@@ -1,0 +1,36 @@
+metadata:
+  sistema: "SCORECARD APEX v3.0"
+  data_avaliacao: "YYYY-MM-DD"
+
+candidato:
+  nome: ""
+  arquetipo: "" # Lendário Vivo/Ícone Histórico/Especialista
+  
+classificacao:
+  score_legal: 0
+  score_impacto: 0.0
+  classificacao_final: "" # PREMIUM/APPROVED/CONDITIONAL/BLOCKED
+  
+decisao:
+  prosseguir: false
+  prioridade: "" # Alta/Média/Baixa
+  restricoes: []
+
+# Notes System (AIOS-inspired)
+analyst_notes:
+  - date: "YYYY-MM-DD"
+    note: "Observação sobre viabilidade"
+  - date: "YYYY-MM-DD"
+    note: "Recomendação baseada em análise"
+
+pm_notes:
+  - date: "YYYY-MM-DD"
+    note: "Decisão de produto ou priorização"
+  - date: "YYYY-MM-DD"
+    note: "Requisito identificado"
+
+architect_notes:
+  - date: "YYYY-MM-DD"
+    note: "Consideração arquitetural"
+  - date: "YYYY-MM-DD"
+    note: "Restrição técnica"

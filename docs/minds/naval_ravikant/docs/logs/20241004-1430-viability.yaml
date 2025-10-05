@@ -1,0 +1,69 @@
+scorecard_apex:
+  candidato: "Naval Ravikant"
+  data_avaliacao: "2024-10-04"
+
+  avaliacao_legal:
+    score: 9
+    status: "VERDE"
+    riscos_identificados:
+      - "Figura viva, mas com postura extremamente aberta sobre conhecimento"
+      - "Todo conteúdo publicamente compartilhado com intenção educativa"
+    mitigacoes_possiveis:
+      - "Usar apenas material público (Twitter, podcasts, Naval Almanack)"
+      - "Citar fontes e contexto original sempre"
+      - "Deixar claro que é uma representação baseada em conteúdo público"
+
+  impacto_estrategico:
+    score_total: 9.4
+    reconhecimento: 9  # Ícone global em startups, filosofia e investimentos
+    alinhamento: 10    # Perfeito para mentoria empresarial e filosofia prática
+    densidade_fontes: 10  # 200+ horas de podcasts, 10+ anos de tweets, livro completo
+    singularidade: 9   # Síntese única: investimentos + filosofia + felicidade
+    aplicabilidade: 9  # Princípios universais altamente transferíveis
+
+  classificacao_final: "PREMIUM"
+  arquetipo: "LENDÁRIO VIVO"
+  super_habilidade: "Filosofia Prática de Riqueza e Felicidade"
+
+  diferenciais_unicos:
+    - "Conceito de 'Specific Knowledge' - conhecimento que não pode ser ensinado"
+    - "Framework de Leverage (código, mídia, capital, pessoas)"
+    - "Filosofia de 'Wealth Creation' sem culpa ou conflito"
+    - "Abordagem não-dogmática de espiritualidade e felicidade"
+    - "Princípios de tomada de decisão de alto impacto"
+    - "Teoria de jogos aplicada a relacionamentos e negócios"
+
+  fontes_principais_identificadas:
+    tier_1_essencial:
+      - "The Naval Almanack (livro completo compilado por Eric Jorgenson)"
+      - "Naval Podcast com Shane Parrish (3+ horas)"
+      - "Joe Rogan Experience #1309 (2+ horas)"
+      - "Tim Ferriss Show (múltiplos episódios)"
+      - "Thread completa 'How to Get Rich Without Getting Lucky'"
+
+    tier_2_importante:
+      - "Naval Periscope archives (50+ horas)"
+      - "Twitter/X archive completo (10+ anos)"
+      - "Angel List essays e posts"
+      - "Entrevistas no Knowledge Project"
+      - "Aparições em podcasts variados (100+ horas)"
+
+    tier_3_complementar:
+      - "Venture Hacks blog posts"
+      - "Aparições em conferências de startups"
+      - "Comentários em Hacker News"
+      - "Reflexões sobre Bitcoin e crypto"
+
+  recomendacao:
+    prosseguir: true
+    prioridade: "ALTA"
+    investimento_estimado: 80  # horas
+    roi_esperado: 10
+    justificativa: "Naval representa uma síntese única e moderna de filosofia prática, investimentos e felicidade. Seu conteúdo é denso, profundo e altamente aplicável. A combinação de business wisdom com filosofia estoica/budista é única no mercado."
+
+  proximos_passos:
+    - "Executar 02_icp_match_score.md para validar alinhamento estratégico"
+    - "Iniciar coleta do Naval Almanack e principais podcasts"
+    - "Mapear evolução temporal do pensamento (2007-2024)"
+    - "Identificar frameworks e modelos mentais únicos"
+    - "Documentar contradições produtivas no pensamento"

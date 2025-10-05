@@ -1,0 +1,17 @@
+{
+  "personality_profile": {
+    "mbti": "",
+    "enneagram": "",
+    "disc": "",
+    "big_five": {
+      "openness": 0,
+      "conscientiousness": 0,
+      "extraversion": 0,
+      "agreeableness": 0,
+      "neuroticism": 0
+    },
+    "cognitive_functions": [],
+    "values_core": [],
+    "anti_values": []
+  }
+}

@@ -1,0 +1,64 @@
+version: 1.0.0
+installed_at: '2025-10-05T21:07:56.263Z'
+install_type: expansion-pack
+expansion_pack_id: expansion-creator
+expansion_pack_name: expansion-creator
+ides_setup:
+  - cursor
+  - claude-code
+  - trae
+files:
+  - path: .expansion-creator/config.yaml
+    hash: 9b3c312d8d22aff1
+    modified: false
+  - path: .expansion-creator/README.md
+    hash: 7044add1fb918922
+    modified: false
+  - path: .expansion-creator/utils/workflow-management.md
+    hash: 68ca29e897a820d8
+    modified: false
+  - path: .expansion-creator/utils/aios-doc-template.md
+    hash: 6bfd19c9953f2c28
+    modified: false
+  - path: .expansion-creator/templates/expansion-template-tmpl.yaml
+    hash: 68c2dfe56d1f01b2
+    modified: false
+  - path: .expansion-creator/templates/expansion-task-tmpl.md
+    hash: 57716d156d547b06
+    modified: false
+  - path: .expansion-creator/templates/expansion-readme-tmpl.md
+    hash: 1b398959d018966e
+    modified: false
+  - path: .expansion-creator/templates/expansion-config-tmpl.yaml
+    hash: 93cb6cd2bef88e68
+    modified: false
+  - path: .expansion-creator/templates/expansion-agent-tmpl.md
+    hash: ec4ce54c10680b11
+    modified: false
+  - path: .expansion-creator/tasks/execute-checklist.md
+    hash: c3c5a7fc78c2258c
+    modified: false
+  - path: .expansion-creator/tasks/create-expansion-template.md
+    hash: 1ae864814e5cefc2
+    modified: false
+  - path: .expansion-creator/tasks/create-expansion-task.md
+    hash: 68b277348d6daec4
+    modified: false
+  - path: .expansion-creator/tasks/create-expansion-pack.md
+    hash: 3e8b6ed8c970d824
+    modified: false
+  - path: .expansion-creator/tasks/create-expansion-agent.md
+    hash: 9221446a90a3ef86
+    modified: false
+  - path: .expansion-creator/tasks/create-doc.md
+    hash: 6c55d56d3bc2031f
+    modified: false
+  - path: .expansion-creator/data/expansion-pack-kb.md
+    hash: fc59f1273952c664
+    modified: false
+  - path: .expansion-creator/agents/expansion-creator.md
+    hash: 68587204f1794b14
+    modified: false
+  - path: .expansion-creator/checklists/expansion-pack-checklist.md
+    hash: d3da2bca9b2a769e
+    modified: false

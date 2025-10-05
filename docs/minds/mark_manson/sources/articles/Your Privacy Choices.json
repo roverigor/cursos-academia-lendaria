@@ -1,0 +1,30 @@
+{
+  "persona": "mark_manson",
+  "url": "https://markmanson.net/your-privacy-choices",
+  "metadata": {
+    "title": "Your Privacy Choices",
+    "author": "Mark Manson",
+    "date": "Please enable JavaScript in your browser to complete this form.Please enable JavaScript in your browser to complete this form.Name *FirstLastEmail *Your Request *Receive information about processed personal dataDelete my personal dataObject against the processing of my personal dataEdit/correct my personal dataOpt out of targeted advertisingOpt out of the sale of my personal dataLimit the use of my sensitive personal informationOtherPlease provide any details and notes you have regarding your requestRequired confirmation *I understand that I may be required to validate my request by email, and I may be contacted in order to complete the request.Submit",
+    "description": "You can use the form below to submit a request regarding your personal information that is controlled by us. Please complete this form and we will respond as soon as possible. For more details and information about how we use and protect your personal information, please visit our Privacy Policy. We need your name and email address in order to process your request and safeguard your data. We will use the data gathered here only to process your request and for record keeping as required by law. I",
+    "keywords": [],
+    "categories": []
+  },
+  "structure": {
+    "headings": [
+      {
+        "level": "h2",
+        "text": "Your Request"
+      }
+    ],
+    "paragraphs": 4,
+    "lists": 1,
+    "quotes": 0,
+    "links": 1,
+    "images": 2,
+    "patterns": {
+      "questions": 0
+    }
+  },
+  "word_count": 240,
+  "download_date": "2025-09-25T21:00:12.665281"
+}
