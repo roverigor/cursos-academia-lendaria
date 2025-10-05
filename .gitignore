@@ -7,11 +7,5 @@
 .windsurf/
 .trae/
 
-# Cursor and AI helpers
-.cursor/
-.expansion-creator/
-.claude/
-
-
-# node_modules or other dependencies (if any)
+# Dependências comuns
 node_modules/
