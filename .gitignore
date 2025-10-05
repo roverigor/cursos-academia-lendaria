@@ -12,8 +12,6 @@
 .expansion-creator/
 .claude/
 
-# Logs
-*.log
 
 # node_modules or other dependencies (if any)
 node_modules/

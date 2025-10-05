@@ -1,15 +1,15 @@
-# 🔧 WORKFLOW COM AIOS-FULLSTACK
+# 🔧 WORKFLOW COM AIOS-FULLSTACK (AIOS-first)
 
 ## 📋 Visão Geral
 
-Este documento mapeia **como usar agentes AIOS como assistentes consultivos** durante a execução do clone_system.
+Este documento descreve **como executar o pipeline MMOS** usando o catálogo `prompts.yaml`, o launcher AIOS e os agentes especializados.
 
-### ⚠️ Importante: AIOS é Metodologia Conversacional
+### ⚠️ Importante: AIOS-first
 
-- **NÃO é:** Automação via CLI com comandos executáveis
-- **É:** Framework de agentes especializados para assistência via chat
-- **Uso:** Conversar com agentes para obter orientação, templates e validação
-- **Execução:** Permanece manual com checkpoints humanos
+- **Metadados centralizados:** `docs/mmos/prompts.yaml` define ordem, dependências, agente e outputs.
+- **Launcher:** `docs/mmos/scripts/aios-launcher.sh` gera briefing, injeta contexto e registra logs.
+- **Execução híbrida:** agentes permanecem conversacionais, mas são acionados com briefing padronizado.
+- **Checkpoints humanos** continuam obrigatórios ao final de cada fase.
 
 ---
 
@@ -34,7 +34,7 @@ Este documento mapeia **como usar agentes AIOS como assistentes consultivos** du
 
 ### ETAPA 1: VIABILITY
 
-**Prompts:** `clone_system/1_viability/prompts/`
+**Prompts (IDs):** `viability_*`
 
 | Tarefa | Agente | Como Consultar |
 |--------|--------|----------------|
@@ -55,7 +55,7 @@ Este documento mapeia **como usar agentes AIOS como assistentes consultivos** du
 
 ### ETAPA 2: RESEARCH
 
-**Prompts:** `clone_system/2_research/prompts/`
+**Prompts (IDs):** `research_*`
 
 | Tarefa | Agente | Como Consultar |
 |--------|--------|----------------|
@@ -77,7 +77,7 @@ Este documento mapeia **como usar agentes AIOS como assistentes consultivos** du
 
 ### ETAPA 3: ANALYSIS (DNA Mental™ 8 Camadas)
 
-**Prompts:** `clone_system/3_analysis/prompts/` - Organizados em 6 níveis
+**Prompts (IDs):** `analysis_*` (ordem/níveis em `prompts.yaml`)
 
 #### Estrutura de Paralelização
 
@@ -121,7 +121,7 @@ Este documento mapeia **como usar agentes AIOS como assistentes consultivos** du
 
 ### ETAPA 4: SYNTHESIS
 
-**Prompts:** `clone_system/4_synthesis/prompts/`
+**Prompts (IDs):** `synthesis_*`
 
 | Tarefa | Agente | Como Consultar |
 |--------|--------|----------------|
@@ -142,7 +142,7 @@ Este documento mapeia **como usar agentes AIOS como assistentes consultivos** du
 
 ### ETAPA 5: IMPLEMENTATION
 
-**Prompts:** `clone_system/5_implementation/prompts/`
+**Prompts (IDs):** `implementation_*`
 
 | Tarefa | Agente | Como Consultar |
 |--------|--------|----------------|
@@ -163,7 +163,7 @@ Este documento mapeia **como usar agentes AIOS como assistentes consultivos** du
 
 ### ETAPA 6: TESTING
 
-**Prompts:** `clone_system/6_testing/prompts/`
+**Prompts (IDs):** `testing_*`
 
 | Tarefa | Agente | Como Consultar |
 |--------|--------|----------------|
@@ -201,32 +201,22 @@ Este documento mapeia **como usar agentes AIOS como assistentes consultivos** du
 
 ## 💡 Como Usar AIOS na Prática
 
-### Exemplo: Criar Clone de Naval Ravikant
+### Exemplo AIOS-first: clones/naval_ravikant
 
-**1. Iniciar conversa com Analyst:**
-```
-Você: "Preciso avaliar a viabilidade de criar um clone mental de Naval Ravikant.
-      Siga o SCORECARD APEX em clone_system/1_viability/prompts/01_scorecard_apex.md"
+1. **Briefing automátic**o:
+   ```bash
+   cd docs/mmos
+   ./scripts/aios-launcher.sh --prompt viability_scorecard_apex --mind naval_ravikant
+   ```
+   - O launcher mostra dependências, outputs alvo, agente e salva log em `docs/mmos/logs/`.
 
-Analyst: [Fornece análise estruturada com scores]
+2. **Execução com o agente**:
+   - Copie o briefing exibido e acione `#analyst` com esse contexto.
+   - Salve o output no caminho recomendado (por exemplo, `minds/naval_ravikant/docs/logs/<timestamp>-viability.yaml`).
 
-Você: [Copia resultado para clones/naval_ravikant/docs/logs/20251004-1900-viability.yaml]
-```
-
-**2. Consultar PM para PRD:**
-```
-Você: "Baseado neste scorecard [colar], crie PRD completo seguindo template
-      em 02_prd_generator.md. Clone será usado como mentor de startups."
-
-PM: [Fornece PRD estruturado]
-
-Você: [Salva em clones/naval_ravikant/docs/PRD.md]
-```
-
-**3. E assim por diante...**
-- Cada prompt do clone_system → conversa com agente apropriado
-- Agente fornece output → você valida e salva no local correto
-- Checkpoints humanos garantem qualidade em cada etapa
+3. **Próximos prompts**:
+   - Continue chamando o launcher com os IDs seguintes (`viability_icp_match_score`, `viability_prd_generator` etc.).
+   - Siga as dependências (`depends_on`) exibidas; após cada fase, realize o checkpoint humano.
 
 ---
 
@@ -252,7 +242,10 @@ Você: [Salva em clones/naval_ravikant/docs/PRD.md]
 
 ## 📚 Referências
 
-- **clone_system/README.md** - Pipeline completo de 47 prompts
+- **docs/mmos/README.md** - Visão AIOS-first e estrutura do pipeline
+- **docs/mmos/prompts.yaml** - Catálogo oficial de prompts
+- **scripts/aios-launcher.sh** - Briefing automático + logging
+- **docs/mmos/docs/OUTPUTS_GUIDE.md** - Especificação de outputs por etapa
 - **aios-fullstack/README.md** - Framework AIOS
 - **aios-fullstack/aios-core/user-guide.md** - Guia de uso dos agentes
 - **clone_system/docs/OUTPUTS_GUIDE.md** - Especificação de outputs
