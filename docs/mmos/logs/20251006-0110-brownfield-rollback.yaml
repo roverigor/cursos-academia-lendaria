@@ -1,0 +1,30 @@
+schema_version: '1.0'
+rollback_timestamp: '2025-10-06T01:10:15.425184'
+mind: elon_musk
+execution_id: brownfield_elon_musk_20251006_0109
+reason: Testing git-based rollback
+git_snapshot: e5fbaecb0c84a37bc3c5f33f4bfad1ecedef2d1d
+git_snapshot_short: e5fbaecb
+rollback_steps:
+- action: preserve_logs
+  command: git stash push -u docs/mmos/logs/*brownfield* -m "Preserve brownfield logs
+    before rollback"
+  status: skipped
+- action: git_reset
+  command: git reset --hard e5fbaecb0c84a37bc3c5f33f4bfad1ecedef2d1d
+  status: skipped
+- action: restore_logs
+  command: git stash pop
+  status: skipped
+rollback_successful: false
+preserved_logs:
+- docs/mmos/logs/brownfield_elon_musk_20251006_0109-checkpoint.yaml
+- docs/mmos/logs/20251006-0109-brownfield-diff.yaml
+- docs/mmos/logs/20251006-0109-brownfield-execution.yaml
+- docs/mmos/logs/20251006-0109-brownfield-plan.yaml
+- docs/mmos/logs/20251006-0058-regression-test.yaml
+next_steps:
+- Review regression test failures
+- Analyze why brownfield update caused issues
+- Consider alternative approach (e.g., smaller incremental changes)
+- Update BROWNFIELD_WORKFLOW.md if needed

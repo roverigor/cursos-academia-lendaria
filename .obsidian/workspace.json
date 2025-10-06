@@ -11,10 +11,14 @@
             "id": "ed91d08d432111ce",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "docs/minds/jesus_cristo/sources/tier2_epistolas/epistolas_paulinas.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nova aba"
+              "title": "epistolas_paulinas"
             }
           }
         ]
@@ -74,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "1cea70b490970c06",
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/minds/jesus_cristo/sources/tier2_epistolas/epistolas_paulinas.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Links inversos para epistolas_paulinas"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "docs/minds/jesus_cristo/sources/tier2_epistolas/epistolas_paulinas.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Links de saída"
+              "title": "Links de saída para epistolas_paulinas"
             }
           },
           {
@@ -136,12 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "docs/minds/jesus_cristo/sources/tier2_epistolas/epistolas_paulinas.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário"
+              "title": "Sumário de epistolas_paulinas"
             }
           }
         ]
@@ -164,20 +171,31 @@
   },
   "active": "ed91d08d432111ce",
   "lastOpenFiles": [
+    "docs/mmos/logs/20251006-0110-brownfield-rollback.yaml",
+    "docs/mmos/brownfield/rollback_manager.py.tmp.18646.1759723815257",
+    "docs/mmos/logs/20251006-0109-brownfield-execution.yaml",
+    "docs/mmos/logs/brownfield_elon_musk_20251006_0109-checkpoint.yaml",
+    "docs/mmos/logs/20251006-0109-brownfield-plan.yaml",
+    "docs/mmos/logs/20251006-0109-brownfield-diff.yaml",
+    "docs/minds/elon_musk/sources/sources_master.yaml",
+    "docs/minds/jesus_cristo/metadata/temporal_context.yaml",
+    "docs/minds/jesus_cristo/sources/tier2_epistolas/epistolas_gerais.md",
+    "docs/mmos/brownfield/rollback_manager.py.tmp.18646.1759723715196",
+    "docs/minds/jesus_cristo/sources/tier1_evangelhos/lucas.md",
+    "docs/minds/jesus_cristo/sources/tier2_epistolas/atos.md",
+    "docs/minds/jesus_cristo/sources/tier3_contexto/judaismo_segundo_templo.md",
+    "docs/minds/jesus_cristo/sources/tier3_contexto/josefo_contexto.md",
+    "docs/minds/jesus_cristo/sources/tier3_contexto/profetas_citacoes.md",
+    "docs/minds/jesus_cristo/sources/tier3_contexto/torah_citacoes.md",
+    "docs/minds/jesus_cristo/sources/tier2_epistolas/epistolas_paulinas.md",
+    "docs/minds/jesus_cristo/sources/tier1_evangelhos/marcos.md",
+    "docs/minds/jesus_cristo/sources/priority_matrix.yaml",
+    "docs/minds/jesus_cristo/sources/tier1_evangelhos/mateus.md",
+    "docs/minds/jesus_cristo/sources/tier2_epistolas",
     "docs/mmos/logs/20251006-0100-story-1.3-test-results.md",
-    "docs/minds/jesus_cristo/sources/tier3_contexto",
-    "docs/minds/jesus_cristo/sources/tier1_evangelhos",
-    "docs/mmos/logs/20251006-0059-brownfield-rollback.yaml",
-    "docs/mmos/logs/20251006-0058-regression-test.yaml",
-    "docs/mmos/logs/20251006-0058-brownfield-execution.yaml",
-    "docs/mmos/logs/brownfield_elon_musk_20251006_0058-checkpoint.yaml",
     "docs/minds/BACKUP_elon_musk_20251006/system_prompts/System_Prompt_2.md",
     "docs/minds/BACKUP_elon_musk_20251006/system_prompts/System_Prompt_(narrativo)_br.md",
     "docs/minds/BACKUP_elon_musk_20251006/system_prompts/System_Prompt.md",
-    "docs/minds/BACKUP_elon_musk_20251006/sources/sources_master.yaml",
-    "docs/minds/BACKUP_elon_musk_20251006/sources/pasted_content_2.txt",
-    "docs/minds/BACKUP_elon_musk_20251006/sources/pasted_content.txt",
-    "docs/minds/BACKUP_elon_musk_20251006/sources/musk_deep_research.csv",
     "docs/minds/BACKUP_elon_musk_20251006/docs/musk_primeiros_negocios.md",
     "docs/minds/BACKUP_elon_musk_20251006/docs/musk_infancia_detalhes.md",
     "docs/minds/BACKUP_elon_musk_20251006/docs/musk_biografia.md",
@@ -188,17 +206,6 @@
     "docs/minds/BACKUP_elon_musk_20251006/artifacts/musk_controversias_crises.md",
     "docs/minds/BACKUP_elon_musk_20251006/artifacts/musk_comunicacao_linguagem.md",
     "docs/minds/BACKUP_elon_musk_20251006/artifacts/musk_cognitive_architecture.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/Uma_análise_psicológica_abrangente.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/TEMPLATE_MASTER:_EXTRAÇÃO_DE_ARQUITETURA_COGNITIVA_COMPLETA_ELON_MUSK.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/Rotina_Elon_Musk.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/Os_Padrões_de_Leitura_de_Elon_Musk_e_Sua_Influência_Sistemática.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/O_Algorithm_de_Elon_Musk_Anatomia_Detalhada_do_Pensamento_Operacional.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/First_Principles_Thinking.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/Dossiê_Estratégico_A_Arquitetura_Psicológica_de_Elon_Musk.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/Dataset_Abrangente_sobre_Elon_Musk.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/DATASET_ENRIQUECIDO:_ARQUITETURA_COGNITIVA_COMPLETA_ELON_MUSK.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/As_Filosofias_que_Regem_a_Mente_de_Elon_Musk.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/A_Arquitetura_Mental_de_Elon_Musk_Uma_Análise_Sistemática_dos_Frameworks_de_Pensamento.md",
-    "docs/minds/BACKUP_elon_musk_20251006/artifacts/ASSINATURA_LINGUÍSTICA_ELON_MUSK.md"
+    "docs/minds/BACKUP_elon_musk_20251006/artifacts/Uma_análise_psicológica_abrangente.md"
   ]
 }

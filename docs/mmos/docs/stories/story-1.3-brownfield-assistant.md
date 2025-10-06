@@ -138,7 +138,8 @@ backup_required: true
 regression_tests_required: true
 
 pre_execution_checklist:
-  - Create backup: cp -r minds/nassim_taleb minds/BACKUP_nassim_taleb_20251006
+  - Ensure working tree is clean: git status
+  - Create snapshot: git add . && git commit -m 'pre-brownfield: nassim_taleb'
   - Read LIMITATIONS.md
   - Document baseline behavior
 ```
@@ -166,9 +167,11 @@ plan_file: docs/logs/20251006-0115-brownfield-plan.yaml
 status: in_progress
 
 steps_completed:
-  - step: backup_created
+  - step: git_snapshot
     timestamp: '2025-10-06T01:30:15'
-    details: minds/BACKUP_nassim_taleb_20251006
+    details:
+      commit_hash: abc123def456...
+      commit_short: abc123de
 
   - step: prompt_executed
     timestamp: '2025-10-06T01:32:45'
@@ -277,19 +280,20 @@ mind: nassim_taleb
 execution_id: brownfield_nassim_taleb_20251006_0130
 reason: critical_regression_detected
 
-backup_source: minds/BACKUP_nassim_taleb_20251006
+git_snapshot: abc123def456...
+git_snapshot_short: abc123de
 
 rollback_steps:
-  - action: restore_sources
-    command: cp -r minds/BACKUP_nassim_taleb_20251006/sources minds/nassim_taleb/
+  - action: preserve_logs
+    command: git stash push -u docs/mmos/logs/*brownfield* -m "Preserve brownfield logs before rollback"
     status: completed
 
-  - action: restore_artifacts
-    command: cp -r minds/BACKUP_nassim_taleb_20251006/artifacts minds/nassim_taleb/
+  - action: git_reset
+    command: git reset --hard abc123def456...
     status: completed
 
-  - action: restore_kb
-    command: cp -r minds/BACKUP_nassim_taleb_20251006/kb minds/nassim_taleb/
+  - action: restore_logs
+    command: git stash pop
     status: completed
 
 rollback_successful: true
@@ -539,8 +543,8 @@ python3 -m docs.mmos.brownfield.cli plan --mind nassim_taleb
 # 3. Review plan (human decision)
 cat docs/logs/20251006-0115-brownfield-plan.yaml
 
-# 4. Execute (after creating backup)
-cp -r minds/nassim_taleb minds/BACKUP_nassim_taleb_20251006
+# 4. Execute (after creating git snapshot)
+git add . && git commit -m 'pre-brownfield: nassim_taleb'
 python3 -m docs.mmos.brownfield.cli execute --mind nassim_taleb --plan docs/logs/20251006-0115-brownfield-plan.yaml
 # Output: Executing 5 prompts... (uses launcher internally)
 # Saved to: docs/logs/20251006-0130-brownfield-execution.yaml

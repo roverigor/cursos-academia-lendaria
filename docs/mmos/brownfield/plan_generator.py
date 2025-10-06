@@ -263,7 +263,8 @@ class PlanGenerator:
     def _generate_checklist(self, mind: str, scope: Dict) -> List[str]:
         """Generate pre-execution checklist"""
         checklist = [
-            f"Create backup: cp -r docs/minds/{mind} docs/minds/BACKUP_{mind}_$(date +%Y%m%d)",
+            f"Ensure working tree is clean: git status",
+            f"Create snapshot: git add . && git commit -m 'pre-brownfield: {mind}'",
             f"Read docs/LIMITATIONS.md",
             f"Document baseline behavior (test {scope.get('total_prompts', 0)} key prompts)"
         ]

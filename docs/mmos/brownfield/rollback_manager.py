@@ -27,7 +27,7 @@ class RollbackManager:
     def __init__(self, execution_log_path: Path):
         self.execution_log_path = Path(execution_log_path)
         self.execution_log = self._load_execution_log()
-        self.backup_location = self._extract_backup_location()
+        self.git_snapshot = self._extract_git_snapshot()
         self.mind_dir = Path(f"docs/minds/{self.execution_log['mind']}")
 
     def _load_execution_log(self) -> Dict:
@@ -35,16 +35,16 @@ class RollbackManager:
         with open(self.execution_log_path, 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
 
-    def _extract_backup_location(self) -> Optional[Path]:
-        """Extract backup location from execution log"""
+    def _extract_git_snapshot(self) -> Optional[str]:
+        """Extract git commit hash from execution log"""
         for step in self.execution_log.get('steps_completed', []):
-            if step['step'] == 'backup_validated':
-                return Path(step['details']['backup_location'])
+            if step['step'] == 'git_snapshot':
+                return step['details']['commit_hash']
         return None
 
     def generate_rollback_plan(self, reason: str = '') -> List[RollbackStep]:
         """
-        Generate rollback steps based on execution log
+        Generate rollback steps using git reset
 
         Args:
             reason: Reason for rollback
@@ -52,50 +52,29 @@ class RollbackManager:
         Returns:
             List of RollbackStep
         """
-        if not self.backup_location:
-            raise RuntimeError("No backup location found in execution log")
-
-        if not self.backup_location.exists():
-            raise RuntimeError(f"Backup not found at {self.backup_location}")
+        if not self.git_snapshot:
+            raise RuntimeError("No git snapshot found in execution log. Cannot rollback without git commit hash.")
 
         steps = []
 
-        # Determine what was modified (from execution log)
-        modified_areas = self._get_modified_areas()
-
-        # Generate restore commands
-        if modified_areas.get('sources'):
-            steps.append(RollbackStep(
-                action='restore_sources',
-                command=f'cp -r {self.backup_location}/sources {self.mind_dir}/',
-                status='pending'
-            ))
-
-        if modified_areas.get('artifacts'):
-            steps.append(RollbackStep(
-                action='restore_artifacts',
-                command=f'cp -r {self.backup_location}/artifacts {self.mind_dir}/',
-                status='pending'
-            ))
-
-        if modified_areas.get('kb'):
-            steps.append(RollbackStep(
-                action='restore_kb',
-                command=f'cp -r {self.backup_location}/kb {self.mind_dir}/',
-                status='pending'
-            ))
-
-        if modified_areas.get('system_prompts'):
-            steps.append(RollbackStep(
-                action='restore_system_prompts',
-                command=f'cp -r {self.backup_location}/system_prompts {self.mind_dir}/',
-                status='pending'
-            ))
-
-        # Add cleanup step (optional - remove failed brownfield artifacts)
+        # Step 1: Stash current brownfield logs (to preserve them)
         steps.append(RollbackStep(
-            action='cleanup_temp_files',
-            command=f'find {self.mind_dir} -name "*brownfield*" -type f',
+            action='preserve_logs',
+            command='git stash push -u docs/mmos/logs/*brownfield* -m "Preserve brownfield logs before rollback"',
+            status='pending'
+        ))
+
+        # Step 2: Git reset to snapshot
+        steps.append(RollbackStep(
+            action='git_reset',
+            command=f'git reset --hard {self.git_snapshot}',
+            status='pending'
+        ))
+
+        # Step 3: Restore logs from stash
+        steps.append(RollbackStep(
+            action='restore_logs',
+            command='git stash pop',
             status='pending'
         ))
 
@@ -137,7 +116,7 @@ class RollbackManager:
             Updated plan with execution status
         """
         print(f"\n=== Rollback Execution ===")
-        print(f"Backup source: {self.backup_location}")
+        print(f"Git snapshot: {self.git_snapshot[:8] if self.git_snapshot else 'unknown'}")
         print(f"Target: {self.mind_dir}")
         print(f"Steps: {len(plan)}\n")
 
@@ -190,7 +169,8 @@ class RollbackManager:
             'mind': self.execution_log['mind'],
             'execution_id': self.execution_log['execution_id'],
             'reason': reason,
-            'backup_source': str(self.backup_location),
+            'git_snapshot': self.git_snapshot,
+            'git_snapshot_short': self.git_snapshot[:8] if self.git_snapshot else 'unknown',
             'rollback_steps': [
                 {
                     'action': step.action,

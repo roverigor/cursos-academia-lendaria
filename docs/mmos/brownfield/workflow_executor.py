@@ -76,27 +76,45 @@ class WorkflowExecutor:
         return self._get_execution_data()
 
     def _validate_prerequisites(self, dry_run: bool) -> bool:
-        """Validate prerequisites before execution"""
+        """Validate prerequisites before execution using git"""
         valid = True
 
-        # Check if backup exists (if required)
+        # Check git status - working tree should be clean
         if self.plan.get('backup_required', True):
-            backup_pattern = f"BACKUP_{self.plan['mind']}_*"
-            parent_dir = self.mind_dir.parent
-            backups = list(parent_dir.glob(backup_pattern))
+            result = subprocess.run(
+                ['git', 'status', '--porcelain'],
+                capture_output=True,
+                text=True,
+                cwd=Path.cwd()
+            )
 
-            if not backups:
-                print(f"[ERROR] No backup found matching {backup_pattern}")
-                print(f"[ERROR] Create backup first: cp -r {self.mind_dir} {parent_dir}/BACKUP_{self.plan['mind']}_$(date +%Y%m%d)")
-                valid = False
-            else:
-                latest_backup = max(backups, key=lambda p: p.stat().st_mtime)
-                print(f"[OK] Backup found: {latest_backup}")
+            if result.stdout.strip():
+                print(f"[WARN] Working tree has uncommitted changes")
+                print(f"[INFO] Recommend: git add . && git commit -m 'pre-brownfield snapshot'")
+                print(f"[INFO] Or use --no-backup flag to proceed anyway")
+                # Don't fail - just warn
+
+            # Get current commit hash for rollback reference
+            result = subprocess.run(
+                ['git', 'rev-parse', 'HEAD'],
+                capture_output=True,
+                text=True,
+                cwd=Path.cwd()
+            )
+
+            if result.returncode == 0:
+                commit_hash = result.stdout.strip()
+                print(f"[OK] Git snapshot: {commit_hash[:8]}")
                 self.execution_log.append(ExecutionStep(
-                    step='backup_validated',
+                    step='git_snapshot',
                     timestamp=datetime.now().isoformat(),
-                    details={'backup_location': str(latest_backup)}
+                    details={
+                        'commit_hash': commit_hash,
+                        'commit_short': commit_hash[:8]
+                    }
                 ))
+            else:
+                print(f"[WARN] Not a git repository, rollback will be manual")
 
         # Check if LIMITATIONS.md exists (for review)
         limitations_file = self.mind_dir / "docs" / "LIMITATIONS.md"

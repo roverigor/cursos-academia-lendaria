@@ -1,24 +1,26 @@
 schema_version: '1.0'
-generated_at: '2025-10-06T01:09:43.875715'
-note: Auto-generated from current sources/ state
-sources:
+scan_timestamp: '2025-10-06T01:09:43.876878'
+mind: elon_musk
+new_sources:
 - path: pasted_content_2.txt
   type: unknown
   size: 22749
   hash: sha256:498f7ec9ac135aff
-  title: pasted_content_2
+  priority: medium
 - path: elon-musk-json.json
   type: unknown
   size: 11927
   hash: sha256:537f4761fed96ad5
-  title: elon-musk-json
+  priority: medium
 - path: musk_deep_research.csv
   type: unknown
   size: 16852
   hash: sha256:6454d044df0e8047
-  title: musk_deep_research
+  priority: medium
 - path: pasted_content.txt
   type: unknown
   size: 4499
   hash: sha256:cc78aee1061a4ea7
-  title: pasted_content
+  priority: medium
+modified_sources: []
+missing_sources: []
