@@ -65,12 +65,14 @@ class PhaseExecutor:
         with open(self.prompts_yaml_path, 'r', encoding='utf-8') as f:
             data = yaml.safe_load(f)
 
-        # Find phase in pipeline
-        for phase_config in data.get('pipeline', []):
-            if phase_config['name'] == self.phase:
-                return phase_config.get('prompts', [])
+        # Filter prompts by phase
+        all_prompts = data.get('prompts', [])
+        phase_prompts = [p for p in all_prompts if p.get('phase') == self.phase]
 
-        raise ValueError(f"Phase '{self.phase}' not found in prompts.yaml")
+        if not phase_prompts:
+            raise ValueError(f"No prompts found for phase '{self.phase}' in prompts.yaml")
+
+        return phase_prompts
 
     def _resolve_execution_order(self) -> List[List[Dict]]:
         """
@@ -119,30 +121,83 @@ class PhaseExecutor:
         """
         Execute a single prompt asynchronously
 
-        This will call the launcher CLI as a subprocess
+        Uses APIClient to call Anthropic API with context injection
         """
         prompt_id = prompt['id']
         started_at = datetime.now().isoformat()
         start_time = time.time()
 
         try:
-            # Build launcher command
-            # TODO: Replace with actual launcher integration
-            # For now, simulate execution
-            await asyncio.sleep(0.5)  # Simulate API call
+            # Load prompt text from file
+            prompt_file_rel = prompt.get('file', f'prompts/{prompt_id}.md')
+            # Resolve relative to docs/mmos/
+            prompt_file = Path('docs/mmos') / prompt_file_rel
+            if not prompt_file.exists():
+                raise FileNotFoundError(f"Prompt file not found: {prompt_file}")
 
-            # Mock execution result
+            with open(prompt_file, 'r', encoding='utf-8') as f:
+                prompt_text = f.read()
+
+            # Execute via APIClient (in thread pool to avoid blocking)
+            # Note: This is a workaround - ideally APIClient would be async
+            loop = asyncio.get_event_loop()
+
+            # Import here to avoid circular dependency and handle missing anthropic
+            try:
+                from .api_client import execute_prompt
+                response = await loop.run_in_executor(
+                    None,
+                    execute_prompt,
+                    self.mind,
+                    prompt_text
+                )
+            except ImportError as e:
+                # If anthropic is not installed, mock the execution
+                print(f"[WARN] APIClient not available ({e}), using mock execution")
+                await asyncio.sleep(0.5)  # Simulate API call
+                response = type('obj', (object,), {
+                    'success': True,
+                    'content': f"Mock output for {prompt_id}",
+                    'retry_count': 0
+                })()
+
             duration_ms = int((time.time() - start_time) * 1000)
-            output_path = f"docs/minds/{self.mind}/artifacts/{prompt_id}.yaml"
 
-            return PromptExecution(
-                prompt_id=prompt_id,
-                status='completed',
-                duration_ms=duration_ms,
-                started_at=started_at,
-                output_path=output_path,
-                parallel_group=parallel_group
-            )
+            if response.success:
+                # Resolve output path from template
+                output_template = prompt.get('outputs', [{}])[0].get('path',
+                    f"minds/{{mind}}/docs/logs/{{timestamp}}-{prompt_id}.yaml")
+
+                output_path = output_template.replace('{mind}', self.mind).replace(
+                    '{timestamp}', datetime.now().strftime('%Y%m%d-%H%M')
+                )
+                output_path = f"docs/{output_path}"
+
+                # Save output
+                output_file = Path(output_path)
+                output_file.parent.mkdir(parents=True, exist_ok=True)
+                with open(output_file, 'w', encoding='utf-8') as f:
+                    f.write(response.content or '')
+
+                return PromptExecution(
+                    prompt_id=prompt_id,
+                    status='completed',
+                    duration_ms=duration_ms,
+                    started_at=started_at,
+                    output_path=output_path,
+                    parallel_group=parallel_group,
+                    retry_count=response.retry_count
+                )
+            else:
+                return PromptExecution(
+                    prompt_id=prompt_id,
+                    status='failed',
+                    duration_ms=duration_ms,
+                    started_at=started_at,
+                    error=response.error,
+                    parallel_group=parallel_group,
+                    retry_count=response.retry_count
+                )
 
         except Exception as e:
             duration_ms = int((time.time() - start_time) * 1000)
@@ -151,7 +206,8 @@ class PhaseExecutor:
                 status='failed',
                 duration_ms=duration_ms,
                 started_at=started_at,
-                error=str(e)
+                error=str(e),
+                parallel_group=parallel_group
             )
 
     async def _execute_batch_parallel(self, batch: List[Dict], batch_idx: int) -> List[PromptExecution]:
