@@ -30,8 +30,13 @@ class ContextLoader:
         """
         brief_path = self.mind_dir / "MIND_BRIEF.md"
         if brief_path.exists():
-            with open(brief_path, 'r', encoding='utf-8') as f:
-                return f.read()
+            try:
+                with open(brief_path, 'r', encoding='utf-8') as f:
+                    return f.read()
+            except UnicodeDecodeError:
+                # Fallback to latin-1 for legacy files
+                with open(brief_path, 'r', encoding='latin-1') as f:
+                    return f.read()
         return None
 
     def load_prd(self) -> Optional[str]:
@@ -43,8 +48,13 @@ class ContextLoader:
         """
         prd_path = self.mind_dir / "docs" / "PRD.md"
         if prd_path.exists():
-            with open(prd_path, 'r', encoding='utf-8') as f:
-                return f.read()
+            try:
+                with open(prd_path, 'r', encoding='utf-8') as f:
+                    return f.read()
+            except UnicodeDecodeError:
+                # Fallback to latin-1 for legacy files
+                with open(prd_path, 'r', encoding='latin-1') as f:
+                    return f.read()
         return None
 
     def load_sources(self, max_files: int = 5) -> List[Dict[str, str]]:
@@ -76,6 +86,16 @@ class ContextLoader:
                         'filename': source_file.name,
                         'content': f.read()
                     })
+            except UnicodeDecodeError:
+                # Fallback to latin-1 for legacy files
+                try:
+                    with open(source_file, 'r', encoding='latin-1') as f:
+                        sources.append({
+                            'filename': source_file.name,
+                            'content': f.read()
+                        })
+                except Exception as e:
+                    print(f"Warning: Could not load {source_file.name}: {e}")
             except Exception as e:
                 print(f"Warning: Could not load {source_file.name}: {e}")
 
@@ -111,6 +131,16 @@ class ContextLoader:
                             'filename': log_file.name,
                             'content': f.read()
                         })
+                except UnicodeDecodeError:
+                    # Fallback to latin-1 for legacy files
+                    try:
+                        with open(log_file, 'r', encoding='latin-1') as f:
+                            logs.append({
+                                'filename': log_file.name,
+                                'content': f.read()
+                            })
+                    except Exception as e:
+                        print(f"Warning: Could not load {log_file.name}: {e}")
                 except Exception as e:
                     print(f"Warning: Could not load {log_file.name}: {e}")
 
