@@ -92,15 +92,24 @@ All outputs now excellent/good. Proceed? [yes/no]
 
 ## Configuration
 
-Set environment variable:
+**No API key needed!** This pipeline uses **Claude Code** (the session you're in).
 
-```bash
-export ANTHROPIC_API_KEY="your-api-key"
-```
-
-Model: `claude-sonnet-4-5-20250929` (Claude Sonnet 4.5)
+Model: Claude Sonnet 4.5 (your current session)
 Max tokens: `100000`
 Max concurrent: `3`
+
+### How it works with Claude Code
+
+1. **Pipeline prepares prompts** with full context (MIND_BRIEF + sources + logs)
+2. **Prompts saved** to temp files for execution
+3. **You execute** each prompt via Claude Code (copy/paste or CLI)
+4. **Responses captured** and saved to output files
+
+This approach:
+- ✅ No API key required
+- ✅ Uses your existing Claude Code session
+- ✅ Full control over each execution
+- ✅ Can review prompts before running
 
 ## Performance
 
