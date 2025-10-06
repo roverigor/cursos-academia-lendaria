@@ -8,7 +8,7 @@ prompts:
   parallelizable: false
   outputs:
   - path: minds/{mind}/docs/logs/{timestamp}-viability.yaml
-    description: Avaliao APEX completa
+    description: Avaliação APEX completa
   depends_on: []
 - id: viability_icp_match_score
   file: prompts/viability_icp_match_score.md
@@ -19,7 +19,7 @@ prompts:
   parallelizable: false
   outputs:
   - path: minds/{mind}/docs/logs/{timestamp}-icp_match.yaml
-    description: Relatrio ICP
+    description: Relatório ICP
   depends_on:
   - viability_scorecard_apex
 - id: viability_prd_generator
@@ -115,7 +115,7 @@ prompts:
   parallelizable: false
   outputs:
   - path: minds/{mind}/sources/sources_master.yaml
-    description: Inventrio completo
+    description: Inventário completo
   depends_on:
   - research_source_collector
 - id: research_etl_q_a
@@ -151,7 +151,7 @@ prompts:
   parallelizable: true
   outputs:
   - path: minds/{mind}/artifacts/quotes_database.yaml
-    description: Base de citaes
+    description: Base de citações
   depends_on:
   - research_sources_master
 - id: analysis_timeline_mapping
@@ -175,7 +175,7 @@ prompts:
   parallelizable: true
   outputs:
   - path: minds/{mind}/artifacts/routine_analysis.md
-    description: Rotinas e hbitos
+    description: Rotinas e hábitos
   depends_on:
   - analysis_source_reading
   - analysis_quote_extraction
@@ -216,7 +216,7 @@ prompts:
   parallelizable: true
   outputs:
   - path: minds/{mind}/artifacts/behavioral_patterns.md
-    description: Padres comportamentais
+    description: Padrões comportamentais
   depends_on:
   - analysis_source_reading
   - analysis_quote_extraction
@@ -269,7 +269,7 @@ prompts:
   parallelizable: true
   outputs:
   - path: minds/{mind}/artifacts/decision_patterns.yaml
-    description: Arquitetura de decises
+    description: Arquitetura de decisões
   depends_on:
   - analysis_mental_models
   - analysis_values_hierarchy
@@ -282,7 +282,7 @@ prompts:
   parallelizable: true
   outputs:
   - path: minds/{mind}/artifacts/immune_system.md
-    description: Sistema imunolgico cognitivo
+    description: Sistema imunológico cognitivo
   depends_on:
   - analysis_mental_models
   - analysis_values_hierarchy
@@ -295,7 +295,7 @@ prompts:
   parallelizable: false
   outputs:
   - path: minds/{mind}/artifacts/core_obsessions.yaml
-    description: Obsesses principais
+    description: Obsessões principais
   depends_on:
   - analysis_belief_system
   - analysis_values_hierarchy
@@ -345,7 +345,7 @@ prompts:
   parallelizable: true
   outputs:
   - path: minds/{mind}/artifacts/personality_profile.json
-    description: Perfil psicomtrico
+    description: Perfil psicométrico
   depends_on:
   - analysis_unique_algorithm
   - analysis_contradictions_map
@@ -355,10 +355,10 @@ prompts:
   title: Limitations Document
   order: 6
   agent: analyst
-  parallelizokay: true
+  parallelizable: true
   outputs:
   - path: minds/{mind}/docs/LIMITATIONS.md
-    description: Limitaes conhecidas
+    description: Limitações conhecidas
   depends_on:
   - analysis_cognitive_architecture
   - analysis_psychometric_analysis
@@ -371,7 +371,7 @@ prompts:
   parallelizable: true
   outputs:
   - path: minds/{mind}/artifacts/communication_templates.md
-    description: Templates de comunicao
+    description: Templates de comunicação
   depends_on:
   - analysis_cognitive_architecture
   - analysis_behavioral_patterns
@@ -445,7 +445,7 @@ prompts:
   parallelizable: false
   outputs:
   - path: minds/{mind}/docs/logs/{timestamp}-specialist_recommendations.yaml
-    description: Recomendaes de specialist
+    description: Recomendações de specialist
   depends_on:
   - synthesis_kb_chunker
 - id: implementation_extract_patterns
@@ -457,7 +457,7 @@ prompts:
   parallelizable: true
   outputs:
   - path: minds/{mind}/artifacts/patterns_synthesized.md
-    description: Padres finais
+    description: Padrões finais
   depends_on:
   - synthesis_kb_chunker
 - id: implementation_extract_core
@@ -505,7 +505,7 @@ prompts:
   parallelizable: true
   outputs:
   - path: minds/{mind}/artifacts/instructions_core.yaml
-    description: Instrues fundamentais
+    description: Instruções fundamentais
   depends_on:
   - implementation_extract_patterns
 - id: implementation_generalista_compiler
@@ -567,7 +567,7 @@ prompts:
   parallelizable: true
   outputs:
   - path: minds/{mind}/artifacts/neural_flow_techniques.md
-    description: Tcnicas Neural Flow
+    description: Técnicas Neural Flow
   depends_on:
   - implementation_generalista_compiler
 - id: testing_test_generator
