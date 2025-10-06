@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 executions:
 - timestamp: '2025-10-05T23:51:57.832603'
   mind: steve_jobs
@@ -12,3 +12,72 @@ executions:
   context_shown: false
   dry_run: false
   duration_ms: 23
+- timestamp: '2025-10-06T00:05:19.403396'
+  mind: steve_jobs
+  phase: analysis
+  prompt_id: analysis_mental_models
+  prompt_title: Mental Models
+  agent: analyst
+  user: oalanicolas
+  output_path: minds/steve_jobs/artifacts/mental_models.md
+  parallelizable: true
+  context_shown: true
+  dry_run: false
+  duration_ms: 24
+- timestamp: '2025-10-06T00:06:20.779586'
+  mind: nassim_taleb
+  phase: viability
+  prompt_id: viability_scorecard_apex
+  prompt_title: SCORECARD APEX
+  agent: analyst
+  user: oalanicolas
+  output_path: minds/nassim_taleb/docs/logs/20251006-0006-viability.yaml
+  parallelizable: false
+  context_shown: false
+  dry_run: false
+  duration_ms: 23
+- timestamp: '2025-10-06T00:22:13.299556'
+  mind: jesus_cristo
+  phase: viability
+  prompt_id: viability_scorecard_apex
+  prompt_title: SCORECARD APEX
+  agent: analyst
+  user: oalanicolas
+  output_path: minds/jesus_cristo/docs/logs/20251006-0022-viability.yaml
+  parallelizable: false
+  context_shown: false
+  dry_run: false
+  duration_ms: 23
+- timestamp: '2025-10-06T00:22:27.467185'
+  mind: jesus_cristo
+  phase: synthesis
+  prompt_id: synthesis_extract_core
+  prompt_title: Extract Core (Synthesis)
+  agent: analyst
+  user: oalanicolas
+  output_path: minds/jesus_cristo/artifacts/core_elements.yaml
+  parallelizable: true
+  context_shown: false
+  dry_run: false
+  duration_ms: 25
+- timestamp: '2025-10-06T00:22:32.672810'
+  mind: jesus_cristo
+  phase: implementation
+  prompt_id: implementation_generalista_compiler
+  prompt_title: Generalista Compiler
+  agent: architect
+  user: oalanicolas
+  output_path: minds/jesus_cristo/system_prompts/20251006-0022-v{version}-generalista.md
+  parallelizable: false
+  context_shown: false
+  dry_run: false
+  duration_ms: 26
+checkpoints:
+- timestamp: '2025-10-06T00:32:50.821008'
+  mind: nassim_taleb
+  checkpoint_num: 1
+  phase: viability
+  status: approved
+  validator: oalanicolas
+  notes: Primeira fase validada com sucesso
+  executions_reviewed: 1
