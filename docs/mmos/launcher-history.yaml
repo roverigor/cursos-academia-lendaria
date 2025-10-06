@@ -1,0 +1,14 @@
+schema_version: '1.0'
+executions:
+- timestamp: '2025-10-05T23:51:57.832603'
+  mind: steve_jobs
+  phase: analysis
+  prompt_id: analysis_mental_models
+  prompt_title: Mental Models
+  agent: analyst
+  user: oalanicolas
+  output_path: minds/steve_jobs/artifacts/mental_models.md
+  parallelizable: true
+  context_shown: false
+  dry_run: false
+  duration_ms: 23
