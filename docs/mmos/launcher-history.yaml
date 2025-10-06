@@ -72,6 +72,18 @@ executions:
   context_shown: false
   dry_run: false
   duration_ms: 26
+- timestamp: '2025-10-06T00:38:13.304249'
+  mind: jesus_cristo
+  phase: viability
+  prompt_id: viability_icp_match_score
+  prompt_title: ICP Match Score
+  agent: analyst
+  user: oalanicolas
+  output_path: minds/jesus_cristo/docs/logs/20251006-0038-icp_match.yaml
+  parallelizable: false
+  context_shown: false
+  dry_run: false
+  duration_ms: 26
 checkpoints:
 - timestamp: '2025-10-06T00:32:50.821008'
   mind: nassim_taleb

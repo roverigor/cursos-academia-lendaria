@@ -1,6 +1,6 @@
-# 🔧 Tools Guide - Clone System
+# 🔧 Tools Guide - MMOS v3.0
 
-Guia de ferramentas disponíveis para todas as etapas do pipeline de clonagem.
+Guia de ferramentas disponíveis para todas as etapas do pipeline MMOS (Mind Mapper OS).
 
 ---
 
@@ -199,7 +199,7 @@ pip3 install yt-dlp
 
 ## 📚 Documentação Específica
 
-- **Research detalhado**: [2_research/docs/](../2_research/docs/)
+- **Research detalhado**: [stage-guides/research/](stage-guides/research/)
 - **AIOS Workflow**: [AIOS_WORKFLOW.md](AIOS_WORKFLOW.md)
 - **Outputs Guide**: [OUTPUTS_GUIDE.md](OUTPUTS_GUIDE.md)
 

@@ -44,10 +44,10 @@ Este documento descreve **como executar o pipeline MMOS** usando o catálogo `pr
 | Roadmap inicial (TODO.md) | PM/PO | "Gere roadmap do projeto de clone" |
 
 **Outputs:**
-- `clones/[nome]/docs/logs/YYYYMMDD-HHMM-viability.yaml`
-- `clones/[nome]/docs/PRD.md`
-- `clones/[nome]/metadata/dependencies.yaml`
-- `clones/[nome]/docs/TODO.md`
+- `minds/[nome]/docs/logs/YYYYMMDD-HHMM-viability.yaml`
+- `minds/[nome]/docs/PRD.md`
+- `minds/[nome]/metadata/dependencies.yaml`
+- `minds/[nome]/docs/TODO.md`
 
 **✅ Checkpoint #1:** Aprovar viabilidade (score ≥ 35) e prosseguir
 
@@ -66,10 +66,10 @@ Este documento descreve **como executar o pipeline MMOS** usando o catálogo `pr
 | Inventário mestre | Analyst | "Consolide em sources_master.yaml com metadados completos" |
 
 **Outputs:**
-- `clones/[nome]/sources/*/` (books, interviews, speeches, etc.)
-- `clones/[nome]/metadata/temporal_context.yaml`
-- `clones/[nome]/metadata/priority_matrix.yaml`
-- `clones/[nome]/sources/sources_master.yaml`
+- `minds/[nome]/sources/*/` (books, interviews, speeches, etc.)
+- `minds/[nome]/metadata/temporal_context.yaml`
+- `minds/[nome]/metadata/priority_matrix.yaml`
+- `minds/[nome]/sources/sources_master.yaml`
 
 **✅ Checkpoint #2:** Validar suficiência (mínimo 5 fontes primárias de qualidade)
 
@@ -108,12 +108,12 @@ Este documento descreve **como executar o pipeline MMOS** usando o catálogo `pr
 - **Agentes:** Architect + Analyst
 
 **Outputs chave:**
-- `clones/[nome]/artifacts/cognitive_architecture.yaml` (síntese de 3000+ palavras)
-- `clones/[nome]/artifacts/personality_profile.json` (análise de 5000+ palavras)
-- `clones/[nome]/artifacts/recognition_patterns.yaml`
-- `clones/[nome]/artifacts/core_obsessions.yaml`
-- `clones/[nome]/artifacts/unique_algorithm.py`
-- `clones/[nome]/docs/LIMITATIONS.md`
+- `minds/[nome]/artifacts/cognitive_architecture.yaml` (síntese de 3000+ palavras)
+- `minds/[nome]/artifacts/personality_profile.json` (análise de 5000+ palavras)
+- `minds/[nome]/artifacts/recognition_patterns.yaml`
+- `minds/[nome]/artifacts/core_obsessions.yaml`
+- `minds/[nome]/artifacts/unique_algorithm.py`
+- `minds/[nome]/docs/LIMITATIONS.md`
 
 **✅ Checkpoint #3:** Validar se essência cognitiva foi capturada
 
@@ -131,10 +131,10 @@ Este documento descreve **como executar o pipeline MMOS** usando o catálogo `pr
 | Frameworks e metodologias | Architect | "Extraia frameworks e processos criados por [NOME]" |
 
 **Outputs:**
-- `clones/[nome]/artifacts/communication_templates.md`
-- `clones/[nome]/artifacts/signature_phrases.md`
-- `clones/[nome]/kb/chunk_001.md` até `chunk_NNN.md` (FLAT)
-- `clones/[nome]/artifacts/frameworks.yaml`
+- `minds/[nome]/artifacts/communication_templates.md`
+- `minds/[nome]/artifacts/signature_phrases.md`
+- `minds/[nome]/kb/chunk_001.md` até `chunk_NNN.md` (FLAT)
+- `minds/[nome]/artifacts/frameworks.yaml`
 
 **✅ Checkpoint #4:** Validar completude do knowledge base
 
@@ -152,10 +152,10 @@ Este documento descreve **como executar o pipeline MMOS** usando o catálogo `pr
 | Manual operacional | PM | "Documente como usar o clone em docs/operational_manual.md" |
 
 **Outputs:**
-- `clones/[nome]/system_prompts/YYYYMMDD-HHMM-v1.0-generalista-initial.md`
-- `clones/[nome]/system_prompts/config.yaml`
-- `clones/[nome]/specialists/*/system_prompts/` (se aplicável)
-- `clones/[nome]/docs/operational_manual.md`
+- `minds/[nome]/system_prompts/YYYYMMDD-HHMM-v1.0-generalista-initial.md`
+- `minds/[nome]/system_prompts/config.yaml`
+- `minds/[nome]/specialists/*/system_prompts/` (se aplicável)
+- `minds/[nome]/docs/operational_manual.md`
 
 **✅ Checkpoint #5:** Revisar system prompt e aprovar para testes
 
@@ -174,9 +174,9 @@ Este documento descreve **como executar o pipeline MMOS** usando o catálogo `pr
 | Aprovação final | PM | "Documente versão 1.0 como production-ready" |
 
 **Outputs:**
-- `clones/[nome]/docs/logs/YYYYMMDD-HHMM-test-results.yaml`
-- `clones/[nome]/docs/logs/YYYYMMDD-HHMM-refinement-plan.md`
-- Clone aprovado para produção ✅
+- `minds/[nome]/docs/logs/YYYYMMDD-HHMM-test-results.yaml`
+- `minds/[nome]/docs/logs/YYYYMMDD-HHMM-refinement-plan.md`
+- Mind aprovado para produção ✅
 
 **✅ Checkpoint #6:** Aprovar clone como production-ready (80%+ consistência)
 
@@ -195,13 +195,13 @@ Este documento descreve **como executar o pipeline MMOS** usando o catálogo `pr
 7. **Unique Algorithm** - Algoritmo cognitivo singular
 8. **Integrative Synthesis** - Síntese completa
 
-**Referência completa:** `clone_system/README.md`
+**Referência completa:** `docs/mmos/README.md`
 
 ---
 
 ## 💡 Como Usar AIOS na Prática
 
-### Exemplo AIOS-first: clones/naval_ravikant
+### Exemplo AIOS-first: minds/naval_ravikant
 
 1. **Briefing automátic**o:
    ```bash
@@ -248,7 +248,7 @@ Este documento descreve **como executar o pipeline MMOS** usando o catálogo `pr
 - **docs/mmos/docs/OUTPUTS_GUIDE.md** - Especificação de outputs por etapa
 - **aios-fullstack/README.md** - Framework AIOS
 - **aios-fullstack/aios-core/user-guide.md** - Guia de uso dos agentes
-- **clone_system/docs/OUTPUTS_GUIDE.md** - Especificação de outputs
+- **docs/mmos/docs/OUTPUTS_GUIDE.md** - Especificação de outputs
 
 ---
 

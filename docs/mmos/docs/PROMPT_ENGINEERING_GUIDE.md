@@ -1,39 +1,44 @@
 # PROMPT ENGINEERING GUIDE – MMOS v3.0
 
 ## PURPOSE
-Establish a standardized format for all 42 MMOS (Mind Mapper OS) prompts, aligned with the **DNA Mental™** methodology (8 Cognitive Layers). Ensure each prompt captures the correct layers of cognitive depth according to README.md and OUTPUTS_GUIDE.md.
+Establish a standardized format for all MMOS (Mind Mapper OS) prompts (currently 59 prompts organized in 6 phases), aligned with the **DNA Mental™** methodology (8 Cognitive Layers). Ensure each prompt captures the correct layers of cognitive depth according to README.md and OUTPUTS_GUIDE.md.
 
 ## NAMING CONVENTION
 
 ### Mandatory Pattern
 ```
-NN_functional_name.md
+{phase}_{functional_name}.md
 
 Where:
-- NN: execution order (01, 02, 03…)
+- phase: viability, research, analysis, synthesis, implementation, testing
 - functional_name: clear descriptive name in English
 ```
 
 ### Valid Examples (current system)
 ```
-✅ 01_scorecard_apex.md
-✅ 02_prd_generator.md
-✅ 02_dependencies_mapper.md
-✅ 03_todo_initializer.md
-✅ 01_source_discovery.md
-✅ 02_source_collector.md
-✅ 03_temporal_mapper.md
-✅ 03_priority_calculator.md
-✅ 04_sources_master.md
+✅ viability_scorecard_apex.md
+✅ viability_prd_generator.md
+✅ research_source_discovery.md
+✅ research_source_collector.md
+✅ analysis_mental_models.md
+✅ analysis_cognitive_architecture.md
+✅ synthesis_kb_chunker.md
+✅ implementation_generalista_compiler.md
+✅ testing_personality_validator.md
 ```
 
-### Numbering System
-Indicates execution order and parallelization opportunities:
-```
-01_xxx.md              → Runs first (sequential)
-02_aaa.md, 02_bbb.md   → Can run in parallel
-03_xxx.md              → Wait for all 02_ prompts
-04_xxx.md              → Runs last
+### Execution Order System
+Defined via prompts.yaml metadata (order field + depends_on):
+```yaml
+- id: research_source_discovery
+  order: 1          # Runs first
+  depends_on: []    # No dependencies
+
+- id: research_source_collector
+  order: 2          # After source_discovery
+  parallelizable: true    # Can run with other order:2 prompts
+  depends_on:
+    - research_source_discovery
 ```
 
 ## REQUIRED TEMPLATE

@@ -1,8 +1,8 @@
-# DNA MENTAL™ - METODOLOGIA OFICIAL DO CLONE SYSTEM V3.0
+# DNA MENTAL™ - METODOLOGIA OFICIAL DO MMOS V3.0
 
 **Versão:** 2.0 (Realinhada)
 **Status:** Metodologia Oficial
-**Aplicação:** Todos os 42 prompts do sistema ACS V3.0
+**Aplicação:** Todos os prompts do sistema MMOS (Mind Mapper OS) - atualmente 59 prompts organizados em 6 fases
 
 ---
 
@@ -18,20 +18,20 @@ DNA Mental™ é a metodologia proprietária para clonagem cognitiva de alta fid
 
 **IMPORTANTE:** Nesta documentação, quando mencionamos arquivos:
 
-- **Prompts** = Arquivos `.md` em `/clone_system/X_etapa/prompts/`
-  - Exemplo: `03_values_hierarchy.md` (você executa este arquivo)
+- **Prompts** = Arquivos `.md` em `/docs/mmos/prompts/`
+  - Exemplo: `analysis_values_hierarchy.md` (você executa este arquivo)
 
-- **Outputs** = Arquivos `.yaml`/`.json`/`.md` gerados em `/clones/nome_clone/`
+- **Outputs** = Arquivos `.yaml`/`.json`/`.md` gerados em `/minds/{mind_name}/`
   - Exemplo: `values_hierarchy.yaml` (resultado gerado pelo prompt)
 
 **Formato usado neste documento:**
 ```
-`nome_do_prompt.md` → Gera `nome_do_output.yaml`
+`{phase}_{name}.md` → Gera `{output}.yaml`
 ```
 
 Exemplo real:
 ```
-`03_values_hierarchy.md` → Gera `values_hierarchy.yaml`
+`analysis_values_hierarchy.md` → Gera `values_hierarchy.yaml`
 ```
 
 ---

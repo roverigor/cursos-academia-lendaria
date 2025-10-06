@@ -102,7 +102,9 @@ def main(mind: str, phase: str, prompt_id: str, show_context: bool, show_deps: b
 
         # Display prompt information
         click.echo("\n" + "=" * 60)
-        click.echo(f"📋 Prompt: {prompt['title']}")
+        # Fallback if title is missing (defensive programming)
+        title = prompt.get('title', prompt['id'].replace('_', ' ').title())
+        click.echo(f"📋 Prompt: {title}")
         click.echo(f"🔖 ID: {prompt['id']}")
         click.echo(f"📍 Phase: {prompt['phase']}")
         click.echo(f"🤖 Agent: @{prompt['agent']}")

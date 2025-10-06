@@ -585,6 +585,7 @@ prompts:
 - id: testing_personality_validator
   file: prompts/testing_personality_validator.md
   phase: testing
+  title: Personality Validator
   order: 0
   outputs:
   - path: minds/{mind}/docs/logs/{timestamp}-personality_validation.md

@@ -20,12 +20,12 @@ Estrutura **minimalista e funcional** com 5-6 pastas máximo:
 ## ESTRUTURA COMPLETA
 
 ```
-nome_do_clone/
+minds/{mind_name}/
 ├── sources/              # Biblioteca semântica da mente (fontes primárias)
 ├── artifacts/            # Artefatos do processo (FLAT)
 ├── docs/
 │   ├── logs/            # Relatórios timestamped
-│   └── README.md        # Documentação do clone
+│   └── README.md        # Documentação do mind
 ├── kb/                  # Knowledge Base (upload) FLAT
 ├── system_prompts/      # Prompts gerados finais
 └── specialists/         # [OPCIONAL] Versões especializadas
@@ -97,14 +97,14 @@ sources/
 **Artefatos intermediários** do processo de extração de DNA - tudo interno.
 
 ### CONTEÚDO
-✅ Outputs das 6 etapas do clone_system
+✅ Outputs das 6 etapas do MMOS pipeline
 ✅ Arquivos YAML de análise
 ✅ Arquivos MD de síntese
 ✅ Metadados de processo
 ✅ Análises intermediárias
 ✅ Templates em desenvolvimento
 ✅ Frameworks extraídos
-✅ Tudo que **não** sobe para o clone
+✅ Tudo que **não** sube para o mind
 
 ### ORGANIZAÇÃO
 **FLAT** - Todos os arquivos na raiz (sem subpastas):
@@ -223,7 +223,7 @@ Histórico de versões:
 ## PASTA: `kb/`
 
 ### PROPÓSITO
-**Knowledge Base** - Tudo que **sobe para o clone** (drag & drop).
+**Knowledge Base** - Tudo que **sobe para o mind** (drag & drop).
 
 ### CONTEÚDO
 ✅ Análises cognitivas processadas
@@ -235,7 +235,7 @@ Histórico de versões:
 ✅ Livros curados em formato Q&A
 ✅ Material de contexto essencial
 ✅ Exemplos de interações
-✅ Tudo que o clone precisa SABER
+✅ Tudo que o mind precisa SABER
 
 ### ORGANIZAÇÃO
 **FLAT** - Todos os arquivos na raiz (sem subpastas):
@@ -279,7 +279,7 @@ Exemplos:
 - ❌ Não colocar livros brutos completos (só se curados)
 
 ### CRITÉRIO DE INCLUSÃO
-**Pergunta-chave:** "O clone precisa saber/usar isso para responder bem?"
+**Pergunta-chave:** "O mind precisa saber/usar isso para responder bem?"
 - ✅ SIM → vai para kb/
 - ❌ NÃO → fica em artifacts/ ou sources/
 
@@ -364,8 +364,8 @@ specialists/
 
 ### 1️⃣ SETUP INICIAL
 ```bash
-mkdir nome_do_clone
-cd nome_do_clone
+mkdir minds/{mind_name}
+cd minds/{mind_name}
 mkdir sources artifacts kb system_prompts
 mkdir -p docs/logs
 ```
@@ -389,7 +389,7 @@ Organizar em subpastas (books/, articles/, videos/, etc.)
 - Materiais que não sejam da voz original
 ```
 
-### 3️⃣ EXECUÇÃO DO CLONE_SYSTEM
+### 3️⃣ EXECUÇÃO DO MMOS PIPELINE
 
 **Etapa 1: Viability**
 ```
@@ -725,18 +725,18 @@ gary_vee/
 
 ---
 
-## MIGRAÇÃO DE CLONES EXISTENTES
+## MIGRAÇÃO DE MINDS EXISTENTES
 
-Se você tem clones na estrutura antiga, siga este processo:
+Se você tem minds na estrutura antiga, siga este processo:
 
 ### 1. Backup
 ```bash
-cp -r nome_do_clone nome_do_clone_BACKUP_20250929
+cp -r minds/{mind_name} minds/{mind_name}_BACKUP_20250929
 ```
 
 ### 2. Criar nova estrutura
 ```bash
-cd nome_do_clone
+cd minds/{mind_name}
 mkdir sources artifacts kb system_prompts
 mkdir -p docs/logs
 ```
@@ -860,7 +860,7 @@ exam_interactions.md
 - Mais de 6 pastas na raiz (sem specialists)
 
 ### 🎯 CRITÉRIO-CHAVE
-**"O clone precisa saber isso?"**
+**"O mind precisa saber isso?"**
 - SIM → kb/
 - NÃO → artifacts/ ou sources/
 

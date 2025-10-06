@@ -310,10 +310,10 @@ Parallel collection is the PRIMARY methodology for Etapa 2.
 
 **Process Flow:**
 ```
-01_source_discovery.md → Identify all sources
-02_source_collector.md → PARALLEL COLLECTION (this guide)
-03_temporal_mapper.md → Map timeline
-04_sources_master.md → Update master file
+research_source_discovery.md → Identify all sources
+research_source_collector.md → PARALLEL COLLECTION (this guide)
+research_temporal_mapper.md → Map timeline
+research_sources_master.md → Update master file
 ```
 
 ### Next Steps After Collection

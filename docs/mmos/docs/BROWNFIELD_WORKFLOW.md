@@ -124,9 +124,9 @@ cp [nova_fonte] sources/[categoria]/
 **NÃO execute todo 3_analysis novamente.**
 
 Execute apenas:
-- `01_source_reading.md` - Ler nova fonte
-- `01_quote_extraction.md` - Extrair citações
-- `02_behavioral_patterns.md` - **SOMENTE** da nova fonte
+- `analysis_source_reading.md` - Ler nova fonte
+- `analysis_quote_extraction.md` - Extrair citações
+- `analysis_behavioral_patterns.md` - **SOMENTE** da nova fonte
 
 #### 1.3 Merge com Análise Existente
 
@@ -459,8 +459,8 @@ cp "Naval_Podcast_2023.md" minds/naval_ravikant/sources/interviews/
 
 # 4. INCREMENTAL ANALYSIS
 # Execute APENAS:
-# - 01_source_reading.md (nova entrevista)
-# - 01_quote_extraction.md (nova entrevista)
+# - analysis_source_reading.md (nova entrevista)
+# - analysis_quote_extraction.md (nova entrevista)
 # - Compare com behavioral_patterns.md existente
 
 # 5. UPDATE KB
