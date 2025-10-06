@@ -1,67 +1,91 @@
-# Story 1.5: Auto-Execution Engine with Human Checkpoints
+# ⚠️ ARCHIVED: Story 1.5 (Merged into Story 1.4)
+
+**Archive Date:** 2025-10-06
+**Reason:** Merged with Story 1.4 for simplicity ("simplicidade sempre")
+**Decision:** Splitting into MVP + Full added unnecessary overhead
+**New Story:** See `story-1.4-auto-execution-engine.md` v2.0 (merged version)
+
+---
+
+# Story 1.5: Auto-Execution Full (Parallel + Quality Scoring)
 
 **Epic:** 1 - MMOS AIOS-first Orchestration
-**Priority:** High (blocks scalability)
-**Estimated Effort:** 5-8 days
-**Status:** 📋 Draft (awaiting approval)
+**Priority:** High (performance optimization)
+**Estimated Effort:** 3-4 days
+**Status:** ❌ MERGED INTO 1.4 (v2.0)
+**Depends On:** ~~Story 1.4 (Auto-Execution MVP)~~ N/A - merged
 
 ---
 
 ## User Story
 
-*As a pipeline operator, I want an auto-execution engine that runs all prompts within each phase automatically and pauses at the 6 mandatory human checkpoints, so that I can create complete minds in 3-5 days with minimal manual intervention while maintaining quality gates.*
+*As a pipeline operator, I want parallel execution and quality scoring added to the auto-execution engine (Story 1.4), so that I can reduce pipeline time from ~8h to ~4.5h (40% faster) while maintaining quality gates with automated validation.*
 
 ---
 
 ## Business Context
 
-### Current State (with Launcher MVP)
-- ✅ Launcher maps prompt→agent correctly
-- ✅ Context injection working
-- ✅ Logging structured
-- ❌ **Still manual**: Operator runs 59 prompts one-by-one
-- ❌ **Time intensive**: ~5-10 minutes per prompt = ~5-10 hours total human time
+### Current State (with Story 1.4 MVP)
+- ✅ Auto-execution working (sequential)
+- ✅ Checkpoints validated (approve/reject/retry)
+- ✅ Manual intervention eliminated (47 commands → 6 checkpoints)
+- ⚠️ **Sequential execution**: Full pipeline takes ~7.5 hours
+- ⚠️ **No quality automation**: Human must review all outputs manually
 
-### Desired State (with Auto-Execution Engine)
-- ✅ Operator runs 1 command per phase
-- ✅ IA executes all prompts in phase automatically
-- ✅ Human validates only at 6 checkpoints (not 59 times)
-- ✅ **Total human time**: ~1-2 hours across 6 checkpoints
-- ✅ **Time reduction**: 80-90% less human effort
+### Desired State (Story 1.5 - Full)
+- ✅ **Parallel execution**: Up to 3 prompts concurrent
+- ✅ **Quality scoring**: Auto-flag poor outputs at checkpoints
+- ✅ **40% faster**: ~7.5h → ~4.5h pipeline time
+- ✅ **Smarter checkpoints**: Highlight what needs review
 
-### Value Proposition
-- **Scalability**: Create 10+ minds in parallel
-- **Consistency**: Same execution logic for all minds
-- **Traceability**: Every AI decision logged
-- **Quality**: Human validates at critical gates only
+### What Story 1.5 Adds (on top of 1.4)
+1. **Parallel Execution** (AC5 from old 1.5)
+   - Execute parallelizable prompts concurrently
+   - 40% time reduction
+
+2. **Quality Scoring** (AC7 from old 1.5)
+   - Auto-validate outputs (excellent/good/acceptable/poor)
+   - Highlight poor quality at checkpoints
+
+### Value Proposition (Incremental)
+- **Performance**: 40% faster pipeline (8h → 4.5h)
+- **Quality**: Automated output validation
+- **Focus**: Human reviews only flagged outputs
 
 ---
 
-## Acceptance Criteria
+## Acceptance Criteria (Enhancements to Story 1.4)
 
-### AC1: Phase Auto-Execution
-**Given** a mind directory exists with required context
-**When** operator runs `aios-pipeline execute-phase --mind <name> --phase <viability|research|analysis|synthesis|implementation|testing>`
-**Then** the system:
-1. Loads all prompts for that phase from `prompts.yaml`
-2. Executes prompts in dependency order (respecting `depends_on`)
-3. Calls Anthropic API with appropriate prompt + context for each
-4. Saves outputs to correct paths (resolved templates)
-5. Logs each execution to `launcher-history.yaml`
-6. Handles parallelizable prompts concurrently (if marked `parallelizable: true`)
-7. Stops at end of phase and displays checkpoint validation prompt
+**Given** Story 1.4 provides sequential execution
+**When** prompts in same order have `parallelizable: true`
+**Then** the system (enhanced from 1.4):
+1. Executes parallelizable prompts **concurrently** (up to 3 simultaneous)
+2. Waits for all to complete before next order level
+3. Logs execution start/end for each
+4. Reports time saved vs sequential
 
-### AC2: Human Checkpoint Validation
-**Given** a phase has completed execution
-**When** the checkpoint validation prompt is displayed
-**Then** the system:
-1. Shows summary of all outputs created in this phase
-2. Lists files for human to review
-3. Shows checkpoint criteria (from AIOS_WORKFLOW.md)
-4. Waits for human approval (`approve`, `reject`, `retry <prompt_id>`)
-5. If approved: proceeds to next phase
-6. If rejected: stops execution, logs rejection reason
-7. If retry: re-executes specified prompt and re-validates
+**Validation:**
+```
+[Phase: Analysis] Order 2 (3 parallelizable prompts)
+  ⏳ analysis_quote_extraction (started 14:30:15)
+  ⏳ analysis_behavioral_patterns (started 14:30:15)
+  ⏳ analysis_timeline_mapping (started 14:30:15)
+  ✅ analysis_quote_extraction (45s)
+  ✅ analysis_timeline_mapping (52s)
+  ✅ analysis_behavioral_patterns (58s)
+Time saved: ~1.5min (sequential: 155s, parallel: 58s)
+```
+
+**Given** a prompt execution completes
+**When** output is saved
+**Then** the system (enhanced from 1.4):
+1. Runs quality check:
+   - Structure validation (valid YAML/Markdown?)
+   - Completeness (word count ≥ threshold)
+   - Format compliance (expected sections/keys?)
+2. Assigns score: `excellent` (90-100%), `good` (70-89%), `acceptable` (50-69%), `poor` (<50%)
+3. Logs score in launcher-history.yaml
+4. **At checkpoint**: Highlights `poor` outputs for review
 
 ### AC3: Dependency Resolution
 **Given** a prompt has dependencies listed in `depends_on`
