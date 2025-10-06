@@ -6,6 +6,7 @@
 .idea/
 .windsurf/
 .trae/
+.obsidian/
 
 # Dependências comuns
 node_modules/
