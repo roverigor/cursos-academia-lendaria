@@ -134,6 +134,12 @@ social:
   download_media: false           # Don't download images/videos from posts
   preserve_urls: true             # Keep links in posts
   format_threads: markdown        # Format thread as markdown
+  apify:
+    enabled: true
+    timeout_seconds: 300
+    twitter_actor: apify/twitter-scraper
+    reddit_actor: apify/reddit-scraper
+    linkedin_actor: apify/linkedin-profile-scraper
 
   twitter:
     max_tweets_per_thread: 100
@@ -145,11 +151,13 @@ social:
     max_posts: 10                 # Conservative limit
     public_only: true             # Only public posts
     include_comments: false
+    prefer_apify: true            # Use Apify actor first if available
 
   reddit:
     max_comments: 1000            # Max comments per submission
     include_op_only: false        # Include all comments, not just OP
     format: markdown
+    prefer_apify: true
 
 # Platform-specific extractors
 platforms:
@@ -235,6 +243,20 @@ rate_limits:
   social:
     twitter_requests_per_15min: 100
     reddit_requests_per_minute: 60
+
+# Book download rules (Z-Library)
+books:
+  provider: zlibrary
+  verify_official_url_on_start: true
+  twitter_url: "https://x.com/Z_Lib_official"
+  max_results_per_query: 3
+  delay_between_downloads: 2      # seconds
+  output:
+    save_path: downloads/books/{source_id}/
+    metadata_filename: metadata.json
+  retry:
+    max_attempts: 3
+    backoff_seconds: 5
 
 # Storage
 storage:

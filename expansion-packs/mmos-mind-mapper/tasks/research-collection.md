@@ -236,7 +236,22 @@ minds/{mind}/sources/
 
 #### Step 2: Parallel Collection Batches
 
-**Execute collection in priority batches with parallelization:**
+**Integração com ETL Data Collector**
+
+- O MMOS delega a coleta paralela para o pack `etl-data-collector`.
+- Arquivo de integração: `expansion-packs/etl-data-collector/config/integration-mm.yaml`.
+- Execute via `ParallelCollector` para aproveitar checkpoint/resume, métricas e relatórios.
+- Comando base:
+  ```bash
+  node expansion-packs/etl-data-collector/scripts/orchestrator/parallel-collector.js \
+    --config expansion-packs/etl-data-collector/config/integration-mm.yaml \
+    --sources minds/{mind}/sources/sources.yaml \
+    --output minds/{mind}/sources
+  ```
+- Certifique-se de exportar as variáveis sensíveis (AssemblyAI, Twitter, Reddit).
+- Após a execução, `ParallelCollector` gera `etl-report.json` com métricas e `downloads/` contendo artefatos.
+
+**Execute collection em lotes com paralelização:**
 
 **Batch 1 (Critical - Tier 1 sources):**
 ```yaml

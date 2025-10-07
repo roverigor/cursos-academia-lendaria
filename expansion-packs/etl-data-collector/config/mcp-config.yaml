@@ -143,6 +143,23 @@ mcps:
       max_redirects: 5
       verify_ssl: true
 
+  # Apify MCP - Managed actors for social scraping
+  apify:
+    enabled: true
+    priority: optional
+    type: node
+    server: apify-mcp
+    command: "npx -y @apify/mcp-server"
+
+    features:
+      run_actor: true
+      datasets: true
+
+    config:
+      api_token_env: APIFY_TOKEN
+      default_timeout: 300
+      default_actor: apify/twitter-scraper
+
   # Brave Search MCP - For discovering content
   brave-search:
     enabled: false                # Optional, not core functionality
@@ -173,6 +190,10 @@ client:
 
     web-fetch:
       - direct_library           # Use axios + cheerio
+
+    apify:
+      - web-fetch
+      - direct_library
 
   logging:
     level: INFO

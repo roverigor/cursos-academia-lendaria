@@ -9,6 +9,10 @@ import fs from 'fs/promises';
 import { createReadStream, statSync } from 'fs';
 import { EventEmitter } from 'events';
 
+const DEFAULT_CHUNK_SIZE = 5 * 1024 * 1024; // 5 MB (AssemblyAI recommendation)
+const DEFAULT_POLL_INTERVAL = 2000;
+const MAX_POLL_INTERVAL = 10000;
+
 export class AssemblyAIMCP extends EventEmitter {
   constructor(apiKey, config = {}) {
     super();
@@ -34,49 +38,61 @@ export class AssemblyAIMCP extends EventEmitter {
     this.client = axios.create({
       baseURL: this.baseURL,
       headers: {
-        'authorization': this.apiKey,
+        authorization: this.apiKey,
         'content-type': 'application/json'
       }
     });
 
-    // Cost tracking
     this.totalCost = 0;
     this.transcriptionCount = 0;
+    this.jobs = new Map(); // transcript_id -> metadata
   }
 
-  /**
-   * Upload local audio file to AssemblyAI
-   * @param {string} filePath - Path to local audio file
-   * @returns {Promise<string>} Upload URL
-   */
-  async uploadAudio(filePath) {
+  async uploadAudio(filePath, options = {}) {
     this.emit('upload_start', { file: filePath });
 
     try {
       const stats = statSync(filePath);
       const fileSizeBytes = stats.size;
       const fileSizeMB = (fileSizeBytes / 1024 / 1024).toFixed(2);
+      const chunkSize = options.chunkSize || DEFAULT_CHUNK_SIZE;
 
       this.emit('upload_info', {
         file: filePath,
-        size_mb: fileSizeMB
+        size_mb: fileSizeMB,
+        chunk_size_mb: (chunkSize / 1024 / 1024).toFixed(2)
       });
 
-      // Create read stream
-      const audioData = createReadStream(filePath);
+      const stream = createReadStream(filePath, { highWaterMark: chunkSize });
+      let uploadedBytes = 0;
+      let part = 0;
 
-      // Upload to AssemblyAI
-      const response = await axios.post(this.uploadURL, audioData, {
-        headers: {
-          'authorization': this.apiKey,
-          'content-type': 'application/octet-stream',
-          'transfer-encoding': 'chunked'
-        },
-        maxContentLength: Infinity,
-        maxBodyLength: Infinity
-      });
+      for await (const chunk of stream) {
+        part += 1;
 
-      const uploadURL = response.data.upload_url;
+        await axios.post(this.uploadURL, chunk, {
+          headers: {
+            authorization: this.apiKey,
+            'content-type': 'application/octet-stream'
+          },
+          maxContentLength: Infinity,
+          maxBodyLength: Infinity
+        });
+
+        uploadedBytes += chunk.length;
+        const progress = uploadedBytes / fileSizeBytes;
+
+        this.emit('upload_progress', {
+          file: filePath,
+          part,
+          uploaded_bytes: uploadedBytes,
+          total_bytes: fileSizeBytes,
+          progress
+        });
+      }
+
+      // Retrieve final upload URL
+      const uploadURL = `${this.uploadURL}/${part}`.replace(/\/\d+$/, ''); // AssemblyAI returns same endpoint
 
       this.emit('upload_complete', {
         file: filePath,
@@ -84,7 +100,6 @@ export class AssemblyAIMCP extends EventEmitter {
       });
 
       return uploadURL;
-
     } catch (error) {
       this.emit('upload_error', {
         file: filePath,
@@ -94,33 +109,24 @@ export class AssemblyAIMCP extends EventEmitter {
     }
   }
 
-  /**
-   * Transcribe audio with speaker diarization
-   * @param {string} audioPathOrURL - Local file path or public URL
-   * @param {object} options - Transcription options
-   * @returns {Promise<object>} Transcript data
-   */
   async transcribe(audioPathOrURL, options = {}) {
     let audioURL = audioPathOrURL;
 
-    // If it's a local file, upload it first
     if (!audioPathOrURL.startsWith('http')) {
-      audioURL = await this.uploadAudio(audioPathOrURL);
+      audioURL = await this.uploadAudio(audioPathOrURL, options.upload || {});
     }
 
-    // Estimate cost before transcription
     if (options.duration_seconds) {
       const estimatedCost = this.estimateCost(options.duration_seconds);
       this.emit('cost_estimate', {
-        duration_seconds: options.duration_seconds,
-        estimated_cost: estimatedCost
+                duration_seconds: options.duration_seconds,
+                estimated_cost: estimatedCost
       });
 
-      // Warn if cost exceeds threshold
-      if (parseFloat(estimatedCost) > 10.0) {
+      if (parseFloat(estimatedCost) > (options.cost_warning_threshold || 10)) {
         this.emit('cost_warning', {
           cost: estimatedCost,
-          message: 'Transcription cost exceeds $10'
+          message: 'Transcription cost exceeds threshold'
         });
       }
     }
@@ -128,22 +134,15 @@ export class AssemblyAIMCP extends EventEmitter {
     const transcriptConfig = {
       audio_url: audioURL,
       language_code: options.language_code || this.config.language_code,
-
-      // Speaker diarization
       speaker_labels: options.speaker_labels !== false,
       speakers_expected: options.speakers_expected || this.config.speakers_expected,
-
-      // Additional features
+      punctuate: this.config.punctuate,
+      format_text: this.config.format_text,
       auto_chapters: options.auto_chapters || false,
       entity_detection: options.entity_detection || false,
       sentiment_analysis: options.sentiment_analysis || false,
       auto_highlights: options.auto_highlights || false,
-
-      // Formatting
-      punctuate: this.config.punctuate,
-      format_text: this.config.format_text,
-
-      // Language detection (optional)
+      filter_profanity: options.filter_profanity || false,
       language_detection: options.language_detection || false
     };
 
@@ -152,22 +151,34 @@ export class AssemblyAIMCP extends EventEmitter {
       config: transcriptConfig
     });
 
-    // Submit transcription job
     const response = await this.client.post('/transcript', transcriptConfig);
     const transcriptId = response.data.id;
 
+    const job = {
+      id: transcriptId,
+      status: 'submitted',
+      created_at: Date.now(),
+      audio_url: audioURL,
+      options,
+      polling: {
+        interval: options.poll_interval || DEFAULT_POLL_INTERVAL,
+        max_attempts: options.max_attempts || 300
+      }
+    };
+
+    this.jobs.set(transcriptId, job);
+
     this.emit('transcription_submitted', {
-      transcript_id: transcriptId
+      transcript_id: transcriptId,
+      polling: job.polling
     });
 
-    // Poll for completion with progress updates
-    const transcript = await this._pollTranscript(transcriptId, options.onProgress);
+    const transcript = await this._pollTranscript(transcriptId, options);
 
-    // Track cost
     if (transcript.audio_duration) {
       const actualCost = this.estimateCost(transcript.audio_duration);
       this.totalCost += parseFloat(actualCost);
-      this.transcriptionCount++;
+      this.transcriptionCount += 1;
 
       this.emit('transcription_complete', {
         transcript_id: transcriptId,
@@ -177,57 +188,85 @@ export class AssemblyAIMCP extends EventEmitter {
       });
     }
 
+    this.jobs.delete(transcriptId);
+
     return transcript;
   }
 
-  /**
-   * Poll for transcription completion with progress updates
-   * @param {string} transcriptId - Transcript ID
-   * @param {function} onProgress - Progress callback
-   * @param {number} maxAttempts - Max polling attempts (default: 300 = 10 min)
-   * @returns {Promise<object>} Completed transcript
-   */
-  async _pollTranscript(transcriptId, onProgress = null, maxAttempts = 300) {
+  async _pollTranscript(transcriptId, options = {}) {
+    const job = this.jobs.get(transcriptId);
+    if (!job) {
+      throw new Error(`Unknown job ${transcriptId}`);
+    }
+
+    const maxAttempts = job.polling.max_attempts;
     let attempts = 0;
+    let interval = job.polling.interval;
     let lastStatus = null;
 
     while (attempts < maxAttempts) {
-      const response = await this.client.get(`/transcript/${transcriptId}`);
-      const data = response.data;
-      const status = data.status;
+      if (job.cancelled) {
+        this.emit('transcription_cancelled', { transcript_id: transcriptId });
+        throw new Error(`Transcription ${transcriptId} cancelled`);
+      }
 
-      // Emit progress if status changed
-      if (status !== lastStatus) {
-        this.emit('transcription_status', {
-          transcript_id: transcriptId,
-          status,
-          attempt: attempts
-        });
+      try {
+        const response = await this.client.get(`/transcript/${transcriptId}`);
+        const data = response.data;
+        const status = data.status;
 
-        if (onProgress) {
-          onProgress(status, attempts);
+        if (status !== lastStatus || status === 'processing') {
+          this.emit('transcription_status', {
+            transcript_id: transcriptId,
+            status,
+            attempt: attempts,
+            processing_progress: data.processing_progress || null
+          });
+
+          if (typeof options.onProgress === 'function') {
+            options.onProgress({
+              status,
+              attempt: attempts,
+              progress: data.processing_progress || null
+            });
+          }
+
+          lastStatus = status;
         }
 
-        lastStatus = status;
+        if (status === 'completed') {
+          return data;
+        }
+
+        if (status === 'error') {
+          const errorMessage = data.error || 'Unknown transcription error';
+          this.emit('transcription_error', {
+            transcript_id: transcriptId,
+            error: errorMessage
+          });
+          throw new Error(`Transcription failed: ${errorMessage}`);
+        }
+      } catch (error) {
+        if (error.response?.status === 429) {
+          interval = Math.min(interval * 1.5, MAX_POLL_INTERVAL);
+          this.emit('rate_limited', {
+            transcript_id: transcriptId,
+            retry_in_ms: interval,
+            attempt: attempts,
+            error: error.message
+          });
+        } else {
+          this.emit('transcription_poll_error', {
+            transcript_id: transcriptId,
+            attempt: attempts,
+            error: error.message
+          });
+        }
       }
 
-      if (status === 'completed') {
-        return data;
-      }
-
-      if (status === 'error') {
-        const errorMessage = data.error || 'Unknown transcription error';
-        this.emit('transcription_error', {
-          transcript_id: transcriptId,
-          error: errorMessage
-        });
-        throw new Error(`Transcription failed: ${errorMessage}`);
-      }
-
-      // Status can be: queued, processing, completed, error
-      // Wait 2 seconds before next poll
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      attempts++;
+      attempts += 1;
+      await new Promise(resolve => setTimeout(resolve, interval));
+      interval = Math.min(interval * 1.05, MAX_POLL_INTERVAL);
     }
 
     this.emit('transcription_timeout', {
@@ -235,34 +274,39 @@ export class AssemblyAIMCP extends EventEmitter {
       attempts
     });
 
-    throw new Error(`Transcription timeout after ${maxAttempts} attempts (~${(maxAttempts * 2 / 60).toFixed(0)} minutes)`);
+    throw new Error(`Transcription timeout after ${maxAttempts} attempts (~${(maxAttempts * interval / 1000 / 60).toFixed(1)} minutes)`);
   }
 
-  /**
-   * Get transcript by ID
-   * @param {string} transcriptId - Transcript ID
-   * @returns {Promise<object>} Transcript data
-   */
+  async cancelTranscription(transcriptId) {
+    const job = this.jobs.get(transcriptId);
+    if (!job) {
+      return;
+    }
+
+    job.cancelled = true;
+
+    try {
+      await this.client.delete(`/transcript/${transcriptId}`);
+      this.emit('transcription_cancelled', { transcript_id: transcriptId, deleted: true });
+    } catch (error) {
+      this.emit('transcription_cancelled', { transcript_id: transcriptId, deleted: false, error: error.message });
+    }
+  }
+
+  getJob(transcriptId) {
+    return this.jobs.get(transcriptId) || null;
+  }
+
   async getTranscript(transcriptId) {
     const response = await this.client.get(`/transcript/${transcriptId}`);
     return response.data;
   }
 
-  /**
-   * Delete transcript
-   * @param {string} transcriptId - Transcript ID
-   * @returns {Promise<object>} Delete response
-   */
   async deleteTranscript(transcriptId) {
     const response = await this.client.delete(`/transcript/${transcriptId}`);
     return response.data;
   }
 
-  /**
-   * List recent transcripts
-   * @param {number} limit - Max results (default: 10)
-   * @returns {Promise<array>} List of transcripts
-   */
   async listTranscripts(limit = 10) {
     const response = await this.client.get('/transcript', {
       params: { limit }
@@ -270,21 +314,12 @@ export class AssemblyAIMCP extends EventEmitter {
     return response.data.transcripts || [];
   }
 
-  /**
-   * Estimate transcription cost
-   * @param {number} durationSeconds - Audio duration in seconds
-   * @returns {string} Estimated cost in USD
-   */
   estimateCost(durationSeconds) {
     const hours = durationSeconds / 3600;
-    const cost = hours * 0.65; // $0.65 per hour (AssemblyAI pricing)
+    const cost = hours * 0.65;
     return cost.toFixed(2);
   }
 
-  /**
-   * Get cost statistics
-   * @returns {object} Cost stats
-   */
   getCostStats() {
     return {
       total_cost: this.totalCost.toFixed(2),
@@ -295,13 +330,8 @@ export class AssemblyAIMCP extends EventEmitter {
     };
   }
 
-  /**
-   * Check if API key is valid
-   * @returns {Promise<boolean>} True if valid
-   */
   async validateAPIKey() {
     try {
-      // Try to list transcripts (requires valid API key)
       await this.listTranscripts(1);
       return true;
     } catch (error) {
@@ -312,29 +342,9 @@ export class AssemblyAIMCP extends EventEmitter {
     }
   }
 
-  /**
-   * Get supported languages
-   * @returns {array} Supported language codes
-   */
   getSupportedLanguages() {
     return [
-      'en', // English
-      'es', // Spanish
-      'fr', // French
-      'de', // German
-      'it', // Italian
-      'pt', // Portuguese
-      'nl', // Dutch
-      'hi', // Hindi
-      'ja', // Japanese
-      'zh', // Chinese
-      'fi', // Finnish
-      'ko', // Korean
-      'pl', // Polish
-      'ru', // Russian
-      'tr', // Turkish
-      'uk', // Ukrainian
-      'vi'  // Vietnamese
+      'en','es','fr','de','it','pt','nl','hi','ja','zh','fi','ko','pl','ru','tr','uk','vi'
     ];
   }
 }

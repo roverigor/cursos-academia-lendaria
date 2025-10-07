@@ -21,8 +21,8 @@ sources_master:
       sources:
         - id: s001
           title: "Congressional Testimony on AI Regulation"
-          type: interview
-          url: "https://www.judiciary.senate.gov/committee-activity/hearings/oversight-of-ai-rules-principles-protections"
+          type: youtube
+          url: "https://www.youtube.com/watch?v=rCyp-lW8Rz8"
           date: "2023-05-16"
           length: "3 hours"
           format: "video"
@@ -30,11 +30,11 @@ sources_master:
           layers: [5, 6, 7, 8]
           layer_8_evidence: "AI safety advocacy while leading rapid OpenAI deployment"
           collection_priority: 1
-          status: PENDING
+          status: COLLECTED
 
         - id: s002
           title: "Lex Fridman #419 - Sam Altman: OpenAI CEO on GPT-4, ChatGPT"
-          type: interview
+          type: youtube
           url: "https://www.youtube.com/watch?v=L_Guz73e6fw"
           date: "2023-03-25"
           length: "2h 37m"
@@ -43,11 +43,11 @@ sources_master:
           layers: [4, 5, 6, 7, 8]
           layer_8_evidence: "Discusses AGI existential risk + rapid deployment strategy simultaneously"
           collection_priority: 1
-          status: PENDING
+          status: COLLECTED
 
         - id: s003
           title: "How to be Successful"
-          type: long_form_essay
+          type: blog
           url: "https://blog.samaltman.com/how-to-be-successful"
           date: "2019-01-24"
           length: "3000 words"
@@ -56,11 +56,11 @@ sources_master:
           layers: [4, 5, 6]
           values_evidence: "Compound yourself, Self-belief, Think independently"
           collection_priority: 1
-          status: PENDING
+          status: COLLECTED
 
         - id: s004
           title: "Moore's Law for Everything"
-          type: long_form_essay
+          type: blog
           url: "https://moores.samaltman.com"
           date: "2021-03-16"
           length: "5000 words"
@@ -69,11 +69,11 @@ sources_master:
           layers: [5, 6, 7]
           obsession_evidence: "AGI will fundamentally change economics and society"
           collection_priority: 1
-          status: PENDING
+          status: COLLECTED
 
         - id: s005
           title: "The Intelligence Age"
-          type: long_form_essay
+          type: blog
           url: "https://ia.samaltman.com"
           date: "2024-09-23"
           length: "2000 words"
@@ -82,12 +82,12 @@ sources_master:
           layers: [6, 7, 8]
           singularity_evidence: "Deep learning works, AGI is near, most profound leap in history"
           collection_priority: 1
-          status: PENDING
+          status: COLLECTED
 
         - id: s006
           title: "How to Start a Startup (Stanford CS183B)"
-          type: course
-          url: "https://startupclass.samaltman.com"
+          type: youtube
+          url: "https://www.youtube.com/playlist?list=PL5Gap3S8Gk93B-7bqlvAS3_hxRzl3UuLn"
           date: "2014-09-23"
           length: "20 lectures"
           format: "video_course"
@@ -98,9 +98,9 @@ sources_master:
           status: PENDING
 
         - id: s007
-          title: "All-In Podcast - OpenAI, AGI, AI Regulation"
-          type: interview
-          url: "https://www.youtube.com/allin"
+          title: "All-In Podcast #131 - Interview with Sam Altman"
+          type: youtube
+          url: "https://www.youtube.com/watch?v=xtG0aRblg50"
           date: "2024-03-15"
           length: "90m"
           format: "video + transcript"
@@ -112,8 +112,8 @@ sources_master:
 
         - id: s008
           title: "Senate AI Insight Forum Testimony"
-          type: interview
-          url: "https://www.appropriations.senate.gov/hearings/artificial-intelligence"
+          type: youtube
+          url: "https://www.youtube.com/watch?v=szn8YUvBq0k"
           date: "2024-01-10"
           length: "2 hours"
           format: "video"
@@ -125,12 +125,12 @@ sources_master:
 
         - id: s009
           title: "GPT-4 Launch Announcement"
-          type: video_presentation
-          url: "https://openai.com/research/gpt-4"
+          type: youtube
+          url: "https://www.youtube.com/watch?v=AuR7gwQ1DQw"
           date: "2023-03-14"
-          length: "30m + blog post"
+          length: "30m"
           format: "video + text"
-          access: "public_web"
+          access: "public_youtube"
           layers: [4, 5, 6]
           decision_evidence: "6-month delay for safety despite competitive pressure (Google Bard)"
           collection_priority: 2
@@ -138,7 +138,7 @@ sources_master:
 
         - id: s010
           title: "Twitter Threads on AI Safety (2023-2024 Collection)"
-          type: social_media
+          type: social
           url: "https://twitter.com/sama"
           date: "2023-2024"
           length: "50+ substantive threads"
@@ -151,8 +151,8 @@ sources_master:
 
         - id: s011
           title: "Tim Ferriss Show - Sam Altman Interview"
-          type: interview
-          url: "https://tim.blog/sam-altman"
+          type: podcast
+          url: "https://traffic.megaphone.fm/GLT9459025150.mp3"
           date: "2021-06-10"
           length: "2h 15m"
           format: "audio + transcript"
@@ -164,8 +164,8 @@ sources_master:
 
         - id: s012
           title: "Y Combinator Blog - Product Market Fit Essays"
-          type: long_form_collection
-          url: "https://www.ycombinator.com/library"
+          type: blog
+          url: "https://www.ycombinator.com/library/4S-how-to-understand-users"
           date: "2014-2019"
           length: "20+ essays"
           format: "blog_posts"

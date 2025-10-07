@@ -13,32 +13,42 @@ import { WebCollector } from '../collectors/web-collector.js';
 import { PDFCollector } from '../collectors/pdf-collector.js';
 import { PodcastCollector } from '../collectors/podcast-collector.js';
 import { SocialCollector } from '../collectors/social-collector.js';
+import { ZLibraryCollector } from '../collectors/zlibrary-collector.js';
 
 export class ParallelCollector {
-  constructor(configPath) {
+  constructor(configPath, options = {}) {
     this.configPath = configPath;
-    this.config = null;
     this.downloadRules = null;
     this.collectors = {};
+    this.options = {
+      maxConcurrent: options.maxConcurrent || 5,
+      statePath: options.statePath || path.join(process.cwd(), '.etl-task-state.json'),
+      progressRefresh: options.progressRefresh || 2000,
+      allowResume: options.allowResume !== false
+    };
+
     this.results = {
       successful: [],
       failed: [],
+      skipped: [],
       startTime: null,
       endTime: null
     };
+
+    this.progressTracker = null;
+    this.taskManager = null;
   }
 
   async initialize() {
-    // Load download rules
     const rulesPath = path.join(path.dirname(this.configPath), 'download-rules.yaml');
     const rulesContent = await fs.readFile(rulesPath, 'utf8');
     this.downloadRules = yaml.load(rulesContent);
 
-    // Initialize collectors
     this.collectors = {
       youtube: new YouTubeCollector(this.downloadRules),
       blog: new WebCollector(this.downloadRules),
       pdf: new PDFCollector(this.downloadRules),
+      book: new ZLibraryCollector(this.downloadRules),
       podcast: new PodcastCollector(this.downloadRules),
       social: new SocialCollector(this.downloadRules)
     };
@@ -47,77 +57,94 @@ export class ParallelCollector {
   async collectAll(sourcesPath, outputDir) {
     this.results.startTime = Date.now();
 
-    // Load sources
     const sourcesContent = await fs.readFile(sourcesPath, 'utf8');
     const sourcesData = yaml.load(sourcesContent);
     const sources = sourcesData.sources || [];
 
-    // Group by type
+    this.progressTracker = new ProgressTracker(sources.length, {
+      refreshInterval: this.options.progressRefresh
+    });
+
+    this.taskManager = new TaskManager({
+      maxConcurrent: this.options.maxConcurrent,
+      statePath: this.options.allowResume ? this.options.statePath : null
+    });
+
+    this._wireTaskEvents();
+
     const grouped = this._groupByType(sources);
-
-    // Create task manager
-    const taskManager = new TaskManager({ maxConcurrent: 5 });
-    const progress = new ProgressTracker(sources.length);
-
-    // Add tasks for each source
     for (const [type, typeSources] of Object.entries(grouped)) {
       for (const source of typeSources) {
-        taskManager.addTask({
+        this.taskManager.addTask({
           id: source.id,
           type,
           source,
-          execute: async () => {
+          execute: async ({ cancelToken }) => {
             const collector = this.collectors[type];
-            return await collector.collect(source, outputDir);
+            if (!collector) {
+              throw new Error(`No collector found for type ${type}`);
+            }
+            return await collector.collect({ ...source, cancelToken }, outputDir);
           }
         });
       }
     }
 
-    // Monitor progress
-    taskManager.on('task_completed', (task) => {
-      this.results.successful.push(task);
-      progress.increment(task.type, true);
-      progress.display();
-    });
-
-    taskManager.on('task_failed', (task) => {
-      this.results.failed.push(task);
-      progress.increment(task.type, false);
-      progress.display();
-    });
-
-    // Wait for completion
-    await this._waitForCompletion(taskManager);
+    await this._waitForCompletion();
 
     this.results.endTime = Date.now();
+    this.progressTracker.stopAutoDisplay();
 
-    // Generate report
     return this._generateReport(sources.length);
+  }
+
+  cancel(sourceId) {
+    this.taskManager?.cancelTask(sourceId);
+  }
+
+  async shutdown() {
+    await this.taskManager?.shutdown();
+    this.progressTracker?.stopAutoDisplay();
+  }
+
+  _wireTaskEvents() {
+    this.taskManager.on('task_started', (task) => {
+      this.progressTracker.increment({ type: task.type, status: 'started', count: 0 });
+    });
+
+    this.taskManager.on('task_completed', (task) => {
+      this.results.successful.push(task);
+      this.progressTracker.increment({ type: task.type, status: 'completed' });
+    });
+
+    this.taskManager.on('task_failed', (task) => {
+      this.results.failed.push(task);
+      this.progressTracker.increment({ type: task.type, status: 'failed' });
+    });
+
+    this.taskManager.on('task_cancelled', (task) => {
+      this.results.skipped.push(task);
+      this.progressTracker.increment({ type: task.type, status: 'skipped' });
+    });
   }
 
   _groupByType(sources) {
     const grouped = {};
-
     for (const source of sources) {
       const type = source.type || 'blog';
-      
       if (!grouped[type]) {
         grouped[type] = [];
       }
-
       grouped[type].push(source);
     }
-
     return grouped;
   }
 
-  async _waitForCompletion(taskManager) {
+  async _waitForCompletion() {
     return new Promise((resolve) => {
       const checkInterval = setInterval(() => {
-        const stats = taskManager.getStats();
-        
-        if (stats.running === 0 && stats.pending === 0) {
+        const stats = this.taskManager.getStats();
+        if (stats.totals.running === 0 && stats.totals.pending === 0) {
           clearInterval(checkInterval);
           resolve();
         }
@@ -126,16 +153,39 @@ export class ParallelCollector {
   }
 
   _generateReport(totalSources) {
-    const duration = (this.results.endTime - this.results.startTime) / 1000;
+    const durationSeconds = Math.floor((this.results.endTime - this.results.startTime) / 1000);
+    const progress = this.progressTracker.getProgress();
+    const taskStats = this.taskManager.getStats();
 
     return {
-      total: totalSources,
-      successful: this.results.successful.length,
-      failed: this.results.failed.length,
-      successRate: ((this.results.successful.length / totalSources) * 100).toFixed(1),
-      duration: Math.floor(duration),
-      results: this.results
+      totals: {
+        total: totalSources,
+        successful: this.results.successful.length,
+        failed: this.results.failed.length,
+        skipped: this.results.skipped.length,
+        successRate: totalSources > 0
+          ? ((this.results.successful.length / totalSources) * 100).toFixed(1)
+          : '0.0'
+      },
+      duration_seconds: durationSeconds,
+      duration_human: this._formatDuration(durationSeconds),
+      progress,
+      task_metrics: taskStats.metrics,
+      results: this.results,
+      generated_at: new Date().toISOString()
     };
+  }
+
+  _formatDuration(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+
+    const parts = [];
+    if (hours) parts.push(`${hours}h`);
+    if (minutes) parts.push(`${minutes}m`);
+    parts.push(`${secs}s`);
+    return parts.join(' ');
   }
 }
 

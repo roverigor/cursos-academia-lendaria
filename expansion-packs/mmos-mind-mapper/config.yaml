@@ -11,7 +11,11 @@ author: Academia Lendar[IA] (Alan Nicolas)
 slashPrefix: mmosMapper
 
 # Dependencies
-dependencies: []
+dependencies:
+  - name: etl-data-collector
+    path: ../etl-data-collector
+    required: true
+    description: "Parallel ETL pipeline utilizado na fase de Research para coleta de fontes multimídia."
 
 # Minimum AIOS version required
 requires:
@@ -100,14 +104,19 @@ checklists:
 installation:
   command: npm run install:expansion mmos-mind-mapper
   post_install_message: |
-    🧠 MMOS Mind Mapper v3.0 installed successfully!
+    🧠 MMOS Mind Mapper v3.0 instalado com sucesso!
 
     Quick start:
-    1. Activate orchestrator: @mind-mapper
-    2. Run pipeline: *execute-pipeline
-    3. Choose greenfield (new mind) or brownfield (update)
+    1. Ative o orquestrador: @mind-mapper
+    2. Rode o pipeline com *execute-pipeline
+    3. Escolha greenfield (novo mind) ou brownfield (atualização)
 
-    Key commands:
-    - *viability - Check if mind is viable (APEX + ICP)
-    - *map-mind - Execute complete mapping
-    - *help - Show all commands
+    Integração ETL:
+    - O pack ETL Data Collector é requerido para a fase Research (parallel-collector)
+    - Configure `expansion-packs/etl-data-collector/config/integration-mm.yaml` se precisar ajustar caminhos/prefs
+    - Garanta que credenciais (AssemblyAI, Twitter, Reddit) estejam exportadas antes de coletar fontes
+
+    Comandos úteis:
+    - *viability  → verifica se o mind é viável (APEX + ICP)
+    - *map-mind  → executa o pipeline completo
+    - *help      → mostra todos os comandos disponíveis

@@ -3,17 +3,19 @@
 **Task ID:** collect-books
 **Agent:** document-specialist
 **Elicit:** false
-**Purpose:** Extract text from PDFs and eBooks with structure preservation
+**Purpose:** Extract structure-preserving text from manually provided PDFs/eBooks and (future) Z-Library downloads
 
 ---
 
 ## Overview
 
-Processes PDF/eBook files, detects if scanned (OCR needed), extracts text with structure, and splits into chapters.
+Runs the document extraction pipeline on either (a) manually provided files (`local_path`) or (b) Z-Library downloads (future integration). Organizes chapters and metadata for downstream processing.
 
-**Inputs:** Sources list filtered for `type: pdf`, `type: book`, `type: ebook`
+**Inputs:** Sources list filtered for `type: book`. For manual mode provide `local_path` pointing to the PDF/eBook placed under `inputs/books/`.
 
 **Outputs:**
+- `{output_dir}/books/{source_id}/raw.{ext}`
+- `{output_dir}/books/{source_id}/metadata.json`
 - `{output_dir}/pdf/{source_id}/text.txt`
 - `{output_dir}/pdf/{source_id}/text_structured.md`
 - `{output_dir}/pdf/{source_id}/chapters/` (if detected)
@@ -24,32 +26,20 @@ Processes PDF/eBook files, detects if scanned (OCR needed), extracts text with s
 ## Workflow
 
 ```javascript
-async function collectBooks(sources, outputDir) {
+async function collectBooks(sources, outputDir, collectors) {
   for (const source of sources) {
-    // 1. Download PDF if URL provided
-    const filePath = source.local_path || await downloadFile(source.url);
-
-    // 2. Detect if scanned
-    const isScanned = await detectScannedPDF(filePath);
-
-    // 3. Extract text
-    let text;
-    if (isScanned) {
-      text = await ocrPDF(filePath); // Python Tesseract
-    } else {
-      const pdf = await pdfParse(fs.readFileSync(filePath));
-      text = pdf.text;
+    // Prefer manual path when provided
+    if (source.local_path) {
+      const extraction = await collectors.pdf.extract(source.local_path, outputDir, {
+        sourceId: source.id,
+        metadataPath: source.metadata_path
+      });
+      await persistArtifacts(source.id, extraction);
+      continue;
     }
 
-    // 4. Analyze structure (chapters)
-    const structure = analyzeStructure(text);
-
-    // 5. Save
-    await saveDocument(source.id, {
-      text,
-      structure,
-      metadata: { isScanned, pageCount: structure.pageCount }
-    });
+    // Placeholder: future automation (Z-Library / Telegram bot)
+    reportFailure(source.id, 'No local_path provided. Manual download required.');
   }
 }
 ```

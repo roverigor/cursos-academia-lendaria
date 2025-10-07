@@ -38,6 +38,10 @@ agents:
     title: Document & PDF Processing Specialist
     whenToUse: Extract text from PDFs, eBooks, and structured documents
 
+  - id: zlibrary-harvester
+    title: Z-Library Acquisition Specialist
+    whenToUse: Locate and download books/eBooks via Z-Library before extraction
+
   - id: social-specialist
     title: Social Media Data Collection Specialist
     whenToUse: Collect data from Twitter, LinkedIn, Reddit, and other platforms
@@ -64,7 +68,7 @@ tasks:
     elicit: false
 
   - id: collect-books
-    title: PDF & eBook Text Extraction
+    title: Z-Library Acquisition + PDF/eBook Extraction
     agent: document-specialist
     elicit: false
 
@@ -104,6 +108,10 @@ scripts:
     - extract-pdf.js
     - extract-epub.js
     - chunk-text.js
+
+  books:
+    - zlibrary-collector.js
+    - python/zlibrary_downloader.py
 
   social:
     - fetch-tweets.js

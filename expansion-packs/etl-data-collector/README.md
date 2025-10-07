@@ -23,6 +23,13 @@ npm run setup
 
 # 2. Configure API keys
 export ASSEMBLYAI_API_KEY="your-key"
+export ZLIB_EMAIL="your@email.com"
+export ZLIB_PASSWORD="your-password"
+# For manual mode just ensure the file exists under docs/.../inputs/books/
+
+# Optional future automation placeholders
+# export ZLIB_COOKIE="..."
+# export ZLIB_USER_AGENT="..."
 
 # 3. Create sources list
 cat > sources.yaml << 'YAML'
@@ -45,11 +52,12 @@ node scripts/orchestrator/parallel-collector.js \
 
 ## 📦 What's Included
 
-### Agents (5)
+### Agents (6)
 - `data-collector` - Master orchestrator
 - `youtube-specialist` - Video/audio + transcription
 - `web-specialist` - Blog/article scraping
 - `document-specialist` - PDF/eBook processing
+- `zlibrary-harvester` - Z-Library acquisition
 - `social-specialist` - Social media collection
 
 ### Tasks (8)
@@ -57,7 +65,7 @@ node scripts/orchestrator/parallel-collector.js \
 - `collect-youtube` - YouTube videos
 - `collect-podcasts` - Podcast episodes
 - `collect-blogs` - Blog articles
-- `collect-books` - PDFs/eBooks
+- `collect-books` - Z-Library download + PDF/eBook extraction
 - `collect-social` - Social media
 - `validate-collection` - Quality checks
 - `chunk-and-index` - Post-processing
@@ -67,6 +75,7 @@ node scripts/orchestrator/parallel-collector.js \
 - ✅ Podcasts (RSS feeds)
 - ✅ Blogs (WordPress, Medium, Substack, generic)
 - ✅ PDFs & eBooks
+- ✅ Books via Z-Library
 - ✅ Twitter threads
 - ✅ Reddit AMAs
 - ✅ LinkedIn posts (limited)
@@ -187,3 +196,16 @@ Issues and PRs welcome at: https://github.com/anthropics/claude-code/issues
 **Note:** Some files are marked with `TODO: EXPAND` comments and need full implementation.
 
 </div>
+
+## Manual Book Downloads
+
+Until we wire an automated provider, place PDFs/eBooks manually in your mind workspace and reference them using `local_path` in the source entry:
+
+```yaml
+- id: naval-almanack
+  type: book
+  local_path: docs/minds/naval_ravikant/inputs/books/naval_almanack.pdf
+  tier: 1
+```
+
+The `collect-books` task will skip the downloader and run the PDF extraction pipeline directly.

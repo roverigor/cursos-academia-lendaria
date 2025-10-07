@@ -136,26 +136,26 @@ sources_master:
         tempo_estimado: "2-3 horas"
 
       - id: "L2"
-        titulo: "Direct Truth: Uncompromising, non-prescriptive Truths"
-        tipo: "LIVRO (PDF)"
-        caminho: "sources/books/Direct Truth Uncompromising, non-pres... (Z-Library).pdf"
-        tamanho: "821 KB"
-        paginas_estimadas: "200-250"
-        ano_publicacao: "~2018"
-        credibilidade: 10
-        valor_clone: 9
-        riqueza_cognitiva: 9
-        densidade_exemplos: 7
-        justificativa: |
-          Livro central sobre TRUTH (conceito core).
-          Título define filosofia: Direct, Uncompromising, Non-prescriptive.
-          Provavelmente incluso em Complete Collection, mas análise separada importante.
-        temas_cobertos:
+        title: "Direct Truth: Uncompromising, non-prescriptive Truths"
+        type: "BOOK (PDF)"
+        path: "sources/books/Direct Truth Uncompromising, non-pres... (Z-Library).pdf"
+        size: "821 KB"
+        estimated_pages: "200-250"
+        publication_year: "~2018"
+        credibility: 10
+        clone_value: 9
+        cognitive_richness: 9
+        example_density: 7
+        rationale: |
+          Core book about TRUTH (central concept).
+          Title defines the philosophy: Direct, Uncompromising, Non-prescriptive.
+          Likely included in Complete Collection, but standalone analysis remains critical.
+        covered_topics:
           - "Nature of truth"
           - "Non-prescriptive philosophy"
           - "Direct communication"
-        prioridade_leitura: 5
-        tempo_estimado: "6-8 horas"
+        reading_priority: 5
+        estimated_time: "6-8 hours"
 
   # =============================================================================
   # TIER 2: FONTES IMPORTANTES (RECOMENDADAS)
@@ -169,48 +169,48 @@ sources_master:
 
     fontes:
       - id: "L3"
-        titulo: "Atmamun: The Path to Achieving the Bliss"
-        tipo: "LIVRO (PDF)"
-        caminho: "sources/books/Atmamun-The-Path-To-Achieving-The-Bli...-_Z-Library_.pdf"
-        tamanho: "778 KB"
-        paginas_estimadas: "200+"
-        ano_publicacao: "~2017"
-        credibilidade: 10
-        valor_clone: 8
-        riqueza_cognitiva: 9
-        densidade_exemplos: 7
-        justificativa: |
-          Livro sobre BLISS (felicidade transcendente).
-          Aborda lado mais "positivo" da filosofia.
-          Balance necessário com Direct Truth (mais austero).
-        temas_cobertos:
+        title: "Atmamun: The Path to Achieving the Bliss"
+        type: "BOOK (PDF)"
+        path: "sources/books/Atmamun-The-Path-To-Achieving-The-Bli...-_Z-Library_.pdf"
+        size: "778 KB"
+        estimated_pages: "200+"
+        publication_year: "~2017"
+        credibility: 10
+        clone_value: 8
+        cognitive_richness: 9
+        example_density: 7
+        rationale: |
+          Book focused on BLISS (transcendent happiness).
+          Covers the more "positive" side of the philosophy.
+          Provides balance against Direct Truth (more austere).
+        covered_topics:
           - "Bliss achievement"
           - "Inner peace"
           - "Transcendence"
-        prioridade_leitura: 6
-        tempo_estimado: "6-8 horas"
+        reading_priority: 6
+        estimated_time: "6-8 hours"
 
       - id: "L4"
-        titulo: "A Master's Secret Whispers: For Those Who Abhor Hopium"
-        tipo: "LIVRO (PDF)"
-        caminho: "sources/books/A-Masters-Secret-Whispers-For-Those-W...-_Z-Library_.pdf"
-        tamanho: "495 KB"
-        paginas_estimadas: "150-180"
-        ano_publicacao: "~2019"
-        credibilidade: 10
-        valor_clone: 8
-        riqueza_cognitiva: 8
-        densidade_exemplos: 8
-        justificativa: |
-          Título indica tom: "For Those Who Abhor Hopium" = anti-motivação.
-          Provavelmente whispers práticos (aforismos).
-          Formato diferente = pode revelar padrões condensados.
-        temas_cobertos:
+        title: "A Master's Secret Whispers: For Those Who Abhor Hopium"
+        type: "BOOK (PDF)"
+        path: "sources/books/A-Masters-Secret-Whispers-For-Those-W...-_Z-Library_.pdf"
+        size: "495 KB"
+        estimated_pages: "150-180"
+        publication_year: "~2019"
+        credibility: 10
+        clone_value: 8
+        cognitive_richness: 8
+        example_density: 8
+        rationale: |
+          Title sets the tone: "For Those Who Abhor Hopium" = anti-motivation.
+          Likely contains practical whispers (aphorisms).
+          Distinct format that may reveal condensed patterns.
+        covered_topics:
           - "Anti-hopium philosophy"
           - "Master's teachings"
           - "Practical whispers"
-        prioridade_leitura: 7
-        tempo_estimado: "4-6 horas"
+        reading_priority: 7
+        estimated_time: "4-6 hours"
 
       - id: "V4"
         titulo: "Kapil Gupta MD - SOLO Podcast Compilation"
