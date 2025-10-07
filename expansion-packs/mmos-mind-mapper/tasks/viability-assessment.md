@@ -1,3 +1,90 @@
+---
+task-id: viability-assessment
+name: APEX + ICP Viability Assessment
+agent: mind-mapper
+version: 1.0.0
+purpose: Evaluate mind mapping candidate viability through APEX scoring and ICP matching to prevent wasted resources
+
+workflow-mode: interactive
+elicit: true
+elicitation-type: custom
+
+prerequisites:
+  - Mind candidate name identified
+  - Basic understanding of target use case
+  - Access to web search for initial source discovery
+
+inputs:
+  - name: mind_name
+    type: string
+    description: Subject to evaluate (e.g., "Naval Ravikant", "Seth Godin")
+    required: true
+
+  - name: mode
+    type: enum
+    description: Assessment mode
+    required: true
+    options: ["apex", "icp", "full", "prd_generation"]
+    default: "full"
+    user_friendly: "Quick APEX only / ICP match only / Full assessment / Generate PRD after GO"
+
+  - name: initial_context
+    type: text
+    description: Why this mind is being considered
+    required: true
+
+  - name: target_icp
+    type: string
+    description: Specific use case or audience
+    required: false
+    example: "startup founders", "enterprise sales teams"
+
+  - name: constraints
+    type: object
+    description: Time, budget, or quality requirements
+    required: false
+    fields:
+      - max_time_hours
+      - max_tokens
+      - min_quality_score
+
+outputs:
+  - path: "docs/minds/{mind_name}/viability/viability-output.yaml"
+    description: Complete APEX + ICP scoring with GO/NO-GO recommendation
+    format: "yaml"
+
+  - path: "docs/minds/{mind_name}/viability/prd.md"
+    description: Product requirements document (if mode=prd_generation and GO decision)
+    format: "markdown"
+    conditional: "Only generated if GO decision and mode includes prd_generation"
+
+dependencies:
+  templates:
+    - viability-output.yaml
+    - prd-template.md
+  checklists:
+    - viability-checklist.md
+
+validation:
+  success-criteria:
+    - "APEX score calculated across all 6 dimensions"
+    - "ICP match score >= 70% for GO decision"
+    - "Clear GO/NO-GO recommendation with justification"
+    - "Token savings projection provided"
+
+  warning-conditions:
+    - "ICP score 60-69% (borderline)"
+    - "Missing sources in 2+ APEX dimensions"
+
+  failure-conditions:
+    - "APEX score < 50/100"
+    - "ICP match < 60%"
+    - "Insufficient public information available"
+
+estimated-duration: "15-30 minutes for full assessment"
+token-savings: "40% by auto-rejecting poor candidates before expensive research phase"
+---
+
 # Viability Assessment Task
 
 ## Purpose
@@ -19,25 +106,6 @@ Evaluate whether a mind mapping candidate is worth the investment of time, token
 - Viability is already confirmed (brownfield updates)
 - Working with pre-approved subjects
 - This is exploratory research without production intent
-
-## Inputs
-
-### Required Inputs
-- **Mind Name**: Subject to evaluate (e.g., "Naval Ravikant", "Seth Godin")
-- **Mode**: One of `apex`, `icp`, `prd_generation`, or `full`
-- **Initial Context**: Why this mind is being considered
-
-### Optional Inputs
-- **Target ICP**: Specific use case or audience (e.g., "startup founders", "enterprise sales teams")
-- **Constraints**: Time, budget, or quality requirements
-- **Known Sources**: Any high-quality sources already identified
-
-### Mode Descriptions
-
-**`apex`** - Execute APEX 6-dimension scoring only
-**`icp`** - Execute ICP matching analysis only
-**`full`** - Execute APEX + ICP + generate recommendation
-**`prd_generation`** - Generate PRD, TODO, dependencies (post-GO decision)
 
 ## Key Activities & Instructions
 
