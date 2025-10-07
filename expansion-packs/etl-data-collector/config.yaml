@@ -1,0 +1,196 @@
+name: etl-data-collector
+version: 1.0.0
+short-title: ETL Data Collector - Universal Multi-Source Data Pipeline
+description: >-
+  Industrial-grade ETL system for collecting, transforming, and loading data from diverse sources.
+  Supports YouTube, podcasts, blogs, PDFs, social media, and more. Built on Node.js with Python
+  fallbacks for heavy processing. Designed for parallel execution and robust error handling.
+
+author: Academia Lendar[IA] (Alan Nicolas)
+slashPrefix: etl
+
+tags:
+  - etl
+  - data-collection
+  - web-scraping
+  - transcription
+  - parallel-processing
+  - automation
+
+requires:
+  node: ">=18.0.0"
+  aios: ">=2.0.0"
+
+agents:
+  - id: data-collector
+    title: Master Data Collection Orchestrator
+    whenToUse: Orchestrate multi-source data collection workflows
+
+  - id: youtube-specialist
+    title: YouTube & Video Content Specialist
+    whenToUse: Download videos, extract audio, generate transcripts
+
+  - id: web-specialist
+    title: Web Content & Blog Scraping Specialist
+    whenToUse: Scrape websites, extract articles, process HTML content
+
+  - id: document-specialist
+    title: Document & PDF Processing Specialist
+    whenToUse: Extract text from PDFs, eBooks, and structured documents
+
+  - id: social-specialist
+    title: Social Media Data Collection Specialist
+    whenToUse: Collect data from Twitter, LinkedIn, Reddit, and other platforms
+
+tasks:
+  - id: collect-all-sources
+    title: Master Orchestrator - Parallel Multi-Source Collection
+    agent: data-collector
+    elicit: true
+
+  - id: collect-youtube
+    title: YouTube Video Download & Transcription
+    agent: youtube-specialist
+    elicit: false
+
+  - id: collect-podcasts
+    title: Podcast Audio Download & Transcription
+    agent: youtube-specialist
+    elicit: false
+
+  - id: collect-blogs
+    title: Blog & Article Web Scraping
+    agent: web-specialist
+    elicit: false
+
+  - id: collect-books
+    title: PDF & eBook Text Extraction
+    agent: document-specialist
+    elicit: false
+
+  - id: collect-social
+    title: Social Media Data Collection
+    agent: social-specialist
+    elicit: false
+
+  - id: validate-collection
+    title: Validate Collection Completeness & Quality
+    agent: data-collector
+    elicit: false
+
+  - id: chunk-and-index
+    title: Chunk Text & Create Search Index
+    agent: data-collector
+    elicit: false
+
+scripts:
+  orchestrator:
+    - parallel-collector.js
+    - task-manager.js
+    - progress-tracker.js
+
+  youtube:
+    - download-video.js
+    - extract-audio.js
+    - get-transcript.js
+    - process-metadata.js
+
+  web:
+    - scrape-blog.js
+    - extract-article.js
+    - fetch-dynamic.js
+
+  pdf:
+    - extract-pdf.js
+    - extract-epub.js
+    - chunk-text.js
+
+  social:
+    - fetch-tweets.js
+    - scrape-linkedin.js
+    - get-reddit.js
+
+  audio:
+    - download-podcast.js
+    - transcribe-whisper.py
+    - extract-audio-metadata.js
+
+tools:
+  validators:
+    - check-completeness.js
+    - verify-transcript.js
+    - validate-structure.js
+
+  transformers:
+    - clean-transcript.js
+    - normalize-text.js
+    - extract-timestamps.js
+    - markdown-converter.js
+
+  helpers:
+    - file-manager.js
+    - logger.js
+    - config-loader.js
+
+templates:
+  - collection-log.md
+  - source-metadata.json
+  - collection-summary.yaml
+  - download-report.md
+  - error-log.yaml
+  - progress-status.yaml
+
+checklists:
+  - collection-quality.md
+  - security-validation.md
+  - completeness-check.md
+
+data:
+  - etl-kb.md
+  - source-types-taxonomy.yaml
+  - tools-config.yaml
+  - dependencies.json
+
+integration:
+  mmos-mind-mapper:
+    hook: post-research
+    input: sources_master.yaml
+    output: sources/downloads/, sources/processed/
+
+  standalone:
+    input: sources-list.yaml
+    output: ./downloads/, ./processed/
+
+dependencies:
+  node:
+    - "@mozilla/readability"
+    - "cheerio"
+    - "puppeteer"
+    - "pdf-parse"
+    - "ytdl-core"
+    - "youtube-transcript"
+    - "axios"
+    - "node-fetch"
+    - "turndown"
+    - "js-yaml"
+    - "cli-progress"
+    - "p-limit"
+
+  python:
+    - "yt-dlp>=2024.1.0"
+    - "whisper>=1.1.10"
+    - "beautifulsoup4>=4.12.0"
+    - "PyPDF2>=3.0.0"
+    - "pydub>=0.25.1"
+
+mcps:
+  recommended:
+    - youtube-transcript
+    - brave-search
+    - web-fetch
+    - pdf-reader
+
+  optional:
+    - twitter-api
+    - reddit-api
+    - whisper-api

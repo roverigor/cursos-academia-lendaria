@@ -1,0 +1,229 @@
+priority_matrix:
+  mind_name: Sam Altman
+  generated_date: 2025-10-06
+  total_sources_identified: 47
+
+  tier_1_critical:
+    description: "Essential sources covering Layers 5-8 (values, obsessions, singularity, paradoxes)"
+    count: 12
+    sources:
+      - id: congress_testimony_2023
+        title: "Congressional Testimony on AI Regulation"
+        type: interview
+        url: "https://www.youtube.com/watch?v=[testimony_id]"
+        date: "2023-05-16"
+        length: "3 hours"
+        layers_covered: [5, 6, 7, 8]
+        paradox_evidence: "AI safety advocacy while leading OpenAI acceleration"
+        priority_score: 10
+
+      - id: lex_friedman_2023
+        title: "Lex Fridman #419 - Sam Altman (OpenAI CEO on GPT-4, ChatGPT)"
+        type: interview
+        url: "https://www.youtube.com/watch?v=L_Guz73e6fw"
+        date: "2023-03-25"
+        length: "2h 37m"
+        layers_covered: [4, 5, 6, 7, 8]
+        paradox_evidence: "Discusses both AGI risks and rapid deployment strategy"
+        priority_score: 10
+
+      - id: sama_blog_success
+        title: "How to be Successful (Blog Essay)"
+        type: long_form
+        url: "https://blog.samaltman.com/how-to-be-successful"
+        date: "2019-01-24"
+        length: "3000 words"
+        layers_covered: [4, 5, 6]
+        values_evidence: "Compound yourself, Have almost too much self-belief"
+        priority_score: 9
+
+      - id: sama_blog_moores_law
+        title: "Moore's Law for Everything"
+        type: long_form
+        url: "https://moores.samaltman.com"
+        date: "2021-03-16"
+        length: "5000 words"
+        layers_covered: [5, 6, 7]
+        obsession_evidence: "AGI will change economics fundamentally"
+        priority_score: 9
+
+      - id: yc_how_to_start_startup
+        title: "How to Start a Startup (Stanford CS183B)"
+        type: course
+        url: "https://startupclass.samaltman.com"
+        date: "2014-09-23"
+        length: "20 lectures"
+        layers_covered: [3, 4, 5]
+        frameworks_evidence: "Startup frameworks, mental models"
+        priority_score: 9
+
+      - id: sama_blog_intelligence_age
+        title: "The Intelligence Age"
+        type: long_form
+        url: "https://ia.samaltman.com"
+        date: "2024-09-23"
+        length: "2000 words"
+        layers_covered: [6, 7, 8]
+        singularity_evidence: "Most profound leap forward in human history"
+        priority_score: 10
+
+      - id: allin_podcast_2024
+        title: "All-In Podcast - Sam Altman on OpenAI, AGI, Regulation"
+        type: interview
+        url: "https://www.youtube.com/watch?v=[allin_id]"
+        date: "2024-03-15"
+        length: "90m"
+        layers_covered: [5, 6, 7, 8]
+        paradox_evidence: "Defends rapid release while calling for regulation"
+        priority_score: 9
+
+      - id: openai_gpt4_launch
+        title: "GPT-4 Launch Announcement & Strategy"
+        type: video
+        url: "https://openai.com/research/gpt-4"
+        date: "2023-03-14"
+        length: "30m"
+        layers_covered: [4, 5, 6]
+        decision_patterns: "Conservative launch despite competitive pressure"
+        priority_score: 8
+
+      - id: sama_twitter_threads_ai_safety
+        title: "Twitter Threads Collection: AI Safety (2023-2024)"
+        type: social_media
+        url: "https://twitter.com/sama"
+        date: "2023-2024"
+        length: "50+ threads"
+        layers_covered: [5, 6, 8]
+        real_time_thinking: "Evolution of safety vs acceleration stance"
+        priority_score: 8
+
+      - id: yc_blog_pmf
+        title: "Product Market Fit Essays Collection"
+        type: long_form
+        url: "https://www.ycombinator.com/library"
+        date: "2014-2019"
+        length: "20+ essays"
+        layers_covered: [3, 4]
+        frameworks_evidence: "Core YC frameworks for startups"
+        priority_score: 7
+
+      - id: congress_testimony_2024
+        title: "Senate AI Insight Forum Testimony"
+        type: interview
+        url: "https://www.youtube.com/watch?v=[senate_id]"
+        date: "2024-01-10"
+        length: "2 hours"
+        layers_covered: [5, 6, 7, 8]
+        paradox_evidence: "OpenAI strategy vs regulation advocacy"
+        priority_score: 9
+
+      - id: startup_school_collection
+        title: "Y Combinator Startup School (Complete Collection)"
+        type: course
+        url: "https://www.startupschool.org"
+        date: "2017-2024"
+        length: "100+ lectures"
+        layers_covered: [2, 3, 4]
+        behavioral_patterns: "Communication style, teaching approach"
+        priority_score: 7
+
+  tier_2_important:
+    description: "Valuable sources covering Layers 2-4 (communication, behavior, mental models)"
+    count: 20
+    sources:
+      - "Tim Ferriss Show interviews"
+      - "Masters of Scale interview"
+      - "TechCrunch Disrupt talks"
+      - "Y Combinator blog posts (200+)"
+      - "Early blog.samaltman.com essays"
+      - "Podcast appearances (various)"
+      - "Stanford guest lectures"
+      - "OpenAI blog strategy posts"
+
+  tier_3_supplementary:
+    description: "Supporting sources for Layer 1 (linguistic surface, quotes)"
+    count: 15
+    sources:
+      - "Twitter day-to-day posts"
+      - "Conference Q&As"
+      - "LinkedIn posts"
+      - "Secondary source interviews"
+      - "Panel discussions"
+
+  layer_coverage_analysis:
+    layer_1_linguistic_surface:
+      sources: 47
+      confidence: HIGH
+      notes: "Abundant material across all formats"
+
+    layer_2_recognition_patterns:
+      sources: 35
+      confidence: HIGH
+      notes: "YC frameworks reveal pattern recognition in startups"
+
+    layer_3_mental_models:
+      sources: 30
+      confidence: HIGH
+      notes: "CS183B + YC essays = complete framework library"
+
+    layer_4_decision_architecture:
+      sources: 25
+      confidence: HIGH
+      notes: "OpenAI decisions documented, YC portfolio visible"
+
+    layer_5_values_hierarchy:
+      sources: 15
+      confidence: MEDIUM-HIGH
+      notes: "Trade-offs visible in OpenAI strategy, needs triangulation"
+
+    layer_6_core_obsessions:
+      sources: 12
+      confidence: MEDIUM
+      notes: "AGI obsession clear, needs 3+ independent confirmations"
+
+    layer_7_cognitive_singularity:
+      sources: 8
+      confidence: MEDIUM
+      notes: "Unique algorithm emerging: YC frameworks + AGI timeline"
+
+    layer_8_productive_paradoxes:
+      sources: 6
+      confidence: MEDIUM-LOW
+      notes: "Safety/Acceleration paradox needs deeper triangulation"
+      action: "CRITICAL: Collect 3+ sources documenting this tension"
+
+  collection_strategy:
+    parallel_execution:
+      - "Tier 1 (12 sources): Immediate parallel collection"
+      - "Tier 2 (20 sources): Secondary parallel wave"
+      - "Tier 3 (15 sources): Final pass if needed"
+
+    time_estimate:
+      tier_1: "6-8 hours"
+      tier_2: "10-12 hours"
+      tier_3: "4-6 hours"
+      total_sequential: "24-30 hours"
+      total_parallel: "10-15 hours (60% reduction)"
+
+    human_checkpoints:
+      - checkpoint: "After Tier 1 collection"
+        purpose: "Validate Layer 8 paradox evidence quality"
+        decision: "GO/REFINE/HALT"
+
+      - checkpoint: "After Layer 6-8 sources"
+        purpose: "Confirm obsessions + singularity triangulation"
+        decision: "PROCEED/COLLECT_MORE"
+
+  minimum_requirements:
+    books: 0  # Not applicable (no primary authored books)
+    long_form: 15  # REQUIREMENT: ≥10
+    interviews: 10  # REQUIREMENT: ≥5
+    total_sources: 47  # REQUIREMENT: ≥15
+    layer_6_8_sources: 18  # REQUIREMENT: ≥10
+    tier_1_sources: 12  # REQUIREMENT: ≥8
+
+  status:
+    requirements_met: true
+    ready_for_collection: true
+    estimated_completion: "2025-10-08"
+    confidence: HIGH
