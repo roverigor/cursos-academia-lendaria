@@ -1,9 +1,41 @@
-# collect-books
+---
+task-id: collect-books
+name: Book/eBook Acquisition & Text Extraction
+agent: document-specialist
+version: 1.0.0
+purpose: Extract structure-preserving text from manually provided PDFs/eBooks and (future) Z-Library downloads
 
-**Task ID:** collect-books
-**Agent:** document-specialist
-**Elicit:** false
-**Purpose:** Extract structure-preserving text from manually provided PDFs/eBooks and (future) Z-Library downloads
+workflow-mode: automated
+elicit: false
+
+inputs:
+  - name: sources
+    type: array
+    description: Sources filtered for type 'book' with local_path or zlibrary details
+    required: true
+  - name: output_dir
+    type: directory_path
+    required: true
+
+outputs:
+  - path: "{output_dir}/books/{source_id}/text.md"
+    format: markdown
+  - path: "{output_dir}/books/{source_id}/metadata.json"
+    format: json
+  - path: "{output_dir}/books/{source_id}/chapters/"
+    format: directory
+    optional: true
+
+dependencies:
+  agents:
+    - zlibrary-harvester (for acquisition, manual mode)
+  scripts:
+    - scripts/extractors/generic-extractor.js
+  tools:
+    - tools/validators/check-completeness.js
+---
+
+# collect-books
 
 ---
 

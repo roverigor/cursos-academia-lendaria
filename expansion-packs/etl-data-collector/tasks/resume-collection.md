@@ -1,9 +1,50 @@
-# resume-collection
+---
+task-id: resume-collection
+name: Resume Interrupted Collection
+agent: data-collector
+version: 1.0.0
+purpose: Resume interrupted collection from checkpoint
 
-**Task ID:** resume-collection
-**Agent:** data-collector
-**Elicit:** true
-**Purpose:** Resume interrupted collection from checkpoint
+workflow-mode: interactive
+elicit: true
+elicitation-type: guided
+
+prerequisites:
+  - Original sources_master.yaml file
+  - Existing downloads/ directory with partial data
+  - Optional: COLLECTION_LOG.md from previous run
+
+inputs:
+  - name: sources_path
+    type: file_path
+    description: Original sources list
+    required: true
+  - name: output_dir
+    type: directory_path
+    description: Directory with partial downloads
+    required: true
+  - name: force_redownload
+    type: boolean
+    description: Re-download all sources (ignore existing)
+    required: false
+    default: false
+
+outputs:
+  - path: "{output_dir}/downloads/"
+    description: Completed downloads
+  - path: "{output_dir}/COLLECTION_LOG.md"
+    description: Updated collection log
+  - path: "{output_dir}/COLLECTION_SUMMARY.yaml"
+    description: Final summary after resume
+
+dependencies:
+  tasks:
+    - collect-all-sources.md
+  scripts:
+    - scripts/orchestrator/progress-tracker.js
+---
+
+# resume-collection
 
 ---
 

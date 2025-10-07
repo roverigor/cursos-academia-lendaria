@@ -1,9 +1,40 @@
-# validate-collection
+---
+task-id: validate-collection
+name: Validate Collection Completeness & Quality
+agent: data-collector
+version: 1.0.0
+purpose: Comprehensive validation of collected data for completeness and quality
 
-**Task ID:** validate-collection
-**Agent:** data-collector
-**Elicit:** false
-**Purpose:** Comprehensive validation of collected data for completeness and quality
+workflow-mode: automated
+elicit: false
+
+inputs:
+  - name: downloads_dir
+    type: directory_path
+    description: Downloaded data directory
+    required: true
+  - name: sources_list
+    type: file_path
+    description: Original sources list for comparison
+    required: true
+
+outputs:
+  - path: "{output_dir}/VALIDATION_REPORT.yaml"
+    format: yaml
+  - path: "{output_dir}/logs/validation_errors.log"
+    format: text
+
+dependencies:
+  checklists:
+    - checklists/collection-quality.md
+    - checklists/completeness-check.md
+  tools:
+    - tools/validators/check-completeness.js
+    - tools/validators/validate-transcript.js
+    - tools/validators/verify-quality.js
+---
+
+# validate-collection
 
 ---
 

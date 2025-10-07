@@ -1,9 +1,34 @@
-# collect-social
+---
+task-id: collect-social
+name: Social Media Data Collection
+agent: social-specialist
+version: 1.0.0
+purpose: Collect social media data (Twitter, LinkedIn, Reddit) with API/MCP integration
 
-**Task ID:** collect-social
-**Agent:** social-specialist
-**Elicit:** false
-**Purpose:** Collect social media data (Twitter, LinkedIn, Reddit) with API/MCP integration
+workflow-mode: automated
+elicit: false
+
+inputs:
+  - name: sources
+    type: array
+    description: Sources filtered for type 'twitter', 'linkedin', 'reddit'
+    required: true
+  - name: output_dir
+    type: directory_path
+    required: true
+
+outputs:
+  - path: "{output_dir}/social/{source_id}/thread.md"
+    format: markdown
+  - path: "{output_dir}/social/{source_id}/metadata.json"
+    format: json
+
+dependencies:
+  data:
+    - data/platform-support.yaml
+---
+
+# collect-social
 
 ---
 

@@ -1,9 +1,41 @@
-# collect-youtube
+---
+task-id: collect-youtube
+name: YouTube Video Download & Transcription
+agent: youtube-specialist
+version: 1.0.0
+purpose: Download YouTube videos, extract audio, and generate transcripts
 
-**Task ID:** collect-youtube
-**Agent:** youtube-specialist
-**Elicit:** false
-**Purpose:** Download YouTube videos, extract audio, and generate transcripts
+workflow-mode: automated
+elicit: false
+
+inputs:
+  - name: sources
+    type: array
+    description: Sources filtered for type 'youtube' or 'video'
+    required: true
+  - name: output_dir
+    type: directory_path
+    description: Output directory for downloads
+    required: true
+
+outputs:
+  - path: "{output_dir}/youtube/{source_id}/audio.mp3"
+    format: audio
+  - path: "{output_dir}/youtube/{source_id}/transcript.txt"
+    format: text
+  - path: "{output_dir}/youtube/{source_id}/metadata.json"
+    format: json
+
+dependencies:
+  scripts:
+    - scripts/collectors/youtube-collector.js
+    - scripts/mcps/assemblyai-mcp.js
+  tools:
+    - tools/transformers/clean-transcript.js
+    - tools/validators/validate-transcript.js
+---
+
+# collect-youtube
 
 ---
 

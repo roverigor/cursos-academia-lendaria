@@ -1,9 +1,37 @@
-# collect-blogs
+---
+task-id: collect-blogs
+name: Blog & Article Web Scraping
+agent: web-specialist
+version: 1.0.0
+purpose: Scrape blog posts and articles, convert to clean markdown
 
-**Task ID:** collect-blogs
-**Agent:** web-specialist
-**Elicit:** false
-**Purpose:** Scrape blog posts and articles, convert to clean markdown
+workflow-mode: automated
+elicit: false
+
+inputs:
+  - name: sources
+    type: array
+    description: Sources filtered for type 'blog' or 'article'
+    required: true
+  - name: output_dir
+    type: directory_path
+    required: true
+
+outputs:
+  - path: "{output_dir}/blogs/{source_id}/article.md"
+    format: markdown
+  - path: "{output_dir}/blogs/{source_id}/metadata.json"
+    format: json
+
+dependencies:
+  scripts:
+    - scripts/collectors/web-collector.js
+    - scripts/extractors/article-extractor.js
+  tools:
+    - tools/transformers/markdown-converter.js
+---
+
+# collect-blogs
 
 ---
 

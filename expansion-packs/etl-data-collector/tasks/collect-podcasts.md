@@ -1,9 +1,39 @@
-# collect-podcasts
+---
+task-id: collect-podcasts
+name: Podcast Audio Download & Transcription
+agent: youtube-specialist
+version: 1.0.0
+purpose: Download podcast episodes from RSS feeds and transcribe with speaker diarization
 
-**Task ID:** collect-podcasts
-**Agent:** youtube-specialist (handles audio transcription)
-**Elicit:** false
-**Purpose:** Download podcast episodes from RSS feeds and transcribe with speaker diarization
+workflow-mode: automated
+elicit: false
+
+inputs:
+  - name: sources
+    type: array
+    description: Sources filtered for type 'podcast'
+    required: true
+  - name: output_dir
+    type: directory_path
+    required: true
+
+outputs:
+  - path: "{output_dir}/podcasts/{source_id}/audio.mp3"
+    format: audio
+  - path: "{output_dir}/podcasts/{source_id}/transcript.md"
+    format: markdown
+  - path: "{output_dir}/podcasts/{source_id}/metadata.json"
+    format: json
+
+dependencies:
+  scripts:
+    - scripts/collectors/podcast-collector.js
+    - scripts/mcps/assemblyai-mcp.js
+  tools:
+    - tools/transformers/filter-speaker.js
+---
+
+# collect-podcasts
 
 ---
 

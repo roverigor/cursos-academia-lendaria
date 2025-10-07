@@ -1,9 +1,122 @@
-# collect-all-sources
+---
+task-id: collect-all-sources
+name: Master Orchestrator - Parallel Multi-Source Collection
+agent: data-collector
+version: 1.0.0
+purpose: Master orchestrator for parallel multi-source data collection
 
-**Task ID:** collect-all-sources
-**Agent:** data-collector
-**Elicit:** true
-**Purpose:** Master orchestrator for parallel multi-source data collection
+workflow-mode: interactive
+elicit: true
+elicitation-type: custom
+
+prerequisites:
+  - Sources list file (sources_master.yaml, sources.yaml, or sources.json)
+  - Node.js dependencies installed (npm install)
+  - API keys configured (if using social media sources)
+
+inputs:
+  - name: sources_path
+    type: file_path
+    description: Path to sources list (YAML or JSON)
+    required: true
+    default: "auto-detect from MMOS or prompt user"
+
+  - name: tiers
+    type: array
+    description: Which tiers to collect (1, 2, 3)
+    required: false
+    default: [1, 2, 3]
+
+  - name: concurrent_per_type
+    type: number
+    description: Concurrent downloads per source type
+    required: false
+    default: 4
+    range: [1, 10]
+
+  - name: output_dir
+    type: directory_path
+    description: Output directory for downloads
+    required: false
+    default: "auto-detect"
+
+  - name: error_strategy
+    type: enum
+    description: How to handle errors
+    required: false
+    default: "retry"
+    options: ["fail-fast", "retry", "skip"]
+
+outputs:
+  - path: "{output_dir}/downloads/"
+    description: Raw downloaded data organized by type
+    format: "directory"
+
+  - path: "{output_dir}/processed/"
+    description: Cleaned and structured data
+    format: "directory"
+
+  - path: "{output_dir}/COLLECTION_SUMMARY.yaml"
+    description: Complete collection statistics and report
+    format: "yaml"
+
+  - path: "{output_dir}/COLLECTION_LOG.md"
+    description: Detailed log with errors and retries
+    format: "markdown"
+
+dependencies:
+  agents:
+    - youtube-specialist
+    - web-specialist
+    - document-specialist
+    - social-specialist
+
+  tasks:
+    - collect-youtube.md
+    - collect-blogs.md
+    - collect-podcasts.md
+    - collect-books.md
+    - collect-social.md
+    - validate-collection.md
+
+  templates:
+    - collection-summary.yaml
+    - collection-log.md
+
+  checklists:
+    - collection-quality.md
+    - completeness-check.md
+
+validation:
+  success-criteria:
+    - "At least 90% of sources downloaded"
+    - "100% of Tier 1 sources downloaded"
+    - "Average quality score > 85%"
+    - "No security violations (rate limits, bans)"
+    - "All outputs validated"
+
+  warning-conditions:
+    - "80-90% success rate"
+    - "Some Tier 1 sources failed"
+    - "Quality score 75-85%"
+
+  failure-conditions:
+    - "<80% success rate"
+    - "Multiple Tier 1 sources failed"
+    - "Security violations detected"
+
+integration:
+  mmos:
+    trigger: "Post research-collection task"
+    context-detection: "Auto-detect from sources_path containing '/minds/'"
+    output-location: "docs/minds/{mind_name}/sources/downloads/"
+    next-phase: "Cognitive Analysis"
+
+estimated-duration: "45-60 minutes for ~50 sources"
+estimated-storage: "3-5 GB for mixed content"
+---
+
+# collect-all-sources
 
 ---
 

@@ -1,9 +1,43 @@
-# chunk-and-index
+---
+task-id: chunk-and-index
+name: Chunk Text & Create Search Index
+agent: data-collector
+version: 1.0.0
+purpose: Chunk text into semantic segments and create searchable index
 
-**Task ID:** chunk-and-index
-**Agent:** data-collector
-**Elicit:** false
-**Purpose:** Chunk text into semantic segments and create searchable index
+workflow-mode: automated
+elicit: false
+
+inputs:
+  - name: downloads_dir
+    type: directory_path
+    description: Raw downloaded data directory
+    required: true
+  - name: chunking_strategy
+    type: object
+    description: Chunking configuration
+    required: false
+    default:
+      max_tokens: 500
+      overlap: 50
+      preserve_paragraphs: true
+
+outputs:
+  - path: "{output_dir}/processed/chunks/"
+    format: directory
+    description: Chunked text files
+  - path: "{output_dir}/processed/index.json"
+    format: json
+    description: Search index
+  - path: "{output_dir}/processed/CHUNKING_REPORT.yaml"
+    format: yaml
+
+dependencies:
+  tools:
+    - tools/transformers/chunk-text.js
+---
+
+# chunk-and-index
 
 ---
 

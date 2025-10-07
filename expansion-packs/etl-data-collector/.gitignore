@@ -1,0 +1,92 @@
+# API Keys and Credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+secrets.json
+config/credentials.json
+config/secrets.json
+
+# Z-Library Credentials
+zlib-credentials.json
+.zlib-session
+
+# API Keys in various formats
+*_api_key*
+*-api-key*
+api-keys.yaml
+api-keys.json
+
+# Social Media Auth
+twitter-auth.json
+linkedin-cookies.json
+reddit-credentials.json
+
+# AssemblyAI
+assemblyai.key
+assemblyai-*.json
+
+# Whisper API
+whisper-api-key.txt
+openai-api-key.txt
+
+# Downloaded Data (can be large)
+downloads/
+processed/
+outputs/
+temp/
+tmp/
+.cache/
+
+# Collection Logs (contain potentially sensitive URLs)
+COLLECTION_LOG_*.md
+COLLECTION_SUMMARY_*.yaml
+collection-state.json
+.etl-task-state.json
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS Files
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+
+# Test outputs
+test-output/
+test-downloads/
+
+# Personal notes (may contain sensitive info)
+notes.txt
+notes.md
+TODO-personal.md
+SCRATCH.md
