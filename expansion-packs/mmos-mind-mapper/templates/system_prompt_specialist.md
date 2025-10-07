@@ -1,3 +1,4 @@
+<!-- TEMPLATE METADATA: system_prompt_specialist | v1.0.0 | format: markdown | MMOS Pipeline -->
 # System Prompt: [Nome do Mind] - [Specialist Domain] v1.0
 
 **Mind Name:** [NOME_COMPLETO]

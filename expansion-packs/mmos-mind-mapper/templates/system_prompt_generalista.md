@@ -1,3 +1,4 @@
+<!-- TEMPLATE METADATA: system_prompt_generalista | v1.0.0 | format: markdown | MMOS Pipeline -->
 # System Prompt: [Nome do Mind] - Generalista v1.0
 
 **Mind Name:** [NOME_COMPLETO]

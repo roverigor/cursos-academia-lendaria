@@ -1,3 +1,4 @@
+<!-- TEMPLATE METADATA: mind_brief | v1.0.0 | format: markdown | MMOS Pipeline -->
 # Mind Brief - [Nome do Mind]
 
 **Data de Criação:** YYYY-MM-DD
