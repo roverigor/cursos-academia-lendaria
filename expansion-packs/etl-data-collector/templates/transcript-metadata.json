@@ -1,0 +1,31 @@
+{
+  "source_id": "",
+  "source_type": "youtube|podcast",
+  "url": "",
+  "title": "",
+  "duration_seconds": 0,
+  "transcript": {
+    "method": "assemblyai|youtube-api",
+    "confidence": 0.0,
+    "total_words": 0,
+    "speakers": []
+  },
+  "diarization": {
+    "speakers_detected": 0,
+    "target_speaker": "",
+    "target_speech_time_seconds": 0,
+    "target_percentage": 0.0
+  },
+  "quality": {
+    "score": 0,
+    "acceptable": false,
+    "issues": []
+  },
+  "files": {
+    "audio": "",
+    "transcript_full": "",
+    "transcript_filtered": "",
+    "metadata": ""
+  },
+  "extracted_at": ""
+}

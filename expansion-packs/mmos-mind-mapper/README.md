@@ -402,3 +402,17 @@ This expansion pack requires:
 
 _Version: 3.0.0_
 _Compatible with: AIOS-FULLSTACK v4+_
+
+---
+
+<div align="center">
+
+**Desenvolvido com 🧠 e IA pela Academia Lendar[IA]**
+
+*Criado por Alan Nicolas*
+
+---
+
+**© 2025 Academia Lendar[IA] - Todos os direitos reservados**
+
+</div>

@@ -1,0 +1,40 @@
+collection_summary:
+  timestamp: ""
+  sources_file: ""
+  total_sources: 0
+  successful: 0
+  failed: 0
+  success_rate: 0
+
+  by_type:
+    youtube:
+      total: 0
+      successful: 0
+      failed: 0
+    blog:
+      total: 0
+      successful: 0
+      failed: 0
+    pdf:
+      total: 0
+      successful: 0
+      failed: 0
+
+  by_tier:
+    tier_1:
+      total: 0
+      successful: 0
+      success_rate: 0
+
+  performance:
+    total_duration_minutes: 0
+    avg_download_time_seconds: 0
+    peak_concurrent_downloads: 0
+
+  quality:
+    avg_quality_score: 0
+    sources_needing_review: []
+
+  errors: []
+
+  next_steps: []
