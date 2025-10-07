@@ -1,3 +1,48 @@
+---
+task-id: mind-validation
+name: Clone Fidelity Testing & Quality Assurance
+agent: mind-mapper
+version: 1.0.0
+purpose: Execute blind testing and validation protocols to verify 94% clone fidelity before production deployment
+
+workflow-mode: interactive
+elicit: true
+elicitation-type: custom
+
+prerequisites:
+  - System prompts generated (generalista + specialists)
+  - Operational manual created
+  - Testing protocol defined
+
+inputs:
+  - name: mind_name
+    type: string
+    required: true
+  - name: mode
+    type: enum
+    required: true
+    options: ["blind_test", "fidelity_scoring", "edge_cases", "production_readiness", "full"]
+    default: "full"
+
+outputs:
+  - path: "docs/minds/{mind_name}/validation/validation-report.yaml"
+    description: Complete fidelity test results with pass/fail and recommendations
+
+dependencies:
+  templates:
+    - validation-report.yaml
+  checklists:
+    - production-readiness-checklist.md
+
+validation:
+  success-criteria:
+    - "Fidelity score >= 94%"
+    - "All edge cases handled correctly"
+    - "Blind test passed with expert validation"
+
+estimated-duration: "2-3 hours for full validation"
+---
+
 # Mind Validation Task
 
 ## Purpose
@@ -18,11 +63,6 @@ Execute comprehensive quality assurance and fidelity testing for MMOS mind clone
 - System prompt not yet compiled (complete system-prompt-creation first)
 - Making iterative prompt changes (test after each iteration)
 - Brownfield updates (use brownfield regression testing)
-
-## Inputs
-
-### Required Inputs
-- **Mind Name**: Subject being validated
 - **Mode**: One of `test_generation`, `validation`, `report`, or `full`
 - **System Prompt**: Compiled generalista or specialist prompt
 - **Testing Protocol**: Generated from system-prompt-creation task

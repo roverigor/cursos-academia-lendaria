@@ -1,3 +1,98 @@
+---
+task-id: cognitive-analysis
+name: DNA Mental™ 8-Layer Cognitive Analysis
+agent: cognitive-analyst
+version: 1.0.0
+purpose: Execute proprietary 8-layer cognitive analysis to extract complete mind architecture for 94% fidelity clones
+
+workflow-mode: interactive
+elicit: true
+elicitation-type: custom
+
+prerequisites:
+  - Research collection completed with sources_master.yaml
+  - At least 20+ high-quality sources available
+  - sources/downloads/ directory populated with collected data
+  - Minimum 3 independent sources per DNA Mental layer
+
+inputs:
+  - name: mind_name
+    type: string
+    description: Subject being analyzed
+    required: true
+
+  - name: mode
+    type: enum
+    description: Analysis depth mode
+    required: true
+    options: ["layers_1_4", "layer_5", "layer_6", "layer_7", "layer_8", "architecture", "full"]
+    default: "full"
+    user_friendly: "Observable patterns / Values / Obsessions / Singularity / Paradoxes / Compile architecture / Full 8-layer"
+
+  - name: sources_master_path
+    type: file_path
+    description: Path to sources inventory
+    required: true
+    default: "docs/minds/{mind_name}/sources/sources_master.yaml"
+
+  - name: focus_areas
+    type: array
+    description: Specific aspects to emphasize
+    required: false
+    example: ["decision-making", "creativity", "leadership"]
+
+  - name: triangulation_threshold
+    type: float
+    description: Minimum source agreement for Layers 5-8
+    required: false
+    default: 0.70
+    range: [0.60, 0.90]
+
+outputs:
+  - path: "docs/minds/{mind_name}/analysis/cognitive-spec.yaml"
+    description: Complete DNA Mental™ 8-layer cognitive architecture
+    format: "yaml"
+
+  - path: "docs/minds/{mind_name}/analysis/mind-brief.md"
+    description: Executive summary of cognitive analysis findings
+    format: "markdown"
+
+  - path: "docs/minds/{mind_name}/analysis/layer-{N}-{layer_name}.md"
+    description: Detailed analysis for each layer (8 files total)
+    format: "markdown"
+
+dependencies:
+  templates:
+    - cognitive-spec.yaml
+    - mind-brief.md
+  checklists:
+    - analysis-completeness-checklist.md
+  data:
+    - mmos-kb.md (DNA Mental™ layer definitions)
+
+validation:
+  success-criteria:
+    - "All 8 layers extracted with minimum 3 independent sources each"
+    - "Layers 5-8 triangulated with >= 70% source agreement"
+    - "Layer 8 (Productive Paradoxes) identified with at least 3 distinct paradoxes"
+    - "Human checkpoint completed for Layers 6-8 validation"
+    - "Cognitive architecture compiles without contradictions"
+
+  warning-conditions:
+    - "1-2 layers have only 2 sources (borderline triangulation)"
+    - "Layer 8 has only 2 paradoxes identified"
+    - "Triangulation threshold 60-69% on any identity layer"
+
+  failure-conditions:
+    - "Any layer missing or has <2 sources"
+    - "Layer 8 missing or has <2 paradoxes"
+    - "Triangulation <60% on Layers 5-8"
+    - "Contradictory findings across layers"
+
+estimated-duration: "6-8 hours for full 8-layer analysis"
+critical-success-factor: "Layer 8 (Productive Paradoxes) differentiates authentic human clones from robotic AI"
+---
+
 # Cognitive Analysis Task
 
 ## Purpose
@@ -18,21 +113,6 @@ Execute the proprietary DNA Mental™ 8-layer cognitive analysis methodology to 
 - Sources not yet collected (use research-collection first)
 - Updating existing cognitive architecture (use brownfield-update)
 - Only need partial layer extraction (specify mode for targeted extraction)
-
-## Inputs
-
-### Required Inputs
-- **Mind Name**: Subject being analyzed
-- **Mode**: One of `layers_1_4`, `layer_5`, `layer_6`, `layer_7`, `layer_8`, `architecture`, or `full`
-- **sources_master.yaml**: Complete source inventory from research phase
-
-### Optional Inputs
-- **Focus Areas**: Specific aspects to emphasize (e.g., "decision-making", "creativity")
-- **Triangulation Threshold**: Minimum source agreement for Layers 5-8 (default: 70%)
-
-### Mode Descriptions
-
-**`layers_1_4`** - Extract observable patterns (can run in parallel)
 **`layer_5`** - Mental Models extraction with triangulation
 **`layer_6`** - Values Hierarchy extraction + **HUMAN CHECKPOINT**
 **`layer_7`** - Core Obsessions extraction + **HUMAN CHECKPOINT**

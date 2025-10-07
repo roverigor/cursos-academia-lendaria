@@ -1,3 +1,111 @@
+---
+task-id: research-collection
+name: Source Discovery & Parallel Collection
+agent: research-specialist
+version: 1.0.0
+purpose: Execute systematic source discovery and parallel collection workflow for cognitive analysis
+
+workflow-mode: interactive
+elicit: true
+elicitation-type: custom
+
+prerequisites:
+  - Viability assessment completed with GO decision
+  - PRD file generated and available
+  - ETL Data Collector pack installed and configured
+  - API keys configured (AssemblyAI for transcription, social media credentials if needed)
+
+inputs:
+  - name: mind_name
+    type: string
+    description: Subject being mapped
+    required: true
+
+  - name: mode
+    type: enum
+    description: Research workflow mode
+    required: true
+    options: ["discovery", "collection", "master_compilation", "full"]
+    default: "full"
+    user_friendly: "Just discover sources / Just collect / Just compile / Full workflow"
+
+  - name: prd_path
+    type: file_path
+    description: Path to PRD file
+    required: true
+    default: "docs/minds/{mind_name}/viability/prd.md"
+
+  - name: viability_report_path
+    type: file_path
+    description: Path to viability assessment output
+    required: true
+    default: "docs/minds/{mind_name}/viability/viability-output.yaml"
+
+  - name: known_sources
+    type: array
+    description: User-provided high-quality sources to prioritize
+    required: false
+
+  - name: time_constraints
+    type: object
+    description: Time-boxing parameters
+    required: false
+    fields:
+      - max_hours
+      - priority_tiers_only
+
+outputs:
+  - path: "docs/minds/{mind_name}/sources/sources_master.yaml"
+    description: Master inventory of all discovered and collected sources
+    format: "yaml"
+
+  - path: "docs/minds/{mind_name}/sources/downloads/"
+    description: Raw downloaded data organized by type (YouTube, blogs, PDFs, etc.)
+    format: "directory"
+
+  - path: "docs/minds/{mind_name}/sources/COLLECTION_SUMMARY.yaml"
+    description: Collection statistics and quality report
+    format: "yaml"
+
+dependencies:
+  agents:
+    - data-collector (from etl-data-collector pack)
+  tasks:
+    - collect-all-sources.md (from etl-data-collector pack)
+  templates:
+    - sources-master.yaml
+  checklists:
+    - research-quality-checklist.md
+  external_packs:
+    - etl-data-collector
+
+validation:
+  success-criteria:
+    - "sources_master.yaml generated with 20+ high-quality sources"
+    - "All Tier 1 sources successfully collected"
+    - "At least 3 independent sources per DNA Mental Layer (8 layers)"
+    - "Collection quality score >= 85%"
+
+  warning-conditions:
+    - "15-19 sources total (borderline)"
+    - "Missing sources for 1-2 DNA Mental layers"
+    - "Collection quality score 75-84%"
+
+  failure-conditions:
+    - "<15 total sources"
+    - "Missing sources for 3+ DNA Mental layers"
+    - "Collection quality score < 75%"
+
+integration:
+  etl_pack:
+    trigger: "Delegates to @data-collector for parallel collection"
+    handoff: "sources_master.yaml → etl-data-collector *collect command"
+    completion: "Receives COLLECTION_SUMMARY.yaml back from ETL pack"
+
+estimated-duration: "2-4 hours for full workflow (discovery + collection + compilation)"
+performance-benefit: "60% faster than sequential collection via parallel ETL workflow"
+---
+
 # Research Collection Task
 
 ## Purpose
@@ -18,26 +126,6 @@ Execute systematic source discovery and parallel collection workflow for MMOS Mi
 - Viability assessment not yet completed (use viability-assessment first)
 - Updating existing mind (use brownfield-update instead)
 - Sources already collected (proceed to cognitive-analysis)
-
-## Inputs
-
-### Required Inputs
-- **Mind Name**: Subject being mapped
-- **Mode**: One of `discovery`, `collection`, `master_compilation`, or `full`
-- **PRD**: Path to PRD file (must exist)
-- **Viability Report**: APEX and ICP assessment outputs
-
-### Optional Inputs
-- **Known Sources**: User-provided high-quality sources to prioritize
-- **Time Constraints**: If research needs to be time-boxed
-- **Source Type Preferences**: Prioritize certain content types (e.g., books over social media)
-
-### Mode Descriptions
-
-**`discovery`** - Identify all available sources, map types and quality
-**`collection`** - Execute parallel source collection workflow
-**`master_compilation`** - Generate sources_master.yaml inventory
-**`full`** - Execute discovery → collection → master_compilation sequentially
 
 ## Key Activities & Instructions
 

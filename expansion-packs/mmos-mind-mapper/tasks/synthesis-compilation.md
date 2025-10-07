@@ -1,3 +1,54 @@
+---
+task-id: synthesis-compilation
+name: Framework & Knowledge Base Synthesis
+agent: cognitive-analyst
+version: 1.0.0
+purpose: Transform cognitive analysis into implementation-ready frameworks, templates, and knowledge chunks
+
+workflow-mode: interactive
+elicit: true
+elicitation-type: custom
+
+prerequisites:
+  - Cognitive analysis complete with all 8 layers validated
+  - cognitive-spec.yaml exists and validated
+  - mind-brief.md generated
+
+inputs:
+  - name: mind_name
+    type: string
+    required: true
+  - name: mode
+    type: enum
+    required: true
+    options: ["frameworks", "templates", "phrases", "contradictions", "kb_chunking", "specialist_recommender", "full"]
+    default: "full"
+  - name: cognitive_spec_path
+    type: file_path
+    required: true
+    default: "docs/minds/{mind_name}/analysis/cognitive-spec.yaml"
+
+outputs:
+  - path: "docs/minds/{mind_name}/synthesis/frameworks/"
+    description: Actionable decision frameworks extracted from cognitive architecture
+  - path: "docs/minds/{mind_name}/synthesis/kb/"
+    description: Chunked knowledge base optimized for RAG
+
+dependencies:
+  templates:
+    - cognitive-spec.yaml
+  checklists:
+    - analysis-completeness-checklist.md
+
+validation:
+  success-criteria:
+    - "Minimum 5 actionable frameworks extracted"
+    - "KB chunked with proper metadata for RAG"
+    - "Signature phrases catalog with 20+ examples"
+
+estimated-duration: "3-4 hours for full synthesis"
+---
+
 # Synthesis Compilation Task
 
 ## Purpose
@@ -16,17 +67,6 @@ Transform cognitive analysis artifacts (8 layers) into implementation-ready synt
 - Cognitive analysis not complete (finish cognitive-analysis first)
 - System prompts already generated (proceed to mind-validation)
 - Only updating specific elements (use brownfield-update)
-
-## Inputs
-
-### Required Inputs
-- **Mind Name**: Subject being synthesized
-- **Mode**: One of `frameworks`, `templates`, `phrases`, `contradictions`, `kb_chunking`, `specialist_recommender`, or `full`
-- **Cognitive Architecture**: Complete cognitive_architecture.yaml from Phase 3
-
-### Optional Inputs
-- **RAG Target**: If targeting RAG system, optimize chunk size accordingly
-- **Specialist Focus**: If specific specialist variants already identified
 
 ### Mode Descriptions
 

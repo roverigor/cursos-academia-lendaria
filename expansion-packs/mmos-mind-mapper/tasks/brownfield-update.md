@@ -1,3 +1,54 @@
+---
+task-id: brownfield-update
+name: Incremental Mind Update (Brownfield Mode)
+agent: mind-mapper
+version: 1.0.0
+purpose: Execute safe incremental updates to existing production minds without full reprocessing
+
+workflow-mode: interactive
+elicit: true
+elicitation-type: custom
+
+prerequisites:
+  - Existing mind in production
+  - Brownfield update plan generated
+  - Rollback capability verified
+
+inputs:
+  - name: mind_name
+    type: string
+    required: true
+  - name: update_type
+    type: enum
+    required: true
+    options: ["new_sources", "layer_update", "framework_refinement", "contradiction_resolution"]
+  - name: rollback_enabled
+    type: boolean
+    required: true
+    default: true
+
+outputs:
+  - path: "docs/minds/{mind_name}/brownfield/update-plan.yaml"
+    description: Brownfield update plan with safety checkpoints
+  - path: "docs/minds/{mind_name}/brownfield/rollback/"
+    description: Rollback snapshots for safe recovery
+
+dependencies:
+  templates:
+    - brownfield-plan.yaml
+  checklists:
+    - brownfield-safety-checklist.md
+
+validation:
+  success-criteria:
+    - "Update applied without breaking existing functionality"
+    - "Fidelity score maintained or improved"
+    - "Rollback verified and functional"
+
+estimated-duration: "1-2 hours for incremental update"
+resource-savings: "60-75% savings vs full greenfield reprocessing"
+---
+
 # Brownfield Update Task
 
 ## Purpose
@@ -19,10 +70,6 @@ Execute incremental updates to existing MMOS mind clones without full pipeline r
 - Creating new mind from scratch (use execute-mmos-pipeline greenfield)
 - Fundamental re-architecture needed (may require full reprocessing)
 - Mind never completed full pipeline (finish greenfield first)
-
-## Inputs
-
-### Required Inputs
 - **Mind Name**: Existing mind being updated
 - **Update Type**: One of `new_sources`, `layer_refinement`, `prompt_iteration`, `regression_test`, or `full`
 - **Current Version**: Existing system prompt version (e.g., "v1.2")

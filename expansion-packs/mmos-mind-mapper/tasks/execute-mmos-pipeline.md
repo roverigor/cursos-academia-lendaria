@@ -1,3 +1,68 @@
+---
+task-id: execute-mmos-pipeline
+name: Complete MMOS Pipeline Orchestration (6 Phases)
+agent: mind-mapper
+version: 1.0.0
+purpose: Orchestrate complete end-to-end MMOS pipeline from viability to production deployment
+
+workflow-mode: interactive
+elicit: true
+elicitation-type: guided
+
+prerequisites:
+  - MMOS Mind Mapper pack installed
+  - ETL Data Collector pack installed
+  - All API keys configured
+
+inputs:
+  - name: mind_name
+    type: string
+    required: true
+  - name: workflow_mode
+    type: enum
+    required: true
+    options: ["greenfield", "brownfield"]
+    default: "greenfield"
+  - name: start_phase
+    type: enum
+    required: false
+    options: ["viability", "research", "analysis", "synthesis", "implementation", "testing"]
+    default: "viability"
+  - name: initial_context
+    type: text
+    required: true
+
+outputs:
+  - path: "docs/minds/{mind_name}/"
+    description: Complete mind directory with all 6 phase outputs
+  - path: "docs/minds/{mind_name}/system_prompts/generalista.md"
+    description: Production-ready system prompt (final deliverable)
+
+dependencies:
+  agents:
+    - mind-pm
+    - research-specialist
+    - cognitive-analyst
+    - system-prompt-architect
+  tasks:
+    - viability-assessment.md
+    - research-collection.md
+    - cognitive-analysis.md
+    - synthesis-compilation.md
+    - system-prompt-creation.md
+    - mind-validation.md
+    - brownfield-update.md
+
+validation:
+  success-criteria:
+    - "All 6 phases completed successfully"
+    - "Fidelity score >= 94%"
+    - "Production deployment approved"
+    - "All human checkpoints validated"
+
+estimated-duration: "20-30 hours total for greenfield pipeline"
+---
+
 # Execute MMOS Pipeline Task
 
 ## Purpose
@@ -16,18 +81,6 @@ Orchestrate the complete MMOS Mind Mapper pipeline from viability assessment thr
 - Only running a specific phase (use individual phase tasks instead)
 - Performing quick viability checks (use viability-assessment task)
 - Doing exploratory research without commitment (use research-collection task)
-
-## Inputs
-
-### Required Inputs
-- **Mind Name**: Subject to be mapped (e.g., "Tim Ferriss", "Alex Hormozi")
-- **Mode Selection**: Greenfield (new) or Brownfield (update existing)
-- **Initial Context**: Brief description of why this mind is being mapped
-
-### Optional Inputs (Greenfield)
-- **ICP Profile**: Target use case (if known)
-- **Priority Constraints**: Time, budget, or quality priorities
-- **Source Hints**: Known high-quality sources to prioritize
 
 ### Required Inputs (Brownfield)
 - **Existing Mind Path**: Location of current mind directory

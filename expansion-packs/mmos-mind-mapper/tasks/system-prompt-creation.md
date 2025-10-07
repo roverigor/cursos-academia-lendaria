@@ -1,3 +1,58 @@
+---
+task-id: system-prompt-creation
+name: System Prompt Compilation (Generalista & Specialists)
+agent: system-prompt-architect
+version: 1.0.0
+purpose: Compile production-ready system prompts integrating all 8 cognitive layers for 94% fidelity
+
+workflow-mode: interactive
+elicit: true
+elicitation-type: custom
+
+prerequisites:
+  - Synthesis phase complete with all artifacts validated
+  - cognitive-spec.yaml validated
+  - Frameworks and KB chunks generated
+
+inputs:
+  - name: mind_name
+    type: string
+    required: true
+  - name: mode
+    type: enum
+    required: true
+    options: ["identity_core", "meta_axioms", "instructions_core", "generalista", "specialist", "operational_manual", "testing_protocol", "full"]
+    default: "full"
+  - name: cognitive_spec_path
+    type: file_path
+    required: true
+  - name: synthesis_path
+    type: directory_path
+    required: true
+
+outputs:
+  - path: "docs/minds/{mind_name}/system_prompts/generalista.md"
+    description: Production-ready generalista system prompt
+  - path: "docs/minds/{mind_name}/system_prompts/specialists/"
+    description: Specialist variant system prompts
+
+dependencies:
+  templates:
+    - system-prompt-generalista.md
+    - system-prompt-specialist.md
+  checklists:
+    - system-prompt-validation-checklist.md
+
+validation:
+  success-criteria:
+    - "All 8 layers integrated into prompt"
+    - "Contradiction handling rules defined"
+    - "Signature phrases incorporated"
+    - "Operational manual generated"
+
+estimated-duration: "4-6 hours for full compilation"
+---
+
 # System Prompt Creation Task
 
 ## Purpose
@@ -18,16 +73,6 @@ Compile complete production-ready system prompts (generalista and specialists) b
 - Synthesis not complete (finish synthesis-compilation first)
 - Updating existing prompts (use brownfield-update)
 - Only validating prompts (use mind-validation)
-
-## Inputs
-
-### Required Inputs
-- **Mind Name**: Subject being compiled
-- **Mode**: One of `identity_core`, `meta_axioms`, `instructions_core`, `generalista`, `specialist`, `operational_manual`, `testing_protocol`, or `full`
-- **Cognitive Architecture**: Complete cognitive_architecture.yaml
-- **Synthesis Artifacts**: All outputs from synthesis-compilation
-
-### Optional Inputs
 - **Target LLM**: Claude/GPT-4/other (for prompt optimization)
 - **Context Window**: Token limit for prompt size
 - **Specialist Name**: If creating specialist variant
