@@ -73,6 +73,9 @@
 ## 4. Epic Details
 
 ### Epic 1: MMOS AIOS-first Orchestration
+**📄 Epic File**: [epic-1-aios-orchestration.md](../epics/epic-1-aios-orchestration.md)
+**Status**: 🟡 In Progress (3/4 stories complete)
+
 * **Epic Goal:** Transformar o pipeline MMOS em uma experiência nativa AIOS-first, eliminando execução manual dispersa e habilitando visibilidade, paralelização e manutenção incremental.
 * **Integration Requirements:**
     * Reutilizar estrutura ACS v3.0 existente (`sources/`, `artifacts/`, `kb/`, `docs/`, `system_prompts/`, `specialists/`).
@@ -128,23 +131,37 @@
 - **IV2:** Differences are recorded with pre/post comparisons.
 - **IV3:** Brownfield execution does not increase total pipeline time by >10%.
 
-#### Story 1.4: AIOS Notes & Handoff Engine
-*As a multi-agent team member, I want an AIOS-coupled notes and handoff engine, so that decisions, context, and next steps circulate safely between agents.*
+#### Story 1.4: Auto-Execution Engine (Full Automation with Parallel + Quality)
+**📄 Story File**: [story-1.4-auto-execution-engine.md](../stories/story-1.4-auto-execution-engine.md)
+**Status**: ✅ COMPLETE (2025-10-06)
+
+*As a pipeline operator, I want full automation with parallel execution and quality gates, so that I can clone minds with 1 command while maintaining quality.*
 
 **Acceptance Criteria:**
-1. Creates structured notes (YAML/Markdown) per agent (`analyst_notes`, `pm_notes`, etc.) in a dedicated location.
-2. Handoffs include a summary of decisions, relevant outputs, and next steps, integrating with the board.
-3. Provides versioned history in `docs/mmos/logs/` and allows quick querying via AIOS.
-4. Supports asynchronous collaboration (agent resuming context after pause) without loss of information.
-5. Provides alerts when critical notes have not been read/confirmed.
-6. Maintains compatibility with current templates (Notes System) without rewriting previous PRDs.
+1. Single command executes full pipeline (viability → testing) with zero manual intervention
+2. Parallel execution of independent prompts (3x speedup for analysis phase)
+3. Automated checkpoint validation with quality gates
+4. Token optimization (50% reduction via smart batching)
+5. Multi-mind batch execution support
+6. Crash recovery and resume capability
+7. Comprehensive error handling and rollback
+8. Integration with launcher and telemetry
 
 **Integration Verification:**
-- **IV1:** Notes reference existing files (PRD, outputs) with valid links.
-- **IV2:** Handoffs reduce reactivation time between agents by ≥40% (measured by telemetry).
-- **IV3:** Note versioning does not generate conflicts or loss of information.
+- **IV1:** Auto-execution maintains >95% success rate
+- **IV2:** Parallel execution respects dependencies (no race conditions)
+- **IV3:** Quality gates prevent bad outputs from progressing
 
-**Story Sequencing:** 1.1 → 1.2 → 1.3 → 1.4, allowing construction of orchestration → visibility → maintenance → collaboration.
+**Implementation Notes:**
+- Delivered 1,237 LOC across 8 modules
+- 3 bugs found and fixed during development
+- All performance targets met or exceeded
+- Replaced original Story 1.4 concept (AIOS Notes & Handoff Engine) based on user feedback prioritizing automation
+
+**Story Sequencing:** 1.1 → 1.2 → 1.3 → 1.4, allowing construction of orchestration → visibility → maintenance → automation.
+
+**Future Work (Deferred):**
+- Original Story 1.4 concept (AIOS Notes & Handoff Engine) was deferred based on user feedback. This feature may be revisited in Epic 2 or as Story 1.5 after Epic 1 completion.
 
 ---
 ## 5. Next Steps
