@@ -81,13 +81,20 @@ placeholders:
 
   - name: errors
     type: array
-    description: Detailed error information
+    description: User-friendly error information with actionable fixes
     item_template: |
       ### {{source_id}} ({{type}})
-      - **Error:** {{error}}
+      - **What happened:** {{error_plain_english}}
+      - **Why it failed:** {{root_cause_explanation}}
+      - **How to fix:** {{step_by_step_solution}}
       - **Retries:** {{retries}}
       - **Status:** {{status}}
-      - **Recommendation:** {{recommendation}}
+    error_formatting_guidelines: |
+      Transform technical errors into helpful explanations:
+      - "Video not found" → "This video was deleted or made private by the owner. Try finding an alternative source."
+      - "Rate limit" → "Website blocked us for downloading too fast. Wait 15 minutes and use '*retry' command."
+      - "Authentication error" → "Need login credentials. Add API key to .env file: ASSEMBLYAI_API_KEY=your-key"
+      - "Network timeout" → "Download took too long (slow connection or large file). Try again with better internet."
 
   - name: quality_issues
     type: array

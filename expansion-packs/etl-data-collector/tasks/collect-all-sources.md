@@ -23,29 +23,25 @@ inputs:
 
   - name: tiers
     type: array
-    description: Which tiers to collect (1, 2, 3)
+    description: Which tiers to collect (1=essential, 2=important, 3=supplementary)
     required: false
     default: [1, 2, 3]
-
-  - name: concurrent_per_type
-    type: number
-    description: Concurrent downloads per source type
-    required: false
-    default: 4
-    range: [1, 10]
+    user_friendly: "Which sources? All / Only essential / Essential + Important"
 
   - name: output_dir
     type: directory_path
-    description: Output directory for downloads
+    description: Where to save downloaded files
     required: false
     default: "auto-detect"
+    user_friendly: "Save location (leave blank for default)"
 
-  - name: error_strategy
+  - name: mode
     type: enum
-    description: How to handle errors
+    description: Collection mode
     required: false
-    default: "retry"
-    options: ["fail-fast", "retry", "skip"]
+    default: "standard"
+    options: ["fast", "standard", "careful"]
+    user_friendly: "Fast (parallel, skip errors) / Standard (parallel, retry errors) / Careful (sequential, validate each)"
 
 outputs:
   - path: "{output_dir}/downloads/"
@@ -242,35 +238,31 @@ Enter choice (1-3):
 ```
 ⚙️  Collection Configuration
 
-Configure your collection parameters:
+Found sources list: docs/minds/sam_altman/sources/sources_master.yaml
+Total sources: 47 (Tier 1: 15, Tier 2: 20, Tier 3: 12)
 
-1. Tier selection (which tiers to collect):
-   [ ] Tier 1 only (high priority)
-   [ ] Tiers 1-2 (high + medium)
-   [x] All tiers (1-3) - RECOMMENDED
+1. Which sources do you want to collect?
+   [ ] Only essential (Tier 1 - 15 sources)
+   [ ] Essential + Important (Tiers 1-2 - 35 sources)
+   [x] All sources (Tiers 1-3 - 47 sources) ← RECOMMENDED
 
-2. Parallelization:
-   Concurrent downloads per type: [4] (1-10)
+2. Collection mode:
+   [ ] Fast - Parallel downloads, skip errors (~20 mins)
+   [x] Standard - Parallel downloads, retry errors (~45 mins) ← RECOMMENDED
+   [ ] Careful - One at a time, validate each (~90 mins)
 
-3. Output directory:
-   [auto-detect] or custom path: ___________
+3. Save location:
+   [auto-detect: docs/minds/sam_altman/sources/downloads/]
+   Or enter custom path: ___________
 
-4. Error handling:
-   [ ] Fail fast (stop on first error)
-   [x] Retry failed (3 attempts with backoff)
-   [ ] Skip failed (continue regardless)
-
-5. Quality validation:
-   [x] Validate all downloads after collection
-   [ ] Skip validation (faster but risky)
-
-Press Enter to confirm or modify selections:
+Proceed with these settings? (yes/no/customize):
 ```
 
-**Validation:**
-- Concurrent downloads: 1-10 (default: 4)
-- Output directory: Must be writable
-- Tier selection: At least one tier selected
+**Simplified User Experience:**
+- No technical jargon (concurrent_per_type, error_strategy removed)
+- Mode replaces 3 technical parameters with user-friendly options
+- Time estimates help users choose appropriate mode
+- Default selections work for 95% of use cases
 
 ---
 
@@ -307,10 +299,27 @@ Estimated storage: 3-5 GB
 Proceed? (yes/no/edit):
 ```
 
-**If "edit":**
-- Allow user to exclude specific source types
-- Allow user to modify specific sources
-- Regenerate estimate
+**Conditional Branch: User Response**
+
+```
+IF user responds "yes":
+  → Continue to Step 4 (Launch Parallel Collection)
+
+IF user responds "no":
+  → Abort collection, display "Collection cancelled by user"
+  → Exit gracefully
+
+IF user responds "edit":
+  → Present interactive editor:
+     • Show numbered list of all sources
+     • Allow user to exclude specific sources (uncheck boxes)
+     • Allow user to exclude entire source types
+     • Recalculate time and storage estimates
+     • Return to this checkpoint with updated values
+  → Loop back to "Proceed?" prompt
+```
+
+**Implementation Note:** This checkpoint prevents accidental large downloads and gives users control before execution.
 
 ---
 

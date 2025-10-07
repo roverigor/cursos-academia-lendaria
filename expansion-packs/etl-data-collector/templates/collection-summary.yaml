@@ -78,13 +78,21 @@ placeholders:
 
   - name: errors
     type: array
-    description: List of failed sources with error details
+    description: List of failed sources with user-friendly error explanations
     item_structure:
       - source_id
       - type
-      - error
+      - error_message (user-friendly explanation, not technical stack trace)
+      - what_went_wrong (plain English description)
+      - how_to_fix (actionable steps)
       - retries
       - final_status
+    error_message_guidelines: |
+      Use plain language instead of technical jargon:
+      - "Video unavailable or deleted" instead of "HTTP 404 Not Found"
+      - "Need to login or provide API key" instead of "Authentication failed: 401 Unauthorized"
+      - "Download blocked by website" instead of "403 Forbidden - rate limit exceeded"
+      - "Invalid link" instead of "URLError: Name or service not known"
 
   - name: next_steps
     type: array
