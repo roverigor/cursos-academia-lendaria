@@ -21,11 +21,15 @@ export class ParallelCollector {
     this.configPath = configPath;
     this.downloadRules = null;
     this.collectors = {};
-    this.mindDir = options.mindDir; // Store mindDir for log path resolution
+    this.outputDir = options.outputDir; // Store outputDir for state file location
 
-    // Use logs directory for state if mindDir provided, otherwise fallback to CWD
-    const defaultStatePath = this.mindDir
-      ? path.join(getLogsDir(this.mindDir), '.etl-task-state.json')
+    // Derive state path from outputDir structure
+    // If outputDir is {something}/sources/downloads, use {something}/docs/logs
+    // Otherwise, use outputDir/../logs
+    const defaultStatePath = this.outputDir
+      ? (this.outputDir.includes('/sources/downloads')
+          ? path.join(this.outputDir, '../../docs/logs/.etl-task-state.json')
+          : path.join(path.dirname(this.outputDir), 'logs/.etl-task-state.json'))
       : path.join(process.cwd(), '.etl-task-state.json');
 
     this.options = {

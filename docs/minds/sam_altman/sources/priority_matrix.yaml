@@ -1,0 +1,317 @@
+priority_matrix:
+  clone: "Sam Altman"
+  date_created: "2025-10-11"
+  optimization_for: "Maximum fidelity for startup advisor + AI strategist (94% target)"
+
+  tier_1_critical:
+    description: "Must-have sources that capture Sam's essence across 3 eras (Founder, YC, OpenAI)"
+    time_investment: "25 hours"
+    expected_value: "75% of total value"
+
+    sources:
+      1:
+        name: "How to Be Successful"
+        type: "Blog essay"
+        hours: 0.5
+        roi_score: 10
+        reason: "Core framework for success, most influential essay, 13 principles"
+        topics_covered:
+          - "Compound yourself"
+          - "Self-belief + optimism"
+          - "Hard work + focus"
+          - "Take risks + be bold"
+        temporal_period: "YC era (2019)"
+        dna_layers: [1, 3, 4, 5, 6]
+
+      2:
+        name: "The Intelligence Age"
+        type: "Blog essay"
+        hours: 0.5
+        roi_score: 10
+        reason: "Most recent vision statement (Sept 2024), post-ChatGPT synthesis"
+        topics_covered:
+          - "AGI implications"
+          - "Economic transformation"
+          - "Infrastructure needs"
+          - "Optimistic long-term view"
+        temporal_period: "OpenAI CEO (2024)"
+        dna_layers: [1, 3, 5, 6, 8]
+
+      3:
+        name: "Moore's Law for Everything"
+        type: "Blog essay"
+        hours: 1
+        roi_score: 10
+        reason: "Economic policy vision, UBI proposal, futures thinking"
+        topics_covered:
+          - "AI-driven productivity"
+          - "Universal Basic Income"
+          - "Wealth distribution"
+          - "Long-term civilization"
+        temporal_period: "OpenAI CEO (2021)"
+        dna_layers: [3, 5, 6, 8]
+
+      4:
+        name: "Congressional Testimony (May 16, 2023)"
+        type: "Testimony transcript"
+        hours: 2
+        roi_score: 10
+        reason: "High-stakes public position, AI regulation stance, Layer 8 paradox visible"
+        topics_covered:
+          - "AI safety concerns"
+          - "Regulation proposals"
+          - "Existential risk"
+          - "Balancing innovation vs caution"
+        temporal_period: "OpenAI CEO (2023)"
+        dna_layers: [1, 2, 4, 5, 8]
+
+      5:
+        name: "Lex Fridman Podcast #367 (March 2023)"
+        type: "Long-form interview"
+        hours: 2
+        roi_score: 10
+        reason: "GPT-4 launch context, deep technical + philosophical, authentic voice"
+        topics_covered:
+          - "GPT-4 capabilities"
+          - "AI safety"
+          - "OpenAI trajectory"
+          - "AGI timeline"
+        temporal_period: "OpenAI CEO (2023)"
+        dna_layers: [1, 2, 3, 4, 6, 7, 8]
+
+      6:
+        name: "Lex Fridman Podcast #419 (March 2024)"
+        type: "Long-form interview"
+        hours: 2.5
+        roi_score: 10
+        reason: "Post-board crisis, GPT-5/Sora, Elon context, evolution visible"
+        topics_covered:
+          - "Board saga reflection"
+          - "GPT-5 development"
+          - "Sora launch"
+          - "Power dynamics"
+        temporal_period: "OpenAI CEO (2024)"
+        dna_layers: [1, 2, 4, 5, 7, 8]
+
+      7:
+        name: "Stanford CS183B (Fall 2014) - Complete Series"
+        type: "Lecture series (20 videos)"
+        hours: 16
+        roi_score: 9
+        reason: "YC President era, startup frameworks, teaching style, systematic wisdom"
+        topics_covered:
+          - "Product-market fit"
+          - "Hiring A-players"
+          - "Fundraising strategies"
+          - "Scaling operations"
+        temporal_period: "YC President (2014)"
+        dna_layers: [1, 2, 3, 4, 5]
+
+      8:
+        name: "Startup Playbook"
+        type: "Written guide"
+        hours: 1
+        roi_score: 9
+        reason: "Distilled YC wisdom, tactical frameworks, prescriptive advice"
+        topics_covered:
+          - "Idea validation"
+          - "Team building"
+          - "Product launch"
+          - "Growth tactics"
+        temporal_period: "YC President (2014-2019)"
+        dna_layers: [1, 3, 4]
+
+  tier_2_important:
+    description: "High-value sources for depth, nuance, and temporal context"
+    time_investment: "30 hours"
+    expected_value: "18% additional value"
+
+    sources:
+      9:
+        name: "The Days are Long but the Decades are Short"
+        type: "Blog essay"
+        hours: 0.5
+        roi_score: 9
+        reason: "Personal philosophy, life advice, vulnerable tone"
+
+      10:
+        name: "Idea Generation"
+        type: "Blog essay"
+        hours: 0.5
+        roi_score: 9
+        reason: "Cognitive process, creativity frameworks"
+
+      11:
+        name: "Tim Ferriss Show Appearance"
+        type: "Podcast"
+        hours: 2
+        roi_score: 8
+        reason: "Personal habits, decision-making, different audience"
+
+      12:
+        name: "All-In Podcast Appearances (multiple)"
+        type: "Podcast series"
+        hours: 6
+        roi_score: 8
+        reason: "Tech industry context, peer conversations, real-time reactions"
+
+      13:
+        name: "Y Combinator Startup School Talks (2014-2019)"
+        type: "Video talks"
+        hours: 8
+        roi_score: 8
+        reason: "Repeated patterns, founder advice, YC-specific insights"
+
+      14:
+        name: "Blog Archive (2012-2025) - Complete"
+        type: "Blog compilation"
+        hours: 10
+        roi_score: 9
+        reason: "Temporal evolution, breadth of topics, authentic voice"
+
+      15:
+        name: "Twitter/X Archive - Curated Threads"
+        type: "Social media"
+        hours: 3
+        roi_score: 7
+        reason: "Real-time thinking, quick insights, public reactions"
+
+  tier_3_comprehensive:
+    description: "Completeness, validation, and edge cases"
+    time_investment: "25 hours"
+    expected_value: "6% additional value"
+
+    categories:
+      profiles_interviews:
+        count: 10
+        hours: 10
+        roi_score: 6
+        reason: "Third-party perspectives, biographical context"
+        examples:
+          - "New Yorker profile"
+          - "TIME interviews"
+          - "TechCrunch features"
+          - "Forbes coverage"
+
+      openai_blog_posts:
+        count: 15
+        hours: 5
+        roi_score: 6
+        reason: "Company announcements, co-authored content"
+
+      yc_blog_posts:
+        count: 20
+        hours: 5
+        roi_score: 6
+        reason: "YC President era writing"
+
+      minor_podcasts:
+        count: 10
+        hours: 5
+        roi_score: 5
+        reason: "Repetition with slight variations"
+
+  processing_strategy:
+
+    week_1:
+      focus: "Core essence - Three Sams baseline"
+      sources:
+        - "How to Be Successful (Day 1)"
+        - "The Intelligence Age + Moore's Law (Day 1-2)"
+        - "Congressional Testimony (Day 2)"
+        - "Lex Fridman #367 (Day 3)"
+        - "Lex Fridman #419 (Day 4)"
+        - "CS183B Lectures 1-10 (Day 5-6)"
+        - "Startup Playbook (Day 7)"
+      deliverable: "Three Sam personas mapped, core paradoxes identified"
+
+    week_2:
+      focus: "Temporal depth and personal philosophy"
+      sources:
+        - "Days are Long essay"
+        - "Idea Generation essay"
+        - "CS183B Lectures 11-20"
+        - "Tim Ferriss appearance"
+        - "All-In Podcast selection"
+        - "Blog archive priority posts"
+      deliverable: "Communication style captured, decision frameworks extracted"
+
+    week_3:
+      focus: "Breadth and validation"
+      sources:
+        - "YC Startup School talks"
+        - "Remaining blog posts"
+        - "Twitter/X curated threads"
+        - "Third-party profiles"
+        - "OpenAI + YC blog posts"
+      deliverable: "95%+ source coverage, triangulation complete"
+
+  decision_rules:
+
+    when_to_skip_tier_3:
+      - "If Tier 1+2 achieve 95% pattern recognition in testing"
+      - "If timeline constrained to < 3 weeks"
+      - "If Layer 8 paradoxes already well-captured"
+
+    when_to_prioritize_specific_sources:
+      use_case_startup_advisor: "Focus on CS183B + Startup Playbook + YC talks"
+      use_case_ai_strategist: "Focus on Intelligence Age + Congressional + Lex interviews"
+      use_case_futurist: "Focus on Moore's Law + Intelligence Age + long-term essays"
+      use_case_investor: "Focus on YC content + startup advice + pattern recognition"
+
+  validation_checkpoints:
+
+    after_tier_1:
+      test: "Can we explain Sam's Three Eras + Layer 8 paradoxes?"
+      expected: "Yes - Founder/YC/OpenAI distinct + optimistic-cautious on AI"
+      confidence_needed: 85
+
+    after_tier_2:
+      test: "Can we replicate Sam's voice and decision-making?"
+      expected: "Yes - direct, optimistic, first-principles, long-term focused"
+      confidence_needed: 92
+
+    after_tier_3:
+      test: "Can we handle edge cases and temporal switching?"
+      expected: "Yes - context-aware across 2005-2025"
+      confidence_needed: 94
+
+  risk_mitigation:
+
+    if_source_unavailable:
+      congressional_testimony: "CRITICAL - use official transcript or video transcript"
+      lex_podcasts: "HIGH - transcripts available at lexfridman.com"
+      cs183b: "MEDIUM - videos + third-party transcripts exist"
+      blog_posts: "LOW - most are archived, use archive.org if needed"
+
+    quality_assurance:
+      temporal_tagging: "Date-stamp all sources, flag era transitions"
+      board_drama_balance: "Nov 2023 event = context, not definition"
+      ai_safety_nuance: "Layer 8 validation critical - capture both sides"
+      generic_tech_voice: "Validate against Naval/Elon - must be distinct"
+
+  expected_outcomes:
+
+    after_tier_1:
+      patterns_captured: 60
+      authenticity_score: 85
+      knowledge_coverage: 75
+      time_invested: 25
+
+    after_tier_2:
+      patterns_captured: 90
+      authenticity_score: 93
+      knowledge_coverage: 90
+      time_invested: 55
+
+    after_tier_3:
+      patterns_captured: 100
+      authenticity_score: 95
+      knowledge_coverage: 96
+      time_invested: 80
+
+  final_recommendation:
+    minimum_viable: "Tier 1 only - 25 hours (85% fidelity)"
+    recommended: "Tier 1 + 2 - 55 hours (93% fidelity)"
+    comprehensive: "All tiers - 80 hours (95%+ fidelity)"
+    current_choice: "Tier 1 + 2 (target: 94% per PRD)"

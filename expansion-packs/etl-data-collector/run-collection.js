@@ -14,19 +14,32 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function main() {
-  console.log('🚀 ETL Data Collector - Sam Altman Tier 1 Collection\n');
+  console.log('🚀 ETL Data Collector - Universal Source Collection\n');
 
-  // Use standard paths - mind directory is the root for all paths
-  const mindDir = path.join(__dirname, '../../docs/minds/sam_altman');
-  const sourcesPath = getSourcesMasterPath(mindDir);
-  const outputDir = getDownloadsDir(mindDir);
-  const configPath = path.join(__dirname, 'config/download-rules.yaml');
+  // Parse CLI arguments (AIOS-compliant: no hardcoded paths)
+  const sourcesPath = process.argv[2];
+  const outputDir = process.argv[3];
+  const configPath = process.argv[4] || path.join(__dirname, 'config/download-rules.yaml');
+
+  // Validate required arguments
+  if (!sourcesPath || !outputDir) {
+    console.error('❌ Usage: node run-collection.js <sources-path> <output-dir> [config-path]');
+    console.error('\nExample:');
+    console.error('  node run-collection.js \\');
+    console.error('    /path/to/sources.yaml \\');
+    console.error('    /path/to/output \\');
+    console.error('    ./config/download-rules.yaml');
+    console.error('\nAIOS Pattern:');
+    console.error('  Invoke from MMOS via task with explicit parameters');
+    process.exit(1);
+  }
 
   // Check if sources file exists
   try {
     await fs.access(sourcesPath);
   } catch (error) {
     console.error(`❌ Sources file not found: ${sourcesPath}`);
+    console.error('   Please provide a valid path to sources.yaml');
     process.exit(1);
   }
 
@@ -44,7 +57,7 @@ async function main() {
   console.log(`   Config:  ${configPath}\n`);
 
   const collector = new ParallelCollector(configPath, {
-    mindDir,
+    outputDir,  // Pass outputDir instead of mindDir
     maxConcurrent: 3,
     allowResume: true
   });
@@ -63,8 +76,17 @@ async function main() {
     console.log(`   Skipped:    ${report.totals.skipped}`);
     console.log(`   Duration:   ${report.duration_human}\n`);
 
-    // Save report to docs/logs/ with timestamp (NOT in downloads/)
-    const reportPath = getLogPath(mindDir, 'collection-report', 'json');
+    // Save report - derive log path from output directory structure
+    // If outputDir is {something}/sources/downloads, logs should be at {something}/docs/logs
+    // Otherwise, save in outputDir parent with 'logs' subdirectory
+    const logsDir = outputDir.includes('/sources/downloads')
+      ? path.join(outputDir, '../../docs/logs')
+      : path.join(path.dirname(outputDir), 'logs');
+
+    await fs.mkdir(logsDir, { recursive: true });
+
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+    const reportPath = path.join(logsDir, `${timestamp}-collection-report.json`);
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
     console.log(`💾 Report saved: ${reportPath}\n`);
 
