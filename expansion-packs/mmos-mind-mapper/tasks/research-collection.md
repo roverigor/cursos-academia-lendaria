@@ -63,8 +63,12 @@ outputs:
     description: Raw downloaded data organized by type (YouTube, blogs, PDFs, etc.)
     format: "directory"
 
-  - path: "docs/minds/{mind_name}/sources/COLLECTION_SUMMARY.yaml"
-    description: Collection statistics and quality report
+  - path: "docs/minds/{mind_name}/docs/logs/{timestamp}-collection-report.yaml"
+    description: Collection statistics and quality report (timestamped, in logs/)
+    format: "yaml"
+
+  - path: "docs/minds/{mind_name}/docs/logs/{timestamp}-discovery-report.yaml"
+    description: Source discovery report (timestamped, in logs/)
     format: "yaml"
 
 dependencies:
@@ -127,6 +131,72 @@ Execute systematic source discovery and parallel collection workflow for MMOS Mi
 - Updating existing mind (use brownfield-update instead)
 - Sources already collected (proceed to cognitive-analysis)
 
+## File Organization Standard
+
+**CRITICAL:** The MMOS system enforces strict file organization for logs and reports:
+
+### Directory Structure Rules
+
+```
+{mind}/
+├── sources/
+│   ├── sources_master.yaml        ← ONLY metadata file here
+│   ├── blogs/{id}.md              ← Collected blog content
+│   ├── downloads/{type}/{id}/     ← Collected media/transcripts
+│   └── manual/                    ← Templates for manual collection
+│
+└── docs/
+    └── logs/                      ← ALL logs, reports, configs here
+        ├── {timestamp}-collection-report.yaml
+        ├── {timestamp}-import-log.yaml
+        ├── VERIFIED_TRANSCRIPT_SOURCES.md
+        └── QUICK_LINKS.md
+```
+
+### What Goes Where
+
+**✅ sources/ directory:**
+- `sources_master.yaml` - Master source inventory (ONLY metadata file)
+- `blogs/{id}.md` - Collected blog post content
+- `downloads/{type}/{id}/` - Downloaded transcripts, media, PDFs
+- `manual/` - Templates for manual collection workflow
+
+**✅ docs/logs/ directory:**
+- Collection reports (YAML, JSON, MD)
+- Import logs and status files
+- Search guides and quick links
+- Configuration files (tier batches, priorities)
+- ETL task state files
+- Any temporary or diagnostic files
+
+**❌ NEVER put in sources/:**
+- Collection reports
+- Import logs
+- Search guides
+- Configuration files
+- Priority matrices
+- Task state files
+
+### Validation
+
+Use the validation script to check compliance:
+
+```bash
+cd expansion-packs/etl-data-collector
+node validate-log-locations.js ../../docs/minds/{mind_name}
+```
+
+The script will report violations and suggest fixes.
+
+### Why This Matters
+
+1. **Clean structure**: Makes it easy to find actual content vs operational files
+2. **Git management**: Logs can be gitignored without losing content
+3. **Automation**: ETL scripts know exactly where to write logs
+4. **Consistency**: All minds follow the same standard
+
+---
+
 ## Key Activities & Instructions
 
 ### Mode: Discovery
@@ -152,6 +222,12 @@ source_types:
       - "{mind_name} articles"
       - "{mind_name} essays"
     platforms: [Personal website, Medium, Substack]
+    collection_rules:
+      - "If site highlights featured/top posts, collect those first"
+      - "If no highlights, gather all posts from the last 3 years"
+      - "If total post count ≤ 50, collect the entire archive"
+      - "Persist each article as sources/blogs/{slug}.md and set id to the slug"
+      - "Capture metadata in frontmatter (published_at, tags, canonical_url)"
 
   interviews:
     priority: 2
@@ -263,7 +339,9 @@ source_rankings:
 
 #### Step 5: Generate Discovery Report
 
-**Output:** `minds/{mind}/sources/discovery_report.yaml`
+**Output:** `minds/{mind}/docs/logs/{timestamp}-discovery-report.yaml`
+
+(Note: Discovery reports go to docs/logs/, NOT sources/)
 
 ```yaml
 discovery_report:
@@ -617,12 +695,13 @@ analysis_readiness_checklist:
 ## Outputs
 
 ### Discovery Mode Output
-- `minds/{mind}/sources/discovery_report.yaml`
+- `minds/{mind}/docs/logs/{timestamp}-discovery-report.yaml`
 
 ### Collection Mode Outputs
 - `minds/{mind}/sources/{type}/*` - All collected source files
-- `minds/{mind}/metadata/temporal_context.yaml`
-- `minds/{mind}/sources/priority_matrix.yaml`
+- `minds/{mind}/docs/logs/{timestamp}-temporal-context.yaml`
+- `minds/{mind}/docs/logs/{timestamp}-priority-matrix.yaml`
+- `minds/{mind}/docs/logs/{timestamp}-collection-report.yaml`
 
 ### Master Compilation Mode Outputs
 - `minds/{mind}/sources/sources_master.yaml`

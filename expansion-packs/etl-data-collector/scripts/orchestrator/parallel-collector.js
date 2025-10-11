@@ -6,6 +6,7 @@
 import yaml from 'js-yaml';
 import fs from 'fs/promises';
 import path from 'path';
+import { getLogsDir } from '../utils/path-helpers.js';
 import { TaskManager } from './task-manager.js';
 import { ProgressTracker } from './progress-tracker.js';
 import { YouTubeCollector } from '../collectors/youtube-collector.js';
@@ -20,9 +21,16 @@ export class ParallelCollector {
     this.configPath = configPath;
     this.downloadRules = null;
     this.collectors = {};
+    this.mindDir = options.mindDir; // Store mindDir for log path resolution
+
+    // Use logs directory for state if mindDir provided, otherwise fallback to CWD
+    const defaultStatePath = this.mindDir
+      ? path.join(getLogsDir(this.mindDir), '.etl-task-state.json')
+      : path.join(process.cwd(), '.etl-task-state.json');
+
     this.options = {
       maxConcurrent: options.maxConcurrent || 5,
-      statePath: options.statePath || path.join(process.cwd(), '.etl-task-state.json'),
+      statePath: options.statePath || defaultStatePath,
       progressRefresh: options.progressRefresh || 2000,
       allowResume: options.allowResume !== false
     };

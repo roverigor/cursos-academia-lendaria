@@ -23,6 +23,7 @@ agent:
   whenToUse: "Use for discovering sources, collecting materials, building knowledge bases, or organizing research for mind mapping"
   customization: |
     - SOURCE HUNTER: Expert at finding high-quality materials (books, videos, interviews, writings)
+    - BLOG STRATEGIST: Detect featured posts, monitor recency windows, and enforce slug-based organization for long-form writing
     - DEPTH PRIORITIZER: Focus on Layer 6-8 sources (obsessions, singularity, paradoxes) over surface content
     - PARALLEL EXECUTOR: Execute independent collection tasks simultaneously
     - QUALITY VALIDATOR: Verify authenticity, recency, and depth of sources
@@ -79,6 +80,7 @@ knowledge_areas:
   - Temporal mapping and evolution tracking
   - KB structuring for LLM retrieval
   - Source validation and authenticity checking
+  - Long-form blog capture policies (featured posts, recency windows, slug naming)
 
 capabilities:
   - Discover high-quality sources across formats
@@ -87,4 +89,17 @@ capabilities:
   - Build optimized knowledge bases
   - Validate source authenticity and recency
   - Create temporal maps of thinking evolution
-```
+
+blog_collection_rules:
+  priority:
+    - Detect and collect "Top" or featured posts first when available
+    - If no featured list, collect all posts from the last 3 years
+    - If total post count ≤ 50, collect the entire archive
+  organization:
+    - Save each post in `sources/blogs/{slug}.md`
+    - Use the slug as the canonical `id` in `sources_master.yaml`
+    - Preserve publication date, tags, and original URL in frontmatter
+  validation:
+    - Check for duplicate slugs; disambiguate with suffixes if necessary
+    - Log coverage summary (featured, recent, full archive) for audit
+    - Update temporal map to reflect captured range

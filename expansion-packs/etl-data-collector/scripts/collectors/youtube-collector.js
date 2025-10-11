@@ -7,10 +7,14 @@ import fs from 'fs/promises';
 import { createWriteStream } from 'fs';
 import path from 'path';
 import { EventEmitter } from 'events';
+import { exec } from 'child_process';
+import { promisify } from 'util';
 import ytdl from 'ytdl-core';
 import sanitizeFilename from 'sanitize-filename';
 import { AssemblyAIMCP } from '../mcps/assemblyai-mcp.js';
 import { getMCPClient } from '../mcps/mcp-client.js';
+
+const execPromise = promisify(exec);
 import {
   identifyTargetSpeaker,
   filterByTargetSpeaker,
@@ -154,53 +158,51 @@ export class YouTubeCollector extends EventEmitter {
   async _downloadAudio({ url, videoId, sourceDir, metadata }) {
     const audioRules = this.downloadRules.youtube?.audio || {};
     const format = audioRules.format || 'mp3';
-    const qualityPreset = audioRules.quality || 'highestaudio';
 
     const audioFilename = `audio.${format}`;
-    const tempFilename = sanitizeFilename(`${videoId}.${format}`);
-    const tempPath = path.join(sourceDir, `${tempFilename}.tmp`);
     const finalPath = path.join(sourceDir, audioFilename);
 
-    const ytdlOptions = {
-      filter: 'audioonly',
-      quality: qualityPreset,
-      highWaterMark: 1 << 25  // 32 MB buffer
-    };
+    // Use yt-dlp CLI (more robust than ytdl-core)
+    const ytdlpCmd = [
+      'yt-dlp',
+      '--extract-audio',
+      `--audio-format ${format}`,
+      '--audio-quality 0',  // Best quality
+      '-o', `"${finalPath}"`,
+      '--no-playlist',
+      '--quiet',
+      '--progress',
+      `"${url}"`
+    ].join(' ');
 
-    const stream = ytdl(url, ytdlOptions);
-
-    stream.on('progress', (chunkLength, downloaded, total) => {
-      const progress = total ? downloaded / total : 0;
-      this.emit('download_progress', {
-        videoId,
-        downloaded,
-        total,
-        progress,
-        audio: true
-      });
-    });
-
-    const streamPromise = new Promise((resolve, reject) => {
-      const fileStream = createWriteStream(tempPath);
-
-      stream
-        .on('error', reject)
-        .pipe(fileStream)
-        .on('error', reject)
-        .on('finish', resolve);
+    this.emit('download_progress', {
+      videoId,
+      downloaded: 0,
+      total: 0,
+      progress: 0,
+      audio: true,
+      message: 'Starting yt-dlp download...'
     });
 
     try {
-      await streamPromise;
+      const { stdout, stderr } = await execPromise(ytdlpCmd, {
+        maxBuffer: 50 * 1024 * 1024  // 50MB buffer for progress output
+      });
+
+      // Check if file exists
+      try {
+        await fs.access(finalPath);
+      } catch (accessError) {
+        throw new Error(`Download completed but file not found at ${finalPath}`);
+      }
+
+      this.emit('download_complete', { videoId, audioPath: finalPath });
+      return finalPath;
+
     } catch (error) {
-      await this._safeDelete(tempPath);
-      throw new Error(`Failed to download audio: ${error.message}`);
+      await this._safeDelete(finalPath);
+      throw new Error(`Failed to download audio via yt-dlp: ${error.message}`);
     }
-
-    await fs.rename(tempPath, finalPath);
-    this.emit('download_complete', { videoId, audioPath: finalPath });
-
-    return finalPath;
   }
 
   async _transcribe({ audioPath, metadata, source, videoId }) {
