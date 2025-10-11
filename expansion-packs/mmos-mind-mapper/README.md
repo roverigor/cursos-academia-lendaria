@@ -44,8 +44,8 @@ Use **mmos-mind-mapper** when you want to:
   - Commands: `*compile-generalista`, `*create-specialist`, `*test-fidelity`
 
 - **`mind-pm`** - Pipeline Project Manager
-  - Orchestrates pipeline, manages checkpoints, handles brownfield updates
-  - Commands: `*plan-pipeline`, `*brownfield-update`, `*validate-quality`
+  - Orchestrates pipeline, manages checkpoints, handles brownfield updates and reexecutions
+  - Commands: `*status`, `*report`, `*risks`, `*reexecute`
 
 ### Tasks
 
@@ -57,6 +57,7 @@ Use **mmos-mind-mapper** when you want to:
 - **`system-prompt-creation.md`** - Generalista & specialist compiler
 - **`mind-validation.md`** - Fidelity testing & quality assurance
 - **`brownfield-update.md`** - Incremental updates without full reprocessing
+- **`reexecute-mind.md`** - Backup via git and restart mapping from scratch
 
 ### Templates
 
@@ -152,7 +153,24 @@ node tools/install-expansion-pack.js mmos-mind-mapper
 # - Provide rollback if needed
 ```
 
-### Example 4: Create Specialist Clone
+### Example 4: Reexecute Mind from Scratch
+
+```bash
+# Activate pipeline PM
+@mind-pm
+
+# Backup and restart mapping
+*reexecute nassim_taleb
+
+# System will:
+# - Create git commit with complete backup
+# - Clean all artifacts and outputs
+# - Optionally preserve sources
+# - Automatically launch fresh pipeline
+# - Rollback available via git
+```
+
+### Example 5: Create Specialist Clone
 
 ```bash
 # Activate system prompt architect
@@ -190,7 +208,7 @@ expansion-packs/mmos-mind-mapper/
 ├── data/                           # Knowledge base
 │   └── mmos-kb.md
 ├── README.md                       # This file
-├── tasks/                          # 8 core workflows
+├── tasks/                          # 9 core workflows
 │   ├── execute-mmos-pipeline.md
 │   ├── viability-assessment.md
 │   ├── research-collection.md
@@ -198,7 +216,8 @@ expansion-packs/mmos-mind-mapper/
 │   ├── synthesis-compilation.md
 │   ├── system-prompt-creation.md
 │   ├── mind-validation.md
-│   └── brownfield-update.md
+│   ├── brownfield-update.md
+│   └── reexecute-mind.md
 └── templates/                      # 10 output templates
     ├── viability-output.yaml
     ├── prd-template.md

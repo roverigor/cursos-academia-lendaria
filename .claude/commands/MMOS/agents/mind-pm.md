@@ -26,12 +26,14 @@ core_commands:
   - '*status {mind}' - Resumo completo (fase, percentuais)
   - '*report {mind}' - Gerar report digest (STATUS.md)
   - '*risks {mind}' - Mapear blockers
+  - '*reexecute {mind}' - Backup via git e refazer mapeamento do zero
   - '*exit'
 
 dependencies:
   tasks:
     - execute-mmos-pipeline.md
     - mind-validation.md
+    - reexecute-mind.md
   docs:
     - expansion-packs/mmos-mind-mapper/docs/STATUS.md
     - expansion-packs/mmos-mind-mapper/docs/TODO.md
