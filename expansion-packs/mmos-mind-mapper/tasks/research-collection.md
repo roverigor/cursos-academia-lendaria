@@ -59,8 +59,8 @@ outputs:
     description: Master inventory of all discovered and collected sources
     format: "yaml"
 
-  - path: "docs/minds/{mind_name}/sources/downloads/"
-    description: Raw downloaded data organized by type (YouTube, blogs, PDFs, etc.)
+  - path: "docs/minds/{mind_name}/sources/{type}/"
+    description: Raw downloaded data organized by type (blogs/, youtube/, pdf/, etc.)
     format: "directory"
 
   - path: "docs/minds/{mind_name}/docs/logs/{timestamp}-collection-report.yaml"
@@ -141,8 +141,9 @@ Execute systematic source discovery and parallel collection workflow for MMOS Mi
 {mind}/
 ├── sources/
 │   ├── sources_master.yaml        ← ONLY metadata file here
-│   ├── blogs/{id}.md              ← Collected blog content
-│   ├── downloads/{type}/{id}/     ← Collected media/transcripts
+│   ├── blogs/{slug}.md            ← Collected blog content (semantic slugs)
+│   ├── youtube/{slug}/            ← YouTube transcripts (semantic slugs)
+│   ├── pdf/{slug}/                ← PDF extractions (semantic slugs)
 │   └── manual/                    ← Templates for manual collection
 │
 └── docs/
@@ -157,9 +158,15 @@ Execute systematic source discovery and parallel collection workflow for MMOS Mi
 
 **✅ sources/ directory:**
 - `sources_master.yaml` - Master source inventory (ONLY metadata file)
-- `blogs/{id}.md` - Collected blog post content
-- `downloads/{type}/{id}/` - Downloaded transcripts, media, PDFs
+- `blogs/{slug}.md` - Collected blog post content (semantic slugs)
+- `youtube/{slug}/` - YouTube transcripts and metadata (semantic slugs)
+- `pdf/{slug}/` - PDF extractions: text.md, text.txt, metadata.json (semantic slugs)
 - `manual/` - Templates for manual collection workflow
+
+**Semantic Slug Examples:**
+- Blog: `how-to-be-successful.md` (not `T1-001.md`)
+- YouTube: `lex-fridman-367-gpt4-future-of-ai/` (not `T1-005/`)
+- PDF: `congressional-testimony-2023-05-16/` (not `T1-004/`)
 
 **✅ docs/logs/ directory:**
 - Collection reports (YAML, JSON, MD)
@@ -407,15 +414,18 @@ minds/{mind}/sources/
 - O MMOS delega a coleta paralela para o pack `etl-data-collector`.
 - Arquivo de integração: `expansion-packs/etl-data-collector/config/integration-mm.yaml`.
 - Execute via `ParallelCollector` para aproveitar checkpoint/resume, métricas e relatórios.
-- Comando base:
+- Comando base (ETL adiciona subdiretórios automaticamente: blogs/, youtube/, pdf/):
   ```bash
-  node expansion-packs/etl-data-collector/scripts/orchestrator/parallel-collector.js \
-    --config expansion-packs/etl-data-collector/config/integration-mm.yaml \
-    --sources minds/{mind}/sources/sources.yaml \
-    --output minds/{mind}/sources
+  cd expansion-packs/etl-data-collector
+  node run-collection.js \
+    ../../docs/minds/{mind}/sources/tier1_batch.yaml \
+    ../../docs/minds/{mind}/sources \
+    ./config/download-rules.yaml
   ```
+  **IMPORTANTE:** O outputDir deve ser `sources/`, NÃO `sources/downloads/`
+  Os collectors adicionam subdirectórios automaticamente (blogs/, youtube/, pdf/)
 - Certifique-se de exportar as variáveis sensíveis (AssemblyAI, Twitter, Reddit).
-- Após a execução, `ParallelCollector` gera `etl-report.json` com métricas e `downloads/` contendo artefatos.
+- Após a execução, gera relatório em `docs/logs/{timestamp}-collection-report.json`
 
 **Execute collection em lotes com paralelização:**
 

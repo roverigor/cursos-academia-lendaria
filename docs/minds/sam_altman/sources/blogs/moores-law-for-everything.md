@@ -4,7 +4,7 @@ url: https://moores.samaltman.com/
 author: by Sam Altman · March 16, 2021
 platform: generic
 source_type: blog
-extracted: 2025-10-11T22:31:48.826Z
+extracted: 2025-10-11T23:34:28.720Z
 extraction_method: generic
 ---
 

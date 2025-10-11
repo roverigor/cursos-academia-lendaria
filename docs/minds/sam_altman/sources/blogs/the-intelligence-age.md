@@ -3,7 +3,7 @@ title: "The Intelligence Age"
 url: https://ia.samaltman.com/
 platform: generic
 source_type: blog
-extracted: 2025-10-11T22:31:47.743Z
+extracted: 2025-10-11T23:34:27.452Z
 extraction_method: generic
 ---
 

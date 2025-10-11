@@ -3,7 +3,7 @@ title: "Idea Generation"
 url: https://blog.samaltman.com/idea-generation
 platform: medium
 source_type: blog
-extracted: 2025-10-11T22:31:54.364Z
+extracted: 2025-10-11T23:03:42.641Z
 extraction_method: medium
 ---
 

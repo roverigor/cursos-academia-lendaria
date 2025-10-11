@@ -33,6 +33,7 @@ sources:
     title: "Congressional Testimony - May 16, 2023"
     type: "pdf"
     url: "https://www.judiciary.senate.gov/imo/media/doc/2023-05-16%20-%20Bio%20&%20Testimony%20-%20Altman.pdf"
+    slug: "congressional-testimony-2023-05-16"
     tier: 1
     priority: CRITICAL
     estimated_pages: 8
@@ -43,6 +44,7 @@ sources:
     type: "youtube"
     url: "https://www.youtube.com/watch?v=L_Guz73e6fw"
     video_id: "L_Guz73e6fw"
+    slug: "lex-fridman-367-gpt4-future-of-ai"
     tier: 1
     priority: CRITICAL
     duration_minutes: 120
@@ -53,6 +55,7 @@ sources:
     type: "youtube"
     url: "https://www.youtube.com/watch?v=jvqFAi7vkBc"
     video_id: "jvqFAi7vkBc"
+    slug: "lex-fridman-419-gpt5-board-saga-agi"
     tier: 1
     priority: CRITICAL
     duration_minutes: 150

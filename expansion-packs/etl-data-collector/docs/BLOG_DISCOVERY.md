@@ -1,5 +1,9 @@
 # Blog Discovery - Smart Post Collection
 
+> ⚠️ **DEPRECATED WORKFLOW** - Este documento descreve o workflow antigo (2 passos separados).
+> **Novo workflow recomendado:** Use `bin/collect-blog.js` que faz discovery + collection em um único comando.
+> Veja: [scripts/legacy/README.md](../scripts/legacy/README.md)
+
 Sistema inteligente para descobrir e selecionar posts de blogs usando regras automáticas.
 
 ## 🎯 Regras Inteligentes
@@ -32,16 +36,25 @@ Se o blog tiver menos de 50 posts no total, captura 100%.
 
 ## 🚀 Uso
 
-### CLI Standalone
+### ✅ Novo Workflow (Recomendado)
 
 ```bash
 cd expansion-packs/etl-data-collector
 
-# Descobrir posts de um blog
-node discover-blog-posts.js <blog-url> [output-file]
+# UM COMANDO - Discovery + Collection + Validation
+node bin/collect-blog.js https://blog.samaltman.com ./output
+```
+
+### ⚠️ Workflow Antigo (Deprecated)
+
+```bash
+cd expansion-packs/etl-data-collector
+
+# Descobrir posts de um blog (DEPRECATED - use bin/collect-blog.js)
+node scripts/legacy/discover-blog-posts.js <blog-url> [output-file]
 
 # Exemplo: Sam Altman
-node discover-blog-posts.js https://blog.samaltman.com sam-blog-sources.yaml
+node scripts/legacy/discover-blog-posts.js https://blog.samaltman.com sam-blog-sources.yaml
 ```
 
 ### Output
@@ -144,7 +157,11 @@ Sistema ignora automaticamente:
 ### Exemplo 1: Blog Grande (> 50 posts) com Featured
 
 ```bash
-node discover-blog-posts.js https://techcrunch.com/blog techcrunch.yaml
+# Novo (recomendado):
+node bin/collect-blog.js https://techcrunch.com/blog ./output
+
+# Antigo (deprecated):
+node scripts/legacy/discover-blog-posts.js https://techcrunch.com/blog techcrunch.yaml
 ```
 
 **Output:**
@@ -157,7 +174,11 @@ node discover-blog-posts.js https://techcrunch.com/blog techcrunch.yaml
 ### Exemplo 2: Blog Médio (> 50 posts) sem Featured
 
 ```bash
-node discover-blog-posts.js https://stripe.com/blog stripe.yaml
+# Novo (recomendado):
+node bin/collect-blog.js https://stripe.com/blog ./output
+
+# Antigo (deprecated):
+node scripts/legacy/discover-blog-posts.js https://stripe.com/blog stripe.yaml
 ```
 
 **Output:**
@@ -170,7 +191,11 @@ node discover-blog-posts.js https://stripe.com/blog stripe.yaml
 ### Exemplo 3: Blog Pequeno (< 50 posts)
 
 ```bash
-node discover-blog-posts.js https://blog.samaltman.com sam.yaml
+# Novo (recomendado):
+node bin/collect-blog.js https://blog.samaltman.com ./output
+
+# Antigo (deprecated):
+node scripts/legacy/discover-blog-posts.js https://blog.samaltman.com sam.yaml
 ```
 
 **Output:**

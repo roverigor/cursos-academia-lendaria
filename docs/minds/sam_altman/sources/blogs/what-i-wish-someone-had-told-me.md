@@ -3,7 +3,7 @@ title: "What I Wish Someone Had Told Me"
 url: https://blog.samaltman.com/what-i-wish-someone-had-told-me
 platform: medium
 source_type: blog
-extracted: 2025-10-11T22:31:54.511Z
+extracted: 2025-10-11T23:03:24.447Z
 extraction_method: medium
 ---
 
