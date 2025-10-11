@@ -45,7 +45,7 @@ Use **mmos-mind-mapper** when you want to:
 
 - **`mind-pm`** - Pipeline Project Manager
   - Orchestrates pipeline, manages checkpoints, handles brownfield updates and reexecutions
-  - Commands: `*status`, `*report`, `*risks`, `*reexecute`
+  - Commands: `*status`, `*report`, `*risks`, `*reexecute`, `*reexecute-phase`
 
 ### Tasks
 
@@ -58,6 +58,7 @@ Use **mmos-mind-mapper** when you want to:
 - **`mind-validation.md`** - Fidelity testing & quality assurance
 - **`brownfield-update.md`** - Incremental updates without full reprocessing
 - **`reexecute-mind.md`** - Backup via git and restart mapping from scratch
+- **`reexecute-phase.md`** - Backup and reexecute specific phase only
 
 ### Templates
 
@@ -170,7 +171,24 @@ node tools/install-expansion-pack.js mmos-mind-mapper
 # - Rollback available via git
 ```
 
-### Example 5: Create Specialist Clone
+### Example 5: Reexecute Specific Phase
+
+```bash
+# Activate pipeline PM
+@mind-pm
+
+# Redo just the research phase
+*reexecute-phase nassim_taleb research
+
+# System will:
+# - Create git backup of research outputs
+# - Delete only research artifacts
+# - Warn about downstream phase impacts
+# - Automatically relaunch research-collection task
+# - Rollback available via git
+```
+
+### Example 6: Create Specialist Clone
 
 ```bash
 # Activate system prompt architect
@@ -208,7 +226,7 @@ expansion-packs/mmos-mind-mapper/
 ├── data/                           # Knowledge base
 │   └── mmos-kb.md
 ├── README.md                       # This file
-├── tasks/                          # 9 core workflows
+├── tasks/                          # 10 core workflows
 │   ├── execute-mmos-pipeline.md
 │   ├── viability-assessment.md
 │   ├── research-collection.md
@@ -217,7 +235,8 @@ expansion-packs/mmos-mind-mapper/
 │   ├── system-prompt-creation.md
 │   ├── mind-validation.md
 │   ├── brownfield-update.md
-│   └── reexecute-mind.md
+│   ├── reexecute-mind.md
+│   └── reexecute-phase.md
 └── templates/                      # 10 output templates
     ├── viability-output.yaml
     ├── prd-template.md
