@@ -33,6 +33,6 @@ dependencies:
     - execute-mmos-pipeline.md
     - mind-validation.md
   docs:
-    - expansion-packs/mmos-mind-mapper/STATUS.md
-    - expansion-packs/mmos-mind-mapper/TODO.md
+    - expansion-packs/mmos-mind-mapper/docs/STATUS.md
+    - expansion-packs/mmos-mind-mapper/docs/TODO.md
 ```
