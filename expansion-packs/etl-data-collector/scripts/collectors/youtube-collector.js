@@ -313,7 +313,6 @@ export class YouTubeCollector extends EventEmitter {
   }
 
   async _saveArtifacts({ source, sourceDir, metadata, transcript, processed, quality, audioPath }) {
-    const metadataPath = path.join(sourceDir, 'metadata.json');
     const transcriptPath = path.join(sourceDir, 'transcript.json');
 
     const artifact = {
@@ -326,7 +325,7 @@ export class YouTubeCollector extends EventEmitter {
       generated_at: new Date().toISOString()
     };
 
-    await fs.writeFile(metadataPath, JSON.stringify(metadata, null, 2), 'utf-8');
+    // Save full transcript artifact (metadata already in transcript.md YAML front matter)
     await fs.writeFile(transcriptPath, JSON.stringify(artifact, null, 2), 'utf-8');
   }
 

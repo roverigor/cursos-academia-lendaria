@@ -52,14 +52,12 @@ export class SocialCollector extends EventEmitter {
       const markdownPath = path.join(sourceDir, 'content.md');
       await fs.writeFile(markdownPath, markdown, 'utf-8');
 
-      const metadataPath = path.join(sourceDir, 'metadata.json');
-      await fs.writeFile(metadataPath, JSON.stringify(content.metadata, null, 2));
+      // Metadata already in YAML front matter of content.md
 
       const result = {
         source_id: normalized.id,
         platform: normalized.platform,
         markdown_path: markdownPath,
-        metadata_path: metadataPath,
         stats: content.stats
       };
 

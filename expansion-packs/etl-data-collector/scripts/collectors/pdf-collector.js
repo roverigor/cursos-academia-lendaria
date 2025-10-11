@@ -289,15 +289,9 @@ export class PDFCollector extends EventEmitter {
       }
     }
 
-    const metadataPath = path.join(sourceDir, 'metadata.json');
-    await fsp.writeFile(metadataPath, JSON.stringify({
-      ...metadata,
-      ocr_performed: ocrPerformed,
-      quality,
-      chapters: chapters.map((c, i) => ({ title: c.title, index: i + 1, length: c.content.length }))
-    }, null, 2));
+    // Metadata already in YAML front matter of text.md
 
-    return { markdownPath, rawTextPath, chapterPaths, metadataPath };
+    return { markdownPath, rawTextPath, chapterPaths };
   }
 
   async _cleanupTemps(tempArtifacts, localPath) {

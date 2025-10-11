@@ -87,14 +87,13 @@ export class WebCollector {
       // Convert to markdown
       const markdown = extractor.toMarkdown(extracted);
 
-      // Save
-      const outputPath = path.join(outputDir, 'blogs', `${source.id}.md`);
+      // Generate slug from title (or use source.slug if provided)
+      const slug = source.slug || this._slugify(extracted.metadata.title || source.title || source.id);
+
+      // Save with slug filename (metadata already in YAML front matter)
+      const outputPath = path.join(outputDir, 'blogs', `${slug}.md`);
       await fs.mkdir(path.dirname(outputPath), { recursive: true });
       await fs.writeFile(outputPath, markdown);
-
-      // Save metadata separately
-      const metadataPath = path.join(outputDir, 'blogs', `${source.id}.metadata.json`);
-      await fs.writeFile(metadataPath, JSON.stringify(extracted.metadata, null, 2));
 
       this.stats.successful++;
 
@@ -301,6 +300,19 @@ export class WebCollector {
   clearCaches() {
     this.robotsCache.clear();
     this.lastRequestTime.clear();
+  }
+
+  /**
+   * Convert title to URL-friendly slug
+   */
+  _slugify(text) {
+    return text
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')  // Remove special chars
+      .replace(/[\s_-]+/g, '-')   // Replace spaces/underscores with single hyphen
+      .replace(/^-+|-+$/g, '')    // Remove leading/trailing hyphens
+      .substring(0, 100);          // Limit length
   }
 }
 
