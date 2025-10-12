@@ -1,0 +1,22 @@
+2025-10-12 18:22:26 [extract_metadata] INFO: 
+2025-10-12 18:22:26 [extract_metadata] INFO: ============================================================
+2025-10-12 18:22:26 [extract_metadata] INFO:   Extracting Metadata - sam_altman
+2025-10-12 18:22:26 [extract_metadata] INFO: ============================================================
+2025-10-12 18:22:26 [extract_metadata] INFO: Processing mind: sam_altman
+2025-10-12 18:22:26 [extract_metadata] WARNING: ⚠   Could not extract display_name from README, using: Sam Altman
+2025-10-12 18:22:26 [extract_metadata] INFO: ✓ Created metadata.yaml: docs/minds/sam_altman/metadata.yaml
+2025-10-12 18:22:26 [extract_metadata] INFO:   ID: sam_altman
+2025-10-12 18:22:26 [extract_metadata] INFO:   Display Name: Sam Altman
+2025-10-12 18:22:26 [extract_metadata] INFO:   Status: completed
+2025-10-12 18:22:26 [extract_metadata] INFO:   Version: v1.0.0
+2025-10-12 18:22:26 [extract_metadata] WARNING: ⚠   ⚠ Manual review needed for: apex_score, icp_match
+2025-10-12 18:22:26 [extract_metadata] INFO: 
+2025-10-12 18:22:26 [extract_metadata] INFO: ============================================================
+2025-10-12 18:22:26 [extract_metadata] INFO:   Migration Summary - extract_metadata
+2025-10-12 18:22:26 [extract_metadata] INFO: ============================================================
+2025-10-12 18:22:26 [extract_metadata] INFO:   Success: 1
+2025-10-12 18:22:26 [extract_metadata] INFO:   Skipped: 0
+2025-10-12 18:22:26 [extract_metadata] INFO:   Warnings: 2
+2025-10-12 18:22:26 [extract_metadata] INFO:   Failed: 0
+2025-10-12 18:22:26 [extract_metadata] INFO: ============================================================
+2025-10-12 18:22:26 [extract_metadata] INFO: 

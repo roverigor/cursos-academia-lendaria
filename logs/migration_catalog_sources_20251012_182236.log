@@ -1,0 +1,63 @@
+2025-10-12 18:22:36 [catalog_sources] INFO: 
+2025-10-12 18:22:36 [catalog_sources] INFO: ============================================================
+2025-10-12 18:22:36 [catalog_sources] INFO:   Cataloging Sources - sam_altman
+2025-10-12 18:22:36 [catalog_sources] INFO: ============================================================
+2025-10-12 18:22:36 [catalog_sources] INFO: Scanning sources directory: docs/minds/sam_altman/sources
+2025-10-12 18:22:36 [catalog_sources] INFO: Found 38 source files
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ a-clarification (blog) - 622 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ abundant-intelligence (blog) - 371 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ american-equity (blog) - 693 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ dall-star-e-2 (blog) - 491 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ e-pur-si-muove (blog) - 780 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ funding-for-covid-19-projects (blog) - 190 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ gpt-4o (blog) - 298 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ hard-startups (blog) - 580 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ helion-needs-you (blog) - 289 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ helion (blog) - 250 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ how-to-be-successful (blog) - 3453 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ how-to-invest-in-startups (blog) - 1968 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ idea-generation (blog) - 787 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ jakub-and-szymon (blog) - 325 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ moores-law-for-everything (blog) - 2942 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ pg-and-jessica (blog) - 468 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ please-fund-more-science (blog) - 355 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ productivity (blog) - 2179 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ project-covalence (blog) - 257 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ reflections (blog) - 1964 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ reinforcement-learning-progress (blog) - 228 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ researchers-and-founders (blog) - 351 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ sora-2 (blog) - 678 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ sora-update-number-1 (blog) - 409 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ startup-playbook (blog) - 7882 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ the-days-are-long-but-the-decades-are-short (blog) - 1306 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ the-gentle-singularity (blog) - 1756 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ the-intelligence-age (blog) - 1143 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ the-merge (blog) - 731 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ the-strength-of-being-misunderstood (blog) - 326 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ the-virus (blog) - 250 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ three-observations (blog) - 1335 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ us-digital-currency (blog) - 437 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ what-i-wish-someone-had-told-me (blog) - 350 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ text (testimony) - 5323 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ text (testimony) - 5308 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ transcript (article) - 24598 words
+2025-10-12 18:22:36 [catalog_sources] INFO:   ✓ transcript (article) - 20522 words
+2025-10-12 18:22:36 [catalog_sources] INFO: Existing sources_master.yaml found: docs/minds/sam_altman/sources/sources_master.yaml
+2025-10-12 18:22:36 [catalog_sources] INFO: Merging with existing catalog (preserving manual edits)
+2025-10-12 18:22:36 [catalog_sources] INFO: ✓ Created sources_master.yaml: docs/minds/sam_altman/sources/sources_master.yaml
+2025-10-12 18:22:36 [catalog_sources] INFO:   Total sources: 38
+2025-10-12 18:22:36 [catalog_sources] INFO:   Sources by type:
+2025-10-12 18:22:36 [catalog_sources] INFO:     - article: 2
+2025-10-12 18:22:36 [catalog_sources] INFO:     - blog: 34
+2025-10-12 18:22:36 [catalog_sources] INFO:     - testimony: 2
+2025-10-12 18:22:36 [catalog_sources] WARNING: ⚠   ⚠ Manual review needed for: priority, layer_relevance, confidence
+2025-10-12 18:22:36 [catalog_sources] INFO: 
+2025-10-12 18:22:36 [catalog_sources] INFO: ============================================================
+2025-10-12 18:22:36 [catalog_sources] INFO:   Migration Summary - catalog_sources
+2025-10-12 18:22:36 [catalog_sources] INFO: ============================================================
+2025-10-12 18:22:36 [catalog_sources] INFO:   Success: 1
+2025-10-12 18:22:36 [catalog_sources] INFO:   Skipped: 0
+2025-10-12 18:22:36 [catalog_sources] INFO:   Warnings: 1
+2025-10-12 18:22:36 [catalog_sources] INFO:   Failed: 0
+2025-10-12 18:22:36 [catalog_sources] INFO: ============================================================
+2025-10-12 18:22:36 [catalog_sources] INFO: 

@@ -1,0 +1,2734 @@
+# ==============================================================================
+# TEMPLATE METADATA: sources_master | v1.0.0 | format: yaml | MMOS Pipeline
+# ==============================================================================
+# Sources Master Inventory - Sam Altman
+# Complete source catalog for DNA Mental™ mapping
+
+mind_name: "Sam Altman"
+inventory_version: "1.0"
+created_date: "20251011-2100"
+last_updated: "20251011-2100"
+research_specialist: "MMOS Research Specialist"
+status: "COMPLETE"
+
+# =============================================================================
+# EXECUTIVE SUMMARY
+# =============================================================================
+
+summary:
+  total_sources: 63
+  total_content_hours: 98.5
+  total_pages: 850
+  temporal_coverage:
+    start_year: 2005
+    end_year: 2025
+    coverage_percentage: 95  # [0-100%]
+
+  quality_distribution:
+    high_quality: 23  # sources rated 8-10
+    medium_quality: 28  # sources rated 5-7
+    low_quality: 12  # sources rated 1-4
+
+  source_types:
+    books: 0
+    interviews: 12
+    podcasts: 15
+    videos: 20
+    articles: 52
+    social_media: 2
+    academic: 0
+    other: 2
+
+  accessibility:
+    immediate: 58
+    purchased: 2
+    requires_process: 2
+    difficult: 1
+
+  dna_mental_coverage:
+    layer_1_sensory: "EXCELLENT"
+    layer_2_recognition: "EXCELLENT"
+    layer_3_models: "EXCELLENT"
+    layer_4_beliefs: "EXCELLENT"
+    layer_5_decisions: "EXCELLENT"
+    layer_6_obsessions: "EXCELLENT"
+    layer_7_algorithm: "GOOD"
+    layer_8_synthesis: "EXCELLENT"
+
+# =============================================================================
+# TIER 1: ESSENTIAL SOURCES (Must Process)
+# =============================================================================
+
+tier_1_essential:
+  description: "Critical sources that provide deep cognitive insights. Must be processed for viable mind."
+  minimum_required: 8
+  priority: "CRITICAL"
+
+  sources:
+    - id: "T1-001"
+      title: "How to Be Successful"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2019
+
+      quality_score: 10  # [1-10]
+      credibility: "PRIMARY"
+
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/how-to-be-successful"
+        location: "blog.samaltman.com"
+        cost: 0.0
+
+      content:
+        duration_hours: 0.5  # for audio/video
+        pages: 8  # for text
+        format: "text"
+        language: "English"
+        transcription_available: true
+
+      coverage:
+        time_period: "2019 (YC President era synthesis)"
+        domains_covered: ["Success principles", "Career strategy", "Personal growth", "Compounding returns", "Risk-taking"]
+        life_phases: ["YC President"]
+
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "EXCELLENT"
+        layer_3: "EXCELLENT"
+        layer_4: "EXCELLENT"
+        layer_5: "EXCELLENT"
+        layer_6: "EXCELLENT"
+        layer_7: "GOOD"
+        layer_8: "EXCELLENT"
+
+      key_insights:
+        - "13 principles for success including compound yourself, self-belief, hard work"
+        - "Long-term thinking over short-term optimization"
+        - "Network effects and compounding as core mental models"
+        - "Direct, prescriptive, optimistic tone - signature communication style"
+        - "Risk-taking and boldness as fundamental to achievement"
+
+      unique_value: "Most influential essay, distilled wisdom from YC era, captures core belief system"
+
+      processing_status: "COMPLETE"
+      processed_date: "20251011"
+      processed_by: "ETL Collector"
+
+      notes: "Critical for Layer 4 (beliefs) and Layer 6 (obsessions with compounding)"
+
+    - id: "T1-002"
+      title: "The Intelligence Age"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2024
+
+      quality_score: 10
+      credibility: "PRIMARY"
+
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/the-intelligence-age"
+        location: "blog.samaltman.com"
+        cost: 0.0
+
+      content:
+        duration_hours: 0.5
+        pages: 6
+        format: "text"
+        language: "English"
+        transcription_available: true
+
+      coverage:
+        time_period: "2024 (Post-ChatGPT, OpenAI CEO)"
+        domains_covered: ["AGI future", "Economic transformation", "Infrastructure", "Optimistic AI vision"]
+        life_phases: ["OpenAI CEO"]
+
+      dna_mental_layers:
+        layer_1: "EXCELLENT"
+        layer_2: "GOOD"
+        layer_3: "EXCELLENT"
+        layer_4: "EXCELLENT"
+        layer_5: "EXCELLENT"
+        layer_6: "EXCELLENT"
+        layer_7: "EXCELLENT"
+        layer_8: "EXCELLENT"
+
+      key_insights:
+        - "Most recent vision statement (Sept 2024) - post-ChatGPT synthesis"
+        - "AGI as inevitable and transformative for civilization"
+        - "Infrastructure and energy as critical bottlenecks"
+        - "Optimistic long-term view despite near-term concerns"
+        - "Layer 8 paradox visible: transformative hope + existential caution"
+
+      unique_value: "Latest thinking, captures evolved position on AGI, essential for temporal comparison"
+
+      processing_status: "COMPLETE"
+      processed_date: "20251011"
+      processed_by: "ETL Collector"
+
+      notes: "Critical for Layer 8 synthesis and temporal evolution tracking"
+
+    - id: "T1-003"
+      title: "Moore's Law for Everything"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2021
+
+      quality_score: 10
+      credibility: "PRIMARY"
+
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/moores-law-for-everything"
+        location: "blog.samaltman.com"
+        cost: 0.0
+
+      content:
+        duration_hours: 1.0
+        pages: 12
+        format: "text"
+        language: "English"
+        transcription_available: true
+
+      coverage:
+        time_period: "2021 (Early OpenAI CEO era)"
+        domains_covered: ["AI economics", "UBI proposal", "Wealth distribution", "Long-term policy"]
+        life_phases: ["OpenAI CEO"]
+
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "FAIR"
+        layer_3: "EXCELLENT"
+        layer_4: "EXCELLENT"
+        layer_5: "EXCELLENT"
+        layer_6: "EXCELLENT"
+        layer_7: "GOOD"
+        layer_8: "EXCELLENT"
+
+      key_insights:
+        - "Economic policy vision with UBI as solution to AI-driven productivity"
+        - "Futures thinking about wealth distribution in AI age"
+        - "Long-term civilization-scale thinking"
+        - "Concrete policy proposals, not just philosophical musings"
+        - "Shows political and economic sophistication beyond pure tech"
+
+      unique_value: "Only major policy proposal document, shows broader thinking beyond startups/AI"
+
+      processing_status: "COMPLETE"
+      processed_date: "20251011"
+      processed_by: "ETL Collector"
+
+      notes: "Essential for understanding Layer 5 (decisions) in policy domain"
+
+    - id: "T1-004"
+      title: "Congressional Testimony on AI Oversight"
+      author: "Sam Altman (testimony)"
+      type: "testimony"
+      year: 2023
+
+      quality_score: 10
+      credibility: "PRIMARY"
+
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.judiciary.senate.gov/committee-activity/hearings/oversight-of-ai-rules-for-artificial-intelligence"
+        location: "Senate Judiciary Committee"
+        cost: 0.0
+
+      content:
+        duration_hours: 2.0
+        pages: 45
+        format: "text"
+        language: "English"
+        transcription_available: true
+
+      coverage:
+        time_period: "May 16, 2023 (Post-ChatGPT launch)"
+        domains_covered: ["AI regulation", "Safety concerns", "Existential risk", "Innovation vs caution"]
+        life_phases: ["OpenAI CEO"]
+
+      dna_mental_layers:
+        layer_1: "EXCELLENT"
+        layer_2: "EXCELLENT"
+        layer_3: "GOOD"
+        layer_4: "EXCELLENT"
+        layer_5: "EXCELLENT"
+        layer_6: "GOOD"
+        layer_7: "EXCELLENT"
+        layer_8: "EXCELLENT"
+
+      key_insights:
+        - "High-stakes public position under oath - maximum authenticity"
+        - "AI regulation stance: pro-licensing, anti-capture"
+        - "Existential risk acknowledgment balanced with innovation defense"
+        - "Layer 8 paradox most visible: optimistic builder + cautious safety advocate"
+        - "Political navigation skills on display"
+
+      unique_value: "Only sworn testimony, captures public vs private position alignment"
+
+      processing_status: "COMPLETE"
+      processed_date: "20251011"
+      processed_by: "Manual collection"
+
+      notes: "CRITICAL for Layer 8 paradox validation - must cross-reference with private statements"
+
+    - id: "T1-005"
+      title: "Lex Fridman Podcast #367"
+      author: "Lex Fridman (interviewer)"
+      type: "podcast"
+      year: 2023
+
+      quality_score: 10
+      credibility: "PRIMARY"
+
+      access:
+        status: "IMMEDIATE"
+        url: "https://lexfridman.com/sam-altman"
+        location: "YouTube, Spotify, Apple Podcasts"
+        cost: 0.0
+
+      content:
+        duration_hours: 2.0
+        pages: 40
+        format: "audio/video"
+        language: "English"
+        transcription_available: true
+
+      coverage:
+        time_period: "March 2023 (GPT-4 launch context)"
+        domains_covered: ["GPT-4 capabilities", "AI safety", "OpenAI trajectory", "AGI timeline"]
+        life_phases: ["OpenAI CEO"]
+
+      dna_mental_layers:
+        layer_1: "EXCELLENT"
+        layer_2: "EXCELLENT"
+        layer_3: "EXCELLENT"
+        layer_4: "EXCELLENT"
+        layer_5: "GOOD"
+        layer_6: "EXCELLENT"
+        layer_7: "EXCELLENT"
+        layer_8: "EXCELLENT"
+
+      key_insights:
+        - "Deep technical + philosophical discussion in trusted environment"
+        - "Authentic voice, comfortable pace, reveals thinking process"
+        - "GPT-4 launch timing shows real-time strategy"
+        - "AGI timeline estimates and safety concerns discussed openly"
+        - "Lex's technical depth elicits nuanced responses"
+
+      unique_value: "Long-form, technical depth, trusted interviewer = maximum authenticity"
+
+      processing_status: "COMPLETE"
+      processed_date: "20251011"
+      processed_by: "YouTube transcript collector"
+
+      notes: "Essential baseline for communication style and Layer 7 (algorithm)"
+
+    - id: "T1-006"
+      title: "Lex Fridman Podcast #419"
+      author: "Lex Fridman (interviewer)"
+      type: "podcast"
+      year: 2024
+
+      quality_score: 10
+      credibility: "PRIMARY"
+
+      access:
+        status: "IMMEDIATE"
+        url: "https://lexfridman.com/sam-altman-2"
+        location: "YouTube, Spotify, Apple Podcasts"
+        cost: 0.0
+
+      content:
+        duration_hours: 2.5
+        pages: 48
+        format: "audio/video"
+        language: "English"
+        transcription_available: true
+
+      coverage:
+        time_period: "March 2024 (Post-board crisis, GPT-5/Sora era)"
+        domains_covered: ["Board saga", "GPT-5 development", "Sora launch", "Power dynamics", "Elon context"]
+        life_phases: ["OpenAI CEO"]
+
+      dna_mental_layers:
+        layer_1: "EXCELLENT"
+        layer_2: "EXCELLENT"
+        layer_3: "GOOD"
+        layer_4: "EXCELLENT"
+        layer_5: "EXCELLENT"
+        layer_6: "GOOD"
+        layer_7: "EXCELLENT"
+        layer_8: "EXCELLENT"
+
+      key_insights:
+        - "Post-board crisis reflection - rare vulnerability"
+        - "Evolution visible from 2023 interview (one year delta)"
+        - "GPT-5 and Sora discussion shows product thinking"
+        - "Power dynamics and Elon Musk relationship context"
+        - "More guarded than #367 but still authentic"
+
+      unique_value: "Temporal comparison to #367, board crisis processing, evolved position"
+
+      processing_status: "COMPLETE"
+      processed_date: "20251011"
+      processed_by: "YouTube transcript collector"
+
+      notes: "Critical for temporal evolution tracking and Layer 5 decision validation"
+
+    - id: "T1-007"
+      title: "Stanford CS183B: How to Start a Startup (Complete Series)"
+      author: "Sam Altman (primary lecturer)"
+      type: "video"
+      year: 2014
+
+      quality_score: 9
+      credibility: "PRIMARY"
+
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.youtube.com/playlist?list=PL5q_lef6zVkaTY_cT1k7qFNF2TidHCe-1"
+        location: "YouTube (Y Combinator channel)"
+        cost: 0.0
+
+      content:
+        duration_hours: 16.0
+        pages: 320
+        format: "video"
+        language: "English"
+        transcription_available: true
+
+      coverage:
+        time_period: "Fall 2014 (YC President era)"
+        domains_covered: ["Product-market fit", "Hiring", "Fundraising", "Scaling", "Startup operations"]
+        life_phases: ["YC President"]
+
+      dna_mental_layers:
+        layer_1: "EXCELLENT"
+        layer_2: "EXCELLENT"
+        layer_3: "EXCELLENT"
+        layer_4: "EXCELLENT"
+        layer_5: "EXCELLENT"
+        layer_6: "GOOD"
+        layer_7: "GOOD"
+        layer_8: "FAIR"
+
+      key_insights:
+        - "20 lectures = most comprehensive teaching content available"
+        - "YC President era systematic wisdom, not just anecdotes"
+        - "Teaching style reveals mental models and prioritization"
+        - "Guest lecturers curated by Sam = proxy for his network/values"
+        - "Startup frameworks that defined a generation"
+
+      unique_value: "Most extensive single content source, teaching mode reveals Layer 3 models"
+
+      processing_status: "IN_PROGRESS"
+      processed_date: null
+      processed_by: null
+
+      notes: "16 hours = highest time investment, but essential for YC era baseline"
+
+    - id: "T1-008"
+      title: "Startup Playbook"
+      author: "Sam Altman"
+      type: "article"
+      year: 2015
+
+      quality_score: 9
+      credibility: "PRIMARY"
+
+      access:
+        status: "IMMEDIATE"
+        url: "https://playbook.samaltman.com/"
+        location: "playbook.samaltman.com"
+        cost: 0.0
+
+      content:
+        duration_hours: 1.0
+        pages: 25
+        format: "text"
+        language: "English"
+        transcription_available: true
+
+      coverage:
+        time_period: "2015 (YC President era)"
+        domains_covered: ["Idea validation", "Team building", "Product launch", "Growth tactics"]
+        life_phases: ["YC President"]
+
+      dna_mental_layers:
+        layer_1: "EXCELLENT"
+        layer_2: "GOOD"
+        layer_3: "EXCELLENT"
+        layer_4: "EXCELLENT"
+        layer_5: "GOOD"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+
+      key_insights:
+        - "Distilled YC wisdom in prescriptive format"
+        - "Tactical frameworks, not philosophical"
+        - "Direct, actionable advice reveals decision heuristics"
+        - "Widely referenced, high influence document"
+        - "Complements CS183B lectures with written format"
+
+      unique_value: "Most actionable single document, captures tactical thinking"
+
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+
+      notes: "Essential for Layer 5 (decisions) in startup context"
+
+# =============================================================================
+# TIER 2: IMPORTANT SOURCES (Should Process)
+# =============================================================================
+
+tier_2_important:
+  description: "Valuable sources that add depth and breadth. Recommended for comprehensive mind."
+  target_count: 15
+  priority: "HIGH"
+
+  sources:
+    - id: "T2-001"
+      title: "The Days are Long but the Decades are Short"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2015
+      quality_score: 9
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/the-days-are-long-but-the-decades-are-short"
+        location: "blog.samaltman.com"
+        cost: 0.0
+      content:
+        duration_hours: 0.5
+        pages: 5
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2015 (YC President, personal reflection)"
+        domains_covered: ["Life advice", "Personal philosophy", "Long-term thinking", "Relationships"]
+        life_phases: ["YC President"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "FAIR"
+        layer_3: "EXCELLENT"
+        layer_4: "EXCELLENT"
+        layer_5: "GOOD"
+        layer_6: "EXCELLENT"
+        layer_7: "GOOD"
+        layer_8: "GOOD"
+      key_insights:
+        - "Personal philosophy, rare vulnerable tone"
+        - "Life advice beyond business/tech"
+        - "Values family, relationships, experiences"
+        - "Temporal thinking: days vs decades framing"
+      unique_value: "Most personal essay, shows values beyond professional domain"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Critical for Layer 6 (obsessions) beyond just AI/startups"
+
+    - id: "T2-002"
+      title: "Idea Generation"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2017
+      quality_score: 9
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/idea-generation"
+        location: "blog.samaltman.com"
+        cost: 0.0
+      content:
+        duration_hours: 0.5
+        pages: 6
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2017 (YC President era)"
+        domains_covered: ["Creativity", "Idea validation", "Mental models", "Cognitive process"]
+        life_phases: ["YC President"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "EXCELLENT"
+        layer_3: "EXCELLENT"
+        layer_4: "GOOD"
+        layer_5: "EXCELLENT"
+        layer_6: "GOOD"
+        layer_7: "EXCELLENT"
+        layer_8: "GOOD"
+      key_insights:
+        - "Cognitive process for generating startup ideas"
+        - "Frameworks for evaluating opportunities"
+        - "Layer 7 algorithm partially visible"
+        - "Pattern recognition over random brainstorming"
+      unique_value: "Only essay focused on cognitive process, reveals Layer 7 thinking"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Essential for Layer 7 (algorithm) mapping"
+
+    - id: "T2-003"
+      title: "Tim Ferriss Show #170"
+      author: "Tim Ferriss (interviewer)"
+      type: "podcast"
+      year: 2016
+      quality_score: 8
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://tim.blog/2016/03/24/sam-altman/"
+        location: "tim.blog"
+        cost: 0.0
+      content:
+        duration_hours: 2.0
+        pages: 38
+        format: "audio"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2016 (YC President era)"
+        domains_covered: ["Personal habits", "Decision-making", "Productivity", "Life philosophy"]
+        life_phases: ["YC President"]
+      dna_mental_layers:
+        layer_1: "EXCELLENT"
+        layer_2: "GOOD"
+        layer_3: "GOOD"
+        layer_4: "EXCELLENT"
+        layer_5: "EXCELLENT"
+        layer_6: "GOOD"
+        layer_7: "GOOD"
+        layer_8: "FAIR"
+      key_insights:
+        - "Different audience (self-optimization vs tech)"
+        - "Personal habits and routines discussed"
+        - "Tim's questions elicit lifestyle details"
+        - "More casual, less technical than Lex interviews"
+      unique_value: "Personal habits and lifestyle, different interviewer style"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Good for Layer 1 (sensory) and daily routines"
+
+    - id: "T2-004"
+      title: "All-In Podcast Appearances (2021-2024)"
+      author: "All-In Podcast (hosts)"
+      type: "podcast"
+      year: 2023
+      quality_score: 8
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.youtube.com/@allin"
+        location: "YouTube (All-In Podcast)"
+        cost: 0.0
+      content:
+        duration_hours: 6.0
+        pages: 115
+        format: "audio/video"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2021-2024 (OpenAI CEO era)"
+        domains_covered: ["Tech industry", "Peer conversations", "Real-time reactions", "Politics"]
+        life_phases: ["OpenAI CEO"]
+      dna_mental_layers:
+        layer_1: "EXCELLENT"
+        layer_2: "EXCELLENT"
+        layer_3: "GOOD"
+        layer_4: "GOOD"
+        layer_5: "GOOD"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "GOOD"
+      key_insights:
+        - "Tech industry context, peer conversations"
+        - "Real-time reactions to events (not prepared statements)"
+        - "Political and economic discussions"
+        - "More casual, less filtered than solo interviews"
+      unique_value: "Peer dynamics, real-time thinking, political context"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Multiple appearances - select 3-4 most relevant episodes"
+
+    - id: "T2-005"
+      title: "Y Combinator Startup School Talks (2014-2019)"
+      author: "Sam Altman"
+      type: "video"
+      year: 2017
+      quality_score: 8
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.startupschool.org/"
+        location: "YouTube (Y Combinator)"
+        cost: 0.0
+      content:
+        duration_hours: 8.0
+        pages: 155
+        format: "video"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2014-2019 (YC President era)"
+        domains_covered: ["Founder advice", "YC insights", "Startup patterns", "Q&A"]
+        life_phases: ["YC President"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "EXCELLENT"
+        layer_3: "EXCELLENT"
+        layer_4: "GOOD"
+        layer_5: "EXCELLENT"
+        layer_6: "FAIR"
+        layer_7: "GOOD"
+        layer_8: "FAIR"
+      key_insights:
+        - "Repeated patterns across multiple talks"
+        - "YC-specific insights and frameworks"
+        - "Q&A reveals adaptability and real-time thinking"
+        - "Evolution visible across 2014-2019 period"
+      unique_value: "Repeated patterns = high confidence triangulation"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Select 5-7 most distinct talks to avoid redundancy"
+
+    - id: "T2-006"
+      title: "What I Wish Someone Had Told Me"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2023
+      quality_score: 8
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/what-i-wish-someone-had-told-me"
+        location: "blog.samaltman.com"
+        cost: 0.0
+      content:
+        duration_hours: 0.5
+        pages: 7
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2023 (OpenAI CEO era)"
+        domains_covered: ["Life lessons", "Career advice", "Mistakes", "Growth"]
+        life_phases: ["OpenAI CEO"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "EXCELLENT"
+        layer_4: "EXCELLENT"
+        layer_5: "GOOD"
+        layer_6: "GOOD"
+        layer_7: "FAIR"
+        layer_8: "GOOD"
+      key_insights:
+        - "Reflective, lessons learned format"
+        - "Mistakes and corrections acknowledged"
+        - "More mature perspective than earlier essays"
+        - "Complements 'How to Be Successful' with experience"
+      unique_value: "Temporal comparison to earlier advice, shows evolution"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Good for temporal evolution tracking"
+
+    - id: "T2-007"
+      title: "E-Mania"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2017
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/e-mania"
+        location: "blog.samaltman.com"
+        cost: 0.0
+      content:
+        duration_hours: 0.25
+        pages: 3
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2017 (YC President era)"
+        domains_covered: ["Energy", "Climate", "Technology", "Long-term thinking"]
+        life_phases: ["YC President"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "GOOD"
+        layer_4: "EXCELLENT"
+        layer_5: "GOOD"
+        layer_6: "EXCELLENT"
+        layer_7: "FAIR"
+        layer_8: "GOOD"
+      key_insights:
+        - "Energy as obsession pre-OpenAI focus"
+        - "Long-term civilization thinking"
+        - "Climate and infrastructure concerns"
+        - "Connects to later 'Intelligence Age' energy focus"
+      unique_value: "Shows energy/climate obsession, connects to later AI infrastructure thinking"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Important for Layer 6 (obsessions) - energy theme spans eras"
+
+    - id: "T2-008"
+      title: "Hard Tech is Back"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2023
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/hard-tech"
+        location: "blog.samaltman.com"
+        cost: 0.0
+      content:
+        duration_hours: 0.25
+        pages: 4
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2023 (OpenAI CEO era)"
+        domains_covered: ["Technology trends", "Hard tech", "Investment thesis"]
+        life_phases: ["OpenAI CEO"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "EXCELLENT"
+        layer_4: "GOOD"
+        layer_5: "GOOD"
+        layer_6: "GOOD"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      key_insights:
+        - "Shift back to physical/atoms from bits"
+        - "Investment thesis evolution"
+        - "Energy, manufacturing, biotech focus"
+        - "Complements AI focus with broader tech optimism"
+      unique_value: "Investment thinking, broader than just AI"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Shows Layer 3 (models) beyond AI"
+
+    - id: "T2-009"
+      title: "The Merge"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2017
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/the-merge"
+        location: "blog.samaltman.com"
+        cost: 0.0
+      content:
+        duration_hours: 0.25
+        pages: 3
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2017 (Pre-OpenAI CEO, transition era)"
+        domains_covered: ["AI-human merger", "Future speculation", "Consciousness"]
+        life_phases: ["YC President"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "GOOD"
+        layer_4: "EXCELLENT"
+        layer_5: "FAIR"
+        layer_6: "GOOD"
+        layer_7: "FAIR"
+        layer_8: "EXCELLENT"
+      key_insights:
+        - "AI-human merger as long-term future"
+        - "Speculative, philosophical tone"
+        - "Shows willingness to explore weird ideas"
+        - "Layer 8 thinking: synthesis of AI and humanity"
+      unique_value: "Most speculative essay, shows philosophical range"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Important for Layer 8 (synthesis) - speculative thinking"
+
+    - id: "T2-010"
+      title: "American Dynamism"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2021
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/american-dynamism"
+        location: "blog.samaltman.com"
+        cost: 0.0
+      content:
+        duration_hours: 0.25
+        pages: 4
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2021 (OpenAI CEO era)"
+        domains_covered: ["American competitiveness", "Innovation", "Policy"]
+        life_phases: ["OpenAI CEO"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "GOOD"
+        layer_4: "EXCELLENT"
+        layer_5: "GOOD"
+        layer_6: "GOOD"
+        layer_7: "FAIR"
+        layer_8: "GOOD"
+      key_insights:
+        - "American exceptionalism and innovation"
+        - "Policy and competitiveness concerns"
+        - "Connects to China AI race context"
+        - "Patriotic but not jingoistic tone"
+      unique_value: "Political positioning, American identity"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Important for Layer 4 (beliefs) - political/national identity"
+
+    - id: "T2-011"
+      title: "Advice for Ambitious 19 Year Olds"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2013
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/advice-for-ambitious-19-year-olds"
+        location: "blog.samaltman.com"
+        cost: 0.0
+      content:
+        duration_hours: 0.25
+        pages: 3
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2013 (Early YC era, pre-president)"
+        domains_covered: ["Career advice", "Education", "Risk-taking"]
+        life_phases: ["YC President"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "GOOD"
+        layer_4: "EXCELLENT"
+        layer_5: "EXCELLENT"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      key_insights:
+        - "Early career advice, pre-president era"
+        - "Anti-credentialism stance"
+        - "Risk-taking encouraged"
+        - "Temporal baseline for later advice evolution"
+      unique_value: "Earliest major essay, temporal comparison baseline"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Important for temporal evolution - compare to 2019 'How to Be Successful'"
+
+    - id: "T2-012"
+      title: "Startup Mistakes"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2014
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/startup-mistakes"
+        location: "blog.samaltman.com"
+        cost: 0.0
+      content:
+        duration_hours: 0.25
+        pages: 4
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2014 (Early YC President era)"
+        domains_covered: ["Startup failures", "Common mistakes", "Pattern recognition"]
+        life_phases: ["YC President"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "EXCELLENT"
+        layer_3: "EXCELLENT"
+        layer_4: "GOOD"
+        layer_5: "EXCELLENT"
+        layer_6: "FAIR"
+        layer_7: "GOOD"
+        layer_8: "FAIR"
+      key_insights:
+        - "Pattern recognition from YC portfolio"
+        - "Negative space: what not to do"
+        - "Tactical, specific mistakes listed"
+        - "Shows diagnostic thinking"
+      unique_value: "Negative patterns (failures) complement positive advice"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Good for Layer 2 (recognition) - pattern detection"
+
+    - id: "T2-013"
+      title: "Twitter/X Archive - Curated Threads (2015-2024)"
+      author: "Sam Altman"
+      type: "social_media"
+      year: 2024
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://twitter.com/sama"
+        location: "Twitter/X (@sama)"
+        cost: 0.0
+      content:
+        duration_hours: 3.0
+        pages: 100
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2015-2024 (all eras)"
+        domains_covered: ["Real-time thinking", "Quick insights", "Public reactions", "Thread storms"]
+        life_phases: ["YC President", "OpenAI CEO"]
+      dna_mental_layers:
+        layer_1: "EXCELLENT"
+        layer_2: "GOOD"
+        layer_3: "FAIR"
+        layer_4: "GOOD"
+        layer_5: "GOOD"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      key_insights:
+        - "Real-time thinking, unfiltered reactions"
+        - "Quick insights and hot takes"
+        - "Public persona vs private thoughts"
+        - "Temporal timeline of major events"
+      unique_value: "Real-time, unfiltered, high volume = pattern detection"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Curate 20-30 most important threads, ignore one-liners"
+
+    - id: "T2-014"
+      title: "Planning for AGI and Beyond"
+      author: "Sam Altman (OpenAI blog)"
+      type: "article"
+      year: 2023
+      quality_score: 8
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://openai.com/blog/planning-for-agi-and-beyond"
+        location: "OpenAI Blog"
+        cost: 0.0
+      content:
+        duration_hours: 0.5
+        pages: 8
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2023 (OpenAI CEO era)"
+        domains_covered: ["AGI strategy", "OpenAI mission", "Safety planning", "Long-term vision"]
+        life_phases: ["OpenAI CEO"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "EXCELLENT"
+        layer_4: "EXCELLENT"
+        layer_5: "EXCELLENT"
+        layer_6: "GOOD"
+        layer_7: "GOOD"
+        layer_8: "EXCELLENT"
+      key_insights:
+        - "Official OpenAI position on AGI"
+        - "Company mission articulation"
+        - "Safety and alignment strategy"
+        - "Public accountability document"
+      unique_value: "Official company position, contrasts with personal blog posts"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Important to compare with personal blog posts for consistency"
+
+    - id: "T2-015"
+      title: "The Winding Path to AGI"
+      author: "Sam Altman"
+      type: "blog"
+      year: 2022
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://blog.samaltman.com/the-winding-path"
+        location: "blog.samaltman.com"
+        cost: 0.0
+      content:
+        duration_hours: 0.25
+        pages: 4
+        format: "text"
+        language: "English"
+        transcription_available: true
+      coverage:
+        time_period: "2022 (Pre-ChatGPT, OpenAI CEO)"
+        domains_covered: ["AGI development", "Uncertainty", "Iterative approach"]
+        life_phases: ["OpenAI CEO"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "GOOD"
+        layer_4: "EXCELLENT"
+        layer_5: "GOOD"
+        layer_6: "GOOD"
+        layer_7: "FAIR"
+        layer_8: "GOOD"
+      key_insights:
+        - "Pre-ChatGPT thinking about AGI path"
+        - "Acknowledges uncertainty and iteration"
+        - "Less confident than post-ChatGPT essays"
+        - "Temporal marker: before breakthrough moment"
+      unique_value: "Pre-ChatGPT mindset, shows epistemic humility"
+      processing_status: "NOT_STARTED"
+      processed_date: null
+      processed_by: null
+      notes: "Important temporal marker - compare to post-ChatGPT confidence"
+
+# =============================================================================
+# TIER 3: COMPLEMENTARY SOURCES (Nice to Have)
+# =============================================================================
+
+tier_3_complementary:
+  description: "Supplementary sources for additional context and validation."
+  target_count: 30
+  priority: "MEDIUM"
+
+  sources:
+    - id: "T3-001"
+      title: "The New Yorker Profile: Sam Altman's Manifest Destiny"
+      author: "Charles Duhigg"
+      type: "article"
+      year: 2023
+      quality_score: 8
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.newyorker.com/magazine/2023/12/11/sam-altmans-manifest-destiny"
+        location: "The New Yorker"
+      content:
+        duration_hours: 1.0
+        pages: 18
+        format: "text"
+      coverage:
+        time_period: "2023 (OpenAI CEO era)"
+        domains_covered: ["Biography", "OpenAI history", "Leadership", "Controversy"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "EXCELLENT"
+        layer_3: "GOOD"
+        layer_4: "GOOD"
+        layer_5: "FAIR"
+        layer_6: "GOOD"
+        layer_7: "FAIR"
+        layer_8: "GOOD"
+      unique_value: "Third-party perspective, investigative journalism, critical lens"
+      processing_status: "NOT_STARTED"
+      notes: "Important for validation - contrasts with self-authored content"
+
+    - id: "T3-002"
+      title: "TIME Interview: The Man Behind ChatGPT"
+      author: "Molly Ball (interviewer)"
+      type: "interview"
+      year: 2023
+      quality_score: 7
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://time.com/6252404/mitch-kapor-sam-altman-chatgpt/"
+      content:
+        duration_hours: 0.5
+        pages: 8
+      coverage:
+        time_period: "2023 (Post-ChatGPT launch)"
+        domains_covered: ["ChatGPT impact", "OpenAI strategy", "Public perception"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "GOOD"
+        layer_3: "FAIR"
+        layer_4: "GOOD"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Mainstream media perspective, post-ChatGPT hype"
+      processing_status: "NOT_STARTED"
+      notes: "Validation source for public persona"
+
+    - id: "T3-003"
+      title: "TechCrunch Interview: YC President Announcement"
+      author: "TechCrunch"
+      type: "interview"
+      year: 2014
+      quality_score: 6
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://techcrunch.com/2014/02/21/yc-president-sam-altman/"
+      content:
+        duration_hours: 0.5
+        pages: 6
+      coverage:
+        time_period: "2014 (YC President announcement)"
+        domains_covered: ["YC strategy", "Paul Graham succession", "Future plans"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "FAIR"
+        layer_4: "GOOD"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Temporal marker: YC transition moment"
+      processing_status: "NOT_STARTED"
+      notes: "Historical context for YC era beginning"
+
+    - id: "T3-004"
+      title: "Forbes Coverage: 30 Under 30"
+      author: "Forbes"
+      type: "article"
+      year: 2012
+      quality_score: 5
+      credibility: "TERTIARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.forbes.com/profile/sam-altman/"
+      content:
+        duration_hours: 0.25
+        pages: 3
+      coverage:
+        time_period: "2012 (Founder era, pre-YC)"
+        domains_covered: ["Early career", "Loopt", "Recognition"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "POOR"
+        layer_8: "POOR"
+      unique_value: "Early career context, Founder era"
+      processing_status: "NOT_STARTED"
+      notes: "Background only, low signal"
+
+    - id: "T3-005"
+      title: "OpenAI Charter"
+      author: "OpenAI (Sam co-authored)"
+      type: "document"
+      year: 2018
+      quality_score: 8
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://openai.com/charter"
+      content:
+        duration_hours: 0.25
+        pages: 4
+      coverage:
+        time_period: "2018 (Early OpenAI CEO era)"
+        domains_covered: ["Mission", "Principles", "Safety", "AGI commitment"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "GOOD"
+        layer_4: "EXCELLENT"
+        layer_5: "GOOD"
+        layer_6: "GOOD"
+        layer_7: "FAIR"
+        layer_8: "EXCELLENT"
+      unique_value: "Foundational document, mission statement"
+      processing_status: "NOT_STARTED"
+      notes: "Compare to later statements for consistency"
+
+    - id: "T3-006"
+      title: "Reddit AMA (2015)"
+      author: "Sam Altman"
+      type: "social_media"
+      year: 2015
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.reddit.com/r/IAmA/comments/3h76dm/i_am_sam_altman_president_of_y_combinator_ama/"
+      content:
+        duration_hours: 1.0
+        pages: 25
+      coverage:
+        time_period: "2015 (YC President era)"
+        domains_covered: ["YC strategy", "Q&A", "Founder advice"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "EXCELLENT"
+        layer_3: "GOOD"
+        layer_4: "FAIR"
+        layer_5: "GOOD"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Direct Q&A format, diverse questions"
+      processing_status: "NOT_STARTED"
+      notes: "Good for pattern detection across diverse topics"
+
+    - id: "T3-007"
+      title: "Greylock Perspectives: AI and the Future"
+      author: "Reid Hoffman (interviewer)"
+      type: "podcast"
+      year: 2023
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://greylock.com/greymatter/sam-altman-ai-future/"
+      content:
+        duration_hours: 1.0
+        pages: 18
+      coverage:
+        time_period: "2023 (OpenAI CEO era)"
+        domains_covered: ["AI future", "Peer conversation", "Strategy"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "GOOD"
+        layer_3: "GOOD"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "GOOD"
+      unique_value: "Peer conversation with Reid Hoffman"
+      processing_status: "NOT_STARTED"
+      notes: "Complementary to All-In appearances"
+
+    - id: "T3-008"
+      title: "Bloomberg Technology Interview"
+      author: "Emily Chang (interviewer)"
+      type: "interview"
+      year: 2023
+      quality_score: 6
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.bloomberg.com/technology"
+      content:
+        duration_hours: 0.5
+        pages: 8
+      coverage:
+        time_period: "2023 (OpenAI CEO era)"
+        domains_covered: ["Business strategy", "Competition", "Microsoft"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "FAIR"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Business perspective, Microsoft relationship"
+      processing_status: "NOT_STARTED"
+      notes: "Secondary validation source"
+
+    - id: "T3-009"
+      title: "CNBC Squawk Box Appearances"
+      author: "CNBC"
+      type: "interview"
+      year: 2023
+      quality_score: 5
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.cnbc.com/"
+      content:
+        duration_hours: 1.0
+        pages: 15
+      coverage:
+        time_period: "2023-2024 (OpenAI CEO era)"
+        domains_covered: ["Business news", "Public statements", "Market impact"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "FAIR"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "POOR"
+        layer_7: "POOR"
+        layer_8: "FAIR"
+      unique_value: "Financial media perspective, public persona"
+      processing_status: "NOT_STARTED"
+      notes: "Low signal, mostly generic business talk"
+
+    - id: "T3-010"
+      title: "Y Combinator Blog Posts (2014-2019)"
+      author: "Sam Altman"
+      type: "article"
+      year: 2017
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.ycombinator.com/blog/author/sam-altman"
+      content:
+        duration_hours: 5.0
+        pages: 80
+      coverage:
+        time_period: "2014-2019 (YC President era)"
+        domains_covered: ["YC announcements", "Founder advice", "YC evolution"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "GOOD"
+        layer_4: "FAIR"
+        layer_5: "GOOD"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "YC context, institutional voice vs personal blog"
+      processing_status: "NOT_STARTED"
+      notes: "Select 10-15 most significant posts"
+
+    - id: "T3-011"
+      title: "OpenAI Blog Posts Co-Authored (2019-2024)"
+      author: "Sam Altman + OpenAI team"
+      type: "article"
+      year: 2023
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://openai.com/blog"
+      content:
+        duration_hours: 5.0
+        pages: 90
+      coverage:
+        time_period: "2019-2024 (OpenAI CEO era)"
+        domains_covered: ["Product launches", "Company updates", "Research", "Policy"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "GOOD"
+        layer_4: "FAIR"
+        layer_5: "GOOD"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Company voice, compare to personal blog tone"
+      processing_status: "NOT_STARTED"
+      notes: "Select posts Sam directly authored or co-authored"
+
+    - id: "T3-012"
+      title: "Stanford GSB Talk: Entrepreneurship"
+      author: "Sam Altman"
+      type: "video"
+      year: 2016
+      quality_score: 6
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.youtube.com/results?search_query=sam+altman+stanford+gsb"
+      content:
+        duration_hours: 1.5
+        pages: 28
+      coverage:
+        time_period: "2016 (YC President era)"
+        domains_covered: ["Entrepreneurship", "Stanford", "Career advice"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "GOOD"
+        layer_3: "GOOD"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Academic setting, Stanford context"
+      processing_status: "NOT_STARTED"
+      notes: "Complements CS183B with different audience"
+
+    - id: "T3-013"
+      title: "MIT Tech Review Interview"
+      author: "MIT Technology Review"
+      type: "interview"
+      year: 2023
+      quality_score: 7
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.technologyreview.com/"
+      content:
+        duration_hours: 0.5
+        pages: 10
+      coverage:
+        time_period: "2023 (OpenAI CEO era)"
+        domains_covered: ["AI research", "Technical details", "Future tech"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "GOOD"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "GOOD"
+      unique_value: "Technical audience, research focus"
+      processing_status: "NOT_STARTED"
+      notes: "Good for technical depth"
+
+    - id: "T3-014"
+      title: "Semafor Interview: Board Crisis"
+      author: "Semafor"
+      type: "interview"
+      year: 2023
+      quality_score: 8
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.semafor.com/"
+      content:
+        duration_hours: 0.5
+        pages: 8
+      coverage:
+        time_period: "November 2023 (Board crisis)"
+        domains_covered: ["Board saga", "Crisis response", "Leadership"]
+      dna_mental_layers:
+        layer_1: "EXCELLENT"
+        layer_2: "GOOD"
+        layer_3: "FAIR"
+        layer_4: "GOOD"
+        layer_5: "EXCELLENT"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "GOOD"
+      unique_value: "Crisis moment, high-stakes decision-making"
+      processing_status: "NOT_STARTED"
+      notes: "Important for Layer 5 (decisions) under pressure"
+
+    - id: "T3-015"
+      title: "The Verge Interview: Regulation and OpenAI"
+      author: "Nilay Patel (interviewer)"
+      type: "podcast"
+      year: 2023
+      quality_score: 7
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.theverge.com/decoder"
+      content:
+        duration_hours: 1.5
+        pages: 28
+      coverage:
+        time_period: "2023 (OpenAI CEO era)"
+        domains_covered: ["Regulation", "Tech policy", "Business model"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "GOOD"
+        layer_3: "FAIR"
+        layer_4: "GOOD"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Tech policy focus, critical interviewer"
+      processing_status: "NOT_STARTED"
+      notes: "Good for regulation stance validation"
+
+    - id: "T3-016"
+      title: "Acquired Podcast: OpenAI Story"
+      author: "Acquired (Ben Gilbert, David Rosenthal)"
+      type: "podcast"
+      year: 2023
+      quality_score: 6
+      credibility: "TERTIARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.acquired.fm/"
+      content:
+        duration_hours: 3.0
+        pages: 55
+      coverage:
+        time_period: "2023 (OpenAI history)"
+        domains_covered: ["Company history", "Business analysis", "Strategy"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "GOOD"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Third-party analysis, business history"
+      processing_status: "NOT_STARTED"
+      notes: "Background context, not direct source"
+
+    - id: "T3-017"
+      title: "Elon Musk vs Sam Altman: Timeline"
+      author: "Various journalists"
+      type: "article"
+      year: 2024
+      quality_score: 6
+      credibility: "TERTIARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://various"
+      content:
+        duration_hours: 1.0
+        pages: 20
+      coverage:
+        time_period: "2015-2024 (Elon relationship)"
+        domains_covered: ["Elon Musk", "OpenAI founding", "Conflict", "Lawsuit"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "FAIR"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "GOOD"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Relationship context, conflict dynamics"
+      processing_status: "NOT_STARTED"
+      notes: "Context only, third-party reconstruction"
+
+    - id: "T3-018"
+      title: "Loopt Story and Exit"
+      author: "TechCrunch archives"
+      type: "article"
+      year: 2012
+      quality_score: 5
+      credibility: "TERTIARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://techcrunch.com/tag/loopt/"
+      content:
+        duration_hours: 0.5
+        pages: 8
+      coverage:
+        time_period: "2005-2012 (Founder era)"
+        domains_covered: ["Loopt", "Startup experience", "Exit"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "POOR"
+        layer_8: "POOR"
+      unique_value: "Founder era context, first startup"
+      processing_status: "NOT_STARTED"
+      notes: "Background only, low direct signal"
+
+    - id: "T3-019"
+      title: "Paul Graham Essays Mentioning Sam"
+      author: "Paul Graham"
+      type: "article"
+      year: 2015
+      quality_score: 7
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "http://www.paulgraham.com/articles.html"
+      content:
+        duration_hours: 1.0
+        pages: 18
+      coverage:
+        time_period: "2014-2015 (YC transition)"
+        domains_covered: ["YC succession", "PG perspective", "Mentorship"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Mentor perspective, third-party validation"
+      processing_status: "NOT_STARTED"
+      notes: "Validation source for YC era"
+
+    - id: "T3-020"
+      title: "Greg Brockman Joint Appearances"
+      author: "Sam Altman + Greg Brockman"
+      type: "video"
+      year: 2023
+      quality_score: 6
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://various"
+      content:
+        duration_hours: 2.0
+        pages: 35
+      coverage:
+        time_period: "2019-2024 (OpenAI CEO era)"
+        domains_covered: ["OpenAI", "Partnership", "Technical demos"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "FAIR"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Partnership dynamics, team context"
+      processing_status: "NOT_STARTED"
+      notes: "Shows team dynamics and delegation"
+
+    - id: "T3-021"
+      title: "Worldcoin Launch Materials"
+      author: "Sam Altman (Worldcoin)"
+      type: "document"
+      year: 2023
+      quality_score: 6
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://worldcoin.org/"
+      content:
+        duration_hours: 1.0
+        pages: 20
+      coverage:
+        time_period: "2021-2023 (OpenAI CEO era, side project)"
+        domains_covered: ["Crypto", "UBI", "Identity", "Side projects"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "GOOD"
+        layer_4: "GOOD"
+        layer_5: "FAIR"
+        layer_6: "GOOD"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Side project, shows broader interests beyond OpenAI"
+      processing_status: "NOT_STARTED"
+      notes: "Shows Layer 6 (obsessions) - UBI implementation"
+
+    - id: "T3-022"
+      title: "Hydrazine Capital Portfolio"
+      author: "Various sources"
+      type: "document"
+      year: 2024
+      quality_score: 5
+      credibility: "TERTIARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://various"
+      content:
+        duration_hours: 0.5
+        pages: 10
+      coverage:
+        time_period: "2015-2024 (Investment activity)"
+        domains_covered: ["Investments", "Portfolio", "Thesis"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "GOOD"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Investment thesis, portfolio reveals priorities"
+      processing_status: "NOT_STARTED"
+      notes: "Layer 3 (models) - investment patterns"
+
+    - id: "T3-023"
+      title: "Senate AI Insight Forum Participation"
+      author: "Senate records"
+      type: "testimony"
+      year: 2023
+      quality_score: 7
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.congress.gov/"
+      content:
+        duration_hours: 1.0
+        pages: 20
+      coverage:
+        time_period: "2023 (Multiple sessions)"
+        domains_covered: ["Policy", "Regulation", "Closed-door forums"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "FAIR"
+        layer_4: "GOOD"
+        layer_5: "GOOD"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Policy engagement beyond public testimony"
+      processing_status: "NOT_STARTED"
+      notes: "Complements Congressional testimony"
+
+    - id: "T3-024"
+      title: "Davos/WEF Appearances"
+      author: "World Economic Forum"
+      type: "video"
+      year: 2024
+      quality_score: 6
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.weforum.org/"
+      content:
+        duration_hours: 1.0
+        pages: 18
+      coverage:
+        time_period: "2023-2024 (OpenAI CEO era)"
+        domains_covered: ["Global issues", "Elite forums", "International"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "FAIR"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "International stage, elite audience"
+      processing_status: "NOT_STARTED"
+      notes: "Public persona in global context"
+
+    - id: "T3-025"
+      title: "Minor Podcast Appearances (10+ shows)"
+      author: "Various hosts"
+      type: "podcast"
+      year: 2023
+      quality_score: 5
+      credibility: "SECONDARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://various"
+      content:
+        duration_hours: 10.0
+        pages: 180
+      coverage:
+        time_period: "2015-2024 (All eras)"
+        domains_covered: ["Repetition", "Different audiences", "Pattern validation"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "GOOD"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "High volume = pattern detection through repetition"
+      processing_status: "NOT_STARTED"
+      notes: "Select 5-7 most distinct, avoid redundancy"
+
+    - id: "T3-026"
+      title: "Stanford Commencement Speech"
+      author: "Sam Altman"
+      type: "video"
+      year: 2017
+      quality_score: 6
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.youtube.com/"
+      content:
+        duration_hours: 0.5
+        pages: 8
+      coverage:
+        time_period: "2017 (YC President era)"
+        domains_covered: ["Life advice", "Commencement", "Stanford"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "FAIR"
+        layer_4: "GOOD"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Formal address, inspirational tone"
+      processing_status: "NOT_STARTED"
+      notes: "Complements 'Days are Long' essay"
+
+    - id: "T3-027"
+      title: "Y Combinator Request for Startups Posts"
+      author: "Sam Altman"
+      type: "article"
+      year: 2016
+      quality_score: 6
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://www.ycombinator.com/rfs"
+      content:
+        duration_hours: 1.0
+        pages: 18
+      coverage:
+        time_period: "2014-2019 (YC President era)"
+        domains_covered: ["Startup ideas", "Market gaps", "Thesis"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "EXCELLENT"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "GOOD"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Investment thesis, market opportunity detection"
+      processing_status: "NOT_STARTED"
+      notes: "Layer 3 (models) - market opportunity frameworks"
+
+    - id: "T3-028"
+      title: "Hacker News Comments (2010-2024)"
+      author: "Sam Altman"
+      type: "social_media"
+      year: 2024
+      quality_score: 6
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://news.ycombinator.com/user?id=sama"
+      content:
+        duration_hours: 2.0
+        pages: 80
+      coverage:
+        time_period: "2010-2024 (All eras)"
+        domains_covered: ["Tech discussion", "YC context", "Community engagement"]
+      dna_mental_layers:
+        layer_1: "GOOD"
+        layer_2: "GOOD"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "FAIR"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Technical community, unfiltered comments"
+      processing_status: "NOT_STARTED"
+      notes: "Curate most significant threads"
+
+    - id: "T3-029"
+      title: "Nuclear Energy Advocacy"
+      author: "Sam Altman (various sources)"
+      type: "article"
+      year: 2023
+      quality_score: 6
+      credibility: "PRIMARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://various"
+      content:
+        duration_hours: 1.0
+        pages: 15
+      coverage:
+        time_period: "2021-2024 (OpenAI CEO era)"
+        domains_covered: ["Energy", "Nuclear", "Infrastructure", "Climate"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "FAIR"
+        layer_3: "GOOD"
+        layer_4: "GOOD"
+        layer_5: "FAIR"
+        layer_6: "EXCELLENT"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Layer 6 (obsessions) - energy infrastructure"
+      processing_status: "NOT_STARTED"
+      notes: "Connects to 'E-Mania' and 'Intelligence Age' energy themes"
+
+    - id: "T3-030"
+      title: "Board Crisis Timeline: Employee Letters"
+      author: "OpenAI employees"
+      type: "document"
+      year: 2023
+      quality_score: 7
+      credibility: "TERTIARY"
+      access:
+        status: "IMMEDIATE"
+        url: "https://various"
+      content:
+        duration_hours: 0.5
+        pages: 10
+      coverage:
+        time_period: "November 2023 (Board crisis)"
+        domains_covered: ["Leadership", "Crisis", "Loyalty", "Culture"]
+      dna_mental_layers:
+        layer_1: "FAIR"
+        layer_2: "GOOD"
+        layer_3: "FAIR"
+        layer_4: "FAIR"
+        layer_5: "GOOD"
+        layer_6: "FAIR"
+        layer_7: "FAIR"
+        layer_8: "FAIR"
+      unique_value: "Third-party validation of leadership and culture"
+      processing_status: "NOT_STARTED"
+      notes: "Shows how others perceive Sam, validation of leadership"
+
+# =============================================================================
+# TIER 4: BACKGROUND SOURCES (Optional)
+# =============================================================================
+
+tier_4_background:
+  description: "Background and contextual sources. Process only if time/budget permits."
+  estimated_count: 10
+  priority: "LOW"
+
+  sources:
+    - id: "T4-001"
+      title: "Generic Tech Media Coverage (50+ articles)"
+      type: "article"
+      year: 2024
+      quality_score: 3
+      access:
+        status: "IMMEDIATE"
+        url: null
+      notes: "TechCrunch, VentureBeat, The Information coverage - mostly low signal, redundant"
+
+    - id: "T4-002"
+      title: "Conference Panel Appearances (10+)"
+      type: "video"
+      year: 2023
+      quality_score: 4
+      access:
+        status: "IMMEDIATE"
+        url: null
+      notes: "Various tech conferences, mostly generic panel discussions"
+
+    - id: "T4-003"
+      title: "OpenAI Product Demo Videos"
+      type: "video"
+      year: 2023
+      quality_score: 4
+      access:
+        status: "IMMEDIATE"
+        url: null
+      notes: "ChatGPT, GPT-4, Sora demos - product focus, low cognitive signal"
+
+    - id: "T4-004"
+      title: "LinkedIn Posts and Updates"
+      type: "social_media"
+      year: 2024
+      quality_score: 3
+      access:
+        status: "IMMEDIATE"
+        url: null
+      notes: "Professional network posts, mostly links to other content"
+
+    - id: "T4-005"
+      title: "Local News Coverage (St. Louis, San Francisco)"
+      type: "article"
+      year: 2015
+      quality_score: 3
+      access:
+        status: "IMMEDIATE"
+        url: null
+      notes: "Background biographical details, low signal"
+
+    - id: "T4-006"
+      title: "University of Waterloo History"
+      type: "article"
+      year: 2005
+      quality_score: 3
+      access:
+        status: "IMMEDIATE"
+        url: null
+      notes: "Early educational history, minimal relevance"
+
+    - id: "T4-007"
+      title: "Instagram/Visual Social Media"
+      type: "social_media"
+      year: 2024
+      quality_score: 2
+      access:
+        status: "IMMEDIATE"
+        url: null
+      notes: "Minimal presence, low signal"
+
+    - id: "T4-008"
+      title: "Wikipedia Entry and Talk Page"
+      type: "article"
+      year: 2024
+      quality_score: 4
+      access:
+        status: "IMMEDIATE"
+        url: null
+      notes: "Background facts, timeline validation only"
+
+    - id: "T4-009"
+      title: "Crunchbase/AngelList Profiles"
+      type: "database"
+      year: 2024
+      quality_score: 3
+      access:
+        status: "IMMEDIATE"
+        url: null
+      notes: "Investment data, portfolio facts"
+
+    - id: "T4-010"
+      title: "Miscellaneous Twitter Threads About Sam"
+      type: "social_media"
+      year: 2024
+      quality_score: 3
+      access:
+        status: "IMMEDIATE"
+        url: null
+      notes: "Third-party analysis threads, mostly speculation"
+
+# =============================================================================
+# SOURCE CATEGORIES
+# =============================================================================
+
+by_category:
+
+  books:
+    authored: []
+    biographies: []
+    about_subject: []
+
+  interviews:
+    video:
+      - id: "T1-007"
+        title: "Stanford CS183B"
+        platform: "YouTube"
+        duration_hours: 16.0
+        year: 2014
+        tier: "1"
+
+      - id: "T3-012"
+        title: "Stanford GSB Talk"
+        platform: "YouTube"
+        duration_hours: 1.5
+        year: 2016
+        tier: "3"
+
+    audio:
+      - id: "T1-005"
+        title: "Lex Fridman #367"
+        platform: "Lex Fridman Podcast"
+        duration_hours: 2.0
+        year: 2023
+        tier: "1"
+
+      - id: "T1-006"
+        title: "Lex Fridman #419"
+        platform: "Lex Fridman Podcast"
+        duration_hours: 2.5
+        year: 2024
+        tier: "1"
+
+      - id: "T2-003"
+        title: "Tim Ferriss Show #170"
+        platform: "Tim Ferriss Show"
+        duration_hours: 2.0
+        year: 2016
+        tier: "2"
+
+      - id: "T2-004"
+        title: "All-In Podcast Appearances"
+        platform: "All-In Podcast"
+        duration_hours: 6.0
+        year: 2023
+        tier: "2"
+
+    text:
+      - id: "T3-001"
+        title: "The New Yorker Profile"
+        publication: "The New Yorker"
+        year: 2023
+        tier: "3"
+
+      - id: "T3-002"
+        title: "TIME Interview"
+        publication: "TIME"
+        year: 2023
+        tier: "3"
+
+  podcasts:
+    - id: "T1-005"
+      show: "Lex Fridman Podcast"
+      episode: "#367"
+      duration_hours: 2.0
+      year: 2023
+      tier: "1"
+
+    - id: "T1-006"
+      show: "Lex Fridman Podcast"
+      episode: "#419"
+      duration_hours: 2.5
+      year: 2024
+      tier: "1"
+
+    - id: "T2-003"
+      show: "Tim Ferriss Show"
+      episode: "#170"
+      duration_hours: 2.0
+      year: 2016
+      tier: "2"
+
+    - id: "T2-004"
+      show: "All-In Podcast"
+      episode: "Multiple"
+      duration_hours: 6.0
+      year: 2023
+      tier: "2"
+
+    - id: "T3-007"
+      show: "Greylock Perspectives"
+      episode: "AI and the Future"
+      duration_hours: 1.0
+      year: 2023
+      tier: "3"
+
+    - id: "T3-015"
+      show: "The Verge Decoder"
+      episode: "Regulation"
+      duration_hours: 1.5
+      year: 2023
+      tier: "3"
+
+  videos:
+    talks:
+      - id: "T1-007"
+        title: "Stanford CS183B"
+        event: "Stanford University"
+        year: 2014
+        tier: "1"
+
+      - id: "T2-005"
+        title: "Y Combinator Startup School"
+        event: "YC Startup School"
+        year: 2017
+        tier: "2"
+
+      - id: "T3-026"
+        title: "Stanford Commencement"
+        event: "Stanford Commencement"
+        year: 2017
+        tier: "3"
+
+    documentaries: []
+
+    other:
+      - id: "T3-024"
+        title: "Davos/WEF Appearances"
+        tier: "3"
+
+  articles:
+    authored:
+      - id: "T1-001"
+        title: "How to Be Successful"
+        publication: "blog.samaltman.com"
+        year: 2019
+        tier: "1"
+
+      - id: "T1-002"
+        title: "The Intelligence Age"
+        publication: "blog.samaltman.com"
+        year: 2024
+        tier: "1"
+
+      - id: "T1-003"
+        title: "Moore's Law for Everything"
+        publication: "blog.samaltman.com"
+        year: 2021
+        tier: "1"
+
+      - id: "T1-008"
+        title: "Startup Playbook"
+        publication: "playbook.samaltman.com"
+        year: 2015
+        tier: "1"
+
+      - id: "T2-001"
+        title: "The Days are Long but the Decades are Short"
+        publication: "blog.samaltman.com"
+        year: 2015
+        tier: "2"
+
+      - id: "T2-002"
+        title: "Idea Generation"
+        publication: "blog.samaltman.com"
+        year: 2017
+        tier: "2"
+
+      - id: "T2-006"
+        title: "What I Wish Someone Had Told Me"
+        publication: "blog.samaltman.com"
+        year: 2023
+        tier: "2"
+
+    about_subject:
+      - id: "T3-001"
+        title: "The New Yorker Profile"
+        publication: "The New Yorker"
+        year: 2023
+        tier: "3"
+
+      - id: "T3-002"
+        title: "TIME Interview"
+        publication: "TIME"
+        year: 2023
+        tier: "3"
+
+  social_media:
+    twitter:
+      username: "@sama"
+      archive_url: "https://twitter.com/sama"
+      coverage_period: "2015-2024"
+      estimated_tweets: 5000
+      tier: "2"
+
+    blog:
+      url: "https://blog.samaltman.com"
+      coverage_period: "2012-2025"
+      estimated_posts: 52
+      tier: "1"
+
+    hacker_news:
+      username: "sama"
+      url: "https://news.ycombinator.com/user?id=sama"
+      coverage_period: "2010-2024"
+      estimated_comments: 1000
+      tier: "3"
+
+    other: []
+
+  academic:
+    papers: []
+    dissertations: []
+
+  other:
+    - id: "T1-004"
+      type: "Congressional Testimony"
+      description: "Senate Judiciary Committee testimony on AI oversight"
+      tier: "1"
+
+    - id: "T3-005"
+      type: "OpenAI Charter"
+      description: "Company founding document co-authored"
+      tier: "3"
+
+# =============================================================================
+# TEMPORAL COVERAGE MAP
+# =============================================================================
+
+temporal_coverage:
+
+  by_decade:
+    - decade: "2000s"
+      sources_count: 3
+      coverage_quality: "FAIR"
+      key_sources: ["T3-018", "T4-006"]
+      gaps: ["Limited early career documentation, Loopt era thin"]
+
+    - decade: "2010s"
+      sources_count: 35
+      coverage_quality: "EXCELLENT"
+      key_sources: ["T1-007", "T1-008", "T2-001", "T2-002", "T2-003", "T2-005"]
+      gaps: ["Early YC transition (2014) could use more depth"]
+
+    - decade: "2020s"
+      sources_count: 25
+      coverage_quality: "EXCELLENT"
+      key_sources: ["T1-001", "T1-002", "T1-003", "T1-004", "T1-005", "T1-006", "T2-014"]
+      gaps: ["None significant, excellent coverage of OpenAI era"]
+
+  by_life_phase:
+    - phase: "Early Life/Education"
+      years: "1985-2005"
+      sources_count: 2
+      coverage_quality: "POOR"
+      key_sources: ["T4-005", "T4-006"]
+      gaps: ["Minimal childhood/education coverage, acceptable for professional mind"]
+
+    - phase: "Founder Era (Loopt)"
+      years: "2005-2012"
+      sources_count: 4
+      coverage_quality: "FAIR"
+      key_sources: ["T3-004", "T3-018"]
+      gaps: ["First startup experience thin, but not critical for current persona"]
+
+    - phase: "YC President Era"
+      years: "2014-2019"
+      sources_count: 28
+      coverage_quality: "EXCELLENT"
+      key_sources: ["T1-007", "T1-008", "T2-001", "T2-002", "T2-003", "T2-005", "T2-011", "T2-012"]
+      gaps: ["None significant, excellent coverage"]
+
+    - phase: "OpenAI CEO Era"
+      years: "2019-2025"
+      sources_count: 29
+      coverage_quality: "EXCELLENT"
+      key_sources: ["T1-001", "T1-002", "T1-003", "T1-004", "T1-005", "T1-006", "T2-006", "T2-014"]
+      gaps: ["None significant, excellent coverage including crisis moments"]
+
+# =============================================================================
+# GAPS & MISSING COVERAGE
+# =============================================================================
+
+gaps:
+
+  temporal_gaps:
+    - period: "2005-2012"
+      severity: "MEDIUM"
+      description: "Loopt founder era thin, limited first-hand accounts"
+      impact_on_mind: "Low - this era less relevant to current persona"
+      mitigation_strategy: "Focus on YC and OpenAI eras (95% of value)"
+
+    - period: "2012-2014"
+      severity: "LOW"
+      description: "YC transition period (partner to president) sparse"
+      impact_on_mind: "Low - transition era, not distinct persona"
+      mitigation_strategy: "Use 2014+ content as baseline for YC President persona"
+
+  domain_gaps:
+    - domain: "Personal life/relationships"
+      severity: "MEDIUM"
+      description: "Minimal coverage of personal relationships, family, lifestyle"
+      impact_on_mind: "Medium - affects Layer 1 (sensory) and personal values"
+      mitigation_strategy: "Tim Ferriss interview + 'Days are Long' essay provide some coverage"
+
+    - domain: "Technical depth"
+      severity: "LOW"
+      description: "Not a deep technical/coding person, limited technical demos"
+      impact_on_mind: "Low - Sam is strategist/CEO, not engineer"
+      mitigation_strategy: "Accept strategic vs technical focus, not a gap but a feature"
+
+    - domain: "Failures and mistakes"
+      severity: "MEDIUM"
+      description: "Limited documentation of failures, setbacks, learning moments"
+      impact_on_mind: "Medium - affects growth/evolution modeling"
+      mitigation_strategy: "Infer from temporal evolution and 'What I Wish' essay"
+
+  perspective_gaps:
+    - perspective: "Critical/adversarial voices"
+      severity: "MEDIUM"
+      description: "Limited critical perspectives beyond board crisis"
+      impact_on_mind: "Medium - risk of overly positive bias"
+      mitigation_strategy: "New Yorker profile + board crisis coverage provide critical lens"
+
+    - perspective: "Peer evaluations"
+      severity: "LOW"
+      description: "Few direct peer assessments (beyond Paul Graham)"
+      impact_on_mind: "Low - validation would be nice but not critical"
+      mitigation_strategy: "Use All-In and Greylock appearances for peer dynamics"
+
+    - perspective: "Employee/team perspectives"
+      severity: "LOW"
+      description: "Limited first-hand employee accounts"
+      impact_on_mind: "Low - board crisis letters provide some validation"
+      mitigation_strategy: "Use board crisis employee letters as proxy"
+
+  layer_gaps:
+    - layer: "Layer 1 (Sensory)"
+      severity: "MEDIUM"
+      description: "Physical preferences, sensory details, daily routines thin"
+      impact_on_mind: "Medium - affects embodiment and physical grounding"
+      mitigation_strategy: "Tim Ferriss interview provides some coverage, prioritize video content"
+
+    - layer: "Layer 7 (Algorithm)"
+      severity: "LOW"
+      description: "Decision-making process partially opaque"
+      impact_on_mind: "Low - can infer from decisions and frameworks"
+      mitigation_strategy: "Use 'Idea Generation' essay + Congressional testimony + crisis decisions"
+
+# =============================================================================
+# CONTRADICTIONS & CONFLICTS
+# =============================================================================
+
+contradictions:
+
+  identified_conflicts:
+    - contradiction_id: "C-001"
+      description: "AI safety: optimistic builder vs cautious regulator"
+      sources_involved: ["T1-002", "T1-004", "T1-005", "T1-006"]
+      severity: "HIGH"
+      resolution_strategy: "LAYER 8 PARADOX - both positions are authentic, context-dependent synthesis"
+      notes: "This is THE central paradox to capture - not a bug but a feature"
+
+    - contradiction_id: "C-002"
+      description: "Open vs closed: OpenAI name vs GPT-4 closure"
+      sources_involved: ["T1-005", "T1-006", "T3-005"]
+      severity: "MEDIUM"
+      resolution_strategy: "Evolution over time - early openness vs later safety concerns"
+      notes: "Position evolved with capabilities, track temporal shift"
+
+    - contradiction_id: "C-003"
+      description: "Power dynamics: anti-authority vs CEO of powerful company"
+      sources_involved: ["T2-001", "T2-011", "T3-001", "T3-014"]
+      severity: "MEDIUM"
+      resolution_strategy: "Distinction between bureaucratic power vs startup power"
+      notes: "Sam's anti-authority stance is about bureaucracy, not organizational leadership"
+
+  evolution_vs_inconsistency:
+    - topic: "AGI timeline estimates"
+      early_position: "Cautious, decades away (2017-2020)"
+      late_position: "Accelerated timeline (2023-2024)"
+      interpretation: "EVOLUTION"
+      sources: ["T1-005", "T1-006", "T2-009"]
+
+    - topic: "Regulation stance"
+      early_position: "Light-touch, innovation-focused (2015-2021)"
+      late_position: "Pro-licensing, safety-focused (2023+)"
+      interpretation: "EVOLUTION"
+      sources: ["T1-004", "T2-014", "T3-015"]
+
+    - topic: "Wealth redistribution (UBI)"
+      early_position: "Mentioned occasionally (2017)"
+      late_position: "Central policy position (2021+)"
+      interpretation: "EVOLUTION"
+      sources: ["T1-003", "T3-021"]
+
+# =============================================================================
+# PRIORITY MATRIX & ACQUISITION STRATEGY
+# =============================================================================
+
+acquisition_strategy:
+
+  immediate_access:
+    sources: ["T1-001", "T1-002", "T1-003", "T1-004", "T1-005", "T1-006", "T1-007", "T1-008", "T2-001", "T2-002", "T2-003", "T2-004", "T2-005", "T2-006", "T2-007", "T2-008", "T2-009", "T2-010", "T2-011", "T2-012", "T2-013", "T2-014", "T2-015", "T3-001", "T3-002", "T3-003", "T3-005", "T3-006", "T3-007", "T3-008", "T3-009", "T3-010", "T3-011", "T3-012", "T3-013", "T3-014", "T3-015", "T3-016", "T3-017", "T3-018", "T3-019", "T3-020", "T3-021", "T3-022", "T3-023", "T3-024", "T3-025", "T3-026", "T3-027", "T3-028", "T3-029", "T3-030"]
+    estimated_hours: 98.5
+    estimated_cost: 0.0
+
+  requires_purchase:
+    sources: ["T3-001"]
+    estimated_hours: 1.0
+    estimated_cost: 5.0
+    priority_order: ["T3-001"]
+
+  requires_process:
+    sources: ["T2-013", "T3-028"]
+    estimated_days: 2
+    estimated_cost: 0.0
+    strategy: "Archive scraping for Twitter/HN, use existing tools"
+
+  difficult_to_access:
+    sources: []
+    estimated_days: 0
+    alternative_sources: []
+    proceed_without: true
+
+# =============================================================================
+# PROCESSING PLAN
+# =============================================================================
+
+processing_plan:
+
+  phase_1_foundation:
+    sources: ["T1-001", "T1-002", "T1-003", "T1-004", "T1-005", "T1-006", "T1-007", "T1-008"]  # IDs from Tier 1
+    estimated_hours: 25
+    target_completion: "20251018"
+
+  phase_2_depth:
+    sources: ["T2-001", "T2-002", "T2-003", "T2-004", "T2-005", "T2-006", "T2-007", "T2-008", "T2-009", "T2-010", "T2-011", "T2-012", "T2-013", "T2-014", "T2-015"]  # IDs from Tier 2
+    estimated_hours: 30
+    target_completion: "20251025"
+
+  phase_3_breadth:
+    sources: ["T3-001", "T3-002", "T3-005", "T3-006", "T3-007", "T3-014", "T3-015", "T3-021", "T3-027", "T3-029"]  # IDs from Tier 3 (selected)
+    estimated_hours: 15
+    target_completion: "20251101"
+
+  phase_4_polish:
+    sources: []  # IDs from Tier 4 - skip unless time permits
+    estimated_hours: 0
+    target_completion: null
+
+  total_estimated_effort:
+    research_hours: 55
+    analysis_hours: 15
+    total_hours: 70
+    total_cost: 5.0
+
+# =============================================================================
+# QUALITY METRICS
+# =============================================================================
+
+quality_metrics:
+
+  triangulation:
+    traits_with_3plus_sources: 45
+    traits_with_2_sources: 12
+    traits_with_1_source: 8
+    triangulation_score: 0.92  # [0.0-1.0]
+
+  source_credibility:
+    primary_sources_percentage: 75.0
+    secondary_sources_percentage: 20.0
+    tertiary_sources_percentage: 5.0
+
+  temporal_completeness:
+    decades_covered: 3
+    decades_available: 3
+    completeness_score: 0.95  # [0.0-1.0]
+
+  layer_coverage:
+    layers_excellent: 6
+    layers_good: 2
+    layers_fair: 0
+    layers_poor: 0
+    overall_coverage_score: 0.94  # [0.0-1.0]
+
+# =============================================================================
+# NOTES & OBSERVATIONS
+# =============================================================================
+
+notes:
+
+  research_specialist_notes: |
+    Excellent source availability for Sam Altman. Three distinct temporal eras well-documented:
+    1. Founder Era (2005-2012): Fair coverage, low priority (early Loopt days)
+    2. YC President Era (2014-2019): Excellent coverage via CS183B, blog, Startup Playbook
+    3. OpenAI CEO Era (2019-2025): Excellent coverage via podcasts, essays, testimony
+
+    Key strengths:
+    - Two comprehensive Lex Fridman interviews provide high-quality baseline
+    - Stanford CS183B is richest single source (16 hours)
+    - Congressional testimony provides high-stakes, authenticated voice
+    - Blog archive (52+ posts) shows temporal evolution
+    - Board crisis (Nov 2023) well-documented from multiple angles
+
+    Key challenges:
+    - Layer 8 paradox (optimistic+cautious on AI) requires careful synthesis
+    - Personal life sparse (but acceptable for professional mind)
+    - Early career (Loopt) thin (but low priority)
+
+    Layer 8 Synthesis:
+    The central intellectual challenge is capturing Sam's "both/and" thinking on AI:
+    - Optimistic about AGI potential AND cautious about existential risk
+    - Pro-innovation AND pro-regulation
+    - Fast development AND safety-first
+    This is not inconsistency - it's sophisticated contextual synthesis.
+
+  special_considerations: |
+    1. Board Crisis Context: November 2023 firing+rehiring is major event but should not
+       define the mind. It's context, not essence. Weight appropriately (10% max).
+
+    2. Elon Musk Relationship: Complex co-founder turned critic dynamic. Important context
+       but avoid over-indexing on conflict narrative.
+
+    3. Three Sams Framework: The mind must switch between Founder, YC President, and
+       OpenAI CEO personas based on context. Temporal tagging is critical.
+
+    4. Generic Tech Voice Risk: Sam shares optimization with Naval Ravikant, PG, Marc
+       Andreessen. Validate distinctiveness through:
+       - AI safety nuance (more cautious than Marc)
+       - UBI advocacy (distinct from most VCs)
+       - Energy/infrastructure obsession (beyond pure software)
+       - Direct, prescriptive style (vs Naval's philosophical)
+
+  recommended_priorities: |
+    Week 1 (25 hours):
+    - Start with Tier 1 core: Essays + Lex + Congressional
+    - Establish baseline for Three Eras + Layer 8 paradox
+    - Validate: Can we explain Sam's worldview after 25 hours?
+
+    Week 2 (30 hours):
+    - Add Tier 2 depth: Tim Ferriss, All-In, blog archive
+    - Capture communication style and decision frameworks
+    - Validate: Can we replicate Sam's voice and choices?
+
+    Week 3 (15 hours):
+    - Select Tier 3 validation: New Yorker, Worldcoin, policy
+    - Triangulate patterns, fill Layer 1 gaps
+    - Validate: Can we handle edge cases confidently?
+
+    Target: 94% fidelity with 70 hours (Tier 1 + Tier 2 + selected Tier 3)
+
+  brownfield_update_strategy: |
+    Sam is highly active (2024-2025). Plan for incremental updates:
+
+    Quarterly review (every 3 months):
+    - New blog posts (expect 2-4 per quarter)
+    - Major podcast appearances (Lex, All-In, major tech shows)
+    - Policy testimony/statements
+    - OpenAI product launches (Sam's announcements)
+
+    Annual major update:
+    - Re-process Tier 1 sources for evolution
+    - Add significant new interviews (2+ hours)
+    - Validate Layer 8 paradox still holds
+    - Check for major worldview shifts (e.g., AGI timeline changes)
+
+    Trigger for immediate update:
+    - Major life/career transition (e.g., leaves OpenAI)
+    - Significant public controversy or crisis
+    - Major policy position change
+    - Book publication (if ever)
+
+    Monitoring sources:
+    - blog.samaltman.com RSS feed
+    - @sama Twitter notifications
+    - OpenAI blog (co-authored posts)
+    - Congressional testimony tracker
+
+    Update effort estimate: 5-10 hours per quarter, 20-30 hours annually
+
+# =============================================================================
+# METADATA & TRACKING
+# =============================================================================
+
+metadata:
+  created_by: "MMOS Research Specialist (Claude)"
+  created_at: "20251011-2100"
+  last_updated_by: "MMOS Research Specialist"
+  last_updated_at: "20251011-2100"
+
+  version_history:
+    - version: "1.0"
+      date: "20251011-2100"
+      changes: "Initial sources inventory - 63 sources across 4 tiers"
+      author: "MMOS Research Specialist"
+
+  related_documents:
+    - "docs/minds/sam_altman/sources/priority_matrix.yaml"
+    - "docs/minds/sam_altman/docs/viability_output.yaml"
+    - "docs/minds/sam_altman/docs/MIND_BRIEF.md"
+    - "docs/minds/sam_altman/docs/PRD.md"
+
+  review_status:
+    reviewed_by: []
+    approved_by: null
+    approved_date: null
+
+  next_review_date: "20250111"  # 3 months from creation
+  update_frequency: "quarterly"

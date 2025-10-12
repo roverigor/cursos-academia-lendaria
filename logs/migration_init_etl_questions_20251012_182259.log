@@ -1,0 +1,19 @@
+2025-10-12 18:22:59 [init_etl_questions] INFO: 
+2025-10-12 18:22:59 [init_etl_questions] INFO: ============================================================
+2025-10-12 18:22:59 [init_etl_questions] INFO:   Initializing ETL Questions - sam_altman
+2025-10-12 18:22:59 [init_etl_questions] INFO: ============================================================
+2025-10-12 18:22:59 [init_etl_questions] INFO: Initializing ETL questions template for: sam_altman
+2025-10-12 18:22:59 [init_etl_questions] INFO: ✓ Created etl_questions.yaml: docs/minds/sam_altman/kb/etl_questions.yaml
+2025-10-12 18:22:59 [init_etl_questions] INFO:   Schema version: 1.0
+2025-10-12 18:22:59 [init_etl_questions] INFO:   Status: template (empty)
+2025-10-12 18:22:59 [init_etl_questions] INFO:   Ready for future ETL processing
+2025-10-12 18:22:59 [init_etl_questions] INFO: 
+2025-10-12 18:22:59 [init_etl_questions] INFO: ============================================================
+2025-10-12 18:22:59 [init_etl_questions] INFO:   Migration Summary - init_etl_questions
+2025-10-12 18:22:59 [init_etl_questions] INFO: ============================================================
+2025-10-12 18:22:59 [init_etl_questions] INFO:   Success: 1
+2025-10-12 18:22:59 [init_etl_questions] INFO:   Skipped: 0
+2025-10-12 18:22:59 [init_etl_questions] INFO:   Warnings: 0
+2025-10-12 18:22:59 [init_etl_questions] INFO:   Failed: 0
+2025-10-12 18:22:59 [init_etl_questions] INFO: ============================================================
+2025-10-12 18:22:59 [init_etl_questions] INFO: 
