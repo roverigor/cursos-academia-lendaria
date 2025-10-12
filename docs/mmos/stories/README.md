@@ -80,13 +80,21 @@ Fully automated pipeline execution from viability to testing.
 
 **Goal:** Normalize and standardize taxonomy across all 32+ minds.
 
-### Story 3.1: Backward Compatible Additions ✅ COMPLETE
+### Story 3.1: Backward Compatible Additions ✅ PILOT COMPLETE
 **File:** `story-3.1-backward-compatible-additions.md`
-**Status:** ✅ IMPLEMENTATION COMPLETE
+**Status:** ✅ PILOT COMPLETE (1/28 minds migrated: sam_altman)
 **Estimate:** 3-4 days
-**Completed:** October 12, 2025
+**Pilot Completed:** October 12, 2025
 
 Add standardized metadata files to all minds without breaking existing structure.
+
+**Pilot Deliverables:**
+- 5 migration scripts + 4 utility libraries
+- Tested successfully on sam_altman mind
+- All 5 new files created (metadata.yaml, sources_master.yaml, pipeline_progress.yaml, etl_questions.yaml, versioned system_prompts)
+- Ready for Epic 2 database testing
+
+**Full Rollout:** Story 3.1.1 (pending - 27 remaining minds)
 
 **Key Features:**
 - Creates `metadata.yaml` for all minds
