@@ -109,13 +109,13 @@ class MigrationLogger:
         return 0 if self.stats['failed'] == 0 else 1
 
 
-def setup_logging(script_name: str, log_dir: str = "logs") -> MigrationLogger:
+def setup_logging(script_name: str, log_dir: str = "docs/mmos/logs") -> MigrationLogger:
     """
     Setup logging for migration script.
 
     Args:
         script_name: Name of the migration script
-        log_dir: Directory for log files
+        log_dir: Directory for log files (default: docs/mmos/logs)
 
     Returns:
         Configured MigrationLogger instance
