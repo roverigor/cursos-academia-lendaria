@@ -3,7 +3,7 @@ title: "How To Be Successful"
 url: https://blog.samaltman.com/how-to-be-successful
 platform: medium
 source_type: blog
-extracted: 2025-10-11T23:34:27.868Z
+extracted: 2025-10-12T00:02:28.781Z
 extraction_method: medium
 ---
 

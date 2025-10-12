@@ -3,7 +3,7 @@ title: "Reflections"
 url: https://blog.samaltman.com/reflections
 platform: medium
 source_type: blog
-extracted: 2025-10-11T23:03:18.533Z
+extracted: 2025-10-12T00:02:40.937Z
 extraction_method: medium
 ---
 

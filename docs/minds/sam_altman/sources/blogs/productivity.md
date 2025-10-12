@@ -3,7 +3,7 @@ title: "Productivity"
 url: https://blog.samaltman.com/productivity
 platform: medium
 source_type: blog
-extracted: 2025-10-11T23:04:00.588Z
+extracted: 2025-10-12T00:02:40.712Z
 extraction_method: medium
 ---
 
