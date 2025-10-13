@@ -76,6 +76,112 @@ Fully automated pipeline execution from viability to testing.
 
 ---
 
+## Epic 2: Database & Backend Foundation
+
+**Goal:** Create unified database foundation storing all mind data with referential integrity.
+
+### Story 2.1: Database Schema Design ✅ COMPLETED
+**File:** `docs/mmos/database/schema_complete.sql`
+**Status:** ✅ COMPLETED
+**Completed:** October 12, 2025
+**Commit:** `0be8803`
+
+Design and implement unified database schema (v3.0.0) integrating MMOS + InnerLens + Specialization.
+
+**Deliverables:**
+- ✅ 989-line SQL schema with 17 core tables
+- ✅ 10 triggers for auto-timestamps and validation
+- ✅ 4 views for analytics and reporting
+- ✅ Complete foreign key constraints
+- ✅ Support for evidence-based scoring
+
+---
+
+### Story 2.2: Specialization Taxonomy Population ✅ COMPLETED
+**File:** `docs/mmos/database/seed_specialization_taxonomy.sql`
+**Status:** ✅ COMPLETED
+**Completed:** October 12, 2025
+**Commit:** `0be8803`
+
+Populate complete specialization taxonomy (6 domains → 320 proficiencies).
+
+**Deliverables:**
+- ✅ 6 domains populated
+- ✅ 22 specializations populated
+- ✅ 73 skills populated
+- ✅ 320 proficiencies populated
+- ✅ Total: 421 taxonomy items with 100% referential integrity
+
+**Domains:**
+1. Business & Entrepreneurship (52 proficiencies)
+2. Marketing & Sales (78 proficiencies)
+3. Technology & Engineering (62 proficiencies)
+4. Creative & Content (49 proficiencies)
+5. Strategy & Consulting (35 proficiencies)
+6. Personal Development (44 proficiencies)
+
+---
+
+### Story 2.3: Core Minds Population ✅ COMPLETED
+**File:** `scripts/database/populate_minds.sh`
+**Status:** ✅ COMPLETED
+**Completed:** October 12, 2025
+**Commit:** `0be8803`
+
+Populate minds table with all 28 minds from docs/minds/ directory.
+
+**Deliverables:**
+- ✅ Bash + Node.js scripts for mind population
+- ✅ 28 minds inserted into database
+- ✅ All with display_name, slug, status=active
+- ✅ Default values: privacy_level=public, subject_type=public_figure
+
+**Usage:**
+```bash
+# Bash version
+bash scripts/database/populate_minds.sh
+
+# Node.js version (requires better-sqlite3)
+node scripts/database/populate_minds.js
+```
+
+---
+
+### Story 2.4: Pipeline Integration 📋 READY FOR DEVELOPMENT
+**File:** `story-2.4-pipeline-v3-integration.md`
+**Status:** 📋 Ready for Development
+**Estimate:** 2-3 days (8 story points)
+
+Integrate MMOS collection pipeline with database v3.0.0 so processing a mind automatically populates sources, fragments, and analysis tables.
+
+**Key Features:**
+- Source population from sources_master.yaml
+- Fragment extraction from cognitive-spec.yaml
+- DNA Mental™ analysis import
+- Validation module (referential integrity checks)
+- Re-processing modes (fresh/update/skip)
+
+**Dependencies:**
+- Story 2.1 ✅
+- Story 2.2 ✅
+- Story 2.3 ✅
+- Story 3.1 ✅ (for testing with sam_altman)
+
+**Deliverables:**
+- `populate-sources.js` - Read YAML, insert sources
+- `import-analysis.js` - Store cognitive-spec as JSON
+- `extract-fragments.js` - Extract evidence from layers
+- `validate-integration.js` - Check data integrity
+- `db-integration-v3.sh` - Orchestrate all modules
+
+**Success Metrics:**
+- <5 min total integration per mind
+- 100% referential integrity
+- 50-200 fragments extracted per mind
+- All 3 re-processing modes working
+
+---
+
 ## Epic 3: Taxonomy Normalization & Migration
 
 **Goal:** Normalize and standardize taxonomy across all 32+ minds.
@@ -121,6 +227,32 @@ bash scripts/migration/migrate_story_3.1.sh --all
 # Dry run
 bash scripts/migration/migrate_story_3.1.sh --dry-run sam_altman
 ```
+
+---
+
+### Story 3.1.1: Full Migration Rollout (27 Minds) 📋 READY FOR DEVELOPMENT
+**File:** `story-3.1.1-full-rollout.md`
+**Status:** 📋 Ready for Development
+**Estimate:** 1-2 days
+
+Migrate remaining 27 minds using validated Story 3.1 scripts.
+
+**Dependencies:**
+- Story 3.1 ✅
+- Story 2.4 (recommended - validates database integration first)
+
+**Key Features:**
+- Migrate 27 remaining minds (all except sam_altman)
+- Validation suite implementation (validate_minds.js, validate_sources.js)
+- 100% compliance checks
+- Documentation updates (taxonomy-system.md, mind-onboarding.md, README.md)
+
+**Success Metrics:**
+- ✅ All 28 minds have metadata.yaml
+- ✅ All 28 minds have sources_master.yaml
+- ✅ All 28 minds have pipeline_progress.yaml
+- ✅ Validation suite passes 100%
+- ✅ Migration completes in <5 minutes
 
 ---
 
@@ -235,7 +367,12 @@ Create analytics tools for profiling data visualization.
 ### Epic 1: AIOS Orchestration
 - **Duration:** 4-6 weeks
 - **Stories:** 4 (1.1-1.4)
-- **Status:** Story 1.1 complete
+- **Status:** Story 1.1 complete (25% of epic)
+
+### Epic 2: Database & Backend Foundation
+- **Duration:** 9 days (October 12-20, 2025)
+- **Stories:** 4 (2.1-2.4)
+- **Status:** 75% complete (Stories 2.1-2.3 done, Story 2.4 in progress)
 
 ### Epic 3: Taxonomy Normalization
 - **Duration:** 11-14 weeks
@@ -265,5 +402,6 @@ When creating new stories:
 
 ---
 
-**Last Updated:** October 12, 2025
-**Total Stories:** 17 (2 complete, 15 pending)
+**Last Updated:** October 13, 2025
+**Total Stories:** 21 (5 complete, 16 pending)
+**Epic Sequence:** Epic 1 → Epic 2 → Epic 3 → Epic 4

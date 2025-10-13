@@ -1,15 +1,16 @@
-# Story 4.1: Pipeline Integration with Database v3.0.0
+# Story 2.4: Pipeline Integration with Database v3.0.0
 
-**Story ID:** MMOS-4.1
-**Epic:** Epic 4 - Pipeline Automation & Database Integration
+**Story ID:** MMOS-2.4
+**Epic:** Epic 2 - Database & Backend Foundation
 **Priority:** HIGH
 **Status:** 📋 Ready for Development
 **Estimate:** 2-3 days
 **Scope:** MMOS pipeline only (InnerLens in Story 4.2)
 **Dependencies:**
-- Story 3.1 ✅ (Pilot migration complete)
-- Database v3.0.0 ✅ (Schema + taxonomy populated)
-- Minds population ✅ (28 minds in database)
+- Story 2.1 ✅ (Database schema design)
+- Story 2.2 ✅ (Specialization taxonomy population)
+- Story 2.3 ✅ (Core minds population)
+- Story 3.1 ✅ (Pilot migration - for testing with sam_altman)
 
 ---
 
@@ -417,18 +418,18 @@ Mode: skip
 
 ## Next Steps After Completion
 
-1. ✅ Story 4.1 complete: MMOS pipeline integrated
-2. → **Story 4.2**: InnerLens 120-trait analysis integration
-3. → **Story 4.3**: Automated proficiency scoring + fragment tags
-4. → **Story 4.4**: Process andrej_karpathy (first complete test)
-5. → **Story 4.5**: Bulk process remaining 27 minds
-6. → **Story 4.6**: Real-time sync (watch files → auto-update DB)
+1. ✅ Story 2.4 complete: MMOS pipeline integrated with database
+2. → **Story 3.1.1**: Full rollout to remaining 27 minds
+3. → **Epic 4 Story 4.1**: InnerLens 120-trait analysis integration
+4. → **Epic 4 Story 4.2**: Automated proficiency scoring + fragment tags
+5. → **Epic 4 Story 4.3**: Real-time sync (watch files → auto-update DB)
 
 ---
 
 **Created:** October 12, 2025
+**Last Updated:** October 13, 2025 (Moved from Story 4.1 to Epic 2)
 **Author:** Mary (Business Analyst) + Dev Team
-**Epic:** Epic 4 - Pipeline Automation
+**Epic:** Epic 2 - Database & Backend Foundation
 **Story Points:** 8 (Fibonacci - reduced after scope cut)
 
 ---

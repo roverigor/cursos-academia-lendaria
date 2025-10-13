@@ -7,7 +7,7 @@
 **Estimate:** 1-2 days
 **Dependencies:**
 - Story 3.1 ✅ (Pilot Complete)
-- Epic 2 Story 2 (recommended - validates database with 1 mind first)
+- Story 2.4 (recommended - validates database integration with sam_altman first)
 
 ---
 
@@ -26,7 +26,7 @@ Story 3.1 successfully migrated **sam_altman** as a pilot. All scripts are:
 - ✅ Idempotent
 - ✅ Backward compatible
 
-Epic 2 will use sam_altman to validate the database schema before full rollout.
+Story 2.4 will use sam_altman to validate the database integration before full rollout.
 
 ---
 
@@ -157,11 +157,12 @@ Update 3 documentation files:
 ## Next Steps After Completion
 
 1. ✅ All 28 minds normalized
-2. → Epic 2 Story 3 (Database Population) can use all minds
+2. → Database population can scale to all 28 minds
 3. → Story 3.2 (Artifacts Reorganization) can proceed
 4. → Validation CI/CD can be implemented
 
 ---
 
 **Created:** October 12, 2025
-**To be scheduled:** After Epic 2 Story 2 validation
+**Last Updated:** October 13, 2025 (Fixed dependency reference)
+**To be scheduled:** After Story 2.4 validation
