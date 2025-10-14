@@ -1,0 +1,120 @@
+# CreatorOS Fidelity Report Template
+# Version: 1.0
+# Purpose: Voice consistency validation output format
+
+report_metadata:
+  generation_id: "{{GENERATION_ID}}"
+  persona_name: "{{PERSONA_NAME}}"
+  content_type: "{{CONTENT_TYPE}}"
+  generated_date: "{{TIMESTAMP}}"
+  word_count: {{WORD_COUNT}}
+  validator_version: "1.0.0"
+
+overall_fidelity:
+  score: {{OVERALL_SCORE}}  # 0.00 - 1.00 (85%+ target)
+  grade: "{{GRADE}}"         # A+ (95-100%), A (90-94%), B+ (85-89%), B (80-84%), C (75-79%), F (<75%)
+  status: "{{STATUS}}"       # "PASS" (≥85%) or "FAIL" (<85%)
+
+# Fidelity Dimensions (weighted scoring)
+dimensions:
+
+  vocabulary:
+    weight: 0.30  # 30% of overall score
+    score: {{VOCABULARY_SCORE}}
+    metrics:
+      signature_words_used: {{SIGNATURE_COUNT}}  # Count of persona signature words
+      signature_words_expected: {{SIGNATURE_EXPECTED}}
+      vocabulary_richness: {{VOCAB_RICHNESS}}     # Type-token ratio (unique/total)
+      domain_terminology: {{DOMAIN_SCORE}}        # Proper use of domain jargon
+      word_choice_alignment: {{WORD_ALIGNMENT}}   # Match to persona word preferences
+    notes: "{{VOCABULARY_NOTES}}"
+
+  syntax:
+    weight: 0.20  # 20% of overall score
+    score: {{SYNTAX_SCORE}}
+    metrics:
+      avg_sentence_length: {{AVG_SENTENCE_LENGTH}}       # words per sentence
+      target_sentence_length: {{TARGET_SENTENCE_LENGTH}} # persona baseline
+      sentence_variety: {{SENTENCE_VARIETY}}             # simple/compound/complex mix
+      clause_complexity: {{CLAUSE_COMPLEXITY}}           # subordinate clauses per sentence
+      punctuation_style: {{PUNCTUATION_SCORE}}           # match to persona patterns
+    notes: "{{SYNTAX_NOTES}}"
+
+  style:
+    weight: 0.25  # 25% of overall score
+    score: {{STYLE_SCORE}}
+    metrics:
+      metaphor_frequency: {{METAPHOR_FREQ}}       # metaphors per 1000 words
+      example_types_match: {{EXAMPLE_MATCH}}      # personal stories vs case studies vs research
+      rhetorical_devices: {{RHETORICAL_SCORE}}    # use of questions, repetition, parallelism
+      paragraph_structure: {{PARAGRAPH_SCORE}}    # length and cohesion match
+      tone_consistency: {{TONE_SCORE}}            # formal/informal/conversational
+    notes: "{{STYLE_NOTES}}"
+
+  thinking:
+    weight: 0.25  # 25% of overall score
+    score: {{THINKING_SCORE}}
+    metrics:
+      argumentation_style: {{ARGUMENTATION_SCORE}}  # deductive/inductive/abductive
+      reasoning_depth: {{REASONING_DEPTH}}          # surface/moderate/deep
+      contrarian_index: {{CONTRARIAN_INDEX}}        # consensus vs contrarian stance
+      intellectual_humility: {{HUMILITY_SCORE}}     # certainty vs nuance
+      first_principles: {{FIRST_PRINCIPLES}}        # reasoning from fundamentals
+    notes: "{{THINKING_NOTES}}"
+
+# Detailed Analysis
+analysis:
+  strengths:
+    - "{{STRENGTH_1}}"
+    - "{{STRENGTH_2}}"
+    - "{{STRENGTH_3}}"
+
+  weaknesses:
+    - "{{WEAKNESS_1}}"
+    - "{{WEAKNESS_2}}"
+    - "{{WEAKNESS_3}}"
+
+  recommendations:
+    - "{{RECOMMENDATION_1}}"
+    - "{{RECOMMENDATION_2}}"
+    - "{{RECOMMENDATION_3}}"
+
+# Example Comparisons
+examples:
+  generated_sample: |
+    {{GENERATED_SAMPLE_TEXT}}
+
+  persona_reference: |
+    {{PERSONA_REFERENCE_TEXT}}
+
+  comparison_notes: "{{COMPARISON_NOTES}}"
+
+# Flagged Issues
+flags:
+  - type: "{{FLAG_TYPE}}"           # "vocabulary", "syntax", "style", "thinking"
+    severity: "{{SEVERITY}}"         # "low", "medium", "high"
+    location: "{{LOCATION}}"         # paragraph/sentence reference
+    description: "{{DESCRIPTION}}"
+    suggestion: "{{SUGGESTION}}"
+
+# Quality Thresholds
+thresholds:
+  min_fidelity_score: 0.85
+  min_readability_score: 60
+  min_seo_score: 0.80
+  target_fidelity_score: 0.90
+
+# Regeneration Recommendation
+regeneration:
+  recommended: {{REGENERATION_RECOMMENDED}}  # true/false
+  reason: "{{REGENERATION_REASON}}"
+  focus_areas:
+    - "{{FOCUS_AREA_1}}"
+    - "{{FOCUS_AREA_2}}"
+
+# Metadata
+validation:
+  validated_by: "CreatorOS Fidelity Validator v1.0"
+  validation_date: "{{VALIDATION_TIMESTAMP}}"
+  processing_time_ms: {{PROCESSING_TIME}}
+  confidence_level: {{CONFIDENCE}}  # 0.00 - 1.00
