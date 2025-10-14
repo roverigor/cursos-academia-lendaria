@@ -44,7 +44,7 @@ node bin/collect-blog.js https://blog.example.com ./output
 
 ## See Also
 
-- [Story 1.1: Simplify MMOS Collection](/docs/stories/1.1.simplify-mmos-collection.md)
+- [Story 1.1: Simplify MMOS Collection](1.1.simplify-mmos-collection.md)
 - [ETL README](../../README.md)
 - [Blog Discovery Docs](../../docs/BLOG_DISCOVERY.md)
 
