@@ -47,6 +47,11 @@ Use **mmos-mind-mapper** when you want to:
   - Orchestrates pipeline, manages checkpoints, handles brownfield updates and reexecutions
   - Commands: `*status`, `*report`, `*risks`, `*reexecute`, `*reexecute-phase`
 
+- **`emulator`** - Mind Clone Activation Specialist
+  - Loads and embodies cognitive clones for direct interaction
+  - Supports single clone, dual interactions, and roundtable sessions
+  - Commands: `*activate`, `*test`, `*advice`, `*duo`, `*roundtable`, `*switch`, `*list-minds`
+
 ### Tasks
 
 - **`execute-mmos-pipeline.md`** - Complete MMOS pipeline orchestration (6 phases)
@@ -205,16 +210,77 @@ node tools/install-expansion-pack.js mmos-mind-mapper
 # Get: Specialist system prompt optimized for domain
 ```
 
+### Example 7: Interact with a Clone
+
+```bash
+# Activate clone emulator
+@emulator
+
+# Load a specific mind
+*activate nassim_taleb
+
+# System loads:
+# - Latest system-prompt version
+# - Knowledge base (if < 20k tokens)
+# - Displays metadata (tokens used, fidelity level)
+
+# Now converse directly with the clone
+# Clone responds in Nassim's style with his frameworks
+
+# Get advice on your project
+*advice
+
+# Test the clone's fidelity
+*test
+```
+
+### Example 8: Dual Clone Interaction
+
+```bash
+# Activate emulator
+@emulator
+
+# Start dual interaction mode
+*duo nassim_taleb naval_ravikant
+
+# System orchestrates:
+# - 3+ dialogue turns between both clones
+# - They debate your project/context
+# - Each brings their unique perspective
+# - After interaction, you can join the conversation
+
+# Switch to different pairing
+*switch steve_jobs
+```
+
+### Example 9: Roundtable Session
+
+```bash
+# Activate emulator
+@emulator
+
+# Launch roundtable with 4 minds
+*roundtable nassim_taleb naval_ravikant ray_dalio sam_altman
+
+# System coordinates:
+# - Each clone contributes their perspective
+# - Structured turns with moderation
+# - Cross-pollination of ideas
+# - Synthesis before opening to you
+# - Token budget managed across all 4 clones
+```
+
 ## Pack Structure
 
 ```
 expansion-packs/mmos-mind-mapper/
-├── agents/                          # 5 specialized agents
+├── agents/                          # 6 specialized agents
 │   ├── mind-mapper.md
 │   ├── research-specialist.md
 │   ├── cognitive-analyst.md
 │   ├── system-prompt-architect.md
-│   └── mind-pm.md
+│   ├── mind-pm.md
+│   └── emulator.md
 ├── checklists/                      # 6 validation checklists
 │   ├── viability-checklist.md
 │   ├── research-quality-checklist.md

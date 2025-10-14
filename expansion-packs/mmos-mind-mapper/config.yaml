@@ -53,6 +53,9 @@ agents:
   - id: mind-pm
     file: agents/mind-pm.md
     role: Pipeline Project Manager
+  - id: emulator
+    file: agents/emulator.md
+    role: Mind Clone Activation Specialist
 
 tasks:
   - id: execute-mmos-pipeline

@@ -964,10 +964,48 @@ memory.store({
 });
 ```
 
+### Database Integration (Post-Analysis)
+
+**After completing cognitive-spec.yaml**, integrate with MMOS Database v3.0.0:
+
+```bash
+# Run database integration pipeline
+bash scripts/pipeline/db-integration-v3.sh \
+  --mind {{mind_slug}} \
+  --mode full \
+  --reprocess skip
+```
+
+This will:
+1. **Populate sources** from `sources_master.yaml` → `sources` table
+2. **Import analysis** from `cognitive-spec.yaml` → `analysis` table
+3. **Extract fragments** (blocked - requires InnerLens expansion pack)
+4. **Validate integrity** - Check referential integrity and data quality
+
+**Validation Output:**
+```
+📊 VALIDATION SUMMARY
+Sources: {{count}}
+Analysis: {{count}}
+Fragments: {{count}}
+Errors: 0
+Warnings: {{count}}
+
+✅ VALIDATION PASSED
+```
+
+**Re-processing modes:**
+- `skip` (default): Safe mode, won't overwrite existing data
+- `update`: Update existing records with new data
+- `fresh`: Delete all existing data for this mind and re-import ⚠️
+
+**Note:** Fragment extraction is currently blocked pending InnerLens expansion pack implementation (Epic TBD).
+
 ### Agent Coordination
 - **@cognitive-analyst**: Executes all layer extractions
 - **@architect**: Synthesizes cognitive architecture
 - **User**: Validates Layers 6, 7, 8 (mandatory)
+- **Database Pipeline**: Automatically ingests results into MMOS DB v3.0.0
 
 ### Performance Estimates
 - Layers 1-4: 2-3 hours, 300K tokens (parallel)
@@ -976,6 +1014,7 @@ memory.store({
 - Layer 7: 1.5 hours, 150K tokens + human time
 - Layer 8: 2 hours, 200K tokens + human time (most critical)
 - Architecture: 1 hour, 100K tokens
+- **Database Integration**: 1-2 minutes
 - **Total: 9-11 hours, 1M tokens**
 
 ## Notes

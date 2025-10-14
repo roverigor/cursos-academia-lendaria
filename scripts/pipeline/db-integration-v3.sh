@@ -35,6 +35,7 @@ log_error() {
 # Parse arguments
 MIND_SLUG=""
 MODE="full" # full, sources-only, analysis-only
+REPROCESS_MODE="skip" # skip, update, fresh
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -46,8 +47,13 @@ while [[ $# -gt 0 ]]; do
             MODE="$2"
             shift 2
             ;;
+        --reprocess)
+            REPROCESS_MODE="$2"
+            shift 2
+            ;;
         *)
             log_error "Unknown option: $1"
+            echo "Usage: $0 --mind <slug> [--mode full|sources-only|analysis-only] [--reprocess skip|update|fresh]"
             exit 1
             ;;
     esac
@@ -68,6 +74,7 @@ fi
 
 log_info "Starting database integration for: $MIND_SLUG"
 log_info "Mode: $MODE"
+log_info "Reprocess mode: $REPROCESS_MODE"
 echo ""
 
 # Get mind_id from database
@@ -95,7 +102,8 @@ if [ "$MODE" = "full" ] || [ "$MODE" = "sources-only" ]; then
         node "$SCRIPT_DIR/populate-sources.js" \
             --mind "$MIND_SLUG" \
             --file "$SOURCES_MASTER" \
-            --db "$DB_PATH"
+            --db "$DB_PATH" \
+            --mode "$REPROCESS_MODE"
 
         log_success "Sources populated successfully"
     else
@@ -106,35 +114,11 @@ if [ "$MODE" = "full" ] || [ "$MODE" = "sources-only" ]; then
 fi
 
 # ═══════════════════════════════════════════════════════════
-# PHASE 2: Fragments Extraction
+# PHASE 2: Analysis Import
 # ═══════════════════════════════════════════════════════════
 
 if [ "$MODE" = "full" ] || [ "$MODE" = "analysis-only" ]; then
-    log_info "Phase 2: Extracting fragments from analysis..."
-
-    COGNITIVE_SPEC="$MIND_DIR/analysis/cognitive-spec.yaml"
-
-    if [ -f "$COGNITIVE_SPEC" ]; then
-        # Extract fragments from cognitive spec
-        node "$SCRIPT_DIR/extract-fragments.js" \
-            --mind "$MIND_SLUG" \
-            --cognitive-spec "$COGNITIVE_SPEC" \
-            --db "$DB_PATH"
-
-        log_success "Fragments extracted successfully"
-    else
-        log_warning "cognitive-spec.yaml not found, skipping fragments"
-    fi
-
-    echo ""
-fi
-
-# ═══════════════════════════════════════════════════════════
-# PHASE 3: Analysis Import
-# ═══════════════════════════════════════════════════════════
-
-if [ "$MODE" = "full" ] || [ "$MODE" = "analysis-only" ]; then
-    log_info "Phase 3: Importing DNA Mental™ analysis..."
+    log_info "Phase 2: Importing DNA Mental™ analysis..."
 
     COGNITIVE_SPEC="$MIND_DIR/analysis/cognitive-spec.yaml"
 
@@ -143,7 +127,8 @@ if [ "$MODE" = "full" ] || [ "$MODE" = "analysis-only" ]; then
         node "$SCRIPT_DIR/import-analysis.js" \
             --mind "$MIND_SLUG" \
             --file "$COGNITIVE_SPEC" \
-            --db "$DB_PATH"
+            --db "$DB_PATH" \
+            --mode "$REPROCESS_MODE"
 
         log_success "Analysis imported successfully"
     else
@@ -154,66 +139,59 @@ if [ "$MODE" = "full" ] || [ "$MODE" = "analysis-only" ]; then
 fi
 
 # ═══════════════════════════════════════════════════════════
-# PHASE 4: Proficiency Scoring
+# PHASE 3: Fragments Extraction (BLOCKED - Needs InnerLens)
 # ═══════════════════════════════════════════════════════════
 
 if [ "$MODE" = "full" ] || [ "$MODE" = "analysis-only" ]; then
-    log_info "Phase 4: Scoring proficiencies..."
-
-    COGNITIVE_SPEC="$MIND_DIR/analysis/cognitive-spec.yaml"
-
-    if [ -f "$COGNITIVE_SPEC" ]; then
-        # Score proficiencies based on cognitive spec
-        node "$SCRIPT_DIR/score-proficiencies.js" \
-            --mind "$MIND_SLUG" \
-            --cognitive-spec "$COGNITIVE_SPEC" \
-            --db "$DB_PATH"
-
-        log_success "Proficiencies scored successfully"
-    else
-        log_warning "cognitive-spec.yaml not found, skipping proficiency scoring"
-    fi
-
+    log_info "Phase 3: Extracting fragments..."
+    log_warning "Fragment extraction requires InnerLens expansion pack (Epic TBD)"
+    log_warning "Skipping fragments extraction for now"
     echo ""
 fi
 
 # ═══════════════════════════════════════════════════════════
-# PHASE 5: Fragment Tags Generation
+# PHASE 4: Proficiency Scoring (FUTURE)
 # ═══════════════════════════════════════════════════════════
 
-if [ "$MODE" = "full" ] || [ "$MODE" = "analysis-only" ]; then
-    log_info "Phase 5: Generating fragment tags..."
+# TODO: Implement score-proficiencies.js module
+# if [ "$MODE" = "full" ] || [ "$MODE" = "analysis-only" ]; then
+#     log_info "Phase 4: Scoring proficiencies..."
+#     node "$SCRIPT_DIR/score-proficiencies.js" \
+#         --mind "$MIND_SLUG" \
+#         --cognitive-spec "$COGNITIVE_SPEC" \
+#         --db "$DB_PATH"
+# fi
 
-    # Generate tags for all fragments of this mind
-    node "$SCRIPT_DIR/generate-tags.js" \
-        --mind "$MIND_SLUG" \
-        --db "$DB_PATH"
+# ═══════════════════════════════════════════════════════════
+# PHASE 5: Fragment Tags Generation (FUTURE)
+# ═══════════════════════════════════════════════════════════
 
-    log_success "Fragment tags generated successfully"
-    echo ""
-fi
+# TODO: Implement generate-tags.js module
+# if [ "$MODE" = "full" ] || [ "$MODE" = "analysis-only" ]; then
+#     log_info "Phase 5: Generating fragment tags..."
+#     node "$SCRIPT_DIR/generate-tags.js" \
+#         --mind "$MIND_SLUG" \
+#         --db "$DB_PATH"
+# fi
 
 # ═══════════════════════════════════════════════════════════
 # VALIDATION
 # ═══════════════════════════════════════════════════════════
 
 log_info "Validating integration..."
-
-VALIDATION_REPORT=$(sqlite3 "$DB_PATH" "
-SELECT '📊 Integration Report for: $MIND_SLUG' as header
-UNION ALL SELECT ''
-UNION ALL SELECT '• Sources: ' || COUNT(*) FROM sources WHERE mind_id = $MIND_ID
-UNION ALL SELECT '• Fragments: ' || COUNT(*) FROM fragments WHERE mind_id = $MIND_ID
-UNION ALL SELECT '• Analysis entries: ' || COUNT(*) FROM analysis WHERE mind_id = $MIND_ID
-UNION ALL SELECT '• Proficiency scores: ' || COUNT(*) FROM mind_proficiency_scores WHERE mind_id = $MIND_ID
-UNION ALL SELECT '• Fragment tags: ' || COUNT(DISTINCT ft.tag)
-    FROM fragment_tags ft
-    JOIN fragments f ON f.id = ft.fragment_id
-    WHERE f.mind_id = $MIND_ID
-;
-")
-
-echo "$VALIDATION_REPORT"
 echo ""
 
-log_success "Database integration complete for: $MIND_SLUG"
+# Run validation module
+node "$SCRIPT_DIR/validate-integration.js" \
+    --mind "$MIND_SLUG" \
+    --db "$DB_PATH"
+
+VALIDATION_EXIT_CODE=$?
+
+if [ $VALIDATION_EXIT_CODE -eq 0 ]; then
+    log_success "Database integration complete for: $MIND_SLUG"
+    exit 0
+else
+    log_error "Validation failed for: $MIND_SLUG"
+    exit 1
+fi

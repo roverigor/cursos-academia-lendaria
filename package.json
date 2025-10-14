@@ -1,0 +1,42 @@
+{
+  "name": "mmos",
+  "version": "3.0.0",
+  "description": "Mind Mapper OS - Cognitive profiling and database integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "validate:minds": "node scripts/validation/validate_minds.js",
+    "validate:sources": "node scripts/validation/validate_sources.js",
+    "validate:all": "npm run validate:minds && npm run validate:sources"
+  },
+  "keywords": [
+    "mmos",
+    "cognitive-profiling",
+    "database",
+    "innerlens"
+  ],
+  "author": "MMOS Team",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "js-yaml": "^4.1.0",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "scripts/**/*.js",
+      "!scripts/**/*.test.js"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.js",
+      "**/*.test.js"
+    ]
+  }
+}

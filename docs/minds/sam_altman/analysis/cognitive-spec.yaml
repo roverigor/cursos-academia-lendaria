@@ -259,8 +259,8 @@ layer_3_mental_models:
     - analogy: "Moore's Law as universal metaphor"
       usage_context: "Extending exponential improvement beyond chips to AI, energy, intelligence itself"
       examples:
-        - "Moore's Law for Everything" (applying to economics, AI)
-        - "Compute as currency of the future"
+        - "'Moore's Law for Everything' (applying to economics, AI)"
+        - "'Compute as currency of the future'"
 
     - analogy: "Square root of -1 as psychedelic operator"
       usage_context: "Simple operations that reveal entirely new realities"
@@ -338,7 +338,7 @@ layer_4_belief_systems:
       manifestations:
         - "GPT release strategy (1, 2, 3, 3.5, 4 iteratively)"
         - "Public red-teaming and safety research"
-        - "Willingness to ship "imperfect" products"
+        - "Willingness to ship 'imperfect' products"
       confidence: 92
 
     - belief: "Distributed power > Concentrated control (for AGI)"
