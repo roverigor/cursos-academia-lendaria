@@ -127,6 +127,10 @@ templates:
   - video-script.md
   - newsletter.md
   - course-outline.yaml
+  - course-curriculum.yaml
+  - course-lesson.md
+  - course-quiz.yaml
+  - course-project.md
   - lesson-plan.yaml
   - funnel-map.yaml
   - ab-test-config.yaml
