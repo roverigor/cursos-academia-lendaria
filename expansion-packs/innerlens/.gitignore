@@ -1,0 +1,87 @@
+# Node modules (when/if installed)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Environment variables and local configs
+.env
+.env.local
+.env.*.local
+config.local.yaml
+*.local.yaml
+
+# Generated outputs (user data)
+output/
+innerlens-output/
+*.profile.yaml
+*.fragments.json
+bigfive-*.yaml
+fragments-*.json
+
+# Cache and temporary files
+.cache/
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE and editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Test outputs and coverage
+coverage/
+.nyc_output/
+test-results/
+
+# Build artifacts (future web service)
+dist/
+build/
+*.js.map
+
+# API keys and credentials (CRITICAL - never commit)
+*.key
+*.pem
+credentials.json
+api-keys.json
+.anthropic-key
+.claude-key
+
+# User-specific analysis data (privacy)
+analysis/
+profiles/
+user-data/
+subjects/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Future web service specifics
+.next/
+.nuxt/
+.vercel/
+.netlify/

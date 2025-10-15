@@ -1,0 +1,386 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MIU Fragment Collection",
+  "description": "Collection of Minimal Interpretable Units (MIUs) extracted from behavioral evidence with zero inference",
+  "version": "1.0.0",
+  "type": "object",
+  "required": ["metadata", "fragments"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["subject_id", "extraction_date", "source_documents", "extractor_version"],
+      "properties": {
+        "subject_id": {
+          "type": "string",
+          "description": "Unique identifier for the subject being analyzed",
+          "example": "subject_nassim_taleb"
+        },
+        "extraction_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of extraction",
+          "example": "2025-01-14T10:30:00Z"
+        },
+        "source_documents": {
+          "type": "array",
+          "description": "List of source documents analyzed",
+          "items": {
+            "type": "object",
+            "required": ["document_id", "document_type", "word_count"],
+            "properties": {
+              "document_id": {
+                "type": "string",
+                "example": "podcast_lex_fridman_2022"
+              },
+              "document_type": {
+                "type": "string",
+                "enum": ["podcast_transcript", "email", "whatsapp_export", "code_repo", "blog_post", "book_chapter", "interview_transcript", "meeting_notes", "chat_log"],
+                "example": "podcast_transcript"
+              },
+              "word_count": {
+                "type": "integer",
+                "minimum": 0,
+                "example": 5420
+              },
+              "language": {
+                "type": "string",
+                "pattern": "^[a-z]{2}$",
+                "description": "ISO 639-1 language code",
+                "example": "en"
+              }
+            }
+          }
+        },
+        "extractor_version": {
+          "type": "string",
+          "description": "Version of fragment extractor used",
+          "example": "claude_sonnet_4_miu_v1.0.0"
+        },
+        "total_fragments": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total number of MIUs extracted"
+        },
+        "total_words_analyzed": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total words across all source documents"
+        },
+        "extraction_cost_usd": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total cost of extraction in USD"
+        }
+      }
+    },
+    "fragments": {
+      "type": "array",
+      "description": "Array of MIU fragments",
+      "items": {
+        "type": "object",
+        "required": ["fragment_id", "subject_id", "content", "attribution", "source", "context", "structure", "extraction"],
+        "properties": {
+          "fragment_id": {
+            "type": "string",
+            "description": "Unique identifier for this fragment",
+            "pattern": "^f_[a-zA-Z0-9_]+_[0-9]{3,}$",
+            "example": "f_nassim_001"
+          },
+          "subject_id": {
+            "type": "string",
+            "description": "Subject this fragment belongs to",
+            "example": "nassim_taleb"
+          },
+          "content": {
+            "type": "object",
+            "required": ["verbatim", "char_count", "word_count", "clause_count"],
+            "properties": {
+              "verbatim": {
+                "type": "string",
+                "description": "Exact text of the MIU (preserves all punctuation, capitalization)",
+                "minLength": 10,
+                "example": "I avoid delegating because I've been burned before by team members who didn't meet my standards, so now I tend to do everything myself, which I know is unsustainable but I can't help it."
+              },
+              "char_count": {
+                "type": "integer",
+                "minimum": 10,
+                "description": "Number of characters in verbatim text",
+                "example": 182
+              },
+              "word_count": {
+                "type": "integer",
+                "minimum": 3,
+                "description": "Number of words in verbatim text",
+                "example": 34
+              },
+              "clause_count": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Number of grammatical clauses (may be > 1 if causally/temporally linked)",
+                "example": 7
+              }
+            }
+          },
+          "attribution": {
+            "type": "object",
+            "required": ["speaker"],
+            "properties": {
+              "speaker": {
+                "type": "string",
+                "enum": ["subject", "other", "group", "narrator"],
+                "description": "Who said/did this?",
+                "example": "subject"
+              },
+              "speaker_name": {
+                "type": ["string", "null"],
+                "description": "If 'other', who specifically?",
+                "example": null
+              }
+            }
+          },
+          "source": {
+            "type": "object",
+            "required": ["document_id", "document_type", "char_position", "medium", "language"],
+            "properties": {
+              "document_id": {
+                "type": "string",
+                "description": "Document this fragment came from",
+                "example": "podcast_lex_fridman_2022"
+              },
+              "document_type": {
+                "type": "string",
+                "enum": ["podcast_transcript", "email", "whatsapp_export", "code_repo", "blog_post", "book_chapter", "interview_transcript", "meeting_notes", "chat_log"],
+                "example": "podcast_transcript"
+              },
+              "char_position": {
+                "type": "array",
+                "description": "[start_char, end_char] in source document",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "example": [15420, 15602]
+              },
+              "timestamp": {
+                "type": ["string", "null"],
+                "format": "date-time",
+                "description": "ISO 8601 timestamp if available (e.g., podcast timestamp, message sent time)",
+                "example": "2022-03-15T14:32:18Z"
+              },
+              "medium": {
+                "type": "string",
+                "enum": ["spoken_transcribed", "written_digital", "written_handwritten_ocr", "code_comments", "mixed"],
+                "description": "How was this originally expressed?",
+                "example": "spoken_transcribed"
+              },
+              "language": {
+                "type": "string",
+                "pattern": "^[a-z]{2}$",
+                "description": "ISO 639-1 language code",
+                "example": "en"
+              }
+            }
+          },
+          "context": {
+            "type": "object",
+            "required": ["sentence_before", "sentence_after", "responding_to"],
+            "properties": {
+              "sentence_before": {
+                "type": ["string", "null"],
+                "description": "One sentence immediately before this MIU (for context)",
+                "example": "We were discussing my approach to team management."
+              },
+              "sentence_after": {
+                "type": ["string", "null"],
+                "description": "One sentence immediately after this MIU (for context)",
+                "example": "It's something I'm working on with my therapist."
+              },
+              "responding_to": {
+                "type": ["string", "null"],
+                "description": "For dialogue: what question/statement triggered this response?",
+                "example": null
+              }
+            }
+          },
+          "structure": {
+            "type": "object",
+            "description": "Zero-inference linguistic facts (observables only)",
+            "required": ["words", "pronouns", "verbs", "verb_forms", "nouns", "adjectives", "adverbs", "punctuation", "tenses_detected", "modal_verbs"],
+            "properties": {
+              "words": {
+                "type": "array",
+                "description": "All words (tokenized, lowercased)",
+                "items": {
+                  "type": "string"
+                },
+                "example": ["i", "avoid", "delegating", "because", "i've", "been", "burned", "before", "by", "team", "members", "who", "didn't", "meet", "my", "standards", "so", "now", "i", "tend", "to", "do", "everything", "myself", "which", "i", "know", "is", "unsustainable", "but", "i", "can't", "help", "it"]
+              },
+              "unique_words": {
+                "type": "array",
+                "description": "Unique words (no duplicates)",
+                "items": {
+                  "type": "string"
+                },
+                "example": ["i", "avoid", "delegating", "because", "been", "burned", "before", "by", "team", "members", "who", "didn't", "meet", "my", "standards", "so", "now", "tend", "to", "do", "everything", "myself", "which", "know", "is", "unsustainable", "but", "can't", "help", "it"]
+              },
+              "word_frequencies": {
+                "type": "object",
+                "description": "Word frequency count",
+                "additionalProperties": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "example": {
+                  "i": 4,
+                  "avoid": 1,
+                  "delegating": 1,
+                  "because": 1,
+                  "standards": 1,
+                  "everything": 1,
+                  "myself": 1,
+                  "unsustainable": 1
+                }
+              },
+              "pronouns": {
+                "type": "array",
+                "description": "All pronouns (preserves original case)",
+                "items": {
+                  "type": "string"
+                },
+                "example": ["I", "I've", "my", "I", "myself", "I"]
+              },
+              "verbs": {
+                "type": "array",
+                "description": "All verbs (preserves original form)",
+                "items": {
+                  "type": "string"
+                },
+                "example": ["avoid", "delegating", "been", "burned", "didn't", "meet", "tend", "do", "know", "is", "can't", "help"]
+              },
+              "verb_forms": {
+                "type": "array",
+                "description": "Grammatical forms of verbs (factual, no interpretation)",
+                "items": {
+                  "type": "string",
+                  "enum": ["infinitive", "present_simple", "present_continuous", "present_perfect", "past_simple", "past_continuous", "past_perfect", "future_simple", "gerund", "past_participle", "modal"]
+                },
+                "example": ["present_simple", "gerund", "past_participle", "modal"]
+              },
+              "nouns": {
+                "type": "array",
+                "description": "All nouns",
+                "items": {
+                  "type": "string"
+                },
+                "example": ["team", "members", "standards", "everything"]
+              },
+              "adjectives": {
+                "type": "array",
+                "description": "All adjectives",
+                "items": {
+                  "type": "string"
+                },
+                "example": ["unsustainable"]
+              },
+              "adverbs": {
+                "type": "array",
+                "description": "All adverbs",
+                "items": {
+                  "type": "string"
+                },
+                "example": ["before", "now"]
+              },
+              "punctuation": {
+                "type": "array",
+                "description": "All punctuation marks (in order)",
+                "items": {
+                  "type": "string"
+                },
+                "example": [",", ",", "."]
+              },
+              "has_question_mark": {
+                "type": "boolean",
+                "description": "Does fragment end with '?'",
+                "example": false
+              },
+              "has_exclamation": {
+                "type": "boolean",
+                "description": "Does fragment contain '!'",
+                "example": false
+              },
+              "clause_count": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Number of grammatical clauses",
+                "example": 7
+              },
+              "is_compound": {
+                "type": "boolean",
+                "description": "Contains multiple independent clauses (and, but, or)",
+                "example": true
+              },
+              "is_complex": {
+                "type": "boolean",
+                "description": "Contains subordinate clauses (because, when, if, that, which)",
+                "example": true
+              },
+              "tenses_detected": {
+                "type": "array",
+                "description": "Grammatical tenses present (factual detection)",
+                "items": {
+                  "type": "string",
+                  "enum": ["present_simple", "present_continuous", "present_perfect", "past_simple", "past_continuous", "past_perfect", "future_simple", "conditional"]
+                },
+                "example": ["present_simple", "present_perfect", "past_simple"]
+              },
+              "modal_verbs": {
+                "type": "array",
+                "description": "Modal verbs present (can, could, will, would, should, may, might, must)",
+                "items": {
+                  "type": "string"
+                },
+                "example": ["can't"]
+              }
+            }
+          },
+          "extraction": {
+            "type": "object",
+            "required": ["method", "version", "timestamp", "model", "cost_usd"],
+            "properties": {
+              "method": {
+                "type": "string",
+                "description": "Extraction method identifier",
+                "example": "claude_sonnet_4_miu_v1"
+              },
+              "version": {
+                "type": "string",
+                "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+                "description": "Semantic version of extraction method",
+                "example": "1.0.0"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "date-time",
+                "description": "ISO 8601 timestamp of extraction",
+                "example": "2025-01-14T10:30:00Z"
+              },
+              "model": {
+                "type": "string",
+                "description": "AI model used for extraction",
+                "example": "claude-sonnet-4-5-20250929"
+              },
+              "cost_usd": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Cost of extracting this fragment (USD)",
+                "example": 0.0012
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

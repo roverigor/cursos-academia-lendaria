@@ -1,0 +1,71 @@
+{
+  "name": "@aios/innerlens",
+  "version": "1.0.0-alpha",
+  "description": "InnerLens Lite - Fast Big Five personality analysis expansion pack for AIOS",
+  "type": "module",
+  "author": "Academia Lendar[IA] (Alan Nicolas)",
+  "license": "MIT",
+  "keywords": [
+    "aios-expansion",
+    "personality-analysis",
+    "big-five",
+    "psychometric",
+    "behavioral-analytics"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "echo \"No tests yet - using AIOS agent-based validation\"",
+    "lint": "echo \"No linting yet - using AIOS quality checks\"",
+    "validate": "node scripts/validate-templates.js",
+    "check-schema": "node scripts/check-miu-schema.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {
+    "js-yaml": "^4.1.0",
+    "ajv": "^8.12.0"
+  },
+  "peerDependencies": {
+    "@aios/core": ">=4.0.0"
+  },
+  "aios": {
+    "type": "expansion-pack",
+    "slashPrefix": "innerlens",
+    "agents": [
+      "fragment-extractor",
+      "psychologist",
+      "quality-assurance"
+    ],
+    "tasks": [
+      "extract-fragments",
+      "analyze-bigfive",
+      "validate-quality",
+      "detect-traits-quick",
+      "integrate-with-mmos"
+    ]
+  },
+  "future": {
+    "note": "Prepared for web-based API service with parallel LLM calls",
+    "planned-dependencies": {
+      "express": "For REST API endpoints",
+      "fastify": "Alternative: faster HTTP framework",
+      "@anthropic-ai/sdk": "Claude API client for parallel calls",
+      "p-limit": "Concurrency control for parallel analysis",
+      "redis": "Caching for fragments and profiles",
+      "zod": "Runtime schema validation"
+    },
+    "api-endpoints": {
+      "POST /analyze": "Accepts text, returns Big Five profile",
+      "POST /extract": "Extract MIU fragments only",
+      "GET /profile/:id": "Retrieve cached profile",
+      "POST /batch": "Batch analysis (parallel processing)"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/academia-lendaria/aios-fullstack",
+    "directory": "expansion-packs/innerlens"
+  }
+}

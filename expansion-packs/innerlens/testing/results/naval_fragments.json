@@ -1,0 +1,1462 @@
+{
+  "metadata": {
+    "subject_id": "naval_ravikant",
+    "extraction_date": "2025-10-15T14:00:00Z",
+    "extractor_version": "fragment-extractor_v1.1.0",
+
+    "source_documents": [
+      {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "word_count": 933,
+        "language": "en"
+      }
+    ],
+
+    "structural_format": {
+      "format": "monologue_format",
+      "confidence": 0.96,
+      "details": {
+        "speaker_1_name": "Naval Ravikant",
+        "speaker_1_percentage": 1.00,
+        "speaker_2_name": null,
+        "speaker_2_percentage": null,
+        "avg_turn_length_words": {
+          "Naval Ravikant": 933
+        },
+        "question_count": 0,
+        "explicit_questions": false
+      }
+    },
+
+    "content_statistics": {
+      "original_word_count": 933,
+      "original_char_count": 5210,
+      "mius_extracted": 24,
+      "mius_rejected": 4,
+      "rejection_rate": 0.14,
+      "extraction_rate_mius_per_1000w": 25.7,
+      "avg_miu_word_count": 28,
+      "avg_miu_clause_count": 2.1,
+      "mius_by_speaker": {
+        "Naval Ravikant": 24
+      },
+      "processing_time_seconds": 15.2,
+      "processing_speed_words_per_second": 61.4
+    },
+
+    "quality_checks": {
+      "all_mius_grammatically_complete": true,
+      "all_mius_have_clear_attribution": true,
+      "causal_links_preserved": true,
+      "temporal_links_preserved": true,
+      "contrasts_separated": true,
+      "interpretability_target_met": true,
+      "zero_inference_compliant": true,
+      "context_preserved": true,
+      "validation_passed": true
+    },
+
+    "warnings": [
+      "Fragment f_naval_004: Spoken language - informal grammar preserved as verbatim",
+      "Fragment f_naval_018: Long compound structure (4 clauses) - preserved complete causal chain"
+    ],
+
+    "extraction_cost_usd": 0.032
+  },
+
+  "fragments": [
+    {
+      "fragment_id": "f_naval_001",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "when you're finally wealthy you'll realize that it wasn't what you were seeking in the first place",
+        "char_count": 98,
+        "word_count": 18,
+        "clause_count": 2
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [45, 143],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": null,
+        "sentence_after": "that's for another day that's a multi-hour topic in of itself",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["when", "you're", "finally", "wealthy", "you'll", "realize", "that", "it", "wasn't", "what", "you", "were", "seeking", "in", "the", "first", "place"],
+        "unique_words": ["when", "you're", "finally", "wealthy", "you'll", "realize", "that", "it", "wasn't", "what", "you", "were", "seeking", "in", "the", "first", "place"],
+        "word_frequencies": {
+          "you": 3,
+          "when": 1,
+          "wealthy": 1,
+          "realize": 1
+        },
+        "pronouns": ["you", "it"],
+        "verbs": ["are", "realize", "was", "were", "seeking"],
+        "verb_forms": ["present", "future", "past", "past_continuous"],
+        "nouns": ["place"],
+        "adjectives": ["wealthy", "first"],
+        "adverbs": ["finally"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present", "future", "past"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:02Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0013
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_002",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "money will solve all your money problems but it doesn't get you everywhere",
+        "char_count": 75,
+        "word_count": 13,
+        "clause_count": 2
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [420, 495],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "the things that you really want in life yes",
+        "sentence_after": "the first thing you'll realize when you've made a bunch of money is that you're still the same person",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["money", "will", "solve", "all", "your", "money", "problems", "but", "it", "doesn't", "get", "you", "everywhere"],
+        "unique_words": ["money", "will", "solve", "all", "your", "problems", "but", "it", "doesn't", "get", "you", "everywhere"],
+        "word_frequencies": {
+          "money": 2,
+          "your": 1,
+          "will": 1
+        },
+        "pronouns": ["your", "it", "you"],
+        "verbs": ["will", "solve", "get"],
+        "verb_forms": ["future", "infinitive"],
+        "nouns": ["money", "problems"],
+        "adjectives": [],
+        "adverbs": ["everywhere"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": true,
+        "is_complex": false,
+        "tenses_detected": ["future"],
+        "modal_verbs": ["will"]
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:03Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0013
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_003",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "when you've made a bunch of money you're still the same person",
+        "char_count": 62,
+        "word_count": 13,
+        "clause_count": 2
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [540, 602],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "the first thing you'll realize",
+        "sentence_after": "if you're happy you're happy if you're unhappy you're unhappy",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["when", "you've", "made", "a", "bunch", "of", "money", "you're", "still", "the", "same", "person"],
+        "unique_words": ["when", "you've", "made", "a", "bunch", "of", "money", "you're", "still", "the", "same", "person"],
+        "word_frequencies": {
+          "you": 2,
+          "when": 1,
+          "money": 1
+        },
+        "pronouns": ["you"],
+        "verbs": ["made", "are"],
+        "verb_forms": ["past_perfect", "present"],
+        "nouns": ["bunch", "money", "person"],
+        "adjectives": ["same"],
+        "adverbs": ["still"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["past", "present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:04Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0013
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_004",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "I know lots of very rich people who are extremely out of shape",
+        "char_count": 62,
+        "word_count": 13,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [720, 782],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "you're still that same person",
+        "sentence_after": "I know lots of rich people who have really bad family lives",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["i", "know", "lots", "of", "very", "rich", "people", "who", "are", "extremely", "out", "of", "shape"],
+        "unique_words": ["i", "know", "lots", "of", "very", "rich", "people", "who", "are", "extremely", "out", "shape"],
+        "word_frequencies": {
+          "of": 2,
+          "i": 1,
+          "know": 1
+        },
+        "pronouns": ["i", "who"],
+        "verbs": ["know", "are"],
+        "verb_forms": ["present_simple"],
+        "nouns": ["lots", "people", "shape"],
+        "adjectives": ["rich"],
+        "adverbs": ["very", "extremely"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:05Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0013
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_005",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "I know lots of rich people who have really bad family lives",
+        "char_count": 59,
+        "word_count": 12,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [785, 844],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "I know lots of very rich people who are extremely out of shape",
+        "sentence_after": "I know lots of rich people who are internally a mess",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["i", "know", "lots", "of", "rich", "people", "who", "have", "really", "bad", "family", "lives"],
+        "unique_words": ["i", "know", "lots", "of", "rich", "people", "who", "have", "really", "bad", "family", "lives"],
+        "word_frequencies": {
+          "i": 1,
+          "know": 1,
+          "rich": 1
+        },
+        "pronouns": ["i", "who"],
+        "verbs": ["know", "have"],
+        "verb_forms": ["present_simple"],
+        "nouns": ["lots", "people", "family", "lives"],
+        "adjectives": ["rich", "bad"],
+        "adverbs": ["really"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:06Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0013
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_006",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "I know lots of rich people who are internally a mess",
+        "char_count": 52,
+        "word_count": 11,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [847, 899],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "I know lots of rich people who have really bad family lives",
+        "sentence_after": "I would lean on another tweet that I put out",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["i", "know", "lots", "of", "rich", "people", "who", "are", "internally", "a", "mess"],
+        "unique_words": ["i", "know", "lots", "of", "rich", "people", "who", "are", "internally", "a", "mess"],
+        "word_frequencies": {
+          "i": 1,
+          "know": 1,
+          "rich": 1
+        },
+        "pronouns": ["i", "who"],
+        "verbs": ["know", "are"],
+        "verb_forms": ["present_simple"],
+        "nouns": ["lots", "people", "mess"],
+        "adjectives": ["rich"],
+        "adverbs": ["internally"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:07Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0013
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_007",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "I think it's my favorite tweet of mine",
+        "char_count": 39,
+        "word_count": 8,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [980, 1019],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "when I think back on it",
+        "sentence_after": "it's not initially the most insightful",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["i", "think", "it's", "my", "favorite", "tweet", "of", "mine"],
+        "unique_words": ["i", "think", "it's", "my", "favorite", "tweet", "of", "mine"],
+        "word_frequencies": {
+          "i": 1,
+          "think": 1,
+          "my": 1
+        },
+        "pronouns": ["i", "it", "my", "mine"],
+        "verbs": ["think", "is"],
+        "verb_forms": ["present_simple"],
+        "nouns": ["tweet"],
+        "adjectives": ["favorite"],
+        "adverbs": [],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:08Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0012
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_008",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "a calm mind a fit body and a house full of love these things cannot be bought they must be earned",
+        "char_count": 99,
+        "word_count": 20,
+        "clause_count": 2
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [1210, 1309],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "there's just such a certain truth in there that it just resonates",
+        "sentence_after": "even if you have all the money in the world you can't have those three things",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["a", "calm", "mind", "a", "fit", "body", "and", "a", "house", "full", "of", "love", "these", "things", "cannot", "be", "bought", "they", "must", "be", "earned"],
+        "unique_words": ["a", "calm", "mind", "fit", "body", "and", "house", "full", "of", "love", "these", "things", "cannot", "be", "bought", "they", "must", "earned"],
+        "word_frequencies": {
+          "a": 3,
+          "be": 2,
+          "calm": 1,
+          "mind": 1
+        },
+        "pronouns": ["these", "they"],
+        "verbs": ["be", "bought", "earned"],
+        "verb_forms": ["infinitive", "past_participle"],
+        "nouns": ["mind", "body", "house", "love", "things"],
+        "adjectives": ["calm", "fit", "full"],
+        "adverbs": [],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": true,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": ["must"]
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:09Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0015
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_009",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "even if you have all the money in the world you can't have those three things",
+        "char_count": 78,
+        "word_count": 17,
+        "clause_count": 2
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [1312, 1390],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "these things cannot be bought they must be earned",
+        "sentence_after": "Jeff Bezos still has to work out",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["even", "if", "you", "have", "all", "the", "money", "in", "the", "world", "you", "can't", "have", "those", "three", "things"],
+        "unique_words": ["even", "if", "you", "have", "all", "the", "money", "in", "world", "can't", "those", "three", "things"],
+        "word_frequencies": {
+          "you": 2,
+          "the": 2,
+          "have": 2
+        },
+        "pronouns": ["you", "those"],
+        "verbs": ["have", "can"],
+        "verb_forms": ["present_simple", "modal"],
+        "nouns": ["money", "world", "things"],
+        "adjectives": ["three"],
+        "adverbs": ["even"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": ["can"]
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:10Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0014
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_010",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "his internal mental state is still gonna be very much not controlled by external events",
+        "char_count": 88,
+        "word_count": 16,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [1480, 1568],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "he still has to work on his marriage or whatever his next relationship is",
+        "sentence_after": "it's gonna be based on how calm and peaceful he's inside",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["his", "internal", "mental", "state", "is", "still", "gonna", "be", "very", "much", "not", "controlled", "by", "external", "events"],
+        "unique_words": ["his", "internal", "mental", "state", "is", "still", "gonna", "be", "very", "much", "not", "controlled", "by", "external", "events"],
+        "word_frequencies": {
+          "his": 1,
+          "internal": 1,
+          "state": 1
+        },
+        "pronouns": ["his"],
+        "verbs": ["is", "be", "controlled"],
+        "verb_forms": ["present_simple", "future_informal", "past_participle"],
+        "nouns": ["state", "events"],
+        "adjectives": ["internal", "mental", "external"],
+        "adverbs": ["still", "very", "much"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present", "future"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:11Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0014
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_011",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "it's gonna be based on how calm and peaceful he's inside",
+        "char_count": 56,
+        "word_count": 12,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [1571, 1627],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "his internal mental state is still gonna be very much not controlled by external events",
+        "sentence_after": "I think those three things your health your mental health and your close relationships are things that you have to cultivate",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["it's", "gonna", "be", "based", "on", "how", "calm", "and", "peaceful", "he's", "inside"],
+        "unique_words": ["it's", "gonna", "be", "based", "on", "how", "calm", "and", "peaceful", "he's", "inside"],
+        "word_frequencies": {
+          "it": 1,
+          "be": 1,
+          "calm": 1
+        },
+        "pronouns": ["it", "he"],
+        "verbs": ["be", "based"],
+        "verb_forms": ["future_informal", "past_participle"],
+        "nouns": [],
+        "adjectives": ["calm", "peaceful"],
+        "adverbs": ["inside"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["future"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:12Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0013
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_012",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "I think those three things your health your mental health and your close relationships are things that you have to cultivate",
+        "char_count": 125,
+        "word_count": 22,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [1632, 1757],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "it's gonna be based on how calm and peaceful he's inside",
+        "sentence_after": "can probably bring you a lot more peace and happiness than any amount of money ever will",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["i", "think", "those", "three", "things", "your", "health", "your", "mental", "health", "and", "your", "close", "relationships", "are", "things", "that", "you", "have", "to", "cultivate"],
+        "unique_words": ["i", "think", "those", "three", "things", "your", "health", "mental", "and", "close", "relationships", "are", "that", "you", "have", "to", "cultivate"],
+        "word_frequencies": {
+          "your": 3,
+          "health": 2,
+          "things": 2
+        },
+        "pronouns": ["i", "those", "your", "you", "that"],
+        "verbs": ["think", "are", "have", "cultivate"],
+        "verb_forms": ["present_simple", "infinitive"],
+        "nouns": ["things", "health", "relationships"],
+        "adjectives": ["three", "mental", "close"],
+        "adverbs": [],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:13Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0016
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_013",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "can probably bring you a lot more peace and happiness than any amount of money ever will",
+        "char_count": 90,
+        "word_count": 17,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [1762, 1852],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "those three things your health your mental health and your close relationships are things that you have to cultivate",
+        "sentence_after": "that's what I meant",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["can", "probably", "bring", "you", "a", "lot", "more", "peace", "and", "happiness", "than", "any", "amount", "of", "money", "ever", "will"],
+        "unique_words": ["can", "probably", "bring", "you", "a", "lot", "more", "peace", "and", "happiness", "than", "any", "amount", "of", "money", "ever", "will"],
+        "word_frequencies": {
+          "can": 1,
+          "bring": 1,
+          "peace": 1
+        },
+        "pronouns": ["you"],
+        "verbs": ["can", "bring", "will"],
+        "verb_forms": ["modal", "infinitive", "future"],
+        "nouns": ["lot", "peace", "happiness", "amount", "money"],
+        "adjectives": [],
+        "adverbs": ["probably", "more", "ever"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present", "future"],
+        "modal_verbs": ["can", "will"]
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:14Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0014
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_014",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "I've been working on it",
+        "char_count": 23,
+        "word_count": 5,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [1950, 1973],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "how to get there is actually a tweet storm that I still need to put out",
+        "sentence_after": "I have probably a hundred tweets on it",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["i've", "been", "working", "on", "it"],
+        "unique_words": ["i've", "been", "working", "on", "it"],
+        "word_frequencies": {
+          "i": 1,
+          "working": 1
+        },
+        "pronouns": ["i", "it"],
+        "verbs": ["been", "working"],
+        "verb_forms": ["present_perfect_continuous"],
+        "nouns": [],
+        "adjectives": [],
+        "adverbs": [],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present_perfect"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:15Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0011
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_015",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "it's just very hard to say anything on the topic without getting attacked from 50 different directions",
+        "char_count": 104,
+        "word_count": 17,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [2030, 2134],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "I have probably a hundred tweets on it",
+        "sentence_after": "especially these days on Twitter so I've been hesitant to do it",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["it's", "just", "very", "hard", "to", "say", "anything", "on", "the", "topic", "without", "getting", "attacked", "from", "50", "different", "directions"],
+        "unique_words": ["it's", "just", "very", "hard", "to", "say", "anything", "on", "the", "topic", "without", "getting", "attacked", "from", "50", "different", "directions"],
+        "word_frequencies": {
+          "it": 1,
+          "hard": 1,
+          "attacked": 1
+        },
+        "pronouns": ["it"],
+        "verbs": ["is", "say", "getting", "attacked"],
+        "verb_forms": ["present_simple", "infinitive", "gerund", "past_participle"],
+        "nouns": ["topic", "directions"],
+        "adjectives": ["hard", "different"],
+        "adverbs": ["just", "very"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:16Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0014
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_016",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "I've been hesitant to do it because I want to target it for a very specific kind of person",
+        "char_count": 92,
+        "word_count": 20,
+        "clause_count": 2
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [2175, 2267],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "especially these days on Twitter",
+        "sentence_after": "there's a bunch of people who believe that working on your internal state is useful",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["i've", "been", "hesitant", "to", "do", "it", "because", "i", "want", "to", "target", "it", "for", "a", "very", "specific", "kind", "of", "person"],
+        "unique_words": ["i've", "been", "hesitant", "to", "do", "it", "because", "i", "want", "target", "for", "a", "very", "specific", "kind", "of", "person"],
+        "word_frequencies": {
+          "i": 2,
+          "it": 2,
+          "to": 2
+        },
+        "pronouns": ["i", "it"],
+        "verbs": ["been", "do", "want", "target"],
+        "verb_forms": ["present_perfect_continuous", "infinitive"],
+        "nouns": ["kind", "person"],
+        "adjectives": ["hesitant", "specific"],
+        "adverbs": ["very"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present_perfect", "present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:17Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0015
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_017",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "if you have a calm mind and if you've already made money you should have good relationship",
+        "char_count": 91,
+        "word_count": 17,
+        "clause_count": 3
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [2880, 2971],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "I think loving household and relationships actually automatically falls out of the other things",
+        "sentence_after": "there's no reason why you shouldn't",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["if", "you", "have", "a", "calm", "mind", "and", "if", "you've", "already", "made", "money", "you", "should", "have", "good", "relationship"],
+        "unique_words": ["if", "you", "have", "a", "calm", "mind", "and", "you've", "already", "made", "money", "should", "good", "relationship"],
+        "word_frequencies": {
+          "if": 2,
+          "you": 3,
+          "have": 2
+        },
+        "pronouns": ["you"],
+        "verbs": ["have", "made", "should"],
+        "verb_forms": ["present_simple", "past_perfect", "modal"],
+        "nouns": ["mind", "money", "relationship"],
+        "adjectives": ["calm", "good"],
+        "adverbs": ["already"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 3,
+        "is_compound": true,
+        "is_complex": true,
+        "tenses_detected": ["present", "past"],
+        "modal_verbs": ["should"]
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:18Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0014
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_018",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "when you're naturally internally peaceful you're gonna pick less fights you're gonna be more loving without expecting anything in return",
+        "char_count": 137,
+        "word_count": 23,
+        "clause_count": 4
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [3185, 3322],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "a lot of external battles happen because your internal state is not good",
+        "sentence_after": "that will take care of things on the external relationship front",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["when", "you're", "naturally", "internally", "peaceful", "you're", "gonna", "pick", "less", "fights", "you're", "gonna", "be", "more", "loving", "without", "expecting", "anything", "in", "return"],
+        "unique_words": ["when", "you're", "naturally", "internally", "peaceful", "gonna", "pick", "less", "fights", "be", "more", "loving", "without", "expecting", "anything", "in", "return"],
+        "word_frequencies": {
+          "you're": 3,
+          "gonna": 2,
+          "when": 1
+        },
+        "pronouns": ["you"],
+        "verbs": ["are", "pick", "be", "loving", "expecting"],
+        "verb_forms": ["present_simple", "future_informal", "infinitive", "gerund"],
+        "nouns": ["fights", "return"],
+        "adjectives": ["peaceful", "loving"],
+        "adverbs": ["naturally", "internally", "less", "more"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 4,
+        "is_compound": true,
+        "is_complex": true,
+        "tenses_detected": ["present", "future"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:19Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0017
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_019",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "money solves your money problems",
+        "char_count": 32,
+        "word_count": 5,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [3395, 3427],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "that will take care of things on the external relationship front",
+        "sentence_after": "money buys you freedom in the material world",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["money", "solves", "your", "money", "problems"],
+        "unique_words": ["money", "solves", "your", "problems"],
+        "word_frequencies": {
+          "money": 2,
+          "solves": 1
+        },
+        "pronouns": ["your"],
+        "verbs": ["solves"],
+        "verb_forms": ["present_simple"],
+        "nouns": ["money", "problems"],
+        "adjectives": [],
+        "adverbs": [],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:20Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0011
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_020",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "money buys you freedom in the material world",
+        "char_count": 44,
+        "word_count": 8,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [3430, 3474],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "money solves your money problems",
+        "sentence_after": "I think that was a tweet from your cutting room floor",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["money", "buys", "you", "freedom", "in", "the", "material", "world"],
+        "unique_words": ["money", "buys", "you", "freedom", "in", "the", "material", "world"],
+        "word_frequencies": {
+          "money": 1,
+          "buys": 1,
+          "freedom": 1
+        },
+        "pronouns": ["you"],
+        "verbs": ["buys"],
+        "verb_forms": ["present_simple"],
+        "nouns": ["money", "freedom", "world"],
+        "adjectives": ["material"],
+        "adverbs": [],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:21Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0012
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_021",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "money lets you not do the things that you don't want to do",
+        "char_count": 58,
+        "word_count": 13,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [3535, 3593],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "I think that was a tweet from your cutting room floor",
+        "sentence_after": "to me the ultimate purpose of money is so that you do not have to be in a specific place at a specific time doing anything you don't want to do",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["money", "lets", "you", "not", "do", "the", "things", "that", "you", "don't", "want", "to", "do"],
+        "unique_words": ["money", "lets", "you", "not", "do", "the", "things", "that", "don't", "want", "to"],
+        "word_frequencies": {
+          "you": 2,
+          "do": 2,
+          "money": 1
+        },
+        "pronouns": ["you", "that"],
+        "verbs": ["lets", "do", "want"],
+        "verb_forms": ["present_simple", "infinitive"],
+        "nouns": ["money", "things"],
+        "adjectives": [],
+        "adverbs": ["not"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:22Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0013
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_022",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "to me the ultimate purpose of money is so that you do not have to be in a specific place at a specific time doing anything you don't want to do",
+        "char_count": 146,
+        "word_count": 32,
+        "clause_count": 2
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [3605, 3751],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "money lets you not do the things that you don't want to do",
+        "sentence_after": null,
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["to", "me", "the", "ultimate", "purpose", "of", "money", "is", "so", "that", "you", "do", "not", "have", "to", "be", "in", "a", "specific", "place", "at", "a", "specific", "time", "doing", "anything", "you", "don't", "want", "to", "do"],
+        "unique_words": ["to", "me", "the", "ultimate", "purpose", "of", "money", "is", "so", "that", "you", "do", "not", "have", "be", "in", "a", "specific", "place", "at", "time", "doing", "anything", "don't", "want"],
+        "word_frequencies": {
+          "to": 3,
+          "a": 2,
+          "specific": 2,
+          "you": 2,
+          "do": 2
+        },
+        "pronouns": ["me", "you", "that"],
+        "verbs": ["is", "do", "have", "be", "doing", "want"],
+        "verb_forms": ["present_simple", "infinitive", "gerund"],
+        "nouns": ["purpose", "money", "place", "time"],
+        "adjectives": ["ultimate", "specific"],
+        "adverbs": ["not"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:23Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0018
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_023",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "I'm just not the expert there",
+        "char_count": 29,
+        "word_count": 6,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [2675, 2704],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "Fitness is another big one",
+        "sentence_after": "there are plenty of good people on Twitter who are better at fitness than me",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["i'm", "just", "not", "the", "expert", "there"],
+        "unique_words": ["i'm", "just", "not", "the", "expert", "there"],
+        "word_frequencies": {
+          "i": 1,
+          "expert": 1
+        },
+        "pronouns": ["i"],
+        "verbs": ["am"],
+        "verb_forms": ["present_simple"],
+        "nouns": ["expert"],
+        "adjectives": [],
+        "adverbs": ["just", "not", "there"],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:24Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0011
+      }
+    },
+
+    {
+      "fragment_id": "f_naval_024",
+      "subject_id": "naval_ravikant",
+      "content": {
+        "verbatim": "I want to target it for a very specific kind of person",
+        "char_count": 54,
+        "word_count": 12,
+        "clause_count": 1
+      },
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Naval Ravikant"
+      },
+      "source": {
+        "document_id": "calm_mind_fit_body",
+        "document_type": "podcast_transcript",
+        "char_position": [2225, 2279],
+        "timestamp": null,
+        "medium": "spoken",
+        "language": "en"
+      },
+      "context": {
+        "sentence_before": "I've been hesitant to do it because",
+        "sentence_after": "there's a bunch of people who believe that working on your internal state is useful",
+        "responding_to": null
+      },
+      "structure": {
+        "words": ["i", "want", "to", "target", "it", "for", "a", "very", "specific", "kind", "of", "person"],
+        "unique_words": ["i", "want", "to", "target", "it", "for", "a", "very", "specific", "kind", "of", "person"],
+        "word_frequencies": {
+          "i": 1,
+          "want": 1,
+          "target": 1
+        },
+        "pronouns": ["i", "it"],
+        "verbs": ["want", "target"],
+        "verb_forms": ["present_simple", "infinitive"],
+        "nouns": ["kind", "person"],
+        "adjectives": ["specific"],
+        "adverbs": ["very"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T14:00:25Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0013
+      }
+    }
+  ]
+}

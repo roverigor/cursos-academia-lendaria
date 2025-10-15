@@ -132,8 +132,6 @@
 
 ## Evolution Timeline
 
-### Agent Architecture Evolution
-
 ```
 Iteration 1: 23 Agents (Micro-Specialization)
 ├── One agent per trait/type
@@ -150,38 +148,6 @@ Iteration 3: 3 Agents (Universal + Task-Driven) ✅ APPROVED
 ├── @psychologist: Universal analyst (uses tasks/frameworks)
 ├── @quality-assurance: Universal validator
 └── Frameworks = tasks/knowledge bases (not agents)
-```
-
-### Fragment Architecture Evolution
-
-```
-Iteration A: Framework-Biased Fragments
-├── Fragments tagged with framework hints
-├── User: "Fragments must be reusable 100 years from now"
-└── ❌ Rejected (not framework-agnostic)
-
-Iteration B: Universal Fragments (v2.0)
-├── Framework-agnostic
-├── Still had categorization ("emotional", "cognitive", "behavioral")
-├── User: "Cataloging is inference"
-└── ❌ Rejected (violates zero-inference)
-
-Iteration C: Zero-Inference Fragments ⚠️ SUPERSEDED
-├── NO categorization (pure observables)
-├── Framework-agnostic (100-year reusability)
-├── "6-Year-Old Test" validation
-├── User: "It must be the atom"
-├── Critical analysis: Atomic = too small (not interpretable)
-└── ⚠️ Evolved to MIU (kept all good ideas)
-
-Iteration D: MIU (Minimal Interpretable Unit) ✅ APPROVED
-├── Zero inference PRESERVED
-├── Framework-agnostic PRESERVED
-├── Variable size (1-3 clauses based on meaning)
-├── Preserves causal/temporal relationships
-├── "Psychologist Test" validation (94% interpretable)
-├── User chose: "Error A worse" + "Option 1 (large fragment)"
-└── ✅ Final design (interpretability > atomicity)
 ```
 
 ---
@@ -210,36 +176,6 @@ Iteration D: MIU (Minimal Interpretable Unit) ✅ APPROVED
 **Application:**
 - 23 agents → 7 agents → 3 agents (87% reduction)
 - 46 files to maintain → 14 files → 3 + N tasks (scalable)
-
----
-
-### Learning 4: Critical Discussion Prevents Premature Implementation
-**Principle:** "Don't just agree" - Challenge assumptions, even when they sound good.
-
-**User's critical correction:**
-> "nao concorde simplesmente, vamos discutir sobre isso, traga outras analises, isso é importnte demais para overlook"
->
-> Translation: "Don't just agree, let's discuss this, bring other analyses, this is too important to overlook"
-
-**Application:**
-- User stated: "It must be the atom" (sounded correct)
-- Instead of implementing immediately → Critical analysis performed
-- Analysis revealed: Atomic fragments would fail interpretability test
-- Discussion led to better solution: MIU (keeps good ideas, fixes problems)
-- **Result:** Avoided implementing wrong solution that would require costly rewrite
-
-**Pattern:**
-1. User proposes idea ("atomic")
-2. **Don't immediately agree** → Analyze critically
-3. Identify problems (context loss, not interpretable)
-4. Propose alternatives with tradeoffs
-5. User decides based on their priorities (Error A > Error B)
-6. Implement validated solution (MIU)
-
-**Key insight:**
-- Good ideas aren't always right ideas
-- Critical analysis > Immediate agreement
-- 10 minutes of discussion > 10 hours of rework
 
 ---
 

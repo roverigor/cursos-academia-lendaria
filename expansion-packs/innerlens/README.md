@@ -3,13 +3,13 @@
 **Version:** 1.0.0-alpha
 **Author:** Academia Lendar[IA] (Alan Nicolas)
 **Type:** Universal Expansion Pack
-**Status:** 📋 Planning Phase
+**Status:** ✅ Implementation Complete - Testing Phase
 
 > Fast Big Five personality analysis from digital content - the lite version of InnerLens Professional.
 
 [![AIOS](https://img.shields.io/badge/AIOS-4.0+-blue)]()
 [![License](https://img.shields.io/badge/License-MIT-green)]()
-[![Status](https://img.shields.io/badge/Status-Planning-orange)]()
+[![Status](https://img.shields.io/badge/Status-Implementation_Complete-brightgreen)]()
 
 ---
 
@@ -58,14 +58,24 @@ npm run install:expansion innerlens
 ### Basic Usage
 
 ```bash
-# 1. Activate orchestrator
-@innerlens-orchestrator
-
-# 2. Run quick analysis (Big Five only, <2min)
+# Run complete 3-agent pipeline (extraction → analysis → validation)
+# This orchestrates all 3 agents automatically
 *detect-traits-quick --input transcript.txt
 
-# 3. View results
-# Output: bigfive-profile.yaml
+# Output files:
+# - fragments.json (MIU extraction)
+# - bigfive-raw.yaml (analysis results)
+# - bigfive-profile.yaml (validated profile) ✅
+
+# Alternative: Manual step-by-step
+@fragment-extractor
+*extract-fragments --input transcript.txt
+
+@psychologist
+*analyze --framework bigfive --input fragments.json
+
+@quality-assurance
+*validate --profile bigfive-raw.yaml --framework bigfive
 ```
 
 ---
@@ -76,20 +86,19 @@ npm run install:expansion innerlens
 
 | Agent | Role | When to Use |
 |-------|------|-------------|
-| `innerlens-orchestrator` | Master coordinator | Start here - guides workflows |
-| `traits-analyst` | Big Five expert | Deep trait analysis & explanations |
-| `privacy-guardian` | GDPR/LGPD compliance | Privacy validation |
+| `@fragment-extractor` | MIU extraction specialist | Extract framework-agnostic behavioral units (once, reuse forever) |
+| `@psychologist` | Universal personality analyst | Analyze fragments using Big Five (or any framework via tasks) |
+| `@quality-assurance` | Independent validator | Validate profile quality before delivery |
 
-### Tasks (3)
+### Tasks (2)
 
-**Core Detection:**
-- `detect-traits-quick` - Fast Big Five analysis (<2min)
+**Core Pipeline:**
+- `detect-traits-quick` - 3-agent pipeline orchestrator (fragment extraction → analysis → validation)
+- `analyze-bigfive` - Big Five detection workflow (12-step process for @psychologist)
 
-**Integration:**
-- `integrate-with-mmos` - Export to MMOS for AI cloning
-
-**Compliance:**
-- `validate-privacy` - GDPR/LGPD compliance check
+**Future:**
+- `analyze-hexaco` - HEXACO framework (v1.1)
+- `integrate-with-mmos` - Export to MMOS for AI cloning (v1.1)
 
 ### Framework: Big Five (OCEAN)
 
@@ -121,108 +130,279 @@ npm run install:expansion innerlens
 
 ## 🔧 Usage Examples
 
-### Example 1: Quick Screening
+### Example 1: Complete Pipeline (Recommended)
 
 ```bash
-@innerlens-orchestrator
-*detect-traits-quick --input interview-transcript.txt
+# Single command runs all 3 agents automatically
+*detect-traits-quick --input interview-transcript.txt --subject-id naval_ravikant
 
-# Output: bigfive-profile.yaml
+# Pipeline execution:
+# [30s] @fragment-extractor: Extracting MIUs from interview-transcript.txt...
+#       ✅ 42 MIUs extracted (28.0 per 1000 words)
+#       ✅ Format: interview_format (95% confidence)
+#       ✅ Output: fragments.json
+
+# [90s] @psychologist: Analyzing fragments using Big Five framework...
+#       ✅ Batch 1/2 processed (20 MIUs)
+#       ✅ Batch 2/2 processed (22 MIUs)
+#       ✅ 5 traits scored, 30 facets mapped
+#       ✅ Output: bigfive-raw.yaml
+
+# [30s] @quality-assurance: Validating profile quality...
+#       ✅ Schema validation: PASS
+#       ✅ Statistical distribution: PASS (std_dev: 18.2)
+#       ✅ Facet-trait consistency: PASS (all deviations <= 10)
+#       ✅ Evidence sufficiency: PASS (all traits >= 5 MIUs)
+#       ⚠️  2 warnings detected
+#       ✅ Validation outcome: VALIDATED_MEDIUM
+#       ✅ Output: bigfive-profile.yaml
+
+# Total time: 2m 30s
+# Total cost: $0.175
 ```
 
-**Output:**
+**Output (`bigfive-profile.yaml`):**
 ```yaml
 profile_version: "1.0"
-analyzed_date: "20250114-1400"
+analyzed_date: "2025-01-14T16:33:00Z"
 framework: "Big Five (OCEAN)"
+subject_id: "naval_ravikant"
 
 traits:
   openness:
     score: 85
-    level: "HIGH"
-    confidence: 0.78
+    level: "VERY_HIGH"
+    confidence: 0.88
+    facets:
+      imagination: { score: 90, confidence: 0.85 }
+      artistic_interest: { score: 72, confidence: 0.78 }
+      intellect: { score: 95, confidence: 0.92 }
+      # ... 3 more facets
     evidence_quotes:
-      - quote: "I love exploring new ideas and unconventional approaches"
-        source: "transcript.txt:L42"
-        relevance: "Direct expression of openness"
+      - quote: "I think the biggest mistake people make is confusing absence of evidence with evidence of absence."
+        source: "f_naval_001"
+        intensity: 0.92
+        confidence: 0.90
+        facet: "intellect"
+        reasoning: "Subject demonstrates sophisticated abstract reasoning and philosophical thinking, distinguishing nuanced epistemological concepts. Strong Openness/Intellect indicator."
+      # ... 2-3 more quotes
 
   conscientiousness:
-    score: 72
+    score: 68
     level: "HIGH"
-    confidence: 0.81
-    evidence_quotes:
-      - quote: "I always deliver on time, no matter what"
-        source: "transcript.txt:L89"
-        relevance: "High achievement striving"
+    confidence: 0.82
+    # ... (similar structure)
 
-  extraversion:
-    score: 55
-    level: "AVERAGE"
-    confidence: 0.75
-    # ... (3 quotes per trait)
+  # ... (3 more traits: extraversion, agreeableness, neuroticism)
 
-overall_confidence: 0.77
-quality_score: "MEDIUM"
+statistical_summary:
+  mean_score: 57.0
+  std_dev: 18.2
+  outliers: ["openness"]
+  overall_confidence: 0.82
+
+validation:
+  validation_outcome: "VALIDATED_MEDIUM"
+  quality_score: "MEDIUM"
+  validation_results:
+    schema_validation: "PASS"
+    statistical_validation: { status: "PASS" }
+    evidence_sufficiency: { status: "PASS" }
+  quality_flags:
+    warnings:
+      - "Openness: Outlier detected (85 vs mean 57.0) - verify consistency"
+      - "Extraversion: Moderate confidence (0.71) - 4 MIUs only"
+  user_message: "This profile has been validated with minor limitations. Scores are reliable but Extraversion has limited evidence (4 behavioral examples). See warnings section for details."
 ```
 
 ---
 
-### Example 2: MMOS Integration (AI Cloning)
+### Example 2: Step-by-Step Manual Execution
 
 ```bash
-# Step 1: Run MMOS pipeline (Phases 1-3)
+# Step 1: Extract MIUs (framework-agnostic)
+@fragment-extractor
+*extract-fragments --input podcast-transcript.txt --subject-id sam_altman
+
+# Output: fragments.json
+# {
+#   "metadata": { "subject_id": "sam_altman", "mius_extracted": 38, ... },
+#   "fragments": [
+#     { "fragment_id": "f_sam_001", "content": { "verbatim": "...", ... }, ... },
+#     ...
+#   ]
+# }
+
+# Step 2: Analyze with Big Five
+@psychologist
+*analyze --framework bigfive --input fragments.json
+
+# Output: bigfive-raw.yaml (unvalidated results)
+
+# Step 3: Independent validation
+@quality-assurance
+*validate --profile bigfive-raw.yaml --framework bigfive
+
+# Output: bigfive-profile.yaml (validated, production-ready)
+
+# Future: Reuse same fragments.json for other frameworks
+@psychologist
+*analyze --framework hexaco --input fragments.json  # v1.1
+# No re-extraction needed! Saves time and cost.
+```
+
+---
+
+### Example 3: Future - MMOS Integration (v1.1)
+
+```bash
+# Step 1: Run MMOS pipeline (Phases 1-4)
 @mind-mapper
 *execute-pipeline --mind naval_ravikant
 
-# Step 2: Enhance with InnerLens
-@innerlens-orchestrator
-*integrate-with-mmos --mind naval_ravikant
+# Step 2: Enhance with InnerLens Big Five analysis
+*detect-traits-quick --input minds/naval_ravikant/data/transcripts/*.txt --subject-id naval_ravikant
 
-# Output: minds/naval_ravikant/analysis/psychometric-profile.yaml
-```
+# Step 3: Integrate psychometric profile
+@mind-mapper
+*enhance-mind --mind naval_ravikant --profile bigfive-profile.yaml
 
-**Result:** MMOS Phase 4 (Synthesis) merges:
-- `cognitive-spec.yaml` (DNA Mental™ 8 layers)
-- `psychometric-profile.yaml` (Big Five from InnerLens)
+# Output: minds/naval_ravikant/system_prompts/generalista.md
+# System prompt enhanced with:
+# - Cognitive patterns (MMOS DNA Mental™)
+# - Big Five personality scores (InnerLens)
+# - Evidence-based behavioral tendencies
 
-**Fidelity improvement:** 94% → 96%+ (estimated)
-
----
-
-### Example 3: Multimodal Analysis
-
-```bash
-@innerlens-orchestrator
-
-# Analyze multiple sources
-*detect-traits-quick \
-  --text transcript.txt \
-  --whatsapp whatsapp-export.json \
-  --email email-threads.mbox
-
-# Uses:
-# - Text: Linguistic markers
-# - WhatsApp: Message patterns, timing, emoji
-# - Email: Formality, structure, response time
+# Fidelity improvement: 94% → 96%+ (estimated with personality layer)
 ```
 
 ---
 
 ## 🔍 How It Works
 
-### Detection Pipeline
+### 3-Agent MIU Pipeline Architecture
+
+**Core Innovation: MIU (Minimal Interpretable Unit) - Extract Once, Reuse Forever**
 
 ```mermaid
-graph LR
-    A[Text Input] --> B[Preprocessing]
-    B --> C[Linguistic Markers]
-    B --> D[Multimodal Patterns]
-    C --> E[LLM Analysis]
-    D --> E
-    E --> F[Big Five Scores]
-    F --> G[Confidence Scoring]
-    G --> H[Evidence Quotes]
-    H --> I[YAML Output]
+graph TB
+    A[Raw Text Input<br/>500-2000 words] --> B[📝 @fragment-extractor<br/>~30 seconds]
+
+    B --> C[fragments.json<br/>MIU Format<br/>Zero Inference]
+
+    C --> D[🧠 @psychologist<br/>~90 seconds]
+
+    D --> E[bigfive-raw.yaml<br/>Scores + Evidence]
+
+    E --> F[✅ @quality-assurance<br/>~30 seconds]
+
+    F --> G[bigfive-profile.yaml<br/>VALIDATED Profile]
+
+    style C fill:#e1f5ff,stroke:#0066cc,stroke-width:2px
+    style G fill:#d4edda,stroke:#28a745,stroke-width:2px
+
+    subgraph "Step 1: Framework-Agnostic Extraction"
+        B
+        B1[6 Fragmentation Rules]
+        B2[Zero Inference Principle]
+        B3[Format Identification]
+        B --> B1
+        B --> B2
+        B --> B3
+    end
+
+    subgraph "Step 2: Big Five Detection"
+        D
+        D1[Batch Processing 20-30 MIUs]
+        D2[Intensity + Confidence Scoring]
+        D3[30 Facets Mapping]
+        D --> D1
+        D --> D2
+        D --> D3
+    end
+
+    subgraph "Step 3: Independent Validation"
+        F
+        F1[9 Validation Dimensions]
+        F2[Statistical Checks]
+        F3[Validation Outcome]
+        F --> F1
+        F --> F2
+        F --> F3
+    end
+```
+
+### MIU (Minimal Interpretable Unit) Explained
+
+**What is an MIU?**
+- Smallest text chunk that preserves complete behavioral meaning
+- Includes causal/temporal relationships ("because", "when")
+- Zero inference: ONLY observables stored (no trait categorization)
+- Framework-agnostic: Reusable for Big Five, HEXACO, MBTI, or any future framework
+
+**Why MIU Architecture?**
+- ✅ **Extract once, analyze forever**: Same fragments work for all frameworks
+- ✅ **100-year reusability**: Pure observables never become outdated
+- ✅ **Cost savings**: No re-extraction when analyzing with new frameworks
+- ✅ **Quality**: Separation of concerns (extraction ≠ interpretation)
+
+**Example MIU:**
+```json
+{
+  "fragment_id": "f_naval_001",
+  "content": {
+    "verbatim": "I think the biggest mistake people make is confusing absence of evidence with evidence of absence.",
+    "word_count": 16,
+    "clause_count": 1
+  },
+  "attribution": {
+    "speaker": "subject",
+    "speaker_name": "Naval Ravikant"
+  },
+  "structure": {
+    "pronouns": ["I"],
+    "verbs": ["think", "make", "confusing"],
+    "modal_verbs": [],
+    "tenses_detected": ["present"]
+  }
+  // NO trait categorization - that's @psychologist's job
+}
+```
+
+### Validation Outcomes (@quality-assurance)
+
+Every profile is independently validated across 9 dimensions. **Quality outcomes**:
+
+| Outcome | Criteria | User Message |
+|---------|----------|--------------|
+| **VALIDATED_HIGH** | 0 failures, 0-1 warnings, confidence ≥80% | "High quality - all traits backed by adequate evidence (5+ examples each)" |
+| **VALIDATED_MEDIUM** | 0 failures, 2-3 warnings, confidence ≥65% | "Validated with minor limitations - some traits have limited evidence (3-4 examples)" |
+| **PROVISIONAL** | ≤1 failure, 4-6 warnings, confidence ≥50% | "Use with caution - insufficient evidence for some traits (<3 examples)" |
+| **REJECTED** | 2+ failures OR confidence <50% | "Does not meet quality standards - provide more text data (1000-2000 words)" |
+
+**9 Validation Dimensions:**
+1. Schema validation (all required fields)
+2. Score range validation (0-100, 0.0-1.0)
+3. Statistical distribution (std dev 10-35 ideal, IQR outliers)
+4. Facet-trait consistency (deviation ≤20 points)
+5. Evidence sufficiency (≥3 MIUs per trait)
+6. Confidence calibration (no overconfidence)
+7. Contradiction detection (rare combinations)
+8. Source attribution (all evidence properly attributed)
+9. Processing metadata (time, cost reasonable)
+
+**Example validation failure**:
+```yaml
+validation:
+  validation_outcome: "REJECTED"
+  quality_flags:
+    failures:
+      - "Evidence sufficiency: 3 traits with <3 MIUs (insufficient)"
+      - "Overall confidence 0.38 (below minimum 0.50)"
+  remediation_suggestions:
+    - issue: "Insufficient text data"
+      suggestion: "Provide 1000-2000 words from diverse sources (interview + essay + conversation)"
+      priority: "HIGH"
 ```
 
 ### Linguistic Marker Example
@@ -230,18 +410,46 @@ graph LR
 **Input text:**
 > "I'm constantly reading papers across 10+ disciplines just to find interesting connections. The status quo bores me."
 
-**Detected markers:**
-- ✅ "constantly reading" → High Openness (curiosity)
-- ✅ "10+ disciplines" → High Openness (breadth)
-- ✅ "find connections" → High Openness (abstract thinking)
-- ✅ "status quo bores me" → High Openness (novelty-seeking)
+**Detected by @psychologist:**
+- ✅ "constantly reading" → Openness/Intellect facet (curiosity)
+- ✅ "10+ disciplines" → Openness/Breadth facet
+- ✅ "find connections" → Openness/Intellect (abstract thinking)
+- ✅ "status quo bores me" → Openness/Adventurousness (novelty-seeking)
 
-**Output:**
+**MIU extracted by @fragment-extractor:**
+```json
+{
+  "fragment_id": "f_user_042",
+  "content": {
+    "verbatim": "I'm constantly reading papers across 10+ disciplines just to find interesting connections.",
+    "word_count": 13,
+    "clause_count": 1
+  },
+  "structure": {
+    "pronouns": ["I"],
+    "verbs": ["reading", "find"],
+    "adverbs": ["constantly"],
+    "modal_verbs": []
+  }
+  // NO trait categorization - pure observables only
+}
+```
+
+**Output by @psychologist:**
 ```yaml
 openness:
   score: 88
   level: "VERY_HIGH"
   confidence: 0.85
+  facets:
+    intellect: { score: 95, confidence: 0.92 }
+  evidence_quotes:
+    - quote: "I'm constantly reading papers across 10+ disciplines..."
+      source: "f_user_042"
+      intensity: 0.90
+      confidence: 0.88
+      facet: "intellect"
+      reasoning: "Subject demonstrates extreme intellectual curiosity (10+ disciplines) and abstract pattern-finding behavior. Very strong Openness/Intellect indicator."
 ```
 
 ---
@@ -460,12 +668,16 @@ Before finalizing analysis:
 
 ## 🗺️ Roadmap
 
-### v1.0 (MVP) - Weeks 1-2 ✅ Current
+### v1.0 (MVP) - Weeks 1-2 ✅ Implementation Complete (Testing Phase)
 
-- ✅ Big Five detection (<2min, 75%+ accuracy)
-- ✅ Simple evidence quotes
-- ✅ MMOS integration hook
-- ✅ Privacy framework (4-level classification)
+- ✅ **3-Agent MIU Pipeline**: @fragment-extractor → @psychologist → @quality-assurance
+- ✅ **Big Five Detection**: 5 traits + 30 facets with evidence-based scoring
+- ✅ **Professional Quality**: Format ID, statistics, validation, warnings
+- ✅ **MIU Architecture**: Framework-agnostic extraction (100-year reusability)
+- ✅ **Independent Validation**: 9-dimension quality checks with validation outcomes
+- ✅ **Performance Design**: <2min pipeline (30s + 90s + 30s)
+- ✅ **Cost Design**: ~$0.20 per analysis
+- 🔲 **Pending**: Real-world testing (10 subjects, 75%+ correlation target)
 
 ### v1.1 - Weeks 3-4
 
@@ -518,7 +730,8 @@ MIT License - See [LICENSE](../../LICENSE) for details.
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 1.0.0-alpha | 2025-01-14 | Initial planning release |
+| 1.0.0-alpha | 2025-01-15 | ✅ Implementation complete - all 3 agents, 2 tasks, Big Five framework KB, quality checklist, MIU architecture |
+| 1.0.0-planning | 2025-01-14 | Initial planning and PRD |
 
 ---
 

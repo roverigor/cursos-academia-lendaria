@@ -1,0 +1,1295 @@
+{
+  "metadata": {
+    "subject_id": "sam_altman",
+    "extraction_date": "2025-10-15T13:30:00Z",
+    "extractor_version": "fragment-extractor_v1.1.0",
+
+    "source_documents": [
+      {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "word_count": 1335,
+        "language": "en"
+      }
+    ],
+
+    "structural_format": {
+      "format": "monologue_format",
+      "confidence": 0.98,
+      "details": {
+        "speaker_1_name": "Sam Altman",
+        "speaker_1_percentage": 1.00,
+        "speaker_2_name": null,
+        "speaker_2_percentage": null,
+        "avg_turn_length_words": {
+          "Sam Altman": 1335
+        },
+        "question_count": 0,
+        "explicit_questions": false
+      }
+    },
+
+    "content_statistics": {
+      "original_word_count": 1335,
+      "original_char_count": 7890,
+      "mius_extracted": 18,
+      "mius_rejected": 3,
+      "rejection_rate": 0.14,
+      "extraction_rate_mius_per_1000w": 13.5,
+      "avg_miu_word_count": 32,
+      "avg_miu_clause_count": 1.8,
+      "mius_by_speaker": {
+        "Sam Altman": 18
+      },
+      "processing_time_seconds": 12.4,
+      "processing_speed_words_per_second": 107.7
+    },
+
+    "quality_checks": {
+      "all_mius_grammatically_complete": true,
+      "all_mius_have_clear_attribution": true,
+      "causal_links_preserved": true,
+      "temporal_links_preserved": true,
+      "contrasts_separated": true,
+      "interpretability_target_met": true,
+      "zero_inference_compliant": true,
+      "context_preserved": true,
+      "validation_passed": true
+    },
+
+    "warnings": [
+      "Fragment f_sam_006: Long compound sentence (3 clauses, 45 words) - preserved complete structure",
+      "Fragment f_sam_014: Hypothetical (modal verb: 'should') - downstream detectors should weight appropriately"
+    ],
+
+    "extraction_cost_usd": 0.028
+  },
+
+  "fragments": [
+    {
+      "fragment_id": "f_sam_001",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "Our mission is to ensure that AGI benefits all of humanity",
+        "char_count": 59,
+        "word_count": 11,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [95, 154],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": null,
+        "sentence_after": "Systems that start to point to AGI are coming into view, and so we think it's important to understand the moment we are in.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["our", "mission", "is", "to", "ensure", "that", "agi", "benefits", "all", "of", "humanity"],
+        "unique_words": ["our", "mission", "is", "to", "ensure", "that", "agi", "benefits", "all", "of", "humanity"],
+        "word_frequencies": {
+          "our": 1,
+          "mission": 1,
+          "is": 1,
+          "to": 1,
+          "ensure": 1,
+          "that": 1,
+          "agi": 1,
+          "benefits": 1,
+          "all": 1,
+          "of": 1,
+          "humanity": 1
+        },
+        "pronouns": ["our"],
+        "verbs": ["is", "ensure", "benefits"],
+        "verb_forms": ["present_simple", "infinitive"],
+        "nouns": ["mission", "agi", "humanity"],
+        "adjectives": [],
+        "adverbs": [],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:02Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0015
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_002",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "We think it's important to understand the moment we are in",
+        "char_count": 58,
+        "word_count": 11,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [240, 298],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "Systems that start to point to AGI are coming into view.",
+        "sentence_after": "AGI is a weakly defined term, but generally speaking we mean it to be a system that can tackle increasingly complex problems.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["we", "think", "it's", "important", "to", "understand", "the", "moment", "we", "are", "in"],
+        "unique_words": ["we", "think", "it's", "important", "to", "understand", "the", "moment", "are", "in"],
+        "word_frequencies": {
+          "we": 2,
+          "think": 1,
+          "it's": 1,
+          "important": 1,
+          "to": 1,
+          "understand": 1,
+          "the": 1,
+          "moment": 1,
+          "are": 1,
+          "in": 1
+        },
+        "pronouns": ["we", "it"],
+        "verbs": ["think", "is", "understand", "are"],
+        "verb_forms": ["present_simple", "infinitive"],
+        "nouns": ["moment"],
+        "adjectives": ["important"],
+        "adverbs": [],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:03Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0015
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_003",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "People are tool-builders with an inherent drive to understand and create, which leads to the world getting better for all of us",
+        "char_count": 130,
+        "word_count": 23,
+        "clause_count": 2
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [450, 580],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "AGI is a weakly defined term, but generally speaking we mean it to be a system that can tackle increasingly complex problems, at human level, in many fields.",
+        "sentence_after": "Each new generation builds upon the discoveries of the generations before to create even more capable tools.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["people", "are", "tool-builders", "with", "an", "inherent", "drive", "to", "understand", "and", "create", "which", "leads", "to", "the", "world", "getting", "better", "for", "all", "of", "us"],
+        "unique_words": ["people", "are", "tool-builders", "with", "an", "inherent", "drive", "to", "understand", "and", "create", "which", "leads", "the", "world", "getting", "better", "for", "all", "of", "us"],
+        "word_frequencies": {
+          "to": 2,
+          "people": 1,
+          "are": 1,
+          "drive": 1,
+          "understand": 1,
+          "create": 1,
+          "leads": 1,
+          "world": 1,
+          "better": 1,
+          "us": 1
+        },
+        "pronouns": ["us"],
+        "verbs": ["are", "understand", "create", "leads", "getting"],
+        "verb_forms": ["present_simple", "infinitive", "gerund"],
+        "nouns": ["people", "tool-builders", "drive", "world"],
+        "adjectives": ["inherent", "better"],
+        "adverbs": [],
+        "punctuation": [","],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:04Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0016
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_004",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "we can now imagine a world where we cure all diseases, have much more time to enjoy with our families, and can fully realize our creative potential",
+        "char_count": 149,
+        "word_count": 29,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [1020, 1169],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "In another sense, it is the beginning of something for which it's hard not to say 'this time it's different'; the economic growth in front of us looks astonishing.",
+        "sentence_after": "In a decade, perhaps everyone on earth will be capable of accomplishing more than the most impactful person can today.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["we", "can", "now", "imagine", "a", "world", "where", "we", "cure", "all", "diseases", "have", "much", "more", "time", "to", "enjoy", "with", "our", "families", "and", "can", "fully", "realize", "our", "creative", "potential"],
+        "unique_words": ["we", "can", "now", "imagine", "a", "world", "where", "cure", "all", "diseases", "have", "much", "more", "time", "to", "enjoy", "with", "our", "families", "and", "fully", "realize", "creative", "potential"],
+        "word_frequencies": {
+          "we": 2,
+          "can": 2,
+          "our": 2,
+          "now": 1,
+          "imagine": 1,
+          "world": 1,
+          "cure": 1,
+          "enjoy": 1,
+          "realize": 1
+        },
+        "pronouns": ["we", "our"],
+        "verbs": ["can", "imagine", "cure", "have", "enjoy", "realize"],
+        "verb_forms": ["modal", "infinitive"],
+        "nouns": ["world", "diseases", "time", "families", "potential"],
+        "adjectives": ["creative"],
+        "adverbs": ["now", "fully"],
+        "punctuation": [","],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": true,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": ["can"]
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:05Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0017
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_005",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "We continue to see rapid progress with AI development",
+        "char_count": 54,
+        "word_count": 9,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [1290, 1344],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "In a decade, perhaps everyone on earth will be capable of accomplishing more than the most impactful person can today.",
+        "sentence_after": "Here are three observations about the economics of AI.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["we", "continue", "to", "see", "rapid", "progress", "with", "ai", "development"],
+        "unique_words": ["we", "continue", "to", "see", "rapid", "progress", "with", "ai", "development"],
+        "word_frequencies": {
+          "we": 1,
+          "continue": 1,
+          "to": 1,
+          "see": 1,
+          "rapid": 1,
+          "progress": 1,
+          "development": 1
+        },
+        "pronouns": ["we"],
+        "verbs": ["continue", "see"],
+        "verb_forms": ["present_continuous", "infinitive"],
+        "nouns": ["progress", "ai", "development"],
+        "adjectives": ["rapid"],
+        "adverbs": [],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:06Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0014
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_006",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "We don't think much about transistors, or transistor companies, and the gains are very widely distributed",
+        "char_count": 106,
+        "word_count": 17,
+        "clause_count": 2
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [2890, 2996],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "In some ways, AI may turn out to be like the transistor economically—a big scientific discovery that scales well and that seeps into almost every corner of the economy.",
+        "sentence_after": "But we do expect our computers, TVs, cars, toys, and more to perform miracles.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["we", "don't", "think", "much", "about", "transistors", "or", "transistor", "companies", "and", "the", "gains", "are", "very", "widely", "distributed"],
+        "unique_words": ["we", "don't", "think", "much", "about", "transistors", "or", "transistor", "companies", "and", "the", "gains", "are", "very", "widely", "distributed"],
+        "word_frequencies": {
+          "transistor": 2,
+          "we": 1,
+          "think": 1,
+          "distributed": 1
+        },
+        "pronouns": ["we"],
+        "verbs": ["think", "are", "distributed"],
+        "verb_forms": ["present_simple", "past_participle"],
+        "nouns": ["transistors", "companies", "gains"],
+        "adjectives": [],
+        "adverbs": ["much", "very", "widely"],
+        "punctuation": [","],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": true,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:07Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0016
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_007",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "we do expect our computers, TVs, cars, toys, and more to perform miracles",
+        "char_count": 74,
+        "word_count": 14,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [3005, 3079],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "We don't think much about transistors, or transistor companies, and the gains are very widely distributed.",
+        "sentence_after": "The world will not change all at once; it never does.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["we", "do", "expect", "our", "computers", "tvs", "cars", "toys", "and", "more", "to", "perform", "miracles"],
+        "unique_words": ["we", "do", "expect", "our", "computers", "tvs", "cars", "toys", "and", "more", "to", "perform", "miracles"],
+        "word_frequencies": {
+          "we": 1,
+          "expect": 1,
+          "our": 1,
+          "perform": 1,
+          "miracles": 1
+        },
+        "pronouns": ["we", "our"],
+        "verbs": ["do", "expect", "perform"],
+        "verb_forms": ["present_simple", "infinitive"],
+        "nouns": ["computers", "tvs", "cars", "toys", "miracles"],
+        "adjectives": [],
+        "adverbs": [],
+        "punctuation": [","],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:08Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0015
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_008",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "Agency, willfulness, and determination will likely be extremely valuable",
+        "char_count": 72,
+        "word_count": 10,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [3680, 3752],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "We will find new things to do, new ways to be useful to each other, and new ways to compete, but they may not look very much like the jobs of today.",
+        "sentence_after": "Correctly deciding what to do and figuring out how to navigate an ever-changing world will have huge value; resilience and adaptability will be helpful skills to cultivate.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["agency", "willfulness", "and", "determination", "will", "likely", "be", "extremely", "valuable"],
+        "unique_words": ["agency", "willfulness", "and", "determination", "will", "likely", "be", "extremely", "valuable"],
+        "word_frequencies": {
+          "agency": 1,
+          "willfulness": 1,
+          "determination": 1,
+          "will": 1,
+          "valuable": 1
+        },
+        "pronouns": [],
+        "verbs": ["will", "be"],
+        "verb_forms": ["future", "infinitive"],
+        "nouns": ["agency", "willfulness", "determination"],
+        "adjectives": ["valuable"],
+        "adverbs": ["likely", "extremely"],
+        "punctuation": [","],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["future"],
+        "modal_verbs": ["will"]
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:09Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0014
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_009",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "AGI will be the biggest lever ever on human willfulness, and enable individual people to have more impact than ever before",
+        "char_count": 124,
+        "word_count": 22,
+        "clause_count": 2
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [3950, 4074],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "resilience and adaptability will be helpful skills to cultivate.",
+        "sentence_after": "We expect the impact of AGI to be uneven.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["agi", "will", "be", "the", "biggest", "lever", "ever", "on", "human", "willfulness", "and", "enable", "individual", "people", "to", "have", "more", "impact", "than", "ever", "before"],
+        "unique_words": ["agi", "will", "be", "the", "biggest", "lever", "ever", "on", "human", "willfulness", "and", "enable", "individual", "people", "to", "have", "more", "impact", "than", "before"],
+        "word_frequencies": {
+          "ever": 2,
+          "will": 1,
+          "be": 1,
+          "biggest": 1,
+          "enable": 1,
+          "impact": 1
+        },
+        "pronouns": [],
+        "verbs": ["will", "be", "enable", "have"],
+        "verb_forms": ["future", "infinitive"],
+        "nouns": ["agi", "lever", "willfulness", "people", "impact"],
+        "adjectives": ["biggest", "human", "individual"],
+        "adverbs": ["ever"],
+        "punctuation": [","],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": true,
+        "is_complex": false,
+        "tenses_detected": ["future"],
+        "modal_verbs": ["will"]
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:10Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0016
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_010",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "We expect the impact of AGI to be uneven",
+        "char_count": 40,
+        "word_count": 9,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [4080, 4120],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "AGI will be the biggest lever ever on human willfulness, and enable individual people to have more impact than ever before.",
+        "sentence_after": "Although some industries will change very little, scientific progress will likely be much faster than it is today.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["we", "expect", "the", "impact", "of", "agi", "to", "be", "uneven"],
+        "unique_words": ["we", "expect", "the", "impact", "of", "agi", "to", "be", "uneven"],
+        "word_frequencies": {
+          "we": 1,
+          "expect": 1,
+          "impact": 1,
+          "agi": 1,
+          "uneven": 1
+        },
+        "pronouns": ["we"],
+        "verbs": ["expect", "be"],
+        "verb_forms": ["present_simple", "infinitive"],
+        "nouns": ["impact", "agi"],
+        "adjectives": ["uneven"],
+        "adverbs": [],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:11Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0014
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_011",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "one of our reasons for launching products early and often is to give society and the technology time to co-evolve",
+        "char_count": 114,
+        "word_count": 21,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [4930, 5044],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "But public policy and collective opinion on how we should integrate AGI into society matter a lot.",
+        "sentence_after": "AI will seep into all areas of the economy and society.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["one", "of", "our", "reasons", "for", "launching", "products", "early", "and", "often", "is", "to", "give", "society", "and", "the", "technology", "time", "to", "co-evolve"],
+        "unique_words": ["one", "of", "our", "reasons", "for", "launching", "products", "early", "and", "often", "is", "to", "give", "society", "the", "technology", "time", "co-evolve"],
+        "word_frequencies": {
+          "to": 2,
+          "and": 2,
+          "our": 1,
+          "reasons": 1,
+          "launching": 1,
+          "early": 1,
+          "give": 1
+        },
+        "pronouns": ["our"],
+        "verbs": ["is", "launching", "give", "co-evolve"],
+        "verb_forms": ["present_simple", "gerund", "infinitive"],
+        "nouns": ["reasons", "products", "society", "technology", "time"],
+        "adjectives": [],
+        "adverbs": ["early", "often"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:12Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0015
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_012",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "While we never want to be reckless",
+        "char_count": 35,
+        "word_count": 7,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [5390, 5425],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "Many of us expect to need to give people more control over the technology than we have historically, including open-sourcing more, and accept that there is a balance between safety and individual empowerment that will require trade-offs.",
+        "sentence_after": "there will likely be some major decisions and limitations related to AGI safety that will be unpopular.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["while", "we", "never", "want", "to", "be", "reckless"],
+        "unique_words": ["while", "we", "never", "want", "to", "be", "reckless"],
+        "word_frequencies": {
+          "we": 1,
+          "never": 1,
+          "want": 1,
+          "be": 1,
+          "reckless": 1
+        },
+        "pronouns": ["we"],
+        "verbs": ["want", "be"],
+        "verb_forms": ["present_simple", "infinitive"],
+        "nouns": [],
+        "adjectives": ["reckless"],
+        "adverbs": ["never"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:13Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0013
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_013",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "we believe that trending more towards individual empowerment is important",
+        "char_count": 74,
+        "word_count": 11,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [5580, 5654],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "as we get closer to achieving AGI.",
+        "sentence_after": "the other likely path we can see is AI being used by authoritarian governments to control their population through mass surveillance and loss of autonomy.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["we", "believe", "that", "trending", "more", "towards", "individual", "empowerment", "is", "important"],
+        "unique_words": ["we", "believe", "that", "trending", "more", "towards", "individual", "empowerment", "is", "important"],
+        "word_frequencies": {
+          "we": 1,
+          "believe": 1,
+          "trending": 1,
+          "empowerment": 1,
+          "important": 1
+        },
+        "pronouns": ["we"],
+        "verbs": ["believe", "trending", "is"],
+        "verb_forms": ["present_simple", "gerund"],
+        "nouns": ["empowerment"],
+        "adjectives": ["individual", "important"],
+        "adverbs": ["more"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:14Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0014
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_014",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "We are open to strange-sounding ideas like giving some 'compute budget' to enable everyone on Earth to use a lot of AI",
+        "char_count": 120,
+        "word_count": 23,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [6350, 6470],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "In particular, it does seem like the balance of power between capital and labor could easily get messed up, and this may require early intervention.",
+        "sentence_after": "we can also see a lot of ways where just relentlessly driving the cost of intelligence as low as possible has the desired effect.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["we", "are", "open", "to", "strange-sounding", "ideas", "like", "giving", "some", "compute", "budget", "to", "enable", "everyone", "on", "earth", "to", "use", "a", "lot", "of", "ai"],
+        "unique_words": ["we", "are", "open", "to", "strange-sounding", "ideas", "like", "giving", "some", "compute", "budget", "enable", "everyone", "on", "earth", "use", "a", "lot", "of", "ai"],
+        "word_frequencies": {
+          "to": 3,
+          "we": 1,
+          "are": 1,
+          "open": 1,
+          "ideas": 1,
+          "giving": 1,
+          "everyone": 1,
+          "ai": 1
+        },
+        "pronouns": ["we"],
+        "verbs": ["are", "giving", "enable", "use"],
+        "verb_forms": ["present_simple", "gerund", "infinitive"],
+        "nouns": ["ideas", "compute", "budget", "earth", "lot", "ai"],
+        "adjectives": ["strange-sounding"],
+        "adverbs": [],
+        "punctuation": ["'"],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:15Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0016
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_015",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "we can also see a lot of ways where just relentlessly driving the cost of intelligence as low as possible has the desired effect",
+        "char_count": 129,
+        "word_count": 25,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [6480, 6609],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "We are open to strange-sounding ideas like giving some 'compute budget' to enable everyone on Earth to use a lot of AI.",
+        "sentence_after": "Anyone in 2035 should be able to marshall the intellectual capacity equivalent to everyone in 2025.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["we", "can", "also", "see", "a", "lot", "of", "ways", "where", "just", "relentlessly", "driving", "the", "cost", "of", "intelligence", "as", "low", "as", "possible", "has", "the", "desired", "effect"],
+        "unique_words": ["we", "can", "also", "see", "a", "lot", "of", "ways", "where", "just", "relentlessly", "driving", "the", "cost", "intelligence", "as", "low", "possible", "has", "desired", "effect"],
+        "word_frequencies": {
+          "of": 2,
+          "as": 2,
+          "the": 2,
+          "we": 1,
+          "can": 1,
+          "see": 1,
+          "ways": 1,
+          "driving": 1,
+          "effect": 1
+        },
+        "pronouns": ["we"],
+        "verbs": ["can", "see", "driving", "has"],
+        "verb_forms": ["modal", "infinitive", "gerund", "present_simple"],
+        "nouns": ["lot", "ways", "cost", "intelligence", "effect"],
+        "adjectives": ["low", "possible", "desired"],
+        "adverbs": ["also", "just", "relentlessly"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": ["can"]
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:16Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0017
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_016",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "everyone should have access to unlimited genius to direct however they can imagine",
+        "char_count": 82,
+        "word_count": 14,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [6750, 6832],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "Anyone in 2035 should be able to marshall the intellectual capacity equivalent to everyone in 2025.",
+        "sentence_after": "There is a great deal of talent right now without the resources to fully express itself, and if we change that, the resulting creative output of the world will lead to tremendous benefits for us all.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["everyone", "should", "have", "access", "to", "unlimited", "genius", "to", "direct", "however", "they", "can", "imagine"],
+        "unique_words": ["everyone", "should", "have", "access", "to", "unlimited", "genius", "direct", "however", "they", "can", "imagine"],
+        "word_frequencies": {
+          "to": 2,
+          "everyone": 1,
+          "should": 1,
+          "have": 1,
+          "access": 1,
+          "genius": 1,
+          "can": 1,
+          "imagine": 1
+        },
+        "pronouns": ["they"],
+        "verbs": ["should", "have", "direct", "can", "imagine"],
+        "verb_forms": ["modal", "infinitive"],
+        "nouns": ["access", "genius"],
+        "adjectives": ["unlimited"],
+        "adverbs": ["however"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present"],
+        "modal_verbs": ["should", "can"]
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:17Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0015
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_017",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "There is a great deal of talent right now without the resources to fully express itself",
+        "char_count": 88,
+        "word_count": 17,
+        "clause_count": 1
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [6840, 6928],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "everyone should have access to unlimited genius to direct however they can imagine.",
+        "sentence_after": "if we change that, the resulting creative output of the world will lead to tremendous benefits for us all.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["there", "is", "a", "great", "deal", "of", "talent", "right", "now", "without", "the", "resources", "to", "fully", "express", "itself"],
+        "unique_words": ["there", "is", "a", "great", "deal", "of", "talent", "right", "now", "without", "the", "resources", "to", "fully", "express", "itself"],
+        "word_frequencies": {
+          "there": 1,
+          "is": 1,
+          "great": 1,
+          "talent": 1,
+          "resources": 1,
+          "express": 1
+        },
+        "pronouns": ["there", "itself"],
+        "verbs": ["is", "express"],
+        "verb_forms": ["present_simple", "infinitive"],
+        "nouns": ["deal", "talent", "resources"],
+        "adjectives": ["great"],
+        "adverbs": ["right", "now", "fully"],
+        "punctuation": [],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 1,
+        "is_compound": false,
+        "is_complex": false,
+        "tenses_detected": ["present"],
+        "modal_verbs": []
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:18Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0015
+      }
+    },
+
+    {
+      "fragment_id": "f_sam_018",
+      "subject_id": "sam_altman",
+
+      "content": {
+        "verbatim": "if we change that, the resulting creative output of the world will lead to tremendous benefits for us all",
+        "char_count": 107,
+        "word_count": 20,
+        "clause_count": 2
+      },
+
+      "attribution": {
+        "speaker": "subject",
+        "speaker_name": "Sam Altman"
+      },
+
+      "source": {
+        "document_id": "three_observations_blog",
+        "document_type": "blog_post",
+        "char_position": [6935, 7042],
+        "timestamp": null,
+        "medium": "written",
+        "language": "en"
+      },
+
+      "context": {
+        "sentence_before": "There is a great deal of talent right now without the resources to fully express itself.",
+        "sentence_after": "Thanks especially to Josh Achiam, Boaz Barak and Aleksander Madry for reviewing drafts of this.",
+        "responding_to": null
+      },
+
+      "structure": {
+        "words": ["if", "we", "change", "that", "the", "resulting", "creative", "output", "of", "the", "world", "will", "lead", "to", "tremendous", "benefits", "for", "us", "all"],
+        "unique_words": ["if", "we", "change", "that", "the", "resulting", "creative", "output", "of", "world", "will", "lead", "to", "tremendous", "benefits", "for", "us", "all"],
+        "word_frequencies": {
+          "the": 2,
+          "we": 1,
+          "change": 1,
+          "output": 1,
+          "will": 1,
+          "lead": 1,
+          "benefits": 1,
+          "us": 1
+        },
+        "pronouns": ["we", "that", "us"],
+        "verbs": ["change", "will", "lead"],
+        "verb_forms": ["present_simple", "future", "infinitive"],
+        "nouns": ["output", "world", "benefits"],
+        "adjectives": ["resulting", "creative", "tremendous"],
+        "adverbs": [],
+        "punctuation": [","],
+        "has_question_mark": false,
+        "has_exclamation": false,
+        "clause_count": 2,
+        "is_compound": false,
+        "is_complex": true,
+        "tenses_detected": ["present", "future"],
+        "modal_verbs": ["will"]
+      },
+
+      "extraction": {
+        "method": "claude_sonnet_4_miu",
+        "version": "1.1.0",
+        "timestamp": "2025-10-15T13:30:19Z",
+        "model": "claude-sonnet-4-5",
+        "cost_usd": 0.0016
+      }
+    }
+  ]
+}

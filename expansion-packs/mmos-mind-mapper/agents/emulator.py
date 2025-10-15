@@ -367,6 +367,7 @@ def main():
     if len(sys.argv) < 2:
         print("Usage:")
         print("  python3 emulator.py activate <mind_name>")
+        print("  python3 emulator.py debate <mind1> <mind2> --topic \"topic\" [--framework oxford] [--rounds 5]")
         print("  python3 emulator.py test <mind_name> [protocol]")
         print("  python3 emulator.py duo <mind1> <mind2>")
         print("  python3 emulator.py roundtable <mind1> <mind2> <mind3> [mind4]")
@@ -383,6 +384,58 @@ def main():
             sys.exit(1)
         mind_name = sys.argv[2]
         activate_clone(mind_name)
+
+    elif command == "debate":
+        # Import debate engine
+        sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
+        from debate_engine import DebateConfig, run_debate
+
+        # Parse arguments
+        if len(sys.argv) < 5:
+            print("Error: 2 minds and topic required")
+            print("Usage: python3 emulator.py debate <mind1> <mind2> --topic \"topic\" [--framework oxford] [--rounds 5]")
+            sys.exit(1)
+
+        clone1 = sys.argv[2]
+        clone2 = sys.argv[3]
+
+        # Extract named arguments
+        topic = None
+        framework = "oxford"
+        rounds = 5
+
+        i = 4
+        while i < len(sys.argv):
+            if sys.argv[i] == "--topic" and i + 1 < len(sys.argv):
+                topic = sys.argv[i + 1]
+                i += 2
+            elif sys.argv[i] == "--framework" and i + 1 < len(sys.argv):
+                framework = sys.argv[i + 1]
+                i += 2
+            elif sys.argv[i] == "--rounds" and i + 1 < len(sys.argv):
+                rounds = int(sys.argv[i + 1])
+                i += 2
+            else:
+                i += 1
+
+        if not topic:
+            print("Error: --topic required")
+            print("Usage: python3 emulator.py debate <mind1> <mind2> --topic \"topic\" [--framework oxford] [--rounds 5]")
+            sys.exit(1)
+
+        # Run debate
+        config = DebateConfig(
+            clone1_name=clone1,
+            clone2_name=clone2,
+            topic=topic,
+            framework=framework,
+            rounds=rounds,
+            save_transcript=True,
+            save_benchmark=True
+        )
+
+        report = run_debate(config)
+        print(f"\n✅ Debate complete! Winner: {report.winner} (+{report.win_margin:.1f} points)")
 
     elif command == "test":
         if len(sys.argv) < 3:

@@ -1,0 +1,38 @@
+debate_id: 87e7fe78
+timestamp: '2025-10-14T20:58:05.885084'
+topic: "Elon Musk n\xE3o vai conseguir ir para Marte"
+framework: Oxford Debate
+clones:
+  Sam Altman:
+    version: unknown
+    role: proposer
+    scores:
+      framework_application: 85.0
+      style_consistency: 88.0
+      knowledge_depth: 85.0
+      argument_coherence: 90.0
+      personality_fidelity: 89.0
+    overall: 87.19999999999999
+  Elon Musk:
+    version: unknown
+    role: opposer
+    scores:
+      framework_application: 93.0
+      style_consistency: 92.0
+      knowledge_depth: 90.0
+      argument_coherence: 92.0
+      personality_fidelity: 92.0
+    overall: 91.85000000000001
+results:
+  winner: Elon Musk
+  win_margin: 4.65000000000002
+analysis:
+  strengths:
+  - Excellent style consistency by Elon Musk (92.0%)
+  - Deep knowledge demonstrated by Elon Musk (90.0%)
+  weaknesses: []
+  recommendations: []
+metadata:
+  total_rounds: 3
+  duration_seconds: 0
+  transcript_path: temp/debates/debate-87e7fe78-20251014-205805.md
