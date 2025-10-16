@@ -1,0 +1,47 @@
+---
+mind:
+  name: "Alan Nicolas"
+  slug: "alan_nicolas"
+  type: "greenfield"
+  status: "blocked"
+  created_at: "2025-10-15"
+
+special_case:
+  type: "private_individual"
+  reason: "Creator-OS collaborator - requires provided materials workflow"
+  standard_mmos_applicable: false
+  blocking_issue: "No public sources available"
+  requires_new_workflow: true
+
+archetype:
+  primary: "private_individual"
+  note: "Creator-OS team member - Technical lead"
+
+pipeline:
+  version: "3.0"
+  methodology: "DNA Mental™ (simplified for private individuals)"
+  workflow_status: "awaiting_implementation"
+
+phases:
+  viability:
+    status: "skipped"
+    note: "Pre-approved by user for Creator-OS"
+  research:
+    status: "blocked"
+    sources_collected: 0
+    note: "Awaiting provided materials in sources/ directory"
+  analysis:
+    status: "pending"
+    confidence: null
+  synthesis:
+    status: "pending"
+  implementation:
+    status: "pending"
+  testing:
+    status: "pending"
+    note: "Will require direct person validation"
+
+next_actions:
+  - "User provides interview transcripts or materials in sources/"
+  - "Run: mmos-launcher execute-pipeline alan_nicolas --private-individual"
+  - "Direct validation with Alan"
