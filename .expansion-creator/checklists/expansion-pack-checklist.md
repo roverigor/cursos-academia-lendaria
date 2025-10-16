@@ -288,7 +288,22 @@ This checklist serves as a comprehensive framework for validating AIOS expansion
 
 ## 8. INTEGRATION WITH AIOS
 
-### 8.1 Framework Compatibility
+### 8.1 Slash Commands Structure
+
+- [ ] Slash commands directory created: `.claude/commands/{PackName}/`
+- [ ] Directory name is PascalCase (derived from pack name)
+- [ ] ONLY `agents/` and `tasks/` subdirectories exist (count check: exactly 2)
+- [ ] NO README.md in `.claude/commands/{PackName}/`
+- [ ] NO config files in `.claude/commands/{PackName}/`
+- [ ] NO other files or subdirectories beyond agents/ and tasks/
+- [ ] Structure verified against universal pattern (inspected ANY existing expansion pack)
+- [ ] All agent command files start with `# /{agent-id} Command`
+- [ ] All task command files start with `# /{task-id} Task`
+- [ ] Agent files preserve full YAML configuration from source
+- [ ] Task files link to full specification in expansion-packs/
+- [ ] Validation command passes: `ls -la .claude/commands/{PackName}/ | grep -E '^d' | wc -l` returns 2
+
+### 8.2 Framework Compatibility
 
 - [ ] Pack follows AIOS-FULLSTACK standards
 - [ ] Agent activation syntax (@agent-id) works
@@ -296,7 +311,7 @@ This checklist serves as a comprehensive framework for validating AIOS expansion
 - [ ] Memory layer integration configured
 - [ ] No conflicts with core AIOS components
 
-### 8.2 Installation
+### 8.3 Installation
 
 - [ ] Pack can be installed via standard installer
 - [ ] Installation completes without errors
