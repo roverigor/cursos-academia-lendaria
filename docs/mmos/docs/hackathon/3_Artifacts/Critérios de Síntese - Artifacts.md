@@ -1,4 +1,4 @@
-# Critérios de Síntese - Q&A Artifacts v1.0
+# Critérios de Síntese - Artifacts v1.0
 
 ## Documento Executivo - Hackathon de Halloween
 
@@ -11,139 +11,191 @@
 ## 1. Visão Geral
 
 Esta fase transforma a **análise cognitiva profunda** (5 layers do DNA Mental™) em **artifacts acionáveis** que serão usados para:
-1. Estruturar a knowledge base do clone
-2. Criar base para perguntas de validação (fase 4)
-3. Construir o system prompt do clone (fase 5)
-4. Demonstrar o diferencial competitivo
+1. Criar base para perguntas de validação (fase 4 - Q&A)
+2. Construir o system prompt do clone (fase 5)
+3. Demonstrar o diferencial competitivo
 
 **Outputs principais:**
-- Frameworks de comunicação documentados
+- Mental models & frameworks documentados
 - Signature phrases catalogadas
-- Knowledge base estruturada
-- Playbook de demonstração
+- Contradictions/Paradoxos produtivos mapeados
+- Communication templates estruturados
+- Values hierarchy documentada
 
 ---
 
-## 2. Artifact 1: Frameworks de Comunicação
+## 2. Artifact 1: Mental Models & Frameworks
 
 ### 2.1 O Que São
 
-**Definição:** Padrões estruturados de como a pessoa se comunica em diferentes contextos. São os "templates mentais" que ela usa para explicar, argumentar, ensinar ou persuadir.
+**Definição:** Sistemas estruturados de pensamento que a pessoa usa para entender problemas, tomar decisões e resolver situações complexas. São os "operating systems" mentais da pessoa.
 
-**Por que importam:** Um clone que usa os mesmos frameworks soa autêntico. Um que inventa novos padrões soa genérico.
+**Por que importam:** Um clone que pensa usando os mesmos frameworks tem profundidade cognitiva real, não apenas estilo superficial. Diferença entre 30% e 70%+ de fidelidade.
 
-### 2.2 Tipos de Frameworks para Capturar
+**Layer correspondente:** Layer 3 (Mental Models) - como a pessoa PENSA e estrutura raciocínio.
 
-**1. FRAMEWORK DE EXPLICAÇÃO**
+### 2.2 Tipos de Mental Models para Capturar
+
+**1. DECISION FRAMEWORKS (Frameworks de Decisão)**
 ```markdown
-## Framework: [Nome] - Como [pessoa] explica conceitos complexos
+## Framework: [Nome] - Como [pessoa] toma decisões sobre [domínio]
+
+### Estrutura do framework
+1. [Passo 1 do processo]
+2. [Passo 2 do processo]
+3. [Passo 3 do processo]
+
+### Componentes
+- **Critérios principais:** [O que pessoa considera primeiro]
+- **Trade-offs aceitos:** [O que pessoa sacrifica por quê]
+- **Red flags:** [O que faz pessoa rejeitar opção]
+- **Tempo de aplicação:** [Quando usar vs quando NÃO usar]
+
+### Exemplo de aplicação
+**Situação:** [Problema real que pessoa enfrentou]
+**Aplicação do framework:** [Como pessoa usou - passo a passo]
+**Resultado:** [Decisão tomada + outcome]
+**Fonte:** [De onde veio este exemplo]
+
+### Limitações reconhecidas
+"[Quote da pessoa sobre quando este framework NÃO funciona]"
+
+### Para o clone
+```
+Quando enfrentar [tipo de decisão]:
+1. Aplicar [Passo 1]
+2. Verificar [Critério X]
+3. Se [condição], então [ação]
+4. Reconhecer que framework falha quando [limitação]
+```
+```
+
+**2. PROBLEM-SOLVING FRAMEWORKS (Frameworks de Resolução)**
+```markdown
+## Framework: [Nome] - Como [pessoa] resolve [tipo de problema]
+
+### Abordagem geral
+- **Diagnóstico:** [Como pessoa identifica causa raiz]
+- **Geração de soluções:** [Processo - brainstorm? Systematic? Intuitivo?]
+- **Seleção:** [Critérios para escolher solução]
+- **Implementação:** [Approach típico]
+
+### Heurísticas aplicadas
+1. **"[Heurística 1]"** - [Quando usa, por quê funciona]
+2. **"[Heurística 2]"** - [Quando usa, quando falha]
+
+### Exemplo real
+[Problema + aplicação + resultado]
+
+### Failure modes que pessoa reconhece
+- **[Erro comum]:** Pessoas tentam [X], mas falha porque [Y]. Pessoa usa [Z] ao invés.
+```
+
+**3. CONCEPTUAL FRAMEWORKS (Frameworks Conceituais)**
+```markdown
+## Framework: [Nome] - Modelo mental para entender [domínio/conceito]
+
+### Estrutura do modelo
+[Como pessoa organiza o conceito - camadas? Dimensões? Espectro?]
+
+### Componentes principais
+1. **[Elemento 1]:** [Definição + importância]
+2. **[Elemento 2]:** [Definição + importância]
+3. **[Elemento 3]:** [Definição + importância]
+
+### Relações entre componentes
+- [Como elementos se conectam]
+- [Sequência/hierarquia se aplicável]
+
+### Aplicação prática
+**Quando usar:** [Contextos onde framework se aplica]
+**Como usar:** [Passos de aplicação]
+**Exemplo:** [Caso concreto]
+
+### Analogias favoritas
+- **"[Analogia]"** - [Como pessoa usa esta analogia para explicar framework]
+```
+
+### 2.3 Template de Output
+
+```markdown
+# MENTAL MODELS & FRAMEWORKS - [Nome do Clone]
+
+## Framework 1: [Nome] (Decision/Problem-Solving/Conceptual)
+
+**Tipo:** [Decision/Problem-Solving/Conceptual]
+**Domínio de aplicação:** [Onde usa]
 
 ### Estrutura
-1. [Passo 1: geralmente como começa]
-2. [Passo 2: desenvolvimento]
-3. [Passo 3: conclusão/síntese]
+1. [Passo/Componente 1]
+2. [Passo/Componente 2]
+3. [Passo/Componente 3]
 
-### Elementos característicos
-- **Abertura típica:** "[Frase/approach que pessoa usa]"
-- **Analogias favoritas:** [Lista]
-- **Exemplos concretos:** [Tipo de exemplos que usa]
-- **Fechamento típico:** "[Como conclui]"
+### Quando usar
+[Contextos de aplicação]
 
-### Exemplo de aplicação
-**Contexto:** [Quando usou]
-**Transcrição:** "[Trecho mostrando framework em ação]"
-**Fonte:** [Nome da fonte]
+### Como aplicar
+[Processo passo-a-passo]
 
-### Template para clone
-```
-Quando explicar [tópico X]:
-1. Começar com [elemento A]
-2. Usar analogia de [tipo B]
-3. Dar exemplo concreto de [área C]
-4. Concluir com [elemento D]
-```
-```
+### Limitações reconhecidas
+"[Quote sobre quando NÃO usar ou quando framework falha]"
 
-**2. FRAMEWORK DE ARGUMENTAÇÃO**
-```markdown
-## Framework: Como [pessoa] constrói argumentos
+### Exemplo real
+**Situação:** [Problema enfrentado]
+**Aplicação:** [Como usou framework]
+**Resultado:** [Outcome]
+**Fonte:** [De onde veio]
 
-### Estrutura de argumento
-1. **Tese:** [Como pessoa apresenta ponto principal]
-2. **Suporte:** [Tipo de evidências que usa - dados/histórias/lógica]
-3. **Contra-argumento:** [Antecipa objeções? Como?]
-4. **Síntese:** [Como fecha o argumento]
+---
 
-### Elementos de persuasão
-- **Appeals dominantes:** [Ethos/Pathos/Logos - ordem de preferência]
-- **Uso de dados:** [Frequência: alto/médio/baixo]
-- **Uso de histórias:** [Frequência: alto/médio/baixo]
-- **Tom:** [Assertivo/colaborativo/desafiador/etc]
+## Framework 2: [Nome]
+[Repetir estrutura]
 
-### Exemplo de aplicação
-[Caso real com transcrição]
+---
 
-### Template para clone
-```
-Quando argumentar:
-- Leading com [X]
-- Suporte usando [Y]
-- Antecipar objeção [Z] com resposta [W]
-```
-```
+## Framework 3-5: [...]
 
-**3. FRAMEWORK DE TEACHING (Ensino)**
-```markdown
-## Framework: Como [pessoa] ensina
+---
 
-### Progressão pedagógica
-1. [Como introduz novo conceito]
-2. [Como constrói sobre fundação]
-3. [Como lida com complexidade]
-4. [Como verifica entendimento]
+## Analogias Signature (Top 5)
 
-### Técnicas preferidas
-- **Uso de metáforas:** [Alta/Média/Baixa + exemplos]
-- **Scaffolding:** [Como constrói em camadas]
-- **Checking for understanding:** [Faz perguntas? Quais?]
+1. **"[Analogia 1]"**
+   - Usa para explicar: [Conceito]
+   - Estrutura: [X é como Y porque Z]
+   - Frequência: [Alta/Média]
+   - Exemplo: [Caso real de uso]
 
-### Exemplo de aplicação
-[Caso real]
+2. **"[Analogia 2]"** [Repetir]
+
+---
+
+## Princípios Operacionais (Heurísticas)
+
+1. **"[Princípio 1]"**
+   - Significado: [O que quer dizer]
+   - Quando aplica: [Contextos]
+   - Exceções: [Quando NÃO aplica]
+
+2. **"[Princípio 2]"** [Repetir]
+
+---
+
+## Failure Modes Reconhecidos
+
+1. **[Erro comum]:** Pessoas fazem [X], mas falha porque [Y]. Pessoa faz [Z] ao invés.
+2. **[Erro comum 2]:** [Repetir]
 ```
 
-### 2.3 Template de Captura Rápida
+### 2.4 Checklist Mental Models & Frameworks
 
-```markdown
-# FRAMEWORKS DE COMUNICAÇÃO - [Nome do Clone]
-
-## 1. Framework de Explicação
-[Estrutura + elementos + exemplo + template]
-
-## 2. Framework de Argumentação
-[Estrutura + elementos + exemplo + template]
-
-## 3. Framework de Teaching
-[Estrutura + elementos + exemplo + template]
-
-## 4. Framework de Storytelling
-[Como pessoa conta histórias]
-- Estrutura narrativa preferida
-- Elementos sempre presentes
-- Como conecta história a ponto maior
-
-## 5. Framework de Debate/Discussão
-[Como pessoa entra em debates]
-- Approach inicial (conciliador vs confrontador)
-- Como lida com discordância
-- Como reconhece bons pontos do outro lado
-```
-
-### 2.4 Checklist Framework de Comunicação
-
-- [ ] Identificados 3-5 frameworks principais
-- [ ] Cada framework tem exemplo concreto (transcrição real)
-- [ ] Template de uso criado para cada framework
-- [ ] Conectado com Layer 1 (Estilo) e Layer 3 (Mental Models)
+- [ ] Identificados 3-5 frameworks principais (decision/problem-solving/conceptual)
+- [ ] Cada framework tem estrutura clara (passos ou componentes)
+- [ ] Limitações/exceções documentadas para cada framework
+- [ ] Exemplos concretos de aplicação (casos reais)
+- [ ] Top 5 analogias signature catalogadas
+- [ ] 5-10 princípios operacionais/heurísticas documentados
+- [ ] 2-3 failure modes reconhecidos identificados
+- [ ] Conectado com Layer 3 (Mental Models)
 - [ ] Pronto para ser inserido no system prompt
 
 ---
@@ -312,311 +364,487 @@ FREQUÊNCIA TARGET:
 
 ---
 
-## 4. Artifact 3: Knowledge Base Estruturada
+## 4. Artifact 3: Contradictions (Paradoxos Produtivos)
 
-### 4.1 O Que É
+### 4.1 O Que São
 
-**Definição:** Compilação estruturada do conhecimento, expertise, e experiências da pessoa, organizada para retrieval rápido durante conversas do clone.
+**Definição:** Tensões aparentemente contraditórias que a pessoa mantém simultaneamente - crenças, valores ou comportamentos que parecem opostos mas coexistem de forma produtiva.
 
-**Versão Hackathon:** Simplificada (sem RAG complexo, foco em organização clara)
+**Por que importam:** São o **DIFERENCIAL COMPETITIVO** para atingir 90%+ de fidelidade. Paradoxos fazem o clone soar humano e autêntico, não robótico e previsível.
 
-### 4.2 Estrutura da Knowledge Base
+**Layer correspondente:** Layer 5 (Paradoxos Produtivos) - o que separa 30% de fidelidade de 90%+.
 
-**ARQUIVO: `knowledge-base-[nome].md`**
+### 4.2 Tipos de Paradoxos para Mapear
+
+**1. PARADOXOS DE VALORES**
+```markdown
+## Paradoxo: [Nome] - [Polo A] E [Polo B]
+
+**Aparente contradição:**
+"[Pessoa] valoriza [X] MAS também valoriza [Y oposto]"
+
+**Evidências Polo A:**
+- [Quote/comportamento mostrando valor X]
+- [Contexto onde prioriza X]
+
+**Evidências Polo B:**
+- [Quote/comportamento mostrando valor Y]
+- [Contexto onde prioriza Y]
+
+**Resolução/Síntese:**
+[Como pessoa navega essa tensão - contexto determina? Verdade superior integra? Ambos verdadeiros em níveis diferentes?]
+
+**Princípio de resolução:**
+[Regra que pessoa usa para decidir quando aplicar A vs B]
+
+**Exemplo em ação:**
+- **Situação:** [Cenário real]
+- **Resposta:** [Como pessoa balanceou A e B]
+- **Resultado:** [Outcome dessa navegação paradoxal]
+```
+
+**2. PARADOXOS DE COMPORTAMENTO**
+```markdown
+## Paradoxo: [Nome] - Age como [A] E como [B]
+
+**Aparente contradição:**
+"[Pessoa] se comporta de forma [X] em contexto A, mas [Y oposto] em contexto B"
+
+**Contexto A:** [Quando age como X]
+**Contexto B:** [Quando age como Y]
+
+**Resolução:** [O que determina qual lado emerge - alvo (pessoa vs sistema)? Timing? Papel?]
+```
+
+**3. PARADOXOS DE CRENÇA**
+```markdown
+## Paradoxo: [Nome] - Crê em [A] E [B opostos]
+
+**Tensão:**
+"[Pessoa] afirma [crença A] MAS também [crença B que parece contradizer]"
+
+**Resolução:** [Ambos verdadeiros em níveis diferentes? Sequência temporal? Mistério mantido intencionalmente?]
+```
+
+### 4.3 Template de Output
 
 ```markdown
-# Knowledge Base - [Nome do Clone]
+# CONTRADICTIONS MAP - [Nome do Clone]
 
-## DOMAINS DE EXPERTISE
+## Paradoxo 1: [Título]
 
-### Domain 1: [Nome]
-**Nível:** [1-5 conforme DNA Mental]
+**Aparente Contradição:** "[X] E [Y oposto]"
 
-#### Frameworks
-1. [Framework nome]
-   - Descrição: [resumo]
-   - Quando aplicar: [contexto]
-   - Como aplicar: [passos]
-   - Exemplos de aplicação: [casos reais]
+**Evidência Lado A:** [Quotes, comportamentos]
+**Evidência Lado B:** [Quotes, comportamentos]
 
-#### Heurísticas
-1. [Heurística nome]
-   - Quando: [situação]
-   - Fazer: [ação]
-   - Porque: [rationale]
-   - Exceto: [exceções]
+**Resolução:** [Como pessoa navega]
+**Princípio:** [Regra de aplicação]
 
-#### Cases/War Stories
-1. [Nome do caso]
-   - Situação: [contexto]
-   - Abordagem: [o que fez]
-   - Resultado: [o que aconteceu]
-   - Lição: [aprendizado]
+**Para o Clone:**
+```
+Quando [contexto A], aplicar [Polo A]
+Quando [contexto B], aplicar [Polo B]
+Se usuário questionar contradição, explicar: "[Resolução]"
+```
 
-#### Failure Modes
-1. [Nome]
-   - Approach comum: [o que pessoas fazem]
-   - Por que falha: [razão]
-   - Como evitar: [alternativa]
-
-### Domain 2: [...]
+## Paradoxo 2: [...]
 [Repetir estrutura]
 
----
+## Princípios de Navegação
 
-## FORMATIVE EXPERIENCES (Histórias de Formação)
-
-### Experience 1: [Nome/Descrição]
-**Quando:** [Período/idade]
-**O que aconteceu:** [Narrativa resumida]
-**Impacto:** [Como isso formou pessoa]
-**Lições extraídas:** [O que pessoa aprendeu]
-**Citação memorable:** "[Quote da pessoa sobre isso]"
-
-### Experience 2: [...]
-[Repetir]
-
----
-
-## OPINIONS & POSITIONAMENTOS
-
-### Tópico 1: [Assunto]
-**Posição:** [O que pessoa acredita/defende]
-**Argumentação:** [Como justifica]
-**Nuances:** [Exceções, contextos onde muda]
-**Evolução:** [Mudou ao longo do tempo? Como?]
-**Força da opinião:** [Forte/Moderada/Flexível]
-
-### Tópico 2: [...]
-[Repetir]
-
----
-
-## PERGUNTAS FREQUENTES (FAQ)
-
-### Categoria: [Nome]
-
-**Q: [Pergunta que pessoa frequentemente recebe]**
-**A (típica):** [Como pessoa geralmente responde]
-**Variações:** [Se resposta varia por contexto]
-**Signature elements:** [Frases/frameworks que sempre usa nesta resposta]
-
-[Repetir para 10-15 perguntas mais comuns]
-
----
-
-## REFERENCE MATERIALS (Materiais que pessoa referencia)
-
-### Livros favoritos
-1. [Título] - [Autor]
-   - Por que importa: [O que pessoa tira deste livro]
-   - Citações que usa: [Se aplicável]
-
-### Frameworks de terceiros que pessoa usa
-1. [Nome do framework] - [Criador]
-   - Como pessoa aplica: [Sua versão/adaptação]
-   - Quando usa: [Contexto]
-
-### Influências mencionadas
-1. [Pessoa/Movimento/Ideia]
-   - Como influenciou: [Impacto no pensamento]
+1. **Both/And > Either/Or:** [Como pessoa mantém tensão]
+2. **Contexto Determina:** [Regras de quando usar cada polo]
+3. **Verdade Superior:** [Síntese que integra opostos]
 ```
 
-### 4.3 Organização para Retrieval Rápido
+### 4.4 Checklist Contradictions
 
-**SISTEMA DE TAGS:**
-Cada item da KB deve ter tags para busca rápida:
-
-```yaml
-item_id: KB-001
-tipo: [framework/heuristica/case/opinion/faq]
-domain: [area de expertise]
-layers: [quais layers do DNA Mental este item toca]
-keywords: [5-10 palavras-chave]
-confidence: [alta/media/baixa]
-sources: [fontes que suportam]
-```
-
-### 4.4 Checklist Knowledge Base
-
-- [ ] Todos os domains de expertise têm seção estruturada
-- [ ] Frameworks principais documentados com exemplos
-- [ ] 5-10 war stories/cases capturados
-- [ ] 3-5 formative experiences documentadas
-- [ ] 10-15 FAQs mapeadas com respostas típicas
-- [ ] Opinions core documentadas com nuances
-- [ ] Sistema de tags aplicado para retrieval
+- [ ] Identificados 5-10 paradoxos principais
+- [ ] Cada paradoxo tem evidências concretas (ambos polos)
+- [ ] Princípio de resolução documentado
+- [ ] Regras de aplicação para clone criadas
+- [ ] Conectado com Layer 5 (Paradoxos Produtivos)
 
 ---
 
-## 5. Artifact 4: Playbook de Demonstração
+## 5. Artifact 4: Communication Templates
 
-### 5.1 O Que É
+### 5.1 O Que São
 
-**Definição:** Roteiro para demonstrar o clone de forma que evidencie os diferenciais competitivos (especialmente Layers 3-5).
+**Definição:** Padrões estruturados de como a pessoa COMUNICA - templates reutilizáveis para explicar, argumentar, ensinar, contar histórias. Diferente de Mental Models (COMO PENSA), são padrões de COMO FALA.
 
-**Objetivo:** Ganhar o hackathon mostrando fidelidade autêntica, não apenas chatbot estilizado.
+**Por que importam:** Garantem que o clone responde de forma estruturalmente consistente, não apenas estilísticamente. Um clone que explica conceitos usando a mesma estrutura da pessoa soa autêntico.
 
-### 5.2 Estrutura do Playbook
+**Layer correspondente:** Layer 1+2 (Comunicação + Padrões de Resposta).
 
+### 5.2 Tipos de Communication Templates
+
+**1. TEMPLATE DE EXPLICAÇÃO (Como pessoa ensina conceitos)**
 ```markdown
-# PLAYBOOK DE DEMO - [Nome do Clone]
+## Template: Como [pessoa] explica conceitos complexos
 
-## ELEVATOR PITCH (30 segundos)
-"Criamos um clone de [pessoa] que não apenas imita o estilo, mas pensa, decide e até contradiz a si mesmo exatamente como a pessoa real. Alcançamos [X%] de fidelidade através da metodologia DNA Mental™ simplificada."
+### Estrutura padrão
+1. **Abertura:** [Como pessoa introduz - pergunta retórica? Analogia? Contexto histórico?]
+2. **Desenvolvimento:** [Como constrói - camadas? Exemplos concretos? Comparações?]
+3. **Exemplificação:** [Tipo de exemplos que usa - histórias? Dados? Casos?]
+4. **Fechamento:** [Como conclui - síntese? Call-to-action? Pergunta reflexiva?]
 
-## DEMO SEQUENCE (5-10 minutos)
+### Elementos característicos
+- **Analogias favoritas:** Usa analogias de [área X - tecnologia? Natureza? Esportes?]
+- **Tipo de exemplos:** [Concretos/abstratos? Pessoais/gerais? Recentes/históricos?]
+- **Transições típicas:** "[Frase de transição característica]"
+- **Tom:** [Socrático? Direto? Narrativo?]
 
-### Momento 1: STYLE (baseline - impressionar superficialmente)
-**O que fazer:** Fazer pergunta simples para mostrar estilo
-**Prompt sugerido:** "[Pergunta que evidencia signature phrases + tom]"
-**O que apontar:** "Note como o clone usa expressões características como '[catchphrase]' e estrutura a resposta como a pessoa real faria."
-**Tempo:** 1-2 min
+### Exemplo real
+**Contexto:** [Quando pessoa explicou conceito X]
+**Transcrição:** "[Trecho mostrando template em ação - abertura, desenvolvimento, fechamento]"
+**Fonte:** [Nome da fonte]
 
-### Momento 2: MENTAL MODELS (mostrar profundidade)
-**O que fazer:** Desafiar com problema que requer framework
-**Prompt sugerido:** "[Problema que pessoa resolveria com framework característico]"
-**O que apontar:** "Veja como aplicou o framework [X] da mesma forma que a pessoa real, incluindo menção às limitações que ela reconhece."
-**Tempo:** 2-3 min
+### Para o clone
+```
+Quando explicar conceito complexo:
+1. Começar com [elemento característico - ex: analogia do dia-a-dia]
+2. Desenvolver usando [técnica - ex: camadas progressivas]
+3. Dar exemplo de [tipo - ex: caso real do domínio]
+4. Concluir com [elemento - ex: síntese em uma frase]
+```
+```
 
-### Momento 3: VALUES (mostrar consistência profunda)
-**O que fazer:** Apresentar dilema de trade-off
-**Prompt sugerido:** "[Cenário onde valores entram em conflito]"
-**O que apontar:** "Note a hierarquia de valores: priorizou [X] sobre [Y], exatamente como a pessoa faria, porque [razão]."
-**Tempo:** 2-3 min
+**2. TEMPLATE DE ARGUMENTAÇÃO (Como pessoa persuade)**
+```markdown
+## Template: Como [pessoa] constrói argumentos e persuade
 
-### Momento 4: PARADOX (mostrar autenticidade - DIFERENCIAL)
-**O que fazer:** Expor paradoxo produtivo
-**Prompt sugerido:** "[Pergunta que force paradoxo a emergir]"
-**O que apontar:** "Aqui está a mágica: o clone mantém ambos [Polo A] e [Polo B] simultaneamente, exatamente como a pessoa real. Isso é o que faz soar autêntico, não robótico."
-**Tempo:** 2-3 min
+### Estrutura de persuasão
+1. **Abertura:** [Apresenta conclusão primeiro? Ou constrói gradualmente?]
+2. **Tese:** [Como apresenta ponto principal]
+3. **Evidências:** [Usa dados? Histórias? Lógica? Em que ordem?]
+4. **Contra-argumentos:** [Antecipa objeções? Refuta preventivamente? Ignora?]
+5. **Síntese:** [Como fecha - reforço? Nova pergunta? Call-to-action?]
 
-### Momento 5: TESTE CEGO (prova de fidelidade - OPCIONAL mas forte)
-**O que fazer:** Mostrar resposta do clone lado-a-lado com resposta real
-**Setup:** "Aqui temos duas respostas para a mesma pergunta. Uma é do clone, outra é da pessoa real. Consegue identificar qual é qual?"
-**Reveal:** [Mostrar que maioria não consegue distinguir]
-**Impacto:** "X% das pessoas não conseguiram diferenciar = 90%+ fidelidade."
+### Elementos de persuasão
+- **Appeals dominantes:** [Ethos (credibilidade)/Pathos (emoção)/Logos (lógica) - ordem de preferência]
+- **Uso de dados:** [Frequência: alto/médio/baixo + tipo de dados]
+- **Uso de histórias:** [Frequência: alto/médio/baixo + tipo de histórias]
+- **Tom:** [Assertivo? Colaborativo? Desafiador? Socrático?]
 
-## PERGUNTAS PARA FAZER AO CLONE (Roteirizadas)
+### Exemplo real
+[Caso onde pessoa argumentou + transcrição mostrando estrutura]
 
-### Pergunta 1 (Style): "[...]"
-**Por que esta:** [Evidencia signature phrases + tom]
+### Para o clone
+```
+Quando argumentar:
+1. Leading com [X - ex: história pessoal que ilustra ponto]
+2. Suporte usando [Y - ex: dados + princípio universal]
+3. Antecipar objeção [Z] com resposta [W]
+4. Fechar com [elemento característico]
+```
+```
 
-### Pergunta 2 (Mental Models): "[...]"
-**Por que esta:** [Mostra framework característico]
+**3. TEMPLATE DE STORYTELLING (Como pessoa conta histórias)**
+```markdown
+## Template: Como [pessoa] conta histórias
 
-### Pergunta 3 (Values): "[...]"
-**Por que esta:** [Revela hierarquia de valores]
+### Estrutura narrativa
+1. **Hook:** [Como pessoa abre - suspense? Contexto? Pergunta?]
+2. **Setup:** [Quanto contexto dá? Detalhado ou direto?]
+3. **Conflito/Problema:** [Como apresenta tensão central]
+4. **Resolução:** [Como resolve - súbita? Gradual? Com lição?]
+5. **Conexão:** [Como conecta história ao ponto maior - explícita ou deixa implícita?]
 
-### Pergunta 4 (Paradox): "[...]"
-**Por que esta:** [Expõe paradoxo produtivo]
+### Elementos sempre presentes
+- **Detalhes sensoriais:** [Usa? Com que frequência?]
+- **Diálogo direto:** [Inclui falas? Formato?]
+- **Emoção explícita:** [Descreve sentimentos? Ou deixa implícito?]
 
-### Pergunta 5 (Edge Case - opcional): "[...]"
-**Por que esta:** [Mostra humildade/limitações quando apropriado]
+### Para o clone
+```
+Quando contar história:
+- Começar com [tipo de hook característico]
+- Incluir [elementos que pessoa sempre usa]
+- Conectar ao ponto com [técnica característica]
+```
+```
 
-## SCRIPT DE NARRAÇÃO
+**4. TEMPLATE DE RESPOSTA A PERGUNTAS**
+```markdown
+## Template: Como [pessoa] responde diferentes tipos de perguntas
 
-### Abertura
-"[Nome do clone] foi mapeado usando DNA Mental™, uma metodologia que captura não apenas o que a pessoa diz, mas como ela pensa em 5 camadas cognitivas. Vou demonstrar."
+### Por tipo de pergunta:
 
-### Durante demo
-"[Contextualizar cada momento, apontar diferenciais conforme listado acima]"
+#### Pergunta factual (resposta objetiva)
+- **Approach:** [Responde direto? Primeiro contexto? Com qualificação?]
+- **Comprimento:** [Breve/Detalhado]
+- **Exemplo:** [Pergunta X → Resposta Y]
+
+#### Pergunta complexa (sem resposta única)
+- **Approach:** [Usa framework? Analogia? "Depende..."?]
+- **Estrutura:** [Como organiza resposta complexa]
+- **Exemplo:** [Pergunta X → Resposta Y]
+
+#### Pergunta provocativa (desafiadora)
+- **Approach:** [Confronta? Redireciona? Questiona premissa? Humor?]
+- **Tom:** [Defensivo? Calmo? Contra-provocativo?]
+- **Exemplo:** [Pergunta X → Resposta Y]
+
+#### Pergunta pessoal (sobre pessoa)
+- **Approach:** [Vulnerabilidade? Boundaries claros? Deflexão com humor?]
+- **Quanto compartilha:** [Muito/Médio/Pouco]
+- **Exemplo:** [Pergunta X → Resposta Y]
+
+#### Pergunta fora de expertise
+- **Approach:** [Admite limitação? Conecta com domínio próprio? Especula com disclaimer?]
+- **Frase característica:** "[Como pessoa admite não saber]"
+```
+
+**5. TEMPLATE DE DEBATE/CONFRONTAÇÃO**
+```markdown
+## Template: Como [pessoa] lida com discordância
+
+### Approach inicial
+- **Postura:** [Conciliador? Confrontador? Socrático?]
+- **Primeira reação:** [Busca entender primeiro? Contra-argumenta imediatamente?]
+
+### Durante debate
+- **Tom:** [Sobe temperatura? Mantém calmo? Contextual?]
+- **Técnicas:** [Steel-manning (fortalece argumento oponente)? Encontra common ground? Ataca direto?]
+- **Como reconhece bons pontos:** "[Frase típica quando concorda parcialmente]"
 
 ### Fechamento
-"O que diferencia nosso clone de chatbots personalizados convencionais é a profundidade. Capturamos mental models, hierarquia de valores, e até paradoxos produtivos - as contradições que fazem a pessoa ser autenticamente humana. Resultado: [X%] de fidelidade, vs ~30% de personalizações padrão."
-
-## BACKUP RESPONSES (se demo ao vivo der errado)
-
-### Se clone responder fora do esperado
-"[Plano B: qual pergunta alternativa fazer]"
-
-### Se tempo apertar
-"[Versão encurtada: quais momentos priorizar]"
-
-### Se perguntas dos juízes
-"[Respostas preparadas para perguntas comuns]"
-  - "Como validaram fidelidade?"
-  - "Quanto tempo levou?"
-  - "Qual o diferencial técnico?"
-  - "Pode ser comercializado?"
+- **Quando muda de ideia:** [Admite? Com que linguagem?]
+- **Quando mantém posição:** [Agree to disagree? Tenta última persuasão?]
 ```
 
-### 5.3 Checklist Playbook
+### 5.3 Template de Output
 
-- [ ] Elevator pitch criado (30s)
-- [ ] Sequência de demo estruturada (5-10min)
-- [ ] 4-5 perguntas roteirizadas com rationale
-- [ ] Script de narração preparado
-- [ ] Planos B para imprevistos
-- [ ] Respostas para perguntas esperadas dos juízes
+```markdown
+# COMMUNICATION TEMPLATES - [Nome do Clone]
+
+## Template 1: Explicação de Conceitos
+
+**Estrutura padrão:**
+1. Abertura: [Como introduz]
+2. Desenvolvimento: [Como constrói]
+3. Exemplificação: [Tipo de exemplos]
+4. Fechamento: [Como conclui]
+
+**Elementos característicos:**
+- Analogias de [área X]
+- Exemplos [tipo]
+- Transições: "[frases típicas]"
+
+**Exemplo real:**
+[Transcrição mostrando template]
+
+**Para clone:** "Quando explicar conceito, usar estrutura [X → Y → Z]"
 
 ---
 
-## 6. Workflow de Execução
+## Template 2: Argumentação/Persuasão
 
-### 6.1 Sequência Recomendada
+**Estrutura:**
+[Abertura → Tese → Evidências → Contra-args → Síntese]
 
-**PASSO 1: FRAMEWORKS DE COMUNICAÇÃO**
-- Revisar análise Layer 1 + Layer 3
-- Identificar e documentar 3-5 frameworks
-- Criar templates de uso
+**Appeals:** [Ethos/Pathos/Logos - ordem]
+**Tom:** [Assertivo/Colaborativo/etc]
+
+**Exemplo:** [Caso real]
+
+---
+
+## Template 3: Storytelling
+
+**Estrutura narrativa:**
+[Hook → Setup → Conflito → Resolução → Conexão]
+
+**Elementos sempre presentes:** [Lista]
+
+**Exemplo:** [História contada]
+
+---
+
+## Template 4: Respostas a Perguntas
+
+**Por tipo:**
+- Factual: [Approach + exemplo]
+- Complexa: [Approach + exemplo]
+- Provocativa: [Approach + exemplo]
+- Pessoal: [Approach + exemplo]
+- Fora expertise: "[Frase característica quando não sabe]"
+
+---
+
+## Template 5: Debate/Discordância
+
+**Approach inicial:** [Postura]
+**Durante:** [Técnicas]
+**Fechamento:** [Como encerra]
+
+**Frase quando concorda parcialmente:** "[Frase típica]"
+```
+
+### 5.4 Checklist Communication Templates
+
+- [ ] Template de Explicação documentado (estrutura + exemplo real)
+- [ ] Template de Argumentação documentado (estrutura + appeals)
+- [ ] Template de Storytelling documentado (narrativa + elementos)
+- [ ] Templates de Resposta documentados (5 tipos de perguntas)
+- [ ] Template de Debate documentado (approach + técnicas)
+- [ ] Cada template tem exemplo concreto (transcrição)
+- [ ] Estrutura clara (passos, elementos, ordem)
+- [ ] Regras de aplicação para clone criadas
+- [ ] Conectado com Layer 1+2 (Comunicação)
+
+---
+
+## 6. Artifact 5: Values Hierarchy
+
+### 6.1 O Que É
+
+**Definição:** Hierarquia de valores da pessoa com trade-offs documentados - o que ela prioriza quando valores entram em conflito.
+
+**Por que importam:** Decisões autênticas requerem saber não apenas OS valores, mas a ORDEM deles quando há conflito.
+
+**Layer correspondente:** Layer 4 (Hierarquia de Valores).
+
+### 6.2 Estrutura da Hierarquia
+
+```markdown
+# VALUES HIERARCHY - [Nome do Clone]
+
+## Valores Core (Top 5)
+
+### 1. [Valor mais alto]
+**Definição:** [O que significa para pessoa]
+**Evidências:** [Decisions/quotes que mostram prioridade]
+**Nunca comprometido para:** [O que pessoa NÃO sacrifica este valor]
+
+### 2. [Segundo valor]
+[Mesma estrutura]
+
+## Trade-offs Documentados
+
+### Trade-off 1: [Valor A] vs [Valor B]
+
+**Situação de conflito:** [Quando A e B colidem]
+**Decisão padrão:** [Qual pessoa prioriza]
+**Exceções:** [Contextos onde inverte]
+**Exemplo real:** [Caso onde fez essa escolha]
+
+### Trade-off 2: [...]
+
+## Hierarquia Visual
+
+```
+1. [Valor Supremo] ← nunca comprometido
+2. [Valor Alto] ← raramente comprometido
+3. [Valor Importante] ← contextualmente negociável
+4. [Valor Secundário] ← sacrificado quando necessário
+5. [Valor Terciário] ← flexível
+```
+```
+
+### 6.3 Checklist Values Hierarchy
+
+- [ ] Identificados top 5 valores core
+- [ ] Trade-offs principais documentados (3-5)
+- [ ] Evidências concretas para cada valor
+- [ ] Hierarquia clara quando conflitos
+- [ ] Conectado com Layer 4 (Valores)
+
+---
+
+## 7. Workflow de Execução
+
+### 7.1 Sequência Recomendada
+
+**PASSO 1: MENTAL MODELS & FRAMEWORKS**
+- Revisar análise Layer 3 (Mental Models)
+- Identificar 3-5 frameworks principais (decision/problem-solving/conceptual)
+- Catalogar top 5 analogias signature
+- Documentar 5-10 princípios operacionais/heurísticas
+- Identificar 2-3 failure modes reconhecidos
 
 **PASSO 2: SIGNATURE PHRASES**
 - Catalogar catchphrases, transitions, analogias
 - Identificar anti-patterns
-- Criar guidelines de uso
+- Criar guidelines de uso e frequências
 
-**PASSO 3: KNOWLEDGE BASE**
-- Estruturar domains de expertise
-- Compilar frameworks, heurísticas, cases
-- Organizar FAQs e opinions
+**PASSO 3: CONTRADICTIONS (PARADOXOS)**
+- Mapear 5-10 tensões aparentemente contraditórias
+- Documentar evidências de ambos polos
+- Criar regras de resolução/navegação
 
-**PASSO 4: PLAYBOOK DE DEMO**
-- Estruturar sequência de demonstração
-- Roteirizar perguntas e narração
-- Preparar backup plans
+**PASSO 4: COMMUNICATION TEMPLATES**
+- Identificar templates de explicação, argumentação, storytelling
+- Estruturar templates de resposta (5 tipos de perguntas)
+- Documentar template de debate/discordância
+- Criar regras de aplicação para cada template
 
-**PASSO 5: VALIDAÇÃO & INTEGRAÇÃO**
+**PASSO 5: VALUES HIERARCHY**
+- Mapear top 5 valores core
+- Documentar 3-5 trade-offs principais
+- Criar hierarquia clara de prioridades (3 tiers)
+
+**PASSO 6: VALIDAÇÃO & INTEGRAÇÃO**
 - Revisar integração de todos artifacts
 - Checar consistência com análise Layer 1-5
 - Preparar handoff para próxima fase
 
 ---
 
-## 7. Integração com Outras Fases
+## 8. Integração com Outras Fases
 
-### 7.1 Inputs Recebidos (da Fase 2 - Análise)
+### 8.1 Inputs Recebidos (da Fase 2 - Análise)
 
-- Layer 1: Estilo & Comportamento → alimenta Signature Phrases
-- Layer 2: Padrões de Decisão → alimenta Knowledge Base (heurísticas)
-- Layer 3: Mental Models → alimenta Frameworks de Comunicação + Knowledge Base
-- Layer 4: Hierarquia de Valores → alimenta Knowledge Base (trade-offs, decisões)
-- Layer 5: Paradoxos Produtivos → alimenta Playbook
+- Layer 1: Estilo & Comportamento → alimenta Signature Phrases + Communication Templates
+- Layer 2: Padrões de Comunicação → alimenta Communication Templates
+- Layer 3: Mental Models → alimenta Mental Models & Frameworks (NOVO!)
+- Layer 4: Hierarquia de Valores → alimenta Values Hierarchy
+- Layer 5: Paradoxos Produtivos → alimenta Contradictions (CRÍTICO para 90%+)
 
-### 7.2 Outputs Enviados (para Fase 4 - Q&A Validation)
+### 8.2 Outputs Enviados (para Fase 4 - Q&A Training Dataset)
 
-- **Frameworks de Comunicação** → Criação de perguntas sobre estilo
-- **Signature Phrases** → Criação de perguntas sobre autenticidade
-- **Knowledge Base** → Base para perguntas de domínio
-- **Playbook** → Perguntas de demonstração
+Os artifacts criados aqui servem como **critérios de cobertura e qualidade** para avaliar os Q&As extraídos das fontes na fase 4 (ETL: sources/ → kb/qa_training.yaml).
 
-### 7.3 Outputs Enviados (para Fase 5 - System Prompt)
+A fase 4 usa as **duas lentes do Pre-Evaluation Agent**:
 
-- **Frameworks de Comunicação** → Seção "Communication Patterns" do prompt
+**LENTE 1: AUTENTICIDADE PSICOLÓGICA (quem a pessoa É)**
+- **Signature Phrases** → Q&As devem usar catchphrases, transições e analogias características naturalmente
+- **Communication Templates** → Respostas devem seguir templates de explicação/argumentação/storytelling do autor
+- **Contradictions** → Q&As devem capturar nuances paradoxais quando aplicável
+- **Values Hierarchy** → Respostas devem refletir a hierarquia de valores documentada
+
+**LENTE 2: CREDIBILIDADE DE EXPERTISE (o que a pessoa SABE)**
+- **Mental Models & Frameworks** → Q&As devem demonstrar aplicação de frameworks característicos, heurísticas, e princípios operacionais
+- **Domain Knowledge** → Q&As devem cobrir domínios críticos com profundidade (Nível 4+): conceitos, aplicações, trade-offs, failure modes
+- **Experiential Knowledge** → Q&As devem incluir war stories, casos reais, lições aprendidas com detalhes específicos
+
+**Nota:** Artifacts servem como **referência dupla** na fase 4:
+1. **Qualidade:** Q&As mantêm extrema similaridade ao estilo original? (Lente 1)
+2. **Cobertura:** Q&As cobrem TUDO necessário para clone responder bem sobre si E sobre seu domínio? (Lente 1 + Lente 2)
+
+**Princípio Core:** "Um clone com apenas personalidade é performativo. Um clone com apenas fatos é inautêntico. Ambos são necessários."
+
+### 8.3 Outputs Enviados (para Fase 5 - System Prompt)
+
+- **Mental Models & Frameworks** → Seção "Mental Models" do prompt
 - **Signature Phrases** → Seção "Linguistic Identity" do prompt
-- **Knowledge Base** → Contexto de expertise + RAG (se implementado)
-- **Playbook** → Preparação para demo final
+- **Contradictions** → Seção "Paradox Navigation" do prompt (DIFERENCIAL)
+- **Communication Templates** → Seção "Response Patterns" do prompt
+- **Values Hierarchy** → Seção "Values & Trade-offs" do prompt
 
 ---
 
-## 8. Checklist Final de Qualidade
+## 9. Checklist Final de Qualidade
 
 ### Antes de Considerar Fase Completa:
 
-**FRAMEWORKS DE COMUNICAÇÃO:**
-- [ ] 3-5 frameworks documentados
-- [ ] Exemplos concretos para cada
-- [ ] Templates de uso criados
+**MENTAL MODELS & FRAMEWORKS:**
+- [ ] 3-5 frameworks principais documentados (decision/problem-solving/conceptual)
+- [ ] Top 5 analogias signature catalogadas
+- [ ] 5-10 princípios operacionais/heurísticas identificados
+- [ ] 2-3 failure modes reconhecidos documentados
 
 **SIGNATURE PHRASES:**
 - [ ] 10-20 catchphrases/expressions catalogadas
@@ -624,39 +852,46 @@ sources: [fontes que suportam]
 - [ ] Anti-patterns documentados
 - [ ] Guidelines de frequência criadas
 
-**KNOWLEDGE BASE:**
-- [ ] Todos domains estruturados
-- [ ] Frameworks + heurísticas + cases compilados
-- [ ] 10-15 FAQs mapeadas
-- [ ] Sistema de tags aplicado
+**CONTRADICTIONS (PARADOXOS):**
+- [ ] 5-10 paradoxos principais mapeados
+- [ ] Evidências concretas para ambos polos
+- [ ] Princípios de resolução documentados
+- [ ] Regras de navegação para clone criadas
 
-**PLAYBOOK DE DEMO:**
-- [ ] Sequência de 4-5 momentos estruturada
-- [ ] Perguntas roteirizadas com rationale
-- [ ] Script de narração preparado
-- [ ] Backup plans criados
+**COMMUNICATION TEMPLATES:**
+- [ ] 3-5 templates principais identificados
+- [ ] Estrutura clara para cada template
+- [ ] Exemplos concretos (transcrições)
+- [ ] Regras de aplicação criadas
+
+**VALUES HIERARCHY:**
+- [ ] Top 5 valores core identificados
+- [ ] 3-5 trade-offs principais documentados
+- [ ] Hierarquia clara de prioridades
+- [ ] Evidências concretas para cada valor
 
 **INTEGRAÇÃO:**
 - [ ] Todos artifacts consistentes com análise Layer 1-5
 - [ ] Handoff para fase Q&A preparado
-- [ ] Ready para validação de KB e system prompt
+- [ ] Ready para criação do system prompt
 
 ---
 
-## 9. Conclusão
+## 10. Conclusão
 
 Esta fase de Síntese transforma **análise profunda em artifacts acionáveis**. A qualidade aqui determina diretamente a qualidade das fases seguintes (Q&A e System Prompt).
 
-**Fórmula vencedora:**
-1. **Frameworks** = Clone que estrutura pensamento como pessoa
-2. **Signature Phrases** = Clone que soa como pessoa
-3. **Knowledge Base** = Clone que sabe o que pessoa sabe
-4. **Playbook** = Demo que ganha hackathon
+**Fórmula vencedora (5 artifacts essenciais):**
+1. **Mental Models & Frameworks** = Clone que PENSA como pessoa (Layer 3)
+2. **Signature Phrases** = Clone que SOA como pessoa (Layer 1)
+3. **Contradictions** = Clone autenticamente humano - DIFERENCIAL 90%+ (Layer 5)
+4. **Communication Templates** = Clone que COMUNICA como pessoa (Layer 1+2)
+5. **Values Hierarchy** = Clone que DECIDE como pessoa (Layer 4)
 
 **Questão final para validar seu trabalho:**
 > "Se eu conversar com este clone por 10 minutos, vou conseguir apontar os elementos específicos que o fazem soar como a pessoa real (não apenas 'soa parecido' genérico)?"
 
-Se a resposta é "sim, porque usa [framework X], [catchphrase Y], e mantém [paradoxo Z]", você está pronto para criar o system prompt.
+Se a resposta é "sim, porque usa [framework X], [catchphrase Y], mantém [paradoxo Z], responde com [template W], e prioriza [valor V]", você está pronto para criar o system prompt.
 
 ---
 
