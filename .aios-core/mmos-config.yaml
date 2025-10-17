@@ -1,0 +1,39 @@
+# MMOS-Specific AIOS Configuration
+# Override for MMOS-related work
+
+markdownExploder: true
+
+qa:
+  qaLocation: docs/mmos/qa
+
+prd:
+  prdFile: docs/mmos/prd.md
+  prdVersion: v1
+  prdSharded: true
+  prdShardedLocation: docs/mmos/prd
+  epicFilePattern: EPIC-{n}*.md
+
+architecture:
+  architectureFile: docs/mmos/architecture.md
+  architectureVersion: v1
+  architectureSharded: true
+  architectureShardedLocation: docs/mmos/architecture
+
+customTechnicalDocuments:
+  - docs/mmos/board/README.md
+  - docs/mmos/pipeline/dna-mental-schema.yaml
+
+devLoadAlwaysFiles:
+  - docs/mmos/architecture/pipeline-overview.md
+  - docs/mmos/pipeline/dna-mental-schema.yaml
+
+devDebugLog: .ai/mmos-debug-log.md
+
+# CRITICAL: MMOS stories go to dedicated location
+devStoryLocation: docs/mmos/stories
+
+slashPrefix: MMOS
+
+epicLocation: docs/mmos/epics
+
+boardLocation: docs/mmos/board

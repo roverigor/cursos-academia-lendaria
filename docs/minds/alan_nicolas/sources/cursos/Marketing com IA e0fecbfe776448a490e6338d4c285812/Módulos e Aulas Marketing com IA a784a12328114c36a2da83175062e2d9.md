@@ -1,0 +1,29 @@
+# Módulos e Aulas Marketing com IA
+
+- CrIA - Gerando Imagens com IA
+    - Introdução (conheça seu professor)
+- Copy com IA c/ Bruno Picinini (A Lenda)
+    - Níveis de Consciência
+    - Mecanismos Únicos
+    - Descobrindo Mecanismos Únicos
+    - Causa Surpreendente Principal
+    - Solução Primária Única
+    - Oferta
+    - Modelo 3Rs
+    - Criando {ROTEIROS} Para Seus Prompts
+    - Fórmula & Frameworks de Copy
+    - SPIN Selling
+    - Objeções
+    - Closes
+    - (PRESENTE PARA COMUNIDADE) Próximos Passos de Copy com IA
+    - (BÔNUS) Encontro da Formação LendárIA com - Bruno Picinini sobre Copy IA Avançada
+- Conteúdo Autêntico - Com Igor Ganti
+    - Introdução e Fundamentos
+    - Definindo o seu Por Quê
+    - Definindo sua Narrativa Pessoal
+    - Público Alvo com IA (Parte 1)
+    - Público Alvo com IA (Parte 2)
+    - Criando um Gerente de Conteúdo
+- Conteúdo com IA
+    - Bônus: Encontro com André Cia | Prompts ChatGPT e Midjourney
+    - Bônus: MasterClass Escrita com Henrique de Carvalho

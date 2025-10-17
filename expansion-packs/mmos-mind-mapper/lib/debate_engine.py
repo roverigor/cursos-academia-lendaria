@@ -864,7 +864,7 @@ I'll take distributed chaos over centralized control. Every time."""
 
     def save_benchmark(self, report: ValuationReport):
         """Save debate as benchmark for future comparison"""
-        # Create benchmark directory
+        # Create benchmark directory in docs/mmos (output location)
         benchmark_dir = Path("docs/mmos/qa/benchmarks")
         benchmark_dir.mkdir(parents=True, exist_ok=True)
 

@@ -10,7 +10,7 @@ You are working with AIOS-FULLSTACK, an AI-Orchestrated System for Full Stack De
 - Follow agent-specific workflows and patterns
 
 ### Story-Driven Development
-1. **Always work from a story file** in docs/stories/
+1. **Always work from a story file** in docs/mmos/stories/ (MMOS-specific) or docs/stories/ (AIOS-general)
 2. **Update story checkboxes** as you complete tasks: [ ] → [x]
 3. **Maintain the File List** section with all created/modified files
 4. **Follow acceptance criteria** exactly as written
@@ -38,7 +38,10 @@ aios-core/
 └── checklists/   # Validation checklists
 
 docs/
-├── stories/      # Development stories
+├── mmos/
+│   ├── stories/  # MMOS-specific stories and epics
+│   └── epics/    # MMOS epics
+├── stories/      # AIOS-general development stories
 ├── prd/          # Sharded PRD sections
 └── architecture/ # Sharded architecture
 ```
@@ -70,6 +73,49 @@ docs/
 - Document API changes
 - Add inline comments for complex logic
 - Keep story File List current
+
+## MMOS-Specific Rules
+
+### CRITICAL: Architecture Guard
+
+**Before creating files:** Review `.aios-core/checklists/mmos-architecture-guard.md`
+
+### Decision Rule:
+
+**"Is this about a SPECIFIC mind?"**
+- YES → `docs/minds/{slug}/docs/` or `docs/minds/{slug}/logs/`
+- NO → Is it a script?
+  - YES → `expansion-packs/mmos-mind-mapper/`
+  - NO → `docs/mmos/{appropriate-folder}/`
+
+### docs/minds/{slug}/ Structure:
+```
+sources/          # Collected materials
+analysis/         # Pipeline outputs
+synthesis/        # Pipeline outputs
+implementation/   # Pipeline outputs
+system_prompts/   # Final prompts
+kb/               # Knowledge base
+docs/             # Mind-specific docs (validations, migrations)
+logs/             # Mind-specific logs
+```
+
+### docs/mmos/ Structure (System Only):
+```
+architecture/     # System architecture
+docs/             # System documentation
+epics/            # MMOS epics
+stories/          # MMOS stories
+reports/          # Executive reports
+qa/benchmarks/    # Cross-mind benchmarks
+```
+
+### ❌ NEVER:
+- Create `docs/mmos/validations/{mind}/` → Use `docs/minds/{mind}/docs/`
+- Create `docs/mmos/migrations/{mind}/` → Use `docs/minds/{mind}/docs/`
+- Put outputs in `expansion-packs/` → Use `docs/mmos/`
+
+**Enforcement:** Pre-commit hook (`.aios-core/hooks/pre-commit-mmos-guard.sh`)
 
 ## Git & GitHub
 

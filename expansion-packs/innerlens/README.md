@@ -57,6 +57,34 @@ npm run install:expansion innerlens
 
 ### Basic Usage
 
+#### Option 1: AIOS-Compliant Workflow (Recommended)
+
+```bash
+# Complete pipeline: Extract → Validate → Save → Analyze
+# Uses @aios-master orchestrator with quality enforcement
+@aios-master
+*workflow extract-analyze-save \
+  --mind alan_nicolas \
+  --source testing/validation/text_samples/alan_nicolas.txt \
+  --title "Self Analysis" \
+  --type self_analysis \
+  --run-analysis true
+
+# This workflow:
+# 1. Extracts MIUs using Claude Sonnet 4 (LLM-based, NOT regex)
+# 2. Validates quality (BLOCKING - fails if quality too low)
+# 3. Saves to MMOS database (only if validated)
+# 4. Runs Big Five analysis
+# 5. Returns complete personality profile
+
+# Output files:
+# - {mind}_fragments.json (validated MIU extraction)
+# - {mind}_bigfive.json (Big Five analysis)
+# Plus database entries in /docs/mmos/mmos.db
+```
+
+#### Option 2: Legacy Quick Detection
+
 ```bash
 # Run complete 3-agent pipeline (extraction → analysis → validation)
 # This orchestrates all 3 agents automatically
@@ -66,16 +94,38 @@ npm run install:expansion innerlens
 # - fragments.json (MIU extraction)
 # - bigfive-raw.yaml (analysis results)
 # - bigfive-profile.yaml (validated profile) ✅
+```
 
-# Alternative: Manual step-by-step
+#### Option 3: Manual Step-by-Step (Advanced)
+
+```bash
+# Step 1: Extract MIUs (LLM-based)
 @fragment-extractor
-*extract-fragments --input transcript.txt
+*task extract-fragments \
+  --source transcript.txt \
+  --subject-id naval_ravikant \
+  --output fragments.json
 
-@psychologist
-*analyze --framework bigfive --input fragments.json
-
+# Step 2: Validate MIUs (quality gate)
 @quality-assurance
-*validate --profile bigfive-raw.yaml --framework bigfive
+*task validate-mius \
+  --fragments fragments.json \
+  --subject naval_ravikant
+
+# Step 3: Save to database (only if validated)
+*task save-fragments-to-mmos \
+  --mind naval_ravikant \
+  --fragments fragments.json \
+  --source transcript.txt \
+  --title "Podcast Interview" \
+  --type podcast_transcript
+
+# Step 4: Analyze Big Five
+@psychologist
+*task analyze-bigfive \
+  --fragments fragments.json \
+  --subject-id naval_ravikant \
+  --output bigfive.json
 ```
 
 ---
@@ -90,15 +140,31 @@ npm run install:expansion innerlens
 | `@psychologist` | Universal personality analyst | Analyze fragments using Big Five (or any framework via tasks) |
 | `@quality-assurance` | Independent validator | Validate profile quality before delivery |
 
-### Tasks (2)
+### AIOS Infrastructure (NEW - v1.1.0)
 
-**Core Pipeline:**
-- `detect-traits-quick` - 3-agent pipeline orchestrator (fragment extraction → analysis → validation)
+**Workflows** (orchestrators):
+- `extract-analyze-save` - Complete pipeline from raw text to MMOS database (LLM extraction → quality gate → DB save → Big Five analysis)
+
+**Tasks** (AIOS-executable):
+- `extract-fragments` - LLM-based MIU extraction using Claude Sonnet 4 (NOT regex/heuristics)
+- `validate-mius` - Quality validation with BLOCKING enforcement (10 validation checks)
+- `save-fragments-to-mmos` - Generic database integration (works for any mind)
 - `analyze-bigfive` - Big Five detection workflow (12-step process for @psychologist)
+- `detect-traits-quick` - Legacy 3-agent pipeline orchestrator
 
-**Future:**
-- `analyze-hexaco` - HEXACO framework (v1.1)
-- `integrate-with-mmos` - Export to MMOS for AI cloning (v1.1)
+**Checklists** (quality enforcement):
+- `miu-quality` - 10-dimension MIU validation (schema, grammar, attribution, causal/temporal links, contrasts, zero-inference, context, metadata, statistics)
+- `bigfive-quality` - Big Five profile validation (9 validation dimensions)
+
+**Quality Guarantees:**
+- ✅ **LLM-Based Extraction** - Uses Claude Sonnet 4, NOT Python regex (user requirement: "A extração deve ser feito por LLMS e nao python")
+- ✅ **Quality Gate Enforcement** - Validation is BLOCKING, not optional (prevents low-quality data from reaching database)
+- ✅ **Generic Tools** - All tasks work for ANY mind, not person-specific (user requirement: "workflow padrão para qualquer mente")
+- ✅ **AIOS Compliance** - Full agent → task → checklist → workflow architecture
+
+**Future (v1.2+):**
+- `analyze-hexaco` - HEXACO framework
+- `integrate-with-mmos` - Export to MMOS for AI cloning
 
 ### Framework: Big Five (OCEAN)
 
@@ -369,9 +435,54 @@ graph TB
 }
 ```
 
-### Validation Outcomes (@quality-assurance)
+### Quality Gate Architecture (NEW - v1.1.0)
 
-Every profile is independently validated across 9 dimensions. **Quality outcomes**:
+**Critical Innovation: Validation as BLOCKING Quality Gate**
+
+The AIOS-compliant workflow enforces quality validation as a **blocking gate** - NOT optional validation after the fact.
+
+```
+Raw Text → Extract MIUs → QUALITY GATE → Database Save → Analysis
+                            ↓
+                         VALIDATED?
+                         ├─ ✅ YES → Continue
+                         └─ ❌ NO  → STOP (re-extract required)
+```
+
+**Why This Matters:**
+- ❌ **OLD approach (MVP)**: Extract → Save → Analyze → Validate (quality check AFTER saving)
+- ✅ **NEW approach (v1.1)**: Extract → Validate → Save → Analyze (quality check BEFORE saving)
+
+**User's Explicit Requirement:**
+> "Precisamos garantir que a IA vai seguir o workflow para isso precisamos seguir o padrao AIOS criando um sistema completo de agents/tasks/checklists/qa etc"
+
+**Quality Gate Validation (10 checks):**
+1. ✅ Schema validation (all required fields present)
+2. ✅ Grammatical completeness (100% of MIUs have verbs + complete clauses)
+3. ✅ Clear attribution (100% of MIUs have valid speaker attribution)
+4. ✅ Causal links preserved (no mid-causal-chain splits)
+5. ✅ Temporal links preserved (no mid-temporal-sequence splits)
+6. ✅ Contrasts separated (no opposing ideas in single MIU)
+7. ✅ Zero-inference compliance (100% - NO trait/emotion/behavior labels)
+8. ✅ Context preservation (elliptical fragments have context)
+9. ✅ Metadata quality checks (all metadata flags TRUE)
+10. ✅ Statistical sanity (extraction rates, word counts in reasonable ranges)
+
+**Validation Outcomes:**
+- ✅ **VALIDATED_HIGH** - All checks PASS → Database save allowed
+- 🟡 **VALIDATED_PROVISIONAL** - Core checks PASS, minor warnings → Database save allowed (flagged)
+- ❌ **VALIDATION_FAILED** - Critical check FAILED → **Database save BLOCKED**, re-extraction required
+
+**Enforcement:**
+- Task `validate-mius` must run BEFORE `save-fragments-to-mmos`
+- Workflow `extract-analyze-save` enforces this sequence automatically
+- No way to bypass validation (quality > speed)
+
+---
+
+### Big Five Validation Outcomes (@quality-assurance)
+
+Every Big Five profile is independently validated across 9 dimensions. **Quality outcomes**:
 
 | Outcome | Criteria | User Message |
 |---------|----------|--------------|
@@ -668,7 +779,7 @@ Before finalizing analysis:
 
 ## 🗺️ Roadmap
 
-### v1.0 (MVP) - Weeks 1-2 ✅ Implementation Complete (Testing Phase)
+### v1.0 (MVP) - Weeks 1-2 ✅ Implementation Complete
 
 - ✅ **3-Agent MIU Pipeline**: @fragment-extractor → @psychologist → @quality-assurance
 - ✅ **Big Five Detection**: 5 traits + 30 facets with evidence-based scoring
@@ -677,13 +788,35 @@ Before finalizing analysis:
 - ✅ **Independent Validation**: 9-dimension quality checks with validation outcomes
 - ✅ **Performance Design**: <2min pipeline (30s + 90s + 30s)
 - ✅ **Cost Design**: ~$0.20 per analysis
-- 🔲 **Pending**: Real-world testing (10 subjects, 75%+ correlation target)
 
-### v1.1 - Weeks 3-4
+### v1.1.0 (AIOS Compliance) - Week 3 ✅ Implementation Complete
 
-- ⏳ HEXACO (adds Honesty-Humility dimension)
+**User Requirements Met:**
+- ✅ **LLM-Based Extraction**: "A extração deve ser feito por LLMS e nao python" - Uses Claude Sonnet 4, NOT regex
+- ✅ **Generic Tools**: "Workflow padrão para qualquer mente" - All tasks work for ANY mind
+- ✅ **AIOS Architecture**: "Sistema completo de agents/tasks/checklists/qa" - Full infrastructure created
+
+**Implemented:**
+- ✅ **Workflow `extract-analyze-save`** - Complete orchestrator (Extract → Validate → Save → Analyze)
+- ✅ **Task `extract-fragments`** - LLM-based MIU extraction (NOT Python regex)
+- ✅ **Task `validate-mius`** - Quality validation with BLOCKING enforcement
+- ✅ **Task `save-fragments-to-mmos`** - Generic database integration
+- ✅ **Checklist `miu-quality`** - 10-dimension validation specification
+- ✅ **Quality Gate Architecture** - Validation BEFORE database save (prevents low-quality data)
+- ✅ **MMOS Database Integration** - Fragments saved for cross-framework reuse
+- ✅ **100% AIOS Compliance** - Agents → Tasks → Checklists → Workflows pattern
+
+**Testing Phase:**
+- 🔄 **Real-world validation**: Alan Nicolas as first test subject (Epic 0 validation study)
+- 🔄 **End-to-end workflow test**: Full pipeline from text to database
+- 🔄 **Correlation study**: Target r > 0.75 with self-reported Big Five
+
+### v1.2 - Weeks 4-5
+
+- ⏳ HEXACO framework (adds Honesty-Humility dimension)
 - ⏳ Enhanced multimodal analysis
 - ⏳ Improved confidence scoring
+- ⏳ Expand validation study to N=10 subjects
 
 ### v1.2 - Weeks 5-8
 

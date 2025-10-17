@@ -1,488 +1,493 @@
 sources_inventory:
-  total_sources: 34
-  primary_sources: 34
+  total_sources: 208
+  primary_sources: 208
   secondary_sources: 0
 
   metadata:
-    last_updated: "2025-10-05"
-    total_reading_hours_estimated: 49.0
+    last_updated: "2025-10-16"
+    total_words_estimated: 2224574  # 2.2M words
+    total_reading_hours_estimated: 185.0  # ~300 words/min
     total_video_hours: 17.5
-    total_articles: 24
-    total_videos: 9
-    total_profiles: 1
+    version: "2.0"
+    viability_status: "GO_APPROVED"
+    apex_score: 81
+    icp_match: 87
+    fidelity_target: "93-97%"
 
-  by_type:
-    articles:
-      - id: "article_001"
-        type: "article"
-        title: "Por quê?"
-        file: "001 - Por quê?.md"
-        date: "2024-10-28"
-        size: "14K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 45
+  by_category:
+    cursos:
+      count: 78
+      description: "Course materials covering IA, Obsidian, Crew AI, Dify, Marketing, Clones IA, ETL"
+      priority: "high"
+      persona: "Both (IA Expert + Vida LendÃ¡ria)"
+      tier: "Tier 1-2"
+      includes:
+        - "Fundamentos em IA (19 files)"
+        - "Clones IA (7 files)"
+        - "Crew AI (6 files)"
+        - "Dominando Obsidian (7 files)"
+        - "IntroduÃ§Ã£o ao Dify (6 files)"
+        - "Marketing com IA (13 files)"
+        - "ETL (6 files)"
+        - "Mente LendÃ¡ria (6 files)"
+        - "Aumente seu QI (1 file)"
+        - "Q&A 80/20 (1 file)"
+        - "Plus additional course materials and summaries"
 
-      - id: "article_002"
-        type: "article"
-        title: "Quem é você?"
-        file: "002 - Quem é você?.md"
-        date: "2023-06-24"
-        size: "21K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 60
+    newsletter:
+      count: 56
+      description: "Newsletter content (likely Vida LendÃ¡ria editions)"
+      priority: "high"
+      persona: "Vida LendÃ¡ria"
+      tier: "Tier 2"
+      estimated_words: 400000
+      notes: "Contains philosophical and personal development content"
 
-      - id: "article_003"
-        type: "article"
-        title: "Aprendendo a morrer"
-        file: "003 - Aprendendo a morrer.md"
-        date: "2023-05-09"
-        size: "20K"
-        persona: "Vida Lendária"
-        priority: 8
-        status: "coletado"
-        reading_time_min: 55
+    podcast:
+      count: 36
+      description: "Podcast appearances as guest + own podcast episodes"
+      priority: "high"
+      persona: "Both"
+      tier: "Tier 2"
+      includes:
+        - "Podcast Alan Convidado (guest appearances)"
+        - "Own podcast episodes"
 
-      - id: "article_004"
-        type: "article"
-        title: "Uma Vida Lendária"
-        file: "004 - Uma Vida Lendária.md"
-        date: "2023-08-23"
-        size: "26K"
-        persona: "Vida Lendária"
-        priority: 10
-        status: "coletado"
-        reading_time_min: 70
-
-      - id: "article_005"
-        type: "article"
-        title: "Herói ou Vilão"
-        file: "005 - Herói ou Vilão.md"
-        date: "2023-05-16"
-        size: "32K"
-        persona: "Vida Lendária"
-        priority: 8
-        status: "coletado"
-        reading_time_min: 85
-
-      - id: "article_006"
-        type: "article"
-        title: "A Sombra da Ideologia"
-        file: "006 - A Sombra da Ideologia.md"
-        date: "2023-05-13"
-        size: "78K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 195
-
-      - id: "article_007"
-        type: "article"
-        title: "Uma Mente Milionária"
-        file: "007 - Uma Mente Milionária.md"
-        date: "2024-08-09"
-        size: "48K"
-        persona: "Vida Lendária"
-        priority: 10
-        status: "coletado"
-        reading_time_min: 120
-
-      - id: "article_008"
-        type: "article"
-        title: "Zona de Genialidade"
-        file: "008 - Zona de Genialidade.md"
-        date: "2023-08-23"
-        size: "31K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 80
-
-      - id: "article_009"
-        type: "article"
-        title: "Essencialismo a arte de dizer não"
-        file: "009 - Essencialismo a arte de dizer não.md"
-        date: "2023-07-08"
-        size: "28K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 70
-
-      - id: "article_010"
-        type: "article"
-        title: "A Vida é Contra Intuitiva"
-        file: "010 - A Vida é Contra Intuitiva.md"
-        date: "2023-06-13"
-        size: "48K"
-        persona: "Vida Lendária"
-        priority: 8
-        status: "coletado"
-        reading_time_min: 120
-
-      - id: "article_011"
-        type: "article"
-        title: "O poder de fazer perguntas"
-        file: "011 - O poder de fazer perguntas.md"
-        date: "2023-06-13"
-        size: "83K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 210
-
-      - id: "article_012"
-        type: "article"
-        title: "O poder de fazer perguntas 2"
-        file: "012 - O poder de fazer perguntas 2.md"
-        date: "2023-06-13"
-        size: "48K"
-        persona: "Vida Lendária"
-        priority: 8
-        status: "coletado"
-        reading_time_min: 120
-
-      - id: "article_013"
-        type: "article"
-        title: "Estoicismo A Arte de Viver"
-        file: "013 - Estoicismo A Arte de Viver.md"
-        date: "2023-09-28"
-        size: "59K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 150
-
-      - id: "article_014"
-        type: "article"
-        title: "Á Beira do Abismo"
-        file: "014 - Á Beira do Abismo.md"
-        date: "2023-08-18"
-        size: "26K"
-        persona: "Vida Lendária"
-        priority: 8
-        status: "coletado"
-        reading_time_min: 65
-
-      - id: "article_015"
-        type: "article"
-        title: "Como Tomar Melhores Decisões"
-        file: "015 - Como Tomar Melhores Decisões.md"
-        date: "2024-07-27"
-        size: "23K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 60
-
-      - id: "article_016"
-        type: "article"
-        title: "O Efeito Composto - Por que coisas valiosas levam tempo?"
-        file: "016 - O Efeito Composto - Por que coisas valiosas levam tempo?.md"
-        date: "2023-08-19"
-        size: "35K"
-        persona: "Vida Lendária"
-        priority: 8
-        status: "coletado"
-        reading_time_min: 90
-
-      - id: "article_017"
-        type: "article"
-        title: "Por que procrastinamos? E como parar!"
-        file: "017 - Por que procrastinamos? E como parar!.md"
-        date: "2024-07-26"
-        size: "60K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 150
-
-      - id: "article_018"
-        type: "article"
-        title: "Queimando Pontes"
-        file: "018 - Queimando Pontes.md"
-        date: "2023-05-18"
-        size: "29K"
-        persona: "Vida Lendária"
-        priority: 8
-        status: "coletado"
-        reading_time_min: 75
-
-      - id: "article_019"
-        type: "article"
-        title: "Você é Dois"
-        file: "019 - Você é Dois.md"
-        date: "2023-07-03"
-        size: "34K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 85
-
-      - id: "article_020"
-        type: "article"
-        title: "Modelagem Mental"
-        file: "020 - Modelagem Mental.md"
-        date: "2024-11-30"
-        size: "26K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 65
-
-      - id: "article_021"
-        type: "article"
-        title: "Seja um Otimista Racional"
-        file: "021 - Seja um Otimista Racional.md"
-        date: "2023-09-20"
-        size: "40K"
-        persona: "Vida Lendária"
-        priority: 8
-        status: "coletado"
-        reading_time_min: 100
-
-      - id: "article_022"
-        type: "article"
-        title: "Elemine o Ruído"
-        file: "022 - Elemine o Ruído.md"
-        date: "2023-07-05"
-        size: "29K"
-        persona: "Vida Lendária"
-        priority: 8
-        status: "coletado"
-        reading_time_min: 75
-
-      - id: "article_023"
-        type: "article"
-        title: "Siga Sua Curiosidade"
-        file: "023 - Siga Sua Curiosidade.md"
-        date: "2023-08-12"
-        size: "46K"
-        persona: "Vida Lendária"
-        priority: 9
-        status: "coletado"
-        reading_time_min: 115
-
-      - id: "article_024"
-        type: "article"
-        title: "Episódios VL (Compilação)"
-        file: "Episódios VL.md"
-        date: "2025-04-09"
-        size: "883K"
-        persona: "Vida Lendária"
-        priority: 10
-        status: "coletado"
-        reading_time_min: 360
-        notes: "Compilação master de todos episódios Vida Lendária"
+    self_analysis:
+      count: 13
+      description: "CROWN JEWELS - Deep self-analysis materials"
+      priority: "critical"
+      persona: "Foundation (Both)"
+      tier: "Tier 1"
+      estimated_words: 48885
+      includes:
+        - "modelo-do-eu.md (51KB - Layers 6-8 pre-validated)"
+        - "Q&A.md (173KB - extensive personal Q&A)"
+        - "Plus 11 other self-analysis documents"
+      notes: "Contains pre-validated DNA Mentalâ„¢ Layers 6-8 (Values, Obsessions, Paradoxes)"
 
     videos:
-      - id: "video_001"
-        type: "video"
-        title: "A INTELIGÊNCIA ARTIFICIAL ESTÁ EM TUDO - ALAN NICOLAS | Plugado #170"
-        file: "1_A INTELIGÊNCIA ARTIFICIAL ESTÁ EM TUDO - ALAN NICOLAS \ Plugado #170.pt.srt"
-        date: "2025-10-05"
-        duration_sec: 6385
-        duration_min: 106
-        youtube_id: "fI7tagAxCqk"
-        persona: "IA Expert"
-        priority: 10
-        status: "coletado"
+      count: 12
+      description: "Video transcripts (.srt) from podcast/interview appearances"
+      priority: "high"
+      persona: "IA Expert"
+      tier: "Tier 1-2"
+      duration_hours: 17.5
+      includes:
+        - "Plugado #170"
+        - "Podcast EAG #287"
+        - "Segredos Da Escala #026 & #070"
+        - "Lutz Podcast #241"
+        - "And 7 more major interviews"
 
-      - id: "video_002"
-        type: "video"
-        title: "Como as IAs podem TRANSFORMAR a sua EMPRESA | Com Alan Nicolas | Podcast EAG #287"
-        file: "2_Como as IAs podem TRANSFORMAR a sua EMPRESA \ Com Alan Nicolas \ Podcast EAG #287.pt.srt"
-        date: "2025-10-05"
-        duration_sec: 3930
-        duration_min: 66
-        youtube_id: "bQzhb95SD2g"
-        persona: "IA Expert"
-        priority: 9
-        status: "coletado"
+    interviews:
+      count: 10
+      description: "Interview transcripts and materials"
+      priority: "medium"
+      persona: "Both"
+      tier: "Tier 2"
 
-      - id: "video_003"
-        type: "video"
-        title: "Inteligência Artificial: Está Se Tornando Mais Perigosa E Ameaçadora!-Alan Nicolas"
-        file: "3_Inteligência Artificial Está Se Tornando Mais Perigosa E Ameaçadora!-Alan Nicolas.pt.srt"
-        date: "2025-10-05"
-        duration_sec: 11232
-        duration_min: 187
-        youtube_id: "rIn104yNgeY"
-        persona: "IA Expert"
-        priority: 10
-        status: "coletado"
-
-      - id: "video_004"
-        type: "video"
-        title: "Ele É Especialista Em IA E Já Fez 150 Milhões No Digital | Alan Nicolas - Segredos Da Escala #026"
-        file: "4_Ele É Especialista Em IA E Já Fez 150 Milhões No Digital \ Alan Nicolas - Segredos Da Escala #026.pt.srt"
-        date: "2025-10-05"
-        duration_sec: 10230
-        duration_min: 171
-        youtube_id: "nksadR9ePfw"
-        persona: "IA Expert"
-        priority: 10
-        status: "coletado"
-
-      - id: "video_005"
-        type: "video"
-        title: "Como Estudar Inteligência Artificial do Zero | Feat. Pedro Sobral"
-        file: "5_Como Estudar Inteligência Artificial do Zero \ Feat. Pedro Sobral.pt.srt"
-        date: "2025-10-05"
-        duration_sec: 4391
-        duration_min: 73
-        youtube_id: "qBA_6gf5Dkg"
-        persona: "IA Expert"
-        priority: 9
-        status: "coletado"
-
-      - id: "video_006"
-        type: "video"
-        title: "A Nova Era dos Negócios com IA: Visão de um CEO | Alan Nicolas (Backstage)"
-        file: "6_A Nova Era dos Negócios com IA Visão de um CEO \ Alan Nicolas (Backstage).pt.srt"
-        date: "2025-10-05"
-        duration_sec: 2479
-        duration_min: 41
-        youtube_id: "viKPvEeCk6U"
-        persona: "IA Expert"
-        priority: 8
-        status: "coletado"
-
-      - id: "video_007"
-        type: "video"
-        title: "Inteligência Artificial: A Verdade Sobre O Fim Dos Empregos | Alan Nicolas - Segredos da Escala #070"
-        file: "7_Inteligência Artificial A Verdade Sobre O Fim Dos Empregos \ Alan Nicolas - Segredos da Escala #070.pt.srt"
-        date: "2025-10-05"
-        duration_sec: 9671
-        duration_min: 161
-        youtube_id: "foH_huKTegc"
-        persona: "IA Expert"
-        priority: 9
-        status: "coletado"
-
-      - id: "video_008"
-        type: "video"
-        title: "Inteligência Artificial: Se Não Fizer Isso Vai Ser Deixado Para Trás!-Alan Nicolas"
-        file: "8_Inteligência Artificial Se Não Fizer Isso Vai Ser Deixado Para Trás!-Alan Nicolas.pt.srt"
-        date: "2025-10-05"
-        duration_sec: 10586
-        duration_min: 176
-        youtube_id: "n_QqY7Cegbk"
-        persona: "IA Expert"
-        priority: 10
-        status: "coletado"
-
-      - id: "video_009"
-        type: "video"
-        title: "Inteligência Artificial: Eles Estão Mentindo Para Você! - Alan Nicolas | Lutz Podcast #241"
-        file: "9_Inteligência Artificial Eles Estão Mentindo Para Você! - Alan Nicolas \ Lutz Podcast #241.pt.srt"
-        date: "2025-10-05"
-        duration_sec: 8949
-        duration_min: 149
-        youtube_id: "eDsk14ZTthk"
-        persona: "IA Expert"
-        priority: 10
-        status: "coletado"
+    articles:
+      count: 2
+      description: "Standalone articles"
+      priority: "medium"
+      persona: "IA Expert"
+      tier: "Tier 2-3"
+      includes:
+        - "manifesto-academia.md"
+        - "marketing.md"
 
     profiles:
-      - id: "profile_001"
-        type: "psychometric_profile"
-        title: "Análise Psicométrica Completa - Alan Nicolas"
-        file: "alan-nicolas-profile.json"
-        date: "2024-12-26"
-        version: "1.0"
-        persona: "Ambas (Foundation)"
-        priority: 10
-        status: "coletado"
-        includes:
-          - "DISC Profile (DC pattern)"
-          - "Enneagram Type 5w4 SP/SX/SO"
-          - "MBTI ISTP-A (The Virtuoso)"
-          - "Cognitive Stratum VI (Corporate Strategic)"
-          - "Big Five (O88 C82 E38 A35 N48)"
-          - "HEXACO (H68)"
-          - "Dark Triad (N3.2 M4.1 P2.3)"
-          - "Intelligence Estimates (IQ 130-145, EQ 65)"
-          - "Attachment, Grit, Locus of Control"
+      count: 1
+      description: "Psychometric profile (JSON)"
+      priority: "critical"
+      persona: "Foundation (Both)"
+      tier: "Tier 1"
+      file: "alan-nicolas-profile.json"
+      includes:
+        - "DISC Profile (DC pattern, D85 C80)"
+        - "Enneagram Type 5w4 SP/SX/SO"
+        - "MBTI ISTP-A (The Virtuoso)"
+        - "Cognitive Stratum VI (Corporate Strategic)"
+        - "Big Five (O88 C82 E38 A35 N48)"
+        - "HEXACO (H68)"
+        - "Dark Triad (N3.2 M4.1 P2.3)"
+        - "Intelligence Estimates (IQ 130-145, EQ 65)"
+        - "Attachment, Grit, Locus of Control"
 
-    books: []
-    interviews: []
-    speeches: []
-    social_media: []
+  # CRITICAL: Source Tier Classification for DNA Mentalâ„¢ Extraction
+  source_tier_matrix:
+    tier_1_critical:
+      priority: 1
+      usage: "Primary extraction for all 8 DNA Mentalâ„¢ Layers"
+      sources:
+        - category: "self_analysis"
+          files:
+            - "modelo-do-eu.md"
+            - "Q&A.md"
+          reason: "Pre-validated Layers 6-8, direct self-reflection"
 
+        - category: "profiles"
+          file: "alan-nicolas-profile.json"
+          reason: "Psychometric foundation for personality architecture"
+
+        - category: "videos"
+          files:
+            - "Segredos Da Escala #026 (171 min)"
+            - "Lutz Podcast #241 (149 min)"
+            - "IA: Se Tornando Perigosa (187 min)"
+          reason: "Long-form, unscripted, authentic communication style"
+
+        - category: "cursos"
+          files:
+            - "Mente LendÃ¡ria (all modules)"
+            - "Clones IA (all modules)"
+            - "Fundamentos em IA (all modules)"
+          reason: "Core teaching methodology and expertise demonstration"
+
+    tier_2_validation:
+      priority: 2
+      usage: "Cross-validation, communication style refinement"
+      sources:
+        - category: "newsletter"
+          count: 56
+          reason: "Written communication style, consistent philosophical voice"
+
+        - category: "podcast"
+          count: 36
+          reason: "Conversational patterns, spontaneous reasoning"
+
+        - category: "cursos"
+          remaining_courses: true
+          reason: "Breadth of expertise, framework application examples"
+
+        - category: "videos"
+          remaining: true
+          reason: "Additional communication patterns, media adaptation"
+
+    tier_3_supporting:
+      priority: 3
+      usage: "Supporting evidence, edge case patterns"
+      sources:
+        - category: "interviews"
+          count: 10
+          reason: "Contextual adaptation, audience awareness"
+
+        - category: "articles"
+          count: 2
+          reason: "Additional written samples"
+
+        - category: "self_analysis"
+          remaining: true
+          reason: "Supplementary introspection materials"
+
+  # Temporal coverage analysis
   temporal_coverage:
     earliest: "2023"
     latest: "2025"
+    coverage_quality: "Mature period - established expertise and voice"
     gaps:
-      - "2022 e anterior - Período inicial do blog/podcast"
-      - "Vídeos anteriores a 2024 - Primeiros conteúdos sobre IA"
+      - period: "Pre-2023"
+        impact: "Low - mature thinking already documented"
+        mitigation: "Self-analysis materials cover personal history"
 
-  priority_tier_1:
-    - source: "article_024"
-      type: "article"
-      importance: "critical"
-      reason: "Compilação master completa Vida Lendária - base cognitiva e filosófica"
+  # Dual Persona Architecture (CRITICAL for Clone Design)
+  persona_distribution:
+    vida_legendaria:
+      description: "Philosophical, personal development, life optimization"
+      primary_sources:
+        - "self_analysis (100%)"
+        - "newsletter (90%)"
+        - "cursos/Mente LendÃ¡ria (100%)"
+        - "cursos/Aumente seu QI (100%)"
+      estimated_content_percentage: 40
+      voice_characteristics:
+        - "Introspective and contemplative"
+        - "First principles thinking"
+        - "Stoicism and philosophy integration"
+        - "Question-driven exploration"
 
-    - source: "article_007"
-      type: "article"
-      importance: "critical"
-      reason: "Mentalidade de negócios e criação de riqueza - core expertise"
+    ia_expert:
+      description: "Technical AI expertise, business applications, future trends"
+      primary_sources:
+        - "videos (90%)"
+        - "podcast (70%)"
+        - "cursos/Fundamentos IA (100%)"
+        - "cursos/Clones IA (100%)"
+        - "cursos/Crew AI (100%)"
+        - "cursos/Dify (100%)"
+        - "cursos/Marketing com IA (100%)"
+      estimated_content_percentage: 45
+      voice_characteristics:
+        - "Clear and pedagogical"
+        - "Framework-oriented"
+        - "Practical and actionable"
+        - "Visionary yet grounded"
 
-    - source: "article_004"
-      type: "article"
-      importance: "critical"
-      reason: "Manifesto fundacional Vida Lendária - valores e visão"
+    overlap_integration:
+      description: "Where both personas merge"
+      sources:
+        - "cursos/ETL"
+        - "interviews (contextual)"
+        - "Some newsletter editions"
+      estimated_content_percentage: 15
+      characteristics:
+        - "AI as tool for personal transformation"
+        - "Philosophy of technological evolution"
+        - "Mental models applied to AI adoption"
 
-    - source: "video_001"
-      type: "video"
-      importance: "critical"
-      reason: "Visão completa sobre IA em todos aspectos da vida"
+  # Quality metrics for MMOS Pipeline
+  quality_assessment:
+    availability_score: 19/20  # 95%
+    reasons:
+      - "2.2M words = 10-15 book equivalents"
+      - "Pre-validated Layers 6-8 in modelo-do-eu.md"
+      - "Comprehensive psychometric foundation"
+      - "56 newsletters + 78 course files"
+      - "17.5 hours of video content"
 
-    - source: "video_003"
-      type: "video"
-      importance: "critical"
-      reason: "Perspectiva crítica e alertas sobre riscos da IA"
+    depth_score: 14/20  # 70%
+    reasons:
+      - "Multiple long-form content (3h interviews)"
+      - "Course materials demonstrate teaching depth"
+      - "Self-analysis shows introspective capacity"
+      - "Dual expertise domains (philosophy + AI)"
 
-    - source: "video_004"
-      type: "video"
-      importance: "critical"
-      reason: "Trajetória empreendedorial + expertise IA combinadas"
+    value_density: 11/15  # 73%
+    reasons:
+      - "High signal-to-noise in self-analysis"
+      - "Course materials are structured and refined"
+      - "Newsletter maintains consistent quality"
 
-    - source: "profile_001"
-      type: "profile"
-      importance: "critical"
-      reason: "Base psicométrica completa - fundação da personalidade"
+  # DNA Mentalâ„¢ Layer Coverage Prediction
+  layer_coverage:
+    layer_1_behavioral_patterns:
+      coverage: 95
+      primary_sources:
+        - "Q&A.md"
+        - "Videos (unscripted moments)"
+        - "Podcast appearances"
+      extraction_difficulty: "Easy"
+
+    layer_2_communication_style:
+      coverage: 98
+      primary_sources:
+        - "All written content"
+        - "All video/audio transcripts"
+        - "Newsletter (56 editions)"
+      extraction_difficulty: "Easy"
+
+    layer_3_routines:
+      coverage: 75
+      primary_sources:
+        - "Self-analysis materials"
+        - "Q&A.md"
+      extraction_difficulty: "Medium"
+      notes: "Self-cloning allows direct elicitation if gaps exist"
+
+    layer_4_recognition_patterns:
+      coverage: 90
+      primary_sources:
+        - "Course materials (pattern teaching)"
+        - "modelo-do-eu.md (meta-cognition)"
+      extraction_difficulty: "Medium"
+
+    layer_5_mental_models:
+      coverage: 95
+      primary_sources:
+        - "All course materials"
+        - "modelo-do-eu.md (Section V: NÃºcleo Cognitivo)"
+        - "Newsletter (framework application)"
+      extraction_difficulty: "Medium"
+
+    layer_6_values_hierarchy:
+      coverage: 100
+      primary_sources:
+        - "modelo-do-eu.md (Section I: NÃºcleo Essencial)"
+        - "Q&A.md (values in action)"
+      extraction_difficulty: "Easy"
+      notes: "PRE-VALIDATED - Direct extraction available"
+
+    layer_7_core_obsessions:
+      coverage: 100
+      primary_sources:
+        - "modelo-do-eu.md (Sections II, V, VI)"
+        - "Course creation patterns (obsessions manifest)"
+      extraction_difficulty: "Easy"
+      notes: "PRE-VALIDATED - Explicitly documented"
+
+    layer_8_productive_paradoxes:
+      coverage: 95
+      primary_sources:
+        - "modelo-do-eu.md"
+        - "Psychometric profile (ISTP + teacher paradox)"
+      extraction_difficulty: "Medium"
+      notes: "PRE-VALIDATED - Introspective + technical paradox well-documented"
+
+# Reading priority queue for Phase 2-3
+reading_priority_queue:
+  immediate_priority:
+    - file: "self-analysis/modelo-do-eu.md"
+      tier: 1
+      reason: "CROWN JEWEL - Layers 6-8 pre-validated"
+      estimated_time: "2h"
+
+    - file: "self-analysis/Q&A.md"
+      tier: 1
+      reason: "Comprehensive behavioral + values evidence"
+      estimated_time: "3h"
+
+    - file: "alan-nicolas-profile.json"
+      tier: 1
+      reason: "Psychometric foundation"
+      estimated_time: "30min"
+
+    - file: "cursos/Mente LendÃ¡ria/"
+      tier: 1
+      reason: "Core philosophical framework"
+      estimated_time: "4h"
+
+    - file: "cursos/Clones IA/"
+      tier: 1
+      reason: "Meta-awareness of cloning process"
+      estimated_time: "3h"
+
+  secondary_priority:
+    - category: "newsletter/"
+      tier: 2
+      reason: "Communication style + values consistency"
+      estimated_time: "12h"
+      sampling_strategy: "Read first 10 + last 10 + random sample of 10"
+
+    - category: "videos/"
+      tier: 1-2
+      reason: "Unscripted communication patterns"
+      estimated_time: "10h"
+      sampling_strategy: "Focus on longest interviews (3h Segredos Da Escala)"
+
+    - category: "podcast/"
+      tier: 2
+      reason: "Conversational patterns"
+      estimated_time: "8h"
+      sampling_strategy: "Sample guest appearances + own episodes"
+
+  tertiary_priority:
+    - category: "cursos/Fundamentos IA, Crew AI, Dify, Marketing"
+      tier: 2
+      reason: "Breadth of expertise, framework examples"
+      estimated_time: "8h"
+      sampling_strategy: "Focus on Q&A sections and module summaries"
+
+    - category: "interviews/"
+      tier: 3
+      reason: "Additional context"
+      estimated_time: "4h"
+      sampling_strategy: "Sample 50%"
+
+# Gap analysis
+identified_gaps:
+  layer_3_routines:
+    gap: "Daily/weekly routines partially documented"
+    severity: "Low"
+    mitigation: "Self-cloning allows direct elicitation"
+
+  layer_4_blind_spots:
+    gap: "Blind spots and failure modes"
+    severity: "Medium"
+    mitigation: "Can be directly elicited + inferred from paradoxes"
+
+  temporal_early_period:
+    gap: "Pre-2023 content limited"
+    severity: "Low"
+    mitigation: "Self-analysis covers personal history, mature period well-documented"
+
+# Self-cloning advantages
+self_cloning_advantages:
+  - advantage: "Zero gatekeeping"
+    impact: "Instant validation, no waiting for approvals"
+
+  - advantage: "Direct Layer 6-8 access"
+    impact: "modelo-do-eu.md eliminates 4-8 hours of extraction work"
+
+  - advantage: "Gap filling on demand"
+    impact: "Missing Layer 3 routines can be directly elicited"
+
+  - advantage: "Validation bandwidth"
+    impact: "Unlimited validation cycles, immediate feedback"
+
+  - advantage: "Material access"
+    impact: "Can add private materials not publicly available"
+
+  - advantage: "Iteration velocity"
+    impact: "Can test and refine clone in real-time"
+
+# Next actions (aligned with TODO.md)
+next_actions:
+  phase_2_completion:
+    - action: "Classify all 208 sources into Tier 1/2/3 (detailed)"
+      status: "Partially complete (high-level done)"
+      time_estimate: "2h"
+
+    - action: "Generate reading priority queue with specific files"
+      status: "Complete (documented above)"
+      time_estimate: "0h"
+
+    - action: "Identify remaining gaps"
+      status: "Complete (documented above)"
+      time_estimate: "0h"
+
+  phase_3_readiness:
+    - "Tier 1 sources identified and prioritized"
+    - "DNA Mentalâ„¢ layer coverage mapped"
+    - "Self-cloning advantages documented"
+    - "Extraction strategy defined"
+    status: "READY TO BEGIN PHASE 3"
 
 # Notes System (AIOS-inspired)
 dev_notes:
   - date: "2025-10-05"
-    note: "Inventário inicial criado com 34 fontes primárias identificadas"
-  - date: "2025-10-05"
-    note: "24 artigos Vida Lendária (2023-2024) + 9 vídeos IA (2025) + 1 profile psicométrico"
-  - date: "2025-10-05"
-    note: "Duas personas distintas identificadas: Vida Lendária (filosófico) + IA Expert (técnico)"
+    note: "Initial inventory with 34 sources"
 
-qa_notes:
-  - date: "2025-10-05"
-    note: "Gap identificado: fontes anteriores a 2023 (período inicial do blog)"
-  - date: "2025-10-05"
-    note: "Gap identificado: vídeos mais antigos sobre IA e empreendedorismo"
-  - date: "2025-10-05"
-    note: "Necessário: converter vídeos SRT em transcrições markdown limpas"
+  - date: "2025-10-16"
+    note: "Comprehensive re-inventory reveals 208 sources, 2.2M words"
+
+  - date: "2025-10-16"
+    note: "Self-cloning context discovered - changes viability from 79% to 84%"
+
+  - date: "2025-10-16"
+    note: "modelo-do-eu.md identified as CROWN JEWEL - Layers 6-8 pre-validated"
+
+  - date: "2025-10-16"
+    note: "Dual persona architecture documented: Vida LendÃ¡ria (40%) + IA Expert (45%) + Overlap (15%)"
 
 analyst_notes:
-  - date: "2025-10-05"
-    note: "Cobertura temporal 2023-2025 oferece visão madura do pensamento"
-  - date: "2025-10-05"
-    note: "Artigos VL totalizam ~294k palavras = ~49h leitura, alta densidade filosófica"
-  - date: "2025-10-05"
-    note: "Vídeos IA totalizam ~17.5h conteúdo, alta densidade técnica e visionária"
-  - date: "2025-10-05"
-    note: "Profile psicométrico é excepcional - raridade estatística documentada"
-  - date: "2025-10-05"
-    note: "Priorizar Tier 1: compilação VL + mente milionária + vídeos flagship IA + profile"
-  - date: "2025-10-05"
-    note: "Duas dimensões complementares: fundação filosófica (VL) + aplicação técnica (IA)"
+  - date: "2025-10-16"
+    note: "2.2M words = 12-15 book equivalents, unprecedented source density"
+
+  - date: "2025-10-16"
+    note: "Self-analysis category contains pre-validated DNA Mentalâ„¢ Layers 6-8"
+
+  - date: "2025-10-16"
+    note: "Psychometric profile (alan-nicolas-profile.json) is statistical rarity"
+
+  - date: "2025-10-16"
+    note: "Course materials (78 files) demonstrate both teaching ability and expertise depth"
+
+  - date: "2025-10-16"
+    note: "Newsletter (56 editions) provides consistent philosophical voice samples"
+
+  - date: "2025-10-16"
+    note: "Fidelity target increased to 93-97% (Elite Tier) based on source quality + self-cloning advantages"
+
+qa_notes:
+  - date: "2025-10-16"
+    note: "Total source count: 208 files across 8 categories"
+
+  - date: "2025-10-16"
+    note: "All 8 DNA Mentalâ„¢ layers have 75%+ coverage prediction"
+
+  - date: "2025-10-16"
+    note: "Tier 1 sources include: modelo-do-eu.md, Q&A.md, profile, top videos, core courses"
+
+  - date: "2025-10-16"
+    note: "Phase 2 (Research Collection) assessed at 95% complete - ready for Phase 3"

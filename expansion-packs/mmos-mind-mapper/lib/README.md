@@ -598,7 +598,7 @@ Para melhorar o Debate Engine:
 ## 📞 Suporte
 
 - **Issues:** Reportar bugs no GitHub
-- **Docs:** Ver `/docs/mmos/` para mais detalhes
+- **Docs:** Ver `/expansion-packs/mmos-mind-mapper/README.md` para scripts e `/docs/mmos/` para outputs
 - **Exemplos:** `/temp/debates/` tem exemplos de output
 
 ---

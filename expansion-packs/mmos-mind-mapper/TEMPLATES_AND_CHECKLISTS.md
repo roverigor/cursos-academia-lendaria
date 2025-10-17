@@ -316,10 +316,9 @@ Located in: `expansion-packs/mmos-mind-mapper/checklists/`
 
 ## Related Documentation
 
-- `/expansion-packs/mmos-mind-mapper/README.md` - Expansion pack overview
-- `/docs/mmos/README.md` - MMOS pipeline documentation
-- `/docs/mmos/docs/PRD.md` - MMOS Product Requirements
-- `/docs/mmos/docs/stage-guides/` - Stage-specific guides
+- `/expansion-packs/mmos-mind-mapper/README.md` - Expansion pack scripts and tasks
+- `/docs/mmos/` - MMOS outputs (minds, reports, benchmarks, validations)
+- `/docs/minds/` - Individual mind outputs (sources, analysis, synthesis, system-prompts)
 
 ---
 

@@ -22,7 +22,7 @@ When an agent is active:
 ## Development Methodology
 
 ### Story-Driven Development
-1. **Work from stories** - All development starts with a story in `docs/stories/`
+1. **Work from stories** - All development starts with a story in `docs/mmos/stories/` (MMOS-specific) or `docs/stories/` (AIOS-general)
 2. **Update progress** - Mark checkboxes as tasks complete: [ ] → [x]
 3. **Track changes** - Maintain the File List section in the story
 4. **Follow criteria** - Implement exactly what the acceptance criteria specify
@@ -53,7 +53,11 @@ aios-core/
 └── rules/          # Framework rules and patterns
 
 docs/
-├── stories/        # Development stories (numbered)
+├── mmos/
+│   ├── stories/    # MMOS-specific stories and epics
+│   ├── epics/      # MMOS epics
+│   └── board/      # MMOS orchestration board
+├── stories/        # AIOS-general development stories
 ├── prd/            # Product requirement documents
 ├── architecture/   # System architecture documentation
 └── guides/         # User and developer guides
@@ -217,5 +221,81 @@ npm run trace -- workflow-name
 - Keep README synchronized with actual behavior
 - Document breaking changes prominently
 
+## MMOS-Specific Rules
+
+### CRITICAL: Use Architecture Guard Checklist
+
+**Before creating ANY file in docs/mmos/ or docs/minds/:**
+→ Review `.aios-core/checklists/mmos-architecture-guard.md`
+
+### docs/minds/ Directory - OUTPUT ONLY
+
+**CRITICAL:** `docs/minds/` contains ONLY the direct output of the MMOS pipeline.
+
+#### ✅ What BELONGS in docs/minds/{mind_slug}/:
+- `sources/` - Source materials collected
+- `analysis/` - Phase 3 outputs (identity-core.yaml, cognitive-spec.yaml)
+- `synthesis/` - Phase 4 outputs (frameworks.md, communication-style.md, etc.)
+- `implementation/` - Phase 5 outputs (tools.md, system-prompt-generalista.md)
+- `system_prompts/` - Final system prompts
+- `kb/` - Knowledge base chunks
+- `docs/` - **Mind-specific process docs** (validations, migrations, reports)
+- `logs/` - **Mind-specific execution logs**
+
+#### ❌ What DOES NOT belong in docs/minds/:
+- System-level documentation → `docs/mmos/docs/`
+- Cross-mind comparisons → `docs/mmos/reports/`
+- MMOS process documentation → `docs/mmos/docs/`
+- EPIC files → `docs/mmos/epics/`
+- Story files → `docs/mmos/stories/`
+
+### docs/mmos/ Directory - SYSTEM ONLY
+
+**CRITICAL:** `docs/mmos/` contains ONLY system-level MMOS content.
+
+#### ✅ What BELONGS in docs/mmos/:
+- `architecture/` - MMOS system architecture
+- `docs/` - System documentation (PRD, workflows)
+- `epics/` - MMOS development epics
+- `stories/` - MMOS development stories
+- `reports/` - Executive reports, version comparisons
+- `qa/benchmarks/` - Cross-mind benchmarks
+- `database/` - MMOS database files
+- `logs/` - System-wide logs
+
+#### ❌ What DOES NOT belong in docs/mmos/:
+- **NEVER** create folders named after minds (`/joao_lozano/`, `/pedro_valerio/`)
+- **NEVER** create `validations/` or `migrations/` subfolders with mind names
+- Mind-specific documents → `docs/minds/{slug}/docs/`
+
+### Decision Rule:
+
+Ask: **"Is this about a SPECIFIC mind (name appears in content)?"**
+- **YES** → `docs/minds/{mind_slug}/docs/` or `docs/minds/{mind_slug}/logs/`
+- **NO** → Is it a script/template?
+  - **YES** → `expansion-packs/mmos-mind-mapper/`
+  - **NO** → Is it about MMOS system?
+    - **YES** → `docs/mmos/{appropriate-folder}/`
+    - **NO** → ⚠️ STOP - Review architecture rules
+
+### Examples:
+
+**✅ Correct:**
+- `docs/minds/joao_lozano/docs/validation-checklist.md` (mind-specific)
+- `docs/minds/pedro_valerio/docs/migration-progress.md` (mind-specific)
+- `docs/minds/pedro_valerio/logs/20251016-validation-session.md` (mind-specific log)
+- `docs/mmos/reports/EXECUTIVE_SUMMARY_FOR_PO.md` (system-level)
+- `docs/mmos/epics/EPIC-2-Clone-Auth.md` (system-level)
+
+**❌ Wrong:**
+- `docs/mmos/validations/pedro-valerio-checklist.md` → Use `docs/minds/pedro_valerio/docs/validation-checklist.md`
+- `docs/mmos/migrations/joao-lozano-progress.md` → Use `docs/minds/joao_lozano/docs/migration-progress.md`
+- `expansion-packs/mmos-mind-mapper/benchmarks/debate.yaml` → Use `docs/mmos/qa/benchmarks/debate.yaml`
+
+### Enforcement:
+
+Pre-commit hook will automatically reject architectural violations.
+Run manually: `.aios-core/hooks/pre-commit-mmos-guard.sh`
+
 ---
-*AIOS-FULLSTACK Claude Code Configuration v2.0*
+*AIOS-FULLSTACK Claude Code Configuration v2.1*
