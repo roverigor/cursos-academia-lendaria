@@ -47,7 +47,7 @@ AGORA (v2.0):
 - ✅ IA recebe contexto completo
 
 ### **Arquivos criados:**
-- `expansion-packs/creator-os/templates/course-brief-v2.md` (500+ linhas)
+- `expansion-packs/creator-os/templates/course-brief.md` (500+ linhas)
 - `docs/courses/WORKFLOW-IMPROVEMENTS-V2.md` (documentação)
 - `docs/courses/COURSE-WORKFLOW-DIAGRAM.md` (diagrama visual)
 

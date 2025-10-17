@@ -1,338 +1,896 @@
-# Course Brief: [Course Name]
+# 📋 Course Brief - Formulário Completo de Planejamento
 
-**Version:** 1.0
-**Date Created:** [Date]
-**Created By:** [Name]
-**Status:** [Draft / Approved / In Progress / Complete]
-
----
-
-## 📋 Course Overview
-
-### **Course Title**
-[Full course title - should be clear, compelling, and SEO-friendly]
-
-**Subtitle/Tagline:**
-[One-line hook that captures the transformation - e.g., "Crie Apps Sem Código com IA"]
-
-### **Elevator Pitch (30 seconds)**
-[2-3 sentences that answer: Who is this for? What will they learn? Why does it matter?]
-
-Example:
-> "Este curso ensina empreendedores digitais sem experiência em programação a criar aplicações web completas usando ferramentas no-code e IA. Em 2 horas, você vai do zero ao seu primeiro MicroSaaS publicado e monetizável."
+**Status:** 🟡 Aguardando Preenchimento
+**Data Criação:** [AUTO-PREENCHIDO]
+**Curso ID:** [AUTO-PREENCHIDO]
+**Instrutor:** [AUTO-PREENCHIDO se MMOS mind]
 
 ---
 
-## 🎯 Target Audience
+## 📝 INSTRUÇÕES DE PREENCHIMENTO
 
-### **Primary Persona**
+**Este documento é a ÚNICA fonte de verdade para a criação do seu curso.**
 
-**Demographics:**
-- Age range: [e.g., 25-45 years]
-- Occupation: [e.g., Entrepreneurs, Freelancers, Career Transitioners]
-- Technical level: [e.g., Zero programming knowledge / Beginner / Intermediate]
-- Geographic focus: [e.g., Brazil, Global Portuguese-speaking, etc.]
+Por favor, preencha **TODAS as seções** antes de prosseguir. Quanto mais detalhado você for, melhor será a qualidade do curso gerado.
 
-**Psychographics:**
-- **Motivation:** [What drives them? e.g., "Want autonomy, freedom, ability to build own products"]
-- **Pain Points:** [What frustrates them? e.g., "Can't code, feel locked out of tech opportunities"]
-- **Goals:** [What do they want? e.g., "Create MicroSaaS, offer services to clients, monetize skills"]
-- **Learning Style:** [How do they learn best? e.g., "Hands-on, visual, concrete before abstract"]
+**Quando concluir:**
+1. Salve o documento
+2. Execute o comando de geração: `*generate-course [course-slug]`
+3. A IA lerá este brief e criará o curso completo baseado nas suas respostas
 
-**Mental Barriers:**
-- [Barrier 1 - e.g., "Believes coding is too hard to learn"]
-- [Barrier 2 - e.g., "Doesn't trust AI tools to produce quality code"]
-- [Barrier 3 - e.g., "Fears looking incompetent asking 'dumb' questions"]
-
-**Quote (Ideal Student):**
-> "[What would they say about their struggle before finding this course?]"
-
-### **Secondary Personas (Optional)**
-[If applicable, briefly describe 1-2 additional personas who might benefit]
+**Tempo estimado para preencher:** 45-90 minutos (invista bem esse tempo!)
 
 ---
 
-## 🎓 Learning Outcomes
+## 1️⃣ INFORMAÇÕES BÁSICAS DO CURSO
 
-**By the end of this course, students will be able to:**
+### 1.1. Identificação
 
-1. **[Outcome 1]** - [Specific, measurable, action-oriented]
-   - Example: "Create functional web applications without writing code"
+**Título do Curso:**
+```
+[Escreva o título exato do curso - claro, específico, orientado a resultado]
+Exemplo: "Clone IA Express - Crie Seu Assistente Inteligente em 3 Horas"
+```
 
-2. **[Outcome 2]**
-   - Example: "Integrate database, authentication, and payments into apps"
+**Subtítulo/Tagline (opcional):**
+```
+[Frase curta que captura a promessa do curso]
+Exemplo: "Do zero ao primeiro clone IA funcional, sem código, em um único dia"
+```
 
-3. **[Outcome 3]**
-   - Example: "Deploy apps to production with real URLs"
+**Slug (ID do curso):**
+```
+[Nome usado para pasta/URL - use kebab-case]
+Exemplo: clone-ia-express
+```
 
-4. **[Outcome 4]**
-   - Example: "Monetize skills by building MicroSaaS or offering services"
+**Categoria Principal:**
+```
+[ ] Tecnologia/Programação
+[ ] Marketing Digital
+[ ] Negócios/Empreendedorismo
+[ ] Produtividade/Ferramentas
+[ ] Design/Criatividade
+[ ] Desenvolvimento Pessoal
+[ ] Saúde/Bem-estar
+[ ] Finanças
+[ ] Outro: _________________
+```
 
-5. **[Outcome 5]** (Optional)
-   - Example: "Troubleshoot common errors independently"
-
-**Concrete Deliverables Students Will Have:**
-- [Deliverable 1 - e.g., "3 functional apps created during course"]
-- [Deliverable 2 - e.g., "1 MicroSaaS ready to commercialize"]
-- [Deliverable 3 - e.g., "Reusable prompt library for future projects"]
-
----
-
-## 📚 Course Structure
-
-### **Duration**
-- Total: [X hours]
-- Format: [Self-paced / Cohort-based / Hybrid]
-- Recommended pace: [e.g., "1 module per day" or "Complete in one weekend"]
-
-### **Modules & Lessons**
-
-#### **Module 1: [Module Title]**
-**Duration:** [X minutes]
-**Objective:** [What students will achieve in this module]
-
-**Lessons:**
-- **1.1:** [Lesson Title] ([X min]) - [One-line description]
-- **1.2:** [Lesson Title] ([X min]) - [One-line description]
-
-**Assessment:**
-- [Quiz / Hands-on Project / Peer Review]
-
----
-
-#### **Module 2: [Module Title]**
-**Duration:** [X minutes]
-**Objective:** [What students will achieve in this module]
-
-**Lessons:**
-- **2.1:** [Lesson Title] ([X min])
-- **2.2:** [Lesson Title] ([X min])
-- **2.3:** [Lesson Title] ([X min])
-
-**Assessment:**
-- [Quiz / Hands-on Project / Peer Review]
+**Tags (3-7 palavras-chave):**
+```
+Exemplo: IA, Automação, Clone Virtual, ChatGPT, Produtividade, No-Code
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+```
 
 ---
 
-#### **Module 3: [Module Title]** (Optional)
-[Continue pattern...]
+### 1.2. Duração e Estrutura
+
+**Duração total estimada do curso:**
+```
+[ ] Mini-curso: 1-2 horas (5-8 aulas)
+[ ] Curso padrão: 3-5 horas (8-15 aulas)
+[ ] Curso extenso: 6-10 horas (15-25 aulas)
+[ ] Masterclass: 10+ horas (25+ aulas)
+[ ] Flexível (especifique): _____ horas
+```
+
+**Duração ideal por aula:**
+```
+[ ] Micro (5-10 min) - Microlearning focado
+[ ] Curta (10-20 min) - Padrão para teoria + prática
+[ ] Média (20-30 min) - Aulas mais densas
+[ ] Longa (30-45 min) - Deep dives técnicos
+[ ] Variável (especifique estratégia): __________________
+```
+
+**Número de módulos:**
+```
+_____ módulos (recomendado: 3-5 para cursos de 3-5h)
+```
+
+**Modelo de entrega:**
+```
+[ ] Self-paced (aluno segue no seu ritmo)
+[ ] Cohort-based (turmas com data início/fim)
+[ ] Híbrido (conteúdo gravado + live sessions)
+[ ] Outro: __________________
+```
 
 ---
 
-### **Final Project**
-**Title:** [Project Name]
-**Duration:** [X minutes]
-**Description:** [What students will build - should synthesize all skills learned]
-**Success Criteria:** [How they know they've succeeded - checklist or rubric]
+## 2️⃣ PÚBLICO-ALVO & ICP (IDEAL CUSTOMER PROFILE)
+
+### 2.1. Quem é o aluno ideal?
+
+**Demografia básica:**
+```
+Idade principal: _____ - _____ anos
+Localização: [ ] Brasil [ ] LATAM [ ] Global [ ] Específico: _____
+Gênero: [ ] Todos [ ] Específico: _____
+Nível educacional: [ ] Ensino médio [ ] Superior [ ] Pós-graduação [ ] Qualquer
+```
+
+**Perfil profissional:**
+```
+Ocupação atual (marque todos que se aplicam):
+[ ] Empreendedor digital
+[ ] Executivo corporativo
+[ ] Freelancer/Consultor
+[ ] Profissional técnico (dev, designer, etc.)
+[ ] Estudante
+[ ] Profissional liberal (médico, advogado, etc.)
+[ ] Criador de conteúdo
+[ ] Outro: __________________
+
+Tempo de experiência na área:
+[ ] Iniciante (0-2 anos)
+[ ] Intermediário (2-5 anos)
+[ ] Avançado (5-10 anos)
+[ ] Veterano (10+ anos)
+```
+
+**Contexto psicográfico (crucial!):**
+```
+Momento atual do avatar:
+[Descreva em 2-3 frases o MOMENTO DE VIDA que o avatar está vivendo]
+Exemplo: "Profissional com 15+ anos de experiência, saturado de promessas vazias,
+em transição consciente para construir algo próprio antes que seja tarde demais"
+
+
+
+
+Estado mental/emocional predominante:
+[Como o avatar se SENTE hoje? Frustrado? Animado? Perdido? Impaciente?]
+
+
+
+
+O que mais valoriza (top 3):
+1. [ ] Autonomia [ ] Segurança [ ] Status [ ] Impacto [ ] Velocidade [ ] Profundidade
+2. [ ] Autonomia [ ] Segurança [ ] Status [ ] Impacto [ ] Velocidade [ ] Profundidade
+3. [ ] Autonomia [ ] Segurança [ ] Status [ ] Impacto [ ] Velocidade [ ] Profundidade
+```
 
 ---
 
-## 🛠️ Tools & Prerequisites
+### 2.2. Dores & Problemas (CRITICAL!)
 
-### **Required Tools**
-| Tool | Purpose | Cost | Setup Time |
-|------|---------|------|------------|
-| [Tool 1] | [Purpose] | [Free / $X/month] | [X min] |
-| [Tool 2] | [Purpose] | [Free / $X/month] | [X min] |
-| [Tool 3] | [Purpose] | [Free / $X/month] | [X min] |
+**Dor superficial (o que ele DIZ que quer resolver):**
+```
+Exemplo: "Quero automatizar tarefas repetitivas com IA"
 
-**Total Setup Cost (Recommended):** $[X]/month
-**Total Setup Time:** [X] minutes
 
-### **Prerequisites**
-**Required:**
-- [Prerequisite 1 - e.g., "Computer with internet access"]
-- [Prerequisite 2 - e.g., "Email account"]
-- [Prerequisite 3 - e.g., "Willingness to learn"]
 
-**Recommended (Not Required):**
-- [Optional prerequisite 1]
-- [Optional prerequisite 2]
 
-**NOT Required:**
-- [Common misconception - e.g., "Programming experience"]
-- [Common misconception - e.g., "Technical background"]
+```
 
----
+**Dor real (o que ele REALMENTE quer):**
+```
+Exemplo: "Quero provar que ainda tenho valor e não desperdicei meu potencial"
 
-## 🌟 Unique Differentiation
 
-### **What Makes This Course Different?**
 
-**Compared to Competitor A ([Name]):**
-- **They:** [What they do]
-- **We:** [What we do differently]
-- **Advantage:** [Why ours is better for target audience]
 
-**Compared to Competitor B ([Name]):**
-- **They:** [What they do]
-- **We:** [What we do differently]
-- **Advantage:** [Why ours is better]
+```
 
-### **Unique Selling Propositions (USPs)**
+**Dor profunda (o que está por baixo de tudo):**
+```
+Exemplo: "Preciso construir algo próprio antes que seja tarde demais"
 
-1. **[USP 1]** - [e.g., "Only course teaching no-code with José's 'See First, Understand Later' methodology"]
 
-2. **[USP 2]** - [e.g., "Students create monetizable MicroSaaS in 2 hours, not just toy projects"]
 
-3. **[USP 3]** - [e.g., "Instructor voice is authentic, not corporate/templated"]
 
-### **Instructor Credibility**
+```
 
-**Who is teaching this?**
-- Name: [Instructor Name]
-- Background: [Relevant experience, credentials, accomplishments]
-- Unique Authority: [Why they're uniquely qualified - e.g., "5,000+ hours live TV journalism, AI Fluency certified by Anthropic"]
-- Philosophy: [Their teaching philosophy or belief - e.g., "No-code is democratization of technical knowledge"]
+**Top 5 dores/frustrações específicas:**
+```
+1.
 
----
 
-## 💰 Commercial Model
+2.
 
-### **Pricing Strategy**
 
-**Price Point:** $[X] or R$[X]
+3.
 
-**Pricing Rationale:**
-- Competitor average: $[Y]
-- Value delivered: [What students gain - e.g., "Ability to charge R$1,500-2,500 per client project"]
-- Positioning: [Premium / Mid-market / Budget]
 
-**Pricing Tiers (Optional):**
+4.
 
-| Tier | Price | What's Included | Target Buyer |
-|------|-------|-----------------|--------------|
-| Basic | $[X] | Core course | DIY learners |
-| Pro | $[Y] | Course + community + templates | Serious entrepreneurs |
-| VIP | $[Z] | Pro + 1:1 coaching | High-ticket clients |
 
-### **Revenue Model**
+5.
 
-**Primary Revenue:**
-- One-time purchase
-- Subscription (monthly/annual)
-- Pay-per-module
 
-**Secondary Revenue (Upsells):**
-- [Upsell 1 - e.g., "Advanced course on scaling MicroSaaS"]
-- [Upsell 2 - e.g., "Done-for-you templates library"]
-- [Upsell 3 - e.g., "1:1 coaching sessions"]
+```
 
-### **Launch Strategy**
+**O que acontece se ele NÃO resolver esse problema? (consequências):**
+```
+Curto prazo (3-6 meses):
 
-**Pre-Launch:**
-- Beta cohort: [X students] at [discount %]
-- Early bird: [discount % or bonus] for first [X] buyers
 
-**Launch:**
-- Target: [X] students in first [Y] days
-- Marketing channels: [e.g., "LinkedIn, email list, community"]
+Médio prazo (1-2 anos):
 
-**Post-Launch:**
-- Evergreen availability
-- Periodic cohorts (if applicable)
-- Affiliate program (if applicable)
+
+Longo prazo (5-10 anos):
+
+
+```
 
 ---
 
-## 📊 Success Metrics
+### 2.3. Desejo & Transformação
 
-### **Student Success Metrics**
+**O que o avatar DESEJA alcançar com este curso?**
+```
+Objetivo declarado (o que ele vai falar):
 
-| Metric | Industry Average | Our Target | How We'll Measure |
-|--------|------------------|------------|-------------------|
-| Completion Rate | 12.6% (solo) / 40% (avg) | 50-60% | Platform analytics |
-| NPS (Net Promoter Score) | 30-40 | 60+ | Post-course survey |
-| Skill Application | N/A | 70% create own project | 30-day follow-up survey |
-| Revenue Generated | N/A | 30% make first $500 | 90-day follow-up survey |
 
-### **Business Success Metrics**
+Objetivo real (o que ele verdadeiramente busca):
 
-| Metric | Target | Timeline |
-|--------|--------|----------|
-| Students Enrolled | [X] | [Month 1 / Quarter 1] |
-| Revenue | $[X] | [Month 1 / Quarter 1] |
-| Avg Rating | 4.5+/5 | Ongoing |
-| Testimonials Collected | [X] | [First 30 days] |
 
----
+```
 
-## 🎨 Pedagogical Approach
+**Estado atual (ANTES do curso):**
+```
+[Descreva em 3-5 bullets a situação atual do avatar]
+Exemplo:
+- Trabalha 12h/dia mas não escala
+- Tem mil ideias mas termina poucos projetos
+- Sente que está operando em 30% do potencial
+- Isolado, sem pares que o entendam
 
-### **Teaching Methodology**
 
-**Core Principles:**
-1. **[Principle 1]** - [e.g., "Concrete before abstract (see it work BEFORE theory)"]
-2. **[Principle 2]** - [e.g., "Hands-on practice (80% doing, 20% explaining)"]
-3. **[Principle 3]** - [e.g., "Metaphors first (House FullStack, Armário Database)"]
 
-**Bloom's Taxonomy Progression:**
-- Module 1: **Remember & Understand** - [What concepts]
-- Module 2: **Apply & Analyze** - [What skills]
-- Module 3: **Evaluate & Create** - [What projects]
 
-**Engagement Tactics:**
-- [Tactic 1 - e.g., "Course Buddy accountability system"]
-- [Tactic 2 - e.g., "Gamification with achievements"]
-- [Tactic 3 - e.g., "Mobile-first consumption strategy"]
+```
 
-### **Voice & Tone**
+**Estado desejado (DEPOIS do curso):**
+```
+[Descreva em 3-5 bullets onde o avatar quer chegar]
+Exemplo:
+- 1 oferta escalável gerando R$10-20k/mês
+- Sistema claro com WIP=1 e execução focada
+- Parte de tribo que executa junto
+- Usando IA como multiplicador de impacto
 
-**Instructor Voice Characteristics:**
-- [Trait 1 - e.g., "Direct, conversational, Brazilian Portuguese informal"]
-- [Trait 2 - e.g., "Celebrates wins, acknowledges struggles"]
-- [Trait 3 - e.g., "Uses metaphors liberally, explains tech in human terms"]
 
-**Example Phrases:**
-- "[Signature phrase 1]"
-- "[Signature phrase 2]"
-- "[Signature phrase 3]"
 
-**Tone Rules:**
-- ✅ Do: [e.g., "Use 'você', tell stories, be honest about limitations"]
-- ❌ Don't: [e.g., "Use jargon without explaining, be overly formal, oversell"]
+
+```
+
+**Transformação mensuráve (KPIs de sucesso do aluno):**
+```
+Métrica primária (obrigatória):
+[ ] Receita gerada: R$_____ em _____ dias
+[ ] Tempo economizado: _____ horas/semana
+[ ] Projetos concluídos: _____ em _____ dias
+[ ] Outro: __________________
+
+Métricas secundárias (2-3):
+1.
+2.
+3.
+```
 
 ---
 
-## 🚧 Risks & Mitigation
+## 3️⃣ CONTEÚDO & PEDAGOGIA
 
-### **Potential Risks**
+### 3.1. Pré-requisitos
 
-| Risk | Likelihood | Impact | Mitigation Strategy |
-|------|-----------|--------|---------------------|
-| [Risk 1 - e.g., "Tools update and break tutorials"] | Medium | High | Monthly review of tool versions, video supplements |
-| [Risk 2 - e.g., "Low completion rates"] | Medium | High | Implement Course Buddy, gamification, mobile strategy |
-| [Risk 3 - e.g., "Weak market demand"] | Low | High | Pre-creation research validates demand first |
+**Conhecimento prévio necessário:**
+```
+[ ] Nenhum (curso 100% do zero)
+[ ] Básico (liste abaixo)
+[ ] Intermediário (liste abaixo)
+[ ] Avançado (liste abaixo)
 
----
+Se aplicável, liste o que o aluno PRECISA saber antes:
+1.
+2.
+3.
+```
 
-## ✅ Approval & Next Steps
+**Ferramentas/recursos necessários:**
+```
+Hardware:
+[ ] Apenas smartphone
+[ ] Computador (qualquer)
+[ ] Computador com specs mínimas: __________________
 
-### **Stakeholder Sign-Off**
+Software/Contas:
+1.
+2.
+3.
 
-- [ ] **Instructor Approval:** [Name] - [Date]
-- [ ] **Product Owner Approval:** [Name] - [Date]
-- [ ] **Commercial Approval:** [Name] - [Date] (if applicable)
-
-### **Go/No-Go Decision**
-
-**Decision:** [GO / PIVOT / NO-GO]
-
-**Rationale:**
-[1-2 sentences explaining the decision based on research and brief]
-
-### **Next Steps (If GO)**
-
-1. **[Step 1]** - [e.g., "Create curriculum.yaml outline"] - Owner: [Name] - Due: [Date]
-2. **[Step 2]** - [e.g., "Begin lesson 1.1 content creation"] - Owner: [Name] - Due: [Date]
-3. **[Step 3]** - [e.g., "Schedule mid-creation research checkpoint"] - Owner: [Name] - Due: [Date]
-
----
-
-## 📝 Notes & Assumptions
-
-[Any additional context, constraints, or assumptions that inform this brief]
+Investimento necessário:
+[ ] R$ 0 (100% gratuito)
+[ ] R$ 1-50/mês
+[ ] R$ 50-200/mês
+[ ] R$ 200+/mês
+[ ] Especifique: __________________
+```
 
 ---
 
-*Course Brief Template v1.0 | Product Owner Framework | AIOS-FULLSTACK*
+### 3.2. Objetivos de Aprendizagem
+
+**Ao final do curso, o aluno será capaz de: (5-10 objetivos mensuráveis)**
+
+```
+Use verbos de ação: criar, implementar, analisar, diagnosticar, otimizar, etc.
+Seja ESPECÍFICO e MENSURÁVEL.
+
+Exemplo RUIM: "Entender IA"
+Exemplo BOM: "Criar um clone IA funcional que responde perguntas em português com 85%+ de fidelidade"
+
+1.
+
+
+2.
+
+
+3.
+
+
+4.
+
+
+5.
+
+
+6.
+
+
+7.
+
+
+8.
+
+
+9.
+
+
+10.
+
+
+```
+
+---
+
+### 3.3. Estrutura de Conteúdo (Outline Preliminar)
+
+**Preencha a estrutura modular do curso:**
+
+```
+MÓDULO 1: [Nome do Módulo]
+Objetivo do módulo:
+Duração: _____ min
+
+Aulas:
+  1.1 - [Nome da Aula] (_____ min)
+        Objetivo:
+
+  1.2 - [Nome da Aula] (_____ min)
+        Objetivo:
+
+  1.3 - [Nome da Aula] (_____ min)
+        Objetivo:
+
+
+MÓDULO 2: [Nome do Módulo]
+Objetivo do módulo:
+Duração: _____ min
+
+Aulas:
+  2.1 - [Nome da Aula] (_____ min)
+        Objetivo:
+
+  2.2 - [Nome da Aula] (_____ min)
+        Objetivo:
+
+  2.3 - [Nome da Aula] (_____ min)
+        Objetivo:
+
+
+MÓDULO 3: [Nome do Módulo]
+Objetivo do módulo:
+Duração: _____ min
+
+Aulas:
+  3.1 - [Nome da Aula] (_____ min)
+        Objetivo:
+
+  3.2 - [Nome da Aula] (_____ min)
+        Objetivo:
+
+  3.3 - [Nome da Aula] (_____ min)
+        Objetivo:
+
+
+[Adicione mais módulos conforme necessário]
+```
+
+---
+
+### 3.4. Framework Pedagógico
+
+**Qual abordagem pedagógica melhor se encaixa?**
+```
+[ ] Bloom's Taxonomy (6 níveis: lembrar → criar)
+[ ] Backward Design (começa pelos objetivos finais)
+[ ] Microlearning (aulas curtas, 1 conceito por vez)
+[ ] Flipped Classroom (teoria antes, prática durante)
+[ ] Mastery Learning (só avança após dominar)
+[ ] Problem-Based Learning (aprende resolvendo problemas reais)
+[ ] Experiential Learning (Kolb's Cycle)
+[ ] Gagne's 9 Events of Instruction
+[ ] Outro: __________________
+[ ] Não sei (deixe a IA recomendar baseado no ICP)
+```
+
+**Proporção teoria vs. prática:**
+```
+[ ] 10% teoria / 90% prática (hands-on intensivo)
+[ ] 20% teoria / 80% prática (padrão recomendado)
+[ ] 30% teoria / 70% prática (técnico com base forte)
+[ ] 50% teoria / 50% prática (acadêmico/conceitual)
+[ ] Outro: ____% teoria / ____% prática
+```
+
+**Estilo de ensino preferido:**
+```
+[ ] Conversacional/Mentoria (amigável, direto, como conversa)
+[ ] Prático/Hands-on (foco em fazer, mínima teoria)
+[ ] Socrático (perguntas guiadas, descoberta)
+[ ] Acadêmico/Formal (rigoroso, estruturado)
+[ ] Inspiracional/Transformacional (storytelling, motivacional)
+[ ] Técnico/Direto (objetivo, sem floreios)
+[ ] Outro: __________________
+```
+
+---
+
+### 3.5. Componentes Obrigatórios
+
+**Marque TODOS os componentes que DEVEM ser incluídos:**
+
+```
+CONTEÚDO:
+[ ] Objetivos de aprendizagem (por módulo e aula)
+[ ] Pré-requisitos e nivelamento
+[ ] Conteúdo instrucional (teoria/conceitos)
+[ ] Exemplos práticos (cases, demos, walkthroughs)
+[ ] Atividades práticas / exercícios
+[ ] Metáforas e analogias (explicar conceitos complexos)
+
+AVALIAÇÕES:
+[ ] Quizzes formativos (durante o curso)
+[ ] Quizzes somativos (final de módulo)
+[ ] Projetos práticos (mini-projetos por módulo)
+[ ] Projeto final / Capstone project
+[ ] Auto-avaliação / Reflection prompts
+[ ] Rubric de avaliação clara
+
+RECURSOS:
+[ ] Resumos / Recapitulações (final de cada módulo)
+[ ] Checklists (setup, troubleshooting, etc.)
+[ ] Templates / Arquivos modelo
+[ ] Biblioteca de recursos (links, ferramentas, leituras)
+[ ] Troubleshooting guide (erros comuns + soluções)
+[ ] Glossário de termos
+
+ENGAJAMENTO:
+[ ] Course Buddy system (accountability)
+[ ] Gamificação (achievements, progress tracking)
+[ ] Certificação (critérios para conclusão)
+[ ] Comunidade / Fórum de discussão
+[ ] Q&A sections
+[ ] Próximos passos / Roadmap pós-curso
+```
+
+---
+
+## 4️⃣ VOZ & PERSONALIDADE (MMOS INTEGRATION)
+
+### 4.1. Instrutor / Persona
+
+**Usar clone MMOS como instrutor?**
+```
+[ ] SIM - Usar mind do MMOS: _________________ (slug do mind)
+[ ] SIM - Mas apenas tom/voz (não expertise técnica)
+[ ] NÃO - Voz neutra/profissional padrão
+[ ] NÃO - Voz customizada (descreva abaixo)
+```
+
+**Se usar MMOS mind, validação de fidelidade:**
+```
+[ ] Aplicar fidelity score (target: 85%+)
+[ ] Validação simplificada (checagem básica)
+[ ] Não validar (confiar na geração)
+```
+
+**Se NÃO usar MMOS, descreva a voz desejada:**
+```
+Tom geral:
+[ ] Formal [ ] Casual [ ] Inspirador [ ] Técnico [ ] Provocador [ ] Didático
+
+Personalidade em 3-5 traços:
+Exemplo: "Direto, sem enrolação, usa analogias do dia-a-dia, celebra pequenas vitórias, honesto sobre dificuldades"
+
+1.
+2.
+3.
+4.
+5.
+
+Frases/bordões característicos (3-5 exemplos):
+Exemplo: "Vamos direto ao ponto", "Isso é 80/20 na prática", "Se ficou confuso, a culpa é minha"
+
+1.
+2.
+3.
+4.
+5.
+
+Coisas que o instrutor NUNCA faz/diz:
+Exemplo: "Nunca promete resultado sem esforço", "Nunca usa jargão sem explicar"
+
+1.
+2.
+3.
+```
+
+---
+
+### 4.2. Storytelling & Exemplos
+
+**O instrutor deve usar casos pessoais?**
+```
+[ ] SIM - Histórias pessoais (vulnerable, autêntico)
+[ ] PARCIAL - Apenas exemplos profissionais
+[ ] NÃO - Apenas cases de terceiros / estudos de caso
+```
+
+**Se SIM, forneça 2-3 histórias-chave que ilustram conceitos:**
+```
+História 1 (falha/aprendizado):
+
+
+
+História 2 (transformação/vitória):
+
+
+
+História 3 (insight contra-intuitivo):
+
+
+
+```
+
+---
+
+## 5️⃣ FORMATO & ENTREGA
+
+### 5.1. Formato das Aulas
+
+**Formato de conteúdo principal:**
+```
+[ ] Markdown / Texto escrito (ebooks, artigos)
+[ ] Scripts de vídeo (roteiros para gravar)
+[ ] Slides + Talking points (apresentações)
+[ ] Screencast scripts (tutoriais passo-a-passo)
+[ ] Áudio / Podcast scripts
+[ ] Híbrido (especifique): __________________
+```
+
+**Nível de detalhamento do conteúdo gerado:**
+```
+[ ] Apenas outline/estrutura (você preenche depois)
+[ ] Conteúdo parcial (intro + outline detalhado + exemplos)
+[ ] Conteúdo completo escrito (pronto para publicar)
+[ ] Configurável (você decide por aula)
+```
+
+---
+
+### 5.2. Estrutura de Arquivos
+
+**Estrutura de saída preferida:**
+```
+[ ] Usar estrutura padrão do CreatorOS:
+    /docs/courses/{course-slug}/
+      ├── README.md
+      ├── PRD.md
+      ├── curriculum.yaml
+      ├── course-outline.md
+      ├── lessons/
+      │   ├── 1.1-nome-da-aula.md
+      │   ├── 1.2-nome-da-aula.md
+      │   └── 2.1-nome-da-aula.md
+      ├── assessments/
+      │   ├── quiz-modulo-1.yaml
+      │   └── projeto-final.md
+      └── resources/
+          ├── template-*.md
+          └── checklist-*.md
+
+[ ] Estrutura customizada (descreva abaixo)
+```
+
+**Se customizada, descreva:**
+```
+
+
+```
+
+**Formatos de arquivo a gerar:**
+```
+[ ] Markdown (.md)
+[ ] YAML (.yaml)
+[ ] JSON (.json)
+[ ] HTML (.html)
+[ ] PDF (.pdf)
+[ ] SCORM (LMS package)
+```
+
+---
+
+## 6️⃣ COMERCIAL & LANÇAMENTO
+
+### 6.1. Modelo de Negócio
+
+**Estratégia de monetização:**
+```
+[ ] Pago (venda direta)
+[ ] Freemium (parte grátis, parte paga)
+[ ] Lead magnet (grátis para captura)
+[ ] Upsell (para produto maior)
+[ ] Membership (parte de assinatura)
+[ ] B2B (treinamento corporativo)
+[ ] Outro: __________________
+```
+
+**Preço sugerido (se pago):**
+```
+[ ] Entrada: R$ 27-97
+[ ] Intermediário: R$ 97-297
+[ ] Premium: R$ 297-997
+[ ] High-ticket: R$ 997-2.997
+[ ] Enterprise: R$ 3.000+
+[ ] Valor específico: R$ _______
+
+Justifique o preço baseado em:
+[ ] Tempo economizado (ROI calculável)
+[ ] Receita potencial gerada
+[ ] Benchmarking de mercado
+[ ] Custo de oportunidade
+[ ] Outro: __________________
+```
+
+**Upsells/Cross-sells planejados:**
+```
+Produto relacionado 1: ___________________ (R$ _____)
+Produto relacionado 2: ___________________ (R$ _____)
+Produto relacionado 3: ___________________ (R$ _____)
+```
+
+---
+
+### 6.2. Plataforma de Entrega
+
+**Onde o curso será hospedado?**
+```
+[ ] Plataforma própria (self-hosted)
+[ ] LMS comercial: [ ] Teachable [ ] Thinkific [ ] Kajabi [ ] Hotmart [ ] Outro: ____
+[ ] Marketplace: [ ] Udemy [ ] Coursera [ ] Skillshare [ ] Outro: ____
+[ ] Vídeo: [ ] YouTube [ ] Vimeo
+[ ] Docs: [ ] Notion [ ] GitBook [ ] Confluence
+[ ] Email: Drip campaign (curso por email)
+[ ] Membership: [ ] Patreon [ ] Circle [ ] Discord
+[ ] Ainda não decidido
+```
+
+**Integrações técnicas necessárias:**
+```
+[ ] SCORM (para LMS corporativo)
+[ ] xAPI/Tin Can (tracking avançado)
+[ ] API REST (integração customizada)
+[ ] Webhooks (automações)
+[ ] Zapier/Make (no-code automation)
+[ ] Stripe/Gumroad (pagamentos)
+[ ] Mailchimp/ConvertKit (email marketing)
+[ ] Nenhuma (apenas arquivos estáticos)
+[ ] Outra: __________________
+```
+
+---
+
+### 6.3. Métricas de Sucesso
+
+**Como você vai medir o sucesso do curso?**
+
+```
+MÉTRICAS DE NEGÓCIO:
+- Vendas no primeiro mês: _____ unidades
+- Receita alvo primeiro trimestre: R$ _______
+- Taxa de conversão esperada: _____%
+- LTV esperado por aluno: R$ _______
+
+MÉTRICAS DE PRODUTO:
+- Taxa de conclusão alvo: _____%
+- NPS alvo: _____ pontos
+- Tempo médio de conclusão: _____ dias
+- Rating alvo (se marketplace): _____ estrelas
+
+MÉTRICAS DE IMPACTO (ALUNO):
+- % de alunos que atingem KPI primário: _____%
+- Resultado médio gerado: R$ _______ ou _____ horas economizadas
+- Testimonials coletados: _____ em _____ dias
+```
+
+---
+
+## 7️⃣ CONTEXTO ADICIONAL (OPCIONAL MAS RECOMENDADO)
+
+### 7.1. Histórico & Inspirações
+
+**Cursos/produtos similares que você admira:**
+```
+1. Nome: __________________ | Por quê: ____________________
+2. Nome: __________________ | Por quê: ____________________
+3. Nome: __________________ | Por quê: ____________________
+```
+
+**O que você vai fazer DIFERENTE desses concorrentes?**
+```
+Diferencial #1:
+
+
+Diferencial #2:
+
+
+Diferencial #3:
+
+
+```
+
+---
+
+### 7.2. Materiais Existentes (Caso Tenha)
+
+**Você já tem algum material pronto que pode ser reutilizado?**
+```
+[ ] SIM - Aulas/slides existentes (especifique pasta): ____________________
+[ ] SIM - Artigos/posts de blog (links): ____________________
+[ ] SIM - Vídeos gravados (links): ____________________
+[ ] SIM - Planilhas/templates (especifique): ____________________
+[ ] SIM - Casos de sucesso/testimonials (especifique): ____________________
+[ ] NÃO - Começar do zero
+```
+
+**Se SIM, como a IA deve usar esse material?**
+```
+[ ] Apenas como referência de tom/voz
+[ ] Integrar trechos diretamente (com edição)
+[ ] Usar como base estrutural
+[ ] Apenas inspiração temática
+```
+
+---
+
+### 7.3. Restrições & Limitações
+
+**Há alguma restrição técnica ou de escopo?**
+```
+Restrições de tempo:
+[ ] Precisa estar pronto em _____ dias (urgente)
+[ ] Flexível, priorizo qualidade
+
+Restrições de conteúdo:
+[ ] Não posso ensinar sobre: ____________________
+[ ] Não posso usar ferramenta X porque: ____________________
+[ ] Tenho que incluir tópico Y obrigatoriamente: ____________________
+
+Outras restrições:
+
+
+
+```
+
+---
+
+### 7.4. Cultura & Valores da Entidade
+
+**Se este curso representa uma marca/comunidade, descreva:**
+
+```
+Valores fundamentais (3-5):
+1.
+2.
+3.
+4.
+5.
+
+Missão/propósito:
+
+
+
+História/origem (por que existe):
+
+
+
+Tom cultural (como a comunidade se comunica):
+
+
+
+Enemies (o que rejeitamos):
+
+
+
+```
+
+---
+
+## 8️⃣ CHECKLIST FINAL
+
+**Antes de enviar este brief para geração, confirme:**
+
+```
+[ ] Preenchi TODAS as seções obrigatórias (1-6)
+[ ] Defini claramente o ICP e as dores (seção 2)
+[ ] Especifiquei objetivos de aprendizagem mensuráveis (seção 3.2)
+[ ] Forneci outline preliminar com módulos e aulas (seção 3.3)
+[ ] Defini voz/personalidade do instrutor (seção 4)
+[ ] Especifiquei modelo comercial e preço (seção 6)
+[ ] Revisei todo o documento por erros/inconsistências
+[ ] Salvei o documento na pasta correta: /docs/courses/{course-slug}/
+```
+
+---
+
+## ✅ CONFIRMAÇÃO DE CONCLUSÃO
+
+**Status do preenchimento:**
+```
+[ ] 🟡 Em andamento (ainda preenchendo)
+[ ] 🟢 COMPLETO - Pronto para gerar curso
+```
+
+**Data de conclusão:** _______________
+
+**Assinatura/Responsável:** _______________
+
+---
+
+## 🚀 PRÓXIMOS PASSOS
+
+Após preencher completamente este brief:
+
+1. **Salvar** o documento em: `/docs/courses/{course-slug}/COURSE-BRIEF.md`
+2. **Executar comando**: `*generate-course {course-slug}`
+3. **Aguardar** a IA gerar:
+   - ✅ Pre-Creation Research
+   - ✅ Go/No-Go Analysis
+   - ✅ Curriculum completo (curriculum.yaml)
+   - ✅ Todas as aulas em Markdown
+   - ✅ Assessments (quizzes + projeto final)
+   - ✅ Resources (templates, checklists)
+   - ✅ README + Course Outline
+   - ✅ QA Report
+4. **Revisar** o conteúdo gerado nos checkpoints HITL
+5. **Aprovar** ou solicitar ajustes
+6. **Lançar** quando QA score >= 80
+
+---
+
+**Versão:** 2.0
+**Criado por:** Sarah (PO)
+**Data:** 2025-10-17
+**Framework:** AIOS Course Creation Workflow

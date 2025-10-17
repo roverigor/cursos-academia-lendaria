@@ -54,7 +54,7 @@
 │ [AI] Detecta comando: *generate-course {course-slug}                │
 │      → Verifica se pasta já existe                                  │
 │      → Se NÃO existir: Cria /docs/courses/{course-slug}/           │
-│      → Copia template course-brief-v2.md para a pasta              │
+│      → Copia template course-brief.md para a pasta              │
 │                                                                      │
 │ [HUMAN] Abre COURSE-BRIEF.md e preenche TODAS as seções:           │
 │   Seção 1: Informações básicas (título, tags, duração)             │
@@ -507,7 +507,7 @@ Fluxo novo:
 
 2. [AI] Verifica pasta:
    - Se não existe → Cria /docs/courses/{course-slug}/
-   - Copia course-brief-v2.md para pasta
+   - Copia course-brief.md para pasta
    - Notifica: "📋 COURSE-BRIEF.md criado. Preencha todas as seções antes de continuar."
 
 3. [USER] Abre COURSE-BRIEF.md
@@ -531,7 +531,7 @@ Fluxo novo:
 - Reduz HITL #1 de interativo para "fill document"
 ```
 
-**Mudanças no template course-brief-v2.md:**
+**Mudanças no template course-brief.md:**
 - ✅ 8 seções estruturadas (vs. perguntas soltas)
 - ✅ Seção 2 expandida: ICP completo com dores profundas
 - ✅ Seção 3.3: Outline preliminar (usuário preenche estrutura)

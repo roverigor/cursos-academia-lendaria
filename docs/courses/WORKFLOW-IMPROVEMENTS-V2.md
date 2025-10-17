@@ -45,7 +45,7 @@ No workflow original, o **HITL #1 (Course Brief Creation)** funcionava assim:
 
 2. [AI] Verifica estrutura:
    → Se pasta não existe: Cria /docs/courses/{course-slug}/
-   → Copia template: course-brief-v2.md → COURSE-BRIEF.md
+   → Copia template: course-brief.md → COURSE-BRIEF.md
    → Notifica usuário: "📋 Brief criado. Preencha antes de continuar."
 
 3. [USER] Abre COURSE-BRIEF.md:
@@ -67,7 +67,7 @@ No workflow original, o **HITL #1 (Course Brief Creation)** funcionava assim:
 
 ---
 
-## 📋 ESTRUTURA DO NOVO TEMPLATE (course-brief-v2.md)
+## 📋 ESTRUTURA DO NOVO TEMPLATE (course-brief.md)
 
 ### **8 Seções Estruturadas:**
 
@@ -320,7 +320,7 @@ Cultura & Valores da Entidade:
 
 ## 📚 ARQUIVOS RELACIONADOS
 
-- **Template:** `expansion-packs/creator-os/templates/course-brief-v2.md`
+- **Template:** `expansion-packs/creator-os/templates/course-brief.md`
 - **Workflow:** `docs/courses/COURSE-WORKFLOW-DIAGRAM.md`
 - **Framework:** `.aios-core/docs/COURSE-CREATION-FRAMEWORK.md`
 - **Este doc:** `docs/courses/WORKFLOW-IMPROVEMENTS-V2.md`

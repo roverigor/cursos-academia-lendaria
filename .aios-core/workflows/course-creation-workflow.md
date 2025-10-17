@@ -82,7 +82,7 @@ This workflow covers the complete course creation lifecycle from ideation to lau
 # Step 2: AI creates structure
 # - Checks if /docs/courses/{course-slug}/ exists
 # - If not, creates folder structure
-# - Copies course-brief-v2.md template to folder as COURSE-BRIEF.md
+# - Copies course-brief.md template to folder as COURSE-BRIEF.md
 # - Notifies user: "📋 COURSE-BRIEF.md created. Fill all sections before continuing."
 
 # Step 3: User opens and fills COURSE-BRIEF.md
@@ -110,7 +110,7 @@ This workflow covers the complete course creation lifecycle from ideation to lau
 # - Only asks clarification questions if ambiguous
 ```
 
-**Template:** `expansion-packs/creator-os/templates/course-brief-v2.md`
+**Template:** `expansion-packs/creator-os/templates/course-brief.md`
 
 **What's New in v2.0:**
 - ✅ **No more interactive Q&A** - User fills complete document upfront
@@ -616,8 +616,7 @@ A course is considered **"Done"** when:
 
 ## 📚 Related Resources
 
-- **Course Brief Template v2.0:** `expansion-packs/creator-os/templates/course-brief-v2.md` ⭐ **NEW**
-- **Course Brief Template (legacy):** `expansion-packs/creator-os/templates/course-brief.md`
+- **Course Brief Template:** `expansion-packs/creator-os/templates/course-brief.md`
 - **QA Checklist:** `.aios-core/checklists/course-qa-checklist.md`
 - **QA Report Template:** `expansion-packs/creator-os/templates/course-qa-report.md`
 - **Research Framework:** `.aios-core/workflows/course-research-framework.md`

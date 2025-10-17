@@ -51,12 +51,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **3. Templates (4 files)**
 
-- **Course Brief Template** (`expansion-packs/creator-os/templates/course-brief.md`)
-  - Comprehensive planning document
-  - Sections: Target Audience, Learning Outcomes, Structure, Differentiation, Commercial Model
+- **Course Brief Template v2.0** (`expansion-packs/creator-os/templates/course-brief.md`)
+  - Comprehensive planning document with unified document approach
+  - 8 structured sections including Culture & Values
+  - Sections: Basic Info, ICP & Target Audience, Content & Pedagogy, Voice & Personality, Format & Delivery, Commercial & Launch, Additional Context, Final Checklist
   - Go/No-Go decision framework
   - Stakeholder approval checklist
-  - ~1,000 lines
+  - ~1,200 lines
 
 - **Course QA Report Template** (`expansion-packs/creator-os/templates/course-qa-report.md`)
   - Executive summary with total score
@@ -149,8 +150,8 @@ This framework directly enhances the **Course Architect agent** (`@course-archit
 │   └── course-research-framework.md      (NEW)
 ├── checklists/
 │   └── course-qa-checklist.md            (NEW)
-├── templates/
-│   ├── course-brief.md                   (NEW)
+expansion-packs/creator-os/templates/
+│   ├── course-brief.md                (NEW)
 │   ├── course-qa-report.md               (NEW)
 │   ├── course-research-findings.md       (NEW)
 │   └── course-retrospective.md           (NEW)
