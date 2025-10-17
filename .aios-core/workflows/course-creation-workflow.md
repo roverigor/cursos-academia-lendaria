@@ -1,9 +1,12 @@
 # Course Creation Workflow
 
-**Version:** 1.0
+**Version:** 2.0
 **Purpose:** End-to-end workflow for creating high-quality educational courses
 **Owner:** Product Owner (PO) + Course Creator
 **Total Duration:** 8-12 hours (for 2-hour course) | 15-25 hours (for 5-hour course)
+**Last Updated:** 2025-10-17
+
+**⚠️ MAJOR CHANGE v2.0:** HITL #1 now uses unified document approach instead of interactive Q&A
 
 ---
 
@@ -66,30 +69,87 @@ This workflow covers the complete course creation lifecycle from ideation to lau
 
 ---
 
-### **Step 1.2: Course Brief Creation (30-45 min)**
+### **Step 1.2: Course Brief Creation (45-90 min)** ⚠️ **UPDATED v2.0**
 
-**Action:** Create comprehensive course brief using template
+**Action:** Fill comprehensive course brief document
 
-**Template:** `.aios-core/templates/course-brief.md`
+**NEW WORKFLOW (v2.0):**
 
-**What to Define:**
-- **Target Audience** - Who, age, background, current struggle
-- **Learning Outcomes** - What they'll be able to do after
-- **Course Structure** - Modules, lessons, assessments
-- **Unique Angle** - How this differs from competitors
-- **Commercial Model** - Pricing, platform, upsells
-- **Success Metrics** - Completion %, NPS, revenue targets
+```bash
+# Step 1: Execute command to initialize course
+*generate-course {course-slug}
 
-**Deliverable:** `docs/courses/[course-name]/COURSE-BRIEF.md`
+# Step 2: AI creates structure
+# - Checks if /docs/courses/{course-slug}/ exists
+# - If not, creates folder structure
+# - Copies course-brief-v2.md template to folder as COURSE-BRIEF.md
+# - Notifies user: "📋 COURSE-BRIEF.md created. Fill all sections before continuing."
+
+# Step 3: User opens and fills COURSE-BRIEF.md
+# Open: /docs/courses/{course-slug}/COURSE-BRIEF.md
+# Fill ALL 8 sections (45-90 min total):
+#   Section 1: Basic Info (5-10 min)
+#   Section 2: ICP & Target Audience (15-25 min) ⭐ CRITICAL
+#   Section 3: Content & Pedagogy (20-30 min) ⭐ CRITICAL
+#   Section 4: Voice & Personality (10-15 min)
+#   Section 5: Format & Delivery (5-10 min)
+#   Section 6: Commercial & Launch (10-15 min)
+#   Section 7: Additional Context (5-10 min) - NEW: Culture & Values
+#   Section 8: Final Checklist (2 min)
+
+# Step 4: Mark as complete and save
+# Update status in document: [ ] → [x] COMPLETO
+
+# Step 5: Continue generation
+*continue-course {course-slug}
+
+# Step 6: AI reads complete brief
+# - Loads COURSE-BRIEF.md
+# - Validates completeness
+# - Extracts structured information
+# - Only asks clarification questions if ambiguous
+```
+
+**Template:** `.aios-core/templates/course-brief-v2.md`
+
+**What's New in v2.0:**
+- ✅ **No more interactive Q&A** - User fills complete document upfront
+- ✅ **Better context** - AI gets full picture in one read
+- ✅ **Easy editing** - User can revise without re-answering questions
+- ✅ **Multiple sessions** - Can work on brief over multiple days
+- ✅ **Section 2 expanded** - Deep ICP with superficial/real/deep pains
+- ✅ **Section 3.3 new** - User provides preliminary outline
+- ✅ **Section 7.4 new** - Culture & Values of Entity
+
+**8 Sections to Fill:**
+
+1. **Basic Info** - Title, tags, duration, structure, delivery model
+2. **ICP & Target Audience** - Demographics, psychographics, pains (3 levels), transformation, KPIs
+3. **Content & Pedagogy** - Prerequisites, 5-10 measurable objectives, preliminary outline, framework
+4. **Voice & Personality** - MMOS mind integration or custom voice, storytelling approach
+5. **Format & Delivery** - Content format (markdown, video, etc.), file structure
+6. **Commercial & Launch** - Monetization, price + justification, platform, metrics
+7. **Additional Context** - Inspirations, existing materials, **culture & values** ⭐
+8. **Final Checklist** - Validation of completeness
+
+**Deliverable:** `docs/courses/[course-name]/COURSE-BRIEF.md` (fully filled)
 
 **Checkpoint 1.2:**
-- [ ] Target audience clearly defined
-- [ ] Learning outcomes measurable and achievable
-- [ ] Course structure logical and progressive
-- [ ] Unique angle compelling
-- [ ] Commercial viability validated
+- [ ] All 8 sections completed
+- [ ] Section 2 (ICP) deeply detailed with 3-level pains
+- [ ] Section 3.3 has preliminary outline (modules → lessons → objectives)
+- [ ] Section 7.4 includes culture & values of entity
+- [ ] Final checklist marked as ✅ COMPLETO
+- [ ] Document saved
 
-**If FAIL:** Revise brief until stakeholders approve
+**If INCOMPLETE:** User must finish filling brief before continuing
+
+**Benefits of v2.0 approach:**
+- User has time to think and research between sections
+- Can review entire scope before generation starts
+- Easy to edit and iterate on brief
+- AI gets complete context in one read
+- Reduces back-and-forth clarification questions
 
 ---
 
@@ -556,12 +616,16 @@ A course is considered **"Done"** when:
 
 ## 📚 Related Resources
 
-- **Course Brief Template:** `.aios-core/templates/course-brief.md`
+- **Course Brief Template v2.0:** `.aios-core/templates/course-brief-v2.md` ⭐ **NEW**
+- **Course Brief Template (legacy):** `.aios-core/templates/course-brief.md`
 - **QA Checklist:** `.aios-core/checklists/course-qa-checklist.md`
 - **QA Report Template:** `.aios-core/templates/course-qa-report.md`
 - **Research Framework:** `.aios-core/workflows/course-research-framework.md`
 - **Retrospective Template:** `.aios-core/templates/course-retrospective.md`
+- **Workflow Diagram:** `docs/courses/COURSE-WORKFLOW-DIAGRAM.md` ⭐ **NEW**
+- **v2.0 Improvements Doc:** `docs/courses/WORKFLOW-IMPROVEMENTS-V2.md` ⭐ **NEW**
 
 ---
 
-*Course Creation Workflow v1.0 | Product Owner Framework | AIOS-FULLSTACK*
+*Course Creation Workflow v2.0 | Product Owner Framework | AIOS-FULLSTACK*
+*Updated: 2025-10-17 | Major change: Unified brief document approach*
