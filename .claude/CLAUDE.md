@@ -44,7 +44,7 @@ When an agent is active:
 ## AIOS Framework Structure
 
 ```
-aios-core/
+.aios-core/
 ├── agents/         # Agent persona definitions (YAML/Markdown)
 ├── tasks/          # Executable task workflows
 ├── workflows/      # Multi-step workflow definitions
@@ -52,16 +52,44 @@ aios-core/
 ├── checklists/     # Validation and review checklists
 └── rules/          # Framework rules and patterns
 
-docs/
-├── stories/        # Development stories
-├── prd/            # Product requirement documents
-├── architecture/   # System architecture documentation
-├── guides/         # User and developer guides
-└── mmos/           # MMOS system documentation
+docs/                       # 📚 All documentation (versioned)
+├── README.md               # Master documentation navigation
+├── prd/                    # Product requirement documents
+│   └── mmos-prd.md
+├── methodology/            # Process frameworks and methodologies
+│   ├── dna-mental.md
+│   ├── prompt-engineering.md
+│   ├── tools-guide.md
+│   └── mmos-templates/
+├── guides/                 # User and developer guides
+│   ├── folder-structure.md
+│   ├── outputs-guide.md
+│   ├── integration-etl-mmos.md
+│   └── mmos-stage-guides/
+├── architecture/           # System architecture documentation
+├── stories/                # Development stories
+│   └── mmos-legacy/        # Historical MMOS stories
+├── logs/                   # Execution logs (versioned, not outputs!)
+│   └── YYYY-MM-DD-*.md
+└── mmos/                   # MMOS-specific documentation
+    ├── workflows/          # Step-by-step workflows
+    ├── epics/              # MMOS development epics
+    ├── stories/            # MMOS stories
+    ├── reports/            # Executive reports
+    ├── qa/                 # Quality assurance
+    └── taxonomy/           # Trait taxonomies
 
-outputs/
-├── courses/        # Generated courses (CreatorOS)
-└── minds/          # Processed minds (MMOS Mind Mapper)
+outputs/                    # 🎯 Generated artifacts (NOT versioned)
+├── courses/                # Generated courses (CreatorOS)
+├── minds/                  # Processed minds (MMOS Mind Mapper)
+└── database/               # SQLite database files
+    └── mmos.db
+
+expansion-packs/            # 🔌 Modular system extensions
+├── creator-os/             # Course generation system
+├── mmos-mind-mapper/       # Cognitive clone creation
+├── innerlens/              # Psychometric profiling
+└── etl-data-collector/     # Data collection tools
 ```
 
 ## Workflow Execution
@@ -253,13 +281,23 @@ npm run trace -- workflow-name
 **CRITICAL:** `docs/mmos/` contains ONLY system-level MMOS content.
 
 #### ✅ What BELONGS in docs/mmos/:
+- `workflows/` - MMOS workflow documentation (step-by-step processes)
 - `architecture/` - MMOS system architecture
-- `docs/` - System documentation (PRD, workflows)
 - `design/` - MMOS design documentation
 - `epics/` - MMOS development epics
+- `stories/` - MMOS development stories
 - `reports/` - Executive reports, version comparisons
 - `qa/benchmarks/` - Cross-mind benchmarks
-- `database/` - MMOS database files
+- `taxonomy/` - Trait and personality taxonomies
+- `validations/` - System-level validation checklists
+
+#### ✅ What BELONGS in docs/ (root categories):
+- `prd/` - Product requirements (mmos-prd.md, etc.)
+- `methodology/` - Methodologies and frameworks (dna-mental.md, etc.)
+- `guides/` - User/developer guides (outputs-guide.md, etc.)
+- `architecture/` - General system architecture
+- `logs/` - Execution logs (versioned documentation!)
+- `stories/` - Development stories
 
 #### ❌ What DOES NOT belong in docs/mmos/:
 - **NEVER** create folders named after minds (`/joao_lozano/`, `/pedro_valerio/`)
@@ -270,11 +308,31 @@ npm run trace -- workflow-name
 
 Ask: **"Is this about a SPECIFIC mind (name appears in content)?"**
 - **YES** → `outputs/minds/{mind_slug}/docs/` or `outputs/minds/{mind_slug}/logs/`
-- **NO** → Is it a script/template?
-  - **YES** → `expansion-packs/mmos-mind-mapper/`
-  - **NO** → Is it about MMOS system?
-    - **YES** → `docs/mmos/{appropriate-folder}/`
-    - **NO** → ⚠️ STOP - Review architecture rules
+- **NO** → Continue...
+
+Ask: **"Is it a script/template for MMOS?"**
+- **YES** → `expansion-packs/mmos-mind-mapper/`
+- **NO** → Continue...
+
+Ask: **"Is it about MMOS system/process?"**
+- **YES** → `docs/mmos/{workflows|epics|stories|reports|qa}/`
+- **NO** → Continue...
+
+Ask: **"Is it a methodology/framework?"**
+- **YES** → `docs/methodology/`
+- **NO** → Continue...
+
+Ask: **"Is it a user/developer guide?"**
+- **YES** → `docs/guides/`
+- **NO** → Continue...
+
+Ask: **"Is it a product requirement?"**
+- **YES** → `docs/prd/`
+- **NO** → Continue...
+
+Ask: **"Is it an execution log?"**
+- **YES** → `docs/logs/` (versioned documentation!)
+- **NO** → ⚠️ STOP - Review architecture rules
 
 ### Examples:
 
@@ -282,13 +340,23 @@ Ask: **"Is this about a SPECIFIC mind (name appears in content)?"**
 - `outputs/minds/joao_lozano/docs/validation-checklist.md` (mind-specific)
 - `outputs/minds/pedro_valerio/docs/migration-progress.md` (mind-specific)
 - `outputs/minds/pedro_valerio/logs/20251016-validation-session.md` (mind-specific log)
-- `docs/mmos/reports/EXECUTIVE_SUMMARY_FOR_PO.md` (system-level)
-- `docs/mmos/epics/epic-2-clone-auth.md` (system-level)
+- `docs/mmos/reports/EXECUTIVE_SUMMARY_FOR_PO.md` (MMOS system-level)
+- `docs/mmos/epics/epic-2-clone-auth.md` (MMOS system-level)
+- `docs/mmos/workflows/brownfield-workflow.md` (MMOS workflow)
+- `docs/prd/mmos-prd.md` (product requirement)
+- `docs/methodology/dna-mental.md` (methodology)
+- `docs/guides/outputs-guide.md` (user guide)
+- `docs/logs/2025-10-17-docs-reorganization.md` (execution log - versioned!)
+- `outputs/database/mmos.db` (generated database)
 
 **❌ Wrong:**
 - `docs/mmos/validations/pedro-valerio-checklist.md` → Use `outputs/minds/pedro_valerio/docs/validation-checklist.md`
 - `docs/mmos/migrations/joao-lozano-progress.md` → Use `outputs/minds/joao_lozano/docs/migration-progress.md`
 - `expansion-packs/mmos-mind-mapper/benchmarks/debate.yaml` → Use `docs/mmos/qa/benchmarks/debate.yaml`
+- `docs/mmos/docs/PRD.md` → Use `docs/prd/mmos-prd.md`
+- `docs/mmos/DNA_MENTAL.md` → Use `docs/methodology/dna-mental.md`
+- `outputs/logs/session.md` → Use `docs/logs/2025-10-17-session.md` (logs are docs!)
+- `docs/mmos/mmos.db` → Use `outputs/database/mmos.db`
 
 ### Enforcement:
 
@@ -296,4 +364,25 @@ Pre-commit hook will automatically reject architectural violations.
 Run manually: `.aios-core/hooks/pre-commit-mmos-guard.sh`
 
 ---
-*AIOS-FULLSTACK Claude Code Configuration v2.1*
+
+## Quick Reference: Where Files Go
+
+| File Type | Location | Example |
+|-----------|----------|---------|
+| Product requirements | `docs/prd/` | `mmos-prd.md` |
+| Methodologies | `docs/methodology/` | `dna-mental.md` |
+| User guides | `docs/guides/` | `outputs-guide.md` |
+| Architecture docs | `docs/architecture/` | `system-design.md` |
+| Development stories | `docs/stories/` | `story-2.1.md` |
+| Execution logs | `docs/logs/` | `2025-10-17-session.md` |
+| MMOS workflows | `docs/mmos/workflows/` | `brownfield-workflow.md` |
+| MMOS epics | `docs/mmos/epics/` | `epic-2-database.md` |
+| MMOS reports | `docs/mmos/reports/` | `executive-summary.md` |
+| Mind-specific docs | `outputs/minds/{slug}/docs/` | `validation-checklist.md` |
+| Generated courses | `outputs/courses/{slug}/` | `curriculum.yaml` |
+| Database files | `outputs/database/` | `mmos.db` |
+| MMOS scripts | `expansion-packs/mmos-mind-mapper/` | `pipeline.py` |
+
+---
+*AIOS-FULLSTACK Claude Code Configuration v2.2*
+*Last Updated: 2025-10-17 - docs/ reorganization*

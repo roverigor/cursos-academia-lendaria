@@ -111,31 +111,53 @@ mente_lendaria/
 │   ├── utils/                  # Utilitários JavaScript
 │   └── user-guide.md           # Guia do usuário AIOS
 │
-├── 📂 outputs/                 # Artefatos gerados
+├── 📂 outputs/                 # 🎯 Artefatos gerados (NÃO versionados)
 │   ├── courses/                # Cursos gerados (CreatorOS)
-│   └── minds/                  # Clones de personalidades
-│       ├── [nome-clone]/       # Estrutura individual de cada clone
-│       │   ├── docs/           # PRD, README
-│       │   ├── sources/        # Material fonte
-│       │   ├── analysis/       # Análises de personalidade
-│       │   ├── kb/             # Knowledge base
-│       │   ├── system-prompts/ # System prompts versionados
-│       │   └── specialists/    # Clones especializados
-│       ├── README.md           # Guia de boas práticas
-│       └── catalog.md          # Catálogo completo
+│   ├── minds/                  # Clones de personalidades processados
+│   │   ├── [nome-clone]/       # Estrutura individual de cada clone
+│   │   │   ├── docs/           # Docs mind-específicos
+│   │   │   ├── sources/        # Material fonte
+│   │   │   ├── analysis/       # Análises de personalidade
+│   │   │   ├── kb/             # Knowledge base
+│   │   │   ├── system-prompts/ # System prompts versionados
+│   │   │   └── specialists/    # Clones especializados
+│   │   ├── README.md           # Guia de boas práticas
+│   │   └── catalog.md          # Catálogo completo
+│   └── database/               # Arquivos de database SQLite
+│       └── mmos.db             # Database principal
 │
-├── 📂 docs/                    # Documentação principal
-│   └── mmos/                   # Mind Mapper OS v3.0
+├── 📂 docs/                    # 📚 Documentação (versionada)
+│   ├── README.md               # Master documentation navigation
+│   ├── prd/                    # Product requirement documents
+│   │   └── mmos-prd.md
+│   ├── methodology/            # Metodologias e frameworks
+│   │   ├── dna-mental.md
+│   │   ├── prompt-engineering.md
+│   │   ├── tools-guide.md
+│   │   └── mmos-templates/
+│   ├── guides/                 # Guias de usuário e desenvolvedor
+│   │   ├── folder-structure.md
+│   │   ├── outputs-guide.md
+│   │   ├── integration-etl-mmos.md
+│   │   └── mmos-stage-guides/
+│   ├── architecture/           # Arquitetura de sistema
+│   │   └── docs-reorganization-2025-10-17.md
+│   ├── stories/                # Development stories
+│   ├── logs/                   # Logs de execução (versionados!)
+│   │   └── YYYY-MM-DD-*.md
+│   └── mmos/                   # MMOS-specific documentation
 │       ├── README.md           # Visão geral AIOS-first
+│       ├── workflows/          # Workflows passo-a-passo
 │       ├── prompts.yaml        # Catálogo único de prompts
 │       ├── prompts/            # Todos os prompts (48+)
 │       ├── templates/          # Templates por fase
-│       ├── docs/               # Documentação detalhada
 │       ├── scripts/            # Automação (launcher, board)
 │       ├── launcher/           # AIOS Launcher
 │       ├── board/              # Orchestration Board
-│       ├── logs/               # Logs operacionais
-│       └── orchestration/      # Guias de execução
+│       ├── epics/              # MMOS development epics
+│       ├── stories/            # MMOS stories
+│       ├── reports/            # Executive reports
+│       └── qa/                 # Quality assurance
 │
 ├── 📂 .claude/                 # Configuração Claude Code
 ├── 📂 .cursor/                 # Configuração Cursor
@@ -318,16 +340,16 @@ Assistente para aplicar MMOS a clones existentes:
 
 ### Guias por Fase (MMOS)
 
-- **[Viability Guide](docs/mmos/docs/stage-guides/viability.md)** - Fase de viabilidade
-- **[Research Guide](docs/mmos/docs/stage-guides/research/README.md)** - Fase de pesquisa
-- **[Analysis Guide](docs/mmos/docs/stage-guides/analysis.md)** - Fase de análise
+- **[Viability Guide](docs/guides/mmos-stage-guides/viability.md)** - Fase de viabilidade
+- **[Research Guide](docs/guides/mmos-stage-guides/research/README.md)** - Fase de pesquisa
+- **[Analysis Guide](docs/guides/mmos-stage-guides/analysis.md)** - Fase de análise
 
 ### Stories (Desenvolvimento)
 
-- **[Story 1.1 - AIOS Launcher](docs/mmos/launcher/README.md)** - ✅ Completo
-- **[Story 1.2 - Orchestration Board](docs/mmos/board/README.md)** - ✅ Completo
-- **[Story 1.3 - Brownfield Assistant](docs/mmos/docs/stories/story-1.3-brownfield-assistant.md)** - 🔄 Em progresso
-- **[Story 1.5 - Auto-Execution Engine](docs/mmos/docs/stories/story-1.5-auto-execution-engine.md)** - 📋 Planejado
+- **[Story 1.1 - AIOS Launcher](docs/mmos/stories/story-1.1-aios-launcher.md)** - ✅ Completo
+- **[Story 1.2 - Orchestration Board](docs/stories/mmos-legacy/story-1.2-orchestration-board.md)** - ✅ Completo
+- **[Story 1.3 - Brownfield Assistant](docs/stories/mmos-legacy/story-1.3-brownfield-assistant.md)** - 🔄 Em progresso
+- **[Story 1.4 - Auto-Execution Engine](docs/stories/mmos-legacy/story-1.4-auto-execution-engine.md)** - 📋 Planejado
 
 ---
 
