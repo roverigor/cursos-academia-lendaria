@@ -7,9 +7,9 @@ metadata:
   total_sources: 208
   total_words: "~2.2M"
   total_chunks_target: "800-1200"
-  total_chunks_created: 0  # To be updated as chunking progresses
-  confidence_avg: 90
-  coverage: "85-95% per tier"
+  total_chunks_created: 20  # Updated 2025-10-16: Session 3 in progress (+2 chunks: pd-009, pd-010)
+  confidence_avg: 100  # All 20 chunks from Tier 1 (modelo-do-eu, synthesis docs, tools.md)
+  coverage: "2.0% complete (20/1000 avg)"
 
 # =============================================================================
 # CHUNK STATISTICS (To be populated)
@@ -18,27 +18,27 @@ metadata:
 chunk_statistics:
   by_domain:
     ia_expertise: 0  # Target: 250-350
-    philosophy_consciousness: 0  # Target: 150-200
+    philosophy_consciousness: 4  # Target: 150-200 (pc-001, pc-007, pc-008, pc-009)
     business_strategy: 0  # Target: 100-150
-    frameworks_mental_models: 0  # Target: 80-120
-    personal_development: 0  # Target: 80-120
-    case_studies_examples: 0  # Target: 140-260
+    frameworks_mental_models: 3  # Target: 80-120 (fw-001, fw-002, dm-001)
+    personal_development: 12  # Target: 80-120 (pd-001 through pd-010 + pd-009 cognitive + pd-010 behavioral)
+    case_studies_examples: 1  # Target: 140-260 (case-001-innerlens)
 
   by_source_tier:
-    tier_1_crown_jewels: 0  # Target: 180-200 (modelo-do-eu, Q&A, profile)
+    tier_1_crown_jewels: 20  # Target: 180-200 (20 chunks from modelo-do-eu + synthesis + tools.md)
     tier_2_core: 0  # Target: 500-800 (courses, content)
     tier_3_supporting: 0  # Target: 120-200 (business docs)
 
   by_persona:
     ia_expert: 0  # Target: ~360 chunks (45%)
-    vida_legendaria: 0  # Target: ~320 chunks (40%)
-    overlap_alquimista: 0  # Target: ~120 chunks (15%)
+    vida_legendaria: 5  # Target: ~320 chunks (40%) (pc-001, pc-007, pc-008, pd-001, pd-004)
+    overlap_alquimista: 3  # Target: ~120 chunks (15%) (fw-001, fw-002 both, case-001 overlap)
 
   by_temporal_era:
-    foundational: 0  # Timeless principles
+    foundational: 7  # Timeless principles (pc-001, pc-007, pc-008, fw-001, fw-002, pd-001, pd-004 partial)
     2015_2019_marketing: 0  # El Funileiro era
     2019_2023_ia_transition: 0  # Transformation period
-    2023_present_consciousness: 0  # Current focus
+    2023_present_consciousness: 1  # Current focus (case-001-innerlens)
 
 # =============================================================================
 # SOURCE MAPPING
@@ -120,8 +120,8 @@ domains:
   philosophy_consciousness:
     description: "Existential philosophy, consciousness, non-duality, awakening"
     primary_persona: "vida-legendaria"
-    chunk_prefix: "phil"
-    chunks: []
+    chunk_prefix: "pc"
+    chunks: ["pc-001-valores-fundamentais", "pc-007-core-obsessions", "pc-008-productive-paradoxes", "pc-009-vida-legendaria-persona"]
 
   business_strategy:
     description: "Marketing, business models, authentic marketing, scaling"
@@ -133,19 +133,19 @@ domains:
     description: "Pareto Cubo, Clarity First, mental models, decision frameworks"
     primary_persona: "both"
     chunk_prefix: "fw"
-    chunks: []
+    chunks: ["fw-001-pareto-ao-cubo", "fw-002-clarity-first-framework", "dm-001-decision-frameworks"]
 
   personal_development:
-    description: "Identity transformations, burnout recovery, evolution stories"
+    description: "Identity transformations, burnout recovery, evolution stories, psychometrics, communication"
     primary_persona: "vida-legendaria"
-    chunk_prefix: "dev"
-    chunks: []
+    chunk_prefix: "pd"
+    chunks: ["pd-001-modos-esquematicos", "pd-002-mbti-istp-profile", "pd-003-enneagram-5w4w6", "pd-004-evolutionary-journey", "pd-005-disc-dc-profile", "pd-006-communication-style-foundation", "pd-007-linguistic-patterns", "pd-008-ia-expert-persona", "pd-009-cognitive-core-traits", "pd-010-behavioral-patterns"]
 
   case_studies_examples:
     description: "InnerLens, Academia, real implementations, tool tests"
     primary_persona: "both"
     chunk_prefix: "case"
-    chunks: []
+    chunks: ["case-001-innerlens-consciousness-os"]
 
 # =============================================================================
 # TEMPORAL INDEX
@@ -157,7 +157,7 @@ temporal_eras:
     period: "Timeless"
     description: "Core values, obsessions, paradoxes - unchanging principles"
     relevance: "permanent"
-    chunks: []
+    chunks: ["pc-001-valores-fundamentais", "pc-007-core-obsessions", "pc-008-productive-paradoxes", "fw-001-pareto-ao-cubo", "fw-002-clarity-first-framework", "pd-001-modos-esquematicos", "pd-004-evolutionary-journey"]
 
   2015_2019_marketing:
     period: "2015-2019"
@@ -175,7 +175,7 @@ temporal_eras:
     period: "2023-Present"
     description: "InnerLens, consciousness OS, awakening, current philosophy"
     relevance: "current"
-    chunks: []
+    chunks: ["case-001-innerlens-consciousness-os"]
 
 # =============================================================================
 # TAG TAXONOMY

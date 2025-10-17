@@ -504,6 +504,93 @@ else:
 
 ---
 
+### Step 12: Primary Source Validation (CRITICAL - NEW v1.1)
+
+**Run Check #11 from miu-quality.md checklist**
+
+**CRITICAL CHECK:** Validates that MIUs are LITERAL fragments from subject's words, NOT meta-analysis about them
+
+```python
+primary_source_types = [
+    'self_analysis', 'article', 'essay', 'book',
+    'social_media', 'email', 'speech',
+    'podcast_transcript', 'video_transcript'
+]
+
+meta_analysis_violations = []
+
+for frag in fragments:
+    document_type = frag['source'].get('document_type')
+    speaker = frag['attribution'].get('speaker')
+    verbatim = frag['content']['verbatim']
+
+    # RULE 1: Primary source documents MUST have speaker='subject'
+    if document_type in primary_source_types and speaker != 'subject':
+        meta_analysis_violations.append({
+            'fragment_id': frag['fragment_id'],
+            'verbatim': verbatim,
+            'document_type': document_type,
+            'speaker': speaker,
+            'issue': f'PRIMARY SOURCE ({document_type}) with speaker={speaker} - this is META-ANALYSIS, not actual quote'
+        })
+
+    # RULE 2: speaker='other' only valid in interviews/conversations
+    if speaker == 'other' and document_type not in ['interview', 'conversation']:
+        meta_analysis_violations.append({
+            'fragment_id': frag['fragment_id'],
+            'verbatim': verbatim,
+            'document_type': document_type,
+            'speaker': speaker,
+            'issue': f'speaker=other in {document_type} - likely third-party observation, not primary source'
+        })
+
+if meta_analysis_violations:
+    print(f"❌ Primary source validation FAILED")
+    print(f"   {len(meta_analysis_violations)}/{len(fragments)} MIUs are META-ANALYSIS (not actual quotes)")
+    print(f"   This means the source material is ABOUT the subject, not BY the subject")
+    print(f"")
+    print(f"   Examples:")
+    for v in meta_analysis_violations[:5]:
+        print(f"   - {v['fragment_id']}: \"{v['verbatim'][:60]}...\"")
+        print(f"     Issue: {v['issue']}")
+    print(f"")
+    print(f"   ⚠️  CRITICAL: MIUs MUST be literal fragments of what someone said/wrote")
+    print(f"   ⚠️  These are observations ABOUT {subject_id}, not {subject_id}'s words")
+    print(f"")
+    print(f"   Action required:")
+    print(f"   1. Verify source material is PRIMARY (written/spoken BY subject)")
+    print(f"   2. If source is analysis/meta-content, REJECT all fragments")
+    print(f"   3. Collect actual posts/articles/transcripts/interviews BY subject")
+    print(f"   4. Re-extract from primary sources only")
+    return VALIDATION_FAILED
+else:
+    print(f"✅ Primary source validation: 100% ({len(fragments)}/{len(fragments)} are actual quotes)")
+```
+
+**Outcome:** ✅ PASS | ❌ FAIL
+
+**Why This Is Critical:**
+- MIUs MUST be what someone actually said/wrote (primary source)
+- MIUs are NOT observations, analyses, or descriptions about someone (secondary source)
+- Example FAIL: "Alan uses provocative language" (analysis about Alan)
+- Example PASS: "Eu uso linguagem provocativa porque..." (Alan's actual words)
+
+**Common Failure Case:**
+```
+Source file: "analysis_of_alan_nicolas.txt" (meta-analysis about Alan)
+Content: "Alan Nicolas uses language as a tool..." (observer describing Alan)
+Result: FAIL - This is NOT Alan's words, it's someone analyzing Alan's style
+```
+
+**Correct Approach:**
+```
+Source file: "alan_nicolas_article.txt" (written BY Alan)
+Content: "Eu uso linguagem como ferramenta..." (Alan describing his own approach)
+Result: PASS - This is Alan's actual words
+```
+
+---
+
 ## Validation Outcomes
 
 ### ✅ VALIDATED_HIGH
@@ -519,6 +606,7 @@ else:
 - Context preservation: PASS
 - Metadata quality checks: all TRUE
 - Statistical sanity: PASS
+- **Primary source validation: 100%** (NEW v1.1 - CRITICAL)
 
 **Action:**
 ```python
@@ -562,6 +650,7 @@ return {
 - Causal/temporal links broken
 - Contrasts not separated
 - Zero-inference violated
+- **Primary source violated (meta-analysis detected)** (NEW v1.1 - CRITICAL)
 - Metadata quality_checks.validation_passed = false
 
 **Action:**
@@ -588,16 +677,18 @@ return {
 | `Missing metadata` | Incomplete extraction output | Verify @fragment-extractor output schema |
 | `Zero-inference violated` | Trait labels in MIU structure | Fix extraction prompt, re-extract |
 | `Causal links broken` | MIU split mid-causal-chain | Review fragmentation rules, re-extract |
+| `Primary source violated` | Meta-analysis instead of actual quotes | Use PRIMARY sources (BY subject), not secondary (ABOUT subject) |
 
 ---
 
 ## Success Criteria
 
-- [x] All 10 validation checks executed
+- [x] All 11 validation checks executed (v1.1 added Check #11)
 - [x] Clear PASS/FAIL/WARN outcome
 - [x] Detailed failure reasons logged
 - [x] Database save blocked if validation failed
 - [x] Quality score calculated
+- [x] Primary source validation enforced (v1.1 - CRITICAL)
 
 ---
 
@@ -780,5 +871,16 @@ Recommendation: Review warnings or proceed with caution
 
 **Task Status:** ✅ Specification Complete
 **Last Updated:** 2025-10-16
-**Version:** 1.0.0
+**Version:** 1.1.0 (added Check #11: Primary Source Validation)
 **Owner:** InnerLens Quality Team
+
+---
+
+## Changelog
+
+### v1.1.0 (2025-10-16)
+- **CRITICAL FIX:** Added Step 12: Primary Source Validation
+- **Why:** Original 10 checks validated structure/grammar but NOT whether MIUs were actual quotes vs meta-analysis
+- **Impact:** Now blocks extraction from secondary sources (analysis ABOUT someone) vs primary sources (BY someone)
+- **Example blocked:** "Alan uses provocative language" (analyst describing Alan)
+- **Example allowed:** "Eu uso linguagem provocativa" (Alan describing himself)

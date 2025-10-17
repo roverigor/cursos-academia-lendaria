@@ -51,10 +51,11 @@ Clones que replicam não apenas O QUE a pessoa diz, mas COMO ela pensa e se comu
 **Impact:** Consistency + authenticity check
 **Location:** `joao_lozano/implementation/system-prompt-generalista.md`
 
-### 3. **Theatre of Cognitive Agents** ⭐⭐⭐
-**What:** 4 internal personas that collaborate in processing
+### 3. **Theatre of Cognitive Agents** ⭐⭐⭐ 🔴 UPDATED
+**What:** 5 internal personas that collaborate in processing (was 4)
 **Impact:** Multi-dimensional depth for complex minds
 **Location:** `joao_lozano/implementation/system-prompt-generalista.md`
+**Update:** Added "O Validador" (5th agent) per João's validation feedback
 
 ### 4. **Engagement Modes** ⭐⭐
 **What:** 5 behavioral modes + context triggers
@@ -98,6 +99,7 @@ Clones que replicam não apenas O QUE a pessoa diz, mas COMO ela pensa e se comu
 - [ ] Template criado para documentar fingerprint
 - [ ] Exemplo completo usando João Lozano
 - [ ] Guia de extração: como identificar expressões características
+- [ ] 🔴 **Integration Test (João Validation):** Fingerprint integrates harmoniously with DNA Mental™ base structure (no visible "costuras")
 
 **Complexity:** 3 pontos
 **Dependencies:** None
@@ -120,6 +122,7 @@ Clones que replicam não apenas O QUE a pessoa diz, mas COMO ela pensa e se comu
   5. VERIFICAÇÃO (check knowledge base)
 - [ ] Loop de verificação: "Se soar genérico, PARE e reinicie"
 - [ ] Testado com João + Pedro clones
+- [ ] 🔴 **Integration Test (João Validation):** Activation Ritual references Linguistic Fingerprint (Story 2.1) during CALIBRAGEM step; no conflicts or duplications
 
 **Complexity:** 2 pontos
 **Dependencies:** Story 2.1
@@ -145,6 +148,7 @@ Clones que replicam não apenas O QUE a pessoa diz, mas COMO ela pensa e se comu
 - [ ] Toggle flag: `show_thinking_process: true/false`
 - [ ] Exemplos de como manifestar cada fase externamente (quando enabled)
 - [ ] Tested: Clone funciona com e sem thinking process visível
+- [ ] 🔴 **Integration Test (João Validation):** Interaction Cycle phases don't conflict with Activation Ritual (Story 2.2); Cycle uses Linguistic Fingerprint (Story 2.1) when manifesting phases externally
 
 **Complexity:** 2 pontos
 **Dependencies:** Story 2.2
@@ -153,8 +157,8 @@ Clones que replicam não apenas O QUE a pessoa diz, mas COMO ela pensa e se comu
 
 ---
 
-### Story 2.4: Engagement Modes Implementation 🟡
-**Priority:** MEDIUM (context adaptation)
+### Story 2.4: Engagement Modes Implementation 🔴
+**Priority:** HIGH (context adaptation - MOVED TO BASIC TIER per João feedback)
 
 **User Story:**
 > Como clone, preciso adaptar meu comportamento baseado no contexto da conversa (modos de operação).
@@ -170,9 +174,15 @@ Clones que replicam não apenas O QUE a pessoa diz, mas COMO ela pensa e se comu
 - [ ] Triggers definidos para cada modo
 - [ ] Comportamentos característicos de cada modo
 - [ ] Tested: Clone alterna modos apropriadamente
+- [ ] 🔴 **Integration Test (João Validation):** Each Engagement Mode uses Linguistic Fingerprint (Story 2.1) appropriately; Mode switching doesn't break Activation Ritual (Story 2.2); Modes integrate harmoniously with Interaction Cycle if enabled (Story 2.3)
 
 **Complexity:** 3 pontos
-**Dependencies:** Story 2.3
+**Dependencies:** Story 2.2
+
+**CRITICAL CHANGE (João Validation):**
+> "Engagement Modes são FUNDAMENTAIS para adaptação contextual. Sem eles, o clone fica rígido e unidimensional. É tão importante quanto Linguistic Fingerprint. Deveria estar em BASIC."
+
+**Impact:** Story 2.4 MOVED to Phase 1 (Foundation), becomes part of BASIC tier
 
 ---
 
@@ -190,6 +200,7 @@ Clones que replicam não apenas O QUE a pessoa diz, mas COMO ela pensa e se comu
 - [ ] Template para documentar biases
 - [ ] Guia: como identificar biases em entrevistas/materiais
 - [ ] Section no system prompt: "SELF-AWARENESS"
+- [ ] 🔴 **Integration Test (João Validation):** Biases manifest authentically across all Engagement Modes (Story 2.4); Mitigation strategies don't conflict with Activation Ritual (Story 2.2); Biases expressed using Linguistic Fingerprint (Story 2.1)
 
 **Complexity:** 2 pontos
 **Dependencies:** Story 2.1
@@ -213,6 +224,7 @@ Clones que replicam não apenas O QUE a pessoa diz, mas COMO ela pensa e se comu
 - [ ] Template para mapear contradições
 - [ ] Exemplo usando Pedro Valério (frio sistemático ↔ sensível empático)
 - [ ] System prompt section: "AUTHENTIC COMPLEXITY"
+- [ ] 🔴 **Integration Test (João Validation):** Contradictions trigger appropriate Engagement Mode switches (Story 2.4); Both personas use Linguistic Fingerprint consistently (Story 2.1); Contradictions work with Theatre of Agents if enabled (Story 2.7); No conflicts with Cognitive Biases (Story 2.5)
 
 **Complexity:** 3 pontos
 **Dependencies:** Story 2.4
@@ -233,17 +245,25 @@ Clones que replicam não apenas O QUE a pessoa diz, mas COMO ela pensa e se comu
     - `role` (função/especialização)
     - `perspective` (ângulo de análise)
     - `triggers` (quando ativar)
-- [ ] 4 agentes padrão documentados:
+- [ ] 5 agentes padrão documentados 🔴 UPDATED (João Validation - was 4):
   1. **O Explorador** - Curiosidade, pensamento divergente, exploração
   2. **O Arquiteto** - Estruturação, pensamento sistêmico, blueprints
   3. **O Alquimista** - Otimização, refinamento, transmutação
   4. **O Tradutor** - Comunicação, clareza, metáforas
+  5. **O Validador** 🔴 NEW - Critical thinking, quality assurance, questiona pressupostos
 - [ ] System prompt section: "THEATRE OF AGENTS (OPTIONAL)"
 - [ ] Workflow: Pergunta → Cada agente analisa → Síntese final
 - [ ] Template para customizar agentes por persona
 - [ ] Toggle flag: `use_multi_persona_processing: true/false`
-- [ ] Exemplo completo usando João Lozano (4 agentes)
+- [ ] Exemplo completo usando João Lozano (5 agentes) 🔴 UPDATED
 - [ ] Tested: Clone processa com múltiplas perspectivas internas
+- [ ] 🔴 **Integration Test (João Validation):** Theatre synthesis uses Linguistic Fingerprint (Story 2.1); Each agent respects current Engagement Mode (Story 2.4); Theatre doesn't conflict with Activation Ritual (Story 2.2); If visible mode, agents manifest using Interaction Cycle (Story 2.3); Agents can express Contradictions when relevant (Story 2.6)
+
+**CRITICAL CHANGE (João Validation):**
+> "Agente #5: O Validador
+> Role: Critical Thinking & Quality Assurance
+> Perspectiva: Questiona pressupostos, identifica pontos cegos, valida coerência
+> Quando ativa: Durante processos de verificação, antes de finalizar soluções, para detectar inconsistências"
 
 **Complexity:** 5 pontos
 **Dependencies:** Story 2.1, Story 2.4
@@ -251,12 +271,14 @@ Clones que replicam não apenas O QUE a pessoa diz, mas COMO ela pensa e se comu
 **Technical Notes:**
 - Inspirado no "Theatre of Cognitive Agents" do João Lozano
 - Cria processamento multi-dimensional onde cada agente interno contribui perspectiva única
+- 🔴 UPDATED: 5 agentes padrão (was 4) - "O Validador" adicionado per João's feedback
 - Especialmente valioso para personas complexas (arquitetos, estrategistas, pensadores sistêmicos)
 - Output pode ser silencioso (apenas enriquece resposta final) ou visível (mostra deliberação interna)
+- **O Validador** adiciona camada crítica: questiona pressupostos, detecta inconsistências, valida coerência antes de finalizar respostas
 
 **Examples:**
 
-**João Lozano Theatre:**
+**João Lozano Theatre (5 agentes):** 🔴 UPDATED
 ```yaml
 internal_agents:
   - name: "O Explorador"
@@ -278,9 +300,14 @@ internal_agents:
     role: "Comunicação e Clareza"
     perspective: "Como explicar? Qual metáfora?"
     triggers: ["explicação", "ensino", "comunicação"]
+
+  - name: "O Validador"  # 🔴 NEW (João Validation)
+    role: "Critical Thinking & Quality Assurance"
+    perspective: "Isso está correto? Quais pressupostos estou assumindo?"
+    triggers: ["verificação", "antes de finalizar", "detectar inconsistências", "validar coerência"]
 ```
 
-**Processing Flow:**
+**Processing Flow (with 5 agents):** 🔴 UPDATED
 ```
 User: "Como devo arquitetar esse microsserviço?"
 
@@ -289,9 +316,14 @@ User: "Como devo arquitetar esse microsserviço?"
 → Arquiteto: "Estruturalmente, precisamos 3 camadas: API, Domain, Infra..."
 → Alquimista: "Otimizações: cache, async processing, circuit breakers..."
 → Tradutor: "Vou usar metáfora de orquestração para explicar..."
+→ Validador: "Espera, estamos assumindo que ele precisa de escalabilidade horizontal? 🔴 NEW
+             Vamos validar requisitos antes de sugerir serverless..."
 
 [SYNTHESIS]
-Clone: "Pense comigo [Tradutor]... Visualize isso como uma orquestração [Explorador's options + Arquiteto's structure]...
+Clone: "Pense comigo [Tradutor]... Antes de mais nada [Validador], precisamos confirmar
+alguns pressupostos. Você precisa de escalabilidade horizontal?
+
+[Assumindo sim] Visualize isso como uma orquestração [Explorador's options + Arquiteto's structure]...
 Eu iria de híbrido porque [Arquiteto] com otimizações em [Alquimista]..."
 ```
 
@@ -312,16 +344,21 @@ Eu iria de híbrido porque [Arquiteto] com otimizações em [Alquimista]..."
 
 ## Implementation Roadmap
 
-### Phase 1: Foundation (Week 1-2)
+### Phase 1: Foundation (Week 1-2.5) 🔴 UPDATED
 - ✅ Story 2.1: Linguistic Fingerprint (3 pontos) - CRITICAL
 - ✅ Story 2.2: Activation Ritual (2 pontos) - CRITICAL
+- ✅ **Story 2.4: Engagement Modes (3 pontos) - HIGH** 🔴 MOVED FROM PHASE 2
 - ✅ Story 2.7: Theatre of Cognitive Agents (5 pontos) - HIGH (for complex minds)
-- **Total:** 10 pontos
+- **Total:** 13 pontos ⬆️ (was 10)
+
+**CHANGE RATIONALE (João Validation):**
+> "Engagement Modes são FUNDAMENTAIS para adaptação contextual. Sem eles, o clone fica rígido e unidimensional. É tão importante quanto Linguistic Fingerprint."
+
+Story 2.4 moved to Phase 1 to become part of BASIC tier (75% authenticity).
 
 ### Phase 2: Adaptation (Week 3)
 - ✅ Story 2.3: Interaction Cycle (2 pontos) - OPTIONAL
-- ✅ Story 2.4: Engagement Modes (3 pontos) - MEDIUM
-- **Total:** 5 pontos
+- **Total:** 2 pontos ⬇️ (was 5)
 
 ### Phase 3: Depth (Week 4)
 - ✅ Story 2.5: Cognitive Biases (2 pontos) - LOW
@@ -331,7 +368,7 @@ Eu iria de híbrido porque [Arquiteto] com otimizações em [Alquimista]..."
 **Total Epic:** 20 pontos (~4 weeks)
 
 **Prioritization Note:**
-- Phase 1 features are highest impact (especially 2.1, 2.2, 2.7)
+- Phase 1 features are highest impact (2.1, 2.2, **2.4**, 2.7) - **2.4 NOW CRITICAL FOR BASIC TIER**
 - Phase 2 features are valuable but optional
 - Phase 3 features add depth but can be deferred
 
@@ -342,10 +379,10 @@ Eu iria de híbrido porque [Arquiteto] com otimizações em [Alquimista]..."
 ### Quantitative:
 - [ ] 100% dos clones têm 12+ signature expressions documentadas (Story 2.1)
 - [ ] 100% dos system prompts incluem Activation Protocol (Story 2.2)
+- [ ] 100% dos clones têm Engagement Modes definidos (Story 2.4) 🔴 NOW BASIC TIER (was 80%+)
 - [ ] 50%+ dos clones complexos usam Theatre of Agents (Story 2.7)
-- [ ] 80%+ dos clones têm Engagement Modes definidos (Story 2.4)
 - [ ] 30%+ dos clones têm Interaction Cycle configurado (Story 2.3 - optional)
-- [ ] Blind test: 70%+ pessoas não distinguem clone de real
+- [ ] Blind test: 75%+ pessoas não distinguem clone de real 🔴 UPDATED (was 70%+)
 
 ### Qualitative:
 - [ ] Usuários relatam clones "mais naturais"
@@ -418,10 +455,11 @@ layer_5_metacognition:
 ## ACTIVATION PROTOCOL (REQUIRED)
 [5-step ritual before every response]
 
-## THEATRE OF AGENTS (OPTIONAL - for complex minds)
-[Internal multi-persona processing]
-- Explorador, Arquiteto, Alquimista, Tradutor
+## THEATRE OF AGENTS (OPTIONAL - for complex minds) 🔴 UPDATED
+[Internal multi-persona processing with 5 agents]
+- Explorador, Arquiteto, Alquimista, Tradutor, **Validador** 🔴 NEW
 - Silent deliberation → Synthesized response
+- Validador: Questions assumptions, detects inconsistencies, validates coherence
 
 ## OPERATIONAL MODES (RECOMMENDED)
 [5 modes + triggers]
@@ -495,24 +533,31 @@ layer_5_metacognition:
 
 ---
 
-### 📊 TIER COMPARISON MATRIX
+### 📊 TIER COMPARISON MATRIX 🔴 UPDATED (João Validation)
 
-| Feature | BASIC | STANDARD | PREMIUM | ELITE |
-|---------|-------|----------|---------|-------|
-| **DNA Mental™ (8 layers)** | ✅ | ✅ | ✅ | ✅ |
-| **Story 2.1: Linguistic Fingerprint** | ❌ | ✅ | ✅ | ✅ |
-| **Story 2.2: Activation Ritual** | ❌ | ✅ | ✅ | ✅ |
-| **Story 2.7: Theatre of Agents** | ❌ | ❌ | ✅ | ✅ |
-| **Story 2.4: Engagement Modes** | ❌ | ❌ | ✅ | ✅ |
-| **Story 2.3: Interaction Cycle** | ❌ | ❌ | 🔧 Optional | 🔧 Optional |
-| **Story 2.5: Cognitive Biases** | ❌ | ❌ | ❌ | ✅ |
-| **Story 2.6: Contradictions** | ❌ | ❌ | ❌ | ✅ |
-| | | | | |
-| **Blind Test Accuracy (estimated)** | 60% | 75% | 85% | 95% |
-| **Development Time** | 2-3 days | 4-5 days | 7-9 days | 12-15 days |
-| **Analyst Effort (hours)** | 16h | 32h | 56h | 96h |
-| **System Prompt Complexity** | Simple | Medium | High | Very High |
-| **Best For** | Tests, MVPs | Internal use | Clients, Execs | Flagship, Premium |
+**NOTE:** This is OLD tier system (BASIC/STANDARD/PREMIUM/ELITE). Will be replaced with NEW 3-tier system (BASIC/PREMIUM/LEGEND) in CLONE_AUTHENTICITY_TIERS.md.
+
+**NEW 3-Tier System (Post-João Validation):**
+
+| Feature | BASIC (75%) | PREMIUM (85%) | LEGEND (95%+) |
+|---------|-------------|---------------|---------------|
+| **DNA Mental™ (8 layers)** | ✅ | ✅ | ✅ |
+| **Story 2.1: Linguistic Fingerprint** | ✅ 🔴 | ✅ | ✅ |
+| **Story 2.2: Activation Ritual** | ✅ 🔴 | ✅ | ✅ |
+| **Story 2.4: Engagement Modes** | ✅ 🔴 **MOVED FROM PREMIUM** | ✅ | ✅ |
+| **Story 2.7: Theatre of Agents** | ❌ | ✅ | ✅ |
+| **Story 2.3: Interaction Cycle** | ❌ | 🔧 Optional | 🔧 Optional |
+| **Story 2.5: Cognitive Biases** | ❌ | ❌ | ✅ |
+| **Story 2.6: Contradictions** | ❌ | ❌ | ✅ |
+| | | | |
+| **Blind Test Accuracy** | 75% ⬆️ (was 70%) | 85% | 95%+ |
+| **Development Time** | 5-6 days ⬆️ | 7-9 days | 12-15 days |
+| **Analyst Effort (hours)** | 40h ⬆️ (was 32h) | 56h | 96h |
+| **Best For** | Internal use, standard clones | Clients, complex personas | Flagship, premium products |
+
+🔴 **CRITICAL CHANGE**: Engagement Modes (Story 2.4) now part of BASIC tier per João's feedback. This increases BASIC authenticity from 70% → 75%.
+
+🔴 **PENDING**: Full tier documentation update in `/docs/mmos/CLONE_AUTHENTICITY_TIERS.md`
 
 🔧 = Feature pode ser ativada opcionalmente
 

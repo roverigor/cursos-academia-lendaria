@@ -382,6 +382,92 @@ For each MIU:
 
 ---
 
+### 11. Primary Source Validation (CRITICAL)
+
+**Check:** 100% of MIUs are LITERAL fragments from the subject's own words/writing, NOT meta-analysis about them
+
+**Problem This Prevents:**
+```
+❌ "Alan Nicolas usa linguagem crua como bisturi"
+   → This is ANALYSIS ABOUT Alan, not Alan's words
+
+✅ "Eu uso linguagem crua porque corta resistências"
+   → This is Alan's ACTUAL words
+```
+
+**Validation:**
+```
+For each MIU:
+  IF source.document_type IN ['self_analysis', 'article', 'essay', 'book',
+                               'social_media', 'email', 'speech',
+                               'podcast_transcript', 'video_transcript']:
+    → attribution.speaker MUST be 'subject'
+    → verbatim MUST be something the subject actually said/wrote
+    → CANNOT be meta-analysis or third-party observations
+
+  IF attribution.speaker == 'other':
+    → document_type MUST be 'interview' or 'conversation'
+    → Content MUST be factual question/statement, not personality analysis
+    → Example: "What motivates you?" (valid) vs "He is very open" (invalid)
+```
+
+**Pass:** All MIUs are primary source (subject's actual words)
+**Fail:** Any MIU is meta-analysis/observation about the subject
+
+**Example PASS:**
+```json
+{
+  "content": {
+    "verbatim": "Eu cresci pobre, sem dinheiro para livros"
+  },
+  "attribution": {
+    "speaker": "subject",
+    "speaker_name": "Alan Nicolas"
+  },
+  "source": {
+    "document_type": "article"
+  }
+}
+// ✅ This is Alan's OWN words about his life
+```
+
+**Example FAIL:**
+```json
+{
+  "content": {
+    "verbatim": "Alan usa linguagem crua como bisturi"
+  },
+  "attribution": {
+    "speaker": "other",
+    "speaker_name": "analyst"
+  },
+  "source": {
+    "document_type": "self_analysis"
+  }
+}
+// ❌ This is ANALYSIS about Alan, not Alan's words
+// ❌ document_type='self_analysis' + speaker='other' is INVALID
+```
+
+**Why This Is Critical:**
+- **MIU Definition:** A MIU MUST be a literal fragment of what someone said/wrote
+- **Not Memories:** MIUs are NOT observations, analyses, or interpretations about someone
+- **Primary Source Only:** Only the subject's actual language can be used for personality analysis
+- **Framework Integrity:** Analysis based on meta-content will be invalid
+
+**Common Sources of This Error:**
+1. Using analysis documents ABOUT someone instead of documents BY someone
+2. Extracting from style guides, personality descriptions, or critical essays
+3. Processing third-party observations without proper interview structure
+
+**How to Fix:**
+1. Verify source material is PRIMARY (written/said by the subject)
+2. If using analysis material, reject all fragments
+3. Collect actual posts, articles, transcripts, or interviews by the subject
+4. Re-extract from primary sources only
+
+---
+
 ## Validation Outcome
 
 ### PASS Criteria
@@ -397,6 +483,7 @@ For each MIU:
 - ✅ Context preservation: PASS
 - ✅ Metadata quality checks: all TRUE
 - ✅ Statistical sanity: PASS
+- ✅ **Primary source validation: 100%** (NEW - CRITICAL)
 
 **Result:** ✅ **MIUs VALIDATED** - Ready for personality analysis
 
@@ -411,6 +498,7 @@ For each MIU:
 - ❌ Causal/temporal relationships broken
 - ❌ Contrasts not separated
 - ❌ Zero-inference violated (interpretation present)
+- ❌ **Primary source violated (meta-analysis detected)** (NEW - CRITICAL)
 - ❌ metadata.quality_checks.validation_passed = false
 
 **Result:** ❌ **MIUs REJECTED** - Re-extract required
@@ -476,6 +564,16 @@ For each MIU:
 ---
 
 **Checklist Status:** ✅ Production Ready
-**Version:** 1.0.0
+**Version:** 1.1.0 (added Check #11: Primary Source Validation)
 **Last Updated:** 2025-10-16
 **Owner:** InnerLens Quality Team
+
+---
+
+## Changelog
+
+### v1.1.0 (2025-10-16)
+- **CRITICAL FIX:** Added Check #11: Primary Source Validation
+- **Why:** Prevented extraction of meta-analysis (observations ABOUT someone) instead of primary source (what someone ACTUALLY said/wrote)
+- **Impact:** Blocks invalid MIUs like "Alan uses language..." (analysis) vs "I use language..." (actual quote)
+- **Validation:** Now checks document_type + speaker coherence (self_analysis + speaker='other' = INVALID)

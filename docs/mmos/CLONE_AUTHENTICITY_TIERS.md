@@ -10,9 +10,11 @@
 
 | Tier | Time | Cost | Authenticity | Best For |
 |------|------|------|--------------|----------|
-| 🔵 **BASIC** | 3-4 days | 1x | 70% | Standard production |
+| 🔵 **BASIC** | 5-6 days 🔴 | 1x | 75% 🔴 | Standard production |
 | 🟡 **PREMIUM** | 7-10 days | 3x | 85% | Complex personas, Clients |
 | 🔴 **LEGEND** | 14-20 days | 6x | 95%+ | Flagship, State-of-art |
+
+🔴 **UPDATED (João Validation):** BASIC tier now includes Engagement Modes (Story 2.4)
 
 **Strategy:** Recommend tier based on APEX + Sources analysis, **default to LEGEND when feasible**
 
@@ -27,23 +29,27 @@
 │ DNA Mental™ (8 layers)          │   ✅  │    ✅   │   ✅   │
 │ Linguistic Fingerprint (2.1)    │   ✅  │    ✅   │   ✅   │
 │ Activation Ritual (2.2)         │   ✅  │    ✅   │   ✅   │
-│ Engagement Modes (2.4)          │   ❌  │    ✅   │   ✅   │
+│ Engagement Modes (2.4) 🔴       │   ✅  │    ✅   │   ✅   │
 │ Theatre of Agents (2.7)         │   ❌  │    ✅   │   ✅   │
 │ Cognitive Biases (2.5)          │   ❌  │    ❌   │   ✅   │
 │ Contradictions (2.6)            │   ❌  │    ❌   │   ✅   │
 │ Interaction Cycle (2.3)         │   ❌  │    🔧   │   🔧   │
 ├─────────────────────────────────┼───────┼─────────┼────────┤
-│ Blind Test Accuracy (target)    │  70%  │   85%   │  95%+  │
-│ Development Time                │ 3-4d  │  7-10d  │ 14-20d │
-│ Analyst Effort (hours)          │  24h  │   64h   │  128h  │
+│ Blind Test Accuracy (target)    │  75%🔴│   85%   │  95%+  │
+│ Development Time                │ 5-6d🔴│  7-10d  │ 14-20d │
+│ Analyst Effort (hours)          │  40h🔴│   64h   │  128h  │
 │ System Prompt Complexity        │Medium │  High   │V.High  │
-│ Production Volume (per month)   │  8-10 │   3-4   │   1    │
+│ Production Volume (per month)   │  6-7🔴│   3-4   │   1    │
 └─────────────────────────────────┴───────┴─────────┴────────┘
 
 🔧 = Optional feature (can be enabled if needed)
+🔴 = UPDATED per João Validation (2025-10-17)
 
-KEY INSIGHT: All tiers include foundation (Stories 2.1 + 2.2)
-            Differences are in depth & adaptability features
+KEY INSIGHT: All tiers include foundation (Stories 2.1 + 2.2 + 2.4 🔴)
+            Differences are in depth features (Theatre, Biases, Contradictions)
+
+CRITICAL CHANGE: Engagement Modes (Story 2.4) moved from PREMIUM to BASIC
+                 João: "É tão importante quanto Linguistic Fingerprint"
 ```
 
 ---
@@ -51,9 +57,9 @@ KEY INSIGHT: All tiers include foundation (Stories 2.1 + 2.2)
 ## 🔵 TIER 1: BASIC - "Production Ready Foundation"
 
 ### 🎯 Philosophy
-**"Natural sounding, production ready, scalable"**
+**"Natural sounding, context-adaptive, production ready, scalable"** 🔴 UPDATED
 
-BASIC is NOT a prototype tier - it's the **foundation for production clones**. Every clone gets DNA Mental™ + authenticity foundation (Linguistic Fingerprint + Activation Ritual). This is the **default for 70% of cases**.
+BASIC is NOT a prototype tier - it's the **foundation for production clones**. Every clone gets DNA Mental™ + authenticity foundation (Linguistic Fingerprint + Activation Ritual + **Engagement Modes** 🔴). This is the **default for 70% of cases**.
 
 ### ✅ What You Get
 
@@ -76,20 +82,30 @@ BASIC is NOT a prototype tier - it's the **foundation for production clones**. E
   - Quality gate for consistency
   - Authenticity verification
 
+- ✅ **Story 2.4: Engagement Modes** 🔴 NEW IN BASIC
+  - 5 operational modes defined:
+    - **Exploratório** (discovery, brainstorming)
+    - **Diagnóstico** (problem-solving, troubleshooting)
+    - **Arquitetônico** (design, structuring)
+    - **Refinador** (optimization, polish)
+    - **Explanatório** (teaching, explaining)
+  - Context triggers for mode switching
+  - Adaptive behavior patterns per mode
+  - **João's feedback:** "É tão importante quanto Linguistic Fingerprint"
+
 **What's NOT included:**
 - ❌ Theatre of Agents (multi-persona processing)
-- ❌ Engagement Modes (operational mode switching)
 - ❌ Cognitive Biases documentation
 - ❌ Public/Private contradictions
 - ❌ Interaction Cycle (visible thinking)
 
-### 📊 Numbers
-- **Development Time:** 3-4 days
-- **Analyst Effort:** 24 hours
-- **Authenticity Target:** 70% blind test
-- **Cost Multiplier:** 1x (baseline)
-- **Production Capacity:** 8-10 clones/month
-- **System Prompt Size:** ~800-1200 lines
+### 📊 Numbers 🔴 UPDATED
+- **Development Time:** 5-6 days ⬆️ (was 3-4 days)
+- **Analyst Effort:** 40 hours ⬆️ (was 24 hours, +16h for Engagement Modes)
+- **Authenticity Target:** 75% blind test ⬆️ (was 70%)
+- **Cost Multiplier:** 1x (baseline, unchanged)
+- **Production Capacity:** 6-7 clones/month ⬇️ (was 8-10)
+- **System Prompt Size:** ~1200-1600 lines ⬆️ (was 800-1200)
 
 ### 🎯 When to Choose BASIC
 
@@ -98,9 +114,10 @@ BASIC is NOT a prototype tier - it's the **foundation for production clones**. E
 - "Clone para uso interno da equipe"
 - "Assistente pessoal ou operacional"
 - "Precisa soar natural, não robótico"
-- "Budget/timeline standard (3-4 dias)"
+- "Precisa adaptar comportamento ao contexto" 🔴 NEW
+- "Budget/timeline standard (5-6 dias)" 🔴 UPDATED
 - "Persona não é extremamente complexa"
-- "Clone direto/objetivo (sem múltiplas perspectivas)"
+- "Clone direto/objetivo (sem múltiplas perspectivas internas)"
 
 **❌ DON'T choose BASIC when:**
 - Persona tem múltiplas perspectivas internas → PREMIUM
@@ -108,14 +125,16 @@ BASIC is NOT a prototype tier - it's the **foundation for production clones**. E
 - Produto flagship que demonstra excelência → LEGEND
 - Contradições público/privado são evidentes → LEGEND
 
-### 💡 What BASIC Delivers
+### 💡 What BASIC Delivers 🔴 UPDATED
 
 **User Experience:**
 - Clone usa expressões características da pessoa
 - Vocabulário autêntico (não genérico)
 - Consistência através do Activation Ritual
+- **Adapta comportamento ao contexto (5 modos operacionais)** 🔴 NEW
 - Soa natural, não "AI-like"
-- **70% das pessoas NÃO distinguem de pessoa real**
+- **Não fica rígido ou unidimensional** 🔴 NEW
+- **75% das pessoas NÃO distinguem de pessoa real** ⬆️ (was 70%)
 
 **Examples of BASIC tier clones:**
 - Assistente de equipe (uso diário)
@@ -126,49 +145,46 @@ BASIC is NOT a prototype tier - it's the **foundation for production clones**. E
 - Product manager simples
 - Especialista técnico com domínio único
 
-### 📈 Value Proposition
+### 📈 Value Proposition 🔴 UPDATED
 
 **Why BASIC is powerful:**
-- Foundation (Stories 2.1 + 2.2) delivers 70% authenticity
+- Foundation (Stories 2.1 + 2.2 + **2.4** 🔴) delivers 75% authenticity ⬆️
 - **Best ROI** for most use cases
-- Scalable (8-10/month production capacity)
+- **Context-adaptive behavior** (não fica rígido) 🔴 NEW
+- Scalable (6-7/month production capacity)
 - Production ready, not prototype
 - Natural language, não robótico
 
-**BASIC = Standard de qualidade, não "versão inferior"**
+**BASIC = Standard de qualidade + adaptabilidade contextual, não "versão inferior"**
+
+**João's insight:** "Engagement Modes são FUNDAMENTAIS para adaptação contextual. Sem eles, o clone fica rígido e unidimensional."
 
 ---
 
 ## 🟡 TIER 2: PREMIUM - "Complex & Adaptive"
 
-### 🎯 Philosophy
-**"Multi-dimensional thinking, adaptive behavior, complex personas"**
+### 🎯 Philosophy 🔴 UPDATED
+**"Multi-dimensional thinking, multi-perspective processing, complex personas"**
 
-PREMIUM adds **depth and adaptability** to the foundation. For personas that think through multiple perspectives, adapt to context, and require sophisticated behavioral modeling. Theatre of Agents and Engagement Modes bring complex personas to life.
+PREMIUM adds **depth through multi-perspective processing** to the foundation. For personas that think through multiple distinct internal perspectives and require sophisticated cognitive modeling. Theatre of Agents (5 agents) creates authentic multi-dimensional responses.
+
+**Note:** Engagement Modes are now in BASIC 🔴 - PREMIUM's differentiation is Theatre of Agents.
 
 ### ✅ What You Get
 
-**Everything in BASIC, PLUS:**
+**Everything in BASIC** (DNA Mental™ + Linguistic Fingerprint + Activation Ritual + Engagement Modes), **PLUS:**
 
-- ✅ **Story 2.4: Engagement Modes**
-  - 5 operational modes defined:
-    - **Exploratório** (discovery, brainstorming)
-    - **Diagnóstico** (problem-solving, troubleshooting)
-    - **Arquitetônico** (design, structuring)
-    - **Refinador** (optimization, polish)
-    - **Explanatório** (teaching, explaining)
-  - Context triggers for mode switching
-  - Adaptive behavior patterns per mode
-
-- ✅ **Story 2.7: Theatre of Agents**
-  - 4 internal agents collaborate:
+- ✅ **Story 2.7: Theatre of Agents** (5 agents 🔴)
+  - 5 internal agents collaborate 🔴 UPDATED (was 4):
     - **O Explorador** (curiosity, divergent thinking)
     - **O Arquiteto** (structure, systems thinking)
     - **O Alquimista** (optimization, refinement)
     - **O Tradutor** (communication, metaphors)
+    - **O Validador** 🔴 NEW (critical thinking, quality assurance)
   - Multi-perspective internal processing
   - Silent deliberation → Synthesized response
   - Fully customizable per persona
+  - **João's addition:** "O Validador questiona pressupostos, identifica pontos cegos"
 
 - 🔧 **Story 2.3: Interaction Cycle (OPTIONAL)**
   - Can enable visible thinking process if needed
@@ -204,9 +220,13 @@ PREMIUM adds **depth and adaptability** to the foundation. For personas that thi
 - Não há múltiplas perspectivas evidentes
 - Cliente não vai perceber/valorizar a profundidade
 
-### 💡 What PREMIUM Delivers Beyond BASIC
+### 💡 What PREMIUM Delivers Beyond BASIC 🔴 UPDATED
 
-**1. Multi-Dimensional Processing (Theatre of Agents):**
+**Key Differentiator:** Theatre of Agents (5-agent multi-perspective processing)
+
+**Note:** Engagement Modes are now in BASIC 🔴, so BASIC clones already adapt to context. PREMIUM adds internal multi-perspective deliberation.
+
+**1. Multi-Dimensional Processing (Theatre of Agents with 5 Agents):**
 ```
 User: "Como devo arquitetar esse sistema?"
 
@@ -215,36 +235,18 @@ User: "Como devo arquitetar esse sistema?"
 → Arquiteto: "Estrutura: 3 camadas, API + Domain + Infra..."
 → Alquimista: "Otimizações: cache, async, circuit breakers..."
 → Tradutor: "Metáfora: orquestração sinfônica..."
+→ Validador: "Espera, estamos assumindo escalabilidade horizontal? 🔴 NEW
+             Vamos confirmar requisitos primeiro..."
 
 [SYNTHESIS]
-Clone: "Pense comigo... Visualize como orquestração...
-[Integra naturalmente todas as 4 perspectivas]"
-```
-
-**2. Context-Adaptive Behavior (Engagement Modes):**
-```
-Context: Brainstorming session
-→ Activates: EXPLORATÓRIO mode
-→ Behavior: Divergent thinking, "what if?", possibilities
-
-Context: Problem diagnosis
-→ Activates: DIAGNÓSTICO mode
-→ Behavior: Systematic elimination, root cause
-
-Context: Design discussion
-→ Activates: ARQUITETÔNICO mode
-→ Behavior: Structural thinking, blueprints, trade-offs
-
-Context: Code review
-→ Activates: REFINADOR mode
-→ Behavior: Optimization focus, edge cases, polish
-
-Context: Teaching/explaining
-→ Activates: EXPLANATÓRIO mode
-→ Behavior: Analogies, step-by-step, check understanding
+Clone: "Pense comigo... Antes de mais nada [Validador], vamos confirmar
+seus requisitos de escalabilidade. [Assumindo sim] Visualize como orquestração...
+[Integra naturalmente todas as 5 perspectivas] 🔴"
 ```
 
 **Result:** **85% das pessoas NÃO distinguem de pessoa real**
+
+**Key Insight:** BASIC gives context adaptation (Engagement Modes). PREMIUM gives multi-perspective depth (Theatre of Agents). The combination creates 85% authenticity.
 
 ### 🎯 Examples of PREMIUM tier clones
 
@@ -263,16 +265,18 @@ Context: Teaching/explaining
 - Simple support roles → BASIC
 - Single-domain specialists → BASIC
 
-### 📈 Value Proposition
+### 📈 Value Proposition 🔴 UPDATED
 
 **Why PREMIUM is worth 3x:**
-- Theatre of Agents creates **authentic depth** (not just accuracy)
-- Engagement Modes provide **contextual intelligence**
+- Theatre of Agents (5 agents) creates **authentic multi-dimensional depth**
+- **O Validador** adds critical thinking layer (questions assumptions) 🔴 NEW
 - Essential for **complex personas** (architects, strategists)
-- **85% blind test** (vs 70% BASIC) = noticeable quality jump
-- **Client differentiation** - premium quality visible in interactions
+- **85% blind test** (vs 75% BASIC 🔴) = +10% authenticity jump
+- **Client differentiation** - multi-perspective processing visible in responses
 
-**Investment:** +40h effort → +15% authenticity + multi-dimensional depth
+**Investment:** +24h effort 🔴 (was +40h) → +10% authenticity 🔴 (was +15%) + multi-dimensional depth
+
+**Note:** Lower incremental investment because Engagement Modes now in BASIC 🔴
 
 ---
 
@@ -658,9 +662,11 @@ START: "Qual tier escolher?"
 
 | Tier | Dev Time | Analyst Hours | Cost | Authenticity |
 |------|----------|---------------|------|--------------|
-| BASIC | 3-4 days | 24h | 1x | 70% |
+| BASIC 🔴 | 5-6 days | 40h | 1x | 75% |
 | PREMIUM | 7-10 days | 64h | 3x | 85% |
 | LEGEND | 14-20 days | 128h | 6x | 95%+ |
+
+🔴 **UPDATED:** BASIC tier now includes Engagement Modes (+16h, +1-2 days, +5% authenticity)
 
 ### Incremental Investment
 

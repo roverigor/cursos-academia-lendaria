@@ -59,10 +59,10 @@ def print_step(step_num, text):
 
 def extract_mius_with_llm(source_file, subject_id, output_file, language="auto-detect"):
     """
-    Step 1: Extract MIUs using Claude Sonnet 4 (LLM-based).
+    Step 1: Extract MIUs using Claude Haiku 4.5 (LLM-based).
     Implements task: tasks/extract-fragments.md
     """
-    print_step(1, f"Extract MIUs with @fragment-extractor (Claude Sonnet 4)")
+    print_step(1, f"Extract MIUs with @fragment-extractor (Claude Haiku 4.5)")
 
     # Read source text
     print(f"   📂 Loading source: {source_file}")
@@ -88,8 +88,8 @@ def extract_mius_with_llm(source_file, subject_id, output_file, language="auto-d
     print(f"      Language: {language} (auto-detected)")
 
     # Build extraction prompt
-    print(f"\n   🤖 Calling Claude Sonnet 4 API...")
-    print(f"      Model: claude-sonnet-4-20250514")
+    print(f"\n   🤖 Calling Claude Haiku 4.5 API...")
+    print(f"      Model: claude-haiku-4-5")
     print(f"      Task: Extract MIUs with 6 fragmentation rules")
 
     prompt = f"""You are @fragment-extractor, a specialist in extracting Minimal Interpretable Units (MIUs) from text for personality analysis.
@@ -125,7 +125,7 @@ Return ONLY valid JSON with this structure (no markdown, no explanation):
     "subject_id": "{subject_id}",
     "extraction_date": "{datetime.now().isoformat()}",
     "extractor_version": "fragment-extractor_v1.1.0",
-    "model": "claude-sonnet-4",
+    "model": "claude-haiku-4.5",
     "structural_format": {{
       "format": "auto_detected",
       "confidence": 0.98
@@ -180,31 +180,31 @@ Return ONLY valid JSON with this structure (no markdown, no explanation):
         "responding_to": null
       }},
       "structure": {{
-        "words": ["word1", "word2"],
-        "pronouns": ["eu"],
         "verbs": ["usa", "cria"],
-        "verb_forms": ["present"],
-        "nouns": ["conceito"],
-        "adjectives": ["crua"],
-        "adverbs": [],
-        "punctuation": ["."],
-        "tenses_detected": ["present"],
-        "modal_verbs": []
+        "pronouns": ["eu"],
+        "tenses_detected": ["present"]
       }},
       "extraction": {{
-        "method": "claude_sonnet_4_llm",
+        "method": "claude_haiku_4_llm",
         "version": "1.1.0",
         "timestamp": "{datetime.now().isoformat()}",
-        "model": "claude-sonnet-4",
+        "model": "claude-haiku-4.5",
         "cost_usd": 0.0
       }}
     }}
   ]
 }}
 
-Extract the 40-60 MOST IMPORTANT MIUs (prioritize diversity and clarity). Ensure 100% grammatical completeness and zero-inference compliance.
+Extract 30-35 high-quality MIUs (prioritize diversity and clarity). Ensure 100% grammatical completeness and zero-inference compliance.
 
-IMPORTANT: Keep "structure" fields CONCISE (list only 2-3 examples per category, not all words).
+CRITICAL INSTRUCTIONS:
+1. Return ONLY the JSON structure - no explanations, no questions, no markdown formatting
+2. Begin your response immediately with the opening brace character
+3. The "structure" object must contain ONLY these 3 fields:
+   - "verbs": list of 2-4 main verbs from the fragment
+   - "pronouns": list of pronouns (if any)
+   - "tenses_detected": list of verb tenses present
+4. Do NOT include: words, verb_forms, nouns, adjectives, adverbs, punctuation, modal_verbs, or any other fields
 """
 
     # Call Claude API
@@ -214,8 +214,8 @@ IMPORTANT: Keep "structure" fields CONCISE (list only 2-3 examples per category,
 
     try:
         response = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=8000,  # Reduced to encourage more concise extraction
+            model="claude-haiku-4-5",
+            max_tokens=16000,  # Haiku 4.5 max is 64k - using 16k for 40-60 MIUs
             temperature=0.0,
             messages=[{"role": "user", "content": prompt}]
         )
@@ -249,19 +249,63 @@ IMPORTANT: Keep "structure" fields CONCISE (list only 2-3 examples per category,
             print(f"\n   ⚠️  JSON parsing error: {e}")
             print(f"   🔧 Attempting to fix malformed JSON...")
 
-            # Try to fix common issues
-            # If JSON is incomplete, try to close it properly
+            # Try to fix incomplete JSON by finding last complete fragment
             if "fragments" in response_json:
-                # Find last complete fragment
-                last_complete = response_json.rfind('}')
-                if last_complete > 0:
-                    # Try to close fragments array and metadata
-                    fixed_json = response_json[:last_complete+1] + "\n  ]\n}"
-                    try:
-                        data = json.loads(fixed_json)
-                        print(f"   ✅ JSON fixed successfully!")
-                    except:
-                        print(f"   ❌ Could not fix JSON automatically")
+                # Find all complete fragments (each ends with "}," or "}\n")
+                # Strategy: Find the last fragment that is complete
+
+                # Split by fragments to find complete ones
+                import re
+
+                # Find the opening of fragments array
+                fragments_start = response_json.find('"fragments": [')
+                if fragments_start > 0:
+                    # Find all complete fragment objects
+                    # Look for pattern: {..."extraction": {...}}
+
+                    # Simpler approach: find all instances of complete "extraction" blocks
+                    # and keep only fragments that have them
+
+                    complete_fragments_match = re.findall(
+                        r'(\{"fragment_id".*?"extraction":\s*\{[^}]*\}\s*\})',
+                        response_json,
+                        re.DOTALL
+                    )
+
+                    if complete_fragments_match:
+                        num_complete = len(complete_fragments_match)
+                        print(f"   🔍 Found {num_complete} complete fragments out of possibly more")
+
+                        # Reconstruct JSON with only complete fragments
+                        # Get metadata part
+                        metadata_end = response_json.find('"fragments": [')
+                        if metadata_end > 0:
+                            metadata_part = response_json[:metadata_end]
+
+                            # Build fragments array with complete fragments only
+                            fragments_json = ",\n    ".join(complete_fragments_match)
+
+                            # Close JSON properly
+                            fixed_json = metadata_part + '"fragments": [\n    ' + fragments_json + '\n  ]\n}'
+
+                            try:
+                                data = json.loads(fixed_json)
+
+                                # Update statistics
+                                data['metadata']['content_statistics']['mius_extracted'] = len(data['fragments'])
+                                data['metadata']['content_statistics']['extraction_rate_mius_per_1000w'] = round(
+                                    (len(data['fragments']) / data['metadata']['content_statistics']['original_word_count']) * 1000, 1
+                                )
+
+                                print(f"   ✅ JSON fixed! Recovered {len(data['fragments'])} complete fragments")
+                            except Exception as fix_error:
+                                print(f"   ❌ Could not fix JSON: {fix_error}")
+                                print(f"   💾 Check raw response at: {debug_file}")
+                                raise
+                        else:
+                            raise ValueError("Could not find metadata section")
+                    else:
+                        print(f"   ❌ Could not find any complete fragments")
                         print(f"   💾 Check raw response at: {debug_file}")
                         raise
             else:
@@ -271,9 +315,9 @@ IMPORTANT: Keep "structure" fields CONCISE (list only 2-3 examples per category,
         input_tokens = response.usage.input_tokens
         output_tokens = response.usage.output_tokens
 
-        # Claude Sonnet 4 pricing: $3/MTok input, $15/MTok output
-        input_cost = (input_tokens / 1_000_000) * 3.0
-        output_cost = (output_tokens / 1_000_000) * 15.0
+        # Claude Haiku 4.5 pricing: $1.00/MTok input, $5.00/MTok output
+        input_cost = (input_tokens / 1_000_000) * 1.00
+        output_cost = (output_tokens / 1_000_000) * 5.00
         total_cost = input_cost + output_cost
 
         # Update metadata
@@ -321,7 +365,7 @@ def validate_mius(fragments_file, subject_id, strict_mode=False):
     metadata = data['metadata']
 
     print(f"   📊 Loaded {len(fragments)} fragments")
-    print(f"\n   🔍 Running 10 validation checks...")
+    print(f"\n   🔍 Running 11 validation checks...")
 
     checks_passed = []
     checks_failed = []
@@ -388,6 +432,54 @@ def validate_mius(fragments_file, subject_id, strict_mode=False):
     else:
         print(f"      ✅ Check 10: Statistical sanity - PASS")
         checks_passed.append("statistical_sanity")
+
+    # Check 11: Primary Source Validation (CRITICAL - v1.1)
+    primary_source_types = [
+        'self_analysis', 'article', 'essay', 'book',
+        'social_media', 'email', 'speech',
+        'podcast_transcript', 'video_transcript'
+    ]
+
+    meta_analysis_violations = []
+
+    for frag in fragments:
+        document_type = frag['source'].get('document_type')
+        speaker = frag['attribution'].get('speaker')
+        verbatim = frag['content']['verbatim']
+
+        # RULE 1: Primary source documents MUST have speaker='subject'
+        if document_type in primary_source_types and speaker != 'subject':
+            meta_analysis_violations.append({
+                'fragment_id': frag['fragment_id'],
+                'verbatim': verbatim,
+                'document_type': document_type,
+                'speaker': speaker,
+                'issue': f'PRIMARY SOURCE ({document_type}) with speaker={speaker} - this is META-ANALYSIS, not actual quote'
+            })
+
+        # RULE 2: speaker='other' only valid in interviews/conversations
+        if speaker == 'other' and document_type not in ['interview', 'conversation']:
+            meta_analysis_violations.append({
+                'fragment_id': frag['fragment_id'],
+                'verbatim': verbatim,
+                'document_type': document_type,
+                'speaker': speaker,
+                'issue': f'speaker=other in {document_type} - likely third-party observation, not primary source'
+            })
+
+    if meta_analysis_violations:
+        print(f"      ❌ Check 11: Primary source validation - FAIL ({len(meta_analysis_violations)} meta-analysis violations)")
+        checks_failed.append("primary_source_validation")
+
+        # Show detailed violation info
+        print(f"\n      ⚠️  CRITICAL: These are observations ABOUT {subject_id}, not {subject_id}'s words!")
+        print(f"      Examples:")
+        for v in meta_analysis_violations[:3]:
+            print(f"         - {v['fragment_id']}: \"{v['verbatim'][:50]}...\"")
+            print(f"           Issue: {v['issue']}")
+    else:
+        print(f"      ✅ Check 11: Primary source validation - 100% ({len(fragments)}/{len(fragments)} are actual quotes)")
+        checks_passed.append("primary_source_validation")
 
     # Determine validation outcome
     print()
@@ -669,7 +761,7 @@ def main():
         print()
         print(f"🔍 Extraction (@fragment-extractor):")
         print(f"   • MIUs extracted: {len(data['fragments'])}")
-        print(f"   • Method: Claude Sonnet 4 (LLM)")
+        print(f"   • Method: Claude Haiku 4.5 (LLM)")
         print(f"   • Cost: ${extraction_cost:.4f}")
         print()
         print(f"🔍 Validation (@quality-assurance):")
