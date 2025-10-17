@@ -1,6 +1,6 @@
 #!/bin/bash
 # MMOS Database - Populate Minds
-# Populates the minds table with basic information from docs/minds/
+# Populates the minds table with basic information from outputs/minds/
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$SCRIPT_DIR/../.."

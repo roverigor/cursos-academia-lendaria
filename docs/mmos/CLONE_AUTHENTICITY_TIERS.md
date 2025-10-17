@@ -960,7 +960,7 @@ IF Sources < 20:
 - **EPIC 2 Full Specification:** `docs/mmos/stories/EPIC-2-Clone-Authenticity-Improvements.md`
 - **MMOS Methodology:** `expansion-packs/mmos-mind-mapper/README.md`
 - **DNA Mental™ Schema:** `docs/mmos/architecture/dna-mental-schema.yaml`
-- **João Lozano innovations:** `docs/minds/joao_lozano/docs/joao-lozano-innovations-for-mmos.md`
+- **João Lozano innovations:** `outputs/minds/joao_lozano/docs/joao-lozano-innovations-for-mmos.md`
 
 ---
 

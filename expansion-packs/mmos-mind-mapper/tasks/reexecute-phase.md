@@ -10,7 +10,7 @@ elicit: true
 elicitation-type: guided
 
 prerequisites:
-  - Mind directory exists at docs/minds/{mind_name}
+  - Mind directory exists at outputs/minds/{mind_name}
   - Phase has been previously executed
   - Git repository initialized
 
@@ -30,9 +30,9 @@ inputs:
     description: Why this phase needs to be reexecuted
 
 outputs:
-  - path: "docs/minds/{mind_name}/docs/logs/{timestamp}-phase-reexecution.yaml"
+  - path: "outputs/minds/{mind_name}/docs/logs/{timestamp}-phase-reexecution.yaml"
     description: Reexecution log with backup details
-  - path: "docs/minds/{mind_name}/.phase-backup-{phase}-{timestamp}/"
+  - path: "outputs/minds/{mind_name}/.phase-backup-{phase}-{timestamp}/"
     description: Git commit with phase outputs backup
 
 dependencies:
@@ -142,24 +142,24 @@ Check that mind exists and phase was previously executed:
 
 ```bash
 # Verify mind directory
-test -d "docs/minds/{{mind_name}}" || echo "ERROR: Mind not found"
+test -d "outputs/minds/{{mind_name}}" || echo "ERROR: Mind not found"
 
 # Verify phase was executed (check for phase artifacts)
 case "{{phase}}" in
   research)
-    test -f "docs/minds/{{mind_name}}/sources/sources_master.yaml" || echo "WARNING: Phase may not have been executed"
+    test -f "outputs/minds/{{mind_name}}/sources/sources_master.yaml" || echo "WARNING: Phase may not have been executed"
     ;;
   analysis)
-    test -f "docs/minds/{{mind_name}}/artifacts/cognitive_architecture.yaml" || echo "WARNING: Phase may not have been executed"
+    test -f "outputs/minds/{{mind_name}}/artifacts/cognitive_architecture.yaml" || echo "WARNING: Phase may not have been executed"
     ;;
   synthesis)
-    test -d "docs/minds/{{mind_name}}/kb" || echo "WARNING: Phase may not have been executed"
+    test -d "outputs/minds/{{mind_name}}/kb" || echo "WARNING: Phase may not have been executed"
     ;;
   implementation)
-    test -d "docs/minds/{{mind_name}}/system_prompts" || echo "WARNING: Phase may not have been executed"
+    test -d "outputs/minds/{{mind_name}}/system_prompts" || echo "WARNING: Phase may not have been executed"
     ;;
   testing)
-    test -f "docs/minds/{{mind_name}}/docs/testing_protocol.md" || echo "WARNING: Phase may not have been executed"
+    test -f "outputs/minds/{{mind_name}}/docs/testing_protocol.md" || echo "WARNING: Phase may not have been executed"
     ;;
 esac
 ```
@@ -229,7 +229,7 @@ You are about to **reexecute** the **{{phase}}** phase for: **{{mind_name}}**
 ### Backup Information:
 - Git commit will preserve: Phase-specific outputs
 - Commit tag: backup-{{mind_name}}-{{phase}}-{{timestamp}}
-- Rollback command: `git checkout {{tag}} -- docs/minds/{{mind_name}}`
+- Rollback command: `git checkout {{tag}} -- outputs/minds/{{mind_name}}`
 
 ---
 
@@ -260,16 +260,16 @@ Identify all files produced by this phase:
 case "{{phase}}" in
   research)
     files=(
-      "docs/minds/{{mind_name}}/sources/"
-      "docs/minds/{{mind_name}}/docs/logs/*-discovery*.yaml"
-      "docs/minds/{{mind_name}}/docs/logs/*-collection*.yaml"
+      "outputs/minds/{{mind_name}}/sources/"
+      "outputs/minds/{{mind_name}}/docs/logs/*-discovery*.yaml"
+      "outputs/minds/{{mind_name}}/docs/logs/*-collection*.yaml"
     )
     ;;
   analysis)
     files=(
-      "docs/minds/{{mind_name}}/artifacts/behavioral_patterns.md"
-      "docs/minds/{{mind_name}}/artifacts/writing_style.md"
-      "docs/minds/{{mind_name}}/artifacts/cognitive_architecture.yaml"
+      "outputs/minds/{{mind_name}}/artifacts/behavioral_patterns.md"
+      "outputs/minds/{{mind_name}}/artifacts/writing_style.md"
+      "outputs/minds/{{mind_name}}/artifacts/cognitive_architecture.yaml"
       # ... all analysis artifacts
     )
     ;;
@@ -301,7 +301,7 @@ Affected Downstream Phases:
 {{list_of_affected_phases}}
 
 This commit preserves {{phase}} phase outputs before reexecution.
-Rollback: git checkout {{tag}} -- docs/minds/{{mind_name}}
+Rollback: git checkout {{tag}} -- outputs/minds/{{mind_name}}
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
@@ -326,7 +326,7 @@ Git tag: backup-{{mind_name}}-{{phase}}-{{timestamp}}
 
 **Rollback command** (if needed later):
 ```bash
-git checkout {{tag}} -- docs/minds/{{mind_name}}
+git checkout {{tag}} -- outputs/minds/{{mind_name}}
 ```
 
 **Phase backup safe in git history.**
@@ -343,37 +343,37 @@ Remove only files produced by this phase:
 case "{{phase}}" in
   research)
     # Delete sources (except sources_master.yaml if preserving)
-    rm -rf docs/minds/{{mind_name}}/sources/articles/*.md
-    rm -rf docs/minds/{{mind_name}}/sources/books/*.md
+    rm -rf outputs/minds/{{mind_name}}/sources/articles/*.md
+    rm -rf outputs/minds/{{mind_name}}/sources/books/*.md
     # ... delete specific source files
     ;;
 
   analysis)
     # Delete all 8-layer artifacts
-    rm -f docs/minds/{{mind_name}}/artifacts/behavioral_patterns.md
-    rm -f docs/minds/{{mind_name}}/artifacts/cognitive_architecture.yaml
+    rm -f outputs/minds/{{mind_name}}/artifacts/behavioral_patterns.md
+    rm -f outputs/minds/{{mind_name}}/artifacts/cognitive_architecture.yaml
     # ... delete all analysis outputs
     ;;
 
   synthesis)
     # Delete synthesis and KB outputs
-    rm -rf docs/minds/{{mind_name}}/kb/
-    rm -f docs/minds/{{mind_name}}/artifacts/frameworks_synthesized.md
+    rm -rf outputs/minds/{{mind_name}}/kb/
+    rm -f outputs/minds/{{mind_name}}/artifacts/frameworks_synthesized.md
     # ... delete synthesis outputs
     ;;
 
   implementation)
     # Delete system prompts and identity core
-    rm -rf docs/minds/{{mind_name}}/system_prompts/
-    rm -rf docs/minds/{{mind_name}}/specialists/
-    rm -f docs/minds/{{mind_name}}/artifacts/identity_core.yaml
+    rm -rf outputs/minds/{{mind_name}}/system_prompts/
+    rm -rf outputs/minds/{{mind_name}}/specialists/
+    rm -f outputs/minds/{{mind_name}}/artifacts/identity_core.yaml
     # ... delete implementation outputs
     ;;
 
   testing)
     # Delete test protocols and validation reports
-    rm -f docs/minds/{{mind_name}}/docs/testing_protocol.md
-    rm -f docs/minds/{{mind_name}}/docs/logs/*-validation*.yaml
+    rm -f outputs/minds/{{mind_name}}/docs/testing_protocol.md
+    rm -f outputs/minds/{{mind_name}}/docs/logs/*-validation*.yaml
     # ... delete testing outputs
     ;;
 esac
@@ -404,7 +404,7 @@ Phase outputs deleted: {{count}} files
 Document phase reexecution:
 
 ```yaml
-# File: docs/minds/{{mind_name}}/docs/logs/{{timestamp}}-phase-reexecution.yaml
+# File: outputs/minds/{{mind_name}}/docs/logs/{{timestamp}}-phase-reexecution.yaml
 
 phase_reexecution_log:
   mind_name: {{mind_name}}
@@ -609,7 +609,7 @@ No downstream phases affected. Phase reexecution complete! ✅
 - Ready for fresh execution
 
 **Reexecution Log:**
-- `docs/minds/{{mind_name}}/docs/logs/{{timestamp}}-phase-reexecution.yaml`
+- `outputs/minds/{{mind_name}}/docs/logs/{{timestamp}}-phase-reexecution.yaml`
 
 **Fresh Phase Outputs:**
 - Regenerated by invoking phase task
@@ -633,7 +633,7 @@ If phase reexecution needs to be reverted:
 
 ```bash
 # Restore phase outputs from backup
-git checkout backup-{{mind_name}}-{{phase}}-{{timestamp}} -- docs/minds/{{mind_name}}
+git checkout backup-{{mind_name}}-{{phase}}-{{timestamp}} -- outputs/minds/{{mind_name}}
 
 # Verify restoration
 git status

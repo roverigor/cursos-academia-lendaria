@@ -99,14 +99,14 @@
       started_at: '2025-10-06T14:30:15'
       parallel_group: order_2  # NEW: indicates parallel execution group
       quality_score: excellent  # NEW: quality scoring
-      output_path: docs/minds/nassim_taleb/artifacts/quotes.yaml
+      output_path: outputs/minds/nassim_taleb/artifacts/quotes.yaml
     - prompt_id: analysis_behavioral_patterns
       status: completed
       duration_ms: 58120
       started_at: '2025-10-06T14:30:15'
       parallel_group: order_2
       quality_score: good
-      output_path: docs/minds/nassim_taleb/artifacts/behavioral_patterns.yaml
+      output_path: outputs/minds/nassim_taleb/artifacts/behavioral_patterns.yaml
   checkpoint_status: awaiting_approval
   checkpoint_timestamp: '2025-10-06T14:31:13'
   time_saved_ms: 97110  # NEW: parallel time savings
@@ -257,20 +257,20 @@ Action: [approve/reject/retry analysis_behavioral_patterns]
 **Then** it injects the following context (in order of priority):
 
 1. **Mind Brief** (highest priority)
-   - Path: `docs/minds/{mind}/MIND_BRIEF.md`
+   - Path: `outputs/minds/{mind}/MIND_BRIEF.md`
    - If missing: ⚠️ warning logged, continue
 
 2. **PRD** (if exists)
-   - Path: `docs/minds/{mind}/docs/PRD.md`
+   - Path: `outputs/minds/{mind}/docs/PRD.md`
    - If missing: skip silently
 
 3. **Recent Sources** (up to 5 most recent by modification time)
-   - From: `docs/minds/{mind}/sources/`
+   - From: `outputs/minds/{mind}/sources/`
    - Filter: `.md`, `.txt`, `.yaml` files
    - Sort: by `st_mtime` descending
 
 4. **Recent Logs** (up to 3 most recent)
-   - From: `docs/minds/{mind}/docs/logs/`
+   - From: `outputs/minds/{mind}/docs/logs/`
    - Filter: current phase or previous phase
    - Sort: by timestamp descending
 
@@ -282,8 +282,8 @@ Action: [approve/reject/retry analysis_behavioral_patterns]
 ```yaml
 # API Request Context (logged)
 context_injected:
-  mind_brief: docs/minds/nassim_taleb/MIND_BRIEF.md (2.3KB)
-  prd: docs/minds/nassim_taleb/docs/PRD.md (5.1KB)
+  mind_brief: outputs/minds/nassim_taleb/MIND_BRIEF.md (2.3KB)
+  prd: outputs/minds/nassim_taleb/docs/PRD.md (5.1KB)
   sources:
     - sources/interviews/Naval_Podcast_2023.md (15KB)
     - sources/books/Antifragile.md (45KB)
@@ -330,7 +330,7 @@ python3 -m docs.mmos.pipeline.cli execute-phase --mind test --phase viability
 **Test:**
 ```bash
 # Before execution
-ls -la docs/minds/test/artifacts/
+ls -la outputs/minds/test/artifacts/
 
 # Run auto-execution
 python3 -m docs.mmos.pipeline.cli execute-phase --mind test --phase analysis
@@ -339,7 +339,7 @@ python3 -m docs.mmos.pipeline.cli execute-phase --mind test --phase analysis
 > reject
 
 # Verify: No files deleted, only new files created in artifacts/ and docs/logs/
-ls -la docs/minds/test/artifacts/
+ls -la outputs/minds/test/artifacts/
 ```
 
 ---
@@ -493,7 +493,7 @@ pipeline:
         agent: analyst
         parallelizable: false
         depends_on: []
-        output_template: "docs/minds/{mind}/docs/logs/{timestamp}-icp_match.yaml"
+        output_template: "outputs/minds/{mind}/docs/logs/{timestamp}-icp_match.yaml"
 ```
 
 ### Launcher History Schema Extension (v1.1)
@@ -505,7 +505,7 @@ pipeline:
   prompt_id: viability_icp_match
   agent: analyst
   status: completed
-  output_path: docs/minds/nassim_taleb/docs/logs/20251006-1430-icp_match.yaml
+  output_path: outputs/minds/nassim_taleb/docs/logs/20251006-1430-icp_match.yaml
 
   # NEW fields (v1.1 for Story 1.4)
   execution_mode: auto  # auto or manual
@@ -545,7 +545,7 @@ pipeline:
         agent: analyst
         parallelizable: false
         depends_on: []
-        output_template: "docs/minds/{mind}/docs/logs/{timestamp}-test1.yaml"
+        output_template: "outputs/minds/{mind}/docs/logs/{timestamp}-test1.yaml"
 ```
 
 **Fixture mind**: `tests/fixtures/test_mind/` with MIND_BRIEF.md, sources/, docs/

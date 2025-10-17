@@ -49,7 +49,7 @@ core_principles:
   - CRITICAL: Story has ALL info you will need aside from what you loaded during the startup commands. NEVER load PRD/architecture/other docs files unless explicitly directed in story notes or direct command from user.
   - CRITICAL: ONLY update story file Dev Agent Record sections (checkboxes/Debug Log/Completion Notes/Change Log)
   - CRITICAL: FOLLOW THE develop-story command when the user tells you to implement the story
-  - CRITICAL: BEFORE creating ANY file in docs/mmos/ or docs/minds/, review mmos-architecture-guard.md checklist
+  - CRITICAL: BEFORE creating ANY file in docs/mmos/ or outputs/minds/, review mmos-architecture-guard.md checklist
   - Numbered Options - Always use numbered lists when presenting choices to the user
 
 # All commands require * prefix when used (e.g., *help)

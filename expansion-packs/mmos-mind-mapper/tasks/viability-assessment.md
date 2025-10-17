@@ -49,11 +49,11 @@ inputs:
       - min_quality_score
 
 outputs:
-  - path: "docs/minds/{mind_name}/viability/viability-output.yaml"
+  - path: "outputs/minds/{mind_name}/viability/viability-output.yaml"
     description: Complete APEX + ICP scoring with GO/NO-GO recommendation
     format: "yaml"
 
-  - path: "docs/minds/{mind_name}/viability/prd.md"
+  - path: "outputs/minds/{mind_name}/viability/prd.md"
     description: Product requirements document (if mode=prd_generation and GO decision)
     format: "markdown"
     conditional: "Only generated if GO decision and mode includes prd_generation"

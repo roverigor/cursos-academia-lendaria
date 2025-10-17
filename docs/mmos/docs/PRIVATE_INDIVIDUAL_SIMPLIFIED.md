@@ -184,9 +184,9 @@ if args.private_individual:
 ### Step 1: Create Mind Structure
 ```bash
 # Already done for pilot cases ✅
-docs/minds/jose_amorim/     # Pilot 1
-docs/minds/pedro_valerio/   # Pilot 2
-docs/minds/alan_nicolas/    # Pilot 3
+outputs/minds/jose_amorim/     # Pilot 1
+outputs/minds/pedro_valerio/   # Pilot 2
+outputs/minds/alan_nicolas/    # Pilot 3
 ```
 
 ### Step 2: Provide Materials
@@ -221,7 +221,7 @@ jose_amorim/sources/
 
 ### Step 3: Run Pipeline
 ```bash
-cd docs/minds/jose_amorim
+cd outputs/minds/jose_amorim
 
 # Execute with private individual flag
 mmos-launcher execute-pipeline jose_amorim --private-individual

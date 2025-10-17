@@ -37,7 +37,7 @@
 **Problem 1:** Hardcoded path to `tier1_batch.yaml` in sources/ instead of docs/logs/
 ```javascript
 // Line 18 - WRONG
-const sourcesPath = path.join(__dirname, '../../docs/minds/sam_altman/sources/tier1_batch.yaml');
+const sourcesPath = path.join(__dirname, '../../outputs/minds/sam_altman/sources/tier1_batch.yaml');
 ```
 
 **Problem 2:** Report saved to downloads/ instead of docs/logs/
@@ -113,7 +113,7 @@ import path from 'path';
 
 /**
  * Get the logs directory for a mind
- * @param {string} mindDir - Absolute path to mind directory (e.g., docs/minds/sam_altman)
+ * @param {string} mindDir - Absolute path to mind directory (e.g., outputs/minds/sam_altman)
  * @returns {string} Absolute path to logs directory
  */
 export function getLogsDir(mindDir) {
@@ -150,14 +150,14 @@ export function getLogPath(mindDir, baseName, extension = 'yaml') {
 **Changes needed:**
 ```javascript
 // BEFORE (lines 18, 63-64)
-const sourcesPath = path.join(__dirname, '../../docs/minds/sam_altman/sources/tier1_batch.yaml');
+const sourcesPath = path.join(__dirname, '../../outputs/minds/sam_altman/sources/tier1_batch.yaml');
 const reportPath = path.join(outputDir, 'COLLECTION_REPORT.json');
 
 // AFTER
 import { getLogPath, getLogsDir } from './scripts/utils/path-helpers.js';
 
 // Use sources_master.yaml OR accept batch config from CLI
-const mindDir = path.join(__dirname, '../../docs/minds/sam_altman');
+const mindDir = path.join(__dirname, '../../outputs/minds/sam_altman');
 const sourcesPath = path.join(mindDir, 'sources/sources_master.yaml');
 
 // Save report to docs/logs/ with timestamp

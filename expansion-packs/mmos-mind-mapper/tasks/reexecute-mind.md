@@ -10,7 +10,7 @@ elicit: true
 elicitation-type: guided
 
 prerequisites:
-  - Mind directory exists at docs/minds/{mind_name}
+  - Mind directory exists at outputs/minds/{mind_name}
   - Git repository initialized
   - User has confirmed reexecution decision
 
@@ -30,9 +30,9 @@ inputs:
     description: Keep existing sources or start completely fresh
 
 outputs:
-  - path: "docs/minds/{mind_name}/.backup-{timestamp}/"
+  - path: "outputs/minds/{mind_name}/.backup-{timestamp}/"
     description: Git commit with full backup
-  - path: "docs/minds/{mind_name}/"
+  - path: "outputs/minds/{mind_name}/"
     description: Clean mind directory ready for new pipeline execution
 
 dependencies:
@@ -84,7 +84,7 @@ Check that the specified mind exists:
 
 ```bash
 # Verify directory exists
-test -d "docs/minds/{{mind_name}}" || echo "ERROR: Mind not found"
+test -d "outputs/minds/{{mind_name}}" || echo "ERROR: Mind not found"
 ```
 
 If mind doesn't exist, inform user and exit gracefully.
@@ -131,7 +131,7 @@ You are about to **completely restart** the mind mapping for: **{{mind_name}}**
 ### Backup Information:
 - Git commit will preserve: ALL current files
 - Commit tag: backup-{{mind_name}}-{{timestamp}}
-- Rollback command: `git checkout {{commit_hash}} -- docs/minds/{{mind_name}}`
+- Rollback command: `git checkout {{commit_hash}} -- outputs/minds/{{mind_name}}`
 
 ---
 
@@ -169,7 +169,7 @@ Verify git repository is clean or has only the mind being reexecuted:
 
 ```bash
 # Check for uncommitted changes outside the mind directory
-git status --porcelain | grep -v "docs/minds/{{mind_name}}" || echo "Clean"
+git status --porcelain | grep -v "outputs/minds/{{mind_name}}" || echo "Clean"
 ```
 
 If other uncommitted changes exist, **WARN USER:**
@@ -197,7 +197,7 @@ Execute git commit with backup:
 
 ```bash
 # Add all files from mind directory
-git add docs/minds/{{mind_name}}
+git add outputs/minds/{{mind_name}}
 
 # Create commit with detailed backup message
 git commit -m "backup: {{mind_name}} before reexecution
@@ -219,7 +219,7 @@ Status before reexecution:
 - Docs: {{list}}
 
 This commit preserves complete state before full pipeline restart.
-Rollback: git checkout {{commit_hash}} -- docs/minds/{{mind_name}}
+Rollback: git checkout {{commit_hash}} -- outputs/minds/{{mind_name}}
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
@@ -235,7 +235,7 @@ Check commit was created:
 git log -1 --oneline
 
 # Verify mind files are in commit
-git show --name-only HEAD | grep "docs/minds/{{mind_name}}"
+git show --name-only HEAD | grep "outputs/minds/{{mind_name}}"
 ```
 
 If commit failed, **ABORT** and inform user.
@@ -258,7 +258,7 @@ Git tag: backup-{{mind_name}}-{{timestamp}}
 
 **Rollback command** (if needed later):
 ```bash
-git checkout {{commit_hash}} -- docs/minds/{{mind_name}}
+git checkout {{commit_hash}} -- outputs/minds/{{mind_name}}
 ```
 
 **Current state preserved in git history.**
@@ -274,23 +274,23 @@ Based on `preserve_sources` input:
 **If preserve_sources = true:**
 ```yaml
 preserve:
-  - docs/minds/{{mind_name}}/sources/**
-  - docs/minds/{{mind_name}}/sources/sources_master.yaml
-  - docs/minds/{{mind_name}}/sources/priority_matrix.yaml
+  - outputs/minds/{{mind_name}}/sources/**
+  - outputs/minds/{{mind_name}}/sources/sources_master.yaml
+  - outputs/minds/{{mind_name}}/sources/priority_matrix.yaml
 
 delete:
-  - docs/minds/{{mind_name}}/artifacts/**
-  - docs/minds/{{mind_name}}/kb/**
-  - docs/minds/{{mind_name}}/system_prompts/**
-  - docs/minds/{{mind_name}}/specialists/**
-  - docs/minds/{{mind_name}}/docs/**
-  - docs/minds/{{mind_name}}/metadata/**
+  - outputs/minds/{{mind_name}}/artifacts/**
+  - outputs/minds/{{mind_name}}/kb/**
+  - outputs/minds/{{mind_name}}/system_prompts/**
+  - outputs/minds/{{mind_name}}/specialists/**
+  - outputs/minds/{{mind_name}}/docs/**
+  - outputs/minds/{{mind_name}}/metadata/**
 ```
 
 **If preserve_sources = false:**
 ```yaml
 delete:
-  - docs/minds/{{mind_name}}/** (everything)
+  - outputs/minds/{{mind_name}}/** (everything)
 ```
 
 #### 2.2 Execute Cleanup
@@ -301,17 +301,17 @@ Delete specified directories:
 # Preserve sources if requested
 if [ "{{preserve_sources}}" = "true" ]; then
   # Delete everything except sources
-  rm -rf docs/minds/{{mind_name}}/artifacts
-  rm -rf docs/minds/{{mind_name}}/kb
-  rm -rf docs/minds/{{mind_name}}/system_prompts
-  rm -rf docs/minds/{{mind_name}}/specialists
-  rm -rf docs/minds/{{mind_name}}/docs
-  rm -rf docs/minds/{{mind_name}}/metadata
+  rm -rf outputs/minds/{{mind_name}}/artifacts
+  rm -rf outputs/minds/{{mind_name}}/kb
+  rm -rf outputs/minds/{{mind_name}}/system_prompts
+  rm -rf outputs/minds/{{mind_name}}/specialists
+  rm -rf outputs/minds/{{mind_name}}/docs
+  rm -rf outputs/minds/{{mind_name}}/metadata
 else
   # Delete everything
-  rm -rf docs/minds/{{mind_name}}
+  rm -rf outputs/minds/{{mind_name}}
   # Recreate base directory
-  mkdir -p docs/minds/{{mind_name}}
+  mkdir -p outputs/minds/{{mind_name}}
 fi
 ```
 
@@ -321,7 +321,7 @@ Confirm directory structure:
 
 ```bash
 # List remaining files
-tree docs/minds/{{mind_name}} -L 2
+tree outputs/minds/{{mind_name}} -L 2
 ```
 
 Present cleanup confirmation:
@@ -329,7 +329,7 @@ Present cleanup confirmation:
 ```markdown
 ✅ **CLEANUP COMPLETE**
 
-Mind directory cleaned: docs/minds/{{mind_name}}/
+Mind directory cleaned: outputs/minds/{{mind_name}}/
 
 **Deleted:**
 {{list_of_deleted_directories}}
@@ -351,14 +351,14 @@ Mind directory cleaned: docs/minds/{{mind_name}}/
 Set up clean directory structure:
 
 ```bash
-mkdir -p docs/minds/{{mind_name}}/docs/logs
+mkdir -p outputs/minds/{{mind_name}}/docs/logs
 {{#unless preserve_sources}}
-mkdir -p docs/minds/{{mind_name}}/sources
+mkdir -p outputs/minds/{{mind_name}}/sources
 {{/unless}}
-mkdir -p docs/minds/{{mind_name}}/artifacts
-mkdir -p docs/minds/{{mind_name}}/kb
-mkdir -p docs/minds/{{mind_name}}/system_prompts
-mkdir -p docs/minds/{{mind_name}}/metadata
+mkdir -p outputs/minds/{{mind_name}}/artifacts
+mkdir -p outputs/minds/{{mind_name}}/kb
+mkdir -p outputs/minds/{{mind_name}}/system_prompts
+mkdir -p outputs/minds/{{mind_name}}/metadata
 ```
 
 #### 3.2 Initialize Reexecution Log
@@ -366,7 +366,7 @@ mkdir -p docs/minds/{{mind_name}}/metadata
 Create execution log:
 
 ```yaml
-# File: docs/minds/{{mind_name}}/docs/logs/{{timestamp}}-reexecution-init.yaml
+# File: outputs/minds/{{mind_name}}/docs/logs/{{timestamp}}-reexecution-init.yaml
 
 reexecution_log:
   mind_name: {{mind_name}}
@@ -401,7 +401,7 @@ reexecution_log:
 
 #### 3.3 Update Catalog Status
 
-Update `docs/minds/catalog.md` if mind is already listed:
+Update `outputs/minds/catalog.md` if mind is already listed:
 
 ```yaml
 # Mark mind as "reexecution_in_progress"
@@ -492,7 +492,7 @@ Show final summary before handoff:
 **1. Backup Created** ✅
 - Commit: {{commit_hash}}
 - Tag: backup-{{mind_name}}-{{timestamp}}
-- Rollback: `git checkout {{commit_hash}} -- docs/minds/{{mind_name}}`
+- Rollback: `git checkout {{commit_hash}} -- outputs/minds/{{mind_name}}`
 
 **2. Cleanup Executed** ✅
 - Artifacts: Deleted
@@ -534,9 +534,9 @@ Good luck! 🧠
 - Rollback documentation
 
 **Cleaned Mind Directory:**
-- `docs/minds/{{mind_name}}/` - Clean structure
-- `docs/minds/{{mind_name}}/sources/` - Preserved if requested
-- `docs/minds/{{mind_name}}/docs/logs/{{timestamp}}-reexecution-init.yaml` - Reexecution log
+- `outputs/minds/{{mind_name}}/` - Clean structure
+- `outputs/minds/{{mind_name}}/sources/` - Preserved if requested
+- `outputs/minds/{{mind_name}}/docs/logs/{{timestamp}}-reexecution-init.yaml` - Reexecution log
 
 **Pipeline Launch:**
 - Automatic invocation of `execute-mmos-pipeline.md`
@@ -561,13 +561,13 @@ If reexecution needs to be reverted:
 
 ```bash
 # Method 1: Git checkout (partial restore)
-git checkout {{commit_hash}} -- docs/minds/{{mind_name}}
+git checkout {{commit_hash}} -- outputs/minds/{{mind_name}}
 
 # Method 2: Git revert (if committed cleanup)
 git revert {{cleanup_commit_hash}}
 
 # Method 3: Tag-based restore
-git checkout backup-{{mind_name}}-{{timestamp}} -- docs/minds/{{mind_name}}
+git checkout backup-{{mind_name}}-{{timestamp}} -- outputs/minds/{{mind_name}}
 ```
 
 ## Integration with AIOS

@@ -37,7 +37,7 @@ estimated_time: "15-60 minutes (depending on course size)"
    - **CHECKPOINT:** Get user approval on outline before content generation
 
 3. **Load Instructor Persona** (if Expert-Led mode)
-   - If MMOS: Load from `docs/minds/{mind_name}/synthesis/`
+   - If MMOS: Load from `outputs/minds/{mind_name}/synthesis/`
    - If custom: Load profile JSON and validate
    - Extract voice parameters and teaching style
    - Set fidelity target (85%+ custom, 90%+ MMOS)
@@ -57,7 +57,7 @@ estimated_time: "15-60 minutes (depending on course size)"
    - **CHECKPOINT:** Present validation report, offer regeneration if below targets
 
 6. **Output Generation**
-   - Create file structure in `docs/courses/{course-slug}/`
+   - Create file structure in `outputs/courses/{course-slug}/`
    - Generate README, course-outline, curriculum.yaml
    - Save lessons to `lessons/`, assessments to `assessments/`, resources to `resources/`
    - Log to database (`courses`, `lessons`, `assessments` tables)
@@ -109,14 +109,14 @@ estimated_time: "15-60 minutes (depending on course size)"
 - **Extended course (20-40 lessons):** < 60 min
 
 ## Integration
-**MMOS:** Load instructor personas from `docs/minds/{mind}/synthesis/`
+**MMOS:** Load instructor personas from `outputs/minds/{mind}/synthesis/`
 **InnerLens:** (Optional) Adapt content to audience psychometric profiles (Big Five)
 **ETL Data Collector:** (Optional) Transform legacy materials into structured format
 **Database:** Track in `courses`, `lessons`, `assessments` tables
 
 ## Output Structure
 ```
-docs/courses/{course-slug}/
+outputs/courses/{course-slug}/
   ├── README.md                  # Course overview
   ├── course-outline.md          # Complete structure
   ├── curriculum.yaml            # Structured metadata

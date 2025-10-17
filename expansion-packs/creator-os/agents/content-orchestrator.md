@@ -95,7 +95,7 @@ elicitation_wizard:
         Option A: MMOS Clone (recommended for 90%+ fidelity)
         - Use an existing MMOS Mind Mapper clone
         - Available minds: Naval Ravikant, Nassim Taleb, Paul Graham, etc.
-        - Path: docs/minds/{mind_name}/
+        - Path: outputs/minds/{mind_name}/
 
         Option B: Custom Persona
         - Upload or define custom persona (JSON format)
@@ -143,7 +143,7 @@ integration:
     enabled: true
     description: "Read MMOS Mind Mapper clones as content personas"
     persona_loading:
-      - path: "docs/minds/{mind_name}/synthesis/personality-profile.json"
+      - path: "outputs/minds/{mind_name}/synthesis/personality-profile.json"
         fields:
           - cognitive_preferences.thinking_style
           - cognitive_preferences.communication_style
@@ -151,7 +151,7 @@ integration:
           - traits.extraversion
           - traits.openness
           - traits.conscientiousness
-      - path: "docs/minds/{mind_name}/synthesis/system-prompt-generalista.md"
+      - path: "outputs/minds/{mind_name}/synthesis/system-prompt-generalista.md"
         extract: Voice markers, signature phrases, example types
       - fallback: "If MMOS files not found, use custom persona or ask user"
     voice_parameters:
@@ -346,7 +346,7 @@ examples:
     user: "nassim_taleb"
     agent: |
       ✓ MMOS Clone: Nassim Taleb
-      Loading persona from docs/minds/nassim_taleb/...
+      Loading persona from outputs/minds/nassim_taleb/...
 
       ✓ Found personality-profile.json
       ✓ Found system-prompt-generalista.md

@@ -62,7 +62,7 @@ Populates the `sources` table from `sources_master.yaml`.
 ```bash
 node scripts/pipeline/populate-sources.js \
   --mind sam_altman \
-  --file docs/minds/sam_altman/sources/sources_master.yaml \
+  --file outputs/minds/sam_altman/sources/sources_master.yaml \
   --db docs/mmos/mmos.db \
   --mode skip
 ```
@@ -79,7 +79,7 @@ sources:
     type: "blog"           # Maps to 'article' in DB
     title: "How to Be Successful"
     url: "https://example.com/..."
-    file_path: "docs/minds/.../downloads/..."
+    file_path: "outputs/minds/.../downloads/..."
     word_count: 3500
     status: "processed"
     priority: "high"
@@ -106,7 +106,7 @@ Imports `cognitive-spec.yaml` into the `analysis` table.
 ```bash
 node scripts/pipeline/import-analysis.js \
   --mind sam_altman \
-  --file docs/minds/sam_altman/analysis/cognitive-spec.yaml \
+  --file outputs/minds/sam_altman/analysis/cognitive-spec.yaml \
   --db docs/mmos/mmos.db \
   --mode skip
 ```
@@ -155,7 +155,7 @@ Extracts evidence fragments from `cognitive-spec.yaml` into `fragments` table.
 ```bash
 node scripts/pipeline/extract-fragments.js \
   --mind sam_altman \
-  --cognitive-spec docs/minds/sam_altman/analysis/cognitive-spec.yaml \
+  --cognitive-spec outputs/minds/sam_altman/analysis/cognitive-spec.yaml \
   --db docs/mmos/mmos.db \
   --mode skip
 ```

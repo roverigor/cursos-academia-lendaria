@@ -68,7 +68,7 @@ _promptManualImport(source) {
       steps: [
         '1. Download transcript manually from YouTube',
         '2. Or use external service (Rev.com, Descript)',
-        '3. Save as: docs/minds/{mind}/sources/manual/{source.id}.txt',
+        '3. Save as: outputs/minds/{mind}/sources/manual/{source.id}.txt',
         '4. Run: etl import-manual --source {source.id}'
       ],
       alternativeSources: this._suggestAlternatives(source)
@@ -173,7 +173,7 @@ _logStructuredError(source, strategy, error) {
 Track attempts across sessions:
 
 ```yaml
-# docs/minds/{mind}/sources/collection-state.yaml
+# outputs/minds/{mind}/sources/collection-state.yaml
 sources:
   s001:
     status: FAILED_ALL_STRATEGIES

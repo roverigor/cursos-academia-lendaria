@@ -15,9 +15,9 @@ interactive: true
 
 ## Elicitação
 ```
-1. Qual arquivo de fontes devemos usar? (ex.: docs/minds/sam_altman/sources/sources.yaml)
+1. Qual arquivo de fontes devemos usar? (ex.: outputs/minds/sam_altman/sources/sources.yaml)
 2. Deseja executar apenas Tier 1 ou todos os tiers? (tier1|all)
-3. Confirmar diretório de output (padrão: docs/minds/{mind}/sources)
+3. Confirmar diretório de output (padrão: outputs/minds/{mind}/sources)
 4. Deseja permitir scraping de Twitter? (sim/não)
 ```
 
@@ -51,6 +51,6 @@ interactive: true
 ```
 ✅ Coleta concluída
 - 12 fontes processadas (4 sucesso, 8 falhas registradas)
-- Relatório salvo em docs/minds/sam_altman/sources/etl-report.json
+- Relatório salvo em outputs/minds/sam_altman/sources/etl-report.json
 - Custos AssemblyAI: $12.34 (estimativa)
 ```

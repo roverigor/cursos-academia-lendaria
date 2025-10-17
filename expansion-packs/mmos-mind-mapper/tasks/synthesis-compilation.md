@@ -26,12 +26,12 @@ inputs:
   - name: cognitive_spec_path
     type: file_path
     required: true
-    default: "docs/minds/{mind_name}/analysis/cognitive-spec.yaml"
+    default: "outputs/minds/{mind_name}/analysis/cognitive-spec.yaml"
 
 outputs:
-  - path: "docs/minds/{mind_name}/synthesis/frameworks/"
+  - path: "outputs/minds/{mind_name}/synthesis/frameworks/"
     description: Actionable decision frameworks extracted from cognitive architecture
-  - path: "docs/minds/{mind_name}/synthesis/kb/"
+  - path: "outputs/minds/{mind_name}/synthesis/kb/"
     description: Chunked knowledge base optimized for RAG
 
 dependencies:

@@ -27,23 +27,23 @@
 
 ### Structures Created
 ```
-✅ docs/minds/jose_amorim/
+✅ outputs/minds/jose_amorim/
    ├── README.md (Private Individual workflow)
    ├── metadata.yaml (configured, blocked status)
    ├── SPECIAL_CASE.md (detailed analysis)
    └── sources/ (ready for materials)
 
-✅ docs/minds/pedro_valerio/
+✅ outputs/minds/pedro_valerio/
    ├── README.md (Private Individual workflow)
    ├── metadata.yaml (configured, blocked status)
    └── sources/ (ready for materials)
 
-✅ docs/minds/alan_nicolas/
+✅ outputs/minds/alan_nicolas/
    ├── README.md (Private Individual workflow)
    ├── metadata.yaml (configured, blocked status)
    └── sources/ (ready for materials)
 
-✅ docs/minds/joao_lozano/
+✅ outputs/minds/joao_lozano/
    ├── README.md (Self-documented case)
    ├── metadata.yaml (ready_to_process status)
    └── sources/custom/ (8 comprehensive docs, 3,362 lines)
@@ -64,7 +64,7 @@
    - Original full proposal (historical)
    - Strategic context for Creator-OS
 
-✅ docs/minds/jose_amorim/SPECIAL_CASE.md
+✅ outputs/minds/jose_amorim/SPECIAL_CASE.md
    - Detailed analysis of private individual case
    - Interview protocols (if needed)
 ```
@@ -93,7 +93,7 @@ Phase 2-5: Standard MMOS ✅ No changes
 
 2. **Place in sources/ (User)**
    ```
-   docs/minds/{person}/sources/
+   outputs/minds/{person}/sources/
    ├── interviews/
    │   ├── session-1-background.md
    │   └── session-2-expertise.md
@@ -220,7 +220,7 @@ Phase 2-5: Standard MMOS ✅ No changes
 
 - **Simplified Workflow:** `docs/mmos/docs/PRIVATE_INDIVIDUAL_SIMPLIFIED.md` ⭐
 - **Full Proposal:** `docs/mmos/docs/PRIVATE_INDIVIDUAL_WORKFLOW_PROPOSAL.md`
-- **José Case Study:** `docs/minds/jose_amorim/SPECIAL_CASE.md`
+- **José Case Study:** `outputs/minds/jose_amorim/SPECIAL_CASE.md`
 
 ---
 

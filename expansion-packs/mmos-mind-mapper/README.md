@@ -642,7 +642,7 @@ Total: 4h 0m                   Total: 1h 45m (56% faster)
 All outputs follow **ACS v3.0 structure** for immediate LLM upload:
 
 ```
-docs/minds/{mind_name}/
+outputs/minds/{mind_name}/
 ├── viability/               # Phase 1 outputs
 │   ├── viability-output.yaml
 │   └── prd.md
@@ -777,7 +777,7 @@ The MMOS pipeline has **6 phases** with **6 human checkpoints**:
 # → Fidelity testing → 94% target (you approve production)
 
 # Final output: Production-ready system prompt at:
-# docs/minds/{mind_name}/system_prompts/system-prompt-generalista.md
+# outputs/minds/{mind_name}/system_prompts/system-prompt-generalista.md
 ```
 
 ---
@@ -895,7 +895,7 @@ This expansion pack requires:
 ### 📚 **Documentation:**
 - **Methodology:** `expansion-packs/mmos-mind-mapper/data/mmos-kb.md`
 - **Task specs:** `expansion-packs/mmos-mind-mapper/tasks/*.md`
-- **Examples:** `docs/minds/` directory (22+ reference implementations)
+- **Examples:** `outputs/minds/` directory (22+ reference implementations)
 
 ### 🐛 **Issues:**
 Report problems via GitHub issues: `https://github.com/your-org/mente_lendaria/issues`

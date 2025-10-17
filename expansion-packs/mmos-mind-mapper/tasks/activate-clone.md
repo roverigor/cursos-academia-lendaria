@@ -10,7 +10,7 @@ elicit: true
 elicitation-type: custom
 
 prerequisites:
-  - Mind exists in docs/minds/{mind_name}/ directory
+  - Mind exists in outputs/minds/{mind_name}/ directory
   - system-prompt.md file present
   - (Optional) kb/ directory with knowledge base files
 
@@ -94,7 +94,7 @@ Load a cognitive clone from the minds repository and activate it for direct inte
 
 ```bash
 # Expected structure
-docs/minds/{mind_name}/
+outputs/minds/{mind_name}/
 ├── system-prompt.md (REQUIRED)
 ├── kb/ (optional)
 │   ├── fragment-001.md
@@ -108,16 +108,16 @@ docs/minds/{mind_name}/
 
 **Validation steps:**
 
-1. Check if `docs/minds/{mind_name}/` directory exists
+1. Check if `outputs/minds/{mind_name}/` directory exists
 2. If NOT exists:
    - Display error: "⚠️ Mind '{mind_name}' not found in repository"
-   - Suggest: "Available minds: [list directories in docs/minds/]"
+   - Suggest: "Available minds: [list directories in outputs/minds/]"
    - STOP activation
 
 3. Check if `system-prompt.md` exists
 4. If NOT exists:
    - Display error: "⚠️ system-prompt.md not found for {mind_name}"
-   - Suggest: "This mind may not be fully configured. Check docs/minds/{mind_name}/"
+   - Suggest: "This mind may not be fully configured. Check outputs/minds/{mind_name}/"
    - STOP activation
 
 ### Step 2: Load System Prompt
@@ -126,7 +126,7 @@ docs/minds/{mind_name}/
 
 ```python
 # Pseudocode for implementation
-mind_path = f"docs/minds/{mind_name}"
+mind_path = f"outputs/minds/{mind_name}"
 prompt_path = f"{mind_path}/system-prompt.md"
 
 try:
@@ -357,7 +357,7 @@ activation:
 
 loading:
   system_prompt:
-    path: docs/minds/{{mind_name}}/system-prompt.md
+    path: outputs/minds/{{mind_name}}/system-prompt.md
     tokens: {{prompt_tokens}}
     last_updated: {{last_updated}}
 
@@ -504,7 +504,7 @@ Use `clone-loading-checklist.md` to validate successful activation:
 ```
 ⚠️ Mind '{mind_name}' not found
 
-Searched in: docs/minds/{mind_name}/
+Searched in: outputs/minds/{mind_name}/
 
 Suggestions:
 - Check spelling of mind name
@@ -517,7 +517,7 @@ Suggestions:
 ```
 ⚠️ system-prompt.md not found for {mind_name}
 
-Path checked: docs/minds/{mind_name}/system-prompt.md
+Path checked: outputs/minds/{mind_name}/system-prompt.md
 
 This mind may be incomplete. Run pipeline to generate system-prompt:
 @mind-mapper *map-mind {mind_name}
@@ -531,7 +531,7 @@ This mind may be incomplete. Run pipeline to generate system-prompt:
 Error: {parsing_error_message}
 
 The system-prompt file may be corrupted or have invalid formatting.
-Check docs/minds/{mind_name}/system-prompt.md for issues.
+Check outputs/minds/{mind_name}/system-prompt.md for issues.
 ```
 
 ### Error: Token Budget Exceeded

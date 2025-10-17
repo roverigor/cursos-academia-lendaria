@@ -505,7 +505,7 @@ print(f"   📊 Size: {output_path.stat().st_size:,} bytes")
 ```bash
 @fragment-extractor
 *task extract-fragments \
-  --source docs/minds/naval_ravikant/sources/podcast_calm_mind.txt \
+  --source outputs/minds/naval_ravikant/sources/podcast_calm_mind.txt \
   --subject-id naval_ravikant \
   --output testing/results/naval_fragments.json \
   --model claude-opus-4  # More expensive but higher quality

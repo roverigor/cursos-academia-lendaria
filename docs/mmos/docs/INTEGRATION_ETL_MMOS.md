@@ -17,7 +17,7 @@ ETL → MMOS (incorreto: ETL conhece estrutura interna do MMOS)
 **Implementação problemática em `run-collection.js:20-21`:**
 ```javascript
 // HARDCODED - viola princípio de independência
-const mindDir = path.join(__dirname, '../../docs/minds/sam_altman');
+const mindDir = path.join(__dirname, '../../outputs/minds/sam_altman');
 ```
 
 ---
@@ -100,7 +100,7 @@ downloads/: directory (estrutura por tipo)
 
 **Antes (hardcoded - ERRADO):**
 ```javascript
-const mindDir = path.join(__dirname, '../../docs/minds/sam_altman');
+const mindDir = path.join(__dirname, '../../outputs/minds/sam_altman');
 const sourcesPath = getSourcesMasterPath(mindDir);
 const outputDir = getDownloadsDir(mindDir);
 ```
@@ -136,7 +136,7 @@ execute_etl_collection:
     mode: "standard"
 
   context_vars:
-    mindDir: "docs/minds/{mind_name}"
+    mindDir: "outputs/minds/{mind_name}"
     mind_name: "sam_altman"  # from elicitation
 ```
 

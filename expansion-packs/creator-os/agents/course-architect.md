@@ -167,7 +167,7 @@ The Course Architect is a specialized pedagogical design expert responsible for 
 
 **Output Structure:**
 ```
-docs/courses/{course-slug}/
+outputs/courses/{course-slug}/
   ├── README.md                  # Course overview
   ├── course-outline.md          # Complete structure
   ├── curriculum.yaml            # Structured metadata
@@ -278,7 +278,7 @@ Agent: "Validation Results:
 
 **Step 5: Output**
 ```
-Agent: "Course saved to: docs/courses/clone-ia-express/
+Agent: "Course saved to: outputs/courses/clone-ia-express/
   - 9 lessons
   - 3 quizzes
   - 1 final project
@@ -471,7 +471,7 @@ Agent: Generating outline...
 User: Y
 
 Agent: Generating 12 lessons + 3 projects + 1 final portfolio...
-      ✅ Done! Saved to docs/courses/python-intro-data-analysis/
+      ✅ Done! Saved to outputs/courses/python-intro-data-analysis/
 ```
 
 ### Interaction 2: Expert-Led Course

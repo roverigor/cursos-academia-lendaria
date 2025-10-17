@@ -129,7 +129,7 @@ feat: expand [filename] with complete implementation
 - `expansion-packs/etl-data-collector/STATUS.md` - Current status
 - `expansion-packs/etl-data-collector/config/download-rules.yaml` - What to download
 - `expansion-packs/etl-data-collector/config/mcp-config.yaml` - MCP configurations
-- `docs/minds/jesus_cristo/sources/downloads/README.md` - Example of successful download process
+- `outputs/minds/jesus_cristo/sources/downloads/README.md` - Example of successful download process
 
 ### User Preferences:
 

@@ -55,10 +55,10 @@ Currently, 32 minds have inconsistent structure:
 
 **Command:**
 ```bash
-python3 scripts/migration/extract_metadata.py docs/minds/{mind_name}
+python3 scripts/migration/extract_metadata.py outputs/minds/{mind_name}
 ```
 
-**Generated File:** `docs/minds/{mind_name}/metadata.yaml`
+**Generated File:** `outputs/minds/{mind_name}/metadata.yaml`
 
 **Schema:**
 ```yaml
@@ -103,10 +103,10 @@ mind:
 
 **Command:**
 ```bash
-python3 scripts/migration/catalog_sources.py docs/minds/{mind_name}
+python3 scripts/migration/catalog_sources.py outputs/minds/{mind_name}
 ```
 
-**Generated File:** `docs/minds/{mind_name}/sources/sources_master.yaml`
+**Generated File:** `outputs/minds/{mind_name}/sources/sources_master.yaml`
 
 **Schema:**
 ```yaml
@@ -170,10 +170,10 @@ sources:
 
 **Command:**
 ```bash
-python3 scripts/migration/infer_progress.py docs/minds/{mind_name}
+python3 scripts/migration/infer_progress.py outputs/minds/{mind_name}
 ```
 
-**Generated File:** `docs/minds/{mind_name}/docs/pipeline_progress.yaml`
+**Generated File:** `outputs/minds/{mind_name}/docs/pipeline_progress.yaml`
 
 **Schema:**
 ```yaml
@@ -263,10 +263,10 @@ pipeline_progress:
 
 **Command:**
 ```bash
-python3 scripts/migration/init_etl_questions.py docs/minds/{mind_name}
+python3 scripts/migration/init_etl_questions.py outputs/minds/{mind_name}
 ```
 
-**Generated File:** `docs/minds/{mind_name}/kb/etl_questions.yaml`
+**Generated File:** `outputs/minds/{mind_name}/kb/etl_questions.yaml`
 
 **Schema Template:**
 ```yaml
@@ -311,7 +311,7 @@ metadata:
 
 **Command:**
 ```bash
-bash scripts/migration/version_prompts.sh docs/minds/{mind_name}
+bash scripts/migration/version_prompts.sh outputs/minds/{mind_name}
 ```
 
 **Current Structure (Inconsistent):**
@@ -365,11 +365,11 @@ system_prompts/
 **Scenario 1: Re-run extract_metadata.py**
 ```bash
 # First run
-python3 scripts/migration/extract_metadata.py docs/minds/sam_altman
+python3 scripts/migration/extract_metadata.py outputs/minds/sam_altman
 # Creates metadata.yaml
 
 # Second run (no changes)
-python3 scripts/migration/extract_metadata.py docs/minds/sam_altman
+python3 scripts/migration/extract_metadata.py outputs/minds/sam_altman
 # Detects existing metadata.yaml
 # Option A: Skip (log "already exists")
 # Option B: Update only if source files changed (compare timestamps)
@@ -382,7 +382,7 @@ python3 scripts/migration/extract_metadata.py docs/minds/sam_altman
 # Add 3 new sources to sources/ directory
 
 # Second run
-python3 scripts/migration/catalog_sources.py docs/minds/sam_altman
+python3 scripts/migration/catalog_sources.py outputs/minds/sam_altman
 # Detects existing sources_master.yaml
 # Appends 3 new sources (doesn't duplicate existing 12)
 # Preserves manual edits (priority, layer_relevance)
@@ -405,7 +405,7 @@ python3 scripts/migration/catalog_sources.py docs/minds/sam_altman
 
 **Before Migration:**
 ```
-docs/minds/sam_altman/
+outputs/minds/sam_altman/
 ├── docs/
 │   ├── README.md                 # Existing
 │   └── PRD.md                    # Existing
@@ -418,7 +418,7 @@ docs/minds/sam_altman/
 
 **After Migration:**
 ```
-docs/minds/sam_altman/
+outputs/minds/sam_altman/
 ├── metadata.yaml                 # ✅ NEW
 ├── docs/
 │   ├── README.md                 # ✅ UNCHANGED
@@ -443,13 +443,13 @@ docs/minds/sam_altman/
 **File Integrity Verification:**
 ```bash
 # Before migration
-find docs/minds/sam_altman -type f -exec md5sum {} \; > checksums_before.txt
+find outputs/minds/sam_altman -type f -exec md5sum {} \; > checksums_before.txt
 
 # Run migration
 bash scripts/migration/migrate_story_3.1.sh sam_altman
 
 # After migration
-find docs/minds/sam_altman -type f -exec md5sum {} \; > checksums_after.txt
+find outputs/minds/sam_altman -type f -exec md5sum {} \; > checksums_after.txt
 
 # Verify only NEW files (no modifications to existing)
 comm -13 <(sort checksums_before.txt) <(sort checksums_after.txt)
@@ -478,7 +478,7 @@ npm run validate:sources
 
 **validate:minds:**
 ```javascript
-// For each mind in docs/minds/
+// For each mind in outputs/minds/
 checks:
   - metadata.yaml exists ✅
   - metadata.yaml is valid YAML ✅
@@ -494,7 +494,7 @@ checks:
 
 **validate:sources:**
 ```javascript
-// For each mind in docs/minds/
+// For each mind in outputs/minds/
 checks:
   - sources_master.yaml exists ✅
   - sources_master.yaml is valid YAML ✅
@@ -656,24 +656,24 @@ echo "Log: $LOG_FILE"
 2. FOR EACH MIND (32 total):
 
    Step 1: extract_metadata.py
-   Input:  docs/minds/{mind}/docs/README.md, PRD.md
-   Output: docs/minds/{mind}/metadata.yaml
+   Input:  outputs/minds/{mind}/docs/README.md, PRD.md
+   Output: outputs/minds/{mind}/metadata.yaml
 
    Step 2: catalog_sources.py
-   Input:  docs/minds/{mind}/sources/**/*
-   Output: docs/minds/{mind}/sources/sources_master.yaml
+   Input:  outputs/minds/{mind}/sources/**/*
+   Output: outputs/minds/{mind}/sources/sources_master.yaml
 
    Step 3: infer_progress.py
-   Input:  docs/minds/{mind}/artifacts/*, docs/*, kb/*
-   Output: docs/minds/{mind}/docs/pipeline_progress.yaml
+   Input:  outputs/minds/{mind}/artifacts/*, docs/*, kb/*
+   Output: outputs/minds/{mind}/docs/pipeline_progress.yaml
 
    Step 4: init_etl_questions.py
    Input:  (none - template only)
-   Output: docs/minds/{mind}/kb/etl_questions.yaml
+   Output: outputs/minds/{mind}/kb/etl_questions.yaml
 
    Step 5: version_prompts.sh
-   Input:  docs/minds/{mind}/system_prompts/*
-   Output: docs/minds/{mind}/system_prompts/generalista/v1.0.0.md
+   Input:  outputs/minds/{mind}/system_prompts/*
+   Output: outputs/minds/{mind}/system_prompts/generalista/v1.0.0.md
                                           /specialists/*/v1.0.0.md
                                           /DEPRECATED.md
 
@@ -773,31 +773,31 @@ echo "Log: $LOG_FILE"
 
 **Test 1: extract_metadata.py**
 ```bash
-python3 scripts/migration/extract_metadata.py docs/minds/sam_altman
+python3 scripts/migration/extract_metadata.py outputs/minds/sam_altman
 # Verify: metadata.yaml created with valid schema
 ```
 
 **Test 2: catalog_sources.py**
 ```bash
-python3 scripts/migration/catalog_sources.py docs/minds/sam_altman
+python3 scripts/migration/catalog_sources.py outputs/minds/sam_altman
 # Verify: sources_master.yaml contains all 12 sources
 ```
 
 **Test 3: infer_progress.py**
 ```bash
-python3 scripts/migration/infer_progress.py docs/minds/sam_altman
+python3 scripts/migration/infer_progress.py outputs/minds/sam_altman
 # Verify: pipeline_progress.yaml shows completed phases
 ```
 
 **Test 4: init_etl_questions.py**
 ```bash
-python3 scripts/migration/init_etl_questions.py docs/minds/sam_altman
+python3 scripts/migration/init_etl_questions.py outputs/minds/sam_altman
 # Verify: kb/etl_questions.yaml created with template
 ```
 
 **Test 5: version_prompts.sh**
 ```bash
-bash scripts/migration/version_prompts.sh docs/minds/sam_altman
+bash scripts/migration/version_prompts.sh outputs/minds/sam_altman
 # Verify: system_prompts/generalista/v1.0.0.md and latest.md exist
 ```
 
@@ -822,11 +822,11 @@ bash scripts/migration/migrate_story_3.1.sh sam_altman
 **Test 8: File Integrity Check**
 ```bash
 # Before
-md5sum docs/minds/sam_altman/**/* > before.txt
+md5sum outputs/minds/sam_altman/**/* > before.txt
 # Migrate
 bash scripts/migration/migrate_story_3.1.sh sam_altman
 # After
-md5sum docs/minds/sam_altman/**/* > after.txt
+md5sum outputs/minds/sam_altman/**/* > after.txt
 # Verify: Only NEW files (no modifications to existing)
 diff before.txt after.txt
 ```
@@ -851,19 +851,19 @@ time bash scripts/migration/migrate_story_3.1.sh
 
 **Test 11: Individual Script Performance**
 ```bash
-time python3 scripts/migration/extract_metadata.py docs/minds/sam_altman
+time python3 scripts/migration/extract_metadata.py outputs/minds/sam_altman
 # Expected: <5 seconds
 
-time python3 scripts/migration/catalog_sources.py docs/minds/sam_altman
+time python3 scripts/migration/catalog_sources.py outputs/minds/sam_altman
 # Expected: <10 seconds (depends on source count)
 
-time python3 scripts/migration/infer_progress.py docs/minds/sam_altman
+time python3 scripts/migration/infer_progress.py outputs/minds/sam_altman
 # Expected: <5 seconds
 
-time python3 scripts/migration/init_etl_questions.py docs/minds/sam_altman
+time python3 scripts/migration/init_etl_questions.py outputs/minds/sam_altman
 # Expected: <2 seconds
 
-time bash scripts/migration/version_prompts.sh docs/minds/sam_altman
+time bash scripts/migration/version_prompts.sh outputs/minds/sam_altman
 # Expected: <3 seconds
 ```
 
@@ -875,7 +875,7 @@ time bash scripts/migration/version_prompts.sh docs/minds/sam_altman
 
 - ✅ Python 3.8+ installed
 - ✅ PyYAML library (`pip install pyyaml`)
-- ✅ 32 minds exist in `docs/minds/`
+- ✅ 32 minds exist in `outputs/minds/`
 - ✅ Git repository initialized
 
 ### Blocked By
@@ -942,7 +942,7 @@ time bash scripts/migration/version_prompts.sh docs/minds/sam_altman
 git reset --hard HEAD~1
 
 # Or cherry-pick only successful minds
-git checkout HEAD -- docs/minds/{failed_mind}
+git checkout HEAD -- outputs/minds/{failed_mind}
 ```
 
 **Safe Rollback Because:**
@@ -1006,11 +1006,11 @@ git checkout HEAD -- docs/minds/{failed_mind}
 - scripts/migration/version_prompts.sh
 - scripts/migration/migrate_story_3.1.sh
 - scripts/migration/validate_migration.sh
-- docs/minds/*/metadata.yaml (32 files)
-- docs/minds/*/sources/sources_master.yaml (32 files)
-- docs/minds/*/docs/pipeline_progress.yaml (32 files)
-- docs/minds/*/kb/etl_questions.yaml (32 files)
-- docs/minds/*/system_prompts/generalista/v1.0.0.md (32 files)
+- outputs/minds/*/metadata.yaml (32 files)
+- outputs/minds/*/sources/sources_master.yaml (32 files)
+- outputs/minds/*/docs/pipeline_progress.yaml (32 files)
+- outputs/minds/*/kb/etl_questions.yaml (32 files)
+- outputs/minds/*/system_prompts/generalista/v1.0.0.md (32 files)
 - docs/mmos/architecture/taxonomy-system.md (updated)
 - docs/mmos/guides/mind-onboarding.md (updated)
 - README.md (updated)

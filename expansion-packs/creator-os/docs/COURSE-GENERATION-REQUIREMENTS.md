@@ -280,7 +280,7 @@ Marque os estilos que devem ser suportados:
 [ ] Opção D: Outra estrutura (descreva abaixo)
 
 [X] Opção do Alan
-/docs/courses/{course-slug}/
+/outputs/courses/{course-slug}/
   |── course-outline.md          # Estrutura completa
   ├── README.md                  # Visão geral do curso
   ├── PRD.md                     # PRD Completo

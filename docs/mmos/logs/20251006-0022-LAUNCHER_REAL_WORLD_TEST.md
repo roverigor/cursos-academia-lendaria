@@ -32,7 +32,7 @@
 
 **Comando:**
 ```bash
-mkdir -p docs/minds/jesus_cristo/{sources,artifacts,docs/logs,kb,system_prompts,metadata}
+mkdir -p outputs/minds/jesus_cristo/{sources,artifacts,docs/logs,kb,system_prompts,metadata}
 ```
 
 **Resultado:** ✅ Estrutura criada conforme ACS v3.0

@@ -387,11 +387,11 @@ generalista.md (missing entity prefix)
 
 ```
 ✅ CORRECT:
-docs/minds/sam_altman/
-docs/minds/sam_altman/system_prompts/
-docs/minds/sam_altman/artifacts/
-docs/minds/sam_altman/sources/
-docs/minds/sam_altman/kb/
+outputs/minds/sam_altman/
+outputs/minds/sam_altman/system_prompts/
+outputs/minds/sam_altman/artifacts/
+outputs/minds/sam_altman/sources/
+outputs/minds/sam_altman/kb/
 docs/mmos/pipeline/
 expansion-packs/mmos-mind-mapper/
 
@@ -455,7 +455,7 @@ mind:
 #### A. Mind Schema
 
 ```yaml
-# File: docs/minds/{mind_id}/metadata.yaml
+# File: outputs/minds/{mind_id}/metadata.yaml
 mind:
   id: "{slug}"                          # sam_altman
   display_name: "{Full Name}"           # Sam Altman
@@ -478,7 +478,7 @@ mind:
 #### B. Source Schema
 
 ```yaml
-# File: docs/minds/{mind_id}/sources/sources_master.yaml
+# File: outputs/minds/{mind_id}/sources/sources_master.yaml
 sources:
   - id: "{unique_id}"
     mind_id: "{mind_slug}"
@@ -503,7 +503,7 @@ sources:
 #### C. Artifact Schema
 
 ```yaml
-# File: docs/minds/{mind_id}/artifacts/{artifact_name}.yaml
+# File: outputs/minds/{mind_id}/artifacts/{artifact_name}.yaml
 artifact:
   id: "{unique_id}"
   mind_id: "{mind_slug}"
@@ -529,7 +529,7 @@ artifact:
 #### D. System Prompt Schema
 
 ```yaml
-# File: docs/minds/{mind_id}/system_prompts/{timestamp}-v{version}-{type}.md
+# File: outputs/minds/{mind_id}/system_prompts/{timestamp}-v{version}-{type}.md
 ---
 metadata:
   mind_id: "{mind_slug}"
@@ -550,7 +550,7 @@ metadata:
 #### E. ETL Question Schema
 
 ```yaml
-# File: docs/minds/{mind_id}/kb/etl_questions.yaml
+# File: outputs/minds/{mind_id}/kb/etl_questions.yaml
 questions:
   - id: "{unique_id}"
     mind_id: "{mind_slug}"
@@ -572,7 +572,7 @@ questions:
 #### F. Pipeline Progress Schema
 
 ```yaml
-# File: docs/minds/{mind_id}/metadata/pipeline_progress.yaml
+# File: outputs/minds/{mind_id}/metadata/pipeline_progress.yaml
 pipeline:
   mind_id: "{mind_slug}"
   current_phase: "{viability|research|analysis|synthesis|implementation|testing}"
@@ -624,7 +624,7 @@ pipeline:
 ### 5.1 Standard Mind Directory
 
 ```
-docs/minds/{mind_id}/
+outputs/minds/{mind_id}/
 ├── metadata.yaml                      # Mind metadata (NEW)
 ├── README.md                          # Mind overview
 │

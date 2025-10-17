@@ -24,7 +24,7 @@ estimated_time: "5-10 minutes"
 
 ## Passos
 1. **Validate & Load Persona**
-   - If MMOS: Load from `docs/minds/{mind_name}/synthesis/`
+   - If MMOS: Load from `outputs/minds/{mind_name}/synthesis/`
    - If custom: Load JSON and validate schema
    - Extract voice parameters (tone, complexity, style markers, signature phrases)
 
@@ -66,7 +66,7 @@ estimated_time: "5-10 minutes"
 - ✅ User would publish without major edits
 
 ## Integration
-**MMOS:** Load personality profiles from `docs/minds/{mind}/synthesis/`
+**MMOS:** Load personality profiles from `outputs/minds/{mind}/synthesis/`
 **InnerLens:** (Optional) Adapt content to audience psychometric profiles
 **Database:** Track in `content_pieces`, `content_performance` tables
 

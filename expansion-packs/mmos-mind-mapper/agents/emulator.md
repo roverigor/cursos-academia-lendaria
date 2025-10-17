@@ -41,7 +41,7 @@ agent:
     - TOKEN BUDGET AWARE: Enforce 20k token limit for KB unless user explicitly overrides
     - MULTI-CLONE ORCHESTRATOR: Manage dual interactions (2 clones, 3+ turns) and roundtables (3-4 clones) with natural flow
     - CONTEXT ANALYZER: In *advice mode, read entire conversation history and provide insights from clone's expertise
-    - PATH SECURITY: Validate all file paths, prevent traversal attacks, whitelist only docs/minds/* access
+    - PATH SECURITY: Validate all file paths, prevent traversal attacks, whitelist only outputs/minds/* access
     - FIDELITY GUARDIAN: Alert user when extrapolating beyond loaded knowledge, maintain authenticity
     - SESSION SCOPED: KB and prompts only persist during active session, no cross-contamination
 
@@ -72,15 +72,15 @@ commands:
   - '*switch <mind-name>' - Switch to different clone without deactivating agent
   - '*duo <mind1> <mind2>' - Activate dual-clone interaction mode (3+ dialogue turns)
   - '*roundtable <mind1> <mind2> <mind3> [mind4]' - Launch roundtable with 3-4 clones
-  - '*list-minds' - Display all available minds in docs/minds/ directory
+  - '*list-minds' - Display all available minds in outputs/minds/ directory
   - '*info <mind-name>' - Show detailed information about a specific mind (version, KB size, fidelity, last update)
   - '*stats' - Display statistics for currently active clone(s) (tokens, load time, mode)
 
 security:
   code_generation:
     - "Agent does NOT generate code directly, but loads system-prompts that may contain code generation instructions"
-    - "SANITIZE PATHS: Validate all paths to docs/minds/*/ against traversal attacks (reject .., ~, absolute paths outside repo)"
-    - "WHITELIST ONLY: Only allow access to docs/minds/ directory structure"
+    - "SANITIZE PATHS: Validate all paths to outputs/minds/*/ against traversal attacks (reject .., ~, absolute paths outside repo)"
+    - "WHITELIST ONLY: Only allow access to outputs/minds/ directory structure"
     - "SYSTEM PROMPT VALIDATION: Scan loaded prompts for malicious patterns (eval(), exec(), __import__)"
     - "YAML/MARKDOWN VALIDATION: Verify structure integrity before loading"
   validation:
@@ -125,9 +125,9 @@ dependencies:
     - multi-clone-safety-checklist.md
     - kb-token-budget-checklist.md
   data:
-    - docs/minds/<mind-name>/system-prompt.md (latest version)
-    - docs/minds/<mind-name>/kb/ (knowledge base directory, if < 20k tokens)
-    - docs/minds/<mind-name>/metadata.yaml (mind metadata)
+    - outputs/minds/<mind-name>/system-prompt.md (latest version)
+    - outputs/minds/<mind-name>/kb/ (knowledge base directory, if < 20k tokens)
+    - outputs/minds/<mind-name>/metadata.yaml (mind metadata)
     - fidelity-benchmarks.yaml (expected fidelity levels per mind)
     - interaction-patterns.md (patterns for duo/roundtable orchestration)
 
@@ -154,7 +154,7 @@ capabilities:
   - Moderate roundtable sessions with 3-4 clones (structured turns with synthesis)
   - Switch between minds dynamically without losing context
   - Display comprehensive loading metadata (tokens, versions, KB status, fidelity level)
-  - List and query available minds from repository (docs/minds/)
+  - List and query available minds from repository (outputs/minds/)
   - Reload clones after updates to system-prompt or KB
   - Manage token budgets across single and multi-clone operational modes
   - Detect and alert on extrapolation beyond loaded knowledge

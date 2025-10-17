@@ -19,8 +19,8 @@
 
 ### Current State (Path-Based Loading)
 The **emulator agent** (created in expansion pack creation workflow) currently:
-- ✅ Loads system-prompts from `docs/minds/<mind-name>/system-prompt.md`
-- ✅ Loads KB from `docs/minds/<mind-name>/kb/` directory
+- ✅ Loads system-prompts from `outputs/minds/<mind-name>/system-prompt.md`
+- ✅ Loads KB from `outputs/minds/<mind-name>/kb/` directory
 - ✅ Validates paths against traversal attacks (`.`, `..`, `~`)
 - ✅ Enforces 20k token limit on KB
 - ❌ **Security Risk**: Still vulnerable to sophisticated path manipulations
@@ -246,8 +246,8 @@ Performance:
 
 🪞 Mirror → Nassim Taleb loaded (path-based)
 
-📂 System Prompt: docs/minds/nassim_taleb/system-prompt.md
-📂 KB: docs/minds/nassim_taleb/kb/ (47 files)
+📂 System Prompt: outputs/minds/nassim_taleb/system-prompt.md
+📂 KB: outputs/minds/nassim_taleb/kb/ (47 files)
 ⚠️  Limited features: No versioning, analytics, or caching
 
 Type *help for available commands (some may be disabled)

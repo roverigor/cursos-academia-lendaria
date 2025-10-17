@@ -105,7 +105,7 @@ integration:
   mmos:
     trigger: "Post research-collection task"
     context-detection: "Auto-detect from sources_path containing '/minds/'"
-    output-location: "docs/minds/{mind_name}/sources/downloads/"
+    output-location: "outputs/minds/{mind_name}/sources/downloads/"
     next-phase: "Cognitive Analysis"
 
 estimated-duration: "45-60 minutes for ~50 sources"
@@ -214,7 +214,7 @@ console.log(`✓ Loaded ${sources.length} sources`);
 Please provide the path to your sources list:
 
 1. Use MMOS sources_master.yaml (default for MMOS integration)
-   Path: docs/minds/{mind_name}/sources/sources_master.yaml
+   Path: outputs/minds/{mind_name}/sources/sources_master.yaml
 
 2. Use custom sources file
    Path: [enter custom path]
@@ -238,7 +238,7 @@ Enter choice (1-3):
 ```
 ⚙️  Collection Configuration
 
-Found sources list: docs/minds/sam_altman/sources/sources_master.yaml
+Found sources list: outputs/minds/sam_altman/sources/sources_master.yaml
 Total sources: 47 (Tier 1: 15, Tier 2: 20, Tier 3: 12)
 
 1. Which sources do you want to collect?
@@ -252,7 +252,7 @@ Total sources: 47 (Tier 1: 15, Tier 2: 20, Tier 3: 12)
    [ ] Careful - One at a time, validate each (~90 mins)
 
 3. Save location:
-   [auto-detect: docs/minds/sam_altman/sources/downloads/]
+   [auto-detect: outputs/minds/sam_altman/sources/downloads/]
    Or enter custom path: ___________
 
 Proceed with these settings? (yes/no/customize):
@@ -485,7 +485,7 @@ Next Steps:
 ```yaml
 collection_summary:
   timestamp: 2025-10-06T18:45:00Z
-  sources_file: docs/minds/sam_altman/sources/sources_master.yaml
+  sources_file: outputs/minds/sam_altman/sources/sources_master.yaml
   total_sources: 47
   successful: 43
   failed: 4
@@ -558,7 +558,7 @@ collection_summary:
 
 ## Configuration
 
-- **Sources:** docs/minds/sam_altman/sources/sources_master.yaml
+- **Sources:** outputs/minds/sam_altman/sources/sources_master.yaml
 - **Tiers:** All (1-3)
 - **Concurrency:** 4 per type
 - **Retry Strategy:** 3 attempts with exponential backoff
@@ -623,7 +623,7 @@ if (isMindPath) {
   const mindName = extractMindName(config.sourcesPath);
 
   // Use MMOS directory structure
-  config.outputDir = `docs/minds/${mindName}/sources/downloads/`;
+  config.outputDir = `outputs/minds/${mindName}/sources/downloads/`;
 
   // Update MMOS collection status
   await updateMMOSCollectionStatus(mindName, summary);
@@ -693,10 +693,10 @@ quality:
 
 ```bash
 # Verify path
-ls -la docs/minds/sam_altman/sources/sources_master.yaml
+ls -la outputs/minds/sam_altman/sources/sources_master.yaml
 
 # Or use absolute path
-/Users/alan/Code/mmos/docs/minds/sam_altman/sources/sources_master.yaml
+/Users/alan/Code/mmos/outputs/minds/sam_altman/sources/sources_master.yaml
 ```
 
 ### "Rate limited by API"

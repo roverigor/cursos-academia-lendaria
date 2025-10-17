@@ -56,12 +56,12 @@ This is a **comprehensive, research-driven framework** for creating high-quality
 # 1. Execute Pre-Creation Research
 Open: .aios-core/workflows/course-research-framework.md
 Follow: Phase 1 (5 searches)
-Document in: docs/courses/[course-name]/PRE-CREATION-RESEARCH.md
+Document in: outputs/courses/[course-name]/PRE-CREATION-RESEARCH.md
 
 # 2. Create Course Brief
 Copy: expansion-packs/creator-os/templates/course-brief.md
 Fill out: All sections (target audience, outcomes, structure, etc.)
-Save as: docs/courses/[course-name]/COURSE-BRIEF.md
+Save as: outputs/courses/[course-name]/COURSE-BRIEF.md
 
 # 3. Make Go/No-Go Decision
 Criteria: Market demand + differentiation + feasibility
@@ -72,17 +72,17 @@ Decision: GO / PIVOT / NO-GO
 ```bash
 # 1. Create Curriculum Outline
 Structure: modules → lessons → activities
-Document: docs/courses/[course-name]/curriculum.yaml
+Document: outputs/courses/[course-name]/curriculum.yaml
 
 # 2. Write Lessons
 Per lesson: Metaphor → Explain → Demonstrate → Practice → Checkpoint
 Voice: Match instructor's natural speaking style
-Save: docs/courses/[course-name]/lessons/[X.Y-lesson-name].md
+Save: outputs/courses/[course-name]/lessons/[X.Y-lesson-name].md
 
 # 3. Mid-Creation Research Checkpoint (after 50% complete)
 Open: .aios-core/workflows/course-research-framework.md
 Follow: Phase 2 (technical validation, tool updates)
-Document: docs/courses/[course-name]/MID-CREATION-RESEARCH.md
+Document: outputs/courses/[course-name]/MID-CREATION-RESEARCH.md
 
 # 4. Create Assessments & Resources
 Assessments: Quizzes + final project
@@ -94,12 +94,12 @@ Resources: Setup guides, templates, troubleshooting
 # 1. Post-Creation Research
 Open: .aios-core/workflows/course-research-framework.md
 Follow: Phase 3 (engagement, accessibility, pricing)
-Document: docs/courses/[course-name]/POST-CREATION-RESEARCH.md
+Document: outputs/courses/[course-name]/POST-CREATION-RESEARCH.md
 
 # 2. Execute QA
 Open: .aios-core/checklists/course-qa-checklist.md
 Evaluate: All 5 dimensions (pedagogy, voice, technical, assessment, commercial)
-Generate: docs/courses/[course-name]/QA-REPORT.md (use template)
+Generate: outputs/courses/[course-name]/QA-REPORT.md (use template)
 
 # 3. Fix Issues
 Priority: Critical → High → Medium → Low
@@ -195,8 +195,8 @@ A course is considered **"Done"** when:
 - Provide template message for students to post in community
 
 **Files to Reference:**
-- `docs/courses/vibecoding/README.md` (lines 186-206)
-- `docs/courses/vibecoding/lessons/1.1-*.md` (Course Buddy section)
+- `outputs/courses/vibecoding/README.md` (lines 186-206)
+- `outputs/courses/vibecoding/lessons/1.1-*.md` (Course Buddy section)
 
 ---
 
@@ -209,7 +209,7 @@ A course is considered **"Done"** when:
 - Include LinkedIn share template
 
 **Files to Reference:**
-- `docs/courses/vibecoding/README.md` (lines 210-256)
+- `outputs/courses/vibecoding/README.md` (lines 210-256)
 
 ---
 
@@ -222,7 +222,7 @@ A course is considered **"Done"** when:
 - Explain psychological benefit (utilize dead time)
 
 **Files to Reference:**
-- `docs/courses/vibecoding/README.md` (lines 171-182)
+- `outputs/courses/vibecoding/README.md` (lines 171-182)
 
 ---
 
@@ -235,8 +235,8 @@ A course is considered **"Done"** when:
 - Show knowledge is transferable
 
 **Files to Reference:**
-- `docs/courses/vibecoding/README.md` (lines 72-86)
-- `docs/courses/vibecoding/lessons/2.1-*.md` (Alternative Tools section)
+- `outputs/courses/vibecoding/README.md` (lines 72-86)
+- `outputs/courses/vibecoding/lessons/2.1-*.md` (Alternative Tools section)
 
 ---
 
@@ -290,7 +290,7 @@ A course is considered **"Done"** when:
 ```bash
 Open: expansion-packs/creator-os/templates/course-retrospective.md
 Document: What worked, what didn't, lessons learned
-Create: docs/courses/[course-name]/RETROSPECTIVE.md
+Create: outputs/courses/[course-name]/RETROSPECTIVE.md
 ```
 
 **Step 3: Update Framework**
@@ -432,7 +432,7 @@ Create: docs/courses/[course-name]/RETROSPECTIVE.md
 └── docs/
     └── COURSE-CREATION-FRAMEWORK.md      # This file
 
-docs/courses/[course-name]/
+outputs/courses/[course-name]/
 ├── COURSE-BRIEF.md
 ├── PRE-CREATION-RESEARCH.md
 ├── MID-CREATION-RESEARCH.md
@@ -459,7 +459,7 @@ docs/courses/[course-name]/
 
 ```bash
 # Start new course
-cp expansion-packs/creator-os/templates/course-brief.md docs/courses/[name]/COURSE-BRIEF.md
+cp expansion-packs/creator-os/templates/course-brief.md outputs/courses/[name]/COURSE-BRIEF.md
 
 # Run research
 open .aios-core/workflows/course-research-framework.md
@@ -468,10 +468,10 @@ open .aios-core/workflows/course-research-framework.md
 open .aios-core/checklists/course-qa-checklist.md
 
 # Generate QA Report
-cp expansion-packs/creator-os/templates/course-qa-report.md docs/courses/[name]/QA-REPORT.md
+cp expansion-packs/creator-os/templates/course-qa-report.md outputs/courses/[name]/QA-REPORT.md
 
 # Post-launch retrospective
-cp expansion-packs/creator-os/templates/course-retrospective.md docs/courses/[name]/RETROSPECTIVE.md
+cp expansion-packs/creator-os/templates/course-retrospective.md outputs/courses/[name]/RETROSPECTIVE.md
 ```
 
 ---
@@ -480,7 +480,7 @@ cp expansion-packs/creator-os/templates/course-retrospective.md docs/courses/[na
 
 **Questions?**
 - See specific workflow/checklist documentation
-- Review Vibecoding case study in `docs/courses/vibecoding/`
+- Review Vibecoding case study in `outputs/courses/vibecoding/`
 - Check retrospectives from past courses
 
 **Found a Better Way?**

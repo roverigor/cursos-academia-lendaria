@@ -581,7 +581,7 @@ RegressionTester → regression-test.yaml
   - [x] Add Click framework integration
 
 - [x] **Task 7: Path Configuration Fix**
-  - [x] Update all paths from `minds/` to `docs/minds/`
+  - [x] Update all paths from `minds/` to `outputs/minds/`
   - [x] Update cli.py, rollback_manager.py, plan_generator.py, workflow_executor.py
 
 - [x] **Task 8: Refactor to Git-Based Backup**
@@ -628,7 +628,7 @@ RegressionTester → regression-test.yaml
 1. **Initial Implementation** (v1.0)
    - All 6 components implemented successfully
    - All ACs passing in dry-run mode
-   - Issue found: Path configuration incorrect (minds/ vs docs/minds/)
+   - Issue found: Path configuration incorrect (minds/ vs outputs/minds/)
    - Issue found: Infinite loop risk in dependency resolution
    - Fixes applied immediately
 
@@ -672,7 +672,7 @@ RegressionTester → regression-test.yaml
 
 **Modified:**
 - `docs/mmos/docs/stories/story-1.3-brownfield-assistant.md` (this file)
-- `docs/minds/elon_musk/sources/sources_master.yaml` (created during test)
+- `outputs/minds/elon_musk/sources/sources_master.yaml` (created during test)
 
 **Total:** 8 Python modules (1,629 LOC), 6 YAML logs, 2 documentation files
 
@@ -721,7 +721,7 @@ RegressionTester → regression-test.yaml
 | Rollback | <2min | <1s | ✅ EXCEEDED |
 
 ### Issues Found
-1. ❌ **Path Configuration** - Fixed in v1.0 (docs/minds/ vs minds/)
+1. ❌ **Path Configuration** - Fixed in v1.0 (outputs/minds/ vs minds/)
 2. ❌ **Infinite Loop Risk** - Fixed in v1.0 (dependency resolution)
 3. ❌ **Manual Backup Anti-pattern** - Fixed in v1.1 (git-based rollback)
 

@@ -220,8 +220,8 @@ output_structure:
 integration_points:
   mmos_mind_mapper:
     trigger: "Post research-collection.md task"
-    input: "docs/minds/{mind_name}/sources/sources_master.yaml"
-    output: "docs/minds/{mind_name}/sources/downloads/, processed/"
+    input: "outputs/minds/{mind_name}/sources/sources_master.yaml"
+    output: "outputs/minds/{mind_name}/sources/downloads/, processed/"
 
   standalone:
     input: "sources.yaml or sources.json"

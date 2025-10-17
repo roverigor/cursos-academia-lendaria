@@ -94,7 +94,7 @@ Coleção de personalidades mapeadas, incluindo:
 - **Técnicos**: Andrej Karpathy, Brad Frost
 - **E mais...**
 
-📚 [Catálogo de Clones](docs/minds/README.md) | [Status dos Clones](docs/minds/CLONES_STATUS.md)
+📚 [Catálogo de Clones](outputs/minds/README.md) | [Status dos Clones](outputs/minds/CLONES_STATUS.md)
 
 ---
 
@@ -111,18 +111,20 @@ mente_lendaria/
 │   ├── utils/                  # Utilitários JavaScript
 │   └── user-guide.md           # Guia do usuário AIOS
 │
+├── 📂 outputs/                 # Artefatos gerados
+│   ├── courses/                # Cursos gerados (CreatorOS)
+│   └── minds/                  # Clones de personalidades
+│       ├── [nome-clone]/       # Estrutura individual de cada clone
+│       │   ├── docs/           # PRD, README
+│       │   ├── sources/        # Material fonte
+│       │   ├── analysis/       # Análises de personalidade
+│       │   ├── kb/             # Knowledge base
+│       │   ├── system-prompts/ # System prompts versionados
+│       │   └── specialists/    # Clones especializados
+│       ├── README.md           # Guia de boas práticas
+│       └── catalog.md          # Catálogo completo
+│
 ├── 📂 docs/                    # Documentação principal
-│   ├── minds/                  # Clones de personalidades
-│   │   ├── [nome-clone]/       # Estrutura individual de cada clone
-│   │   │   ├── docs/           # PRD, README
-│   │   │   ├── sources/        # Material fonte
-│   │   │   ├── analysis/       # Análises de personalidade
-│   │   │   ├── kb/             # Knowledge base
-│   │   │   ├── system-prompts/ # System prompts versionados
-│   │   │   └── specialists/    # Clones especializados
-│   │   ├── README.md           # Guia de boas práticas
-│   │   └── catalog.md          # Catálogo completo
-│   │
 │   └── mmos/                   # Mind Mapper OS v3.0
 │       ├── README.md           # Visão geral AIOS-first
 │       ├── prompts.yaml        # Catálogo único de prompts
@@ -302,7 +304,7 @@ Assistente para aplicar MMOS a clones existentes:
 - **[AIOS User Guide](.aios-core/user-guide.md)** - Como usar o framework AIOS
 - **[AIOS Working in Brownfield](.aios-core/working-in-the-brownfield.md)** - Trabalhar com projetos existentes
 - **[MMOS README](docs/mmos/README.md)** - Visão geral do Mind Mapper OS
-- **[Minds README](docs/minds/README.md)** - Boas práticas para clones
+- **[Minds README](outputs/minds/README.md)** - Boas práticas para clones
 
 ### Documentação MMOS
 
@@ -398,7 +400,7 @@ echo "# Log Title" > docs/mmos/logs/${timestamp}-NAME.md
 
 # Validar estrutura mínima de mind
 git rev-parse --show-toplevel
-ls docs/minds/mind_name/{sources,artifacts,kb,docs,system_prompts}
+ls outputs/minds/mind_name/{sources,artifacts,kb,docs,system_prompts}
 
 # Criar estrutura de novo mind
 cd docs/mmos/scripts/universal

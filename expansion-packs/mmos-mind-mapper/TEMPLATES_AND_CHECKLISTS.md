@@ -318,7 +318,7 @@ Located in: `expansion-packs/mmos-mind-mapper/checklists/`
 
 - `/expansion-packs/mmos-mind-mapper/README.md` - Expansion pack scripts and tasks
 - `/docs/mmos/` - MMOS outputs (minds, reports, benchmarks, validations)
-- `/docs/minds/` - Individual mind outputs (sources, analysis, synthesis, system-prompts)
+- `/outputs/minds/` - Individual mind outputs (sources, analysis, synthesis, system-prompts)
 
 ---
 

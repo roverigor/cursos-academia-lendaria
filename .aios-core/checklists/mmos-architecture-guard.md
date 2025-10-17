@@ -2,7 +2,7 @@
 
 **Version:** 1.0
 **Purpose:** Prevent architectural violations in MMOS file placement
-**When to use:** Before creating ANY new file in docs/mmos/ or docs/minds/
+**When to use:** Before creating ANY new file in docs/mmos/ or outputs/minds/
 
 ---
 
@@ -11,7 +11,7 @@
 ### Question 1: What type of content is this?
 
 - [ ] **Mind-specific content** (validation, migration, analysis for ONE mind)
-  - ✅ Action: Use `docs/minds/{slug}/docs/` or `docs/minds/{slug}/logs/`
+  - ✅ Action: Use `outputs/minds/{slug}/docs/` or `outputs/minds/{slug}/logs/`
   - ❌ NEVER use `docs/mmos/validations/` or `docs/mmos/migrations/`
 
 - [ ] **System-level content** (reports, epics, architecture about MMOS itself)
@@ -28,7 +28,7 @@
 
 ```
 Is this about a SPECIFIC mind (name appears in content)?
-├─ YES → docs/minds/{slug}/
+├─ YES → outputs/minds/{slug}/
 │   ├─ Pipeline output? → analysis/, synthesis/, implementation/
 │   ├─ Process doc? → docs/
 │   └─ Execution log? → logs/
@@ -48,17 +48,17 @@ Is this about a SPECIFIC mind (name appears in content)?
 
 - [ ] ❌ `docs/mmos/validations/{mind_name}/`
   - **Why:** Validations are mind-specific
-  - **Correct:** `docs/minds/{mind_name}/docs/validation-*.md`
+  - **Correct:** `outputs/minds/{mind_name}/docs/validation-*.md`
 
 - [ ] ❌ `docs/mmos/migrations/{mind_name}/`
   - **Why:** Migrations are mind-specific
-  - **Correct:** `docs/minds/{mind_name}/docs/migration-*.md`
+  - **Correct:** `outputs/minds/{mind_name}/docs/migration-*.md`
 
 - [ ] ❌ `expansion-packs/mmos-mind-mapper/benchmarks/`
   - **Why:** Benchmarks are outputs, not scripts
   - **Correct:** `docs/mmos/qa/benchmarks/`
 
-- [ ] ❌ `docs/minds/{slug}/MMOS_PROCESS.md`
+- [ ] ❌ `outputs/minds/{slug}/MMOS_PROCESS.md`
   - **Why:** Process docs are system-level
   - **Correct:** `docs/mmos/docs/`
 
@@ -79,7 +79,7 @@ stories/          # MMOS development stories
 taxonomy/         # System taxonomy
 ```
 
-### ✅ docs/minds/{slug}/ (Individual Mind)
+### ✅ outputs/minds/{slug}/ (Individual Mind)
 ```
 sources/          # Collected materials
 analysis/         # Phase 3 outputs
@@ -114,7 +114,7 @@ docs/mmos/validations/pedro-valerio-checklist.md
 
 **✅ Correct:**
 ```
-docs/minds/pedro_valerio/docs/validation-checklist.md
+outputs/minds/pedro_valerio/docs/validation-checklist.md
 ```
 
 ---
@@ -128,7 +128,7 @@ docs/mmos/migrations/joao-lozano-progress.md
 
 **✅ Correct:**
 ```
-docs/minds/joao_lozano/docs/migration-progress.md
+outputs/minds/joao_lozano/docs/migration-progress.md
 ```
 
 ---
@@ -152,7 +152,7 @@ docs/mmos/qa/benchmarks/debate.yaml
 Before committing, verify:
 
 - [ ] No mind-specific folders in `docs/mmos/`
-- [ ] No process docs in `docs/minds/{slug}/` root (use `docs/` subfolder)
+- [ ] No process docs in `outputs/minds/{slug}/` root (use `docs/` subfolder)
 - [ ] No output files in `expansion-packs/`
 - [ ] Path follows allowed structure above
 - [ ] File naming convention followed (kebab-case, descriptive)

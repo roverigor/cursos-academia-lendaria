@@ -83,12 +83,12 @@ docs/
 ### Decision Rule:
 
 **"Is this about a SPECIFIC mind?"**
-- YES → `docs/minds/{slug}/docs/` or `docs/minds/{slug}/logs/`
+- YES → `outputs/minds/{slug}/docs/` or `outputs/minds/{slug}/logs/`
 - NO → Is it a script?
   - YES → `expansion-packs/mmos-mind-mapper/`
   - NO → `docs/mmos/{appropriate-folder}/`
 
-### docs/minds/{slug}/ Structure:
+### outputs/minds/{slug}/ Structure:
 ```
 sources/          # Collected materials
 analysis/         # Pipeline outputs
@@ -111,8 +111,8 @@ qa/benchmarks/    # Cross-mind benchmarks
 ```
 
 ### ❌ NEVER:
-- Create `docs/mmos/validations/{mind}/` → Use `docs/minds/{mind}/docs/`
-- Create `docs/mmos/migrations/{mind}/` → Use `docs/minds/{mind}/docs/`
+- Create `docs/mmos/validations/{mind}/` → Use `outputs/minds/{mind}/docs/`
+- Create `docs/mmos/migrations/{mind}/` → Use `outputs/minds/{mind}/docs/`
 - Put outputs in `expansion-packs/` → Use `docs/mmos/`
 
 **Enforcement:** Pre-commit hook (`.aios-core/hooks/pre-commit-mmos-guard.sh`)

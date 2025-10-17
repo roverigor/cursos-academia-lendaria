@@ -28,9 +28,9 @@ inputs:
     default: true
 
 outputs:
-  - path: "docs/minds/{mind_name}/brownfield/update-plan.yaml"
+  - path: "outputs/minds/{mind_name}/brownfield/update-plan.yaml"
     description: Brownfield update plan with safety checkpoints
-  - path: "docs/minds/{mind_name}/brownfield/rollback/"
+  - path: "outputs/minds/{mind_name}/brownfield/rollback/"
     description: Rollback snapshots for safe recovery
 
 dependencies:

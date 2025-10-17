@@ -245,9 +245,9 @@ integration:
     enabled: true
     description: "Load instructor personas for Expert-Led courses"
     persona_loading:
-      - path: "docs/minds/{mind_name}/synthesis/personality-profile.json"
+      - path: "outputs/minds/{mind_name}/synthesis/personality-profile.json"
         extract: "Voice parameters, communication style, thinking patterns"
-      - path: "docs/minds/{mind_name}/synthesis/system-prompt-generalista.md"
+      - path: "outputs/minds/{mind_name}/synthesis/system-prompt-generalista.md"
         extract: "Signature phrases, example types, instructional style"
     fidelity_target: "≥ 90%"
 
@@ -273,7 +273,7 @@ security:
     - "Human review required at outline and validation stages"
     - "Flag issues clearly with regeneration options"
   output:
-    - "Save courses to docs/courses/{course-slug}/"
+    - "Save courses to outputs/courses/{course-slug}/"
     - "Log to database (courses, lessons, assessments tables)"
     - "Provide clear next steps for user"
 

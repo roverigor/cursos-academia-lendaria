@@ -6,7 +6,7 @@ Conduzir discovery, priorização e coleta de fontes.
 purpose: "Gerar discovery_report, priority_matrix e acionar ETL para coleta"
 prerequisites:
   - Viability = GO/CAUTION
-  - Estrutura `docs/minds/{mind}` criada
+  - Estrutura `outputs/minds/{mind}` criada
 interactive: true
 ```
 

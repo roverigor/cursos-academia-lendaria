@@ -104,7 +104,7 @@ context_summary:
     pending: ["Layer 6 validation", "Layer 7 validation"]
 
   output_destination:
-    path: "docs/minds/sam_altman/artifacts/core_obsessions.yaml"
+    path: "outputs/minds/sam_altman/artifacts/core_obsessions.yaml"
     suggested_filename: "20251012-1430-core-obsessions.yaml"
 ```
 
@@ -123,37 +123,37 @@ context_summary:
 ```yaml
 output_paths:
   viability:
-    - "docs/minds/{mind}/docs/logs/{timestamp}-viability.yaml"
-    - "docs/minds/{mind}/docs/logs/{timestamp}-icp_match.yaml"
-    - "docs/minds/{mind}/docs/PRD.md"
+    - "outputs/minds/{mind}/docs/logs/{timestamp}-viability.yaml"
+    - "outputs/minds/{mind}/docs/logs/{timestamp}-icp_match.yaml"
+    - "outputs/minds/{mind}/docs/PRD.md"
 
   research:
-    - "docs/minds/{mind}/sources/sources_master.yaml"
-    - "docs/minds/{mind}/metadata/temporal_context.yaml"
-    - "docs/minds/{mind}/kb/qa_dataset_{topic}.jsonl"
+    - "outputs/minds/{mind}/sources/sources_master.yaml"
+    - "outputs/minds/{mind}/metadata/temporal_context.yaml"
+    - "outputs/minds/{mind}/kb/qa_dataset_{topic}.jsonl"
 
   analysis:
-    - "docs/minds/{mind}/artifacts/quotes_database.yaml" (Layer 1)
-    - "docs/minds/{mind}/artifacts/writing_style.md" (Layer 2)
-    - "docs/minds/{mind}/artifacts/behavioral_patterns.md" (Layer 3)
-    - "docs/minds/{mind}/artifacts/values_hierarchy.yaml" (Layer 4)
-    - "docs/minds/{mind}/artifacts/beliefs_core.yaml" (Layer 5)
-    - "docs/minds/{mind}/artifacts/mental_models.md" (Layer 6)
-    - "docs/minds/{mind}/artifacts/unique_algorithm.yaml" (Layer 7)
-    - "docs/minds/{mind}/artifacts/contradictions.yaml" (Layer 8)
+    - "outputs/minds/{mind}/artifacts/quotes_database.yaml" (Layer 1)
+    - "outputs/minds/{mind}/artifacts/writing_style.md" (Layer 2)
+    - "outputs/minds/{mind}/artifacts/behavioral_patterns.md" (Layer 3)
+    - "outputs/minds/{mind}/artifacts/values_hierarchy.yaml" (Layer 4)
+    - "outputs/minds/{mind}/artifacts/beliefs_core.yaml" (Layer 5)
+    - "outputs/minds/{mind}/artifacts/mental_models.md" (Layer 6)
+    - "outputs/minds/{mind}/artifacts/unique_algorithm.yaml" (Layer 7)
+    - "outputs/minds/{mind}/artifacts/contradictions.yaml" (Layer 8)
 
   synthesis:
-    - "docs/minds/{mind}/artifacts/communication_templates.md"
-    - "docs/minds/{mind}/artifacts/signature_phrases.md"
-    - "docs/minds/{mind}/kb/chunk_{index}.md"
+    - "outputs/minds/{mind}/artifacts/communication_templates.md"
+    - "outputs/minds/{mind}/artifacts/signature_phrases.md"
+    - "outputs/minds/{mind}/kb/chunk_{index}.md"
 
   implementation:
-    - "docs/minds/{mind}/system_prompts/{timestamp}-v{version}-generalista.md"
-    - "docs/minds/{mind}/specialists/{specialist}/system_prompts/{timestamp}-v{version}.md"
+    - "outputs/minds/{mind}/system_prompts/{timestamp}-v{version}-generalista.md"
+    - "outputs/minds/{mind}/specialists/{specialist}/system_prompts/{timestamp}-v{version}.md"
 
   testing:
-    - "docs/minds/{mind}/docs/logs/{timestamp}-test_cases.yaml"
-    - "docs/minds/{mind}/docs/logs/{timestamp}-personality_validation.md"
+    - "outputs/minds/{mind}/docs/logs/{timestamp}-test_cases.yaml"
+    - "outputs/minds/{mind}/docs/logs/{timestamp}-personality_validation.md"
 ```
 
 **Verification:**
@@ -183,7 +183,7 @@ invocations:
       dependencies_met: true
       checkpoint_pending: false
     output:
-      path: "docs/minds/sam_altman/artifacts/core_obsessions.yaml"
+      path: "outputs/minds/sam_altman/artifacts/core_obsessions.yaml"
       saved: true
       verified: true
     duration_seconds: 420
@@ -270,10 +270,10 @@ naming_conventions:
 ```bash
 # Files read (read-only):
 - /docs/mmos/prompts.yaml (prompt→agent mapping)
-- /docs/minds/{mind}/metadata.yaml (mind metadata - Epic 3)
-- /docs/minds/{mind}/docs/PRD.md (requirements context)
-- /docs/minds/{mind}/sources/sources_master.yaml (available sources)
-- /docs/minds/{mind}/artifacts/* (dependency artifacts)
+- /outputs/minds/{mind}/metadata.yaml (mind metadata - Epic 3)
+- /outputs/minds/{mind}/docs/PRD.md (requirements context)
+- /outputs/minds/{mind}/sources/sources_master.yaml (available sources)
+- /outputs/minds/{mind}/artifacts/* (dependency artifacts)
 - /docs/mmos/logs/launcher-history.yaml (execution history)
 
 # Verification:
@@ -285,13 +285,13 @@ naming_conventions:
 **Test:**
 ```bash
 # Before launcher execution
-find /docs/minds/sam_altman -type f -exec md5sum {} \; > checksums_before.txt
+find /outputs/minds/sam_altman -type f -exec md5sum {} \; > checksums_before.txt
 
 # Execute launcher
 mmos-launcher execute --mind sam_altman --stage analysis --prompt analysis_core_obsessions
 
 # After launcher execution
-find /docs/minds/sam_altman -type f -exec md5sum {} \; > checksums_after.txt
+find /outputs/minds/sam_altman -type f -exec md5sum {} \; > checksums_after.txt
 
 # Verify only NEW files created (no modifications to existing files)
 diff checksums_before.txt checksums_after.txt
@@ -433,7 +433,7 @@ test_executions:
    mmos-launcher execute --mind sam_altman --stage analysis --prompt analysis_core_obsessions
 
 2. PARSING & VALIDATION:
-   ✓ mind=sam_altman → /docs/minds/sam_altman exists
+   ✓ mind=sam_altman → /outputs/minds/sam_altman exists
    ✓ stage=analysis → valid phase
    ✓ prompt=analysis_core_obsessions → /docs/mmos/prompts/analysis_core_obsessions.md exists
 
@@ -443,10 +443,10 @@ test_executions:
 
 4. CONTEXT INJECTION:
    Load:
-   - /docs/minds/sam_altman/metadata.yaml (APEX, ICP, status)
-   - /docs/minds/sam_altman/sources/sources_master.yaml (12 sources)
-   - /docs/minds/sam_altman/artifacts/beliefs_core.yaml (dependency)
-   - /docs/minds/sam_altman/artifacts/values_hierarchy.yaml (dependency)
+   - /outputs/minds/sam_altman/metadata.yaml (APEX, ICP, status)
+   - /outputs/minds/sam_altman/sources/sources_master.yaml (12 sources)
+   - /outputs/minds/sam_altman/artifacts/beliefs_core.yaml (dependency)
+   - /outputs/minds/sam_altman/artifacts/values_hierarchy.yaml (dependency)
 
    Generate context summary → Display to user
 
@@ -463,7 +463,7 @@ test_executions:
 
 8. COMPLETION:
    ✓ Invocation logged
-   ✓ Output verified at: docs/minds/sam_altman/artifacts/core_obsessions.yaml
+   ✓ Output verified at: outputs/minds/sam_altman/artifacts/core_obsessions.yaml
 ```
 
 ### File Structure
@@ -637,9 +637,9 @@ time ./mmos-launcher.sh execute --mind sam_altman --stage analysis --prompt anal
 ### Prerequisites
 
 - ✅ `/docs/mmos/prompts.yaml` exists (59 prompts with agent mappings)
-- ✅ `/docs/minds/{mind}/` directories exist for all minds
+- ✅ `/outputs/minds/{mind}/` directories exist for all minds
 - ✅ AIOS agents are available (@analyst, @architect, @pm, @qa, @dev)
-- ⚠️ `/docs/minds/{mind}/metadata.yaml` (Epic 3 Story 3.1 - can work without it initially)
+- ⚠️ `/outputs/minds/{mind}/metadata.yaml` (Epic 3 Story 3.1 - can work without it initially)
 
 ### Blocked By
 

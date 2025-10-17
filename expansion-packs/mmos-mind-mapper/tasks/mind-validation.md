@@ -25,7 +25,7 @@ inputs:
     default: "full"
 
 outputs:
-  - path: "docs/minds/{mind_name}/validation/validation-report.yaml"
+  - path: "outputs/minds/{mind_name}/validation/validation-report.yaml"
     description: Complete fidelity test results with pass/fail and recommendations
 
 dependencies:

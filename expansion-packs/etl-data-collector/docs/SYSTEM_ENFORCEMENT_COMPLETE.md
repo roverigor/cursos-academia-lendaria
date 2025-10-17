@@ -107,10 +107,10 @@ statePath: this.mindDir
 **Usage:**
 ```bash
 # Check compliance
-node validate-log-locations.js ../../docs/minds/sam_altman
+node validate-log-locations.js ../../outputs/minds/sam_altman
 
 # Auto-fix violations
-node validate-log-locations.js ../../docs/minds/sam_altman --fix
+node validate-log-locations.js ../../outputs/minds/sam_altman --fix
 ```
 
 **Test Results:**
@@ -191,7 +191,7 @@ Violations found: 0
 
 ### Sam Altman Mind (Test Case)
 ```bash
-$ node validate-log-locations.js ../../docs/minds/sam_altman
+$ node validate-log-locations.js ../../outputs/minds/sam_altman
 
 ✅ All files follow the log location standard!
 Total files checked: 18
@@ -246,7 +246,7 @@ Summary:
 1. **Pre-commit Hook**
    ```bash
    # Run validation before commit
-   node expansion-packs/etl-data-collector/validate-log-locations.js docs/minds/*
+   node expansion-packs/etl-data-collector/validate-log-locations.js outputs/minds/*
    ```
 
 2. **CI/CD Integration**
@@ -254,7 +254,7 @@ Summary:
    # .github/workflows/validate-logs.yml
    - name: Validate Log Locations
      run: |
-       for mind in docs/minds/*; do
+       for mind in outputs/minds/*; do
          node expansion-packs/etl-data-collector/validate-log-locations.js "$mind"
        done
    ```

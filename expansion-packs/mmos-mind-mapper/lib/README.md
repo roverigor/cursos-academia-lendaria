@@ -23,7 +23,7 @@ O Debate Engine permite que você execute debates estruturados entre dois clones
 ### Exemplo Básico
 
 ```bash
-python3 expansion-packs/mmos-mind-mapper/agents/emulator.py debate \
+python3 expansion-packs/mmos-mind-mapper/scripts/emulator.py debate \
   sam_altman \
   elon_musk \
   --topic "Should AI development be fully open source?" \
@@ -499,7 +499,7 @@ python3 emulator.py info elon_musk
 
 ### Erro: system-prompt.md not found
 ```
-⚠️  system-prompt.md not found in docs/minds/elon_musk
+⚠️  system-prompt.md not found in outputs/minds/elon_musk
 ```
 
 **Solução:**

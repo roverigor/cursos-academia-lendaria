@@ -33,9 +33,9 @@ inputs:
     required: true
 
 outputs:
-  - path: "docs/minds/{mind_name}/"
+  - path: "outputs/minds/{mind_name}/"
     description: Complete mind directory with all 6 phase outputs
-  - path: "docs/minds/{mind_name}/system_prompts/generalista.md"
+  - path: "outputs/minds/{mind_name}/system_prompts/generalista.md"
     description: Production-ready system prompt (final deliverable)
 
 dependencies:
@@ -771,7 +771,7 @@ Invoke: `system-prompt-creation.md` task with mode = "operational_manual"
 
 #### 7.2 Update Master Catalog
 
-Update `docs/minds/catalog.md` with new mind entry:
+Update `outputs/minds/catalog.md` with new mind entry:
 
 ```yaml
 - name: {{mind_name}}

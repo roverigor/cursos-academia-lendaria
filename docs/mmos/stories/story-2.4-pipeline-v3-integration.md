@@ -84,7 +84,7 @@ bash scripts/pipeline/db-integration-v3.sh --mind sam_altman --mode skip
 ```bash
 node scripts/pipeline/populate-sources.js \
   --mind sam_altman \
-  --file docs/minds/sam_altman/sources/sources_master.yaml \
+  --file outputs/minds/sam_altman/sources/sources_master.yaml \
   --db docs/mmos/mmos.db
 
 # Output:
@@ -116,7 +116,7 @@ node scripts/pipeline/populate-sources.js \
 ```bash
 node scripts/pipeline/extract-fragments.js \
   --mind sam_altman \
-  --cognitive-spec docs/minds/sam_altman/analysis/cognitive-spec.yaml \
+  --cognitive-spec outputs/minds/sam_altman/analysis/cognitive-spec.yaml \
   --db docs/mmos/mmos.db
 
 # Output:
@@ -146,7 +146,7 @@ node scripts/pipeline/extract-fragments.js \
 ```bash
 node scripts/pipeline/import-analysis.js \
   --mind sam_altman \
-  --file docs/minds/sam_altman/analysis/cognitive-spec.yaml \
+  --file outputs/minds/sam_altman/analysis/cognitive-spec.yaml \
   --db docs/mmos/mmos.db
 
 # Output:

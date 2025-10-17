@@ -605,7 +605,7 @@ História 3 (insight contra-intuitivo):
 **Estrutura de saída preferida:**
 ```
 [ ] Usar estrutura padrão do CreatorOS:
-    /docs/courses/{course-slug}/
+    /outputs/courses/{course-slug}/
       ├── README.md
       ├── PRD.md
       ├── curriculum.yaml
@@ -850,7 +850,7 @@ Enemies (o que rejeitamos):
 [ ] Defini voz/personalidade do instrutor (seção 4)
 [ ] Especifiquei modelo comercial e preço (seção 6)
 [ ] Revisei todo o documento por erros/inconsistências
-[ ] Salvei o documento na pasta correta: /docs/courses/{course-slug}/
+[ ] Salvei o documento na pasta correta: /outputs/courses/{course-slug}/
 ```
 
 ---
@@ -873,7 +873,7 @@ Enemies (o que rejeitamos):
 
 Após preencher completamente este brief:
 
-1. **Salvar** o documento em: `/docs/courses/{course-slug}/COURSE-BRIEF.md`
+1. **Salvar** o documento em: `/outputs/courses/{course-slug}/COURSE-BRIEF.md`
 2. **Executar comando**: `*generate-course {course-slug}`
 3. **Aguardar** a IA gerar:
    - ✅ Pre-Creation Research

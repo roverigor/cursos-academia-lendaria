@@ -45,7 +45,7 @@ This task continues course generation after the user has filled the unified COUR
    - Description: Course identifier (same as used in `*generate-course`)
    - Example: "clone-ia-express", "python-data-science"
    - Validation:
-     - Must exist in `/docs/courses/{slug}/`
+     - Must exist in `/outputs/courses/{slug}/`
      - Must have filled `COURSE-BRIEF.md`
 
 ---
@@ -62,15 +62,15 @@ course_existence_check:
 
   checks:
     1_folder_exists:
-      - Check if /docs/courses/{slug}/ exists
+      - Check if /outputs/courses/{slug}/ exists
       - If not: ERROR - "Course not found. Run *generate-course first."
 
     2_brief_exists:
-      - Check if /docs/courses/{slug}/COURSE-BRIEF.md exists
+      - Check if /outputs/courses/{slug}/COURSE-BRIEF.md exists
       - If not: ERROR - "Course brief not found."
 
   output:
-    course_path: "/docs/courses/{slug}/"
+    course_path: "/outputs/courses/{slug}/"
 ```
 
 **1.2. Load Course Brief**
@@ -81,7 +81,7 @@ brief_loading:
 
   actions:
     1_read_file:
-      - Read /docs/courses/{slug}/COURSE-BRIEF.md
+      - Read /outputs/courses/{slug}/COURSE-BRIEF.md
       - Parse frontmatter (YAML)
       - Extract all 8 sections
 
@@ -186,9 +186,9 @@ persona_loading:
 
   if_mmos_persona:
     paths:
-      personality_profile: "docs/minds/{mind_name}/synthesis/personality-profile.json"
-      system_prompt: "docs/minds/{mind_name}/synthesis/system-prompt-generalista.md"
-      cognitive_spec: "docs/minds/{mind_name}/analysis/cognitive-spec.yaml"
+      personality_profile: "outputs/minds/{mind_name}/synthesis/personality-profile.json"
+      system_prompt: "outputs/minds/{mind_name}/synthesis/system-prompt-generalista.md"
+      cognitive_spec: "outputs/minds/{mind_name}/analysis/cognitive-spec.yaml"
 
     extraction:
       voice_parameters:
@@ -1066,7 +1066,7 @@ duration_validation:
 file_structure:
   step: "Generate all course files in organized structure"
 
-  base_path: "docs/courses/{course-slug}/"
+  base_path: "outputs/courses/{course-slug}/"
 
   structure:
     root:
@@ -1247,13 +1247,13 @@ summary_report:
       - Cognitive Load: {"Balanced" or "Needs Review"}
 
     files_created:
-      - README: docs/courses/{slug}/README.md
-      - Outline: docs/courses/{slug}/course-outline.md
-      - Curriculum: docs/courses/{slug}/curriculum.yaml
-      - Lessons: {num_lessons} files in docs/courses/{slug}/lessons/
-      - Assessments: {num_assessments} files in docs/courses/{slug}/assessments/
-      - Resources: {num_resources} files in docs/courses/{slug}/resources/
-      - Brief (reference): docs/courses/{slug}/COURSE-BRIEF.md
+      - README: outputs/courses/{slug}/README.md
+      - Outline: outputs/courses/{slug}/course-outline.md
+      - Curriculum: outputs/courses/{slug}/curriculum.yaml
+      - Lessons: {num_lessons} files in outputs/courses/{slug}/lessons/
+      - Assessments: {num_assessments} files in outputs/courses/{slug}/assessments/
+      - Resources: {num_resources} files in outputs/courses/{slug}/resources/
+      - Brief (reference): outputs/courses/{slug}/COURSE-BRIEF.md
 
     database:
       - Saved to: mmos.db → courses table
@@ -1286,7 +1286,7 @@ summary_report:
 error_scenarios:
 
   - error: "Course not found"
-    trigger: "Directory /docs/courses/{slug}/ doesn't exist"
+    trigger: "Directory /outputs/courses/{slug}/ doesn't exist"
     recovery:
       1: "Suggest running *generate-course first"
     example_message: |
@@ -1303,7 +1303,7 @@ error_scenarios:
       1: "Check if file was deleted"
       2: "Offer to recreate from template"
     example_message: |
-      ❌ Course brief not found: /docs/courses/{slug}/COURSE-BRIEF.md
+      ❌ Course brief not found: /outputs/courses/{slug}/COURSE-BRIEF.md
 
       The brief may have been deleted. Options:
       A. Restore from backup
@@ -1336,7 +1336,7 @@ error_scenarios:
       Please fix the brief syntax and try again.
 
   - error: "MMOS persona not found"
-    trigger: "Mind '{mind_name}' specified but not in docs/minds/"
+    trigger: "Mind '{mind_name}' specified but not in outputs/minds/"
     recovery:
       1: "List available MMOS minds"
       2: "Offer custom profile instead"

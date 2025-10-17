@@ -56,7 +56,7 @@ This workflow covers the complete course creation lifecycle from ideation to lau
 # - Document findings in PRE-CREATION-RESEARCH.md
 ```
 
-**Deliverable:** `docs/courses/[course-name]/PRE-CREATION-RESEARCH.md`
+**Deliverable:** `outputs/courses/[course-name]/PRE-CREATION-RESEARCH.md`
 
 **Checkpoint 1.1:**
 - [ ] All 5 research areas completed
@@ -80,13 +80,13 @@ This workflow covers the complete course creation lifecycle from ideation to lau
 *generate-course {course-slug}
 
 # Step 2: AI creates structure
-# - Checks if /docs/courses/{course-slug}/ exists
+# - Checks if /outputs/courses/{course-slug}/ exists
 # - If not, creates folder structure
 # - Copies course-brief.md template to folder as COURSE-BRIEF.md
 # - Notifies user: "📋 COURSE-BRIEF.md created. Fill all sections before continuing."
 
 # Step 3: User opens and fills COURSE-BRIEF.md
-# Open: /docs/courses/{course-slug}/COURSE-BRIEF.md
+# Open: /outputs/courses/{course-slug}/COURSE-BRIEF.md
 # Fill ALL 8 sections (45-90 min total):
 #   Section 1: Basic Info (5-10 min)
 #   Section 2: ICP & Target Audience (15-25 min) ⭐ CRITICAL
@@ -132,7 +132,7 @@ This workflow covers the complete course creation lifecycle from ideation to lau
 7. **Additional Context** - Inspirations, existing materials, **culture & values** ⭐
 8. **Final Checklist** - Validation of completeness
 
-**Deliverable:** `docs/courses/[course-name]/COURSE-BRIEF.md` (fully filled)
+**Deliverable:** `outputs/courses/[course-name]/COURSE-BRIEF.md` (fully filled)
 
 **Checkpoint 1.2:**
 - [ ] All 8 sections completed
@@ -205,7 +205,7 @@ modules:
         [...]
 ```
 
-**Deliverable:** `docs/courses/[course-name]/curriculum.yaml`
+**Deliverable:** `outputs/courses/[course-name]/curriculum.yaml`
 
 **Checkpoint 2.1:**
 - [ ] All modules have clear objectives
@@ -235,7 +235,7 @@ modules:
 - Celebrate small wins
 - Acknowledge struggles
 
-**Deliverable:** `docs/courses/[course-name]/lessons/[X.Y-lesson-name].md`
+**Deliverable:** `outputs/courses/[course-name]/lessons/[X.Y-lesson-name].md`
 
 **Checkpoint 2.2 (Per Lesson):**
 - [ ] Learning objective achieved by end
@@ -259,7 +259,7 @@ modules:
 - Check for tool updates that affect content
 - Identify common confusion patterns from students
 
-**Deliverable:** `docs/courses/[course-name]/MID-CREATION-RESEARCH.md`
+**Deliverable:** `outputs/courses/[course-name]/MID-CREATION-RESEARCH.md`
 
 **Checkpoint 2.3:**
 - [ ] No breaking changes in tools discovered
@@ -285,8 +285,8 @@ modules:
 - Estimated completion time stated
 
 **Deliverable:**
-- `docs/courses/[course-name]/assessments/quiz-module-[X].yaml`
-- `docs/courses/[course-name]/assessments/projeto-final.md`
+- `outputs/courses/[course-name]/assessments/quiz-module-[X].yaml`
+- `outputs/courses/[course-name]/assessments/projeto-final.md`
 
 **Checkpoint 2.4:**
 - [ ] All modules have assessments
@@ -307,7 +307,7 @@ modules:
 - **Troubleshooting Guide** - Common errors + solutions
 - **Further Learning** - Books, articles, communities
 
-**Deliverable:** `docs/courses/[course-name]/resources/[resource-name].md`
+**Deliverable:** `outputs/courses/[course-name]/resources/[resource-name].md`
 
 **Checkpoint 2.5:**
 - [ ] Minimum 3 resources created
@@ -331,8 +331,8 @@ modules:
 - Support/community info
 
 **Deliverable:**
-- `docs/courses/[course-name]/README.md`
-- `docs/courses/[course-name]/course-outline.md`
+- `outputs/courses/[course-name]/README.md`
+- `outputs/courses/[course-name]/course-outline.md`
 
 **Checkpoint 2.6:**
 - [ ] README clearly explains value proposition
@@ -358,7 +358,7 @@ modules:
 - Pricing validation
 - Launch strategies
 
-**Deliverable:** `docs/courses/[course-name]/POST-CREATION-RESEARCH.md`
+**Deliverable:** `outputs/courses/[course-name]/POST-CREATION-RESEARCH.md`
 
 **Checkpoint 3.1:**
 - [ ] Priority engagement tactics identified
@@ -385,7 +385,7 @@ modules:
 # 5. Commercial Viability (20 pts)
 ```
 
-**Deliverable:** `docs/courses/[course-name]/QA-REPORT.md`
+**Deliverable:** `outputs/courses/[course-name]/QA-REPORT.md`
 
 **Checkpoint 3.2:**
 - [ ] QA Report generated
@@ -481,7 +481,7 @@ modules:
 - Email sequence (welcome, lesson reminders, completion)
 - Social media posts (launch announcement)
 
-**Deliverable:** `docs/courses/[course-name]/marketing/`
+**Deliverable:** `outputs/courses/[course-name]/marketing/`
 
 **Checkpoint 4.2:**
 - [ ] All assets created
@@ -621,8 +621,8 @@ A course is considered **"Done"** when:
 - **QA Report Template:** `expansion-packs/creator-os/templates/course-qa-report.md`
 - **Research Framework:** `.aios-core/workflows/course-research-framework.md`
 - **Retrospective Template:** `expansion-packs/creator-os/templates/course-retrospective.md`
-- **Workflow Diagram:** `docs/courses/COURSE-WORKFLOW-DIAGRAM.md` ⭐ **NEW**
-- **v2.0 Improvements Doc:** `docs/courses/WORKFLOW-IMPROVEMENTS-V2.md` ⭐ **NEW**
+- **Workflow Diagram:** `outputs/courses/COURSE-WORKFLOW-DIAGRAM.md` ⭐ **NEW**
+- **v2.0 Improvements Doc:** `outputs/courses/WORKFLOW-IMPROVEMENTS-V2.md` ⭐ **NEW**
 
 ---
 

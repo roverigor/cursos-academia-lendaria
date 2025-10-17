@@ -168,8 +168,8 @@ import { ParallelCollector } from '@aios/etl-data-collector';
 
 const collector = new ParallelCollector();
 await collector.collectAll(
-  'docs/minds/sam_altman/sources/sources_master.yaml',
-  'docs/minds/sam_altman/sources/downloads/'
+  'outputs/minds/sam_altman/sources/sources_master.yaml',
+  'outputs/minds/sam_altman/sources/downloads/'
 );
 ```
 
@@ -204,7 +204,7 @@ Until we wire an automated provider, place PDFs/eBooks manually in your mind wor
 ```yaml
 - id: naval-almanack
   type: book
-  local_path: docs/minds/naval_ravikant/inputs/books/naval_almanack.pdf
+  local_path: outputs/minds/naval_ravikant/inputs/books/naval_almanack.pdf
   tier: 1
 ```
 

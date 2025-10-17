@@ -5,7 +5,7 @@ Part of Story 3.1 - Backward Compatible Additions.
 
 Usage:
     python3 catalog_sources.py <mind_directory>
-    python3 catalog_sources.py docs/minds/sam_altman
+    python3 catalog_sources.py outputs/minds/sam_altman
 """
 
 import sys
@@ -312,7 +312,7 @@ def main():
     """Main execution."""
     if len(sys.argv) < 2:
         print("Usage: python3 catalog_sources.py <mind_directory>")
-        print("Example: python3 catalog_sources.py docs/minds/sam_altman")
+        print("Example: python3 catalog_sources.py outputs/minds/sam_altman")
         sys.exit(1)
 
     mind_dir = sys.argv[1]

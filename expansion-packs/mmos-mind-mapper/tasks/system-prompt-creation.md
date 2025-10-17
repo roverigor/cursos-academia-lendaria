@@ -31,9 +31,9 @@ inputs:
     required: true
 
 outputs:
-  - path: "docs/minds/{mind_name}/system_prompts/generalista.md"
+  - path: "outputs/minds/{mind_name}/system_prompts/generalista.md"
     description: Production-ready generalista system prompt
-  - path: "docs/minds/{mind_name}/system_prompts/specialists/"
+  - path: "outputs/minds/{mind_name}/system_prompts/specialists/"
     description: Specialist variant system prompts
 
 dependencies:

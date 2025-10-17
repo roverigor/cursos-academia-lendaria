@@ -138,7 +138,7 @@ This task implements an end-to-end pipeline for creating high-quality online cou
 
 16. **output_path** (string, optional)
     - Description: Where to save course files
-    - Default: "docs/courses/{course-slug}/"
+    - Default: "outputs/courses/{course-slug}/"
 
 ---
 
@@ -193,7 +193,7 @@ elicitation:
 
         if_mmos:
           - "Which MMOS mind? (e.g., nassim_taleb, alan_nicolas)"
-          - Load persona from docs/minds/{mind_name}/
+          - Load persona from outputs/minds/{mind_name}/
 
         if_custom:
           - "Provide instructor profile (authority, beliefs, personality)"
@@ -291,9 +291,9 @@ persona_loading:
 
   if_mmos_persona:
     paths:
-      personality_profile: "docs/minds/{mind_name}/synthesis/personality-profile.json"
-      system_prompt: "docs/minds/{mind_name}/synthesis/system-prompt-generalista.md"
-      cognitive_spec: "docs/minds/{mind_name}/analysis/cognitive-spec.yaml"
+      personality_profile: "outputs/minds/{mind_name}/synthesis/personality-profile.json"
+      system_prompt: "outputs/minds/{mind_name}/synthesis/system-prompt-generalista.md"
+      cognitive_spec: "outputs/minds/{mind_name}/analysis/cognitive-spec.yaml"
 
     extraction:
       voice_parameters:
@@ -1273,7 +1273,7 @@ duration_validation:
 file_structure:
   step: "Generate all course files in organized structure"
 
-  base_path: "docs/courses/{course-slug}/"
+  base_path: "outputs/courses/{course-slug}/"
 
   structure:
     root:
@@ -1451,12 +1451,12 @@ summary_report:
       - Cognitive Load: {"Balanced" or "Needs Review"}
 
     files_created:
-      - README: docs/courses/{slug}/README.md
-      - Outline: docs/courses/{slug}/course-outline.md
-      - Curriculum: docs/courses/{slug}/curriculum.yaml
-      - Lessons: {num_lessons} files in docs/courses/{slug}/lessons/
-      - Assessments: {num_assessments} files in docs/courses/{slug}/assessments/
-      - Resources: {num_resources} files in docs/courses/{slug}/resources/
+      - README: outputs/courses/{slug}/README.md
+      - Outline: outputs/courses/{slug}/course-outline.md
+      - Curriculum: outputs/courses/{slug}/curriculum.yaml
+      - Lessons: {num_lessons} files in outputs/courses/{slug}/lessons/
+      - Assessments: {num_assessments} files in outputs/courses/{slug}/assessments/
+      - Resources: {num_resources} files in outputs/courses/{slug}/resources/
 
     database:
       - Saved to: mmos.db → courses table
@@ -1489,7 +1489,7 @@ summary_report:
 error_scenarios:
 
   - error: "MMOS persona not found"
-    trigger: "Mind '{mind_name}' not found in docs/minds/"
+    trigger: "Mind '{mind_name}' not found in outputs/minds/"
     recovery:
       1: "List available MMOS minds"
       2: "Offer to use custom instructor profile instead"
@@ -1741,15 +1741,15 @@ inputs:
 
 expected_output:
   files:
-    - docs/courses/clone-ia-express/README.md
-    - docs/courses/clone-ia-express/course-outline.md
-    - docs/courses/clone-ia-express/curriculum.yaml
-    - docs/courses/clone-ia-express/lessons/1.1-por-que-seu-cerebro-nao-aguenta.md
-    - docs/courses/clone-ia-express/lessons/1.2-modelo-segundo-cerebro.md
+    - outputs/courses/clone-ia-express/README.md
+    - outputs/courses/clone-ia-express/course-outline.md
+    - outputs/courses/clone-ia-express/curriculum.yaml
+    - outputs/courses/clone-ia-express/lessons/1.1-por-que-seu-cerebro-nao-aguenta.md
+    - outputs/courses/clone-ia-express/lessons/1.2-modelo-segundo-cerebro.md
     # ... 9 lessons total
-    - docs/courses/clone-ia-express/assessments/quiz-module-1.yaml
-    - docs/courses/clone-ia-express/assessments/final-project.md
-    - docs/courses/clone-ia-express/resources/checklist-setup.md
+    - outputs/courses/clone-ia-express/assessments/quiz-module-1.yaml
+    - outputs/courses/clone-ia-express/assessments/final-project.md
+    - outputs/courses/clone-ia-express/resources/checklist-setup.md
 
   validation_scores:
     alignment_score: 94
@@ -1796,10 +1796,10 @@ inputs:
 
 expected_output:
   files:
-    - docs/courses/python-data-science/README.md
-    - docs/courses/python-data-science/curriculum.yaml
-    - docs/courses/python-data-science/lessons/... (16 lessons)
-    - docs/courses/python-data-science/assessments/... (4 quizzes + 1 project)
+    - outputs/courses/python-data-science/README.md
+    - outputs/courses/python-data-science/curriculum.yaml
+    - outputs/courses/python-data-science/lessons/... (16 lessons)
+    - outputs/courses/python-data-science/assessments/... (4 quizzes + 1 project)
 
   validation_scores:
     alignment_score: 92
@@ -1854,7 +1854,7 @@ legacy_analysis:
 
 expected_output:
   files:
-    - docs/courses/acme-onboarding-v2/... (restructured)
+    - outputs/courses/acme-onboarding-v2/... (restructured)
 
   improvements:
     - "Added learning objectives (Bloom's)"

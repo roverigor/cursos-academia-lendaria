@@ -1382,7 +1382,7 @@ class MigrationImporter:
 ### Before (Inconsistent)
 
 ```
-docs/minds/sam_altman/
+outputs/minds/sam_altman/
 ├── system_prompts/
 │   ├── System_Prompt.md              # No version
 │   └── generalista.md                # Naming inconsistent
@@ -1398,7 +1398,7 @@ docs/minds/sam_altman/
 ### After (Standardized)
 
 ```
-docs/minds/sam_altman/
+outputs/minds/sam_altman/
 ├── metadata.yaml                     # NEW: Structured metadata
 ├── system_prompts/
 │   ├── generalista/

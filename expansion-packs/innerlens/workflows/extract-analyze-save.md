@@ -575,7 +575,7 @@ summary = {
 @aios-master
 *workflow extract-analyze-save \
   --mind yuval_harari \
-  --source docs/minds/yuval_harari/sources/sapiens_excerpt.txt \
+  --source outputs/minds/yuval_harari/sources/sapiens_excerpt.txt \
   --title "Sapiens - Excerpt on Human Cooperation" \
   --type book_excerpt \
   --output-dir testing/validation/production/

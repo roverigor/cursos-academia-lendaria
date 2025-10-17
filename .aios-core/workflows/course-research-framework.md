@@ -205,7 +205,7 @@ online course completion rates strategies 2024 OR 2025
 
 Consolidate all findings into:
 
-**File:** `docs/courses/[course-name]/PRE-CREATION-RESEARCH.md`
+**File:** `outputs/courses/[course-name]/PRE-CREATION-RESEARCH.md`
 
 **Structure:**
 ```markdown
@@ -316,7 +316,7 @@ Consolidate all findings into:
 
 ### **Mid-Creation Research Deliverable**
 
-**File:** `docs/courses/[course-name]/MID-CREATION-RESEARCH.md`
+**File:** `outputs/courses/[course-name]/MID-CREATION-RESEARCH.md`
 
 **Structure:**
 ```markdown
@@ -423,7 +423,7 @@ student retention online courses 2025 OR community building strategies
 
 ### **Post-Creation Research Deliverable**
 
-**File:** `docs/courses/[course-name]/POST-CREATION-RESEARCH.md`
+**File:** `outputs/courses/[course-name]/POST-CREATION-RESEARCH.md`
 
 **Structure:**
 ```markdown

@@ -186,7 +186,7 @@ Scenario: Taxonomy has no orphaned records
 
 ```gherkin
 Scenario: All minds are populated with valid data
-  Given the docs/minds/ directory contains 28 mind folders
+  Given the outputs/minds/ directory contains 28 mind folders
   When I run populate_minds.sh
   Then 28 minds should be inserted into the database
   And all minds should have unique slugs
@@ -210,7 +210,7 @@ Scenario: Script is idempotent
 **Concerns:**
 1. ⚠️ Node.js version requires `better-sqlite3` (not documented in package.json)
 2. ⚠️ No validation that all 28 expected minds are present
-3. ⚠️ No error handling if docs/minds/ directory is missing
+3. ⚠️ No error handling if outputs/minds/ directory is missing
 
 **Recommendations:**
 - Add `better-sqlite3` to package.json

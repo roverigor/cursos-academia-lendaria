@@ -9,11 +9,11 @@
 ## Pre-Activation Validation
 
 - [ ] **Mind directory exists**
-  - Path: `docs/minds/{mind_name}/`
+  - Path: `outputs/minds/{mind_name}/`
   - Directory is accessible and readable
 
 - [ ] **system-prompt.md found**
-  - Path: `docs/minds/{mind_name}/system-prompt.md`
+  - Path: `outputs/minds/{mind_name}/system-prompt.md`
   - File is not empty (> 100 bytes)
   - File is readable (permissions OK)
 
@@ -72,7 +72,7 @@
 ## Knowledge Base Handling
 
 - [ ] **KB directory checked**
-  - Path: `docs/minds/{mind_name}/kb/`
+  - Path: `outputs/minds/{mind_name}/kb/`
   - Checked if directory exists (optional)
   - If missing, proceed without KB (not an error)
 

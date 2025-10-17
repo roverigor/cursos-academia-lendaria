@@ -86,7 +86,7 @@ Após discovery, usar o arquivo gerado para coletar os posts:
 ```bash
 node run-collection.js \
   sam-blog-sources.yaml \
-  ../../docs/minds/sam_altman/sources/downloads \
+  ../../outputs/minds/sam_altman/sources/downloads \
   ./config/download-rules.yaml
 ```
 

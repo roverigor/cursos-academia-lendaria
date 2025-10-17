@@ -858,16 +858,16 @@ START: "Qual tier escolher?"
 ## Reference Materials
 
 **Source Documentation:**
-- `docs/minds/joao_lozano/synthesis/communication-style.md` (373 lines)
-- `docs/minds/joao_lozano/implementation/system-prompt-generalista.md` (757 lines)
-- `docs/minds/pedro_valerio/VALIDATION_CHECKLIST.md` (contradictions example)
+- `outputs/minds/joao_lozano/synthesis/communication-style.md` (373 lines)
+- `outputs/minds/joao_lozano/implementation/system-prompt-generalista.md` (757 lines)
+- `outputs/minds/pedro_valerio/VALIDATION_CHECKLIST.md` (contradictions example)
 
 **Examples:**
 - João Lozano: Complete linguistic fingerprint documented
 - Pedro Valério: Authentic contradictions mapped
 
 **Innovation Summary:**
-- `docs/minds/joao_lozano/INNOVATIONS_FOR_MMOS.md` (full list of 12 innovations)
+- `outputs/minds/joao_lozano/INNOVATIONS_FOR_MMOS.md` (full list of 12 innovations)
 
 ---
 

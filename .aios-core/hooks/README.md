@@ -14,7 +14,7 @@
 **Checks:**
 - ✅ No mind-specific folders in `docs/mmos/`
 - ✅ No output files in `expansion-packs/`
-- ✅ Proper `docs/minds/{slug}/` structure
+- ✅ Proper `outputs/minds/{slug}/` structure
 - ✅ No mind-specific files in wrong locations
 
 **What it prevents:**

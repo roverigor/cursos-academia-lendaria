@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS sources (
   title TEXT,
 
   -- Location
-  file_path TEXT NOT NULL, -- Relative path: 'docs/minds/sam_altman/sources/podcast_001.txt'
+  file_path TEXT NOT NULL, -- Relative path: 'outputs/minds/sam_altman/sources/podcast_001.txt'
   source_url TEXT, -- Original URL if web source
 
   -- Classification
@@ -488,7 +488,7 @@ CREATE TABLE IF NOT EXISTS system_prompts (
   status TEXT DEFAULT 'draft' CHECK(status IN ('draft', 'testing', 'production', 'archived')),
 
   -- Location
-  file_path TEXT, -- 'docs/minds/sam_altman/system_prompts/v1.0-generalista.md'
+  file_path TEXT, -- 'outputs/minds/sam_altman/system_prompts/v1.0-generalista.md'
 
   -- Metrics
   token_count INTEGER,
@@ -729,7 +729,7 @@ CREATE TABLE IF NOT EXISTS pipeline_progress (
   agent_version TEXT, -- 'v2.0', 'v3.1'
 
   -- Output
-  output_path TEXT, -- 'docs/minds/sam_altman/artifacts/beliefs_core.yaml'
+  output_path TEXT, -- 'outputs/minds/sam_altman/artifacts/beliefs_core.yaml'
   output_type TEXT, -- 'markdown', 'json', 'yaml', 'sql'
 
   -- Timing

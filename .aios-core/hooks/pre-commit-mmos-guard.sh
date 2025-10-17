@@ -27,11 +27,11 @@ if echo "$staged_files" | grep -qE "docs/mmos/(validations|migrations)/[a-z_-]+"
     echo "Found:"
     echo "$staged_files" | grep -E "docs/mmos/(validations|migrations)/[a-z_-]+" | sed 's/^/  - /'
     echo ""
-    echo -e "${YELLOW}Fix: Move to docs/minds/{slug}/docs/ instead${NC}"
+    echo -e "${YELLOW}Fix: Move to outputs/minds/{slug}/docs/ instead${NC}"
     echo ""
     echo "Examples:"
     echo "  ❌ docs/mmos/validations/pedro-valerio-checklist.md"
-    echo "  ✅ docs/minds/pedro_valerio/docs/validation-checklist.md"
+    echo "  ✅ outputs/minds/pedro_valerio/docs/validation-checklist.md"
     echo ""
     violations=$((violations + 1))
 fi
@@ -51,10 +51,10 @@ if echo "$staged_files" | grep -qE "expansion-packs/mmos-mind-mapper/(benchmarks
 fi
 
 # Rule 3: Check for common naming violations
-echo "Checking Rule 3: Mind-specific files should be in docs/minds/..."
+echo "Checking Rule 3: Mind-specific files should be in outputs/minds/..."
 
 # Check for files with mind names in docs/mmos/ (excluding allowed folders)
-for mind_name in $(ls docs/minds/ 2>/dev/null | grep -v "^README" || true); do
+for mind_name in $(ls outputs/minds/ 2>/dev/null | grep -v "^README" || true); do
     if echo "$staged_files" | grep -qE "docs/mmos/.*${mind_name}"; then
         # Exclude allowed locations (reports can mention minds)
         if ! echo "$staged_files" | grep -qE "docs/mmos/(reports|architecture)/"; then
@@ -67,14 +67,14 @@ for mind_name in $(ls docs/minds/ 2>/dev/null | grep -v "^README" || true); do
     fi
 done
 
-# Rule 4: Verify docs/minds/{slug}/ structure
-echo "Checking Rule 4: docs/minds/{slug}/ structure..."
+# Rule 4: Verify outputs/minds/{slug}/ structure
+echo "Checking Rule 4: outputs/minds/{slug}/ structure..."
 
-if echo "$staged_files" | grep -qE "docs/minds/[^/]+/[^/]+\.(md|yaml|json)$"; then
-    echo -e "${YELLOW}⚠️  WARNING: Files in docs/minds/{slug}/ root detected${NC}"
+if echo "$staged_files" | grep -qE "outputs/minds/[^/]+/[^/]+\.(md|yaml|json)$"; then
+    echo -e "${YELLOW}⚠️  WARNING: Files in outputs/minds/{slug}/ root detected${NC}"
     echo ""
     echo "Found:"
-    echo "$staged_files" | grep -E "docs/minds/[^/]+/[^/]+\.(md|yaml|json)$" | sed 's/^/  - /'
+    echo "$staged_files" | grep -E "outputs/minds/[^/]+/[^/]+\.(md|yaml|json)$" | sed 's/^/  - /'
     echo ""
     echo "Pipeline outputs should be in subfolders:"
     echo "  - analysis/, synthesis/, implementation/, system_prompts/, kb/"

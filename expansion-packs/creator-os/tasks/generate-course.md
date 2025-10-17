@@ -17,7 +17,7 @@ This task initializes a new course by creating the folder structure and copying 
 
 **What This Task Does:**
 1. Prompts for course slug (short identifier)
-2. Creates `/docs/courses/{course-slug}/` directory structure
+2. Creates `/outputs/courses/{course-slug}/` directory structure
 3. Copies `course-brief.md` template to `COURSE-BRIEF.md`
 4. **HALTS and notifies user to fill the brief**
 
@@ -43,7 +43,7 @@ This task initializes a new course by creating the folder structure and copying 
    - Validation:
      - Lowercase letters, numbers, hyphens only
      - 3-50 characters
-     - Must not already exist in `/docs/courses/`
+     - Must not already exist in `/outputs/courses/`
    - Format: kebab-case (e.g., "my-course-name")
 
 ### Elicitation
@@ -58,8 +58,8 @@ elicitation:
         What is the course identifier (slug)?
 
         This will be used for:
-        - Folder name: /docs/courses/{slug}/
-        - Brief file: /docs/courses/{slug}/COURSE-BRIEF.md
+        - Folder name: /outputs/courses/{slug}/
+        - Brief file: /outputs/courses/{slug}/COURSE-BRIEF.md
 
         Format: lowercase, hyphens only (e.g., "my-course-name")
 
@@ -68,7 +68,7 @@ elicitation:
       validation:
         - Must be 3-50 characters
         - Must be lowercase letters, numbers, hyphens only
-        - Must not already exist in /docs/courses/
+        - Must not already exist in /outputs/courses/
 
       examples:
         - "clone-ia-express"
@@ -95,7 +95,7 @@ slug_validation:
       - Regex: ^[a-z0-9-]{3,50}$
 
     2_uniqueness:
-      - Check if /docs/courses/{slug}/ already exists
+      - Check if /outputs/courses/{slug}/ already exists
       - If exists: ERROR - "Course '{slug}' already exists. Choose different slug or use *continue-course to resume."
 
   sanitization:
@@ -114,13 +114,13 @@ slug_validation:
 folder_creation:
   step: "Create course directory structure"
 
-  base_path: "docs/courses/{course-slug}/"
+  base_path: "outputs/courses/{course-slug}/"
 
   directories_to_create:
-    - docs/courses/{course-slug}/
-    - docs/courses/{course-slug}/lessons/
-    - docs/courses/{course-slug}/assessments/
-    - docs/courses/{course-slug}/resources/
+    - outputs/courses/{course-slug}/
+    - outputs/courses/{course-slug}/lessons/
+    - outputs/courses/{course-slug}/assessments/
+    - outputs/courses/{course-slug}/resources/
 
   error_handling:
     if_exists: ERROR - "Course already exists"
@@ -140,7 +140,7 @@ template_copy:
     template_path: "expansion-packs/creator-os/templates/course-brief.md"
 
   destination:
-    brief_path: "docs/courses/{course-slug}/COURSE-BRIEF.md"
+    brief_path: "outputs/courses/{course-slug}/COURSE-BRIEF.md"
 
   actions:
     1_check_template:
@@ -159,7 +159,7 @@ template_copy:
         - status: "🟡 Aguardando Preenchimento"
 
   output:
-    brief_file_path: "docs/courses/{course-slug}/COURSE-BRIEF.md"
+    brief_file_path: "outputs/courses/{course-slug}/COURSE-BRIEF.md"
 ```
 
 **1.4. Create README Placeholder**
@@ -168,7 +168,7 @@ template_copy:
 readme_creation:
   step: "Create placeholder README with next steps"
 
-  file: "docs/courses/{course-slug}/README.md"
+  file: "outputs/courses/{course-slug}/README.md"
 
   content: |
     # Course: {course-slug}
@@ -204,15 +204,15 @@ notification:
     ✓ Course structure initialized successfully!
 
     📁 Created:
-    - Folder: /docs/courses/{course-slug}/
-    - Brief: /docs/courses/{course-slug}/COURSE-BRIEF.md
-    - README: /docs/courses/{course-slug}/README.md
+    - Folder: /outputs/courses/{course-slug}/
+    - Brief: /outputs/courses/{course-slug}/COURSE-BRIEF.md
+    - README: /outputs/courses/{course-slug}/README.md
 
     ---
 
     📋 **NEXT STEP - Fill the Course Brief:**
 
-    1. Open: `docs/courses/{course-slug}/COURSE-BRIEF.md`
+    1. Open: `outputs/courses/{course-slug}/COURSE-BRIEF.md`
     2. Complete ALL 8 sections (estimated time: 45-90 minutes):
        - Section 1: Basic Information (5-10 min)
        - Section 2: ICP & Target Audience (15-25 min)
@@ -274,13 +274,13 @@ error_scenarios:
       Please provide a valid slug:
 
   - error: "Course already exists"
-    trigger: "Directory /docs/courses/{slug}/ already exists"
+    trigger: "Directory /outputs/courses/{slug}/ already exists"
     recovery:
       1: "Check if COURSE-BRIEF.md is filled"
       2: "Offer to resume with *continue-course"
       3: "Offer to choose different slug"
     example_message: |
-      ❌ Course '{slug}' already exists at /docs/courses/{slug}/
+      ❌ Course '{slug}' already exists at /outputs/courses/{slug}/
 
       Options:
       A. Resume: *continue-course {slug} (if brief is filled)
@@ -311,14 +311,14 @@ error_scenarios:
       1: "Check file system permissions"
       2: "Suggest manual directory creation"
     example_message: |
-      ❌ Permission denied: Cannot create /docs/courses/{slug}/
+      ❌ Permission denied: Cannot create /outputs/courses/{slug}/
 
       Please check:
-      1. Write permissions for /docs/courses/ directory
+      1. Write permissions for /outputs/courses/ directory
       2. Disk space available
       3. Path is accessible
 
-      Manual fix: mkdir -p docs/courses/{slug}
+      Manual fix: mkdir -p outputs/courses/{slug}
 ```
 
 ---
@@ -372,15 +372,15 @@ success_criteria:
 ✓ Course structure initialized successfully!
 
 📁 Created:
-- Folder: /docs/courses/clone-ia-express/
-- Brief: /docs/courses/clone-ia-express/COURSE-BRIEF.md
-- README: /docs/courses/clone-ia-express/README.md
+- Folder: /outputs/courses/clone-ia-express/
+- Brief: /outputs/courses/clone-ia-express/COURSE-BRIEF.md
+- README: /outputs/courses/clone-ia-express/README.md
 
 ---
 
 📋 **NEXT STEP - Fill the Course Brief:**
 
-1. Open: `docs/courses/clone-ia-express/COURSE-BRIEF.md`
+1. Open: `outputs/courses/clone-ia-express/COURSE-BRIEF.md`
 2. Complete ALL 8 sections (estimated time: 45-90 minutes)
 3. Save the file
 
@@ -402,15 +402,15 @@ success_criteria:
 ✓ Course structure initialized successfully!
 
 📁 Created:
-- Folder: /docs/courses/python-data-science/
-- Brief: /docs/courses/python-data-science/COURSE-BRIEF.md
-- README: /docs/courses/python-data-science/README.md
+- Folder: /outputs/courses/python-data-science/
+- Brief: /outputs/courses/python-data-science/COURSE-BRIEF.md
+- README: /outputs/courses/python-data-science/README.md
 
 ---
 
 📋 **NEXT STEP - Fill the Course Brief:**
 
-1. Open: `docs/courses/python-data-science/COURSE-BRIEF.md`
+1. Open: `outputs/courses/python-data-science/COURSE-BRIEF.md`
 2. Complete ALL 8 sections (estimated time: 45-90 minutes)
 3. Save the file
 
@@ -429,7 +429,7 @@ success_criteria:
 > clone-ia-express
 
 # Output:
-❌ Course 'clone-ia-express' already exists at /docs/courses/clone-ia-express/
+❌ Course 'clone-ia-express' already exists at /outputs/courses/clone-ia-express/
 
 Options:
 A. Resume: *continue-course clone-ia-express (if brief is filled)

@@ -33,7 +33,7 @@ inputs:
     type: file_path
     description: Path to sources inventory
     required: true
-    default: "docs/minds/{mind_name}/sources/sources_master.yaml"
+    default: "outputs/minds/{mind_name}/sources/sources_master.yaml"
 
   - name: focus_areas
     type: array
@@ -49,15 +49,15 @@ inputs:
     range: [0.60, 0.90]
 
 outputs:
-  - path: "docs/minds/{mind_name}/analysis/cognitive-spec.yaml"
+  - path: "outputs/minds/{mind_name}/analysis/cognitive-spec.yaml"
     description: Complete DNA Mental™ 8-layer cognitive architecture
     format: "yaml"
 
-  - path: "docs/minds/{mind_name}/analysis/mind-brief.md"
+  - path: "outputs/minds/{mind_name}/analysis/mind-brief.md"
     description: Executive summary of cognitive analysis findings
     format: "markdown"
 
-  - path: "docs/minds/{mind_name}/analysis/layer-{N}-{layer_name}.md"
+  - path: "outputs/minds/{mind_name}/analysis/layer-{N}-{layer_name}.md"
     description: Detailed analysis for each layer (8 files total)
     format: "markdown"
 

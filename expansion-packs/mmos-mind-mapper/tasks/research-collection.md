@@ -33,13 +33,13 @@ inputs:
     type: file_path
     description: Path to PRD file
     required: true
-    default: "docs/minds/{mind_name}/viability/prd.md"
+    default: "outputs/minds/{mind_name}/viability/prd.md"
 
   - name: viability_report_path
     type: file_path
     description: Path to viability assessment output
     required: true
-    default: "docs/minds/{mind_name}/viability/viability-output.yaml"
+    default: "outputs/minds/{mind_name}/viability/viability-output.yaml"
 
   - name: known_sources
     type: array
@@ -55,19 +55,19 @@ inputs:
       - priority_tiers_only
 
 outputs:
-  - path: "docs/minds/{mind_name}/sources/sources_master.yaml"
+  - path: "outputs/minds/{mind_name}/sources/sources_master.yaml"
     description: Master inventory of all discovered and collected sources
     format: "yaml"
 
-  - path: "docs/minds/{mind_name}/sources/{type}/"
+  - path: "outputs/minds/{mind_name}/sources/{type}/"
     description: Raw downloaded data organized by type (blogs/, youtube/, pdf/, etc.)
     format: "directory"
 
-  - path: "docs/minds/{mind_name}/docs/logs/{timestamp}-collection-report.yaml"
+  - path: "outputs/minds/{mind_name}/docs/logs/{timestamp}-collection-report.yaml"
     description: Collection statistics and quality report (timestamped, in logs/)
     format: "yaml"
 
-  - path: "docs/minds/{mind_name}/docs/logs/{timestamp}-discovery-report.yaml"
+  - path: "outputs/minds/{mind_name}/docs/logs/{timestamp}-discovery-report.yaml"
     description: Source discovery report (timestamped, in logs/)
     format: "yaml"
 
@@ -190,7 +190,7 @@ Use the validation script to check compliance:
 
 ```bash
 cd expansion-packs/etl-data-collector
-node validate-log-locations.js ../../docs/minds/{mind_name}
+node validate-log-locations.js ../../outputs/minds/{mind_name}
 ```
 
 The script will report violations and suggest fixes.
@@ -418,8 +418,8 @@ minds/{mind}/sources/
   ```bash
   cd expansion-packs/etl-data-collector
   node run-collection.js \
-    ../../docs/minds/{mind}/sources/tier1_batch.yaml \
-    ../../docs/minds/{mind}/sources \
+    ../../outputs/minds/{mind}/sources/tier1_batch.yaml \
+    ../../outputs/minds/{mind}/sources \
     ./config/download-rules.yaml
   ```
   **IMPORTANTE:** O outputDir deve ser `sources/`, NÃO `sources/downloads/`

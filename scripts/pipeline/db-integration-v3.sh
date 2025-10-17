@@ -65,7 +65,7 @@ if [ -z "$MIND_SLUG" ]; then
     exit 1
 fi
 
-MIND_DIR="$PROJECT_ROOT/docs/minds/$MIND_SLUG"
+MIND_DIR="$PROJECT_ROOT/outputs/minds/$MIND_SLUG"
 
 if [ ! -d "$MIND_DIR" ]; then
     log_error "Mind directory not found: $MIND_DIR"

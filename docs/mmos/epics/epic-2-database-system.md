@@ -35,7 +35,7 @@ Criar um sistema de banco de dados SQLite local para armazenar **ETL questions**
 **Technology stack:**
 - Python 3.8+, Node.js 18+
 - File-based storage (YAML, JSON, Markdown)
-- 22 minds existentes em `docs/minds/[mind_name]/`
+- 22 minds existentes em `outputs/minds/[mind_name]/`
 - AIOS Launcher/Board leem de arquivos
 
 **Problems:**
@@ -117,7 +117,7 @@ get_pending_questions(mind_id="sam_altman", phase="analysis")
 -- Track execução de cada prompt do MMOS:
 INSERT INTO pipeline_progress VALUES
     ('sam_altman', 'ANALYSIS', 'source_reading', 'analysis_source_reading.md',
-     'completed', 'analyst', '/docs/minds/sam_altman/artifacts/source_notes.md',
+     'completed', 'analyst', '/outputs/minds/sam_altman/artifacts/source_notes.md',
      '2025-01-10 14:30:00', '2025-01-10 16:45:00', 135, -- 2h15min
      TRUE, TRUE, 'Triangulation confirmed', 'curator_001');
 
@@ -131,7 +131,7 @@ SELECT * FROM v_pipeline_status WHERE mind_slug = 'sam-altman';
 -- Versionamento semântico de prompts:
 INSERT INTO system_prompts VALUES
     (1, 'v1.0', 1, 0, 'generalista', '[System prompt content...]',
-     'initial', '/docs/minds/sam_altman/system_prompts/v1.0-generalista.md',
+     'initial', '/outputs/minds/sam_altman/system_prompts/v1.0-generalista.md',
      1500, 0, NULL, TRUE, TRUE);
 
 -- Query: Prompts ativos por tipo
@@ -150,7 +150,7 @@ SELECT * FROM v_active_prompts WHERE mind_slug = 'sam-altman';
 
 **Files como Outputs/Logs:**
 - Launcher continua gerando logs em `docs/mmos/logs/`
-- Artifacts (MD, YAML) continuam em `docs/minds/[name]/artifacts/`
+- Artifacts (MD, YAML) continuam em `outputs/minds/[name]/artifacts/`
 - DB complementa, não substitui files
 
 **Python CLI Tools:**
@@ -316,27 +316,27 @@ CREATE TRIGGER decrement_tag_usage (...);
 class MMOSMigration:
     def migrate_minds(self):
         """Populate minds table with 22 existing minds"""
-        # Read from docs/minds/ directories
+        # Read from outputs/minds/ directories
         # Extract metadata from README, PRD, status files
         # Insert with APEX scores, current phase, etc
         pass
 
     def migrate_sources(self, mind_id: str):
         """Migrate sources_master.yaml for specific mind"""
-        # Read docs/minds/{mind_id}/sources/sources_master.yaml
+        # Read outputs/minds/{mind_id}/sources/sources_master.yaml
         # Insert into sources table with proper categorization
         pass
 
     def migrate_system_prompts(self, mind_id: str):
         """Migrate system prompts with version detection"""
-        # Scan docs/minds/{mind_id}/system_prompts/
+        # Scan outputs/minds/{mind_id}/system_prompts/
         # Parse version from filename (YYYYMMDD-HHMM-vX.Y-type-descriptor.md)
         # Insert with version_major, version_minor
         pass
 
     def migrate_kb_entries(self, mind_id: str):
         """Migrate knowledge base chunks"""
-        # Read from docs/minds/{mind_id}/kb/
+        # Read from outputs/minds/{mind_id}/kb/
         # Chunk and insert with proper categorization
         pass
 

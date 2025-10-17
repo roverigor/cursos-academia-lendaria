@@ -32,7 +32,7 @@ placeholders:
   - name: sources_file
     type: file_path
     description: Sources list file path
-    example: "docs/minds/sam_altman/sources/sources_master.yaml"
+    example: "outputs/minds/sam_altman/sources/sources_master.yaml"
 
   - name: tiers
     type: string

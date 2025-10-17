@@ -5,7 +5,7 @@
 #
 # Usage:
 #   bash version_prompts.sh <mind_directory>
-#   bash version_prompts.sh docs/minds/sam_altman
+#   bash version_prompts.sh outputs/minds/sam_altman
 #
 
 set -e  # Exit on error
@@ -32,7 +32,7 @@ log_error() {
 # Check arguments
 if [ $# -lt 1 ]; then
     echo "Usage: bash version_prompts.sh <mind_directory>"
-    echo "Example: bash version_prompts.sh docs/minds/sam_altman"
+    echo "Example: bash version_prompts.sh outputs/minds/sam_altman"
     exit 1
 fi
 

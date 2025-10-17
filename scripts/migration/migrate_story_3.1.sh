@@ -61,7 +61,7 @@ show_help() {
     echo "  --help         Show this help message"
     echo ""
     echo "Examples:"
-    echo "  bash migrate_story_3.1.sh docs/minds/sam_altman"
+    echo "  bash migrate_story_3.1.sh outputs/minds/sam_altman"
     echo "  bash migrate_story_3.1.sh --all"
     echo "  bash migrate_story_3.1.sh --dry-run sam_altman"
     exit 0

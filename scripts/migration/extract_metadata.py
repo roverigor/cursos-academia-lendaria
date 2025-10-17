@@ -5,7 +5,7 @@ Part of Story 3.1 - Backward Compatible Additions.
 
 Usage:
     python3 extract_metadata.py <mind_directory>
-    python3 extract_metadata.py docs/minds/sam_altman
+    python3 extract_metadata.py outputs/minds/sam_altman
 """
 
 import sys
@@ -137,7 +137,7 @@ def extract_metadata(mind_dir: str, logger) -> Optional[Dict[str, Any]]:
     Extract metadata from mind directory.
 
     Args:
-        mind_dir: Path to mind directory (e.g., docs/minds/sam_altman)
+        mind_dir: Path to mind directory (e.g., outputs/minds/sam_altman)
         logger: MigrationLogger instance
 
     Returns:
@@ -247,7 +247,7 @@ def main():
     """Main execution."""
     if len(sys.argv) < 2:
         print("Usage: python3 extract_metadata.py <mind_directory>")
-        print("Example: python3 extract_metadata.py docs/minds/sam_altman")
+        print("Example: python3 extract_metadata.py outputs/minds/sam_altman")
         sys.exit(1)
 
     mind_dir = sys.argv[1]

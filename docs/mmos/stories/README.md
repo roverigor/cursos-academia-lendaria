@@ -128,7 +128,7 @@ Populate complete specialization taxonomy (6 domains → 320 proficiencies).
 **Completed:** October 12, 2025
 **Commit:** `0be8803`
 
-Populate minds table with all 28 minds from docs/minds/ directory.
+Populate minds table with all 28 minds from outputs/minds/ directory.
 
 **Deliverables:**
 - ✅ Bash + Node.js scripts for mind population
@@ -219,7 +219,7 @@ Add standardized metadata files to all minds without breaking existing structure
 **Usage:**
 ```bash
 # Single mind
-bash scripts/migration/migrate_story_3.1.sh docs/minds/sam_altman
+bash scripts/migration/migrate_story_3.1.sh outputs/minds/sam_altman
 
 # All minds
 bash scripts/migration/migrate_story_3.1.sh --all

@@ -22,7 +22,7 @@ When an agent is active:
 ## Development Methodology
 
 ### Story-Driven Development
-1. **Work from stories** - All development starts with a story in `docs/mmos/stories/` (MMOS-specific) or `docs/stories/` (AIOS-general)
+1. **Work from stories** - All development starts with a story in `docs/stories/` (development stories)
 2. **Update progress** - Mark checkboxes as tasks complete: [ ] → [x]
 3. **Track changes** - Maintain the File List section in the story
 4. **Follow criteria** - Implement exactly what the acceptance criteria specify
@@ -53,14 +53,15 @@ aios-core/
 └── rules/          # Framework rules and patterns
 
 docs/
-├── mmos/
-│   ├── stories/    # MMOS-specific stories and epics
-│   ├── epics/      # MMOS epics
-│   └── board/      # MMOS orchestration board
-├── stories/        # AIOS-general development stories
+├── stories/        # Development stories
 ├── prd/            # Product requirement documents
 ├── architecture/   # System architecture documentation
-└── guides/         # User and developer guides
+├── guides/         # User and developer guides
+└── mmos/           # MMOS system documentation
+
+outputs/
+├── courses/        # Generated courses (CreatorOS)
+└── minds/          # Processed minds (MMOS Mind Mapper)
 ```
 
 ## Workflow Execution
@@ -225,14 +226,14 @@ npm run trace -- workflow-name
 
 ### CRITICAL: Use Architecture Guard Checklist
 
-**Before creating ANY file in docs/mmos/ or docs/minds/:**
+**Before creating ANY file in docs/mmos/ or outputs/minds/:**
 → Review `.aios-core/checklists/mmos-architecture-guard.md`
 
-### docs/minds/ Directory - OUTPUT ONLY
+### outputs/minds/ Directory - OUTPUT ONLY
 
-**CRITICAL:** `docs/minds/` contains ONLY the direct output of the MMOS pipeline.
+**CRITICAL:** `outputs/minds/` contains ONLY the direct output of the MMOS pipeline.
 
-#### ✅ What BELONGS in docs/minds/{mind_slug}/:
+#### ✅ What BELONGS in outputs/minds/{mind_slug}/:
 - `sources/` - Source materials collected
 - `analysis/` - Phase 3 outputs (identity-core.yaml, cognitive-spec.yaml)
 - `synthesis/` - Phase 4 outputs (frameworks.md, communication-style.md, etc.)
@@ -242,12 +243,10 @@ npm run trace -- workflow-name
 - `docs/` - **Mind-specific process docs** (validations, migrations, reports)
 - `logs/` - **Mind-specific execution logs**
 
-#### ❌ What DOES NOT belong in docs/minds/:
-- System-level documentation → `docs/mmos/docs/`
+#### ❌ What DOES NOT belong in outputs/minds/:
+- System-level documentation → `docs/mmos/`
 - Cross-mind comparisons → `docs/mmos/reports/`
-- MMOS process documentation → `docs/mmos/docs/`
-- EPIC files → `docs/mmos/epics/`
-- Story files → `docs/mmos/stories/`
+- MMOS process documentation → `docs/mmos/`
 
 ### docs/mmos/ Directory - SYSTEM ONLY
 
@@ -256,22 +255,21 @@ npm run trace -- workflow-name
 #### ✅ What BELONGS in docs/mmos/:
 - `architecture/` - MMOS system architecture
 - `docs/` - System documentation (PRD, workflows)
+- `design/` - MMOS design documentation
 - `epics/` - MMOS development epics
-- `stories/` - MMOS development stories
 - `reports/` - Executive reports, version comparisons
 - `qa/benchmarks/` - Cross-mind benchmarks
 - `database/` - MMOS database files
-- `logs/` - System-wide logs
 
 #### ❌ What DOES NOT belong in docs/mmos/:
 - **NEVER** create folders named after minds (`/joao_lozano/`, `/pedro_valerio/`)
 - **NEVER** create `validations/` or `migrations/` subfolders with mind names
-- Mind-specific documents → `docs/minds/{slug}/docs/`
+- Mind-specific documents → `outputs/minds/{slug}/docs/`
 
 ### Decision Rule:
 
 Ask: **"Is this about a SPECIFIC mind (name appears in content)?"**
-- **YES** → `docs/minds/{mind_slug}/docs/` or `docs/minds/{mind_slug}/logs/`
+- **YES** → `outputs/minds/{mind_slug}/docs/` or `outputs/minds/{mind_slug}/logs/`
 - **NO** → Is it a script/template?
   - **YES** → `expansion-packs/mmos-mind-mapper/`
   - **NO** → Is it about MMOS system?
@@ -281,15 +279,15 @@ Ask: **"Is this about a SPECIFIC mind (name appears in content)?"**
 ### Examples:
 
 **✅ Correct:**
-- `docs/minds/joao_lozano/docs/validation-checklist.md` (mind-specific)
-- `docs/minds/pedro_valerio/docs/migration-progress.md` (mind-specific)
-- `docs/minds/pedro_valerio/logs/20251016-validation-session.md` (mind-specific log)
+- `outputs/minds/joao_lozano/docs/validation-checklist.md` (mind-specific)
+- `outputs/minds/pedro_valerio/docs/migration-progress.md` (mind-specific)
+- `outputs/minds/pedro_valerio/logs/20251016-validation-session.md` (mind-specific log)
 - `docs/mmos/reports/EXECUTIVE_SUMMARY_FOR_PO.md` (system-level)
-- `docs/mmos/epics/EPIC-2-Clone-Auth.md` (system-level)
+- `docs/mmos/epics/epic-2-clone-auth.md` (system-level)
 
 **❌ Wrong:**
-- `docs/mmos/validations/pedro-valerio-checklist.md` → Use `docs/minds/pedro_valerio/docs/validation-checklist.md`
-- `docs/mmos/migrations/joao-lozano-progress.md` → Use `docs/minds/joao_lozano/docs/migration-progress.md`
+- `docs/mmos/validations/pedro-valerio-checklist.md` → Use `outputs/minds/pedro_valerio/docs/validation-checklist.md`
+- `docs/mmos/migrations/joao-lozano-progress.md` → Use `outputs/minds/joao_lozano/docs/migration-progress.md`
 - `expansion-packs/mmos-mind-mapper/benchmarks/debate.yaml` → Use `docs/mmos/qa/benchmarks/debate.yaml`
 
 ### Enforcement:

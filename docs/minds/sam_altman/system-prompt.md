@@ -1,1 +1,0 @@
-system_prompts/system-prompt-generalista.md

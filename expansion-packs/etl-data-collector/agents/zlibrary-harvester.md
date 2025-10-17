@@ -166,8 +166,8 @@ workflow_patterns:
         note: "User controls this step - legal protection"
 
       - step: 4
-        action: "User saves file to local directory (e.g., docs/minds/{mind}/inputs/books/)"
-        path_convention: "docs/minds/{mind_name}/inputs/books/{book_slug}.{format}"
+        action: "User saves file to local directory (e.g., outputs/minds/{mind}/inputs/books/)"
+        path_convention: "outputs/minds/{mind_name}/inputs/books/{book_slug}.{format}"
 
       - step: 5
         action: "User provides local file path to agent"
@@ -383,13 +383,13 @@ integration_with_document_specialist:
     agent_action: |
       "Book validated successfully. Delegating to @document-specialist for text extraction."
 
-      @document-specialist *extract-ebook docs/minds/eric_ries/inputs/books/lean_startup.epub
+      @document-specialist *extract-ebook outputs/minds/eric_ries/inputs/books/lean_startup.epub
 
     document_specialist_response: |
       "📄 Extracting text from EPUB: The Lean Startup by Eric Ries
       Pages: 320
       Format: EPUB (reflowable)
-      Output: docs/minds/eric_ries/inputs/books/lean_startup.md
+      Output: outputs/minds/eric_ries/inputs/books/lean_startup.md
       Status: Extraction complete ✅"
 
 troubleshooting:
@@ -500,22 +500,22 @@ Most startups fail. But many of those failures are preventable...
 
 📝 NEXT STEPS (MANUAL MODE):
 1. Click "Manual Download" link for your preferred format (EPUB recommended)
-2. Save file to: docs/minds/eric_ries/inputs/books/lean_startup.epub
-3. Run: *process-local docs/minds/eric_ries/inputs/books/lean_startup.epub
+2. Save file to: outputs/minds/eric_ries/inputs/books/lean_startup.epub
+3. Run: *process-local outputs/minds/eric_ries/inputs/books/lean_startup.epub
 
 ⚖️  Legal Reminder: Download for personal research only. No redistribution.
 ```
 
-**User:** `*process-local docs/minds/eric_ries/inputs/books/lean_startup.epub`
+**User:** `*process-local outputs/minds/eric_ries/inputs/books/lean_startup.epub`
 
 **Agent Response:**
 ```
 📚 Processing local book file...
 
-🔍 Validating file: docs/minds/eric_ries/inputs/books/lean_startup.epub
+🔍 Validating file: outputs/minds/eric_ries/inputs/books/lean_startup.epub
 
 validation_report:
-  file_path: "docs/minds/eric_ries/inputs/books/lean_startup.epub"
+  file_path: "outputs/minds/eric_ries/inputs/books/lean_startup.epub"
   validation_date: "2025-10-07T14:30:00Z"
 
   file_checks:
@@ -543,21 +543,21 @@ validation_report:
 
 🤝 Delegating to @document-specialist for text extraction...
 
-@document-specialist *extract-ebook docs/minds/eric_ries/inputs/books/lean_startup.epub
+@document-specialist *extract-ebook outputs/minds/eric_ries/inputs/books/lean_startup.epub
 
 [Agent waits for document-specialist to complete extraction]
 ```
 
 ### Example 2: Validation Only
 
-**User:** `*validate-book docs/minds/naval/inputs/books/almanack_of_naval.pdf`
+**User:** `*validate-book outputs/minds/naval/inputs/books/almanack_of_naval.pdf`
 
 **Agent Response:**
 ```
 🔍 Validating book file...
 
 validation_report:
-  file_path: "docs/minds/naval/inputs/books/almanack_of_naval.pdf"
+  file_path: "outputs/minds/naval/inputs/books/almanack_of_naval.pdf"
   validation_date: "2025-10-07T14:35:00Z"
 
   file_checks:
@@ -580,7 +580,7 @@ validation_report:
   ready_for_extraction: ✅ true
 
 💡 This book is ready to process. Run:
-   *process-local docs/minds/naval/inputs/books/almanack_of_naval.pdf
+   *process-local outputs/minds/naval/inputs/books/almanack_of_naval.pdf
 ```
 
 ### Example 3: Format Preference Guidance

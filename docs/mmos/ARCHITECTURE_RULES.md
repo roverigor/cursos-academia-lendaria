@@ -25,15 +25,15 @@
 
 ---
 
-### Rule 2: docs/minds/{slug}/ = INDIVIDUAL MIND OUTPUTS ONLY
+### Rule 2: outputs/minds/{slug}/ = INDIVIDUAL MIND OUTPUTS ONLY
 
-**✅ ALLOWED in docs/minds/{slug}/:**
+**✅ ALLOWED in outputs/minds/{slug}/:**
 - All pipeline outputs for THIS mind
 - Mind-specific validation docs
 - Mind-specific migration progress
 - Mind-specific logs and sessions
 
-**❌ FORBIDDEN in docs/minds/{slug}/:**
+**❌ FORBIDDEN in outputs/minds/{slug}/:**
 - System-level documentation
 - Cross-mind comparisons
 - MMOS process documentation
@@ -61,7 +61,7 @@
 When creating a new file, ask:
 
 ### "Is this about a SPECIFIC mind?"
-- **YES** → `docs/minds/{slug}/docs/` or `docs/minds/{slug}/logs/`
+- **YES** → `outputs/minds/{slug}/docs/` or `outputs/minds/{slug}/logs/`
 - **NO** → Continue to next question
 
 ### "Is this a script/task/template?"
@@ -85,7 +85,7 @@ docs/mmos/validations/pedro-valerio-checklist.md
 
 **✅ Correct:**
 ```
-docs/minds/pedro_valerio/docs/validation-checklist.md
+outputs/minds/pedro_valerio/docs/validation-checklist.md
 ```
 
 **Why:** Validation is SPECIFIC to that mind, not a system-level concern.
@@ -101,7 +101,7 @@ docs/mmos/migrations/joao-lozano-progress.md
 
 **✅ Correct:**
 ```
-docs/minds/joao_lozano/docs/migration-progress.md
+outputs/minds/joao_lozano/docs/migration-progress.md
 ```
 
 **Why:** Migration progress is SPECIFIC to that mind.
@@ -128,7 +128,7 @@ docs/mmos/qa/benchmarks/debate-123.yaml
 
 **❌ Wrong:**
 ```
-docs/minds/pedro_valerio/MMOS_ARCHITECTURE.md
+outputs/minds/pedro_valerio/MMOS_ARCHITECTURE.md
 ```
 
 **✅ Correct:**
@@ -150,7 +150,7 @@ docs/mmos/architecture/MMOS_ARCHITECTURE.md
 # Check for mind-specific folders in docs/mmos/
 if git diff --cached --name-only | grep -E "docs/mmos/(validations|migrations)/[a-z_-]+"; then
     echo "❌ ERROR: Mind-specific files in docs/mmos/ detected!"
-    echo "Move to docs/minds/{slug}/docs/ instead"
+    echo "Move to outputs/minds/{slug}/docs/ instead"
     exit 1
 fi
 ```
@@ -181,15 +181,15 @@ jobs:
 ```markdown
 ## MMOS-Specific Rules
 
-### docs/minds/ Directory - OUTPUT ONLY
+### outputs/minds/ Directory - OUTPUT ONLY
 
-**CRITICAL:** `docs/minds/` contains ONLY the direct output of the MMOS pipeline.
+**CRITICAL:** `outputs/minds/` contains ONLY the direct output of the MMOS pipeline.
 
-**DO NOT create process documentation in docs/minds/**
+**DO NOT create process documentation in outputs/minds/**
 
 #### Decision Rule:
 "Is this file the DIRECT OUTPUT of the MMOS pipeline for this specific mind?"
-- YES → `docs/minds/{mind_slug}/`
+- YES → `outputs/minds/{mind_slug}/`
 - NO → Appropriate `docs/mmos/` subfolder
 ```
 
@@ -212,9 +212,9 @@ docs/mmos/
 └── mmos.db               ✅ Database file
 ```
 
-### docs/minds/{slug}/ (Individual Mind)
+### outputs/minds/{slug}/ (Individual Mind)
 ```
-docs/minds/{slug}/
+outputs/minds/{slug}/
 ├── sources/              ✅ Collected materials
 ├── analysis/             ✅ Cognitive analysis
 ├── synthesis/            ✅ Synthesis artifacts
@@ -243,7 +243,7 @@ expansion-packs/mmos-mind-mapper/
 
 Before creating ANY new file, verify:
 
-- [ ] **Is this mind-specific?** → Use `docs/minds/{slug}/`
+- [ ] **Is this mind-specific?** → Use `outputs/minds/{slug}/`
 - [ ] **Is this a script/template?** → Use `expansion-packs/mmos-mind-mapper/`
 - [ ] **Is this system-level?** → Use `docs/mmos/`
 - [ ] **Does the path follow the allowed structure above?**

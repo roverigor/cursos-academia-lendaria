@@ -111,9 +111,9 @@ persona_loading:
   step: "Load MMOS Mind Mapper clone as content persona"
 
   paths:
-    personality_profile: "docs/minds/{mind_name}/synthesis/personality-profile.json"
-    system_prompt: "docs/minds/{mind_name}/synthesis/system-prompt-generalista.md"
-    cognitive_spec: "docs/minds/{mind_name}/analysis/cognitive-spec.yaml"
+    personality_profile: "outputs/minds/{mind_name}/synthesis/personality-profile.json"
+    system_prompt: "outputs/minds/{mind_name}/synthesis/system-prompt-generalista.md"
+    cognitive_spec: "outputs/minds/{mind_name}/analysis/cognitive-spec.yaml"
 
   extraction:
     from_personality_profile:
@@ -212,7 +212,7 @@ persona_loading:
 ```yaml
 error_scenarios:
   - scenario: "MMOS mind not found"
-    error: "Mind '{mind_name}' not found in docs/minds/"
+    error: "Mind '{mind_name}' not found in outputs/minds/"
     action: "List available minds, ask user to select"
 
   - scenario: "Custom persona file not found"
@@ -1077,7 +1077,7 @@ user_preview:
 error_scenarios:
 
   - error: "Persona not found"
-    trigger: "MMOS mind '{mind_name}' not found in docs/minds/"
+    trigger: "MMOS mind '{mind_name}' not found in outputs/minds/"
     recovery:
       1: "List available MMOS minds"
       2: "Offer to use custom persona instead"
