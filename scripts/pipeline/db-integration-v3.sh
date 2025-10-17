@@ -6,7 +6,7 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$SCRIPT_DIR/../.."
-DB_PATH="$PROJECT_ROOT/docs/mmos/mmos.db"
+DB_PATH="$PROJECT_ROOT/outputs/database/mmos.db"
 
 # Colors
 GREEN='\033[0;32m'

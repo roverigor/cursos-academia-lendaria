@@ -63,7 +63,7 @@ Populates the `sources` table from `sources_master.yaml`.
 node scripts/pipeline/populate-sources.js \
   --mind sam_altman \
   --file outputs/minds/sam_altman/sources/sources_master.yaml \
-  --db docs/mmos/mmos.db \
+  --db outputs/database/mmos.db \
   --mode skip
 ```
 
@@ -107,7 +107,7 @@ Imports `cognitive-spec.yaml` into the `analysis` table.
 node scripts/pipeline/import-analysis.js \
   --mind sam_altman \
   --file outputs/minds/sam_altman/analysis/cognitive-spec.yaml \
-  --db docs/mmos/mmos.db \
+  --db outputs/database/mmos.db \
   --mode skip
 ```
 
@@ -156,7 +156,7 @@ Extracts evidence fragments from `cognitive-spec.yaml` into `fragments` table.
 node scripts/pipeline/extract-fragments.js \
   --mind sam_altman \
   --cognitive-spec outputs/minds/sam_altman/analysis/cognitive-spec.yaml \
-  --db docs/mmos/mmos.db \
+  --db outputs/database/mmos.db \
   --mode skip
 ```
 
@@ -210,7 +210,7 @@ Validates data quality and referential integrity after pipeline execution.
 ```bash
 node scripts/pipeline/validate-integration.js \
   --mind sam_altman \
-  --db docs/mmos/mmos.db \
+  --db outputs/database/mmos.db \
   [--strict]
 ```
 

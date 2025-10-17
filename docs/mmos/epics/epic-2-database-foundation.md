@@ -288,7 +288,7 @@ Alan Nicolas, Alex Hormozi, Andrej Karpathy, Brad Frost, Dan Kennedy, Dan Koe, D
 
 - **Schema:** `docs/mmos/database/schema_complete.sql`
 - **Seed Data:** `docs/mmos/database/seed_specialization_taxonomy.sql`
-- **Database:** `docs/mmos/mmos.db`
+- **Database:** `outputs/database/mmos.db`
 - **Story 2.4:** `docs/mmos/stories/story-2.4-pipeline-v3-integration.md`
 - **Audit Report:** `docs/mmos/EPIC-AUDIT-REPORT.md`
 

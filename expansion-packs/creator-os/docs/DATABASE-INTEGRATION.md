@@ -10,7 +10,7 @@
 
 ## Executive Summary
 
-CreatorOS will integrate with the existing unified database (`docs/mmos/mmos.db`) to:
+CreatorOS will integrate with the existing unified database (`outputs/database/mmos.db`) to:
 1. **Store content projects, campaigns, and generated pieces** with full traceability
 2. **Track performance metrics** and learning loops
 3. **Link content to minds** (MMOS clones as personas)
@@ -871,7 +871,7 @@ INSERT INTO content_frameworks VALUES
 # scripts/creator-os/init-database.sh
 #!/bin/bash
 
-DB_PATH="docs/mmos/mmos.db"
+DB_PATH="outputs/database/mmos.db"
 
 echo "Initializing CreatorOS tables in mmos.db..."
 
@@ -906,7 +906,7 @@ const fs = require('fs');
 const path = require('path');
 
 async function createProject(config) {
-  const db = new Database('docs/mmos/mmos.db');
+  const db = new Database('outputs/database/mmos.db');
 
   const projectId = `proj_${uuidv4()}`;
 

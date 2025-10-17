@@ -205,7 +205,7 @@ sqlite3 mmos.db .dump | psql mmos_production
 ### Success Criteria
 
 **Functional:**
-- [x] Database criado com 11 tabelas core (`docs/mmos/mmos.db`)
+- [x] Database criado com 11 tabelas core (`outputs/database/mmos.db`)
 - [x] ETL questions system funcional (add, list, answer, tag, relate)
 - [x] Pipeline progress tracking operacional
 - [x] Mind metadata centralizado (22 minds)
@@ -238,7 +238,7 @@ sqlite3 mmos.db .dump | psql mmos_production
 *As a data engineer, I want a SQLite database with PostgreSQL-compatible schema (11 core tables) and migration system, so that I can store structured data locally now and migrate to PostgreSQL later when needed.*
 
 **Scope:**
-- Create SQLite database (`docs/mmos/mmos.db`)
+- Create SQLite database (`outputs/database/mmos.db`)
 - Implement 11 core tables with foreign keys, indexes, triggers
 - Setup Alembic migrations (SQLite-compatible)
 - SQLAlchemy ORM models
@@ -284,7 +284,7 @@ CREATE TRIGGER decrement_tag_usage (...);
 - Unit tests for CRUD operations
 
 **Acceptance Criteria:**
-1. Database created at `docs/mmos/mmos.db`
+1. Database created at `outputs/database/mmos.db`
 2. All 11 tables + 6 views + 3 triggers created successfully
 3. Foreign keys enforce referential integrity (test with invalid inserts)
 4. Indexes created on hot paths
@@ -658,7 +658,7 @@ mmos-db report tags --top 20               # Most used tags
 ### Epic 2 Completion Criteria:
 
 **Database:**
-- [x] SQLite database created at `docs/mmos/mmos.db`
+- [x] SQLite database created at `outputs/database/mmos.db`
 - [x] 11 core tables with foreign keys, indexes, triggers functional
 - [x] 6 views for common queries created
 - [x] Alembic migrations working

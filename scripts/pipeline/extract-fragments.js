@@ -7,7 +7,7 @@
  *   node scripts/pipeline/extract-fragments.js \
  *     --mind sam_altman \
  *     --cognitive-spec docs/minds/sam_altman/analysis/cognitive-spec.yaml \
- *     --db docs/mmos/mmos.db \
+ *     --db outputs/database/mmos.db \
  *     [--mode fresh|update|skip]
  */
 

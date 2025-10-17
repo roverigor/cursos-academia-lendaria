@@ -266,7 +266,7 @@ Type *help for available commands (some may be disabled)
 **Test:**
 ```bash
 # Verify schema compatibility
-sqlite3 docs/mmos/mmos.db "SELECT name FROM sqlite_master WHERE type='table';"
+sqlite3 outputs/database/mmos.db "SELECT name FROM sqlite_master WHERE type='table';"
 
 # Expected tables: minds, system_prompts, fragments, activation_history
 ```

@@ -11,7 +11,7 @@ This script:
 Usage:
     python save_to_database.py
 
-Database: /Users/oalanicolas/Documents/Code/mente_lendaria/docs/mmos/mmos.db
+Database: /Users/oalanicolas/Documents/Code/mente_lendaria/outputs/database/mmos.db
 """
 
 import sqlite3
@@ -22,7 +22,7 @@ from datetime import datetime
 import uuid
 
 # Paths
-DB_PATH = Path("/Users/oalanicolas/Documents/Code/mente_lendaria/docs/mmos/mmos.db")
+DB_PATH = Path("/Users/oalanicolas/Documents/Code/mente_lendaria/outputs/database/mmos.db")
 TESTING_DIR = Path(__file__).parent.parent / "testing"
 RESULTS_DIR = TESTING_DIR / "results"
 DATA_DIR = TESTING_DIR / "data"

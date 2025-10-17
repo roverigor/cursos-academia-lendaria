@@ -19,7 +19,7 @@ from pathlib import Path
 from datetime import datetime
 
 # Constants
-DB_PATH = Path("/Users/oalanicolas/Documents/Code/mente_lendaria/docs/mmos/mmos.db")
+DB_PATH = Path("/Users/oalanicolas/Documents/Code/mente_lendaria/outputs/database/mmos.db")
 
 def get_db_connection():
     """Create database connection."""

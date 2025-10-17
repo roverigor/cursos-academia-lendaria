@@ -6,7 +6,7 @@
  * Usage:
  *   node scripts/pipeline/validate-integration.js \
  *     --mind sam_altman \
- *     --db docs/mmos/mmos.db \
+ *     --db outputs/database/mmos.db \
  *     [--strict]
  */
 

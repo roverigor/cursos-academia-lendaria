@@ -339,7 +339,7 @@ Epic 4 Implementation
 - **Story Specifications:** `docs/mmos/stories/`
 - **Audit Report:** `docs/mmos/EPIC-AUDIT-REPORT.md`
 - **Database Schema:** `docs/mmos/database/schema_complete.sql`
-- **PRD:** `docs/mmos/docs/PRD.md`
+- **PRD:** `docs/prd/mmos-prd.md`
 
 ---
 

@@ -251,8 +251,8 @@ outputs/minds/*
 ### 4.1 CreatorOS Expansion Pack
 
 **Config File:** `/expansion-packs/creator-os/config.yaml`
-- Line 165: `database_path: "../../docs/mmos/mmos.db"` ✅ (Correct - DB not in outputs)
-- Line 300: `CreatorOS uses unified database (docs/mmos/mmos.db)` ✅
+- Line 165: `database_path: "../../outputs/database/mmos.db"` ✅ (Correct - DB not in outputs)
+- Line 300: `CreatorOS uses unified database (outputs/database/mmos.db)` ✅
 
 **Status:** ⚠️ **NEEDS UPDATES**
 - ✅ Main task files updated (`generate-course.md`)

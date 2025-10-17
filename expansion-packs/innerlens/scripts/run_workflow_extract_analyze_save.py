@@ -40,7 +40,7 @@ except ImportError:
 
 # Constants
 BASE_DIR = Path(__file__).parent.parent
-DB_PATH = Path("/Users/oalanicolas/Documents/Code/mente_lendaria/docs/mmos/mmos.db")
+DB_PATH = Path("/Users/oalanicolas/Documents/Code/mente_lendaria/outputs/database/mmos.db")
 
 def print_header(text):
     """Print formatted header."""

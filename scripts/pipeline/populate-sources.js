@@ -7,7 +7,7 @@
  *   node scripts/pipeline/populate-sources.js \
  *     --mind sam_altman \
  *     --file docs/minds/sam_altman/sources/sources_master.yaml \
- *     --db docs/mmos/mmos.db \
+ *     --db outputs/database/mmos.db \
  *     [--mode fresh|update|skip]
  */
 

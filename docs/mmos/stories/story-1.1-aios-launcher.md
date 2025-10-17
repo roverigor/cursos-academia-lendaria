@@ -720,7 +720,7 @@ time ./mmos-launcher.sh execute --mind sam_altman --stage analysis --prompt anal
 
 ## References
 
-- **PRD**: `/docs/mmos/docs/PRD.md` Section 4, Story 1.1
+- **PRD**: `/docs/prd/mmos-prd.md` Section 4, Story 1.1
 - **Epic 1**: `/docs/mmos/epics/epic-1-aios-orchestration.md`
 - **Prompts Registry**: `/docs/mmos/prompts.yaml` (59 prompts)
 - **ACS v3.0 Spec**: `/docs/mmos/docs/ACS_V3_SPEC.md`

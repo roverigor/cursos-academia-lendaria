@@ -22,12 +22,16 @@ outputs/
 │   │   └── resources/
 │   └── ...
 │
-└── minds/           ← Processed minds (MMOS Mind Mapper expansion)
-    ├── {mind-name}/
-    │   ├── synthesis/
-    │   ├── analysis/
-    │   └── sources/
-    └── ...
+├── minds/           ← Processed minds (MMOS Mind Mapper expansion)
+│   ├── {mind-name}/
+│   │   ├── synthesis/
+│   │   ├── analysis/
+│   │   └── sources/
+│   └── ...
+│
+└── database/        ← MMOS database files
+    ├── mmos.db      ← Main SQLite database
+    └── .gitkeep
 ```
 
 ---
@@ -46,8 +50,13 @@ outputs/
 
 **Gitignore policy:**
 - Generated content is **not committed** to git (see `.gitignore`)
-- Only directory structure is tracked
+- Database files (`outputs/database/*`) are **not committed**
+- Only directory structure is tracked (`.gitkeep` files)
 - Each user generates their own outputs locally
+
+**Note about logs:**
+- Execution logs are in `docs/logs/` and **are versioned**
+- Logs document process history and are part of documentation
 
 ### Manual Editing
 
@@ -118,8 +127,12 @@ rm -rf outputs/courses/*
 # Remove all processed minds
 rm -rf outputs/minds/*
 
+# Remove database (WARNING: all data will be lost!)
+rm -rf outputs/database/*
+
 # Keep directory structure
-mkdir -p outputs/{courses,minds}
+mkdir -p outputs/{courses,minds,database}
+touch outputs/{courses,minds,database}/.gitkeep
 ```
 
 ---

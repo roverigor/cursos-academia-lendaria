@@ -1,1 +1,0 @@
-{"timestamp": "2025-10-05T23:07:53.609695Z", "prompt_id": "analysis_core_obsessions", "phase": "analysis", "agent": "analyst", "mind": null, "user": "oalanicolas", "prompt_file": "prompts/analysis_core_obsessions.md", "outputs": [{"path": "minds/{mind}/artifacts/core_obsessions.yaml", "description": "Obsesses principais"}]}

@@ -7,7 +7,7 @@
  *   node scripts/pipeline/import-analysis.js \
  *     --mind sam_altman \
  *     --file docs/minds/sam_altman/analysis/cognitive-spec.yaml \
- *     --db docs/mmos/mmos.db \
+ *     --db outputs/database/mmos.db \
  *     [--mode fresh|update|skip]
  */
 

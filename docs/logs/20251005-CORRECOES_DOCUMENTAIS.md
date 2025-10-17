@@ -149,11 +149,11 @@ grep -r "clones/" docs/mmos/docs --include="*.md" | grep -v "PRD.md" | wc -l
 # Resultado: 0
 
 # Verificação novo pattern prompts
-grep "minds/{mind_name}" docs/mmos/docs/FOLDER_STRUCTURE.md
+grep "minds/{mind_name}" docs/guides/folder-structure.md
 # Resultado: Presente ✅
 
 # Verificação título atualizado
-head -1 docs/mmos/docs/TOOLS_GUIDE.md
+head -1 docs/methodology/tools-guide.md
 # Resultado: # 🔧 Tools Guide - MMOS v3.0 ✅
 ```
 

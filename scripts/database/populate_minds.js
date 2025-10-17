@@ -9,7 +9,7 @@ const path = require('path');
 const Database = require('better-sqlite3');
 
 const MINDS_DIR = path.join(__dirname, '../../docs/minds');
-const DB_PATH = path.join(__dirname, '../../docs/mmos/mmos.db');
+const DB_PATH = path.join(__dirname, '../../outputs/database/mmos.db');
 
 function getMinds() {
   const entries = fs.readdirSync(MINDS_DIR, { withFileTypes: true });

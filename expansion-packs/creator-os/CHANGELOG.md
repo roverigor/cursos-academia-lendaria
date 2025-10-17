@@ -208,7 +208,7 @@ N/A
 
 - Initial CreatorOS expansion pack structure
 - `config.yaml` with 10 agents and 12 tasks
-- Database integration (13 tables in `docs/mmos/mmos.db`)
+- Database integration (13 tables in `outputs/database/mmos.db`)
 - Core documentation:
   - README.md (quick start, architecture, use cases)
   - PRD.md (product requirements)

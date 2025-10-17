@@ -55,12 +55,12 @@
 
 ### Documentation Created
 ```
-✅ docs/mmos/docs/PRIVATE_INDIVIDUAL_SIMPLIFIED.md
+✅ docs/mmos/workflows/private-individual-simplified.md
    - Simplified workflow (no viability, provided materials)
    - 3 pilot cases documented
    - Implementation roadmap
 
-✅ docs/mmos/docs/PRIVATE_INDIVIDUAL_WORKFLOW_PROPOSAL.md
+✅ docs/mmos/workflows/private-individual-workflow-proposal.md
    - Original full proposal (historical)
    - Strategic context for Creator-OS
 
@@ -218,8 +218,8 @@ Phase 2-5: Standard MMOS ✅ No changes
 
 ## 📎 Related Documents
 
-- **Simplified Workflow:** `docs/mmos/docs/PRIVATE_INDIVIDUAL_SIMPLIFIED.md` ⭐
-- **Full Proposal:** `docs/mmos/docs/PRIVATE_INDIVIDUAL_WORKFLOW_PROPOSAL.md`
+- **Simplified Workflow:** `docs/mmos/workflows/private-individual-simplified.md` ⭐
+- **Full Proposal:** `docs/mmos/workflows/private-individual-workflow-proposal.md`
 - **José Case Study:** `outputs/minds/jose_amorim/SPECIAL_CASE.md`
 
 ---

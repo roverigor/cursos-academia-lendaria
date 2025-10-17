@@ -67,7 +67,7 @@ mente_lendaria/
 
 #### 🚨 Problema 1: Aninhamento Confuso `docs/mmos/docs/`
 
-**Issue:** Caminho `docs/mmos/docs/PRD.md` é semanticamente confuso.
+**Issue:** Caminho `docs/prd/mmos-prd.md` é semanticamente confuso.
 
 **Por quê?**
 - "docs" aparece 2x no path
@@ -112,7 +112,7 @@ docs/
 #### 🚨 Problema 3: Database e Logs Commitados
 
 **Issue:**
-- `docs/mmos/mmos.db` (872KB) commitado no repo
+- `outputs/database/mmos.db` (872KB) commitado no repo
 - `docs/mmos/logs/` (868KB) commitado no repo
 
 **Por quê está errado?**
@@ -237,11 +237,11 @@ mente_lendaria/
 mkdir -p docs/prd/
 
 # Mover PRD do MMOS
-mv docs/mmos/docs/PRD.md docs/prd/mmos-prd.md
+mv docs/prd/mmos-prd.md docs/prd/mmos-prd.md
 
 # Atualizar referências
-grep -r "docs/mmos/docs/PRD.md" . --include="*.md" | cut -d: -f1 | \
-  xargs sed -i '' 's|docs/mmos/docs/PRD.md|docs/prd/mmos-prd.md|g'
+grep -r "docs/prd/mmos-prd.md" . --include="*.md" | cut -d: -f1 | \
+  xargs sed -i '' 's|docs/prd/mmos-prd.md|docs/prd/mmos-prd.md|g'
 ```
 
 #### 1.2 Mover Metodologias
@@ -251,13 +251,13 @@ grep -r "docs/mmos/docs/PRD.md" . --include="*.md" | cut -d: -f1 | \
 mkdir -p docs/methodology/
 
 # Mover documentos de metodologia
-mv docs/mmos/docs/DNA_MENTAL_METHODOLOGY.md docs/methodology/dna-mental.md
-mv docs/mmos/docs/PROMPT_ENGINEERING_GUIDE.md docs/methodology/prompt-engineering.md
-mv docs/mmos/docs/TOOLS_GUIDE.md docs/methodology/tools-guide.md
+mv docs/methodology/dna-mental.md docs/methodology/dna-mental.md
+mv docs/methodology/prompt-engineering.md docs/methodology/prompt-engineering.md
+mv docs/methodology/tools-guide.md docs/methodology/tools-guide.md
 
 # Atualizar referências
-find . -name "*.md" -exec sed -i '' 's|docs/mmos/docs/DNA_MENTAL_METHODOLOGY.md|docs/methodology/dna-mental.md|g' {} \;
-find . -name "*.md" -exec sed -i '' 's|docs/mmos/docs/PROMPT_ENGINEERING_GUIDE.md|docs/methodology/prompt-engineering.md|g' {} \;
+find . -name "*.md" -exec sed -i '' 's|docs/methodology/dna-mental.md|docs/methodology/dna-mental.md|g' {} \;
+find . -name "*.md" -exec sed -i '' 's|docs/methodology/prompt-engineering.md|docs/methodology/prompt-engineering.md|g' {} \;
 ```
 
 #### 1.3 Mover Workflows
@@ -267,16 +267,16 @@ find . -name "*.md" -exec sed -i '' 's|docs/mmos/docs/PROMPT_ENGINEERING_GUIDE.m
 mkdir -p docs/mmos/workflows/
 
 # Mover workflows de docs/mmos/docs/ para docs/mmos/workflows/
-mv docs/mmos/docs/AIOS_WORKFLOW.md docs/mmos/workflows/aios-workflow.md
-mv docs/mmos/docs/BROWNFIELD_WORKFLOW.md docs/mmos/workflows/brownfield-workflow.md
-mv docs/mmos/docs/BROWNFIELD_MIGRATION_WORKFLOW.md docs/mmos/workflows/brownfield-migration.md
-mv docs/mmos/docs/PARALLEL_COLLECTION_GUIDE.md docs/mmos/workflows/parallel-collection.md
-mv docs/mmos/docs/PRIVATE_INDIVIDUAL_WORKFLOW_PROPOSAL.md docs/mmos/workflows/private-individual.md
-mv docs/mmos/docs/PRIVATE_INDIVIDUAL_SIMPLIFIED.md docs/mmos/workflows/private-individual-simplified.md
-mv docs/mmos/docs/WORKFLOW_MATRIX_DECISION.md docs/mmos/workflows/workflow-matrix-decision.md
+mv docs/mmos/workflows/aios-workflow.md docs/mmos/workflows/aios-workflow.md
+mv docs/mmos/workflows/brownfield-workflow.md docs/mmos/workflows/brownfield-workflow.md
+mv docs/mmos/workflows/brownfield-migration-workflow.md docs/mmos/workflows/brownfield-migration.md
+mv docs/mmos/workflows/parallel-collection-guide.md docs/mmos/workflows/parallel-collection.md
+mv docs/mmos/workflows/private-individual-workflow-proposal.md docs/mmos/workflows/private-individual.md
+mv docs/mmos/workflows/private-individual-simplified.md docs/mmos/workflows/private-individual-simplified.md
+mv docs/mmos/workflows/workflow-matrix-decision.md docs/mmos/workflows/workflow-matrix-decision.md
 
 # Atualizar referências
-find . -name "*.md" -exec sed -i '' 's|docs/mmos/docs/AIOS_WORKFLOW.md|docs/mmos/workflows/aios-workflow.md|g' {} \;
+find . -name "*.md" -exec sed -i '' 's|docs/mmos/workflows/aios-workflow.md|docs/mmos/workflows/aios-workflow.md|g' {} \;
 # ... (repetir para outros)
 ```
 
@@ -287,11 +287,11 @@ find . -name "*.md" -exec sed -i '' 's|docs/mmos/docs/AIOS_WORKFLOW.md|docs/mmos
 mkdir -p docs/guides/
 
 # Mover guias
-mv docs/mmos/docs/OUTPUTS_GUIDE.md docs/guides/outputs-guide.md
-mv docs/mmos/docs/FOLDER_STRUCTURE.md docs/guides/folder-structure.md
+mv docs/guides/outputs-guide.md docs/guides/outputs-guide.md
+mv docs/guides/folder-structure.md docs/guides/folder-structure.md
 
 # Se houver integration guides específicos:
-mv docs/mmos/docs/INTEGRATION_ETL_MMOS.md docs/mmos/integration-etl.md
+mv docs/guides/integration-etl-mmos.md docs/mmos/integration-etl.md
 ```
 
 #### 1.5 Mover Arquivo Raiz
@@ -328,15 +328,15 @@ mv docs/mmos/docs/research docs/mmos/
 mkdir -p outputs/database/
 
 # Mover database
-mv docs/mmos/mmos.db outputs/database/mmos.db
+mv outputs/database/mmos.db outputs/database/mmos.db
 
 # Atualizar referências em scripts
 find scripts/ -name "*.js" -o -name "*.sh" | \
-  xargs sed -i '' 's|docs/mmos/mmos.db|outputs/database/mmos.db|g'
+  xargs sed -i '' 's|outputs/database/mmos.db|outputs/database/mmos.db|g'
 
 # Atualizar em expansion packs
 find expansion-packs/ -name "*.md" -o -name "*.js" | \
-  xargs sed -i '' 's|docs/mmos/mmos.db|outputs/database/mmos.db|g'
+  xargs sed -i '' 's|outputs/database/mmos.db|outputs/database/mmos.db|g'
 ```
 
 #### 2.2 Mover Logs
@@ -490,8 +490,8 @@ EOF
 echo "Atualizando referências de documentação..."
 
 # Atualizar referências em README.md raiz
-sed -i '' 's|docs/mmos/docs/PRD.md|docs/prd/mmos-prd.md|g' README.md
-sed -i '' 's|docs/mmos/docs/DNA_MENTAL_METHODOLOGY.md|docs/methodology/dna-mental.md|g' README.md
+sed -i '' 's|docs/prd/mmos-prd.md|docs/prd/mmos-prd.md|g' README.md
+sed -i '' 's|docs/methodology/dna-mental.md|docs/methodology/dna-mental.md|g' README.md
 
 # Atualizar em expansion packs
 find expansion-packs/ -name "*.md" -exec sed -i '' \
@@ -511,11 +511,11 @@ echo "✅ Referências atualizadas!"
 
 ## 📊 Comparação BEFORE vs AFTER
 
-### Navegação - docs/mmos/docs/PRD.md
+### Navegação - docs/prd/mmos-prd.md
 
 **BEFORE:**
 ```
-docs/mmos/docs/PRD.md
+docs/prd/mmos-prd.md
      ^^^^ ^^^^ duplicação semântica
 ```
 
@@ -529,7 +529,7 @@ docs/prd/mmos-prd.md
 
 **BEFORE:**
 ```
-docs/mmos/mmos.db
+outputs/database/mmos.db
      ^^^^ category mismatch (docs é para documentação, não artifacts)
 ```
 
@@ -543,7 +543,7 @@ outputs/database/mmos.db
 
 **BEFORE:**
 ```
-docs/mmos/docs/DNA_MENTAL_METHODOLOGY.md
+docs/methodology/dna-mental.md
      ^^^^ ^^^^ aninhamento confuso
 ```
 
@@ -577,7 +577,7 @@ docs/methodology/dna-mental.md
 ### Fase 2: Mover Database e Logs
 
 - [ ] Criar `outputs/database/` e `outputs/logs/mmos/`
-- [ ] Mover `docs/mmos/mmos.db` → `outputs/database/mmos.db`
+- [ ] Mover `outputs/database/mmos.db` → `outputs/database/mmos.db`
 - [ ] Mover `docs/mmos/logs/*` → `outputs/logs/mmos/`
 - [ ] Atualizar `.gitignore` para ignorar `outputs/database/*.db` e `outputs/logs/*`
 - [ ] Criar `.gitkeep` em `outputs/database/` e `outputs/logs/`
@@ -601,7 +601,7 @@ docs/methodology/dna-mental.md
 ### Fase 5: Validação
 
 - [ ] Verificar links quebrados: `grep -r "docs/mmos/docs/" . --include="*.md"`
-- [ ] Verificar paths de database: `grep -r "docs/mmos/mmos.db" . --include="*.{js,sh}"`
+- [ ] Verificar paths de database: `grep -r "outputs/database/mmos.db" . --include="*.{js,sh}"`
 - [ ] Testar comandos principais: `*generate-course`, `*execute-mmos-pipeline`
 - [ ] Documentar estrutura final: `tree -L 3 docs/ > docs-structure-after.txt`
 - [ ] Comparar before/after: `diff docs-structure-{before,after}.txt`
@@ -649,7 +649,7 @@ docs/methodology/dna-mental.md
 **Impacto:** Scripts de population/import param de funcionar
 
 **Mitigação:**
-- Criar symlink temporário: `ln -s outputs/database/mmos.db docs/mmos/mmos.db`
+- Criar symlink temporário: `ln -s outputs/database/mmos.db outputs/database/mmos.db`
 - Manter por 1-2 semanas para backward compatibility
 - Adicionar warning deprecation em scripts
 
@@ -660,7 +660,7 @@ docs/methodology/dna-mental.md
 ### Navegação
 
 **ANTES:**
-- 🔴 Caminho confuso: `docs/mmos/docs/PRD.md`
+- 🔴 Caminho confuso: `docs/prd/mmos-prd.md`
 - 🔴 Documentação geral sem casa
 - 🔴 Aninhamento de 3 níveis desnecessário
 

@@ -32,8 +32,10 @@ coverage/
 # Generated outputs (AIOS expansion packs)
 outputs/courses/*
 outputs/minds/*
+outputs/database/*
 
 # Keep directory structure
 !outputs/courses/.gitkeep
 !outputs/minds/.gitkeep
+!outputs/database/.gitkeep
 !outputs/README.md

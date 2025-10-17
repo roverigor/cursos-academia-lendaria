@@ -385,7 +385,7 @@ Create analytics tools for profiling data visualization.
 
 - **Epics:** `docs/mmos/epics/`
 - **Architecture:** `docs/mmos/architecture/`
-- **PRD:** `docs/mmos/docs/PRD.md`
+- **PRD:** `docs/prd/mmos-prd.md`
 - **Migration Scripts:** `scripts/migration/`
 
 ---

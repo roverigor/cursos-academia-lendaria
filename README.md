@@ -308,13 +308,13 @@ Assistente para aplicar MMOS a clones existentes:
 
 ### Documentação MMOS
 
-- **[PRD](docs/mmos/docs/PRD.md)** - Product Requirements Document
-- **[DNA Mental Methodology](docs/mmos/docs/DNA_MENTAL_METHODOLOGY.md)** - Metodologia de mapeamento
-- **[Outputs Guide](docs/mmos/docs/OUTPUTS_GUIDE.md)** - Outputs esperados por fase
-- **[Prompt Engineering Guide](docs/mmos/docs/PROMPT_ENGINEERING_GUIDE.md)** - Guia de engenharia de prompts
-- **[Tools Guide](docs/mmos/docs/TOOLS_GUIDE.md)** - Ferramentas recomendadas
-- **[Brownfield Workflow](docs/mmos/docs/BROWNFIELD_WORKFLOW.md)** - Workflow para clones existentes
-- **[Parallel Collection Guide](docs/mmos/docs/PARALLEL_COLLECTION_GUIDE.md)** - Coleta paralela de dados
+- **[PRD](docs/prd/mmos-prd.md)** - Product Requirements Document
+- **[DNA Mental Methodology](docs/methodology/dna-mental.md)** - Metodologia de mapeamento
+- **[Outputs Guide](docs/guides/outputs-guide.md)** - Outputs esperados por fase
+- **[Prompt Engineering Guide](docs/methodology/prompt-engineering.md)** - Guia de engenharia de prompts
+- **[Tools Guide](docs/methodology/tools-guide.md)** - Ferramentas recomendadas
+- **[Brownfield Workflow](docs/mmos/workflows/brownfield-workflow.md)** - Workflow para clones existentes
+- **[Parallel Collection Guide](docs/mmos/workflows/parallel-collection-guide.md)** - Coleta paralela de dados
 
 ### Guias por Fase (MMOS)
 

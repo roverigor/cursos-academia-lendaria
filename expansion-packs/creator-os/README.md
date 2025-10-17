@@ -170,7 +170,7 @@ bash scripts/creator-os/init-database.sh
 
 ## 📊 Database Integration
 
-CreatorOS integrates with the unified AIOS database (`docs/mmos/mmos.db`):
+CreatorOS integrates with the unified AIOS database (`outputs/database/mmos.db`):
 
 ### 13 Tables
 

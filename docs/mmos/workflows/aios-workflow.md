@@ -245,10 +245,10 @@ Este documento descreve **como executar o pipeline MMOS** usando o catálogo `pr
 - **docs/mmos/README.md** - Visão AIOS-first e estrutura do pipeline
 - **docs/mmos/prompts.yaml** - Catálogo oficial de prompts
 - **scripts/aios-launcher.sh** - Briefing automático + logging
-- **docs/mmos/docs/OUTPUTS_GUIDE.md** - Especificação de outputs por etapa
+- **docs/guides/outputs-guide.md** - Especificação de outputs por etapa
 - **aios-fullstack/README.md** - Framework AIOS
 - **aios-fullstack/aios-core/user-guide.md** - Guia de uso dos agentes
-- **docs/mmos/docs/OUTPUTS_GUIDE.md** - Especificação de outputs
+- **docs/guides/outputs-guide.md** - Especificação de outputs
 
 ---
 

@@ -162,7 +162,7 @@ data:
 # Database Integration
 database:
   integrated: true
-  database_path: "../../docs/mmos/mmos.db"
+  database_path: "../../outputs/database/mmos.db"
   tables:
     core:
       - content_frameworks
@@ -297,7 +297,7 @@ installation:
     Database Integration
     ═══════════════════════════════════════════════════════════
 
-    CreatorOS uses unified database (docs/mmos/mmos.db):
+    CreatorOS uses unified database (outputs/database/mmos.db):
     - 13 tables (projects, content, performance, funnels, A/B tests)
     - Full traceability (content → persona → mind → fragments)
     - Cross-studio analytics (MMOS + InnerLens + CreatorOS)

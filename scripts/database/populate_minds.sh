@@ -5,7 +5,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$SCRIPT_DIR/../.."
 MINDS_DIR="$PROJECT_ROOT/docs/minds"
-DB_PATH="$PROJECT_ROOT/docs/mmos/mmos.db"
+DB_PATH="$PROJECT_ROOT/outputs/database/mmos.db"
 
 echo "═══════════════════════════════════════════════════════════"
 echo "  MMOS Database - Populate Minds"
