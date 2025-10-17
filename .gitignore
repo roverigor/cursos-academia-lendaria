@@ -7,11 +7,25 @@
 .windsurf/
 .trae/
 .obsidian/
+.cursor/
 
 # Dependências comuns
 node_modules/
 .venv/
 venv/
+.venv-etl/
 __pycache__/
 *.pyc
 .env
+
+# Arquivos temporários e backup
+*.bak
+*~
+*.swp
+*.swo
+*.tmp
+*.log
+
+# Coverage reports
+coverage/
+*.lcov
