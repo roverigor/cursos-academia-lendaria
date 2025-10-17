@@ -110,7 +110,7 @@ This workflow covers the complete course creation lifecycle from ideation to lau
 # - Only asks clarification questions if ambiguous
 ```
 
-**Template:** `.aios-core/templates/course-brief-v2.md`
+**Template:** `expansion-packs/creator-os/templates/course-brief-v2.md`
 
 **What's New in v2.0:**
 - ✅ **No more interactive Q&A** - User fills complete document upfront
@@ -616,12 +616,12 @@ A course is considered **"Done"** when:
 
 ## 📚 Related Resources
 
-- **Course Brief Template v2.0:** `.aios-core/templates/course-brief-v2.md` ⭐ **NEW**
-- **Course Brief Template (legacy):** `.aios-core/templates/course-brief.md`
+- **Course Brief Template v2.0:** `expansion-packs/creator-os/templates/course-brief-v2.md` ⭐ **NEW**
+- **Course Brief Template (legacy):** `expansion-packs/creator-os/templates/course-brief.md`
 - **QA Checklist:** `.aios-core/checklists/course-qa-checklist.md`
-- **QA Report Template:** `.aios-core/templates/course-qa-report.md`
+- **QA Report Template:** `expansion-packs/creator-os/templates/course-qa-report.md`
 - **Research Framework:** `.aios-core/workflows/course-research-framework.md`
-- **Retrospective Template:** `.aios-core/templates/course-retrospective.md`
+- **Retrospective Template:** `expansion-packs/creator-os/templates/course-retrospective.md`
 - **Workflow Diagram:** `docs/courses/COURSE-WORKFLOW-DIAGRAM.md` ⭐ **NEW**
 - **v2.0 Improvements Doc:** `docs/courses/WORKFLOW-IMPROVEMENTS-V2.md` ⭐ **NEW**
 

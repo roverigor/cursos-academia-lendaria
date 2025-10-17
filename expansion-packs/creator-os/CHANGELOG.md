@@ -51,14 +51,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **3. Templates (4 files)**
 
-- **Course Brief Template** (`.aios-core/templates/course-brief.md`)
+- **Course Brief Template** (`expansion-packs/creator-os/templates/course-brief.md`)
   - Comprehensive planning document
   - Sections: Target Audience, Learning Outcomes, Structure, Differentiation, Commercial Model
   - Go/No-Go decision framework
   - Stakeholder approval checklist
   - ~1,000 lines
 
-- **Course QA Report Template** (`.aios-core/templates/course-qa-report.md`)
+- **Course QA Report Template** (`expansion-packs/creator-os/templates/course-qa-report.md`)
   - Executive summary with total score
   - Dimension-by-dimension analysis
   - Issues summary with fix time estimates
@@ -66,7 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Benchmarking section
   - ~1,100 lines
 
-- **Course Research Findings Template** (`.aios-core/templates/course-research-findings.md`)
+- **Course Research Findings Template** (`expansion-packs/creator-os/templates/course-research-findings.md`)
   - Structured documentation for research phases
   - Consolidated insights by theme
   - Prioritized recommendations with ROI scores
@@ -74,7 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Application plan (Go/No-Go, Continue/Pivot decisions)
   - ~1,200 lines
 
-- **Course Retrospective Template** (`.aios-core/templates/course-retrospective.md`)
+- **Course Retrospective Template** (`expansion-packs/creator-os/templates/course-retrospective.md`)
   - Post-mortem analysis framework
   - What Went Well / What Didn't / Ideas to Try
   - Lessons learned (process, content, tools)

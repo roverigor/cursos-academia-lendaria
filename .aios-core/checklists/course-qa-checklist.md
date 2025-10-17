@@ -12,7 +12,7 @@
 1. **Run after content is complete** - All lessons, assessments, and resources created
 2. **Score each dimension** - Use the scoring rubric below (0-20 points each)
 3. **Document issues found** - Categorize as Critical/High/Medium/Low
-4. **Generate QA Report** - Use template at `.aios-core/templates/course-qa-report.md`
+4. **Generate QA Report** - Use template at `expansion-packs/creator-os/templates/course-qa-report.md`
 5. **Decide launch readiness** - 80+ = Ready, 70-79 = Fix critical issues first, <70 = Major revision needed
 
 ---
@@ -212,7 +212,7 @@
 
 After completing this checklist, generate a QA Report using:
 
-**Template:** `.aios-core/templates/course-qa-report.md`
+**Template:** `expansion-packs/creator-os/templates/course-qa-report.md`
 
 **Include:**
 1. Executive Summary (Overall Score, Launch Readiness)
@@ -239,7 +239,7 @@ Before declaring QA complete:
 
 ## 📚 Related Resources
 
-- **QA Report Template:** `.aios-core/templates/course-qa-report.md`
+- **QA Report Template:** `expansion-packs/creator-os/templates/course-qa-report.md`
 - **Course Creation Workflow:** `.aios-core/workflows/course-creation-workflow.md`
 - **Research Framework:** `.aios-core/workflows/course-research-framework.md`
 

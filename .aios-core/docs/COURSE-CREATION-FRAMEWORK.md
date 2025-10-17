@@ -40,10 +40,10 @@ This is a **comprehensive, research-driven framework** for creating high-quality
 
 | Template | File | Purpose | When to Use |
 |----------|------|---------|-------------|
-| **Course Brief** | `.aios-core/templates/course-brief.md` | Comprehensive course planning document | Phase 1: Discovery |
-| **QA Report** | `.aios-core/templates/course-qa-report.md` | Quality evaluation report | Phase 3: QA |
-| **Research Findings** | `.aios-core/templates/course-research-findings.md` | Research synthesis document | After each research phase |
-| **Retrospective** | `.aios-core/templates/course-retrospective.md` | Post-mortem analysis | After course launch |
+| **Course Brief** | `expansion-packs/creator-os/templates/course-brief.md` | Comprehensive course planning document | Phase 1: Discovery |
+| **QA Report** | `expansion-packs/creator-os/templates/course-qa-report.md` | Quality evaluation report | Phase 3: QA |
+| **Research Findings** | `expansion-packs/creator-os/templates/course-research-findings.md` | Research synthesis document | After each research phase |
+| **Retrospective** | `expansion-packs/creator-os/templates/course-retrospective.md` | Post-mortem analysis | After course launch |
 
 ---
 
@@ -59,7 +59,7 @@ Follow: Phase 1 (5 searches)
 Document in: docs/courses/[course-name]/PRE-CREATION-RESEARCH.md
 
 # 2. Create Course Brief
-Copy: .aios-core/templates/course-brief.md
+Copy: expansion-packs/creator-os/templates/course-brief.md
 Fill out: All sections (target audience, outcomes, structure, etc.)
 Save as: docs/courses/[course-name]/COURSE-BRIEF.md
 
@@ -288,7 +288,7 @@ A course is considered **"Done"** when:
 
 **Step 2: Run Retrospective**
 ```bash
-Open: .aios-core/templates/course-retrospective.md
+Open: expansion-packs/creator-os/templates/course-retrospective.md
 Document: What worked, what didn't, lessons learned
 Create: docs/courses/[course-name]/RETROSPECTIVE.md
 ```
@@ -459,7 +459,7 @@ docs/courses/[course-name]/
 
 ```bash
 # Start new course
-cp .aios-core/templates/course-brief.md docs/courses/[name]/COURSE-BRIEF.md
+cp expansion-packs/creator-os/templates/course-brief.md docs/courses/[name]/COURSE-BRIEF.md
 
 # Run research
 open .aios-core/workflows/course-research-framework.md
@@ -468,10 +468,10 @@ open .aios-core/workflows/course-research-framework.md
 open .aios-core/checklists/course-qa-checklist.md
 
 # Generate QA Report
-cp .aios-core/templates/course-qa-report.md docs/courses/[name]/QA-REPORT.md
+cp expansion-packs/creator-os/templates/course-qa-report.md docs/courses/[name]/QA-REPORT.md
 
 # Post-launch retrospective
-cp .aios-core/templates/course-retrospective.md docs/courses/[name]/RETROSPECTIVE.md
+cp expansion-packs/creator-os/templates/course-retrospective.md docs/courses/[name]/RETROSPECTIVE.md
 ```
 
 ---

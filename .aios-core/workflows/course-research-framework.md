@@ -505,7 +505,7 @@ Before considering research "complete":
 
 - **Course QA Checklist:** `.aios-core/checklists/course-qa-checklist.md`
 - **Course Creation Workflow:** `.aios-core/workflows/course-creation-workflow.md`
-- **QA Report Template:** `.aios-core/templates/course-qa-report.md`
+- **QA Report Template:** `expansion-packs/creator-os/templates/course-qa-report.md`
 
 ---
 

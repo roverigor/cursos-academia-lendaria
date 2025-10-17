@@ -286,7 +286,7 @@ NONE ✅
    - Impact: One-stop solution, no need to supplement with external resources
 
 5. **Actionable Immediacy** - Templates ready to copy/paste, queries ready to search
-   - Example: "Copy .aios-core/templates/course-brief.md to docs/courses/[name]/"
+   - Example: "Copy expansion-packs/creator-os/templates/course-brief.md to docs/courses/[name]/"
    - Impact: Reduces friction, users start immediately
 
 6. **Meticulous Detail** - Quintessential PO voice (Sarah's systematic approach)
