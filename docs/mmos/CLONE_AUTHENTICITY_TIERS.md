@@ -675,24 +675,28 @@ START: "Qual tier escolher?"
 │ TIER UPGRADE         │ INVESTMENT │ AUTHENTICITY │  VALUE ADD  │
 │                      │  (+hours)  │     GAIN     │             │
 ├──────────────────────┼────────────┼──────────────┼─────────────┤
-│ BASIC → PREMIUM      │    +40h    │  +15% pts    │ Depth       │
-│                      │            │ (70% → 85%)  │ Adaptability│
+│ BASIC → PREMIUM 🔴   │    +24h    │  +10% pts    │ Multi-      │
+│                      │            │ (75% → 85%)  │ perspective │
 ├──────────────────────┼────────────┼──────────────┼─────────────┤
 │ PREMIUM → LEGEND     │    +64h    │  +10% pts    │ Biases      │
 │                      │            │ (85% → 95%+) │ Contradic.  │
 ├──────────────────────┼────────────┼──────────────┼─────────────┤
-│ BASIC → LEGEND       │   +104h    │  +25% pts    │ All features│
-│                      │            │ (70% → 95%+) │ Max quality │
+│ BASIC → LEGEND 🔴    │    +88h    │  +20% pts    │ All features│
+│                      │            │ (75% → 95%+) │ Max quality │
 └──────────────────────┴────────────┴──────────────┴─────────────┘
+
+🔴 UPDATED: Lower incremental costs because Engagement Modes now in BASIC
 ```
 
 ### Production Capacity
 
 | Tier | Clones/Month | Team Size (1 analyst) |
 |------|--------------|----------------------|
-| BASIC | 8-10 | High volume production |
+| BASIC 🔴 | 6-7 | High volume production |
 | PREMIUM | 3-4 | Selective, high-value |
 | LEGEND | 1 | Flagship, one-of-a-kind |
+
+🔴 **UPDATED:** BASIC capacity reduced from 8-10 to 6-7 due to Engagement Modes addition
 
 **Strategic Insight:**
 - Most teams should do **70% BASIC, 25% PREMIUM, 5% LEGEND**
@@ -993,24 +997,30 @@ A: Upgrade tier mid-project. Document learning for future tier selection.
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│                  TIER SELECTION GUIDE                    │
+│            TIER SELECTION GUIDE (UPDATED) 🔴             │
 ├──────────────────────────────────────────────────────────┤
 │                                                          │
-│  🔵 BASIC: Foundation (70%)                             │
+│  🔵 BASIC: Foundation + Adaptability (75%) 🔴           │
 │     → Most cases, internal use, standard work           │
-│     → 3-4 days, 1x cost                                 │
+│     → Now includes Engagement Modes (context-adaptive)  │
+│     → 5-6 days, 1x cost                                 │
 │                                                          │
-│  🟡 PREMIUM: Depth & Adaptability (85%)                 │
-│     → Complex personas, clients, multi-perspective      │
+│  🟡 PREMIUM: Multi-Perspective Depth (85%)              │
+│     → Complex personas, clients, Theatre of Agents      │
+│     → 5 internal agents (incl. O Validador) 🔴         │
 │     → 7-10 days, 3x cost                                │
 │                                                          │
 │  🔴 LEGEND: Perfection (95%+)                           │
 │     → Flagship, showcase, indistinguishable quality     │
+│     → Biases + Contradictions                           │
 │     → 14-20 days, 6x cost                               │
 │                                                          │
 ├──────────────────────────────────────────────────────────┤
 │  DEFAULT: BASIC for 70% of cases                        │
-│  UPGRADE: PREMIUM when complexity/client demands        │
+│  UPGRADE: PREMIUM when multi-perspective needed         │
 │  LEGEND: Reserved for flagship/showcase                 │
+│                                                          │
+│  🔴 KEY CHANGE: Engagement Modes moved to BASIC         │
+│     João: "É tão importante quanto Fingerprint"         │
 └──────────────────────────────────────────────────────────┘
 ```
