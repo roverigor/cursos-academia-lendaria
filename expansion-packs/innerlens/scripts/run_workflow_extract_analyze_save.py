@@ -202,7 +202,9 @@ Return ONLY valid JSON with this structure (no markdown, no explanation):
   ]
 }}
 
-Extract ALL valid MIUs (aim for 15-100 per 1000 words). Ensure 100% grammatical completeness and zero-inference compliance.
+Extract the 40-60 MOST IMPORTANT MIUs (prioritize diversity and clarity). Ensure 100% grammatical completeness and zero-inference compliance.
+
+IMPORTANT: Keep "structure" fields CONCISE (list only 2-3 examples per category, not all words).
 """
 
     # Call Claude API
@@ -213,7 +215,7 @@ Extract ALL valid MIUs (aim for 15-100 per 1000 words). Ensure 100% grammatical 
     try:
         response = client.messages.create(
             model="claude-sonnet-4-20250514",
-            max_tokens=16000,
+            max_tokens=8000,  # Reduced to encourage more concise extraction
             temperature=0.0,
             messages=[{"role": "user", "content": prompt}]
         )
