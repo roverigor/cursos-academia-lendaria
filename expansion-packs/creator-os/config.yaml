@@ -98,7 +98,10 @@ tasks:
     purpose: Generate newsletter with curated content + commentary
   - id: generate-course
     file: tasks/generate-course.md
-    purpose: Generate complete course (outline, lessons, exercises, assessments)
+    purpose: Initialize course structure and brief template (v2.0 - Step 1)
+  - id: continue-course
+    file: tasks/continue-course.md
+    purpose: Generate course content from filled brief (v2.0 - Steps 2-5)
   - id: design-funnel
     file: tasks/design-funnel.md
     purpose: Design conversion funnel (TOFU → MOFU → BOFU)
