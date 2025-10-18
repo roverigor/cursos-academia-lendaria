@@ -51,7 +51,10 @@ python scripts/init_course.py
 # 2. Fill COURSE-BRIEF.md
 vim outputs/courses/meu-curso/COURSE-BRIEF.md
 
-# 3. Generate complete course
+# 3. Generate curriculum
+python scripts/generate_curriculum.py meu-curso
+
+# 4. Generate complete course
 python scripts/generate_course.py meu-curso
 ```
 

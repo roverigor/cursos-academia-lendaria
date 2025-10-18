@@ -22,7 +22,13 @@ python scripts/init_course.py
 # 2. Preencher COURSE-BRIEF.md
 vim outputs/courses/meu-curso/COURSE-BRIEF.md
 
-# 3. Gerar curso completo
+# 3. Gerar curriculum.yaml
+python scripts/generate_curriculum.py meu-curso
+
+# 4. Revisar curriculum.yaml (opcional - editar se necessário)
+vim outputs/courses/meu-curso/curriculum.yaml
+
+# 5. Gerar curso completo
 python scripts/generate_course.py meu-curso
 ```
 
@@ -53,13 +59,29 @@ python lib/objectives_inferencer.py meu-curso-antigo
 # 4. Preencher lacunas no COURSE-BRIEF.md
 vim outputs/courses/meu-curso-antigo/COURSE-BRIEF.md
 
-# 5. Gerar curso completo
+# 5. Gerar curriculum.yaml
+python scripts/generate_curriculum.py meu-curso-antigo
+
+# 6. Revisar e ajustar curriculum.yaml se necessário
+vim outputs/courses/meu-curso-antigo/curriculum.yaml
+
+# 7. Gerar curso completo
 python scripts/generate_course.py meu-curso-antigo
 ```
 
 ---
 
 ## 🛠️ Comandos Úteis
+
+### Gerar Curriculum
+
+```bash
+# Criar curriculum.yaml do zero
+python scripts/generate_curriculum.py <course-slug>
+
+# Sobrescrever curriculum.yaml existente
+python scripts/generate_curriculum.py <course-slug> --force
+```
 
 ### Validar Curso
 
@@ -79,6 +101,8 @@ python lib/assessment_generator.py <course-slug>
 # Se você pressionou CTRL+C durante a geração
 python scripts/generate_course.py <course-slug> --resume
 ```
+
+**✅ Novo:** Resume agora funciona completamente! Retoma de onde parou.
 
 ### Recomeçar do Zero (Ignorar Checkpoints)
 

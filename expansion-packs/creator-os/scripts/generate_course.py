@@ -233,8 +233,23 @@ class CourseGenerationWorkflow:
             logger.error(f"❌ Failed to load course brief: {e}\n")
             return None
 
-    def _generate_all_lessons(self, curriculum: dict, course_brief: dict) -> dict:
-        """Generate all lessons using LessonGenerator."""
+    def _generate_all_lessons(
+        self,
+        curriculum: dict,
+        course_brief: dict,
+        resume_state: Optional[dict] = None
+    ) -> dict:
+        """
+        Generate all lessons using LessonGenerator.
+
+        Args:
+            curriculum: Course curriculum structure
+            course_brief: Parsed COURSE-BRIEF.md
+            resume_state: Optional checkpoint state for resume
+
+        Returns:
+            Generation result dict or None on failure
+        """
         try:
             generator = LessonGenerator(
                 course_slug=self.course_slug,
@@ -242,7 +257,23 @@ class CourseGenerationWorkflow:
                 course_brief=course_brief
             )
 
-            result = generator.generate_all_lessons()
+            # If resuming, pass completed lessons to skip
+            if resume_state:
+                progress = resume_state.get("progress", {})
+                completed_lessons = progress.get("completed_list", [])
+
+                logger.info(f"📊 Resume Progress:")
+                logger.info(f"   Completed: {len(completed_lessons)} lessons")
+                logger.info(f"   Skipping: {', '.join(completed_lessons[:5])}")
+                if len(completed_lessons) > 5:
+                    logger.info(f"   ... and {len(completed_lessons) - 5} more")
+                logger.info("")
+
+                # Generate only pending lessons
+                result = generator.generate_all_lessons(skip_completed=completed_lessons)
+            else:
+                # Normal generation (all lessons)
+                result = generator.generate_all_lessons()
 
             return result
 
@@ -324,21 +355,88 @@ class CourseGenerationWorkflow:
             logger.error("Run with --force to start fresh.\n")
             return 1
 
+        # Validate context files still exist
+        if not self.state_manager.validate_context(latest_state):
+            logger.error("❌ Context files have changed since checkpoint.")
+            logger.error("curriculum.yaml or COURSE-BRIEF.md may have been modified.")
+            logger.error("Run with --force to start fresh.\n")
+            return 1
+
         # Display resume summary
         logger.info(self.state_manager.format_progress_summary(latest_state))
 
         next_step = latest_state.get("next_step")
 
-        if next_step == "generate_lessons":
-            logger.info("→ Resuming from Step 5: Lesson Generation\n")
-            # Continue with lesson generation
-            # TODO: Implement resume logic for specific step
-            logger.error("⚠️  Resume from this checkpoint not yet implemented.")
-            logger.error("Run without --resume to start fresh.\n")
-            return 1
+        try:
+            if next_step == "generate_lessons":
+                logger.info("→ Resuming from Step 5: Lesson Generation\n")
 
-        else:
-            logger.error(f"⚠️  Unknown next_step: {next_step}")
+                # Load context from state
+                context = latest_state.get("context", {})
+                curriculum_path = context.get("curriculum_path")
+                brief_path = context.get("brief_path")
+
+                if not curriculum_path or not brief_path:
+                    logger.error("❌ Missing context paths in checkpoint.")
+                    return 1
+
+                # Load curriculum and brief
+                with open(curriculum_path, 'r', encoding='utf-8') as f:
+                    curriculum = yaml.safe_load(f)
+
+                course_brief = self._load_course_brief()
+                if not course_brief:
+                    return 1
+
+                # Generate remaining lessons (state manager tracks completed)
+                generation_result = self._generate_all_lessons(
+                    curriculum,
+                    course_brief,
+                    resume_state=latest_state
+                )
+
+                if not generation_result:
+                    logger.error("\n❌ Lesson generation failed")
+                    return 1
+
+                # Continue with validation (Step 6)
+                logger.info("\n" + "="*64)
+                logger.info("STEP 6: COURSE QUALITY VALIDATION")
+                logger.info("="*64 + "\n")
+
+                validation_result = self._validate_course()
+
+                # Generate assessments (Step 7)
+                logger.info("\n" + "="*64)
+                logger.info("STEP 7: ASSESSMENT GENERATION")
+                logger.info("="*64 + "\n")
+
+                assessment_result = self._generate_assessments(curriculum)
+
+                # Final summary
+                logger.info("\n" + "="*64)
+                logger.info("✅ COURSE GENERATION COMPLETE!")
+                logger.info("="*64 + "\n")
+
+                self._display_final_summary(generation_result, validation_result)
+
+                # Cleanup state files
+                self.state_manager.cleanup_states()
+
+                return 0
+
+            elif next_step == "continue_lessons":
+                # Legacy checkpoint name - same as generate_lessons
+                logger.info("→ Resuming lesson generation (legacy checkpoint)\n")
+                return self._resume_from_checkpoint()  # Recursive with updated state
+
+            else:
+                logger.error(f"⚠️  Unknown next_step: {next_step}")
+                logger.error("Run without --resume to start fresh.\n")
+                return 1
+
+        except Exception as e:
+            logger.exception(f"\n❌ Resume failed: {e}")
             logger.error("Run without --resume to start fresh.\n")
             return 1
 
