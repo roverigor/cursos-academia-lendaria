@@ -1,8 +1,8 @@
 ---
 task_name: "generate-course"
-task_version: "2.2"
+task_version: "2.3"
 required_agent_version: ">=2.2"
-description: "Initialize course structure with greenfield/brownfield detection and unified brief document"
+description: "Initialize course structure with greenfield/brownfield detection, file organization, and ICP extraction"
 last_updated: "2025-10-18"
 ---
 
@@ -766,6 +766,284 @@ notification_brownfield_after_organization:
 
 ---
 
+### Step 2.5: ICP Extraction (Brownfield Only)
+
+**This step runs ONLY in brownfield mode after file organization (Step 2).**
+
+**2.5.1. Extract ICP Data from Organized Files**
+
+```yaml
+icp_extraction:
+  step: "Extract ICP (Ideal Customer Profile) data from legacy files"
+
+  applies_to: "Only runs in BROWNFIELD mode (creation_mode = brownfield)"
+
+  skip_if: "creation_mode = greenfield (no legacy files to extract from)"
+
+  prerequisites:
+    - Brownfield mode validated (Scenario 3 passed)
+    - File organization complete (Step 2.2) or skipped (manual organization)
+    - COURSE-BRIEF.md exists (from greenfield template or manual creation)
+
+  import:
+    module: "expansion-packs/creator-os/lib/icp_extractor.py"
+    class: "ICPExtractor"
+
+  actions:
+    1_find_icp_files:
+      description: "Search for ICP-related files in /legado/ and root"
+
+      execution: |
+        from lib.icp_extractor import ICPExtractor
+
+        extractor = ICPExtractor(course_slug)
+        icp_files = extractor.find_icp_files()
+
+      detection_strategies:
+        - Filename patterns (ICP.md, avatar.md, persona.md, publico-alvo.md)
+        - Content keywords ("ideal customer", "público-alvo", "target audience")
+        - Confidence scoring (filename match = 85-95%, content match = 40-75%)
+
+      output:
+        - List of ICPFile objects ranked by confidence
+        - Top 3 candidates displayed to user
+
+    2_extract_icp_data:
+      description: "Parse Markdown structure and extract ICP data"
+
+      execution: |
+        icp_data = extractor.extract_icp(icp_files)
+
+      parsing_logic:
+        - Detect section headers (## Demografia, ## Dores, etc.)
+        - Extract key-value pairs (**Idade:** 30-40)
+        - Extract bullet lists (pain points, goals)
+        - Merge data from multiple files (unique items only)
+        - Calculate confidence score based on completeness
+
+      output:
+        - ICPData object with structured data
+        - Confidence score (0-100%)
+        - Completeness flags for each subsection
+
+    3_export_to_yaml:
+      description: "Save extracted data to YAML for reference"
+
+      execution: |
+        yaml_path = extractor.export_to_yaml(icp_data)
+
+      output_path: "outputs/courses/{course-slug}/icp-extracted.yaml"
+
+      yaml_structure: |
+        icp_extracted:
+          source_file: "legado/ICP.md"
+          extraction_timestamp: "2025-10-18T10:30:00Z"
+          confidence_score: 95
+          demographics:
+            age_range: "35-45"
+            location: "Brasil (urbano)"
+            occupation: ["Empreendedor", "Executivo"]
+            income: "R$ 10k-50k/mês"
+          psychographics:
+            moment_of_life: "Transição consciente"
+            mental_state: "Saturado de informação"
+            values: ["Eficiência", "Autenticidade"]
+          pain_points:
+            - "Sobrecarga cognitiva"
+            - "Falta de tempo para executar"
+          goals:
+            - "Executar com foco"
+            - "Sistema sustentável"
+          archetypes: []
+          completeness:
+            demographics: true
+            psychographics: true
+            pain_points: true
+            goals: true
+
+    4_prefill_course_brief:
+      description: "Auto-populate COURSE-BRIEF.md Section 2 with extracted data"
+
+      execution: |
+        success = extractor.prefill_course_brief(icp_data)
+
+      brief_section_format: |
+        ## 2️⃣ PÚBLICO-ALVO & ICP
+
+        🟢 **Status:** Extracted from `legado/ICP.md` (95% confidence)
+
+        **Extracted:**
+        - Demographics ✅
+        - Psychographics ✅
+        - Pain Points ✅
+        - Goals ✅
+
+        ---
+
+        ### 2.1. Quem é o aluno ideal?
+
+        **Demografia básica:**
+
+        - **Idade:** 35-45 anos
+        - **Localização:** Brasil (urbano)
+        - **Ocupação:** Empreendedor, Executivo
+        - **Renda:** R$ 10k-50k/mês
+
+        **Contexto psicográfico:**
+
+        - **Momento de Vida:** Transição consciente
+        - **Estado Mental:** Saturado de informação
+        - **Valores:** Eficiência, Autenticidade
+
+        ---
+
+        ### 2.2. Dores & Problemas (CRITICAL!)
+
+        **Dores/frustrações específicas:**
+
+        - Sobrecarga cognitiva (infinite consumption loop)
+        - Falta de tempo para executar (sempre consumindo, nunca fazendo)
+
+        ---
+
+        ### 2.3. Desejo & Transformação
+
+        **O que o avatar DESEJA alcançar com este curso?**
+
+        **Objetivos:**
+
+        - Executar com foco (menos ruído mental)
+        - Sistema sustentável (não depende de willpower)
+
+        ---
+
+        📝 **Instruções:** Review extracted data for accuracy. Edit if needed, then change status to ✅.
+
+      status_indicators:
+        complete: "🟢 (all 4 subsections filled)"
+        partial: "🟡 (2-3 subsections filled)"
+        incomplete: "🔴 (0-1 subsections filled)"
+
+    5_user_review:
+      description: "Show extracted ICP to user for approval/editing"
+
+      display: |
+        ✓ ICP extraction complete!
+
+        📊 Extracted ICP Data:
+        - Source: {icp_data.source_file}
+        - Confidence: {icp_data.confidence_score}%
+        - Completeness: {filled_count}/4 subsections
+
+        Demographics:
+          {preview_demographics}
+
+        Psychographics:
+          {preview_psychographics}
+
+        Pain Points ({len}):
+          {preview_pain_points}
+
+        Goals ({len}):
+          {preview_goals}
+
+        ---
+
+        ✅ COURSE-BRIEF.md Section 2 updated
+        💾 Data exported to: icp-extracted.yaml
+
+        ---
+
+        📝 **Next Steps:**
+
+        1. Open COURSE-BRIEF.md and review Section 2
+        2. Edit/refine extracted data if needed
+        3. Change status indicator to ✅ when satisfied
+        4. Continue with *continue-course {course-slug}
+
+      prompt: |
+        Review the extracted ICP data in COURSE-BRIEF.md Section 2.
+
+        Options:
+        1. Looks good - Continue to next step
+        2. I need to edit the data first - Pause workflow
+        3. Re-run extraction (if I updated source files)
+
+        Your choice (1/2/3):
+
+      handling:
+        option_1_continue:
+          action: "Proceed to Step 3 (User Notification)"
+
+        option_2_pause:
+          action: "HALT workflow"
+          message: |
+            Workflow paused for manual editing.
+
+            Please:
+            1. Open: outputs/courses/{course-slug}/COURSE-BRIEF.md
+            2. Edit Section 2 as needed
+            3. Save the file
+            4. Run: *continue-course {course-slug} when ready
+
+        option_3_rerun:
+          action: "Re-execute Step 2.5.1 (find_icp_files)"
+          note: "Useful if user updated source ICP files"
+
+  error_handling:
+    no_icp_files_found:
+      scenario: "extractor.find_icp_files() returns empty list"
+      action: "Insert empty template with 🔴 status and placeholders"
+      message: |
+        ⚠️  No ICP files found in /legado/ or root folder.
+
+        COURSE-BRIEF.md Section 2 filled with empty template.
+        Please fill manually or add ICP files to /legado/ and re-run.
+
+    malformed_markdown:
+      scenario: "Parsing fails due to unrecognized structure"
+      action: "Log warning, skip file, try next candidate"
+      message: |
+        ⚠️  Found ICP file but failed to parse structure: {file_path}
+
+        Reason: No recognizable section headers found.
+        Fallback: Trying next candidate file...
+
+    partial_extraction:
+      scenario: "Only 1-2 subsections extracted (low completeness)"
+      action: "Insert partial data with 🟡 status, add missing placeholders"
+      message: |
+        ⚠️  Partial extraction from {file_path}
+
+        Extracted:
+        - Demographics {✅/❌}
+        - Psychographics {✅/❌}
+        - Pain Points {✅/❌}
+        - Goals {✅/❌}
+
+        Please fill missing sections manually in COURSE-BRIEF.md.
+
+    pdf_files_found:
+      scenario: "ICP files are PDFs (not supported in v1)"
+      action: "Log info message, skip PDF, continue with .md files"
+      message: |
+        ℹ️  Found ICP file in PDF format: {file_path}
+
+        PDF parsing not supported in v1.
+        Recommendation: Convert to Markdown and re-run, or fill manually.
+
+  output:
+    icp_extraction_result:
+      success: true/false
+      files_found: {count}
+      confidence_score: {0-100}
+      brief_updated: true/false
+      yaml_exported: true/false
+      yaml_path: "{path}"
+```
+
+---
+
 ### Step 3: WORKFLOW HALTED
 
 **This task STOPS here.** The user must now:
@@ -1156,10 +1434,22 @@ What would you like to do? (1/2/3):
 
 ---
 
-**Task Version:** 2.2
+**Task Version:** 2.3
 **Last Updated:** 2025-10-18
 **Maintainer:** CreatorOS Team (Sarah - PO)
 **Changelog:**
+- v2.3 (2025-10-18): **Story 3.3 Implementation - ICP Extraction Engine**
+  - Added Step 2.5: ICP Extraction (brownfield only)
+  - Integrated lib/icp_extractor.py module for intelligent ICP data extraction
+  - Implemented multi-strategy file discovery (filename patterns + content keywords)
+  - Added Markdown parsing for structured ICP data (demographics, psychographics, pain points, goals)
+  - Implemented multi-file merging with unique item aggregation
+  - Added confidence scoring (0-100%) based on completeness
+  - Implemented YAML export (icp-extracted.yaml) for traceability
+  - Added COURSE-BRIEF.md Section 2 auto-population with status indicators (🟢/🟡/🔴)
+  - Implemented user review checkpoint with edit/continue/rerun options
+  - Added comprehensive error handling (no files, malformed MD, partial extraction, PDF fallback)
+  - ICP extraction runs automatically after file organization (with user approval)
 - v2.2 (2025-10-18): **Story 3.2 Implementation - File Inventory & Organization**
   - Added Step 2: File Organization (brownfield only)
   - Integrated lib/file_organizer.py module for intelligent categorization
