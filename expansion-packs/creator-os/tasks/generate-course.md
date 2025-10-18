@@ -447,14 +447,331 @@ notification_brownfield:
 
 ---
 
-### Step 2: WORKFLOW HALTED
+### Step 2: File Organization (Brownfield Only)
+
+**This step runs ONLY in brownfield mode after validation passes (Scenario 3).**
+
+**2.1. File Inventory & Categorization**
+
+```yaml
+file_organization:
+  step: "Organize existing materials into canonical structure"
+
+  applies_to: "Only runs in BROWNFIELD mode (creation_mode = brownfield)"
+
+  skip_if: "creation_mode = greenfield (no existing files to organize)"
+
+  prerequisites:
+    - Brownfield mode validated (Scenario 3 passed)
+    - Folder exists with files
+
+  import:
+    module: "expansion-packs/creator-os/lib/file_organizer.py"
+    class: "FileOrganizer"
+
+  actions:
+    1_scan_files:
+      description: "Recursively scan course folder and build inventory"
+
+      execution: |
+        from lib.file_organizer import FileOrganizer
+
+        organizer = FileOrganizer(course_slug)
+        inventory = organizer.scan()
+
+      output:
+        - List of FileMetadata objects with categorization
+        - Total files scanned
+        - Categories detected
+
+    2_dry_run_preview:
+      description: "Show user what WOULD be done (don't move yet)"
+
+      execution: |
+        result = organizer.organize(dry_run=True)
+
+      display: |
+        📊 File Organization Preview
+
+        Found {result.files_scanned} files:
+        - {count_transcripts} transcripts → /legado/transcripts/
+        - {count_videos} videos → /legado/videos/
+        - {count_icp} ICP documents → /legado/
+        - {count_profiles} instructor profiles → /legado/
+        - {count_resources} resources → /resources/
+        - {count_images} images → /resources/
+        - {count_lessons} lessons → /lessons/ (preserved)
+        - {count_structured} structured data → root (preserved)
+        - {count_unknown} unknown files → /legado/other/
+
+        Duration: {result.duration_seconds:.2f} seconds
+
+      output:
+        - Preview of all movements
+        - No files actually moved
+
+    3_user_approval:
+      description: "Ask user to approve organization plan"
+
+      prompt: |
+        Review the organization plan above.
+
+        This will organize your {result.files_scanned} files into the canonical structure.
+        No files will be deleted (only moved). A full audit log will be generated.
+
+        Options:
+        1. Approve and execute organization
+        2. Skip organization (I'll organize manually)
+        3. Cancel and exit
+
+        Your choice (1/2/3):
+
+      validation:
+        - Must be 1, 2, or 3
+
+      handling:
+        option_1_approve:
+          action: "Proceed to step 2.2 (Execute Organization)"
+
+        option_2_skip:
+          action: "Skip to Step 3 (User Notification - Manual Path)"
+          note: "User will organize files manually before continuing"
+
+        option_3_cancel:
+          action: "Abort workflow"
+          message: "Organization cancelled. You can run *generate-course again when ready."
+
+  categorization_rules:
+    1_structured_data:
+      files: ["COURSE-BRIEF.md", "curriculum.yaml", "course-outline.md", "PRD.md"]
+      action: "KEEP in root (preserve as-is)"
+
+    2_lessons:
+      pattern: "^\d+\.\d+-.*\.md$"
+      action: "KEEP in /lessons/ or MOVE to /lessons/"
+
+    3_transcripts:
+      extensions: [".txt", ".srt", ".vtt"]
+      keywords: ["transcript", "transcription", "legenda"]
+      action: "MOVE to /legado/transcripts/"
+
+    4_videos:
+      extensions: [".mp4", ".mov", ".avi", ".mkv", ".webm"]
+      action: "MOVE to /legado/videos/"
+
+    5_icp_docs:
+      keywords: ["icp", "avatar", "persona", "audience", "target"]
+      content_phrases: ["ideal customer", "público-alvo"]
+      action: "MOVE to /legado/"
+
+    6_instructor_profiles:
+      keywords: ["professor", "instrutor", "teacher", "bio"]
+      heuristic: "Capitalized person names (e.g., 'Adriano de Marqui.md')"
+      action: "MOVE to /legado/"
+
+    7_resources:
+      extensions: [".pdf", ".docx", ".xlsx", ".pptx", ".zip"]
+      action: "MOVE to /resources/"
+
+    8_images:
+      extensions: [".png", ".jpg", ".jpeg", ".svg", ".gif", ".webp"]
+      action: "MOVE to /resources/"
+
+    9_unknown:
+      description: "Doesn't match any category above"
+      action: "MOVE to /legado/other/"
+
+  error_handling:
+    - Symlink loops: Skip with warning, continue scan
+    - Permission denied: Skip file, log error, continue
+    - Corrupted files: Log warning, include in inventory
+    - Duplicate files: Compare checksums, rename if different
+```
+
+**2.2. Execute Organization (If Approved)**
+
+```yaml
+execute_organization:
+  step: "Move files to canonical locations (safe migration)"
+
+  applies_to: "Only runs if user approved in step 2.1.3"
+
+  actions:
+    1_create_folders:
+      description: "Create canonical folder structure"
+
+      folders:
+        - /lessons/
+        - /assessments/
+        - /resources/
+        - /legado/
+        - /legado/transcripts/
+        - /legado/videos/
+        - /legado/other/
+
+      execution: |
+        organizer._create_canonical_structure()
+
+    2_move_files:
+      description: "Execute file movements (NOT copies, actual moves)"
+
+      execution: |
+        result = organizer.organize(dry_run=False)
+
+      safety_features:
+        - Never delete files (only move)
+        - Atomic operations (move all or rollback)
+        - Duplicate detection with checksum comparison
+        - Auto-rename duplicates (file-1.md, file-2.md, etc.)
+
+      validation:
+        - File count before == file count after
+        - No data loss (100% files accounted for)
+
+    3_generate_audit_log:
+      description: "Create detailed Markdown log of all movements"
+
+      output_path: "outputs/courses/{slug}/organization-log-{timestamp}.md"
+
+      log_format: |
+        # File Organization Audit Log
+
+        **Course:** {course_slug}
+        **Organized At:** {timestamp}
+        **Total Files:** {total_files}
+        **Files Moved:** {files_moved}
+        **Files Kept:** {files_kept}
+        **Duration:** {duration_seconds}s
+
+        ---
+
+        ## Summary
+
+        - ✅ {count} transcripts → /legado/transcripts/
+        - ✅ {count} videos → /legado/videos/
+        - ✅ {count} ICP docs → /legado/
+        - ... (all categories)
+
+        ---
+
+        ## Detailed Movements
+
+        ### Transcripts (X files)
+        | Original Path | New Path | Size | Action |
+        |---------------|----------|------|--------|
+        | ... | ... | ... | MOVED |
+
+        ### Videos (X files)
+        | Original Path | New Path | Size | Action |
+        |---------------|----------|------|--------|
+        | ... | ... | ... | MOVED |
+
+        ... (all categories)
+
+        ---
+
+        ## Rollback Command
+
+        To undo this organization:
+        ```bash
+        ./expansion-packs/creator-os/scripts/undo-organization.sh {slug} {timestamp}
+        ```
+
+      features:
+        - Human-readable Markdown format
+        - Grouped by category
+        - Includes rollback script command
+        - Full traceability
+
+    4_display_summary:
+      description: "Show organization results to user"
+
+      message: |
+        ✓ Folder organization complete!
+
+        📊 Summary:
+        - 📁 Created: /legado/transcripts/, /legado/videos/, /resources/
+        - 📝 Organized: {total_files} files
+          - {count_transcripts} transcripts → /legado/transcripts/
+          - {count_videos} videos → /legado/videos/
+          - {count_icp} ICP documents → /legado/
+          - {count_profiles} instructor profiles → /legado/
+          - {count_resources} resources → /resources/
+          - {count_unknown} unknown → /legado/other/
+        - ⏱️ Duration: {duration}s
+        - ✅ Zero files lost (100% preserved)
+
+        📋 Audit log: {audit_log_path}
+
+        Next: Extracting intelligence from organized materials...
+
+  output:
+    organization_result:
+      success: true/false
+      files_moved: {count}
+      files_kept: {count}
+      audit_log_path: "{path}"
+      errors: [list of errors]
+```
+
+**2.3. Update Brownfield Notification**
+
+```yaml
+notification_brownfield_after_organization:
+  step: "Update user notification with organization results"
+
+  applies_to: "Brownfield mode after successful organization"
+
+  message_to_user: |
+    ✓ Brownfield mode activated and materials organized!
+
+    📁 Organized:
+    - Folder: /outputs/courses/{course-slug}/
+    - Files organized: {files_moved} moved, {files_kept} kept
+    - Audit log: {audit_log_filename}
+
+    ---
+
+    📋 **NEXT STEPS - Brownfield Workflow:**
+
+    **Phase 2: Material Extraction (Stories 3.3-3.5) - Coming Soon**
+
+    The system will extract content from your organized materials to:
+    1. Generate COURSE-BRIEF.md automatically (Story 3.3: ICP Extraction)
+    2. Extract instructor voice patterns (Story 3.4: Voice Extraction)
+    3. Infer learning objectives (Story 3.5: Objectives Inference)
+
+    **For now (Phase 1 - Manual Path):**
+
+    1. Review organized files in canonical structure
+    2. Create COURSE-BRIEF.md manually based on organized materials
+    3. Run: *continue-course {course-slug}
+
+    ---
+
+    **Status:** File organization complete (Story 3.2 ✓)
+    **Next:** Stories 3.3-3.5 will automate COURSE-BRIEF generation from your organized materials
+
+  workflow_state: "HALTED (awaiting Phase 2 or manual COURSE-BRIEF)"
+  next_task: "continue-course (after COURSE-BRIEF.md creation)"
+```
+
+---
+
+### Step 3: WORKFLOW HALTED
 
 **This task STOPS here.** The user must now:
 
+**For Greenfield:**
 1. Fill `COURSE-BRIEF.md` manually (45-90 minutes)
 2. Run `*continue-course {course-slug}` to generate content
 
-**Note:** Steps 2-5 (Pedagogical Design, Curriculum Generation, Validation, Output) are now part of the `continue-course` task.
+**For Brownfield:**
+1. Review organized files (if organization was run)
+2. Fill `COURSE-BRIEF.md` manually based on organized materials
+3. Run `*continue-course {course-slug}` to generate content
+
+**Note:** Steps 3-6 (Pedagogical Design, Curriculum Generation, Validation, Output) are now part of the `continue-course` task.
 
 ---
 
@@ -831,17 +1148,26 @@ What would you like to do? (1/2/3):
 
 ---
 
-**Task Version:** 2.1
+**Task Version:** 2.2
 **Last Updated:** 2025-10-18
 **Maintainer:** CreatorOS Team (Sarah - PO)
 **Changelog:**
+- v2.2 (2025-10-18): **Story 3.2 Implementation - File Inventory & Organization**
+  - Added Step 2: File Organization (brownfield only)
+  - Integrated lib/file_organizer.py module for intelligent categorization
+  - Added dry-run preview with user approval checkpoint
+  - Implemented 8-category file classification (transcripts, videos, ICP, profiles, resources, images, lessons, structured data, unknown)
+  - Added canonical folder structure creation (/legado/transcripts/, /legado/videos/, /resources/, etc.)
+  - Implemented safe file movement with duplicate detection and checksums
+  - Added audit log generation with rollback command
+  - Updated brownfield workflow notification to reflect organization status
+  - Organization runs automatically after brownfield mode validation (with user approval)
 - v2.1 (2025-10-18): **Story 3.1 Implementation - Greenfield/Brownfield Detection**
   - Added creation mode elicitation (greenfield vs brownfield)
   - Added folder existence validation with 4 scenarios
   - Added creation_mode metadata to COURSE-BRIEF.md frontmatter
-  - Added workflow branching (greenfield → manual brief, brownfield → future extraction)
+  - Added workflow branching (greenfield → manual brief, brownfield → extraction)
   - Added comprehensive error recovery for mode/folder conflicts
   - Updated examples to show all validation scenarios
-  - Brownfield extraction workflow (Stories 3.2-3.4) planned for Phase 2
 - v2.0 (2025-10-17): Refactored to unified brief document workflow. Split into generate-course (init) + continue-course (generation).
 - v1.0 (2025-10-15): Initial interactive elicitation workflow (deprecated).
