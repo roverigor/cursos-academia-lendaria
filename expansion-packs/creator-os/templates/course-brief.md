@@ -9,6 +9,15 @@ status: 🟡 Aguardando Preenchimento
 course_slug: [AUTO-PREENCHIDO]
 created_date: [AUTO-PREENCHIDO]
 instructor: [AUTO-PREENCHIDO se MMOS mind]
+mmos_persona:
+  enabled: false
+  mind_slug: null
+  mind_name: null
+  mind_version: null
+  voice_source: null
+  system_prompt_path: null
+  selected_at: null
+  confidence_score: null
 ---
 
 # 📋 Course Brief - Formulário Completo de Planejamento

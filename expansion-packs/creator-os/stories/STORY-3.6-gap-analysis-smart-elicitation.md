@@ -901,6 +901,49 @@ def test_question_count_by_scenario(scenario, expected_questions):
 
 ---
 
+## File List
+
+### Created Files
+
+1. **`expansion-packs/creator-os/lib/gap_analyzer.py`**
+   - Core gap analysis engine
+   - Analyzes COURSE-BRIEF.md completeness (8 sections)
+   - Detects status indicators (🟢/🟡/🔴) for each section/subsection
+   - Placeholder detection (empty vs auto-filled fields)
+   - Smart question generation (skip complete, confirm partial, elicit missing)
+   - Answer persistence back to COURSE-BRIEF.md
+   - Final validation gate (all sections must be 🟢)
+   - Question count estimation (3-15 based on completeness)
+
+2. **`expansion-packs/creator-os/lib/elicitation_engine.py`**
+   - Interactive question flow engine
+   - Three-tier summary display (Complete/Confirmation/Missing)
+   - Multiple question types (confirmation, multiple_choice, multiple_select, text)
+   - Input validation and error handling
+   - Progress tracking during elicitation
+   - Before/after completeness comparison
+   - User-friendly CLI interface
+
+3. **`expansion-packs/creator-os/templates/elicitation-questions.yaml`**
+   - Complete question bank for all 8 COURSE-BRIEF sections
+   - 23 questions total (baseline for greenfield)
+   - Question metadata (type, options, validation rules)
+   - Confirmation questions for auto-filled sections
+   - Elicitation questions for missing sections
+   - Multiple choice/select options with descriptions
+
+### Modified Files
+
+1. **`expansion-packs/creator-os/tasks/generate-course.md`**
+   - **Version:** 2.5 → 2.6
+   - Added Step 3: Gap Analysis & Smart Elicitation (brownfield only)
+   - Integrated gap_analyzer.py for completeness analysis
+   - Integrated elicitation_engine.py for interactive flow
+   - Added final validation gate before HALT
+   - Updated changelog with Story 3.6 details
+
+---
+
 **Story Breakdown:**
 - Investigation: 1.5 hours (research elicitation UX patterns, question design)
 - Implementation: 8 hours (completeness analysis, question generation, interactive flow, persistence)

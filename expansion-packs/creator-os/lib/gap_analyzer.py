@@ -91,16 +91,23 @@ class GapAnalyzer:
 
     Analyzes which sections are complete, partial, or missing, and generates
     targeted questions to fill only the gaps.
+
+    MMOS Integration:
+    - If MMOS persona enabled, Section 4 (Voice) is automatically marked as 🟢
+    - No voice-related questions will be generated
+    - Gap analysis summary will show "Loaded from MMOS mind"
     """
 
-    def __init__(self, course_slug: str):
+    def __init__(self, course_slug: str, mmos_config: Optional[Dict] = None):
         """
         Initialize GapAnalyzer for a specific course.
 
         Args:
             course_slug: Course identifier (e.g., "dominando-obsidian")
+            mmos_config: MMOS persona configuration (if MMOS enabled)
         """
         self.course_slug = course_slug
+        self.mmos_config = mmos_config or {}
         self.base_path = Path("outputs/courses") / course_slug
         self.brief_path = self.base_path / "COURSE-BRIEF.md"
 
@@ -508,6 +515,17 @@ class GapAnalyzer:
             "section_7_context": self.analyze_section_7(),
             "section_8_checklist": self.analyze_section_8()
         }
+
+        # MMOS Integration: Override Section 4 (Voice) if MMOS enabled
+        if self.mmos_config.get('enabled'):
+            # Mark Section 4 as complete (MMOS voice loaded)
+            sections["section_4_voice"].status = "🟢"
+            sections["section_4_voice"].completeness = 100
+            # Add note to subsections
+            for subsection in sections["section_4_voice"].subsections:
+                sections["section_4_voice"].subsections[subsection] = "🟢"
+            for field in sections["section_4_voice"].fields:
+                sections["section_4_voice"].fields[field] = "🟢"
 
         # Calculate overall score (weighted average)
         total_completeness = sum(s.completeness for s in sections.values())

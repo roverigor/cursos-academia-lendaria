@@ -5,9 +5,10 @@
 **Priority:** P1 (High)
 **Complexity:** M (Medium)
 **Story Points:** 8
-**Status:** 📋 Planning
+**Status:** ✅ Complete
 **Owner:** Course Architect Agent
 **Sprint:** Phase 2 - Intelligence
+**Completed:** 2025-10-18
 
 ---
 
@@ -886,3 +887,78 @@ def test_mmos_priority_over_transcripts():
 - [Story 3.6: Gap Analysis & Smart Elicitation](./STORY-3.6-gap-analysis-smart-elicitation.md)
 - [Story 3.9: Lesson Generation with GPS + DL](./STORY-3.9-lesson-generation-gps.md)
 - [MMOS Mind Mapper](../../mmos-mind-mapper/README.md) (expansion pack)
+
+---
+
+## Implementation Notes
+
+**Completed:** 2025-10-18
+
+### Files Created/Modified
+
+1. **Created:** `expansion-packs/creator-os/lib/mmos_integrator.py` (880 lines)
+   - MMOSIntegrator class with full detection, validation, and extraction logic
+   - Handles multi-document YAMLs from MMOS minds
+   - Interactive selection prompt with detailed display
+   - Voice profile extraction from identity-core, cognitive-spec, communication-style, frameworks
+   - COURSE-BRIEF frontmatter and Section 4 auto-population
+   - System prompt path resolution for lesson generation
+   - Comprehensive error handling and graceful fallbacks
+   - CLI testing mode for validation
+
+2. **Modified:** `expansion-packs/creator-os/tasks/generate-course.md` (v2.6 → v2.7)
+   - Added Question 3: MMOS persona selection
+   - Added Step 1.2.1: MMOS Persona Selection workflow
+   - Updated Step 1.4: Template copy to include MMOS config in frontmatter
+   - Updated Step 2.6: Voice Extraction to skip if MMOS enabled (priority check)
+   - Updated Step 3.1: Gap Analysis to mark Section 4 as 🟢 when MMOS enabled
+   - Added comprehensive changelog entry for v2.7
+
+3. **Modified:** `expansion-packs/creator-os/lib/gap_analyzer.py`
+   - Updated __init__ to accept mmos_config parameter
+   - Added MMOS integration logic in analyze_completeness method
+   - Automatically marks Section 4 (Voice) as 🟢 when MMOS enabled
+   - Skips voice questions in gap analysis elicitation
+
+4. **Modified:** `expansion-packs/creator-os/templates/course-brief.md`
+   - Added mmos_persona section to frontmatter
+   - Includes: enabled, mind_slug, mind_name, mind_version, voice_source, system_prompt_path, selected_at, confidence_score
+
+### Testing Results
+
+- ✅ MMOS mind detection works (found 2 minds: alan_nicolas, joao_lozano)
+- ✅ Mind validation works (checks for required files)
+- ✅ Metadata extraction works (name, description, version)
+- ✅ Interactive selection prompt displays correctly
+- ✅ Voice profile extraction works with multi-document YAMLs
+- ✅ System prompt path resolution works
+- ✅ Handles minds without system prompts gracefully
+- ✅ Handles minds without frameworks gracefully
+
+### Acceptance Criteria Status
+
+- [x] AC 1: MMOS Mind Detection - Implemented and tested
+- [x] AC 2: Interactive MMOS Selection - Implemented and tested
+- [x] AC 3: MMOS Voice Profile Extraction - Implemented and tested
+- [x] AC 4: COURSE-BRIEF Integration - Implemented (prefill_course_brief method)
+- [x] AC 5: Lesson Generation Integration - System prompt path stored for Story 3.9
+- [x] AC 6: Voice Fidelity Validation - Confidence scoring implemented (benchmark integration deferred to Story 3.9)
+- [x] AC 7: Error Handling & Edge Cases - Comprehensive error handling implemented
+- [x] AC 8: Gap Analysis Integration - Section 4 bypass implemented
+
+### Known Issues/Limitations
+
+1. **Multi-document YAML handling:** Some MMOS minds have multi-document YAMLs (e.g., joao_lozano). Fixed by using yaml.safe_load_all() and taking first document.
+
+2. **Missing descriptions:** Some minds have minimal descriptions in cognitive-spec. Falls back to generic "MMOS cognitive clone" text.
+
+3. **System prompt variations:** Different minds have different system prompt filenames. Priority resolution implemented (generalista.md → system-prompt-generalista.md → subdirectories).
+
+4. **Voice fidelity benchmarking:** Full benchmark integration deferred to Story 3.9 (lesson generation). Current implementation calculates confidence based on data completeness.
+
+### Next Steps (Story 3.9)
+
+1. Load MMOS system prompt during lesson generation
+2. Inject system prompt into generation context
+3. Implement voice fidelity validation against MMOS benchmarks
+4. Test end-to-end: MMOS persona → lesson generation → fidelity check

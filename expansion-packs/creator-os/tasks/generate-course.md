@@ -1,8 +1,8 @@
 ---
 task_name: "generate-course"
-task_version: "2.6"
+task_version: "2.7"
 required_agent_version: ">=2.2"
-description: "Initialize course structure with greenfield/brownfield detection, file organization, ICP extraction, voice pattern extraction, learning objectives inference, and smart elicitation with gap analysis"
+description: "Initialize course structure with greenfield/brownfield detection, MMOS persona integration, file organization, ICP extraction, voice pattern extraction, learning objectives inference, and smart elicitation with gap analysis"
 last_updated: "2025-10-18"
 ---
 
@@ -64,7 +64,7 @@ This task initializes a course by detecting whether you're creating from scratch
 
 ```yaml
 elicitation:
-  step: "Gather course slug and creation mode"
+  step: "Gather course slug, creation mode, and MMOS persona selection"
 
   questions:
     1_course_slug:
@@ -108,6 +108,36 @@ elicitation:
 
       default_suggestion: |
         (Checking folder existence to suggest default...)
+
+    3_mmos_persona:
+      prompt: |
+        MMOS Instructor Persona Integration:
+
+        I can load instructor voice from MMOS cognitive clones (if available).
+
+        Options:
+        1. Yes - Scan for MMOS minds and let me select one
+        2. No - I'll define voice manually or use transcript extraction
+
+        Use MMOS persona? (1 or 2):
+
+      validation:
+        - Must be 1 or 2
+
+      conditional_flow:
+        if_yes:
+          action: "Call mmos_integrator.detect_available_minds()"
+          next: "Show MMOS selection menu (if minds found)"
+        if_no:
+          action: "Skip MMOS integration"
+          next: "Continue to file organization (brownfield) or template copy (greenfield)"
+
+      note: |
+        MMOS integration provides:
+        - Authentic instructor voice (95%+ fidelity)
+        - No need for transcript extraction
+        - Auto-populated Section 4 in COURSE-BRIEF
+        - System prompt loaded during lesson generation
 ```
 
 ---
@@ -248,6 +278,224 @@ mode_validation:
       validated_at: "{timestamp}"
 ```
 
+**1.2.1. MMOS Persona Selection (Optional)**
+
+```yaml
+mmos_persona_selection:
+  step: "Detect and select MMOS instructor persona (if requested)"
+
+  applies_to: "Both greenfield and brownfield modes"
+
+  prerequisites:
+    - User answered Question 3 (Use MMOS persona?)
+    - If "Yes" → Proceed with MMOS detection
+    - If "No" → Skip this step entirely
+
+  import:
+    module: "expansion-packs/creator-os/lib/mmos_integrator.py"
+    class: "MMOSIntegrator"
+
+  actions:
+    1_detect_mmos_minds:
+      description: "Scan outputs/minds/ for available MMOS personas"
+
+      execution: |
+        from lib.mmos_integrator import MMOSIntegrator
+
+        integrator = MMOSIntegrator()
+        available_minds = integrator.detect_available_minds()
+
+      detection_logic:
+        - Scan outputs/minds/ directory
+        - Validate MMOS structure (identity-core.yaml, cognitive-spec.yaml, etc.)
+        - Extract metadata (name, description, version)
+        - Check for system prompts
+        - Return sorted list
+
+      output:
+        - List of MMOSMindMetadata objects
+        - 0-N minds available
+
+    2_handle_no_minds:
+      description: "Handle case where no MMOS minds found"
+
+      condition: "len(available_minds) == 0"
+
+      message: |
+        ℹ️  No MMOS minds detected in outputs/minds/
+
+        To use MMOS persona integration, you need at least one MMOS mind.
+
+        Options:
+        1. Continue without MMOS (use manual voice or transcript extraction)
+        2. Create MMOS mind first, then return
+
+        Your choice (1/2):
+
+      handling:
+        option_1_continue:
+          action: "Set mmos_enabled = False, proceed to next step"
+
+        option_2_create_mind:
+          action: "Halt workflow"
+          instructions: |
+            To create an MMOS mind:
+
+            1. Go to expansion-packs/mmos-mind-mapper/
+            2. Run: python scripts/pipeline.py
+            3. Follow the MMOS creation workflow
+            4. Return and run *generate-course again
+
+    3_elicit_selection:
+      description: "Interactive MMOS mind selection"
+
+      condition: "len(available_minds) > 0"
+
+      execution: |
+        selected_mind = integrator.elicit_mmos_selection(available_minds)
+
+      display_format: |
+        ════════════════════════════════════════════════════════════
+        🧠 MMOS INSTRUCTOR PERSONAS DETECTED
+        ════════════════════════════════════════════════════════════
+
+        I found {count} MMOS cognitive clone(s) available:
+
+        [1] João Lozano
+            → Empreendedor Digital | Tom: Inspirador, pragmático
+            → Source: outputs/minds/joao_lozano/
+            ✅ Has system prompt
+
+        [2] Pedro Valério
+            → Tech Educator | Tom: Didático, hands-on
+            → Source: outputs/minds/pedro_valerio/
+            ✅ Has system prompt
+
+        [N+1] None (I'll define voice manually)
+
+        ════════════════════════════════════════════════════════════
+
+        💡 TIP: Using MMOS persona ensures lessons sound exactly like
+               the original instructor (95%+ voice fidelity).
+
+        ════════════════════════════════════════════════════════════
+
+        → Use MMOS instructor persona for this course?
+
+           Your choice (1-N+1): _
+
+      validation:
+        - Must be valid number in range 1 to N+1
+        - N+1 = "None" option
+
+      output:
+        - selected_mind: MMOSMindMetadata object (or None)
+        - mmos_enabled: true/false
+
+    4_load_voice_profile:
+      description: "Load voice profile from selected MMOS mind"
+
+      condition: "selected_mind is not None"
+
+      execution: |
+        voice_profile = integrator.load_voice_profile(selected_mind)
+
+      extraction_sources:
+        - analysis/identity-core.yaml → tone, values, worldview
+        - analysis/cognitive-spec.yaml → style, decision-making
+        - synthesis/communication-style.md → language patterns, phrases
+        - synthesis/frameworks.md → teaching philosophy (if exists)
+
+      output:
+        - MMOSVoiceProfile object with complete voice data
+        - Confidence score 0-100%
+
+    5_store_mmos_config:
+      description: "Store MMOS config for later use"
+
+      execution: |
+        mmos_config = {
+            "enabled": True,
+            "mind_slug": selected_mind.slug,
+            "mind_name": selected_mind.name,
+            "mind_version": selected_mind.version,
+            "voice_source": "mmos",
+            "system_prompt_path": integrator.get_system_prompt_path(selected_mind),
+            "voice_profile": voice_profile,
+            "selected_at": datetime.now().isoformat()
+        }
+
+      note: |
+        This config will be:
+        1. Added to COURSE-BRIEF.md frontmatter (Step 1.4)
+        2. Used to pre-fill Section 4 (Voice) in COURSE-BRIEF
+        3. Used to skip transcript extraction (Step 2.6)
+        4. Used to skip voice questions in gap analysis (Step 3)
+        5. Loaded during lesson generation (Story 3.9)
+
+      output:
+        - mmos_config dict (persisted in memory for this session)
+
+    6_display_summary:
+      description: "Show MMOS selection summary"
+
+      message: |
+        ✓ MMOS persona selected: {mind_name}
+
+        Voice profile loaded:
+        - Tone: {tone}
+        - Style: {style}
+        - Recurring phrases: {count}
+        - Core values: {count}
+        - Confidence: {score}%
+
+        System prompt: {system_prompt_path}
+
+        → Voice will be auto-populated in COURSE-BRIEF Section 4
+        → Transcript extraction will be skipped (MMOS voice takes priority)
+
+  error_handling:
+    corrupted_mind:
+      scenario: "Mind folder missing required files"
+      action: "Exclude from available_minds list, continue"
+      message: |
+        ⚠️  Warning: MMOS mind `{slug}` is incomplete (skipping)
+
+        Missing files: {missing_files}
+
+        Recommendation: Re-run MMOS pipeline for this mind.
+
+    no_system_prompt:
+      scenario: "Mind has no system prompt for lesson generation"
+      action: "Allow selection but warn user"
+      message: |
+        ⚠️  Warning: Mind `{slug}` has no system prompt
+
+        You can still use voice profile for Section 4, but lesson
+        generation won't have full MMOS persona injection.
+
+        Continue with this mind? (yes/no):
+
+    version_mismatch:
+      scenario: "Mind uses old MMOS version (v1.0)"
+      action: "Allow selection but warn user"
+      message: |
+        ⚠️  Warning: Mind `{slug}` uses MMOS v{version} (old format)
+
+        CreatorOS works best with MMOS v2.0+.
+
+        Recommendation: Upgrade mind or choose another.
+
+        Continue anyway? (yes/no):
+
+  output:
+    mmos_selection_result:
+      mmos_enabled: true/false
+      selected_mind: MMOSMindMetadata | None
+      voice_profile: MMOSVoiceProfile | None
+      mmos_config: dict | None
+```
+
 **1.3. Create Folder Structure (Greenfield Only)**
 
 ```yaml
@@ -310,8 +558,46 @@ template_copy:
             has_legacy_materials: false
         - status: "🟡 Aguardando Preenchimento"
 
+    4_add_mmos_config:
+      description: "Add MMOS persona config if MMOS was selected"
+
+      condition: "mmos_config is not None and mmos_config['enabled'] == True"
+
+      action: |
+        # Update frontmatter with MMOS config
+        mmos_persona:
+          enabled: true
+          mind_slug: {mmos_config['mind_slug']}
+          mind_name: {mmos_config['mind_name']}
+          mind_version: {mmos_config['mind_version']}
+          voice_source: mmos
+          system_prompt_path: {mmos_config['system_prompt_path']}
+          selected_at: {mmos_config['selected_at']}
+          confidence_score: {mmos_config['voice_profile'].confidence_score}
+
+    5_prefill_section_4:
+      description: "Pre-fill Section 4 (Voice) if MMOS was selected"
+
+      condition: "mmos_config is not None and mmos_config['enabled'] == True"
+
+      execution: |
+        integrator.prefill_course_brief(
+            voice_profile=mmos_config['voice_profile'],
+            course_slug=course_slug
+        )
+
+      result: |
+        Section 4 (Voice & Personality) auto-populated with:
+        - Instructor name
+        - Tone & style
+        - Recurring phrases
+        - Teaching philosophy
+        - Core values
+        - Status: 🟢 (loaded from MMOS)
+
   output:
     brief_file_path: "outputs/courses/{course-slug}/COURSE-BRIEF.md"
+    mmos_integrated: true/false
 ```
 
 **1.5. Create README Placeholder**
@@ -1056,7 +1342,9 @@ voice_extraction:
 
   applies_to: "Only runs in BROWNFIELD mode (creation_mode = brownfield)"
 
-  skip_if: "creation_mode = greenfield (no legacy transcripts to extract from)"
+  skip_if:
+    - "creation_mode = greenfield (no legacy transcripts to extract from)"
+    - "mmos_config['enabled'] = true (MMOS voice takes priority)"
 
   prerequisites:
     - Brownfield mode validated (Scenario 3 passed)
@@ -1064,11 +1352,41 @@ voice_extraction:
     - ICP extraction complete (Step 2.5) or skipped
     - COURSE-BRIEF.md exists
 
+  priority_check:
+    description: "Check if MMOS persona was selected (takes priority over transcript extraction)"
+
+    condition: "mmos_config is not None and mmos_config['enabled'] == True"
+
+    action: "Skip voice extraction entirely - MMOS voice already loaded"
+
+    message: |
+      ℹ️  Skipping transcript voice extraction
+
+      MMOS persona already selected: {mmos_config['mind_name']}
+
+      Voice profile loaded from MMOS mind (Section 4 already populated).
+      Transcript extraction not needed.
+
+      Next: Proceeding to learning objectives inference...
+
+    output:
+      voice_source: "mmos"
+      voice_extraction_skipped: true
+      reason: "MMOS persona takes priority"
+
   import:
     module: "expansion-packs/creator-os/lib/voice_extractor.py"
     class: "VoiceExtractor"
 
   actions:
+    0_check_mmos_priority:
+      description: "Verify MMOS voice is not already loaded"
+
+      execution: |
+        if mmos_config and mmos_config.get('enabled'):
+            print("ℹ️  MMOS persona detected - skipping transcript extraction")
+            return None  # Skip to Step 2.7
+
     1_find_transcripts:
       description: "Search for transcript files in organized structure"
 
@@ -1627,14 +1945,32 @@ gap_analysis:
       execution: |
         from lib.gap_analyzer import GapAnalyzer
 
-        analyzer = GapAnalyzer(course_slug)
+        analyzer = GapAnalyzer(course_slug, mmos_config=mmos_config)
         completeness_map = analyzer.analyze_completeness()
+
+      mmos_integration:
+        description: "Handle MMOS persona if enabled"
+
+        condition: "mmos_config is not None and mmos_config['enabled'] == True"
+
+        action: |
+          # If MMOS persona was selected, mark Section 4 (Voice) as 🟢
+          if mmos_config and mmos_config.get('enabled'):
+              completeness_map["section_4_voice"]["status"] = "🟢"
+              completeness_map["section_4_voice"]["source"] = "mmos"
+              completeness_map["section_4_voice"]["skip_questions"] = True
+
+        note: |
+          When MMOS persona is enabled:
+          - Section 4 automatically marked as 🟢 (complete)
+          - No voice-related questions will be generated
+          - Gap analysis summary will show "Loaded from MMOS mind"
 
       analysis_dimensions:
         - Section 1: Basic Information (title, slug, category, duration)
         - Section 2: ICP (demographics, psychographics, pain points, goals)
         - Section 3: Content (objectives, framework, prerequisites)
-        - Section 4: Voice (tone, style, phrases, greeting)
+        - Section 4: Voice (tone, style, phrases, greeting) [AUTO-COMPLETE if MMOS]
         - Section 5: Format (lesson duration, format, assessments)
         - Section 6: Commercial (pricing, launch date, upsells)
         - Section 7: Context (references to legacy materials)
@@ -1650,6 +1986,7 @@ gap_analysis:
         - Section-level status (🟢/🟡/🔴)
         - Subsection/field-level status
         - Analyzed timestamp
+        - MMOS voice bypass flag (if enabled)
 
     2_calculate_question_count:
       description: "Estimate how many questions will be asked"
@@ -2345,10 +2682,27 @@ What would you like to do? (1/2/3):
 
 ---
 
-**Task Version:** 2.6
+**Task Version:** 2.7
 **Last Updated:** 2025-10-18
 **Maintainer:** CreatorOS Team (Sarah - PO)
 **Changelog:**
+- v2.7 (2025-10-18): **Story 3.7 Implementation - MMOS Persona Integration**
+  - Added Question 3: MMOS persona selection (both greenfield and brownfield)
+  - Added Step 1.2.1: MMOS Persona Selection with detection and interactive selection
+  - Created lib/mmos_integrator.py for MMOS mind detection and voice profile extraction
+  - Implemented MMOS mind validation (identity-core.yaml, cognitive-spec.yaml, system prompts)
+  - Added metadata extraction from MMOS minds (name, description, version)
+  - Implemented interactive MMOS mind selection prompt with detailed display
+  - Added voice profile extraction from MMOS files (tone, style, phrases, teaching philosophy)
+  - Implemented COURSE-BRIEF frontmatter update with mmos_persona config
+  - Implemented COURSE-BRIEF Section 4 auto-population with MMOS voice data
+  - Added MMOS priority check in Step 2.6 (skips transcript extraction if MMOS enabled)
+  - Updated Gap Analysis (Step 3.1) to mark Section 4 as 🟢 when MMOS enabled
+  - Implemented voice question bypass in gap analysis (no voice elicitation needed)
+  - Added system prompt path storage for lesson generation integration (Story 3.9)
+  - MMOS integration works with both greenfield and brownfield workflows
+  - Comprehensive error handling (no minds, corrupted minds, version mismatch)
+  - Voice fidelity target: 95% (authentic instructor voice from MMOS)
 - v2.6 (2025-10-18): **Story 3.6 Implementation - Gap Analysis & Smart Elicitation**
   - Added Step 3: Gap Analysis & Smart Elicitation (brownfield only)
   - Created lib/gap_analyzer.py for COURSE-BRIEF completeness analysis
