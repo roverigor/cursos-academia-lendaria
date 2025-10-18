@@ -1,15 +1,15 @@
 ---
 task_name: "continue-course"
-task_version: "2.2"
+task_version: "2.3"
 required_agent_version: ">=2.0"
-description: "Read filled course brief and generate complete course content with pedagogical rigor using GPS Framework + Didática Lendária"
+description: "Read filled course brief and generate complete course content with pedagogical rigor using GPS Framework + Didática Lendária with error recovery"
 last_updated: "2025-10-18"
 ---
 
 # Task: Continue Course Generation
 
 **Task ID:** continue-course
-**Version:** 2.1
+**Version:** 2.3
 **Purpose:** Read filled course brief and generate complete course content with pedagogical rigor
 **Owner:** Course Architect Agent
 **Estimated Time:** 15-45 minutes (depending on course size)
@@ -19,7 +19,16 @@ last_updated: "2025-10-18"
 
 ## Overview
 
-**WORKFLOW v2.0 - Brief-Driven Generation**
+**WORKFLOW v2.3 - Brief-Driven Generation with Error Recovery**
+
+This task continues course generation after the user has filled the unified COURSE-BRIEF.md document. It includes checkpoint-based recovery to prevent loss of progress if interrupted (CTRL+C, API failures, power outages).
+
+**New in v2.3 (Story 3.11):**
+- Checkpoint state files at 4 levels (brief, curriculum, every 5 lessons)
+- Interrupt handling (CTRL+C, SIGTERM) with graceful state save
+- Resume command: `--resume` flag loads latest state and continues
+- Idempotent resume (safe to run multiple times)
+- Auto-cleanup state files on successful completion
 
 This task continues course generation after the user has filled the unified COURSE-BRIEF.md document. It reads the brief, validates completeness, and generates all course content (lessons, assessments, resources) with pedagogical frameworks and optional MMOS persona voice.
 
@@ -56,9 +65,117 @@ This task continues course generation after the user has filled the unified COUR
      - Must exist in `/outputs/courses/{slug}/`
      - Must have filled `COURSE-BRIEF.md`
 
+### Optional Flags (NEW - v2.3)
+
+2. **--resume** (flag, optional)
+   - Description: Resume from last checkpoint instead of starting fresh
+   - When to use: After CTRL+C interrupt, API failure, or power outage
+   - Behavior:
+     - Loads latest state from `outputs/courses/{slug}/.state/`
+     - Validates state is not corrupted
+     - Validates context files still exist (curriculum.yaml, etc.)
+     - Skips completed lessons, continues from next pending
+     - Displays resume summary before continuing
+   - Example: `*continue-course dominando-obsidian --resume`
+
+3. **--force** (flag, optional)
+   - Description: Start fresh, ignoring any saved state
+   - When to use: To regenerate from scratch, abandoning saved progress
+   - Example: `*continue-course dominando-obsidian --force`
+
+4. **--force-context** (flag, optional)
+   - Description: Skip context validation (risky)
+   - When to use: When curriculum changed but you want to resume anyway
+   - Requires: `--resume` flag
+   - Example: `*continue-course dominando-obsidian --resume --force-context`
+
 ---
 
 ## Processing Pipeline
+
+### Step 0: Resume Check (NEW - v2.3)
+
+**If `--resume` flag is provided, load state and skip to checkpoint.**
+
+```python
+from lib.state_manager import resume_course_generation
+
+# Check if resume flag is present
+if args.resume:
+    try:
+        # Load and validate state
+        latest_state = resume_course_generation(
+            course_slug=course_slug,
+            force_context=args.force_context
+        )
+
+        # Resume from checkpoint based on next_step
+        next_step = latest_state.get("next_step")
+
+        if next_step == "generate_lessons":
+            # Skip to Step 5 (full lesson generation)
+            # Curriculum already approved
+            curriculum_path = latest_state["context"]["curriculum_path"]
+            with open(curriculum_path, 'r') as f:
+                curriculum_data = yaml.safe_load(f)
+
+            # Jump to Step 5
+            print("→ Resuming from Step 5: Lesson Generation\n")
+            # ... continue to Step 5 ...
+
+        elif next_step == "continue_lessons":
+            # Resume lesson generation (skip completed)
+            completed_ids = set(latest_state["progress"]["completed_list"])
+
+            # Load curriculum
+            curriculum_path = latest_state["context"]["curriculum_path"]
+            with open(curriculum_path, 'r') as f:
+                curriculum_data = yaml.safe_load(f)
+
+            # Filter out completed lessons
+            pending_lessons = [
+                lesson for lesson in flatten_curriculum(curriculum_data)
+                if lesson["lesson_id"] not in completed_ids
+            ]
+
+            # Display resume progress
+            total = latest_state["progress"]["lessons_total"]
+            completed = latest_state["progress"]["lessons_completed"]
+            last_completed = latest_state["progress"]["last_completed"]
+            next_pending = pending_lessons[0]["lesson_id"] if pending_lessons else None
+
+            print(f"""
+📊 RESUME PROGRESS:
+   Completed: {completed}/{total} lessons
+   Remaining: {len(pending_lessons)} lessons
+   Last completed: {last_completed}
+   Next: {next_pending}
+            """)
+
+            # Generate remaining lessons
+            # Jump to Step 5 with filtered lesson list
+            # ... continue to Step 5 with pending_lessons ...
+
+        else:
+            print(f"⚠️  Unknown next_step: {next_step}")
+            print("Starting from Step 1 (default workflow)")
+
+    except StateNotFoundError as e:
+        print(f"❌ {e}")
+        sys.exit(1)
+
+    except StateCorruptedError as e:
+        print(f"❌ {e}")
+        sys.exit(1)
+
+    except ContextChangedError as e:
+        print(f"❌ {e}")
+        sys.exit(1)
+
+# If not resuming, continue with normal workflow (Step 1)
+```
+
+---
 
 ### Step 1: Load & Validate Course Brief
 
@@ -834,12 +951,16 @@ validation_function:
     warnings: [...]  # Non-blocking warnings
 ```
 
-**4.5. Implementation Code**
+**4.5. Implementation Code (with State Checkpoint - NEW v2.3)**
 
 ```python
 # In continue-course workflow Step 4:
 
 from lib.curriculum_approval import CurriculumApprovalCheckpoint
+from lib.state_manager import StateManager  # NEW - v2.3
+
+# Initialize state manager
+state_manager = StateManager(course_slug)  # NEW - v2.3
 
 # After curriculum.yaml generation (Step 3.1)
 checkpoint = CurriculumApprovalCheckpoint(course_slug)
@@ -852,7 +973,33 @@ result = checkpoint.show_approval_options()
 
 # Handle result
 if result == "proceed_to_generation":
-    # User approved - continue to Step 5 (Lesson Generation)
+    # User approved - SAVE CHECKPOINT (NEW - v2.3)
+    curriculum_path = f"outputs/courses/{course_slug}/curriculum.yaml"
+    brief_path = f"outputs/courses/{course_slug}/COURSE-BRIEF.md"
+
+    # Count total lessons
+    with open(curriculum_path, 'r') as f:
+        curriculum = yaml.safe_load(f)
+    total_lessons = sum(
+        len(module.get("lessons", []))
+        for module in curriculum.get("modules", [])
+    )
+
+    state_manager.save_checkpoint({
+        "checkpoint": "curriculum_approved",
+        "course_slug": course_slug,
+        "progress": {
+            "curriculum_approved": True,
+            "total_lessons": total_lessons
+        },
+        "context": {
+            "curriculum_path": curriculum_path,
+            "brief_path": brief_path
+        },
+        "next_step": "generate_lessons"
+    })
+
+    # Continue to Step 5 (Lesson Generation)
     print("\n→ Proceeding to lesson generation (Step 5)...\n")
     # Continue workflow...
 
@@ -1087,12 +1234,16 @@ completion_summary:
       ════════════════════════════════════════════════════════════
 ```
 
-**5.4. Implementation Code**
+**5.4. Implementation Code (with State Checkpoints - NEW v2.3)**
 
 ```python
 # In continue-course workflow Step 5:
 
 from lib.lesson_generator import LessonGenerator
+from lib.state_manager import StateManager  # NEW - v2.3
+
+# Initialize state manager
+state_manager = StateManager(course_slug)  # NEW - v2.3
 
 # After curriculum approval (Step 4 returned "proceed_to_generation")
 print("\n→ Proceeding to lesson generation (Step 5)...\n")
@@ -1104,15 +1255,54 @@ generator = LessonGenerator(
     course_brief=course_brief_data
 )
 
+# Generate all lessons with checkpoint callback (NEW - v2.3)
+def checkpoint_callback(completed_lessons, all_lessons):
+    """Save checkpoint every 5 lessons."""
+    if len(completed_lessons) % 5 == 0:
+        # Save checkpoint
+        completed_ids = [lesson.lesson_id for lesson in completed_lessons]
+        last_completed = completed_ids[-1] if completed_ids else None
+
+        # Find next pending lesson
+        completed_set = set(completed_ids)
+        next_pending = None
+        for lesson in all_lessons:
+            if lesson.lesson_id not in completed_set:
+                next_pending = lesson.lesson_id
+                break
+
+        state_manager.save_checkpoint({
+            "checkpoint": "lesson_generation",
+            "course_slug": course_slug,
+            "progress": {
+                "lessons_completed": len(completed_ids),
+                "lessons_total": len(all_lessons),
+                "completed_list": completed_ids,
+                "last_completed": last_completed,
+                "next_pending": next_pending
+            },
+            "context": {
+                "curriculum_path": f"outputs/courses/{course_slug}/curriculum.yaml",
+                "brief_path": f"outputs/courses/{course_slug}/COURSE-BRIEF.md"
+            },
+            "next_step": "continue_lessons"
+        })
+
 # Generate all lessons
-result = generator.generate_all_lessons()
+result = generator.generate_all_lessons(checkpoint_callback=checkpoint_callback)
 
 # Check results
 if len(result.failed) == 0:
     print(f"\n✅ All {result.total_lessons} lessons generated successfully!")
+
+    # Cleanup state files on successful completion (NEW - v2.3)
+    state_manager.cleanup_states()
+
 else:
     print(f"\n⚠️  {len(result.completed)}/{result.total_lessons} lessons generated")
     print(f"   {len(result.failed)} lessons failed - review errors above")
+
+    # Keep state files for resume (don't cleanup)
 ```
 
 **5.5. Success Criteria**
