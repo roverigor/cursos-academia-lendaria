@@ -1,7 +1,7 @@
 # CreatorOS - The Operating System for Digital Creators
 
-**Version:** 1.0.0
-**Status:** 📋 Planning Phase
+**Version:** 2.0.0 (Epic 3 Complete)
+**Status:** ✅ Production Ready
 **Author:** Academia Lendar[IA] (Alan Nicolas)
 
 > "Create, convert, scale — with AI personality cloning"
@@ -27,41 +27,81 @@ CreatorOS is your **complete operating system** for content creation and growth:
 ✅ **Multi-format generation** - Courses, blogs, social, video, newsletters
 ✅ **Voice preservation** - 90%+ fidelity using MMOS AI clones
 ✅ **Marketing intelligence** - Funnels, A/B tests, SEO, attribution
-✅ **Pedagogical rigor** - Bloom's Taxonomy, ADDIE, Kolb's Cycle
+✅ **Pedagogical rigor** - GPS Framework + Didática Lendária (7 Elements)
 ✅ **Project management** - Campaigns, audiences, performance tracking
 ✅ **Unified database** - Full traceability from idea to conversion
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (3 Commands)
 
-### Installation
+**⚡ NEW: Complete workflow orchestration scripts now available!**
 
-```bash
-# Install CreatorOS expansion pack
-npm run install:expansion creator-os
-
-# Initialize database
-bash scripts/creator-os/init-database.sh
-```
-
-### Your First Content Piece
+### Create Your First Course (Greenfield)
 
 ```bash
-# 1. Activate the Project Manager
-@content-pm
+# Navigate to CreatorOS
+cd expansion-packs/creator-os
 
-# 2. Create a project
-*create-project
+# 1. Initialize course
+python scripts/init_course.py
+#    → Select: Greenfield mode
+#    → Optional: Choose MMOS persona
 
-# 3. Generate a blog post
-*generate-blog-post --topic "deep work strategies" --persona nassim_taleb
+# 2. Fill COURSE-BRIEF.md
+vim outputs/courses/meu-curso/COURSE-BRIEF.md
 
-# 4. Track performance
-*track-performance
+# 3. Generate complete course
+python scripts/generate_course.py meu-curso
 ```
 
-### 3-Minute Walkthrough
+**Time:** 30-60 minutes | **Output:** Complete course with GPS + DL validation
+
+📖 **Full Guide:** See [QUICK-START.md](./QUICK-START.md) for detailed instructions
+
+---
+
+## 📚 Course Generation Features (Epic 3)
+
+### What Gets Generated
+
+✅ **Pedagogically Sound Lessons**
+- GPS Framework (Goal → Position → Steps)
+- Didática Lendária (7 Elements)
+- Automatic validation & retry (90%+ quality guaranteed)
+
+✅ **Complete Course Structure**
+- curriculum.yaml (modules + lessons)
+- course-outline.md
+- Assessments (quizzes + final project)
+
+✅ **Voice Fidelity** (Optional MMOS Integration)
+- 90%+ instructor voice preservation
+- Fallback to rule-based extraction if API fails
+
+### Intelligent Workflows
+
+**Greenfield** (From Scratch)
+- Fill COURSE-BRIEF.md manually
+- AI generates complete curriculum
+- Mandatory approval checkpoint before lesson generation
+- GPS + DL validation ensures transformational learning
+
+**Brownfield** (Migrate Existing Course)
+- Auto-organize files (transcripts, videos, docs)
+- Auto-extract ICP, voice patterns, learning objectives
+- Gap analysis skips 60-80% of manual questions
+- Preserves instructor voice from transcripts
+
+---
+
+## 🛠️ Advanced Usage
+
+### Resume Interrupted Generation
+
+```bash
+# CTRL+C during generation? No problem!
+python scripts/generate_course.py meu-curso --resume
 
 ```bash
 @content-pm
