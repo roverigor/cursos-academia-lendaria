@@ -1,8 +1,8 @@
 ---
 task_name: "continue-course"
-task_version: "2.1"
+task_version: "2.2"
 required_agent_version: ">=2.0"
-description: "Read filled course brief and generate complete course content with pedagogical rigor"
+description: "Read filled course brief and generate complete course content with pedagogical rigor using GPS Framework + Didática Lendária"
 last_updated: "2025-10-18"
 ---
 
@@ -882,101 +882,252 @@ success_criteria:
 
 ---
 
-### Step 5: Lesson Generation
+### Step 5: Lesson Generation (GPS + Didática Lendária)
 
 **(Only runs after explicit approval from Step 4)**
 
 **GATE:** This step only executes if Step 4 returns "proceed_to_generation"
 
-**5.1. Generate Lesson Content (Per Lesson)**
+**Story:** STORY-3.9 - Lesson Generation with GPS + Didática Lendária
+
+**5.1. Initialize Lesson Generator**
+
+```python
+from lib.lesson_generator import LessonGenerator
+
+# After curriculum approval
+generator = LessonGenerator(
+    course_slug=course_slug,
+    curriculum=curriculum_data,
+    course_brief=course_brief_data
+)
+```
+
+**5.2. Generate All Lessons Sequentially**
 
 ```yaml
-lesson_generation:
-  step: "Create full lesson content with instructor voice"
+batch_generation:
+  step: "Generate all lessons with progress tracking"
 
-  for_each_lesson:
-    inputs:
-      - lesson_outline: {from Step 2.2 output}
-      - instructor_persona: {from Step 1.4 output or null}
-      - pedagogical_framework: {from brief}
-      - teaching_style: {from brief}
-      - icp: {from brief Section 2}
+  library: "lib/lesson_generator.py"
+  class: "LessonGenerator"
+  method: "generate_all_lessons()"
 
-    prompt_to_llm: |
-      Write a complete lesson for an online course.
+  process:
+    1_load_voice_profile:
+      priority_order:
+        - MMOS persona (if enabled) → Load full system prompt
+        - Transcripts (if extracted) → Use voice patterns
+        - Manual (from brief) → Use defined tone/style
 
-      Lesson Details:
-      - ID: {lesson_id}
-      - Title: {lesson_title}
-      - Learning Objectives: {objectives}
-      - Key Concepts: {key_concepts}
-      - Duration: {duration} minutes
-      - Target Audience: {icp_from_brief}
+      output: VoiceProfile with prompt injection text
 
-      Course Context:
-      - Course Title: {course_title_from_brief}
-      - Module: {module_title}
-      - Previous Lesson: {prev_lesson_title}
-      - Next Lesson: {next_lesson_title}
+    2_for_each_lesson:
+      steps:
+        a_build_generation_prompt:
+          inputs:
+            - GPS framework template (lesson-gps-framework.md)
+            - Lesson spec (ID, title, objectives, duration)
+            - Course brief (ICP, learning objectives)
+            - Voice profile (MMOS > Transcripts > Manual)
 
-      Pedagogical Requirements:
-      - Framework: {framework} → {framework_guidelines}
-      - Style: {teaching_style_from_brief}
-      - Bloom's Level: {target_bloom_level}
+          template_structure: |
+            G (GOAL) - 30-60 seconds
+              → Clear promise (3 tangible outcomes)
+              → Why this matters (emotional hook)
 
-      Instructor Voice (if expert mode):
-      - Name: {instructor_name_from_brief}
-      - Tone: {voice_parameters.tone}
-      - Complexity: {voice_parameters.complexity}
-      - Signature phrases: {style_markers.signature_phrases}
-      - Example types: {style_markers.example_types}
-      - Things to NEVER say: {from_brief_section_4}
+            P (POSITION) - 60-90 seconds
+              → Empathy (validate concerns)
+              → Acknowledge different starting points
 
-      ICP Context (for examples):
-      - Demographics: {demographics_from_brief}
-      - Pain points: {pain_points_from_brief}
-      - Desired transformation: {transformation_from_brief}
+            S (STEPS) - Main content
+              → Why before What
+              → Analogies + Diagrams
+              → Reflective questions (2-3)
+              → Link de Transição (between concepts)
 
-      Structure to follow:
-      1. Hook (2-3 sentences - grab attention, state value)
-      2. Learning Objectives (explicit list)
-      3. Prerequisites Check (if any)
-      4. Core Content:
-         - Introduction to concept
-         - Deep dive / explanation
-         - Examples / case studies (relevant to ICP)
-         - Common pitfalls to avoid
-      5. Practical Application:
-         - Exercise or activity
-         - Real-world use case
-      6. Key Takeaways (3-5 bullet points)
-      7. What's Next (transition to next lesson)
-      8. Resources (tools, readings, templates)
+            REVISÃO ESTRUTURADA
+              → Before → After transformation
 
-      Requirements:
-      - Word count: {target_word_count} (based on duration from brief)
-      - Maintain instructor's voice throughout (if expert mode)
-      - Use {teaching_style_from_brief} tone
-      - Include at least 2 examples relevant to ICP
-      - Make immediately actionable
-      - Write for {quality_reference_from_brief} quality standard
+            AÇÃO RÁPIDA (2 minutes)
+              → Specific, achievable action
 
-    llm_model: "claude-sonnet-4"
-    temperature: 0.7
-    max_tokens: 4000
+          critical_requirements:
+            - Follow GPS structure exactly (G → P → S)
+            - Include all 7 Elements (Didática Lendária)
+            - Use voice profile naturally (not generic AI)
+            - Minimum: 1 analogy, 1 diagram, 2 reflective questions
+            - Word count: duration_minutes × 150 words/min
 
-    output_format:
-      markdown:
-        frontmatter:
-          lesson_id: "{lesson_id}"
-          lesson_title: "{lesson_title}"
-          module: "{module_id}"
-          duration: "{duration_minutes}"
-          learning_objectives: [...]
-          prerequisites: [...]
-          bloom_level: "{level}"
-          instructor: "{instructor_name}"
-          generated_date: "{timestamp}"
+        b_generate_with_ai:
+          model: "gpt-4"  # or gpt-4-turbo
+          temperature: 0.7
+          max_tokens: 4000
+          system_prompt: "templates/generation-prompt-system.md"
+
+          retry_logic:
+            max_retries: 2
+            backoff: [1s, 2s]  # Exponential backoff
+            on_failure: "Log error, continue to next lesson"
+
+        c_validate_content:
+          quick_checks:
+            - Not empty (>500 words)
+            - Has GPS sections (G, P, S)
+            - Minimum structure present
+
+          if_invalid: "Retry (up to 2 times)"
+
+        d_save_lesson:
+          filename_format: "{module}.{lesson}-{slug}.md"
+          examples:
+            - "1.1-intro.md"
+            - "2.3-advanced-topic.md"
+
+          path: "outputs/courses/{slug}/lessons/"
+
+          validation:
+            - NO zero-padding (1.1 not 01.01)
+            - Dot separator (module.lesson)
+            - Dash before slug
+            - Slug is kebab-case
+
+        e_update_progress:
+          display:
+            - Progress bar (ASCII: ████░░░░)
+            - Completed lessons (✅ with duration)
+            - Current lesson (🔄 with elapsed time)
+            - Queued lessons (⏳ next 3)
+            - Statistics (avg time, estimated completion, cost)
+
+    3_handle_failures:
+      strategy: "Continue to next lesson (don't abort)"
+      tracking: "failed_lessons list with error details"
+      recovery: "Offer retry command after completion"
+
+  output: GenerationResult
+    completed: [GeneratedLesson objects]
+    failed: [Error details per lesson]
+    total_time_seconds: float
+    total_cost_usd: float
+    avg_time_per_lesson: float
+```
+
+**5.3. Display Completion Summary**
+
+```yaml
+completion_summary:
+  step: "Present generation results"
+
+  if_all_succeeded:
+    display: |
+      ════════════════════════════════════════════════════════════
+      ✅ COURSE GENERATION COMPLETE!
+      ════════════════════════════════════════════════════════════
+
+      Course: {course_title}
+      Generated: {completed_count}/{total_count} lessons (100%)
+      Total time: {total_time_minutes} minutes
+      Total cost: ${total_cost}
+
+      ════════════════════════════════════════════════════════════
+
+      📂 OUTPUT FILES:
+
+      Lessons ({count} files):
+        outputs/courses/{slug}/lessons/
+        ├── 1.1-{slug}.md
+        ├── 1.2-{slug}.md
+        ...
+
+      ════════════════════════════════════════════════════════════
+
+      📊 QUALITY METRICS:
+
+      GPS Compliance: {gps_percentage}% (target: 100%)
+      Avg Lesson Length: {avg_words} words
+
+      ════════════════════════════════════════════════════════════
+
+      🎯 NEXT STEPS:
+
+      1. Review generated lessons:
+         → Open: outputs/courses/{slug}/lessons/
+
+      2. Run validation checks:
+         → *validate-course {slug}
+
+      3. Generate assessments:
+         → *generate-assessments {slug}
+
+      ════════════════════════════════════════════════════════════
+
+  if_partial_success:
+    display: |
+      ⚠️  COURSE GENERATION PARTIALLY COMPLETE
+
+      Generated: {completed}/{total} lessons ({percentage}%)
+      Failed: {failed_count} lessons
+
+      ════════════════════════════════════════════════════════════
+
+      ❌ FAILED LESSONS:
+
+      1. {lesson_id} - {lesson_title}
+         Error: {error_message}
+         Action: Retry with: *generate-lesson {slug} {lesson_id}
+
+      ...
+
+      ════════════════════════════════════════════════════════════
+
+      → To retry failed lessons:
+        *retry-failed-lessons {slug}
+
+      ════════════════════════════════════════════════════════════
+```
+
+**5.4. Implementation Code**
+
+```python
+# In continue-course workflow Step 5:
+
+from lib.lesson_generator import LessonGenerator
+
+# After curriculum approval (Step 4 returned "proceed_to_generation")
+print("\n→ Proceeding to lesson generation (Step 5)...\n")
+
+# Initialize generator
+generator = LessonGenerator(
+    course_slug=course_slug,
+    curriculum=curriculum_data,
+    course_brief=course_brief_data
+)
+
+# Generate all lessons
+result = generator.generate_all_lessons()
+
+# Check results
+if len(result.failed) == 0:
+    print(f"\n✅ All {result.total_lessons} lessons generated successfully!")
+else:
+    print(f"\n⚠️  {len(result.completed)}/{result.total_lessons} lessons generated")
+    print(f"   {len(result.failed)} lessons failed - review errors above")
+```
+
+**5.5. Success Criteria**
+
+```yaml
+success_criteria:
+  - ✅ All lessons follow GPS structure (G → P → S)
+  - ✅ All 7 Didática Lendária elements present
+  - ✅ Voice fidelity ≥85% (custom) or ≥90% (MMOS)
+  - ✅ File naming convention enforced (M.L-slug.md)
+  - ✅ Retry logic handles failures gracefully
+  - ✅ Progress tracking displays in real-time
+  - ✅ Partial completion handled (failed lessons tracked)
+  - ✅ Completion summary shows next steps
+```
 
         content: |
           # {lesson_title}
@@ -1957,13 +2108,14 @@ Next steps:
 
 ---
 
-**Task Version:** 2.1
+**Task Version:** 2.2
 **Last Updated:** 2025-10-18
 **Maintainer:** CreatorOS Team (Sarah - PO)
 **Changelog:**
+- v2.2 (2025-10-18): **MAJOR UPDATE** - Implemented STORY-3.9: Lesson Generation with GPS + Didática Lendária. Step 5 now uses GPS Framework (Goal → Position → Steps) + 7 Elements for transformational learning. Added LessonGenerator class, GPS validator, DL scorer, voice injection priority (MMOS > Transcripts > Manual), real-time progress tracking, and comprehensive error handling with retry logic.
 - v2.1 (2025-10-18): Added Step 4 - Curriculum Approval Checkpoint (STORY-3.8). Mandatory HITL gate that HALTS workflow after curriculum generation to prevent costly mistakes. Renumbered subsequent steps (old Step 4 → Step 6, old Step 5 → Step 7).
 - v2.0 (2025-10-17): Created as companion to generate-course v2.0. Implements brief-driven generation (Steps 2-5 from v1.0, adapted to read from COURSE-BRIEF.md instead of interactive elicitation).
-- Full implementation: ~2,400 lines (complete pipeline with all validation steps + approval checkpoint)
+- Full implementation: ~2,600 lines (complete pipeline with GPS lesson generation + validation + approval checkpoint)
 
 ---
 
