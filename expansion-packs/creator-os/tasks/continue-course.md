@@ -1,6 +1,6 @@
 ---
 task_name: "continue-course"
-task_version: "2.0"
+task_version: "2.1"
 required_agent_version: ">=2.0"
 description: "Read filled course brief and generate complete course content with pedagogical rigor"
 last_updated: "2025-10-18"
@@ -9,7 +9,7 @@ last_updated: "2025-10-18"
 # Task: Continue Course Generation
 
 **Task ID:** continue-course
-**Version:** 2.0
+**Version:** 2.1
 **Purpose:** Read filled course brief and generate complete course content with pedagogical rigor
 **Owner:** Course Architect Agent
 **Estimated Time:** 15-45 minutes (depending on course size)
@@ -482,7 +482,413 @@ preview_approval:
 
 **(Implementation from v1.0 - adapted for brief-driven approach)**
 
-**3.1. Generate Lesson Content (Per Lesson)**
+**3.1. Generate curriculum.yaml from approved outline**
+
+```yaml
+curriculum_yaml_generation:
+  step: "Convert outline to structured curriculum.yaml"
+
+  input_sources:
+    - course_outline (from Step 2.2 approved output)
+    - course_config (from Step 1.2 brief)
+
+  output_file: "outputs/courses/{slug}/curriculum.yaml"
+
+  structure:
+    course_id: "{uuid}"
+    title: "{from_brief}"
+    slug: "{slug}"
+    version: "1.0"
+    created_at: "{timestamp}"
+
+    metadata:
+      total_duration_hours: {from_brief}
+      knowledge_level: "{from_brief}"
+      target_audience: "{from_brief}"
+      pedagogical_framework: "{from_brief}"
+      teaching_style: "{from_brief}"
+
+    modules:
+      - module_id: 1
+        module_title: "{from_outline}"
+        duration_minutes: {calculated}
+        lessons:
+          - lesson_id: "1.1"
+            lesson_title: "{from_outline}"
+            duration_minutes: {from_outline}
+            learning_objectives: [...]
+            bloom_level: "{from_outline}"
+          - lesson_id: "1.2"
+            # ...
+```
+
+---
+
+### Step 4: Curriculum Approval Checkpoint (MANDATORY HALT)
+
+**CRITICAL:** This is a human-in-the-loop checkpoint that HALTS the workflow to prevent costly mistakes.
+
+**Story:** STORY-3.8 - Curriculum Approval Checkpoint
+
+**4.1. Display Curriculum Summary**
+
+```yaml
+curriculum_summary_display:
+  step: "Present clear curriculum overview"
+
+  library: "lib/curriculum_approval.py"
+  class: "CurriculumApprovalCheckpoint"
+
+  display_format: |
+    ════════════════════════════════════════════════════════════
+    📋 CURRICULUM GENERATED
+    ════════════════════════════════════════════════════════════
+
+    Course: {course_title}
+    Total: {num_lessons} lessons across {num_modules} modules
+    Estimated Duration: {total_hours} hours
+    Estimated Generation Cost: ${cost_min}-${cost_max}
+    Estimated Generation Time: {time_min}-{time_max} minutes
+
+    ════════════════════════════════════════════════════════════
+
+    📚 MODULE BREAKDOWN:
+
+    Module 1: {title} ({lesson_count} lessons, ~{duration} min)
+      1.1 - {lesson_title} ({duration} min)
+      1.2 - {lesson_title} ({duration} min)
+      ...
+
+    Module 2: {title} ({lesson_count} lessons, ~{duration} min)
+      2.1 - {lesson_title} ({duration} min)
+      ...
+
+    ════════════════════════════════════════════════════════════
+
+    📄 FULL CURRICULUM:
+       File: outputs/courses/{slug}/curriculum.yaml
+       (Open to see complete YAML structure)
+
+    ════════════════════════════════════════════════════════════
+
+  cost_estimation:
+    formula: "lesson_count * $0.70-$1.10 per lesson (GPT-4 based)"
+    basis: "Typical lesson length 1500-2000 words"
+
+  time_estimation:
+    formula: "lesson_count * 2-3 minutes per lesson"
+    basis: "Claude Sonnet 4 generation time"
+```
+
+**4.2. Present Approval Options (NEVER AUTO-APPROVE)**
+
+```yaml
+approval_options:
+  step: "Wait for explicit user choice"
+
+  display: |
+    ⏸️  CHECKPOINT: Approve curriculum?
+
+    ────────────────────────────────────────────────────────────
+
+    Options:
+
+    [1] ✅ APPROVE
+        → Generate all {lesson_count} lessons now
+        → Estimated cost: ${cost_min}-${cost_max} | Time: {time_min}-{time_max} min
+        → Cannot undo (lessons will be generated)
+
+    [2] ✏️  EDIT CURRICULUM
+        → Modify curriculum.yaml manually in your editor
+        → Add/remove lessons, adjust titles/durations
+        → Return here when done to validate changes
+
+    [3] 🔄 REGENERATE CURRICULUM
+        → Go back to COURSE-BRIEF.md and adjust
+        → Re-run outline and curriculum generation
+        → Use if structure needs major changes
+
+    [4] ❌ CANCEL WORKFLOW
+        → Stop here without generating lessons
+        → Progress saved (COURSE-BRIEF, curriculum preserved)
+        → Resume later with: *continue-course {slug}
+
+    ────────────────────────────────────────────────────────────
+
+    💡 TIP: Most users choose [2] to tweak lesson titles before approval.
+
+    ────────────────────────────────────────────────────────────
+
+    Your choice (1-4): _
+
+  validation:
+    - User MUST enter 1, 2, 3, or 4 (no default)
+    - No config option to bypass checkpoint
+    - All decisions logged for audit
+
+  critical_rule: |
+    NEVER auto-approve curriculum, even if:
+    - User has "auto_approve_curriculum: true" in config (ignore it)
+    - Curriculum looks perfect (still require human review)
+    - User is in batch mode (still HALT)
+
+    Rationale: This is a "spend money" gate - must be explicit
+```
+
+**4.3. Handle User Choice**
+
+```yaml
+option_handlers:
+
+  option_1_approve:
+    handler: "CurriculumApprovalCheckpoint.handle_option_approve()"
+
+    workflow:
+      1_confirmation_prompt: |
+         ⚠️  This will generate all {lesson_count} lessons and incur costs (${cost_min}-${cost_max}).
+            Are you sure? (yes/no): _
+
+      2_validate_confirmation:
+         - If "yes": Proceed to option_1_approve_confirmed
+         - If "no": Return to approval_options
+         - Any other input: Return to approval_options
+
+      3_approve_confirmed:
+         - Log approval decision
+         - Return: "proceed_to_generation"
+         - Continue to Step 5 (Lesson Generation)
+
+    critical_rule: "Require explicit 'yes' confirmation (safety check)"
+
+  option_2_edit:
+    handler: "CurriculumApprovalCheckpoint.handle_option_edit()"
+
+    workflow:
+      1_display_instructions: |
+         ✏️  EDIT MODE
+
+         1. Open curriculum file:
+            {curriculum_path}
+
+         2. Make your changes:
+            - Add/remove lessons
+            - Adjust titles, durations, or learning objectives
+            - Reorder modules
+
+         3. Save the file
+
+         4. Return here and press ENTER to validate changes
+
+         ────────────────────────────────────────────────────────────
+
+         💡 TIPS:
+            - Keep numbering sequential (1.1, 1.2, 2.1, ...)
+            - Lesson duration: 10-45 minutes typical
+            - Use YAML syntax (indentation matters!)
+
+         ────────────────────────────────────────────────────────────
+
+         When done editing, press ENTER to continue: _
+
+      2_wait_for_user: "input() - User edits file externally"
+
+      3_revalidate_curriculum:
+         - Run: validate_curriculum_yaml(curriculum_path)
+         - If validation fails:
+           - Display errors
+           - Show fix instructions
+           - HALT with resume command
+         - If validation passes:
+           - Display success
+           - Reload curriculum data
+           - Re-display curriculum summary
+           - Return to approval_options (loop)
+
+    validation_rules:
+      - YAML syntax valid
+      - Modules list exists and not empty
+      - Each module has lessons
+      - Lesson IDs sequential (1.1, 1.2, 2.1, ...)
+      - No duplicate lesson IDs
+      - Total duration reasonable (60-3000 min)
+
+  option_3_regenerate:
+    handler: "CurriculumApprovalCheckpoint.handle_option_regenerate()"
+
+    workflow:
+      1_explain_workflow: |
+         🔄 REGENERATE CURRICULUM
+
+         This will:
+         1. Return to COURSE-BRIEF.md for editing
+         2. Re-run outline generation
+         3. Re-run curriculum generation
+         4. Return to this checkpoint
+
+         Current curriculum.yaml will be backed up as curriculum-backup-{timestamp}.yaml
+
+         ────────────────────────────────────────────────────────────
+
+         → Proceed with regeneration? (yes/no): _
+
+      2_get_confirmation:
+         - If "yes": Continue to step 3
+         - If "no": Return to approval_options
+
+      3_backup_curriculum:
+         - Copy curriculum.yaml to curriculum-backup-{timestamp}.yaml
+         - Log backup path
+
+      4_provide_instructions: |
+         📝 EDIT COURSE-BRIEF.md
+
+         1. Open: outputs/courses/{slug}/COURSE-BRIEF.md
+         2. Make changes (objectives, structure, etc.)
+         3. Save the file
+         4. Run: *continue-course {slug} --regenerate-curriculum
+
+         Workflow will regenerate outline + curriculum based on updated brief.
+
+         ────────────────────────────────────────────────────────────
+
+      5_halt_workflow:
+         - Log regeneration decision
+         - Return: "halt_for_brief_edit"
+         - Workflow HALTS (user must manually resume)
+
+  option_4_cancel:
+    handler: "CurriculumApprovalCheckpoint.handle_option_cancel()"
+
+    workflow:
+      1_display_summary: |
+         ❌ WORKFLOW CANCELED
+
+         Progress has been saved:
+         ✓ COURSE-BRIEF.md
+         ✓ course-outline.md
+         ✓ curriculum.yaml
+
+         No lessons were generated (no cost incurred).
+
+         ────────────────────────────────────────────────────────────
+
+         To resume later:
+
+         Option A: Generate lessons with current curriculum
+           → *continue-course {slug}
+
+         Option B: Edit curriculum first, then generate
+           → Edit: outputs/courses/{slug}/curriculum.yaml
+           → Run: *continue-course {slug} --validate-curriculum
+
+         Option C: Start over (regenerate curriculum)
+           → *continue-course {slug} --regenerate-curriculum
+
+         ────────────────────────────────────────────────────────────
+
+      2_log_decision:
+         - Log: "User canceled workflow at curriculum checkpoint"
+
+      3_halt_workflow:
+         - Return: "halt_canceled"
+         - Workflow HALTS gracefully
+```
+
+**4.4. Curriculum Validation Logic**
+
+```yaml
+validation_function:
+  name: "validate_curriculum_yaml()"
+  location: "lib/curriculum_approval.py"
+
+  rules:
+    rule_1_yaml_syntax:
+      check: "Parse YAML without errors"
+      error_if_fails: "Invalid YAML syntax: {yaml_error}"
+
+    rule_2_has_modules:
+      check: "'modules' key exists and not empty"
+      error_if_fails: "No modules found in curriculum"
+
+    rule_3_modules_have_lessons:
+      check: "Each module has 'lessons' list (not empty)"
+      error_if_fails: "Module {id} has no lessons"
+
+    rule_4_sequential_numbering:
+      check: "Lesson IDs match pattern: {module_num}.{lesson_num}"
+      expected: "1.1, 1.2, 1.3, 2.1, 2.2, ..."
+      error_if_fails: "Lesson numbering error: Expected {expected}, got {actual}"
+
+    rule_5_no_duplicates:
+      check: "All lesson IDs are unique"
+      error_if_fails: "Duplicate lesson IDs found: {duplicates}"
+
+    rule_6_duration_reasonable:
+      check: "Total duration between 60-3000 minutes"
+      warning_if_short: "Total duration < 60 min: {duration}"
+      warning_if_long: "Total duration > 3000 min: {duration}"
+
+  return_format:
+    valid: true/false
+    errors: [...]  # Blocking errors
+    warnings: [...]  # Non-blocking warnings
+```
+
+**4.5. Implementation Code**
+
+```python
+# In continue-course workflow Step 4:
+
+from lib.curriculum_approval import CurriculumApprovalCheckpoint
+
+# After curriculum.yaml generation (Step 3.1)
+checkpoint = CurriculumApprovalCheckpoint(course_slug)
+
+# Display summary
+checkpoint.display_curriculum_summary()
+
+# Show options and get user choice
+result = checkpoint.show_approval_options()
+
+# Handle result
+if result == "proceed_to_generation":
+    # User approved - continue to Step 5 (Lesson Generation)
+    print("\n→ Proceeding to lesson generation (Step 5)...\n")
+    # Continue workflow...
+
+elif result == "halt_for_brief_edit":
+    # User chose regenerate - HALT with instructions
+    print("\n→ Workflow halted for brief editing.")
+    print("   Resume with: *continue-course {slug} --regenerate-curriculum\n")
+    sys.exit(0)
+
+elif result == "halt_canceled":
+    # User canceled - HALT gracefully
+    print("\n→ Workflow canceled by user.\n")
+    sys.exit(0)
+```
+
+**4.6. Success Criteria**
+
+```yaml
+success_criteria:
+  - ✅ 100% of workflows HALT at curriculum checkpoint
+  - ✅ Zero accidental lesson generations (always require approval)
+  - ✅ All approval decisions logged for audit
+  - ✅ Validation catches YAML errors before lesson generation
+  - ✅ User can edit/regenerate/cancel without losing progress
+  - ✅ Resume instructions provided for all HALT scenarios
+```
+
+---
+
+### Step 5: Lesson Generation
+
+**(Only runs after explicit approval from Step 4)**
+
+**GATE:** This step only executes if Step 4 returns "proceed_to_generation"
+
+**5.1. Generate Lesson Content (Per Lesson)**
 
 ```yaml
 lesson_generation:
@@ -620,7 +1026,7 @@ lesson_generation:
           **Próxima Aula:** [{next_lesson_title}]({next_lesson_file})
 ```
 
-**3.2. Generate Assessments**
+**5.2. Generate Assessments**
 
 ```yaml
 assessment_generation:
@@ -713,7 +1119,7 @@ assessment_generation:
       ```
 ```
 
-**3.3. Generate Supplementary Resources**
+**5.3. Generate Supplementary Resources**
 
 ```yaml
 resources_generation:
@@ -757,11 +1163,11 @@ resources_generation:
 
 ---
 
-### Step 4: Pedagogical Validation
+### Step 6: Pedagogical Validation
 
 **(Implementation from v1.0 - adapted for brief-driven approach)**
 
-**4.1. Alignment Check**
+**6.1. Alignment Check**
 
 ```yaml
 alignment_validation:
@@ -826,7 +1232,7 @@ alignment_validation:
         - Re-run validation
 ```
 
-**4.2. Completeness Check**
+**6.2. Completeness Check**
 
 ```yaml
 completeness_validation:
@@ -884,7 +1290,7 @@ completeness_validation:
         - Re-run completeness check
 ```
 
-**4.3. Voice Fidelity Validation (if expert mode)**
+**6.3. Voice Fidelity Validation (if expert mode)**
 
 ```yaml
 fidelity_validation:
@@ -969,7 +1375,7 @@ fidelity_validation:
       - Re-run fidelity validation
 ```
 
-**4.4. Cognitive Load Balance**
+**6.4. Cognitive Load Balance**
 
 ```yaml
 cognitive_load_validation:
@@ -1019,7 +1425,7 @@ cognitive_load_validation:
       - Reduce jargon density
 ```
 
-**4.5. Duration Realism Check**
+**6.5. Duration Realism Check**
 
 ```yaml
 duration_validation:
@@ -1064,11 +1470,11 @@ duration_validation:
 
 ---
 
-### Step 5: Output Generation
+### Step 7: Output Generation
 
 **(Implementation from v1.0 - adapted for brief-driven approach)**
 
-**5.1. File Structure Creation**
+**7.1. File Structure Creation**
 
 ```yaml
 file_structure:
@@ -1184,7 +1590,7 @@ file_structure:
           cognitive_load_balanced: {true/false}
 ```
 
-**5.2. Database Logging**
+**7.2. Database Logging**
 
 ```yaml
 database_logging:
@@ -1234,7 +1640,7 @@ database_logging:
       - assessment_id, course_id, type, module, file_path
 ```
 
-**5.3. Generation Summary Report**
+**7.3. Generation Summary Report**
 
 ```yaml
 summary_report:
@@ -1551,26 +1957,29 @@ Next steps:
 
 ---
 
-**Task Version:** 2.0
-**Last Updated:** 2025-10-17
+**Task Version:** 2.1
+**Last Updated:** 2025-10-18
 **Maintainer:** CreatorOS Team (Sarah - PO)
 **Changelog:**
+- v2.1 (2025-10-18): Added Step 4 - Curriculum Approval Checkpoint (STORY-3.8). Mandatory HITL gate that HALTS workflow after curriculum generation to prevent costly mistakes. Renumbered subsequent steps (old Step 4 → Step 6, old Step 5 → Step 7).
 - v2.0 (2025-10-17): Created as companion to generate-course v2.0. Implements brief-driven generation (Steps 2-5 from v1.0, adapted to read from COURSE-BRIEF.md instead of interactive elicitation).
-- Full implementation: ~2,200 lines (complete pipeline with all validation steps)
+- Full implementation: ~2,400 lines (complete pipeline with all validation steps + approval checkpoint)
 
 ---
 
-**NOTE:** This is the complete implementation. All Steps 2-5 from v1.0 have been migrated and adapted to read from the unified brief document instead of interactive elicitation. The task now:
+**NOTE:** This is the complete implementation with mandatory approval checkpoint. The task now:
 
 1. ✅ Reads filled COURSE-BRIEF.md
 2. ✅ Validates completeness
 3. ✅ Loads instructor persona (MMOS or custom)
 4. ✅ Applies pedagogical frameworks
-5. ✅ Generates course structure
-6. ✅ Creates lesson content with voice fidelity
-7. ✅ Generates assessments and resources
-8. ✅ Validates alignment, completeness, fidelity, cognitive load
-9. ✅ Outputs final files and database records
-10. ✅ Provides quality scores and next steps
+5. ✅ Generates course structure and curriculum.yaml
+6. ✅ **HALTS at Curriculum Approval Checkpoint (STORY-3.8)**
+7. ✅ Waits for explicit user approval before lesson generation
+8. ✅ Creates lesson content with voice fidelity (only after approval)
+9. ✅ Generates assessments and resources
+10. ✅ Validates alignment, completeness, fidelity, cognitive load
+11. ✅ Outputs final files and database records
+12. ✅ Provides quality scores and next steps
 
 Ready for integration testing and production use.
