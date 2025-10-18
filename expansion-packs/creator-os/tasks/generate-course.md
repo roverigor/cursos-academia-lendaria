@@ -1,8 +1,8 @@
 # Task: Generate Course
 
 **Task ID:** generate-course
-**Version:** 2.0
-**Purpose:** Initialize course structure and unified brief document for human completion
+**Version:** 2.1
+**Purpose:** Initialize course structure with greenfield/brownfield detection and unified brief document
 **Owner:** Course Architect Agent
 **Estimated Time:** 30-60 seconds (initialization only)
 **Elicit:** true
@@ -11,25 +11,31 @@
 
 ## Overview
 
-**WORKFLOW v2.0 - Unified Brief Document Approach**
+**WORKFLOW v2.1 - Greenfield/Brownfield Detection + Unified Brief**
 
-This task initializes a new course by creating the folder structure and copying the unified course brief template. The user then fills out the comprehensive brief document (45-90 min) before content generation begins with the `continue-course` task.
+This task initializes a course by detecting whether you're creating from scratch (greenfield) or upgrading existing materials (brownfield), validating the mode against folder state, and setting up the appropriate workflow.
 
 **What This Task Does:**
 1. Prompts for course slug (short identifier)
-2. Creates `/outputs/courses/{course-slug}/` directory structure
-3. Copies `course-brief.md` template to `COURSE-BRIEF.md`
-4. **HALTS and notifies user to fill the brief**
+2. **NEW: Asks greenfield vs brownfield mode**
+3. **NEW: Validates mode against folder existence (4 scenarios)**
+4. **NEW: Branches to appropriate workflow**
+5. Creates `/outputs/courses/{course-slug}/` directory structure (greenfield only)
+6. Copies `course-brief.md` template to `COURSE-BRIEF.md` (greenfield only)
+7. **HALTS and notifies user with mode-specific next steps**
 
 **What This Task Does NOT Do:**
 - Does NOT generate course content (that's `continue-course` task)
 - Does NOT ask 15-20 interactive questions (v1.0 deprecated)
 - Does NOT elicit requirements incrementally
+- Does NOT extract brownfield materials yet (Phase 2: Stories 3.2-3.4)
 
 **Success Criteria:**
-- Folder structure created successfully
-- `COURSE-BRIEF.md` copied and ready for editing
-- User notified with clear next steps
+- Mode selection validated against folder state (100% accuracy)
+- Appropriate workflow executed (greenfield or brownfield)
+- creation_mode metadata persisted to COURSE-BRIEF.md
+- User notified with clear, context-aware next steps
+- Error recovery options provided for conflicts
 
 ---
 
@@ -50,7 +56,7 @@ This task initializes a new course by creating the folder structure and copying 
 
 ```yaml
 elicitation:
-  step: "Gather course slug for initialization"
+  step: "Gather course slug and creation mode"
 
   questions:
     1_course_slug:
@@ -68,12 +74,32 @@ elicitation:
       validation:
         - Must be 3-50 characters
         - Must be lowercase letters, numbers, hyphens only
-        - Must not already exist in /outputs/courses/
 
       examples:
         - "clone-ia-express"
         - "python-data-science"
         - "team-onboarding-v2"
+
+    2_creation_mode:
+      prompt: |
+        Is this course:
+
+        1. Greenfield - Creating from scratch (no existing materials)
+           → Start with blank slate, fill COURSE-BRIEF manually
+           → Folder should NOT exist yet
+
+        2. Brownfield - Upgrading/migrating existing course materials
+           → Extract content from existing files
+           → Folder should already exist with materials
+
+        Your choice (1 or 2):
+
+      validation:
+        - Must be 1 or 2
+        - Will be validated against folder existence
+
+      default_suggestion: |
+        (Checking folder existence to suggest default...)
 ```
 
 ---
@@ -94,10 +120,6 @@ slug_validation:
       - Must be 3-50 characters
       - Regex: ^[a-z0-9-]{3,50}$
 
-    2_uniqueness:
-      - Check if /outputs/courses/{slug}/ already exists
-      - If exists: ERROR - "Course '{slug}' already exists. Choose different slug or use *continue-course to resume."
-
   sanitization:
     - Convert to lowercase
     - Replace spaces with hyphens
@@ -108,11 +130,125 @@ slug_validation:
     validated_slug: "{sanitized-course-slug}"
 ```
 
-**1.2. Create Folder Structure**
+**1.2. Validate Creation Mode vs Folder State**
+
+```yaml
+mode_validation:
+  step: "Validate creation mode matches folder existence"
+
+  inputs:
+    - validated_slug (from step 1.1)
+    - creation_mode (1=greenfield, 2=brownfield from elicitation)
+
+  checks:
+    folder_path: "outputs/courses/{slug}/"
+    folder_exists: "Check if path exists"
+    file_count: "Count files recursively (if exists)"
+
+  validation_scenarios:
+
+    scenario_1_greenfield_pass:
+      condition: "mode=greenfield AND folder does NOT exist"
+      result: SUCCESS
+      message: |
+        ✓ Greenfield mode validated
+        ✓ Folder does not exist (will be created)
+
+        Proceeding to create course structure...
+
+    scenario_2_greenfield_conflict:
+      condition: "mode=greenfield AND folder EXISTS"
+      result: ERROR
+      message: |
+        ❌ CONFLICT: Greenfield mode selected but folder already exists!
+
+        Found: outputs/courses/{slug}/
+        Contains: {file_count} files
+
+        This suggests you meant "Brownfield" (upgrade existing course).
+
+        Recovery options:
+        1. Change to Brownfield mode (recommended)
+        2. Delete existing folder and continue as Greenfield (⚠️ DESTRUCTIVE)
+        3. Choose different slug
+
+        What would you like to do? (1/2/3):
+
+      recovery_actions:
+        option_1_switch_to_brownfield:
+          action: "Set creation_mode = brownfield"
+          next: "Re-run validation (should pass scenario_3)"
+
+        option_2_delete_folder:
+          action: "Delete outputs/courses/{slug}/ recursively"
+          confirmation: "Are you SURE? This will delete {file_count} files. Type 'DELETE' to confirm:"
+          if_confirmed: "Delete folder and proceed to step 1.3"
+          if_not_confirmed: "Abort and re-prompt options"
+
+        option_3_change_slug:
+          action: "Re-prompt for slug (back to elicitation step 1)"
+
+    scenario_3_brownfield_pass:
+      condition: "mode=brownfield AND folder EXISTS"
+      result: SUCCESS
+      message: |
+        ✓ Brownfield mode validated
+        ✓ Folder exists: outputs/courses/{slug}/
+        ✓ Found {file_count} files
+
+        Next: Analyzing existing materials...
+
+    scenario_4_brownfield_conflict:
+      condition: "mode=brownfield AND folder does NOT exist"
+      result: ERROR
+      message: |
+        ❌ CONFLICT: Brownfield mode selected but no folder found!
+
+        Expected: outputs/courses/{slug}/
+
+        Brownfield mode requires existing materials to upgrade.
+
+        Recovery options:
+        1. Change to Greenfield mode (create new course)
+        2. Create folder manually and add materials, then retry
+        3. Check slug spelling (typo?)
+
+        What would you like to do? (1/2/3):
+
+      recovery_actions:
+        option_1_switch_to_greenfield:
+          action: "Set creation_mode = greenfield"
+          next: "Re-run validation (should pass scenario_1)"
+
+        option_2_manual_setup:
+          action: "Halt workflow"
+          instructions: |
+            Please create the folder and add your materials:
+
+            1. Create folder: mkdir -p outputs/courses/{slug}/
+            2. Add your existing course materials to this folder
+            3. Run this command again: *generate-course
+
+        option_3_check_slug:
+          action: "Re-prompt for slug (back to elicitation step 1)"
+
+  output:
+    creation_mode: "greenfield | brownfield"
+    folder_state:
+      exists: "true | false"
+      file_count: "{number}"
+      validated_at: "{timestamp}"
+```
+
+**1.3. Create Folder Structure (Greenfield Only)**
 
 ```yaml
 folder_creation:
   step: "Create course directory structure"
+
+  applies_to: "Only runs in GREENFIELD mode"
+
+  skip_if: "creation_mode = brownfield (folder already exists)"
 
   base_path: "outputs/courses/{course-slug}/"
 
@@ -123,18 +259,21 @@ folder_creation:
     - outputs/courses/{course-slug}/resources/
 
   error_handling:
-    if_exists: ERROR - "Course already exists"
     if_permission_denied: ERROR - "Cannot create directory - check permissions"
 
   output:
     created_paths: [list of created directories]
 ```
 
-**1.3. Copy Brief Template**
+**1.4. Copy Brief Template (Greenfield Only)**
 
 ```yaml
 template_copy:
   step: "Copy unified brief template to course folder"
+
+  applies_to: "Only runs in GREENFIELD mode"
+
+  skip_if: "creation_mode = brownfield (brief will be extracted from existing materials)"
 
   source:
     template_path: "expansion-packs/creator-os/templates/course-brief.md"
@@ -156,13 +295,18 @@ template_copy:
       - Replace placeholders in brief frontmatter:
         - course_slug: {course-slug}
         - created_date: {current_timestamp}
+        - creation_mode: "greenfield"
+        - folder_state_at_start:
+            exists: false
+            file_count: 0
+            has_legacy_materials: false
         - status: "🟡 Aguardando Preenchimento"
 
   output:
     brief_file_path: "outputs/courses/{course-slug}/COURSE-BRIEF.md"
 ```
 
-**1.4. Create README Placeholder**
+**1.5. Create README Placeholder**
 
 ```yaml
 readme_creation:
@@ -194,11 +338,32 @@ readme_creation:
     **Framework:** AIOS Course Creation Workflow v2.0
 ```
 
-**1.5. User Notification & HALT**
+**1.6. Workflow Branching**
 
 ```yaml
-notification:
+workflow_branching:
+  step: "Route to appropriate workflow based on creation mode"
+
+  greenfield_workflow:
+    condition: "creation_mode = greenfield"
+    next_step: "Step 1.7 - User Notification & HALT (Greenfield)"
+    description: "User must fill COURSE-BRIEF.md manually before generation"
+
+  brownfield_workflow:
+    condition: "creation_mode = brownfield"
+    next_step: "Step 1.7 - User Notification & HALT (Brownfield)"
+    description: "User should prepare materials before running extraction workflow (Phase 2)"
+```
+
+**1.7. User Notification & HALT**
+
+**For Greenfield Mode:**
+
+```yaml
+notification_greenfield:
   step: "Notify user and HALT workflow"
+
+  applies_to: "creation_mode = greenfield"
 
   message_to_user: |
     ✓ Course structure initialized successfully!
@@ -237,6 +402,49 @@ notification:
   next_task: "continue-course"
 ```
 
+**For Brownfield Mode:**
+
+```yaml
+notification_brownfield:
+  step: "Notify user and HALT workflow"
+
+  applies_to: "creation_mode = brownfield"
+
+  message_to_user: |
+    ✓ Brownfield mode activated!
+
+    📁 Detected:
+    - Folder: /outputs/courses/{course-slug}/
+    - Files found: {file_count}
+
+    ---
+
+    📋 **NEXT STEPS - Brownfield Workflow:**
+
+    **Phase 2: Material Extraction (Future Implementation)**
+
+    The system will extract content from your existing materials to:
+    1. Generate COURSE-BRIEF.md automatically (from existing content)
+    2. Identify ICP from audience descriptions
+    3. Extract instructor voice patterns
+    4. Map existing structure to course outline
+
+    **For now (Phase 1 - Manual Path):**
+
+    1. Create COURSE-BRIEF.md manually in: outputs/courses/{course-slug}/
+    2. Fill all sections based on your existing materials
+    3. Run: *continue-course {course-slug}
+
+    ---
+
+    **Status:** Brownfield workflow is planned for Story 3.2-3.4 (Phase 2)
+    **Current workaround:** Use greenfield flow with manual COURSE-BRIEF.md
+
+  workflow_state: "HALTED"
+  next_task: "continue-course (after manual COURSE-BRIEF.md creation)"
+  note: "Automated brownfield extraction coming in Phase 2 (Stories 3.2-3.4)"
+```
+
 ---
 
 ### Step 2: WORKFLOW HALTED
@@ -273,21 +481,77 @@ error_scenarios:
 
       Please provide a valid slug:
 
-  - error: "Course already exists"
-    trigger: "Directory /outputs/courses/{slug}/ already exists"
+  - error: "Invalid creation mode selection"
+    trigger: "User provides value other than 1 or 2 for mode selection"
     recovery:
-      1: "Check if COURSE-BRIEF.md is filled"
-      2: "Offer to resume with *continue-course"
-      3: "Offer to choose different slug"
+      1: "Re-prompt with clear options"
+      2: "Show folder existence status to help decide"
     example_message: |
-      ❌ Course '{slug}' already exists at /outputs/courses/{slug}/
+      ❌ Invalid selection: "{input_value}"
 
-      Options:
-      A. Resume: *continue-course {slug} (if brief is filled)
-      B. Choose different slug
-      C. Delete existing and start over (manual deletion required)
+      Please choose:
+      1. Greenfield (creating new course from scratch)
+      2. Brownfield (upgrading existing course materials)
+
+      Note: Checking outputs/courses/{slug}/... {exists|does not exist}
+      Suggestion: Choose {recommended_mode} based on folder state
+
+      Your choice (1 or 2):
+
+  - error: "Greenfield conflict - folder exists"
+    trigger: "User selected greenfield but folder already exists"
+    recovery:
+      1: "Switch to brownfield mode (recommended)"
+      2: "Delete folder and continue (destructive)"
+      3: "Choose different slug"
+    example_message: |
+      ❌ CONFLICT: Greenfield mode selected but folder already exists!
+
+      Found: outputs/courses/{slug}/
+      Contains: {file_count} files
+
+      This suggests you meant "Brownfield" (upgrade existing course).
+
+      Recovery options:
+      1. Change to Brownfield mode (recommended)
+      2. Delete existing folder and continue as Greenfield (⚠️ DESTRUCTIVE)
+      3. Choose different slug
+
+      What would you like to do? (1/2/3):
+
+  - error: "Brownfield conflict - folder missing"
+    trigger: "User selected brownfield but folder doesn't exist"
+    recovery:
+      1: "Switch to greenfield mode"
+      2: "Create folder manually and retry"
+      3: "Check slug spelling"
+    example_message: |
+      ❌ CONFLICT: Brownfield mode selected but no folder found!
+
+      Expected: outputs/courses/{slug}/
+
+      Brownfield mode requires existing materials to upgrade.
+
+      Recovery options:
+      1. Change to Greenfield mode (create new course)
+      2. Create folder manually and add materials, then retry
+      3. Check slug spelling (typo?)
+
+      What would you like to do? (1/2/3):
+
+  - error: "Folder deletion cancelled"
+    trigger: "User chose to delete folder but didn't confirm with 'DELETE'"
+    recovery:
+      1: "Return to mode conflict recovery options"
+    example_message: |
+      ⚠️ Deletion cancelled (confirmation not received)
+
+      Returning to recovery options...
 
       What would you like to do?
+      1. Change to Brownfield mode (recommended)
+      2. Try delete again (type 'DELETE' to confirm)
+      3. Choose different slug
 
   - error: "Template not found"
     trigger: "expansion-packs/creator-os/templates/course-brief.md not found"
@@ -360,7 +624,7 @@ success_criteria:
 
 ## Example Usage
 
-### Example 1: Initialize Expert-Led Course
+### Example 1: Greenfield - New Course from Scratch
 
 ```bash
 *generate-course
@@ -368,7 +632,20 @@ success_criteria:
 # Prompt: What is the course identifier (slug)?
 > clone-ia-express
 
+# Prompt: Is this course:
+# 1. Greenfield - Creating from scratch (no existing materials)
+# 2. Brownfield - Upgrading/migrating existing course materials
+# Your choice (1 or 2):
+> 1
+
+# System validates: folder doesn't exist ✓
+
 # Output:
+✓ Greenfield mode validated
+✓ Folder does not exist (will be created)
+
+Proceeding to create course structure...
+
 ✓ Course structure initialized successfully!
 
 📁 Created:
@@ -390,37 +667,62 @@ success_criteria:
 ```
 ```
 
-### Example 2: Initialize Technical Course
+### Example 2: Brownfield - Upgrade Existing Course
 
 ```bash
 *generate-course
 
 # Prompt: What is the course identifier (slug)?
-> python-data-science
+> dominando-obsidian
+
+# Prompt: Is this course:
+# 1. Greenfield - Creating from scratch (no existing materials)
+# 2. Brownfield - Upgrading/migrating existing course materials
+# Your choice (1 or 2):
+> 2
+
+# System validates: folder exists with 42 files ✓
 
 # Output:
-✓ Course structure initialized successfully!
+✓ Brownfield mode validated
+✓ Folder exists: outputs/courses/dominando-obsidian/
+✓ Found 42 files
 
-📁 Created:
-- Folder: /outputs/courses/python-data-science/
-- Brief: /outputs/courses/python-data-science/COURSE-BRIEF.md
-- README: /outputs/courses/python-data-science/README.md
+Next: Analyzing existing materials...
 
 ---
 
-📋 **NEXT STEP - Fill the Course Brief:**
+✓ Brownfield mode activated!
 
-1. Open: `outputs/courses/python-data-science/COURSE-BRIEF.md`
-2. Complete ALL 8 sections (estimated time: 45-90 minutes)
-3. Save the file
+📁 Detected:
+- Folder: /outputs/courses/dominando-obsidian/
+- Files found: 42
 
-**When ready, run:**
-```
-*continue-course python-data-science
-```
+---
+
+📋 **NEXT STEPS - Brownfield Workflow:**
+
+**Phase 2: Material Extraction (Future Implementation)**
+
+The system will extract content from your existing materials to:
+1. Generate COURSE-BRIEF.md automatically (from existing content)
+2. Identify ICP from audience descriptions
+3. Extract instructor voice patterns
+4. Map existing structure to course outline
+
+**For now (Phase 1 - Manual Path):**
+
+1. Create COURSE-BRIEF.md manually in: outputs/courses/dominando-obsidian/
+2. Fill all sections based on your existing materials
+3. Run: *continue-course dominando-obsidian
+
+---
+
+**Status:** Brownfield workflow is planned for Story 3.2-3.4 (Phase 2)
+**Current workaround:** Use greenfield flow with manual COURSE-BRIEF.md
 ```
 
-### Example 3: Error - Course Already Exists
+### Example 3: Error - Greenfield Conflict (Folder Exists)
 
 ```bash
 *generate-course
@@ -428,15 +730,74 @@ success_criteria:
 # Prompt: What is the course identifier (slug)?
 > clone-ia-express
 
+# Prompt: Is this course:
+# 1. Greenfield - Creating from scratch (no existing materials)
+# 2. Brownfield - Upgrading/migrating existing course materials
+# Your choice (1 or 2):
+> 1
+
+# System checks: folder DOES exist!
+
 # Output:
-❌ Course 'clone-ia-express' already exists at /outputs/courses/clone-ia-express/
+❌ CONFLICT: Greenfield mode selected but folder already exists!
 
-Options:
-A. Resume: *continue-course clone-ia-express (if brief is filled)
-B. Choose different slug
-C. Delete existing and start over (manual deletion required)
+Found: outputs/courses/clone-ia-express/
+Contains: 15 files
 
-What would you like to do?
+This suggests you meant "Brownfield" (upgrade existing course).
+
+Recovery options:
+1. Change to Brownfield mode (recommended)
+2. Delete existing folder and continue as Greenfield (⚠️ DESTRUCTIVE)
+3. Choose different slug
+
+What would you like to do? (1/2/3):
+> 1
+
+# User chooses option 1 - system switches to brownfield
+✓ Switched to Brownfield mode
+✓ Folder exists: outputs/courses/clone-ia-express/
+✓ Found 15 files
+
+[... continues with brownfield workflow ...]
+```
+
+### Example 4: Error - Brownfield Conflict (Folder Missing)
+
+```bash
+*generate-course
+
+# Prompt: What is the course identifier (slug)?
+> new-course
+
+# Prompt: Is this course:
+# 1. Greenfield - Creating from scratch (no existing materials)
+# 2. Brownfield - Upgrading/migrating existing course materials
+# Your choice (1 or 2):
+> 2
+
+# System checks: folder does NOT exist!
+
+# Output:
+❌ CONFLICT: Brownfield mode selected but no folder found!
+
+Expected: outputs/courses/new-course/
+
+Brownfield mode requires existing materials to upgrade.
+
+Recovery options:
+1. Change to Greenfield mode (create new course)
+2. Create folder manually and add materials, then retry
+3. Check slug spelling (typo?)
+
+What would you like to do? (1/2/3):
+> 1
+
+# User chooses option 1 - system switches to greenfield
+✓ Switched to Greenfield mode
+✓ Folder does not exist (will be created)
+
+[... continues with greenfield workflow ...]
 ```
 
 ---
@@ -470,9 +831,17 @@ What would you like to do?
 
 ---
 
-**Task Version:** 2.0
-**Last Updated:** 2025-10-17
+**Task Version:** 2.1
+**Last Updated:** 2025-10-18
 **Maintainer:** CreatorOS Team (Sarah - PO)
 **Changelog:**
+- v2.1 (2025-10-18): **Story 3.1 Implementation - Greenfield/Brownfield Detection**
+  - Added creation mode elicitation (greenfield vs brownfield)
+  - Added folder existence validation with 4 scenarios
+  - Added creation_mode metadata to COURSE-BRIEF.md frontmatter
+  - Added workflow branching (greenfield → manual brief, brownfield → future extraction)
+  - Added comprehensive error recovery for mode/folder conflicts
+  - Updated examples to show all validation scenarios
+  - Brownfield extraction workflow (Stories 3.2-3.4) planned for Phase 2
 - v2.0 (2025-10-17): Refactored to unified brief document workflow. Split into generate-course (init) + continue-course (generation).
 - v1.0 (2025-10-15): Initial interactive elicitation workflow (deprecated).

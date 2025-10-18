@@ -1,8 +1,22 @@
+---
+creation_mode: [AUTO-PREENCHIDO: greenfield | brownfield]
+detected_at: [AUTO-PREENCHIDO: timestamp]
+folder_state_at_start:
+  exists: [AUTO-PREENCHIDO: true | false]
+  file_count: [AUTO-PREENCHIDO: number]
+  has_legacy_materials: [AUTO-PREENCHIDO: true | false]
+status: 🟡 Aguardando Preenchimento
+course_slug: [AUTO-PREENCHIDO]
+created_date: [AUTO-PREENCHIDO]
+instructor: [AUTO-PREENCHIDO se MMOS mind]
+---
+
 # 📋 Course Brief - Formulário Completo de Planejamento
 
 **Status:** 🟡 Aguardando Preenchimento
 **Data Criação:** [AUTO-PREENCHIDO]
 **Curso ID:** [AUTO-PREENCHIDO]
+**Creation Mode:** [AUTO-PREENCHIDO: Greenfield | Brownfield]
 **Instrutor:** [AUTO-PREENCHIDO se MMOS mind]
 
 ---
