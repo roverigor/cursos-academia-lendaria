@@ -455,9 +455,10 @@ Fidelity target: 85%
         max_retries: Optional[int] = None
     ) -> GeneratedLesson:
         """
-        Generate a single lesson with retry logic.
+        Generate a single lesson with retry logic and quality validation.
 
         AC 5: Error Handling & Retry Logic
+        QA Fix: Add validation-driven retry loop (GPS + DL scoring)
 
         Args:
             lesson_spec: Lesson specification
@@ -471,6 +472,16 @@ Fidelity target: 85%
         """
         max_retries = max_retries or self.max_retries
 
+        # Import validators
+        from lib.gps_validator import GPSValidator
+        from lib.didatica_scorer import DidaticaScorer
+
+        gps_validator = GPSValidator()
+        dl_scorer = DidaticaScorer()
+
+        last_error = None
+        feedback_for_retry = ""
+
         for attempt in range(max_retries + 1):
             try:
                 logger.debug(
@@ -480,8 +491,11 @@ Fidelity target: 85%
 
                 lesson_start = time.time()
 
-                # Build generation prompt
-                generation_prompt = self._build_generation_prompt(lesson_spec)
+                # Build generation prompt (with feedback from previous attempt if retry)
+                generation_prompt = self._build_generation_prompt(
+                    lesson_spec,
+                    retry_feedback=feedback_for_retry if attempt > 0 else None
+                )
 
                 # Generate with AI (mock for now - would use OpenAI API)
                 lesson_content = self._generate_with_ai(
@@ -490,19 +504,63 @@ Fidelity target: 85%
                     max_tokens=self.max_tokens
                 )
 
-                # Validate content
+                # Basic validation
                 if not self._validate_lesson_content(lesson_content):
                     raise LessonGenerationError("Generated content is incomplete or invalid")
 
-                # Save to file
+                # GPS validation (CRITICAL - must pass)
+                gps_result = gps_validator.validate_lesson(lesson_content)
+                if not gps_result.valid:
+                    # Build specific feedback for retry
+                    missing_sections = []
+                    if not gps_result.has_goal:
+                        missing_sections.append("G (GOAL) section")
+                    if not gps_result.has_position:
+                        missing_sections.append("P (POSITION) section")
+                    if not gps_result.has_steps:
+                        missing_sections.append("S (STEPS) section")
+
+                    feedback_for_retry = (
+                        f"GPS VALIDATION FAILED - Missing: {', '.join(missing_sections)}. "
+                        f"You MUST include ALL THREE GPS sections with proper headings: "
+                        f"## G - GOAL, ## P - POSITION, ## S - STEPS"
+                    )
+
+                    raise LessonGenerationError(
+                        f"GPS validation failed (score: {gps_result.score}/30) - {feedback_for_retry}"
+                    )
+
+                # DL scoring (CRITICAL - must score 70+)
+                dl_result = dl_scorer.score_lesson(lesson_content)
+                if not dl_result.passed:
+                    # Build specific feedback for retry
+                    weak_elements = [
+                        name for name, score in dl_result.element_scores.items()
+                        if score < (dl_result.max_score_per_element * 0.7)
+                    ]
+
+                    feedback_for_retry = (
+                        f"DIDÁTICA LENDÁRIA SCORING FAILED (score: {dl_result.score}/100, threshold: 70). "
+                        f"Weak elements: {', '.join(weak_elements)}. "
+                        f"You MUST strengthen these pedagogical elements: "
+                        f"add more analogies, deeper reflective questions, clearer transitions, "
+                        f"stronger emotional hook, and structured review section."
+                    )
+
+                    raise LessonGenerationError(
+                        f"DL scoring failed ({dl_result.score}/100 < 70) - {feedback_for_retry}"
+                    )
+
+                # BOTH validations passed - save and return
                 file_path = self._save_lesson(lesson_spec, lesson_content)
 
                 # Calculate metrics
                 duration = time.time() - lesson_start
                 word_count = len(lesson_content.split())
 
-                # Validate GPS structure (quick check)
-                gps_valid = self._quick_gps_check(lesson_content)
+                logger.info(
+                    f"✅ Quality validated: GPS={gps_result.score}/30, DL={dl_result.score}/100"
+                )
 
                 return GeneratedLesson(
                     lesson_id=lesson_spec.lesson_id,
@@ -510,38 +568,49 @@ Fidelity target: 85%
                     file_path=str(file_path),
                     duration_seconds=duration,
                     word_count=word_count,
-                    gps_valid=gps_valid,
+                    gps_valid=True,
+                    dl_score=dl_result.score,
                     retry_count=attempt
                 )
 
             except Exception as e:
+                last_error = e
+
                 if attempt < max_retries:
-                    # Exponential backoff: 1s, 2s, 4s
-                    wait_time = 2 ** attempt
+                    # Log retry reason
                     logger.warning(
-                        f"Retry {attempt + 1}/{max_retries} for {lesson_spec.lesson_id}: {e}"
+                        f"⚠️  Attempt {attempt + 1}/{max_retries + 1} failed for {lesson_spec.lesson_id}: {e}"
                     )
-                    logger.warning(f"Waiting {wait_time}s before retry...")
-                    time.sleep(wait_time)
+                    logger.warning(f"Retrying with adjusted prompt...")
+
+                    # Small delay before retry (not exponential - we want fast retries for quality issues)
+                    time.sleep(1)
                     continue
                 else:
                     # All retries exhausted
                     logger.error(
-                        f"Failed to generate {lesson_spec.lesson_id} after "
-                        f"{max_retries + 1} attempts: {e}"
+                        f"❌ Failed to generate {lesson_spec.lesson_id} after "
+                        f"{max_retries + 1} attempts"
                     )
+                    logger.error(f"Final error: {e}")
                     raise LessonGenerationError(
-                        f"Failed after {max_retries + 1} attempts: {e}"
+                        f"Failed after {max_retries + 1} attempts: {last_error}"
                     )
 
-    def _build_generation_prompt(self, lesson_spec: LessonSpec) -> str:
+    def _build_generation_prompt(
+        self,
+        lesson_spec: LessonSpec,
+        retry_feedback: Optional[str] = None
+    ) -> str:
         """
         Build complete AI generation prompt with all context.
 
         AC 1: Template-Based Generation
+        QA Fix: Added retry_feedback parameter for validation-driven retries
 
         Args:
             lesson_spec: Lesson specification
+            retry_feedback: Optional feedback from failed validation (for retries)
 
         Returns:
             Complete prompt for AI generation
@@ -558,6 +627,18 @@ Fidelity target: 85%
 
         # Format key concepts
         concepts_text = "\n".join(f"- {concept}" for concept in lesson_spec.key_concepts)
+
+        # Add retry feedback section if this is a retry
+        retry_section = ""
+        if retry_feedback:
+            retry_section = f"""
+
+⚠️ **CRITICAL VALIDATION FEEDBACK FROM PREVIOUS ATTEMPT:**
+
+{retry_feedback}
+
+YOU MUST FIX THESE ISSUES IN THIS GENERATION. Do not repeat the same mistakes.
+"""
 
         # Build prompt
         prompt = f"""
@@ -585,6 +666,7 @@ You are generating a lesson for the course "{course_title}".
 **PEDAGOGICAL FRAMEWORK - GPS + DIDÁTICA LENDÁRIA:**
 
 {self.template}
+{retry_section}
 
 **CRITICAL REQUIREMENTS:**
 

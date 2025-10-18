@@ -327,18 +327,14 @@ class VoiceExtractor:
         """
         Use AI to extract voice patterns from a single transcript.
 
+        QA Fix: Added fallback to rule-based extraction if AI fails
+
         Args:
             transcript_file: TranscriptFile object
 
         Returns:
-            VoiceAnalysis object or None on failure
+            VoiceAnalysis object (AI-powered or fallback)
         """
-        if self.ai_client is None:
-            print("❌ AI client not initialized. Cannot analyze voice patterns.")
-            return None
-
-        print(f"🤖 Analyzing voice patterns in: {transcript_file.relative_path}")
-
         # Read transcript content
         content = self._read_transcript_content(transcript_file)
 
@@ -346,21 +342,33 @@ class VoiceExtractor:
             print(f"⚠️  Transcript too short (<100 chars): {transcript_file.relative_path}")
             return None
 
-        # Build AI prompt
-        prompt = self._build_voice_analysis_prompt(content)
+        # Try AI analysis first (if client available)
+        if self.ai_client is not None:
+            print(f"🤖 Analyzing voice patterns (AI): {transcript_file.relative_path}")
 
-        # Call AI (with retry logic)
-        try:
-            response = self._call_ai_with_retry(prompt)
+            # Build AI prompt
+            prompt = self._build_voice_analysis_prompt(content)
 
-            # Parse YAML response
-            voice_analysis = self._parse_voice_analysis_response(response, transcript_file.path)
+            # Call AI (with retry logic)
+            try:
+                response = self._call_ai_with_retry(prompt)
 
-            return voice_analysis
+                # Parse YAML response
+                voice_analysis = self._parse_voice_analysis_response(response, transcript_file.path)
 
-        except Exception as e:
-            print(f"❌ AI analysis failed for {transcript_file.relative_path}: {e}")
-            return None
+                print(f"✅ AI analysis successful")
+                return voice_analysis
+
+            except Exception as e:
+                print(f"⚠️  AI analysis failed for {transcript_file.relative_path}: {e}")
+                print(f"⚠️  Falling back to rule-based extraction...")
+                # Fall through to rule-based fallback
+
+        else:
+            print(f"⚠️  AI client not initialized, using rule-based extraction")
+
+        # Fallback: Rule-based voice extraction
+        return self._extract_voice_rules_based(content, transcript_file.path)
 
     def _read_transcript_content(self, transcript_file: TranscriptFile) -> str:
         """
@@ -573,6 +581,168 @@ personality_traits:
             personality_traits=data.get('personality_traits', []),
             analysis_timestamp=datetime.utcnow().isoformat() + "Z"
         )
+
+    def _extract_voice_rules_based(self, content: str, transcript_path: str) -> VoiceAnalysis:
+        """
+        Fallback: Extract voice patterns using rule-based methods (no AI).
+
+        QA Fix: Provides fallback when AI fails or is unavailable.
+
+        Extraction Strategy:
+        - Greeting: First 3 sentences
+        - Tone: Detect from linguistic markers
+        - Recurring phrases: Frequency analysis
+        - Teaching approach: Pattern matching
+
+        Args:
+            content: Transcript text
+            transcript_path: Path to transcript
+
+        Returns:
+            VoiceAnalysis with rule-based extraction
+        """
+        print(f"📝 Using rule-based voice extraction (no AI)")
+
+        # Extract signature greeting (first 3 sentences)
+        sentences = re.split(r'[.!?]+', content[:500])
+        greeting_sentences = [s.strip() for s in sentences if s.strip()][:3]
+        signature_greeting = '. '.join(greeting_sentences) + '.' if greeting_sentences else ''
+
+        # Detect tone from markers
+        tone = self._detect_tone_rules_based(content)
+
+        # Detect style
+        style = self._detect_style_rules_based(content)
+
+        # Extract recurring phrases (simple frequency analysis)
+        recurring_phrases = self._extract_frequent_phrases(content)
+
+        # Detect teaching approach patterns
+        teaching_approach = self._detect_teaching_approach(content)
+
+        # Detect interaction patterns
+        interaction_patterns = self._detect_interaction_patterns(content)
+
+        # Detect personality traits
+        personality_traits = self._detect_personality_traits(content)
+
+        return VoiceAnalysis(
+            transcript_path=transcript_path,
+            signature_greeting=signature_greeting,
+            tone=tone,
+            style=style,
+            recurring_phrases=recurring_phrases[:10],  # Top 10
+            teaching_approach=teaching_approach,
+            interaction_patterns=interaction_patterns,
+            personality_traits=personality_traits,
+            analysis_timestamp=datetime.utcnow().isoformat() + "Z"
+        )
+
+    def _detect_tone_rules_based(self, content: str) -> str:
+        """Detect tone using linguistic markers."""
+        content_lower = content.lower()
+
+        # Markers for different tones
+        formal_markers = ['deve-se', 'é necessário', 'conforme', 'portanto', 'todavia']
+        casual_markers = ['né', 'tá', 'vamos lá', 'beleza', 'tipo assim', 'sabe']
+        warm_markers = ['querido', 'amigo', 'pessoal', 'galera', 'meu amigo']
+        authoritative_markers = ['precisa', 'deve', 'tem que', 'sempre', 'nunca']
+
+        formal_count = sum(1 for m in formal_markers if m in content_lower)
+        casual_count = sum(1 for m in casual_markers if m in content_lower)
+        warm_count = sum(1 for m in warm_markers if m in content_lower)
+        auth_count = sum(1 for m in authoritative_markers if m in content_lower)
+
+        scores = {
+            'Formal e profissional': formal_count,
+            'Casual e próximo': casual_count,
+            'Caloroso e acolhedor': warm_count,
+            'Autoritário e firme': auth_count
+        }
+
+        # Return tone with highest score (or default)
+        max_tone = max(scores, key=scores.get)
+        return max_tone if scores[max_tone] > 0 else 'Profissional e equilibrado'
+
+    def _detect_style_rules_based(self, content: str) -> str:
+        """Detect teaching style."""
+        content_lower = content.lower()
+
+        # Style markers
+        structured = sum(1 for marker in ['primeiro', 'segundo', 'terceiro', 'passo', 'etapa'] if marker in content_lower)
+        practical = sum(1 for marker in ['exemplo', 'na prática', 'vamos fazer', 'experimente'] if marker in content_lower)
+        theoretical = sum(1 for marker in ['teoria', 'conceito', 'princípio', 'fundamento'] if marker in content_lower)
+
+        if practical > structured and practical > theoretical:
+            return 'Prático, orientado a exemplos'
+        elif structured > theoretical:
+            return 'Estruturado, passo-a-passo'
+        elif theoretical > 0:
+            return 'Teórico primeiro, depois prático'
+        else:
+            return 'Equilibrado'
+
+    def _extract_frequent_phrases(self, content: str) -> List[Dict]:
+        """Extract frequently recurring phrases (3-5 words)."""
+        # Simple n-gram frequency analysis
+        words = re.findall(r'\b\w+\b', content.lower())
+
+        # Extract 3-grams
+        three_grams = defaultdict(int)
+        for i in range(len(words) - 2):
+            phrase = ' '.join(words[i:i+3])
+            if len(phrase) > 10:  # Filter out very short phrases
+                three_grams[phrase] += 1
+
+        # Return top phrases with count > 2
+        top_phrases = sorted(three_grams.items(), key=lambda x: x[1], reverse=True)
+        top_phrases = [(phrase, count) for phrase, count in top_phrases if count > 2][:10]
+
+        return [
+            {"phrase": phrase, "count": count, "context": "recurring"}
+            for phrase, count in top_phrases
+        ]
+
+    def _detect_teaching_approach(self, content: str) -> Dict:
+        """Detect teaching approach patterns."""
+        content_lower = content.lower()
+
+        return {
+            "uses_analogies": any(marker in content_lower for marker in ['é como', 'imagine que', 'assim como', 'pense em']),
+            "theory_first": 'primeiro vamos entender' in content_lower or 'antes de' in content_lower,
+            "practice_first": 'vamos fazer' in content_lower or 'mão na massa' in content_lower,
+            "incremental": any(marker in content_lower for marker in ['passo a passo', 'aos poucos', 'gradualmente'])
+        }
+
+    def _detect_interaction_patterns(self, content: str) -> Dict:
+        """Detect interaction patterns."""
+        content_lower = content.lower()
+
+        return {
+            "direct_address": any(marker in content_lower for marker in ['você vai', 'você pode', 'vamos juntos']),
+            "inclusive_language": any(marker in content_lower for marker in ['vamos', 'nós', 'juntos', 'nossa']),
+            "checks_understanding": any(marker in content_lower for marker in ['entendeu', 'ficou claro', 'faz sentido', 'conseguiu acompanhar'])
+        }
+
+    def _detect_personality_traits(self, content: str) -> List[Dict]:
+        """Detect personality traits."""
+        content_lower = content.lower()
+
+        traits = []
+
+        if any(marker in content_lower for marker in ['você consegue', 'você vai conseguir', 'é fácil']):
+            traits.append({"trait": "Builds confidence", "evidence": "Uses encouraging language"})
+
+        if any(marker in content_lower for marker in ['pode parecer', 'eu sei que', 'talvez você']):
+            traits.append({"trait": "Addresses objections", "evidence": "Anticipates concerns"})
+
+        if any(marker in content_lower for marker in ['haha', 'rs', 'brincadeira']):
+            traits.append({"trait": "Uses humor", "evidence": "Includes jokes or informal humor"})
+
+        if not traits:
+            traits.append({"trait": "Professional", "evidence": "Maintains professional tone"})
+
+        return traits
 
     def aggregate_voice_profiles(self, individual_analyses: List[VoiceAnalysis]) -> VoiceProfile:
         """
