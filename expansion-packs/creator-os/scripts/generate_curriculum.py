@@ -37,6 +37,8 @@ from typing import Dict, List, Optional
 # Add lib directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
 
+from brief_parser import BriefParser, validate_brief_completeness
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -157,32 +159,25 @@ class CurriculumGenerator:
         return True
 
     def _load_course_brief(self) -> Optional[Dict]:
-        """Load and parse COURSE-BRIEF.md."""
+        """Load and parse COURSE-BRIEF.md using BriefParser."""
         try:
-            with open(self.brief_path, 'r', encoding='utf-8') as f:
-                content = f.read()
+            # Use BriefParser to extract all 8 sections
+            parser = BriefParser(str(self.brief_path))
+            brief_obj = parser.parse()
 
-            # Parse frontmatter
-            frontmatter_match = re.match(r'^---\n(.*?)\n---\n(.*)', content, re.DOTALL)
-
-            if not frontmatter_match:
-                logger.error("❌ COURSE-BRIEF.md has invalid format (missing frontmatter)")
-                return None
-
-            frontmatter_yaml = frontmatter_match.group(1)
-            markdown_content = frontmatter_match.group(2)
-
-            metadata = yaml.safe_load(frontmatter_yaml)
-
-            # Parse markdown sections (basic extraction)
-            sections = self._parse_markdown_sections(markdown_content)
-
+            # Convert to dict for curriculum generation
             course_brief = {
-                "metadata": metadata,
-                "title": metadata.get("title", "Untitled Course"),
-                "creation_mode": metadata.get("creation_mode", "greenfield"),
-                "mmos_persona": metadata.get("mmos_persona", {}),
-                "sections": sections
+                "title": brief_obj.title,
+                "slug": brief_obj.course_slug,
+                "creation_mode": brief_obj.creation_mode,
+                "learning_objectives": brief_obj.content.learning_objectives,
+                "preliminary_outline": brief_obj.content.preliminary_outline,
+                "total_duration_hours": brief_obj.basic_info.total_duration_hours,
+                "icp": {
+                    "pain_points": brief_obj.icp.pain_points,
+                    "goals": brief_obj.icp.goals,
+                },
+                "brief_object": brief_obj  # Keep full object for reference
             }
 
             logger.info(f"✅ Loaded: {course_brief['title']}")
@@ -194,53 +189,28 @@ class CurriculumGenerator:
             logger.exception(f"❌ Failed to load COURSE-BRIEF.md: {e}")
             return None
 
-    def _parse_markdown_sections(self, content: str) -> Dict:
-        """Parse markdown sections from COURSE-BRIEF content."""
-        sections = {}
-
-        # Extract sections by heading
-        section_pattern = r'##\s+(\d+)\.\s+(.*?)\n(.*?)(?=##\s+\d+\.|$)'
-        matches = re.findall(section_pattern, content, re.DOTALL)
-
-        for num, title, body in matches:
-            section_key = title.strip().lower().replace(' ', '_').replace('&', 'and')
-            sections[section_key] = {
-                "title": title.strip(),
-                "content": body.strip()
-            }
-
-        return sections
-
     def _validate_brief_completeness(self, course_brief: Dict) -> bool:
         """Validate COURSE-BRIEF has required sections filled."""
-        sections = course_brief.get("sections", {})
+        brief_obj = course_brief.get("brief_object")
 
-        required_sections = [
-            "basic_info",
-            "icp_(ideal_customer_profile)",
-            "content_and_curriculum",
-        ]
+        if not brief_obj:
+            logger.error("❌ Brief object not found")
+            return False
 
-        missing = []
-        empty = []
+        # Use BriefParser validation
+        validation = validate_brief_completeness(brief_obj)
 
-        for section in required_sections:
-            if section not in sections:
-                missing.append(section)
-            elif len(sections[section].get("content", "").strip()) < 50:
-                empty.append(section)
-
-        if missing:
-            logger.error("\n❌ COURSE-BRIEF.md is missing required sections:")
-            for section in missing:
-                logger.error(f"   - {section}")
+        if not validation["valid"]:
+            logger.error("\n❌ COURSE-BRIEF validation failed:")
+            for error in validation["errors"]:
+                logger.error(f"   - {error}")
             logger.error("\nPlease fill all 8 sections before generating curriculum.\n")
             return False
 
-        if empty:
-            logger.warning("\n⚠️  Some sections are very short (might need more detail):")
-            for section in empty:
-                logger.warning(f"   - {section}")
+        if validation["warnings"]:
+            logger.warning("\n⚠️  COURSE-BRIEF warnings:")
+            for warning in validation["warnings"]:
+                logger.warning(f"   - {warning}")
             logger.warning("")
 
         return True

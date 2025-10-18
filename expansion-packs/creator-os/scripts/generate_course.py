@@ -36,6 +36,7 @@ from curriculum_approval import run_curriculum_approval_checkpoint
 from lesson_generator import LessonGenerator
 from course_validator import CourseValidator
 from assessment_generator import AssessmentGenerator
+from brief_parser import BriefParser, validate_brief_completeness
 
 # Configure logging
 logging.basicConfig(
@@ -199,38 +200,103 @@ class CourseGenerationWorkflow:
         return True
 
     def _load_course_brief(self) -> dict:
-        """Load and parse COURSE-BRIEF.md."""
+        """
+        Load and parse COURSE-BRIEF.md using BriefParser.
+
+        Returns:
+            Parsed brief as dict (compatible with LessonGenerator)
+        """
         logger.info("\n📖 Loading COURSE-BRIEF.md...")
 
         try:
-            with open(self.brief_path, 'r', encoding='utf-8') as f:
-                content = f.read()
+            # Use BriefParser to extract all 8 sections
+            parser = BriefParser(str(self.brief_path))
+            brief_obj = parser.parse()
 
-            # Parse frontmatter
-            import re
-            frontmatter_match = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
+            # Validate completeness
+            validation = validate_brief_completeness(brief_obj)
 
-            if frontmatter_match:
-                frontmatter_yaml = frontmatter_match.group(1)
-                metadata = yaml.safe_load(frontmatter_yaml)
-            else:
-                metadata = {}
+            if not validation["valid"]:
+                logger.error("\n❌ COURSE-BRIEF validation failed:")
+                for error in validation["errors"]:
+                    logger.error(f"   - {error}")
+                logger.error("")
+                return None
 
-            # For now, return minimal structure
-            # TODO: Parse full 8 sections from markdown
+            if validation["warnings"]:
+                logger.warning("\n⚠️  COURSE-BRIEF warnings:")
+                for warning in validation["warnings"]:
+                    logger.warning(f"   - {warning}")
+                logger.warning("")
+
+            # Convert to dict for compatibility with LessonGenerator
             course_brief = {
-                "title": metadata.get("title", "Untitled Course"),
-                "mmos_persona": metadata.get("mmos_persona", {}),
-                "icp": {},
-                "learning_objectives": [],
-                "voice_profile": {}
+                "title": brief_obj.title,
+                "slug": brief_obj.course_slug,
+                "creation_mode": brief_obj.creation_mode,
+                "mmos_persona": brief_obj.mmos_persona,
+
+                # Section 1: Basic Info
+                "subtitle": brief_obj.basic_info.subtitle,
+                "category": brief_obj.basic_info.category,
+                "tags": brief_obj.basic_info.tags,
+                "total_duration_hours": brief_obj.basic_info.total_duration_hours,
+                "knowledge_level": brief_obj.basic_info.knowledge_level,
+                "prerequisites": brief_obj.basic_info.prerequisites,
+
+                # Section 2: ICP
+                "icp": {
+                    "demographics": brief_obj.icp.demographics,
+                    "psychographics": brief_obj.icp.psychographics,
+                    "pain_points": brief_obj.icp.pain_points,
+                    "goals": brief_obj.icp.goals,
+                    "current_state": brief_obj.icp.current_state,
+                    "desired_state": brief_obj.icp.desired_state,
+                },
+
+                # Section 3: Content & Pedagogy
+                "learning_objectives": brief_obj.content.learning_objectives,
+                "preliminary_outline": brief_obj.content.preliminary_outline,
+                "pedagogical_framework": brief_obj.content.pedagogical_framework,
+                "content_depth": brief_obj.content.content_depth,
+                "key_concepts": brief_obj.content.key_concepts,
+
+                # Section 4: Voice & Personality
+                "voice_profile": {
+                    "mode": brief_obj.voice.mode,
+                    "instructor_name": brief_obj.voice.instructor_name,
+                    "mmos_persona_slug": brief_obj.voice.mmos_persona_slug,
+                    "tone": brief_obj.voice.tone,
+                    "style": brief_obj.voice.style,
+                    "personality_traits": brief_obj.voice.personality_traits,
+                    "teaching_approach": brief_obj.voice.teaching_approach,
+                },
+
+                # Section 5: Format & Delivery
+                "teaching_style": brief_obj.format.teaching_style,
+                "content_formats": brief_obj.format.content_formats,
+                "engagement_tactics": brief_obj.format.engagement_tactics,
+
+                # Section 6: Commercial
+                "pricing_model": brief_obj.commercial.pricing_model,
+                "target_price": brief_obj.commercial.target_price,
+
+                # Section 7: Additional Context
+                "success_metrics": brief_obj.context.success_metrics,
+                "constraints": brief_obj.context.constraints,
             }
 
-            logger.info(f"✅ Loaded: {course_brief['title']}\n")
+            logger.info(f"✅ Loaded: {course_brief['title']}")
+            logger.info(f"   Mode: {course_brief['creation_mode']}")
+            logger.info(f"   Duration: {course_brief['total_duration_hours']} hours")
+            logger.info(f"   Objectives: {len(course_brief['learning_objectives'])}")
+            logger.info(f"   Voice: {course_brief['voice_profile']['mode']}")
+            logger.info("")
+
             return course_brief
 
         except Exception as e:
-            logger.error(f"❌ Failed to load course brief: {e}\n")
+            logger.exception(f"❌ Failed to load course brief: {e}\n")
             return None
 
     def _generate_all_lessons(
