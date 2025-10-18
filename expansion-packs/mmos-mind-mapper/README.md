@@ -46,7 +46,7 @@ Use **mmos-mind-mapper** when you want to:
 
 ## What's Included
 
-### 🤖 Agents (6 specialists)
+### 🤖 Agents (7 specialists)
 
 #### 1. **`mind-mapper`** - Cognitive Archaeologist & Pipeline Orchestrator
 Master agent coordinating entire MMOS workflow.
@@ -111,6 +111,31 @@ Loads and embodies cognitive clones for direct interaction.
 - `*roundtable {mind1} {mind2} {mind3} {mind4}` - 4-way debate
 - `*switch {mind}` - Change active clone
 - `*list-minds` - Show available clones
+
+---
+
+#### 7. **`debate`** - Clone Debate & Fidelity Testing Specialist
+Orchestrates debates between two clones with automated fidelity scoring.
+
+**Quick Usage:**
+```bash
+@debate sam_altman elon_musk "Should AI be open source?"
+```
+
+**Commands:**
+- `*debate {clone1} {clone2} "{topic}"` - Execute debate (default: steel_man, 3 rounds)
+- `*frameworks` - Explain all 5 debate frameworks
+- `*benchmark {debate_id}` - Show detailed benchmark report
+- `*compare {clone}` - Compare clone's performance across debates
+- `*leaderboard` - Show clone rankings by fidelity
+
+**Features:**
+- 🎯 5 debate frameworks (steel_man, oxford, socratic, devils_advocate, hegelian)
+- 📊 Automated fidelity scoring (5 dimensions: framework, style, knowledge, coherence, personality)
+- 📝 Markdown transcripts saved to `outputs/debates/`
+- 📈 YAML benchmarks saved to `docs/mmos/qa/benchmarks/`
+- ⚖️ Weighted scoring with actionable recommendations
+- 🏆 Clone leaderboards and performance tracking
 
 ---
 
@@ -482,17 +507,75 @@ Simply activate agents using `@agent-name` or `/MMOS:agents:agent-name`.
 
 ---
 
+### Example 10: Clone Debate for QA Testing ⚔️
+
+```bash
+# Quick activation - inline syntax
+@debate sam_altman elon_musk "Should AI development be fully open source?"
+
+# System executes:
+# 1. Loads both clones (system prompts + KB)
+# 2. Runs steel_man debate (3 rounds):
+#    - Round 1: Each argues OPPONENT'S best case
+#    - Round 2: Each defends their own position
+#    - Round 3: Final synthesis and closing
+# 3. Scores fidelity across 5 dimensions per clone
+# 4. Generates valuation report with recommendations
+
+# Output examples:
+# Sam Altman (v1.2) - 88.4% overall fidelity
+#   ✅ Excellent framework application (92%)
+#   ⚠️  Personality fidelity needs work (79%)
+#   💡 Add more examples of core obsessions to KB
+#
+# Elon Musk (v1.0) - 91.7% overall fidelity
+#   ✅ Excellent style consistency (94%)
+#   ✅ Strong knowledge depth (90%)
+#   Winner by +3.3 points
+
+# Files saved:
+# → outputs/debates/debate-a3f2b891-20251017-143022.md
+# → docs/mmos/qa/benchmarks/benchmark-a3f2b891-20251017-143022.yaml
+
+# Advanced usage with options:
+@debate
+
+*debate nassim_taleb ray_dalio "How to build antifragile organizations?" --framework socratic --rounds 5
+
+# Socratic dialogue:
+# - Question-driven exploration (7 rounds)
+# - Questioner probes assumptions
+# - Responder provides thoughtful answers
+# - Final synthesis reveals deeper truths
+
+# Compare clone performance across debates
+*compare nassim_taleb
+
+# Shows all debates featuring Nassim with trending fidelity scores
+
+# View leaderboard
+*leaderboard
+
+# Clone Rankings (Overall Fidelity):
+# 1. Elon Musk - 91.7% (3 debates)
+# 2. Sam Altman - 88.4% (2 debates)
+# 3. Nassim Taleb - 87.2% (4 debates)
+```
+
+---
+
 ## Pack Structure
 
 ```
 expansion-packs/mmos-mind-mapper/
-├── agents/                          # 6 specialized agents
+├── agents/                          # 7 specialized agents
 │   ├── mind-mapper.md               # Pipeline orchestrator
 │   ├── research-specialist.md       # Source collection expert
 │   ├── cognitive-analyst.md         # 8-layer analysis expert
 │   ├── system-prompt-architect.md   # Prompt compiler
 │   ├── mind-pm.md                   # Pipeline PM & brownfield manager
-│   └── emulator.md                  # Clone activation & interaction
+│   ├── emulator.md                  # Clone activation & interaction
+│   └── debate.md                    # Clone debate & fidelity testing
 │
 ├── tasks/                           # 13 core workflows
 │   ├── execute-mmos-pipeline.md     # Master orchestrator (6 phases)

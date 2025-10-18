@@ -20,7 +20,7 @@ from pathlib import Path
 # Constants
 TOKEN_LIMIT_KB = 20000
 TOKEN_BUDGET = 200000
-MINDS_DIR = Path("docs/minds")
+MINDS_DIR = Path("outputs/minds")
 
 
 def count_tokens(text: str) -> int:

@@ -17,8 +17,8 @@ from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass, asdict
 
 # Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent))
-from agents.emulator import activate_clone, load_system_prompt, load_kb
+sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
+from emulator import activate_clone, load_system_prompt, load_kb
 
 
 @dataclass
