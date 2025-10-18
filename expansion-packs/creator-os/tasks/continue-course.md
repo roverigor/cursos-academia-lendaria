@@ -1,3 +1,11 @@
+---
+task_name: "continue-course"
+task_version: "2.0"
+required_agent_version: ">=2.0"
+description: "Read filled course brief and generate complete course content with pedagogical rigor"
+last_updated: "2025-10-18"
+---
+
 # Task: Continue Course Generation
 
 **Task ID:** continue-course

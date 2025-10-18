@@ -1,7 +1,15 @@
+---
+task_name: "generate-course"
+task_version: "2.2"
+required_agent_version: ">=2.2"
+description: "Initialize course structure with greenfield/brownfield detection and unified brief document"
+last_updated: "2025-10-18"
+---
+
 # Task: Generate Course
 
 **Task ID:** generate-course
-**Version:** 2.1
+**Version:** 2.2
 **Purpose:** Initialize course structure with greenfield/brownfield detection and unified brief document
 **Owner:** Course Architect Agent
 **Estimated Time:** 30-60 seconds (initialization only)

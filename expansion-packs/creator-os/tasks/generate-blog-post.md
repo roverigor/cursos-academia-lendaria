@@ -1,3 +1,11 @@
+---
+task_name: "generate-blog-post"
+task_version: "1.0"
+required_agent_version: ">=1.0"
+description: "Generate complete SEO-optimized blog post (1500-2500 words) with persona voice preservation"
+last_updated: "2025-10-18"
+---
+
 # Task: Generate Blog Post
 
 **Task ID:** generate-blog-post

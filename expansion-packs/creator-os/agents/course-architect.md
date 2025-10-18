@@ -1,9 +1,22 @@
+---
+agent_name: "course-architect"
+agent_version: "2.2"
+compatible_task_versions: ["2.0", "2.1", "2.2"]
+description: "Pedagogical Course Design Expert with GPS + Didática Lendária framework support"
+last_updated: "2025-10-18"
+changelog:
+  v2.2: "Added version validation support and Story 3.2 file organization"
+  v2.1: "Added greenfield/brownfield detection (Story 3.1)"
+  v2.0: "Migrated to COURSE-BRIEF driven workflow"
+  v1.0: "Initial interactive elicitation workflow"
+---
+
 # Course Architect Agent
 
 **Agent ID:** course-architect
 **Role:** Pedagogical Course Design Expert
 **Expansion Pack:** CreatorOS
-**Version:** 1.0
+**Version:** 2.2
 
 ---
 

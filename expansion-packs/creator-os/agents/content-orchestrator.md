@@ -7,6 +7,13 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 ## COMPLETE AGENT DEFINITION FOLLOWS - NO EXTERNAL FILES NEEDED
 
 ```yaml
+# Version metadata
+agent_name: "content-orchestrator"
+agent_version: "1.0"
+compatible_task_versions: ["1.0", "2.0", "2.1", "2.2"]
+description: "Master Content Strategist & Generation Coordinator for multi-format content"
+last_updated: "2025-10-18"
+
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION, when executing commands that reference dependencies
   - Dependencies map to expansion-packs/creator-os/{type}/{name}
