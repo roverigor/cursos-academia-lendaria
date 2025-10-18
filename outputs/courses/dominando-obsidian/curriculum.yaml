@@ -1,0 +1,525 @@
+---
+# Dominando Obsidian - Curriculum Metadata
+# Versão 2.0 (2025) - Gerado por CreatorOS
+
+course:
+  title: "Dominando Obsidian - Construa Seu Segundo Cérebro com IA"
+  slug: "dominando-obsidian"
+  version: "2.0"
+  language: "pt-BR"
+  instructor:
+    name: "Adriano de Marqui"
+    bio: "Empresário de tecnologia há 26 anos, professor na Academia Lendária e especialista em gestão de conhecimento com IA"
+    voice_profile:
+      greeting: "Fala, lendário!"
+      tone: "conversacional, empático, prático"
+      style: "80/20, WHY-first, hands-on"
+      key_phrases: ["Olha só...", "Então vamos lá...", "Tá?", "Né?", "Mão na massa"]
+  created: "2025-01-17"
+  updated: "2025-01-17"
+
+pedagogical:
+  framework: "Backward Design + Microlearning"
+  approach: "ICP-driven, outcome-focused, immediate application"
+  voice_fidelity_target: 0.90
+  alignment_target: 0.90
+  completeness_target: 1.0
+
+duration:
+  total_video: "14.5 hours"
+  total_practice: "11 hours"
+  total_hours: "25.5 hours"
+  estimated_weeks: "2-3 weeks"
+
+target_audience:
+  primary_icp:
+    - "Empreendedor Digital Travado (30%)"
+    - "Executivo Exausto (25%)"
+  age_range: "35-45 years"
+  experience: "15-20 years professional"
+  pain_points:
+    - "Sobrecarga cognitiva constante"
+    - "Consumo infinito sem execução"
+    - "Ferramentas desconectadas"
+    - "Não sabe usar IA na prática"
+  desires:
+    - "Sistema claro que funciona"
+    - "Foco e execução"
+    - "IA integrada no workflow"
+    - "Vantagem competitiva mensurável"
+
+learning_objectives:
+  bloom_levels:
+    remember:
+      - "Explicar conceito de segundo cérebro"
+      - "Descrever vantagens do Obsidian"
+      - "Listar tipos de notas"
+    understand:
+      - "Diferenciar pastas, tags e links"
+      - "Interpretar graph view"
+      - "Entender embeddings e semantic search"
+    apply:
+      - "Instalar Obsidian multi-plataforma"
+      - "Escrever em Markdown"
+      - "Criar sistema de organização"
+      - "Integrar ChatGPT e Smart Connections"
+    analyze:
+      - "Identificar clusters no grafo"
+      - "Avaliar arquétipo pessoal"
+      - "Descobrir conexões semânticas"
+    create:
+      - "Construir segundo cérebro funcional"
+      - "Desenvolver templates com IA"
+      - "Criar workflows personalizados"
+    evaluate:
+      - "Medir ROI do sistema"
+      - "Refinar sistema continuamente"
+
+modules:
+  - id: "modulo-1"
+    title: "Fundamentos e Instalação"
+    description: "Entender o WHY e ter tudo funcionando perfeitamente"
+    duration_video: "2.5 hours"
+    duration_practice: "1 hour"
+    objectives:
+      - "Compreender o problema da sobrecarga cognitiva"
+      - "Decidir conscientemente usar Obsidian"
+      - "Instalar e sincronizar em todos dispositivos"
+      - "Configurar para máxima produtividade"
+    lessons: 4
+
+  - id: "modulo-2"
+    title: "Escrita e Formatação"
+    description: "Dominar Markdown e criar notas poderosas"
+    duration_video: "2 hours"
+    duration_practice: "1.5 hours"
+    objectives:
+      - "Escrever em Markdown com fluência"
+      - "Criar diferentes tipos de notas apropriadamente"
+      - "Gerenciar arquivos e anexos eficientemente"
+    lessons: 3
+
+  - id: "modulo-3"
+    title: "Organização Inteligente"
+    description: "Sistema sustentável de organização que não quebra"
+    duration_video: "2.5 hours"
+    duration_practice: "2 hours"
+    objectives:
+      - "Implementar estrutura de pastas minimalista"
+      - "Criar sistema de tags hierárquico"
+      - "Usar properties para metadados"
+      - "Dominar busca avançada"
+    lessons: 4
+
+  - id: "modulo-4"
+    title: "Conexões e Grafo"
+    description: "Criar rede de conhecimento interconectado"
+    duration_video: "2 hours"
+    duration_practice: "1.5 hours"
+    objectives:
+      - "Criar links internos efetivos"
+      - "Interpretar e customizar graph view"
+      - "Usar Canvas para pensamento visual"
+    lessons: 3
+
+  - id: "modulo-5"
+    title: "Superpoderes com IA"
+    description: "Turbinar segundo cérebro com inteligência artificial"
+    duration_video: "3 hours"
+    duration_practice: "2 hours"
+    objectives:
+      - "Instalar e configurar plugins essenciais"
+      - "Integrar ChatGPT no Obsidian"
+      - "Usar Smart Connections para chat semântico"
+      - "Criar templates inteligentes com IA"
+    lessons: 4
+
+  - id: "modulo-6"
+    title: "Execução e Maestria"
+    description: "Transformar em hábito sustentável e vantagem competitiva"
+    duration_video: "2.5 hours"
+    duration_practice: "3 hours"
+    objectives:
+      - "Implementar workflows diários"
+      - "Adaptar sistema ao arquétipo pessoal"
+      - "Migrar conhecimento de outras ferramentas"
+      - "Evoluir continuamente através dos níveis de maestria"
+    lessons: 4
+
+lessons:
+  # MÓDULO 1: Fundamentos e Instalação
+  - id: "1.1"
+    module: "modulo-1"
+    title: "Por Que Você Precisa de um Segundo Cérebro (Agora)"
+    type: "conceitual + motivacional"
+    duration: "25 min"
+    objectives:
+      - "Identificar sobrecarga cognitiva pessoal"
+      - "Entender os 3 superpoderes do segundo cérebro"
+      - "Visualizar sistema a construir"
+    deliverable: "Reflexão escrita sobre dor atual"
+
+  - id: "1.2"
+    module: "modulo-1"
+    title: "Por Que Obsidian é a Escolha Definitiva"
+    type: "comparativo + técnico"
+    duration: "30 min"
+    objectives:
+      - "Comparar Obsidian com alternativas"
+      - "Entender vantagens técnicas"
+      - "Tomar decisão consciente"
+    deliverable: "Commit de 90 dias com Obsidian"
+
+  - id: "1.3"
+    module: "modulo-1"
+    title: "Instalação Multi-Plataforma Completa"
+    type: "hands-on tutorial"
+    duration: "45 min"
+    objectives:
+      - "Instalar em Mac/Windows/Linux/iOS/Android"
+      - "Configurar sincronização"
+      - "Resolver problemas comuns"
+    deliverable: "Obsidian rodando em 2+ dispositivos"
+
+  - id: "1.4"
+    module: "modulo-1"
+    title: "Configurações Essenciais e Interface"
+    type: "hands-on tutorial"
+    duration: "35 min"
+    objectives:
+      - "Configurar settings essenciais"
+      - "Dominar interface desktop e mobile"
+      - "Criar atalhos produtivos"
+    deliverable: "Settings configurados + 5 notas teste"
+
+  # MÓDULO 2: Escrita e Formatação
+  - id: "2.1"
+    module: "modulo-2"
+    title: "Markdown em 30 Minutos (O Essencial)"
+    type: "hands-on tutorial"
+    duration: "40 min"
+    objectives:
+      - "Entender importância do Markdown"
+      - "Dominar formatação básica e avançada"
+      - "Usar atalhos de formatação"
+    deliverable: "Nota formatada com todos elementos"
+
+  - id: "2.2"
+    module: "modulo-2"
+    title: "Tipos de Notas e Quando Usar Cada Uma"
+    type: "conceitual + hands-on"
+    duration: "45 min"
+    objectives:
+      - "Distinguir tipos de notas"
+      - "Aplicar princípio 'uma ideia = uma nota'"
+      - "Criar estrutura inicial"
+    deliverable: "3 atômicas + 1 hub + 1 diária + 1 literatura"
+
+  - id: "2.3"
+    module: "modulo-2"
+    title: "Trabalhando com Arquivos e Anexos"
+    type: "hands-on tutorial"
+    duration: "35 min"
+    objectives:
+      - "Inserir imagens, PDFs, áudios"
+      - "Diferenciar embeds vs. links"
+      - "Organizar attachments"
+    deliverable: "Nota com imagem + PDF + áudio"
+
+  # MÓDULO 3: Organização Inteligente
+  - id: "3.1"
+    module: "modulo-3"
+    title: "Pastas - Estrutura Minimalista que Funciona"
+    type: "estratégico + hands-on"
+    duration: "40 min"
+    objectives:
+      - "Implementar PARA adaptado"
+      - "Entender quando usar pastas vs tags vs links"
+      - "Evitar anti-padrões"
+    deliverable: "Estrutura implementada + 20 notas organizadas"
+
+  - id: "3.2"
+    module: "modulo-3"
+    title: "Tags e Hierarquias de Tags"
+    type: "hands-on tutorial"
+    duration: "35 min"
+    objectives:
+      - "Criar sistema de tags efetivo"
+      - "Usar tags aninhadas"
+      - "Combinar tags com busca"
+    deliverable: "Sistema de tags aplicado em 15 notas"
+
+  - id: "3.3"
+    module: "modulo-3"
+    title: "Properties (Metadados Poderosos)"
+    type: "hands-on tutorial"
+    duration: "45 min"
+    objectives:
+      - "Entender properties e tipos"
+      - "Criar properties por tipo de nota"
+      - "Preparar para Dataview"
+    deliverable: "10 notas com properties"
+
+  - id: "3.4"
+    module: "modulo-3"
+    title: "Busca Avançada e Filtros"
+    type: "hands-on tutorial"
+    duration: "30 min"
+    objectives:
+      - "Dominar busca avançada"
+      - "Usar operadores booleanos e regex"
+      - "Salvar buscas frequentes"
+    deliverable: "Dashboard com 5 buscas salvas"
+
+  # MÓDULO 4: Conexões e Grafo
+  - id: "4.1"
+    module: "modulo-4"
+    title: "Links Internos - A Alma do Segundo Cérebro"
+    type: "conceitual + hands-on"
+    duration: "45 min"
+    objectives:
+      - "Criar links efetivos"
+      - "Usar backlinks para descobertas"
+      - "Aplicar aliases"
+    deliverable: "20 notas com 3+ links cada"
+
+  - id: "4.2"
+    module: "modulo-4"
+    title: "O Grafo do Conhecimento"
+    type: "visual + analítico"
+    duration: "40 min"
+    objectives:
+      - "Interpretar graph view"
+      - "Customizar para insights"
+      - "Identificar clusters e gaps"
+    deliverable: "Screenshot do grafo + análise"
+
+  - id: "4.3"
+    module: "modulo-4"
+    title: "Canvas - Pensamento Visual"
+    type: "hands-on tutorial"
+    duration: "35 min"
+    objectives:
+      - "Usar Canvas para brainstorming"
+      - "Conectar notas, imagens, websites"
+      - "Aplicar em casos reais"
+    deliverable: "Canvas de projeto com 10+ cards"
+
+  # MÓDULO 5: Superpoderes com IA
+  - id: "5.1"
+    module: "modulo-5"
+    title: "Plugins Essenciais da Comunidade"
+    type: "hands-on tutorial"
+    duration: "45 min"
+    objectives:
+      - "Diferenciar Core vs Community plugins"
+      - "Instalar Calendar, Dataview, Templater, Excalidraw"
+      - "Gerenciar plugins eficientemente"
+    deliverable: "4 plugins instalados e configurados"
+
+  - id: "5.2"
+    module: "modulo-5"
+    title: "Integrando ChatGPT no Obsidian"
+    type: "hands-on workshop"
+    duration: "50 min"
+    objectives:
+      - "Configurar Text Generator + Custom Frames"
+      - "Usar IA para resumir, expandir, traduzir"
+      - "Criar prompts customizados"
+    deliverable: "5 notas processadas + 2 prompts criados"
+
+  - id: "5.3"
+    module: "modulo-5"
+    title: "Smart Connections - Converse com Seu Cérebro"
+    type: "hands-on workshop"
+    duration: "50 min"
+    objectives:
+      - "Configurar Smart Connections"
+      - "Fazer perguntas ao segundo cérebro"
+      - "Descobrir conexões semânticas"
+    deliverable: "10 perguntas respondidas + conexões descobertas"
+
+  - id: "5.4"
+    module: "modulo-5"
+    title: "Templates Inteligentes com IA"
+    type: "hands-on tutorial"
+    duration: "35 min"
+    objectives:
+      - "Combinar Templater + Text Generator"
+      - "Criar templates com IA integrada"
+      - "Automatizar workflows"
+    deliverable: "3 templates com IA + 1 workflow automatizado"
+
+  # MÓDULO 6: Execução e Maestria
+  - id: "6.1"
+    module: "modulo-6"
+    title: "Workflows Diários - Do Caos à Clareza"
+    type: "estratégico + hands-on"
+    duration: "45 min"
+    objectives:
+      - "Implementar rotinas de captura, processamento, revisão"
+      - "Criar hábito sustentável"
+      - "Evitar abandono"
+    deliverable: "1 semana de daily notes + inbox zerado 5 dias + 1 weekly review"
+
+  - id: "6.2"
+    module: "modulo-6"
+    title: "Casos de Uso por Arquétipo"
+    type: "aplicação prática"
+    duration: "40 min"
+    objectives:
+      - "Adaptar ao arquétipo específico"
+      - "Ver workflows reais"
+      - "Customizar para máximo ROI"
+    deliverable: "Setup customizado implementado"
+
+  - id: "6.3"
+    module: "modulo-6"
+    title: "Importando de Outras Ferramentas"
+    type: "hands-on tutorial"
+    duration: "35 min"
+    objectives:
+      - "Migrar de Notion, Evernote, OneNote, etc."
+      - "Preservar estrutura e metadados"
+      - "Limpar e reorganizar"
+    deliverable: "50+ notas importadas e organizadas"
+
+  - id: "6.4"
+    module: "modulo-6"
+    title: "Os 4 Níveis de Maestria e Próximos Passos"
+    type: "estratégico + motivacional"
+    duration: "30 min"
+    objectives:
+      - "Entender jornada de evolução"
+      - "Criar plano de 90 dias"
+      - "Conhecer próximos passos e recursos"
+    deliverable: "Plano de 90 dias + foto do setup + depoimento"
+
+assessments:
+  - id: "quiz-modulo-1"
+    type: "multiple_choice"
+    title: "Quiz - Fundamentos"
+    module: "modulo-1"
+    questions: 15
+    passing_score: 0.80
+    topics:
+      - "Conceito de segundo cérebro"
+      - "Vantagens do Obsidian"
+      - "Configurações essenciais"
+      - "Markdown básico"
+
+  - id: "projeto-modulo-3"
+    type: "practical_project"
+    title: "Projeto - Organização"
+    module: "modulo-3"
+    deliverable: "30 notas organizadas + screenshot"
+    rubric:
+      estrutura_pastas: 0.25
+      tags_consistentes: 0.25
+      properties_completas: 0.25
+      sustentabilidade: 0.25
+
+  - id: "workshop-modulo-5"
+    type: "hands_on_demo"
+    title: "Workshop - IA"
+    module: "modulo-5"
+    deliverable: "Vídeo 5 min demonstrando IA"
+    rubric:
+      configuracao_ia: 0.30
+      use_case_relevante: 0.30
+      qualidade_output: 0.30
+      clareza_explicacao: 0.10
+
+  - id: "projeto-final"
+    type: "capstone_project"
+    title: "Projeto Final - Segundo Cérebro Completo"
+    module: "modulo-6"
+    deliverable: "Screenshots + vídeo 10 min + before/after + depoimento"
+    rubric:
+      sistema_funcionando: 0.40
+      adaptacao_contexto: 0.30
+      evidencia_uso_diario: 0.20
+      qualidade_apresentacao: 0.10
+
+resources:
+  checklists:
+    - "checklist-setup-completo.md"
+    - "checklist-weekly-review.md"
+    - "checklist-migracao.md"
+  templates:
+    - "template-daily-note.md"
+    - "template-book-note.md"
+    - "template-meeting-note.md"
+    - "template-project-brief.md"
+    - "template-idea-note.md"
+    - "template-decision-log.md"
+  guides:
+    - "guia-rapido-markdown.md"
+    - "guia-prompts-ia.md"
+    - "guia-busca-avancada.md"
+    - "guia-css-snippets.md"
+  dashboards:
+    - "dashboard-empreendedor.md"
+    - "dashboard-executivo.md"
+    - "dashboard-tecnico.md"
+    - "dashboard-criador.md"
+
+validation_targets:
+  voice_fidelity:
+    target: 0.90
+    measurement: "Voice characteristics matching Professor Adriano"
+    criteria:
+      - "Greeting: 'Fala, lendário!' presente"
+      - "Frases características usadas adequadamente"
+      - "Tom conversacional e empático mantido"
+      - "Abordagem prática 80/20"
+
+  alignment:
+    target: 0.90
+    measurement: "Objetivos ↔ Conteúdo ↔ Assessments"
+    criteria:
+      - "Cada lição entrega objetivos declarados"
+      - "Assessments testam objetivos específicos"
+      - "Progressão lógica entre módulos"
+
+  completeness:
+    target: 1.00
+    measurement: "All required components present"
+    criteria:
+      - "22 lições completas"
+      - "4 assessments completos"
+      - "14 resources criados"
+      - "Todos deliverables especificados"
+
+  cognitive_load:
+    target: "balanced"
+    measurement: "No overload, clear progression"
+    criteria:
+      - "Lições 25-50 min (bite-sized)"
+      - "Prática após cada conceito"
+      - "Complexidade crescente gradual"
+
+  duration_accuracy:
+    target: "±25%"
+    measurement: "Estimated vs. actual time"
+    criteria:
+      - "Vídeos dentro da faixa estimada"
+      - "Práticas realistas e executáveis"
+
+metadata:
+  generated_by: "CreatorOS v2.0 - AIOS-FULLSTACK"
+  framework: "expansion-packs/creator-os/"
+  voice_source: "outputs/courses/dominando-obsidian/legado/"
+  icp_source: "outputs/courses/dominando-obsidian/icp.md"
+  instructor_profile: "outputs/courses/dominando-obsidian/Adriano de Marqui .md"
+  benchmark_courses:
+    - "Building a Second Brain (Tiago Forte): 6 módulos, 5 semanas"
+    - "To Obsidian and Beyond (Sweet Setup): 40+ vídeos, 4 módulos"
+    - "Dominando Obsidian v1.0 (Legado): 38 aulas, 6 módulos"
+  competitive_positioning: "Premium, completo, IA-first, ICP-driven"
+
+status:
+  curriculum_design: "complete"
+  awaiting_approval: true
+  ready_for_generation: false
+  next_step: "Get user approval before generating lessons"

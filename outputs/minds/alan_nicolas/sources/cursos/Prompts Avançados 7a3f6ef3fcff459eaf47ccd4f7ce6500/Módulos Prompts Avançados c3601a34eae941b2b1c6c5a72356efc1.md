@@ -1,0 +1,21 @@
+# Módulos Prompts Avançados
+
+- **Prompts Avançados**
+    - O que é um Prompt Avançado
+    - Criando um Prompt para usar no ChatGPT
+    - Comparar Resultados dos Prompts no ChatGPT
+    - Passando um Prompt Avançado para o My GPT
+- **GPTs Avançados**
+    - Engenharia Reversa de GPTs
+    - Múltiplas Ações (Multi-prompt)
+    - Menus no ChatGPT
+    - GPTs vs Assistentes
+    - Assistente x GPT x Claude: quem vence?
+    - Galeria de GPTs
+- **GPT l Conclusão**
+    - Problemas Comuns
+    - Conclusão e Referências
+- **Agentes Básicos com Dify**
+    - Quais são as ferramentas nativas do Dify?
+- **Monetização com projetos IA**
+    - Monetizando com Chatbots

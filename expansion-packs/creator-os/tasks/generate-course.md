@@ -1,8 +1,8 @@
 ---
 task_name: "generate-course"
-task_version: "2.3"
+task_version: "2.6"
 required_agent_version: ">=2.2"
-description: "Initialize course structure with greenfield/brownfield detection, file organization, and ICP extraction"
+description: "Initialize course structure with greenfield/brownfield detection, file organization, ICP extraction, voice pattern extraction, learning objectives inference, and smart elicitation with gap analysis"
 last_updated: "2025-10-18"
 ---
 
@@ -1044,7 +1044,918 @@ icp_extraction:
 
 ---
 
-### Step 3: WORKFLOW HALTED
+### Step 2.6: Voice Extraction (Brownfield Only)
+
+**This step runs ONLY in brownfield mode after ICP extraction (Step 2.5).**
+
+**2.6.1. Extract Voice Patterns from Transcripts**
+
+```yaml
+voice_extraction:
+  step: "Extract instructor voice patterns from video/audio transcripts"
+
+  applies_to: "Only runs in BROWNFIELD mode (creation_mode = brownfield)"
+
+  skip_if: "creation_mode = greenfield (no legacy transcripts to extract from)"
+
+  prerequisites:
+    - Brownfield mode validated (Scenario 3 passed)
+    - File organization complete (Step 2.2) or skipped
+    - ICP extraction complete (Step 2.5) or skipped
+    - COURSE-BRIEF.md exists
+
+  import:
+    module: "expansion-packs/creator-os/lib/voice_extractor.py"
+    class: "VoiceExtractor"
+
+  actions:
+    1_find_transcripts:
+      description: "Search for transcript files in organized structure"
+
+      execution: |
+        from lib.voice_extractor import VoiceExtractor
+
+        extractor = VoiceExtractor(course_slug, ai_client)
+        transcript_files = extractor.find_transcripts()
+
+      detection_strategies:
+        - Filename patterns (transcript*.txt, aula*.txt, lesson*.txt)
+        - Content validation (must contain conversational markers)
+        - Multi-format support (plain text, Markdown, SRT, VTT)
+        - Priority search paths (/legado/transcripts/, /legado/, /transcripts/, root)
+
+      output:
+        - List of TranscriptFile objects ranked by confidence
+        - Top 5 candidates displayed to user
+
+    2_sample_transcripts:
+      description: "Select representative sample (3-5 files)"
+
+      execution: |
+        sampled = extractor.sample_transcripts(transcript_files)
+
+      sampling_strategy:
+        - "≤5 transcripts: Analyze all"
+        - "6-20 transcripts: First, middle, last + 2 random (5 total)"
+        - ">20 transcripts: First, last + 3 from middle third (5 total)"
+
+      output:
+        - 0-5 sampled transcripts for analysis
+        - Sampling decision logged for transparency
+
+    3_analyze_with_ai:
+      description: "Use AI to extract voice patterns from each sample"
+
+      execution: |
+        voice_profile = extractor.analyze_voice(use_cache=True)
+
+      ai_configuration:
+        model: "gpt-4o-mini"  # Fast, cheap, good for pattern extraction
+        temperature: 0.3  # Low variance (consistent extractions)
+        max_retries: 3  # Retry on API failures
+
+      analysis_dimensions:
+        - Signature greeting (first 3 sentences)
+        - Tone & style (formal/casual, warm/authoritative)
+        - Recurring phrases (top 10 with counts)
+        - Teaching approach (theory vs practice, uses analogies, etc.)
+        - Interaction patterns (direct address, checks understanding)
+        - Personality traits (builds confidence, addresses objections)
+
+      caching:
+        - Results cached in /legado/.voice-analysis-cache.yaml
+        - Cache invalidated if transcript files change
+        - Reduces cost on re-runs
+
+      output:
+        - VoiceProfile object with aggregated patterns
+        - Confidence score (0-100) based on consistency
+
+    4_export_results:
+      description: "Export voice profile for reference"
+
+      execution: |
+        # Voice profile automatically includes all data
+        # No separate YAML export needed (unlike ICP)
+
+      output:
+        - Voice patterns stored in VoiceProfile object
+        - Cached in .voice-analysis-cache.yaml
+
+    5_prefill_course_brief:
+      description: "Auto-populate COURSE-BRIEF.md Section 4 with voice profile"
+
+      execution: |
+        success = extractor.prefill_course_brief(voice_profile)
+
+      brief_section_format: |
+        ## 4️⃣ VOZ & PERSONALIDADE (MMOS INTEGRATION)
+
+        🟢 **Status:** Extracted from 5 transcripts (92% confidence)
+
+        ### Instrutor
+
+        **Saudação Assinatura:**
+        > "Fala, lendário! Tudo certo com você?"
+
+        ### Tom e Estilo
+
+        - **Tom:** Warm, conversational, peer-to-peer mentor
+        - **Estilo:** Casual yet professional, builds confidence
+
+        ### Frases Recorrentes
+
+        As lições devem incorporar estas frases naturalmente:
+        - "Tá?" (52x - checking understanding)
+        - "Olha só..." (38x - introducing new concept)
+        - "Então vamos lá..." (27x - transitioning to practice)
+        - "Mão na massa" (19x - call to action)
+        - "Eu sei que..." (16x - acknowledging concerns)
+
+        ### Padrões de Ensino
+
+        - **Approach:** Practice-first (80/20 rule - doing over explaining)
+        - ✅ Uses analogies and metaphors frequently
+        - ✅ Anticipates student objections/concerns proactively
+        - ✅ Checks understanding with rhetorical questions
+        - ✅ Explains WHY before HOW (purpose first)
+
+        ### Traços de Personalidade
+
+        - **Builds confidence:** "você consegue", "está indo bem"
+        - **Addresses objections:** "eu sei que você pode estar pensando..."
+        - **Real-world focus:** References client projects, market scenarios
+        - **Patient & empathetic:** Normalizes struggles, acknowledges learning curves
+
+        ---
+
+        📝 **Instruções:** Voice profile will be injected into lesson generation prompts automatically.
+        Review for accuracy and edit if needed, then change status to ✅.
+
+      status_indicators:
+        complete: "🟢 (≥3 transcripts, ≥80% confidence)"
+        partial: "🟡 (1-2 transcripts or 60-79% confidence)"
+        incomplete: "🔴 (0 transcripts or <60% confidence)"
+
+    6_user_review:
+      description: "Show extracted voice profile to user for approval/editing"
+
+      display: |
+        ✓ Voice extraction complete!
+
+        📊 Extracted Voice Profile:
+        - Transcripts analyzed: {voice_profile.transcripts_analyzed}
+        - Confidence: {voice_profile.confidence_score}%
+
+        Signature greeting:
+          "{voice_profile.signature_greeting}"
+
+        Tone & Style:
+          {voice_profile.tone}
+          {voice_profile.style}
+
+        Recurring phrases ({len}):
+          {preview_top_5}
+
+        Teaching approach:
+          {preview_approach}
+
+        Personality traits:
+          {preview_traits}
+
+        ---
+
+        ✅ COURSE-BRIEF.md Section 4 updated
+
+        ---
+
+        📝 **Next Steps:**
+
+        1. Open COURSE-BRIEF.md and review Section 4
+        2. Edit/refine extracted voice patterns if needed
+        3. Change status indicator to ✅ when satisfied
+        4. Continue with *continue-course {course-slug}
+
+      prompt: |
+        Review the extracted voice profile in COURSE-BRIEF.md Section 4.
+
+        Options:
+        1. Looks good - Continue to next step
+        2. I need to edit the data first - Pause workflow
+        3. Re-run extraction (if I updated transcript files)
+
+        Your choice (1/2/3):
+
+      handling:
+        option_1_continue:
+          action: "Proceed to Step 3 (User Notification)"
+
+        option_2_pause:
+          action: "HALT workflow"
+          message: |
+            Workflow paused for manual editing.
+
+            Please:
+            1. Open: outputs/courses/{course-slug}/COURSE-BRIEF.md
+            2. Edit Section 4 as needed
+            3. Save the file
+            4. Run: *continue-course {course-slug} when ready
+
+        option_3_rerun:
+          action: "Re-execute Step 2.6.1 (find_transcripts) with --no-cache"
+          note: "Useful if user updated/added transcript files"
+
+  error_handling:
+    no_transcripts_found:
+      scenario: "extractor.find_transcripts() returns empty list"
+      action: "Insert empty template with 🔴 status and recommendations"
+      message: |
+        ⚠️  No transcript files found in /legado/transcripts/ or other locations.
+
+        COURSE-BRIEF.md Section 4 filled with empty template.
+
+        Recommendations:
+        1. Add transcript files to /legado/transcripts/
+        2. Or use MMOS mind if available
+        3. Or fill voice profile manually
+
+    transcripts_too_short:
+      scenario: "All transcripts < 100 words (not representative)"
+      action: "Log warning, insert empty template with 🔴 status"
+      message: |
+        ⚠️  Found transcript files but all are too short (<100 words each)
+
+        Transcripts need to be substantial enough to extract voice patterns.
+        Please add longer transcripts or fill Section 4 manually.
+
+    api_failure:
+      scenario: "OpenAI API error (rate limit, outage, etc.)"
+      action: "Retry up to 3 times with exponential backoff"
+      message: |
+        ❌ Voice analysis failed (API error: {error})
+
+        Action: Retrying in {wait_time} seconds (attempt {attempt}/3)...
+
+        If retries fail: Section 4 will be marked 🔴 for manual filling.
+        Cached partial results (if any) will be preserved.
+
+    low_confidence:
+      scenario: "Confidence score < 60% (inconsistent patterns)"
+      action: "Insert extracted data with 🟡 status and warning"
+      message: |
+        ⚠️  Voice patterns extracted but confidence is LOW ({confidence}%)
+
+        Possible reasons:
+        - Multiple instructors in course
+        - Different content types (lecture vs workshop)
+        - Transcription quality issues
+
+        Recommendation: Review extracted patterns carefully and edit as needed.
+
+    parsing_error:
+      scenario: "AI returns malformed YAML"
+      action: "Log error, retry once, fallback to empty template if retry fails"
+      message: |
+        ⚠️  AI response parsing error
+
+        Retrying analysis...
+        If retry fails, Section 4 will be marked 🔴 for manual filling.
+
+  output:
+    voice_extraction_result:
+      success: true/false
+      transcripts_found: {count}
+      transcripts_analyzed: {count}
+      confidence_score: {0-100}
+      brief_updated: true/false
+      cached: true/false
+```
+
+---
+
+### Step 2.7: Learning Objectives Inference (Brownfield Only)
+
+**This step runs ONLY in brownfield mode after voice extraction (Step 2.6).**
+
+**2.7.1. Infer Learning Objectives from Lessons**
+
+```yaml
+objectives_inference:
+  step: "Infer learning objectives from existing lesson content"
+
+  applies_to: "Only runs in BROWNFIELD mode (creation_mode = brownfield)"
+
+  skip_if: "creation_mode = greenfield (no legacy lessons to infer from)"
+
+  prerequisites:
+    - Brownfield mode validated (Scenario 3 passed)
+    - File organization complete (Step 2.2) or skipped
+    - ICP extraction complete (Step 2.5) or skipped
+    - Voice extraction complete (Step 2.6) or skipped
+    - COURSE-BRIEF.md exists
+
+  import:
+    module: "expansion-packs/creator-os/lib/objectives_inferencer.py"
+    class: "ObjectivesInferencer"
+
+  actions:
+    1_find_legacy_lessons:
+      description: "Search for lesson files in organized structure"
+
+      execution: |
+        from lib.objectives_inferencer import ObjectivesInferencer
+
+        inferencer = ObjectivesInferencer(course_slug)
+        lessons = inferencer.find_legacy_lessons()
+
+      detection_strategies:
+        - Filename patterns (1.1-*.md, aula-*.md, lesson-*.md)
+        - Content validation (must have headers - structured content)
+        - Multi-path search (/lessons/, /legado/, root)
+
+      output:
+        - List of LessonFile objects with titles and content types
+        - Total lessons found
+
+    2_infer_lesson_objectives:
+      description: "Match lessons to pedagogical patterns and infer objectives"
+
+      execution: |
+        lesson_objectives = []
+        for lesson in lessons:
+            objective = inferencer.infer_lesson_objective(lesson)
+            lesson_objectives.append(objective)
+
+      pattern_matching:
+        - Installation lessons → Apply level ("Install and configure {tool}")
+        - Concept lessons → Understand level ("Explain {topic}")
+        - Workshop lessons → Apply level ("Apply {skill} to practice")
+        - Why-use lessons → Evaluate level ("Evaluate benefits of {tool}")
+        - Troubleshooting → Analyze level ("Troubleshoot {problem}")
+        - Advanced → Create level ("Develop advanced {technique}")
+
+      output:
+        - List of LessonObjective objects
+        - Each with Bloom's level, confidence score, source lesson
+
+    3_synthesize_course_objectives:
+      description: "Aggregate lesson objectives to 3-5 course-level objectives"
+
+      execution: |
+        course_objectives = inferencer.synthesize_course_objectives(lesson_objectives)
+
+      aggregation_strategy:
+        - Group by Bloom's level and semantic similarity
+        - Cluster similar lessons (e.g., all "installation" lessons → 1 objective)
+        - Prioritize higher Bloom's levels (Apply, Create > Understand)
+        - Generalize specific objectives to cover multiple lessons
+        - Limit to maximum 5 course objectives
+
+      output:
+        - List of 3-5 CourseObjective objects
+        - Each with aggregated confidence, source lessons list
+
+    4_prefill_course_brief:
+      description: "Auto-populate COURSE-BRIEF.md Section 3.2 with objectives"
+
+      execution: |
+        success = inferencer.prefill_course_brief(course_objectives)
+
+      brief_section_format: |
+        ### 3.2. Objetivos de Aprendizagem
+
+        🟢 **Status:** Inferred from 38 legacy lessons (82% avg confidence)
+
+        **Objetivos do Curso:**
+
+        1. **Build a functional second brain in Obsidian for knowledge management**
+           - Bloom's Level: Apply
+           - Source: 1.3-instalacao.md, 1.4-config.md, 2.1-markdown.md
+           - Confidence: 85%
+
+        2. **Organize knowledge using sustainable note-taking systems**
+           - Bloom's Level: Understand
+           - Source: 3.1-pastas.md, 3.2-tags.md, 3.3-properties.md
+           - Confidence: 78%
+
+        3. **Connect ideas using bi-directional links and graph visualization**
+           - Bloom's Level: Apply
+           - Source: 4.1-links.md, 4.2-backlinks.md, 4.3-graph.md
+           - Confidence: 92%
+
+        ---
+        📝 **Instruções:**
+        - These objectives were inferred from your existing lessons.
+        - Review for accuracy and alignment with your vision.
+        - Edit to refine wording or add/remove objectives.
+        - Ensure objectives match what students will ACTUALLY achieve.
+        - When satisfied, change status to ✅.
+
+        📚 **Bloom's Taxonomy Reference:**
+        - **Understand:** Explain, describe, summarize
+        - **Apply:** Use, implement, execute (hands-on)
+        - **Analyze:** Compare, troubleshoot, examine
+        - **Evaluate:** Assess, justify, critique
+        - **Create:** Design, build, develop (original work)
+
+      status_indicators:
+        complete: "🟢 (≥10 lessons, ≥80% avg confidence)"
+        partial: "🟡 (5-9 lessons or 60-79% avg confidence)"
+        incomplete: "🔴 (<5 lessons or <60% avg confidence)"
+
+    5_user_review:
+      description: "Show inferred objectives to user for approval/editing"
+
+      display: |
+        ✓ Learning objectives inference complete!
+
+        📊 Inferred Course Objectives:
+        - Total lessons analyzed: {total_lessons}
+        - Objectives generated: {len(course_objectives)}
+        - Average confidence: {avg_confidence}%
+
+        Objectives:
+        {preview_objectives}
+
+        ---
+
+        ✅ COURSE-BRIEF.md Section 3.2 updated
+
+        ---
+
+        📝 **Next Steps:**
+
+        1. Open COURSE-BRIEF.md and review Section 3.2
+        2. Edit/refine inferred objectives if needed
+        3. Change status indicator to ✅ when satisfied
+        4. Continue with *continue-course {course-slug}
+
+      prompt: |
+        Review the inferred learning objectives in COURSE-BRIEF.md Section 3.2.
+
+        Options:
+        1. Looks good - Continue to next step
+        2. I need to edit the objectives first - Pause workflow
+        3. Re-run inference (if I updated lesson files)
+
+        Your choice (1/2/3):
+
+      handling:
+        option_1_continue:
+          action: "Proceed to Step 3 (User Notification)"
+
+        option_2_pause:
+          action: "HALT workflow"
+          message: |
+            Workflow paused for manual editing.
+
+            Please:
+            1. Open: outputs/courses/{course-slug}/COURSE-BRIEF.md
+            2. Edit Section 3.2 as needed
+            3. Save the file
+            4. Run: *continue-course {course-slug} when ready
+
+        option_3_rerun:
+          action: "Re-execute Step 2.7.1 (find_legacy_lessons)"
+          note: "Useful if user updated/added lesson files"
+
+  error_handling:
+    no_lessons_found:
+      scenario: "inferencer.find_legacy_lessons() returns empty list"
+      action: "Insert empty template with 🔴 status and instructions"
+      message: |
+        ⚠️  No legacy lesson files found in /lessons/, /legado/, or root folder.
+
+        COURSE-BRIEF.md Section 3.2 filled with empty template.
+        Please define objectives manually or add lesson files and re-run.
+
+    too_few_lessons:
+      scenario: "Less than 3 lessons found"
+      action: "Insert inferred objectives with 🟡 status and warning"
+      message: |
+        ⚠️  Only {count} lessons found - objectives may be incomplete.
+
+        Inferred Objectives:
+        - {Objective 1}
+        - {Objective 2}
+
+        **Recommendation:** Add at least 1-2 more objectives manually to cover full course scope.
+
+    low_confidence:
+      scenario: "Average confidence < 50%"
+      action: "Insert objectives with 🔴 status and warning"
+      message: |
+        🔴 **Status:** Inferred from {count} lessons ({avg_confidence}% avg confidence - LOW)
+
+        **Warning:** Lesson titles are unclear or generic.
+        Objectives below are best guesses - review carefully.
+
+        Inferred Objectives:
+        - {Objective 1} (Confidence: 45%)
+        - {Objective 2} (Confidence: 31%)
+
+        **Recommendation:** Refine these objectives based on actual course content.
+
+    imbalanced_blooms:
+      scenario: "All objectives at same Bloom's level (e.g., all Understand)"
+      action: "Insert objectives with 🟡 status and recommendation"
+      message: |
+        🟡 **Status:** All lessons detected as "{dominant_level}" type.
+
+        **Notice:** Course appears {observation} (no {missing_types} detected).
+
+        Inferred Objectives (all "{dominant_level}" level):
+        - {Objective 1}
+        - {Objective 2}
+        ...
+
+        **Recommendation:** Consider adding {recommendation_level} objectives with hands-on projects.
+
+      examples:
+        all_understand:
+          observation: "theory-heavy"
+          missing_types: "hands-on practice"
+          recommendation_level: "Apply/Create"
+
+        all_apply:
+          observation: "practice-focused"
+          missing_types: "conceptual foundation"
+          recommendation_level: "Understand"
+
+  output:
+    objectives_inference_result:
+      success: true/false
+      lessons_found: {count}
+      lesson_objectives_generated: {count}
+      course_objectives_generated: {count}
+      avg_confidence: {0-100}
+      brief_updated: true/false
+```
+
+---
+
+### Step 3: Gap Analysis & Smart Elicitation (Brownfield Only)
+
+**This step runs ONLY in brownfield mode after all extraction steps (2.5, 2.6, 2.7).**
+
+**3.1. Analyze COURSE-BRIEF Completeness**
+
+```yaml
+gap_analysis:
+  step: "Analyze which sections are complete, partial, or missing"
+
+  applies_to: "Only runs in BROWNFIELD mode (creation_mode = brownfield)"
+
+  skip_if: "creation_mode = greenfield (no auto-fill to analyze)"
+
+  prerequisites:
+    - Brownfield mode validated (Scenario 3 passed)
+    - File organization complete (Step 2.2) or skipped
+    - ICP extraction complete (Step 2.5) or skipped
+    - Voice extraction complete (Step 2.6) or skipped
+    - Learning objectives inference complete (Step 2.7) or skipped
+    - COURSE-BRIEF.md exists
+
+  import:
+    module: "expansion-packs/creator-os/lib/gap_analyzer.py"
+    class: "GapAnalyzer"
+
+  actions:
+    1_analyze_completeness:
+      description: "Scan COURSE-BRIEF.md and determine section statuses"
+
+      execution: |
+        from lib.gap_analyzer import GapAnalyzer
+
+        analyzer = GapAnalyzer(course_slug)
+        completeness_map = analyzer.analyze_completeness()
+
+      analysis_dimensions:
+        - Section 1: Basic Information (title, slug, category, duration)
+        - Section 2: ICP (demographics, psychographics, pain points, goals)
+        - Section 3: Content (objectives, framework, prerequisites)
+        - Section 4: Voice (tone, style, phrases, greeting)
+        - Section 5: Format (lesson duration, format, assessments)
+        - Section 6: Commercial (pricing, launch date, upsells)
+        - Section 7: Context (references to legacy materials)
+        - Section 8: Checklist (final validation items)
+
+      status_indicators:
+        complete: "🟢 (100% completeness, no action needed)"
+        partial: "🟡 (50-99% completeness, needs confirmation)"
+        incomplete: "🔴 (0-49% completeness, needs elicitation)"
+
+      output:
+        - CompletenessMap with overall score (0-100%)
+        - Section-level status (🟢/🟡/🔴)
+        - Subsection/field-level status
+        - Analyzed timestamp
+
+    2_calculate_question_count:
+      description: "Estimate how many questions will be asked"
+
+      execution: |
+        expected_count = analyzer.calculate_expected_question_count(creation_mode)
+
+      calculation:
+        - Greenfield (0% completeness): 15 questions
+        - Brownfield (80% completeness): 3 questions
+        - Brownfield (50% completeness): 7-8 questions
+        - Minimum: 3 questions (always ask critical fields)
+
+      output:
+        - Expected question count (3-15)
+
+    3_generate_questions:
+      description: "Generate targeted questions for gaps only"
+
+      execution: |
+        questions = analyzer.generate_questions(completeness_map)
+
+      question_generation_rules:
+        - "🟢 sections: Skip entirely (no questions)"
+        - "🟡 sections: Generate confirmation questions (show data, ask for validation)"
+        - "🔴 sections: Generate full elicitation questions"
+
+      question_types:
+        confirmation: "Show extracted data, ask yes/no/show_source"
+        elicitation: "Ask for missing data with options"
+        multiple_choice: "Single selection from options"
+        multiple_select: "Multiple selections from options"
+        text: "Free-form text answer"
+
+      output:
+        - List of Question objects (0-15 questions)
+        - Questions ordered by section priority
+
+  output:
+    gap_analysis_result:
+      overall_score: {0-100}
+      sections_complete: {count}
+      sections_partial: {count}
+      sections_missing: {count}
+      questions_generated: {count}
+      questions_saved: {count}  # vs baseline of 15
+```
+
+**3.2. Display Summary & Run Interactive Elicitation**
+
+```yaml
+smart_elicitation:
+  step: "Present questions to user and collect answers"
+
+  import:
+    module: "expansion-packs/creator-os/lib/elicitation_engine.py"
+    class: "ElicitationEngine"
+
+  actions:
+    1_display_summary:
+      description: "Show three-tier summary (Complete/Confirmation/Missing)"
+
+      execution: |
+        from lib.elicitation_engine import ElicitationEngine
+
+        engine = ElicitationEngine(questions)
+        engine.display_summary(completeness_map)
+
+      display_format: |
+        📊 BRIEF ANALYSIS COMPLETE
+
+        I analyzed your existing materials and auto-filled these sections:
+
+        ═══════════════════════════════════════════════════════════
+
+        ✅ COMPLETE (No action needed):
+
+        🟢 ICP (Section 2)
+           ✓ Demographics extracted from `legado/ICP.md`
+           ✓ Psychographics extracted
+           ✓ Pain points extracted (3 items)
+           ✓ Goals extracted (3 items)
+
+        🟢 Voice & Personality (Section 4)
+           ✓ Analyzed 5 transcripts
+           ✓ Signature greeting: "Fala, lendário!"
+           ✓ Tone: Warm, conversational
+           ✓ Recurring phrases: 10 identified
+
+        ═══════════════════════════════════════════════════════════
+
+        🔄 NEEDS CONFIRMATION (Please review):
+
+        🟡 Learning Objectives (Section 3.2)
+           Inferred from 38 legacy lessons
+
+           → Do these objectives accurately reflect your course goals?
+
+        ═══════════════════════════════════════════════════════════
+
+        ❓ MISSING (Need your input):
+
+        🔴 Course Category (Section 1)
+           → What category does this course belong to?
+
+        🔴 Assessment Types (Section 5)
+           → What assessment types fit this course?
+
+        🔴 Pricing (Section 6)
+           → What's the pricing model?
+
+        ═══════════════════════════════════════════════════════════
+
+        📋 SUMMARY:
+           Complete sections: 3/8 (38%)
+           Needs confirmation: 1
+           Missing data: 3 questions
+
+           Total questions: 4 (saved you 11 questions with smart extraction!)
+
+           Estimated time: 5-7 minutes
+
+        ═══════════════════════════════════════════════════════════
+
+      output:
+        - Summary displayed to user
+        - Questions grouped by type
+
+    2_run_interactive_flow:
+      description: "Ask questions one by one and collect answers"
+
+      execution: |
+        answers = engine.run_interactive_flow()
+
+      interaction_format: |
+        ──────────────────────────────────────────────────────────
+        Question 1/4
+        ──────────────────────────────────────────────────────────
+
+        [Question prompt displayed]
+
+        [Options displayed]
+
+        Your choice (1-N): _
+
+      validation:
+        - Validate input type (number for choices, text for text)
+        - Validate range (1-N for choices)
+        - Validate minimum length for text (if specified)
+        - Allow retry on invalid input
+
+      output:
+        - Dict of question_id → Answer objects
+        - Timestamps for each answer
+
+    3_persist_answers:
+      description: "Write answers back to COURSE-BRIEF.md"
+
+      execution: |
+        final_completeness = analyzer.persist_answers(answers)
+
+      persistence_logic:
+        - Confirmation="Yes" → Mark section 🟢 (confirmed)
+        - Confirmation="No" → Mark section 🟡 (manual edit required)
+        - Elicitation answer → Fill missing field, mark 🟢
+
+      output:
+        - Updated COURSE-BRIEF.md
+        - Final CompletenessMap (re-analyzed)
+
+    4_display_completion_summary:
+      description: "Show before/after completeness scores"
+
+      execution: |
+        engine.display_completion_summary(completeness_map, final_completeness)
+
+      display_format: |
+        ═══════════════════════════════════════════════════════════
+        📊 ELICITATION COMPLETE
+        ═══════════════════════════════════════════════════════════
+
+        Completeness Score:
+          Before: 38%
+          After:  92%
+          Improvement: +54%
+
+        Section Status Updates:
+          🔴 → 🟢  Basic Information
+          🟡 → 🟢  Learning Objectives
+          🔴 → 🟢  Format & Delivery
+          🔴 → 🟢  Commercial & Launch
+
+        ═══════════════════════════════════════════════════════════
+        ✅ COURSE-BRIEF.md updated successfully
+        ═══════════════════════════════════════════════════════════
+
+      output:
+        - Summary displayed to user
+
+  error_handling:
+    no_questions_needed:
+      scenario: "All sections 🟢 (100% complete)"
+      action: "Skip elicitation entirely"
+      message: |
+        ✅ No questions needed - all sections are complete!
+
+        COURSE-BRIEF.md is ready for generation.
+
+    user_interrupted:
+      scenario: "User cancels elicitation mid-flow (Ctrl+C)"
+      action: "Save partial answers, mark as incomplete"
+      message: |
+        ⚠️  Elicitation interrupted
+
+        Partial answers saved to COURSE-BRIEF.md.
+        Remaining sections marked for manual completion.
+
+        To resume: *continue-course {course-slug}
+
+    validation_failed:
+      scenario: "User provides invalid input repeatedly"
+      action: "Skip question, mark for manual completion"
+      message: |
+        ⚠️  Input validation failed 3 times
+
+        Skipping this question - please fill manually in COURSE-BRIEF.md.
+        Moving to next question...
+
+  output:
+    elicitation_result:
+      questions_asked: {count}
+      questions_answered: {count}
+      questions_skipped: {count}
+      final_completeness: {0-100}
+      brief_updated: true/false
+```
+
+**3.3. Final Validation Gate**
+
+```yaml
+final_validation:
+  step: "Validate all sections 🟢 before proceeding"
+
+  actions:
+    1_validate_brief_complete:
+      description: "Check all 8 sections are 🟢"
+
+      execution: |
+        is_complete = analyzer.validate_brief_complete()
+
+      validation_rules:
+        - All sections must be 🟢 (100% complete)
+        - If any 🟡 or 🔴: Show error with instructions
+        - Provide recovery commands (*validate-brief, *edit-brief)
+
+      output:
+        - True if all sections complete
+        - Raises BriefIncompleteError if incomplete
+
+    2_handle_incomplete_brief:
+      description: "Handle incomplete sections gracefully"
+
+      error_message: |
+        ❌ BRIEF INCOMPLETE
+
+        The following sections are not complete:
+          - {section_name_1} (🟡 needs review)
+          - {section_name_2} (🔴 missing data)
+
+        Please review COURSE-BRIEF.md and fill these sections manually.
+
+        When done, run: *continue-course {course-slug} --validate-brief
+
+        Or to edit interactively: *edit-brief {course-slug}
+
+      recovery_options:
+        option_1_manual_edit:
+          action: "HALT workflow, user edits COURSE-BRIEF.md"
+          next_step: "User runs *continue-course when ready"
+
+        option_2_retry_elicitation:
+          action: "Re-run Step 3 (Gap Analysis & Elicitation)"
+          command: "*continue-course {course-slug} --retry-elicitation"
+
+    3_mark_brief_complete:
+      description: "Update COURSE-BRIEF.md status on success"
+
+      execution: |
+        # Update frontmatter status
+        status: ✅ Complete
+
+      output:
+        - COURSE-BRIEF.md status updated to ✅
+        - Ready to proceed to content generation
+
+  output:
+    validation_result:
+      success: true/false
+      sections_complete: {count}
+      sections_incomplete: {count}
+      incomplete_section_names: [list]
+```
+
+---
+
+### Step 4: WORKFLOW HALTED
 
 **This task STOPS here.** The user must now:
 
@@ -1052,12 +1963,12 @@ icp_extraction:
 1. Fill `COURSE-BRIEF.md` manually (45-90 minutes)
 2. Run `*continue-course {course-slug}` to generate content
 
-**For Brownfield:**
-1. Review organized files (if organization was run)
-2. Fill `COURSE-BRIEF.md` manually based on organized materials
+**For Brownfield (after Step 3 complete):**
+1. Review COURSE-BRIEF.md (all sections now 🟢 or 🟡)
+2. Edit any 🟡 sections manually if needed
 3. Run `*continue-course {course-slug}` to generate content
 
-**Note:** Steps 3-6 (Pedagogical Design, Curriculum Generation, Validation, Output) are now part of the `continue-course` task.
+**Note:** Steps 4-7 (Pedagogical Design, Curriculum Generation, Validation, Output) are now part of the `continue-course` task.
 
 ---
 
@@ -1434,10 +2345,53 @@ What would you like to do? (1/2/3):
 
 ---
 
-**Task Version:** 2.3
+**Task Version:** 2.6
 **Last Updated:** 2025-10-18
 **Maintainer:** CreatorOS Team (Sarah - PO)
 **Changelog:**
+- v2.6 (2025-10-18): **Story 3.6 Implementation - Gap Analysis & Smart Elicitation**
+  - Added Step 3: Gap Analysis & Smart Elicitation (brownfield only)
+  - Created lib/gap_analyzer.py for COURSE-BRIEF completeness analysis
+  - Implemented section-level status detection (🟢/🟡/🔴) for all 8 sections
+  - Added subsection/field-level granularity for fine-grained gap detection
+  - Implemented placeholder detection (empty vs auto-filled fields)
+  - Created lib/elicitation_engine.py for interactive question flow
+  - Implemented three-tier summary display (Complete/Confirmation/Missing)
+  - Added smart question generation (skip 🟢, confirm 🟡, elicit 🔴)
+  - Created templates/elicitation-questions.yaml question bank (23 questions)
+  - Implemented multiple question types (confirmation, multiple_choice, multiple_select, text)
+  - Added answer persistence back to COURSE-BRIEF.md
+  - Implemented final validation gate (all sections must be 🟢)
+  - Added question count estimation (3-15 based on completeness)
+  - Smart elicitation runs automatically after all extractions (brownfield only)
+  - Reduces questions by 60-80% for good brownfield scenarios
+- v2.5 (2025-10-18): **Story 3.5 Implementation - Learning Objectives Inference**
+  - Added Step 2.7: Learning Objectives Inference (brownfield only)
+  - Created pedagogical-patterns.yaml template with 6 lesson type patterns
+  - Created blooms-taxonomy.yaml reference data with action verbs and examples
+  - Implemented lib/objectives_inferencer.py for AI-free pattern-based inference
+  - Added lesson file discovery (1.1-*.md, aula-*.md, lesson-*.md patterns)
+  - Implemented pedagogical intent extraction from filenames
+  - Added Bloom's Taxonomy classification (6 levels: Remember → Create)
+  - Implemented multi-lesson aggregation to 3-5 course-level objectives
+  - Added semantic clustering by lesson pattern type
+  - Implemented COURSE-BRIEF.md Section 3.2 auto-population with status indicators
+  - Added educational annotations about Bloom's Taxonomy and good objectives
+  - Implemented confidence scoring based on pattern match quality
+  - Added comprehensive error handling (no lessons, too few lessons, low confidence, imbalanced Bloom's)
+  - Objectives inference runs automatically after voice extraction (brownfield only)
+- v2.4 (2025-10-18): **Story 3.4 Implementation - Voice Extraction from Transcripts**
+  - Added Step 2.6: Voice Extraction (brownfield only)
+  - Integrated lib/voice_extractor.py module for AI-powered voice pattern analysis
+  - Implemented multi-format transcript discovery (plain text, Markdown, SRT, VTT)
+  - Added smart sampling strategy (3-5 representative transcripts based on course size)
+  - Implemented AI analysis with GPT-4o-mini for voice pattern extraction (greeting, tone, phrases, teaching approach, personality)
+  - Added multi-transcript aggregation with consistency scoring
+  - Implemented COURSE-BRIEF.md Section 4 auto-population with status indicators (🟢/🟡/🔴)
+  - Added caching mechanism (.voice-analysis-cache.yaml) to avoid re-analysis
+  - Implemented user review checkpoint with edit/continue/rerun options
+  - Added comprehensive error handling (no transcripts, API failures, low confidence, parsing errors)
+  - Voice extraction runs automatically after ICP extraction (with user approval)
 - v2.3 (2025-10-18): **Story 3.3 Implementation - ICP Extraction Engine**
   - Added Step 2.5: ICP Extraction (brownfield only)
   - Integrated lib/icp_extractor.py module for intelligent ICP data extraction

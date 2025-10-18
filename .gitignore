@@ -29,10 +29,6 @@ __pycache__/
 # Coverage reports
 coverage/
 *.lcov
-# Generated outputs (AIOS expansion packs)
-outputs/courses/*
-outputs/minds/*
-outputs/database/*
 
 # Keep directory structure
 #!outputs/courses/.gitkeep

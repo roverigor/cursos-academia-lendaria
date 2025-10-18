@@ -57,8 +57,48 @@ outputs:
     description: Executive summary of cognitive analysis findings
     format: "markdown"
 
-  - path: "outputs/minds/{mind_name}/analysis/layer-{N}-{layer_name}.md"
-    description: Detailed analysis for each layer (8 files total)
+  - path: "outputs/minds/{mind_name}/artifacts/behavioral_patterns.yaml"
+    description: "Layer 1: Observable behavioral patterns and decision-making"
+    format: "yaml"
+
+  - path: "outputs/minds/{mind_name}/artifacts/writing_style.yaml"
+    description: "Layer 2: Linguistic patterns and communication style"
+    format: "yaml"
+
+  - path: "outputs/minds/{mind_name}/artifacts/routine_analysis.yaml"
+    description: "Layer 3: Temporal patterns, routines, and habits"
+    format: "yaml"
+
+  - path: "outputs/minds/{mind_name}/artifacts/recognition_patterns.yaml"
+    description: "Layer 4: Mental radars and attention filters"
+    format: "yaml"
+
+  - path: "outputs/minds/{mind_name}/artifacts/mental_models.yaml"
+    description: "Layer 5: Thinking frameworks and reasoning patterns"
+    format: "yaml"
+
+  - path: "outputs/minds/{mind_name}/artifacts/values_hierarchy.yaml"
+    description: "Layer 6: Core values in priority order"
+    format: "yaml"
+
+  - path: "outputs/minds/{mind_name}/artifacts/core_obsessions.yaml"
+    description: "Layer 7: Deep driving questions"
+    format: "yaml"
+
+  - path: "outputs/minds/{mind_name}/artifacts/contradictions.yaml"
+    description: "Layer 8: Productive paradoxes (THE GOLD LAYER)"
+    format: "yaml"
+
+  - path: "outputs/minds/{mind_name}/artifacts/cognitive_architecture.yaml"
+    description: "Complete DNA Mental™ 8-layer synthesis"
+    format: "yaml"
+
+  - path: "outputs/minds/{mind_name}/artifacts/personality_profile.json"
+    description: "Psychometric personality profile"
+    format: "json"
+
+  - path: "outputs/minds/{mind_name}/docs/LIMITATIONS.md"
+    description: "Known gaps and uncertainties in cognitive analysis"
     format: "markdown"
 
 dependencies:
@@ -200,7 +240,7 @@ behavioral_categories:
 4. Note behavioral evolution over time
 5. Document outlier behaviors (important for Layer 8 paradoxes)
 
-**Output:** `minds/{mind}/artifacts/behavioral_patterns.md`
+**Output:** `minds/{mind}/artifacts/behavioral_patterns.yaml`
 
 ```markdown
 # Behavioral Patterns - {{Mind Name}}
@@ -278,7 +318,7 @@ linguistic_dimensions:
 4. Identify voice consistency metrics
 5. Note context-dependent style variations
 
-**Output:** `minds/{mind}/artifacts/writing_style.md`
+**Output:** `minds/{mind}/artifacts/writing_style.yaml`
 
 #### Layer 3: Routine & Habits (Temporal Patterns)
 
@@ -318,7 +358,7 @@ routine_dimensions:
     networking: "{{approach}}"
 ```
 
-**Output:** `minds/{mind}/artifacts/routine_analysis.md`
+**Output:** `minds/{mind}/artifacts/routine_analysis.yaml`
 
 #### Layer 4: Recognition Patterns (Mental Radars)
 
@@ -372,9 +412,9 @@ Layer 3 - Routine & Habits: {{count}} temporal patterns mapped
 Layer 4 - Recognition Patterns: {{count}} mental radars documented
 
 Artifacts generated:
-✓ minds/{mind}/artifacts/behavioral_patterns.md
-✓ minds/{mind}/artifacts/writing_style.md
-✓ minds/{mind}/artifacts/routine_analysis.md
+✓ minds/{mind}/artifacts/behavioral_patterns.yaml
+✓ minds/{mind}/artifacts/writing_style.yaml
+✓ minds/{mind}/artifacts/routine_analysis.yaml
 ✓ minds/{mind}/artifacts/recognition_patterns.yaml
 
 Proceeding to Layer 5 (Mental Models) - triangulation begins...
@@ -435,7 +475,7 @@ triangulation_score: 3/3 sources ✓
 confidence: high
 ```
 
-**Output:** `minds/{mind}/artifacts/mental_models.md`
+**Output:** `minds/{mind}/artifacts/mental_models.yaml`
 
 ### Mode: Layer 6 (Values Hierarchy) + HUMAN CHECKPOINT
 
@@ -911,13 +951,13 @@ cognitive_architecture:
 ## Outputs
 
 ### Layers 1-4 Outputs
-- `minds/{mind}/artifacts/behavioral_patterns.md`
-- `minds/{mind}/artifacts/writing_style.md`
-- `minds/{mind}/artifacts/routine_analysis.md`
+- `minds/{mind}/artifacts/behavioral_patterns.yaml`
+- `minds/{mind}/artifacts/writing_style.yaml`
+- `minds/{mind}/artifacts/routine_analysis.yaml`
 - `minds/{mind}/artifacts/recognition_patterns.yaml`
 
 ### Layer 5 Output
-- `minds/{mind}/artifacts/mental_models.md`
+- `minds/{mind}/artifacts/mental_models.yaml`
 
 ### Layer 6 Output
 - `minds/{mind}/artifacts/values_hierarchy.yaml`

@@ -1,0 +1,32 @@
+{
+  "persona": "mark_manson",
+  "url": "https://markmanson.net/most-important-skill-in-life",
+  "metadata": {
+    "title": "The Most Important Skill in Life",
+    "author": "Mark Manson",
+    "date": null,
+    "description": "If you think back to when you were a slobbering, drooling kid, life was pretty simple. Mom told you to say “thank you” so you said thank you. Dad told you to clean your room, so you cleaned your room. Teacher told you to stop picking your nose, so you stopped picking your nose (in public, at least). Life was algorithmic. Do X and be rewarded with Y. The X was always clear and given while the Y reward was dependable. You could count on it. You could expect it. Most of life passed this way. Teache",
+    "keywords": [],
+    "categories": []
+  },
+  "structure": {
+    "headings": [
+      {
+        "level": "h2",
+        "text": "Hey, sorry to interrupt…"
+      }
+    ],
+    "paragraphs": 14,
+    "lists": 2,
+    "quotes": 0,
+    "links": 4,
+    "images": 0,
+    "patterns": {
+      "problem": 1,
+      "profanity": 4,
+      "questions": 1
+    }
+  },
+  "word_count": 672,
+  "download_date": "2025-09-25T20:59:57.050953"
+}

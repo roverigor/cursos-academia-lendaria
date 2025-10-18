@@ -1,0 +1,303 @@
+viability_assessment:
+  mind_name: Yuval Noah Harari
+  target_use_case: "AI: Future of Humanity Advisor"
+  assessment_date: 2025-10-07
+  analyst: Mind Mapper Orchestrator
+  mode: full
+
+apex_scoring:
+  dimension_1_availability:
+    books_published:
+      score: 5
+      max: 5
+      evidence:
+        - "Sapiens: A Brief History of Humankind (2011/2014)"
+        - "Homo Deus: A Brief History of Tomorrow (2016)"
+        - "21 Lessons for the 21st Century (2018)"
+        - "Nexus: A Brief History of Information Networks (2024)"
+        - "Sapiens: A Graphic History (series, 2020+)"
+        - "Unstoppable Us (children's series, 2022+)"
+        - "Multiple academic books (Special Operations, Ultimate Experience, etc.)"
+      notes: "45 million copies sold, translated into 65 languages"
+
+    long_form_content:
+      score: 5
+      max: 5
+      evidence:
+        - "Regular articles in The Guardian, NYT, Financial Times, TIME, Washington Post, The Economist"
+        - "Articles archive on ynharari.com"
+        - "Guardian opinion piece on Ukraine became most-read of all time"
+      notes: "100+ high-quality essays and articles"
+
+    interviews_appearances:
+      score: 5
+      max: 5
+      evidence:
+        - "Lex Fridman Podcast #390"
+        - "Tim Ferriss Show #477"
+        - "Sam Harris Waking Up #68"
+        - "Russell Brand Under The Skin #005"
+        - "CBS 60 Minutes (2021)"
+        - "IMF Podcast (2024)"
+        - "TED Interviews"
+        - "GZERO Media"
+        - "Frontiers Forum"
+        - "Spotify playlist: 34+ episodes"
+      notes: "50+ high-quality interviews across major platforms"
+
+    social_media_activity:
+      score: 3
+      max: 3
+      evidence:
+        - "Twitter/X: @harari_yuval - active in 2024"
+        - "Instagram: 1M followers, 959 posts"
+        - "Substantive posts on AI, democracy, current events"
+        - "Linktree with multiple platforms"
+      notes: "Highly active with substantive content"
+
+    video_content:
+      score: 2
+      max: 2
+      evidence:
+        - "Multiple TED talks (4-5 major talks)"
+        - "Conference keynotes (Frontiers Forum, etc.)"
+        - "YouTube content on ynharari.com"
+      notes: "Regular video appearances and talks"
+
+    total_availability: 20
+    max_availability: 20
+    percentage: 100%
+
+  dimension_2_public_persona:
+    recognition_level:
+      score: 5
+      max: 5
+      evidence:
+        - "Globally recognized thought leader"
+        - "Books recommended by Barack Obama, Bill Gates, Mark Zuckerberg"
+        - "45 million books sold worldwide"
+        - "Considered one of world's most influential public intellectuals"
+        - "Hundreds of thousands per speaking appearance"
+      assessment: "Global recognition at highest level"
+
+    media_coverage:
+      score: 5
+      max: 5
+      evidence:
+        - "NYT bestseller list"
+        - "Guardian most-read opinion piece of all time"
+        - "Financial Times, TIME, Washington Post features"
+        - "CBS 60 Minutes profile"
+        - "IMF, World Economic Forum speaker"
+      assessment: "Major media coverage worldwide"
+
+    teaching_presence:
+      score: 5
+      max: 5
+      evidence:
+        - "Professor at Hebrew University of Jerusalem"
+        - "Distinguished Research Fellow at Cambridge Centre for Existential Risk"
+        - "TED talks (millions of views)"
+        - "Regular conference keynotes"
+        - "Educational resources based on his work"
+      assessment: "Extensive teaching and educational impact"
+
+    total_public_persona: 15
+    max_public_persona: 15
+    percentage: 100%
+
+  dimension_3_expertise_depth:
+    demonstrated_results:
+      score: 7
+      max: 7
+      evidence:
+        - "45 million books sold in 65 languages"
+        - "Transformed public discourse on history, AI, future of humanity"
+        - "NYT #1 bestseller (multiple books)"
+        - "Influenced policy discussions globally (Congress, IMF, WEF)"
+      assessment: "Extraordinary results - industry transformation level"
+
+    domain_tenure:
+      score: 4
+      max: 5
+      evidence:
+        - "PhD from Oxford, 2002"
+        - "Professor at Hebrew University (20+ years academic career)"
+        - "Public intellectual work since Sapiens (2011/2014)"
+        - "Specialized in world history, medieval history, military history"
+      assessment: "15-19 years in public thought leadership, 20+ in academia"
+
+    methodology_development:
+      score: 5
+      max: 5
+      evidence:
+        - "Storytelling as fundamental human framework"
+        - "Collective fiction theory (money, religion, nations as shared myths)"
+        - "Interdisciplinary synthesis (history + biology + technology)"
+        - "AI as 'alien intelligence' concept"
+        - "Information networks framework (Nexus)"
+      assessment: "Created unique frameworks widely used and discussed"
+
+    peer_recognition:
+      score: 3
+      max: 3
+      evidence:
+        - "Cited by scholars, policy makers, tech leaders"
+        - "Invited to IMF, WEF, Congressional testimony discussions"
+        - "Referenced across disciplines"
+      notes: "Some academic criticism exists but widespread recognition"
+
+    total_expertise_depth: 19
+    max_expertise_depth: 20
+    percentage: 95%
+
+  dimension_4_x_factor:
+    contrarian_thinking:
+      score: 5
+      max: 5
+      evidence:
+        - "Challenges orthodox views on human exceptionalism"
+        - "Argues religions, nations, money are 'collective fictions'"
+        - "Contrarian on AI safety vs acceleration debate"
+        - "Questions liberal humanism assumptions"
+      assessment: "Consistently challenges orthodoxy with backed arguments"
+
+    storytelling_communication:
+      score: 5
+      max: 5
+      evidence:
+        - "Universally recognized as 'gifted storyteller'"
+        - "Master at simplifying complex concepts"
+        - "Memorable communication style"
+        - "Sweeping historical narratives"
+      assessment: "Master storyteller with distinctive voice"
+
+    pattern_synthesis:
+      score: 5
+      max: 5
+      evidence:
+        - "Connects history, biology, technology, philosophy seamlessly"
+        - "Stone Age to AI in single narrative"
+        - "Cross-domain thinking (medieval warfare to future AI)"
+        - "Macro-historical synthesis"
+      assessment: "Brilliant interdisciplinary connections"
+
+    total_x_factor: 15
+    max_x_factor: 15
+    percentage: 100%
+
+  dimension_5_temporal_relevance:
+    current_activity:
+      score: 5
+      max: 5
+      evidence:
+        - "Nexus published September 2024 (#1 NYT bestseller)"
+        - "Active social media (Twitter/Instagram 2024)"
+        - "Recent podcasts (IMF Oct 2024)"
+        - "Ongoing Sapienship company"
+      assessment: "Highly active, producing new content regularly"
+
+    trend_alignment:
+      score: 5
+      max: 5
+      evidence:
+        - "AI expertise perfectly aligned with 2024 trends"
+        - "Information networks, democracy, populism all urgent topics"
+        - "WEF, IMF, Congressional interest in his views"
+        - "Nexus addresses AI Stone Age connection"
+      assessment: "Expertise addresses major current/emerging trends"
+
+    future_applicability:
+      score: 5
+      max: 5
+      evidence:
+        - "Historical principles are timeless"
+        - "AI insights applicable for decades ahead"
+        - "Macro-historical perspective transcends fads"
+        - "Frameworks remain relevant as technology evolves"
+      assessment: "Timeless principles + urgent current application"
+
+    total_temporal_relevance: 15
+    max_temporal_relevance: 15
+    percentage: 100%
+
+  dimension_6_value_density:
+    actionable_frameworks:
+      score: 4
+      max: 6
+      evidence:
+        - "Meditation practice (Vipassana, 2 hours daily)"
+        - "Critical thinking framework"
+        - "21 Lessons framework for navigation"
+        - "Emotional intelligence emphasis"
+      notes: "Some frameworks but mostly philosophical rather than tactical"
+
+    tactical_specificity:
+      score: 2
+      max: 5
+      evidence:
+        - "Focus on 'personal resilience and emotional intelligence'"
+        - "Meditation techniques (observe breath)"
+        - "Mostly strategic/theoretical rather than step-by-step"
+      assessment: "Limited tactical specificity, more big-picture thinking"
+
+    case_studies_examples:
+      score: 3
+      max: 4
+      evidence:
+        - "Rich historical examples (Hammurabi Code, French Revolution, etc.)"
+        - "Contemporary examples (AI developments, Ukraine war)"
+        - "Less detailed implementation case studies"
+      assessment: "Multiple historical examples, fewer contemporary case studies"
+
+    total_value_density: 9
+    max_value_density: 15
+    percentage: 60%
+
+  apex_total_score:
+    availability: 20
+    public_persona: 15
+    expertise_depth: 19
+    x_factor: 15
+    temporal_relevance: 15
+    value_density: 9
+
+    total: 93
+    max_possible: 100
+    percentage: 93%
+
+    automated_decision:
+      threshold_auto_reject: "<50"
+      threshold_human_review: "50-74"
+      threshold_auto_approve: ">=75"
+
+      decision: APPROVE
+      rationale: "93% APEX score indicates exceptional viability. World-class availability (20/20), perfect public persona (15/15), outstanding X-factor (15/15), and ideal temporal relevance (15/15). Only weakness is tactical specificity (9/15), which is acceptable for a philosopher/historian focused on macro perspectives rather than implementation details."
+
+strengths:
+  - "45M books sold, global bestseller status"
+  - "Perfect availability across all content types"
+  - "Globally recognized by world leaders (Obama, Gates)"
+  - "Master storyteller with unique interdisciplinary synthesis"
+  - "Perfect timing: AI expertise in AI era"
+  - "Active and producing (Nexus 2024)"
+
+weaknesses:
+  - "More strategic/philosophical than tactical/actionable"
+  - "Limited step-by-step implementation frameworks"
+  - "Some academic criticism of scientific accuracy"
+  - "Contrarian views may be polarizing"
+
+opportunities:
+  - "AI safety/acceleration paradox (potential Layer 8)"
+  - "Extensive source material available"
+  - "Cross-domain expertise enables rich cognitive architecture"
+  - "Perfect alignment with 'AI: Future of Humanity' use case"
+
+risks:
+  - "Rapidly evolving AI field may date specific predictions"
+  - "Philosophical rather than technical AI expertise"
+  - "Polarizing views may limit certain audiences"
+
+recommendation: PROCEED_TO_ICP_MATCHING
+next_step: "Evaluate ICP match for 'AI: Future of Humanity Advisor' use case"

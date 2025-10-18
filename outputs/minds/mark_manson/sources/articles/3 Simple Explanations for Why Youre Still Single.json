@@ -1,0 +1,49 @@
+{
+  "persona": "mark_manson",
+  "url": "https://markmanson.net/still-single",
+  "metadata": {
+    "title": "3 Simple Explanations for Why You’re Still Single",
+    "author": "Mark Manson",
+    "date": null,
+    "description": "Why people who are perpetually single and don’t want to be… are perpetually still single and don’t want to be.",
+    "keywords": [],
+    "categories": []
+  },
+  "structure": {
+    "headings": [
+      {
+        "level": "h2",
+        "text": "1. You Don’t Respect Yourself"
+      },
+      {
+        "level": "h3",
+        "text": "Unf*ck Your Relationships"
+      },
+      {
+        "level": "h2",
+        "text": "2. You Have Absurd Expectations"
+      },
+      {
+        "level": "h2",
+        "text": "3. You Haven’t Developed the Skills for Intimacy"
+      },
+      {
+        "level": "h3",
+        "text": "Unf*ck Your Relationships"
+      }
+    ],
+    "paragraphs": 35,
+    "lists": 3,
+    "quotes": 1,
+    "links": 13,
+    "images": 3,
+    "patterns": {
+      "actually": 1,
+      "values": 3,
+      "choose": 1,
+      "questions": 5
+    }
+  },
+  "word_count": 1480,
+  "download_date": "2025-09-25T21:00:00.746736"
+}

@@ -1,0 +1,488 @@
+# DISCOVERY REPORT - Abilio Diniz Sources
+# Generated: 2025-10-15
+# Phase 2: Research Collection - Source Discovery
+
+discovery_report:
+  mind_name: "Abilio Diniz"
+  discovery_date: "2025-10-15"
+  analyst: "Mind Mapper Orchestrator"
+
+  summary:
+    total_sources_identified: 24
+    collection_method: "WebSearch + WebFetch"
+    time_invested: "60 minutes"
+    sources_by_tier:
+      tier_1: 3  # Books + major frameworks
+      tier_2: 12 # Podcasts, CNN show, courses
+      tier_3: 9  # Articles, profiles, news
+
+# ========================================
+# SOURCES IDENTIFIED
+# ========================================
+
+sources_identified:
+
+  # TIER 1: PRIMARY SOURCES (Books, Core Frameworks)
+  tier_1_primary:
+    - id: "T1-001"
+      title: "Caminhos e Escolhas (2004)"
+      type: "book"
+      priority: "CRITICAL"
+      availability: "Purchase required (Portuguese)"
+      estimated_value: 10/10
+      notes: |
+        First book, 220,000+ copies sold, 30+ reprints. Core philosophy,
+        6 Pillars framework, personal transformation post-kidnapping.
+        Available on Amazon.br, Estante Virtual, some excerpts online.
+
+    - id: "T1-002"
+      title: "Novos Caminhos, Novas Escolhas (2014)"
+      type: "book"
+      priority: "CRITICAL"
+      availability: "Purchase required (Portuguese)"
+      estimated_value: 9/10
+      notes: |
+        Second book with Sergio Malbergier. Management, leadership,
+        motivation, balance, longevity, faith. 10 years of maturation
+        from first book. Available on Amazon.br.
+
+    - id: "T1-003"
+      title: "Leadership 360° - FGV Course Materials"
+      type: "course_curriculum"
+      priority: "HIGH"
+      availability: "FGV enrollment or materials request"
+      estimated_value: 9/10
+      notes: |
+        30-hour course, 6 modules, taught 2010-2024. Comprehensive
+        leadership framework. Enrollment R$ 1,097. May have public
+        materials or course outline available.
+
+  # TIER 2: SECONDARY SOURCES (Interviews, Media, Courses)
+  tier_2_secondary:
+    - id: "T2-001"
+      title: "Flow Podcast #469 (Sep 2021)"
+      type: "podcast"
+      priority: "HIGH"
+      availability: "Public (Spotify, Apple Podcasts, YouTube)"
+      estimated_value: 9/10
+      url: "https://open.spotify.com/episode/6dQg8YJf5VrDAmu8adkUp5"
+      notes: |
+        Major Brazilian podcast, millions of views. Discusses kidnapping,
+        "grow or perish" philosophy, life lessons, business trajectory.
+        Full transcript needed.
+
+    - id: "T2-002"
+      title: "Caminhos com Abilio Diniz (CNN Brasil)"
+      type: "tv_show"
+      priority: "HIGH"
+      availability: "Public (YouTube CNN Brasil)"
+      estimated_value: 8/10
+      url: "https://www.cnnbrasil.com.br/tudo-sobre/abilio-diniz/"
+      notes: |
+        Interview show hosted by Abilio (2022-2024). 3 seasons, 20+ episodes.
+        Interviews executives, politicians. Shows his interviewing style,
+        questions, insights. Episodes available on YouTube.
+
+    - id: "T2-003"
+      title: "Olhares Brasileiros com Abilio Diniz"
+      type: "podcast"
+      priority: "MEDIUM"
+      availability: "Public (podcast platforms)"
+      estimated_value: 7/10
+      notes: |
+        First CNN Brasil show (2022), became podcast. Conversations with
+        Brazilian personalities about society, culture, economy, business,
+        spirituality, behavior.
+
+    - id: "T2-004"
+      title: "Caminhos e Escolhas - Book Summary (Medium)"
+      type: "article"
+      priority: "HIGH"
+      availability: "Partially accessible (paywall)"
+      estimated_value: 7/10
+      url: "https://medium.com/@wpolis/resumo-de-livro-caminho-e-escolhas-de-abilio-diniz-e6f71c5881af"
+      notes: |
+        Detailed summary of first book. Covers 6 Pillars, key concepts,
+        transformation story. Good for quick access to book's core ideas
+        if purchase unavailable.
+
+    - id: "T2-005"
+      title: "Novos Caminhos, Novas Escolhas - Excerpt PDF"
+      type: "book_excerpt"
+      priority: "MEDIUM"
+      availability: "Public (Companhia das Letras)"
+      estimated_value: 7/10
+      url: "https://www.companhiadasletras.com.br/trechos/28000384.pdf"
+      notes: |
+        Official excerpt from second book. Provides sample of writing style,
+        content, and frameworks. Good preview before purchase.
+
+    - id: "T2-006"
+      title: "Official Biography (abiliodiniz.com.br)"
+      type: "website"
+      priority: "HIGH"
+      availability: "Public"
+      estimated_value: 8/10
+      url: "https://abiliodiniz.com.br/biografia/"
+      notes: |
+        Comprehensive official biography. Timeline, achievements, books,
+        courses, personal philosophy, family info. High-quality source.
+
+    - id: "T2-007"
+      title: "FGV Leadership 360° Course Page"
+      type: "course_description"
+      priority: "MEDIUM"
+      availability: "Public"
+      estimated_value: 7/10
+      url: "https://educacao-executiva.fgv.br/cursos/online/curta-media-duracao-online/lideranca-360o-abilio-diniz"
+      notes: |
+        Course description, modules, learning objectives, format. Provides
+        framework structure even without full course materials.
+
+    - id: "T2-008"
+      title: "Kidnapping Coverage (1989) - Multiple Sources"
+      type: "news_compilation"
+      priority: "HIGH"
+      availability: "Public (various news sites)"
+      estimated_value: 8/10
+      notes: |
+        Comprehensive coverage of 1989 kidnapping. 6-day captivity details,
+        rescue, trauma, recovery. Critical for understanding origin trauma.
+        Sources: Metrópoles, Aventuras na História, Brasil Paralelo, Wikipedia.
+
+    - id: "T2-009"
+      title: "BRF Presidency Coverage (2013-2018)"
+      type: "news_compilation"
+      priority: "MEDIUM"
+      availability: "Public (business press)"
+      estimated_value: 7/10
+      notes: |
+        Coverage of BRF tenure: entry (2013), philosophy, results,
+        R$ 1.1B loss (2017), forced exit (2018). Shows leadership in
+        crisis, failures, resilience. Sources: IstoÉ Dinheiro, Gazeta do Povo.
+
+    - id: "T2-010"
+      title: "Península Participações Profile"
+      type: "article"
+      priority: "MEDIUM"
+      availability: "Public"
+      estimated_value: 6/10
+      notes: |
+        Investment philosophy, portfolio (R$ 9B AUM), O3 Capital, Altitude
+        Ventures, direct investments. Shows wealth management approach.
+
+    - id: "T2-011"
+      title: "FGV Professor Obituary"
+      type: "article"
+      priority: "MEDIUM"
+      availability: "Public"
+      estimated_value: 7/10
+      url: "https://portal.fgv.br/en/news/obituary-abilio-diniz-fgv-professor"
+      notes: |
+        Official FGV tribute. Teaching legacy, Leadership 360° impact,
+        academic contributions, tributes from colleagues.
+
+    - id: "T2-012"
+      title: "Fortune Obituary (Feb 2024)"
+      type: "article"
+      priority: "MEDIUM"
+      availability: "Public"
+      estimated_value: 7/10
+      url: "https://fortune.com/2024/02/19/obituary-abilio-diniz-billionaire-brazil-pao-de-acucar-casino-carrefour/"
+      notes: |
+        International perspective, legacy summary, business achievements,
+        fitness obsession, Francophile reinvention (Carrefour). English-language
+        source valuable for international context.
+
+  # TIER 3: TERTIARY SOURCES (Profiles, News, Wikipedia)
+  tier_3_tertiary:
+    - id: "T3-001"
+      title: "Wikipedia - Abilio Diniz (Portuguese)"
+      type: "encyclopedia"
+      priority: "MEDIUM"
+      availability: "Public"
+      estimated_value: 7/10
+      url: "https://pt.wikipedia.org/wiki/Abilio_Diniz"
+      notes: |
+        Comprehensive timeline, family, business roles, kidnapping,
+        awards, board positions. Good fact-checking source.
+
+    - id: "T3-002"
+      title: "Wikipedia - Sequestro de Abilio Diniz"
+      type: "encyclopedia"
+      priority: "MEDIUM"
+      availability: "Public"
+      estimated_value: 7/10
+      url: "https://pt.wikipedia.org/wiki/Sequestro_de_Abilio_Diniz"
+      notes: |
+        Dedicated article on kidnapping. Detailed timeline, sequestradores,
+        political context, aftermath. Critical for trauma narrative.
+
+    - id: "T3-003"
+      title: "Wikipedia - Abilio Diniz (English)"
+      type: "encyclopedia"
+      priority: "LOW"
+      availability: "Currently blocked"
+      estimated_value: 6/10
+      url: "https://en.wikipedia.org/wiki/Abilio_Diniz"
+      notes: |
+        English version. Shorter but provides international perspective.
+        Currently blocked by network restrictions.
+
+    - id: "T3-004"
+      title: "InfoMoney Profile"
+      type: "article"
+      priority: "LOW"
+      availability: "Partially accessible"
+      estimated_value: 6/10
+      url: "https://www.infomoney.com.br/perfil/abilio-diniz/"
+      notes: |
+        Business trajectory, financial achievements, Pão de Açúcar history.
+        Mostly CSS/JS, limited content extraction.
+
+    - id: "T3-005"
+      title: "Exame Magazine Coverage"
+      type: "news_compilation"
+      priority: "LOW"
+      availability: "Public"
+      estimated_value: 6/10
+      notes: |
+        Various articles on business achievements, legacy, BRF, death.
+        Major Brazilian business magazine coverage.
+
+    - id: "T3-006"
+      title: "CNN Brasil - Tudo sobre Abilio Diniz"
+      type: "news_compilation"
+      priority: "MEDIUM"
+      availability: "Public"
+      estimated_value: 7/10
+      url: "https://www.cnnbrasil.com.br/tudo-sobre/abilio-diniz/"
+      notes: |
+        Compilation of all CNN Brasil coverage. Show announcements,
+        episodes, news, tributes. Good for CNN show episode links.
+
+    - id: "T3-007"
+      title: "G4 Educação - Biografia"
+      type: "article"
+      priority: "LOW"
+      availability: "Public"
+      estimated_value: 5/10
+      url: "https://g4educacao.com/biografias/abilio-diniz"
+      notes: |
+        Educational biography. Timeline, achievements, simplified for
+        students. Good for quick facts.
+
+    - id: "T3-008"
+      title: "IBC Coaching - Estilo de Liderança"
+      type: "article"
+      priority: "LOW"
+      availability: "Public"
+      estimated_value: 5/10
+      url: "https://www.ibccoaching.com.br/portal/exemplo-de-lideranca/estilo-lideranca-abilio-diniz/"
+      notes: |
+        Leadership style analysis from coaching perspective. May have
+        frameworks breakdown, leadership typology.
+
+    - id: "T3-009"
+      title: "Internet Archive - Caminhos e Escolhas PDF"
+      type: "book_archive"
+      priority: "HIGH"
+      availability: "Public (if available)"
+      estimated_value: 10/10
+      url: "https://archive.org/details/isbn_9788535214314"
+      notes: |
+        CRITICAL: Full PDF of first book may be available on Internet Archive.
+        Would eliminate need for purchase if accessible. Worth checking.
+
+# ========================================
+# COLLECTION STRATEGY
+# ========================================
+
+collection_strategy:
+
+  phase_1_immediate:
+    priority: "CRITICAL"
+    timeline: "Today"
+    sources:
+      - "T2-006: Official Biography (Web accessible)"
+      - "T2-008: Kidnapping Coverage (Web accessible)"
+      - "T3-001: Wikipedia Portuguese (Web accessible)"
+      - "T3-002: Kidnapping Wikipedia (Web accessible)"
+      - "T2-011: FGV Obituary (Web accessible)"
+      - "T2-012: Fortune Obituary (Web accessible)"
+    method: "WebFetch + synthesis"
+    expected_output: "6 comprehensive source documents"
+    estimated_time: "90 minutes"
+
+  phase_2_multimedia:
+    priority: "HIGH"
+    timeline: "Today + Tomorrow"
+    sources:
+      - "T2-001: Flow Podcast #469 (Transcript extraction)"
+      - "T2-002: CNN Brasil episodes (Video → transcript)"
+      - "T2-007: FGV Course page (Detailed extraction)"
+    method: "YouTube transcript extraction or manual"
+    expected_output: "3 multimedia source documents"
+    estimated_time: "2-3 hours"
+
+  phase_3_books:
+    priority: "CRITICAL (if accessible)"
+    timeline: "Check today"
+    sources:
+      - "T3-009: Internet Archive PDF check"
+      - "T2-005: Companhia das Letras excerpt PDF"
+      - "T2-004: Medium book summary"
+    method: "Direct PDF access or purchase"
+    expected_output: "Book content or detailed summaries"
+    estimated_time: "1 hour (or pending purchase)"
+
+  phase_4_optional_depth:
+    priority: "MEDIUM"
+    timeline: "After Phase 1-3"
+    sources:
+      - "T2-009: BRF Coverage"
+      - "T2-010: Península Profile"
+      - "T2-003: Olhares Brasileiros podcast"
+      - "T3-005: Exame compilation"
+    method: "Targeted searches for specific topics"
+    expected_output: "4 supplementary documents"
+    estimated_time: "60-90 minutes"
+
+# ========================================
+# PRIORITY QUEUE (PARALLEL COLLECTION)
+# ========================================
+
+priority_queue:
+
+  batch_1_critical:
+    - T2-006  # Official Biography
+    - T2-008  # Kidnapping Coverage
+    - T3-001  # Wikipedia PT
+    - T2-011  # FGV Obituary
+    - T2-012  # Fortune Obituary
+    - T3-002  # Kidnapping Wikipedia
+    rationale: "All web-accessible, high-value, foundational information"
+    collection_method: "WebFetch in parallel"
+
+  batch_2_frameworks:
+    - T2-007  # FGV Leadership 360°
+    - T2-004  # Book Summary (Medium)
+    - T2-005  # Book Excerpt PDF
+    - T3-009  # Internet Archive check
+    rationale: "Framework extraction, book content access"
+    collection_method: "WebFetch + PDF extraction"
+
+  batch_3_multimedia:
+    - T2-001  # Flow Podcast
+    - T2-002  # CNN Brasil episodes
+    - T2-003  # Olhares Brasileiros
+    rationale: "Communication style, interview format, spontaneous speech"
+    collection_method: "Transcript extraction"
+
+  batch_4_supplementary:
+    - T2-009  # BRF Coverage
+    - T2-010  # Península Profile
+    - T3-005  # Exame compilation
+    - T3-006  # CNN Brasil compilation
+    rationale: "Business context, failures, investments, media coverage"
+    collection_method: "Targeted searches + WebFetch"
+
+# ========================================
+# LAYER COVERAGE EXPECTATIONS
+# ========================================
+
+layer_coverage_expectations:
+
+  layer_1_sensory_inputs:
+    coverage: "EXCELLENT"
+    sources: ["T2-006", "T2-008", "T2-001", "T2-002"]
+    notes: "Kidnapping trauma, fitness obsession, daily routines, stimuli preferences"
+
+  layer_2_recognition_patterns:
+    coverage: "GOOD"
+    sources: ["T1-001", "T1-002", "T2-007", "T2-004"]
+    notes: "Leadership 360° modules, 6 Pillars, pattern recognition in business"
+
+  layer_3_routines_habits:
+    coverage: "EXCELLENT"
+    sources: ["T2-006", "T2-001", "T2-012"]
+    notes: "75-year fitness routine, work schedule, discipline practices"
+
+  layer_4_mental_models:
+    coverage: "EXCELLENT"
+    sources: ["T1-001", "T1-002", "T1-003", "T2-007"]
+    notes: "Leadership 360°, 6 Pillars, 3 Breaking Points, conscious capitalism"
+
+  layer_5_values_hierarchy:
+    coverage: "EXCELLENT"
+    sources: ["T1-001", "T2-001", "T2-006", "T2-008"]
+    notes: "Resilience, balance, growth, discipline, family, spirituality"
+
+  layer_6_core_obsessions:
+    coverage: "EXCELLENT"
+    sources: ["T2-008", "T2-001", "T2-012", "T2-009"]
+    notes: "Resilience mastery, physical excellence, transformation teaching"
+
+  layer_7_communication_style:
+    coverage: "GOOD"
+    sources: ["T2-001", "T2-002", "T2-003", "T1-001"]
+    notes: "Interview style, writing style, storytelling, vulnerability"
+
+  layer_8_productive_paradoxes:
+    coverage: "EXCELLENT"
+    sources: ["T2-008", "T2-009", "T2-001"]
+    notes: "Trauma → optimism, discipline → balance, failure → growth"
+
+overall_layer_coverage_estimate: "90-95% (Excellent for Brazilian sources)"
+
+# ========================================
+# GAPS & MITIGATION
+# ========================================
+
+gaps_identified:
+
+  critical_gaps: []  # None - all critical information identifiable
+
+  important_gaps:
+    - gap: "Full book content (Caminhos e Escolhas)"
+      mitigation: "Check Internet Archive T3-009, use Medium summary T2-004, purchase if needed"
+      severity: "MEDIUM"
+
+    - gap: "Flow Podcast transcript"
+      mitigation: "Manual transcription or YouTube auto-transcript extraction"
+      severity: "LOW"
+
+    - gap: "CNN Brasil episode transcripts"
+      mitigation: "Select 2-3 key episodes, manual transcription if needed"
+      severity: "LOW"
+
+  nice_to_have_gaps:
+    - gap: "FGV course full materials"
+      mitigation: "Use course description T2-007, frameworks from books"
+      severity: "LOW"
+
+    - gap: "Family interviews"
+      mitigation: "Use official biography family info, obituaries"
+      severity: "LOW"
+
+# ========================================
+# METADATA
+# ========================================
+
+metadata:
+  discovery_date: "2025-10-15"
+  analyst: "Mind Mapper Orchestrator"
+  discovery_duration: "60 minutes"
+  sources_identified: 24
+  web_searches_conducted: 7
+  web_fetches_attempted: 5
+
+  confidence_level: "VERY HIGH"
+
+  version: "1.0"
+  next_phase: "Phase 2: Collection Execution"
+  estimated_collection_time: "4-6 hours"
+
+---
+
+**DISCOVERY COMPLETE**: 24 sources identified, 6 Tier 1 (critical), 12 Tier 2 (high value), 6 Tier 3 (supplementary). Web-accessible sources sufficient for 90-95% layer coverage. Portuguese-language focus appropriate for Brazilian market. Ready to proceed with collection.

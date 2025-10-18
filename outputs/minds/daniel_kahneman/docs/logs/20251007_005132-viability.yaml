@@ -1,0 +1,339 @@
+# VIABILITY ASSESSMENT - Daniel Kahneman
+# Generated: 2025-10-07 00:51:32
+# Assessor: Mind Mapper Orchestrator (MMOS)
+
+mind_name: Daniel Kahneman
+purpose: Ensinar a pensar com clareza e reconhecer nossos próprios vieses
+assessment_mode: full
+assessment_date: 2025-10-07
+
+# ============================================
+# APEX SCORING (6 Dimensions)
+# ============================================
+
+dimension_1_availability:
+  total: 16
+  max: 20
+
+  books_published:
+    score: 5
+    max: 5
+    evidence:
+      - "Thinking, Fast and Slow (2011) - International bestseller"
+      - "Noise: A Flaw in Human Judgment (2021) - Co-authored"
+      - "Judgment under Uncertainty: Heuristics and Biases (1982) - Editor"
+      - "Well-Being: The Foundations of Hedonic Psychology (1999)"
+      - "Choices, Values, and Frames (2000) - Co-edited with Amos Tversky"
+      - "37 books total listed on Goodreads (including editions)"
+    assessment: "Exceptional - 5+ major books as primary author/editor"
+
+  long_form_content:
+    score: 4
+    max: 5
+    evidence:
+      - "100+ peer-reviewed academic articles"
+      - "Extensive essays and research papers"
+      - "Academic writings spanning 50+ years"
+    assessment: "Extensive academic content, not regular blog but prolific researcher"
+
+  interviews_appearances:
+    score: 4
+    max: 5
+    evidence:
+      - "The Knowledge Project (2 episodes)"
+      - "Conversations with Tyler (Episode 56)"
+      - "Hidden Brain (NPR)"
+      - "Masters in Business with Barry Ritholtz"
+      - "On Being with Krista Tippett"
+      - "17+ podcast episodes totaling 14h 47min"
+      - "Numerous conference talks and academic lectures"
+    assessment: "20-49 high-quality long-form interviews documented"
+
+  social_media_activity:
+    score: 1
+    max: 3
+    evidence:
+      - "Limited social media presence during lifetime"
+      - "Primarily communicated through academic channels"
+      - "Passed away March 27, 2024"
+    assessment: "Limited but not necessary given other channels"
+
+  video_content:
+    score: 2
+    max: 2
+    evidence:
+      - "TED talks available"
+      - "Academic lecture recordings"
+      - "Conference keynote videos"
+      - "Nobel Prize lecture"
+    assessment: "Regular video appearances and lecture content"
+
+  notes: "Despite passing in March 2024, content availability is exceptional. His work is immortalized in books, academic papers, and recorded interviews."
+
+dimension_2_public_persona:
+  total: 15
+  max: 15
+
+  recognition_level:
+    score: 5
+    max: 5
+    evidence:
+      - "Nobel Memorial Prize in Economic Sciences (2002)"
+      - "Presidential Medal of Freedom (2013)"
+      - "Globally recognized as 'grandfather of behavioral economics'"
+      - "Thinking, Fast and Slow: international bestseller"
+    assessment: "Globally recognized thought leader - highest tier"
+
+  media_coverage:
+    score: 5
+    max: 5
+    evidence:
+      - "Featured in NYT, WSJ, Forbes, The Economist"
+      - "Wikipedia entry with comprehensive coverage"
+      - "Major obituaries in Science, PNAS, Princeton, Stanford"
+      - "World Economic Forum featured articles"
+    assessment: "Extensive major media coverage throughout career"
+
+  teaching_presence:
+    score: 5
+    max: 5
+    evidence:
+      - "Professor Emeritus at Princeton University"
+      - "Regular conference keynote speaker"
+      - "Influenced creation of behavioral economics courses worldwide"
+      - "Thinking, Fast and Slow used as textbook globally"
+    assessment: "Profound teaching presence - shaped entire academic field"
+
+  assessment: "Maximum public persona score - Nobel laureate with massive intellectual influence"
+
+dimension_3_expertise_depth:
+  total: 20
+  max: 20
+
+  demonstrated_results:
+    score: 7
+    max: 7
+    evidence:
+      - "Nobel Prize in Economic Sciences (2002)"
+      - "Founded field of behavioral economics with Amos Tversky"
+      - "Prospect Theory - paradigm shift in economics"
+      - "Presidential Medal of Freedom (2013)"
+      - "Transformed understanding of human judgment and decision-making"
+    assessment: "Extraordinary results - Nobel Prize + industry transformation"
+
+  domain_tenure:
+    score: 5
+    max: 5
+    evidence:
+      - "PhD in Psychology (1961)"
+      - "Began prizewinning research in late 1960s"
+      - "Active until 2024 - 50+ years in domain"
+      - "Collaboration with Amos Tversky: 1969-1996"
+    assessment: "50+ years of groundbreaking work"
+
+  methodology_development:
+    score: 5
+    max: 5
+    evidence:
+      - "Prospect Theory (1979) - widely adopted in economics, finance, policy"
+      - "Heuristics and Biases framework"
+      - "System 1 / System 2 thinking model"
+      - "Loss aversion principle"
+      - "Noise framework (2021)"
+    assessment: "Created multiple frameworks used globally - foundational methodologies"
+
+  peer_recognition:
+    score: 3
+    max: 3
+    evidence:
+      - "Most cited researcher in behavioral economics"
+      - "Constant references: 'as Kahneman shows', 'Kahneman's research'"
+      - "Inspired entire generation of behavioral scientists"
+      - "Collaborative work cited in thousands of papers"
+    assessment: "Highest tier peer recognition - field-defining figure"
+
+  assessment: "Maximum expertise depth - Nobel laureate who revolutionized two fields"
+
+dimension_4_x_factor:
+  total: 15
+  max: 15
+
+  contrarian_thinking:
+    score: 5
+    max: 5
+    evidence:
+      - "Challenged homo economicus assumption in classical economics"
+      - "Demonstrated human irrationality with rigorous evidence"
+      - "Questioned fundamental assumptions about utility and rationality"
+      - "Replaced economic orthodoxy with empirical psychology"
+    assessment: "Consistently challenged orthodoxy with backed arguments - paradigm shifter"
+
+  storytelling_communication:
+    score: 5
+    max: 5
+    evidence:
+      - "Thinking, Fast and Slow - masterclass in accessible science writing"
+      - "Uses vivid examples and thought experiments"
+      - "Linda the bank teller problem - iconic teaching story"
+      - "Translates complex research into memorable narratives"
+    assessment: "Master storyteller - made complex psychology accessible and memorable"
+
+  pattern_synthesis:
+    score: 5
+    max: 5
+    evidence:
+      - "Integrated psychology + economics (creating behavioral economics)"
+      - "Connected cognitive science + finance + public policy"
+      - "Applied hedonic psychology to well-being research"
+      - "Synthesized insights across judgment, memory, decision-making"
+    assessment: "Brilliant cross-domain synthesis - created entirely new field"
+
+  unique_qualities: "Kahneman uniquely combined rigorous experimental psychology with economic theory, exceptional storytelling, and willingness to challenge fundamental assumptions. His contrarian stance was always evidence-based, making him impossible to dismiss."
+
+dimension_5_temporal_relevance:
+  total: 11
+  max: 15
+
+  current_activity:
+    score: 1
+    max: 5
+    evidence:
+      - "Passed away March 27, 2024 at age 90"
+      - "Published Noise in 2021 (recent work)"
+      - "Last published paper on income and happiness (2024)"
+      - "Work continues through students and collaborators"
+    assessment: "Deceased (historical) but recently active until death"
+
+  trend_alignment:
+    score: 5
+    max: 5
+    evidence:
+      - "Behavioral science expanding rapidly across industries"
+      - "Cognitive bias awareness at all-time high"
+      - "AI ethics using his frameworks"
+      - "Crypto, finance, policy all applying behavioral economics"
+      - "Post-2024 death, influence continues growing"
+    assessment: "Peak relevance - expertise addresses major current/emerging trends"
+
+  future_applicability:
+    score: 5
+    max: 5
+    evidence:
+      - "Cognitive biases are timeless human traits"
+      - "System 1/System 2 framework applicable to AI era"
+      - "Principles relevant as long as humans make decisions"
+      - "Foundational work that future research builds upon"
+    assessment: "Timeless principles with enduring current application"
+
+  relevance_window: "Indefinite - foundational work with permanent relevance"
+  notes: "While deceased, his work is MORE relevant in 2025 than ever. Behavioral science is exploding. Only downside is no new primary content."
+
+dimension_6_value_density:
+  total: 14
+  max: 15
+
+  actionable_frameworks:
+    score: 6
+    max: 6
+    evidence:
+      - "System 1 / System 2 thinking - immediately applicable"
+      - "Prospect Theory - used in finance, policy, negotiation"
+      - "Loss aversion principle - marketing, product design"
+      - "Anchoring, availability, representativeness heuristics"
+      - "Pre-mortem technique"
+      - "Noise audit framework"
+    assessment: "Multiple proven frameworks ready to deploy across domains"
+
+  tactical_specificity:
+    score: 4
+    max: 5
+    evidence:
+      - "Provides specific experiments and examples"
+      - "Concrete decision-making techniques (e.g., pre-mortem)"
+      - "Mix of theoretical depth + practical application"
+      - "More conceptual frameworks than step-by-step playbooks"
+    assessment: "Clear tactical advice mixed with strategic frameworks"
+
+  case_studies_examples:
+    score: 4
+    max: 4
+    evidence:
+      - "Thinking Fast Slow: packed with case studies"
+      - "Linda the bank teller"
+      - "Asian disease problem"
+      - "Endowment effect experiments"
+      - "Dozens of research studies explained accessibly"
+    assessment: "Rich case studies with experimental details"
+
+  practical_value: "Extremely high - frameworks are used daily by decision-makers, policymakers, marketers, investors, and anyone seeking to improve judgment."
+
+# ============================================
+# APEX TOTAL SCORE
+# ============================================
+
+apex_total_score:
+  availability: 16
+  public_persona: 15
+  expertise_depth: 20
+  x_factor: 15
+  temporal_relevance: 11
+  value_density: 14
+
+  total: 91
+  max: 100
+  percentage: 91
+
+automated_decision_thresholds:
+  auto_reject: "< 50"
+  human_review: "50-74"
+  auto_approve: ">= 75"
+
+automated_decision: APPROVE
+decision_rationale: "Score of 91/100 exceeds auto-approve threshold of 75. This is an exceptionally viable mind mapping candidate. Only weakness is temporal (deceased), but content availability and relevance remain exceptional."
+
+# ============================================
+# VIABILITY SUMMARY
+# ============================================
+
+viability_summary:
+  overall_viability: "EXCEPTIONAL - 91%"
+
+  strengths:
+    - "Nobel Prize laureate with extraordinary demonstrated results"
+    - "Foundational frameworks (Prospect Theory, System 1/2) used globally"
+    - "Master communicator - made complex psychology accessible"
+    - "Cross-domain synthesis created behavioral economics field"
+    - "Peak temporal relevance - behavioral science exploding"
+    - "Rich source material: 5+ books, 100+ papers, 17+ interviews"
+    - "Maximum expertise depth and public persona"
+
+  weaknesses:
+    - "Deceased (March 2024) - no new primary content possible"
+    - "Limited social media presence (generational)"
+    - "Academic style may require synthesis for broader audiences"
+
+  opportunities:
+    - "Perfect alignment with ICP: teaching clear thinking and bias recognition"
+    - "Specialist variants: Financial Decision Coach, Policy Advisor, Research Methodology Guide"
+    - "Timeless content allows evergreen clone"
+
+  risks:
+    - "HIGH EXPECTATIONS: Users will compare to actual Kahneman"
+    - "Complex concepts require accurate translation"
+    - "Must honor legacy respectfully (recently deceased)"
+
+recommendation: "STRONG GO - This is a gold-standard mind mapping candidate. Proceed with full confidence."
+
+# ============================================
+# NEXT STEPS
+# ============================================
+
+next_steps_if_go:
+  - "Execute ICP (Ideal Clone Profile) matching"
+  - "Generate PRD (Product Requirements Document)"
+  - "Initialize TODO backlog"
+  - "Map dependencies"
+  - "Proceed to Phase 2: Research Collection"
+
+assessment_complete: true
+ready_for_icp_phase: true

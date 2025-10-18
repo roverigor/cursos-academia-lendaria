@@ -1,0 +1,189 @@
+# Bloom's Taxonomy Reference
+#
+# Cognitive levels and action verbs for learning objectives.
+# Used by Story 3.5: Learning Objectives Inference Engine
+#
+# Bloom's Taxonomy (Revised, 2001):
+# 1. Remember (recall facts)
+# 2. Understand (explain concepts)
+# 3. Apply (use in new situations)
+# 4. Analyze (draw connections)
+# 5. Evaluate (justify decisions)
+# 6. Create (produce original work)
+
+blooms_taxonomy:
+  remember:
+    level: 1
+    description: "Recall facts and basic concepts"
+    usage: "Basic courses, prerequisite knowledge, vocabulary"
+    action_verbs:
+      - "Identify"
+      - "Recall"
+      - "List"
+      - "Recognize"
+      - "Name"
+      - "Define"
+      - "Label"
+      - "State"
+      - "Match"
+      - "Select"
+    examples:
+      - "Identify the main components of Obsidian"
+      - "List the key features of second brain systems"
+      - "Recall the basic Markdown syntax"
+
+  understand:
+    level: 2
+    description: "Explain ideas or concepts"
+    usage: "Conceptual lessons, theory, foundational knowledge"
+    action_verbs:
+      - "Explain"
+      - "Summarize"
+      - "Describe"
+      - "Interpret"
+      - "Classify"
+      - "Compare"
+      - "Infer"
+      - "Paraphrase"
+      - "Distinguish"
+      - "Predict"
+    examples:
+      - "Explain how bi-directional links work"
+      - "Describe the principles of knowledge management"
+      - "Compare different note-taking systems"
+
+  apply:
+    level: 3
+    description: "Use information in new situations"
+    usage: "Hands-on lessons, practical courses, skills development"
+    action_verbs:
+      - "Use"
+      - "Implement"
+      - "Execute"
+      - "Apply"
+      - "Solve"
+      - "Demonstrate"
+      - "Operate"
+      - "Practice"
+      - "Perform"
+      - "Build"
+    examples:
+      - "Build a second brain system in Obsidian"
+      - "Implement a daily note workflow"
+      - "Use templates to automate note-taking"
+
+  analyze:
+    level: 4
+    description: "Draw connections among ideas"
+    usage: "Advanced courses, debugging, system thinking"
+    action_verbs:
+      - "Analyze"
+      - "Compare"
+      - "Contrast"
+      - "Examine"
+      - "Troubleshoot"
+      - "Diagnose"
+      - "Investigate"
+      - "Differentiate"
+      - "Organize"
+      - "Deconstruct"
+    examples:
+      - "Analyze workflow inefficiencies in your current system"
+      - "Troubleshoot sync errors in Obsidian"
+      - "Examine the relationship between notes and ideas"
+
+  evaluate:
+    level: 5
+    description: "Justify a decision or course of action"
+    usage: "Strategic thinking, decision-making, comparison courses"
+    action_verbs:
+      - "Evaluate"
+      - "Justify"
+      - "Assess"
+      - "Critique"
+      - "Defend"
+      - "Judge"
+      - "Recommend"
+      - "Prioritize"
+      - "Validate"
+      - "Select"
+    examples:
+      - "Evaluate different AI tools for productivity"
+      - "Justify when to use Obsidian vs Notion"
+      - "Assess the effectiveness of your note-taking system"
+
+  create:
+    level: 6
+    description: "Produce new or original work"
+    usage: "Capstone projects, creative courses, system design"
+    action_verbs:
+      - "Create"
+      - "Design"
+      - "Develop"
+      - "Build"
+      - "Construct"
+      - "Formulate"
+      - "Invent"
+      - "Generate"
+      - "Produce"
+      - "Compose"
+    examples:
+      - "Design a custom knowledge management system"
+      - "Create an AI-powered productivity workflow"
+      - "Develop advanced automation templates"
+
+# Target distribution for practical courses
+recommended_distribution:
+  practical_course:
+    description: "Most online courses (hands-on, skill-based)"
+    remember: 0  # Avoid - too basic
+    understand: 20  # Conceptual foundation
+    apply: 50  # Core focus - doing
+    analyze: 20  # Problem-solving
+    evaluate: 5  # Strategic thinking
+    create: 5  # Advanced projects
+
+  academic_course:
+    description: "University-style courses (theory-heavy)"
+    remember: 10  # Foundational knowledge
+    understand: 40  # Core focus - concepts
+    apply: 30  # Application
+    analyze: 15  # Critical thinking
+    evaluate: 5  # Evaluation
+    create: 0  # Rarely used
+
+  capstone_course:
+    description: "Project-based courses"
+    remember: 0  # Assumed prerequisite
+    understand: 10  # Minimal theory
+    apply: 30  # Building blocks
+    analyze: 20  # System design
+    evaluate: 15  # Decision-making
+    create: 25  # Final project
+
+# Common mistakes to avoid
+anti_patterns:
+  vague_objectives:
+    bad: "Understand Obsidian"
+    good: "Explain the core features of Obsidian for knowledge management"
+    reason: "Too vague - what aspect of Obsidian? What depth?"
+
+  passive_learning:
+    bad: "Learn about AI"
+    good: "Build an AI assistant using ChatGPT API"
+    reason: "Passive verb - not measurable"
+
+  teacher_focused:
+    bad: "I will teach you productivity"
+    good: "Implement a daily productivity workflow"
+    reason: "Focus on student outcome, not teacher action"
+
+  no_context:
+    bad: "Use templates"
+    good: "Use templates to automate meeting notes"
+    reason: "Missing context - templates for what?"
+
+  too_broad:
+    bad: "Master everything about Obsidian"
+    good: "Build a functional second brain with core Obsidian features"
+    reason: "Unrealistic scope - what does 'master' mean?"
