@@ -88,9 +88,9 @@ def find_icp_files(course_folder):
         "avatar do cliente"
     ]
 
-    # Search in legado/ and root course folder
+    # Search in sources/ and root course folder
     search_paths = [
-        f"{course_folder}/legado/",
+        f"{course_folder}/sources/",
         f"{course_folder}/"
     ]
 
@@ -98,7 +98,7 @@ def find_icp_files(course_folder):
 ```
 
 **Validation:**
-- [x] Searches both `/legado/` and course root folder
+- [x] Searches both `/sources/` and course root folder
 - [x] Case-insensitive filename matching (ICP.md = icp.md = Icp.MD)
 - [x] Supports Portuguese and English variations
 - [x] Returns empty list gracefully if no files found (no error)
@@ -179,7 +179,7 @@ def parse_icp_structure(markdown_content):
 **Output Format:**
 ```yaml
 icp_extracted:
-  source_file: "legado/ICP-Cliente-Ideal.md"
+  source_file: "sources/ICP-Cliente-Ideal.md"
   extraction_timestamp: "2025-10-18T10:30:00Z"
   confidence_score: 95  # Percentage (0-100)
 
@@ -235,7 +235,7 @@ icp_extracted:
 ```markdown
 ## 2. Público-Alvo (ICP)
 
-🟢 **Status:** Extracted from `legado/ICP-Cliente-Ideal.md` (95% confidence)
+🟢 **Status:** Extracted from `sources/ICP-Cliente-Ideal.md` (95% confidence)
 
 ### Demografia
 - **Idade:** 35-45 anos
@@ -374,7 +374,7 @@ def merge_multiple_icp_files(icp_files_ranked):
 
 2. **Malformed Markdown (parsing fails):**
    ```
-   ⚠️  Warning: Found ICP file `legado/ICP.md` but failed to parse structure.
+   ⚠️  Warning: Found ICP file `sources/ICP.md` but failed to parse structure.
 
    Reason: No recognizable section headers found.
    Fallback: Displaying raw content for manual extraction.
@@ -418,7 +418,7 @@ def merge_multiple_icp_files(icp_files_ranked):
    class ICPExtractor:
        def __init__(self, course_folder):
            self.course_folder = course_folder
-           self.search_paths = [f"{course_folder}/legado/", course_folder]
+           self.search_paths = [f"{course_folder}/sources/", course_folder]
 
        def find_icp_files(self) -> List[ICPFile]:
            """Search for ICP-related files"""
@@ -480,7 +480,7 @@ def merge_multiple_icp_files(icp_files_ranked):
 ## Dependencies
 
 **Upstream:**
-- Story 3.2: File Inventory & Organization (must run first to organize /legado/)
+- Story 3.2: File Inventory & Organization (must run first to organize /sources/)
 
 **Downstream:**
 - Story 3.6: Gap Analysis & Smart Elicitation (uses ICP data to skip questions)
@@ -496,7 +496,7 @@ def merge_multiple_icp_files(icp_files_ranked):
 def test_find_icp_exact_filename():
     # Setup: Create course folder with ICP.md
     course_folder = create_test_course("test-icp-exact")
-    create_file(f"{course_folder}/legado/ICP.md", "# ICP Content")
+    create_file(f"{course_folder}/sources/ICP.md", "# ICP Content")
 
     # Execute
     extractor = ICPExtractor(course_folder)
@@ -514,7 +514,7 @@ def test_find_icp_content_keywords():
     # Setup: File without "ICP" in name but has keywords
     course_folder = create_test_course("test-icp-content")
     create_file(
-        f"{course_folder}/legado/audience-research.md",
+        f"{course_folder}/sources/audience-research.md",
         "# Audience Research\n\nOur ideal customer profile shows..."
     )
 
@@ -606,7 +606,7 @@ def test_merge_conflicting_demographics():
 def test_e2e_icp_extraction():
     # Setup: Real course folder with ICP file
     course_folder = "test-data/dominando-obsidian"
-    create_file(f"{course_folder}/legado/ICP.md", REALISTIC_ICP_CONTENT)
+    create_file(f"{course_folder}/sources/ICP.md", REALISTIC_ICP_CONTENT)
 
     # Execute full workflow
     extractor = ICPExtractor(course_folder)
@@ -709,7 +709,7 @@ def test_malformed_markdown_logging():
 
 **Test Artifacts:**
 - `outputs/courses/test-icp-extraction/` - Test folder with sample ICP file
-- `outputs/courses/test-icp-extraction/legado/ICP.md` - Sample ICP data
+- `outputs/courses/test-icp-extraction/sources/ICP.md` - Sample ICP data
 - `outputs/courses/test-icp-extraction/icp-extracted.yaml` - Extracted YAML output
 - `outputs/courses/test-icp-extraction/COURSE-BRIEF.md` - Updated with extracted data
 

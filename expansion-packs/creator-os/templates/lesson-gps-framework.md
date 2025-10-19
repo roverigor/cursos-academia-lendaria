@@ -188,7 +188,7 @@ pelo nome da etiqueta."
 ```
 [DIAGRAM: {Description of visual}]
 Exemplo: [DIAGRAM: Flowchart showing folder structure -
-root → legado → transcripts, videos, resources]
+root → sources → transcripts, videos, resources]
 ```
 
 ### Checkpoint: Reflective Question (2-3 per lesson REQUIRED)

@@ -148,10 +148,10 @@ echo -e "${GREEN}🗑️  Cleaning up empty folders...${NC}"
 
 # Remove empty folders in canonical structure (if they're empty)
 empty_dirs=(
-    "${COURSE_DIR}/legado/other"
-    "${COURSE_DIR}/legado/videos"
-    "${COURSE_DIR}/legado/transcripts"
-    "${COURSE_DIR}/legado"
+    "${COURSE_DIR}/sources/other"
+    "${COURSE_DIR}/sources/videos"
+    "${COURSE_DIR}/sources/transcripts"
+    "${COURSE_DIR}/sources"
     "${COURSE_DIR}/resources"
     "${COURSE_DIR}/assessments"
 )

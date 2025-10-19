@@ -441,9 +441,9 @@ class GapAnalyzer:
         """Analyze Section 7: Context & References."""
         section_text = self._extract_section("## 7️⃣ CONTEXTO ADICIONAL")
 
-        # Check for references to legacy materials
-        has_references = bool(re.search(r'\[.*?\]\(.*?legado.*?\)', section_text)) or \
-                        bool(re.search(r'legado/', section_text))
+        # Check for references to source materials
+        has_references = bool(re.search(r'\[.*?\]\(.*?sources.*?\)', section_text)) or \
+                        bool(re.search(r'sources/', section_text))
 
         # Check for any meaningful context
         has_context = self._has_meaningful_content(section_text, min_words=15)

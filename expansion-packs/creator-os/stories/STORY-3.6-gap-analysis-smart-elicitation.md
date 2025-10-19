@@ -182,7 +182,7 @@ brief_completeness:
     status: "🟢"
     completeness: 100
     fields:
-      references: "🟢"  # Auto-generated links to /legado/
+      references: "🟢"  # Auto-generated links to /sources/
 
   section_8_checklist:
     status: "🟡"
@@ -344,7 +344,7 @@ I analyzed your existing materials and auto-filled these sections:
 ✅ COMPLETE (No action needed):
 
 🟢 ICP (Section 2)
-   ✓ Demographics extracted from `legado/ICP-Cliente-Ideal.md`
+   ✓ Demographics extracted from `sources/ICP-Cliente-Ideal.md`
    ✓ Psychographics extracted
    ✓ Pain points extracted (3 items)
    ✓ Goals extracted (3 items)
@@ -833,8 +833,8 @@ def test_e2e_greenfield_flow():
 def test_e2e_brownfield_good_extraction():
     # Setup: Course with ICP.md, transcripts, lessons
     course_folder = "test-data/dominando-obsidian"
-    create_file(f"{course_folder}/legado/ICP.md", REALISTIC_ICP)
-    create_transcripts(f"{course_folder}/legado/transcripts/", count=5)
+    create_file(f"{course_folder}/sources/ICP.md", REALISTIC_ICP)
+    create_transcripts(f"{course_folder}/sources/transcripts/", count=5)
     create_legacy_lessons(course_folder, count=20)
 
     # Run extractions (Stories 3.3, 3.4, 3.5)

@@ -59,14 +59,14 @@ workflow:
         2. Preview Organization (Dry Run):
            - Show what WOULD be moved (don't move yet)
            - Display categorization:
-             * Transcripts → /legado/transcripts/
-             * Videos → /legado/videos/
-             * ICP docs → /legado/
-             * Instructor profiles → /legado/
+             * Transcripts → /sources/transcripts/
+             * Videos → /sources/videos/
+             * ICP docs → /sources/
+             * Instructor profiles → /sources/
              * Resources → /resources/
              * Images → /resources/
              * Structured data → root (preserved)
-             * Unknown → /legado/other/
+             * Unknown → /sources/other/
 
         3. User Approval:
            Options:
@@ -106,7 +106,7 @@ workflow:
       action: extract_icp
       task: extract-icp
       requires:
-        - outputs/courses/{slug}/legado/ (organized materials)
+        - outputs/courses/{slug}/sources/ (organized materials)
       parallel: true
       outputs:
         - COURSE-BRIEF.md Section 2 (ICP) populated
@@ -153,7 +153,7 @@ workflow:
       action: extract_voice
       task: extract-voice
       requires:
-        - outputs/courses/{slug}/legado/transcripts/
+        - outputs/courses/{slug}/sources/transcripts/
       parallel: true
       condition: mmos_persona.enabled == false
       outputs:
@@ -207,7 +207,7 @@ workflow:
       action: infer_objectives
       task: infer-objectives
       requires:
-        - outputs/courses/{slug}/legado/ (organized materials)
+        - outputs/courses/{slug}/sources/ (organized materials)
         - icp_extracted (from parallel step)
       parallel: true
       outputs:
@@ -412,7 +412,7 @@ workflow:
           outputs/courses/{slug}/
           ├── lessons/ (GPS + DL framework compliant)
           ├── assessments/ (generated from objectives)
-          └── legado/ (preserved original materials)
+          └── sources/ (preserved original materials)
 
     - agent: course-architect
       action: validate_course_quality
@@ -487,7 +487,7 @@ workflow:
           ├── curriculum.yaml (structure modernized)
           ├── lessons/ (GPS + DL frameworks applied)
           ├── assessments/ (aligned with objectives)
-          └── legado/ (original materials preserved)
+          └── sources/ (original materials preserved)
 
         📊 Auto-extraction Results:
           - ICP: {icp_confidence_score}% confidence

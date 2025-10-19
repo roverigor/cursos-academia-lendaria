@@ -215,8 +215,8 @@ Quizzes gerados contêm **placeholders `[EDIT ME]`** que precisam ser preenchido
 
 **Solução:** Organize manualmente:
 ```bash
-mkdir -p outputs/courses/<slug>/legado/transcripts
-mkdir -p outputs/courses/<slug>/legado/videos
+mkdir -p outputs/courses/<slug>/sources/transcripts
+mkdir -p outputs/courses/<slug>/sources/videos
 # Move files to appropriate folders
 ```
 

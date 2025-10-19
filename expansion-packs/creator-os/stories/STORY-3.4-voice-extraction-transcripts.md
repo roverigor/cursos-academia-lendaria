@@ -69,8 +69,8 @@ def find_transcript_files(course_folder):
     Detect transcript files in course folder
     """
     search_paths = [
-        f"{course_folder}/legado/transcripts/",
-        f"{course_folder}/legado/",
+        f"{course_folder}/sources/transcripts/",
+        f"{course_folder}/sources/",
         f"{course_folder}/transcripts/",
         f"{course_folder}/"
     ]
@@ -99,7 +99,7 @@ def find_transcript_files(course_folder):
 ```
 
 **Validation:**
-- [ ] Searches `/legado/transcripts/`, `/legado/`, `/transcripts/`, root
+- [ ] Searches `/sources/transcripts/`, `/sources/`, `/transcripts/`, root
 - [ ] Supports `.txt` and `.md` formats
 - [ ] Validates content (not just filename) to avoid false positives
 - [ ] Case-insensitive matching
@@ -456,7 +456,7 @@ def analyze_voice_with_cache(course_folder, transcript_files):
     """
     Cache analysis results to avoid re-analyzing on every run
     """
-    cache_path = f"{course_folder}/legado/.voice-analysis-cache.yaml"
+    cache_path = f"{course_folder}/sources/.voice-analysis-cache.yaml"
 
     # Check if cache exists and is valid
     if os.path.exists(cache_path):
@@ -484,7 +484,7 @@ def analyze_voice_with_cache(course_folder, transcript_files):
 ```
 
 **Validation:**
-- [ ] Caches analysis results in `/legado/.voice-analysis-cache.yaml`
+- [ ] Caches analysis results in `/sources/.voice-analysis-cache.yaml`
 - [ ] Cache invalidated if transcript files change
 - [ ] Cache includes timestamp for audit
 - [ ] Logs cache hit/miss for transparency
@@ -503,7 +503,7 @@ def analyze_voice_with_cache(course_folder, transcript_files):
    🔴 **Status:** No transcripts found.
 
    Recomendação:
-   - Se você tem transcrições de aulas, adicione-as em `/legado/transcripts/`
+   - Se você tem transcrições de aulas, adicione-as em `/sources/transcripts/`
    - Ou defina o perfil de voz manualmente abaixo
 
    ### Tom e Estilo
@@ -568,7 +568,7 @@ def analyze_voice_with_cache(course_folder, transcript_files):
        def __init__(self, course_folder, ai_client):
            self.course_folder = course_folder
            self.ai_client = ai_client
-           self.cache_path = f"{course_folder}/legado/.voice-analysis-cache.yaml"
+           self.cache_path = f"{course_folder}/sources/.voice-analysis-cache.yaml"
 
        def find_transcripts(self) -> List[TranscriptFile]:
            """Detect transcript files"""
@@ -649,7 +649,7 @@ def analyze_voice_with_cache(course_folder, transcript_files):
 ## Dependencies
 
 **Upstream:**
-- Story 3.2: File Inventory & Organization (transcripts must be in `/legado/transcripts/`)
+- Story 3.2: File Inventory & Organization (transcripts must be in `/sources/transcripts/`)
 
 **Downstream:**
 - Story 3.6: Gap Analysis & Smart Elicitation (uses voice profile to skip Section 4 questions)
@@ -665,8 +665,8 @@ def analyze_voice_with_cache(course_folder, transcript_files):
 ```python
 def test_find_transcripts_standard():
     course_folder = create_test_course("test-voice-standard")
-    create_file(f"{course_folder}/legado/transcripts/aula-1-transcript.txt", SAMPLE_TRANSCRIPT)
-    create_file(f"{course_folder}/legado/transcripts/aula-2-transcript.txt", SAMPLE_TRANSCRIPT)
+    create_file(f"{course_folder}/sources/transcripts/aula-1-transcript.txt", SAMPLE_TRANSCRIPT)
+    create_file(f"{course_folder}/sources/transcripts/aula-2-transcript.txt", SAMPLE_TRANSCRIPT)
 
     extractor = VoiceExtractor(course_folder, mock_ai_client)
     files = extractor.find_transcripts()

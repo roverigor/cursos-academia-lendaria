@@ -447,7 +447,7 @@ def main():
         print("📝 NEXT STEPS:")
         print()
         print(f"1. Review organized files:")
-        print(f"   → Check: {course_path}/legado/")
+        print(f"   → Check: {course_path}/sources/")
         print()
         print(f"2. Auto-extract content:")
         print(f"   → Run ICP extraction")

@@ -116,7 +116,7 @@ class ObjectivesInferencer:
 
         Searches in (priority order):
         1. /lessons/ folder (primary)
-        2. /legado/ folder (secondary)
+        2. /sources/ folder (secondary)
         3. Course root (fallback)
 
         Returns:
@@ -128,7 +128,7 @@ class ObjectivesInferencer:
         # Search paths (order matters)
         search_paths = [
             self.base_path / "lessons",
-            self.base_path / "legado",
+            self.base_path / "sources",
             self.base_path,
         ]
 

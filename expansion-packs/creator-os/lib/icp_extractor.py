@@ -158,7 +158,7 @@ class ICPExtractor:
         Search for ICP-related files using multiple strategies.
 
         Searches in:
-        - /legado/ folder (primary)
+        - /sources/ folder (primary)
         - Course root folder (secondary)
 
         Returns:
@@ -167,9 +167,9 @@ class ICPExtractor:
         print(f"🔍 Searching for ICP files in: {self.base_path}")
         candidates = []
 
-        # Search paths (order matters: legado first, then root)
+        # Search paths (order matters: sources first, then root)
         search_paths = [
-            self.base_path / "legado",
+            self.base_path / "sources",
             self.base_path,
         ]
 
@@ -177,12 +177,12 @@ class ICPExtractor:
             if not search_path.exists():
                 continue
 
-            # Scan files in this path (non-recursive for root, recursive for legado)
+            # Scan files in this path (non-recursive for root, recursive for sources)
             if search_path == self.base_path:
                 # Root: only direct children
                 files = [f for f in search_path.iterdir() if f.is_file()]
             else:
-                # Legado: recursive scan
+                # Sources: recursive scan
                 files = [f for f in search_path.rglob("*") if f.is_file()]
 
             for file_path in files:

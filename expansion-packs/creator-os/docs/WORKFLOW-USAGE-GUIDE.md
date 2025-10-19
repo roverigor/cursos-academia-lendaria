@@ -456,14 +456,14 @@ Scanning course folder...
 📊 File Organization Preview (Dry Run):
 
 Found 47 files:
-  - 12 transcripts → /legado/transcripts/
-  - 8 videos → /legado/videos/
-  - 3 ICP documents → /legado/
-  - 1 instructor profile → /legado/
+  - 12 transcripts → /sources/transcripts/
+  - 8 videos → /sources/videos/
+  - 3 ICP documents → /sources/
+  - 1 instructor profile → /sources/
   - 15 resources → /resources/
   - 5 images → /resources/
   - 2 structured data → root (preserved)
-  - 1 unknown files → /legado/other/
+  - 1 unknown files → /sources/other/
 
 Duration: 0.8 seconds
 
@@ -710,7 +710,7 @@ cp /path/to/materials/* outputs/courses/{slug}/
 chmod -R u+w outputs/courses/{slug}/
 
 # Or organize manually:
-mkdir -p outputs/courses/{slug}/legado/{transcripts,videos}
+mkdir -p outputs/courses/{slug}/sources/{transcripts,videos}
 mkdir -p outputs/courses/{slug}/resources
 ```
 

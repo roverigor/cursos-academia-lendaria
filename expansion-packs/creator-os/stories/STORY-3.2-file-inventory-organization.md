@@ -104,11 +104,11 @@ outputs/courses/{slug}/
 ├── course-outline.md (generated later)
 ├── README.md (keep or generate)
 │
-├── legado/ (legacy materials - preserved as-is but organized)
+├── sources/ (source materials - user deposits anything here, script organizes)
 │   ├── transcripts/ ← Transcripts moved here
 │   ├── videos/ ← Videos moved here
-│   ├── {instructor-profile}.md ← Kept in legado root
-│   ├── icp.md ← Kept in legado root (or /docs/ if preferred)
+│   ├── {instructor-profile}.md ← Kept in sources root
+│   ├── icp.md ← Kept in sources root
 │   └── other/ ← Unknown files
 │
 ├── lessons/ (generated lessons)
@@ -162,9 +162,9 @@ outputs/courses/{slug}/
 
 ## Summary
 
-- ✅ 38 transcripts → `/legado/transcripts/`
-- ✅ 2 ICP documents → `/legado/`
-- ✅ 1 instructor profile → `/legado/`
+- ✅ 38 transcripts → `/sources/transcripts/`
+- ✅ 2 ICP documents → `/sources/`
+- ✅ 1 instructor profile → `/sources/`
 - ✅ 1 README → kept in root (updated)
 - ⚠️ 0 unknown files
 
@@ -175,20 +175,20 @@ outputs/courses/{slug}/
 ### Transcripts (38 files)
 | Original Path | New Path | Size | Action |
 |---------------|----------|------|--------|
-| `01_aula.txt` | `legado/transcripts/01_aula.txt` | 42 KB | MOVED |
-| `02_aula-transcription.txt` | `legado/transcripts/02_aula-transcription.txt` | 38 KB | MOVED |
+| `01_aula.txt` | `sources/transcripts/01_aula.txt` | 42 KB | MOVED |
+| `02_aula-transcription.txt` | `sources/transcripts/02_aula-transcription.txt` | 38 KB | MOVED |
 | ... | ... | ... | ... |
 
 ### ICP Documents (2 files)
 | Original Path | New Path | Size | Action |
 |---------------|----------|------|--------|
-| `icp.md` | `legado/icp.md` | 18 KB | MOVED |
-| `avatar-analysis.pdf` | `legado/avatar-analysis.pdf` | 125 KB | MOVED |
+| `icp.md` | `sources/icp.md` | 18 KB | MOVED |
+| `avatar-analysis.pdf` | `sources/avatar-analysis.pdf` | 125 KB | MOVED |
 
 ### Instructor Profiles (1 file)
 | Original Path | New Path | Size | Action |
 |---------------|----------|------|--------|
-| `Adriano de Marqui .md` | `legado/Adriano de Marqui.md` | 12 KB | MOVED |
+| `Adriano de Marqui .md` | `sources/Adriano de Marqui.md` | 12 KB | MOVED |
 
 ### Structured Data (4 files - kept in place)
 | Path | Size | Action |

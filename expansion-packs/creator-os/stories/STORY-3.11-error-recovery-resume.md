@@ -67,7 +67,7 @@ course_slug: "dominando-obsidian"
 creation_mode: "brownfield"
 progress:
   folder_organized: true
-  legado_files_count: 45
+  sources_files_count: 45
 next_step: "extract_icp"
 
 ---

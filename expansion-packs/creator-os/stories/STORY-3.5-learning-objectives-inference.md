@@ -68,7 +68,7 @@ def find_legacy_lessons(course_folder):
     Detect existing lesson files to infer content structure
     """
     search_paths = [
-        f"{course_folder}/legado/",
+        f"{course_folder}/sources/",
         f"{course_folder}/lessons/",
         f"{course_folder}/"
     ]
@@ -116,7 +116,7 @@ def extract_lesson_intent(filename, content_sample=None):
 ```
 
 **Validation:**
-- [ ] Searches `/legado/`, `/lessons/`, root folder
+- [ ] Searches `/sources/`, `/lessons/`, root folder
 - [ ] Detects Markdown lesson files
 - [ ] Extracts clean titles from filenames
 - [ ] Classifies content type (installation, concept, workshop, etc.)

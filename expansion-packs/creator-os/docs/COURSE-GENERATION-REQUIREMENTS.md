@@ -675,7 +675,7 @@ Por favor, forneça **2-3 exemplos reais** de cursos que você gostaria de criar
 #### **Exemplo 2:**
 
 **Título do curso:**  Clone IA Express
-Curso legado: /Users/oalanicolas/Documents/Code/mente_lendaria/docs/creatoros/courses/clones/legacy
+Curso sources: /Users/oalanicolas/Documents/Code/mente_lendaria/docs/creatoros/courses/clones/legacy
 
 **Público-alvo:**
 
@@ -954,7 +954,7 @@ Isolamento, ticket baixo e autoestima profissional ferida.
 Dependência de terceiros; agonia de “ficar para trás”.
 
 
-Perde a chance de legado pago.
+Perde a chance de sources pago.
 
 
 O motivo que ele diz para não conseguir

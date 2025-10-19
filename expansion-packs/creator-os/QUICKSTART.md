@@ -31,7 +31,7 @@ Isso é tudo! O sistema vai:
 ```
 
 O sistema vai:
-1. ✅ Criar estrutura para materiais legados
+1. ✅ Criar estrutura para materiais sourcess
 2. ✅ Organizar seus arquivos antigos
 3. ✅ Extrair ICP automaticamente (AI)
 4. ✅ Extrair perfil de voz (AI)

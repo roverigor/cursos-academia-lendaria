@@ -109,7 +109,7 @@ Transform CreatorOS from a template-based course generator into an **intelligent
 ### **Scenario 2: Brownfield - Legacy Course Upgrade**
 **Context:** Existing course with transcripts/materials
 **Folder State:** `outputs/courses/{slug}/` exists with:
-- `/legado/` folder (transcripts, videos)
+- `/sources/` folder (transcripts, videos)
 - ICP.md (loose file in root)
 - Instructor profile (loose file in root)
 
@@ -117,8 +117,8 @@ Transform CreatorOS from a template-based course generator into an **intelligent
 1. User: `*generate-course` → "dominando-obsidian" → "Brownfield"
 2. System: Detects existing folder, reads ALL files
 3. System: **Organizes loose files:**
-   - ICP.md stays in legado/ (or moves to /docs/)
-   - Adriano profile stays in legado/
+   - ICP.md stays in sources/ (or moves to /docs/)
+   - Adriano profile stays in sources/
    - Creates /resources/, /assessments/ if missing
 4. System: **Extracts intelligence:**
    - Voice analysis from transcripts (tone, phrases, style)
@@ -131,7 +131,7 @@ Transform CreatorOS from a template-based course generator into an **intelligent
    - 🟢 Section 4 (Voice): Complete from transcript analysis
    - 🟡 Section 5 (Format): Duration inferred from legacy count
    - 🔴 Section 6 (Commercial): Empty (user input required)
-   - 🟢 Section 7 (Context): References to /legado/ materials
+   - 🟢 Section 7 (Context): References to /sources/ materials
    - 🟡 Section 8 (Checklist): Partial
 6. System: **Smart Elicitation (3-5 questions only):**
    - "Pedagogical framework: Bloom/ADDIE/Microlearning/Auto?"
@@ -254,8 +254,8 @@ Transform CreatorOS from a template-based course generator into an **intelligent
    - OCR PDFs for text content if needed
    - Transcribes videos if no transcripts (optional, costly)
 6. System: **Organizes imports:**
-   - Transcripts → /legado/transcripts/
-   - Videos → /legado/videos/
+   - Transcripts → /sources/transcripts/
+   - Videos → /sources/videos/
    - Slides/PDFs → /resources/
 7. System: **Proceeds as Scenario 2 (Brownfield)**
 8. System: Generates brief with extracted intelligence
@@ -369,16 +369,16 @@ Q2: "Greenfield (new) or Brownfield (existing)?"
   - Instructor profiles (contains "instructor", "professor", person name)
   - Structured data (COURSE-BRIEF.md, curriculum.yaml, etc.)
 - [ ] Automatically organizes into canonical structure:
-  - Transcripts → `/legado/transcripts/` (create if needed)
-  - Videos → `/legado/videos/`
-  - ICP docs → Keep in `/legado/` (accessible for extraction)
-  - Profiles → Keep in `/legado/`
+  - Transcripts → `/sources/transcripts/` (create if needed)
+  - Videos → `/sources/videos/`
+  - ICP docs → Keep in `/sources/` (accessible for extraction)
+  - Profiles → Keep in `/sources/`
   - Resources → `/resources/`
   - Preserves `/lessons/`, `/assessments/` if exist
 - [ ] Logs all file movements to `organization-log.md` for audit
 - [ ] Handles edge cases:
   - Duplicate filenames (append `-1`, `-2` suffixes)
-  - Unknown file types (create `/legado/other/`)
+  - Unknown file types (create `/sources/other/`)
   - Circular symlinks (skip with warning)
 - [ ] Never deletes files, only moves/copies
 - [ ] Provides summary: "Organized 42 files: 38 transcripts, 2 ICP docs, 2 profiles"
@@ -447,7 +447,7 @@ Q2: "Greenfield (new) or Brownfield (existing)?"
 **So that** the regenerated course maintains authentic voice fidelity
 
 **Acceptance Criteria:**
-- [ ] System detects transcript files in `/legado/` or `/transcripts/`
+- [ ] System detects transcript files in `/sources/` or `/transcripts/`
 - [ ] Samples diverse transcripts (algorithm):
   - If ≤5 transcripts: Analyze all
   - If 6-20: Analyze first, middle, last + 2 random
@@ -489,7 +489,7 @@ Q2: "Greenfield (new) or Brownfield (existing)?"
 **Blockers:** None
 **Technical Notes:**
 - Uses AI model for semantic analysis (GPT-4 mini or equivalent)
-- Caches analysis results in `/legado/.voice-analysis-cache.yaml`
+- Caches analysis results in `/sources/.voice-analysis-cache.yaml`
 - Budget: ~$0.10-0.50 per analysis (acceptable for UX gain)
 
 ---
@@ -574,7 +574,7 @@ Q2: "Greenfield (new) or Brownfield (existing)?"
     pricing: 🔴 (unknown)
     launch: 🔴 (unknown)
   section_7_context:
-    references: 🟢 (auto-generated links to /legado/)
+    references: 🟢 (auto-generated links to /sources/)
   section_8_checklist:
     status: 🟡 (auto-populated)
   ```
@@ -1083,15 +1083,15 @@ def organize_course_files(course_slug: str):
     resources = [f for f in all_files if is_resource(f)]
 
     # Organize
-    create_folder_if_missing(f"{base_path}/legado/transcripts/")
-    move_files(transcripts, f"{base_path}/legado/transcripts/")
+    create_folder_if_missing(f"{base_path}/sources/transcripts/")
+    move_files(transcripts, f"{base_path}/sources/transcripts/")
 
-    create_folder_if_missing(f"{base_path}/legado/videos/")
-    move_files(videos, f"{base_path}/legado/videos/")
+    create_folder_if_missing(f"{base_path}/sources/videos/")
+    move_files(videos, f"{base_path}/sources/videos/")
 
-    # ICP and profiles stay in /legado/ root for easy access
-    move_files(icp_docs, f"{base_path}/legado/")
-    move_files(profiles, f"{base_path}/legado/")
+    # ICP and profiles stay in /sources/ root for easy access
+    move_files(icp_docs, f"{base_path}/sources/")
+    move_files(profiles, f"{base_path}/sources/")
 
     create_folder_if_missing(f"{base_path}/resources/")
     move_files(resources, f"{base_path}/resources/")

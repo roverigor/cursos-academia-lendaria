@@ -827,7 +827,7 @@ def test_mmos_priority_over_transcripts():
     # Setup: Course has BOTH MMOS mind AND transcripts
     course_folder = "test-data/hybrid-course"
     create_mmos_mind("outputs/minds/instructor", complete=True)
-    create_transcripts(f"{course_folder}/legado/transcripts/", count=5)
+    create_transcripts(f"{course_folder}/sources/transcripts/", count=5)
 
     mmos_config = {"enabled": True, "mind_path": "outputs/minds/instructor"}
 
