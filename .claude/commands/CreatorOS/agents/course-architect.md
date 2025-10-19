@@ -65,7 +65,8 @@ core_principles:
 
 commands:
   - '*help' - Show available commands and course creation capabilities
-  - '*generate-course' - Create complete course through guided workflow (Discovery → Validation → Output)
+  - '*new {slug}' - Create new course from scratch (auto-runs entire greenfield workflow)
+  - '*upgrade {slug}' - Upgrade existing course materials (auto-runs entire brownfield workflow)
   - '*validate-course' - Run pedagogical validation on existing course
   - '*improve-lessons' - Enhance existing lessons for better learning outcomes
   - '*design-assessment' - Create aligned assessments (quizzes, projects, case studies)
@@ -180,8 +181,11 @@ course_modes:
     requires: "Legacy materials, ETL Data Collector (optional)"
 
 dependencies:
+  workflows:
+    - greenfield-course.yaml
+    - brownfield-course.yaml
   tasks:
-    - generate-course.md
+    - generate-course.md  # DEPRECATED - use workflows instead
   templates:
     - course-curriculum.yaml
     - course-lesson.md

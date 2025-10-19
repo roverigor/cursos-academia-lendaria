@@ -15,12 +15,12 @@ Key Features:
 Categorization Logic:
 1. Structured data (curriculum.yaml, COURSE-BRIEF.md) → Preserve
 2. Existing lessons (*.md with lesson structure) → Preserve in /lessons/
-3. Transcripts → Move to /legado/transcripts/
-4. Videos → Move to /legado/videos/
-5. ICP/Persona docs → Move to /legado/
-6. Instructor profiles → Move to /legado/
+3. Transcripts → Move to /sources/transcripts/
+4. Videos → Move to /sources/videos/
+5. ICP/Persona docs → Move to /sources/
+6. Instructor profiles → Move to /sources/
 7. Resources (PDFs, images) → Move to /resources/
-8. Unknown/Other → Move to /legado/other/
+8. Unknown/Other → Move to /sources/other/
 
 Usage:
     from lib.file_organizer import FileOrganizer
@@ -312,21 +312,21 @@ class FileOrganizer:
             else:
                 return f"lessons/{filename}", "move"
 
-        # Transcripts: Move to /legado/transcripts/
+        # Transcripts: Move to /sources/transcripts/
         if category == "transcript":
-            return f"legado/transcripts/{filename}", "move"
+            return f"sources/transcripts/{filename}", "move"
 
-        # Videos: Move to /legado/videos/
+        # Videos: Move to /sources/videos/
         if category == "video":
-            return f"legado/videos/{filename}", "move"
+            return f"sources/videos/{filename}", "move"
 
-        # ICP docs: Move to /legado/
+        # ICP docs: Move to /sources/
         if category == "icp_doc":
-            return f"legado/{filename}", "move"
+            return f"sources/{filename}", "move"
 
-        # Instructor profiles: Move to /legado/
+        # Instructor profiles: Move to /sources/
         if category == "instructor_profile":
-            return f"legado/{filename}", "move"
+            return f"sources/{filename}", "move"
 
         # Resources: Move to /resources/
         if category == "resource":
@@ -336,9 +336,9 @@ class FileOrganizer:
         if category == "image":
             return f"resources/{filename}", "move"
 
-        # Unknown: Move to /legado/other/
+        # Unknown: Move to /sources/other/
         if category == "unknown":
-            return f"legado/other/{filename}", "move"
+            return f"sources/other/{filename}", "move"
 
         # Default: Keep as-is
         return str(relative_path), "keep"
@@ -476,10 +476,10 @@ class FileOrganizer:
             self.base_path / "lessons",
             self.base_path / "assessments",
             self.base_path / "resources",
-            self.base_path / "legado",
-            self.base_path / "legado" / "transcripts",
-            self.base_path / "legado" / "videos",
-            self.base_path / "legado" / "other",
+            self.base_path / "sources",
+            self.base_path / "sources" / "transcripts",
+            self.base_path / "sources" / "videos",
+            self.base_path / "sources" / "other",
         ]
 
         for folder in folders:

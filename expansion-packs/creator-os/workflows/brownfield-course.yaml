@@ -1,0 +1,667 @@
+workflow:
+  id: brownfield-course
+  name: Brownfield Course Migration
+  description: >-
+    Agent workflow for upgrading existing course materials to CreatorOS structure.
+    Auto-extracts ICP, voice patterns, and learning objectives from legacy content.
+    Implements GPS + Didática Lendária pedagogical frameworks with quality validation.
+  type: brownfield
+  project_types:
+    - course-upgrade
+    - legacy-migration
+    - content-modernization
+    - course-restructure
+
+  sequence:
+    - agent: course-architect
+      creates: course-structure
+      task: init-course-brownfield
+      prerequisites:
+        - Existing course folder with materials already present
+        - Folder path: outputs/courses/{slug}/
+      outputs:
+        - course_slug
+        - creation_mode: brownfield
+        - mmos_persona_config
+        - outputs/courses/{slug}/COURSE-BRIEF.md
+      notes: |
+        Initialize brownfield course structure:
+        - Prompt for course slug
+        - Validate folder EXISTS with files (brownfield requirement)
+        - Optional: Select MMOS persona (overrides voice extraction)
+        - Create COURSE-BRIEF.md template (8 empty sections)
+        - Update frontmatter with metadata
+
+        PREREQUISITE CHECK:
+          ✅ Folder must exist: outputs/courses/{slug}/
+          ✅ Folder must contain files (transcripts, videos, docs)
+          ❌ If folder empty → ERROR (use greenfield mode)
+          ❌ If folder not exists → ERROR (create folder first)
+
+        SAVE OUTPUT: COURSE-BRIEF.md created
+
+    - agent: course-architect
+      action: organize_files
+      task: organize-files
+      requires:
+        - outputs/courses/{slug}/ (with existing materials)
+      outputs:
+        - organized_folder_structure
+        - audit_log
+      notes: |
+        Organize existing materials into canonical structure:
+
+        1. Scan Files:
+           - Recursively scan course folder
+           - Build file inventory (metadata: name, size, type, modified)
+           - Categorize files by type and content
+
+        2. Preview Organization (Dry Run):
+           - Show what WOULD be moved (don't move yet)
+           - Display categorization:
+             * Transcripts → /legado/transcripts/
+             * Videos → /legado/videos/
+             * ICP docs → /legado/
+             * Instructor profiles → /legado/
+             * Resources → /resources/
+             * Images → /resources/
+             * Structured data → root (preserved)
+             * Unknown → /legado/other/
+
+        3. User Approval:
+           Options:
+             1. Approve and execute organization
+             2. Skip organization (I'll organize manually)
+             3. Cancel and exit
+
+        4. Execute Organization (if approved):
+           - Move files to canonical structure
+           - Generate audit log (all movements tracked)
+           - Preserve original timestamps
+
+        File Organization Rules:
+          - Transcripts: .txt, .srt, .vtt, .docx (with transcript keywords)
+          - Videos: .mp4, .mov, .avi, .mkv
+          - ICP docs: persona, audience, icp, target (in filename/content)
+          - Instructor profiles: bio, about, instructor (in filename)
+          - Resources: pdfs, templates, checklists
+          - Structured: curriculum.yaml, COURSE-BRIEF.md, lessons/*.md
+
+        SAVE OUTPUT: Organized folder + audit log
+
+    - parallel_extraction:
+      action: run_extractors_in_parallel
+      requires:
+        - organized_folder_structure
+      duration: 2-5 minutes
+      notes: |
+        Run 3 extractors in parallel (if applicable):
+          - extract-icp (always runs)
+          - extract-voice (skipped if MMOS persona enabled)
+          - infer-objectives (always runs)
+
+        These extractors run concurrently to save time.
+
+    - agent: course-architect
+      action: extract_icp
+      task: extract-icp
+      requires:
+        - outputs/courses/{slug}/legado/ (organized materials)
+      parallel: true
+      outputs:
+        - COURSE-BRIEF.md Section 2 (ICP) populated
+        - icp_confidence_score
+      notes: |
+        Extract ICP from existing materials:
+
+        Sources analyzed:
+          - Transcripts (student references, pain points mentioned)
+          - ICP documents (explicit audience definitions)
+          - Course descriptions (target audience statements)
+          - Student feedback (if available)
+
+        Extracted fields:
+          Demographics:
+            - Age range
+            - Professional role
+            - Industry/sector
+            - Experience level
+
+          Psychographics:
+            - Learning style preferences
+            - Motivations
+            - Challenges
+            - Goals
+
+          Pain Points:
+            - Current struggles (3-5 items)
+            - Frustrations
+            - Gaps in knowledge
+
+          Goals:
+            - Desired outcomes (3-5 items)
+            - Success metrics
+            - Transformation targets
+
+        Quality Scoring:
+          - Confidence score: 0-100%
+          - Flagged items for manual review (low confidence)
+
+        SAVE OUTPUT: COURSE-BRIEF.md Section 2 auto-populated
+
+    - agent: course-architect
+      action: extract_voice
+      task: extract-voice
+      requires:
+        - outputs/courses/{slug}/legado/transcripts/
+      parallel: true
+      condition: mmos_persona.enabled == false
+      outputs:
+        - COURSE-BRIEF.md Section 4 (Voice) populated
+        - voice_confidence_score
+      notes: |
+        Extract instructor voice from transcripts:
+
+        SKIP IF: MMOS persona enabled (MMOS provides voice)
+
+        Sources analyzed:
+          - Video transcripts (primary source)
+          - Audio transcripts
+          - Written materials (secondary)
+
+        Extracted patterns:
+          Tone:
+            - Formality level (casual ↔ formal)
+            - Energy level (calm ↔ enthusiastic)
+            - Humor usage (none ↔ frequent)
+
+          Style:
+            - Teaching approach (lecture, storytelling, socratic)
+            - Explanation method (analogies, examples, definitions)
+            - Question usage frequency
+
+          Signature Phrases:
+            - Common expressions (top 10-15)
+            - Transition phrases
+            - Emphasis patterns
+
+          Teaching Approach:
+            - Concept introduction style
+            - Practice integration method
+            - Feedback delivery style
+
+        Linguistic Analysis:
+          - Sentence structure (simple ↔ complex)
+          - Vocabulary level (basic ↔ advanced)
+          - Technical term density
+          - Personal pronoun usage (I, we, you)
+
+        Quality Scoring:
+          - Confidence score: 0-100%
+          - Minimum transcript words required: 5,000
+          - Flagged low-confidence extractions
+
+        SAVE OUTPUT: COURSE-BRIEF.md Section 4 auto-populated
+
+    - agent: course-architect
+      action: infer_objectives
+      task: infer-objectives
+      requires:
+        - outputs/courses/{slug}/legado/ (organized materials)
+        - icp_extracted (from parallel step)
+      parallel: true
+      outputs:
+        - COURSE-BRIEF.md Section 3 (Objectives) populated
+        - objectives_count
+      notes: |
+        Infer learning objectives from materials:
+
+        Sources analyzed:
+          - Existing lesson titles
+          - Transcript content (skills taught)
+          - ICP goals (from extract-icp)
+          - Course descriptions
+
+        Inference method:
+          1. Extract skills/concepts taught
+          2. Map to Bloom's Taxonomy levels
+          3. Formulate objectives using action verbs
+          4. Validate against ICP goals (alignment check)
+
+        Bloom's Taxonomy Action Verbs:
+          - Remember: define, list, recall, identify
+          - Understand: explain, summarize, describe, interpret
+          - Apply: use, implement, execute, solve
+          - Analyze: compare, contrast, examine, categorize
+          - Evaluate: assess, critique, judge, defend
+          - Create: design, develop, compose, produce
+
+        Quality Checks:
+          - Each objective uses Bloom's action verb
+          - Objectives align with ICP goals (≥ 80%)
+          - Coverage of cognitive levels (progression)
+          - Specificity score (vague ↔ specific)
+
+        SAVE OUTPUT: COURSE-BRIEF.md Section 3 auto-populated
+
+    - agent: course-architect
+      action: analyze_gaps
+      task: analyze-gaps
+      requires:
+        - COURSE-BRIEF.md (partially filled by extractors)
+      wait_for:
+        - extract-icp
+        - extract-voice
+        - infer-objectives
+      outputs:
+        - gap_analysis_report
+        - completeness_percentage
+      notes: |
+        Analyze COURSE-BRIEF completeness:
+
+        Gap Detection:
+          - Check all 8 sections for content
+          - Calculate completeness percentage per section
+          - Identify missing required fields
+          - Flag low-confidence extractions
+
+        Smart Elicitation:
+          For each gap:
+            - Generate targeted question
+            - Provide context (why it's needed)
+            - Suggest options (if applicable)
+            - Reference extracted content (for validation)
+
+        Output Format:
+          Section 1: Basic Info
+            ✅ Title: Present
+            ❌ Subtitle: Missing
+            ⚠️ Duration: Low confidence (inferred: 10h)
+
+          Section 2: ICP
+            ✅ Demographics: 85% confidence
+            ✅ Pain Points: 90% confidence
+            ⚠️ Goals: 60% confidence (manual review suggested)
+
+          Section 3: Content & Pedagogy
+            ✅ Objectives: 12 inferred
+            ❌ Preliminary Outline: Missing
+            ✅ Pedagogical Framework: GPS + DL (default)
+
+          Section 4: Voice & Personality
+            ✅ Tone: 75% confidence (extracted from transcripts)
+            ⚠️ Signature Phrases: 15 detected (review top 5)
+
+          [... sections 5-8]
+
+        Overall Completeness: 68%
+
+        SAVE OUTPUT: Gap analysis report with smart questions
+
+    - manual_halt_1:
+      action: user_fills_gaps
+      requires: gap_analysis_report
+      duration: 10-30 minutes
+      notes: |
+        ✋ WORKFLOW HALTED - Fill Remaining Gaps
+
+        📊 Auto-extraction Results:
+          - ICP: {icp_confidence_score}% confidence
+          - Voice: {voice_confidence_score}% confidence
+          - Objectives: {objectives_count} inferred
+
+        📋 Gap Analysis:
+          Completeness: {completeness_percentage}%
+          Missing sections: {gap_analysis_report.missing_sections}
+
+        📝 Please Review & Fill Gaps:
+          File: outputs/courses/{slug}/COURSE-BRIEF.md
+
+        Sections Needing Review:
+          {gap_analysis_report.sections_with_warnings}
+
+        Optional: Re-run extractors if needed:
+          - *extract-icp {slug} --force
+          - *extract-voice {slug} --force
+          - *infer-objectives {slug} --force
+
+        When ready, continue with:
+          @course-architect
+          *generate-curriculum {slug}
+
+    - agent: course-architect
+      creates: curriculum.yaml
+      task: generate-curriculum
+      requires:
+        - outputs/courses/{slug}/COURSE-BRIEF.md (reviewed and filled)
+      outputs:
+        - outputs/courses/{slug}/curriculum.yaml
+      notes: |
+        Generate curriculum from COURSE-BRIEF:
+        - Load and parse COURSE-BRIEF.md (all 8 sections)
+        - Validate brief completeness (required fields check)
+        - Generate curriculum structure:
+          * MVP: Basic 3-module template
+          * Production: AI-generated based on objectives + ICP
+        - Validate curriculum structure
+        - Save curriculum.yaml
+
+        Special handling for brownfield:
+          - Preserve lesson IDs from legacy (if structured)
+          - Map objectives to existing lesson titles
+          - Suggest module groupings based on content
+
+        SAVE OUTPUT: curriculum.yaml created
+
+    - manual_halt_2:
+      action: curriculum_approval_checkpoint
+      requires: curriculum.yaml
+      duration: 5-15 minutes
+      checkpoint: curriculum-approval
+      notes: |
+        ✋ WORKFLOW HALTED - Curriculum Approval Required
+
+        Review generated curriculum:
+          📄 outputs/courses/{slug}/curriculum.yaml
+
+        Brownfield Note:
+          - Compare with original course structure
+          - Validate mapping of legacy lessons
+          - Check module groupings make sense
+
+        Approval options:
+          1️⃣ Approve curriculum → Proceed to lesson generation
+          2️⃣ Edit curriculum.yaml → Re-run generate-curriculum with --force
+          3️⃣ Edit COURSE-BRIEF.md → Re-run generate-curriculum
+          4️⃣ Cancel → Exit workflow
+
+        When approved, continue with:
+          @course-architect
+          *generate-lessons {slug}
+
+    - agent: course-architect
+      creates: complete-course
+      task: generate-lessons
+      requires:
+        - outputs/courses/{slug}/curriculum.yaml (approved)
+        - outputs/courses/{slug}/COURSE-BRIEF.md
+      outputs:
+        - outputs/courses/{slug}/lessons/*.md
+        - outputs/courses/{slug}/assessments/*.yaml
+        - outputs/courses/{slug}/assessments/final-project.md
+      resume_capable: true
+      checkpoint_on_interrupt: true
+      notes: |
+        Generate all lessons and assessments (8-step workflow):
+
+        Same as greenfield workflow (see greenfield-course.yaml)
+
+        Brownfield-specific considerations:
+          - Reference legacy materials in lessons (if applicable)
+          - Preserve instructor voice from extraction
+          - Map objectives to legacy lesson structure
+          - Generate assessments based on legacy quizzes (if available)
+
+        STEP 5 Enhancement for Brownfield:
+          - Include legacy content references
+          - Preserve original examples (if high quality)
+          - Modernize structure (GPS + DL frameworks)
+          - Maintain voice consistency with extraction
+
+        SAVE OUTPUT:
+          outputs/courses/{slug}/
+          ├── lessons/ (GPS + DL framework compliant)
+          ├── assessments/ (generated from objectives)
+          └── legado/ (preserved original materials)
+
+    - agent: course-architect
+      action: validate_course_quality
+      task: validate-course
+      requires:
+        - outputs/courses/{slug}/lessons/
+        - outputs/courses/{slug}/curriculum.yaml
+      optional: true
+      outputs:
+        - validation_report
+      notes: |
+        OPTIONAL: Run comprehensive validation
+
+        Brownfield-specific validations:
+          ✅ Voice fidelity vs. extraction (if not MMOS)
+          ✅ Objective coverage vs. legacy course
+          ✅ Content modernization (GPS + DL compliance)
+          ✅ Legacy examples preserved (where appropriate)
+
+        Standard validations:
+          ✅ GPS structure (all lessons ≥ 30 points)
+          ✅ Didática Lendária (all lessons ≥ 70 points)
+          ✅ Bloom's taxonomy progression
+          ✅ Duration accuracy (±25% tolerance)
+
+        If validation fails:
+          - Review failed lessons
+          - Regenerate specific lessons
+          - Re-run voice extraction (if voice fidelity low)
+
+    - manual_finalization:
+      action: review_and_publish
+      requires: complete_course
+      notes: |
+        📝 MANUAL REVIEW & FINALIZATION
+
+        Brownfield-specific review:
+          1. Compare with Legacy Course:
+             - Check content coverage (nothing critical missing)
+             - Validate voice consistency
+             - Ensure examples/case studies preserved
+             - Verify technical accuracy maintained
+
+          2. Quality Improvements:
+             - GPS structure adds clarity (Goal → Position → Steps)
+             - DL elements improve engagement (7 elements)
+             - Modern pedagogical frameworks applied
+             - Assessments aligned with objectives
+
+          3. Student Impact:
+             - Better learning progression (Bloom's Taxonomy)
+             - Clearer lesson structure (GPS)
+             - More engaging content (DL)
+             - Same authentic instructor voice
+
+        Standard finalization:
+          - Edit assessment scaffolds ([EDIT ME] → real content)
+          - Run final validation
+          - Test with beta students
+          - Iterate based on feedback
+          - Publish to production
+
+    - workflow_end:
+      action: course_complete
+      notes: |
+        ✅ BROWNFIELD COURSE MIGRATION COMPLETE!
+
+        📂 Course Location: outputs/courses/{slug}/
+
+        Generated Files:
+          ├── COURSE-BRIEF.md (auto-extracted + manual review)
+          ├── curriculum.yaml (structure modernized)
+          ├── lessons/ (GPS + DL frameworks applied)
+          ├── assessments/ (aligned with objectives)
+          └── legado/ (original materials preserved)
+
+        📊 Auto-extraction Results:
+          - ICP: {icp_confidence_score}% confidence
+          - Voice: {voice_confidence_score}% confidence
+          - Objectives: {objectives_count} inferred
+
+        📊 Quality Metrics:
+          - GPS Validation: {gps_pass_rate}%
+          - DL Validation: {dl_pass_rate}%
+          - Voice Fidelity: {voice_fidelity}%
+
+        🎯 Modernization Improvements:
+          ✅ Structured pedagogical frameworks (GPS + DL)
+          ✅ Bloom's Taxonomy progression
+          ✅ Aligned assessments
+          ✅ Quality validation (automated)
+          ✅ Original voice preserved
+
+        🎯 Next Steps:
+          1. Compare with legacy course (nothing missing)
+          2. Complete assessment scaffolds
+          3. Beta test with existing students
+          4. Gather feedback on improvements
+          5. Publish modernized course
+
+        Reference: expansion-packs/creator-os/README.md
+
+  flow_diagram: |
+    ```mermaid
+    graph TD
+        A[Start: Brownfield Course] --> B[course-architect: init-course-brownfield]
+        B --> B1{Folder Exists with Files?}
+        B1 -->|No| ERROR1[ERROR: Use greenfield mode]
+        B1 -->|Yes| C[course-architect: organize-files]
+
+        C --> D[Scan Files]
+        D --> E[Preview Organization Dry Run]
+        E --> F{User Approval?}
+        F -->|Cancel| END1[Workflow Canceled]
+        F -->|Skip| G[Manual Organization]
+        F -->|Approve| H[Execute Organization]
+        G --> I[Parallel Extraction]
+        H --> I
+
+        I --> J[extract-icp]
+        I --> K[extract-voice]
+        I --> L[infer-objectives]
+
+        J --> M{MMOS Enabled?}
+        K --> M
+        L --> M
+
+        M -->|MMOS=Yes| N[Skip voice extraction]
+        M -->|MMOS=No| O[Use extracted voice]
+        N --> P[analyze-gaps]
+        O --> P
+
+        P --> Q[Gap Analysis Report]
+        Q --> R[HALT: User Fills Gaps]
+        R --> S[User: Review & Fill COURSE-BRIEF.md]
+        S --> T[course-architect: generate-curriculum]
+
+        T --> U{curriculum.yaml Generated}
+        U --> V[HALT: Approve Curriculum]
+        V --> W{User Approval}
+        W -->|Approve| X[course-architect: generate-lessons]
+        W -->|Edit curriculum| T1[User: Edit curriculum.yaml]
+        W -->|Edit brief| S1[User: Edit COURSE-BRIEF.md]
+        T1 --> T
+        S1 --> T
+
+        X --> Y[Generate All Lessons GPS + DL]
+        Y --> Z[Validate Course Quality]
+        Z --> AA[Generate Assessments]
+        AA --> AB{Run Validation?}
+        AB -->|Yes| AC[validate-course]
+        AB -->|No| AD[Manual Review]
+        AC --> AD
+        AD --> AE[Course Complete]
+
+        style AE fill:#90EE90
+        style ERROR1 fill:#FFB6C1
+        style END1 fill:#FFB6C1
+        style R fill:#FFE4B5
+        style V fill:#FFE4B5
+        style I fill:#E6E6FA
+        style J fill:#E6E6FA
+        style K fill:#E6E6FA
+        style L fill:#E6E6FA
+    ```
+
+  decision_guidance:
+    when_to_use:
+      - Upgrading existing course materials
+      - Modernizing legacy content
+      - Applying pedagogical frameworks to old courses
+      - Preserving instructor voice from transcripts
+      - Migrating to CreatorOS structure
+
+    when_not_to_use:
+      - Creating courses from scratch (use greenfield-course)
+      - No existing materials to extract from
+      - Materials are too low quality to modernize
+
+  prerequisites:
+    folder_structure:
+      - Folder must exist: outputs/courses/{slug}/
+      - Folder must contain files (transcripts, videos, docs)
+      - Recommended: Organize files loosely before starting
+
+    material_requirements:
+      - Minimum: 3,000 words of transcripts OR 30 min video
+      - Recommended: 5,000+ words for voice extraction
+      - Optional: Existing ICP documents, instructor bios
+
+  performance_targets:
+    extraction_phase:
+      duration: "2-5 minutes"
+      parallel_execution: true
+
+    small_course:
+      lessons: 3-5
+      total_duration: "< 20 minutes"
+      cost: "~$1-3 USD"
+
+    medium_course:
+      lessons: 8-15
+      total_duration: "< 40 minutes"
+      cost: "~$4-10 USD"
+
+    large_course:
+      lessons: 20-40
+      total_duration: "< 90 minutes"
+      cost: "~$12-30 USD"
+
+  handoff_prompts:
+    init_to_organize: |
+      Course structure created!
+      Now organizing existing files into canonical structure.
+
+    organize_to_extract: |
+      Files organized successfully!
+      Running auto-extraction (ICP, Voice, Objectives) in parallel...
+
+    extract_to_gaps: |
+      Auto-extraction complete!
+      - ICP: {icp_confidence_score}% confidence
+      - Voice: {voice_confidence_score}% confidence
+      - Objectives: {objectives_count} inferred
+
+      Analyzing gaps in COURSE-BRIEF.md...
+
+    gaps_to_user: |
+      Gap analysis complete!
+      Completeness: {completeness_percentage}%
+
+      Please review auto-extracted content and fill remaining gaps:
+        outputs/courses/{slug}/COURSE-BRIEF.md
+
+      When ready, continue with curriculum generation.
+
+    curriculum_to_user: |
+      Curriculum generated!
+      Review curriculum.yaml - modernized structure with legacy mapping.
+      Approve to proceed with lesson generation.
+
+    lessons_complete: |
+      Brownfield migration complete!
+      Legacy materials modernized with GPS + DL frameworks.
+      Original voice preserved, content improved.
+
+      Review outputs/courses/{slug}/ for all generated files.
+
+    workflow_complete: |
+      Brownfield course migration successful!
+      Legacy content modernized, voice preserved, structure improved.
+      Review, test with existing students, then publish.

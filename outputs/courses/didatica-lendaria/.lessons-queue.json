@@ -1,0 +1,46 @@
+{
+  "5.2": {
+    "title": "Como Dividir Conceitos em Aulas",
+    "duration": 8,
+    "module": 5,
+    "key_points": [
+      "Regra de ouro: 2-3 conceitos máximo",
+      "Critérios para dividir: complexidade, dependências, tempo",
+      "Exemplo prático: React Hooks (dividir em 5 aulas menores)",
+      "Exercício: Pegar tema grande e dividir"
+    ]
+  },
+  "5.3": {
+    "title": "Links e Hooks entre Aulas",
+    "duration": 10,
+    "module": 5,
+    "key_points": [
+      "Link: conectar com aula anterior",
+      "Hook: criar curiosidade para próxima",
+      "3 tipos de hooks: teaser, problema não resolvido, benefício adicional",
+      "Exercício: criar hook para finalizar aula"
+    ]
+  },
+  "5.4": {
+    "title": "Processo Consciente vs. Inconsciente",
+    "duration": 8,
+    "module": 5,
+    "key_points": [
+      "4 níveis de aprendizado (já tem aula 7.1 sobre isso - verificar duplicate!)",
+      "Ignorância inconsciente → Conhecimento inconsciente",
+      "Como acelerar transição entre níveis",
+      "Meta: tornar didática inconsciente (maestria)"
+    ]
+  },
+  "5.5": {
+    "title": "Preparando uma Aula - Passo a Passo",
+    "duration": 7,
+    "module": 5,
+    "key_points": [
+      "Template de preparação (GPS + 7 elementos)",
+      "Checklist pré-gravação",
+      "Tempo estimado: 30-60 min de prep para 10 min de aula",
+      "Exercício: preparar 1 aula usando template"
+    ]
+  }
+}

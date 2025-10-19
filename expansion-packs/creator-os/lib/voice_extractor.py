@@ -132,7 +132,7 @@ class VoiceExtractor:
         """
         self.course_slug = course_slug
         self.base_path = Path("outputs/courses") / course_slug
-        self.cache_path = self.base_path / "legado" / ".voice-analysis-cache.yaml"
+        self.cache_path = self.base_path / "sources" / ".voice-analysis-cache.yaml"
 
         if not self.base_path.exists():
             raise FileNotFoundError(f"Course folder not found: {self.base_path}")
@@ -153,8 +153,8 @@ class VoiceExtractor:
         Search for transcript files using multiple strategies.
 
         Searches in (priority order):
-        1. /legado/transcripts/ (primary)
-        2. /legado/ (secondary)
+        1. /sources/transcripts/ (primary)
+        2. /sources/ (secondary)
         3. /transcripts/ (fallback)
         4. Course root (last resort)
 
@@ -166,8 +166,8 @@ class VoiceExtractor:
 
         # Search paths (priority order)
         search_paths = [
-            self.base_path / "legado" / "transcripts",
-            self.base_path / "legado",
+            self.base_path / "sources" / "transcripts",
+            self.base_path / "sources",
             self.base_path / "transcripts",
             self.base_path,
         ]
@@ -1141,9 +1141,9 @@ personality_traits:
             "voice_profile": asdict(voice_profile)
         }
 
-        # Ensure legado folder exists
-        legado_path = self.base_path / "legado"
-        legado_path.mkdir(exist_ok=True)
+        # Ensure sources folder exists
+        sources_path = self.base_path / "sources"
+        sources_path.mkdir(exist_ok=True)
 
         # Write cache
         with open(self.cache_path, 'w', encoding='utf-8') as f:
@@ -1250,7 +1250,7 @@ personality_traits:
 🔴 **Status:** No transcripts found. Please fill manually.
 
 **Recommendation:**
-- Add transcript files to `/legado/transcripts/`
+- Add transcript files to `/sources/transcripts/`
 - Or define voice profile manually below
 - Or use MMOS mind if available
 

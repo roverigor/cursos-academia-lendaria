@@ -84,6 +84,7 @@ agents:
     role: Performance Analytics & Learning Extraction Expert
 
 tasks:
+  # Content Generation
   - id: generate-blog-post
     file: tasks/generate-blog-post.md
     purpose: Generate SEO-optimized blog post (1500-2500 words) with persona voice
@@ -96,12 +97,48 @@ tasks:
   - id: generate-newsletter
     file: tasks/generate-newsletter.md
     purpose: Generate newsletter with curated content + commentary
-  - id: generate-course
-    file: tasks/generate-course.md
-    purpose: Initialize course structure and brief template (v2.0 - Step 1)
-  - id: continue-course
-    file: tasks/continue-course.md
-    purpose: Generate course content from filled brief (v2.0 - Steps 2-5)
+
+  # Course Generation - Orchestrators
+  - id: start-new-course
+    file: tasks/start-new-course.md
+    purpose: ONE-COMMAND greenfield course creation (*new command)
+  - id: start-upgrade-course
+    file: tasks/start-upgrade-course.md
+    purpose: ONE-COMMAND brownfield course upgrade (*upgrade command)
+
+  # Course Generation - Atomic Tasks
+  - id: init-course-greenfield
+    file: tasks/init-course-greenfield.md
+    purpose: Initialize new course structure (greenfield)
+  - id: init-course-brownfield
+    file: tasks/init-course-brownfield.md
+    purpose: Initialize course structure for upgrade (brownfield)
+  - id: organize-files
+    file: tasks/organize-files.md
+    purpose: Organize legacy course files by category
+  - id: extract-icp
+    file: tasks/extract-icp.md
+    purpose: Extract ICP (Ideal Customer Profile) from legacy materials
+  - id: extract-voice
+    file: tasks/extract-voice.md
+    purpose: Extract instructor voice profile from legacy content
+  - id: infer-objectives
+    file: tasks/infer-objectives.md
+    purpose: Infer learning objectives using Bloom's Taxonomy
+  - id: analyze-gaps
+    file: tasks/analyze-gaps.md
+    purpose: Analyze gaps in COURSE-BRIEF after extraction
+  - id: generate-curriculum
+    file: tasks/generate-curriculum.md
+    purpose: Generate curriculum.yaml from COURSE-BRIEF
+  - id: generate-lessons
+    file: tasks/generate-lessons.md
+    purpose: Generate all lessons with GPS + Didática Lendária
+  - id: validate-course
+    file: tasks/validate-course.md
+    purpose: Comprehensive course quality validation
+
+  # Marketing & Analytics
   - id: design-funnel
     file: tasks/design-funnel.md
     purpose: Design conversion funnel (TOFU → MOFU → BOFU)
@@ -123,6 +160,14 @@ tasks:
   - id: validate-fidelity
     file: tasks/validate-fidelity.md
     purpose: Validate voice fidelity vs persona (85-95% target)
+
+  # DEPRECATED (kept for backwards compatibility)
+  - id: generate-course
+    file: tasks/deprecated/generate-course.md
+    purpose: DEPRECATED - Use start-new-course or start-upgrade-course instead
+  - id: continue-course
+    file: tasks/deprecated/continue-course.md
+    purpose: DEPRECATED - Use start-new-course or start-upgrade-course instead
 
 templates:
   - blog-post.md
