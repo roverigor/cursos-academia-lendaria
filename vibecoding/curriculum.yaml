@@ -323,6 +323,7 @@ assessments:
   quizzes:
     - "assessments/quiz-modulo-1.yaml"
     - "assessments/quiz-modulo-2.yaml"
+    - "assessments/quiz-modulo-3.yaml"
   projects:
     - "assessments/projeto-final-microsaas.md"
 
@@ -345,7 +346,7 @@ monetization_potential:
 
 certification:
   criteria:
-    - "Completar 6 lessons (100%)"
+    - "Completar 7 lessons (100%)"
     - "Submeter 3 apps obrigatórios"
   submission_format:
     - "URL do app publicado"

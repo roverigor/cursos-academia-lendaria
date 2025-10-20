@@ -2,7 +2,7 @@
 
 **Date:** January 2025
 **QA Conducted By:** Claude (Course Architect Agent)
-**Scope:** All 6 lessons + 3 assessments + supporting resources
+**Scope:** All 7 lessons + 3 assessments + supporting resources
 
 ---
 

@@ -1,0 +1,251 @@
+---
+quiz_id: "quiz-1"
+module: 1
+title: "Quiz 1: Validação de Conceitos Básicos"
+duration: "5 min"
+total_questions: 10
+passing_score: 70
+topics:
+  - "conceitos-basicos"
+  - "banco-dados"
+  - "dashboard"
+  - "primeira-tabela"
+
+instructions: |
+  Este quiz valida se você pegou os conceitos essenciais do Módulo 1.
+
+  **Regras:**
+  - 10 questões de múltipla escolha
+  - Nota mínima: 7/10 (70%)
+  - Sem limite de tentativas
+  - Pode consultar as aulas
+
+  **Dica:** Se errar, volta na aula e revisa. Sem pressão.
+
+questions:
+  - id: 1
+    question: "O que é banco de dados em termos simples?"
+    type: "multiple_choice"
+    options:
+      a: "Um software complexo que só desenvolvedores entendem"
+      b: "Excel organizado para escalar, com backup automático e acesso simultâneo"
+      c: "Um servidor que armazena arquivos como Google Drive"
+      d: "Uma linguagem de programação para criar aplicativos"
+    correct_answer: "b"
+    explanation: |
+      Banco de dados é basicamente Excel turbinado: organiza dados em tabelas,
+      mas com superpoderes como backup automático, múltiplos usuários simultâneos,
+      e performance que aguenta milhões de registros.
+
+  - id: 2
+    question: "Qual a diferença entre 'linha' no Excel e 'registro' no banco de dados?"
+    type: "multiple_choice"
+    options:
+      a: "São completamente diferentes"
+      b: "Registro é muito mais complexo que linha"
+      c: "É a mesma coisa, só muda o nome"
+      d: "Linha é para números, registro é para texto"
+    correct_answer: "c"
+    explanation: |
+      Linha (Excel) = Registro (Banco de Dados). Mesma coisa.
+      Só muda o nome técnico. Cada linha/registro representa um item individual
+      (ex: um cliente, um pedido, uma tarefa).
+
+  - id: 3
+    question: "O que HTTP faz na comunicação entre app e servidor?"
+    type: "multiple_choice"
+    options:
+      a: "Criptografa todos os dados"
+      b: "Age como 'garçom' que leva pedidos e traz respostas"
+      c: "Armazena dados no navegador"
+      d: "Compila o código do aplicativo"
+    correct_answer: "b"
+    explanation: |
+      HTTP é o protocolo (idioma) que cliente e servidor usam para conversar.
+      Como um garçom: você faz pedido (request), garçom leva pra cozinha (servidor),
+      e traz a resposta (response).
+
+  - id: 4
+    question: "Qual verbo HTTP você usa para CRIAR algo novo?"
+    type: "multiple_choice"
+    options:
+      a: "GET"
+      b: "PUT"
+      c: "POST"
+      d: "DELETE"
+    correct_answer: "c"
+    explanation: |
+      POST = Create (criar)
+      GET = Read (ler)
+      PUT = Update (atualizar)
+      DELETE = Delete (deletar)
+
+      Lembre: CRUD = Create, Read, Update, Delete
+
+  - id: 5
+    question: "Onde você passa 60% do tempo no dashboard do Supabase?"
+    type: "multiple_choice"
+    options:
+      a: "Settings"
+      b: "Table Editor"
+      c: "SQL Editor"
+      d: "Logs"
+    correct_answer: "b"
+    explanation: |
+      Table Editor é a 'cozinha' do Supabase - onde você cria tabelas,
+      edita dados, visualiza registros. É onde a maior parte do trabalho acontece.
+
+  - id: 6
+    question: "Quando você cria uma tabela no Supabase, o que acontece automaticamente?"
+    type: "multiple_choice"
+    options:
+      a: "Nada, você precisa configurar tudo manualmente"
+      b: "APIs REST são geradas automaticamente"
+      c: "Apenas o banco é criado, sem APIs"
+      d: "Você precisa escrever código para acessar os dados"
+    correct_answer: "b"
+    explanation: |
+      Quando você cria uma tabela, Supabase GERA AUTOMATICAMENTE:
+      - APIs REST (GET, POST, PUT, DELETE)
+      - Endpoints GraphQL
+      - Documentação da API
+
+      Você não escreve NADA. Só clica e funciona.
+
+  - id: 7
+    question: "Qual tier do Supabase é suficiente para validar MVP e primeiros 1.000 usuários?"
+    type: "multiple_choice"
+    options:
+      a: "Pro ($25/mês)"
+      b: "Enterprise (custom pricing)"
+      c: "Free (R$ 0/mês)"
+      d: "Nenhum, precisa de servidor próprio"
+    correct_answer: "c"
+    explanation: |
+      Tier FREE é suficiente para:
+      - MVPs
+      - Validação de ideias
+      - Até 1.000 usuários ativos
+      - 500 MB de banco de dados
+
+      Só precisa upgrade quando crescer além disso.
+
+  - id: 8
+    question: "O que é API em termos simples?"
+    type: "multiple_choice"
+    options:
+      a: "Um tipo de banco de dados"
+      b: "Cardápio do que o servidor oferece"
+      c: "Linguagem de programação"
+      d: "Sistema de autenticação"
+    correct_answer: "b"
+    explanation: |
+      API = Cardápio.
+
+      Assim como cardápio mostra o que restaurante oferece,
+      API mostra o que servidor pode fazer (buscar dados, criar registro, etc.).
+
+      Você pede do cardápio, servidor prepara e entrega.
+
+  - id: 9
+    question: "Quantos campos você criou MANUALMENTE na tabela 'tasks' da aula 01.4?"
+    type: "multiple_choice"
+    options:
+      a: "4 campos (id, created_at, title, completed)"
+      b: "2 campos (title, completed)"
+      c: "1 campo (title)"
+      d: "Nenhum, todos foram automáticos"
+    correct_answer: "b"
+    explanation: |
+      Você criou MANUALMENTE:
+      - title (text)
+      - completed (bool)
+
+      Foram criados AUTOMATICAMENTE:
+      - id (gerado pelo sistema)
+      - created_at (timestamp automático)
+
+  - id: 10
+    question: "Por que NÃO usar Excel para app com múltiplos usuários?"
+    type: "multiple_choice"
+    options:
+      a: "Excel é caro demais"
+      b: "Excel não aguenta múltiplos usuários simultâneos, não tem backup automático, e trava com muitos dados"
+      c: "Excel só funciona em Windows"
+      d: "Excel não permite criar tabelas"
+    correct_answer: "b"
+    explanation: |
+      Excel funciona bem para uso pessoal, mas falha em:
+      - Acesso simultâneo (1 pessoa por vez, ou conflitos)
+      - Performance (trava com 50k+ linhas)
+      - Backup (você precisa lembrar de salvar)
+      - Segurança (quem tem o arquivo vê tudo)
+
+      Banco de dados resolve todos esses problemas.
+
+---
+
+# SCORING
+
+scoring_guide:
+  10/10: |
+    🔥 PERFEITO! Você dominou os conceitos fundamentais.
+    Bora pro Módulo 2: Normalização Sem Drama.
+
+  8-9/10: |
+    ✅ Muito bom! Você pegou quase tudo.
+    Revisa as questões que errou e continua.
+
+  7/10: |
+    ✅ Passou! Mas recomendo revisar as aulas.
+    Conceitos básicos são a fundação de tudo.
+
+  <7/10: |
+    📚 Recomendo revisar as aulas do Módulo 1.
+    Sem pressão - conceitos novos levam tempo para fixar.
+    Refaz o quiz depois de revisar.
+
+---
+
+# FEEDBACK
+
+feedback_messages:
+  all_correct: |
+    🚀 DOMINOU!
+
+    Você acabou de provar que entende:
+    ✅ O que é banco de dados (Excel turbinado)
+    ✅ HTTP e APIs (garçom e cardápio)
+    ✅ Dashboard do Supabase (onde fica o quê)
+    ✅ Criação de tabelas (prática pura)
+
+    Agora você TEM FUNDAÇÃO sólida.
+
+    Próximo passo: Módulo 2 - Normalização Sem Drama
+    (Onde você aprende a organizar dados como um profissional)
+
+  passed: |
+    ✅ PASSOU!
+
+    Você provou que pegou os conceitos essenciais.
+
+    Se errou alguma, revisa rapidamente e segue em frente.
+    Não precisa perfeição - precisa PROGRESSÃO.
+
+    Bora pro Módulo 2? 🚀
+
+  failed: |
+    📚 Sem pressão!
+
+    Conceitos novos levam tempo pra fixar.
+
+    Recomendação:
+    1. Revisa as aulas que você teve dúvida
+    2. Refaz os exercícios práticos
+    3. Volta no quiz quando sentir segurança
+
+    Lembra: não é corrida. É maratona.
+
+    Te espero quando estiver pronto! 💪
+
+---

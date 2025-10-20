@@ -59,7 +59,7 @@
 
 ### ✅ Task 3: Comprehensive QA
 
-**Scope:** All 6 lessons + 3 assessments + 4 resources
+**Scope:** All 7 lessons + 3 assessments + 4 resources
 
 **Dimensions Evaluated:**
 1. **Voice Consistency:** José's tone, verbal markers, metaphors
@@ -185,7 +185,7 @@ Every lesson + comprehensive resource document.
 ## 📦 Final Deliverables
 
 ### Core Course Content (Created Previously):
-- ✅ 6 Lessons (2,867 lines total)
+- ✅ 7 Lessons (3,035 lines total)
 - ✅ 3 Assessments (quizzes + projeto final)
 - ✅ curriculum.yaml (metadata)
 - ✅ README.md (course overview)
@@ -211,7 +211,7 @@ Every lesson + comprehensive resource document.
 ### ✅ Ready for Immediate Launch:
 
 **Core Content:**
-- [x] All 6 lessons written and QA'd
+- [x] All 7 lessons written and QA'd
 - [x] All 3 assessments complete
 - [x] All 4 essential resources created
 - [x] Voice fidelity verified (92%)
@@ -279,7 +279,7 @@ After completing Vibecoding (2 hours), students will:
 ## 📊 Course Statistics
 
 **Modules:** 3
-**Lessons:** 6 (7.5 to 25 minutes each)
+**Lessons:** 7 (7.5 to 25 minutes each)
 **Total Duration:** 2 hours
 **Projects Built:** 6 functional apps
 **Tools Mastered:** 6 (Claude, Bolt, Supabase, GitHub, OpenAI, Stripe)

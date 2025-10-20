@@ -16,7 +16,7 @@ Criado curso completo "Vibecoding" do zero até otimização final, com qualidad
 
 ### **Phase 1: Course Generation** ✅
 **Duration:** Multiple hours (from context)
-**Output:** Complete 2-hour course with 6 lessons
+**Output:** Complete 2-hour course with 7 lessons
 
 ### **Phase 2: Resource Creation** ✅
 **Duration:** ~1 hour
@@ -36,7 +36,7 @@ Criado curso completo "Vibecoding" do zero até otimização final, com qualidad
 
 ### **Core Course Content** (From Phase 1)
 
-**6 Lessons Created:**
+**7 Lessons Created:**
 1. `1.1-maquina-que-nao-sabia-operar.md` (303 lines) - Foundation
 2. `1.2-mapa-da-clareza.md` (344 lines) - First app
 3. `2.1-bolt-prototipo-producao.md` (392 lines) - Production deployment
@@ -92,7 +92,7 @@ Criado curso completo "Vibecoding" do zero até otimização final, com qualidad
 
 | Category | Files | Lines | Notes |
 |----------|-------|-------|-------|
-| **Lessons** | 6 | 3,035 | Core teaching content |
+| **Lessons** | 7 | 3,035 | Core teaching content |
 | **Assessments** | 3 | 667 | Quizzes + final project |
 | **Documentation** | 3 | 1,239 | README + outline + metadata |
 | **Resources** | 4 | 2,650 | Setup + prompts + canvas + troubleshooting |
@@ -374,7 +374,7 @@ outputs/courses/vibecoding/
 ### **✅ Ready for Immediate Launch**
 
 **Content:**
-- [x] All 6 lessons written, QA'd, optimized
+- [x] All 7 lessons written, QA'd, optimized
 - [x] All 3 assessments complete
 - [x] All 4 essential resources created
 - [x] All documentation finalized
@@ -412,7 +412,7 @@ Minor issues documented in QA Report:
 **Completion Rate:**
 - Target: 50-60%
 - Industry avg: 15-40%
-- Track: % of enrollments that complete all 6 lessons
+- Track: % of enrollments that complete all 7 lessons
 
 **Course Buddy Adoption:**
 - Target: 30%+ find a buddy
@@ -497,7 +497,7 @@ Minor issues documented in QA Report:
 
 ✅ **Created** 21 files, 9,641 lines of content
 ✅ **Researched** 5 web searches, synthesized insights
-✅ **Analyzed** All 6 lessons + 3 assessments (comprehensive QA)
+✅ **Analyzed** All 7 lessons + 3 assessments (comprehensive QA)
 ✅ **Optimized** 4 files with 5 research-driven improvements
 ✅ **Documented** 5 detailed reports (2,050 lines)
 ✅ **Maintained** 92% voice fidelity throughout
