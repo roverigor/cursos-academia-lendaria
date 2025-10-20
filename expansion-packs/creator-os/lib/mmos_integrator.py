@@ -15,16 +15,21 @@ Key Features:
 - COURSE-BRIEF Section 4 auto-population with MMOS voice
 - Voice fidelity validation (if benchmarks exist)
 
-MMOS Mind Structure:
+MMOS Mind Structure (v3.0):
 outputs/minds/{slug}/
-├── analysis/
-│   ├── identity-core.yaml       # Core identity data
-│   └── cognitive-spec.yaml      # Cognitive/personality data
-├── synthesis/
-│   ├── communication-style.md   # Communication patterns
-│   └── frameworks.md            # Teaching philosophy (optional)
+├── sources/                      # Primary sources (books, transcripts, etc.)
+├── artifacts/                    # FLAT - Intermediate artifacts
+│   ├── identity_core.yaml        # Core identity data
+│   ├── cognitive_architecture.yaml # Cognitive/personality data
+│   ├── communication_templates.md  # Communication patterns
+│   └── frameworks_synthesized.md   # Teaching philosophy (optional)
+├── kb/                          # FLAT - Final knowledge base
+│   ├── communication_style_final.md
+│   └── frameworks_final.md
 ├── system_prompts/
-│   └── generalista.md          # System prompt for lesson generation
+│   └── generalista.md           # System prompt for lesson generation
+├── docs/
+│   └── logs/                    # Execution logs
 └── metadata.yaml                # Mind metadata
 
 Usage:
@@ -150,12 +155,12 @@ class MMOSIntegrator:
 
     def _is_valid_mmos_mind(self, mind_path: Path) -> bool:
         """
-        Check if folder contains valid MMOS structure.
+        Check if folder contains valid MMOS structure (v3.0).
 
-        Required files:
-        - analysis/identity-core.yaml
-        - analysis/cognitive-spec.yaml
-        - synthesis/communication-style.md (or system_prompts/*.md)
+        Required files (v3.0):
+        - artifacts/identity_core.yaml OR artifacts/cognitive_architecture.yaml
+        - artifacts/communication_templates.md OR kb/communication_style_final.md
+        - system_prompts/*.md (recommended)
 
         Args:
             mind_path: Path to mind folder
@@ -163,18 +168,24 @@ class MMOSIntegrator:
         Returns:
             True if valid MMOS mind, False otherwise
         """
-        required_paths = [
-            mind_path / "analysis" / "identity-core.yaml",
-            mind_path / "analysis" / "cognitive-spec.yaml",
-        ]
+        # Check for identity/cognitive data in artifacts/ (v3.0)
+        has_identity = (
+            (mind_path / "artifacts" / "identity_core.yaml").exists() or
+            (mind_path / "artifacts" / "cognitive_architecture.yaml").exists() or
+            (mind_path / "artifacts" / "psychometric_profile.yaml").exists()
+        )
 
-        # Check required files
-        for path in required_paths:
-            if not path.exists():
-                return False
+        if not has_identity:
+            return False
 
-        # Check if has EITHER communication-style.md OR system prompts
-        has_comm_style = (mind_path / "synthesis" / "communication-style.md").exists()
+        # Check for communication style in artifacts/ or kb/ (v3.0)
+        has_comm_style = (
+            (mind_path / "artifacts" / "communication_templates.md").exists() or
+            (mind_path / "kb" / "communication_style_final.md").exists() or
+            (mind_path / "artifacts" / "writing_style.yaml").exists()
+        )
+
+        # Check if has system prompts
         has_system_prompts = (mind_path / "system_prompts").exists() and \
                             list((mind_path / "system_prompts").glob("*.md"))
 
@@ -192,19 +203,27 @@ class MMOSIntegrator:
         """
         slug = mind_path.name
 
-        # Load identity core for name (handle multi-document YAMLs)
-        identity_core_path = mind_path / "analysis" / "identity-core.yaml"
-        with open(identity_core_path, 'r', encoding='utf-8') as f:
-            # Load only first document if multi-document YAML
-            identity_core = next(yaml.safe_load_all(f))
+        # Load identity core for name (v3.0: artifacts/)
+        identity_core_path = mind_path / "artifacts" / "identity_core.yaml"
+        identity_core = {}
+        if identity_core_path.exists():
+            with open(identity_core_path, 'r', encoding='utf-8') as f:
+                # Load only first document if multi-document YAML
+                identity_core = next(yaml.safe_load_all(f))
 
         name = identity_core.get("nome_completo", slug.replace("_", " ").title())
 
-        # Load cognitive spec for description (handle multi-document YAMLs)
-        cognitive_spec_path = mind_path / "analysis" / "cognitive-spec.yaml"
-        with open(cognitive_spec_path, 'r', encoding='utf-8') as f:
-            # Load only first document if multi-document YAML
-            cognitive_spec = next(yaml.safe_load_all(f))
+        # Load cognitive spec for description (v3.0: artifacts/)
+        cognitive_spec_path = mind_path / "artifacts" / "cognitive_architecture.yaml"
+        if not cognitive_spec_path.exists():
+            # Fallback: Try old name
+            cognitive_spec_path = mind_path / "artifacts" / "cognitive-spec.yaml"
+
+        cognitive_spec = {}
+        if cognitive_spec_path.exists():
+            with open(cognitive_spec_path, 'r', encoding='utf-8') as f:
+                # Load only first document if multi-document YAML
+                cognitive_spec = next(yaml.safe_load_all(f))
 
         # Get description from cognitive spec
         description = cognitive_spec.get("resumo_personalidade", "MMOS cognitive clone")
@@ -234,8 +253,11 @@ class MMOSIntegrator:
                             if f.name.lower() not in ['changelog.md', 'readme.md']]
             has_system_prompt = len(system_prompts) > 0
 
-        # Check for frameworks
-        has_frameworks = (mind_path / "synthesis" / "frameworks.md").exists()
+        # Check for frameworks (v3.0: artifacts/ or kb/)
+        has_frameworks = (
+            (mind_path / "artifacts" / "frameworks_synthesized.md").exists() or
+            (mind_path / "kb" / "frameworks_final.md").exists()
+        )
 
         return MMOSMindMetadata(
             slug=slug,
@@ -314,23 +336,37 @@ class MMOSIntegrator:
         """
         mind_path = Path(mind_metadata.path)
 
-        # Load identity core (handle multi-document YAMLs)
-        with open(mind_path / "analysis" / "identity-core.yaml", 'r', encoding='utf-8') as f:
-            identity_core = next(yaml.safe_load_all(f))
+        # Load identity core (v3.0: artifacts/)
+        identity_core_path = mind_path / "artifacts" / "identity_core.yaml"
+        identity_core = {}
+        if identity_core_path.exists():
+            with open(identity_core_path, 'r', encoding='utf-8') as f:
+                identity_core = next(yaml.safe_load_all(f))
 
-        # Load cognitive spec (handle multi-document YAMLs)
-        with open(mind_path / "analysis" / "cognitive-spec.yaml", 'r', encoding='utf-8') as f:
-            cognitive_spec = next(yaml.safe_load_all(f))
+        # Load cognitive spec (v3.0: artifacts/)
+        cognitive_spec_path = mind_path / "artifacts" / "cognitive_architecture.yaml"
+        if not cognitive_spec_path.exists():
+            cognitive_spec_path = mind_path / "artifacts" / "cognitive-spec.yaml"
 
-        # Load communication style (if exists)
-        comm_style_path = mind_path / "synthesis" / "communication-style.md"
+        cognitive_spec = {}
+        if cognitive_spec_path.exists():
+            with open(cognitive_spec_path, 'r', encoding='utf-8') as f:
+                cognitive_spec = next(yaml.safe_load_all(f))
+
+        # Load communication style (v3.0: artifacts/ or kb/)
+        comm_style_path = mind_path / "artifacts" / "communication_templates.md"
+        if not comm_style_path.exists():
+            comm_style_path = mind_path / "kb" / "communication_style_final.md"
+
         comm_style = ""
         if comm_style_path.exists():
             with open(comm_style_path, 'r', encoding='utf-8') as f:
                 comm_style = f.read()
 
-        # Load frameworks (if exists)
-        frameworks_path = mind_path / "synthesis" / "frameworks.md"
+        # Load frameworks (v3.0: artifacts/ or kb/)
+        frameworks_path = mind_path / "artifacts" / "frameworks_synthesized.md"
+        if not frameworks_path.exists():
+            frameworks_path = mind_path / "kb" / "frameworks_final.md"
         frameworks = None
         if frameworks_path.exists():
             with open(frameworks_path, 'r', encoding='utf-8') as f:

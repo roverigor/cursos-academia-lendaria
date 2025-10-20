@@ -215,7 +215,7 @@ Orchestrates debates between two clones with automated fidelity scoring.
 
 ---
 
-### 📄 Templates (10 output formats)
+### 📄 Templates (11 output formats)
 
 All templates follow **ACS v3.0 structure** for production-ready outputs:
 
@@ -227,8 +227,9 @@ All templates follow **ACS v3.0 structure** for production-ready outputs:
 6. **`personality-profile.json`** - Psychometric profile (Big 5 + custom dimensions)
 7. **`system-prompt-generalista.md`** - General-purpose clone prompt (production-ready)
 8. **`system-prompt-specialist.md`** - Domain-specific specialist prompt template
-9. **`validation-report.yaml`** - Fidelity testing results with detailed scores
-10. **`brownfield-plan.yaml`** - Incremental update plan with regression tests
+9. **`system-prompt-autodescobridor.md`** - **NEW!** Self-aware meta-cognitive clone for gap identification
+10. **`validation-report.yaml`** - Fidelity testing results with detailed scores
+11. **`brownfield-plan.yaml`** - Incremental update plan with regression tests
 
 ---
 
@@ -641,6 +642,83 @@ Achieves **94% clone fidelity** by analyzing all cognitive layers:
 
 ---
 
+### 🔍 **Autodescobridor: Self-Aware Meta-Cognitive Clone** 🆕
+
+**The 5th Standard System Prompt** - A revolutionary addition to MMOS v3.0+
+
+Every mind now includes a **self-aware clone** that knows it's a clone and actively seeks to improve its own fidelity.
+
+**What is the Autodescobridor?**
+
+A meta-cognitive persona that:
+- ✅ **Knows its own gaps** (has read `LIMITATIONS.md`)
+- ✅ **Elicits missing information** through targeted questions
+- ✅ **Tests its own authenticity** via hypothetical scenarios
+- ✅ **Recommends sources** to fill documented blind spots
+- ✅ **Challenges assumptions** (seeks disconfirming evidence)
+- ✅ **Improves progressively** (v1.0 → v1.1 → v1.2...)
+
+**Key Innovation:** Instead of pretending to be complete, the Autodescobridor openly acknowledges:
+- Current fidelity percentage (e.g., "I'm 85-90% faithful")
+- High/medium/low certainty areas per layer
+- Critical gaps in source coverage
+- Behavioral contexts not documented
+- Edge cases not tested
+
+**Use Cases:**
+1. **Gap Identification:** "What information would most improve my fidelity?"
+2. **Source Recommendation:** "I need 5 third-party observations to reach 94%"
+3. **Authenticity Testing:** "Present me with hypothetical scenarios to test my predictions"
+4. **Elicitation Sessions:** Clone asks original mind targeted questions to fill gaps
+5. **Continuous Improvement:** Track fidelity evolution across versions
+
+**Example Interaction:**
+
+```
+User: "How should I price my new product?"
+
+Autodescobridor:
+"Tenho uma lacuna crítica aqui. Meu modelo de decisões financeiras
+é INCOMPLETO (confidence: 50-70%).
+
+Eu SEI que você valoriza autonomia (Valor #1) e por isso pricing
+premium faz sentido. Mas eu NÃO SEI:
+- Seu processo mental específico de precificação
+- Como você avalia ROI de um investimento
+- Sua filosofia real sobre dinheiro
+
+Antes de te dar uma resposta que pode estar 50% errada, você
+pode me responder:
+1. Como você decidiu o preço do seu último produto?
+2. Que variáveis você considerou?
+3. Houve conflito entre impacto vs lucro? Como resolveu?
+
+Isso elevaria minha fidelidade de 85% → 88% nessa área específica."
+```
+
+**Standard Output Structure:**
+
+Every MMOS mind now generates **5 system prompts:**
+1. `system-prompt-generalista.md` - General-purpose clone
+2. `system-prompt-professor-socratico.md` - Teaching persona (optional)
+3. `system-prompt-estrategista-direto.md` - Business strategy persona (optional)
+4. `system-prompt-visionario-inquieto.md` - Peer/creative persona (optional)
+5. **`system-prompt-autodescobridor.md`** - Self-aware meta-cognitive clone ✨
+
+**Template Location:**
+```
+expansion-packs/mmos-mind-mapper/templates/system-prompt-autodescobridor.md
+```
+
+**Benefits:**
+- 🎯 **Transparent limitations** - Clone doesn't fake expertise it doesn't have
+- 🔄 **Continuous improvement** - Systematically fill gaps over time
+- 🧪 **Self-testing** - Clone validates own predictions against original
+- 📊 **Measurable progress** - Track fidelity evolution (85% → 88% → 91% → 94%)
+- 🤝 **Collaborative mapping** - Clone becomes active participant in its own creation
+
+---
+
 ### ⚡ **APEX + ICP Dual Scoring**
 
 Saves **40% of tokens** by rejecting inviable minds automatically:
@@ -751,9 +829,13 @@ outputs/minds/{mind_name}/
 │   ├── meta-axioms.yaml
 │   └── tools.md
 │
-├── system_prompts/          # Production prompts
-│   ├── system-prompt-generalista.md  # Latest version
-│   └── archive/                       # Version history
+├── system_prompts/          # Production prompts (5 standard)
+│   ├── system-prompt-generalista.md        # General-purpose clone
+│   ├── system-prompt-professor-socratico.md # Teaching persona
+│   ├── system-prompt-estrategista-direto.md # Business strategy
+│   ├── system-prompt-visionario-inquieto.md # Peer/creative mode
+│   ├── system-prompt-autodescobridor.md     # 🆕 Self-aware meta-cognitive
+│   └── archive/                             # Version history
 │       ├── v1.0-generalista.md
 │       └── v1.1-generalista.md
 │
