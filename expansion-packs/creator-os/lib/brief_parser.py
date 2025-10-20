@@ -34,6 +34,8 @@ class BasicInfo:
     slug: str = ""
     category: str = ""
     tags: List[str] = field(default_factory=list)
+    course_type: str = ""  # "technical", "conceptual", "mixed"
+    tool_name: str = ""  # Main tool/framework (if technical)
     total_duration_hours: int = 0
     modules_count: int = 0
     lessons_count: int = 0
@@ -242,6 +244,21 @@ class BriefParser:
         # Extract tags (numbered list)
         tags = re.findall(r'^\d+\.\s*(.+)$', content, re.MULTILINE)
         info.tags = [tag.strip() for tag in tags if tag.strip() and not tag.strip().startswith('[')]
+
+        # Extract course type (technical, conceptual, mixed)
+        if re.search(r'\[x\].*?TÉCNICO', content, re.IGNORECASE):
+            info.course_type = "technical"
+        elif re.search(r'\[x\].*?CONCEITUAL', content, re.IGNORECASE):
+            info.course_type = "conceptual"
+        elif re.search(r'\[x\].*?MISTO', content, re.IGNORECASE):
+            info.course_type = "mixed"
+
+        # Extract tool name (if technical)
+        tool_match = re.search(r'Ferramenta:\s*(.+)', content, re.IGNORECASE)
+        if tool_match:
+            tool = tool_match.group(1).strip()
+            if tool and tool != '_______________':  # Ignore placeholder
+                info.tool_name = tool
 
         # Extract duration
         duration_match = re.search(r'(\d+)\s*horas?\s*totais?', content, re.IGNORECASE)

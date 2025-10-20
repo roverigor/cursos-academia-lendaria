@@ -148,6 +148,7 @@ outputs/courses/vibecoding/
 ├── assessments/
 │   ├── quiz-modulo-1.yaml
 │   ├── quiz-modulo-2.yaml
+│   ├── quiz-modulo-3.yaml
 │   └── projeto-final-microsaas.md
 └── resources/
     ├── checklist-setup-ferramentas.md
@@ -155,6 +156,22 @@ outputs/courses/vibecoding/
     ├── template-microsaas-canvas.md
     └── troubleshooting-comum.md
 ```
+
+---
+
+## ⏱️ Tempo por Lição
+
+| Módulo | Lesson | Título | Duração |
+|--------|--------|--------|---------|
+| 1 | 1.1 | A Máquina que Você Não Sabia Operar | 10 min |
+| 1 | 1.2 | Mapa da Clareza - Seu Primeiro App Funcional | 20 min |
+| 2 | 2.1 | Bolt.new - De Protótipo a Produção | 15 min |
+| 2 | 2.2 | Supabase - O Armário que Lembra Tudo | 20 min |
+| 2 | 2.3 | Auth - O Porteiro do Seu App | 25 min |
+| 3 | 3.1 | Hub de GPTs - Seu Primeiro MicroSaaS | 20 min |
+| 3 | 3.2 | Landing que Vende no Automático | 10 min |
+
+**Total:** 120 min
 
 ---
 

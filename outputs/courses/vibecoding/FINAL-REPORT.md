@@ -26,7 +26,7 @@ outputs/courses/vibecoding/
 ├── COURSE-GENERATION-REPORT.md ✅ (Relatório inicial)
 ├── FINAL-REPORT.md ✅ (Este arquivo)
 │
-├── lessons/ (6 LESSONS COMPLETAS)
+├── lessons/ (7 LESSONS COMPLETAS)
 │   ├── 1.1-maquina-que-nao-sabia-operar.md ✅ (350 linhas)
 │   ├── 1.2-mapa-da-clareza.md ✅ (400 linhas)
 │   ├── 2.1-bolt-prototipo-producao.md ✅ (450 linhas)
@@ -134,7 +134,7 @@ outputs/courses/vibecoding/
 - Ver funcionando ANTES da teoria
 - Hands-on total (80% prática, 20% explicação)
 
-**Evidência:** Todas as 6 lessons mantêm voz consistente com transcript de 2h+ da aula real do José Carlos.
+**Evidência:** Todas as 7 lessons mantêm voz consistente com transcript de 2h+ da aula real do José Carlos.
 
 ---
 
@@ -227,7 +227,7 @@ outputs/courses/vibecoding/
 - [x] README.md (course overview)
 - [x] course-outline.md (detailed structure)
 - [x] curriculum.yaml (structured metadata)
-- [x] All 6 lessons complete
+- [x] All 7 lessons complete
 - [x] 2 quizzes (Módulo 1 e 2)
 - [x] Projeto Final assessment
 - [x] At least 1 essential resource (Biblioteca de Prompts)
@@ -276,7 +276,7 @@ Based on course structure, voice fidelity, and pedagogical alignment:
 
 1. ✅ **Discovery** (100%) - Requirements, ICP, voice profile capturado
 2. ✅ **Framework Selection** (100%) - Backward Design + Microlearning + Scaffolding
-3. ✅ **Structure Design** (100%) - 3 módulos, 6 lessons aprovadas
+3. ✅ **Structure Design** (100%) - 3 módulos, 7 lessons aprovadas
 4. ✅ **Content Generation** (100%) - 6 lessons + 3 assessments + 1 resource essencial
 5. ✅ **Validation** (100%) - Voice fidelity 92%, pedagogical alignment
 6. ✅ **Output Generation** (100%) - Todos os arquivos principais criados

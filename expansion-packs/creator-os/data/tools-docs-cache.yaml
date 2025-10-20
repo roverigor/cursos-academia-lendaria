@@ -1,0 +1,64 @@
+# Tools Documentation Cache
+# This file caches official documentation URLs for known technical tools
+#
+# Auto-populated by lesson_generator.py when new tools are discovered
+# You can manually edit this file to add/update URLs
+#
+# Format:
+#   tool_name:
+#     docs_url: https://...
+#     last_verified: YYYY-MM-DD
+#     community_urls: [...]
+
+tools:
+  supabase:
+    docs_url: https://supabase.com/docs
+    last_verified: 2025-10-19
+    community_urls:
+      - https://reddit.com/r/Supabase
+      - https://stackoverflow.com/questions/tagged/supabase
+
+  obsidian:
+    docs_url: https://help.obsidian.md/
+    last_verified: 2025-10-19
+    community_urls:
+      - https://reddit.com/r/ObsidianMD
+      - https://forum.obsidian.md/
+
+  notion:
+    docs_url: https://www.notion.so/help/
+    last_verified: 2025-10-19
+    community_urls:
+      - https://reddit.com/r/Notion
+
+  chatgpt:
+    docs_url: https://platform.openai.com/docs
+    last_verified: 2025-10-19
+    community_urls:
+      - https://community.openai.com/
+
+  git:
+    docs_url: https://git-scm.com/doc
+    last_verified: 2025-10-19
+    community_urls:
+      - https://stackoverflow.com/questions/tagged/git
+
+  python:
+    docs_url: https://docs.python.org/3/
+    last_verified: 2025-10-19
+    community_urls:
+      - https://stackoverflow.com/questions/tagged/python
+      - https://reddit.com/r/Python
+
+  react:
+    docs_url: https://react.dev/
+    last_verified: 2025-10-19
+    community_urls:
+      - https://stackoverflow.com/questions/tagged/reactjs
+      - https://reddit.com/r/reactjs
+
+# Notes:
+# - This cache is automatically updated when new tools are discovered via web search
+# - URLs are verified against web search results
+# - Community can contribute via PR to add more tools
+# - If a tool is not in cache, system will search dynamically and add it here

@@ -16,35 +16,52 @@ This checklist ensures comprehensive cognitive analysis across all 8 DNA Mental�
 
 ## SECTION 1: ARTIFACTS COMPLETENESS CHECK
 
-### 1.1 Required Artifacts Exist
+### 1.1 Phase 3: Analysis Artifacts (YAML)
 
-**Core Artifacts (artifacts/ directory):**
-- [ ] personality_profile.json (psychometric analysis)
-- [ ] cognitive_architecture.yaml (8-layer spec)
-- [ ] behavioral_patterns.md
-- [ ] mental_models.md
-- [ ] decision_architecture.yaml
-- [ ] values_hierarchy.yaml
-- [ ] belief_system.md
-- [ ] contradictions_map.md
-- [ ] unique_algorithm.md
-- [ ] communication_templates.md
-- [ ] signature_phrases.md
-- [ ] linguistic_forensics.md
-- [ ] recognition_patterns.md
+**Core Analysis Artifacts (artifacts/ directory):**
+- [ ] behavioral_patterns.yaml (Layer 1)
+- [ ] writing_style.yaml (Layer 2)
+- [ ] routine_analysis.yaml (Layer 3)
+- [ ] recognition_patterns.yaml (Layer 4)
+- [ ] mental_models.yaml (Layer 5)
+- [ ] values_hierarchy.yaml (Layer 6) + 🔴 HUMAN CHECKPOINT
+- [ ] core_obsessions.yaml (Layer 7) + 🔴 HUMAN CHECKPOINT
+- [ ] contradictions.yaml (Layer 8) + 🔴 HUMAN CHECKPOINT
+- [ ] cognitive-spec.yaml (Architecture synthesis)
+- [ ] psychometric_profile.yaml (Psychometric analysis)
 
-**Minimum Artifacts Required:** 13/13
+**Minimum Analysis Artifacts Required:** 10/10 YAML files
 
-**Status:** [ ] COMPLETE [ ] INCOMPLETE (missing: _____)
+**Status:** [ ] COMPLETE (10/10) [ ] INCOMPLETE (missing: _____)
 
-### 1.2 Documentation Files
+### 1.2 Phase 4: Synthesis Artifacts (MD)
+
+**Synthesis Frameworks (artifacts/ directory):**
+- [ ] frameworks_synthesized.md (Decision/problem-solving frameworks)
+- [ ] communication_templates.md (Communication patterns)
+- [ ] decision_patterns.md (Decision synthesis from Layers 1+5+6)
+- [ ] voice_guide.md (Quick reference for Layer 2)
+
+**Minimum Synthesis Artifacts Required:** 4/4 MD files
+
+**Status:** [ ] COMPLETE (4/4) [ ] INCOMPLETE (missing: _____)
+
+### 1.3 Documentation Files
 
 **Documentation (docs/ directory):**
-- [ ] COGNITIVE_SPEC.md (complete 8-layer blueprint)
-- [ ] MIND_BRIEF.md (updated with analysis findings)
-- [ ] Analysis logs in docs/logs/ (all prompts executed)
+- [ ] LIMITATIONS.md (known gaps and uncertainties)
+- [ ] operational_manual.md (usage guide - Phase 5)
+- [ ] Analysis logs in docs/logs/ (all execution records)
 
 **Status:** [ ] COMPLETE [ ] INCOMPLETE
+
+### 1.4 Knowledge Base (Optional)
+
+**KB Chunks (kb/ directory):**
+- [ ] kb/chunk_*.md (multiple optimized chunks from Phase 4)
+- [ ] kb/index.yaml (manifest with metadata)
+
+**Status:** [ ] COMPLETE [ ] NOT REQUIRED [ ] INCOMPLETE
 
 ---
 

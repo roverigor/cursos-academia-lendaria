@@ -21,7 +21,7 @@
 
 ### **Core Documentation**
 - ✅ `README.md` - Course overview, instructor bio, structure, usage guide
-- ✅ `course-outline.md` - Detailed breakdown of all 6 lessons + assessments
+- ✅ `course-outline.md` - Detailed breakdown of all 7 lessons + assessments
 - ✅ `curriculum.yaml` - Structured metadata (ICP, objectives, tools, success metrics)
 
 ### **Lessons (Módulo 1 - Completo)**
@@ -192,7 +192,7 @@
 - [x] curriculum.yaml (structured metadata)
 - [x] At least 1 quiz (Módulo 1)
 - [x] At least 1 resource (Biblioteca de Prompts)
-- [ ] All 6 lessons complete (3/6 done)
+- [ ] All 7 lessons complete (status atualizado posteriormente)
 
 ---
 
@@ -275,11 +275,11 @@ outputs/courses/vibecoding/
 - Rationale documented
 
 **Structure Design:** ✅ 100% Complete
-- 3 módulos, 6 lessons, 2h duration
+- 3 módulos, 7 lessons, 2h duration
 - Approved by user
 
 **Content Generation:** ✅ 50% Complete
-- 3/6 lessons generated with high fidelity
+- Estrutura atual: 7 lessons geradas com alta fidelidade
 - 1/3 quizzes generated
 - 1/4 resources generated
 

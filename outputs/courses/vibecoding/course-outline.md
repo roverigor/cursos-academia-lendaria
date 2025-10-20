@@ -296,7 +296,7 @@ Ao final do curso, o aluno terá:
 ## 🎓 Certificação
 
 **Critérios para Certificado:**
-- ✅ Completar 6 lessons (100%)
+- ✅ Completar 7 lessons (100%)
 - ✅ Criar e submeter 3 apps obrigatórios:
   1. Mapa da Clareza (Artifacts + IA)
   2. App com Auth (Bolt + Supabase)

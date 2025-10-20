@@ -92,6 +92,28 @@ Exemplo: IA, Automação, Clone Virtual, ChatGPT, Produtividade, No-Code
 7.
 ```
 
+**Tipo de Curso (IMPORTANTE para pesquisa técnica):**
+```
+[ ] 🔧 TÉCNICO - Curso sobre ferramenta/tecnologia específica
+    Exemplos: "Dominando Supabase", "Curso de Obsidian", "Git Avançado"
+    → Sistema irá buscar documentação oficial e Q&A de comunidade
+
+[ ] 💡 CONCEITUAL - Curso sobre ideias/metodologias/soft skills
+    Exemplos: "Didática Lendária", "Mindfulness para Produtividade"
+    → Sistema NÃO irá fazer pesquisa técnica
+
+[ ] 🔀 MISTO - Combina ferramentas técnicas + conceitos
+    Exemplos: "Produtividade com IA" (usa ChatGPT + mindset)
+    → Sistema detecta aulas técnicas individualmente
+```
+
+**Se TÉCNICO, especifique a ferramenta/tecnologia principal:**
+```
+[Deixe vazio se não for técnico]
+Exemplos: Supabase, Obsidian, React, Python, Notion, Git
+Ferramenta: _______________
+```
+
 ---
 
 ### 1.2. Duração e Estrutura
