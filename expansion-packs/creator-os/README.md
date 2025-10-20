@@ -33,38 +33,125 @@ CreatorOS is your **complete operating system** for content creation and growth:
 
 ---
 
-## 🚀 Quick Start (3 Commands)
+## 🚀 Quick Start (Multiple Workflows)
 
-**⚡ NEW: Complete workflow orchestration scripts now available!**
+**⚡ NEW: Intelligent context detection - System adapts to your workflow!**
 
-### Create Your First Course (Greenfield)
+### Workflow 1: Create Course from Scratch
 
 ```bash
-# Navigate to CreatorOS
-cd expansion-packs/creator-os
-
 # 1. Initialize course
-python scripts/init_course.py
-#    → Select: Greenfield mode
-#    → Optional: Choose MMOS persona
+@course-architect
+*new meu-curso
 
-# 2. Fill COURSE-BRIEF.md
+# 2. Fill COURSE-BRIEF.md manually
 vim outputs/courses/meu-curso/COURSE-BRIEF.md
 
-# 3. Generate curriculum
-python scripts/generate_curriculum.py meu-curso
-
-# 4. Generate complete course
-python scripts/generate_course.py meu-curso
+# 3. System auto-detects filled brief and continues
+#    → Market research (automatic)
+#    → COURSE-BRIEF reformulation (automatic)
+#    → Review → Approve curriculum → Generate lessons
 ```
 
-**Time:** 30-60 minutes | **Output:** Complete course with GPS + DL validation
+**Time:** 45-75 minutes | **Output:** Complete course with market intelligence
+
+---
+
+### Workflow 2: Pre-Created Brief (Your Workflow!) 🆕
+
+```bash
+# 1. Create COURSE-BRIEF.md externally (Claude app, Google Docs, etc.)
+#    Save to: outputs/courses/meu-curso/COURSE-BRIEF.md
+
+# 2. (Optional) Add support materials
+#    Add to: outputs/courses/meu-curso/sources/
+
+# 3. Run *new command - System detects and adapts!
+@course-architect
+*new meu-curso
+
+# System automatically detects:
+#   ✅ COURSE-BRIEF is 85% complete
+#   ✅ Found 3 files in /sources/
+#   ✅ Skipping manual filling
+#   ✅ Proceeding to market research
+
+# 4. Review reformulated brief → Approve → Done!
+```
+
+**Time:** 20-40 minutes | **Output:** Complete course (skips manual steps!)
+
+**Benefits:**
+- ✅ Create brief in your preferred tool (Claude app, Docs, Notion)
+- ✅ Add PDFs, links, references to `/sources/` for context
+- ✅ System intelligently skips unnecessary steps
+- ✅ Faster workflow (no context switching)
+
+---
+
+### Workflow 3: Upgrade Existing Course
+
+```bash
+# 1. Place legacy materials in folder
+mkdir -p outputs/courses/meu-curso/sources/
+# Add transcripts, videos, PDFs to /sources/
+
+# 2. Run brownfield upgrade
+@course-architect
+*upgrade meu-curso
+
+# System auto-extracts:
+#   → ICP from materials
+#   → Voice from transcripts
+#   → Objectives from content
+#   → Runs market research
+#   → Generates optimized curriculum
+```
+
+**Time:** 30-60 minutes | **Output:** Modernized course with market intelligence
 
 📖 **Full Guide:** See [QUICK-START.md](./QUICK-START.md) for detailed instructions
 
 ---
 
 ## 📚 Course Generation Features (Epic 3)
+
+### 🆕 **Competitive Intelligence & Market Research** (October 2025)
+
+CreatorOS now includes **automated market research** to create strategically superior courses:
+
+🔍 **Automated Competitive Analysis**
+- Analyzes 10-15 competitive courses automatically (5-10 min)
+- Identifies curriculum patterns, pricing strategies, student feedback
+- Generates 4 comprehensive reports (market analysis, gaps, differentiation, sources)
+
+🎯 **Strategic Gap Identification**
+- Prioritizes content gaps (P0/P1/P2)
+- Finds topics competitors miss or cover superficially
+- Identifies ICP-specific opportunities
+
+💡 **Intelligent COURSE-BRIEF Reformulation**
+- Integrates research insights into initial course brief
+- Preserves original vision + adds market intelligence
+- Auto-generates Section 9: Market Research Summary
+- Transparent research annotations throughout
+
+📊 **Differentiation Strategy**
+- Creates unique positioning statement
+- Identifies 3+ competitive advantages
+- Recommends pricing based on market analysis
+
+**Result:** Courses that are **strategically differentiated**, not generic copies.
+
+**Example:** Building a Supabase course? Research shows:
+- ✅ Gap: No course for frontend → fullstack transition (P0 opportunity)
+- ✅ Gap: Only 2/12 courses cover production deployment
+- ✅ Differentiation: ICP-specific examples (React context) vs generic tutorials
+- ✅ Pricing: $79 (mid-tier quality positioning)
+
+**Integration:** Automatic in both greenfield and brownfield workflows.
+
+---
 
 ### What Gets Generated
 
@@ -77,6 +164,7 @@ python scripts/generate_course.py meu-curso
 - curriculum.yaml (modules + lessons)
 - course-outline.md
 - Assessments (quizzes + final project)
+- **NEW:** Market research reports (4 markdown files)
 
 ✅ **Voice Fidelity** (Optional MMOS Integration)
 - 90%+ instructor voice preservation
@@ -85,16 +173,42 @@ python scripts/generate_course.py meu-curso
 ### Intelligent Workflows
 
 **Greenfield** (From Scratch)
-- Fill COURSE-BRIEF.md manually
-- AI generates complete curriculum
-- Mandatory approval checkpoint before lesson generation
-- GPS + DL validation ensures transformational learning
+
+**INTELLIGENT CONTEXT DETECTION:** System detects 3 scenarios automatically!
+
+**Scenario A: Greenfield Pure** (No pre-existing brief)
+1. Fill COURSE-BRIEF.md manually (8 sections) ⏸️ **HALT for manual filling**
+2. **🆕 Automated market research** (competitive intelligence)
+3. **🆕 COURSE-BRIEF reformulation** (integrates research + preserves vision)
+4. Review reformulated brief (user approval checkpoint)
+5. AI generates curriculum (based on optimized brief)
+6. Approve curriculum → Generate lessons
+7. GPS + DL validation ensures transformational learning
+
+**Scenario B: Pre-Created Brief** 🆕 **YOUR WORKFLOW!**
+1. ✅ **SKIP manual filling** (COURSE-BRIEF detected as 70%+ complete)
+2. ✅ **Detect /sources/ materials** (optional support files)
+3. **🆕 Auto-proceed to market research** (no manual halt!)
+4. **🆕 COURSE-BRIEF reformulation** (integrates research)
+5. Review reformulated brief (user approval checkpoint)
+6. AI generates curriculum → Approve → Generate lessons
+7. GPS + DL validation
+
+**Benefits:** 40% faster (20-40 min vs 45-75 min)
+
+**Scenario C: Legacy Materials Detected**
+- System detects `/sources/` but no COURSE-BRIEF
+- ⚠️ Recommends switching to brownfield mode: `*upgrade {slug}`
+- User decides: brownfield vs manual greenfield
 
 **Brownfield** (Migrate Existing Course)
-- Auto-organize files (transcripts, videos, docs)
-- Auto-extract ICP, voice patterns, learning objectives
-- Gap analysis skips 60-80% of manual questions
-- Preserves instructor voice from transcripts
+1. Auto-organize files (transcripts, videos, docs)
+2. Auto-extract ICP, voice patterns, learning objectives
+3. Gap analysis skips 60-80% of manual questions
+4. **🆕 Market research** (compares legacy with market leaders)
+5. **🆕 COURSE-BRIEF reformulation** (legacy + research insights)
+6. Review reformulated brief → Generate curriculum
+7. Preserves instructor voice + modernizes content
 
 ---
 
@@ -147,7 +261,7 @@ python scripts/generate_course.py meu-curso --resume
 │                                                              │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
 │  │   Agents     │  │    Tasks     │  │  Templates   │     │
-│  │   (10)       │  │    (12)      │  │    (12)      │     │
+│  │   (5)        │  │    (21)      │  │    (17)      │     │
 │  └──────────────┘  └──────────────┘  └──────────────┘     │
 │         │                  │                  │             │
 │         └──────────────────┴──────────────────┘             │
@@ -172,39 +286,45 @@ python scripts/generate_course.py meu-curso --resume
     └─────────────┘ └─────────────┘ └─────────────┘
 ```
 
-### 10 Specialized Agents
+### Specialized Agents
 
-| Agent | Role | When to Use |
-|-------|------|-------------|
-| **@content-pm** | Project Manager & Strategy Orchestrator | Project setup, campaign planning, performance review |
-| **@content-orchestrator** | Master Content Generation Coordinator | Multi-format content generation |
-| **@blog-writer** | SEO-Optimized Blog Writing Specialist | 1500-2500 word blog posts |
-| **@social-media-specialist** | Multi-Platform Social Content Expert | LinkedIn, Twitter, Instagram posts |
-| **@video-script-writer** | Video Scriptwriting & Storytelling Specialist | YouTube, TikTok, explainer videos |
-| **@course-architect** | Pedagogical Course Design Expert | Full course creation (outline → assessments) |
-| **@funnel-architect** | Conversion Funnel Strategy Specialist | TOFU → MOFU → BOFU funnels |
-| **@ab-test-manager** | A/B Testing & Experimentation Expert | Test titles, hooks, CTAs, formats |
-| **@seo-optimizer** | SEO Strategy & Optimization Specialist | Keyword research, rankings, backlinks |
-| **@growth-analyst** | Performance Analytics & Learning Extraction Expert | Insights, patterns, recommendations |
+**Core Agents (Implemented):**
 
-### 12 Core Tasks
+| Agent | Role | When to Use | Status |
+|-------|------|-------------|--------|
+| **@content-orchestrator** | Master Content Generation Coordinator | Multi-format content generation | ✅ Available |
+| **@blog-writer** | SEO-Optimized Blog Writing Specialist | 1500-2500 word blog posts | ✅ Available |
+| **@course-architect** | Pedagogical Course Design Expert | Full course creation (outline → assessments) | ✅ Available |
 
-**Content Generation:**
+**Planned Agents (Phase 2-3):**
+
+| Agent | Role | When to Use | ETA |
+|-------|------|-------------|-----|
+| **@content-pm** | Project Manager & Strategy Orchestrator | Project setup, campaign planning | Phase 2 (Weeks 5-8) |
+| **@funnel-architect** | Conversion Funnel Strategy Specialist | TOFU → MOFU → BOFU funnels | Phase 3 (Weeks 9-12) |
+
+### Core Tasks
+
+**Course Generation (Greenfield/Brownfield):**
+- `*new {slug}` - 🆕 Create new course from scratch (greenfield workflow)
+- `*upgrade {slug}` - 🆕 Upgrade existing course (brownfield workflow)
+- `*market-research {slug}` - 🆕 Competitive market research (10-15 courses analyzed)
+- `*reformulate-course-brief {slug}` - 🆕 Integrate research insights into brief
+- `*generate-curriculum {slug}` - Generate curriculum.yaml from COURSE-BRIEF
+- `*generate-lessons {slug}` - Generate all lessons (GPS + Didática Lendária)
+- `*validate-course {slug}` - Comprehensive quality validation
+
+**Course Generation (Atomic Tasks):**
+- `*init-course-greenfield` - Initialize new course structure
+- `*init-course-brownfield` - Initialize brownfield course structure
+- `*organize-files` - Organize legacy course files
+- `*extract-icp` - Extract ICP from legacy materials
+- `*extract-voice` - Extract instructor voice profile
+- `*infer-objectives` - Infer learning objectives (Bloom's Taxonomy)
+- `*analyze-gaps` - Analyze COURSE-BRIEF gaps after extraction
+
+**Content Generation (Planned):**
 - `*generate-blog-post` - SEO blog (1500-2500 words)
-- `*generate-social-content` - Social posts (LinkedIn, Twitter, Instagram)
-- `*generate-video-script` - Video script with story arc
-- `*generate-newsletter` - Curated content + commentary
-- `*generate-course` - Full course curriculum
-
-**Marketing Intelligence:**
-- `*design-funnel` - Create conversion funnel
-- `*create-ab-test` - Setup A/B test
-- `*optimize-seo` - SEO strategy + tracking
-
-**Analytics:**
-- `*track-performance` - Log metrics (views, conversions)
-- `*analyze-learnings` - Extract insights from data
-- `*analyze-attribution` - Multi-touch attribution
 
 **Quality:**
 - `*validate-fidelity` - Check voice consistency (85-95%)

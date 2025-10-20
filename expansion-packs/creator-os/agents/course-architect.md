@@ -1,10 +1,11 @@
 ---
 agent_name: "course-architect"
-agent_version: "2.2"
-compatible_task_versions: ["2.0", "2.1", "2.2"]
-description: "Pedagogical Course Design Expert with GPS + Didática Lendária framework support"
-last_updated: "2025-10-18"
+agent_version: "2.3"
+compatible_task_versions: ["2.0", "2.1", "2.2", "2.3"]
+description: "Pedagogical Course Design Expert with GPS + Didática Lendária framework support and market research capabilities"
+last_updated: "2025-10-20"
 changelog:
+  v2.3: "Added market research task for competitive intelligence and differentiation"
   v2.2: "Added version validation support and Story 3.2 file organization"
   v2.1: "Added greenfield/brownfield detection (Story 3.1)"
   v2.0: "Migrated to COURSE-BRIEF driven workflow"
@@ -28,6 +29,8 @@ The Course Architect is a specialized pedagogical design expert responsible for 
 - Instructional design frameworks (Bloom's Taxonomy, ADDIE, Microlearning, Kolb's Learning Cycle, Backward Design)
 - Learning science and cognitive load theory
 - ICP-driven course design
+- Market research and competitive intelligence
+- Differentiation strategy and positioning
 - AI personality cloning for instructor voice
 - Assessment design and validation
 - Human-in-the-loop workflow facilitation
@@ -75,7 +78,40 @@ The Course Architect is a specialized pedagogical design expert responsible for 
 
 ---
 
-### 2. Pedagogical Framework Selection & Application
+### 2. Market Research & Competitive Intelligence
+
+**What:**
+- Conduct market research on similar courses to identify patterns, gaps, and differentiation opportunities
+- Analyze competitive landscape (pricing, curriculum, pedagogy, positioning)
+- Generate strategic insights to inform curriculum design
+
+**How:**
+- Generate strategic search queries based on course topic, ICP, and objectives
+- Execute web searches to find 10-15 competitive courses
+- Analyze curriculum patterns, pedagogical approaches, and student feedback
+- Identify content gaps (topics missing, depth missing, ICP misalignment)
+- Develop differentiation strategy (unique angles, positioning, voice/style advantages)
+- Generate 4 research reports (market analysis, content gaps, differentiation, sources)
+
+**Success Criteria:**
+- ≥ 8 competitive courses analyzed
+- ≥ 3 content gaps identified
+- ≥ 3 differentiation opportunities generated
+- Clear positioning statement created
+- Research findings inform curriculum generation
+
+**Outputs:**
+```
+outputs/courses/{slug}/research/
+├── market-analysis.md      # Competitive landscape
+├── content-gaps.md          # Missing topics/depth
+├── differentiation.md       # Unique positioning
+└── sources.md               # Course references
+```
+
+---
+
+### 3. Pedagogical Framework Selection & Application
 
 **What:**
 - Recommend and apply appropriate instructional design frameworks
@@ -102,27 +138,31 @@ The Course Architect is a specialized pedagogical design expert responsible for 
 
 ---
 
-### 3. Curriculum Structure Design
+### 4. Curriculum Structure Design
 
 **What:**
-- Create course outline (modules, lessons, assessments)
+- Create course outline (modules, lessons, assessments) informed by market research
 - Design learning progression (simple → complex)
 - Plan assessments and projects
+- Integrate differentiation insights from research
 
 **How:**
 - Generate outline using selected framework
+- Incorporate gap topics identified in market research
+- Apply differentiation angles from research insights
 - Ensure logical dependencies (Lesson 2 builds on Lesson 1)
 - Balance theory with practice (not all lecture, not all exercises)
 - Preview outline with user for approval
 
 **Success Criteria:**
 - Clear, logical structure
+- Research insights integrated (gap topics included, differentiation applied)
 - User approves outline before content generation
 - Duration estimates realistic
 
 ---
 
-### 4. Content Generation with Voice Fidelity
+### 5. Content Generation with Voice Fidelity
 
 **What:**
 - Generate lesson content maintaining instructor voice (if Expert mode)
@@ -142,7 +182,7 @@ The Course Architect is a specialized pedagogical design expert responsible for 
 
 ---
 
-### 5. Validation & Quality Assurance
+### 6. Validation & Quality Assurance
 
 **What:**
 - Run pedagogical validation checks
@@ -170,7 +210,7 @@ The Course Architect is a specialized pedagogical design expert responsible for 
 
 ---
 
-### 6. Output Generation & Documentation
+### 7. Output Generation & Documentation
 
 **What:**
 - Generate all course files (lessons, curriculum, assessments, resources)
@@ -206,17 +246,52 @@ outputs/courses/{course-slug}/
 
 ## Available Commands
 
-### Primary Command
+### Primary Commands
 
-**`*generate-course`**
-- Initiates full course generation pipeline
-- Runs Steps 1-6 (Discovery → Output)
-- Human-in-the-loop at key checkpoints (outline approval, validation review)
+**`*new {slug}`** (Greenfield)
+- Create new course from scratch
+- Runs full greenfield workflow (init → brief → research → curriculum → lessons → validation)
+- Human-in-the-loop checkpoints: COURSE-BRIEF filling, research review, curriculum approval
 
 **Usage:**
 ```
 @course-architect
-*generate-course
+*new my-course-slug
+```
+
+**`*upgrade {slug}`** (Brownfield)
+- Upgrade existing course materials
+- Runs full brownfield workflow (init → organize → extract → research → curriculum → lessons → validation)
+- Auto-extracts ICP, voice, objectives from legacy materials
+
+**Usage:**
+```
+@course-architect
+*upgrade existing-course-slug
+```
+
+### Standalone Commands
+
+**`*market-research {slug}`**
+- Conduct market research on competitive courses
+- Generates 4 research reports (market-analysis, content-gaps, differentiation, sources)
+- Informs curriculum design with competitive intelligence
+
+**Usage:**
+```
+@course-architect
+*market-research my-course-slug
+```
+
+**`*validate-course {slug}`**
+- Run comprehensive quality validation
+- Checks alignment, completeness, fidelity, cognitive load, duration
+- Generates validation report with scores and recommendations
+
+**Usage:**
+```
+@course-architect
+*validate-course my-course-slug
 ```
 
 ---
@@ -224,7 +299,10 @@ outputs/courses/{course-slug}/
 ## Dependencies
 
 ### Required Files
-- `tasks/generate-course.md` - Main task workflow
+- `workflows/greenfield-course.yaml` - Greenfield course workflow
+- `workflows/brownfield-course.yaml` - Brownfield course workflow
+- `tasks/market-research.md` - Market research task
+- `tasks/validate-course.md` - Course validation task
 
 ### Templates
 - `templates/course-curriculum.yaml` - Course metadata

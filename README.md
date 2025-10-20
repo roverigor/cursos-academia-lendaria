@@ -191,7 +191,7 @@ mente_lendaria/
 ```bash
 # 1. Clone o repositório
 git clone [repository-url]
-cd mente_lendaria
+cd mmos
 
 # 2. Instalar dependências CLI
 brew bundle                    # macOS

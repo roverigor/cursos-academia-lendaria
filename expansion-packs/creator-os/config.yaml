@@ -52,36 +52,26 @@ key_capabilities:
 
 # Components
 agents:
-  - id: content-pm
-    file: agents/content-pm.md
-    role: Content Project Manager & Strategy Orchestrator
+  # Core Agents (Implemented)
   - id: content-orchestrator
     file: agents/content-orchestrator.md
     role: Master Content Generation Coordinator
   - id: blog-writer
     file: agents/blog-writer.md
     role: SEO-Optimized Blog Writing Specialist
-  - id: social-media-specialist
-    file: agents/social-media-specialist.md
-    role: Multi-Platform Social Content Expert
-  - id: video-script-writer
-    file: agents/video-script-writer.md
-    role: Video Scriptwriting & Storytelling Specialist
   - id: course-architect
     file: agents/course-architect.md
     role: Pedagogical Course Design Expert
+
+  # Planned Agents (Phase 2-3)
+  - id: content-pm
+    file: agents/content-pm.md
+    role: Content Project Manager & Strategy Orchestrator
+    status: planned
   - id: funnel-architect
     file: agents/funnel-architect.md
     role: Conversion Funnel Strategy Specialist
-  - id: ab-test-manager
-    file: agents/ab-test-manager.md
-    role: A/B Testing & Experimentation Expert
-  - id: seo-optimizer
-    file: agents/seo-optimizer.md
-    role: SEO Strategy & Optimization Specialist
-  - id: growth-analyst
-    file: agents/growth-analyst.md
-    role: Performance Analytics & Learning Extraction Expert
+    status: planned
 
 tasks:
   # Content Generation
@@ -137,6 +127,12 @@ tasks:
   - id: validate-course
     file: tasks/validate-course.md
     purpose: Comprehensive course quality validation
+  - id: market-research
+    file: tasks/market-research.md
+    purpose: Conduct competitive market research on similar courses (10-15 analyzed)
+  - id: reformulate-course-brief
+    file: tasks/reformulate-course-brief.md
+    purpose: Reformulate COURSE-BRIEF with market research insights and gap analysis
 
   # Marketing & Analytics
   - id: design-funnel

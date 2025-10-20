@@ -327,6 +327,99 @@ workflow:
 
         When ready, continue with:
           @course-architect
+          *market-research {slug}
+
+    - agent: course-architect
+      creates: market-research-reports
+      task: market-research
+      requires:
+        - outputs/courses/{slug}/COURSE-BRIEF.md (reviewed and filled)
+      outputs:
+        - outputs/courses/{slug}/research/market-analysis.md
+        - outputs/courses/{slug}/research/content-gaps.md
+        - outputs/courses/{slug}/research/differentiation.md
+        - outputs/courses/{slug}/research/sources.md
+      notes: |
+        Conduct market research on similar courses:
+        - Generate strategic search queries (topic, ICP, platform-specific)
+        - Execute web searches (top 10-15 competitive courses)
+        - Analyze curriculum patterns, pedagogical approaches, pricing
+        - Identify content gaps and differentiation opportunities
+        - Generate 4 research reports in /research/ folder
+
+        Brownfield-specific value:
+          - Compare legacy course with competitors
+          - Identify modernization opportunities
+          - Validate ICP extraction against market
+          - Find missing topics to add during upgrade
+
+        Duration: 5-10 minutes
+        SAVE OUTPUT: research/ folder with 4 markdown reports
+
+    - agent: course-architect
+      action: reformulate_course_brief
+      task: reformulate-course-brief
+      requires:
+        - outputs/courses/{slug}/COURSE-BRIEF.md (with auto-extraction)
+        - outputs/courses/{slug}/research/market-analysis.md
+        - outputs/courses/{slug}/research/content-gaps.md
+        - outputs/courses/{slug}/research/differentiation.md
+      outputs:
+        - outputs/courses/{slug}/COURSE-BRIEF.md (reformulated)
+        - outputs/courses/{slug}/COURSE-BRIEF-ORIGINAL.md (backup)
+      notes: |
+        Reformulate COURSE-BRIEF based on market research insights:
+
+        SAME PROCESS AS GREENFIELD (see greenfield-course.yaml for details)
+
+        Brownfield-specific enhancements:
+          - Compare legacy course structure with competitive patterns
+          - Identify modernization opportunities (topics to add, depth to increase)
+          - Validate auto-extracted ICP against market segments
+          - Highlight legacy advantages (what competitors don't have)
+
+        Section 9 includes brownfield-specific insights:
+          ### Legacy vs. Market Comparison:
+          - Topics in legacy but not in competitors: {unique_legacy_topics}
+          - Topics in competitors but not in legacy: {gap_topics_to_add}
+          - Modernization opportunities: {modernization_areas}
+
+        SAVE OUTPUT: COURSE-BRIEF.md (enriched with market intelligence + legacy comparison)
+
+    - manual_halt_research:
+      action: review_reformulated_brief
+      requires:
+        - outputs/courses/{slug}/COURSE-BRIEF.md (reformulated)
+      duration: 5-10 minutes
+      notes: |
+        ✋ WORKFLOW HALTED - Review Reformulated COURSE-BRIEF
+
+        📊 COURSE-BRIEF has been reformulated with market research insights!
+
+        📄 Review updated file:
+          outputs/courses/{slug}/COURSE-BRIEF.md
+
+        📄 Compare with original:
+          outputs/courses/{slug}/COURSE-BRIEF-ORIGINAL.md
+
+        🔍 Key Changes Made:
+          ✅ Section 3: Gap topics added to outline
+          ✅ Section 6: Pricing/positioning refined
+          ✅ Section 9: Market research + legacy comparison
+
+        📊 Full Research Reports:
+          📄 market-analysis.md - Competitive landscape
+          📄 content-gaps.md - Topics to add during modernization
+          📄 differentiation.md - How to position upgraded course
+
+        Brownfield-specific review:
+          1️⃣ Validate legacy advantages are preserved
+          2️⃣ Confirm gap topics make sense to add
+          3️⃣ Review modernization strategy
+          4️⃣ Ensure ICP refinement aligns with market
+
+        When satisfied, continue with:
+          @course-architect
           *generate-curriculum {slug}
 
     - agent: course-architect
@@ -334,15 +427,22 @@ workflow:
       task: generate-curriculum
       requires:
         - outputs/courses/{slug}/COURSE-BRIEF.md (reviewed and filled)
+        - outputs/courses/{slug}/research/ (optional but recommended)
       outputs:
         - outputs/courses/{slug}/curriculum.yaml
       notes: |
-        Generate curriculum from COURSE-BRIEF:
+        Generate curriculum from COURSE-BRIEF + research insights:
         - Load and parse COURSE-BRIEF.md (all 8 sections)
+        - Load market research (if available):
+          * content-gaps.md → topics to add during modernization
+          * differentiation.md → unique angles to apply
+          * market-analysis.md → patterns to compare against legacy
         - Validate brief completeness (required fields check)
         - Generate curriculum structure:
           * MVP: Basic 3-module template
-          * Production: AI-generated based on objectives + ICP
+          * Production: AI-generated based on objectives + ICP + research
+        - Apply differentiation strategy from research
+        - Include gap topics identified in research
         - Validate curriculum structure
         - Save curriculum.yaml
 
@@ -350,6 +450,7 @@ workflow:
           - Preserve lesson IDs from legacy (if structured)
           - Map objectives to existing lesson titles
           - Suggest module groupings based on content
+          - Add new topics from research gaps (modernization)
 
         SAVE OUTPUT: curriculum.yaml created
 
@@ -548,7 +649,16 @@ workflow:
         P --> Q[Gap Analysis Report]
         Q --> R[HALT: User Fills Gaps]
         R --> S[User: Review & Fill COURSE-BRIEF.md]
-        S --> T[course-architect: generate-curriculum]
+        S --> S2[course-architect: market-research]
+        S2 --> S3[Web Search: Competitive Courses]
+        S3 --> S4[Analyze: Compare Legacy vs Market]
+        S4 --> S5{Research Reports Generated}
+        S5 --> S6[course-architect: reformulate-course-brief]
+        S6 --> S7[Integrate Research + Legacy Comparison]
+        S7 --> S8[Backup Original + Add Section 9]
+        S8 --> S9{COURSE-BRIEF Reformulated}
+        S9 --> S10[HALT: Review Reformulated COURSE-BRIEF]
+        S10 --> T[course-architect: generate-curriculum]
 
         T --> U{curriculum.yaml Generated}
         U --> V[HALT: Approve Curriculum]
@@ -572,11 +682,18 @@ workflow:
         style ERROR1 fill:#FFB6C1
         style END1 fill:#FFB6C1
         style R fill:#FFE4B5
+        style S10 fill:#FFE4B5
         style V fill:#FFE4B5
         style I fill:#E6E6FA
         style J fill:#E6E6FA
         style K fill:#E6E6FA
         style L fill:#E6E6FA
+        style S2 fill:#E0F2F7
+        style S3 fill:#E0F2F7
+        style S4 fill:#E0F2F7
+        style S6 fill:#B0E0E6
+        style S7 fill:#B0E0E6
+        style S8 fill:#B0E0E6
     ```
 
   decision_guidance:
