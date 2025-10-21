@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: logs/YYYYMMDD-HHMM-test_cases.yaml, system-prompts/
-- Output: logs/YYYYMMDD-HHMM-personality_validation.yaml
+- Input: @{mind}/docs/logs/YYYYMMDD-HHMM-test_cases.yaml, @{mind}/system_prompts/
+- Output: @{mind}/docs/logs/YYYYMMDD-HHMM-personality_validation.yaml
 - Dependências: 01_test_generator.md executado
 
 ## OBJETIVO PRINCIPAL

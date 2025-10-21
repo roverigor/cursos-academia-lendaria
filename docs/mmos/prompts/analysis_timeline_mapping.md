@@ -1,37 +1,37 @@
 # TIMELINE MAPPING
 
 ## METADADOS
-- Vers„o: 3.0 ACS Neural Flow
-- Input: sources/, analysis/quotes_database.yaml
-- Output: analysis/life_timeline.yaml
-- DependÍncias: 01_quote_extraction.md, 01_source_reading.md
+- Vers√£o: 3.0 ACS Neural Flow
+- Input: @{mind}/sources/, @{mind}/artifacts/quotes_database.yaml
+- Output: @{mind}/artifacts/life_timeline.yaml
+- Depend√™ncias: 01_quote_extraction.md, 01_source_reading.md
 
 ## OBJETIVO PRINCIPAL
 
-Mapear a trajetÛria completa de vida e carreira de [NOME_SUJEITO] em timeline estruturada, identificando fases distintas, eventos transformadores, e evoluÁ„o temporal de padrıes comportamentais, valores e competÍncias.
+Mapear a trajet√≥ria completa de vida e carreira de [NOME_SUJEITO] em timeline estruturada, identificando fases distintas, eventos transformadores, e evolu√ß√£o temporal de padr√µes comportamentais, valores e compet√™ncias.
 
-## INPUT NECESS¡RIO
+## INPUT NECESS√ÅRIO
 
 ```yaml
 required_inputs:
-  - sources/ (todos os materiais coletados)
-  - analysis/quotes_database.yaml (citaÁıes com timestamps)
-  - logs/YYYYMMDD-HHMM-key_insights.md (insights de leitura)
+  - @{mind}/sources/ (todos os materiais coletados)
+  - @{mind}/artifacts/quotes_database.yaml (cita√ß√µes com timestamps)
+  - @{mind}/docs/logs/YYYYMMDD-HHMM-key_insights.md (insights de leitura)
 ```
 
 ## METODOLOGIA
 
 ### FASE 1: COLETA TEMPORAL
-Extrair todos os eventos, decisıes, mudanÁas e marcos documentados nas fontes com datas/perÌodos especÌficos.
+Extrair todos os eventos, decis√µes, mudan√ßas e marcos documentados nas fontes com datas/per√≠odos espec√≠ficos.
 
-### FASE 2: PERIODIZA«√O
-Identificar fases naturais baseadas em mudanÁas significativas de contexto, valores, comportamento ou foco.
+### FASE 2: PERIODIZA√á√ÉO
+Identificar fases naturais baseadas em mudan√ßas significativas de contexto, valores, comportamento ou foco.
 
-### FASE 3: AN¡LISE EVOLUTIVA
-Mapear como padrıes especÌficos emergiram, evoluÌram ou desapareceram ao longo do tempo.
+### FASE 3: AN√ÅLISE EVOLUTIVA
+Mapear como padr√µes espec√≠ficos emergiram, evolu√≠ram ou desapareceram ao longo do tempo.
 
-### FASE 4: IDENTIFICA«√O DE GATILHOS
-Documentar eventos/contextos que desencadearam mudanÁas significativas.
+### FASE 4: IDENTIFICA√á√ÉO DE GATILHOS
+Documentar eventos/contextos que desencadearam mudan√ßas significativas.
 
 ## OUTPUT ESTRUTURADO
 
@@ -51,30 +51,30 @@ life_phases:
     phase_name: "[Nome descritivo da fase]"
 
     defining_characteristics:
-      - characteristic: "[CaracterÌstica definidora 1]"
-        evidence: "[EvidÍncia especÌfica com fonte]"
+      - characteristic: "[Caracter√≠stica definidora 1]"
+        evidence: "[Evid√™ncia espec√≠fica com fonte]"
         manifestation: "[Como se manifestava]"
-      - characteristic: "[CaracterÌstica definidora 2]"
-        evidence: "[EvidÍncia especÌfica]"
+      - characteristic: "[Caracter√≠stica definidora 2]"
+        evidence: "[Evid√™ncia espec√≠fica]"
         manifestation: "[Como se manifestava]"
 
     key_events:
       - event_id: "EVT_001"
-        date: "[YYYY-MM-DD ou perÌodo]"
-        event_description: "[DescriÁ„o especÌfica do evento]"
-        event_type: "[Decis„o/Conquista/Crise/Aprendizado/MudanÁa]"
+        date: "[YYYY-MM-DD ou per√≠odo]"
+        event_description: "[Descri√ß√£o espec√≠fica do evento]"
+        event_type: "[Decis√£o/Conquista/Crise/Aprendizado/Mudan√ßa]"
         impact_level: "[1-10]"
-        immediate_consequences: "[ConsequÍncias imediatas]"
+        immediate_consequences: "[Consequ√™ncias imediatas]"
         long_term_impact: "[Impacto de longo prazo]"
         sources: ["[Fonte 1]", "[Fonte 2]"]
         quotes_related: ["[ID da quote do quotes_database.yaml]"]
 
       - event_id: "EVT_002"
-        date: "[Data/perÌodo]"
-        event_description: "[DescriÁ„o]"
+        date: "[Data/per√≠odo]"
+        event_description: "[Descri√ß√£o]"
         event_type: "[Tipo]"
         impact_level: "[1-10]"
-        immediate_consequences: "[ConsequÍncias]"
+        immediate_consequences: "[Consequ√™ncias]"
         long_term_impact: "[Impacto]"
         sources: ["[Fonte]"]
         quotes_related: ["[IDs]"]
@@ -82,40 +82,40 @@ life_phases:
     dominant_values:
       - value: "[Valor dominante nesta fase]"
         manifestation: "[Como se manifestava comportamentalmente]"
-        evidence: "[EvidÍncias especÌficas]"
+        evidence: "[Evid√™ncias espec√≠ficas]"
         evolution_from_previous: "[Como evoluiu da fase anterior]"
 
     skills_developed:
-      - skill: "[CompetÍncia desenvolvida]"
+      - skill: "[Compet√™ncia desenvolvida]"
         development_context: "[Contexto de desenvolvimento]"
-        mastery_level: "[NÌvel alcanÁado na fase]"
-        evidence: "[EvidÍncias de desenvolvimento]"
+        mastery_level: "[N√≠vel alcan√ßado na fase]"
+        evidence: "[Evid√™ncias de desenvolvimento]"
 
     relationships_formative:
       - person: "[Nome da pessoa]"
-        relationship_type: "[Mentor/Parceiro/Advers·rio/InspiraÁ„o]"
+        relationship_type: "[Mentor/Parceiro/Advers√°rio/Inspira√ß√£o]"
         influence_description: "[Como influenciou]"
-        duration: "[PerÌodo]"
+        duration: "[Per√≠odo]"
         impact_score: "[1-10]"
 
     environment_context:
       geographic_location: "[Onde estava]"
-      socioeconomic_context: "[Contexto socioeconÙmico]"
-      cultural_influences: "[InfluÍncias culturais especÌficas]"
-      technological_context: "[Contexto tecnolÛgico da Època]"
-      industry_context: "[Contexto da ind˙stria/·rea]"
+      socioeconomic_context: "[Contexto socioecon√¥mico]"
+      cultural_influences: "[Influ√™ncias culturais espec√≠ficas]"
+      technological_context: "[Contexto tecnol√≥gico da √©poca]"
+      industry_context: "[Contexto da ind√∫stria/√°rea]"
 
     internal_state:
-      confidence_level: "[Baixo/MÈdio/Alto/Vari·vel]"
-      primary_motivation: "[MotivaÁ„o prim·ria na fase]"
-      fears_doubts: "[Medos ou d˙vidas documentados]"
+      confidence_level: "[Baixo/M√©dio/Alto/Vari√°vel]"
+      primary_motivation: "[Motiva√ß√£o prim√°ria na fase]"
+      fears_doubts: "[Medos ou d√∫vidas documentados]"
       self_perception: "[Como se via]"
 
     transition_to_next:
-      transition_event: "[Evento que marcou fim/inÌcio de nova fase]"
-      transition_date: "[Data/perÌodo]"
+      transition_event: "[Evento que marcou fim/in√≠cio de nova fase]"
+      transition_date: "[Data/per√≠odo]"
       transition_type: "[Gradual/Abrupta/Crise/Oportunidade]"
-      readiness_level: "[Qu„o preparado estava]"
+      readiness_level: "[Qu√£o preparado estava]"
 
   phase_02_ascensao:
     period: "[YYYY-YYYY]"
@@ -145,8 +145,8 @@ transformative_moments:
   crisis_points:
     - crisis_id: "CRISIS_001"
       date: "[Data]"
-      crisis_description: "[DescriÁ„o especÌfica da crise]"
-      crisis_type: "[Financeira/Sa˙de/Relacionamento/Profissional/Existencial]"
+      crisis_description: "[Descri√ß√£o espec√≠fica da crise]"
+      crisis_type: "[Financeira/Sa√∫de/Relacionamento/Profissional/Existencial]"
       severity: "[1-10]"
       response_strategy: "[Como respondeu]"
       outcome: "[Resultado]"
@@ -157,7 +157,7 @@ transformative_moments:
   breakthrough_moments:
     - breakthrough_id: "BREAK_001"
       date: "[Data]"
-      breakthrough_description: "[DescriÁ„o do breakthrough]"
+      breakthrough_description: "[Descri√ß√£o do breakthrough]"
       context: "[Contexto]"
       enablers: "[O que possibilitou]"
       immediate_impact: "[Impacto imediato]"
@@ -171,25 +171,25 @@ transformative_moments:
       to_state: "[Novo estado/caminho]"
       trigger: "[O que desencadeou]"
       decision_process: "[Como decidiu]"
-      resistance_faced: "[ResistÍncia enfrentada]"
+      resistance_faced: "[Resist√™ncia enfrentada]"
       validation_received: "[Quando se validou]"
       sources: ["[Fontes]"]
 
 pattern_evolution:
   behavioral_patterns:
-    - pattern_name: "[Nome do padr„o comportamental]"
+    - pattern_name: "[Nome do padr√£o comportamental]"
       emergence_phase: "[Quando emergiu]"
       evolution_timeline:
         - phase: "[Fase 1]"
           manifestation: "[Como se manifestava]"
-          frequency: "[FrequÍncia]"
+          frequency: "[Frequ√™ncia]"
           context: "[Contextos]"
         - phase: "[Fase 2]"
           manifestation: "[Como evoluiu]"
-          frequency: "[FrequÍncia]"
+          frequency: "[Frequ√™ncia]"
           context: "[Contextos]"
-      current_state: "[Estado atual do padr„o]"
-      stability_score: "[Qu„o est·vel/consistente 0.0-1.0]"
+      current_state: "[Estado atual do padr√£o]"
+      stability_score: "[Qu√£o est√°vel/consistente 0.0-1.0]"
 
   values_evolution:
     - value: "[Nome do valor]"
@@ -198,41 +198,41 @@ pattern_evolution:
         - phase: "[Fase]"
           priority_rank: "[Ranking]"
           manifestation: "[Como se manifestava]"
-          evidence: "[EvidÍncias]"
-      evolution_pattern: "[Crescente/Decrescente/Est·vel/CÌclico]"
-      current_centrality: "[Qu„o central È hoje 0.0-1.0]"
+          evidence: "[Evid√™ncias]"
+      evolution_pattern: "[Crescente/Decrescente/Est√°vel/C√≠clico]"
+      current_centrality: "[Qu√£o central √© hoje 0.0-1.0]"
 
   skill_mastery_curves:
-    - skill: "[CompetÍncia especÌfica]"
+    - skill: "[Compet√™ncia espec√≠fica]"
       discovery_date: "[Quando descobriu/iniciou]"
       mastery_timeline:
-        - period: "[PerÌodo]"
-          level: "[NÌvel de maestria 0-100]"
-          evidence: "[EvidÍncias do nÌvel]"
-          practice_intensity: "[Intensidade de pr·tica]"
+        - period: "[Per√≠odo]"
+          level: "[N√≠vel de maestria 0-100]"
+          evidence: "[Evid√™ncias do n√≠vel]"
+          practice_intensity: "[Intensidade de pr√°tica]"
       peak_performance_period: "[Quando atingiu pico]"
-      current_level: "[NÌvel atual]"
+      current_level: "[N√≠vel atual]"
 
 recurring_patterns:
   decision_patterns:
-    - pattern_description: "[DescriÁ„o do padr„o decisÛrio]"
+    - pattern_description: "[Descri√ß√£o do padr√£o decis√≥rio]"
       frequency_count: "[N vezes observado]"
       contexts: ["[Contexto 1]", "[Contexto 2]"]
       success_rate: "[Taxa de sucesso]"
       examples:
         - date: "[Data]"
-          situation: "[SituaÁ„o]"
-          decision: "[Decis„o]"
+          situation: "[Situa√ß√£o]"
+          decision: "[Decis√£o]"
           outcome: "[Resultado]"
 
   response_patterns:
     - trigger_type: "[Tipo de gatilho]"
-      typical_response: "[Resposta tÌpica]"
-      frequency: "[FrequÍncia]"
+      typical_response: "[Resposta t√≠pica]"
+      frequency: "[Frequ√™ncia]"
       effectiveness: "[Efetividade 0.0-1.0]"
       examples:
         - date: "[Data]"
-          trigger: "[Gatilho especÌfico]"
+          trigger: "[Gatilho espec√≠fico]"
           response: "[Resposta]"
           outcome: "[Resultado]"
 
@@ -241,52 +241,52 @@ temporal_gaps:
     gap_duration: "[N anos/meses]"
     documentation_level: "[Baixo/Inexistente]"
     known_facts: ["[Fato 1]", "[Fato 2]"]
-    inference_possible: "[Sim/N„o]"
-    impact_on_analysis: "[Como afeta an·lise]"
+    inference_possible: "[Sim/N√£o]"
+    impact_on_analysis: "[Como afeta an√°lise]"
 
 meta_timeline_analysis:
   documentation_quality:
-    high_coverage_periods: ["[PerÌodo 1]", "[PerÌodo 2]"]
-    low_coverage_periods: ["[PerÌodo 1]", "[PerÌodo 2]"]
-    bias_sources: "[PossÌveis vieses nas fontes]"
-    contradictions_found: "[ContradiÁıes entre fontes]"
+    high_coverage_periods: ["[Per√≠odo 1]", "[Per√≠odo 2]"]
+    low_coverage_periods: ["[Per√≠odo 1]", "[Per√≠odo 2]"]
+    bias_sources: "[Poss√≠veis vieses nas fontes]"
+    contradictions_found: "[Contradi√ß√µes entre fontes]"
 
   narrative_consistency:
     self_narrative_evolution: "[Como narrativa pessoal evoluiu]"
-    external_perception_shifts: "[Como percepÁ„o externa mudou]"
+    external_perception_shifts: "[Como percep√ß√£o externa mudou]"
     alignment_score: "[Alinhamento self vs external 0.0-1.0]"
 
   confidence_by_period:
-    - period: "[PerÌodo]"
+    - period: "[Per√≠odo]"
       confidence_level: "[0.0-1.0]"
-      reasoning: "[Por que este nÌvel de confianÁa]"
+      reasoning: "[Por que este n√≠vel de confian√ßa]"
 ```
 
 ## CHECKLIST DE QUALIDADE
 
-- [ ] MÌnimo 5 fases de vida identificadas e documentadas
-- [ ] Cada fase tem mÌnimo 3 key_events documentados
+- [ ] M√≠nimo 5 fases de vida identificadas e documentadas
+- [ ] Cada fase tem m√≠nimo 3 key_events documentados
 - [ ] Eventos transformadores (crises/breakthroughs/pivots) mapeados
-- [ ] EvoluÁ„o de mÌnimo 5 padrıes comportamentais rastreada
-- [ ] EvoluÁ„o de mÌnimo 3 valores core rastreada
+- [ ] Evolu√ß√£o de m√≠nimo 5 padr√µes comportamentais rastreada
+- [ ] Evolu√ß√£o de m√≠nimo 3 valores core rastreada
 - [ ] Gaps temporais identificados e documentados
-- [ ] Todas as datas verificadas contra m˙ltiplas fontes
-- [ ] ContradiÁıes temporais resolvidas ou documentadas
-- [ ] Confidence scores atribuÌdos por perÌodo
-- [ ] MÌnimo 3 fontes para eventos crÌticos
+- [ ] Todas as datas verificadas contra m√∫ltiplas fontes
+- [ ] Contradi√ß√µes temporais resolvidas ou documentadas
+- [ ] Confidence scores atribu√≠dos por per√≠odo
+- [ ] M√≠nimo 3 fontes para eventos cr√≠ticos
 
-## ALERTAS CRÕTICOS
+## ALERTAS CR√çTICOS
 
-1. **VERIFICA«√O DE DATAS**: Todas as datas devem ser verificadas contra m˙ltiplas fontes. Conflitos devem ser documentados em notas.
+1. **VERIFICA√á√ÉO DE DATAS**: Todas as datas devem ser verificadas contra m√∫ltiplas fontes. Conflitos devem ser documentados em notas.
 
-2. **CAUSALIDADE vs CORRELA«√O**: Cuidado ao afirmar que "evento X causou mudanÁa Y". Documentar correlaÁ„o temporal mas ser cauteloso com causalidade.
+2. **CAUSALIDADE vs CORRELA√á√ÉO**: Cuidado ao afirmar que "evento X causou mudan√ßa Y". Documentar correla√ß√£o temporal mas ser cauteloso com causalidade.
 
-3. **REVISIONISM BIAS**: Pessoas reescrevem suas histÛrias. Triangular narrativa pessoal com evidÍncias externas e documentos da Època.
+3. **REVISIONISM BIAS**: Pessoas reescrevem suas hist√≥rias. Triangular narrativa pessoal com evid√™ncias externas e documentos da √©poca.
 
-4. **TEMPORAL GAPS**: Documentar explicitamente perÌodos com baixa documentaÁ„o. N„o preencher gaps com especulaÁ„o.
+4. **TEMPORAL GAPS**: Documentar explicitamente per√≠odos com baixa documenta√ß√£o. N√£o preencher gaps com especula√ß√£o.
 
-5. **PHASE GRANULARITY**: Fases devem ser significativas (mÌnimo 1-2 anos). Evitar fragmentaÁ„o excessiva que dificulta an·lise de padrıes.
+5. **PHASE GRANULARITY**: Fases devem ser significativas (m√≠nimo 1-2 anos). Evitar fragmenta√ß√£o excessiva que dificulta an√°lise de padr√µes.
 
 ---
 
-**ENTREGUE**: analysis/life_timeline.yaml com timeline completa estruturada seguindo exatamente este formato.
+**ENTREGUE**: @{mind}/artifacts/life_timeline.yaml com timeline completa estruturada seguindo exatamente este formato.

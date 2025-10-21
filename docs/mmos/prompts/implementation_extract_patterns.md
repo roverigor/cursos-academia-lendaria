@@ -2,7 +2,7 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/, templates/, frameworks/, sources/
+- Input: @{mind}/artifacts/, templates/, frameworks/, @{mind}/sources/
 - Output: patterns_final.yaml
 - Dependências: Etapas 3 e 4 completas
 
@@ -16,24 +16,24 @@ Você é um Especialista em Reconhecimento de Padrões e Síntese Cognitiva com 
 ```yaml
 inputs_requeridos:
   # Da Analysis (Etapa 3)
-  cognitive_architecture: "analysis/cognitive_architecture.yaml"
-  personality_profile: "analysis/personality_profile.json"
-  values_hierarchy: "analysis/values_hierarchy.yaml"
-  linguistic_patterns: "analysis/writing_style.md"
-  behavioral_patterns: "analysis/behavioral_patterns.md"
-  contradictions_resolved: "analysis/contradictions.yaml"
-  decision_patterns: "analysis/decision_patterns.yaml"
+  cognitive_architecture: "@{mind}/artifacts/cognitive_architecture.yaml"
+  personality_profile: "@{mind}/artifacts/personality_profile.json"
+  values_hierarchy: "@{mind}/artifacts/values_hierarchy.yaml"
+  linguistic_patterns: "@{mind}/artifacts/writing_style.md"
+  behavioral_patterns: "@{mind}/artifacts/behavioral_patterns.md"
+  contradictions_resolved: "@{mind}/artifacts/contradictions.yaml"
+  decision_patterns: "@{mind}/artifacts/decision_patterns.yaml"
 
   # Da Synthesis (Etapa 4)
   communication_templates: "templates/communication_templates.md"
   signature_phrases: "templates/signature_phrases.md"
   mental_frameworks: "frameworks/signature_frameworks.md"
-  knowledge_base: "kb/"
+  knowledge_base: "@{mind}/kb/"
 
   # Contexto do PRD
-  clone_objectives: "docs/PRD.md"
-  functional_requirements: "docs/PRD.md"
-  success_criteria: "docs/PRD.md"
+  clone_objectives: "@{mind}/docs/PRD.md"
+  functional_requirements: "@{mind}/docs/PRD.md"
+  success_criteria: "@{mind}/docs/PRD.md"
 ```
 
 ## METODOLOGIA

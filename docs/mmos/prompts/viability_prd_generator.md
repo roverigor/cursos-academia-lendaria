@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/scorecard_apex.yaml
-- Output: docs/PRD.md
+- Input: @{mind}/artifacts/scorecard_apex.yaml
+- Output: @{mind}/docs/PRD.md
 - Dependências: 01_scorecard_apex.md
 
 ## OBJETIVO PRINCIPAL
@@ -249,5 +249,5 @@ Antes de finalizar o PRD, verifique:
 ## ALERTAS CRÍTICOS
 - Este PRD será usado por TODAS as etapas subsequentes
 - Qualidade na especificação determina sucesso do projeto
-- Inputs devem ser baseados no docs/OUTPUTS_GUIDE.md
+- Inputs devem ser baseados no @{mind}/docs/OUTPUTS_GUIDE.md
 - Outputs devem seguir estrutura validada do sistema

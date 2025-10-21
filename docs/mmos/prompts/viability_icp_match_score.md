@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: logs/YYYYMMDD-HHMM-viability.yaml (output do APEX), perfil ICP da Comunidade Lendária
-- Output: logs/YYYYMMDD-HHMM-icp_match.yaml
+- Input: @{mind}/docs/@{mind}/docs/logs/YYYYMMDD-HHMM-viability.yaml (output do APEX), perfil ICP da Comunidade Lendária
+- Output: @{mind}/docs/@{mind}/docs/logs/YYYYMMDD-HHMM-icp_match.yaml
 - Dependências: 01_scorecard_apex.md (DEVE ser executado primeiro)
 - Execução: APENAS se scorecard_apex.score_final >= 6.0 (APROVADO ou superior)
 
@@ -18,7 +18,7 @@ Este prompt SÓ deve ser executado APÓS `01_scorecard_apex.md` ter sido conclu�
 ```yaml
 input_requerido:
   # Arquivo gerado pelo prompt anterior (obrigatório)
-  viability_file: "logs/YYYYMMDD-HHMM-viability.yaml"
+  viability_file: "@{mind}/docs/@{mind}/docs/logs/YYYYMMDD-HHMM-viability.yaml"
 
   # Campos extraídos do viability.yaml
   nome_clone: "[Extrair de viability.yaml]"
@@ -158,13 +158,13 @@ Avalie se o clone oferece antídotos para:
 
 ## OUTPUT ESTRUTURADO
 
-**Arquivo:** `logs/YYYYMMDD-HHMM-icp_match.yaml`
+**Arquivo:** `@{mind}/docs/@{mind}/docs/logs/YYYYMMDD-HHMM-icp_match.yaml`
 
 ```yaml
 icp_match_report:
   # Metadados e referências
   analysis_date: "YYYY-MM-DD HH:MM"
-  viability_file_reference: "logs/YYYYMMDD-HHMM-viability.yaml"
+  viability_file_reference: "@{mind}/docs/@{mind}/docs/logs/YYYYMMDD-HHMM-viability.yaml"
 
   clone: "[Nome do Clone]"
   icp_match_score: [X.X]/10
@@ -453,7 +453,7 @@ super_poder: "Síntese perfeita entre filosofia e capitalismo
 # PASSO 1: Executar APEX Score (obrigatório)
 Input: "Gary Vee"
 Prompt: 01_scorecard_apex.md
-Output: logs/20250929-2145-viability.yaml
+Output: @{mind}/docs/@{mind}/docs/logs/20250929-2145-viability.yaml
 
 # PASSO 2: Validar resultado APEX
 if viability.yaml.score_final >= 6.0:
@@ -463,9 +463,9 @@ else:
     exit()
 
 # PASSO 3: Executar ICP Match Score (condicional)
-Input: logs/20250929-2145-viability.yaml
+Input: @{mind}/docs/@{mind}/docs/logs/20250929-2145-viability.yaml
 Prompt: 02_icp_match_score.md
-Output: logs/20250929-2147-icp_match.yaml
+Output: @{mind}/docs/@{mind}/docs/logs/20250929-2147-icp_match.yaml
 
 # PASSO 4: Decisão Final Combinada
 apex_score = viability.yaml.score_final
@@ -479,7 +479,7 @@ print(f"DECISÃO FINAL: {priority}")
 
 **Passo 1 - APEX Score:**
 ```yaml
-# logs/20250929-2145-viability.yaml
+# @{mind}/docs/@{mind}/docs/logs/20250929-2145-viability.yaml
 clone: "Naval Ravikant"
 score_final: 9.2/10
 classification: "PREMIUM"
@@ -494,7 +494,7 @@ super_skill_category: "Filosofia Prática + Startups + Wealth Creation"
 
 **Passo 3 - ICP Match Score:**
 ```yaml
-# logs/20250929-2147-icp_match.yaml
+# @{mind}/docs/@{mind}/docs/logs/20250929-2147-icp_match.yaml
 clone: "Naval Ravikant"
 icp_match_score: 9.5/10
 classification: "MATCH PERFEITO"
@@ -523,7 +523,7 @@ RECOMENDAÇÃO: "Clonar imediatamente - Alto ROI técnico + Alta relevância ICP
 Antes de executar este prompt, confirmar:
 
 - [ ] `01_scorecard_apex.md` foi executado
-- [ ] Arquivo `logs/YYYYMMDD-HHMM-viability.yaml` existe
+- [ ] Arquivo `@{mind}/docs/@{mind}/docs/logs/YYYYMMDD-HHMM-viability.yaml` existe
 - [ ] `viability.yaml` contém `score_final >= 6.0`
 - [ ] Campos obrigatórios presentes no viability.yaml:
   - [ ] `clone` (nome)

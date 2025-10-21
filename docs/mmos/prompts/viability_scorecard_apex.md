@@ -3,7 +3,7 @@
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
 - Input: Nome do candidato a clone + contexto opcional
-- Output: logs/YYYYMMDD-HHMM-viability.yaml
+- Output: @{mind}/docs/logs/YYYYMMDD-HHMM-viability.yaml
 - Dependências: Nenhuma
 
 ## OBJETIVO PRINCIPAL

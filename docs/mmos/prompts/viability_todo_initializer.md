@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: docs/PRD.md, metadata/dependencies.yaml, analysis/scorecard_apex.yaml
-- Output: docs/TODO.md
+- Input: @{mind}/docs/PRD.md, @{mind}/metadata/dependencies.yaml, @{mind}/artifacts/scorecard_apex.yaml
+- Output: @{mind}/docs/TODO.md
 - Dependências: 01_scorecard_apex.md, 02_prd_generator.md, 02_dependencies_mapper.md
 
 ## OBJETIVO PRINCIPAL

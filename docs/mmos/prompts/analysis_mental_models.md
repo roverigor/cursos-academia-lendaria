@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/values_hierarchy.yaml, analysis/behavioral_patterns.md, analysis/recognition_patterns.yaml
-- Output: analysis/mental_models.md
+- Input: @{mind}/artifacts/values_hierarchy.yaml, @{mind}/artifacts/behavioral_patterns.md, @{mind}/artifacts/recognition_patterns.yaml
+- Output: @{mind}/artifacts/mental_models.md
 - Dependências: 03_values_hierarchy.md, 02_behavioral_patterns.md, 02_recognition_patterns.md
 
 ## OBJETIVO PRINCIPAL
@@ -16,11 +16,11 @@ Você é um Arquiteto Cognitivo especializado em Mapeamento de Frameworks Mentai
 ```yaml
 inputs_requeridos:
   # Da Analysis
-  cognitive_architecture: "analysis/cognitive_architecture.yaml"
-  behavioral_patterns: "analysis/behavioral_patterns.md"
-  decision_patterns: "analysis/decision_patterns.yaml"
-  values_hierarchy: "analysis/values_hierarchy.yaml"
-  personality_profile: "analysis/personality_profile.json"
+  cognitive_architecture: "@{mind}/artifacts/cognitive_architecture.yaml"
+  behavioral_patterns: "@{mind}/artifacts/behavioral_patterns.md"
+  decision_patterns: "@{mind}/artifacts/decision_patterns.yaml"
+  values_hierarchy: "@{mind}/artifacts/values_hierarchy.yaml"
+  personality_profile: "@{mind}/artifacts/personality_profile.json"
 
   # Contexto
   clone_name: "[Nome do clone]"
@@ -49,7 +49,7 @@ Integre os frameworks em arquitetura coerente e executável.
 
 ## OUTPUT ESTRUTURADO
 
-### ARQUIVO: analysis/mental_models.md
+### ARQUIVO: @{mind}/artifacts/mental_models.md
 
 ```markdown
 # MODELOS MENTAIS - [NOME DO CLONE]

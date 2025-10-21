@@ -4,8 +4,8 @@
 - **Fase:** 5 - Implementation
 - **Nível:** 04 - Especialização
 - **Objetivo:** Criar system prompt de especialista a partir do generalista
-- **Input Principal:** system-prompts/YYYYMMDD-HHMM-v1.0-generalista-initial.md
-- **Output:** specialists/[tipo]/system-prompts/YYYYMMDD-HHMM-v1.0-[tipo]-initial.md
+- **Input Principal:** @{mind}/system_prompts/YYYYMMDD-HHMM-v1.0-generalista-initial.md
+- **Output:** @{mind}/specialists/[tipo]/@{mind}/system_prompts/YYYYMMDD-HHMM-v1.0-[tipo]-initial.md
 - **Formato:** Markdown (.md)
 - **Uso:** Após aprovação do generalista
 

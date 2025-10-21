@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/quotes.md, analysis/timeline.md, analysis/values_hierarchy.md, analysis/behavioral_triggers.md, sources/
-- Output: analysis/cognitive_architecture.yaml
+- Input: @{mind}/artifacts/quotes.md, @{mind}/artifacts/timeline.md, @{mind}/artifacts/values_hierarchy.md, @{mind}/artifacts/behavioral_triggers.md, @{mind}/sources/
+- Output: @{mind}/artifacts/cognitive_architecture.yaml
 - Dependências: 01_quote_extraction.md, 02_behavioral_patterns.md, 03_values_hierarchy.md
 
 ## OBJETIVO PRINCIPAL
@@ -13,11 +13,11 @@ Mapear a arquitetura cognitiva completa do clone alvo, incluindo funções cogni
 
 ```
 clone_target: "[NOME COMPLETO]"
-quotes_file: "analysis/quotes.md"
-timeline_file: "analysis/timeline.md"
-values_file: "analysis/values_hierarchy.md"
-behavioral_file: "analysis/behavioral_triggers.md"
-sources_path: "sources/"
+quotes_file: "@{mind}/artifacts/quotes.md"
+timeline_file: "@{mind}/artifacts/timeline.md"
+values_file: "@{mind}/artifacts/values_hierarchy.md"
+behavioral_file: "@{mind}/artifacts/behavioral_triggers.md"
+sources_path: "@{mind}/sources/"
 ```
 
 ## METODOLOGIA
@@ -584,5 +584,5 @@ Exemplo completo: [Caso documentado do início ao fim]
 - Documente velocidades exatas - Timing é crucial
 - Não idealize - Capture como É, não como deveria ser
 - Mantenha complexidade - Não simplifique demais
-- Arquivo cognitive_patterns.md deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo cognitive_patterns.md deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - A arquitetura cognitiva é o motor do clone - Precisão aqui determina qualidade do output

@@ -3,7 +3,7 @@
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
 - Input: core_elements.yaml, patterns_final.yaml, identity_core, meta_axioms, instructions_core
-- Output: system-prompts/generalista.md
+- Output: @{mind}/system_prompts/generalista.md
 - Dependências: 02_identity_core.md, 02_meta_axioms.md, 02_instructions_core.md
 
 ```yaml

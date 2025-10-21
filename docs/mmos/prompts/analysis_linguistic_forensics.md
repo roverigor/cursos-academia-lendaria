@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: sources/ organizadas, analysis/quotes_database.yaml, analysis/sources_master.yaml
-- Output: analysis/writing_style.md
+- Input: @{mind}/sources/ organizadas, @{mind}/artifacts/quotes_database.yaml, @{mind}/artifacts/sources_master.yaml
+- Output: @{mind}/artifacts/writing_style.md
 - Dependências: 01_quote_extraction.md, 04_sources_master.md
 
 ## PROMPT PRINCIPAL

@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: sources/ organizadas, analysis/sources_master.yaml
-- Output: kb/qa_training.yaml
+- Input: @{mind}/sources/ organizadas, @{mind}/artifacts/sources_master.yaml
+- Output: @{mind}/kb/qa_training.yaml
 - Dependências: 04_sources_master.md
 
 ## OBJETIVO PRINCIPAL
@@ -15,8 +15,8 @@ Você é um especialista em ensino e extração de dados com expertise em criar 
 
 Acesso às fontes organizadas e aprovadas:
 ```
-sources_path: "sources/"
-sources_master: "analysis/sources_master.yaml"
+sources_path: "@{mind}/sources/"
+sources_master: "@{mind}/artifacts/sources_master.yaml"
 priority_sources: "[Lista de fontes de alta prioridade]"
 ```
 

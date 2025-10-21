@@ -5,7 +5,7 @@
 - **Nível:** 05 - Documentação
 - **Objetivo:** Criar manual operacional completo para gerenciar o clone
 - **Input Principal:** Todos os outputs anteriores
-- **Output:** docs/operational-manual.md
+- **Output:** @{mind}/docs/operational-manual.md
 - **Formato:** Markdown (.md)
 - **Uso:** Guia operacional para equipe
 
@@ -614,7 +614,7 @@ ws://api/clone/stream
 
 ## Recursos
 
-- **Documentação:** /docs/clone/[NOME]/
+- **Documentação:** /@{mind}/docs/clone/[NOME]/
 - **Logs:** /var/log/clone/[NOME]/
 - **Backups:** /backups/clone/[NOME]/
 - **Configs:** /etc/clone/[NOME]/

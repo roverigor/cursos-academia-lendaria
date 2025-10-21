@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: sources/ + sources/priority_matrix.yaml + logs/collection_report.yaml
-- Output: sources/sources_master.yaml + logs/YYYYMMDD-HHMM-readiness_assessment.yaml
+- Input: @{mind}/sources/ + @{mind}/sources/priority_matrix.yaml + @{mind}/docs/logs/collection_report.yaml
+- Output: @{mind}/sources/sources_master.yaml + @{mind}/docs/logs/YYYYMMDD-HHMM-readiness_assessment.yaml
 - Dependências: 02_source_collector.md, 03_priority_calculator.md
 
 ## OBJETIVO PRINCIPAL
@@ -14,7 +14,7 @@ Consolidar todos os outputs da fase de Research em um inventário master validad
 ```yaml
 inputs_requeridos:
   # Do Source Collector
-  sources_organizadas: "[Estrutura de pastas sources/]"
+  sources_organizadas: "[Estrutura de pastas @{mind}/sources/]"
   collection_report: "[Relatório de coleta completo]"
   quality_metadata: "[Metadata de qualidade por fonte]"
 

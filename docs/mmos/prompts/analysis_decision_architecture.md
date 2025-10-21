@@ -1,40 +1,40 @@
 # DECISION ANALYSIS
 
 ## METADADOS
-- Vers„o: 3.0 ACS Neural Flow
-- Input: sources/, analysis/life_timeline.yaml, analysis/quotes_database.yaml
-- Output: analysis/decision_patterns.yaml
-- DependÍncias: 01_timeline_mapping.md, 01_quote_extraction.md
+- Vers√£o: 3.0 ACS Neural Flow
+- Input: @{mind}/sources/, @{mind}/artifacts/life_timeline.yaml, @{mind}/artifacts/quotes_database.yaml
+- Output: @{mind}/artifacts/decision_patterns.yaml
+- Depend√™ncias: 01_timeline_mapping.md, 01_quote_extraction.md
 
 ## OBJETIVO PRINCIPAL
 
-Mapear a arquitetura decisÛria de [NOME_SUJEITO] atravÈs de an·lise sistem·tica de decisıes documentadas, identificando frameworks mentais, heurÌsticas, valores operacionais, vieses caracterÌsticos e padrıes de trade-off que governam escolhas em diferentes contextos.
+Mapear a arquitetura decis√≥ria de [NOME_SUJEITO] atrav√©s de an√°lise sistem√°tica de decis√µes documentadas, identificando frameworks mentais, heur√≠sticas, valores operacionais, vieses caracter√≠sticos e padr√µes de trade-off que governam escolhas em diferentes contextos.
 
-## INPUT NECESS¡RIO
+## INPUT NECESS√ÅRIO
 
 ```yaml
 required_inputs:
-  - sources/ (todos os materiais coletados)
-  - analysis/life_timeline.yaml (decisıes contextualizadas temporalmente)
-  - analysis/quotes_database.yaml (citaÁıes sobre decisıes e raciocÌnio)
+  - @{mind}/sources/ (todos os materiais coletados)
+  - @{mind}/artifacts/life_timeline.yaml (decis√µes contextualizadas temporalmente)
+  - @{mind}/artifacts/quotes_database.yaml (cita√ß√µes sobre decis√µes e racioc√≠nio)
 ```
 
 ## METODOLOGIA
 
-### FASE 1: CATALOGA«√O DE DECIS’ES
-Identificar e catalogar todas as decisıes significativas documentadas, com contexto, raciocÌnio declarado e resultado observado.
+### FASE 1: CATALOGA√á√ÉO DE DECIS√ïES
+Identificar e catalogar todas as decis√µes significativas documentadas, com contexto, racioc√≠nio declarado e resultado observado.
 
-### FASE 2: AN¡LISE DE FRAMEWORKS
-Extrair frameworks mentais e princÌpios decisÛrios que emergem consistentemente.
+### FASE 2: AN√ÅLISE DE FRAMEWORKS
+Extrair frameworks mentais e princ√≠pios decis√≥rios que emergem consistentemente.
 
-### FASE 3: MAPEAMENTO DE HEURÕSTICAS
-Identificar atalhos mentais, regras pr·ticas e heurÌsticas utilizadas.
+### FASE 3: MAPEAMENTO DE HEUR√çSTICAS
+Identificar atalhos mentais, regras pr√°ticas e heur√≠sticas utilizadas.
 
-### FASE 4: AN¡LISE DE TRADE-OFFS
-Mapear como diferentes valores/objetivos s„o balanceados quando em conflito.
+### FASE 4: AN√ÅLISE DE TRADE-OFFS
+Mapear como diferentes valores/objetivos s√£o balanceados quando em conflito.
 
-### FASE 5: IDENTIFICA«√O DE VIESES
-Documentar vieses cognitivos caracterÌsticos observ·veis nas decisıes.
+### FASE 5: IDENTIFICA√á√ÉO DE VIESES
+Documentar vieses cognitivos caracter√≠sticos observ√°veis nas decis√µes.
 
 ## OUTPUT ESTRUTURADO
 
@@ -42,150 +42,150 @@ Documentar vieses cognitivos caracterÌsticos observ·veis nas decisıes.
 decision_analysis_metadata:
   subject: "[NOME COMPLETO]"
   analysis_date: "YYYY-MM-DD"
-  decisions_analyzed: "[N decisıes catalogadas]"
+  decisions_analyzed: "[N decis√µes catalogadas]"
   temporal_range: "[YYYY-YYYY]"
-  domains_covered: ["[DomÌnio 1]", "[DomÌnio 2]"]
+  domains_covered: ["[Dom√≠nio 1]", "[Dom√≠nio 2]"]
   confidence_level: "[0.0-1.0]"
 
 decision_catalog:
   high_stakes_decisions:
     - decision_id: "DEC_001"
       date: "[YYYY-MM-DD]"
-      decision_description: "[DescriÁ„o especÌfica da decis„o]"
-      decision_type: "[Carreira/Financeira/Relacionamento/EstratÈgica/…tica]"
+      decision_description: "[Descri√ß√£o espec√≠fica da decis√£o]"
+      decision_type: "[Carreira/Financeira/Relacionamento/Estrat√©gica/√âtica]"
       stakes_level: "[1-10]"
 
       context:
-        situation: "[SituaÁ„o especÌfica]"
+        situation: "[Situa√ß√£o espec√≠fica]"
         constraints: ["[Constraint 1]", "[Constraint 2]"]
-        time_pressure: "[Baixa/MÈdia/Alta]"
+        time_pressure: "[Baixa/M√©dia/Alta]"
         information_available: "[Completa/Parcial/Incompleta]"
-        external_pressure: ["[Press„o 1]", "[Press„o 2]"]
+        external_pressure: ["[Press√£o 1]", "[Press√£o 2]"]
         phase_of_life: "[Fase conforme timeline]"
 
       options_considered:
-        - option: "[OpÁ„o 1]"
+        - option: "[Op√ß√£o 1]"
           pros_stated: ["[Pro 1]", "[Pro 2]"]
           cons_stated: ["[Con 1]", "[Con 2]"]
           probability_success: "[Estimativa se documentada]"
-        - option: "[OpÁ„o 2]"
+        - option: "[Op√ß√£o 2]"
           pros_stated: ["[Pro 1]", "[Pro 2]"]
           cons_stated: ["[Con 1]", "[Con 2]"]
           probability_success: "[Estimativa]"
 
-      decision_made: "[Decis„o tomada]"
+      decision_made: "[Decis√£o tomada]"
 
       reasoning_declared:
-        primary_reason: "[Raz„o principal declarada]"
-        supporting_reasons: ["[Raz„o 2]", "[Raz„o 3]"]
+        primary_reason: "[Raz√£o principal declarada]"
+        supporting_reasons: ["[Raz√£o 2]", "[Raz√£o 3]"]
         values_invoked: ["[Valor 1]", "[Valor 2]"]
-        frameworks_used: ["[Framework se identific·vel]"]
+        frameworks_used: ["[Framework se identific√°vel]"]
         quotes_relevant: ["[ID quote do database]"]
 
       reasoning_inferred:
-        hidden_motivations: "[MotivaÁıes n„o declaradas mas inferÌveis]"
-        emotional_factors: "[Fatores emocionais observ·veis]"
-        social_influences: "[InfluÍncias sociais]"
-        financial_calculations: "[C·lculos financeiros implÌcitos]"
-        risk_tolerance_revealed: "[Toler‚ncia a risco demonstrada]"
+        hidden_motivations: "[Motiva√ß√µes n√£o declaradas mas infer√≠veis]"
+        emotional_factors: "[Fatores emocionais observ√°veis]"
+        social_influences: "[Influ√™ncias sociais]"
+        financial_calculations: "[C√°lculos financeiros impl√≠citos]"
+        risk_tolerance_revealed: "[Toler√¢ncia a risco demonstrada]"
 
       execution:
-        implementation_speed: "[R·pida/Gradual/Lenta]"
-        commitment_level: "[Baixo/MÈdio/Alto/Total]"
-        reversibility: "[ReversÌvel/Parcialmente/IrreversÌvel]"
+        implementation_speed: "[R√°pida/Gradual/Lenta]"
+        commitment_level: "[Baixo/M√©dio/Alto/Total]"
+        reversibility: "[Revers√≠vel/Parcialmente/Irrevers√≠vel]"
         resources_committed: "[Recursos alocados]"
 
       outcome:
         immediate_result: "[Resultado imediato]"
         long_term_result: "[Resultado de longo prazo]"
         success_level: "[0-10]"
-        unexpected_consequences: ["[ConsequÍncia 1]", "[ConsequÍncia 2]"]
+        unexpected_consequences: ["[Consequ√™ncia 1]", "[Consequ√™ncia 2]"]
         learning_documented: "[Aprendizado documentado]"
 
       meta_analysis:
         decision_quality_score: "[0-10]"
-        process_quality: "[Qualidade do processo decisÛrio]"
+        process_quality: "[Qualidade do processo decis√≥rio]"
         outcome_quality: "[Qualidade do resultado]"
         luck_factor: "[Papel da sorte/acaso 0.0-1.0]"
-        would_repeat: "[Repetiria? Sim/N„o/Condicional]"
+        would_repeat: "[Repetiria? Sim/N√£o/Condicional]"
 
       sources: ["[Fonte 1]", "[Fonte 2]"]
 
   routine_decisions:
-    - decision_pattern: "[Padr„o de decis„o rotineira]"
-      frequency: "[FrequÍncia]"
-      typical_context: "[Contexto tÌpico]"
-      heuristic_used: "[HeurÌstica utilizada]"
+    - decision_pattern: "[Padr√£o de decis√£o rotineira]"
+      frequency: "[Frequ√™ncia]"
+      typical_context: "[Contexto t√≠pico]"
+      heuristic_used: "[Heur√≠stica utilizada]"
       success_rate: "[Taxa de sucesso]"
       examples:
         - date: "[Data]"
-          situation: "[SituaÁ„o]"
-          decision: "[Decis„o]"
+          situation: "[Situa√ß√£o]"
+          decision: "[Decis√£o]"
           outcome: "[Resultado]"
 
 decision_frameworks:
   primary_frameworks:
     - framework_id: "FW_001"
       framework_name: "[Nome do framework mental]"
-      framework_description: "[DescriÁ„o especÌfica]"
+      framework_description: "[Descri√ß√£o espec√≠fica]"
 
       structure:
         key_questions: ["[Pergunta 1]", "[Pergunta 2]", "[Pergunta 3]"]
-        evaluation_criteria: ["[CritÈrio 1]", "[CritÈrio 2]"]
-        decision_algorithm: "[DescriÁ„o do algoritmo decisÛrio]"
-        threshold_logic: "[LÛgica de threshold se aplic·vel]"
+        evaluation_criteria: ["[Crit√©rio 1]", "[Crit√©rio 2]"]
+        decision_algorithm: "[Descri√ß√£o do algoritmo decis√≥rio]"
+        threshold_logic: "[L√≥gica de threshold se aplic√°vel]"
 
       application_contexts:
-        - context: "[Contexto de aplicaÁ„o]"
-          frequency: "[FrequÍncia de uso]"
+        - context: "[Contexto de aplica√ß√£o]"
+          frequency: "[Frequ√™ncia de uso]"
           effectiveness: "[Efetividade 0.0-1.0]"
           example_decision_id: "DEC_XXX"
 
       origin:
-        source_type: "[Aprendizado/Mentoria/ExperiÍncia/Leitura]"
+        source_type: "[Aprendizado/Mentoria/Experi√™ncia/Leitura]"
         development_period: "[Quando desenvolveu]"
         refinement_history: "[Como refinou ao longo do tempo]"
 
       strengths:
-        - "[ForÁa 1 do framework]"
-        - "[ForÁa 2 do framework]"
+        - "[For√ßa 1 do framework]"
+        - "[For√ßa 2 do framework]"
 
       limitations:
-        - "[LimitaÁ„o 1]"
-        - "[LimitaÁ„o 2]"
+        - "[Limita√ß√£o 1]"
+        - "[Limita√ß√£o 2]"
 
       evidence_strength: "[0.0-1.0]"
 
   principles_operational:
-    - principle: "[PrincÌpio decisÛrio]"
-      statement: "[Statement especÌfico do princÌpio]"
-      priority_level: "[Alto/MÈdio/Baixo]"
+    - principle: "[Princ√≠pio decis√≥rio]"
+      statement: "[Statement espec√≠fico do princ√≠pio]"
+      priority_level: "[Alto/M√©dio/Baixo]"
       contexts_applied: ["[Contexto 1]", "[Contexto 2]"]
       examples_application:
         - decision_id: "DEC_XXX"
-          how_applied: "[Como o princÌpio guiou decis„o]"
-      conflicts_with: ["[Outros princÌpios que conflita]"]
-      override_conditions: "[Quando È sobreposto]"
+          how_applied: "[Como o princ√≠pio guiou decis√£o]"
+      conflicts_with: ["[Outros princ√≠pios que conflita]"]
+      override_conditions: "[Quando √© sobreposto]"
 
 heuristics_catalog:
   mental_shortcuts:
-    - heuristic_name: "[Nome da heurÌstica]"
-      heuristic_description: "[DescriÁ„o do atalho mental]"
-      trigger_conditions: ["[CondiÁ„o 1]", "[CondiÁ„o 2]"]
+    - heuristic_name: "[Nome da heur√≠stica]"
+      heuristic_description: "[Descri√ß√£o do atalho mental]"
+      trigger_conditions: ["[Condi√ß√£o 1]", "[Condi√ß√£o 2]"]
       typical_application: "[Como tipicamente aplica]"
       accuracy_rate: "[Taxa de acerto]"
       failure_modes: ["[Modo de falha 1]", "[Modo de falha 2]"]
       examples:
         - decision_id: "DEC_XXX"
-          application_details: "[Detalhes da aplicaÁ„o]"
+          application_details: "[Detalhes da aplica√ß√£o]"
 
   rules_of_thumb:
-    - rule: "[Regra pr·tica]"
-      domain: "[DomÌnio de aplicaÁ„o]"
+    - rule: "[Regra pr√°tica]"
+      domain: "[Dom√≠nio de aplica√ß√£o]"
       origin: "[Origem da regra]"
       reliability: "[Confiabilidade 0.0-1.0]"
-      exceptions_known: ["[ExceÁ„o 1]", "[ExceÁ„o 2]"]
-      usage_frequency: "[Alta/MÈdia/Baixa]"
+      exceptions_known: ["[Exce√ß√£o 1]", "[Exce√ß√£o 2]"]
+      usage_frequency: "[Alta/M√©dia/Baixa]"
 
 trade_off_patterns:
   value_conflicts:
@@ -195,23 +195,23 @@ trade_off_patterns:
 
       typical_resolution:
         prioritizes: "[Qual valor geralmente prioriza]"
-        context_dependency: "[Como contexto afeta priorizaÁ„o]"
-        resolution_pattern: "[Padr„o de resoluÁ„o]"
+        context_dependency: "[Como contexto afeta prioriza√ß√£o]"
+        resolution_pattern: "[Padr√£o de resolu√ß√£o]"
 
       examples:
         - decision_id: "DEC_XXX"
           value_a_weight: "[Peso dado ao valor A]"
           value_b_weight: "[Peso dado ao valor B]"
           resolution: "[Como resolveu]"
-          satisfaction_level: "[SatisfaÁ„o com resoluÁ„o]"
+          satisfaction_level: "[Satisfa√ß√£o com resolu√ß√£o]"
 
   resource_allocation:
-    - resource_type: "[Tempo/Dinheiro/Energia/AtenÁ„o]"
-      allocation_philosophy: "[Filosofia de alocaÁ„o]"
+    - resource_type: "[Tempo/Dinheiro/Energia/Aten√ß√£o]"
+      allocation_philosophy: "[Filosofia de aloca√ß√£o]"
       typical_distribution:
         - category: "[Categoria 1]"
           percentage: "[%]"
-          rationale: "[RaciocÌnio]"
+          rationale: "[Racioc√≠nio]"
       reallocation_triggers: ["[Gatilho 1]", "[Gatilho 2]"]
       examples_major_allocations:
         - decision_id: "DEC_XXX"
@@ -221,75 +221,75 @@ trade_off_patterns:
     short_term_bias: "[0.0-1.0]"
     long_term_bias: "[0.0-1.0]"
     balancing_mechanism: "[Como balancea curto vs longo prazo]"
-    context_shifts: "[Contextos que mudam preferÍncia temporal]"
+    context_shifts: "[Contextos que mudam prefer√™ncia temporal]"
 
 cognitive_biases:
   identified_biases:
-    - bias_name: "[Nome do viÈs cognitivo]"
-      bias_description: "[DescriÁ„o especÌfica]"
-      frequency_manifestation: "[FrequÍncia observada]"
-      domains_affected: ["[DomÌnio 1]", "[DomÌnio 2]"]
+    - bias_name: "[Nome do vi√©s cognitivo]"
+      bias_description: "[Descri√ß√£o espec√≠fica]"
+      frequency_manifestation: "[Frequ√™ncia observada]"
+      domains_affected: ["[Dom√≠nio 1]", "[Dom√≠nio 2]"]
 
       manifestation_examples:
         - decision_id: "DEC_XXX"
-          how_manifested: "[Como o viÈs se manifestou]"
-          impact: "[Impacto na decis„o]"
+          how_manifested: "[Como o vi√©s se manifestou]"
+          impact: "[Impacto na decis√£o]"
           awareness_level: "[Consciente/Inconsciente]"
 
       mitigation_attempts:
-        aware: "[Sim/N„o]"
-        strategies_used: ["[EstratÈgia 1]", "[EstratÈgia 2]"]
+        aware: "[Sim/N√£o]"
+        strategies_used: ["[Estrat√©gia 1]", "[Estrat√©gia 2]"]
         effectiveness: "[0.0-1.0]"
 
       authenticity_marker: "[Por que preservar no clone]"
 
   blind_spots_decisional:
-    - blind_spot: "[Ponto cego especÌfico]"
-      description: "[DescriÁ„o do que n„o vÍ/considera]"
-      evidence: "[EvidÍncias do blind spot]"
-      frequency: "[FrequÍncia]"
-      consequences: ["[ConsequÍncia 1]", "[ConsequÍncia 2]"]
-      compensating_mechanisms: "[Mecanismos compensatÛrios desenvolvidos]"
+    - blind_spot: "[Ponto cego espec√≠fico]"
+      description: "[Descri√ß√£o do que n√£o v√™/considera]"
+      evidence: "[Evid√™ncias do blind spot]"
+      frequency: "[Frequ√™ncia]"
+      consequences: ["[Consequ√™ncia 1]", "[Consequ√™ncia 2]"]
+      compensating_mechanisms: "[Mecanismos compensat√≥rios desenvolvidos]"
 
 decision_styles:
   by_context:
     professional_decisions:
-      style: "[AnalÌtico/Intuitivo/Consultivo/Autorit·rio]"
-      speed: "[R·pido/Moderado/Lento]"
-      information_seeking: "[Baixo/MÈdio/Alto]"
+      style: "[Anal√≠tico/Intuitivo/Consultivo/Autorit√°rio]"
+      speed: "[R√°pido/Moderado/Lento]"
+      information_seeking: "[Baixo/M√©dio/Alto]"
       risk_tolerance: "[0-10]"
-      reversibility_preference: "[Prefere reversÌvel/irrelevante]"
-      typical_process: "[DescriÁ„o do processo tÌpico]"
+      reversibility_preference: "[Prefere revers√≠vel/irrelevante]"
+      typical_process: "[Descri√ß√£o do processo t√≠pico]"
 
     personal_decisions:
       style: "[Estilo]"
       speed: "[Velocidade]"
-      information_seeking: "[NÌvel]"
+      information_seeking: "[N√≠vel]"
       risk_tolerance: "[0-10]"
-      reversibility_preference: "[PreferÍncia]"
+      reversibility_preference: "[Prefer√™ncia]"
       typical_process: "[Processo]"
 
     strategic_decisions:
       style: "[Estilo]"
       speed: "[Velocidade]"
-      information_seeking: "[NÌvel]"
+      information_seeking: "[N√≠vel]"
       risk_tolerance: "[0-10]"
-      reversibility_preference: "[PreferÍncia]"
+      reversibility_preference: "[Prefer√™ncia]"
       typical_process: "[Processo]"
 
   under_pressure:
     stress_response: "[Como decide sob stress]"
     quality_degradation: "[Como qualidade se degrada]"
-    fallback_patterns: ["[Padr„o 1]", "[Padr„o 2]"]
-    recovery_mechanisms: "[Como recupera qualidade decisÛria]"
+    fallback_patterns: ["[Padr√£o 1]", "[Padr√£o 2]"]
+    recovery_mechanisms: "[Como recupera qualidade decis√≥ria]"
 
 risk_profile:
   risk_tolerance_overall: "[0-10]"
 
   risk_tolerance_by_domain:
-    - domain: "[DomÌnio]"
+    - domain: "[Dom√≠nio]"
       tolerance_level: "[0-10]"
-      rationale: "[RaciocÌnio]"
+      rationale: "[Racioc√≠nio]"
       evidence_decisions: ["DEC_XXX", "DEC_YYY"]
 
   risk_assessment_patterns:
@@ -302,69 +302,69 @@ risk_profile:
 
 decision_evolution:
   maturation_patterns:
-    - period: "[PerÌodo]"
-      decision_quality_trend: "[Melhorando/Est·vel/Degradando]"
-      sophistication_increase: "[DescriÁ„o]"
+    - period: "[Per√≠odo]"
+      decision_quality_trend: "[Melhorando/Est√°vel/Degradando]"
+      sophistication_increase: "[Descri√ß√£o]"
       learning_integration: "[Como aprendizados foram integrados]"
 
   framework_adoption_timeline:
     - framework: "[Framework]"
       adoption_date: "[Data]"
-      trigger: "[O que desencadeou adoÁ„o]"
-      evolution: "[Como evoluiu desde adoÁ„o]"
+      trigger: "[O que desencadeou ado√ß√£o]"
+      evolution: "[Como evoluiu desde ado√ß√£o]"
 
 meta_decision_insights:
   decision_about_decisions:
-    - meta_principle: "[PrincÌpio meta sobre decisıes]"
-      description: "[DescriÁ„o]"
+    - meta_principle: "[Princ√≠pio meta sobre decis√µes]"
+      description: "[Descri√ß√£o]"
       examples: ["[Exemplo 1]", "[Exemplo 2]"]
 
   self_awareness_level: "[0.0-1.0]"
-  process_consciousness: "[Qu„o consciente È do prÛprio processo]"
-  improvement_efforts: ["[EsforÁo 1]", "[EsforÁo 2]"]
+  process_consciousness: "[Qu√£o consciente √© do pr√≥prio processo]"
+  improvement_efforts: ["[Esfor√ßo 1]", "[Esfor√ßo 2]"]
 
 operational_instructions_for_clone:
   decision_simulation_algorithm: |
-    [Algoritmo para simular decisıes do sujeito:
-    1. Identificar tipo de decis„o
+    [Algoritmo para simular decis√µes do sujeito:
+    1. Identificar tipo de decis√£o
     2. Aplicar framework relevante
     3. Considerar valores em jogo
-    4. Aplicar heurÌsticas caracterÌsticas
-    5. Integrar vieses autÍnticos
-    6. Gerar decis„o no estilo caracterÌstico]
+    4. Aplicar heur√≠sticas caracter√≠sticas
+    5. Integrar vieses aut√™nticos
+    6. Gerar decis√£o no estilo caracter√≠stico]
 
   context_detection_logic: |
-    [LÛgica para detectar contexto e ajustar estilo decisÛrio]
+    [L√≥gica para detectar contexto e ajustar estilo decis√≥rio]
 
   consistency_maintenance: |
-    [Como manter consistÍncia com padrıes histÛricos]
+    [Como manter consist√™ncia com padr√µes hist√≥ricos]
 ```
 
 ## CHECKLIST DE QUALIDADE
 
-- [ ] MÌnimo 20 decisıes significativas catalogadas
-- [ ] MÌnimo 3 frameworks decisÛrios identificados
-- [ ] MÌnimo 10 heurÌsticas mapeadas
-- [ ] Trade-offs documentados com exemplos especÌficos
-- [ ] MÌnimo 5 vieses cognitivos identificados
-- [ ] EvoluÁ„o decisÛria ao longo do tempo mapeada
-- [ ] Risk profile quantificado por domÌnio
+- [ ] M√≠nimo 20 decis√µes significativas catalogadas
+- [ ] M√≠nimo 3 frameworks decis√≥rios identificados
+- [ ] M√≠nimo 10 heur√≠sticas mapeadas
+- [ ] Trade-offs documentados com exemplos espec√≠ficos
+- [ ] M√≠nimo 5 vieses cognitivos identificados
+- [ ] Evolu√ß√£o decis√≥ria ao longo do tempo mapeada
+- [ ] Risk profile quantificado por dom√≠nio
 - [ ] Decision styles por contexto documentados
-- [ ] InstruÁıes operacionais para clone incluÌdas
-- [ ] Todas as decisıes com sources verificadas
+- [ ] Instru√ß√µes operacionais para clone inclu√≠das
+- [ ] Todas as decis√µes com sources verificadas
 
-## ALERTAS CRÕTICOS
+## ALERTAS CR√çTICOS
 
-1. **DECIS’ES vs NARRATIVA**: Separar decis„o real de narrativa post-hoc. Procurar evidÍncias contempor‚neas sempre que possÌvel.
+1. **DECIS√ïES vs NARRATIVA**: Separar decis√£o real de narrativa post-hoc. Procurar evid√™ncias contempor√¢neas sempre que poss√≠vel.
 
-2. **VIESES S√O FEATURES**: N„o corrija vieses cognitivos - eles s„o parte da autenticidade. Documente-os para replicaÁ„o.
+2. **VIESES S√ÉO FEATURES**: N√£o corrija vieses cognitivos - eles s√£o parte da autenticidade. Documente-os para replica√ß√£o.
 
-3. **CONTEXTO … CRÕTICO**: Mesma pessoa decide diferente em contextos diferentes. Mapear dependÍncias contextuais rigorosamente.
+3. **CONTEXTO √â CR√çTICO**: Mesma pessoa decide diferente em contextos diferentes. Mapear depend√™ncias contextuais rigorosamente.
 
-4. **SORTE vs SKILL**: Distinguir decisıes boas que deram errado por azar de decisıes ruins que deram certo por sorte.
+4. **SORTE vs SKILL**: Distinguir decis√µes boas que deram errado por azar de decis√µes ruins que deram certo por sorte.
 
-5. **EVOLU«√O TEMPORAL**: Pessoas mudam frameworks decisÛrios ao longo do tempo. N„o generalize padrıes recentes para toda vida.
+5. **EVOLU√á√ÉO TEMPORAL**: Pessoas mudam frameworks decis√≥rios ao longo do tempo. N√£o generalize padr√µes recentes para toda vida.
 
 ---
 
-**ENTREGUE**: analysis/decision_patterns.yaml com an·lise completa de arquitetura decisÛria seguindo exatamente este formato.
+**ENTREGUE**: @{mind}/artifacts/decision_patterns.yaml com an√°lise completa de arquitetura decis√≥ria seguindo exatamente este formato.

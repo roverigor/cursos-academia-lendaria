@@ -1,87 +1,87 @@
 # TEMPORAL MAPPER
 
 ## METADADOS
-- Versão: 3.0 ACS Neural Flow
-- Input: sources/ organizadas, logs/collection_report.yaml
-- Output: metadata/temporal_context.yaml
-- Dependências: 01_source_discovery.md, 02_source_collector.md
+- VersÃ£o: 3.0 ACS Neural Flow
+- Input: @{mind}/sources/ organizadas, @{mind}/docs/logs/collection_report.yaml
+- Output: @{mind}/metadata/temporal_context.yaml
+- DependÃªncias: 01_source_discovery.md, 02_source_collector.md
 
 ## OBJETIVO PRINCIPAL
 
-Mapear contexto temporal das fontes disponíveis, identificando períodos de vida documentados, gaps de cobertura e densidade de informação por fase, gerando YAML estruturado para orientar análises subsequentes.
+Mapear contexto temporal das fontes disponÃ­veis, identificando perÃ­odos de vida documentados, gaps de cobertura e densidade de informaÃ§Ã£o por fase, gerando YAML estruturado para orientar anÃ¡lises subsequentes.
 
-## INPUT NECESSÁRIO
+## INPUT NECESSÃRIO
 
-Nome completo da pessoa alvo e acesso às fontes coletadas:
+Nome completo da pessoa alvo e acesso Ã s fontes coletadas:
 ```
 clone_target: "[NOME COMPLETO]"
-sources_path: "sources/"
+sources_path: "@{mind}/sources/"
 ```
 
 # # METODOLOGIA
 
-# ## FASE 1: COLETA CRONOLÓGICA
+# ## FASE 1: COLETA CRONOLÃGICA
 1. Revisar todas as fontes coletadas
-2. Extrair eventos com datas específicas
+2. Extrair eventos com datas especÃ­ficas
 3. Organizar cronologicamente
 4. Identificar gaps temporais
 
-# ## FASE 2: ESTRUTURAÇÃO TEMPORAL
+# ## FASE 2: ESTRUTURAÃÃO TEMPORAL
 Para cada evento, documente usando este formato exato:
 
 # # OUTPUT ESTRUTURADO
 
 # TIMELINE COMPLETA: [NOME]
 
-# # Era da Formação ([Nascimento] - [Idade ~25])
+# # Era da FormaÃ§Ã£o ([Nascimento] - [Idade ~25])
 
 # ## [ANO] - Idade: [X] anos
-# ### Evento: [Título Descritivo do Evento]
+# ### Evento: [TÃ­tulo Descritivo do Evento]
 
 **Contexto Mundial/Industrial:**
 - [O que estava acontecendo no mundo]
-- [Estado da indústria/campo relevante]
-- [Contexto econômico/social]
+- [Estado da indÃºstria/campo relevante]
+- [Contexto econÃ´mico/social]
 
-**A Decisão:**
-- O que foi decidido: [Descrição específica]
-- Alternativas consideradas: [Outras opções que tinha]
-- Recursos disponíveis: [O que tinha para trabalhar]
-- Pressões externas: [Quem/o que influenciou]
+**A DecisÃ£o:**
+- O que foi decidido: [DescriÃ§Ã£o especÃ­fica]
+- Alternativas consideradas: [Outras opÃ§Ãµes que tinha]
+- Recursos disponÃ­veis: [O que tinha para trabalhar]
+- PressÃµes externas: [Quem/o que influenciou]
 
 **Justificativa Original:**
-> "[Quote exato se disponível, ou paráfrase da época]"
-- Fonte: [De onde vem essa informação]
+> "[Quote exato se disponÃ­vel, ou parÃ¡frase da Ã©poca]"
+- Fonte: [De onde vem essa informaÃ§Ã£o]
 - Contexto da fala: [Quando/onde disse isso]
 
 **Justificativa Retrospectiva:**
 > "[Como explicou anos depois]"
 - Fonte: [Entrevista/livro/artigo]
-- Anos depois: [Quanto tempo após o evento]
-- Mudança de narrativa: [Se mudou a história]
+- Anos depois: [Quanto tempo apÃ³s o evento]
+- MudanÃ§a de narrativa: [Se mudou a histÃ³ria]
 
 **Impacto Imediato:**
 - Pessoal: [Como afetou a pessoa]
-- Profissional: [Mudanças na carreira]
+- Profissional: [MudanÃ§as na carreira]
 - Relacionamentos: [Como afetou outros]
-- Financeiro: [Consequências monetárias]
+- Financeiro: [ConsequÃªncias monetÃ¡rias]
 
 **Impacto de Longo Prazo:**
-- Padrão estabelecido: [Comportamento que emergiu]
-- Lições internalizadas: [O que aprendeu]
-- Narrativa criada: [História que passou a contar]
-- Decisões futuras influenciadas: [Como afetou escolhas posteriores]
+- PadrÃ£o estabelecido: [Comportamento que emergiu]
+- LiÃ§Ãµes internalizadas: [O que aprendeu]
+- Narrativa criada: [HistÃ³ria que passou a contar]
+- DecisÃµes futuras influenciadas: [Como afetou escolhas posteriores]
 
-**CLASSIFICAÇÃO DO EVENTO:**
+**CLASSIFICAÃÃO DO EVENTO:**
 [Escolha UM e delete os outros]
- **RUPTURA** - Mudança fundamental de direção/identidade
- **VALIDAÇÃO** - Sucesso que reforçou padrão existente
-🔵 **COLAPSO** - Fracasso que gerou mecanismo de defesa
- **INSIGHT** - Momento de realização/compreensão
-⚫ **TRAUMA** - Evento que criou ferida psicológica
-⚪ **NEUTRO** - Importante mas sem carga emocional forte
+ **RUPTURA** - MudanÃ§a fundamental de direÃ§Ã£o/identidade
+ **VALIDAÃÃO** - Sucesso que reforÃ§ou padrÃ£o existente
+ðµ **COLAPSO** - Fracasso que gerou mecanismo de defesa
+ **INSIGHT** - Momento de realizaÃ§Ã£o/compreensÃ£o
+â« **TRAUMA** - Evento que criou ferida psicolÃ³gica
+âª **NEUTRO** - Importante mas sem carga emocional forte
 
-**Análise Psicológica:**
+**AnÃ¡lise PsicolÃ³gica:**
 - Estado mental antes: [Como estava]
 - Estado mental depois: [Como ficou]
 - Defesas criadas: [Mecanismos desenvolvidos]
@@ -89,112 +89,112 @@ Para cada evento, documente usando este formato exato:
 
 ---
 
-# ## [PRÓXIMO ANO] - Idade: [X] anos
+# ## [PRÃXIMO ANO] - Idade: [X] anos
 [Continue o mesmo formato...]
 
-# # Era da Construção ([Idade ~25] - [Idade ~40])
+# # Era da ConstruÃ§Ã£o ([Idade ~25] - [Idade ~40])
 [Continue com eventos desta fase...]
 
-# # Era da Consolidação ([Idade ~40] - [Idade ~55])
+# # Era da ConsolidaÃ§Ã£o ([Idade ~40] - [Idade ~55])
 [Continue com eventos desta fase...]
 
 # # Era do Legado ([Idade ~55] - [Presente/Morte])
 [Continue com eventos desta fase...]
 
-# PADRÕES TEMPORAIS IDENTIFICADOS
+# PADRÃES TEMPORAIS IDENTIFICADOS
 
 # # Ciclos Recorrentes
-- Ciclo de [X] anos: [Padrão que se repete]
-- Trigger do ciclo: [O que reinicia o padrão]
+- Ciclo de [X] anos: [PadrÃ£o que se repete]
+- Trigger do ciclo: [O que reinicia o padrÃ£o]
 - Como termina: [Como o ciclo se quebra]
 
-# # Períodos de Crise
+# # PerÃ­odos de Crise
 1. [Anos]: [Natureza da crise]
-   - Duração: [Quanto tempo durou]
-   - Resolução: [Como saiu]
-   - Mudanças permanentes: [O que nunca mais foi igual]
+   - DuraÃ§Ã£o: [Quanto tempo durou]
+   - ResoluÃ§Ã£o: [Como saiu]
+   - MudanÃ§as permanentes: [O que nunca mais foi igual]
 
-# # Períodos de Crescimento Acelerado
+# # PerÃ­odos de Crescimento Acelerado
 1. [Anos]: [O que estava acontecendo]
    - Catalisadores: [O que acelerou]
-   - Resultados: [O que foi alcançado]
+   - Resultados: [O que foi alcanÃ§ado]
    - Custo: [O que foi sacrificado]
 
-# # Pontos de Inflexão
+# # Pontos de InflexÃ£o
 1. [Ano/Evento]: Antes vs. Depois
 2. [Ano/Evento]: Antes vs. Depois
 3. [Ano/Evento]: Antes vs. Depois
 
-# ANÁLISE LONGITUDINAL
+# ANÃLISE LONGITUDINAL
 
-# # Evolução de Valores
+# # EvoluÃ§Ã£o de Valores
 - [Idade 20-30]: Valores dominantes
 - [Idade 30-40]: Valores dominantes
 - [Idade 40-50]: Valores dominantes
 - [Idade 50+]: Valores dominantes
 
-# # Evolução de Relacionamentos
-- Padrão na juventude: [Como se relacionava]
-- Padrão na maturidade: [Como mudou]
-- Padrão final: [Como terminou]
+# # EvoluÃ§Ã£o de Relacionamentos
+- PadrÃ£o na juventude: [Como se relacionava]
+- PadrÃ£o na maturidade: [Como mudou]
+- PadrÃ£o final: [Como terminou]
 
-# # Evolução de Narrativas
-- História contada aos 30: [Versão]
-- História contada aos 50: [Como mudou]
-- História final: [Versão definitiva]
+# # EvoluÃ§Ã£o de Narrativas
+- HistÃ³ria contada aos 30: [VersÃ£o]
+- HistÃ³ria contada aos 50: [Como mudou]
+- HistÃ³ria final: [VersÃ£o definitiva]
 
-# SINCRONICIDADES E CONEXÕES
-[Eventos aparentemente não relacionados que se conectam]
+# SINCRONICIDADES E CONEXÃES
+[Eventos aparentemente nÃ£o relacionados que se conectam]
 
 # COUNTERFACTUALS
-[Momentos onde pequenas mudanças teriam alterado tudo]
+[Momentos onde pequenas mudanÃ§as teriam alterado tudo]
 ```
 
-# # INSTRUÇÕES DE USO
+# # INSTRUÃÃES DE USO
 
 # ## Antes de executar:
 1. Tenha o arquivo sources_list.md completo
 2. Organize fontes cronologicamente
-3. Prepare para deep dive biográfico
+3. Prepare para deep dive biogrÃ¡fico
 
-# ## Durante a execução:
-1. Seja cronologicamente preciso - Datas exatas quando possível
+# ## Durante a execuÃ§Ã£o:
+1. Seja cronologicamente preciso - Datas exatas quando possÃ­vel
 2. Contextualize sempre - O que estava acontecendo no mundo
-3. Documente mudanças de narrativa - Como a pessoa conta a história mudou
-4. Identifique padrões - Ciclos que se repetem
-5. Marque pontos de inflexão - Momentos que mudaram tudo
+3. Documente mudanÃ§as de narrativa - Como a pessoa conta a histÃ³ria mudou
+4. Identifique padrÃµes - Ciclos que se repetem
+5. Marque pontos de inflexÃ£o - Momentos que mudaram tudo
 
-# ## Tags de Classificação:
-- RUPTURA: Mudança fundamental de direção
-- VALIDAÇÃO: Sucesso que criou/reforçou padrão
+# ## Tags de ClassificaÃ§Ã£o:
+- RUPTURA: MudanÃ§a fundamental de direÃ§Ã£o
+- VALIDAÃÃO: Sucesso que criou/reforÃ§ou padrÃ£o
 - COLAPSO: Fracasso significativo
-- INSIGHT: Momento de compreensão profunda
-- TRAUMA: Evento com impacto psicológico profundo
+- INSIGHT: Momento de compreensÃ£o profunda
+- TRAUMA: Evento com impacto psicolÃ³gico profundo
 - NEUTRO: Importante mas sem carga emocional
 
-# ## Divisão por Eras:
-- Formação (0-25): Desenvolvimento de identidade
-- Construção (25-40): Estabelecimento no mundo
-- Consolidação (40-55): Refinamento e domínio
+# ## DivisÃ£o por Eras:
+- FormaÃ§Ã£o (0-25): Desenvolvimento de identidade
+- ConstruÃ§Ã£o (25-40): Estabelecimento no mundo
+- ConsolidaÃ§Ã£o (40-55): Refinamento e domÃ­nio
 - Legado (55+): Foco em impacto duradouro
 
 # # CHECKLIST DE QUALIDADE
 
 - [ ] Todos os anos da vida cobertos
 - [ ] Eventos classificados com tags apropriadas
-- [ ] Contexto mundial/industrial incluído
+- [ ] Contexto mundial/industrial incluÃ­do
 - [ ] Justificativas originais vs. retrospectivas documentadas
 - [ ] Impactos de curto e longo prazo identificados
-- [ ] Padrões temporais analisados
-- [ ] Evolução de valores mapeada
-- [ ] Pontos de inflexão marcados
-- [ ] Análise psicológica incluída
+- [ ] PadrÃµes temporais analisados
+- [ ] EvoluÃ§Ã£o de valores mapeada
+- [ ] Pontos de inflexÃ£o marcados
+- [ ] AnÃ¡lise psicolÃ³gica incluÃ­da
 
-# # ALERTAS CRÍTICOS
-- Não pule períodos - Mesmo anos "vazios" são informativos
-- Não aceite narrativas oficiais - Compare versões
-- Não ignore contexto - Decisões fazem sentido na época
-- Preserve múltiplas versões - Como a pessoa conta mudou
-- Identifique traumas - Mesmo que não admitidos
-- Arquivo timeline.md deve estar em analysis/ conforme OUTPUTS_GUIDE.md
-- A timeline é o esqueleto sobre o qual toda a personalidade é construída
+# # ALERTAS CRÃTICOS
+- NÃ£o pule perÃ­odos - Mesmo anos "vazios" sÃ£o informativos
+- NÃ£o aceite narrativas oficiais - Compare versÃµes
+- NÃ£o ignore contexto - DecisÃµes fazem sentido na Ã©poca
+- Preserve mÃºltiplas versÃµes - Como a pessoa conta mudou
+- Identifique traumas - Mesmo que nÃ£o admitidos
+- Arquivo timeline.md deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
+- A timeline Ã© o esqueleto sobre o qual toda a personalidade Ã© construÃ­da

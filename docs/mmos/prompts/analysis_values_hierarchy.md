@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/quotes.md, analysis/timeline.md, sources/
-- Output: analysis/values_hierarchy.yaml
+- Input: @{mind}/artifacts/quotes.md, @{mind}/artifacts/timeline.md, @{mind}/sources/
+- Output: @{mind}/artifacts/values_hierarchy.yaml
 - Dependências: 01_quote_extraction.md, 03_temporal_mapper.md
 
 ## OBJETIVO PRINCIPAL
@@ -15,9 +15,9 @@ Analisar TODO o material coletado e mapear a hierarquia completa de valores do c
 
 ```
 clone_target: "[NOME COMPLETO]"
-quotes_file: "analysis/quotes.md"
-timeline_file: "analysis/timeline.md"
-sources_path: "sources/"
+quotes_file: "@{mind}/artifacts/quotes.md"
+timeline_file: "@{mind}/artifacts/timeline.md"
+sources_path: "@{mind}/sources/"
 ```
 
 ## METODOLOGIA
@@ -323,5 +323,5 @@ Threshold de ação = [Valor mínimo para agir]
 - Evidence-based only - Sem 3+ evidências, descarte
 - Preserve hierarquia - Ordem importa tanto quanto conteúdo
 - Contexto modifica mas não elimina - Valores core persistem
-- Arquivo values_hierarchy.md deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo values_hierarchy.md deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - Valores determinam tudo - Este arquivo é o coração do clone cognitivo

@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: All project files (PRD, analysis/, synthesis/, system-prompts/, logs/)
-- Output: docs/README.md
+- Input: All project files (PRD, @{mind}/artifacts/, synthesis/, @{mind}/system_prompts/, @{mind}/docs/logs/)
+- Output: @{mind}/docs/README.md
 - Dependências: Todas as etapas anteriores completas
 
 ---
@@ -14,7 +14,7 @@ Gerar documentação README.md completa e profissional do clone, consolidando to
 ## PROMPT
 
 ```markdown
-Gere docs/README.md consolidando toda a documentação do clone de [NOME].
+Gere @{mind}/docs/README.md consolidando toda a documentação do clone de [NOME].
 
 **META:** README completo, profissional e acionável como documentação oficial do clone.
 
@@ -53,21 +53,21 @@ Use este formato:
 
 ```
 nome-do-clone/
-├── docs/
+├── @{mind}/docs/
 │   ├── README.md                       # Este arquivo
 │   ├── PRD.md                          # Product Requirements Document
 │   ├── TODO.md                         # Task tracking
 │   ├── LIMITATIONS.md                  # Limitações conhecidas
 │   ├── operational_manual.md           # Manual operacional
 │   └── testing_protocol.md             # Protocolo de testes
-├── sources/
+├── @{mind}/sources/
 │   ├── books/                          # Livros e publicações
 │   ├── interviews/                     # Entrevistas e transcrições
 │   ├── speeches/                       # Palestras e apresentações
 │   ├── articles/                       # Artigos e posts
 │   ├── videos/                         # Transcrições de vídeos
 │   └── sources_master.yaml             # Índice de todas as fontes
-├── analysis/
+├── @{mind}/artifacts/
 │   ├── cognitive_architecture.yaml     # Arquitetura cognitiva
 │   ├── personality_profile.json        # Perfil de personalidade
 │   ├── values_hierarchy.yaml           # Hierarquia de valores
@@ -81,14 +81,14 @@ nome-do-clone/
 ├── frameworks/
 │   ├── signature_frameworks.md         # Frameworks mentais
 │   └── decision_patterns.md            # Padrões de decisão
-├── kb/
+├── @{mind}/kb/
 │   └── [chunks organizados]            # Knowledge base chunked
-├── system-prompts/
+├── @{mind}/system_prompts/
 │   └── YYYYMMDD-HHMM-v1.0-generalista-initial.md  # System prompt ativo
-├── metadata/
+├── @{mind}/metadata/
 │   ├── dependencies.yaml               # Mapa de dependências
 │   └── temporal_context.yaml           # Contexto temporal
-└── logs/
+└── @{mind}/docs/@{mind}/docs/logs/
     └── YYYYMMDD-HHMM-*.yaml            # Logs de validação e testes
 ```
 
@@ -212,7 +212,7 @@ O clone foi validado através de:
 
 ### Resultados
 
-Ver [logs/YYYYMMDD-HHMM-validation_report.yaml](../logs/) para relatório completo.
+Ver [@{mind}/docs/@{mind}/docs/logs/YYYYMMDD-HHMM-validation_report.yaml](../@{mind}/docs/@{mind}/docs/logs/) para relatório completo.
 
 **Summary:**
 - Tests Passed: [X]/[Y] ([Z]%)

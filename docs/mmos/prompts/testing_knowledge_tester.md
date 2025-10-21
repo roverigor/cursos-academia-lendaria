@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: logs/YYYYMMDD-HHMM-test_cases.yaml, kb/, sources/
-- Output: logs/YYYYMMDD-HHMM-knowledge_test.yaml
+- Input: @{mind}/docs/logs/YYYYMMDD-HHMM-test_cases.yaml, @{mind}/kb/, @{mind}/sources/
+- Output: @{mind}/docs/logs/YYYYMMDD-HHMM-knowledge_test.yaml
 - Dependências: 01_test_generator.md executado
 
 ---

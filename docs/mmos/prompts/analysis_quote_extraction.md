@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: sources/ organizadas, analysis/sources_master.yaml
-- Output: analysis/quotes_database.yaml
+- Input: @{mind}/sources/ organizadas, @{mind}/artifacts/sources_master.yaml
+- Output: @{mind}/artifacts/quotes_database.yaml
 - Dependências: 04_sources_master.md
 
 ## OBJETIVO PRINCIPAL
@@ -16,8 +16,8 @@ Você é um analista linguístico especializado em extração de citações e an
 Nome completo da pessoa alvo e acesso às fontes organizadas:
 ```
 clone_target: "[NOME COMPLETO]"
-sources_path: "sources/"
-sources_master: "analysis/sources_master.yaml"
+sources_path: "@{mind}/sources/"
+sources_master: "@{mind}/artifacts/sources_master.yaml"
 ```
 
 ## METODOLOGIA
@@ -373,5 +373,5 @@ Use este formato exato:
 - Não descontextualize - Contexto muda significado
 - Não seja seletivo - Extraia tanto positivo quanto negativo
 - Preserve idioma original quando relevante
-- Arquivo quotes.md deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo quotes.md deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - As citações são a voz direta da pessoa - será consultado constantemente

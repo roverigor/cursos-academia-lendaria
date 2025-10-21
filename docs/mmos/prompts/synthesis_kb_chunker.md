@@ -4,7 +4,7 @@
 - **Version:** 3.0 ACS Neural Flow
 - **Specialization:** Knowledge Architecture & Retrieval Optimization
 - **Input:** frameworks/ + core_elements.yaml + contradictions.md
-- **Output:** knowledge_base/chunked_system.yaml
+- **Output:** @{mind}/kb/chunked_system.yaml
 - **Dependencies:** synthesis_frameworks_identifier.md, synthesis_extract_core.md
 
 ---

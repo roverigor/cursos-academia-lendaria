@@ -3,8 +3,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/quotes.md, analysis/timeline.md, sources/
-- Output: analysis/behavioral_patterns.md
+- Input: @{mind}/artifacts/quotes.md, @{mind}/artifacts/timeline.md, @{mind}/sources/
+- Output: @{mind}/artifacts/behavioral_patterns.md
 - Dependências: 01_quote_extraction.md, 03_temporal_mapper.md
 
 ## OBJETIVO PRINCIPAL
@@ -17,9 +17,9 @@ Você é um analista de padrões comportamentais especializado em mapeamento de 
 Nome completo da pessoa alvo e acesso aos materiais de análise:
 ```
 clone_target: "[NOME COMPLETO]"
-quotes_file: "analysis/quotes.md"
-timeline_file: "analysis/timeline.md"
-sources_path: "sources/"
+quotes_file: "@{mind}/artifacts/quotes.md"
+timeline_file: "@{mind}/artifacts/timeline.md"
+sources_path: "@{mind}/sources/"
 ```
 
 ## METODOLOGIA
@@ -366,5 +366,5 @@ def transicionar_estado(estado_atual, gatilho):
 - Todos têm estados NEGATIVOS - Preserve-os
 - Durações VARIAM - Use ranges, não fixos
 - Gatilhos podem FALHAR - Não são 100%
-- Arquivo behavioral_triggers.md deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo behavioral_triggers.md deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - Estados e gatilhos são a dinâmica da personalidade - Capture o movimento, não apenas a foto

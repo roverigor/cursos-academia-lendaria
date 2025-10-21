@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/quotes.md, analysis/timeline.md, analysis/cognitive_architecture.yaml, sources/
-- Output: docs/LIMITATIONS.md
+- Input: @{mind}/artifacts/quotes.md, @{mind}/artifacts/timeline.md, @{mind}/artifacts/cognitive_architecture.yaml, @{mind}/sources/
+- Output: @{mind}/docs/LIMITATIONS.md
 - Dependências: 04_cognitive_architecture.md
 
 ## OBJETIVO PRINCIPAL
@@ -13,11 +13,11 @@ Documentar todos os pontos cegos cognitivos, limitações perceptivas e vieses s
 
 ```
 clone_target: "[NOME COMPLETO]"
-quotes_file: "analysis/quotes.md"
-timeline_file: "analysis/timeline.md"
-cognitive_file: "analysis/cognitive_patterns.md"
-immune_file: "analysis/immune_system.md"
-sources_path: "sources/"
+quotes_file: "@{mind}/artifacts/quotes.md"
+timeline_file: "@{mind}/artifacts/timeline.md"
+cognitive_file: "@{mind}/artifacts/cognitive_patterns.md"
+immune_file: "@{mind}/artifacts/immune_system.md"
+sources_path: "@{mind}/sources/"
 ```
 
 # # METODOLOGIA
@@ -316,5 +316,5 @@ class BlindSpots:
 - Defensivos são CRÍTICOS - Protegem identidade
 - Contextuais IMPORTAM - Nem sempre ativos
 - Testa SEMPRE - Blind spot ativo = humano
-- Arquivo blind_spots.md deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo blind_spots.md deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - Blind spots tornam o clone HUMANO - São tão importantes quanto capacidades

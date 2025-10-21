@@ -1,41 +1,41 @@
 # BELIEF SYSTEM
 
 ## METADADOS
-- Vers„o: 3.0 ACS Neural Flow
-- Input: sources/, analysis/quotes_database.yaml, analysis/values_hierarchy.yaml, analysis/life_timeline.yaml
-- Output: analysis/beliefs_core.yaml
-- DependÍncias: 01_quote_extraction.md, 03_values_hierarchy.md, 01_timeline_mapping.md
+- Vers√£o: 3.0 ACS Neural Flow
+- Input: @{mind}/sources/, @{mind}/artifacts/quotes_database.yaml, @{mind}/artifacts/values_hierarchy.yaml, @{mind}/artifacts/life_timeline.yaml
+- Output: @{mind}/artifacts/beliefs_core.yaml
+- Depend√™ncias: 01_quote_extraction.md, 03_values_hierarchy.md, 01_timeline_mapping.md
 
 ## OBJETIVO PRINCIPAL
 
-Mapear o sistema completo de crenÁas de [NOME_SUJEITO] - desde convicÁıes fundamentais sobre realidade, natureza humana e significado, atÈ crenÁas operacionais sobre trabalho, sucesso e relacionamentos - identificando estrutura hier·rquica, interdependÍncias, contradiÁıes e evoluÁ„o temporal.
+Mapear o sistema completo de cren√ßas de [NOME_SUJEITO] - desde convic√ß√µes fundamentais sobre realidade, natureza humana e significado, at√© cren√ßas operacionais sobre trabalho, sucesso e relacionamentos - identificando estrutura hier√°rquica, interdepend√™ncias, contradi√ß√µes e evolu√ß√£o temporal.
 
-## INPUT NECESS¡RIO
+## INPUT NECESS√ÅRIO
 
 ```yaml
 required_inputs:
-  - sources/ (todos os materiais coletados)
-  - analysis/quotes_database.yaml (citaÁıes sobre crenÁas e visıes de mundo)
-  - analysis/values_hierarchy.yaml (valores para contextualizaÁ„o)
-  - analysis/life_timeline.yaml (evoluÁ„o temporal de crenÁas)
+  - @{mind}/sources/ (todos os materiais coletados)
+  - @{mind}/artifacts/quotes_database.yaml (cita√ß√µes sobre cren√ßas e vis√µes de mundo)
+  - @{mind}/artifacts/values_hierarchy.yaml (valores para contextualiza√ß√£o)
+  - @{mind}/artifacts/life_timeline.yaml (evolu√ß√£o temporal de cren√ßas)
 ```
 
 ## METODOLOGIA
 
-### FASE 1: EXTRA«√O DE CREN«AS
-Identificar todas as crenÁas declaradas ou demonstradas atravÈs de comportamento e decisıes.
+### FASE 1: EXTRA√á√ÉO DE CREN√áAS
+Identificar todas as cren√ßas declaradas ou demonstradas atrav√©s de comportamento e decis√µes.
 
-### FASE 2: HIERARQUIZA«√O
-Organizar crenÁas em nÌveis (meta-crenÁas í crenÁas core í crenÁas operacionais í crenÁas situacionais).
+### FASE 2: HIERARQUIZA√á√ÉO
+Organizar cren√ßas em n√≠veis (meta-cren√ßas ¬í cren√ßas core ¬í cren√ßas operacionais ¬í cren√ßas situacionais).
 
-### FASE 3: MAPEAMENTO DE INTERDEPEND NCIAS
-Identificar como crenÁas se sustentam, reforÁam ou contradizem mutuamente.
+### FASE 3: MAPEAMENTO DE INTERDEPEND√äNCIAS
+Identificar como cren√ßas se sustentam, refor√ßam ou contradizem mutuamente.
 
-### FASE 4: AN¡LISE EVOLUTIVA
-Rastrear como crenÁas emergiram, evoluÌram ou foram abandonadas.
+### FASE 4: AN√ÅLISE EVOLUTIVA
+Rastrear como cren√ßas emergiram, evolu√≠ram ou foram abandonadas.
 
-### FASE 5: TESTE DE CONSIST NCIA
-Identificar contradiÁıes, disson‚ncias e mecanismos de reconciliaÁ„o.
+### FASE 5: TESTE DE CONSIST√äNCIA
+Identificar contradi√ß√µes, disson√¢ncias e mecanismos de reconcilia√ß√£o.
 
 ## OUTPUT ESTRUTURADO
 
@@ -43,115 +43,115 @@ Identificar contradiÁıes, disson‚ncias e mecanismos de reconciliaÁ„o.
 belief_system_metadata:
   subject: "[NOME COMPLETO]"
   analysis_date: "YYYY-MM-DD"
-  beliefs_cataloged: "[N crenÁas identificadas]"
+  beliefs_cataloged: "[N cren√ßas identificadas]"
   temporal_range: "[YYYY-YYYY]"
   confidence_level: "[0.0-1.0]"
-  worldview_classification: "[ClassificaÁ„o geral da vis„o de mundo]"
+  worldview_classification: "[Classifica√ß√£o geral da vis√£o de mundo]"
 
 meta_beliefs:
   epistemological:
     - belief_id: "META_EPI_001"
-      belief_statement: "[CrenÁa sobre conhecimento/verdade]"
-      category: "EpistemolÛgica"
+      belief_statement: "[Cren√ßa sobre conhecimento/verdade]"
+      category: "Epistemol√≥gica"
 
       manifestation:
         explicit_statements: ["[Statement 1]", "[Statement 2]"]
         implicit_behaviors: ["[Comportamento 1]", "[Comportamento 2]"]
-        decision_impacts: ["[Como afeta decisıes]"]
+        decision_impacts: ["[Como afeta decis√µes]"]
 
       evidence:
         quotes: ["[ID quote do database]"]
-        actions_consistent: ["[AÁ„o que demonstra]"]
+        actions_consistent: ["[A√ß√£o que demonstra]"]
         sources: ["[Fonte 1]", "[Fonte 2]"]
 
-      stability: "[Muito est·vel/Est·vel/Moderada/Vari·vel]"
-      centrality: "[0.0-1.0 - qu„o central È para identity]"
+      stability: "[Muito est√°vel/Est√°vel/Moderada/Vari√°vel]"
+      centrality: "[0.0-1.0 - qu√£o central √© para identity]"
       confidence_level: "[0.0-1.0]"
 
   ontological:
     - belief_id: "META_ONT_001"
-      belief_statement: "[CrenÁa sobre natureza da realidade]"
-      category: "OntolÛgica"
+      belief_statement: "[Cren√ßa sobre natureza da realidade]"
+      category: "Ontol√≥gica"
       # [Mesma estrutura acima]
 
   axiological:
     - belief_id: "META_AXI_001"
-      belief_statement: "[CrenÁa sobre natureza do valor/bem/mal]"
-      category: "AxiolÛgica"
+      belief_statement: "[Cren√ßa sobre natureza do valor/bem/mal]"
+      category: "Axiol√≥gica"
       # [Mesma estrutura acima]
 
 core_beliefs:
   human_nature:
     - belief_id: "CORE_HN_001"
-      belief_statement: "[CrenÁa sobre natureza humana]"
+      belief_statement: "[Cren√ßa sobre natureza humana]"
 
       elaboration:
-        core_assumption: "[AssunÁ„o fundamental]"
-        implications: ["[ImplicaÁ„o 1]", "[ImplicaÁ„o 2]"]
-        boundaries: "[Limites/exceÁıes reconhecidos]"
+        core_assumption: "[Assun√ß√£o fundamental]"
+        implications: ["[Implica√ß√£o 1]", "[Implica√ß√£o 2]"]
+        boundaries: "[Limites/exce√ß√µes reconhecidos]"
 
       formation:
         origin_period: "[Quando formou]"
-        formative_experiences: ["[ExperiÍncia 1]", "[ExperiÍncia 2]"]
-        influences: ["[InfluÍncia 1]", "[InfluÍncia 2]"]
+        formative_experiences: ["[Experi√™ncia 1]", "[Experi√™ncia 2]"]
+        influences: ["[Influ√™ncia 1]", "[Influ√™ncia 2]"]
 
       manifestation:
         behavioral_evidence: ["[Comportamento 1]", "[Comportamento 2]"]
-        linguistic_markers: ["[Express„o recorrente]"]
-        decision_influence: ["[Como influencia decisıes]"]
+        linguistic_markers: ["[Express√£o recorrente]"]
+        decision_influence: ["[Como influencia decis√µes]"]
 
       challenges:
-        contradictory_evidence_faced: ["[EvidÍncia contr·ria]"]
+        contradictory_evidence_faced: ["[Evid√™ncia contr√°ria]"]
         response_to_challenge: "[Como respondeu]"
         belief_modification: "[Se/como modificou]"
 
       strength: "[0.0-1.0]"
-      flexibility: "[RÌgida/Moderada/FlexÌvel]"
+      flexibility: "[R√≠gida/Moderada/Flex√≠vel]"
 
       sources: ["[Fonte 1]", "[Fonte 2]"]
 
   life_purpose:
     - belief_id: "CORE_LP_001"
-      belief_statement: "[CrenÁa sobre propÛsito/significado]"
+      belief_statement: "[Cren√ßa sobre prop√≥sito/significado]"
       # [Mesma estrutura acima]
 
   causation_agency:
     - belief_id: "CORE_CA_001"
-      belief_statement: "[CrenÁa sobre agÍncia/controle/destino]"
+      belief_statement: "[Cren√ßa sobre ag√™ncia/controle/destino]"
       elaboration:
         locus_of_control: "[Interno/Externo/Misto]"
-        free_will_position: "[PosiÁ„o sobre livre arbÌtrio]"
-        determinism_level: "[NÌvel de determinismo aceito]"
+        free_will_position: "[Posi√ß√£o sobre livre arb√≠trio]"
+        determinism_level: "[N√≠vel de determinismo aceito]"
       # [Mesma estrutura acima]
 
   change_possibility:
     - belief_id: "CORE_CP_001"
-      belief_statement: "[CrenÁa sobre mudanÁa/crescimento/fixidez]"
+      belief_statement: "[Cren√ßa sobre mudan√ßa/crescimento/fixidez]"
       elaboration:
         growth_mindset_level: "[0.0-1.0]"
-        domains_changeable: ["[DomÌnio 1]", "[DomÌnio 2]"]
-        domains_fixed: ["[DomÌnio 1]", "[DomÌnio 2]"]
+        domains_changeable: ["[Dom√≠nio 1]", "[Dom√≠nio 2]"]
+        domains_fixed: ["[Dom√≠nio 1]", "[Dom√≠nio 2]"]
       # [Mesma estrutura acima]
 
 operational_beliefs:
   work_success:
     - belief_id: "OP_WS_001"
-      belief_statement: "[CrenÁa sobre trabalho/sucesso]"
+      belief_statement: "[Cren√ßa sobre trabalho/sucesso]"
       domain: "Trabalho e Sucesso"
 
       practical_implications:
-        strategies_derived: ["[EstratÈgia 1]", "[EstratÈgia 2]"]
+        strategies_derived: ["[Estrat√©gia 1]", "[Estrat√©gia 2]"]
         behaviors_driven: ["[Comportamento 1]", "[Comportamento 2]"]
-        decisions_influenced: ["[Tipo de decis„o]"]
+        decisions_influenced: ["[Tipo de decis√£o]"]
 
       testing_history:
-        tested_when: "[Quando testou esta crenÁa]"
+        tested_when: "[Quando testou esta cren√ßa]"
         outcome: "[Resultado do teste]"
         belief_adjustment: "[Se/como ajustou]"
 
       transmission:
-        communicates_to_others: "[Sim/N„o/¿s vezes]"
-        teaching_frequency: "[FrequÍncia]"
+        communicates_to_others: "[Sim/N√£o/√Äs vezes]"
+        teaching_frequency: "[Frequ√™ncia]"
         conviction_level: "[0.0-1.0]"
 
       evidence_strength: "[0.0-1.0]"
@@ -159,58 +159,58 @@ operational_beliefs:
 
   relationships:
     - belief_id: "OP_REL_001"
-      belief_statement: "[CrenÁa sobre relacionamentos]"
+      belief_statement: "[Cren√ßa sobre relacionamentos]"
       domain: "Relacionamentos"
       # [Mesma estrutura acima]
 
   learning_growth:
     - belief_id: "OP_LG_001"
-      belief_statement: "[CrenÁa sobre aprendizado/crescimento]"
+      belief_statement: "[Cren√ßa sobre aprendizado/crescimento]"
       domain: "Aprendizado e Crescimento"
       # [Mesma estrutura acima]
 
   money_resources:
     - belief_id: "OP_MR_001"
-      belief_statement: "[CrenÁa sobre dinheiro/recursos]"
+      belief_statement: "[Cren√ßa sobre dinheiro/recursos]"
       domain: "Dinheiro e Recursos"
       # [Mesma estrutura acima]
 
   power_authority:
     - belief_id: "OP_PA_001"
-      belief_statement: "[CrenÁa sobre poder/autoridade]"
+      belief_statement: "[Cren√ßa sobre poder/autoridade]"
       domain: "Poder e Autoridade"
       # [Mesma estrutura acima]
 
   competition_cooperation:
     - belief_id: "OP_CC_001"
-      belief_statement: "[CrenÁa sobre competiÁ„o/cooperaÁ„o]"
-      domain: "CompetiÁ„o e CooperaÁ„o"
+      belief_statement: "[Cren√ßa sobre competi√ß√£o/coopera√ß√£o]"
+      domain: "Competi√ß√£o e Coopera√ß√£o"
       # [Mesma estrutura acima]
 
 contextual_beliefs:
   domain_specific:
-    - domain: "[DomÌnio especÌfico]"
+    - domain: "[Dom√≠nio espec√≠fico]"
       beliefs:
         - belief_id: "CTX_001"
-          belief_statement: "[CrenÁa especÌfica do domÌnio]"
+          belief_statement: "[Cren√ßa espec√≠fica do dom√≠nio]"
           applicability: "[Onde se aplica]"
-          context_dependency: "[DependÍncias contextuais]"
+          context_dependency: "[Depend√™ncias contextuais]"
           sources: ["[Fonte]"]
 
   situational:
-    - situation_type: "[Tipo de situaÁ„o]"
+    - situation_type: "[Tipo de situa√ß√£o]"
       beliefs:
         - belief_id: "SIT_001"
-          belief_statement: "[CrenÁa situacional]"
+          belief_statement: "[Cren√ßa situacional]"
           activation_triggers: ["[Gatilho 1]", "[Gatilho 2]"]
-          duration: "[Tempor·ria/Duradoura]"
+          duration: "[Tempor√°ria/Duradoura]"
           sources: ["[Fonte]"]
 
 belief_structures:
   hierarchical_dependencies:
     - meta_belief_id: "META_XXX"
       supports_core_beliefs: ["CORE_YYY", "CORE_ZZZ"]
-      explanation: "[Como meta-crenÁa suporta core beliefs]"
+      explanation: "[Como meta-cren√ßa suporta core beliefs]"
 
     - core_belief_id: "CORE_YYY"
       supports_operational_beliefs: ["OP_AAA", "OP_BBB"]
@@ -218,57 +218,57 @@ belief_structures:
 
   reinforcing_clusters:
     - cluster_id: "CLUSTER_001"
-      cluster_description: "[DescriÁ„o do cluster de crenÁas mutuamente reforÁadoras]"
+      cluster_description: "[Descri√ß√£o do cluster de cren√ßas mutuamente refor√ßadoras]"
       beliefs_in_cluster: ["BELIEF_ID_1", "BELIEF_ID_2", "BELIEF_ID_3"]
-      synergy_effect: "[Como se reforÁam mutuamente]"
-      resilience: "[Qu„o resistente a mudanÁa 0.0-1.0]"
+      synergy_effect: "[Como se refor√ßam mutuamente]"
+      resilience: "[Qu√£o resistente a mudan√ßa 0.0-1.0]"
 
   contradictory_pairs:
     - contradiction_id: "CONTRA_001"
       belief_a: "BELIEF_ID_X"
       belief_b: "BELIEF_ID_Y"
 
-      contradiction_description: "[DescriÁ„o especÌfica da contradiÁ„o]"
+      contradiction_description: "[Descri√ß√£o espec√≠fica da contradi√ß√£o]"
       awareness_level: "[Consciente/Parcialmente/Inconsciente]"
 
       reconciliation_mechanisms:
-        - mechanism_type: "[CompartimentalizaÁ„o/RacionalizaÁ„o/NegaÁ„o/AceitaÁ„o]"
+        - mechanism_type: "[Compartimentaliza√ß√£o/Racionaliza√ß√£o/Nega√ß√£o/Aceita√ß√£o]"
           description: "[Como reconcilia]"
           effectiveness: "[0.0-1.0]"
 
       context_switching:
         belief_a_contexts: ["[Contexto onde A predomina]"]
         belief_b_contexts: ["[Contexto onde B predomina]"]
-        transition_triggers: ["[O que causa transiÁ„o]"]
+        transition_triggers: ["[O que causa transi√ß√£o]"]
 
       authenticity_preservation: "[Por que manter no clone]"
 
 belief_evolution:
   formation_timeline:
-    - period: "[PerÌodo]"
+    - period: "[Per√≠odo]"
       beliefs_formed: ["BELIEF_ID_1", "BELIEF_ID_2"]
-      formation_context: "[Contexto de formaÁ„o]"
+      formation_context: "[Contexto de forma√ß√£o]"
       catalyzing_events: ["[Evento 1]", "[Evento 2]"]
 
   transformation_moments:
     - transformation_id: "TRANS_001"
-      date: "[Data/perÌodo]"
-      belief_before: "[CrenÁa anterior]"
-      belief_after: "[Nova crenÁa]"
+      date: "[Data/per√≠odo]"
+      belief_before: "[Cren√ßa anterior]"
+      belief_after: "[Nova cren√ßa]"
 
       transformation_trigger:
-        event_type: "[Crise/Insight/EvidÍncia/Mentoria]"
-        description: "[DescriÁ„o especÌfica]"
+        event_type: "[Crise/Insight/Evid√™ncia/Mentoria]"
+        description: "[Descri√ß√£o espec√≠fica]"
         impact_level: "[0-10]"
 
       transformation_process:
-        duration: "[DuraÁ„o da transformaÁ„o]"
-        resistance_level: "[ResistÍncia enfrentada]"
+        duration: "[Dura√ß√£o da transforma√ß√£o]"
+        resistance_level: "[Resist√™ncia enfrentada]"
         support_factors: ["[Fator 1]", "[Fator 2]"]
         integration_challenges: ["[Desafio 1]", "[Desafio 2]"]
 
       aftermath:
-        behavioral_changes: ["[MudanÁa 1]", "[MudanÁa 2]"]
+        behavioral_changes: ["[Mudan√ßa 1]", "[Mudan√ßa 2]"]
         relationship_impacts: ["[Impacto 1]", "[Impacto 2]"]
         cascading_belief_changes: ["BELIEF_ID_X", "BELIEF_ID_Y"]
 
@@ -276,7 +276,7 @@ belief_evolution:
 
   stability_analysis:
     - belief_id: "BELIEF_XXX"
-      lifespan: "[DuraÁ„o que mantÈm]"
+      lifespan: "[Dura√ß√£o que mant√©m]"
       challenge_history:
         - challenge_date: "[Data]"
           challenge_type: "[Tipo de desafio]"
@@ -287,31 +287,31 @@ belief_evolution:
 dissonance_management:
   cognitive_dissonance_instances:
     - dissonance_id: "DISS_001"
-      belief_system: "[CrenÁa sistem·tica]"
-      behavior_observed: "[Comportamento contraditÛrio]"
+      belief_system: "[Cren√ßa sistem√°tica]"
+      behavior_observed: "[Comportamento contradit√≥rio]"
 
       dissonance_level: "[0-10]"
       awareness: "[Consciente/Inconsciente]"
 
       coping_mechanisms:
-        - mechanism: "[Mecanismo especÌfico]"
-          frequency: "[FrequÍncia de uso]"
+        - mechanism: "[Mecanismo espec√≠fico]"
+          frequency: "[Frequ√™ncia de uso]"
           effectiveness: "[0.0-1.0]"
           examples: ["[Exemplo 1]", "[Exemplo 2]"]
 
       cost_of_dissonance:
-        psychological: "[Custo psicolÛgico]"
+        psychological: "[Custo psicol√≥gico]"
         behavioral: "[Custo comportamental]"
         relational: "[Custo relacional]"
 
-      preservation_for_clone: "[Por que preservar esta disson‚ncia]"
+      preservation_for_clone: "[Por que preservar esta disson√¢ncia]"
 
 belief_testing_patterns:
   empirical_approach:
-    tests_beliefs: "[Sim/N„o/Seletivamente]"
+    tests_beliefs: "[Sim/N√£o/Seletivamente]"
     testing_methodology: "[Como testa]"
     openness_to_revision: "[0.0-1.0]"
-    revision_threshold: "[O que necess·rio para revisar]"
+    revision_threshold: "[O que necess√°rio para revisar]"
 
   confirmation_bias_level: "[0.0-1.0]"
   belief_perseverance_strength: "[0.0-1.0]"
@@ -321,86 +321,86 @@ belief_testing_patterns:
       revision_count: "[N vezes revisada]"
       revisions:
         - revision_date: "[Data]"
-          from_belief: "[CrenÁa anterior]"
-          to_belief: "[CrenÁa revisada]"
-          evidence_triggered: "[EvidÍncia que desencadeou]"
+          from_belief: "[Cren√ßa anterior]"
+          to_belief: "[Cren√ßa revisada]"
+          evidence_triggered: "[Evid√™ncia que desencadeou]"
           sources: ["[Fonte]"]
 
 influence_mapping:
   sources_of_beliefs:
-    - influence_source: "[Fonte de influÍncia]"
-      influence_type: "[Mentor/Livro/ExperiÍncia/Cultura]"
+    - influence_source: "[Fonte de influ√™ncia]"
+      influence_type: "[Mentor/Livro/Experi√™ncia/Cultura]"
       beliefs_influenced: ["BELIEF_ID_1", "BELIEF_ID_2"]
-      influence_period: "[PerÌodo]"
+      influence_period: "[Per√≠odo]"
       influence_strength: "[0.0-1.0]"
       current_status: "[Ativa/Superada/Integrada]"
 
   transmission_to_others:
     evangelizes_beliefs: ["BELIEF_ID_1", "BELIEF_ID_2"]
-    teaching_approach: "[Como ensina suas crenÁas]"
+    teaching_approach: "[Como ensina suas cren√ßas]"
     conviction_in_teaching: "[0.0-1.0]"
     adaptability_to_audience: "[0.0-1.0]"
 
 worldview_synthesis:
   coherence_level: "[0.0-1.0]"
-  integration_quality: "[Como crenÁas se integram]"
+  integration_quality: "[Como cren√ßas se integram]"
 
-  worldview_archetype: "[ClassificaÁ„o geral]"
+  worldview_archetype: "[Classifica√ß√£o geral]"
 
   distinctive_elements:
-    - element: "[Elemento ˙nico da vis„o de mundo]"
+    - element: "[Elemento √∫nico da vis√£o de mundo]"
       uniqueness_score: "[0.0-1.0]"
       centrality: "[0.0-1.0]"
       explanation: "[Por que distintivo]"
 
   philosophical_influences:
-    - philosophy_tradition: "[TradiÁ„o filosÛfica]"
+    - philosophy_tradition: "[Tradi√ß√£o filos√≥fica]"
       alignment_level: "[0.0-1.0]"
-      conscious_adoption: "[Sim/N„o]"
+      conscious_adoption: "[Sim/N√£o]"
       manifestation: "[Como se manifesta]"
 
 operational_instructions_for_clone:
   belief_activation_logic: |
-    [Algoritmo para ativar crenÁas corretas conforme contexto:
-    1. Identificar contexto/domÌnio da situaÁ„o
-    2. Ativar crenÁas relevantes na hierarquia
-    3. Aplicar mecanismos de reconciliaÁ„o se contraditÛrias
-    4. Manter disson‚ncias caracterÌsticas
-    5. Expressar crenÁas com nÌvel de convicÁ„o caracterÌstico]
+    [Algoritmo para ativar cren√ßas corretas conforme contexto:
+    1. Identificar contexto/dom√≠nio da situa√ß√£o
+    2. Ativar cren√ßas relevantes na hierarquia
+    3. Aplicar mecanismos de reconcilia√ß√£o se contradit√≥rias
+    4. Manter disson√¢ncias caracter√≠sticas
+    5. Expressar cren√ßas com n√≠vel de convic√ß√£o caracter√≠stico]
 
   dissonance_preservation: |
-    [Como manter disson‚ncias cognitivas autÍnticas]
+    [Como manter disson√¢ncias cognitivas aut√™nticas]
 
   evolution_simulation: |
-    [Como simular capacidade de evoluÁ„o de crenÁas]
+    [Como simular capacidade de evolu√ß√£o de cren√ßas]
 ```
 
 ## CHECKLIST DE QUALIDADE
 
-- [ ] MÌnimo 30 crenÁas catalogadas em todos os nÌveis
-- [ ] Meta-crenÁas (epistemolÛgicas/ontolÛgicas/axiolÛgicas) identificadas
-- [ ] Core beliefs sobre natureza humana, propÛsito, agÍncia mapeadas
-- [ ] Operational beliefs em mÌnimo 6 domÌnios documentadas
+- [ ] M√≠nimo 30 cren√ßas catalogadas em todos os n√≠veis
+- [ ] Meta-cren√ßas (epistemol√≥gicas/ontol√≥gicas/axiol√≥gicas) identificadas
+- [ ] Core beliefs sobre natureza humana, prop√≥sito, ag√™ncia mapeadas
+- [ ] Operational beliefs em m√≠nimo 6 dom√≠nios documentadas
 - [ ] Hierarchical dependencies mapeadas
-- [ ] MÌnimo 5 contradictory pairs identificadas e analisadas
+- [ ] M√≠nimo 5 contradictory pairs identificadas e analisadas
 - [ ] Belief evolution timeline documentada
 - [ ] Dissonance management mechanisms catalogados
 - [ ] Influence sources rastreadas
-- [ ] Operational instructions para clone incluÌdas
-- [ ] Todas as crenÁas com evidence e sources
+- [ ] Operational instructions para clone inclu√≠das
+- [ ] Todas as cren√ßas com evidence e sources
 
-## ALERTAS CRÕTICOS
+## ALERTAS CR√çTICOS
 
-1. **DECLARADO vs DEMONSTRADO**: Pessoas declaram crenÁas socialmente desej·veis. CrenÁas reais s„o demonstradas por decisıes e comportamentos consistentes.
+1. **DECLARADO vs DEMONSTRADO**: Pessoas declaram cren√ßas socialmente desej√°veis. Cren√ßas reais s√£o demonstradas por decis√µes e comportamentos consistentes.
 
-2. **DISSON¬NCIAS S√O AUTENTICIDADE**: N„o resolva contradiÁıes entre crenÁas - elas s„o parte essencial da pessoa. Documente mecanismos de reconciliaÁ„o.
+2. **DISSON√ÇNCIAS S√ÉO AUTENTICIDADE**: N√£o resolva contradi√ß√µes entre cren√ßas - elas s√£o parte essencial da pessoa. Documente mecanismos de reconcilia√ß√£o.
 
-3. **CONTEXTO ATIVA CREN«AS**: Mesma pessoa expressa crenÁas diferentes em contextos diferentes. Mapear context-dependency rigorosamente.
+3. **CONTEXTO ATIVA CREN√áAS**: Mesma pessoa expressa cren√ßas diferentes em contextos diferentes. Mapear context-dependency rigorosamente.
 
-4. **EVOLU«√O … ESSENCIAL**: CrenÁas mudam ao longo da vida. Documentar trajectory, n„o apenas snapshot atual.
+4. **EVOLU√á√ÉO √â ESSENCIAL**: Cren√ßas mudam ao longo da vida. Documentar trajectory, n√£o apenas snapshot atual.
 
-5. **HIERARQUIA IMPORTA**: Meta-crenÁas governam core beliefs que governam operational beliefs. MudanÁas top-down causam cascatas.
+5. **HIERARQUIA IMPORTA**: Meta-cren√ßas governam core beliefs que governam operational beliefs. Mudan√ßas top-down causam cascatas.
 
 ---
 
-**ENTREGUE**: analysis/beliefs_core.yaml com sistema completo de crenÁas seguindo exatamente este formato.
+**ENTREGUE**: @{mind}/artifacts/beliefs_core.yaml com sistema completo de cren√ßas seguindo exatamente este formato.

@@ -3,7 +3,7 @@
 ##  METADATA
 - **Version:** 3.0 ACS Neural Flow
 - **Specialization:** Mental Model Discovery & Latticework Architecture
-- **Input:** analysis/cognitive_architecture.yaml, analysis/behavioral_patterns.md, analysis/decision_patterns.yaml
+- **Input:** @{mind}/artifacts/cognitive_architecture.yaml, @{mind}/artifacts/behavioral_patterns.md, @{mind}/artifacts/decision_patterns.yaml
 - **Output:** frameworks/signature_frameworks.md
 - **Dependencies:** Stage 3 complete (Analysis)
 
@@ -38,10 +38,10 @@ Build a latticework showing how these frameworks interconnect and reinforce each
 ```yaml
 input_requirements:
   # From Analysis Phase
-  cognitive_architecture: "analysis/cognitive_architecture.yaml"
-  behavioral_patterns: "analysis/behavioral_patterns.md"
-  decision_patterns: "analysis/decision_patterns.yaml"
-  values_hierarchy: "analysis/values_hierarchy.yaml"
+  cognitive_architecture: "@{mind}/artifacts/cognitive_architecture.yaml"
+  behavioral_patterns: "@{mind}/artifacts/behavioral_patterns.md"
+  decision_patterns: "@{mind}/artifacts/decision_patterns.yaml"
+  values_hierarchy: "@{mind}/artifacts/values_hierarchy.yaml"
   
   # Context
   clone_name: "[Clone name]"

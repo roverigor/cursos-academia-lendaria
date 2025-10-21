@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: sources/ organizadas, metadata/dependencies.yaml, docs/PRD.md
-- Output: sources/priority_matrix.yaml, logs/YYYYMMDD-HHMM-strategy_recommendations.yaml
+- Input: @{mind}/sources/ organizadas, @{mind}/metadata/dependencies.yaml, @{mind}/docs/PRD.md
+- Output: @{mind}/sources/priority_matrix.yaml, @{mind}/docs/logs/YYYYMMDD-HHMM-strategy_recommendations.yaml
 - Dependências: 02_source_collector.md, 02_dependencies_mapper.md, 02_prd_generator.md
 
 ## OBJETIVO PRINCIPAL
@@ -170,7 +170,7 @@ Antes de finalizar os cálculos:
 
 ## ALERTAS CRÍTICOS
 - O objetivo é maximizar valor informacional com recursos limitados
-- Priority_matrix.yaml deve estar em analysis/ conforme OUTPUTS_GUIDE.md
-- Strategy_recommendations.yaml deve estar em logs/ conforme OUTPUTS_GUIDE.md
+- Priority_matrix.yaml deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
+- Strategy_recommendations.yaml deve estar em @{mind}/docs/logs/ conforme OUTPUTS_GUIDE.md
 - Fórmulas devem ser aplicadas consistentemente a todas as fontes
 - ROI deve considerar arquétipo específico do clone alvo

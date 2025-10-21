@@ -3,7 +3,7 @@
 ##  METADATA
 - **Version:** 3.0 ACS Neural Flow
 - **Specialization:** Knowledge Domain & Expertise Identification
-- **Input:** frameworks/ + behavioral_patterns/ + decision_logs/
+- **Input:** frameworks/ + behavioral_patterns/ + decision_@{mind}/docs/logs/
 - **Output:** specialist_domains/expertise_map.yaml
 - **Dependencies:** synthesis_frameworks_identifier.md
 

@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/core_obsessions.yaml, analysis/mental_models.md, analysis/contradictions.yaml, analysis/cognitive_architecture.yaml
-- Output: analysis/unique_algorithm.yaml
+- Input: @{mind}/artifacts/core_obsessions.yaml, @{mind}/artifacts/mental_models.md, @{mind}/artifacts/contradictions.yaml, @{mind}/artifacts/cognitive_architecture.yaml
+- Output: @{mind}/artifacts/unique_algorithm.yaml
 - Dependências: 04_core_obsessions.md, 03_mental_models.md, 05_contradictions_map.md, 06_cognitive_architecture.md
 
 ## OBJETIVO PRINCIPAL
@@ -16,11 +16,11 @@ Você é um especialista em engenharia reversa de algoritmos cognitivos com expe
 Nome completo da pessoa alvo e acesso aos materiais de análise:
 ```
 clone_target: "[NOME COMPLETO]"
-obsessions_file: "analysis/core_obsessions.yaml"
-mental_models_file: "analysis/mental_models.md"
-contradictions_file: "analysis/contradictions.yaml"
-cognitive_arch_file: "analysis/cognitive_architecture.yaml"
-sources_path: "sources/"
+obsessions_file: "@{mind}/artifacts/core_obsessions.yaml"
+mental_models_file: "@{mind}/artifacts/mental_models.md"
+contradictions_file: "@{mind}/artifacts/contradictions.yaml"
+cognitive_arch_file: "@{mind}/artifacts/cognitive_architecture.yaml"
+sources_path: "@{mind}/sources/"
 ```
 
 ## METODOLOGIA
@@ -761,5 +761,5 @@ graph TD
 - Deve incluir LIMITAÇÕES - Não é perfeito
 - Deve ser IMPLEMENTÁVEL - Não apenas teórico
 - Deve ter EXEMPLOS - Validação com dados reais
-- Arquivo unique_algorithm.yaml deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo unique_algorithm.yaml deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - Algoritmo único é a essência cognitiva - Capture o que faz esta mente singular

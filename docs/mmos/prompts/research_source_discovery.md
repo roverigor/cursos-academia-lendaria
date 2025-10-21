@@ -3,7 +3,7 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: docs/PRD.md, docs/TODO.md
+- Input: @{mind}/docs/PRD.md, @{mind}/docs/TODO.md
 - Output: Memória (lista de fontes mantida em conversação)
 - Dependências: Nenhuma
 
@@ -185,4 +185,4 @@ Mantenha as fontes em memória estruturadas assim:
 - Não assuma disponibilidade - Verifique se materiais podem ser acessados
 - Este é o fundamento de todo o trabalho - Seja exaustivo
 - Preserve todas as fontes - Mesmo as que parecem irrelevantes agora
-- Arquivo sources_list.md deve estar em sources/ conforme OUTPUTS_GUIDE.md
+- Arquivo sources_list.md deve estar em @{mind}/sources/ conforme OUTPUTS_GUIDE.md

@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/quotes.md, analysis/timeline.md, analysis/values_hierarchy.md, sources/
-- Output: analysis/contradictions.yaml
+- Input: @{mind}/artifacts/quotes.md, @{mind}/artifacts/timeline.md, @{mind}/artifacts/values_hierarchy.md, @{mind}/sources/
+- Output: @{mind}/artifacts/contradictions.yaml
 - Dependências: 01_quote_extraction.md, 03_temporal_mapper.md, 03_values_hierarchy.md
 
 ## OBJETIVO PRINCIPAL
@@ -14,10 +14,10 @@ Você é um especialista em análise de contradições cognitivas e evolução c
 
 ```
 clone_target: "[NOME COMPLETO]"
-quotes_file: "analysis/quotes.md"
-timeline_file: "analysis/timeline.md"
-values_file: "analysis/values_hierarchy.md"
-sources_path: "sources/"
+quotes_file: "@{mind}/artifacts/quotes.md"
+timeline_file: "@{mind}/artifacts/timeline.md"
+values_file: "@{mind}/artifacts/values_hierarchy.md"
+sources_path: "@{mind}/sources/"
 ```
 
 ## METODOLOGIA
@@ -352,6 +352,6 @@ synthesis_contradictoria:
 4. **CONTEXT DEPENDENCY**: Documente como contexto influencia qual padrão emerge
 5. **EVOLUTION CAPACITY**: Preserve a capacidade de evolução, não apenas snapshots estáticos
 
-- Arquivo contradictions_map.md deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo contradictions_map.md deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - Análise completa em formato YAML seguindo exatamente esta estrutura
 - Todas as contradições preservadas como features operacionais autênticas

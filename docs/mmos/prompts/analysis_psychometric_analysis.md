@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/quotes.md, analysis/timeline.md, analysis/cognitive_patterns.md, analysis/behavioral_triggers.md, sources/
-- Output: analysis/personality_profile.json
+- Input: @{mind}/artifacts/quotes.md, @{mind}/artifacts/timeline.md, @{mind}/artifacts/cognitive_patterns.md, @{mind}/artifacts/behavioral_triggers.md, @{mind}/sources/
+- Output: @{mind}/artifacts/personality_profile.json
 - Dependências: 01_quote_extraction.md, 02_behavioral_patterns.md, 04_cognitive_architecture.md
 
 ## OBJETIVO PRINCIPAL
@@ -13,11 +13,11 @@ Analisar o clone alvo criando perfil psicométrico completo através de framewor
 
 ```
 clone_target: "[NOME COMPLETO]"
-quotes_file: "analysis/quotes.md"
-timeline_file: "analysis/timeline.md"
-cognitive_file: "analysis/cognitive_patterns.md"
-behavioral_file: "analysis/behavioral_triggers.md"
-sources_path: "sources/"
+quotes_file: "@{mind}/artifacts/quotes.md"
+timeline_file: "@{mind}/artifacts/timeline.md"
+cognitive_file: "@{mind}/artifacts/cognitive_patterns.md"
+behavioral_file: "@{mind}/artifacts/behavioral_triggers.md"
+sources_path: "@{mind}/sources/"
 ```
 
 ## METODOLOGIA
@@ -1037,5 +1037,5 @@ Versão Executiva (1500 palavras):
 - Admitir "dados insuficientes" quando apropriado
 - Manter tom profissional mas acessível
 - Respeitar privacidade e dignidade
-- Arquivo psychometric_analysis.md deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo psychometric_analysis.md deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - Esta análise não substitui avaliação profissional

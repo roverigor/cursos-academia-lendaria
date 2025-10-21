@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: sources/sources_list.md, metadata/dependencies.yaml
-- Output: sources/ organizadas, logs/collection_report.yaml
+- Input: @{mind}/sources/sources_list.md, @{mind}/metadata/dependencies.yaml
+- Output: @{mind}/sources/ organizadas, @{mind}/docs/logs/collection_report.yaml
 - Dependências: 01_source_discovery.md, 02_dependencies_mapper.md
 
 ## OBJETIVO PRINCIPAL
@@ -68,7 +68,7 @@ Execute a coleta seguindo esta ordem:
 Crie EXATAMENTE esta estrutura de pastas:
 
 ```
-sources/
+@{mind}/sources/
 ├── primary/                 # Fontes primárias (do próprio clone)
 │   ├── books/              # Livros autorais
 │   │   ├── [ano]_[titulo]/
@@ -91,13 +91,13 @@ sources/
 │   ├── documentaries/
 │   ├── academic_papers/
 │   ├── news_articles/
-│   └── critical_analysis/
+│   └── critical_@{mind}/artifacts/
 ├── contextual/             # Contexto histórico e influências
 │   ├── influences/         # Material dos influenciadores
 │   ├── contemporaries/     # Material de contemporâneos
 │   ├── historical_context/
 │   └── industry_context/
-└── metadata/               # Metadados e índices
+└── @{mind}/metadata/               # Metadados e índices
     ├── collection_log.yaml
     ├── source_index.yaml
     ├── quality_assessment.yaml
@@ -290,4 +290,4 @@ Antes de finalizar a coleta:
 - Metadados são essenciais para fases posteriores de análise
 - Priorize qualidade sobre quantidade na coleta
 - Verifique disponibilidade antes de adicionar fontes à lista
-- Relatório collection_report.yaml deve estar em logs/ conforme OUTPUTS_GUIDE.md
+- Relatório collection_report.yaml deve estar em @{mind}/docs/logs/ conforme OUTPUTS_GUIDE.md

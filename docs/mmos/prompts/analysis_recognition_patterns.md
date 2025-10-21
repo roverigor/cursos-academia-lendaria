@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/quotes.md, analysis/timeline.md, sources/
-- Output: analysis/recognition_patterns.yaml
+- Input: @{mind}/artifacts/quotes.md, @{mind}/artifacts/timeline.md, @{mind}/sources/
+- Output: @{mind}/artifacts/recognition_patterns.yaml
 - Dependências: 01_quote_extraction.md, 01_timeline_mapping.md, 01_source_reading.md
 
 ## OBJETIVO PRINCIPAL
@@ -16,9 +16,9 @@ Você é um especialista em mapeamento de padrões de percepção cognitiva com 
 Nome completo da pessoa alvo e acesso aos materiais de análise:
 ```
 clone_target: "[NOME COMPLETO]"
-quotes_file: "analysis/quotes.md"
-timeline_file: "analysis/timeline.md"
-sources_path: "sources/"
+quotes_file: "@{mind}/artifacts/quotes.md"
+timeline_file: "@{mind}/artifacts/timeline.md"
+sources_path: "@{mind}/sources/"
 ```
 
 ## METODOLOGIA
@@ -452,5 +452,5 @@ def filtrar_atencao(input_data):
 - Distorções são AUTÊNTICAS - Replique-as
 - Velocidades VARIAM - Por domínio e contexto
 - Filtros são HIERÁRQUICOS - Mantém prioridades
-- Arquivo recognition_patterns.yaml deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo recognition_patterns.yaml deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - Padrões de reconhecimento são a assinatura cognitiva - Capture o que é único

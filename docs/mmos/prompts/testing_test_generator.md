@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: system-prompts/, docs/operational_manual.md, docs/testing_protocol.md
-- Output: logs/YYYYMMDD-HHMM-test_cases.yaml
+- Input: @{mind}/system_prompts/, @{mind}/docs/operational_manual.md, @{mind}/docs/testing_protocol.md
+- Output: @{mind}/docs/logs/YYYYMMDD-HHMM-test_cases.yaml
 - Dependências: Etapa 5 completa (Implementation)
 
 ---

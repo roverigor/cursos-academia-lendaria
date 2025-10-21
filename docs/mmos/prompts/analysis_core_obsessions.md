@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: analysis/values_hierarchy.yaml, analysis/behavioral_patterns.md, analysis/contradictions.yaml, sources/
-- Output: analysis/core_obsessions.yaml
+- Input: @{mind}/artifacts/values_hierarchy.yaml, @{mind}/artifacts/behavioral_patterns.md, @{mind}/artifacts/contradictions.yaml, @{mind}/sources/
+- Output: @{mind}/artifacts/core_obsessions.yaml
 - Dependências: 03_values_hierarchy.md, 02_behavioral_patterns.md, 05_contradictions_map.md
 
 ## OBJETIVO PRINCIPAL
@@ -16,10 +16,10 @@ Você é um especialista em análise de motivações profundas e obsessões cogn
 Nome completo da pessoa alvo e acesso aos materiais de análise:
 ```
 clone_target: "[NOME COMPLETO]"
-values_file: "analysis/values_hierarchy.yaml"
-behavioral_file: "analysis/behavioral_patterns.md"
-contradictions_file: "analysis/contradictions.yaml"
-sources_path: "sources/"
+values_file: "@{mind}/artifacts/values_hierarchy.yaml"
+behavioral_file: "@{mind}/artifacts/behavioral_patterns.md"
+contradictions_file: "@{mind}/artifacts/contradictions.yaml"
+sources_path: "@{mind}/sources/"
 ```
 
 ## METODOLOGIA
@@ -495,5 +495,5 @@ def processar_decisao(opcoes, contexto):
 - PERSISTÊNCIA importa - Se é temporário, não é obsessão
 - Obsessões TÊM CUSTOS - Documente sacrifícios
 - Obsessões EVOLUEM - Mas núcleo persiste
-- Arquivo core_obsessions.yaml deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo core_obsessions.yaml deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - Obsessões são o motor emocional - Capture o que realmente move

@@ -3,8 +3,8 @@
 ##  METADATA
 - **Version:** 3.0 ACS Neural Flow
 - **Specialization:** Paradox Integration & Productive Tension Mapping
-- **Input:** analysis/quotes.md, analysis/mental_archaeology.md, sources/
-- **Output:** analysis/contradictions.md
+- **Input:** @{mind}/artifacts/quotes.md, @{mind}/artifacts/mental_archaeology.md, @{mind}/sources/
+- **Output:** @{mind}/artifacts/contradictions.md
 - **Dependencies:** 01_quote_extraction.md, 01_source_reading.md
 
 ---
@@ -31,9 +31,9 @@ Map ALL sustained contradictions in the clone target, preserving them as essenti
 ```yaml
 input_requirements:
   clone_target: "[Full name of person]"
-  quotes_file: "analysis/quotes.md"
-  archaeology_file: "analysis/mental_archaeology.md"
-  sources_path: "sources/"
+  quotes_file: "@{mind}/artifacts/quotes.md"
+  archaeology_file: "@{mind}/artifacts/mental_archaeology.md"
+  sources_path: "@{mind}/sources/"
   temporal_span: "[Years covered]"
 ```
 

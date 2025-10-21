@@ -3,7 +3,7 @@
 ##  METADATA
 - **Version:** 3.0 ACS Neural Flow
 - **Specialization:** Communication Pattern Architecture
-- **Input:** analysis/communication_patterns.md, quotes/signature_phrases.md
+- **Input:** @{mind}/artifacts/communication_patterns.md, quotes/signature_phrases.md
 - **Output:** templates/communication_frameworks.yaml
 - **Dependencies:** 01_quote_extraction.md, 02_phrase_mining.md
 

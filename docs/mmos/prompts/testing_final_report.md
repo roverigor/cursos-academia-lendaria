@@ -2,8 +2,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: logs/YYYYMMDD-HHMM-personality_validation.yaml, logs/YYYYMMDD-HHMM-knowledge_test.yaml, logs/YYYYMMDD-HHMM-edge_cases.yaml
-- Output: logs/YYYYMMDD-HHMM-validation_report.yaml
+- Input: @{mind}/docs/logs/YYYYMMDD-HHMM-personality_validation.yaml, @{mind}/docs/logs/YYYYMMDD-HHMM-knowledge_test.yaml, @{mind}/docs/logs/YYYYMMDD-HHMM-edge_cases.yaml
+- Output: @{mind}/docs/logs/YYYYMMDD-HHMM-validation_report.yaml
 - Dependências: 02_personality_validator.md, 02_knowledge_tester.md, 02_edge_cases.md executados
 
 ---
@@ -378,13 +378,13 @@ metrics_dashboard:
 appendices:
 
   test_artifacts:
-    - artifact: "[logs/YYYYMMDD-HHMM-personality_validation.yaml]"
+    - artifact: "[@{mind}/docs/logs/YYYYMMDD-HHMM-personality_validation.yaml]"
       description: "[Descrição]"
 
-    - artifact: "[logs/YYYYMMDD-HHMM-knowledge_test.yaml]"
+    - artifact: "[@{mind}/docs/logs/YYYYMMDD-HHMM-knowledge_test.yaml]"
       description: "[Descrição]"
 
-    - artifact: "[logs/YYYYMMDD-HHMM-edge_cases.yaml]"
+    - artifact: "[@{mind}/docs/logs/YYYYMMDD-HHMM-edge_cases.yaml]"
       description: "[Descrição]"
 
   validation_team:

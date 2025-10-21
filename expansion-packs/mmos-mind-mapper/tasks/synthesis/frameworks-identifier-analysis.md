@@ -1,207 +1,148 @@
 ---
 task-id: frameworks-identifier-analysis
-name: Mental Frameworks Identification & Latticework Construction
+name: Framework Extraction & Latticework Architecture
 agent: synthesis-expert
 version: 3.5.0
-purpose: Extract mental models from cognitive analysis and synthesize them into interconnected framework latticework using Munger methodology
+layer: synthesis
+phase: 4
 
-workflow-mode: interactive
-elicit: false
-elicitation-type: none
-
-prerequisites:
-  - Phase 3 (Analysis) completed with all artifacts
-  - cognitive-architecture.yaml exists
-  - behavioral-patterns.yaml exists
-  - values-hierarchy.yaml exists (Layer 6)
-  - mental-models.yaml exists (Layer 5)
-  - decision-architecture.yaml exists
+metadata:
+  specialization: Mental Model Discovery & Latticework Architecture
+  methodology: Munger-Inspired 5-Phase Framework Extraction
+  estimated-time: 4-6 hours
+  complexity: high
 
 inputs:
-  - name: mind_name
-    type: string
-    required: true
-
-  - name: cognitive_architecture_path
-    type: file_path
-    default: "outputs/minds/{mind_name}/artifacts/cognitive-architecture.yaml"
-
-  - name: behavioral_patterns_path
-    type: file_path
-    default: "outputs/minds/{mind_name}/artifacts/behavioral-patterns.yaml"
-
-  - name: values_hierarchy_path
-    type: file_path
-    default: "outputs/minds/{mind_name}/artifacts/values-hierarchy.yaml"
-
-  - name: mental_models_path
-    type: file_path
-    default: "outputs/minds/{mind_name}/artifacts/mental-models.yaml"
-
-  - name: minimum_frameworks
-    type: integer
-    default: 8
-    description: Minimum frameworks for solid latticework
+  required:
+    - analysis/cognitive_architecture.yaml
+    - analysis/behavioral_patterns.md
+    - analysis/decision_patterns.yaml
+    - analysis/values_hierarchy.yaml
+  context:
+    - clone_name: "[Mind name]"
+    - archetype_principal: "[Identified archetype]"
+    - domain_expertise: "[Area of specialization]"
+    - temporal_period: "[Period covered by sources]"
 
 outputs:
-  - path: "outputs/minds/{mind_name}/synthesis/frameworks-synthesized.yaml"
-    description: Complete mental framework latticework with cross-domain validation
-    format: yaml
-    template: frameworks-synthesized.yaml
+  primary:
+    - frameworks/signature_frameworks.md
+  format: markdown
+  template: frameworks-synthesized.yaml
 
 validation:
-  success-criteria:
-    - "Minimum 8 distinct frameworks extracted from source data"
-    - "Each framework validated across 2+ domains"
-    - "First-principles decomposition performed for all frameworks"
-    - "Latticework map shows interconnections between frameworks"
-    - "Context boundaries defined (when works vs fails)"
-    - "Cross-domain applications validated"
-    - "Inversion thinking applied to each framework"
+  checklist: synthesis-quality-validation.md
+  required-frameworks: 7+
+  evidence-per-framework: 3+
+  cross-domain-validation: true
+  first-principles-decomposition: true
+  latticework-connections: true
 
-  warning-conditions:
-    - "Only 5-7 frameworks identified (borderline latticework)"
-    - "Single-domain frameworks without cross-validation"
-    - "Missing first-principles decomposition"
+quality-gates:
+  - "Minimum 7 distinct frameworks extracted"
+  - "Each framework has 3+ behavioral examples"
+  - "Cross-domain applications tested"
+  - "First-principles decomposition performed"
+  - "Inversion boundaries documented"
+  - "Latticework connections mapped"
+  - "Bias patterns identified"
+  - "Meta-framework specified"
+  - "Validation tests passed"
+  - "Implementation logic clear"
 
-  failure-conditions:
-    - "Less than 5 frameworks identified"
-    - "Frameworks are isolated (no interconnections)"
-    - "No cross-domain validation"
-    - "No context boundaries defined"
-
-estimated-duration: "4-6 hours for complete latticework construction"
-critical-success-factor: "Latticework quality > framework quantity - interconnections matter more than count"
+elicit: false
 ---
 
-# Frameworks Identifier Analysis Task
+# Framework Extraction Specialist
 
-## Purpose
+## CORE PHILOSOPHY
 
-Extract mental models from cognitive analysis and synthesize them into an interconnected **latticework of frameworks** using Charlie Munger's multi-disciplinary methodology.
+> "You can't really know anything if you just remember isolated facts. If facts don't hang together on a latticework of theory, you don't have them in a usable form"
+> — Charlie Munger
 
-**Not a list of frameworks** - a **living knowledge architecture** where models support, contradict, and enhance each other.
-
-**Munger Principle:** *"You need a latticework of mental models in your head. If facts don't hang together on a latticework of theory, you don't have them in a usable form"*
+**METHODOLOGY OVER CATALOG:** Don't list known mental models. Extract frameworks SPECIFIC to this mind from raw data.
 
 ---
 
-## Charlie Munger's Latticework Method
+## PRIMARY OBJECTIVE
 
-### Core Philosophy
+Discover and map the mental models this specific person uses to:
+- Process information (perception frameworks)
+- Make decisions (decision frameworks)
+- Solve problems (problem-solving frameworks)
+- Navigate relationships (social frameworks)
+- Generate creative output (innovation frameworks)
 
-1. **80-90 Models Suffice:** A handful of truly powerful models from major disciplines carry 90% of cognitive freight
-2. **Cross-Pollination Gold:** Best insights come from applying Model X from Domain A to Problem Y in Domain B
-3. **Inversion Power:** Ask "how would this fail catastrophically?" not just "how does this work?"
-4. **Circle of Competence:** Know what you know deeply vs what you've only memorized
-5. **Lollapalooza Effects:** Multiple frameworks acting together create extreme outcomes
+Build a latticework showing how these frameworks interconnect and reinforce each other.
 
-### The 5-Step Framework Identification Process
+---
 
-```yaml
-munger_framework_extraction:
-  step_1: Pattern Hunting (find repeating structures)
-  step_2: Cross-Domain Mapping (test in 2+ domains)
-  step_3: First-Principles Decomposition (reduce to atoms)
-  step_4: Interconnection Building (weave latticework)
-  step_5: Usability Testing (validate predictive power)
+## MUNGER-INSPIRED EXTRACTION METHODOLOGY
+
+### PHASE 1: PATTERN HUNTING (Discovery Mode)
+
+**Objective:** Find repeating cognitive structures in raw behavioral data
+
+#### Step 1.1: Decision Tree Extraction
+
+Analyze documented decisions and extract implicit if-then rules:
+
+```
+When [Situation Type A] occurs:
+  IF [Condition 1]
+    THEN [Action/Conclusion Pattern]
+  ELSE IF [Condition 2]
+    THEN [Different Action Pattern]
+```
+
+**Evidence Required:**
+- Minimum 3 instances of same pattern
+- Consistent across different contexts
+- Documented with dates/sources
+
+#### Step 1.2: Causal Chain Mapping
+
+Identify recurring cause-effect reasoning:
+
+```
+Person believes: A → B → C
+Evidence:
+- [Quote showing A→B reasoning]
+- [Action showing B→C belief]
+- [Outcome confirming C expectation]
+```
+
+**Look for:**
+- Stated beliefs about causation
+- Implicit assumptions in arguments
+- Repeated explanatory patterns
+- Predictive models they use
+
+#### Step 1.3: Constraint Identification
+
+What limits/boundaries does this person consistently respect?
+
+```
+Constraint Type: [Resource/Ethical/Practical/Temporal]
+Manifestation: [How it shapes decisions]
+Never violated in: [X] observed instances
+Exception conditions: [When/if broken]
+```
+
+#### Step 1.4: Heuristic Discovery
+
+Extract mental shortcuts consistently applied:
+
+```
+Heuristic Pattern: "[Name it descriptively]"
+Rule: "When X, assume Y"
+Accuracy: [How often correct?]
+Domains: [Where applied?]
 ```
 
 ---
 
-## Execution Steps
-
-### Phase 1: Pattern Hunting - Raw Framework Extraction (90 min)
-
-**Goal:** Scan cognitive analysis for repeating mental structures
-
-**Method:** Munger's Pattern Recognition
-
-1. **Read all analysis artifacts** with framework detector active:
-   - `cognitive-architecture.yaml` - top-level thinking patterns
-   - `behavioral-patterns.yaml` - decision rules in action
-   - `mental-models.yaml` - explicit models mentioned
-   - `values-hierarchy.yaml` - value-based decision frameworks
-   - `decision-architecture.yaml` - choice heuristics
-
-2. **Hunt for 6 framework types:**
-
-   **a) Cause-Effect Frameworks** (A → B → C)
-   ```
-   Example: "First-principles thinking"
-   - Break problem to atomic truths
-   - Rebuild from ground up
-   - Ignore analogies to existing solutions
-   Evidence: Appears in 8+ sources when solving technical problems
-   ```
-
-   **b) Decision Frameworks** (If X then Y)
-   ```
-   Example: "2x2 Decision Matrix"
-   - High impact + Low effort = Do now
-   - High impact + High effort = Plan carefully
-   - Low impact + Low effort = Delegate
-   - Low impact + High effort = Eliminate
-   Evidence: Used in business decisions across 5+ scenarios
-   ```
-
-   **c) Constraint Frameworks** (Limits define possibilities)
-   ```
-   Example: "Working backwards from constraints"
-   - Identify non-negotiable constraints first
-   - Design solution within boundaries
-   - Challenge constraints second, not first
-   Evidence: Mentioned as "design within reality" in 7 sources
-   ```
-
-   **d) Optimization Frameworks** (Maximize X while minimizing Y)
-   ```
-   Example: "80/20 Leverage Finding"
-   - Find 20% of inputs creating 80% of outcomes
-   - Double down on high-leverage activities
-   - Systematically eliminate low-leverage work
-   Evidence: Appears in time management, learning, business
-   ```
-
-   **e) Pattern-Recognition Frameworks** (This resembles that)
-   ```
-   Example: "Biological Systems as Organizational Model"
-   - Organizations = living systems
-   - Apply evolution, adaptation, ecosystem thinking
-   - Resilience through diversity
-   Evidence: Used to explain company culture in 4+ contexts
-   ```
-
-   **f) Heuristics** (Mental shortcuts for repeated situations)
-   ```
-   Example: "Strong opinions, weakly held"
-   - Commit fully to current best answer
-   - Update instantly when new evidence appears
-   - Avoid fence-sitting indecision
-   Evidence: Behavioral pattern in debates across 6+ scenarios
-   ```
-
-3. **Document each framework discovery:**
-   ```yaml
-   framework_candidate:
-     name: "[Descriptive Name]"
-     type: "[cause-effect/decision/constraint/optimization/pattern/heuristic]"
-     description: "[How it works in 2-3 sentences]"
-     evidence:
-       - source: "[File/context]"
-         example: "[Specific usage]"
-       - source: "[Another file]"
-         example: "[Another usage]"
-     frequency: "[How often used: constant/high/medium]"
-   ```
-
-4. **Frequency threshold:** Discard frameworks with <3 documented usages (noise, not signal)
-
-**Output Phase 1:** List of 15-25 framework candidates with evidence
-
----
-
-### Phase 2: Cross-Domain Mapping - Latticework Validation (60 min)
+### PHASE 2: FIRST-PRINCIPLES DECOMPOSITION
 
 **Goal:** Test if frameworks work across multiple domains (Munger's acid test)
 

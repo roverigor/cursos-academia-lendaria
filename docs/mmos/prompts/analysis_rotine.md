@@ -3,8 +3,8 @@
 
 ## METADADOS
 - Versão: 3.0 ACS Neural Flow
-- Input: sources/ organizadas, analysis/quotes.md, analysis/timeline.md
-- Output: analysis/routine_analysis.md
+- Input: @{mind}/sources/ organizadas, @{mind}/artifacts/quotes.md, @{mind}/artifacts/timeline.md
+- Output: @{mind}/artifacts/routine_analysis.md
 - Dependências: 01_quote_extraction.md, 03_temporal_mapper.md
 
 ## OBJETIVO PRINCIPAL
@@ -17,9 +17,9 @@ Você é um analista comportamental especializado em sistemas de alta performanc
 Nome completo da pessoa alvo e acesso aos materiais de análise:
 ```
 clone_target: "[NOME COMPLETO]"
-sources_path: "sources/"
-quotes_file: "analysis/quotes.md"
-timeline_file: "analysis/timeline.md"
+sources_path: "@{mind}/sources/"
+quotes_file: "@{mind}/artifacts/quotes.md"
+timeline_file: "@{mind}/artifacts/timeline.md"
 ```
 
 ## METODOLOGIA
@@ -135,5 +135,5 @@ Mapeie com precisão cirúrgica:
 - Evite: Linguagem motivacional vazia, glorificação, simplificação excessiva
 - Priorize: Insights acionáveis, nuance psicológica, aplicabilidade prática
 - Tom: Analítico mas acessível
-- Arquivo routine_analysis.md deve estar em analysis/ conforme OUTPUTS_GUIDE.md
+- Arquivo routine_analysis.md deve estar em @{mind}/artifacts/ conforme OUTPUTS_GUIDE.md
 - Use fontes primárias (podcasts longos, entrevistas) sobre artigos superficiais
