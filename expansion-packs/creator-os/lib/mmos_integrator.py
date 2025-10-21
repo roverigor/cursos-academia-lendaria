@@ -117,6 +117,36 @@ class MMOSIntegrator:
         self.minds_dir = Path(minds_dir)
         self.available_minds: List[MMOSMindMetadata] = []
 
+        # Load paths config
+        config_path = Path(__file__).parent.parent / "config" / "mmos-paths.yaml"
+        self.paths = self._load_paths(config_path)
+
+    def _load_paths(self, config_path: Path) -> Dict:
+        """Load paths from YAML config (fallback to defaults if not found)."""
+        if config_path.exists():
+            with open(config_path, 'r', encoding='utf-8') as f:
+                config = yaml.safe_load(f)
+                return config.get("paths", {})
+
+        # Fallback defaults
+        return {
+            "identity_core": ["artifacts/identity_core.yaml"],
+            "cognitive_architecture": ["artifacts/cognitive_architecture.yaml"],
+            "communication_style": ["artifacts/communication_templates.md", "kb/communication_style_final.md"],
+            "frameworks": ["artifacts/frameworks_synthesized.md", "kb/frameworks_final.md"],
+            "system_prompts": ["system_prompts/generalista.md"],
+            "metadata": ["metadata.yaml"]
+        }
+
+    def _find_file(self, mind_path: Path, path_key: str) -> Optional[Path]:
+        """Find first existing file from config paths."""
+        paths = self.paths.get(path_key, [])
+        for rel_path in paths:
+            full_path = mind_path / rel_path
+            if full_path.exists():
+                return full_path
+        return None
+
     def detect_available_minds(self) -> List[MMOSMindMetadata]:
         """
         Scan outputs/minds/ directory for valid MMOS personas.
@@ -154,89 +184,52 @@ class MMOSIntegrator:
         return minds
 
     def _is_valid_mmos_mind(self, mind_path: Path) -> bool:
-        """
-        Check if folder contains valid MMOS structure (v3.0).
-
-        Required files (v3.0):
-        - artifacts/identity_core.yaml OR artifacts/cognitive_architecture.yaml
-        - artifacts/communication_templates.md OR kb/communication_style_final.md
-        - system_prompts/*.md (recommended)
-
-        Args:
-            mind_path: Path to mind folder
-
-        Returns:
-            True if valid MMOS mind, False otherwise
-        """
-        # Check for identity/cognitive data in artifacts/ (v3.0)
+        """Check if mind has required files (uses config paths)."""
+        # Must have identity OR cognitive
         has_identity = (
-            (mind_path / "artifacts" / "identity_core.yaml").exists() or
-            (mind_path / "artifacts" / "cognitive_architecture.yaml").exists() or
-            (mind_path / "artifacts" / "psychometric_profile.yaml").exists()
+            self._find_file(mind_path, "identity_core") is not None or
+            self._find_file(mind_path, "cognitive_architecture") is not None
         )
 
         if not has_identity:
             return False
 
-        # Check for communication style in artifacts/ or kb/ (v3.0)
-        has_comm_style = (
-            (mind_path / "artifacts" / "communication_templates.md").exists() or
-            (mind_path / "kb" / "communication_style_final.md").exists() or
-            (mind_path / "artifacts" / "writing_style.yaml").exists()
-        )
+        # Must have communication OR system_prompts
+        has_comm = self._find_file(mind_path, "communication_style") is not None
+        has_prompts = self._find_file(mind_path, "system_prompts") is not None
 
-        # Check if has system prompts
-        has_system_prompts = (mind_path / "system_prompts").exists() and \
-                            list((mind_path / "system_prompts").glob("*.md"))
-
-        return has_comm_style or has_system_prompts
+        return has_comm or has_prompts
 
     def _extract_mind_metadata(self, mind_path: Path) -> MMOSMindMetadata:
-        """
-        Extract metadata from MMOS mind folder.
-
-        Args:
-            mind_path: Path to mind folder
-
-        Returns:
-            MMOSMindMetadata object
-        """
+        """Extract metadata from MMOS mind (uses config paths)."""
         slug = mind_path.name
 
-        # Load identity core for name (v3.0: artifacts/)
-        identity_core_path = mind_path / "artifacts" / "identity_core.yaml"
+        # Load identity core
         identity_core = {}
-        if identity_core_path.exists():
-            with open(identity_core_path, 'r', encoding='utf-8') as f:
-                # Load only first document if multi-document YAML
+        identity_path = self._find_file(mind_path, "identity_core")
+        if identity_path:
+            with open(identity_path, 'r', encoding='utf-8') as f:
                 identity_core = next(yaml.safe_load_all(f))
 
         name = identity_core.get("nome_completo", slug.replace("_", " ").title())
 
-        # Load cognitive spec for description (v3.0: artifacts/)
-        cognitive_spec_path = mind_path / "artifacts" / "cognitive_architecture.yaml"
-        if not cognitive_spec_path.exists():
-            # Fallback: Try old name
-            cognitive_spec_path = mind_path / "artifacts" / "cognitive-spec.yaml"
-
+        # Load cognitive spec
         cognitive_spec = {}
-        if cognitive_spec_path.exists():
-            with open(cognitive_spec_path, 'r', encoding='utf-8') as f:
-                # Load only first document if multi-document YAML
+        cognitive_path = self._find_file(mind_path, "cognitive_architecture")
+        if cognitive_path:
+            with open(cognitive_path, 'r', encoding='utf-8') as f:
                 cognitive_spec = next(yaml.safe_load_all(f))
 
-        # Get description from cognitive spec
         description = cognitive_spec.get("resumo_personalidade", "MMOS cognitive clone")
         if not description or description == "MMOS cognitive clone":
-            # Try occupation/role as fallback
             occupation = cognitive_spec.get("ocupacao_principal", "")
             if occupation:
                 description = f"{occupation}"
 
-        # Try to load version from metadata.yaml
+        # Load metadata
         version = "unknown"
-        metadata_path = mind_path / "metadata.yaml"
-        if metadata_path.exists():
+        metadata_path = self._find_file(mind_path, "metadata")
+        if metadata_path:
             try:
                 with open(metadata_path, 'r', encoding='utf-8') as f:
                     metadata = yaml.safe_load(f)
@@ -244,20 +237,9 @@ class MMOSIntegrator:
             except:
                 pass
 
-        # Check for system prompt
-        has_system_prompt = False
-        system_prompts_dir = mind_path / "system_prompts"
-        if system_prompts_dir.exists():
-            # Look for generalista.md or any .md file (excluding CHANGELOG.md)
-            system_prompts = [f for f in system_prompts_dir.glob("*.md")
-                            if f.name.lower() not in ['changelog.md', 'readme.md']]
-            has_system_prompt = len(system_prompts) > 0
-
-        # Check for frameworks (v3.0: artifacts/ or kb/)
-        has_frameworks = (
-            (mind_path / "artifacts" / "frameworks_synthesized.md").exists() or
-            (mind_path / "kb" / "frameworks_final.md").exists()
-        )
+        # Check capabilities
+        has_system_prompt = self._find_file(mind_path, "system_prompts") is not None
+        has_frameworks = self._find_file(mind_path, "frameworks") is not None
 
         return MMOSMindMetadata(
             slug=slug,
@@ -325,50 +307,34 @@ class MMOSIntegrator:
                 return None
 
     def load_voice_profile(self, mind_metadata: MMOSMindMetadata) -> MMOSVoiceProfile:
-        """
-        Extract voice profile from MMOS mind files.
-
-        Args:
-            mind_metadata: Metadata for selected mind
-
-        Returns:
-            MMOSVoiceProfile object with extracted voice data
-        """
+        """Extract voice profile from MMOS mind (uses config paths)."""
         mind_path = Path(mind_metadata.path)
 
-        # Load identity core (v3.0: artifacts/)
-        identity_core_path = mind_path / "artifacts" / "identity_core.yaml"
+        # Load identity core
         identity_core = {}
-        if identity_core_path.exists():
-            with open(identity_core_path, 'r', encoding='utf-8') as f:
+        identity_path = self._find_file(mind_path, "identity_core")
+        if identity_path:
+            with open(identity_path, 'r', encoding='utf-8') as f:
                 identity_core = next(yaml.safe_load_all(f))
 
-        # Load cognitive spec (v3.0: artifacts/)
-        cognitive_spec_path = mind_path / "artifacts" / "cognitive_architecture.yaml"
-        if not cognitive_spec_path.exists():
-            cognitive_spec_path = mind_path / "artifacts" / "cognitive-spec.yaml"
-
+        # Load cognitive spec
         cognitive_spec = {}
-        if cognitive_spec_path.exists():
-            with open(cognitive_spec_path, 'r', encoding='utf-8') as f:
+        cognitive_path = self._find_file(mind_path, "cognitive_architecture")
+        if cognitive_path:
+            with open(cognitive_path, 'r', encoding='utf-8') as f:
                 cognitive_spec = next(yaml.safe_load_all(f))
 
-        # Load communication style (v3.0: artifacts/ or kb/)
-        comm_style_path = mind_path / "artifacts" / "communication_templates.md"
-        if not comm_style_path.exists():
-            comm_style_path = mind_path / "kb" / "communication_style_final.md"
-
+        # Load communication style
         comm_style = ""
-        if comm_style_path.exists():
-            with open(comm_style_path, 'r', encoding='utf-8') as f:
+        comm_path = self._find_file(mind_path, "communication_style")
+        if comm_path:
+            with open(comm_path, 'r', encoding='utf-8') as f:
                 comm_style = f.read()
 
-        # Load frameworks (v3.0: artifacts/ or kb/)
-        frameworks_path = mind_path / "artifacts" / "frameworks_synthesized.md"
-        if not frameworks_path.exists():
-            frameworks_path = mind_path / "kb" / "frameworks_final.md"
+        # Load frameworks
         frameworks = None
-        if frameworks_path.exists():
+        frameworks_path = self._find_file(mind_path, "frameworks")
+        if frameworks_path:
             with open(frameworks_path, 'r', encoding='utf-8') as f:
                 frameworks = f.read()
 
@@ -377,28 +343,16 @@ class MMOSIntegrator:
             source="mmos",
             mmos_mind=mind_metadata.slug,
             instructor_name=identity_core.get("nome_completo", mind_metadata.name),
-
-            # Tone & Style
             tone=self._extract_tone(identity_core, cognitive_spec),
             style=self._extract_style(cognitive_spec),
-
-            # Communication patterns
             language_patterns=self._extract_language_patterns(comm_style),
             recurring_phrases=self._extract_catchphrases(comm_style),
             interaction_style=self._extract_interaction_style(comm_style, cognitive_spec),
-
-            # Teaching philosophy
             teaching_philosophy=self._extract_teaching_philosophy(frameworks) if frameworks else None,
-
-            # Values & Worldview
             core_values=identity_core.get("valores_centrais", []),
             worldview=identity_core.get("visao_de_mundo", {}),
-
-            # Cognitive patterns
             decision_making=cognitive_spec.get("estilo_decisao", ""),
             problem_solving=cognitive_spec.get("abordagem_problemas", ""),
-
-            # Metadata
             extraction_timestamp=datetime.now().isoformat(),
             confidence_score=self._calculate_confidence(identity_core, cognitive_spec, comm_style, frameworks)
         )
