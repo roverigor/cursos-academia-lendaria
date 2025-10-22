@@ -33,11 +33,11 @@
 - **Expertise:** State transitions, trigger mapping, behavioral economics, decision heuristics
 
 **Responsible for (5 prompts):**
-1. `analysis_behavioral_patterns.md` → `behavioral-patterns-analysis.md`
-2. `analysis_recognition_patterns.md` → `recognition-patterns-analysis.md`
-3. `analysis_rotine.md` → `routine-patterns-analysis.md`
-4. `analysis_decision_architecture.md` → `decision-architecture-analysis.md`
-5. `analysis_immune_system.md` → `immune-system-analysis.md`
+1. `analysis_behavioral_patterns.md` → `@{mind}/artifacts/behavioral_patterns.md` → `behavioral-patterns-analysis.md`
+2. `analysis_recognition_patterns.md` → `@{mind}/artifacts/recognition_patterns.yaml` → `recognition-patterns-analysis.md`
+3. `analysis_rotine.md` → `@{mind}/artifacts/routine_analysis.md` → `routine-patterns-analysis.md`
+4. `analysis_decision_architecture.md` → `@{mind}/artifacts/decision_patterns.yaml` → `decision-architecture-analysis.md`
+5. `analysis_immune_system.md` → `@{mind}/artifacts/immune_system.yaml` → `immune-system-analysis.md`
 
 **Commands:**
 - `*analyze-behavioral-patterns`
@@ -138,11 +138,11 @@ validation_gates:
 - **Expertise:** Values hierarchy, obsessions, contradictions, belief systems, anti-values
 
 **Responsible for (5 prompts):**
-1. `analysis_values_hierarchy.md` → `values-hierarchy-analysis.md` (Layer 6) 🔴
-2. `analysis_core_obsessions.md` → `core-obsessions-analysis.md` (Layer 7) 🔴
-3. `analysis_contradictions_map.md` → `contradictions-analysis.md` (Layer 8) 🔴
-4. `analysis_belief_system.md` → `belief-system-analysis.md`
-5. `analysis_unique_algorithm.md` → `unique-algorithm-analysis.md`
+1. `analysis_values_hierarchy.md` → `@{mind}/artifacts/values_hierarchy.yaml` → `values-hierarchy-analysis.md` (Layer 6) 🔴
+2. `analysis_core_obsessions.md` → `@{mind}/artifacts/core_obsessions.yaml` → `core-obsessions-analysis.md` (Layer 7) 🔴
+3. `analysis_contradictions_map.md` → `@{mind}/artifacts/contradictions.yaml` → `contradictions-analysis.md` (Layer 8) 🔴
+4. `analysis_belief_system.md` → `@{mind}/artifacts/beliefs_core.yaml` → `belief-system-analysis.md`
+5. `analysis_unique_algorithm.md` → `@{mind}/artifacts/unique_algorithm.yaml` → `unique-algorithm-analysis.md`
 
 **Commands:**
 - `*analyze-values` (+ HUMAN CHECKPOINT)
@@ -249,10 +249,10 @@ validation_gates:
 - **Expertise:** Mental models, cognitive frameworks, thinking patterns, learning systems
 
 **Responsible for (4 prompts):**
-1. `analysis_mental_models.md` → `mental-models-analysis.md` (Layer 5)
-2. `analysis_cognitive_architecture.md` → `cognitive-architecture-synthesis.md`
-3. `analysis_linguistic_forensics.md` → `linguistic-patterns-analysis.md`
-4. `analysis_psychometric_analysis.md` → `psychometric-profiling.md`
+1. `analysis_mental_models.md` → `@{mind}/artifacts/mental_models.md` → `mental-models-analysis.md` (Layer 5)
+2. `analysis_cognitive_architecture.md` → `@{mind}/artifacts/cognitive_architecture.yaml` → `cognitive-architecture-synthesis.md`
+3. `analysis_linguistic_forensics.md` → `@{mind}/artifacts/writing_style.md` → `linguistic-patterns-analysis.md`
+4. `analysis_psychometric_analysis.md` → `@{mind}/artifacts/personality_profile.json` → `psychometric-profiling.md`
 
 **Commands:**
 - `*analyze-mental-models`
@@ -359,13 +359,13 @@ validation_gates:
 - **Expertise:** Framework identification from raw data, cross-domain pattern synthesis, contradiction integration, knowledge architecture design
 
 **Responsible for (7 prompts):**
-1. `synthesis_frameworks_identifier.md` → `frameworks-identifier-analysis.md`
-2. `synthesis_template_extractor.md` → `communication-templates-extraction.md`
-3. `synthesis_phrases_miner.md` → `signature-phrases-mining.md`
-4. `synthesis_contradictions.md` → `contradictions-synthesis.md`
-5. `synthesis_extract_core.md` → `core-essence-extraction.md`
-6. `synthesis_kb_chunker.md` → `knowledge-base-chunking.md`
-7. `synthesis_specialist_recommender.md` → `specialist-recommendation.md`
+1. `synthesis_frameworks_identifier.md` → `@{mind}/artifacts/frameworks_synthesized.yaml` → `frameworks-identifier-analysis.md`
+2. `synthesis_template_extractor.md` → `@{mind}/artifacts/communication_templates.yaml` → `communication-templates-extraction.md`
+3. `synthesis_phrases_miner.md` → `@{mind}/artifacts/signature_phrases.yaml` → `signature-phrases-mining.md`
+4. `synthesis_contradictions.md` → `@{mind}/artifacts/contradictions.yaml` → `contradictions-synthesis.md`
+5. `synthesis_extract_core.md` → `@{mind}/artifacts/core_elements.yaml + @{mind}/docs/identity_blueprint.md` → `core-essence-extraction.md`
+6. `synthesis_kb_chunker.md` → `@{mind}/kb/chunked_system.yaml` → `knowledge-base-chunking.md`
+7. `synthesis_specialist_recommender.md` → `@{mind}/specialists/expertise_map.yaml` → `specialist-recommendation.md`
 
 **Commands:**
 - `*identify-frameworks`
@@ -679,15 +679,15 @@ methodological_toolkit:
 - **Expertise:** Multi-dimensional identity cores (12-16 dimensions), psychological meta-axioms, four-level behavioral depth (Social/Personal/Core/Subconscious), executable operational manuals, specialist persona creation, cognitive otherness for synthetic minds
 
 **Responsible for (9 prompts):**
-1. `implementation_identity_core.md` → `identity-core-creation.md`
-2. `implementation_meta_axioms.md` → `meta-axioms-definition.md`
-3. `implementation_instructions_core.md` → `instructions-core-compilation.md`
-4. `implementation_generalista_compiler.md` → `generalista-prompt-compilation.md`
-5. `implementation_specialist_creator.md` → `specialist-prompt-creation.md`
-6. `implementation_neural_flow_techniques.md` → `neural-flow-implementation.md`
-7. `implementation_operational_manual.md` → `operational-manual-creation.md`
-8. `implementation_testing_protocol.md` → `testing-protocol-design.md`
-9. `implementation_extract_patterns.md` → `pattern-extraction-implementation.md`
+1. `implementation_identity_core.md` → `@{mind}/artifacts/identity_core.yaml` → `identity-core-creation.md`
+2. `implementation_meta_axioms.md` → `@{mind}/artifacts/meta_axioms.yaml` → `meta-axioms-definition.md`
+3. `implementation_instructions_core.md` → `@{mind}/artifacts/instructions_core.yaml` → `instructions-core-compilation.md`
+4. `implementation_generalista_compiler.md` → `@{mind}/system_prompts/generalista.md` → `generalista-prompt-compilation.md`
+5. `implementation_specialist_creator.md` → `@{mind}/specialists/[tipo]/system_prompts/YYYYMMDD-HHMM-v1.0-[tipo]-initial.md` → `specialist-prompt-creation.md`
+6. `implementation_neural_flow_techniques.md` → `@{mind}/artifacts/neural_flow.yaml` → `neural-flow-implementation.md`
+7. `implementation_operational_manual.md` → `@{mind}/docs/operational-manual.md` → `operational-manual-creation.md`
+8. `implementation_testing_protocol.md` → `@{mind}/docs/testing-protocol.md` → `testing-protocol-design.md`
+9. `implementation_extract_patterns.md` → `@{mind}/artifacts/patterns_final.yaml` → `pattern-extraction-implementation.md`
 
 **Commands:**
 - `*create-identity-core`
@@ -791,14 +791,14 @@ validation_gates:
 - **Expertise:** Source triangulation, expert identification, rapid skill deconstruction, interview mining, pattern extraction from multiple sources
 
 **Responsible for (8 prompts):**
-1. `research_source_validator.md` → `source-validation-report.md`
-2. `research_expert_identifier.md` → `expert-identification-analysis.md`
-3. `research_content_miner.md` → `content-mining-extraction.md`
-4. `research_interview_analyzer.md` → `interview-pattern-analysis.md`
-5. `research_cross_reference.md` → `cross-reference-validation.md`
-6. `research_pattern_extractor.md` → `multi-source-pattern-extraction.md`
-7. `research_knowledge_gaps.md` → `knowledge-gap-identification.md`
-8. `research_triangulation.md` → `source-triangulation-report.md`
+1. `research_source_validator.md` → `@{mind}/docs/logs/YYYYMMDD-HHMM-source_validation.md` → `source-validation-report.md`
+2. `research_expert_identifier.md` → `@{mind}/docs/logs/YYYYMMDD-HHMM-expert_identification.md` → `expert-identification-analysis.md`
+3. `research_content_miner.md` → `@{mind}/docs/logs/YYYYMMDD-HHMM-content_mining.md` → `content-mining-extraction.md`
+4. `research_interview_analyzer.md` → `@{mind}/docs/logs/YYYYMMDD-HHMM-interview_patterns.md` → `interview-pattern-analysis.md`
+5. `research_cross_reference.md` → `@{mind}/docs/logs/YYYYMMDD-HHMM-cross_reference.md` → `cross-reference-validation.md`
+6. `research_pattern_extractor.md` → `@{mind}/docs/logs/YYYYMMDD-HHMM-patterns_extracted.md` → `multi-source-pattern-extraction.md`
+7. `research_knowledge_gaps.md` → `@{mind}/docs/logs/YYYYMMDD-HHMM-knowledge_gaps.md` → `knowledge-gap-identification.md`
+8. `research_triangulation.md` → `@{mind}/docs/logs/YYYYMMDD-HHMM-triangulation.md` → `source-triangulation-report.md`
 
 **Commands:**
 - `*validate-sources`
