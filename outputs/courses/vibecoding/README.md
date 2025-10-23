@@ -281,6 +281,13 @@ Marca @JoseCarlosAmorim pra ele ver tua conquista! 🔥
 
 ---
 
+## 📘 Guia do Instrutor
+
+Para acompanhamento, avaliação e critérios padronizados:
+- Consulte `INSTRUCTOR-GUIDE.md` (rubricas por lesson, checkpoints e certificação)
+
+---
+
 ## 🎓 Certificado de Conclusão
 
 Para receber o certificado, você precisa:

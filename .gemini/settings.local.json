@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(do mind_slug=\"$mind%/\" echo \"=== $mind_slug ===\" ls -1 \"$mind_slug\")",
+      "Bash(git log --format=\"%ai %s\" --all -- outputs/minds/pedro_valerio/)",
+      "Bash(do echo \"$dir%/\")",
+      "Bash(git ls-tree -r 265ad50^:docs/mmos/)",
+      "Bash(git checkout 265ad50^ -- docs/mmos/prompts/)",
+      "Bash(cd /Users/oalanicolas/Library/Mobile Documents/com~apple~CloudDocs/Code/mente_lendaria)",
+      "Bash(git ls-tree --name-only 265ad50^:docs/mmos/prompts/)",
+      "Bash(xargs -I {} sh -c 'git show \"\"\"\"265ad50^:docs/mmos/prompts/{}\"\"\"\" > \"\"\"\"docs/mmos/prompts/{}\"\"\"\" && echo \"\"\"\"✅ {}\"\"\"\"')",
+      "Bash(git log --all --full-history --pretty=format:\"%h %s\" -- \"docs/mmos/prompts/*.md\")",
+      "Bash(git ls-tree --name-only cb216ff:docs/mmos/prompts/)",
+      "Read(//Users/oalanicolas/.config/claude/**)",
+      "Read(//Users/oalanicolas/**)",
+      "Read(//Users/alan/.config/**)",
+      "Read(//Users/alan/Library/**)",
+      "WebSearch",
+      "Bash(ls -lah \"/Users/oalanicolas/Library/Mobile Documents/com~apple~CloudDocs/Code/mente_lendaria/outputs/minds/\"*.{json,md,csv,txt})",
+      "Bash(find:*)",
+      "Bash(tree -L 2 \"outputs/courses/supabase-zero-backend-completo\" -I '*.md|*.yaml')",
+      "Bash(git restore docs/mmos/prompts/)",
+      "Bash(git restore expansion-packs/mmos-mind-mapper/tasks/cognitive-analysis.md)",
+      "Bash(git restore expansion-packs/creator-os/lib/mmos_integrator.py)",
+      "Bash(sqlite3:*)",
+      "Read(//tmp/**)",
+      "Bash(cd:*)",
+      "Bash(cd /Users/oalanicolas/Library/Mobile\\ Documents/com~apple~CloudDocs/Code/mente_lendaria && python:*)",
+      "Bash(git add docs/mmos/architecture/PIPELINE-V3.5-ARCHITECTURE.md docs/mmos/architecture/PROMPT-TASK-ARTIFACT-MATRIX.md)",
+      "Bash(git commit -m \"$(cat <<''EOF''\ndocs: create MMOS Pipeline v3.5 hybrid architecture specification\n\nAdded comprehensive v3.5 architecture documentation combining:\n- v2.0 granularity (51 atomic prompts, ~8,800 lines)\n- v3.0 intelligence (task orchestration, strategic checkpoints)\n\nKey documents:\n- PIPELINE-V3.5-ARCHITECTURE.md: Complete system design\n  - 4 layers: Tasks → Prompts → Artifacts → Validation\n  - 22+ artifact outputs (vs 14 in v3.0, 20+ in v2.0)\n  - Human checkpoints at Layers 6, 7, 8\n  - Parallel execution patterns (38% speedup)\n  \n- PROMPT-TASK-ARTIFACT-MATRIX.md: Complete traceability\n  - All 51 prompts mapped to tasks and artifacts\n  - 20,519 lines of prompt instructions cataloged\n  - 3 artifact configurations (minimal/standard/maximum)\n  - Execution time estimates and token usage\n\nStatus: Design approved, pending implementation\nNext: Move prompts to expansion pack for independence\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Gemini <noreply@google.com>\nEOF\n)\")",
+      "Bash(git log -1 --format=\"%h %s\")",
+      "Skill(skill-creator)",
+      "Bash(python:*)",
+      "Bash(chmod:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -6,7 +6,7 @@
 
 frameworks_latticework:
   metadata:
-    mind_name: ""
+    mind_path: "@{mind}"
     analysis_date: ""
     analyst: "synthesis-expert"
     methodology: "Munger Latticework Construction (5-step framework extraction)"

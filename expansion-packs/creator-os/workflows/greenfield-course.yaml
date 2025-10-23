@@ -37,7 +37,7 @@ workflow:
         STEP 2: Execute Scenario-Appropriate Logic
 
         SCENARIO A: Greenfield Pure
-          - Create folder: outputs/courses/{slug}/
+          - Create folder com no máximo 3 palavras: outputs/courses/{slug}/
           - Copy COURSE-BRIEF.md template (8 empty sections)
           - Create .metadata.json (context: greenfield_pure)
           - NEXT: User fills COURSE-BRIEF manually

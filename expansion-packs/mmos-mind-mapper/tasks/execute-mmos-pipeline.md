@@ -559,7 +559,7 @@ Invoke: `synthesis-compilation.md` task with mode = "specialist_recommender"
 - "{{Mind}} as Strategic Advisor"
 
 **Output:**
-- `minds/{mind}/docs/logs/{timestamp}-specialist_recommendations.yaml`
+- `@{mind}/docs/logs/{timestamp}-specialist_recommendations.yaml`
 
 ### Phase 5: Implementation (System Prompt Creation)
 
@@ -570,7 +570,7 @@ Invoke: `system-prompt-creation.md` task with mode = "identity_core"
 **Distill the absolute essence** of the mind into identity primitives.
 
 **Output:**
-- `minds/{mind}/artifacts/identity_core.yaml`
+- `@{mind}/artifacts/identity_core.yaml`
 
 #### 5.2 Generate Meta Axioms
 
@@ -579,7 +579,7 @@ Invoke: `system-prompt-creation.md` task with mode = "meta_axioms"
 **Extract operating principles** that govern all behavior.
 
 **Output:**
-- `minds/{mind}/artifacts/meta_axioms.yaml`
+- `@{mind}/artifacts/meta_axioms.yaml`
 
 #### 5.3 Compile Generalista System Prompt
 
@@ -588,7 +588,7 @@ Invoke: `system-prompt-creation.md` task with mode = "generalista"
 **Compile complete general-purpose system prompt.**
 
 **Output:**
-- `minds/{mind}/system_prompts/{timestamp}-v1.0-generalista.md`
+- `@{mind}/system_prompts/{timestamp}-v1.0-generalista.md`
 
 #### 5.4 HUMAN CHECKPOINT: System Prompt Review
 
@@ -599,7 +599,7 @@ Present compiled prompt to user:
 
 ### Generalista v1.0 Complete
 
-**Location:** minds/{{mind}}/system_prompts/{{timestamp}}-v1.0-generalista.md
+**Location:** @{mind}/system_prompts/{{timestamp}}-v1.0-generalista.md
 
 **Prompt Statistics:**
 - Total tokens: {{count}}
