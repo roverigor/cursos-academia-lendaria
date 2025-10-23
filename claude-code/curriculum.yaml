@@ -1,0 +1,532 @@
+---
+course_id: "claude-code-2025"
+title: "Claude Code Expert: Automação Inteligente para Founders sem Código"
+slug: "claude-code"
+version: "1.0"
+created_at: "2025-10-22T00:00:00Z"
+updated_at: "2025-10-22T01:00:00Z"
+
+# Instructor Information
+instructor:
+  name: "José Carlos Amorim"
+  source: "MMOS"
+  persona_fidelity: 0.875  # 85-90% target
+  bio: |
+    Nexialista, educator, e autor de "Nexialismo: A Última Inteligência". 
+    Transição de jornalista/gerente para AI strategist. Especialista em traduzir 
+    complexidade técnica em insights viscerais via ESPIRAL EXPANSIVA. 
+    TDAH + TAG como vantagem competitiva na era da IA.
+  voice_model: "system-prompt-generalista.md"
+  signature_style: "Metáforas visuais-espaciais, confessionalidade estratégica, zero enrolação"
+
+# Course Metadata
+metadata:
+  mode: "expert"  # Using MMOS persona
+  total_duration_hours: 2.5
+  num_modules: 3
+  num_lessons: 10
+  knowledge_level: "beginner"
+  target_audience: "Founders e empreendedores não-programadores (35-45 anos, 15+ anos experiência)"
+  pedagogical_framework: "Problem-Based Learning + Bloom's Taxonomy + GPS + Didática Lendária"
+  teaching_style: "conversational"
+  quality_reference: "mindvalley"  # High production value, transformational
+  language: "pt-BR"
+  creation_mode: "greenfield"
+  market_position: "first_mover"  # Único Claude Code PT-BR
+  differentiation: "velocity_first_nexialist_instructor_business_context"
+
+# Overall Learning Objectives
+learning_objectives:
+  - "Configurar e usar Claude Code para criar scripts e automações funcionais sem conhecimento prévio de programação"
+  - "Criar automações de web scraping para extrair dados de sites e organizar em planilhas/CSVs automaticamente"
+  - "Implementar processamento automatizado de documentos (PDFs, CSVs, JSONs) com extração inteligente"
+  - "Construir APIs REST básicas para integrar sistemas e automatizar workflows entre ferramentas"
+  - "Desenvolver dashboards e interfaces web simples para visualizar dados e controlar automações"
+  - "Debugar e iterar código gerado por Claude usando prompts eficazes e técnicas de troubleshooting"
+  - "Integrar Claude Code com ferramentas no-code (Zapier, Make, Airtable) para workflows híbridos"
+  - "Criar protótipos funcionais de ideias de produto em < 1 dia usando Claude como par de programação"
+  - "Avaliar viabilidade técnica de ideias e estimar esforço necessário para implementação com IA"
+  - "Estruturar projetos com boa organização de arquivos e documentação para manutenção futura"
+
+# Prerequisites
+prerequisites:
+  - "Saber usar ChatGPT ou Claude no nível conversacional"
+  - "Noções básicas de arquivos e pastas (criar/mover/renomear)"
+  - "Não ter medo de terminal (será ensinado no curso)"
+
+# Course Structure
+modules:
+  - module_id: 1
+    module_number: "Módulo 1"
+    module_title: "FUNDAMENTOS - Do Zero ao Primeiro Script"
+    module_description: "Desmistificar código e criar primeira automação funcionando em < 30 minutos"
+    duration_minutes: 45
+    module_objectives:
+      - "Entender o que Claude Code faz, limites e quando usar (vs no-code vs contratar dev)"
+      - "Configurar ambiente completo (Claude Pro, VS Code, terminal) em < 10 minutos"
+      - "Criar e executar primeiro script funcional que economiza horas toda semana"
+
+    lessons:
+      - lesson_id: "1.1"
+        lesson_number: "Aula 1.1"
+        lesson_title: "Claude Code não é Magia: Como a IA Realmente Programa"
+        lesson_description: "Desmistificar Claude Code, expectativas realistas, quando usar vs alternativas"
+        file_path: "lessons/1.1-claude-code-nao-e-magia.md"
+        duration_minutes: 15
+        learning_objectives:
+          - "Entender como Claude Code funciona (predição de padrões, não 'pensamento')"
+          - "Identificar casos de uso ideais para Claude Code vs no-code vs dev humano"
+          - "Reconhecer limites e expectations realistas (não resolve tudo, mas 80% do que você precisa)"
+        bloom_level: "understand"
+        prerequisites:
+          - "Nenhum"
+        key_concepts:
+          - "Claude como 'autocomplete sofisticado' (metáfora)"
+          - "Predição de tokens vs inteligência artificial geral"
+          - "Quando usar Claude Code (automação, scraping, APIs simples) vs quando não usar (ML custom, hardware, realtime)"
+          - "Expectativas realistas: vai errar na primeira tentativa (e está tudo bem)"
+        activities:
+          - type: "reflection"
+            description: "Listar 3 tarefas repetitivas que Claude Code poderia automatizar no seu negócio"
+
+      - lesson_id: "1.2"
+        lesson_number: "Aula 1.2"
+        lesson_title: "Setup Rápido: Do Navegador ao Código em 10 Minutos"
+        lesson_description: "Configurar ambiente completo (Claude Pro, VS Code, terminal) multi-OS"
+        file_path: "lessons/1.2-setup-rapido.md"
+        duration_minutes: 15
+        learning_objectives:
+          - "Instalar e configurar Claude Pro + VS Code + terminal em < 10 minutos"
+          - "Validar que setup está funcionando (primeiro comando teste)"
+          - "Troubleshooting de erros comuns de instalação (Mac/Windows/Linux)"
+        bloom_level: "apply"
+        prerequisites:
+          - "Computador (Mac, Windows ou Linux)"
+          - "Cartão de crédito para Claude Pro ($20/mês)"
+        key_concepts:
+          - "Claude Pro vs API (quando usar cada)"
+          - "VS Code como editor universal (gratuito)"
+          - "Terminal basics (cd, ls, pwd) sem medo"
+          - "Validação: 'Como saber que está tudo certo?'"
+        activities:
+          - type: "exercise"
+            description: "Configurar ambiente completo e executar comando teste (echo 'Hello World')"
+          - type: "checklist"
+            description: "Checklist de setup (4 passos, validação a cada etapa)"
+
+      - lesson_id: "1.3"
+        lesson_number: "Aula 1.3"
+        lesson_title: "Primeira Automação: Script que Salva Sua Semana"
+        lesson_description: "Criar primeiro script funcional (organizar downloads/emails) em < 15min"
+        file_path: "lessons/1.3-primeira-automacao.md"
+        duration_minutes: 15
+        learning_objectives:
+          - "Criar script Python funcional com Claude (organizar arquivos de pasta Downloads)"
+          - "Executar script e ver resultado tangível (100 arquivos organizados em segundos)"
+          - "Calcular ROI: quantas horas economizadas por semana"
+        bloom_level: "apply"
+        prerequisites:
+          - "Setup completo (aula 1.2)"
+        key_concepts:
+          - "Prompt eficaz para Claude: 'Quero script que organize Downloads por extensão'"
+          - "Copy-paste ready: ajustar apenas paths (não precisa entender código ainda)"
+          - "Validação de sucesso: pasta organizada, tempo economizado"
+          - "Celebração: primeira vitória (small win momentum)"
+        activities:
+          - type: "exercise"
+            description: "Criar e executar script de organização de arquivos"
+          - type: "reflection"
+            description: "Calcular: quantas horas/semana economizadas com esta automação?"
+
+  - module_id: 2
+    module_number: "Módulo 2"
+    module_title: "ARSENAL PRÁTICO - 5 Automações que Todo Founder Precisa"
+    module_description: "Dominar os 5 casos de uso mais valiosos para não-programadores"
+    duration_minutes: 75
+    module_objectives:
+      - "Criar automações de web scraping para coleta de dados/leads de sites públicos"
+      - "Processar centenas/milhares de documentos (PDFs, CSVs) em massa automaticamente"
+      - "Construir APIs REST simples para integrar sistemas customizados"
+      - "Desenvolver dashboards web para visualizar KPIs em tempo real"
+      - "Combinar Claude Code + no-code tools (Zapier/Make) para workflows híbridos poderosos"
+
+    lessons:
+      - lesson_id: "2.1"
+        lesson_number: "Aula 2.1"
+        lesson_title: "Web Scraping Inteligente: Extraia Dados de Qualquer Site"
+        lesson_description: "Coletar dados públicos (preços, conteúdo, leads) automaticamente com ética"
+        file_path: "lessons/2.1-web-scraping-inteligente.md"
+        duration_minutes: 15
+        learning_objectives:
+          - "Criar script de web scraping para coletar dados de sites públicos (ex: diretórios de empresas)"
+          - "Aplicar princípios éticos: verificar robots.txt, rate limiting, respeitar ToS"
+          - "Exportar dados coletados para CSV/planilha para análise"
+        bloom_level: "apply"
+        prerequisites:
+          - "Primeira automação funcionando (1.3)"
+        key_concepts:
+          - "Web scraping: 'Ctrl+C, Ctrl+V automático da internet' (metáfora)"
+          - "BeautifulSoup + requests (libraries Python para scraping)"
+          - "Ética: robots.txt, rate limiting (1 req/segundo), ToS"
+          - "Caso de uso: scrapear diretório de franquias para prospecção"
+        activities:
+          - type: "exercise"
+            description: "Scrapear lista de 50 empresas de diretório público e exportar para CSV"
+          - type: "checklist"
+            description: "Checklist ética: robots.txt OK, rate limiting OK, dados públicos OK"
+
+      - lesson_id: "2.2"
+        lesson_number: "Aula 2.2"
+        lesson_title: "Processamento em Massa: 1000 Documentos em 1 Comando"
+        lesson_description: "Processar PDFs, extrair tabelas, converter formatos em escala"
+        file_path: "lessons/2.2-processamento-em-massa.md"
+        duration_minutes: 15
+        learning_objectives:
+          - "Processar múltiplos PDFs em batch (extrair texto, tabelas, metadados)"
+          - "Converter formatos em massa (CSV ↔ JSON ↔ Excel)"
+          - "Criar loops de automação para processar centenas/milhares de arquivos"
+        bloom_level: "apply"
+        prerequisites:
+          - "Script básico funcionando (1.3)"
+        key_concepts:
+          - "Batch processing: processar pasta inteira com 1 comando"
+          - "PyPDF2, pandas (libraries para docs)"
+          - "Progress bars (saber quando vai terminar)"
+          - "Caso de uso: analisar 500 contratos/NFs para relatório financeiro"
+        activities:
+          - type: "exercise"
+            description: "Processar 100 PDFs (extrair texto) e gerar relatório consolidado"
+          - type: "exercise"
+            description: "Converter 50 CSVs para JSON com transformações"
+
+      - lesson_id: "2.3"
+        lesson_number: "Aula 2.3"
+        lesson_title: "API Simples: Conecte Sistemas sem Zapier"
+        lesson_description: "Criar endpoints REST para integrar ferramentas customizadas"
+        file_path: "lessons/2.3-api-simples.md"
+        duration_minutes: 15
+        learning_objectives:
+          - "Entender o que é API em linguagem simples ('tomada elétrica para sistemas')"
+          - "Criar API REST básica com Flask (3 endpoints: GET, POST, webhook)"
+          - "Integrar API customizada com Zapier/Make para workflows avançados"
+        bloom_level: "create"
+        prerequisites:
+          - "Confortável com scripts Python (2.1, 2.2)"
+        key_concepts:
+          - "API: 'tomada elétrica universal para conectar sistemas' (metáfora)"
+          - "REST: GET (buscar), POST (enviar), PUT (atualizar), DELETE (remover)"
+          - "Flask (micro-framework Python para APIs simples)"
+          - "Caso de uso: webhook que recebe dados do Zapier, processa, envia para CRM"
+        activities:
+          - type: "exercise"
+            description: "Criar API com 2 endpoints (GET lista de leads, POST novo lead)"
+          - type: "exercise"
+            description: "Integrar API com Zapier (trigger: form submission → API → planilha)"
+
+      - lesson_id: "2.4"
+        lesson_number: "Aula 2.4"
+        lesson_title: "Dashboard ao Vivo: Visualize Seus KPIs em Tempo Real"
+        lesson_description: "Interface web simples para visualizar dados e controlar automações"
+        file_path: "lessons/2.4-dashboard-ao-vivo.md"
+        duration_minutes: 15
+        learning_objectives:
+          - "Criar dashboard web básico com HTML+JS+CSS gerado por Claude"
+          - "Conectar dashboard a dados reais (CSV, API, database)"
+          - "Deploy gratuito (Vercel/Netlify/Replit) para acessar de qualquer lugar"
+        bloom_level: "create"
+        prerequisites:
+          - "API funcionando (2.3) OU scripts gerando dados (2.2)"
+        key_concepts:
+          - "Dashboard: 'painel do carro para seu negócio' (metáfora)"
+          - "HTML (estrutura), CSS (estética), JavaScript (interatividade)"
+          - "Chart.js (biblioteca para gráficos bonitos)"
+          - "Deploy gratuito: Vercel (1 comando, link público)"
+          - "Caso de uso: KPIs de vendas ao vivo, status de automações, alertas"
+        activities:
+          - type: "exercise"
+            description: "Criar dashboard com 3 métricas (vendas, leads, conversão) + gráfico"
+          - type: "exercise"
+            description: "Deploy no Vercel e compartilhar link com equipe"
+
+      - lesson_id: "2.5"
+        lesson_number: "Aula 2.5"
+        lesson_title: "Workflows Híbridos: Claude + No-Code = Superpoderes"
+        lesson_description: "Integrar com Zapier/Make/Airtable para máximo poder"
+        file_path: "lessons/2.5-workflows-hibridos.md"
+        duration_minutes: 15
+        learning_objectives:
+          - "Identificar quando usar no-code (80%) vs Claude Code (20% customização)"
+          - "Criar workflow híbrido: Zapier trigger → Claude script → Airtable output"
+          - "Aplicar filosofia pragmática: melhor ferramenta para cada trabalho"
+        bloom_level: "evaluate"
+        prerequisites:
+          - "Familiaridade com Zapier ou Make (básico)"
+          - "Scripts e API funcionando (2.1-2.4)"
+        key_concepts:
+          - "Hybrid approach: no-code para 80%, code para 20% que requer customização"
+          - "Zapier/Make: drag-n-drop para workflows simples"
+          - "Claude Code: customização infinita quando no-code esbarra em teto"
+          - "Caso de uso: Form submission → Zapier → Claude script (processa e categoriza) → Airtable + Slack notification"
+        activities:
+          - type: "exercise"
+            description: "Criar workflow: Typeform → Zapier → script Claude (enriquecimento de dados) → Notion database"
+          - type: "decision_framework"
+            description: "Usar framework: 'No-code ou Code?' para 5 casos de uso"
+
+  - module_id: 3
+    module_number: "Módulo 3"
+    module_title: "PRODUÇÃO - Do Protótipo ao Produto Real"
+    module_description: "Transformar scripts em sistemas confiáveis e escaláveis"
+    duration_minutes: 30
+    module_objectives:
+      - "Debugar código com Claude quando (inevitavelmente) der erro"
+      - "Ler logs sem saber programar, iterar sem desespero"
+      - "Estruturar projetos com organização e documentação adequadas"
+      - "Avaliar viabilidade técnica de ideias antes de investir tempo"
+      - "Criar protótipo funcional de ideia real em 1 dia (metodologia end-to-end)"
+
+    lessons:
+      - lesson_id: "3.1"
+        lesson_number: "Aula 3.1"
+        lesson_title: "Debugging com Claude: Quando (Inevitavelmente) Der Erro"
+        lesson_description: "Troubleshooting eficaz, ler logs, iterar sem desespero"
+        file_path: "lessons/3.1-debugging-com-claude.md"
+        duration_minutes: 15
+        learning_objectives:
+          - "Aplicar framework OBSERVE → SEARCH → ASK CLAUDE → ITERATE para resolver erros"
+          - "Ler e interpretar logs de erro sem saber programar (identificar linha problema)"
+          - "Usar Claude eficazmente para debugging (copiar erro, pedir solução, testar)"
+        bloom_level: "analyze"
+        prerequisites:
+          - "Pelo menos 1 script funcional criado (qualquer aula módulo 2)"
+        key_concepts:
+          - "Erros são NORMAIS: código raramente funciona na primeira tentativa"
+          - "Framework OBSERVE → SEARCH → ASK CLAUDE → ITERATE"
+          - "5 erros mais comuns: syntax, dependencies, permissions, API limits, logic bugs"
+          - "Como ler traceback: linha do erro, mensagem de erro, contexto"
+          - "Quando é hora de pedir ajuda (vs quando persistir)"
+        activities:
+          - type: "exercise"
+            description: "Debugar 3 scripts quebrados (erros comuns propositais)"
+          - type: "exercise"
+            description: "Usar Claude para resolver erro real do seu projeto"
+
+      - lesson_id: "3.2"
+        lesson_number: "Aula 3.2"
+        lesson_title: "Projeto Real: Ideia → Protótipo Funcional em 1 Dia"
+        lesson_description: "Metodologia end-to-end para validar qualquer ideia tecnicamente"
+        file_path: "lessons/3.2-projeto-real.md"
+        duration_minutes: 15
+        learning_objectives:
+          - "Avaliar viabilidade técnica de ideia usando framework 'Posso fazer isso com Claude Code?'"
+          - "Estruturar projeto com organização adequada (pastas, README, .env, .gitignore)"
+          - "Criar protótipo funcional de ideia real em < 8 horas usando metodologia end-to-end"
+        bloom_level: "create"
+        prerequisites:
+          - "Todas as aulas anteriores (arsenal completo)"
+        key_concepts:
+          - "Framework viabilidade: Sinais verdes (CRUD, scraping, automação) vs sinais vermelhos (ML custom, hardware, realtime)"
+          - "Metodologia 1-dia: Define (2h) → Build MVP (4h) → Test & Iterate (2h)"
+          - "Estrutura de projeto: /src, /data, /tests, README.md, requirements.txt"
+          - "Documentação: future-you agradecerá (comments úteis, README claro)"
+          - "Git basics: commit, history, rollback (segurança)"
+        activities:
+          - type: "project"
+            description: "Escolher 1 ideia real do seu negócio e criar protótipo funcional"
+          - type: "reflection"
+            description: "Avaliar: 'Esta ideia é viável?' usando framework aprendido"
+          - type: "checklist"
+            description: "Checklist produção: README, .env, error handling, logs, documentação"
+
+# Assessments
+assessments:
+  - assessment_id: "quiz-1"
+    type: "quiz"
+    title: "Quiz: Fundamentos Claude Code"
+    module: 1
+    file_path: "assessments/quiz-modulo-1.yaml"
+    duration_minutes: 10
+    num_questions: 5
+    passing_score: 70
+    description: "Verificar compreensão de conceitos básicos e setup"
+
+  - assessment_id: "quiz-2"
+    type: "quiz"
+    title: "Quiz: Arsenal Prático"
+    module: 2
+    file_path: "assessments/quiz-modulo-2.yaml"
+    duration_minutes: 15
+    num_questions: 8
+    passing_score: 70
+    description: "Verificar domínio dos 5 casos de uso principais"
+
+  - assessment_id: "project-final"
+    type: "project"
+    title: "Projeto Final: Ideia → Protótipo em 1 Dia"
+    module: 3
+    file_path: "assessments/projeto-final-prototipo-1-dia.md"
+    duration_hours: 8
+    deliverable: "Protótipo funcional de automação/ferramenta própria"
+    description: "Aplicar todo o aprendizado para criar solução real do próprio negócio"
+
+# Resources
+resources:
+  templates:
+    - title: "Template: Script de Automação Base"
+      file_path: "resources/template-script-automacao.md"
+      description: "Estrutura base para qualquer script Python com error handling e logs"
+
+    - title: "Template: API REST Simples"
+      file_path: "resources/template-api-basica.md"
+      description: "Flask API com 4 endpoints prontos (GET, POST, PUT, DELETE)"
+
+    - title: "Template: README.md para Projetos"
+      file_path: "resources/template-readme-projeto.md"
+      description: "Documentação padrão para seus projetos (setup, uso, troubleshooting)"
+
+  checklists:
+    - title: "Checklist: Setup Completo"
+      file_path: "resources/checklist-setup.md"
+      description: "4 passos para validar que ambiente está pronto (Claude Pro, VS Code, terminal, teste)"
+
+    - title: "Checklist: Debugging Sistemático"
+      file_path: "resources/checklist-debugging.md"
+      description: "Framework OBSERVE → SEARCH → ASK → ITERATE em formato checklist"
+
+    - title: "Checklist: Projeto Pronto para Produção"
+      file_path: "resources/checklist-producao.md"
+      description: "10 itens para validar antes de considerar projeto 'done' (README, .env, error handling, etc)"
+
+  guides:
+    - title: "Troubleshooting Guide: 20+ Erros Comuns"
+      file_path: "resources/troubleshooting-guide.md"
+      description: "Erros mais frequentes + soluções passo-a-passo (syntax, deps, permissions, API)"
+
+    - title: "Security Guide: API Keys e Secrets"
+      file_path: "resources/security-guide.md"
+      description: "Como proteger API keys, usar .env files, revogar keys vazadas"
+
+  tools:
+    - name: "Claude Pro"
+      url: "https://claude.ai"
+      description: "Assistente de IA para gerar código (necessário)"
+      cost: "paid"
+
+    - name: "VS Code"
+      url: "https://code.visualstudio.com"
+      description: "Editor de código gratuito e universal"
+      cost: "free"
+
+    - name: "Python 3.x"
+      url: "https://python.org"
+      description: "Linguagem de programação para scripts"
+      cost: "free"
+
+    - name: "Vercel"
+      url: "https://vercel.com"
+      description: "Deploy gratuito de dashboards/sites"
+      cost: "freemium"
+
+    - name: "Zapier"
+      url: "https://zapier.com"
+      description: "No-code automation para workflows híbridos"
+      cost: "freemium"
+
+  readings:
+    - title: "Anthropic Claude Documentation"
+      author: "Anthropic"
+      url: "https://docs.anthropic.com"
+      type: "documentation"
+      description: "Docs oficiais Claude AI (referência técnica)"
+
+    - title: "Automate the Boring Stuff with Python"
+      author: "Al Sweigart"
+      url: "https://automatetheboringstuff.com"
+      type: "book"
+      description: "Livro clássico sobre automação Python (complementar)"
+
+# Validation Scores (to be filled after generation)
+validation:
+  alignment_score: null  # Target: >= 90%
+  completeness_score: null  # Target: 100%
+  fidelity_score: null  # Target: >= 85% (MMOS)
+  cognitive_load_balanced: null  # Target: true
+  duration_realistic: null  # Target: true
+
+# Tags & Categories
+tags:
+  - "Claude Code"
+  - "AI Coding"
+  - "Automation"
+  - "No-Code"
+  - "Python"
+  - "Web Scraping"
+  - "API"
+  - "Dashboard"
+  - "Workflows"
+  - "Founders"
+
+categories:
+  - "Technology"
+  - "Productivity"
+  - "Automation"
+
+# SEO Metadata
+seo:
+  meta_title: "Claude Code Expert: Automação para Founders | Curso em Português"
+  meta_description: "Aprenda a automatizar como devs usando Claude Code - sem programar. 10 aulas práticas, 2.5h, resultados desde a primeira aula. Por José Amorim."
+  keywords:
+    - "Claude Code tutorial português"
+    - "automação inteligente founders"
+    - "AI coding para não programadores"
+    - "web scraping Python iniciantes"
+    - "Claude API automação"
+
+# Distribution
+distribution:
+  platforms:
+    - "teachable"
+  status: "draft"
+  publish_date: null
+  price: 197
+  currency: "BRL"
+  upsells:
+    - "Comunidade Lendária (R$97-297/mês)"
+    - "Templates Premium Pack (R$97)"
+    - "Mentoria 1:1 Advanced (R$997-2997)"
+
+# Version History
+version_history:
+  - version: "1.0"
+    date: "2025-10-22"
+    changes: "Initial curriculum generated from COURSE-BRIEF + market research"
+    author: "Course Architect (AIOS CreatorOS)"
+
+# Market Intelligence (from research)
+market_intelligence:
+  positioning: "first_mover"  # Único Claude Code PT-BR
+  competitive_advantage:
+    - "Velocity-first (código < 30min vs 2-4h)"
+    - "Nexialist instructor (não dev puro)"
+    - "Business-context (automações reais)"
+    - "Debugging dedicado"
+  tam_brl: 10000000  # R$10-25M
+  sam_brl: 300000  # R$200-400k
+  som_year1_brl: 45000  # R$30-60k (conservative)
+  target_students_year1: 225  # 150-300
+
+# Course Architect Notes
+notes: |
+  Generated from comprehensive COURSE-BRIEF (v2.1) with market research validation.
+  
+  Key decisions:
+  - 10 aulas x 15min = 2.5h (optimal for busy founders)
+  - 3 módulos seguem GPS progression (Fundamentos → Prática → Produção)
+  - Todas as 10 aulas cobrem gaps críticos identificados no market research
+  - José Amorim MMOS voice (85-90% fidelity target)
+  - Bloom's levels progridem: Understand → Apply → Create
+  - Business-first: exemplos sempre de casos de negócio reais
+  - Debugging dedicado (aula 3.1) - diferencial vs competidores
+  
+  Next: Generate 10 lesson files following this curriculum structure.
+

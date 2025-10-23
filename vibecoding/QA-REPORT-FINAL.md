@@ -22,7 +22,7 @@ Evaluated across 5 dimensions:
 1. **Voice Consistency** (José's authentic tone and patterns)
 2. **Technical Accuracy** (Code, tools, instructions)
 3. **Pedagogical Flow** (Scaffolding, progression, clarity)
-4. **Assessment Alignment** (Quizzes match learning objectives)
+4. **Assessment Alignment** (3 Module Quizzes + Final Project match learning objectives)
 5. **Commercial Viability** (Monetization potential, market fit)
 
 ---

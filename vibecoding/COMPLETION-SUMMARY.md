@@ -287,7 +287,7 @@ After completing Vibecoding (2 hours), students will:
 **Monetization Potential:** R$ 970 - R$ 15.700/mês
 
 **Assessment:**
-- 2 Module Quizzes (10 questions each)
+- 3 Module Quizzes (10 questions each)
 - 1 Final Project (rubric-based, 100 points)
 - Passing: 70 points
 - Excellence: 90+ points
