@@ -962,4 +962,4 @@ module.exports = GenerateTestsTask;
 - Validate all file paths to prevent directory traversal
 - Sanitize component names and test descriptions
 - Ensure generated code doesn't include sensitive information
-- Validate test framework dependencies for security vulnerabilities
+- Validate test framework dependencies for security vulnerabilities 

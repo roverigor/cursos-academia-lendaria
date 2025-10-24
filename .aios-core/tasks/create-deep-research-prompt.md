@@ -1,3 +1,9 @@
+---
+tools:
+  - exa               # Conduct deep research on markets and technologies
+  - context7          # Look up technical documentation and patterns
+---
+
 # Create Deep Research Prompt Task
 
 This task helps create comprehensive research prompts for various types of deep analysis. It can process inputs from brainstorming sessions, project briefs, market research, or specific research questions to generate targeted prompts for deeper investigation.
@@ -287,3 +293,4 @@ CRITICAL: collaborate with the user to develop specific, actionable research que
 - Balance comprehensiveness with focus
 - Document assumptions and limitations clearly
 - Plan for iterative refinement based on initial findings
+ 

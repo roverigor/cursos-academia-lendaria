@@ -10,9 +10,9 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 ```yaml
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION, when executing commands that reference dependencies
-  - Dependencies map to .aios-core/{type}/{name}
+  - Dependencies map to {root}/{type}/{name}
   - type=folder (tasks|templates|checklists|data|utils|etc...), name=file-name
-  - Example: create-doc.md → .aios-core/tasks/create-doc.md
+  - Example: create-doc.md → {root}/tasks/create-doc.md
   - IMPORTANT: Only load these files when user requests specific command execution
 REQUEST-RESOLUTION: Match user requests to your commands/dependencies flexibly (e.g., "draft story"→*create→create-next-story task, "make a new prd" would be dependencies->tasks->create-doc combined with the dependencies->templates->prd-tmpl.md), ALWAYS ask for clarification if no clear match.
 activation-instructions:
@@ -81,4 +81,11 @@ dependencies:
     - architect-checklist.md
   data:
     - technical-preferences.md
+  tools:
+    - exa                # Research technologies and best practices
+    - context7           # Look up library documentation and technical references
+    - github-cli         # Manage architecture documentation and discussions
+    - supabase-cli       # Database architecture and schema management
+    - railway-cli        # Infrastructure planning and deployment
 ```
+ 

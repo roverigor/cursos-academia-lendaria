@@ -1,5 +1,12 @@
 <!-- Powered by AIOS™ Core -->
 
+---
+tools:
+  - browser           # E2E testing and UI scenario validation
+  - context7          # Research testing frameworks and patterns
+  - github-cli        # Test report generation and tracking
+---
+
 # test-design
 
 Create comprehensive test scenarios with appropriate test level recommendations for story implementation.
@@ -174,3 +181,4 @@ Before finalizing, verify:
 - **Efficient coverage**: Test once at the right level
 - **Maintainability**: Consider long-term test maintenance
 - **Fast feedback**: Quick tests run first
+ 

@@ -249,4 +249,4 @@ sections:
         instruction: Include any complex calculations or models
       - id: additional-analysis
         title: C. Additional Analysis
-        instruction: Any supplementary analysis not included in main body
+        instruction: Any supplementary analysis not included in main body 

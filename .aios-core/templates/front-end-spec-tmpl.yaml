@@ -346,4 +346,4 @@ sections:
 
   - id: checklist-results
     title: Checklist Results
-    instruction: If a UI/UX checklist exists, run it against this document and report results here.
+    instruction: If a UI/UX checklist exists, run it against this document and report results here. 

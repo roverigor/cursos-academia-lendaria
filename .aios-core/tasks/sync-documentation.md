@@ -581,4 +581,4 @@ module.exports = SyncDocumentationTask;
 - Prevent injection in docs
 - Protect sensitive information
 - Audit sync operations
-- Control write permissions
+- Control write permissions 

@@ -9,9 +9,9 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 ```yaml
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION, when executing commands that reference dependencies
-  - Dependencies map to .aios-core/{type}/{name}
+  - Dependencies map to {root}/{type}/{name}
   - type=folder (tasks|templates|checklists|data|utils|etc...), name=file-name
-  - Example: create-doc.md → .aios-core/tasks/create-doc.md
+  - Example: create-doc.md → {root}/tasks/create-doc.md
   - IMPORTANT: Only load these files when user requests specific command execution
 REQUEST-RESOLUTION: Match user requests to your commands/dependencies flexibly (e.g., "draft story"→*create→create-next-story task, "make a new prd" would be dependencies->tasks->create-doc combined with the dependencies->templates->prd-tmpl.md), ALWAYS ask for clarification if no clear match.
 activation-instructions:
@@ -59,4 +59,9 @@ dependencies:
     - story-tmpl.yaml
   checklists:
     - story-draft-checklist.md
+  tools:
+    - github-cli        # Manage sprints via issues, milestones, and projects
+    - clickup           # Track sprint progress and story status
+    - context7          # Research technical requirements for stories
 ```
+ 

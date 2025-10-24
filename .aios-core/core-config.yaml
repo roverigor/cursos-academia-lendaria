@@ -17,6 +17,19 @@ devLoadAlwaysFiles:
   - docs/architecture/coding-standards.md
   - docs/architecture/tech-stack.md
   - docs/architecture/source-tree.md
+# Fallback patterns for Portuguese or alternative naming conventions
+# These will be tried if the primary files above are not found
+devLoadAlwaysFilesFallback:
+  # Portuguese variants
+  - docs/architecture/padroes-de-codigo.md
+  - docs/architecture/pilha-tecnologica.md
+  - docs/architecture/arvore-de-origem.md
+  # Alternative English names
+  - docs/architecture/code-standards.md
+  - docs/architecture/technology-stack.md
+  - docs/architecture/project-structure.md
+  - docs/architecture/unified-project-structure.md
+  - docs/architecture/directory-structure.md
 devDebugLog: .ai/debug-log.md
 devStoryLocation: docs/stories
 slashPrefix: AIOS

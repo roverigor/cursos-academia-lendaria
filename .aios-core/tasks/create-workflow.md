@@ -101,7 +101,7 @@ ELICIT: Resources and Dependencies
    - Approval workflows
 
 4. **Create Workflow File**
-   - Generate path: `.aios-core/workflows/{workflow-name}.yaml`
+   - Generate path: `{root}/workflows/{workflow-name}.yaml`
    - Write structured YAML definition
    - Include comprehensive documentation
 
@@ -146,7 +146,7 @@ ELICIT: Resources and Dependencies
 ## Success Output
 ```
 ✅ Workflow '{workflow-name}' created successfully!
-📁 Location: .aios-core/workflows/{workflow-name}.yaml
+📁 Location: {root}/workflows/{workflow-name}.yaml
 📊 Workflow Summary:
    - Stages: {stage-count}
    - Agents: {agent-list}
@@ -158,4 +158,4 @@ ELICIT: Resources and Dependencies
 - Workflows are selected during project initialization
 - Each stage execution is logged in memory
 - Progress tracking available through memory queries
-- Agents automatically receive stage-specific context
+- Agents automatically receive stage-specific context 

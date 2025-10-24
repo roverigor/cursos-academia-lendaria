@@ -1,6 +1,6 @@
 ---
 docOutputLocation: docs/brainstorming-session-results.md
-template: ".aios-core/templates/brainstorming-output-tmpl.yaml"
+template: "{root}/templates/brainstorming-output-tmpl.yaml"
 ---
 
 # Facilitate Brainstorming Session Task
@@ -134,3 +134,4 @@ Generate structured document with these sections:
 - Always ask before switching techniques: "Ready to try a different approach?"
 - Offer options: "Should we explore this idea deeper or generate more alternatives?"
 - Respect their process and timing
+ 

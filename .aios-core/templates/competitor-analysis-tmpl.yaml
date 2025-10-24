@@ -290,4 +290,4 @@ sections:
           Recommended review schedule:
           - Weekly: {{weekly_items}}
           - Monthly: {{monthly_items}}
-          - Quarterly: {{quarterly_analysis}}
+          - Quarterly: {{quarterly_analysis}} 

@@ -1,5 +1,11 @@
 <!-- Powered by AIOS™ Core -->
 
+---
+tools:
+  - github-cli        # PR review and quality gate management
+  - context7          # Research testing best practices and standards
+---
+
 # qa-gate
 
 Create or update a quality gate decision file for a story based on review findings.
@@ -161,3 +167,4 @@ Gate: CONCERNS → qa.qaLocation/gates/{epic}.{story}-{slug}.yml
 - Always write to standard path
 - Always update story with gate reference
 - Clear, actionable findings
+ 

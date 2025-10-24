@@ -1,3 +1,11 @@
+---
+tools:
+  - github-cli        # Code review and PR management
+  - browser           # End-to-end testing and UI validation
+  - context7          # Research testing frameworks and best practices
+  - supabase          # Database testing and data validation
+---
+
 # review-story
 
 Perform a comprehensive test architecture review with quality gate decision. This adaptive, risk-aware review creates both a story update and a detailed gate file.
@@ -312,3 +320,22 @@ After review:
 3. Recommend status: "Ready for Done" or "Changes Required" (owner decides)
 4. If files were modified, list them in QA Results and ask Dev to update File List
 5. Always provide constructive feedback and actionable recommendations
+
+## ClickUp Synchronization
+
+**Automatic Sync**: When you save the story file with QA Results updates, the story-manager.js module automatically syncs changes to ClickUp:
+
+- **What Gets Synced**:
+  - Full story markdown updated in ClickUp task description
+  - Story status changes reflected in custom field
+  - Changelog comment posted with detected changes
+
+- **Change Detection**:
+  - Status changes (e.g., Review → Done)
+  - Task completions (checkboxes marked)
+  - File list modifications
+  - Dev Notes or Acceptance Criteria updates
+
+- **No Action Required**: The sync happens transparently when using story-manager utilities. If sync fails, story file is still saved locally with a warning message.
+
+- **Manual Sync**: If needed, use: `npm run sync-story -- --story {epic}.{story}` 

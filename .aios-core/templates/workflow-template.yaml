@@ -131,4 +131,4 @@ security:
     {{/EACH_ROLES}}
   {{/IF_ALLOWED_ROLES}}
   audit_logging: {{AUDIT_LOGGING}}
-{{/IF_SECURITY}}
+{{/IF_SECURITY}} 

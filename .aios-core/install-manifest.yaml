@@ -1,7 +1,10 @@
-version: 4.31.0
-installed_at: '2025-10-05T21:07:56.339Z'
-install_type: full
+version: 4.31.0+main-8d5d3d2
+installed_at: '2025-10-23T20:58:00.000Z'
+install_type: manual-sync
 agent: null
+upstream_commit: 8d5d3d2
+upstream_branch: aios-upstream/main
+sync_notes: Manual sync from upstream main (41 commits ahead of v4.31.0) - MMOS customizations preserved
 ides_setup:
   - cursor
   - claude-code

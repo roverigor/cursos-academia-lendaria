@@ -302,3 +302,4 @@ The brownfield story creation is successful when:
 - It's better to ask the user for clarification than make assumptions
 - Each story should be self-contained for the dev agent
 - Include references to existing code patterns when available
+ 

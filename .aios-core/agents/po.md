@@ -9,9 +9,9 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 ```yaml
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION, when executing commands that reference dependencies
-  - Dependencies map to .aios-core/{type}/{name}
+  - Dependencies map to {root}/{type}/{name}
   - type=folder (tasks|templates|checklists|data|utils|etc...), name=file-name
-  - Example: create-doc.md → .aios-core/tasks/create-doc.md
+  - Example: create-doc.md → {root}/tasks/create-doc.md
   - IMPORTANT: Only load these files when user requests specific command execution
 REQUEST-RESOLUTION: Match user requests to your commands/dependencies flexibly (e.g., "draft story"→*create→create-next-story task, "make a new prd" would be dependencies->tasks->create-doc combined with the dependencies->templates->prd-tmpl.md), ALWAYS ask for clarification if no clear match.
 activation-instructions:
@@ -51,7 +51,7 @@ persona:
     - Focus on Executable & Value-Driven Increments - Ensure work aligns with MVP goals
     - Documentation Ecosystem Integrity - Maintain consistency across all documents
 # All commands require * prefix when used (e.g., *help)
-commands:  
+commands:
   - help: Show numbered list of the following commands to allow selection
   - execute-checklist-po: Run task execute-checklist (checklist po-master-checklist)
   - shard-doc {document} {destination}: run the task shard-doc against the optionally provided document to the specified destination
@@ -60,6 +60,8 @@ commands:
   - create-story: Create user story from requirements (task brownfield-create-story)
   - doc-out: Output full document to current destination file
   - validate-story-draft {story}: run the task validate-next-story against the provided story file
+  - sync-story {story}: Force sync story to ClickUp (task sync-story-to-clickup)
+  - pull-story {story}: Pull story updates from ClickUp (task pull-story-from-clickup)
   - yolo: Toggle Yolo Mode off on - on will skip doc section confirmations
   - exit: Exit (confirm)
 dependencies:
@@ -68,9 +70,16 @@ dependencies:
     - shard-doc.md
     - correct-course.md
     - validate-next-story.md
+    - sync-story-to-clickup.md
+    - pull-story-from-clickup.md
   templates:
     - story-tmpl.yaml
   checklists:
     - po-master-checklist.md
     - change-checklist.md
+  tools:
+    - github-cli        # Create issues, view PRs, manage repositories
+    - context7          # Look up documentation for libraries and frameworks
+    - clickup           # Manage product backlog and user stories
 ```
+ 

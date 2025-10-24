@@ -177,3 +177,4 @@ Please provide:
 5. Whether to include hidden files/folders (starting with `.`)
 
 Would you like to proceed with documentation indexing? Please provide the required input above.
+ 

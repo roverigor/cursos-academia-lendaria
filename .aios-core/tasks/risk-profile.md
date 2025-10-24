@@ -1,5 +1,12 @@
 <!-- Powered by AIOS™ Core -->
 
+```yaml
+tools:
+  - github-cli        # Code analysis and historical risk patterns
+  - context7          # Research security vulnerabilities and patterns
+  - exa               # Research similar implementation risks
+```
+
 # risk-profile
 
 Generate a comprehensive risk assessment matrix for a story implementation using probability × impact analysis.
@@ -353,3 +360,4 @@ Risk profile: qa.qaLocation/assessments/{epic}.{story}-risk-{YYYYMMDD}.md
 - Link risks to specific test requirements
 - Track residual risk after mitigation
 - Update risk profile as story evolves
+ 

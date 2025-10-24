@@ -49,3 +49,4 @@ You will now synthesize the inputs and the above principles into a final, compre
    - Output the complete, generated prompt in a clear, copy-pasteable format (e.g., a large code block).
    - Explain the structure of the prompt and why certain information was included, referencing the principles above.
    - <important_note>Conclude by reminding the user that all AI-generated code will require careful human review, testing, and refinement to be considered production-ready.</important_note>
+ 

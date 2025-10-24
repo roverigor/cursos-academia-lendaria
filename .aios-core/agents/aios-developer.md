@@ -9,9 +9,9 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 ```yaml
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION, when executing commands that reference dependencies
-  - Dependencies map to .aios-core/{type}/{name}
+  - Dependencies map to {root}/{type}/{name}
   - type=folder (tasks|templates|checklists|data|utils|etc...), name=file-name
-  - Example: create-agent.md → .aios-core/tasks/create-agent.md
+  - Example: create-agent.md → {root}/tasks/create-agent.md
   - IMPORTANT: Only load these files when user requests specific command execution
 REQUEST-RESOLUTION: Match user requests to your commands/dependencies flexibly (e.g., "create new agent"→*create-agent→create-agent task), ALWAYS ask for clarification if no clear match.
 activation-instructions:

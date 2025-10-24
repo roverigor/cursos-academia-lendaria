@@ -134,4 +134,4 @@ sections:
     title: QA Results
     instruction: Results from QA Agent QA review of the completed story implementation
     owner: qa-agent
-    editors: [qa-agent]
+    editors: [qa-agent] 

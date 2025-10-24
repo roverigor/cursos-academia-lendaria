@@ -160,7 +160,7 @@ workflow:
         All stories implemented and reviewed!
         Project development phase complete.
         
-        Reference: .aios-core/data/aios-kb.md#IDE Development Workflow
+        Reference: {root}/data/aios-kb.md#IDE Development Workflow
 
   flow_diagram: |
     ```mermaid

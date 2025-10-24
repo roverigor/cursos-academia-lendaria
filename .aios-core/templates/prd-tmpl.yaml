@@ -99,7 +99,7 @@ sections:
     instruction: |
       Gather technical decisions that will guide the Architect. Steps:
       
-      1. Check if .aios-core/data/technical-preferences.yaml or an attached technical-preferences file exists - use it to pre-populate choices
+      1. Check if {root}/data/technical-preferences.yaml or an attached technical-preferences file exists - use it to pre-populate choices
       2. Ask user about: languages, frameworks, starter templates, libraries, APIs, deployment targets
       3. For unknowns, offer guidance based on project goals and MVP scope
       4. Document ALL technical choices with rationale (why this choice fits the project)
@@ -199,4 +199,4 @@ sections:
         instruction: This section will contain the prompt for the UX Expert, keep it short and to the point to initiate create architecture mode using this document as input.
       - id: architect-prompt
         title: Architect Prompt
-        instruction: This section will contain the prompt for the Architect, keep it short and to the point to initiate create architecture mode using this document as input.
+        instruction: This section will contain the prompt for the Architect, keep it short and to the point to initiate create architecture mode using this document as input. 

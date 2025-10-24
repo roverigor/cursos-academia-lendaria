@@ -948,4 +948,4 @@ module.exports = ReviewProposalTask;
 - Audit all review actions
 - Prevent unauthorized status changes
 - Protect sensitive proposal information
-- Log all review activities for compliance
+- Log all review activities for compliance 

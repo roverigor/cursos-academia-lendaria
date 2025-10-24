@@ -58,6 +58,12 @@ dependencies:
     - {{ITEM}}
     {{/EACH_DATA_DEPS}}
   {{/IF_DATA}}
+  {{#IF_TOOLS}}
+  tools:
+    {{#EACH_TOOL_DEPS}}
+    - {{ITEM}}
+    {{/EACH_TOOL_DEPS}}
+  {{/IF_TOOLS}}
 {{/IF_DEPENDENCIES}}
 
 {{#IF_ACTIVATION_INSTRUCTIONS}}
@@ -73,4 +79,4 @@ security:
     - {{ITEM}}
     {{/EACH_ALLOWED_OPS}}
   audit_logging: {{AUDIT_LOGGING}}
-{{/IF_SECURITY_CONFIG}}
+{{/IF_SECURITY_CONFIG}} 

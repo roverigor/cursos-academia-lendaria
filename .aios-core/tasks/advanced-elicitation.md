@@ -115,3 +115,4 @@ Choose a number (0-8) or 9 to proceed:
 - **Stay Relevant**: Tie all elicitation back to the specific content being analyzed
 - **Identify Personas**: For multi-persona methods, clearly identify which viewpoint is speaking
 - **Maintain Flow**: Keep the process moving efficiently
+ 

@@ -112,4 +112,4 @@ async function operation() {
 ```
 
 ---
-*AIOS-FULLSTACK Cursor Configuration v1.0*
+*AIOS-FULLSTACK Cursor Configuration v1.0* 

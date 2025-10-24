@@ -802,4 +802,4 @@ sections:
 
   - id: checklist-results
     title: Checklist Results Report
-    instruction: Before running the checklist, offer to output the full architecture document. Once user confirms, execute the architect-checklist and populate results here.
+    instruction: Before running the checklist, offer to output the full architecture document. Once user confirms, execute the architect-checklist and populate results here. 

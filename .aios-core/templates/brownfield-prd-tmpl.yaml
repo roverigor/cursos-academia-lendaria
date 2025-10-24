@@ -277,4 +277,4 @@ sections:
             items:
               - template: "IV1: {{existing_functionality_verification}}"
               - template: "IV2: {{integration_point_verification}}"
-              - template: "IV3: {{performance_impact_verification}}"
+              - template: "IV3: {{performance_impact_verification}}" 

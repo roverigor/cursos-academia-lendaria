@@ -87,7 +87,7 @@ ELICIT: Task Dependencies
    - Output sanitization
 
 4. **Create Task File**
-   - Generate path: `.aios-core/tasks/{task-name}.md`
+   - Generate path: `{root}/tasks/{task-name}.md`
    - Write formatted task definition
    - Ensure proper markdown structure
 
@@ -130,10 +130,10 @@ ELICIT: Task Dependencies
 ## Success Output
 ```
 ✅ Task '{task-name}' created successfully!
-📁 Location: .aios-core/tasks/{task-name}.md
+📁 Location: {root}/tasks/{task-name}.md
 📝 Integration example:
    dependencies:
      tasks:
        - {task-name}.md
 🔗 Agents using this task: {agent-list}
-```
+``` 

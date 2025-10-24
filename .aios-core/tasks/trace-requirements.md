@@ -1,5 +1,11 @@
 <!-- Powered by AIOS™ Core -->
 
+---
+tools:
+  - github-cli        # Requirements tracking and test coverage analysis
+  - context7          # Research testing patterns and traceability best practices
+---
+
 # trace-requirements
 
 Map story requirements to test cases using Given-When-Then patterns for comprehensive traceability.
@@ -264,3 +270,4 @@ Trace matrix: qa.qaLocation/assessments/{epic}.{story}-trace-{YYYYMMDD}.md
 - Identify both presence and absence
 - Prioritize based on risk
 - Make recommendations actionable
+ 

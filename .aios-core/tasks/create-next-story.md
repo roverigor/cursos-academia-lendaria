@@ -1,3 +1,10 @@
+---
+tools:
+  - github-cli        # Access repository structure and previous stories
+  - context7          # Look up documentation for technical requirements
+  - clickup           # Manage story metadata and tracking
+---
+
 # Create Next Story Task
 
 ## Purpose
@@ -16,6 +23,8 @@ To identify the next logical story based on project progress and epic definition
 
 #### 1.1 Locate Epic Files and Review Existing Stories
 
+- **Refer to tools/cli/github-cli.yaml** for repository navigation commands and file listing operations
+- Consult the examples section for branch and file structure inspection patterns
 - Based on `prdSharded` from config, locate epic files (sharded location/pattern or monolithic PRD sections)
 - If `devStoryLocation` has story files, load the highest `{epicNum}.{storyNum}.story.md` file
 - **If highest story exists:**
@@ -39,18 +48,55 @@ To identify the next logical story based on project progress and epic definition
 
 #### 3.1 Determine Architecture Reading Strategy
 
+- **Refer to tools/mcp/context7.yaml** for library documentation lookup and technical context research
+- Consult the examples section for querying library-specific documentation patterns
 - **If `architectureVersion: >= v4` and `architectureSharded: true`**: Read `{architectureShardedLocation}/index.md` then follow structured reading order below
 - **Else**: Use monolithic `architectureFile` for similar sections
 
 #### 3.2 Read Architecture Documents Based on Story Type
 
-**For ALL Stories:** tech-stack.md, unified-project-structure.md, coding-standards.md, testing-strategy.md
+**CRITICAL: File Fallback Strategy**
 
-**For Backend/API Stories, additionally:** data-models.md, database-schema.md, backend-architecture.md, rest-api-spec.md, external-apis.md
+When attempting to read architecture files, use this fallback order:
+1. Try primary filename (e.g., `tech-stack.md`)
+2. If not found, try fallback alternatives from `devLoadAlwaysFilesFallback` in core-config.yaml
+3. If still not found, check for Portuguese equivalents
+4. If none exist, note the missing file in Dev Notes
 
-**For Frontend/UI Stories, additionally:** frontend-architecture.md, components.md, core-workflows.md, data-models.md
+**Common Fallback Mappings:**
+```yaml
+tech-stack.md → [technology-stack.md, pilha-tecnologica.md, stack.md]
+coding-standards.md → [code-standards.md, padroes-de-codigo.md, standards.md]
+source-tree.md → [project-structure.md, unified-project-structure.md, arvore-de-origem.md, directory-structure.md]
+testing-strategy.md → [test-strategy.md, estrategia-de-testes.md]
+database-schema.md → [db-schema.md, esquema.md, schema.md]
+```
+
+**For ALL Stories (try in fallback order):**
+- tech-stack.md
+- unified-project-structure.md (or project-structure.md, source-tree.md)
+- coding-standards.md
+- testing-strategy.md
+
+**For Backend/API Stories, additionally:**
+- data-models.md
+- database-schema.md
+- backend-architecture.md
+- rest-api-spec.md (or api-spec.md, api-design.md)
+- external-apis.md
+
+**For Frontend/UI Stories, additionally:**
+- frontend-architecture.md
+- components.md
+- core-workflows.md (or workflows.md, user-flows.md)
+- data-models.md
 
 **For Full-Stack Stories:** Read both Backend and Frontend sections above
+
+**Important:** When a fallback file is used, note it in Dev Notes:
+```
+[Note: Using fallback file 'pilha-tecnologica.md' instead of 'tech-stack.md']
+```
 
 #### 3.3 Extract Story-Specific Technical Details
 
@@ -75,8 +121,122 @@ ALWAYS cite source documents: `[Source: architecture/{filename}.md#{section}]`
 
 ### 5. Populate Story Template with Full Context
 
+#### 5.1 Get Workspace Structure and Verify Epic
+
+- **Refer to tools/mcp/clickup.yaml** - Review the 'story_creation_workflow' example for complete step-by-step guidance
+- **Step 1: Get Workspace Hierarchy**
+  - Call `get_workspace_hierarchy` (no parameters needed)
+  - Extract the Backlog list ID from response:
+    ```javascript
+    // Response structure:
+    {
+      "spaces": [{
+        "lists": [{
+          "name": "Backlog",
+          "id": "901317181013"  // ← Extract this numeric list_id
+        }]
+      }]
+    }
+    ```
+  - **CRITICAL:** Store this numeric list_id for use in Step 5.3
+  - Log: "✅ Found Backlog list (list_id: {backlog_list_id})"
+
+- **Step 2: Search for Epic in Backlog**
+  - Use `get_workspace_tasks` with parameters:
+    - list_ids: [{backlog_list_id}]  # From Step 1
+    - tags: ["epic-{epicNum}"]
+    - status: ["Planning", "In Progress"]
+
+- **If Epic NOT found:**
+  - HALT execution
+  - Display error: "❌ Epic {epicNum} not found in ClickUp Backlog list.
+    Please create Epic task with:
+    - Name: 'Epic {epicNum}: {Epic Title}'
+    - List: Backlog (list_id: {backlog_list_id})
+    - Tags: ['epic', 'epic-{epicNum}']
+    - Status: Planning or In Progress
+    Then retry story creation."
+
+- **If Epic found:**
+  - Capture epic_task_id for parent relationship
+  - Log: "✅ Found Epic {epicNum} (task_id: {epic_task_id})"
+
+#### 5.2 Prepare Story File and Metadata
+
+- **Refer to tools/mcp/clickup.yaml** for create_task parameters and validation requirements when creating story tracking tasks
+- Use validator 'validate-create-task' to check assignee format (must be array)
+- Consult the examples section for custom_field format patterns
+- Note the API complexity section regarding assignee format mismatch between create and update operations
 - Create new story file: `{devStoryLocation}/{epicNum}.{storyNum}.story.md` using Story Template
 - Fill in basic story information: Title, Status (Draft), Story statement, Acceptance Criteria from Epic
+
+##### 5.2.1 Prepare ClickUp Metadata for Frontmatter
+
+- Prepare ClickUp section structure (will be populated after ClickUp task creation):
+  ```yaml
+  clickup:
+    task_id: ""  # To be filled
+    epic_task_id: "{epic_task_id from 5.1}"
+    list: "Backlog"
+    url: ""  # To be filled
+    last_sync: ""  # To be filled
+  ```
+
+#### 5.3 Create Story Task in ClickUp
+
+- **Refer to tools/mcp/clickup.yaml** - Review the 'story_creation_workflow' example for complete parameter reference
+- **CRITICAL:** Use validator 'validate-create-task' to prevent format errors
+- **CRITICAL:** Use numeric list_id from Step 5.1, NOT a list name string
+
+**Task Creation Parameters:**
+```yaml
+list_id: "{backlog_list_id}"  # MUST be numeric string from 5.1 (e.g., "901317181013")
+name: "Story {epicNum}.{storyNum}: {Story Title}"
+parent: "{epic_task_id}"  # Creates as subtask of Epic (from 5.1)
+markdown_description: "{entire story .md file content}"
+tags:
+  - "story"
+  - "epic-{epicNum}"
+  - "story-{epicNum}.{storyNum}"
+custom_fields:
+  - id: "epic_number"
+    value: {epicNum}
+  - id: "story_number"
+    value: "{epicNum}.{storyNum}"
+  - id: "story_file_path"
+    value: "{devStoryLocation}/{epicNum}.{storyNum}.story.md"
+  - id: "story-status"
+    value: "Draft"
+```
+
+**Validation Notes:**
+- list_id MUST be numeric string (validated by /^\d+$/)
+- Using "Backlog" or other non-numeric values will fail validation
+- assignees (if provided) must be array, not object
+
+**Response Handling:**
+- **Capture:** story_task_id from response
+- **Log:** "✅ Story task created in ClickUp: {story_task_id}"
+
+**Error Handling:**
+- If create_task fails with validation error, display the exact error and parameters used
+- If API error occurs, log error but continue (local story still valid)
+- Warn user: "⚠️ Story created locally but ClickUp sync failed: {error_message}"
+
+#### 5.4 Update Story Frontmatter with ClickUp Data
+
+- Update the frontmatter YAML clickup section with captured values:
+  ```yaml
+  clickup:
+    task_id: "{story_task_id from 5.3}"
+    epic_task_id: "{epic_task_id from 5.1}"
+    list: "Backlog"
+    url: "https://app.clickup.com/t/{story_task_id}"
+    last_sync: "{current ISO 8601 timestamp}"
+  ```
+- Save story file with updated frontmatter
+- Log: "✅ Story task created in ClickUp: {story_task_id}"
+
 - **`Dev Notes` section (CRITICAL):**
   - CRITICAL: This section MUST contain ONLY information extracted from architecture documents. NEVER invent or assume technical details.
   - Include ALL relevant technical details from Steps 2-3, organized by category:
@@ -98,6 +258,8 @@ ALWAYS cite source documents: `[Source: architecture/{filename}.md#{section}]`
 
 ### 6. Story Draft Completion and Review
 
+- **Refer to tools/mcp/clickup.yaml** for update_task and get_task operations when managing story status and metadata
+- Consult the validation requirements section before updating task status
 - Review all sections for completeness and accuracy
 - Verify all source references are included for technical details
 - Ensure tasks align with both epic requirements and architecture constraints
@@ -110,3 +272,5 @@ ALWAYS cite source documents: `[Source: architecture/{filename}.md#{section}]`
   - Any deviations or conflicts noted between epic and architecture
   - Checklist Results
   - Next steps: For Complex stories, suggest the user carefully review the story draft and also optionally have the PO run the task `aios-core/tasks/validate-next-story`
+
+**ClickUp Integration Note:** This task now includes Epic verification (Section 5.1), ClickUp story task creation (Section 5.3), and automatic frontmatter updates (Section 5.4). Stories are created as subtasks of their parent Epic in ClickUp's Backlog list. If Epic verification or ClickUp sync fails, the story file will still be created locally with a warning message.

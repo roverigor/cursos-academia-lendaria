@@ -51,6 +51,7 @@ For new dependencies being added:
   - templates → `dependencies.templates`
   - checklists → `dependencies.checklists`
   - data → `dependencies.data`
+  - tools → `dependencies.tools`
 
 ### 4. Generate Modification Diff
 
@@ -171,4 +172,4 @@ Agent ready for use with enhanced capabilities.
 - Uses `component-metadata.js` for registry updates
 - Integrates with `git-wrapper.js` for version control
 - Leverages `yaml-validator.js` for syntax checking
-- Coordinates with `rollback-handler.js` for recovery
+- Coordinates with `rollback-handler.js` for recovery 

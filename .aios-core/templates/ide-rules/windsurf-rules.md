@@ -77,4 +77,4 @@ project/
 - Reference story IDs in commits
 
 ---
-*AIOS-FULLSTACK Configuration v1.0*
+*AIOS-FULLSTACK Configuration v1.0* 

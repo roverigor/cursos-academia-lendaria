@@ -90,11 +90,153 @@ CRITICAL: Use proper parsing that understands markdown context. A ## inside a co
 
 For each extracted section:
 
-1. **Generate filename**: Convert the section heading to lowercase-dash-case
+#### CRITICAL: Filename Translation Rules (Portuguese → English)
 
-   - Remove special characters
+**All filenames MUST be created in English, regardless of document language.**
+
+**Common Portuguese → English Translations:**
+
+```yaml
+# Document Structure
+índice: index
+metadados: metadata
+documento: document
+seção: section
+
+# Product/Business
+visão: vision
+produto: product
+problema: problem
+solução: solution
+objetivos: objectives
+metas: goals
+stakeholders: stakeholders
+premissas: assumptions
+restrições: constraints
+glossário: glossary
+terminologia: terminology
+
+# Requirements
+requisitos: requirements
+funcionalidades: features
+características: characteristics
+necessidades: needs
+
+# Technical
+arquitetura: architecture
+tecnologia: technology
+pilha: stack
+pilha-tecnológica: tech-stack
+padrões: standards
+padrões-de-código: coding-standards
+estrutura: structure
+estrutura-do-projeto: project-structure
+árvore-de-origem: source-tree
+componentes: components
+
+# Development
+desenvolvimento: development
+implementação: implementation
+testes: tests
+estratégia: strategy
+estratégia-de-testes: testing-strategy
+qualidade: quality
+validação: validation
+
+# Data & API
+dados: data
+banco-de-dados: database
+esquema: schema
+modelo: model
+modelos-de-dados: data-models
+api: api
+design: design
+especificação: specification
+endpoints: endpoints
+
+# Infrastructure
+infraestrutura: infrastructure
+pipeline: pipeline
+implantação: deployment
+monitoramento: monitoring
+alertas: alerts
+
+# Security & Performance
+segurança: security
+desempenho: performance
+escalabilidade: scalability
+confiabilidade: reliability
+conformidade: compliance
+disponibilidade: availability
+
+# Risks & Planning
+riscos: risks
+técnicos: technical
+negócio: business
+cronograma: timeline
+fases: phases
+épicos: epics
+histórias: stories
+decisões: decisions
+
+# NFRs
+requisitos-não-funcionais: non-functional-requirements
+nfrs: nfrs
+```
+
+**Filename Generation Algorithm:**
+
+1. **Extract heading text**: Remove `##` and trim
+2. **Translate Portuguese terms**:
+   - Check if heading contains any Portuguese term from map above
+   - Replace with English equivalent
+   - For compound terms, translate each part (e.g., "Padrões de Código" → "Coding Standards")
+3. **Normalize to lowercase-dash-case**:
+   - Convert to lowercase
    - Replace spaces with dashes
-   - Example: "## Tech Stack" → `tech-stack.md`
+   - Remove accents and special characters (á→a, ã→a, ç→c, etc.)
+4. **Clean up**:
+   - Remove consecutive dashes
+   - Remove leading/trailing dashes
+
+**Examples:**
+
+```
+Portuguese Heading              → Translation Process              → Final Filename
+----------------------------------------------------------------------------------
+## Visão do Produto            → Vision of Product                 → product-vision.md
+## Pilha Tecnológica           → Tech Stack                        → tech-stack.md
+## Padrões de Código           → Coding Standards                  → coding-standards.md
+## Estrutura do Projeto        → Project Structure                 → project-structure.md
+## Índice                      → Index                             → index.md
+## Metadados do Documento      → Document Metadata                 → document-metadata.md
+## Requisitos Funcionais       → Functional Requirements           → functional-requirements.md
+## Estratégia de Testes        → Testing Strategy                  → testing-strategy.md
+## Banco de Dados - Esquema    → Database Schema                   → database-schema.md
+## API Design (tRPC)           → API Design (tRPC)                 → api-design-trpc.md
+## Riscos Técnicos             → Technical Risks                   → technical-risks.md
+```
+
+**Special Cases:**
+
+- **Numbers in headings**: Preserve (e.g., "1.1 Visão" → "product-vision.md", remove numbering)
+- **Parentheses/brackets**: Keep in translation, then convert (e.g., "API (tRPC)" → "api-trpc.md")
+- **Acronyms**: Keep as-is (API, RLS, CI/CD, NFR)
+- **Mixed language**: If heading already has English terms, keep them (e.g., "Tech Stack Overview")
+
+**If heading is not Portuguese:**
+- Apply standard lowercase-dash-case conversion
+- No translation needed
+
+1. **Generate filename using translation rules above**:
+
+   - **FIRST**: Check if document language appears to be Portuguese (look for accents, common PT words)
+   - **IF Portuguese**: Apply translation from map above
+   - **THEN**: Convert to lowercase-dash-case
+   - Remove special characters and accents
+   - Replace spaces with dashes
+   - Example (English): "## Tech Stack" → `tech-stack.md`
+   - Example (Portuguese): "## Pilha Tecnológica" → `tech-stack.md`
 
 2. **Adjust heading levels**:
 
@@ -185,3 +327,4 @@ Document sharded successfully:
 - Preserve ALL formatting, including whitespace where significant
 - Handle edge cases like sections with code blocks containing ## symbols
 - Ensure the sharding is reversible (could reconstruct the original from shards)
+ 

@@ -1,3 +1,9 @@
+---
+tools:
+  - github-cli        # Validate repository structure and file paths
+  - context7          # Verify technical specifications and patterns
+---
+
 # Validate Next Story Task
 
 ## Purpose
@@ -27,6 +33,8 @@ To comprehensively validate a story draft before implementation begins, ensuring
 
 ### 2. File Structure and Source Tree Validation
 
+- **Refer to tools/cli/github-cli.yaml** for repository structure validation commands and file path verification operations
+- Consult the examples section for file listing and directory structure inspection patterns
 - **File paths clarity**: Are new/existing files to be created/modified clearly specified?
 - **Source tree relevance**: Is relevant project structure included in Dev Notes?
 - **Directory structure**: Are new directories/components properly located according to project structure?
@@ -75,6 +83,8 @@ To comprehensively validate a story draft before implementation begins, ensuring
 
 ### 8. Anti-Hallucination Verification
 
+- **Refer to tools/mcp/context7.yaml** for library documentation lookup to verify technical claims against official sources
+- Consult the examples section for documentation verification patterns and library-specific queries
 - **Source verification**: Every technical claim must be traceable to source documents
 - **Architecture alignment**: Dev Notes content matches architecture specifications
 - **No invented details**: Flag any technical decisions not supported by source documents
@@ -132,3 +142,4 @@ Provide a structured validation report including:
 - **NO-GO**: Story requires fixes before implementation
 - **Implementation Readiness Score**: 1-10 scale
 - **Confidence Level**: High/Medium/Low for successful implementation
+ 

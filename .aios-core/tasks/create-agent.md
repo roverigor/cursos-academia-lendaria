@@ -31,7 +31,7 @@ The elicitation workflow is now handled by `aios-core/elicitation/agent-elicitat
 1. **Basic Agent Information** - Name, title, icon, usage
 2. **Agent Persona & Style** - Role, communication, identity, focus
 3. **Agent Commands** - Standard and custom commands
-4. **Dependencies & Resources** - Tasks, templates, checklists
+4. **Dependencies & Resources** - Tasks, templates, checklists, tools
 5. **Security & Access Control** - Permissions and logging
 6. **Advanced Options** - Memory layer, principles, activation
 
@@ -62,7 +62,7 @@ The elicitation workflow is now handled by `aios-core/elicitation/agent-elicitat
    - Sanitize all user inputs
 
 4. **Create File**
-   - Generate path: `.aios-core/agents/{agent-name}.md`
+   - Generate path: `{root}/agents/{agent-name}.md`
    - Write agent definition with proper formatting
    - Set appropriate file permissions
 
@@ -104,9 +104,9 @@ The elicitation workflow is now handled by `aios-core/elicitation/agent-elicitat
 ## Success Output
 ```
 ✅ Agent '{agent-name}' created successfully!
-📁 Location: .aios-core/agents/{agent-name}.md
+📁 Location: {root}/agents/{agent-name}.md
 📝 Next steps:
    1. Run *update-manifest to add agent to team
    2. Test agent with /{agent-name} command
    3. Create any needed task dependencies
-```
+``` 

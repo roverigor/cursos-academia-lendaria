@@ -218,4 +218,4 @@ npm run trace -- workflow-name
 - Document breaking changes prominently
 
 ---
-*AIOS-FULLSTACK Claude Code Configuration v2.0*
+*AIOS-FULLSTACK Claude Code Configuration v2.0* 

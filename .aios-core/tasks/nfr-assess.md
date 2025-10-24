@@ -1,5 +1,13 @@
 <!-- Powered by AIOS™ Core -->
 
+---
+tools:
+  - browser           # Performance testing and UI validation
+  - supabase          # Database reliability and data validation
+  - github-cli        # Security review and code analysis
+  - context7          # Research NFR best practices
+---
+
 # nfr-assess
 
 Quick NFR validation focused on the core four: security, performance, reliability, maintainability.
@@ -343,3 +351,4 @@ performance_deep_dive:
 ```
 
 </details>
+ 

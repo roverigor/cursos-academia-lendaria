@@ -154,3 +154,4 @@ Be pragmatic - perfect documentation doesn't exist, but it must be enough to pro
 - READY: The story provides sufficient context for implementation
 - NEEDS REVISION: The story requires updates (see issues)
 - BLOCKED: External information required (specify what information)
+ 

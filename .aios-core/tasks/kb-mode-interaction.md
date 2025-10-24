@@ -75,3 +75,4 @@ Or ask me about anything else related to aios-fullstack!
 **User**: Tell me about workflows
 
 **Assistant**: [Provides focused information about workflows from the KB, then offers to explore specific workflow types or related topics]
+ 
