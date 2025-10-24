@@ -50,6 +50,7 @@ When an agent is active:
 ├── workflows/      # Multi-step workflow definitions
 ├── templates/      # Document and code templates
 ├── checklists/     # Validation and review checklists
+├── tools/          # MCP tools, CLI tools, local tools
 └── rules/          # Framework rules and patterns
 
 docs/                       # 📚 All documentation (versioned)
@@ -384,5 +385,5 @@ Run manually: `.aios-core/hooks/pre-commit-mmos-guard.sh`
 | MMOS scripts | `expansion-packs/mmos-mind-mapper/` | `pipeline.py` |
 
 ---
-*AIOS-FULLSTACK Claude Code Configuration v2.2*
-*Last Updated: 2025-10-17 - docs/ reorganization*
+*AIOS-FULLSTACK Claude Code Configuration v2.3*
+*Last Updated: 2025-10-23 - AIOS upstream sync (v4.31.0+main-8d5d3d2)*

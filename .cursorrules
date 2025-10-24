@@ -1,0 +1,238 @@
+# AIOS-FULLSTACK Development Rules for Cursor
+
+You are working with AIOS-FULLSTACK, an AI-Orchestrated System for Full Stack Development.
+
+## Core Development Rules
+
+### Agent Integration
+- Recognize AIOS agent activations: @dev, @qa, @architect, @pm, @po, @sm, @analyst
+- Agent commands use * prefix: *help, *create-story, *task, *exit
+- Follow agent-specific workflows and patterns
+
+### Story-Driven Development
+1. **Always work from a story file** in docs/stories/
+2. **Update story checkboxes** as you complete tasks: [ ] → [x]
+3. **Maintain the File List** section with all created/modified files
+4. **Follow acceptance criteria** exactly as written
+
+### Code Quality Standards
+- Write clean, maintainable code following project conventions
+- Include comprehensive error handling
+- Add unit tests for all new functionality
+- Follow existing patterns in the codebase
+
+### Testing Protocol
+- Run all tests before marking tasks complete
+- Ensure linting passes: `npm run lint`
+- Verify type checking: `npm run typecheck`
+- Add tests for new features
+
+## AIOS Framework Structure
+
+```
+.aios-core/
+├── agents/       # Agent persona definitions
+├── tasks/        # Executable task workflows
+├── workflows/    # Multi-step workflows
+├── templates/    # Document templates
+├── checklists/   # Validation checklists
+└── tools/        # MCP tools, CLI tools, local tools
+
+docs/                       # 📚 All documentation (versioned)
+├── README.md               # Master documentation navigation
+├── prd/                    # Product requirement documents
+├── methodology/            # Process frameworks and methodologies
+├── guides/                 # User and developer guides
+├── architecture/           # System architecture documentation
+├── stories/                # Development stories
+├── logs/                   # Execution logs (versioned!)
+└── mmos/                   # MMOS-specific documentation
+    ├── workflows/          # Step-by-step workflows
+    ├── epics/              # MMOS development epics
+    ├── stories/            # MMOS stories
+    ├── reports/            # Executive reports
+    ├── qa/                 # Quality assurance
+    └── taxonomy/           # Trait taxonomies
+
+outputs/                    # 🎯 Generated artifacts (NOT versioned)
+├── courses/                # Generated courses (CreatorOS)
+├── minds/                  # Processed minds (MMOS Mind Mapper)
+└── database/               # SQLite database files
+
+expansion-packs/            # 🔌 Modular system extensions
+├── creator-os/             # Course generation system
+├── mmos-mind-mapper/       # Cognitive clone creation
+├── innerlens/              # Psychometric profiling
+└── etl-data-collector/     # Data collection tools
+```
+
+## Development Workflow
+
+1. **Read the story** - Understand requirements fully
+2. **Implement sequentially** - Follow task order
+3. **Test thoroughly** - Validate each step
+4. **Update story** - Mark completed items
+5. **Document changes** - Update File List
+
+## Best Practices
+
+### When implementing:
+- Check existing patterns first
+- Reuse components and utilities
+- Follow naming conventions
+- Keep functions focused and small
+
+### When testing:
+- Write tests alongside implementation
+- Test edge cases
+- Verify error handling
+- Run full test suite
+
+### When documenting:
+- Update README for new features
+- Document API changes
+- Add inline comments for complex logic
+- Keep story File List current
+
+## Git & GitHub
+
+- Use conventional commits: `feat:`, `fix:`, `docs:`, etc.
+- Reference story ID in commits: `feat: implement IDE detection [Story 2.1]`
+- Ensure GitHub CLI is configured: `gh auth status`
+- Push regularly to avoid conflicts
+
+## Common Patterns
+
+### Error Handling
+```javascript
+try {
+  // Operation
+} catch (error) {
+  console.error(`Error in ${operation}:`, error);
+  throw new Error(`Failed to ${operation}: ${error.message}`);
+}
+```
+
+### File Operations
+```javascript
+const fs = require('fs-extra');
+const path = require('path');
+
+// Always use absolute paths
+const filePath = path.join(__dirname, 'relative/path');
+```
+
+### Async/Await
+```javascript
+async function operation() {
+  try {
+    const result = await asyncOperation();
+    return result;
+  } catch (error) {
+    // Handle error appropriately
+  }
+}
+```
+
+## MMOS-Specific Rules
+
+### CRITICAL: Use Architecture Guard Checklist
+
+**Before creating ANY file in docs/mmos/ or outputs/minds/:**
+→ Review `.aios-core/checklists/mmos-architecture-guard.md`
+
+### outputs/minds/ Directory - OUTPUT ONLY
+
+**CRITICAL:** `outputs/minds/` contains ONLY the direct output of the MMOS pipeline.
+
+#### ✅ What BELONGS in outputs/minds/{mind_slug}/:
+- `sources/` - Source materials collected
+- `analysis/` - Phase 3 outputs (identity-core.yaml, cognitive-spec.yaml)
+- `synthesis/` - Phase 4 outputs (frameworks.md, communication-style.md, etc.)
+- `implementation/` - Phase 5 outputs (tools.md, system-prompt-generalista.md)
+- `system_prompts/` - Final system prompts
+- `kb/` - Knowledge base chunks
+- `docs/` - **Mind-specific process docs** (validations, migrations, reports)
+- `logs/` - **Mind-specific execution logs**
+
+#### ❌ What DOES NOT belong in outputs/minds/:
+- System-level documentation → `docs/mmos/`
+- Cross-mind comparisons → `docs/mmos/reports/`
+- MMOS process documentation → `docs/mmos/`
+
+### docs/mmos/ Directory - SYSTEM ONLY
+
+**CRITICAL:** `docs/mmos/` contains ONLY system-level MMOS content.
+
+#### ✅ What BELONGS in docs/mmos/:
+- `workflows/` - MMOS workflow documentation (step-by-step processes)
+- `architecture/` - MMOS system architecture
+- `design/` - MMOS design documentation
+- `epics/` - MMOS development epics
+- `stories/` - MMOS development stories
+- `reports/` - Executive reports, version comparisons
+- `qa/benchmarks/` - Cross-mind benchmarks
+- `taxonomy/` - Trait and personality taxonomies
+- `validations/` - System-level validation checklists
+
+#### ❌ What DOES NOT belong in docs/mmos/:
+- **NEVER** create folders named after minds (`/joao_lozano/`, `/pedro_valerio/`)
+- **NEVER** create `validations/` or `migrations/` subfolders with mind names
+- Mind-specific documents → `outputs/minds/{slug}/docs/`
+
+### Decision Rule:
+
+Ask: **"Is this about a SPECIFIC mind (name appears in content)?"**
+- **YES** → `outputs/minds/{mind_slug}/docs/` or `outputs/minds/{mind_slug}/logs/`
+- **NO** → Continue...
+
+Ask: **"Is it a script/template for MMOS?"**
+- **YES** → `expansion-packs/mmos-mind-mapper/`
+- **NO** → Continue...
+
+Ask: **"Is it about MMOS system/process?"**
+- **YES** → `docs/mmos/{workflows|epics|stories|reports|qa}/`
+- **NO** → Continue...
+
+Ask: **"Is it a methodology/framework?"**
+- **YES** → `docs/methodology/`
+- **NO** → Continue...
+
+Ask: **"Is it a user/developer guide?"**
+- **YES** → `docs/guides/`
+- **NO** → Continue...
+
+Ask: **"Is it a product requirement?"**
+- **YES** → `docs/prd/`
+- **NO** → Continue...
+
+Ask: **"Is it an execution log?"**
+- **YES** → `docs/logs/` (versioned documentation!)
+- **NO** → ⚠️ STOP - Review architecture rules
+
+### Enforcement:
+
+Pre-commit hook will automatically reject architectural violations.
+Run manually: `.aios-core/hooks/pre-commit-mmos-guard.sh`
+
+## Quick Reference: Where Files Go
+
+| File Type | Location | Example |
+|-----------|----------|---------|
+| Product requirements | `docs/prd/` | `mmos-prd.md` |
+| Methodologies | `docs/methodology/` | `dna-mental.md` |
+| User guides | `docs/guides/` | `outputs-guide.md` |
+| Architecture docs | `docs/architecture/` | `system-design.md` |
+| Development stories | `docs/stories/` | `story-2.1.md` |
+| Execution logs | `docs/logs/` | `2025-10-17-session.md` |
+| MMOS workflows | `docs/mmos/workflows/` | `brownfield-workflow.md` |
+| MMOS epics | `docs/mmos/epics/` | `epic-2-database.md` |
+| MMOS reports | `docs/mmos/reports/` | `executive-summary.md` |
+| Mind-specific docs | `outputs/minds/{slug}/docs/` | `validation-checklist.md` |
+| Generated courses | `outputs/courses/{slug}/` | `curriculum.yaml` |
+| Database files | `outputs/database/` | `mmos.db` |
+| MMOS scripts | `expansion-packs/mmos-mind-mapper/` | `pipeline.py` |
+
+---
+*AIOS-FULLSTACK Cursor Configuration v2.0*
+*Last Updated: 2025-10-23 - AIOS upstream sync (v4.31.0+main-8d5d3d2)*
