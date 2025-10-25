@@ -28,7 +28,10 @@ __pycache__/
 
 # Documentações dos expansion-packs (não versionadas)
 # docs/ - Comentado: docs/ root deve ser versionado (AIOS)
-expansion-packs/*/docs/
+# EXCEÇÃO: epics/ e stories/ são versionados (desenvolvimento do sistema)
+expansion-packs/*/docs/*
+!expansion-packs/*/docs/epics/
+!expansion-packs/*/docs/stories/
 # Coverage reports
 coverage/
 *.lcov
