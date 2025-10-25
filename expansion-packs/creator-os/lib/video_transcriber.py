@@ -17,9 +17,29 @@ import time
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
+from functools import lru_cache
 from typing import List, Optional
 from urllib import error as urllib_error
 from urllib import request as urllib_request
+
+
+@lru_cache(maxsize=1)
+def _dotenv_values() -> dict:
+    """Load key-value pairs from project .env (without external deps)."""
+    env_path = Path(__file__).resolve().parents[3] / ".env"
+    values: dict[str, str] = {}
+
+    if not env_path.exists():
+        return values
+
+    for line in env_path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            continue
+        key, value = stripped.split("=", 1)
+        cleaned = value.strip().strip('"').strip("'")
+        values[key.strip()] = cleaned
+    return values
 
 
 class VideoProcessingError(Exception):
@@ -83,7 +103,7 @@ class VideoTranscriber:
         self.rename_videos = rename_videos
         self.force = force
         self._ffmpeg = shutil.which("ffmpeg")
-        self._api_key = os.getenv("ASSEMBLYAI_API_KEY")
+        self._api_key = self._resolve_env("ASSEMBLYAI_API_KEY")
 
     def process(self) -> VideoProcessingSummary:
         """
@@ -315,3 +335,7 @@ class VideoTranscriber:
         body = text if text else "(No speech detected in audio track.)"
 
         transcript_path.write_text("\n".join(header) + body + "\n", encoding="utf-8")
+
+    def _resolve_env(self, key: str) -> Optional[str]:
+        """Look up env var, falling back to .env file."""
+        return os.getenv(key) or _dotenv_values().get(key)
