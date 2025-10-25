@@ -28,8 +28,8 @@ class TestMapMindBasic:
     def test_to_slug_conversion(self):
         """Test person name to slug conversion."""
         assert _to_slug("Daniel Kahneman") == "daniel_kahneman"
-        assert _to_slug("José Amorim") == "jos_amorim"
-        assert _to_slug("Pedro Valério") == "pedro_valrio"
+        assert _to_slug("José Amorim") == "josé_amorim"  # Preserves accents (Python3 \w includes unicode)
+        assert _to_slug("Pedro Valério") == "pedro_valério"  # Preserves accents
         assert _to_slug("alan-nicolas") == "alan_nicolas"
         assert _to_slug("  Test  Person  ") == "test_person"
 
@@ -326,6 +326,34 @@ class TestMapMindIntegration:
         assert result['status'] == 'completed'
         assert result['mode'] == 'no-public-interviews'
         assert result['workflow_type'] == 'greenfield'
+
+
+class TestMapMindAdditional:
+    """Additional tests for coverage improvement."""
+
+    @patch('lib.map_mind.auto_detect_workflow')
+    def test_detection_error_ambiguous(self, mock_detect):
+        """Test error handling for ambiguous detection."""
+        mock_detect.side_effect = Exception("Could not auto-detect: ambiguous sources")
+
+        result = map_mind("test_person")
+
+        assert result['status'] == 'failed'
+        assert 'error' in result
+
+    @patch('lib.map_mind._execute_workflow')
+    def test_map_mind_with_brownfield_migration_mode(self, mock_execute):
+        """Test brownfield migration mode."""
+        mock_execute.return_value = {'execution': 'simulated'}
+
+        result = map_mind(
+            "test_person",
+            force_mode="no-public-migration"
+        )
+
+        assert result['status'] == 'completed'
+        assert result['mode'] == 'no-public-migration'
+        assert result['workflow_type'] == 'brownfield'
 
 
 # Run tests

@@ -50,6 +50,9 @@ python scripts/init_course.py
 #   - Course slug: meu-curso-antigo
 #   - Mode: 2 (Brownfield)
 #   - Confirmar organização de arquivos: yes
+#   - O script verifica /sources/videos, converte para MP3 e gera
+#     transcrições lesson1/lesson2 automaticamente (requer ffmpeg +
+#     variável ASSEMBLYAI_API_KEY configurada)
 
 # 3. Auto-extrair conteúdo (ICP, voz, objetivos)
 python lib/icp_extractor.py meu-curso-antigo

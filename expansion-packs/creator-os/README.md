@@ -103,9 +103,14 @@ mkdir -p outputs/courses/meu-curso/sources/
 # System auto-extracts:
 #   → ICP from materials
 #   → Voice from transcripts
+#   → Converts /sources/videos into MP3 + transcripts (lesson1, lesson2…)
 #   → Objectives from content
 #   → Runs market research
 #   → Generates optimized curriculum
+
+> ℹ️ Video automation requires `ffmpeg` plus an AssemblyAI API key.
+> Configure `ASSEMBLYAI_API_KEY` in your `.env` and the brownfield upgrade
+> will automatically convert and transcribe every video in `/sources/videos/`.
 ```
 
 **Time:** 30-60 minutes | **Output:** Modernized course with market intelligence

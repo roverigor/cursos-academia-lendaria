@@ -25,10 +25,20 @@ import os
 import re
 from pathlib import Path
 import shutil
-import yaml
+try:
+    import yaml  # type: ignore
+except ImportError:
+    yaml = None  # type: ignore
 
-# Add lib directory to path
+# Add lib directory to path before importing CreatorOS modules
 sys.path.insert(0, str(Path(__file__).parent.parent / "lib"))
+
+# Expose lib modules
+from video_transcriber import (  # noqa: E402
+    MissingDependencyError as VideoDependencyError,
+    VideoProcessingError,
+    VideoTranscriber,
+)
 
 
 def validate_slug(slug: str) -> bool:
@@ -227,6 +237,44 @@ def organize_brownfield_files(course_slug: str) -> Path:
     return course_path
 
 
+def auto_generate_transcripts(course_slug: str) -> None:
+    """
+    Convert videos to audio + transcripts after organization.
+    """
+    try:
+        processor = VideoTranscriber(course_slug)
+        summary = processor.process()
+    except VideoDependencyError as exc:
+        print("\n🎧 Skipping video transcription:")
+        print(f"   {exc.instructions}")
+        print("   Install dependency and re-run if you need automatic transcripts.")
+        return
+    except VideoProcessingError as exc:
+        print(f"\n⚠️  Video transcription encountered an error: {exc}")
+        return
+
+    if summary.videos_found == 0:
+        print("\n🎧 No videos detected in /sources/videos — nothing to transcribe.")
+        return
+
+    print("\n🎧 Video → Audio → Transcript summary")
+    print(f"   Videos detected: {summary.videos_found}")
+    print(f"   Converted to MP3: {summary.converted}")
+    print(f"   Transcriptions created: {summary.transcribed}")
+    if summary.skipped_existing:
+        print(f"   Skipped (already processed): {summary.skipped_existing}")
+    if summary.audio_dir:
+        print(f"   MP3 directory: {summary.audio_dir}")
+    if summary.transcript_dir:
+        print(f"   Transcript directory: {summary.transcript_dir}")
+    if summary.errors:
+        print("   ⚠️  Issues detected:")
+        for err in summary.errors[:5]:
+            print(f"      - {err}")
+        if len(summary.errors) > 5:
+            print(f"      ... +{len(summary.errors) - 5} more")
+
+
 def select_mmos_persona(course_slug: str, course_path: Path) -> dict:
     """
     Interactive MMOS persona selection.
@@ -398,6 +446,7 @@ def main():
 
     else:  # brownfield
         course_path = organize_brownfield_files(course_slug)
+        auto_generate_transcripts(course_slug)
 
     # Step 6: MMOS Persona Selection
     mmos_config = select_mmos_persona(course_slug, course_path)

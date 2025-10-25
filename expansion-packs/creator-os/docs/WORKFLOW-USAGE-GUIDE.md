@@ -75,6 +75,11 @@ Both workflows implement:
 8. **Generate Lessons** - AI modernizes lessons (GPS + DL)
 9. **Validate & Finalize** - Quality validation + assessment generation
 
+> 🎧 **New:** After the organization step the workflow looks at
+> `sources/videos/`, converts every video to `lesson{n}.mp3`, and generates a
+> matching transcript (`lesson{n}.transcript.md`) automatically. Install
+> `ffmpeg` and set `ASSEMBLYAI_API_KEY` once to enable this automation.
+
 **Estimated Time:**
 - Small course (3-5 lessons): 20-40 minutes
 - Medium course (8-15 lessons): 40-90 minutes
