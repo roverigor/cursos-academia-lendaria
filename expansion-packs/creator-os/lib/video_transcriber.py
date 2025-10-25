@@ -10,15 +10,16 @@ filenames using the `lesson{index}` convention expected by downstream tooling.
 from __future__ import annotations
 
 import os
+import json
 import shutil
 import subprocess
 import time
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
-from typing import Iterable, List, Optional
-
-import requests
+from typing import List, Optional
+from urllib import error as urllib_error
+from urllib import request as urllib_request
 
 
 class VideoProcessingError(Exception):
@@ -222,22 +223,20 @@ class VideoTranscriber:
             "content-type": "application/octet-stream",
         }
 
-        def read_file() -> Iterable[bytes]:
-            with open(mp3_path, "rb") as f:
-                while True:
-                    data = f.read(5 * 1024 * 1024)
-                    if not data:
-                        break
-                    yield data
-
-        response = requests.post(
+        data = mp3_path.read_bytes()
+        req = urllib_request.Request(
             "https://api.assemblyai.com/v2/upload",
+            data=data,
             headers=headers,
-            data=read_file(),
-            timeout=120,
+            method="POST",
         )
-        response.raise_for_status()
-        return response.json()["upload_url"]
+
+        try:
+            with urllib_request.urlopen(req, timeout=120) as resp:
+                payload = json.loads(resp.read().decode("utf-8"))
+                return payload["upload_url"]
+        except urllib_error.HTTPError as exc:
+            raise VideoProcessingError(f"Upload failed: {exc.read().decode('utf-8')}") from exc
 
     def _request_transcription(self, upload_url: str) -> str:
         headers = {
@@ -250,24 +249,35 @@ class VideoTranscriber:
             "speech_model": self.model_name,
         }
 
-        response = requests.post(
+        data_bytes = json.dumps(payload).encode("utf-8")
+        req = urllib_request.Request(
             "https://api.assemblyai.com/v2/transcript",
-            json=payload,
+            data=data_bytes,
             headers=headers,
-            timeout=30,
+            method="POST",
         )
-        response.raise_for_status()
-        data = response.json()
-        return data["id"]
+
+        try:
+            with urllib_request.urlopen(req, timeout=30) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                return data["id"]
+        except urllib_error.HTTPError as exc:
+            raise VideoProcessingError(f"Transcription request failed: {exc.read().decode('utf-8')}") from exc
 
     def _poll_transcription(self, transcript_id: str) -> str:
         headers = {"authorization": self._api_key}
         endpoint = f"https://api.assemblyai.com/v2/transcript/{transcript_id}"
 
         for _ in range(120):  # ~6 minutes max
-            resp = requests.get(endpoint, headers=headers, timeout=15)
-            resp.raise_for_status()
-            data = resp.json()
+            req = urllib_request.Request(endpoint, headers=headers, method="GET")
+            try:
+                with urllib_request.urlopen(req, timeout=15) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+            except urllib_error.HTTPError as exc:
+                raise VideoProcessingError(
+                    f"Polling failed: {exc.read().decode('utf-8')}"
+                ) from exc
+
             status = data.get("status")
 
             if status == "completed":

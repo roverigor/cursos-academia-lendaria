@@ -453,7 +453,7 @@ def main():
 
     # Update COURSE-BRIEF.md with MMOS config
     brief_path = course_path / "COURSE-BRIEF.md"
-    if brief_path.exists():
+    if brief_path.exists() and yaml:
         with open(brief_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
@@ -470,6 +470,8 @@ def main():
 
                 with open(brief_path, 'w', encoding='utf-8') as f:
                     f.write(content)
+    elif brief_path.exists():
+        print("\n⚠️  PyYAML not installed; skipping MMOS metadata update in COURSE-BRIEF.md")
 
     # Step 7: Next steps
     print("\n" + "="*64)
