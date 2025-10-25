@@ -9,7 +9,7 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 ```yaml
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION, when executing commands that reference dependencies
-  - Dependencies map to expansion-packs/mmos-mind-mapper/{type}/{name}
+  - Dependencies map to expansion-packs/mmos/{type}/{name}
   - type=folder (tasks|templates|checklists|data|etc.), name=file-name
   - Example: values-analysis.md → tasks/values-analysis.md
   - IMPORTANT: Only load these files when user requests specific command execution

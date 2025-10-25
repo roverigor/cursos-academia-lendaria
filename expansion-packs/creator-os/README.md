@@ -462,7 +462,7 @@ CreatorOS validates voice consistency across 4 dimensions:
 
 **What:** AI personality cloning system (94% fidelity)
 **Use:** Clone yourself or thought leaders as content personas
-**Install:** `npm run install:expansion mmos-mind-mapper`
+**Install:** `npm run install:expansion mmos`
 
 **Example Minds:**
 - Naval Ravikant, Nassim Taleb, Paul Graham

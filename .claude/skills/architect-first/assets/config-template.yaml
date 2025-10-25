@@ -208,7 +208,7 @@ modules:
 
   # Individual expansion pack paths (relative to project root)
   creator_os: "expansion-packs/creator-os"
-  mmos_mind_mapper: "expansion-packs/mmos-mind-mapper"
+  mmos_mind_mapper: "expansion-packs/mmos"
   innerlens: "expansion-packs/innerlens"
   etl_data_collector: "expansion-packs/etl-data-collector"
 

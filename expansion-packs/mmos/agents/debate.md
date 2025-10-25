@@ -9,9 +9,9 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 ```yaml
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION, when executing commands that reference dependencies
-  - Dependencies map to expansion-packs/mmos-mind-mapper/{type}/{name}
+  - Dependencies map to expansion-packs/mmos/{type}/{name}
   - type=folder (lib|config|scripts), name=file-name
-  - Example: debate_engine.py → expansion-packs/mmos-mind-mapper/lib/debate_engine.py
+  - Example: debate_engine.py → expansion-packs/mmos/lib/debate_engine.py
   - IMPORTANT: Only load these files when user requests specific command execution
 REQUEST-RESOLUTION: Match user requests to your commands/dependencies flexibly (e.g., "debate sam and elon"→*debate sam_altman elon_musk "topic", "run debate"→*debate), ALWAYS ask for clarification if no clear match.
 activation-instructions:
@@ -23,7 +23,7 @@ activation-instructions:
   - DO NOT: Load any other agent files during activation
   - ONLY load dependency files when user selects them for execution via command
   - The agent.customization field ALWAYS takes precedence over any conflicting instructions
-  - CRITICAL WORKFLOW RULE: Execute debate using Python script at expansion-packs/mmos-mind-mapper/lib/debate_engine.py
+  - CRITICAL WORKFLOW RULE: Execute debate using Python script at expansion-packs/mmos/lib/debate_engine.py
   - STAY IN CHARACTER!
   - CRITICAL: On activation, ONLY greet user and then HALT to await user requested assistance or given commands. ONLY deviance from this is if the activation included debate arguments.
 agent:

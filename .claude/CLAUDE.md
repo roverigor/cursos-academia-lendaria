@@ -88,7 +88,7 @@ outputs/                    # 🎯 Generated artifacts (NOT versioned)
 
 expansion-packs/            # 🔌 Modular system extensions
 ├── creator-os/             # Course generation system
-├── mmos-mind-mapper/       # Cognitive clone creation
+├── mmos/       # Cognitive clone creation
 ├── innerlens/              # Psychometric profiling
 └── etl-data-collector/     # Data collection tools
 ```
@@ -312,7 +312,7 @@ Ask: **"Is this about a SPECIFIC mind (name appears in content)?"**
 - **NO** → Continue...
 
 Ask: **"Is it a script/template for MMOS?"**
-- **YES** → `expansion-packs/mmos-mind-mapper/`
+- **YES** → `expansion-packs/mmos/`
 - **NO** → Continue...
 
 Ask: **"Is it about MMOS system/process?"**
@@ -353,7 +353,7 @@ Ask: **"Is it an execution log?"**
 **❌ Wrong:**
 - `docs/mmos/validations/pedro-valerio-checklist.md` → Use `outputs/minds/pedro_valerio/docs/validation-checklist.md`
 - `docs/mmos/migrations/joao-lozano-progress.md` → Use `outputs/minds/joao_lozano/docs/migration-progress.md`
-- `expansion-packs/mmos-mind-mapper/benchmarks/debate.yaml` → Use `docs/mmos/qa/benchmarks/debate.yaml`
+- `expansion-packs/mmos/benchmarks/debate.yaml` → Use `docs/mmos/qa/benchmarks/debate.yaml`
 - `docs/mmos/docs/PRD.md` → Use `docs/prd/mmos-prd.md`
 - `docs/mmos/DNA_MENTAL.md` → Use `docs/methodology/dna-mental.md`
 - `outputs/logs/session.md` → Use `docs/logs/2025-10-17-session.md` (logs are docs!)
@@ -382,7 +382,7 @@ Run manually: `.aios-core/hooks/pre-commit-mmos-guard.sh`
 | Mind-specific docs | `outputs/minds/{slug}/docs/` | `validation-checklist.md` |
 | Generated courses | `outputs/courses/{slug}/` | `curriculum.yaml` |
 | Database files | `outputs/database/` | `mmos.db` |
-| MMOS scripts | `expansion-packs/mmos-mind-mapper/` | `pipeline.py` |
+| MMOS scripts | `expansion-packs/mmos/` | `pipeline.py` |
 
 ---
 *AIOS-FULLSTACK Claude Code Configuration v2.3*

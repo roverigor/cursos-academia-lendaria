@@ -152,7 +152,7 @@ See [`outputs/README.md`](../outputs/README.md) for details.
 
 ### Expansion Packs
 - **[CreatorOS](../expansion-packs/creator-os/)** - Course generation system
-- **[MMOS Mind Mapper](../expansion-packs/mmos-mind-mapper/)** - Cognitive clone creation
+- **[MMOS Mind Mapper](../expansion-packs/mmos/)** - Cognitive clone creation
 - **[InnerLens](../expansion-packs/innerlens/)** - Psychometric profiling
 - **[ETL Data Collector](../expansion-packs/etl-data-collector/)** - Data collection tools
 

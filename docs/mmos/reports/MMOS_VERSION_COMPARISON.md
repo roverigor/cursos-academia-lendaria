@@ -59,7 +59,7 @@ prompts:
 
 ---
 
-### System 2: Expansion Pack `expansion-packs/mmos-mind-mapper/` (v3.0.0)
+### System 2: Expansion Pack `expansion-packs/mmos/` (v3.0.0)
 
 **Architecture:** Task-based orchestration with interactive workflows
 **Total Tasks:** 13 high-level tasks (orchestrate 48+ operations)
@@ -401,7 +401,7 @@ tasks/
 
 **Implementation Locations:**
 ```
-expansion-packs/mmos-mind-mapper/
+expansion-packs/mmos/
 ├── tasks/
 │   ├── cognitive-analysis.md (extend Layers 2, 6, 8)
 │   └── system-prompt-creation.md (add new sections)
@@ -560,7 +560,7 @@ docs/mmos/
 
 ### Expansion Pack v3.0.0
 ```
-expansion-packs/mmos-mind-mapper/
+expansion-packs/mmos/
 ├── config.yaml (expansion pack metadata)
 ├── agents/ (6 agent definitions)
 │   ├── mind-mapper.md

@@ -37,6 +37,6 @@ dependencies:
     - reexecute-mind.md
     - reexecute-phase.md
   docs:
-    - expansion-packs/mmos-mind-mapper/docs/STATUS.md
-    - expansion-packs/mmos-mind-mapper/docs/TODO.md
+    - expansion-packs/mmos/docs/STATUS.md
+    - expansion-packs/mmos/docs/TODO.md
 ```

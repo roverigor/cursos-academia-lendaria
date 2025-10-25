@@ -204,7 +204,7 @@ mente_lendaria/
 │
 ├── expansion-packs/               ← EXPANSION PACKS
 │   ├── creator-os/
-│   ├── mmos-mind-mapper/
+│   ├── mmos/
 │   ├── etl-data-collector/
 │   └── innerlens/
 │

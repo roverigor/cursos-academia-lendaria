@@ -268,7 +268,7 @@ source:
 
 #### C. Workflows
 
-Defined in `expansion-packs/mmos-mind-mapper/tasks/`:
+Defined in `expansion-packs/mmos/tasks/`:
 - `execute-mmos-pipeline.md` - Full greenfield pipeline
 - `brownfield-update.md` - Incremental updates
 
@@ -393,7 +393,7 @@ outputs/minds/sam_altman/artifacts/
 outputs/minds/sam_altman/sources/
 outputs/minds/sam_altman/kb/
 docs/mmos/pipeline/
-expansion-packs/mmos-mind-mapper/
+expansion-packs/mmos/
 
 ❌ INCORRECT:
 docs/Mind/ (uppercase)
@@ -761,7 +761,7 @@ docs/mmos/
 ### 5.3 Expansion Pack Directory
 
 ```
-expansion-packs/mmos-mind-mapper/
+expansion-packs/mmos/
 ├── README.md
 ├── config.yaml                        # Pack configuration
 ├── LICENSE
@@ -1043,7 +1043,7 @@ npm run validate:all
 
 ## Appendix B: References
 
-- [MMOS Knowledge Base](../expansion-packs/mmos-mind-mapper/data/mmos-kb.md)
+- [MMOS Knowledge Base](../expansion-packs/mmos/data/mmos-kb.md)
 - [Epic 2: Database System](../mmos/epics/epic-2-database-system.md)
 - [PRD: MMOS Product Requirements](../mmos/docs/PRD.md)
 - [DNA Mental™ Methodology](../mmos/architecture/dna-mental-methodology.md)

@@ -85,7 +85,7 @@ docs/
 **"Is this about a SPECIFIC mind?"**
 - YES → `outputs/minds/{slug}/docs/` or `outputs/minds/{slug}/logs/`
 - NO → Is it a script?
-  - YES → `expansion-packs/mmos-mind-mapper/`
+  - YES → `expansion-packs/mmos/`
   - NO → `docs/mmos/{appropriate-folder}/`
 
 ### outputs/minds/{slug}/ Structure:

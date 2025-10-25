@@ -19,7 +19,7 @@
   - ❌ NEVER create mind-specific folders in docs/mmos/
 
 - [ ] **Executable script/task/template** (reusable across all minds)
-  - ✅ Action: Use `expansion-packs/mmos-mind-mapper/`
+  - ✅ Action: Use `expansion-packs/mmos/`
   - ❌ NEVER put outputs in expansion pack
 
 ---
@@ -34,7 +34,7 @@ Is this about a SPECIFIC mind (name appears in content)?
 │   └─ Execution log? → logs/
 │
 ├─ NO → Is this a script/template?
-│   ├─ YES → expansion-packs/mmos-mind-mapper/
+│   ├─ YES → expansion-packs/mmos/
 │   └─ NO → Is this about MMOS system?
 │       ├─ YES → docs/mmos/{appropriate-folder}/
 │       └─ NO → ⚠️ STOP - Review with team
@@ -54,7 +54,7 @@ Is this about a SPECIFIC mind (name appears in content)?
   - **Why:** Migrations are mind-specific
   - **Correct:** `outputs/minds/{mind_name}/docs/migration-*.md`
 
-- [ ] ❌ `expansion-packs/mmos-mind-mapper/benchmarks/`
+- [ ] ❌ `expansion-packs/mmos/benchmarks/`
   - **Why:** Benchmarks are outputs, not scripts
   - **Correct:** `docs/mmos/qa/benchmarks/`
 
@@ -91,7 +91,7 @@ docs/             # 📋 Mind-specific process docs (validations, migrations)
 logs/             # 📊 Mind-specific execution logs
 ```
 
-### ✅ expansion-packs/mmos-mind-mapper/ (Scripts)
+### ✅ expansion-packs/mmos/ (Scripts)
 ```
 agents/           # Agent definitions
 tasks/            # Task workflows
@@ -137,7 +137,7 @@ outputs/minds/joao_lozano/docs/migration-progress.md
 
 **❌ Wrong:**
 ```
-expansion-packs/mmos-mind-mapper/outputs/debate.yaml
+expansion-packs/mmos/outputs/debate.yaml
 ```
 
 **✅ Correct:**

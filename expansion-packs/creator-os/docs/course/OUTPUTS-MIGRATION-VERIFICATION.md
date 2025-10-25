@@ -170,7 +170,7 @@ A major refactoring was completed to reorganize output directories:
 #### Low Priority - Expansion Pack Documentation
 
 **MMOS Mind Mapper:**
-- 17 files in `/expansion-packs/mmos-mind-mapper/` (129 total occurrences)
+- 17 files in `/expansion-packs/mmos/` (129 total occurrences)
   - Most are examples and template references in documentation
 
 ---
@@ -263,7 +263,7 @@ outputs/minds/*
 
 ### 4.2 MMOS Mind Mapper Expansion Pack
 
-**Config File:** `/expansion-packs/mmos-mind-mapper/config.yaml`
+**Config File:** `/expansion-packs/mmos/config.yaml`
 - No hardcoded output paths ✅ (Config is clean)
 
 **Status:** ⚠️ **NEEDS UPDATES**
@@ -375,7 +375,7 @@ outputs/minds/*
 **Recommendation:** Option B - Add disclaimer to each file
 
 #### Issue #9: MMOS Mind Mapper Documentation
-**Files:** 17 files in `expansion-packs/mmos-mind-mapper/`
+**Files:** 17 files in `expansion-packs/mmos/`
 **Impact:** Medium - Examples in documentation
 **Fix:** Update example paths in task documentation
 
@@ -440,13 +440,13 @@ sed -i '' 's|outputs/courses/|outputs/courses/|g' /Users/oalanicolas/Documents/C
 find /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/creator-os/docs/course/ -name "*.md" -exec sed -i '' 's|outputs/courses/|outputs/courses/|g' {} \;
 
 # Fix #9: MMOS Mind Mapper documentation
-sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos-mind-mapper/tasks/*.md
-sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos-mind-mapper/agents/*.md
-sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos-mind-mapper/checklists/*.md
-sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos-mind-mapper/templates/*.md
-sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos-mind-mapper/lib/README.md
-sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos-mind-mapper/README.md
-sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos-mind-mapper/TEMPLATES_AND_CHECKLISTS.md
+sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos/tasks/*.md
+sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos/agents/*.md
+sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos/checklists/*.md
+sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos/templates/*.md
+sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos/lib/README.md
+sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos/README.md
+sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/expansion-packs/mmos/TEMPLATES_AND_CHECKLISTS.md
 
 # Additional MMOS docs
 sed -i '' 's|outputs/minds/|outputs/minds/|g' /Users/oalanicolas/Documents/Code/mente_lendaria/docs/mmos/ARCHITECTURE_RULES.md

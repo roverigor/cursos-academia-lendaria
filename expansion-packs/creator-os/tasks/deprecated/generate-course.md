@@ -341,7 +341,7 @@ mmos_persona_selection:
           instructions: |
             To create an MMOS mind:
 
-            1. Go to expansion-packs/mmos-mind-mapper/
+            1. Go to expansion-packs/mmos/
             2. Run: python scripts/pipeline.py
             3. Follow the MMOS creation workflow
             4. Return and run *generate-course again

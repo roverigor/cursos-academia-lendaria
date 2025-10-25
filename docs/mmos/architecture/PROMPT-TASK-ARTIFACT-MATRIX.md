@@ -268,7 +268,7 @@ Phase 6 (Testing):
 ### Expansion Pack Structure (v3.5)
 
 ```
-expansion-packs/mmos-mind-mapper/
+expansion-packs/mmos/
 ├── tasks/                              # Orchestration layer
 │   ├── cognitive-analysis.md           → References 18 analysis prompts
 │   ├── synthesis-compilation.md        → References 7 synthesis prompts

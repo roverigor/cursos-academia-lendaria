@@ -886,7 +886,7 @@ def test_mmos_priority_over_transcripts():
 - [Story 3.4: Voice Extraction from Transcripts](./STORY-3.4-voice-extraction-transcripts.md)
 - [Story 3.6: Gap Analysis & Smart Elicitation](./STORY-3.6-gap-analysis-smart-elicitation.md)
 - [Story 3.9: Lesson Generation with GPS + DL](./STORY-3.9-lesson-generation-gps.md)
-- [MMOS Mind Mapper](../../mmos-mind-mapper/README.md) (expansion pack)
+- [MMOS Mind Mapper](../../mmos/README.md) (expansion pack)
 
 ---
 

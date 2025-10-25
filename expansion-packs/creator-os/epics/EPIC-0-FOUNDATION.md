@@ -66,7 +66,7 @@
 - Documentation is clear and comprehensive
 
 **Technical Notes:**
-- Follow structure from `mmos-mind-mapper` and `innerlens`
+- Follow structure from `mmos` and `innerlens`
 - Ensure `slashPrefix: creator` is unique
 - Reference MMOS integration pattern from InnerLens
 - CreatorOS branding applied throughout all documentation
@@ -111,7 +111,7 @@
 - Documentation includes video walkthrough
 
 **Technical Notes:**
-- Study `mmos-mind-mapper/agents/mind-mapper.md` for orchestration patterns
+- Study `mmos/agents/mind-mapper.md` for orchestration patterns
 - Keep tone encouraging and creative (not robotic)
 - Always show preview before finalizing content
 - Offer regeneration options if user not satisfied

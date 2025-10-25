@@ -23,7 +23,7 @@ O Debate Engine permite que você execute debates estruturados entre dois clones
 ### Exemplo Básico
 
 ```bash
-python3 expansion-packs/mmos-mind-mapper/scripts/emulator.py debate \
+python3 expansion-packs/mmos/scripts/emulator.py debate \
   sam_altman \
   elon_musk \
   --topic "Should AI development be fully open source?" \
@@ -504,7 +504,7 @@ python3 emulator.py info elon_musk
 
 **Solução:**
 O clone precisa ter system-prompt configurado primeiro.
-Veja `expansion-packs/mmos-mind-mapper/tasks/cognitive-analysis.md`
+Veja `expansion-packs/mmos/tasks/cognitive-analysis.md`
 
 ---
 
@@ -598,7 +598,7 @@ Para melhorar o Debate Engine:
 ## 📞 Suporte
 
 - **Issues:** Reportar bugs no GitHub
-- **Docs:** Ver `/expansion-packs/mmos-mind-mapper/README.md` para scripts e `/docs/mmos/` para outputs
+- **Docs:** Ver `/expansion-packs/mmos/README.md` para scripts e `/docs/mmos/` para outputs
 - **Exemplos:** `/temp/debates/` tem exemplos de output
 
 ---

@@ -10,7 +10,7 @@
 
 ## 🎯 Executive Summary
 
-**Mission:** Convert 51 atomic prompts v2.0 into complete AIOS architecture within `expansion-packs/mmos-mind-mapper/`
+**Mission:** Convert 51 atomic prompts v2.0 into complete AIOS architecture within `expansion-packs/mmos/`
 
 **Approach:** Create 8 specialized agents (inspired by legendary minds), 51 executable tasks, 51 templates, and 25+ validation checklists
 
@@ -138,9 +138,9 @@ validation_gates:
 - **Expertise:** Values hierarchy, obsessions, contradictions, belief systems, anti-values
 
 **Responsible for (5 prompts):**
-1. `analysis_values_hierarchy.md` → `@{mind}/artifacts/values_hierarchy.yaml` → `values-hierarchy-analysis.md` (Layer 6) 🔴
-2. `analysis_core_obsessions.md` → `@{mind}/artifacts/core_obsessions.yaml` → `core-obsessions-analysis.md` (Layer 7) 🔴
-3. `analysis_contradictions_map.md` → `@{mind}/artifacts/contradictions.yaml` → `contradictions-analysis.md` (Layer 8) 🔴
+1. `analysis_values_hierarchy.md` → `@{mind}/artifacts/values_hierarchy.yaml` → `values-hierarchy-analysis.md`  🔴
+2. `analysis_core_obsessions.md` → `@{mind}/artifacts/core_obsessions.yaml` → `core-obsessions-analysis.md`  🔴
+3. `analysis_contradictions_map.md` → `@{mind}/artifacts/contradictions.yaml` → `contradictions-analysis.md`  🔴
 4. `analysis_belief_system.md` → `@{mind}/artifacts/beliefs_core.yaml` → `belief-system-analysis.md`
 5. `analysis_unique_algorithm.md` → `@{mind}/artifacts/unique_algorithm.yaml` → `unique-algorithm-analysis.md`
 
@@ -249,7 +249,7 @@ validation_gates:
 - **Expertise:** Mental models, cognitive frameworks, thinking patterns, learning systems
 
 **Responsible for (4 prompts):**
-1. `analysis_mental_models.md` → `@{mind}/artifacts/mental_models.md` → `mental-models-analysis.md` (Layer 5)
+1. `analysis_mental_models.md` → `@{mind}/artifacts/mental_models.md` → `mental-models-analysis.md` 
 2. `analysis_cognitive_architecture.md` → `@{mind}/artifacts/cognitive_architecture.yaml` → `cognitive-architecture-synthesis.md`
 3. `analysis_linguistic_forensics.md` → `@{mind}/artifacts/writing_style.md` → `linguistic-patterns-analysis.md`
 4. `analysis_psychometric_analysis.md` → `@{mind}/artifacts/personality_profile.json` → `psychometric-profiling.md`
@@ -1181,7 +1181,7 @@ validation_gates:
 ## 🗂️ DIRECTORY STRUCTURE
 
 ```
-expansion-packs/mmos-mind-mapper/
+expansion-packs/mmos/
 ├── agents/
 │   ├── 01-daniel-behavioral-analyst.yaml
 │   ├── 02-brene-identity-analyst.yaml

@@ -20,7 +20,7 @@
       "Bash(find:*)",
       "Bash(tree -L 2 \"outputs/courses/supabase-zero-backend-completo\" -I '*.md|*.yaml')",
       "Bash(git restore docs/mmos/prompts/)",
-      "Bash(git restore expansion-packs/mmos-mind-mapper/tasks/cognitive-analysis.md)",
+      "Bash(git restore expansion-packs/mmos/tasks/cognitive-analysis.md)",
       "Bash(git restore expansion-packs/creator-os/lib/mmos_integrator.py)",
       "Bash(sqlite3:*)",
       "Read(//tmp/**)",

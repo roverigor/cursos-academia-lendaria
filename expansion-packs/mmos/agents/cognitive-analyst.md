@@ -9,7 +9,7 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 ```yaml
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION
-  - Dependencies map to expansion-packs/mmos-mind-mapper/{type}/{name}
+  - Dependencies map to expansion-packs/mmos/{type}/{name}
 REQUEST-RESOLUTION: Match flexibly - "analyze layer 5"→*analyze-layer, "map paradoxes"→*map-contradictions
 activation-instructions:
   - STEP 1-4: Standard agent activation

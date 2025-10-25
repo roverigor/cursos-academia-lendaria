@@ -51,7 +51,7 @@ Checklist (quality gate)
 
 ### Layer 1: Orchestration (Tasks v3.0)
 
-**Location:** `expansion-packs/mmos-mind-mapper/tasks/`
+**Location:** `expansion-packs/mmos/tasks/`
 
 **Tasks:**
 1. `cognitive-analysis.md` - Orchestrates 12 analysis prompts
@@ -65,7 +65,7 @@ Checklist (quality gate)
 
 ### Layer 2: Execution (Prompts v2.0)
 
-**Location:** `expansion-packs/mmos-mind-mapper/prompts/`
+**Location:** `expansion-packs/mmos/prompts/`
 
 **Categories:**
 - **Analysis (18 prompts):** behavioral, beliefs, cognitive architecture, contradictions, obsessions, decision, immune system, limitations, linguistic, mental models, psychometric, quotes, recognition, routine, source reading, timeline, unique algorithm, values
@@ -119,7 +119,7 @@ artifacts/
 
 ### Layer 4: Validation (Checklists)
 
-**Location:** `expansion-packs/mmos-mind-mapper/checklists/`
+**Location:** `expansion-packs/mmos/checklists/`
 
 **Checklists v3.5:**
 - `analysis-completeness-checklist.md` - Updated for 12 YAML artifacts
@@ -188,7 +188,7 @@ description: Every artifact has explicit lineage
 components:
   task:
     role: Orchestrator
-    location: expansion-packs/mmos-mind-mapper/tasks/
+    location: expansion-packs/mmos/tasks/
     responsibilities:
       - Sequence management
       - Dependency resolution
@@ -197,7 +197,7 @@ components:
 
   prompt:
     role: Executor
-    location: expansion-packs/mmos-mind-mapper/prompts/
+    location: expansion-packs/mmos/prompts/
     responsibilities:
       - Detailed instructions (100-1000 lines)
       - Expert methodology
@@ -378,9 +378,9 @@ execution_log:
 ### Phase 1: Update Tasks (2-3 hours)
 
 **Files to Update:**
-1. `expansion-packs/mmos-mind-mapper/tasks/cognitive-analysis.md`
-2. `expansion-packs/mmos-mind-mapper/tasks/synthesis-compilation.md`
-3. `expansion-packs/mmos-mind-mapper/tasks/system-prompt-creation.md`
+1. `expansion-packs/mmos/tasks/cognitive-analysis.md`
+2. `expansion-packs/mmos/tasks/synthesis-compilation.md`
+3. `expansion-packs/mmos/tasks/system-prompt-creation.md`
 
 **Changes:**
 - Add `prompt_source` field to each mode
@@ -486,13 +486,13 @@ execution_log:
 
 **Legacy Documentation:**
 - Jesus Cristo artifacts: `outputs/minds/jesus_cristo/`
-- Prompts v2.0: `expansion-packs/mmos-mind-mapper/prompts/` (restored from git, moved to expansion pack)
-- prompts.yaml: `expansion-packs/mmos-mind-mapper/prompts/prompts.yaml`
+- Prompts v2.0: `expansion-packs/mmos/prompts/` (restored from git, moved to expansion pack)
+- prompts.yaml: `expansion-packs/mmos/prompts/prompts.yaml`
 
 **Modern Documentation:**
 - José Amorim artifacts: `outputs/minds/jose_amorim/`
-- Tasks v3.0: `expansion-packs/mmos-mind-mapper/tasks/`
-- Checklists: `expansion-packs/mmos-mind-mapper/checklists/`
+- Tasks v3.0: `expansion-packs/mmos/tasks/`
+- Checklists: `expansion-packs/mmos/checklists/`
 
 **Architecture:**
 - This document: `docs/mmos/architecture/PIPELINE-V3.5-ARCHITECTURE.md`

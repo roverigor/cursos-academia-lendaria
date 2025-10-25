@@ -26,12 +26,15 @@ __pycache__/
 *.tmp
 *.log
 
+# Documentações dos expansion-packs (não versionadas)
+# docs/ - Comentado: docs/ root deve ser versionado (AIOS)
+expansion-packs/*/docs/
 # Coverage reports
 coverage/
 *.lcov
 
 # Keep directory structure
-#!outputs/courses/.gitkeep
-#!outputs/minds/.gitkeep
+!outputs/courses/.gitkeep
+!outputs/minds/.gitkeep
 !outputs/database/.gitkeep
 !outputs/README.md

@@ -548,8 +548,8 @@ Epic 3 is complete when:
 - [Clone Arena Database Schema](/docs/mmos/architecture/clone-arena-database-schema.sql)
 - [Story 3.1: Debate Engine Core](/docs/mmos/stories/story-3.1-debate-engine-core.md)
 - [Story 3.2: Fidelity Scoring Engine](/docs/mmos/stories/story-3.2-fidelity-scoring-engine.md)
-- [Emulator Agent Definition](/expansion-packs/mmos-mind-mapper/agents/emulator.md)
-- [MMOS PRD](/expansion-packs/mmos-mind-mapper/PRD.md)
+- [Emulator Agent Definition](/expansion-packs/mmos/agents/emulator.md)
+- [MMOS PRD](/expansion-packs/mmos/PRD.md)
 
 ---
 

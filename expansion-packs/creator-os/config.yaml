@@ -13,8 +13,8 @@ slashPrefix: creator
 
 # Dependencies
 dependencies:
-  - name: mmos-mind-mapper
-    path: ../mmos-mind-mapper
+  - name: mmos
+    path: ../mmos
     required: false
     description: "Optional - For AI personality cloning (use minds as content personas)"
   - name: innerlens
@@ -272,7 +272,7 @@ installation:
     - Example: "Write blog post in Nassim Taleb's voice"
     - Available minds: Naval Ravikant, Paul Graham, Tim Ferriss, +25
 
-    Setup: Install mmos-mind-mapper expansion pack (optional)
+    Setup: Install mmos expansion pack (optional)
 
     ═══════════════════════════════════════════════════════════
     Main Agents
@@ -322,7 +322,7 @@ installation:
     MMOS Mind Mapper:
       - Use AI clones as content personas (94%+ voice fidelity)
       - Example minds: Naval Ravikant, Nassim Taleb, Paul Graham
-      - Install: npm run install:expansion mmos-mind-mapper
+      - Install: npm run install:expansion mmos
 
     InnerLens:
       - Psychometric audience profiling (Big Five + 120 traits)

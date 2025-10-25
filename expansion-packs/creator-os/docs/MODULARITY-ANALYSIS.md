@@ -405,8 +405,8 @@ dependencies:
     path: ../studio-core
     required: true
     description: "Shared components for content/marketing studios"
-  - name: mmos-mind-mapper
-    path: ../mmos-mind-mapper
+  - name: mmos
+    path: ../mmos
     required: false
 ```
 
@@ -419,8 +419,8 @@ dependencies:
     path: ../studio-core
     required: true
     description: "Shared components for content/marketing studios"
-  - name: mmos-mind-mapper
-    path: ../mmos-mind-mapper
+  - name: mmos
+    path: ../mmos
     required: false
 ```
 

@@ -258,7 +258,7 @@ const outputDir = process.argv[3] || DEFAULT_OUTPUT;
 - **AIOS Expansion Pack Standard:** `.aios/docs/expansion-packs.md`
 - **Task Orchestration:** `.aios/docs/task-system.md`
 - **ETL Task Spec:** `expansion-packs/etl-data-collector/tasks/collect-all-sources.md`
-- **MMOS Research Task:** `expansion-packs/mmos-mind-mapper/tasks/research-collection.md`
+- **MMOS Research Task:** `expansion-packs/mmos/tasks/research-collection.md`
 
 ---
 

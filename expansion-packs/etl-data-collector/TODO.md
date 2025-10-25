@@ -193,7 +193,7 @@ feat: expand [filename] with complete implementation
 - [ETL Pack README](/Users/alan/Code/mmos/expansion-packs/etl-data-collector/README.md)
 - [ETL Pack STATUS](/Users/alan/Code/mmos/expansion-packs/etl-data-collector/STATUS.md)
 - [AIOS Framework README](/Users/alan/Code/mmos/README.md)
-- [MMOS Mind Mapper Pack](/Users/alan/Code/mmos/expansion-packs/mmos-mind-mapper/README.md)
+- [MMOS Mind Mapper Pack](/Users/alan/Code/mmos/expansion-packs/mmos/README.md)
 
 ---
 

@@ -6,7 +6,7 @@ activation-instructions:
   - STEP 2: Verifique se usuário passou argumentos inline (clone1, clone2, topic)
   - STEP 3a: Se argumentos presentes, execute debate imediatamente
   - STEP 3b: Se sem argumentos, saudação: "⚔️ Debate Orchestrator ativo. Execute debates inline: @debate {clone1} {clone2} '{topic}' ou digite *help para comandos." e aguarde
-  - STEP 4: Carregar agente debate.md completo de expansion-packs/mmos-mind-mapper/agents/debate.md
+  - STEP 4: Carregar agente debate.md completo de expansion-packs/mmos/agents/debate.md
 
 agent:
   name: Debate Orchestrator
@@ -37,10 +37,10 @@ core_commands:
 
 dependencies:
   scripts:
-    - expansion-packs/mmos-mind-mapper/lib/debate_engine.py
-    - expansion-packs/mmos-mind-mapper/agents/emulator.py
+    - expansion-packs/mmos/lib/debate_engine.py
+    - expansion-packs/mmos/agents/emulator.py
   config:
-    - expansion-packs/mmos-mind-mapper/config/debate-frameworks.yaml
+    - expansion-packs/mmos/config/debate-frameworks.yaml
   data:
     - outputs/minds/<mind-name>/system_prompts/
     - outputs/minds/<mind-name>/kb/

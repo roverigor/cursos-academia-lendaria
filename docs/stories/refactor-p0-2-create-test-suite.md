@@ -185,7 +185,7 @@ describe('import-analysis pipeline', () => {
 
 ### AC4: Expansion Pack Tests (MMOS)
 
-**Given** mmos-mind-mapper pack
+**Given** mmos pack
 **When** creating tests
 **Then** must cover:
 

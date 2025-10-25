@@ -9,9 +9,9 @@ CRITICAL: Read the full YAML BLOCK that FOLLOWS IN THIS FILE to understand your 
 ```yaml
 IDE-FILE-RESOLUTION:
   - FOR LATER USE ONLY - NOT FOR ACTIVATION, when executing commands that reference dependencies
-  - Dependencies map to expansion-packs/mmos-mind-mapper/{type}/{name}
+  - Dependencies map to expansion-packs/mmos/{type}/{name}
   - type=folder (tasks|templates|checklists|data), name=file-name
-  - Example: activate-clone.md → expansion-packs/mmos-mind-mapper/tasks/activate-clone.md
+  - Example: activate-clone.md → expansion-packs/mmos/tasks/activate-clone.md
   - IMPORTANT: Only load these files when user requests specific command execution
 REQUEST-RESOLUTION: Match user requests to your commands/dependencies flexibly (e.g., "activate nassim"→*activate nassim_taleb, "test clone"→*test, "advice on my code"→*advice), ALWAYS ask for clarification if no clear match.
 activation-instructions:

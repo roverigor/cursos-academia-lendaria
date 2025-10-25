@@ -165,7 +165,7 @@ data:
   - dependencies.json
 
 integration:
-  mmos-mind-mapper:
+  mmos:
     hook: post-research
     input: sources_master.yaml
     output: sources/downloads/, sources/processed/

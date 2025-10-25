@@ -22,7 +22,7 @@ Analysis of `docs/brownfield-architecture.md` identified that **NONE** of the 4 
 
 | Pack | Extra Dirs | Issues |
 |------|-----------|--------|
-| mmos-mind-mapper | lib/ | ✅ Cleanest structure |
+| mmos | lib/ | ✅ Cleanest structure |
 | creator-os | database/, docs/, epics/, scripts/ | ⚠️ 4 extra directories |
 | etl-data-collector | bin/, config/, docs/, environments/, **node_modules/**  | 🚨 5 extras + own node_modules! |
 | innerlens | docs/, epics/, scripts/, testing/, workflows/, **package.json** | 🚨 5 extras + own package.json! |
@@ -97,7 +97,7 @@ node scripts/validate-expansion-structure.js [pack-name]
 
 **Output Format**:
 ```
-✅ PASS: mmos-mind-mapper
+✅ PASS: mmos
   ✓ All required directories present
   ✓ No forbidden directories
   ✓ Config.yaml valid
@@ -309,7 +309,7 @@ echo "✅ All expansion packs follow standard structure"
 
 | Pack | node_modules | package.json | docs/ | scripts/ | epics/ | testing/ | Other |
 |------|--------------|--------------|-------|----------|--------|----------|-------|
-| mmos-mind-mapper | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | lib/ ✅ |
+| mmos | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | lib/ ✅ |
 | creator-os | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | database/ ✅ |
 | etl-data-collector | ✅ 🚨 | ❌ | ✅ | ❌ | ❌ | ❌ | bin/, config/, environments/ ✅ |
 | innerlens | ❌ | ✅ 🚨 | ✅ | ✅ | ✅ | ✅ | workflows/ ✅ |

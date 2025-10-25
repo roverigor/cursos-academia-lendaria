@@ -32,7 +32,7 @@ This expansion pack industrializes the process of **cognitive archaeology**—ex
 
 ## When to Use This Pack
 
-Use **mmos-mind-mapper** when you want to:
+Use **mmos** when you want to:
 
 - 🎯 **Map cognitive architecture** of thought leaders into AI clones
 - 🧠 **Create domain expert assistants** that think like specific professionals
@@ -264,20 +264,20 @@ Quality gates enforcing DNA Mental™ methodology:
 ### Option 1: Automated (Recommended)
 
 ```bash
-npm run install:expansion mmos-mind-mapper
+npm run install:expansion mmos
 ```
 
 ### Option 2: Manual
 
 ```bash
-node tools/install-expansion-pack.js mmos-mind-mapper
+node tools/install-expansion-pack.js mmos
 ```
 
 ### Option 3: Direct Integration
 
 The expansion pack is pre-installed in this repository at:
 ```
-expansion-packs/mmos-mind-mapper/
+expansion-packs/mmos/
 ```
 
 Simply activate agents using `@agent-name` or `/MMOS:agents:agent-name`.
@@ -568,7 +568,7 @@ Simply activate agents using `@agent-name` or `/MMOS:agents:agent-name`.
 ## Pack Structure
 
 ```
-expansion-packs/mmos-mind-mapper/
+expansion-packs/mmos/
 ├── agents/                          # 7 specialized agents
 │   ├── mind-mapper.md               # Pipeline orchestrator
 │   ├── research-specialist.md       # Source collection expert
@@ -707,7 +707,7 @@ Every MMOS mind now generates **5 system prompts:**
 
 **Template Location:**
 ```
-expansion-packs/mmos-mind-mapper/templates/system-prompt-autodescobridor.md
+expansion-packs/mmos/templates/system-prompt-autodescobridor.md
 ```
 
 **Benefits:**
@@ -893,7 +893,7 @@ MMOS Mind Mapper integrates seamlessly with **AIOS-FULLSTACK v4+**:
 ### 1. **Install the Pack**
 
 ```bash
-npm run install:expansion mmos-mind-mapper
+npm run install:expansion mmos
 ```
 
 ### 2. **Understand the Pipeline**
@@ -1058,8 +1058,8 @@ This expansion pack requires:
 ## Support & Documentation
 
 ### 📚 **Documentation:**
-- **Methodology:** `expansion-packs/mmos-mind-mapper/data/mmos-kb.md`
-- **Task specs:** `expansion-packs/mmos-mind-mapper/tasks/*.md`
+- **Methodology:** `expansion-packs/mmos/data/mmos-kb.md`
+- **Task specs:** `expansion-packs/mmos/tasks/*.md`
 - **Examples:** `outputs/minds/` directory (22+ reference implementations)
 
 ### 🐛 **Issues:**

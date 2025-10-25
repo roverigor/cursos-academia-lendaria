@@ -20,7 +20,7 @@
 **What it prevents:**
 - ❌ `docs/mmos/validations/pedro-valerio/` (wrong)
 - ❌ `docs/mmos/migrations/joao-lozano/` (wrong)
-- ❌ `expansion-packs/mmos-mind-mapper/benchmarks/` (wrong)
+- ❌ `expansion-packs/mmos/benchmarks/` (wrong)
 
 ---
 

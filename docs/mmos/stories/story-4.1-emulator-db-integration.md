@@ -325,7 +325,7 @@ assert minds_table_still_exists()
 ## Tasks / Subtasks
 
 - [ ] **Task 1: Create Database Client Module** (AC1, AC2)
-  - [ ] Create `expansion-packs/mmos-mind-mapper/agents/db_client.py`
+  - [ ] Create `expansion-packs/mmos/agents/db_client.py`
   - [ ] Implement `load_mind_by_name(name: str) → Mind`
   - [ ] Implement `load_mind_by_id(id: int) → Mind`
   - [ ] Implement `load_system_prompt(mind_id, version=None) → SystemPrompt`
@@ -334,14 +334,14 @@ assert minds_table_still_exists()
   - [ ] Add error handling for DB unavailability
 
 - [ ] **Task 2: Implement Memory Cache Layer** (IV2)
-  - [ ] Create `expansion-packs/mmos-mind-mapper/agents/cache_manager.py`
+  - [ ] Create `expansion-packs/mmos/agents/cache_manager.py`
   - [ ] Implement LRU cache (max 5 clones)
   - [ ] Implement cache_get(), cache_put(), cache_invalidate()
   - [ ] Add cache hit/miss tracking
   - [ ] Add cache statistics for *stats command
 
 - [ ] **Task 3: Update Emulator Agent** (AC1, AC2, AC3, AC4)
-  - [ ] Modify `expansion-packs/mmos-mind-mapper/agents/emulator.md`
+  - [ ] Modify `expansion-packs/mmos/agents/emulator.md`
   - [ ] Update `*activate` to use db_client instead of file paths
   - [ ] Add `--version` flag for explicit version loading
   - [ ] Update KB token validation to query DB
@@ -349,7 +349,7 @@ assert minds_table_still_exists()
   - [ ] Add DB source indicator to activation greeting
 
 - [ ] **Task 4: Create Activation History Tracker** (AC5)
-  - [ ] Create `expansion-packs/mmos-mind-mapper/agents/activation_tracker.py`
+  - [ ] Create `expansion-packs/mmos/agents/activation_tracker.py`
   - [ ] Create `activation_history` table schema
   - [ ] Implement log_activation(), log_session_end()
   - [ ] Implement `*stats` command (query activation_history)
@@ -442,7 +442,7 @@ CREATE TABLE activation_history (
 
 ### Cache Configuration
 ```yaml
-# expansion-packs/mmos-mind-mapper/config.yaml
+# expansion-packs/mmos/config.yaml
 cache:
   enabled: true
   max_clones: 5  # LRU eviction

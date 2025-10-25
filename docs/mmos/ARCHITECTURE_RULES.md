@@ -41,7 +41,7 @@
 
 ---
 
-### Rule 3: expansion-packs/mmos-mind-mapper/ = SCRIPTS ONLY
+### Rule 3: expansion-packs/mmos/ = SCRIPTS ONLY
 
 **✅ ALLOWED in expansion pack:**
 - Agents, tasks, workflows
@@ -65,7 +65,7 @@ When creating a new file, ask:
 - **NO** → Continue to next question
 
 ### "Is this a script/task/template?"
-- **YES** → `expansion-packs/mmos-mind-mapper/`
+- **YES** → `expansion-packs/mmos/`
 - **NO** → Continue to next question
 
 ### "Is this about MMOS system as a whole?"
@@ -112,7 +112,7 @@ outputs/minds/joao_lozano/docs/migration-progress.md
 
 **❌ Wrong:**
 ```
-expansion-packs/mmos-mind-mapper/benchmarks/debate-123.yaml
+expansion-packs/mmos/benchmarks/debate-123.yaml
 ```
 
 **✅ Correct:**
@@ -225,9 +225,9 @@ outputs/minds/{slug}/
 └── logs/                 ✅ Mind-specific execution logs
 ```
 
-### expansion-packs/mmos-mind-mapper/ (Scripts)
+### expansion-packs/mmos/ (Scripts)
 ```
-expansion-packs/mmos-mind-mapper/
+expansion-packs/mmos/
 ├── agents/               ✅ Agent definitions
 ├── tasks/                ✅ Task workflows
 ├── templates/            ✅ Reusable templates
@@ -244,7 +244,7 @@ expansion-packs/mmos-mind-mapper/
 Before creating ANY new file, verify:
 
 - [ ] **Is this mind-specific?** → Use `outputs/minds/{slug}/`
-- [ ] **Is this a script/template?** → Use `expansion-packs/mmos-mind-mapper/`
+- [ ] **Is this a script/template?** → Use `expansion-packs/mmos/`
 - [ ] **Is this system-level?** → Use `docs/mmos/`
 - [ ] **Does the path follow the allowed structure above?**
 - [ ] **Am I creating a new subfolder in docs/mmos/?** → STOP and review this doc

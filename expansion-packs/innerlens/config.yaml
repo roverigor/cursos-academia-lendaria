@@ -16,8 +16,8 @@ dependencies:
     path: ../etl-data-collector
     required: false
     description: "Optional - For collecting multimodal data (WhatsApp, emails, code repos, social media)"
-  - name: mmos-mind-mapper
-    path: ../mmos-mind-mapper
+  - name: mmos
+    path: ../mmos
     required: false
     description: "Optional - For AI personality cloning use cases only"
 
@@ -100,7 +100,7 @@ integration:
     api_enabled: true
 
   # MMOS integration (optional)
-  mmos-mind-mapper:
+  mmos:
     hook: post-analysis
     input: minds/{mind_name}/analysis/cognitive-spec.yaml
     output: minds/{mind_name}/analysis/psychometric-profile.yaml

@@ -70,7 +70,7 @@ mente_lendaria/
 │   ├── courses/         # Cursos gerados
 │   └── swipe/           # ?
 ├── expansion-packs/     # 🚨 Packs COM ESTRUTURAS DIFERENTES
-│   ├── mmos-mind-mapper/
+│   ├── mmos/
 │   ├── creator-os/
 │   ├── etl-data-collector/
 │   └── innerlens/       # ⚠️ SEM SLASH COMMANDS
@@ -101,7 +101,7 @@ mente_lendaria/
 
 **MMOS Pack** (mais limpo):
 ```
-mmos-mind-mapper/
+mmos/
 ├── agents/
 ├── tasks/
 ├── templates/
@@ -259,7 +259,7 @@ prd:
 
 **🚨 Violação Arquitetural**:
 - Core framework NÃO deve ter conhecimento de expansion packs específicos
-- Config deveria estar em `expansion-packs/mmos-mind-mapper/config.yaml`
+- Config deveria estar em `expansion-packs/mmos/config.yaml`
 - Quebra separação de responsabilidades
 
 **🎯 Impacto**:
@@ -503,7 +503,7 @@ expansion-packs/{pack-name}/
 
 ```bash
 # Mover:
-mv .aios-core/mmos-config.yaml expansion-packs/mmos-mind-mapper/aios-integration.yaml
+mv .aios-core/mmos-config.yaml expansion-packs/mmos/aios-integration.yaml
 
 # Atualizar referências no core
 # Core deve descobrir configs de packs dinamicamente

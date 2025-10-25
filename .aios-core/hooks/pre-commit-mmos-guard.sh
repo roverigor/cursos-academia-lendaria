@@ -39,11 +39,11 @@ fi
 # Rule 2: No output files in expansion pack
 echo "Checking Rule 2: No output files in expansion pack..."
 
-if echo "$staged_files" | grep -qE "expansion-packs/mmos-mind-mapper/(benchmarks|outputs|results)/"; then
+if echo "$staged_files" | grep -qE "expansion-packs/mmos/(benchmarks|outputs|results)/"; then
     echo -e "${RED}❌ VIOLATION: Output files in expansion pack${NC}"
     echo ""
     echo "Found:"
-    echo "$staged_files" | grep -E "expansion-packs/mmos-mind-mapper/(benchmarks|outputs|results)/" | sed 's/^/  - /'
+    echo "$staged_files" | grep -E "expansion-packs/mmos/(benchmarks|outputs|results)/" | sed 's/^/  - /'
     echo ""
     echo -e "${YELLOW}Fix: Move to docs/mmos/qa/benchmarks/ or appropriate output location${NC}"
     echo ""

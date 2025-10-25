@@ -1,4 +1,4 @@
-name: mmos-mind-mapper
+name: mmos
 version: 3.0.0
 short-title: Mind Mapper OS - Cognitive Architecture Cloning System
 description: >-
@@ -105,7 +105,7 @@ checklists:
 
 # Installation
 installation:
-  command: npm run install:expansion mmos-mind-mapper
+  command: npm run install:expansion mmos
   post_install_message: |
     🧠 MMOS Mind Mapper v3.0 instalado com sucesso!
 

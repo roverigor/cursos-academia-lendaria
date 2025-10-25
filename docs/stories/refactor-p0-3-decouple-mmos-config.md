@@ -63,13 +63,13 @@ devStoryLocation: docs/mmos/stories
 **When** moving to expansion pack
 **Then** must:
 
-**Create**: `expansion-packs/mmos-mind-mapper/aios-integration.yaml`
+**Create**: `expansion-packs/mmos/aios-integration.yaml`
 
 ```yaml
 # MMOS AIOS Integration Configuration
 # Loaded dynamically by core when MMOS pack is active
 
-pack_name: mmos-mind-mapper
+pack_name: mmos
 integration_type: core_override
 
 # Core behavior overrides (when MMOS active)
@@ -207,7 +207,7 @@ const configLoader = require('./utils/config-loader');
 // const mmosConfig = require('./mmos-config.yaml');
 
 // NEW (dynamic):
-const activePack = process.env.AIOS_ACTIVE_PACK || 'mmos-mind-mapper';
+const activePack = process.env.AIOS_ACTIVE_PACK || 'mmos';
 const packConfig = configLoader.loadPackConfig(activePack);
 const coreConfig = require('./core-config.yaml');
 const config = configLoader.mergeConfigs(coreConfig, packConfig);
@@ -233,7 +233,7 @@ const config = configLoader.mergeConfigs(coreConfig, packConfig);
 **Environment Variable**:
 ```bash
 # Activate MMOS
-export AIOS_ACTIVE_PACK=mmos-mind-mapper
+export AIOS_ACTIVE_PACK=mmos
 
 # Activate Creator OS
 export AIOS_ACTIVE_PACK=creator-os
@@ -244,8 +244,8 @@ unset AIOS_ACTIVE_PACK
 
 **CLI Command** (optional):
 ```bash
-# aios config --pack mmos-mind-mapper
-# Updates .env with AIOS_ACTIVE_PACK=mmos-mind-mapper
+# aios config --pack mmos
+# Updates .env with AIOS_ACTIVE_PACK=mmos
 ```
 
 **Validation**:
@@ -404,8 +404,8 @@ git checkout HEAD -- .aios-core/index.js
 
 ```javascript
 // Test core with MMOS
-process.env.AIOS_ACTIVE_PACK = 'mmos-mind-mapper';
-const config = configLoader.loadPackConfig('mmos-mind-mapper');
+process.env.AIOS_ACTIVE_PACK = 'mmos';
+const config = configLoader.loadPackConfig('mmos');
 expect(config.devStoryLocation).toBe('docs/mmos/stories');
 
 // Test core without pack
@@ -448,7 +448,7 @@ expect(coreConfig).toBeNull();
 ## File List
 
 **Created**:
-- `expansion-packs/mmos-mind-mapper/aios-integration.yaml`
+- `expansion-packs/mmos/aios-integration.yaml`
 - `expansion-packs/creator-os/aios-integration.yaml`
 - `expansion-packs/innerlens/aios-integration.yaml`
 - `expansion-packs/etl-data-collector/aios-integration.yaml`

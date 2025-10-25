@@ -56,7 +56,7 @@
 
 **Technical Notes:**
 - Follow structure from `/aios-fullstack/expansion-packs/expansion-creator/`
-- Reference `mmos-mind-mapper/config.yaml` for dependency syntax
+- Reference `mmos/config.yaml` for dependency syntax
 - Ensure `slashPrefix: innerlens` is unique
 - Positioning as "InnerLens Lite" clear throughout
 

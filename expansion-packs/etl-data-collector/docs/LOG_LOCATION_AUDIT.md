@@ -187,7 +187,7 @@ constructor(configPath, options = {}) {
 
 ### 4. Update MMOS Tasks Documentation
 
-**File:** `expansion-packs/mmos-mind-mapper/tasks/research-collection.md`
+**File:** `expansion-packs/mmos/tasks/research-collection.md`
 
 Add section:
 ```markdown

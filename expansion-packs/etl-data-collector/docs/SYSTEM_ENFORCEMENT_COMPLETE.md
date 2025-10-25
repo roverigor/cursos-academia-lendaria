@@ -159,7 +159,7 @@ Violations found: 0
 ### Modified Files:
 1. ✅ `run-collection.js` - Fixed report location + sources path
 2. ✅ `scripts/orchestrator/parallel-collector.js` - Fixed state path
-3. ✅ `expansion-packs/mmos-mind-mapper/tasks/research-collection.md` - Added file org standard
+3. ✅ `expansion-packs/mmos/tasks/research-collection.md` - Added file org standard
 
 ---
 
