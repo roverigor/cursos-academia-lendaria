@@ -8,6 +8,7 @@ Part of MMOS-E001 Story 1: Auto-Detection Engine
 """
 
 import os
+import shutil
 import requests
 from typing import Dict, List, Optional, Tuple
 from datetime import datetime, timedelta
@@ -117,6 +118,72 @@ def detect_workflow_type(person_slug: str, decision_log: List[str]) -> str:
         return "greenfield"
 
 
+def auto_organize_materials(person_slug: str, decision_log: List[str]) -> bool:
+    """
+    Auto-detect loose materials and move them to sources/.
+
+    Searches for files in ANY subdirectory of outputs/minds/{slug}/
+    (except sources/, venv/, .git/) and moves them to sources/.
+
+    Args:
+        person_slug: Mind slug
+        decision_log: List to append decisions to
+
+    Returns:
+        True if found and organized materials, False otherwise
+    """
+    mind_path = f"outputs/minds/{person_slug}"
+    sources_path = f"{mind_path}/sources"
+
+    if not os.path.exists(mind_path):
+        return False
+
+    # Search for loose materials outside sources/
+    loose_files = []
+    for root, dirs, files in os.walk(mind_path):
+        # Skip sources/, venv/, .git/, __pycache__
+        dirs[:] = [d for d in dirs if d not in ['sources', 'venv', '.git', '__pycache__', '.backup']]
+
+        for file in files:
+            if file.startswith('.'):  # Skip .DS_Store, etc
+                continue
+            # Accept common document formats
+            if file.endswith(('.txt', '.pdf', '.doc', '.docx', '.md', '.json', '.yaml', '.csv', '.html')):
+                loose_files.append(os.path.join(root, file))
+
+    if not loose_files:
+        return False
+
+    # Create sources/ if not exists
+    os.makedirs(sources_path, exist_ok=True)
+
+    # Move files
+    moved_count = 0
+    for file_path in loose_files:
+        try:
+            filename = os.path.basename(file_path)
+            dest = os.path.join(sources_path, filename)
+
+            # Avoid overwriting
+            if os.path.exists(dest):
+                base, ext = os.path.splitext(filename)
+                counter = 1
+                while os.path.exists(dest):
+                    dest = os.path.join(sources_path, f"{base}_{counter}{ext}")
+                    counter += 1
+
+            shutil.move(file_path, dest)
+            moved_count += 1
+        except Exception as e:
+            decision_log.append(f"⚠ Failed to move {filename}: {e}")
+
+    if moved_count > 0:
+        decision_log.append(f"✓ Auto-organized {moved_count} loose file(s) → sources/")
+        return True
+
+    return False
+
+
 def detect_greenfield_mode(person_slug: str, person_name: Optional[str],
                            decision_log: List[str]) -> str:
     """
@@ -149,6 +216,10 @@ def detect_greenfield_mode(person_slug: str, person_name: Optional[str],
         return "public"
 
     decision_log.append(f"ℹ Web search: No public content found for '{person_name}'")
+
+    # Step 2a: Auto-organize loose materials
+    if auto_organize_materials(person_slug, decision_log):
+        decision_log.append("ℹ Re-checking sources/ after auto-organization")
 
     # Step 2: Check if sources/ directory has files
     sources_path = f"outputs/minds/{person_slug}/sources/"
@@ -208,8 +279,10 @@ def quick_web_search(person_name: str) -> bool:
     """
     Quick web search to check if person has public content.
 
-    Uses DuckDuckGo Instant Answer API (no API key required).
-    Falls back gracefully if API is unavailable.
+    Priority order:
+    1. Brave Search API (if BRAVE_API_KEY available) - Most comprehensive
+    2. DuckDuckGo Instant Answer API (fallback) - Only famous figures
+    3. Return False (conservative fallback)
 
     Args:
         person_name: Name to search for
@@ -226,8 +299,65 @@ def quick_web_search(person_name: str) -> bool:
 
     print(f"  [Search] Searching for '{person_name}'...")
 
+    # Try Brave Search API first (more comprehensive)
+    brave_api_key = os.getenv('BRAVE_API_KEY')
+    if brave_api_key and brave_api_key != 'your-brave-api-key-here':
+        try:
+            print(f"  [Search] Using Brave Search API...")
+            url = "https://api.search.brave.com/res/v1/web/search"
+            headers = {
+                'Accept': 'application/json',
+                'X-Subscription-Token': brave_api_key
+            }
+            params = {'q': person_name}
+
+            response = requests.get(url, headers=headers, params=params, timeout=10)
+
+            if response.status_code == 200:
+                data = response.json()
+                results = data.get('web', {}).get('results', [])
+
+                # Validate results are actually about the person
+                # Check if person's name appears in top results
+                person_name_lower = person_name.lower()
+                relevant_results = 0
+
+                for result in results[:5]:  # Check top 5 results
+                    title = result.get('title', '').lower()
+                    description = result.get('description', '').lower()
+                    url = result.get('url', '').lower()
+
+                    # Check if person's name (or parts) appears in result
+                    name_parts = person_name_lower.split()
+                    if len(name_parts) >= 2:
+                        # For full names, require at least 2 parts to match
+                        matches = sum(1 for part in name_parts if part in title or part in description or part in url)
+                        if matches >= 2:
+                            relevant_results += 1
+                    else:
+                        # For single names, require exact match
+                        if person_name_lower in title or person_name_lower in description:
+                            relevant_results += 1
+
+                has_content = relevant_results >= 2  # Require at least 2 relevant results
+
+                # Cache result
+                _web_search_cache[person_name] = (has_content, datetime.now())
+
+                result_msg = f"Found" if has_content else "Not found"
+                print(f"  [Search] Result: {result_msg} ({relevant_results}/{len(results)} relevant results)")
+                return has_content
+            elif response.status_code == 429:
+                print(f"  [Search] Brave API rate limit - falling back to DuckDuckGo")
+            else:
+                print(f"  [Search] Brave API error {response.status_code} - falling back to DuckDuckGo")
+
+        except requests.RequestException as e:
+            print(f"  [Search] Brave Search failed: {e} - falling back to DuckDuckGo")
+
+    # Fallback to DuckDuckGo Instant Answer API
     try:
-        # Use DuckDuckGo Instant Answer API (free, no key required)
+        print(f"  [Search] Using DuckDuckGo Instant Answer API...")
         url = "https://api.duckduckgo.com/"
         params = {
             'q': person_name,

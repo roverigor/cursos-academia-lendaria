@@ -14,7 +14,9 @@ from typing import Optional, Dict, Any
 from pathlib import Path
 
 from .workflow_detector import auto_detect_workflow
-from .metadata_manager import read_metadata
+from .metadata_manager import read_metadata, MetadataManager
+from .workflow_preprocessor import preprocess_workflow
+from .workflow_orchestrator import WorkflowOrchestrator
 
 
 # Valid modes for validation
@@ -109,7 +111,11 @@ def map_mind(person_name: str,
             # STEP 2: Auto-detect workflow and mode
             _log(f"🔍 Auto-detecting workflow for '{person_name}'...")
 
-            detection_result = auto_detect_workflow(slug, person_name)
+            # Normalize person_name: convert slug to proper name for web search
+            normalized_name = _slug_to_name(person_name) if ('_' in person_name or '-' in person_name) else person_name
+            _log(f"   Using search name: '{normalized_name}'")
+
+            detection_result = auto_detect_workflow(slug, normalized_name)
             workflow_type = detection_result["workflow_type"]
             mode = detection_result["mode"]
             decision_log = detection_result["decision_log"]
@@ -226,46 +232,75 @@ def _execute_workflow(workflow_file: str,
         print(f"  {entry}")
     print("="*60 + "\n")
 
-    # TODO: Actual workflow execution
-    # This would:
-    # 1. Load workflow YAML from workflows/{workflow_file}
-    # 2. Preprocess imports using workflow_preprocessor.py
-    # 3. Set context variables (mode, slug, person_name, etc.)
-    # 4. Execute each step in sequence
-    # 5. Handle human checkpoints
-    # 6. Monitor progress and errors
+    # ACTUAL WORKFLOW EXECUTION (Story E001.6-SIMPLE)
+    try:
+        # Get paths to workflow and task directories
+        mmos_root = Path(__file__).parent.parent
+        workflows_dir = mmos_root / "workflows"
+        tasks_dir = mmos_root / "tasks"
 
-    print("⚠️  Workflow execution placeholder")
-    print("    In production, this would execute the full MMOS pipeline")
-    print("    For now, showing what WOULD execute:\n")
+        # 1. Load and preprocess workflow YAML (expands module imports)
+        workflow_path = workflows_dir / workflow_file
 
-    # Show what would be executed
-    print(f"    1. Initialize mind: outputs/minds/{slug}/")
-    print(f"    2. Set mode: {mode}")
+        print(f"\n📥 Loading workflow: {workflow_path}")
+        preprocessed = preprocess_workflow(str(workflow_path))
 
-    if workflow_type == "greenfield":
-        print(f"    3. Phase 0: Mode detection ✅ (already done)")
-        print(f"    4. Phase 1: {'Viability + ' if mode == 'public' else ''}Research")
-        print(f"    5. Phase 2-3: DNA Mental™ Analysis (Layers 1-8)")
-        print(f"    6. Phase 4: Synthesis (frameworks, KB)")
-        print(f"    7. Phase 5: Implementation (system prompt)")
-        print(f"    8. Phase 6: Validation & testing")
-        print(f"    9. Phase 7: Finalization")
-    else:  # brownfield
-        print(f"    3. Phase 0: Backup + assessment")
-        print(f"    4. Phase 1: Incremental research")
-        print(f"    5. Phase 2: Delta analysis (selective re-run)")
-        print(f"    6. Phase 3-7: Selective module execution")
-        print(f"    7. Phase 8: Regression testing")
-        print(f"    8. Phase 9: Commit or rollback decision")
+        # Preprocessor returns {'workflow': {...}}, extract the workflow
+        expanded_workflow = preprocessed.get('workflow', preprocessed)
+        print(f"✅ Workflow loaded and preprocessed")
 
-    print("\n✅ Execution plan prepared")
-    print("   (Actual execution would happen here)\n")
+        # 2. Prepare execution context
+        execution_context = {
+            'slug': slug,
+            'mode': mode,
+            'person_name': person_name,
+            'materials_path': materials_path,
+            'decision_log': decision_log,
+            'workflow_type': workflow_type,
+            'workflow_file': workflow_file
+        }
 
-    return {
-        'workflow_file': workflow_file,
-        'execution': 'simulated'
-    }
+        # 3. Initialize metadata manager for state persistence
+        minds_dir = Path("outputs/minds")
+        metadata_manager = MetadataManager(minds_dir)
+
+        # 4. Create orchestrator and execute workflow
+        orchestrator = WorkflowOrchestrator(
+            workflows_dir=workflows_dir,
+            tasks_dir=tasks_dir,
+            metadata_manager=metadata_manager
+        )
+
+        print(f"\n🚀 Starting workflow execution...")
+        result = orchestrator.orchestrate_workflow(expanded_workflow, execution_context)
+
+        # 5. Return execution result
+        return {
+            'workflow_file': workflow_file,
+            'execution': 'completed' if result['status'] == 'completed' else result['status'],
+            'phases_executed': result.get('phases_executed', []),
+            'outputs': result.get('outputs', {}),
+            'status': result['status'],
+            'error': result.get('error')
+        }
+
+    except FileNotFoundError as e:
+        print(f"\n❌ Workflow file not found: {e}")
+        return {
+            'workflow_file': workflow_file,
+            'execution': 'failed',
+            'error': f'Workflow file not found: {e}'
+        }
+
+    except Exception as e:
+        print(f"\n❌ Workflow execution failed: {e}")
+        import traceback
+        traceback.print_exc()
+        return {
+            'workflow_file': workflow_file,
+            'execution': 'failed',
+            'error': str(e)
+        }
 
 
 def _to_slug(person_name: str) -> str:
@@ -287,6 +322,25 @@ def _to_slug(person_name: str) -> str:
     slug = slug.strip('_')                # Remove leading/trailing underscores
 
     return slug
+
+
+def _slug_to_name(slug: str) -> str:
+    """
+    Convert slug to proper name for display and web search.
+
+    Args:
+        slug: "thiago_finch" or "daniel-kahneman"
+
+    Returns:
+        "Thiago Finch" or "Daniel Kahneman"
+
+    Examples:
+        >>> _slug_to_name("thiago_finch")
+        "Thiago Finch"
+        >>> _slug_to_name("daniel-kahneman")
+        "Daniel Kahneman"
+    """
+    return slug.replace('_', ' ').replace('-', ' ').title()
 
 
 def _log(message: str):

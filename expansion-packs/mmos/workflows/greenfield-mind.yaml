@@ -25,7 +25,7 @@ workflow:
       description: "Private individual - 5-session interview protocol"
       viability_required: false
       research_method: interview_protocol
-      validation_method: direct_person
+      validation_method: direct_person2
       estimated_duration: "6-8 hours"
       estimated_tokens: "1.5-2M tokens"
 

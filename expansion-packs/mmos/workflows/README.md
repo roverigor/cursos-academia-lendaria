@@ -601,6 +601,89 @@ Add custom steps to existing workflows:
 
 ---
 
+## ⚙️ How Workflows Execute
+
+**New in v3.5:** Workflows now execute via the **Workflow Orchestrator** (Story E001.6-SIMPLE).
+
+### Execution Flow
+
+```
+User Command (*map {name})
+    ↓
+map_mind() function
+    ↓
+workflow_detector (auto-detect greenfield/brownfield + mode)
+    ↓
+workflow_preprocessor (expand module imports)
+    ↓
+workflow_orchestrator (sequence phases, present tasks to AI)
+    ↓
+AI executes tasks (reads markdown, interprets instructions, elicits if needed)
+    ↓
+Results tracked in metadata.yaml
+```
+
+### Simple Orchestration Pattern
+
+The orchestrator follows a **simple pattern**:
+1. **Load workflow YAML** (already preprocessed with modules expanded)
+2. **Iterate through sequence phases**
+3. **For each phase with task:**
+   - Load task markdown (`tasks/{task_name}.md`)
+   - Print full markdown to stdout
+   - AI reads and executes autonomously
+4. **Handle checkpoints** (GO/NO-GO decisions)
+5. **Track progress** (update metadata.yaml)
+
+**Key Principle:** Python sequences, AI executes.
+
+### What AI Does
+
+When presented with a task markdown, AI:
+- Reads YAML frontmatter (task-id, elicit, inputs, outputs, etc.)
+- Reads markdown instructions
+- Validates required inputs from context
+- Executes instructions step-by-step
+- If `elicit: true`, uses AskUserQuestion tool
+- Creates output files using Write tool
+- Reports completion
+
+**No Python executor needed** - AI has native markdown task execution capabilities.
+
+### State Persistence
+
+**Resume Capability:** Orchestrator updates `metadata.yaml` after each phase:
+
+```yaml
+pipeline_phases:
+  phase_viability:
+    status: completed
+    completed_at: "2025-10-25T18:30:00Z"
+  phase_research:
+    status: in_progress
+    updated_at: "2025-10-25T18:35:00Z"
+```
+
+If workflow fails or is aborted, it can resume from last completed phase.
+
+### Error Handling
+
+**Graceful failures:**
+- Missing workflow/task files: Clear error message
+- Invalid YAML: Logged with context
+- Task execution failure: Workflow stops, error logged
+- User abort: Workflow stops gracefully, state saved
+
+### Architecture Details
+
+For complete architecture documentation, see:
+- `docs/architecture/workflow-orchestration.md` - Full architecture spec
+- `lib/workflow_orchestrator.py` - Implementation (316 lines)
+- `tests/test_workflow_orchestrator.py` - Unit tests (22 tests)
+- `tests/test_integration_orchestrator.py` - Integration tests (13 tests)
+
+---
+
 ## 📞 Support
 
 ### Questions?

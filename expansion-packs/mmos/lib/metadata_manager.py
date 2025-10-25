@@ -327,3 +327,61 @@ def is_greenfield(slug: str) -> bool:
 
     status = metadata['mind']['pipeline_status']
     return status == 'not_started'
+
+
+class MetadataManager:
+    """
+    Manager class for workflow state persistence via metadata.yaml.
+
+    Provides structured API for updating phase statuses during workflow execution.
+    Enables resume capability after failures or aborts.
+    """
+
+    def __init__(self, minds_dir):
+        """
+        Initialize metadata manager.
+
+        Args:
+            minds_dir: Path to outputs/minds directory
+        """
+        self.minds_dir = minds_dir
+
+    def update_phase_status(self, slug: str, phase: str, status: str, timestamp: str = None):
+        """
+        Update phase status in metadata.yaml.
+
+        Args:
+            slug: Mind slug
+            phase: Phase identifier (e.g., "viability", "research")
+            status: Phase status ("completed", "failed", "skipped")
+            timestamp: ISO timestamp (defaults to now)
+        """
+        if timestamp is None:
+            timestamp = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+
+        metadata = read_metadata(slug)
+        if not metadata:
+            # No metadata exists yet, can't update
+            return
+
+        # Ensure pipeline_phases exists
+        if 'pipeline_phases' not in metadata:
+            metadata['pipeline_phases'] = {}
+
+        # Update phase status
+        phase_key = f"phase_{phase}"
+        if phase_key not in metadata['pipeline_phases']:
+            metadata['pipeline_phases'][phase_key] = {}
+
+        metadata['pipeline_phases'][phase_key].update({
+            'status': status,
+            'updated_at': timestamp
+        })
+
+        if status == 'completed':
+            metadata['pipeline_phases'][phase_key]['completed_at'] = timestamp
+
+        # Write updated metadata
+        metadata_path = self.minds_dir / slug / "metadata.yaml"
+        with open(metadata_path, 'w', encoding='utf-8') as f:
+            yaml.dump(metadata, f, allow_unicode=True, default_flow_style=False, sort_keys=False)
