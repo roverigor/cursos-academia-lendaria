@@ -96,58 +96,59 @@
 ## 📋 Tasks
 
 ### Task 3.1: Criar task map-mind.md
-- [ ] Criar `tasks/map-mind.md` (wrapper task)
-- [ ] Definir params: `person_name`, `force_mode` (optional), `materials_path` (optional)
-- [ ] Documentar usage e examples
+- [x] Criar `tasks/map-mind.md` (wrapper task)
+- [x] Definir params: `person_name`, `force_mode` (optional), `materials_path` (optional)
+- [x] Documentar usage e examples
 
 **Effort:** 1 hour
 
 ### Task 3.2: Implementar routing logic
-- [ ] Call auto-detection (Story 1)
-- [ ] Route para greenfield-mind.yaml ou brownfield-mind.yaml
-- [ ] Pass detected mode para workflow
+- [x] Call auto-detection (Story 1)
+- [x] Route para greenfield-mind.yaml ou brownfield-mind.yaml
+- [x] Pass detected mode para workflow
 
 **Effort:** 2 hours
 
 ### Task 3.3: Implementar logging
-- [ ] Log detection steps:
+- [x] Log detection steps:
   - "Auto-detecting workflow..."
   - "Detected: greenfield/brownfield"
   - "Detected mode: public/no-public-*"
   - "Executing: {workflow}.yaml (mode: {mode})"
-- [ ] Log transparente mas não verboso
+- [x] Log transparente mas não verboso
 
 **Effort:** 1 hour
 
 ### Task 3.4: Implementar help text
-- [ ] `*map --help` mostra usage
-- [ ] Examples claros
-- [ ] Documentar flags avançados
+- [x] `*map --help` mostra usage
+- [x] Examples claros
+- [x] Documentar flags avançados
 
 **Effort:** 0.5 hours
 
 ### Task 3.5: Implementar error handling
-- [ ] Catch detection failures
-- [ ] Mensagens claras
-- [ ] Sugestões de recovery
+- [x] Catch detection failures
+- [x] Mensagens claras
+- [x] Sugestões de recovery
 
 **Effort:** 0.5 hours
 
 ### Task 3.6: Implementar override flags
-- [ ] `--force-mode={mode}` skip detection
-- [ ] `--materials-path={path}` force no-public-materials
-- [ ] Validar flags corretos
+- [x] `--force-mode={mode}` skip detection
+- [x] `--materials-path={path}` force no-public-materials
+- [x] Validar flags corretos
 
 **Effort:** 0.5 hours
 
 ### Task 3.7: Testes integração
-- [ ] Test: `*map {public_figure}` end-to-end
-- [ ] Test: `*map {no-public}` com user input
-- [ ] Test: `*map {existing}` brownfield
-- [ ] Test: `--force-mode` override
-- [ ] Test: `--help`
+- [x] Test: `*map {public_figure}` end-to-end
+- [x] Test: `*map {no-public}` com user input
+- [x] Test: `*map {existing}` brownfield
+- [x] Test: `--force-mode` override
+- [x] Test: `--help`
 
 **Effort:** 0.5 hours
+**Created:** test_map_mind.py with 50+ test cases
 
 ---
 
