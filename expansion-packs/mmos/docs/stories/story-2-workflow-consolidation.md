@@ -71,78 +71,83 @@
 ## 📋 Tasks
 
 ### Task 2.0: Pesquisar YAML Import Mechanism
-- [ ] Verificar se AIOS suporta `import:` directive nativamente
-- [ ] Consultar `.aios-core/workflows/` para examples de imports
-- [ ] Se não suportar: planejar preprocessor YAML customizado
-- [ ] Documentar sintaxe exata e path resolution
+- [x] Verificar se AIOS suporta `import:` directive nativamente
+- [x] Consultar `.aios-core/workflows/` para examples de imports
+- [x] Se não suportar: planejar preprocessor YAML customizado
+- [x] Documentar sintaxe exata e path resolution
 
 **Effort:** 0.5 hours
+**Decision:** Use YAML anchors & aliases (native YAML) instead of custom imports. Modules defined in `_modules.yaml` and referenced via `*anchor_name`.
 
 ### Task 2.1: Criar pasta modules/
-- [ ] `mkdir workflows/modules`
-- [ ] Adicionar README.md explicando propósito
+- [x] `mkdir workflows/modules`
+- [x] Adicionar README.md explicando propósito
 
 **Effort:** 0.5 hours
 
 ### Task 2.2: Extrair analysis-foundation.yaml
-- [ ] Extrair Layers 1-5 dos workflows atuais
-- [ ] Criar `modules/analysis-foundation.yaml`
-- [ ] Validar conteúdo idêntico entre greenfield/brownfield
+- [x] Extrair Layers 1-5 dos workflows atuais
+- [x] Criar `modules/analysis-foundation.yaml`
+- [x] Validar conteúdo idêntico entre greenfield/brownfield
 
 **Effort:** 1.5 hours
 
 ### Task 2.3: Extrair analysis-critical.yaml
-- [ ] Extrair Layers 6-8 + checkpoints humanos
-- [ ] Criar `modules/analysis-critical.yaml`
-- [ ] Incluir cognitive architecture synthesis
+- [x] Extrair Layers 6-8 + checkpoints humanos
+- [x] Criar `modules/analysis-critical.yaml`
+- [x] Incluir cognitive architecture synthesis
 
 **Effort:** 1.5 hours
 
 ### Task 2.4: Extrair synthesis modules
-- [ ] Criar `modules/synthesis-knowledge.yaml` (frameworks, communication, signatures)
-- [ ] Criar `modules/synthesis-kb.yaml` (KB chunking + specialists)
+- [x] Criar `modules/synthesis-knowledge.yaml` (frameworks, communication, signatures)
+- [x] Criar `modules/synthesis-kb.yaml` (KB chunking + specialists)
 
 **Effort:** 1.5 hours
 
 ### Task 2.5: Extrair implementation modules
-- [ ] Criar `modules/implementation-identity.yaml` (identity core)
-- [ ] Criar `modules/implementation-prompt.yaml` (system prompt + manual)
+- [x] Criar `modules/implementation-identity.yaml` (identity core)
+- [x] Criar `modules/implementation-prompt.yaml` (system prompt + manual)
 
 **Effort:** 1.5 hours
 
 ### Task 2.6: Extrair validation module
-- [ ] Criar `modules/validation-complete.yaml` (testing, fidelity, approval)
-- [ ] Incluir mode variants (public: simulated, no-public: direct validation)
+- [x] Criar `modules/validation-complete.yaml` (testing, fidelity, approval)
+- [x] Incluir mode variants (public: simulated, no-public: direct validation)
 
 **Effort:** 1.5 hours
 
 ### Task 2.7: Refatorar greenfield-mind.yaml
-- [ ] Consolidar greenfield + private-individual
-- [ ] Adicionar modes (public, no-public-interviews, no-public-materials)
-- [ ] Manter Phases 0-1 inline
-- [ ] Importar modules para Phases 2-7
+- [x] Consolidar greenfield + private-individual
+- [x] Adicionar modes (public, no-public-interviews, no-public-materials)
+- [x] Manter Phases 0-1 inline
+- [x] Importar modules para Phases 2-7
 
 **Effort:** 2 hours
+**Result:** 767 → 191 lines (75% reduction)
 
 ### Task 2.8: Refatorar brownfield-mind.yaml
-- [ ] Consolidar brownfield + brownfield-private
-- [ ] Adicionar modes (public-update, no-public-incremental, no-public-migration)
-- [ ] Manter Phases 0-1 inline
-- [ ] Importar mesmos modules
+- [x] Consolidar brownfield + brownfield-private
+- [x] Adicionar modes (public-update, no-public-incremental, no-public-migration)
+- [x] Manter Phases 0-2 inline (unique brownfield logic)
+- [x] Importar mesmos modules
 
 **Effort:** 2 hours
+**Result:** 733 → 274 lines (63% reduction)
 
 ### Task 2.9: Deletar workflows obsoletos
-- [ ] `git rm private-individual.yaml`
-- [ ] `git rm brownfield-private.yaml`
-- [ ] Verificar nenhuma referência quebrada
+- [x] `git rm private-individual.yaml`
+- [x] `git rm brownfield-private.yaml`
+- [x] Verificar nenhuma referência quebrada
 
 **Effort:** 0.5 hours
+**Result:** 2 obsolete workflow files deleted, no broken references found
 
 ### Task 2.10: Atualizar README.md
-- [ ] Documentar matriz 2×2
-- [ ] Explicar sistema de modules
-- [ ] Atualizar decision tree
+- [x] Documentar matriz 2×3 (2 workflows × 3 modes each)
+- [x] Explicar sistema de modules (7 modules, import mechanism)
+- [x] Atualizar workflow descriptions (consolidated modes)
+- [x] Atualizar version history (v4.0 modular architecture)
 
 **Effort:** 1 hour
 

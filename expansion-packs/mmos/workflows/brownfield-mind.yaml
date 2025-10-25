@@ -2,9 +2,10 @@ workflow:
   id: brownfield-mind
   name: Brownfield Mind Clone Update
   description: >-
-    Incremental workflow for updating existing mind clones with new sources, refining cognitive architectures,
-    or fixing gaps without reprocessing everything from scratch. Implements rollback safety, regression testing,
-    and version management to preserve existing quality while incorporating improvements.
+    Incremental workflow for updating existing mind clones with new sources, refining cognitive
+    architectures, or fixing gaps without reprocessing everything from scratch. Consolidated
+    workflow supporting three update modes: public figure updates, private incremental updates,
+    and private migrations. Implements rollback safety and regression testing.
   type: brownfield
   project_types:
     - mind-update
@@ -18,716 +19,255 @@ workflow:
     - Previous version validated and documented
     - Clear reason for update documented
 
-  estimated_duration: "2-5 days (60-75% faster than greenfield)"
-  estimated_tokens: "500K-1M tokens (vs 2-3M for greenfield)"
+  modes:
+    public-update:
+      description: "Update existing public figure clone with new sources"
+      research_method: web_scraping_incremental
+      validation_method: simulated
+      estimated_duration: "2-4 hours"
+      estimated_tokens: "500K-1M tokens"
+
+    no-public-incremental:
+      description: "Incremental update with new private materials"
+      research_method: provided_materials_incremental
+      validation_method: direct_person
+      estimated_duration: "2-3 hours"
+      estimated_tokens: "300K-700K tokens"
+
+    no-public-migration:
+      description: "Migrate private individual from scratch (legacy)"
+      research_method: provided_materials_full
+      validation_method: direct_person
+      estimated_duration: "4-6 hours"
+      estimated_tokens: "1-2M tokens"
 
   sequence:
-    # ========================================
-    # PHASE 0: BROWNFIELD ASSESSMENT
-    # ========================================
+    # ========================================================================
+    # PHASE 0: MODE DETECTION & BROWNFIELD ASSESSMENT
+    # ========================================================================
     - agent: pm
       phase: assessment
-      creates: brownfield-plan
-      task: brownfield-update
-      task_mode: assessment
-      prerequisites:
-        - Existing mind directory exists
-        - Current version documented
+      creates: mode-detection-and-backup
+      task: detect-workflow-mode
       outputs:
+        - outputs/minds/{slug}/metadata/mode.yaml
         - outputs/minds/{slug}/.backup-{timestamp}/ (complete backup)
         - outputs/minds/{slug}/docs/logs/{timestamp}-brownfield_start.md
         - outputs/minds/{slug}/docs/logs/{timestamp}-brownfield_plan.yaml
       notes: |
-        MANDATORY FIRST STEP: Create backup and document current state
+        STEP 1: Detect brownfield mode
 
-        1. CREATE COMPLETE BACKUP
-           cp -r outputs/minds/{slug} outputs/minds/{slug}/.backup-{timestamp}/
+        MODE DETECTION LOGIC:
+        - Check existing metadata/mode.yaml
+        - Check sources/ for public vs private materials
+        - Prompt user if ambiguous
 
-           BACKUP IS NON-NEGOTIABLE. Never modify without backup.
+        MODES:
+        1. public-update: Existing public clone, add new web sources
+        2. no-public-incremental: Existing private clone, add materials
+        3. no-public-migration: Convert legacy private (rare)
 
-        2. DOCUMENT CURRENT STATE
-           Record in brownfield_start.md:
-           - System Prompt Version (current)
-           - KB Chunks count
-           - Last update date
-           - Existing specialists
-           - Known limitations
+        STEP 2: Create mandatory backup (NON-NEGOTIABLE)
 
-        3. DOCUMENT UPDATE OBJECTIVE
-           Why are we updating?
-           - New source discovered?
-           - Gap identified?
-           - Architectural inconsistency?
-           - User feedback on incorrect behavior?
-           - Adding specialist variant?
+        cp -r outputs/minds/{slug} outputs/minds/{slug}/.backup-{timestamp}/
 
-        4. READ EXISTING DOCUMENTATION
-           MANDATORY reading before ANY changes:
-           - docs/PRD.md or MIND_BRIEF.md (original objective)
-           - artifacts/cognitive_architecture.yaml (current architecture)
-           - docs/LIMITATIONS.md (known gaps)
-           - docs/logs/ (recent changes)
-           - system_prompts/ (current prompt version)
+        STEP 3: Document current state
+        - System Prompt Version
+        - KB Chunks count
+        - Last update date
+        - Known limitations
 
-        5. CREATE BROWNFIELD PLAN
-           Generate brownfield_plan.yaml:
+        STEP 4: Read existing documentation
+        MANDATORY reading:
+        - docs/PRD.md or MIND_BRIEF.md
+        - artifacts/cognitive_architecture.yaml
+        - docs/LIMITATIONS.md
+        - system_prompts/ (current version)
 
-           ```yaml
-           update_scope:
-             type: incremental | refactoring | major_overhaul
-             impact: low | medium | high
+        STEP 5: Create brownfield plan
+        - Update scope (incremental/refactoring/major)
+        - Areas affected
+        - New sources to add
+        - Gaps to fill
+        - Validation requirements
 
-           areas_affected:
-             sources: true/false
-             artifacts: true/false
-             kb: true/false
-             system_prompts: true/false
-             specialists: true/false
-
-           new_sources:
-             - title: "Source name"
-               type: "interview/book/article"
-               priority: high/medium/low
-               reason: "Why this source matters"
-
-           gaps_to_fill:
-             - "Temporal gap: 2015-2018 missing"
-             - "Topic gap: Decision-making frameworks unclear"
-
-           validation_required:
-             - "Test persona consistency"
-             - "Validate no regression"
-             - "Compare before/after responses"
-
-           rollback_triggers:
-             - "Personality fidelity drops >5%"
-             - "Core values inconsistency"
-             - "Major contradictions introduced"
-           ```
-
-        OUTPUT: Backup created, current state documented, plan approved
-
-    # ========================================
-    # PHASE 1: INCREMENTAL RESEARCH
-    # ========================================
+    # ========================================================================
+    # PHASE 1: INCREMENTAL RESEARCH (Mode-Specific)
+    # ========================================================================
     - agent: analyst
       phase: research
       creates: incremental-sources
       task: research-collection
-      task_mode: incremental
-      prerequisites:
-        - Brownfield plan approved
-        - Backup created
-        - New sources identified
+      task_mode: "{mode}_incremental"
       outputs:
-        - outputs/minds/{slug}/sources/{type}/ (new sources added)
-        - outputs/minds/{slug}/sources/sources_master.yaml (updated, not replaced)
+        - outputs/minds/{slug}/sources/sources_master.yaml (updated)
+        - outputs/minds/{slug}/sources/{type}/* (new sources only)
+        - outputs/minds/{slug}/docs/logs/{timestamp}-new_sources.yaml
       notes: |
-        ADD NEW SOURCES WITHOUT REPROCESSING EVERYTHING
+        MODE-SPECIFIC INCREMENTAL RESEARCH:
 
-        1. ADD NEW SOURCES TO LIBRARY
-           - Place new source in appropriate sources/{type}/ directory
-           - Do NOT delete or modify existing sources
-           - Maintain existing directory structure
+        public-update:
+          - Search for new content since last update
+          - Check temporal context (new books, interviews since X date)
+          - Add to existing sources/
+          - Update sources_master.yaml (append, don't replace)
 
-        2. UPDATE sources_master.yaml (INCREMENTAL)
-           - Append new source entries
-           - Do NOT regenerate from scratch
-           - Maintain existing source metadata
-           - Add "added_date" field for traceability
+        no-public-incremental:
+          - Process newly provided materials
+          - Add to sources/ (interviews/, documents/, etc.)
+          - Update sources_master.yaml incrementally
 
-           Example:
-           ```yaml
-           sources:
-             # ... existing sources preserved ...
-             - id: new_interview_2023
-               type: interview
-               title: "New Interview Title"
-               date: "2023-08-15"
-               added_to_mind: "2025-10-25"  # Brownfield addition
-               priority: high
-               reason: "Fills 2015-2018 temporal gap"
-           ```
+        no-public-migration:
+          - Full research like greenfield no-public-materials
+          - But preserve existing artifacts if valid
 
-        3. QUICK ANALYSIS (NOT FULL PIPELINE)
-           Execute ONLY on new sources:
-           - Source reading (new source only)
-           - Quote extraction (new source only)
-           - Pattern identification (new source only)
+        OUTPUT: Updated source inventory with new materials cataloged
 
-           DO NOT re-analyze existing sources.
-
-        4. VALIDATE SOURCE QUALITY
-           Before proceeding:
-           - Is source high-quality?
-           - Does it align with existing architecture?
-           - Any contradictions with existing sources?
-           - Document compatibility in plan
-
-        OUTPUT: New sources added, inventory updated incrementally
-
-    # ========================================
-    # PHASE 2: DIFFERENTIAL ANALYSIS
-    # ========================================
+    # ========================================================================
+    # PHASE 2: SELECTIVE RE-ANALYSIS
+    # ========================================================================
     - agent: analyst
-      phase: analysis
-      creates: differential-analysis
-      task: cognitive-analysis
-      task_mode: differential
+      phase: re-analysis
+      creates: delta-analysis
+      task: brownfield-delta-analysis
       prerequisites:
         - New sources added
-        - Existing artifacts preserved
+        - Brownfield plan approved
       outputs:
-        - outputs/minds/{slug}/artifacts/NEW_{artifact}.md (temporary)
-        - outputs/minds/{slug}/docs/logs/{timestamp}-diff_analysis.yaml
+        - outputs/minds/{slug}/docs/logs/{timestamp}-delta_analysis.yaml
+        - outputs/minds/{slug}/artifacts/*.yaml (updated only if changed)
       notes: |
-        ANALYZE ONLY NEW SOURCES, THEN MERGE WITH EXISTING
+        SMART RE-ANALYSIS (not full re-run):
 
-        1. RUN ANALYSIS ON NEW SOURCES ONLY
-           - Behavioral patterns (new source)
-           - Communication style (new source)
-           - Mental models (if new ones found)
-           - Values (cross-check against existing)
+        1. Identify what needs re-analysis:
+           - New sources impact which layers?
+           - Which artifacts have gaps being filled?
 
-           Store temporarily as NEW_{artifact}.md
+        2. Selective layer re-processing:
+           - If new sources = same temporal period: Update relevant layers only
+           - If new sources = new topics: May require Layer 5-8 updates
+           - If fixing gap: Re-run specific layer
 
-        2. COMPARE NEW VS EXISTING
-           ```bash
-           diff artifacts/behavioral_patterns.md artifacts/NEW_behavioral_patterns.md
-           ```
+        3. Preserve validated content:
+           - Don't re-analyze what's already validated
+           - Append to existing artifacts
+           - Document what changed in delta_analysis.yaml
 
-           Document differences:
-           - New patterns discovered
-           - Confirmations of existing patterns
-           - Contradictions (IMPORTANT!)
-           - Gaps filled
+        OUTPUT: Delta analysis showing exactly what changed
 
-        3. CONFLICT RESOLUTION
-           If contradictions found:
-           - Is it a productive paradox (Layer 8)?
-           - Is it temporal evolution (person changed)?
-           - Is it source quality issue?
-           - Document resolution strategy
+    # ========================================================================
+    # PHASES 3-7: SHARED PIPELINE (Import Modules - Selective)
+    # ========================================================================
+    # Note: In brownfield, modules are executed SELECTIVELY based on brownfield_plan.yaml
+    # Only re-run phases where delta_analysis indicates changes
 
-        4. INCREMENTAL MERGE
-           - Add NEW insights to existing artifacts
-           - Mark additions: "Added from [source] on [date]"
-           - DO NOT overwrite existing analysis
-           - Preserve version history
+    - import: "modules/analysis-foundation.yaml"
+      # DNA Mental™ Layers 1-5
+      # Executed only if: delta_analysis.layers_affected includes 1-5
 
-           Example:
-           ```markdown
-           ## Behavioral Patterns
+    - import: "modules/analysis-critical.yaml"
+      # DNA Mental™ Layers 6-8 + Checkpoints
+      # Executed only if: delta_analysis.layers_affected includes 6-8
+      # If re-run: Present delta to user for validation
 
-           ### Pattern 1: Daily Routine
-           [Existing analysis...]
+    - import: "modules/synthesis-knowledge.yaml"
+      # Frameworks, communication, signatures
+      # Executed only if: delta_analysis.synthesis_affected = true
 
-           **UPDATE 2025-10-25** (from Interview 2023):
-           New insight: Pattern evolved to include meditation practice.
-           ```
+    - import: "modules/synthesis-kb.yaml"
+      # KB chunking + specialists
+      # ALWAYS re-run to incorporate new sources into KB
 
-        OUTPUT: Differential analysis complete, conflicts resolved
+    - import: "modules/implementation-identity.yaml"
+      # Identity core
+      # Executed only if: delta_analysis.identity_affected = true
 
-    # ========================================
-    # PHASE 3: INCREMENTAL SYNTHESIS
-    # ========================================
-    - agent: analyst
-      phase: synthesis
-      creates: incremental-kb
-      task: knowledge-base-chunking
-      task_mode: incremental
-      prerequisites:
-        - Differential analysis complete
-        - Existing KB preserved
-      outputs:
-        - outputs/minds/{slug}/kb/chunk_{next_number}.md (new chunks only)
-        - outputs/minds/{slug}/artifacts/ (updated frameworks, templates)
-      notes: |
-        UPDATE KNOWLEDGE BASE WITHOUT RECREATING FROM SCRATCH
+    - import: "modules/implementation-prompt.yaml"
+      # System prompt creation (ALWAYS re-run, increment version)
 
-        1. CREATE NEW KB CHUNKS ONLY
-           - Identify last existing chunk number (e.g., chunk_042.md)
-           - Start new chunks at next number (chunk_043.md)
-           - Generate chunks ONLY from new sources
-           - Maintain 500-1000 word chunk size
-           - Use same formatting as existing chunks
-
-        2. UPDATE COMMUNICATION TEMPLATES (IF NEEDED)
-           If new source reveals NEW templates:
-           - Add to artifacts/communication_templates.md
-           - Mark clearly: "Added from [source] on [date]"
-           - Do NOT modify existing templates unless incorrect
-
-        3. UPDATE FRAMEWORKS (IF NEEDED)
-           If new frameworks discovered:
-           - Add to artifacts/frameworks.yaml
-           - Document when framework was developed (temporal context)
-           - Cross-reference with existing frameworks
-
-        4. UPDATE SIGNATURE PHRASES (IF APPLICABLE)
-           New phrases from new sources:
-           - Add to artifacts/signature_phrases.md
-           - Note frequency and context
-           - Avoid duplicating existing phrases
-
-        5. UPDATE KB INDEX (IF EXISTS)
-           If kb/index.md exists:
-           - Add new chunk references
-           - Maintain thematic organization
-           - Update chunk count
-
-        OUTPUT: KB extended with new material, synthesis artifacts updated
-
-    # ========================================
-    # PHASE 4: CONSISTENCY VALIDATION
-    # ========================================
+    # ========================================================================
+    # PHASE 8: REGRESSION TESTING
+    # ========================================================================
     - agent: qa
-      phase: validation
-      creates: consistency-check
-      task: brownfield-update
-      task_mode: consistency_validation
+      phase: regression
+      creates: regression-test
+      task: brownfield-regression
       prerequisites:
-        - Incremental synthesis complete
-        - Backup available for rollback
+        - New system prompt generated
       outputs:
-        - outputs/minds/{slug}/docs/logs/{timestamp}-consistency_check.yaml
-        - outputs/minds/{slug}/docs/logs/{timestamp}-regression_test.md
-      human_checkpoint: true
-      checkpoint_type: CONSISTENCY_REVIEW
+        - outputs/minds/{slug}/docs/logs/{timestamp}-regression_report.yaml
+        - outputs/minds/{slug}/docs/logs/{timestamp}-before_after_comparison.md
       notes: |
-        ENSURE UPDATES DIDN'T BREAK EXISTING QUALITY
+        CRITICAL: Regression testing to ensure no degradation
 
-        1. CONSISTENCY CHECKS
-           Generate consistency_check.yaml:
+        1. Load previous validation results
+           - Read last validation_report.yaml
+           - Extract previous fidelity scores
 
-           ```yaml
-           checks:
-             - name: "Core values unchanged"
-               status: pass | fail | warning
-               notes: "Layer 6 values remain consistent"
+        2. Run validation on NEW system prompt
+           - Same test battery as original
 
-             - name: "Cognitive architecture compatible"
-               status: pass
-               notes: "New patterns integrate cleanly"
+        3. Compare before vs after:
+           - Personality Fidelity: X% → Y%
+           - Knowledge Accuracy: X% → Y%
+           - Style Fidelity: X% → Y%
 
-             - name: "No contradictions introduced"
-               status: warning
-               notes: "Source X suggests Y, but existing said Z. Resolved as paradox."
+        4. Regression detection:
+           - If ANY score drops > 2%: FLAG regression
+           - If overall drops: ABORT, rollback recommended
 
-             - name: "Temporal consistency maintained"
-               status: pass
-               notes: "Timeline coherent, evolution documented"
+        5. Improvement detection:
+           - Document score improvements
+           - Validate gaps were filled
 
-             - name: "Personality fidelity stable"
-               status: pass
-               notes: "Core identity unchanged by update"
-           ```
+        OUTPUT: Regression report with go/no-go decision
 
-        2. REGRESSION TESTING
-           Critical tests:
+    - import: "modules/validation-complete.yaml"
+      # Full validation suite (post-regression)
+      # Mode-specific validation methods apply
 
-           TEST 1: Personality Consistency
-           - Use same prompts as previous version
-           - Compare responses before/after
-           - Acceptable: Minor phrasing changes
-           - Unacceptable: Personality shift
-
-           TEST 2: Knowledge Retention
-           - Previous factual knowledge still accurate?
-           - No information lost from update?
-           - New knowledge additive, not replacing?
-
-           TEST 3: Edge Cases
-           - Re-test documented edge cases
-           - Ensure behavior still correct
-           - Document any changes
-
-        3. FIDELITY COMPARISON
-           Compare before/after:
-           - Personality fidelity (should be stable or improved)
-           - Knowledge accuracy (should improve or stay same)
-           - Style consistency (should be stable)
-
-           ROLLBACK TRIGGERS:
-           - Personality fidelity drops >5%
-           - Core values inconsistent
-           - Major contradictions unresolved
-           - Knowledge regression detected
-
-        4. DOCUMENT REGRESSION TEST RESULTS
-           Create regression_test.md:
-
-           ```markdown
-           # Regression Test - v1.1 → v1.2
-
-           ## Test 1: Personality Consistency
-           **Prompt:** "How do you approach decision-making?"
-           **v1.1 Response:** [preserved]
-           **v1.2 Response:** [new]
-           **Status:** ✅ Consistent | ⚠️ Slight Change | ❌ Regression
-           **Notes:** Slight elaboration added, core approach unchanged
-
-           ## Test 2: Knowledge Retention
-           [...]
-           ```
-
-        HUMAN CHECKPOINT: Consistency Review
-        - Review all consistency checks
-        - Examine regression test results
-        - Decision: APPROVE | REVISE | ROLLBACK
-
-        If APPROVE: Proceed to system prompt update
-        If REVISE: Fix specific issues, re-test
-        If ROLLBACK: Restore backup, document failure reasons
-
-    # ========================================
-    # PHASE 5: SELECTIVE PROMPT UPDATE
-    # ========================================
-    - agent: architect
-      phase: implementation
-      creates: prompt-update-decision
-      task: system-prompt-creation
-      task_mode: incremental
-      prerequisites:
-        - Consistency validation passed
-        - Changes documented
-      outputs:
-        - outputs/minds/{slug}/system_prompts/{timestamp}-v{X.Y}-generalista.md (if updated)
-        - outputs/minds/{slug}/docs/logs/{timestamp}-prompt_changelog.md
-      human_checkpoint: true
-      checkpoint_type: PROMPT_UPDATE_DECISION
-      notes: |
-        UPDATE SYSTEM PROMPT ONLY IF NECESSARY
-
-        1. DECIDE: UPDATE OR NOT?
-
-           UPDATE SYSTEM PROMPT IF:
-           ✅ New source changed core obsession (Layer 7)
-           ✅ Discovered new critical mental model (Layer 5)
-           ✅ Fixed significant error in architecture (Layer 8)
-           ✅ Filled major gap in values hierarchy (Layer 6)
-           ✅ Corrected behavioral pattern misrepresentation
-
-           DO NOT UPDATE IF:
-           ❌ Only added examples/citations (goes to KB only)
-           ❌ Change is superficial/stylistic
-           ❌ New source confirms existing architecture
-           ❌ Update is purely additive to KB
-
-        2. IF UPDATE NEEDED: INCREMENTAL EDIT
-
-           DO NOT regenerate prompt from scratch!
-
-           Process:
-           a) Copy current version to new version file
-           b) Edit specific sections that changed
-           c) Add CHANGELOG section at top
-           d) Increment version number
-
-           Example CHANGELOG:
-           ```markdown
-           ## CHANGELOG
-
-           ### v1.2 - 2025-10-25
-           - Added: Recognition pattern "systems thinking" from Interview 2023
-           - Updated: Core obsession #2 intensity (7→9) based on new evidence
-           - Fixed: Contradiction in decision criteria (resolved as paradox)
-           - KB: Extended with 12 new chunks (043-054)
-
-           ### v1.1 - 2025-09-28
-           [Previous changes...]
-           ```
-
-        3. VERSION MANAGEMENT
-           - Previous: {timestamp}-v1.1-generalista.md (PRESERVED)
-           - New: {timestamp}-v1.2-generalista.md
-           - Keep all previous versions for rollback
-           - Update metadata with version history
-
-        4. SPECIALIST PROMPTS (IF APPLICABLE)
-           If specialists exist:
-           - Decide if they need updates
-           - Update only affected specialists
-           - Maintain version parity or document divergence
-
-        HUMAN CHECKPOINT: Prompt Update Decision
-        - Review proposed changes
-        - Approve version increment
-        - Decision: APPROVE | REVISE | SKIP_UPDATE
-
-        OUTPUT: System prompt updated (if needed), versioned, changelog complete
-
-    # ========================================
-    # PHASE 6: DOCUMENTATION UPDATE
-    # ========================================
+    # ========================================================================
+    # PHASE 9: ROLLBACK OR COMMIT DECISION
+    # ========================================================================
     - agent: pm
-      phase: documentation
-      creates: doc-sync
-      task: brownfield-update
-      task_mode: documentation
+      phase: finalization
+      creates: commit-or-rollback
+      task: brownfield-finalize
       prerequisites:
-        - All updates complete
-        - Testing passed
+        - Regression test complete
+        - Validation passed
       outputs:
-        - outputs/minds/{slug}/docs/README.md (updated)
-        - outputs/minds/{slug}/docs/LIMITATIONS.md (updated)
-        - outputs/minds/{slug}/docs/TODO.md (updated)
-        - outputs/minds/{slug}/docs/logs/{timestamp}-brownfield_complete.md
-      notes: |
-        SYNC DOCUMENTATION WITH CHANGES
-
-        1. UPDATE README.md
-           - Update "Last Update" timestamp
-           - Add note about brownfield update
-           - Update version references
-           - Document new sources added
-
-        2. UPDATE LIMITATIONS.md
-           - Remove gaps that were filled
-           - Add newly discovered gaps (if any)
-           - Update temporal coverage notes
-           - Maintain honesty about constraints
-
-        3. UPDATE TODO.md
-           - Mark completed items
-           - Add new action items discovered
-           - Prioritize remaining work
-           - Document follow-up updates needed
-
-        4. CREATE BROWNFIELD COMPLETION LOG
-           Generate brownfield_complete.md:
-
-           ```markdown
-           # Brownfield Update Complete
-
-           ## Update Summary
-           - **Reason:** [Why this update]
-           - **Duration:** [Time spent]
-           - **Scope:** Incremental update
-
-           ## What Changed
-           - Sources: +2 interviews (filled 2015-2018 gap)
-           - KB: +12 chunks (total: 54)
-           - Artifacts: behavioral_patterns.md updated
-           - System Prompt: v1.1 → v1.2 (added pattern X, fixed contradiction Y)
-
-           ## Tests Passed
-           - ✅ Personality consistency maintained
-           - ✅ Knowledge retention verified
-           - ✅ No regressions detected
-           - ✅ Fidelity: 94% → 96% (+2% improvement)
-
-           ## Remaining Gaps
-           - Topic gap: Early career (pre-2010) still sparse
-           - Format gap: Video content not yet analyzed
-
-           ## Rollback Info
-           - Backup: outputs/minds/{slug}/.backup-{timestamp}/
-           - Previous version: v1.1 (2025-09-28)
-           - Rollback tested: Yes
-           ```
-
-        5. UPDATE METADATA
-           If metadata.yaml exists:
-           - Increment version
-           - Update last_modified
-           - Add update_history entry
-
-        OUTPUT: All documentation synchronized with changes
-
-    # ========================================
-    # PHASE 7: FINAL HUMAN CHECKPOINT
-    # ========================================
-    - agent: pm
-      phase: approval
-      creates: brownfield-approval
-      task: brownfield-update
-      task_mode: final_approval
-      prerequisites:
-        - All updates complete
-        - All tests passed
-        - Documentation updated
-      outputs:
-        - outputs/minds/{slug}/docs/logs/{timestamp}-brownfield_approval.yaml
+        - outputs/minds/{slug}/docs/logs/{timestamp}-brownfield_summary.md
+        - outputs/minds/{slug}/metadata/version_history.yaml (updated)
       human_checkpoint: true
-      checkpoint_type: PRODUCTION_APPROVAL
+      checkpoint_type: COMMIT_ROLLBACK_DECISION
       notes: |
-        FINAL DECISION BEFORE PRODUCTION DEPLOYMENT
+        HUMAN CHECKPOINT: Commit or Rollback?
 
-        Present brownfield update summary:
-
-        ```markdown
-        ## BROWNFIELD UPDATE FINAL REVIEW
-
-        ### Update Scope
-        - Type: Incremental
-        - Impact: Medium
-        - Sources Added: 2
-        - KB Chunks Added: 12
-        - System Prompt: v1.1 → v1.2
-
-        ### Quality Metrics
-        - Personality Fidelity: 94% → 96% (+2%)
-        - Knowledge Accuracy: 92% → 95% (+3%)
-        - Consistency Tests: All passed ✅
-        - Regression Tests: No regressions ✅
-
-        ### Changes Summary
-        - Filled temporal gap: 2015-2018
-        - Added recognition pattern: "systems thinking"
-        - Updated core obsession #2 intensity
-        - Resolved contradiction as productive paradox
-
-        ### Rollback Available
-        - Backup: .backup-{timestamp}/
-        - Tested: Yes
-        - Restore time: <5 minutes
-
-        ---
-
-        APPROVAL DECISION:
-
-        1. APPROVED - Deploy new version to production
-        2. REVISE - Address specific issues before deploy
-        3. ROLLBACK - Restore previous version, document failure
-        ```
-
-        APPROVAL CRITERIA:
-        - ✅ All tests passed
-        - ✅ No regressions detected
-        - ✅ Consistency maintained
-        - ✅ Fidelity stable or improved
-        - ✅ Documentation complete
-        - ✅ Rollback available and tested
+        Present update summary:
+        - Sources added: X new sources
+        - Artifacts changed: [list]
+        - System prompt: v{old} → v{new}
+        - Fidelity change: {old}% → {new}%
+        - Regression detected: YES/NO
 
         User decision:
-        1. APPROVED → Clean up backup, deploy v1.2
-        2. REVISE → Fix issues, re-test, re-present
-        3. ROLLBACK → Restore backup, document lessons learned
+        1. COMMIT - Accept changes, archive backup
+        2. ROLLBACK - Restore from backup, document lessons
+        3. ITERATE - Adjust and re-test
 
-        IF APPROVED:
-        - Move backup to archive (keep for 30 days)
-        - Update production references
-        - Notify stakeholders of new version
+        IF COMMIT:
+          - Update version_history.yaml
+          - Archive .backup-{timestamp}/ for safety
+          - Update catalog.md
 
         IF ROLLBACK:
-        - Restore from backup
-        - Document failure reasons
-        - Re-plan approach
-        - Update TODO.md with learnings
+          - rm -rf outputs/minds/{slug}/*
+          - cp -r .backup-{timestamp}/* outputs/minds/{slug}/
+          - Document why rollback in logs/
 
-        OUTPUT: Final approval documented, production decision executed
+        IF ITERATE:
+          - Keep current state
+          - Return to re-analysis phase
 
-  # ========================================
-  # BROWNFIELD-SPECIFIC RULES
-  # ========================================
-  rules:
-    mandatory:
-      - "ALWAYS create complete backup before ANY changes"
-      - "NEVER overwrite artifacts without backup"
-      - "ALWAYS run regression tests"
-      - "NEVER regenerate from scratch (incremental only)"
-      - "ALWAYS document what changed and why"
-      - "NEVER deploy without human approval"
-
-    best_practices:
-      - "Read existing docs thoroughly before changing"
-      - "Merge incrementally, preserve history"
-      - "Version everything (prompts, artifacts)"
-      - "Test before/after comparisons"
-      - "Document rollback triggers clearly"
-      - "Keep previous versions for 30+ days"
-
-    rollback_triggers:
-      - "Personality fidelity drops >5%"
-      - "Core values become inconsistent"
-      - "Major unresolved contradictions"
-      - "Knowledge regression detected"
-      - "Tests fail repeatedly"
-      - "Architectural integrity compromised"
-
-  # ========================================
-  # COMPARISON: BROWNFIELD VS GREENFIELD
-  # ========================================
-  comparison:
-    time:
-      greenfield: "8-12 days"
-      brownfield: "2-5 days (60-75% faster)"
-
-    scope:
-      greenfield: "Complete pipeline"
-      brownfield: "Selective steps only"
-
-    risk:
-      greenfield: "Low (clean start)"
-      brownfield: "Medium (may break existing)"
-
-    testing:
-      greenfield: "Initial validation"
-      brownfield: "Regression + new validation"
-
-    documentation:
-      greenfield: "Create from scratch"
-      brownfield: "Incremental merge"
-
-    backup:
-      greenfield: "Not required"
-      brownfield: "MANDATORY"
-
-    rollback:
-      greenfield: "N/A (nothing to restore)"
-      brownfield: "Always available and tested"
-
-  # ========================================
-  # VALIDATION CRITERIA
-  # ========================================
-  validation:
-    success_criteria:
-      - Backup created before any changes
-      - Brownfield plan documented and approved
-      - New sources quality validated
-      - Differential analysis complete
-      - Consistency checks all passed
-      - Regression tests all passed
-      - Fidelity stable or improved
-      - Documentation updated and synchronized
-      - Rollback tested and available
-      - Human final approval received
-
-  # ========================================
-  # NOTES
-  # ========================================
-  notes: |
-    BROWNFIELD PHILOSOPHY:
-    "Preserve what works. Improve incrementally. Test obsessively. Document everything."
-
-    KEY INSIGHTS:
-    - 60-75% faster than greenfield when updating existing minds
-    - Lower token cost (500K-1M vs 2-3M)
-    - Higher risk (can break existing quality)
-    - Requires discipline (no shortcuts on backups/testing)
-    - Version management is critical
-    - Rollback capability is non-negotiable
-
-    COMMON MISTAKES TO AVOID:
-    - ❌ Reprocessing everything from scratch (defeats purpose of brownfield)
-    - ❌ Ignoring regression tests (leads to broken deployments)
-    - ❌ Overwriting without backup (no recovery path)
-    - ❌ Skipping documentation updates (docs become stale)
-    - ❌ Deploying without human review (risky changes)
-
-    WHEN TO USE BROWNFIELD:
-    - Adding new source to existing mind
-    - Filling identified gap (temporal, topical)
-    - Fixing architectural inconsistency
-    - Refining based on user feedback
-    - Adding specialist variant
-    - Updating knowledge base
-
-    WHEN NOT TO USE BROWNFIELD:
-    - Creating mind for different person (use greenfield)
-    - Changes so extensive that starting over is cleaner
-    - Existing mind is low quality (better to rebuild)
-
-    WORKFLOW VERSION: 3.0 (DNA Mental™ Brownfield Methodology)
-    LAST UPDATED: 2025-10-25
+        WORKFLOW COMPLETE ✅

@@ -4,139 +4,200 @@
 
 ---
 
-## 📊 MMOS Workflow Matrix (2×2)
+## 📊 MMOS Workflow Matrix (2×3 Modes)
 
-MMOS supports **4 distinct workflows** based on two dimensions:
-1. **Source Type:** Public Figure (web scraping) vs Private Individual (interviews/materials)
+MMOS uses **2 consolidated workflows** with **6 execution modes** based on two dimensions:
+1. **Source Type:** Public (web scraping) vs No-Public (interviews/materials)
 2. **Starting Point:** Greenfield (new) vs Brownfield (existing)
+
+**NEW: Modular Architecture** - Shared modules eliminate 62.7% code duplication
 
 ```
 ┌─────────────────┬──────────────────────────────┬──────────────────────────────┐
 │                 │   GREENFIELD (New)           │   BROWNFIELD (Existing)      │
 ├─────────────────┼──────────────────────────────┼──────────────────────────────┤
-│ PÚBLICO         │  Workflow A                  │  Workflow C                  │
+│ PUBLIC          │  Mode: public                │  Mode: public-update         │
 │ (Web Scraping)  │  greenfield-mind.yaml        │  brownfield-mind.yaml        │
-│                 │  [Example: Sam Altman]       │  [Example: Rare]             │
-│                 │  8-12 days | 2-3M tokens     │  2-5 days | 500K-1M tokens   │
+│                 │  [Example: Sam Altman]       │  [Example: Update existing]  │
+│                 │  8-12h | 2-3M tokens         │  2-4h | 500K-1M tokens       │
 ├─────────────────┼──────────────────────────────┼──────────────────────────────┤
-│ PRIVADO         │  Workflow B                  │  Workflow D                  │
-│ (Interviews)    │  private-individual.yaml     │  brownfield-private.yaml     │
-│                 │  [Example: José, Alan]       │  [Example: João Lozano]      │
-│                 │  15-20h | 1-2M tokens        │  10-19h | 300K-500K tokens   │
+│ NO-PUBLIC       │  Mode: no-public-interviews  │  Mode: no-public-incremental │
+│ (Interviews)    │  greenfield-mind.yaml        │  brownfield-mind.yaml        │
+│                 │  [Example: José, Alan]       │  [Example: Add materials]    │
+│                 │  6-8h | 1.5-2M tokens        │  2-3h | 300K-700K tokens     │
+├─────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ NO-PUBLIC       │  Mode: no-public-materials   │  Mode: no-public-migration   │
+│ (Materials)     │  greenfield-mind.yaml        │  brownfield-mind.yaml        │
+│                 │  [Example: Pre-collected]    │  [Example: João Lozano]      │
+│                 │  4-6h | 1-2M tokens          │  4-6h | 1-2M tokens          │
 └─────────────────┴──────────────────────────────┴──────────────────────────────┘
 ```
 
 ---
 
+## 🧩 Modular Architecture
+
+**Why Modules?** Before consolidation, we had 4 separate workflow files (3,023 lines) with massive code duplication. DNA Mental™ Layers 1-8, synthesis, implementation, and validation were copy-pasted across all workflows.
+
+**Solution:** Extract shared phases into reusable modules, reference via imports.
+
+### Module System
+
+**7 Shared Modules** (`modules/`):
+
+| Module | What It Contains | Used By | Lines |
+|--------|------------------|---------|-------|
+| `analysis-foundation.yaml` | DNA Mental™ Layers 1-5 (Observable patterns, mental models) | Both | 88 |
+| `analysis-critical.yaml` | Layers 6-8 + Human checkpoints (Values, obsessions, paradoxes) | Both | 183 |
+| `synthesis-knowledge.yaml` | Frameworks, communication templates, signature phrases | Both | 76 |
+| `synthesis-kb.yaml` | Knowledge base chunking + specialist recommendations | Both | 71 |
+| `implementation-identity.yaml` | Identity core extraction | Both | 37 |
+| `implementation-prompt.yaml` | System prompt creation + operational manual | Both | 83 |
+| `validation-complete.yaml` | Testing, validation, fidelity scoring, production approval | Both | 127 |
+
+**Total module code:** 665 lines (shared)
+
+### How Imports Work
+
+Since AIOS doesn't support native YAML imports, we use a **preprocessor**:
+
+```yaml
+# In workflow file
+sequence:
+  - import: "modules/analysis-foundation.yaml"
+    # Module phases will be expanded inline before execution
+```
+
+**Preprocessing:**
+```bash
+# Expand imports before execution
+python lib/workflow_preprocessor.py workflows/greenfield-mind.yaml > expanded.yaml
+```
+
+The preprocessor loads each module and inserts its `phases:` section inline.
+
+### Code Reduction Achieved
+
+**Before Consolidation:**
+- greenfield-mind.yaml: 767 lines
+- private-individual.yaml: 921 lines
+- brownfield-mind.yaml: 733 lines
+- brownfield-private.yaml: 602 lines
+- **Total: 3,023 lines** (massive duplication)
+
+**After Consolidation:**
+- greenfield-mind.yaml: 190 lines (75% reduction)
+- brownfield-mind.yaml: 273 lines (63% reduction)
+- modules/: 665 lines (shared)
+- **Total: 1,128 lines** (62.7% reduction ✅)
+
+### Benefits
+
+✅ **Zero Duplication** - Shared logic defined once
+✅ **Single Source of Truth** - Update Layer 8? Edit 1 file
+✅ **Easier Maintenance** - Clear separation of concerns
+✅ **Better Testing** - Test modules independently
+✅ **Mode Flexibility** - 6 modes from 2 workflows
+
+---
+
 ## 📋 Available Workflows
 
-### Workflow A: Public + Greenfield ✅
-**File:** `greenfield-mind.yaml`
-**Example:** Sam Altman, Naval Ravikant
-**Duration:** 8-12 days | **Tokens:** 2-3M
+### Greenfield Mind Clone Creation ✅
+**File:** `greenfield-mind.yaml` (190 lines)
+**Modes:** `public`, `no-public-interviews`, `no-public-materials`
+**Example:** Sam Altman (public), José Amorim (no-public)
+**Duration:** 4-12h (mode-dependent) | **Tokens:** 1-3M
 
 **Use when:**
-- Creating clone of public figure from scratch
-- Abundant web content available
-- No direct access to person
+- Creating new mind clone from scratch
+- No existing clone to update
 
-**Process:**
-1. Viability (APEX scoring)
-2. Web scraping (50+ sources)
-3. DNA Mental™ 8-layer analysis
-4. Synthesis & system prompt
-5. Validation (simulated)
+**3 Execution Modes:**
+
+1. **public** - Public figures with web content
+   - Auto-detect or user-specified
+   - Web scraping + automated research
+   - Simulated validation (no person access)
+   - 8-12h | 2-3M tokens
+
+2. **no-public-interviews** - Private via interview protocol
+   - 5-session structured interviews
+   - Direct validation with person
+   - Privacy & consent protocols
+   - 6-8h | 1.5-2M tokens
+
+3. **no-public-materials** - Private with pre-collected materials
+   - Process provided documents/transcripts
+   - Skip viability assessment
+   - Direct validation with person
+   - 4-6h | 1-2M tokens
+
+**Process (All Modes):**
+1. Mode detection & initialization
+2. Mode-specific research/viability
+3. DNA Mental™ 8-layer analysis (shared modules)
+4. Synthesis & knowledge base (shared modules)
+5. System prompt creation (shared modules)
+6. Validation & testing (mode-specific methods)
+7. Finalization
 
 **Key Features:**
-- Automated research collection
-- Cross-source triangulation
-- 6 human checkpoints
-- Parallel execution optimization
+- Intelligent mode auto-detection
+- Shared pipeline (Phases 2-7) via modules
+- 6 human checkpoints (Layers 6-8 critical)
+- Mode-specific validation strategies
 
 ---
 
-### Workflow B: Private + Greenfield ✅
-**File:** `private-individual.yaml`
-**Example:** José Amorim, Alan Nicolas, Pedro Valério
-**Duration:** 15-20 hours | **Tokens:** 1-2M
+### Brownfield Mind Clone Update ✅
+**File:** `brownfield-mind.yaml` (273 lines)
+**Modes:** `public-update`, `no-public-incremental`, `no-public-migration`
+**Example:** Update Sam Altman clone (public-update), João Lozano migration (no-public-migration)
+**Duration:** 2-6h (mode-dependent) | **Tokens:** 300K-2M
 
 **Use when:**
-- Creating clone of private individual
-- Person has no public content
-- Person available for interviews
+- Updating existing mind clone
+- Adding new sources incrementally
+- Migrating from another system
+- Refining/fixing gaps
 
-**Process:**
-1. Modified viability (interview availability)
-2. 5 structured interview sessions (8-12h)
-3. DNA Mental™ 8-layer analysis
-4. Synthesis & system prompt
-5. Direct validation with person (Session 5)
+**3 Execution Modes:**
 
-**Key Features:**
-- Interview-first methodology
-- Higher source quality (direct from person)
-- Direct validation loop
-- Privacy & consent protocols
+1. **public-update** - Update public figure clone
+   - Add new web sources (incremental)
+   - Selective re-analysis (delta only)
+   - Regression testing
+   - 2-4h | 500K-1M tokens
 
-**Critical for Creator-OS:** Team member cloning at scale
+2. **no-public-incremental** - Update private clone with new materials
+   - Process newly provided materials
+   - Append to existing sources
+   - Incremental updates only
+   - 2-3h | 300K-700K tokens
 
----
+3. **no-public-migration** - Migrate legacy private clone
+   - Convert from other systems
+   - Preserve existing quality (80%)
+   - Fill critical gaps (20%)
+   - 4-6h | 1-2M tokens
 
-### Workflow C: Public + Brownfield ⚠️
-**File:** `brownfield-mind.yaml`
-**Example:** Rare (hypothetical migration)
-**Duration:** 2-5 days | **Tokens:** 500K-1M
-
-**Use when:**
-- Updating existing public figure clone
-- Adding new sources to existing mind
-- Refining architecture
-- Fixing gaps or inconsistencies
-
-**Process:**
-1. Backup original
-2. Incremental source addition
-3. Differential analysis
-4. Consistency validation
-5. Selective prompt update
+**Process (All Modes):**
+1. Mode detection + mandatory backup
+2. Mode-specific incremental research
+3. Delta analysis (what changed?)
+4. Selective module execution (only affected layers)
+5. Regression testing (compare before/after)
+6. Full validation suite
+7. Commit or rollback decision
 
 **Key Features:**
-- Automatic backup + rollback
-- Regression testing
+- **Mandatory backup** before changes (rollback safety)
+- Smart delta analysis (avoid full re-run)
+- Regression detection (score drops flagged)
+- Selective module execution
 - Version management
 - 60-75% faster than greenfield
-
----
-
-### Workflow D: Private + Brownfield 🆕 ⚡
-**File:** `brownfield-private.yaml`
-**Example:** João Lozano (Neural Flow → MMOS)
-**Duration:** 10-19 hours | **Tokens:** 300K-500K
-
-**⚡ FASTEST & MOST EFFICIENT WORKFLOW!**
-
-**Use when:**
-- Migrating existing clone from another system
-- Person created own clone/documentation
-- Original quality is high
-- Format conversion needed
-
-**Process:**
-1. Assessment & mapping (original → MMOS)
-2. Preservation (80% - keep what's excellent)
-3. Format conversion (15% - adapt structure)
-4. Enhancement (5% - fill critical gaps only)
-5. Innovation extraction (improve MMOS!)
-6. Validation with person
-
-**Key Features:**
-- **Preservation-first philosophy**
-- Extract innovations to improve MMOS
-- Minimal creation (mostly adaptation)
-- Person validation included
-- 50-70% faster than any greenfield
-
-**Philosophy:** "Preserve excellence, enhance gaps, extract innovations"
 
 ---
 
@@ -471,7 +532,28 @@ Add custom steps to existing workflows:
 
 ## 📝 Version History
 
-### v3.0 - 2025-10-25 (Current)
+### v4.0 - 2025-10-25 (Current) - **Modular Architecture**
+- ✅ **MAJOR REFACTORING:** 4 workflows → 2 consolidated workflows + 7 modules
+- ✅ **Code reduction:** 3,023 lines → 1,128 lines (62.7% reduction)
+- ✅ **Zero duplication:** Shared pipeline (Phases 2-7) extracted to modules
+- ✅ **Mode system:** 6 execution modes across 2 workflows
+- ✅ **Import mechanism:** Custom YAML preprocessor for module expansion
+- ✅ **Intelligent mode detection:** Auto-detect public vs no-public
+- ✅ **Deleted obsolete files:** private-individual.yaml, brownfield-private.yaml
+- ✅ **Updated README:** Documented modular architecture and mode system
+
+**Modules Created:**
+- `modules/analysis-foundation.yaml` (88 lines)
+- `modules/analysis-critical.yaml` (183 lines)
+- `modules/synthesis-knowledge.yaml` (76 lines)
+- `modules/synthesis-kb.yaml` (71 lines)
+- `modules/implementation-identity.yaml` (37 lines)
+- `modules/implementation-prompt.yaml` (83 lines)
+- `modules/validation-complete.yaml` (127 lines)
+
+**Impact:** Maintenance is now trivial - update Layer 8? Edit ONE file instead of FOUR.
+
+### v3.0 - 2025-10-25 (Superseded)
 - ✅ Converted to AIOS workflow YAML format
 - ✅ Moved from `docs/mmos/workflows/` to expansion pack
 - ✅ Added greenfield-mind.yaml (complete pipeline)

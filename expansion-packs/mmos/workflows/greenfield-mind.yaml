@@ -3,9 +3,8 @@ workflow:
   name: Greenfield Mind Clone Creation
   description: >-
     Complete MMOS pipeline for creating cognitive clones from scratch using DNA Mental™ 8-layer methodology.
-    Implements viability assessment, research collection, cognitive analysis, synthesis, system prompt creation,
-    and validation with human checkpoints at critical decision points. Supports both public figures and
-    private individuals with provided materials.
+    Consolidated workflow supporting three execution modes: public figures (web scraping), private individuals
+    with interviews, and private individuals with pre-existing materials.
   type: greenfield
   project_types:
     - personality-clone
@@ -13,655 +12,155 @@ workflow:
     - ai-mentor
     - specialist-clone
 
-  variants:
-    - public-figure: Web scraping + automated research
-    - private-individual: Provided materials (skip viability)
+  modes:
+    public:
+      description: "Public figure - web scraping + automated research"
+      viability_required: true
+      research_method: web_scraping
+      validation_method: simulated
+      estimated_duration: "8-12 hours"
+      estimated_tokens: "2-3M tokens"
 
-  estimated_duration: "8-12 hours (public) | 4-6 hours (private)"
-  estimated_tokens: "2-3M tokens (public) | 1-2M tokens (private)"
+    no-public-interviews:
+      description: "Private individual - 5-session interview protocol"
+      viability_required: false
+      research_method: interview_protocol
+      validation_method: direct_person
+      estimated_duration: "6-8 hours"
+      estimated_tokens: "1.5-2M tokens"
+
+    no-public-materials:
+      description: "Private individual - provided materials only"
+      viability_required: false
+      research_method: provided_materials
+      validation_method: direct_person
+      estimated_duration: "4-6 hours"
+      estimated_tokens: "1-2M tokens"
 
   sequence:
-    # ========================================
-    # PHASE 0: VIABILITY ASSESSMENT
-    # ========================================
+    # ========================================================================
+    # PHASE 0: MODE DETECTION & INITIALIZATION
+    # ========================================================================
+    - agent: analyst
+      phase: initialization
+      creates: mode-detection
+      task: detect-workflow-mode
+      outputs:
+        - outputs/minds/{slug}/metadata/mode.yaml
+        - outputs/minds/{slug}/metadata/config.yaml
+      notes: |
+        Detect execution mode based on context:
+
+        MODE DETECTION LOGIC:
+        1. Check if mind slug exists in outputs/minds/
+        2. Check for sources/ directory and its contents
+        3. Check for metadata/mode.yaml override
+
+        AUTO-DETECT:
+        - public: No existing directory OR user specifies public figure
+        - no-public-interviews: User requests interview protocol
+        - no-public-materials: sources/ exists with materials
+
+        PROMPT USER if ambiguous:
+        "Which mode for {mind_name}?"
+        1. Public figure (web research)
+        2. Private (5 interview sessions)
+        3. Private (use provided materials)
+
+        SAVE: mode.yaml with selected mode
+        NEXT: Execute mode-specific sequence
+
+    # ========================================================================
+    # PHASE 1: VIABILITY & RESEARCH (Mode-Specific)
+    # ========================================================================
     - agent: analyst
       phase: viability
       creates: viability-assessment
       task: viability-assessment
-      skip_if: private_individual_mode
-      prerequisites:
-        - Mind name identified
-        - Initial context about person
-        - ICP use case defined (optional)
+      skip_if: "mode != 'public'"
       outputs:
         - outputs/minds/{slug}/docs/logs/{timestamp}-viability.yaml
         - outputs/minds/{slug}/docs/PRD.md
         - outputs/minds/{slug}/docs/TODO.md
-        - outputs/minds/{slug}/metadata/dependencies.yaml
       human_checkpoint: true
       checkpoint_type: GO_NO-GO_DECISION
       notes: |
-        Execute APEX scoring (Availability, Public Persona, Expertise, X-Factor):
+        PUBLIC MODE ONLY: Execute APEX viability scoring
 
         APEX THRESHOLDS:
         - Score ≥ 75: Auto-approve (GO)
         - Score 50-74: Human review required
         - Score < 50: Auto-reject (NO-GO)
 
-        Execute ICP Match scoring:
-        - Perfect match: ≥ 90%
-        - Good match: 70-89%
-        - Moderate: 50-69%
-        - Poor: < 50%
-
         HUMAN CHECKPOINT #1: GO/NO-GO Decision
         - Review APEX + ICP scores
-        - Evaluate resource estimates (time, tokens)
         - Decide: GO | NO-GO | REVISE
 
-        IF GO: Generate PRD, TODO, dependencies → Proceed to Phase 1
-        IF NO-GO: Document reasons, clean up, exit gracefully
-        IF REVISE: Adjust scope/ICP, re-run viability
+        NO-PUBLIC MODES: Skip this phase entirely
 
-        PRIVATE INDIVIDUAL MODE:
-        If --private-individual flag is set:
-        - SKIP this entire phase
-        - Person is pre-approved by user
-        - Start directly at Phase 1 (Research)
-
-    # ========================================
-    # PHASE 1: RESEARCH COLLECTION
-    # ========================================
     - agent: analyst
       phase: research
       creates: source-collection
       task: research-collection
-      prerequisites:
-        - PRD approved (or private individual mode)
-        - Mind directory initialized
+      task_mode: "{mode}_research"
       outputs:
         - outputs/minds/{slug}/sources/sources_master.yaml
-        - outputs/minds/{slug}/sources/{type}/ (books, interviews, articles, videos, etc.)
+        - outputs/minds/{slug}/sources/{type}/*
         - outputs/minds/{slug}/metadata/temporal_context.yaml
-        - outputs/minds/{slug}/metadata/priority_matrix.yaml
       validation:
         minimum_sources: 15
         minimum_high_confidence: 5
         minimum_source_types: 3
-        minimum_temporal_periods: 2
       notes: |
-        SOURCE COLLECTION MODES:
-
-        PUBLIC FIGURE MODE (Default):
-        1. Source Discovery
-           - Web scraping: books, articles, podcasts, videos
-           - Identify authoritative sources
-           - Map temporal context (career phases)
-
-        2. Parallel Collection (Optimized)
-           - Batch 1 (Priority 1): Books, official content
-           - Batch 2 (Priority 2): Podcasts, videos
-           - Batch 3 (Priority 3): Secondary sources
-
-        3. Generate sources_master.yaml
-           - Complete inventory with metadata
-           - Quality scoring per source
-           - Temporal mapping
-
-        PRIVATE INDIVIDUAL MODE (--private-individual):
-        1. Scan Provided Materials
-           - Read files from outputs/minds/{slug}/sources/
-           - Supported formats: Markdown, TXT, MBOX, PDF
-           - Organize by type: interviews/, documents/, emails/
-
-        2. Process Provided Sources
-           - Interview transcripts (speaker-labeled markdown)
-           - Written documents (essays, reflections)
-           - Email archives (.mbox format)
-           - Work samples
-
-        3. Generate sources_master.yaml
-           - Catalog all provided materials
-           - Extract metadata (date, topics, format)
-           - No web scraping needed
-
-        VALIDATION:
-        - Check minimum requirements met
-        - If insufficient: Alert user, offer options
-          1. Continue with limited sources (flag constraint)
-          2. Pause for manual source gathering
-          3. Adjust viability decision
-
-        OUTPUT: Complete source inventory ready for analysis
-
-    # ========================================
-    # PHASE 2: COGNITIVE ANALYSIS (DNA Mental™ 8 Layers)
-    # ========================================
-    - agent: analyst
-      phase: analysis
-      creates: cognitive-analysis-layers-1-4
-      task: cognitive-analysis
-      task_mode: layers_1_4
-      prerequisites:
-        - sources_master.yaml complete
-        - Minimum source requirements met
-      outputs:
-        - outputs/minds/{slug}/artifacts/behavioral_patterns.md
-        - outputs/minds/{slug}/artifacts/writing_style.md
-        - outputs/minds/{slug}/artifacts/routine_analysis.md
-        - outputs/minds/{slug}/artifacts/recognition_patterns.yaml
-      parallel_execution: true
-      notes: |
-        DNA Mental™ LAYERS 1-4: Observable Patterns (Foundation)
-
-        Execute in PARALLEL (4 concurrent analyses):
-
-        LAYER 1: Behavioral Patterns
-        - Observable actions and decisions
-        - Recurring behavior patterns
-        - Response to situations
-
-        LAYER 2: Communication Style
-        - Linguistic patterns and vocabulary
-        - Signature phrases and metaphors
-        - Writing/speaking style forensics
-
-        LAYER 3: Routine & Habits
-        - Temporal patterns
-        - Daily/weekly/monthly routines
-        - Work habits and rituals
-
-        LAYER 4: Recognition Patterns (Mental Radars)
-        - What they notice (and ignore)
-        - Pattern recognition capabilities
-        - Filters and attention mechanisms
-
-        No human checkpoint required - foundational observables.
-
-        OUTPUT: 4 artifact files documenting observable patterns
-
-    - agent: analyst
-      phase: analysis
-      creates: cognitive-analysis-layer-5
-      task: cognitive-analysis
-      task_mode: layer_5
-      prerequisites:
-        - Layers 1-4 complete
-      outputs:
-        - outputs/minds/{slug}/artifacts/mental_models.md
-      triangulation: required
-      notes: |
-        DNA Mental™ LAYER 5: Mental Models & Frameworks
-
-        Extract thinking frameworks:
-        - How they interpret reality
-        - Frameworks they apply to problems
-        - Conceptual models they use
-        - Reasoning patterns
-
-        TRIANGULATION REQUIRED:
-        - Cross-reference against Layers 1-4
-        - Validate consistency across sources
-        - Document evidence trail
-
-        OUTPUT: Mental models catalog
-
-    - agent: analyst
-      phase: analysis
-      creates: cognitive-analysis-layer-6
-      task: cognitive-analysis
-      task_mode: layer_6
-      prerequisites:
-        - Layer 5 complete
-      outputs:
-        - outputs/minds/{slug}/artifacts/values_hierarchy.yaml
-      triangulation: required
-      human_checkpoint: true
-      checkpoint_type: LAYER_6_VALIDATION
-      notes: |
-        DNA Mental™ LAYER 6: Values Hierarchy (CRITICAL)
-
-        Extract ranked core values:
-        - What they prioritize above all
-        - Demonstrated vs stated values
-        - Value trade-offs and conflicts
-        - Non-negotiables
-
-        TRIANGULATION REQUIRED:
-        - Stated values vs demonstrated behavior
-        - Cross-source agreement analysis
-        - Temporal consistency check
-
-        HUMAN CHECKPOINT #2: Layer 6 Validation
-
-        Present values hierarchy to user:
-        - Ranked values with evidence
-        - Source citations and examples
-        - Triangulation status (agreement %)
-        - Confidence level
-
-        User decision:
-        1. APPROVE - Proceed to Layer 7
-        2. REVISE - Provide corrections/additions
-        3. RE-ANALYZE - Deeper extraction needed
-
-        VALUES ARE CRITICAL FOR CLONE AUTHENTICITY.
-        Do not proceed without validation.
-
-    - agent: analyst
-      phase: analysis
-      creates: cognitive-analysis-layer-7
-      task: cognitive-analysis
-      task_mode: layer_7
-      prerequisites:
-        - Layer 6 approved
-      outputs:
-        - outputs/minds/{slug}/artifacts/core_obsessions.yaml
-      triangulation: required
-      human_checkpoint: true
-      checkpoint_type: LAYER_7_VALIDATION
-      notes: |
-        DNA Mental™ LAYER 7: Core Obsessions (Driving Forces)
-
-        Identify 2-3 core obsessions:
-        - What topics appear obsessively
-        - What questions drive their work
-        - What problems consume attention
-        - Recurring themes across all contexts
-
-        TRIANGULATION REQUIRED:
-        - Cross-temporal validation
-        - Multi-source confirmation
-        - Intensity and consistency analysis
-
-        HUMAN CHECKPOINT #3: Layer 7 Validation
-
-        Present core obsessions with:
-        - Obsession description
-        - Evidence from sources
-        - Intensity metrics
-        - Historical consistency
-
-        User decision:
-        1. APPROVE - Proceed to Layer 8
-        2. REVISE - Adjust obsessions
-        3. RE-ANALYZE - Need deeper extraction
-
-        OBSESSIONS ARE THE MOTORS OF PERSONALITY.
-
-    - agent: analyst
-      phase: analysis
-      creates: cognitive-analysis-layer-8
-      task: cognitive-analysis
-      task_mode: layer_8
-      prerequisites:
-        - Layer 7 approved
-      outputs:
-        - outputs/minds/{slug}/artifacts/contradictions.yaml
-      triangulation: required
-      human_checkpoint: true
-      checkpoint_type: LAYER_8_VALIDATION
-      notes: |
-        DNA Mental™ LAYER 8: Productive Paradoxes (THE GOLD LAYER)
-
-        Identify productive contradictions:
-        - Simultaneous opposing beliefs
-        - Context-dependent positions
-        - Nuanced complexity
-        - "Both/and" thinking patterns
-
-        WHY LAYER 8 MATTERS:
-        This is what makes AI clones feel genuinely HUMAN.
-        - Prevents robotic consistency
-        - Enables contextual wisdom
-        - Creates authentic personality depth
-
-        Without Layer 8, clones feel "uncanny valley."
-
-        HUMAN CHECKPOINT #4: Layer 8 Validation
-
-        Present each paradox:
-        - Contradiction description ("Belief A" AND "Belief B")
-        - Context where each applies
-        - How they coexist
-        - Evidence from sources
-
-        User decision:
-        1. APPROVE - Proceed to synthesis
-        2. REVISE - Adjust or add paradoxes
-        3. RE-ANALYZE - Deeper paradox extraction
-
-        THIS IS THE DIFFERENTIATOR BETWEEN GOOD AND GREAT CLONES.
-
-    - agent: architect
-      phase: analysis
-      creates: cognitive-architecture
-      task: cognitive-analysis
-      task_mode: architecture
-      prerequisites:
-        - All 8 layers complete and validated
-      outputs:
-        - outputs/minds/{slug}/artifacts/cognitive_architecture.yaml
-        - outputs/minds/{slug}/docs/LIMITATIONS.md
-      notes: |
-        Synthesize all 8 layers into unified cognitive architecture.
-
-        ARCHITECTURE SYNTHESIS:
-        - Integration of all layers
-        - Cross-layer dependencies
-        - Interaction patterns
-        - System dynamics
-
-        Generate LIMITATIONS.md:
-        - Known gaps in knowledge
-        - Topics outside expertise
-        - Temporal boundaries (knowledge cutoff)
-        - Contextual constraints
-
-        OUTPUT: Complete cognitive architecture (3000+ words)
-
-    # ========================================
-    # PHASE 3: SYNTHESIS
-    # ========================================
-    - agent: analyst
-      phase: synthesis
-      creates: framework-extraction
-      task: frameworks-identifier-analysis
-      prerequisites:
-        - Cognitive architecture complete
-      outputs:
-        - outputs/minds/{slug}/artifacts/frameworks.yaml
-      parallel: true
-      notes: |
-        Extract operational frameworks:
-        - Decision-making frameworks
-        - Problem-solving methodologies
-        - Conceptual frameworks they created
-        - Thinking tools they use
-
-        OUTPUT: Frameworks catalog
-
-    - agent: analyst
-      phase: synthesis
-      creates: communication-templates
-      task: communication-templates-extraction
-      prerequisites:
-        - Cognitive architecture complete
-      outputs:
-        - outputs/minds/{slug}/artifacts/communication_templates.md
-      parallel: true
-      notes: |
-        Extract communication patterns:
-        - How they explain complex ideas
-        - Teaching patterns
-        - Analogies and metaphors
-        - Communication structure
-
-        OUTPUT: Communication templates
-
-    - agent: analyst
-      phase: synthesis
-      creates: signature-phrases
-      task: signature-phrases-mining
-      prerequisites:
-        - Cognitive architecture complete
-      outputs:
-        - outputs/minds/{slug}/artifacts/signature_phrases.md
-      parallel: true
-      notes: |
-        Mine signature linguistic elements:
-        - Favorite phrases and sayings
-        - Unique terminology
-        - Verbal tics (natural, not forced)
-        - Conceptual shortcuts
-
-        OUTPUT: Signature phrases catalog
-
-    - agent: analyst
-      phase: synthesis
-      creates: knowledge-base
-      task: knowledge-base-chunking
-      prerequisites:
-        - All analysis artifacts complete
-      outputs:
-        - outputs/minds/{slug}/kb/chunk_*.md
-      notes: |
-        Create optimized knowledge base chunks:
-
-        CHUNKING STRATEGY:
-        - 500-1000 words per chunk
-        - Thematic grouping
-        - Semantic coherence
-        - RAG-optimized
-
-        FLAT STRUCTURE:
-        outputs/minds/{slug}/kb/
-          ├── chunk_001.md
-          ├── chunk_002.md
-          └── chunk_NNN.md
-
-        (No subdirectories - flat for RAG efficiency)
-
-        OUTPUT: Complete knowledge base ready for RAG or fine-tuning
-
-    - agent: architect
-      phase: synthesis
-      creates: specialist-recommendations
-      task: specialist-recommendation
-      prerequisites:
-        - Cognitive architecture complete
-      outputs:
-        - outputs/minds/{slug}/docs/logs/{timestamp}-specialist_recommendations.yaml
-      notes: |
-        Analyze cognitive architecture to recommend specialist variations:
-
-        SPECIALIST TYPES:
-        - "{Mind} as Business Coach"
-        - "{Mind} as Writer's Mentor"
-        - "{Mind} as Strategic Advisor"
-        - "{Mind} as [Domain] Expert"
-
-        Recommend based on:
-        - Core expertise areas
-        - Natural teaching patterns
-        - Specialized knowledge domains
-
-        OUTPUT: Specialist recommendations (optional to implement)
-
-    # ========================================
-    # PHASE 4: IMPLEMENTATION (System Prompt Creation)
-    # ========================================
-    - agent: architect
-      phase: implementation
-      creates: identity-core
-      task: core-essence-extraction
-      prerequisites:
-        - All synthesis artifacts complete
-      outputs:
-        - outputs/minds/{slug}/artifacts/identity_core.yaml
-      notes: |
-        Distill absolute essence into identity primitives:
-
-        IDENTITY CORE:
-        - Who they are (essence)
-        - What drives them (motors)
-        - How they think (cognition)
-        - Why they matter (unique value)
-
-        This becomes the foundation of the system prompt.
-
-        OUTPUT: Identity core YAML
-
-    - agent: architect
-      phase: implementation
-      creates: system-prompt-generalista
-      task: system-prompt-creation
-      task_mode: generalista
-      prerequisites:
-        - identity_core.yaml complete
-        - All 8 layers validated
-        - Knowledge base chunks ready
-      outputs:
-        - outputs/minds/{slug}/system_prompts/{timestamp}-v1.0-generalista.md
-      human_checkpoint: true
-      checkpoint_type: SYSTEM_PROMPT_REVIEW
-      notes: |
-        Compile complete general-purpose system prompt:
-
-        PROMPT STRUCTURE:
-        1. Identity Section (Layer 8 paradoxes integrated)
-        2. Values & Principles (Layer 6 embedded)
-        3. Mental Models (Layer 5 as reasoning patterns)
-        4. Communication Style (Layer 2 as voice)
-        5. Knowledge Integration (KB reference)
-        6. Behavioral Instructions (Layers 1-4)
-        7. Limitations (from LIMITATIONS.md)
-
-        HUMAN CHECKPOINT #5: System Prompt Review
-
-        Present compiled prompt:
-        - Token count statistics
-        - Key characteristics encoded
-        - Preview snippet (first 200 lines)
-
-        User decision:
-        1. APPROVE - Proceed to testing
-        2. ITERATE - Request specific changes
-        3. MAJOR_REVISION - Significant rework needed
-
-        If ITERATE: Apply changes, increment version, re-present
-        If MAJOR_REVISION: Return to synthesis, identify gaps
-
-        OUTPUT: Production system prompt v1.0
-
-    - agent: architect
-      phase: implementation
-      creates: operational-manual
-      task: system-prompt-creation
-      task_mode: operational_manual
-      prerequisites:
-        - System prompt approved
-      outputs:
-        - outputs/minds/{slug}/docs/operational_manual.md
-      notes: |
-        Generate operational manual:
-
-        MANUAL CONTENTS:
-        - How to use the mind clone
-        - Optimal use cases
-        - Known limitations
-        - Troubleshooting guide
-        - Version history
-        - Best practices
-
-        OUTPUT: Complete user manual
-
-    # ========================================
-    # PHASE 5: VALIDATION & TESTING
-    # ========================================
-    - agent: qa
-      phase: testing
-      creates: test-protocol
-      task: mind-validation
-      task_mode: test_generation
-      prerequisites:
-        - System prompt v1.0 complete
-      outputs:
-        - outputs/minds/{slug}/docs/testing_protocol.md
-        - outputs/minds/{slug}/docs/logs/{timestamp}-test_cases.yaml
-      notes: |
-        Generate comprehensive test suite:
-
-        TEST CATEGORIES:
-        1. Personality Consistency Tests
-           - Does it feel like the person?
-           - Paradox navigation (Layer 8 functioning?)
-
-        2. Knowledge Accuracy Tests
-           - Factual correctness
-           - Domain expertise validation
-
-        3. Style Fidelity Tests
-           - Linguistic match
-           - Signature phrases usage
-           - Tone consistency
-
-        4. Edge Case Handling
-           - Unknown topics (should admit)
-           - Controversial subjects
-           - Out-of-expertise scenarios
-
-        OUTPUT: Complete testing protocol
-
-    - agent: qa
-      phase: testing
-      creates: validation-execution
-      task: mind-validation
-      task_mode: validation
-      prerequisites:
-        - Test protocol generated
-      outputs:
-        - outputs/minds/{slug}/docs/logs/{timestamp}-validation_report.yaml
-      notes: |
-        Execute validation test battery:
-
-        RUN TESTS:
-        1. Personality validator (50+ test cases)
-        2. Knowledge validator (100+ factual checks)
-        3. Style validator (linguistic analysis)
-        4. Paradox validator (Layer 8 functioning)
-
-        SCORING:
-        - Personality Fidelity: X%
-        - Knowledge Accuracy: X%
-        - Style Fidelity: X%
-        - Overall Fidelity: X%
-
-        TARGET: ≥ 94% overall fidelity
-
-        OUTPUT: Complete validation report
-
-    - agent: qa
-      phase: testing
-      creates: fidelity-test
-      task: test-fidelity
-      prerequisites:
-        - Validation report complete
-      outputs:
-        - outputs/minds/{slug}/docs/logs/{timestamp}-fidelity_detailed.yaml
-      human_checkpoint: true
-      checkpoint_type: PRODUCTION_APPROVAL
-      notes: |
-        HUMAN CHECKPOINT #6: Production Approval
-
-        Present final validation results:
-
-        OVERALL FIDELITY: X%
-        - Target: 94% (industry standard)
-        - Achieved: X%
-        - Status: PASSED | NEEDS_IMPROVEMENT | FAILED
-
-        DETAILED SCORES:
-        - Personality Fidelity: X% [emoji]
-        - Knowledge Accuracy: X% [emoji]
-        - Style Fidelity: X% [emoji]
-
-        ISSUES FOUND: [if any]
-
-        PRODUCTION READINESS: [assessment]
-
-        User decision:
-        1. DEPLOY - Mind is production-ready
-        2. FIX_ISSUES - Address specific issues first
-        3. ABORT - Fundamental issues, major rework
-
-        IF DEPLOY: Finalize documentation, update catalog
-        IF FIX_ISSUES: Create fix task list, iterate, re-test
-        IF ABORT: Document lessons learned, archive project
-
-    # ========================================
-    # PHASE 6: FINALIZATION
-    # ========================================
+        MODE-SPECIFIC RESEARCH:
+
+        public:
+          - Web scraping (books, articles, podcasts, videos)
+          - Parallel collection (batch 1-3)
+          - Generate sources_master.yaml
+
+        no-public-interviews:
+          - Execute 5-session interview protocol
+          - Record and transcribe sessions
+          - Speaker-labeled markdown transcripts
+          - Save to sources/interviews/
+
+        no-public-materials:
+          - Scan outputs/minds/{slug}/sources/
+          - Catalog provided materials
+          - Supported: MD, TXT, MBOX, PDF
+          - Generate sources_master.yaml
+
+        VALIDATION: Check minimum requirements met
+
+    # ========================================================================
+    # PHASES 2-7: SHARED PIPELINE (Import Modules)
+    # ========================================================================
+    - import: "modules/analysis-foundation.yaml"
+      # DNA Mental™ Layers 1-5 (Observable patterns + mental models)
+
+    - import: "modules/analysis-critical.yaml"
+      # DNA Mental™ Layers 6-8 + Checkpoints (Values, obsessions, paradoxes)
+
+    - import: "modules/synthesis-knowledge.yaml"
+      # Frameworks, communication templates, signature phrases
+
+    - import: "modules/synthesis-kb.yaml"
+      # Knowledge base chunking + specialist recommendations
+
+    - import: "modules/implementation-identity.yaml"
+      # Identity core extraction
+
+    - import: "modules/implementation-prompt.yaml"
+      # System prompt creation + operational manual
+
+    - import: "modules/validation-complete.yaml"
+      # Testing, validation, fidelity scoring, production approval
+      # Mode-specific: public uses simulated validation, no-public uses direct person validation
+
+    # ========================================================================
+    # PHASE 8: FINALIZATION
+    # ========================================================================
     - agent: pm
       phase: finalization
       creates: pipeline-summary
@@ -676,92 +175,16 @@ workflow:
         Generate pipeline execution summary:
 
         SUMMARY CONTENTS:
-        - Resources used (time, tokens)
-        - Outputs generated (count)
-        - Quality metrics (APEX, ICP, fidelity)
-        - Human checkpoints executed (6 total)
-        - Deliverables checklist
-        - Status: COMPLETE & PRODUCTION-READY
+        - Execution mode used
+        - All phases completed
+        - Checkpoints validated
+        - Fidelity scores achieved
+        - Files generated inventory
+        - Total time and token usage
+        - Next steps (deployment, specialist creation)
 
-        Update master catalog:
-        - Add mind entry to outputs/minds/catalog.md
-        - Document version, fidelity, use cases
+        Update catalog.md:
+        - Add new mind to master list
+        - Include key metadata
 
-        Present final summary to user with next steps.
-
-        WORKFLOW COMPLETE! 🎉
-
-  # ========================================
-  # VALIDATION CRITERIA
-  # ========================================
-  validation:
-    success_criteria:
-      - Viability validated (APEX ≥ 50, human GO decision) OR private individual mode
-      - Sources adequate (≥15 total, ≥5 high-confidence, ≥3 types)
-      - 8 Layers complete with required triangulation
-      - Human checkpoints passed (all 6 completed with approval)
-      - System prompt compiled (v1.0 with all layers integrated)
-      - Validation passed (≥94% fidelity OR documented reasons)
-      - Documentation complete (PRD, operational manual, testing protocol)
-      - Production approved (human final approval)
-      - Catalog updated (mind registered)
-      - Pipeline summary generated
-
-  # ========================================
-  # PERFORMANCE & OPTIMIZATION
-  # ========================================
-  optimization:
-    parallel_execution_opportunities:
-      - Phase 1: Parallel source collection (3 batches)
-      - Phase 2: Layers 1-4 concurrent execution
-      - Phase 3: Framework extraction + KB chunking parallel
-      - Phase 5: Test cases parallel execution
-
-    estimated_timings:
-      public_figure_full: "8-12 hours wall time, 2-3M tokens"
-      private_individual: "4-6 hours wall time, 1-2M tokens"
-      preview_mode: "30 minutes, 50K tokens (viability only)"
-
-  # ========================================
-  # ERROR HANDLING
-  # ========================================
-  error_handling:
-    viability_failure:
-      action: Offer scope adjustment or termination
-      document: Log reasons for NO-GO decision
-
-    insufficient_sources:
-      action: Alert user, offer manual collection pause
-      continue: Only if user approves with limitations
-
-    human_checkpoint_rejection:
-      action: Return to previous phase
-      iterate: With user guidance
-      max_iterations: 3
-
-    validation_failure:
-      action: Generate detailed issue report
-      offer: Fix issues OR deploy with documented limitations
-
-    critical_error:
-      action: Backup current state
-      rollback: To last stable checkpoint
-      notify: User with error details
-
-  # ========================================
-  # NOTES
-  # ========================================
-  notes: |
-    KEY INSIGHTS:
-
-    - Layer 8 (Paradoxes) is the differentiator: Makes clones feel authentically human vs robotic
-    - Human checkpoints are non-negotiable: Do not skip or automate critical validation points
-    - Triangulation is mandatory for Layers 5-8: Multiple source confirmation required
-    - Private individual mode saves 60-75% resources: Use when materials provided
-    - Fidelity target is 94%: Industry standard for high-quality personality clones
-    - Pipeline is resumable: Can pause at phase boundaries and resume later
-    - All outputs are versioned: Maintain history for regression analysis
-    - Security: Never expose source material in system prompts (only synthesized patterns)
-
-    WORKFLOW VERSION: 3.0 (DNA Mental™ 8-Layer Methodology)
-    LAST UPDATED: 2025-10-25
+        WORKFLOW COMPLETE ✅
