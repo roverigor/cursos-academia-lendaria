@@ -1,8 +1,6 @@
-# ⚠️ IMPLEMENTATION NOTE:
-# Steps involving "market-research" and "reformulate-course-brief" are currently PLANNED but not implemented.
-# These steps are documented for future integration. The workflow functions without them.
-# Current working steps: init-course-brownfield, organize-files, extract-icp, extract-voice,
-#                         infer-objectives, analyze-gaps, generate-curriculum, generate-lessons
+# ✅ IMPLEMENTATION NOTE:
+# All steps fully implemented including market-research (lib/market_researcher.py + scripts/run_market_research.py)
+# and reformulate-course-brief. Market research uses hybrid agent-Python execution model.
 
 workflow:
   id: brownfield-course
@@ -11,7 +9,7 @@ workflow:
     Agent workflow for upgrading existing course materials to CreatorOS structure.
     Auto-extracts ICP, voice patterns, and learning objectives from legacy content.
     Implements GPS + Didática Lendária pedagogical frameworks with quality validation.
-    Note: Market research steps are planned for future implementation.
+    Includes market research for competitive intelligence and modernization insights.
   type: brownfield
   project_types:
     - course-upgrade

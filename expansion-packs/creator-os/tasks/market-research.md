@@ -5,9 +5,9 @@
 **Type:** Discovery & Intelligence
 **Elicit:** true
 **Duration:** 5-10 minutes
-**Status:** 🚧 **PLANNED - NOT YET IMPLEMENTED**
+**Status:** ✅ **IMPLEMENTED** (Hybrid: Python lib + Agent execution)
 
-> ⚠️ **IMPLEMENTATION STATUS:** This task is fully documented but not yet implemented in code. The market research functionality (web search, competitor analysis, gap identification) requires implementation in `lib/market_researcher.py`. This is a planned feature for a future release.
+> ℹ️ **IMPLEMENTATION:** This task is implemented as a hybrid system combining `lib/market_researcher.py` (1,155 LOC) with agent-based WebSearch/WebFetch execution. Run via `python scripts/run_market_research.py <course-slug>`.
 
 ---
 

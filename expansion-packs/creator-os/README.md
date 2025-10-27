@@ -121,9 +121,9 @@ mkdir -p outputs/courses/meu-curso/sources/
 
 ## 📚 Course Generation Features (Epic 3)
 
-### 🚧 **Competitive Intelligence & Market Research** (Planned)
+### ✅ **Competitive Intelligence & Market Research** (Implemented)
 
-CreatorOS will include **automated market research** to create strategically superior courses:
+CreatorOS includes **automated market research** to create strategically superior courses:
 
 🔍 **Automated Competitive Analysis**
 - Analyzes 10-15 competitive courses automatically (5-10 min)
@@ -148,13 +148,13 @@ CreatorOS will include **automated market research** to create strategically sup
 
 **Result:** Courses that are **strategically differentiated**, not generic copies.
 
-**Example:** Building a Supabase course? Research will show:
+**Example:** Building a Supabase course? Research shows:
 - ✅ Gap: No course for frontend → fullstack transition (P0 opportunity)
 - ✅ Gap: Only 2/12 courses cover production deployment
 - ✅ Differentiation: ICP-specific examples (React context) vs generic tutorials
 - ✅ Pricing: $79 (mid-tier quality positioning)
 
-**Integration:** 🚧 Planned for both greenfield and brownfield workflows.
+**Integration:** ✅ Available for both greenfield and brownfield workflows via `python scripts/run_market_research.py`.
 
 ---
 
@@ -169,7 +169,7 @@ CreatorOS will include **automated market research** to create strategically sup
 - curriculum.yaml (modules + lessons)
 - course-outline.md
 - Assessments (quizzes + final project)
-- **🚧 PLANNED:** Market research reports (4 markdown files)
+- **✅ AVAILABLE:** Market research reports (4 markdown files)
 
 ✅ **Voice Fidelity** (Optional MMOS Integration)
 - 90%+ instructor voice preservation
@@ -183,8 +183,8 @@ CreatorOS will include **automated market research** to create strategically sup
 
 **Scenario A: Greenfield Pure** (No pre-existing brief)
 1. Fill COURSE-BRIEF.md manually (8 sections) ⏸️ **HALT for manual filling**
-2. **🚧 Automated market research** (competitive intelligence - planned)
-3. **🚧 COURSE-BRIEF reformulation** (integrates research + preserves vision - planned)
+2. **✅ Automated market research** (competitive intelligence)
+3. **✅ COURSE-BRIEF reformulation** (integrates research + preserves vision)
 4. Review reformulated brief (user approval checkpoint)
 5. AI generates curriculum (based on optimized brief)
 6. Approve curriculum → Generate lessons
@@ -193,8 +193,8 @@ CreatorOS will include **automated market research** to create strategically sup
 **Scenario B: Pre-Created Brief** 🆕 **YOUR WORKFLOW!**
 1. ✅ **SKIP manual filling** (COURSE-BRIEF detected as 70%+ complete)
 2. ✅ **Detect /sources/ materials** (optional support files)
-3. **🚧 Auto-proceed to market research** (no manual halt - planned)
-4. **🚧 COURSE-BRIEF reformulation** (integrates research - planned)
+3. **✅ Auto-proceed to market research** (no manual halt)
+4. **✅ COURSE-BRIEF reformulation** (integrates research)
 5. Review reformulated brief (user approval checkpoint)
 6. AI generates curriculum → Approve → Generate lessons
 7. GPS + DL validation
@@ -210,8 +210,8 @@ CreatorOS will include **automated market research** to create strategically sup
 1. Auto-organize files (transcripts, videos, docs)
 2. Auto-extract ICP, voice patterns, learning objectives
 3. Gap analysis skips 60-80% of manual questions
-4. **🚧 Market research** (compares legacy with market leaders - planned)
-5. **🚧 COURSE-BRIEF reformulation** (legacy + research insights - planned)
+4. **✅ Market research** (compares legacy with market leaders)
+5. **✅ COURSE-BRIEF reformulation** (legacy + research insights)
 6. Review reformulated brief → Generate curriculum
 7. Preserves instructor voice + modernizes content
 
@@ -313,8 +313,8 @@ python scripts/generate_course.py meu-curso --resume
 **Course Generation (Greenfield/Brownfield):**
 - `*new {slug}` - 🆕 Create new course from scratch (greenfield workflow)
 - `*upgrade {slug}` - 🆕 Upgrade existing course (brownfield workflow)
-- `*market-research {slug}` - 🚧 Competitive market research (10-15 courses analyzed) - PLANNED
-- `*reformulate-course-brief {slug}` - 🚧 Integrate research insights into brief - PLANNED
+- `*market-research {slug}` - ✅ Competitive market research (10-15 courses analyzed)
+- `*reformulate-course-brief {slug}` - ✅ Integrate research insights into brief
 - `*generate-curriculum {slug}` - Generate curriculum.yaml from COURSE-BRIEF
 - `*generate-lessons {slug}` - Generate all lessons (GPS + Didática Lendária)
 - `*validate-course {slug}` - Comprehensive quality validation
