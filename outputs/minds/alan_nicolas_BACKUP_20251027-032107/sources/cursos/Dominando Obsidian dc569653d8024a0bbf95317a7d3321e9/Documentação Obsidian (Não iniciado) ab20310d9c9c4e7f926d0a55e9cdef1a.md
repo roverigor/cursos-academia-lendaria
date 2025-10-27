@@ -1,1 +1,0 @@
-# Documentação Obsidian (Não iniciado)
