@@ -1,0 +1,95 @@
+name: super-agentes
+version: 1.0.0
+short-title: SuperAgentes Pack
+description: >-
+  SuperAgentes is a meta-orchestrator expansion pack that provides unified access
+  to specialized database and design system capabilities. It consolidates DB Sage
+  (database architecture & operations) and Design System (design pattern management)
+  into a single, seamless interface with intelligent command routing.
+author: AIOS Community
+slashPrefix: SA
+
+agents:
+  - id: super-agentes
+    name: SuperAgentes Orchestrator
+    file: agents/super-agentes.md
+    icon: ⚡
+    description: Meta-orchestrator that coordinates DB Sage and Design System agents
+
+  - id: db-sage
+    name: DB Sage
+    file: agents/db-sage.md
+    icon: 🗄️
+    description: Database Architect & Operations Engineer for Supabase/PostgreSQL
+
+  - id: design-system
+    name: Design System Engineer
+    file: agents/design-system.md
+    icon: 🎨
+    description: Design System Architect & Pattern Engineer (placeholder)
+    status: placeholder
+
+capabilities:
+  database:
+    - Schema design and domain modeling
+    - Safe migrations with snapshots and rollback
+    - RLS security policies and audits
+    - Query performance optimization
+    - Supabase setup and operations
+    - SQL execution and CSV import
+
+  design_system:
+    - Design pattern scanning (future)
+    - Component generation (future)
+    - Design system documentation (future)
+    - Design token management (future)
+    - Style consistency validation (future)
+
+command_routing:
+  prefixes:
+    db: Routes to DB Sage context
+    ds: Routes to Design System context
+
+  examples:
+    - "*db:create-schema - Design database schema"
+    - "*db:apply-migration - Run migration with snapshot"
+    - "*db:rls-audit - Audit RLS coverage"
+    - "*ds:help - Show design system commands (placeholder)"
+
+resources:
+  tasks: 23 tasks (20 database + 3 AIOS core shared tasks)
+  templates: 12 database templates
+  checklists: 3 database quality checklists
+  data: 5 knowledge base documents
+  examples: Task execution examples
+  docs: Implementation guides and schema comparisons
+
+integration:
+  type: Orchestrator
+  pattern: Meta-agent with prefix routing
+  agents_included: 2
+  agents_complete: 1
+  agents_placeholder: 1
+
+requires:
+  aios-version: ">=4.0.0"
+
+tools:
+  - supabase-cli
+  - psql
+  - pg_dump
+  - postgres-explain-analyzer
+
+notes: |
+  SuperAgentes follows the AIOS Orchestrator pattern, providing both:
+  1. Agent transformation: `*agent db-sage` for extended work in one context
+  2. Prefix routing: `*db:comando` for quick single-command execution
+
+  The design-system agent is currently a placeholder and will be developed
+  in future releases. DB Sage is fully functional with 20+ production-ready
+  database tasks and templates.
+
+status:
+  db-sage: Production Ready (v1.1.0)
+  design-system: Placeholder
+  overall: Functional with one complete agent

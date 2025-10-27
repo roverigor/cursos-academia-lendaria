@@ -1,0 +1,7 @@
+id,name,description,icon,sort_order
+business_entrepreneurship,"Business & Entrepreneurship","Building, scaling, and operating businesses",,1
+marketing_sales,"Marketing & Sales","Attracting, converting, and retaining customers",,2
+technology_engineering,"Technology & Engineering","Building technical products and systems",,3
+creative_content,"Creative & Content","Creating compelling content and experiences",,4
+strategy_consulting,"Strategy & Consulting","Advising on strategic decisions",,5
+personal_development,"Personal Development","Growth, mindset, and self-improvement",,6
