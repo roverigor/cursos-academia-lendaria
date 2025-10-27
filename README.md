@@ -1,524 +1,418 @@
-# 🧠 Lendário.ai - Mente Lendária
+# Mente Lendária - Mind Mapper OS (MMOS)
 
-> **Uma biblioteca de consciências. Distribuindo cognição humana de gênios em escala.**
+> **AI-orchestrated cognitive cloning platform**
 
-Mente Lendária combina o framework **AIOS-FULLSTACK** para desenvolvimento ágil orientado por IA com o **MMOS (Mind Mapper OS)** para capturar e replicar o DNA Mental - a arquitetura cognitiva única de cada mente brilhante - tornando-a acessível e amplificando a capacidade de quem usa.
+Create production-ready AI personality clones with authentic cognitive patterns, communication styles, and decision-making frameworks.
 
-**Mentores lendários na palma da sua mão.**
-
----
-
-## 📋 Índice
-
-- [Visão Geral](#-visão-geral)
-- [Componentes Principais](#-componentes-principais)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Quick Start](#-quick-start)
-- [Ferramentas e Scripts](#-ferramentas-e-scripts)
-- [Documentação](#-documentação)
-- [Desenvolvimento](#-desenvolvimento)
-- [Contribuindo](#-contribuindo)
+**Command:** `*map {name}` → 6-phase pipeline → cognitive clone
 
 ---
 
-## 🎯 Visão Geral
+## What It Does
 
-O Mente Lendária é uma plataforma completa que permite:
+**MMOS (Mind Mapper OS)** creates AI clones of individuals by:
 
-1. **Mapear Arquiteturas Cognitivas**: Pipeline estruturado para extrair padrões de pensamento, comunicação e tomada de decisão de personalidades específicas
-2. **Criar Clones de IA**: Gerar system prompts que replicam fielmente essas personalidades em LLMs
-3. **Orquestrar Desenvolvimento**: Framework AIOS para gerenciar todo o ciclo de desenvolvimento com agentes especializados
-4. **Automatizar Workflows**: Launcher, board de telemetria e assistentes para execução eficiente
+1. **Mapping Cognitive Architecture** - Extract thinking patterns, communication style, decision frameworks
+2. **Generating System Prompts** - Create production-ready prompts that replicate personality
+3. **Achieving 94% Fidelity** - Validated through debate-engine testing
+4. **Auto-Detection** - Greenfield/Brownfield + Public/No-Public workflows
 
-### Definições Fundamentais
-
-- **Cognição**: Padrões únicos de processamento de informação de cada indivíduo
-- **Arquitetura Mental**: Framework pessoal de tomada de decisão + heurísticas + viéses
-- **DNA Mental**: Conjunto de algoritmos cognitivos replicáveis e transferíveis
-
-### Solução First Principles
-
-1. **Captura**: Isolar padrões cognitivos de gênios vivos/mortos através de análise massiva de conteúdo
-2. **Codificação**: Transformar padrões em algoritmos replicáveis via fine-tuning de LLMs
-3. **Distribuição**: Escala global via APIs e interfaces conversacionais
-4. **Amplificação**: 10x na capacidade cognitiva do usuário médio
-
-### Casos de Uso
-
-- **Consultoria Virtual**: Obter insights de "mentores virtuais" baseados em grandes personalidades
-- **Análise de Decisões**: Simular como diferentes líderes abordariam problemas específicos
-- **Criação de Conteúdo**: Gerar conteúdo no estilo de copywriters, estrategistas ou pensadores renomados
-- **Aprendizado**: Estudar padrões de pensamento de gênios aplicados a contextos práticos
-- **Amplificação Cognitiva**: 10x na capacidade de processamento e tomada de decisão
+**Current Status:**
+- Check minds: `ls outputs/minds/ | wc -l`
+- Check courses: `ls outputs/courses/ | wc -l`
+- Database version: `psql "$SUPABASE_DB_URL" -c "SELECT version FROM migrations ORDER BY applied_at DESC LIMIT 1"`
 
 ---
 
-## 🏗️ Componentes Principais
+## Quick Start
 
-### 1. AIOS-FULLSTACK Framework
+### Prerequisites
 
-Sistema de orquestração para desenvolvimento ágil com IA que inclui:
+- **Python 3.8+** and pip
+- **Node.js 18+** and npm
+- **PostgreSQL client** (psql)
+- Git repository access
+- API keys configured (see `.env.example`)
 
-- **Agentes Especializados**: PM, PO, Architect, Dev, QA, SM, Analyst
-- **Workflows Estruturados**: Planning → Development → QA → Release
-- **Task Management**: Sistema de tarefas, templates e checklists
-- **Multi-IDE Support**: Claude Code, Cursor, Windsurf, VSCode
+### Installation
 
-📚 [Documentação AIOS](.aios-core/user-guide.md)
+```bash
+# 1. Clone repository
+git clone https://github.com/oalanicolas/mmos.git
+cd mente_lendaria
 
-### 2. MMOS (Mind Mapper OS) v3.0
+# 2. Install dependencies
+npm install                 # Node.js dependencies
+pip install -r requirements.txt  # Python dependencies (if needed)
 
-Pipeline industrial para mapeamento cognitivo em 6 fases:
+# 3. Configure environment
+cp .env.example .env
+# Edit .env with your API keys:
+#   ANTHROPIC_API_KEY
+#   GOOGLE_API_KEY
+#   SUPABASE_DB_URL
+#   etc.
 
-```
-Viability → Research → Analysis → Synthesis → Implementation → Testing
+# 4. Verify setup
+npm test                    # Run test suite
 ```
 
-**Recursos principais:**
-- 📋 **Catálogo de Prompts**: Sistema YAML para gerenciar 48+ prompts especializados
-- 🚀 **AIOS Launcher**: Script automatizado para executar prompts sequencialmente
-- 📊 **Orchestration Board**: Dashboard de telemetria e progresso
-- 🎯 **Clones Especializados**: Suporte para clones generalistas e especialistas
+---
 
-📚 [Documentação MMOS](docs/mmos/README.md)
+## Core Commands
 
-### 3. Biblioteca de Minds/Clones
+### Mind Mapping (MMOS)
 
-Coleção de personalidades mapeadas, incluindo:
+```bash
+# Auto-detect workflow and create cognitive clone
+*map {name}                 # Full 6-phase pipeline
 
-- **Empreendedores**: Elon Musk, Gary Vee
-- **Copywriters**: Dan Kennedy, Eugene Schwartz
-- **Estrategistas**: Alex Hormozi, Dan Koe
-- **Pensadores**: Mark Manson, Kapil Gupta, Nassim Taleb
-- **Criadores**: Leonardo da Vinci
-- **Técnicos**: Andrej Karpathy, Brad Frost
-- **E mais...**
+# Examples:
+*map daniel_kahneman        # Public figure (web scraping)
+*map pedro_valerio          # Private person (materials-based)
 
-📚 [Catálogo de Clones](outputs/minds/README.md) | [Status dos Clones](outputs/minds/CLONES_STATUS.md)
+# Entry point: expansion-packs/mmos/lib/map_mind.py
+```
+
+### Database Operations
+
+```bash
+# Set environment
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+export SUPABASE_DB_URL="postgresql://..."
+
+# Run migration
+./scripts/db-migrate.sh supabase/migrations/{file}.sql
+
+# Rollback
+./scripts/db-rollback.sh supabase/migrations/{file}.sql
+
+# Test database
+./scripts/db-test.sh
+```
+
+### Testing & Validation
+
+```bash
+npm test                    # Jest test suite
+npm run test:watch         # Watch mode
+npm run test:coverage      # Coverage report
+npm run validate:minds     # Validate minds
+npm run validate:sources   # Validate sources
+npm run validate:all       # All validations
+```
+
+### Data Pipeline
+
+```bash
+node scripts/pipeline/import-analysis.js
+node scripts/pipeline/validate-integration.js
+node scripts/pipeline/populate-sources.js
+```
 
 ---
 
-## 📁 Estrutura do Projeto
+## Project Structure
 
 ```
 mente_lendaria/
+├── .aios-core/             # AI orchestration framework
+│   ├── agents/             # Agent definitions
+│   ├── tasks/              # Executable tasks
+│   ├── templates/          # Document templates
+│   ├── checklists/         # Quality gates
+│   └── workflows/          # Multi-step automation
 │
-├── 📂 .aios-core/              # Framework AIOS-FULLSTACK
-│   ├── agents/                 # Definições de agentes (YAML)
-│   ├── tasks/                  # Workflows executáveis
-│   ├── templates/              # Templates de documentos
-│   ├── checklists/             # Checklists de validação
-│   ├── utils/                  # Utilitários JavaScript
-│   └── user-guide.md           # Guia do usuário AIOS
+├── expansion-packs/        # Modular extensions
+│   ├── mmos/               # Mind Mapper OS (cognitive cloning)
+│   ├── creator-os/         # Course generation
+│   ├── etl-data-collector/ # Data collection
+│   ├── innerlens/          # Psychometric profiling
+│   ├── super-agentes/      # Advanced orchestration
+│   └── fragments/          # Knowledge extraction
 │
-├── 📂 outputs/                 # 🎯 Artefatos gerados (NÃO versionados)
-│   ├── courses/                # Cursos gerados (CreatorOS)
-│   ├── minds/                  # Clones de personalidades processados
-│   │   ├── [nome-clone]/       # Estrutura individual de cada clone
-│   │   │   ├── docs/           # Docs mind-específicos
-│   │   │   ├── sources/        # Material fonte
-│   │   │   ├── analysis/       # Análises de personalidade
-│   │   │   ├── kb/             # Knowledge base
-│   │   │   ├── system-prompts/ # System prompts versionados
-│   │   │   └── specialists/    # Clones especializados
-│   │   ├── README.md           # Guia de boas práticas
-│   │   └── catalog.md          # Catálogo completo
-│   └── database/               # Arquivos de database SQLite
-│       └── mmos.db             # Database principal
+├── docs/                   # Documentation (versioned)
+│   ├── README.md           # Documentation hub
+│   ├── prd/                # Product requirements
+│   ├── methodology/        # Frameworks (DNA Mental™)
+│   ├── guides/             # User/developer guides
+│   ├── architecture/       # System architecture
+│   ├── stories/            # Development stories
+│   ├── logs/               # Execution logs
+│   └── mmos/               # MMOS-specific docs
 │
-├── 📂 docs/                    # 📚 Documentação (versionada)
-│   ├── README.md               # Master documentation navigation
-│   ├── prd/                    # Product requirement documents
-│   │   └── mmos-prd.md
-│   ├── methodology/            # Metodologias e frameworks
-│   │   ├── dna-mental.md
-│   │   ├── prompt-engineering.md
-│   │   ├── tools-guide.md
-│   │   └── mmos-templates/
-│   ├── guides/                 # Guias de usuário e desenvolvedor
-│   │   ├── folder-structure.md
-│   │   ├── outputs-guide.md
-│   │   ├── integration-etl-mmos.md
-│   │   └── mmos-stage-guides/
-│   ├── architecture/           # Arquitetura de sistema
-│   │   └── docs-reorganization-2025-10-17.md
-│   ├── stories/                # Development stories
-│   ├── logs/                   # Logs de execução (versionados!)
-│   │   └── YYYY-MM-DD-*.md
-│   └── mmos/                   # MMOS-specific documentation
-│       ├── README.md           # Visão geral AIOS-first
-│       ├── workflows/          # Workflows passo-a-passo
-│       ├── prompts.yaml        # Catálogo único de prompts
-│       ├── prompts/            # Todos os prompts (48+)
-│       ├── templates/          # Templates por fase
-│       ├── scripts/            # Automação (launcher, board)
-│       ├── launcher/           # AIOS Launcher
-│       ├── board/              # Orchestration Board
-│       ├── epics/              # MMOS development epics
-│       ├── stories/            # MMOS stories
-│       ├── reports/            # Executive reports
-│       └── qa/                 # Quality assurance
+├── outputs/                # Generated artifacts (NOT versioned)
+│   ├── minds/              # Cognitive clones (51+)
+│   ├── courses/            # Generated courses (17+)
+│   ├── database/           # SQLite database
+│   ├── debates/            # Debate outputs
+│   └── swipe/              # Swipe files
 │
-├── 📂 .claude/                 # Configuração Claude Code
-├── 📂 .cursor/                 # Configuração Cursor
-├── 📂 .windsurf/               # Configuração Windsurf
+├── supabase/               # Database infrastructure
+│   ├── migrations/         # Database migrations
+│   ├── schemas/            # Schema snapshots
+│   ├── rollback/           # Rollback scripts
+│   └── tests/              # Migration tests
 │
-└── README.md                   # Este arquivo
+├── scripts/                # Automation utilities
+│   ├── db-migrate.sh       # Migration runner
+│   ├── db-rollback.sh      # Rollback executor
+│   ├── db-test.sh          # Testing runner
+│   ├── database/           # Database utilities
+│   ├── pipeline/           # Data processing
+│   └── migration/          # Data migration
+│
+├── package.json            # Node.js config (v3.0.0)
+├── .env                    # API keys (NOT versioned)
+└── README.md               # This file
+```
+
+**Full structure:** See `docs/guides/folder-structure.md`
+
+---
+
+## MMOS Pipeline (6 Phases)
+
+```
+Phase 1: Viability Assessment
+         ↓ APEX + ICP scoring (GO/NO-GO)
+Phase 2: Research Collection
+         ↓ Parallel ETL (web scraping + materials)
+Phase 3: Cognitive Analysis
+         ↓ DNA Mental™ 8-layer analysis
+Phase 4: Synthesis
+         ↓ Framework extraction + personality modeling
+Phase 5: Implementation
+         ↓ System prompt generation (generalista + specialists)
+Phase 6: Testing
+         ↓ Debate-engine validation (94% fidelity target)
+```
+
+**Output:** `outputs/minds/{mind_slug}/`
+
+**Workflow variants:**
+- Greenfield (new clone) vs Brownfield (update)
+- Public (web-scraped) vs No-Public (user-provided)
+- Auto-detection via workflow detector
+
+---
+
+## Documentation
+
+### Essential Guides
+
+- **[Documentation Hub](docs/README.md)** - Master navigation
+- **[MMOS PRD](docs/prd/mmos-prd.md)** - Product vision
+- **[DNA Mental™](docs/methodology/dna-mental.md)** - Cognitive framework
+- **[Folder Structure](docs/guides/folder-structure.md)** - Organization guide
+- **[Outputs Guide](docs/guides/outputs-guide.md)** - Generated artifacts specs
+
+### MMOS Workflows
+
+- **[Brownfield Workflow](docs/mmos/workflows/brownfield-workflow.md)** - Update existing clones
+- **[Auto-Detection System](docs/mmos/workflows/auto-detection-system.md)** - Workflow routing
+- **[Workflow Matrix](docs/mmos/workflows/workflow-matrix-decision.md)** - Decision guide
+
+### For Developers
+
+- **[Architecture](docs/architecture/)** - System design
+- **[Tech Stack](docs/architecture/tech-stack.md)** - Technologies used
+- **[Coding Standards](docs/architecture/coding-standards.md)** - Code conventions
+- **[.claude/CLAUDE.md](.claude/CLAUDE.md)** - Claude Code configuration
+
+---
+
+## Technology Stack
+
+### Languages
+- **Python 3** - MMOS pipeline, CreatorOS, utilities
+- **JavaScript/Node.js** - ETL collector, database scripts
+- **Bash** - Database automation, migrations
+- **YAML** - Workflows, templates, configs
+- **SQL** - Database schemas, migrations
+
+### Core Technologies
+
+| Component | Technology |
+|-----------|-----------|
+| **Database** | SQLite + Supabase PostgreSQL |
+| **LLM APIs** | Anthropic Claude, Google Gemini |
+| **Search** | Brave Search, Exa AI |
+| **Web Scraping** | RSS Parser, Domino, HTMLParser2 |
+| **Testing** | Jest, Python unittest |
+| **Orchestration** | AIOS Framework |
+
+### Key Dependencies
+
+```json
+{
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "js-yaml": "^4.1.0",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
 ```
 
 ---
 
-## 🚀 Quick Start
+## Development
 
-### Para Usuários Finais
+### Story-Driven Development
 
-1. Acesse [lendario.ai](https://lendario.ai)
-2. Escolha seu mentor virtual
-3. Converse naturalmente
-4. Receba insights personalizados
+1. Work from stories in `docs/stories/`
+2. Mark checkboxes: `[ ]` → `[x]`
+3. Maintain File List section
+4. Follow acceptance criteria exactly
 
-### Para Desenvolvedores/Contribuidores
+### Git Conventions
 
-#### Pré-requisitos
-- **Python 3.8+** e pip
-- **Node.js 18+** e npm/yarn
-- **Homebrew** (macOS) ou **apt** (Linux)
-- Git com acesso ao repositório completo
-- Credenciais/API keys configuradas (ver `.env.example`)
-
-#### Instalação Rápida
-
-```bash
-# 1. Clone o repositório
-git clone [repository-url]
-cd mmos
-
-# 2. Instalar dependências CLI
-brew bundle                    # macOS
-# ou: sudo apt install yt-dlp ffmpeg exiftool  # Linux
-
-# 3. Instalar dependências Python
-pip install -r requirements.txt
-
-# 4. Configurar API keys
-cp .env.example .env
-# Editar .env com suas keys (ver docs/API_SETUP_GUIDE.md)
-
-# 5. Verificar instalação
-./mmos/scripts/check-api-keys.sh
-
-# 6. Instale o AIOS Framework
-npx bmad-method install
-```
-
-#### Checklist de Setup
-
-- [ ] Estrutura AIOS instalada e verificada
-- [ ] Dependências Python instaladas (`requirements.txt`)
-- [ ] CLI tools instalados (yt-dlp, ffmpeg, exiftool)
-- [ ] API keys configuradas e testadas
-- [ ] Estrutura de mind criada com script
-- [ ] Pipeline MMOS compreendido (`mmos/README.md`)
-- [ ] Outputs Guide consultado (`mmos/docs/OUTPUTS_GUIDE.md`)
-
-### 2. Executar AIOS Launcher (MMOS)
-
-O launcher automatiza a execução sequencial dos prompts do pipeline MMOS:
-
-```bash
-# Executar próximo prompt pendente para uma personalidade
-cd docs/mmos
-./scripts/aios-launcher.sh --mind nassim_taleb
-
-# Ver status geral
-./scripts/aios-launcher.sh --status
-
-# Listar comandos disponíveis
-./scripts/aios-launcher.sh --help
-```
-
-### 3. Visualizar Progresso (Board)
-
-```bash
-# Ver progresso de uma personalidade
-aios-board view --mind nassim_taleb
-
-# Ver overview de todas as personalidades
-aios-board overview
-
-# Dashboard de telemetria
-aios-board telemetry
-
-# Auto-refresh
-aios-board view --mind nassim_taleb --watch
-```
-
-### 4. Usar Agentes AIOS (IDE)
-
-**Claude Code:**
-```bash
-/po          # Product Owner
-/sm          # Scrum Master
-/dev         # Developer
-/qa          # Quality Assurance
-```
-
-**Cursor/Windsurf:**
-```bash
-@po Create next story
-@sm Draft story from epic
-@dev Implement feature
-@qa Review implementation
-```
-
----
-
-## 🛠️ Ferramentas e Scripts
-
-### AIOS Launcher
-
-Script principal para automação do pipeline MMOS:
-
-```bash
-./scripts/aios-launcher.sh [OPTIONS]
-
-Opções:
-  --mind <name>      # Especificar personalidade
-  --phase <phase>    # Filtrar por fase
-  --status           # Ver status geral
-  --reset <mind>     # Resetar progresso
-  --help             # Ajuda completa
-```
-
-📚 [Documentação Launcher](docs/mmos/launcher/README.md)
-
-### Orchestration Board
-
-Dashboard de telemetria e visualização de progresso:
-
-```bash
-aios-board <command> [OPTIONS]
-
-Comandos:
-  view              # Visualizar progresso de um mind
-  overview          # Overview multi-mind
-  telemetry         # Dashboard de telemetria
-  checkpoint        # Registrar checkpoint de validação
-  export            # Exportar snapshot
-```
-
-📚 [Documentação Board](docs/mmos/board/README.md)
-
-### Brownfield Assistant (em desenvolvimento)
-
-Assistente para aplicar MMOS a clones existentes:
-
-```bash
-./scripts/brownfield-assistant.sh --mind <name> --analyze
-```
-
----
-
-## 📚 Documentação
-
-### Guias Principais
-
-- **[AIOS User Guide](.aios-core/user-guide.md)** - Como usar o framework AIOS
-- **[AIOS Working in Brownfield](.aios-core/working-in-the-brownfield.md)** - Trabalhar com projetos existentes
-- **[MMOS README](docs/mmos/README.md)** - Visão geral do Mind Mapper OS
-- **[Minds README](outputs/minds/README.md)** - Boas práticas para clones
-
-### Documentação MMOS
-
-- **[PRD](docs/prd/mmos-prd.md)** - Product Requirements Document
-- **[DNA Mental Methodology](docs/methodology/dna-mental.md)** - Metodologia de mapeamento
-- **[Outputs Guide](docs/guides/outputs-guide.md)** - Outputs esperados por fase
-- **[Prompt Engineering Guide](docs/methodology/prompt-engineering.md)** - Guia de engenharia de prompts
-- **[Tools Guide](docs/methodology/tools-guide.md)** - Ferramentas recomendadas
-- **[Brownfield Workflow](docs/mmos/workflows/brownfield-workflow.md)** - Workflow para clones existentes
-- **[Parallel Collection Guide](docs/mmos/workflows/parallel-collection-guide.md)** - Coleta paralela de dados
-
-### Guias por Fase (MMOS)
-
-- **[Viability Guide](docs/guides/mmos-stage-guides/viability.md)** - Fase de viabilidade
-- **[Research Guide](docs/guides/mmos-stage-guides/research/README.md)** - Fase de pesquisa
-- **[Analysis Guide](docs/guides/mmos-stage-guides/analysis.md)** - Fase de análise
-
-### Stories (Desenvolvimento)
-
-- **[Story 1.1 - AIOS Launcher](docs/mmos/stories/story-1.1-aios-launcher.md)** - ✅ Completo
-- **[Story 1.2 - Orchestration Board](docs/stories/mmos-legacy/story-1.2-orchestration-board.md)** - ✅ Completo
-- **[Story 1.3 - Brownfield Assistant](docs/stories/mmos-legacy/story-1.3-brownfield-assistant.md)** - 🔄 Em progresso
-- **[Story 1.4 - Auto-Execution Engine](docs/stories/mmos-legacy/story-1.4-auto-execution-engine.md)** - 📋 Planejado
-
----
-
-## 💻 Desenvolvimento
-
-### Estrutura de Desenvolvimento AIOS
-
-O projeto segue o modelo **Story-Driven Development**:
-
-1. **Stories** definem features completas
-2. **Epics** agrupam stories relacionadas
-3. **Tasks** são passos executáveis dentro de stories
-4. **Checklists** garantem qualidade e completude
-
-### Workflow de Desenvolvimento
-
-```mermaid
-graph TD
-    A[SM: Draft Next Story] --> B{User Approval}
-    B -->|Approved| C[Dev: Sequential Task Execution]
-    B -->|Needs Changes| A
-    C --> D[Dev: Implement + Tests]
-    D --> E[Dev: Run Validations]
-    E --> F{User Verification}
-    F -->|Approved| G[Commit Changes]
-    F -->|QA Review| H[QA: Review + Refactor]
-    F -->|Needs Fixes| C
-    H --> I{QA Decision}
-    I -->|Approved| G
-    I -->|Needs Work| C
-    G --> J[Mark Story Done]
-```
-
-### Convenções
-
-#### Commits
 ```bash
 # Conventional commits
-feat: implementar nova feature [Story X.Y]
-fix: corrigir bug em component
-docs: atualizar documentação
-chore: manutenção geral
+feat: add feature [Story X.Y]
+fix: correct bug
+docs: update documentation
+chore: maintenance
 ```
-
-#### Nomenclatura de Arquivos
-- **Geral**: `kebab-case` (snake_case para MMOS)
-- **System Prompts**: `YYYYMMDD-HHMM-vX.Y-tipo-descriptor.md`
-- **Logs**: `YYYYMMDD-HHMM-nome-arquivo.md`
-- **Timestamps**: `YYYYMMDD-HHMM`
 
 ### Testing
 
 ```bash
-# Executar testes
-npm test
-
-# Linting
-npm run lint
-
-# Type checking
-npm run typecheck
-```
-
-### Comandos Úteis
-
-```bash
-# Criar log com timestamp
-timestamp=$(date +"%Y%m%d-%H%M")
-echo "# Log Title" > docs/mmos/logs/${timestamp}-NAME.md
-
-# Validar estrutura mínima de mind
-git rev-parse --show-toplevel
-ls outputs/minds/mind_name/{sources,artifacts,kb,docs,system_prompts}
-
-# Criar estrutura de novo mind
-cd docs/mmos/scripts/universal
-./create-mind-structure.sh mind_name
-
-# Validar mind completo
-./validate-mind.sh mind_name
+npm test                   # Run all tests
+npm run test:watch        # Watch mode
+npm run validate:all      # Validate minds + sources
+./scripts/db-test.sh      # Database tests
 ```
 
 ---
 
-## 🛡️ Ética & Transparência
+## Expansion Packs
 
-### ✅ Nossos Compromissos
+| Pack | Purpose | Entry Point |
+|------|---------|-------------|
+| **mmos** | Cognitive cloning | `expansion-packs/mmos/lib/map_mind.py` |
+| **creator-os** | Course generation | `expansion-packs/creator-os/lib/brief_parser.py` |
+| **etl-data-collector** | Data collection | `expansion-packs/etl-data-collector/run-collection.js` |
+| **innerlens** | Psychometric profiling | `expansion-packs/innerlens/` |
+| **super-agentes** | Advanced orchestration | `expansion-packs/super-agentes/` |
+| **fragments** | Knowledge extraction | `expansion-packs/fragments/` |
 
-- **Identificação Clara**: Minds sempre identificados como IA
-- **Amplificação, não Substituição**: Foco em aumentar capacidades humanas
-- **Transparência Total**: Metodologia e processos documentados
-- **Privacidade**: Respeito rigoroso aos dados e privacidade
-- **Código Aberto**: Framework e metodologia disponíveis publicamente
-
-### ❌ O que NÃO fazemos
-
-- **Impersonação Enganosa**: Nunca fazemos passar IA por pessoa real
-- **Deepfakes ou Manipulação**: Sem conteúdo enganoso ou manipulativo
-- **Conteúdo Prejudicial**: Bloqueio de uso malicioso ou prejudicial
-- **Violação de Privacidade**: Respeito absoluto aos direitos individuais
-- **Comercialização Não Autorizada**: Uso ético e legal das personalidades
+Each pack has its own `config.yaml` and documentation.
 
 ---
 
-## 🤝 Contribuindo
+## File Organization Rules
 
-### Como Contribuir
+### CRITICAL: outputs/ vs docs/
 
-1. **Fork** o projeto
-2. Crie uma **branch** para sua feature (`git checkout -b feature/AmazingFeature`)
-3. **Commit** suas mudanças (`git commit -m 'feat: add amazing feature'`)
-4. **Push** para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um **Pull Request**
+**Decision Tree:**
 
-### Áreas para Contribuição
+1. **"Is this about a SPECIFIC mind (name in content)?"**
+   - **YES** → `outputs/minds/{mind_slug}/docs/`
+   - **NO** → Continue...
 
-- 🧠 **Novos Clones**: Adicionar novas personalidades ao catálogo
-- 📝 **Prompts**: Melhorar prompts existentes ou criar novos
-- 🛠️ **Ferramentas**: Desenvolver novos scripts e automações
-- 📚 **Documentação**: Melhorar guias e tutoriais
-- 🐛 **Bug Fixes**: Corrigir problemas identificados
+2. **"Is it a script/template for MMOS?"**
+   - **YES** → `expansion-packs/mmos/`
+   - **NO** → Continue...
 
----
+3. **"Is it about MMOS system/process?"**
+   - **YES** → `docs/mmos/`
+   - **NO** → Continue...
 
-## 📞 Suporte e Comunidade
+4. **"Is it a methodology/framework?"**
+   - **YES** → `docs/methodology/`
+   - **NO** → See `docs/guides/folder-structure.md`
 
-### Contato e Recursos
-
-- 🌐 **Website**: [lendario.ai](https://lendario.ai)
-- 📧 **Email**: alan@academialendaria.ai
-- **GitHub Issues**: [Reportar bugs ou solicitar features](../../issues)
-- **Discord AIOS**: [Comunidade AIOS](https://discord.gg/gk8jAdXWmj)
-- **YouTube**: [AIOS Framework Channel](https://www.youtube.com/@AIOSFramework)
-- **Documentação**: [GitHub Docs](https://github.com/Pedrovaleriolopez/aios-fullstack/docs)
+**Examples:**
+- ✅ `outputs/minds/joao_lozano/docs/validation.md` (mind-specific)
+- ✅ `docs/mmos/workflows/brownfield.md` (system workflow)
+- ✅ `docs/methodology/dna-mental.md` (framework)
+- ❌ `docs/mmos/joao-lozano/` (mind dirs belong in outputs/)
 
 ---
 
-## 👥 Time
+## Ethics & Transparency
 
-**Desenvolvido pela Academia Lendar[IA]**
+### Our Commitments
+
+- **Clear Identification** - AI minds always identified as AI
+- **Amplification, not Replacement** - Augment human capabilities
+- **Total Transparency** - Methodology and processes documented
+- **Privacy** - Rigorous respect for data and privacy
+- **Open Source** - Framework and methodology publicly available
+
+### What We DON'T Do
+
+- **Deceptive Impersonation** - Never pass AI as real person
+- **Deepfakes or Manipulation** - No deceptive or manipulative content
+- **Harmful Content** - Block malicious or harmful use
+- **Privacy Violation** - Absolute respect for individual rights
+- **Unauthorized Commercialization** - Ethical and legal use only
+
+---
+
+## Support
+
+### Resources
+
+- **GitHub Issues:** [Report bugs or request features](https://github.com/oalanicolas/mmos/issues)
+- **Documentation:** [docs/README.md](docs/README.md)
+- **AIOS Community:** [Discord](https://discord.gg/gk8jAdXWmj)
+
+### Contact
+
+- **Website:** lendario.ai
+- **Email:** alan@academialendaria.ai
+
+---
+
+## Contributing
+
+1. Fork the project
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
+
+### Areas for Contribution
+
+- 🧠 New cognitive clones
+- 📝 Improved prompts
+- 🛠️ Scripts and automation
+- 📚 Documentation
+- 🐛 Bug fixes
+
+---
+
+## License
+
+© 2025 Academia Lendária - All rights reserved
+
+---
+
+## Team
+
+**Developed by Academia Lendária**
 
 - **Alan Nicolas** - Founder & Chief Architect
 
 ---
 
-## 🙏 Agradecimentos
+## Acknowledgments
 
-- **AIOS-FULLSTACK Team**: Framework de orquestração
-- **Comunidade Open Source**: Contribuições e feedback
-- **Personalidades Mapeadas**: Inspiração e conhecimento compartilhado
-
----
-
-## 🔗 Links Úteis
-
-- [AIOS-FULLSTACK GitHub](https://github.com/Pedrovaleriolopez/aios-fullstack)
-- [Claude Code](https://claude.ai/claude-code)
-- [Anthropic](https://www.anthropic.com)
+- **AIOS-FULLSTACK Team** - Orchestration framework
+- **Open Source Community** - Contributions and feedback
+- **Mapped Personalities** - Inspiration and shared knowledge
 
 ---
 
 <div align="center">
 
-**Desenvolvido com 🧠 e IA pela Academia Lendar[IA]**
+**Developed with 🧠 and AI by Academia Lendária**
 
-*"Democratizando o acesso às mentes mais brilhantes da humanidade"*
-
----
-
-**© 2025 Academia Lendar[IA] - Todos os direitos reservados**
+*"Democratizing access to humanity's most brilliant minds"*
 
 </div>

@@ -1,216 +1,191 @@
-# Mente Lendária - Documentation
+# Documentation Hub
 
-**Welcome to the Mente Lendária documentation hub.**
-
-This directory contains all project documentation organized by category for easy navigation.
+**Mente Lendária project documentation organized by category.**
 
 ---
 
-## 📁 Documentation Structure
+## Structure
 
-### 🏗️ Architecture & System Design
-- **[architecture/](./architecture/)** - System architecture and technical design
-  - Brownfield architecture analysis
-  - System design documents
-  - Technical specifications
-
-### 📋 Product Requirements
+### Product & Requirements
 - **[prd/](./prd/)** - Product requirement documents
-  - [MMOS PRD](./prd/mmos-prd.md) - Mind Mapper OS product vision
-  - CreatorOS PRD (planned)
-  - InnerLens PRD (planned)
+  - [MMOS PRD](./prd/mmos-prd.md) - Mind Mapper OS vision
 
-### 🧠 Methodologies & Frameworks
-- **[methodology/](./methodology/)** - Process frameworks and best practices
-  - [DNA Mental](./methodology/dna-mental.md) - Cognitive profiling framework
-  - [Prompt Engineering](./methodology/prompt-engineering.md) - AI prompt best practices
-  - [Tools Guide](./methodology/tools-guide.md) - Development tools overview
-  - [MMOS Templates](./methodology/mmos-templates/) - Document templates
+### Methodologies & Frameworks
+- **[methodology/](./methodology/)** - Process frameworks
+  - [DNA Mental™](./methodology/dna-mental.md) - Cognitive profiling framework
+  - [Prompt Engineering](./methodology/prompt-engineering.md) - AI prompts
+  - [Tools Guide](./methodology/tools-guide.md) - Development tools
 
-### 📚 Guides
+### Guides
 - **[guides/](./guides/)** - User and developer guides
-  - [Folder Structure](./guides/folder-structure.md) - Project organization guide
-  - [Outputs Guide](./guides/outputs-guide.md) - Generated content specifications
-  - [ETL/MMOS Integration](./guides/integration-etl-mmos.md) - Data pipeline integration
-  - [MMOS Stage Guides](./guides/mmos-stage-guides/) - Stage-by-stage process guides
+  - [Folder Structure](./guides/folder-structure.md) - Project organization
+  - [Outputs Guide](./guides/outputs-guide.md) - Generated content specs
+  - [ETL/MMOS Integration](./guides/integration-etl-mmos.md) - Data pipeline
+  - [MMOS Stage Guides](./guides/mmos-stage-guides/) - Phase-by-phase
 
-### 📖 Development Stories
-- **[stories/](./stories/)** - Development stories and tasks
-  - Current active stories
-  - [MMOS Legacy Stories](./stories/mmos-legacy/) - Historical MMOS stories
+### Architecture
+- **[architecture/](./architecture/)** - System architecture
+  - Technical design documents
+  - Architecture decisions
+  - Tech stack specifications
 
-### 📝 Execution Logs
-- **[logs/](./logs/)** - Process execution logs (versioned)
-  - Refactoring session logs
-  - Architecture decision records
-  - Migration documentation
-  - QA session reports
+### Development
+- **[stories/](./stories/)** - Development stories
+  - [MMOS Legacy](./stories/mmos-legacy/) - Historical stories
+- **[logs/](./logs/)** - Execution logs (versioned documentation)
+  - Session logs (YYYY-MM-DD-*.md)
+  - Architecture decisions
+  - Migration records
 
----
+### Database
+- **[database/](./database/)** - Database design docs
 
-## 🧬 MMOS-Specific Documentation
-
-The MMOS (Mind Mapper OS) system has its own dedicated documentation:
-
-**[docs/mmos/](./mmos/)** - MMOS system documentation
-- **[workflows/](./mmos/workflows/)** - Step-by-step workflow documentation
-  - [AIOS Workflow](./mmos/workflows/aios-workflow.md) - Agent-based workflow
-  - [Brownfield Workflow](./mmos/workflows/brownfield-workflow.md) - Legacy content migration
-  - [Private Individual Workflow](./mmos/workflows/private-individual-simplified.md) - Greenfield process
-  - [Workflow Decision Matrix](./mmos/workflows/workflow-matrix-decision.md) - Choosing the right workflow
-
-- **[reports/](./mmos/reports/)** - Executive reports and analyses
-- **[epics/](./mmos/epics/)** - MMOS development epics and roadmap
-- **[stories/](./mmos/stories/)** - MMOS-specific development stories
-- **[qa/](./mmos/qa/)** - Quality assurance and benchmarks
-- **[taxonomy/](./mmos/taxonomy/)** - Trait and personality taxonomies
-- **[validations/](./mmos/validations/)** - Validation checklists and reports
+### Research
+- **[research/](./research/)** - Research materials
 
 ---
 
-## 🎯 Quick Navigation
+## MMOS-Specific
+
+**[mmos/](./mmos/)** - MMOS system documentation
+
+### Key Directories
+- **[workflows/](./mmos/workflows/)** - Step-by-step workflows
+  - [Auto-Detection System](./mmos/workflows/auto-detection-system.md)
+  - [Brownfield Workflow](./mmos/workflows/brownfield-workflow.md)
+  - [Workflow Matrix](./mmos/workflows/workflow-matrix-decision.md)
+- **[epics/](./mmos/epics/)** - MMOS development epics
+- **[stories/](./mmos/stories/)** - MMOS-specific stories
+- **[reports/](./mmos/reports/)** - Executive reports
+- **[qa/](./mmos/qa/)** - Quality assurance
+  - [benchmarks/](./mmos/qa/benchmarks/) - Cross-mind benchmarks
+- **[taxonomy/](./mmos/taxonomy/)** - Trait taxonomies
+
+### Important Notes
+
+**Validation docs** belong in mind-specific locations:
+- ✅ `outputs/minds/{slug}/docs/validation-checklist.md`
+- ❌ NOT in `docs/mmos/validations/`
+
+See [Folder Structure Guide](./guides/folder-structure.md) for full rules.
+
+---
+
+## Quick Navigation
 
 ### For Product Managers
-1. Start with **[PRDs](./prd/)** - Understand product vision
-2. Review **[Architecture](./architecture/)** - System design
-3. Check **[Stories](./stories/)** - Current development priorities
+1. [PRDs](./prd/) - Product vision
+2. [Architecture](./architecture/) - System design
+3. [Stories](./stories/) - Development priorities
 
 ### For Developers
-1. Read **[Guides](./guides/)** - Development guidelines
-2. Study **[Methodology](./methodology/)** - Process frameworks
-3. Follow **[Workflows](./mmos/workflows/)** - Step-by-step processes
-4. Reference **[Architecture](./architecture/)** - Technical specs
+1. [Guides](./guides/) - Development guidelines
+2. [Methodology](./methodology/) - Process frameworks
+3. [Architecture](./architecture/) - Technical specs
+4. [.claude/CLAUDE.md](../.claude/CLAUDE.md) - Claude Code config
 
 ### For Users
-1. Check **[Guides](./guides/)** - User documentation
-2. Review **[Workflows](./mmos/workflows/)** - How to use the system
-3. Read **[PRDs](./prd/)** - Feature documentation
+1. [Guides](./guides/) - User documentation
+2. [Workflows](./mmos/workflows/) - How to use
+3. [PRDs](./prd/) - Feature documentation
 
 ---
 
-## 🔍 Finding What You Need
+## Common Questions
 
-### "How do I...?"
+**"How do I map a mind?"**
+→ `*map {name}` - See [MMOS Workflows](./mmos/workflows/)
 
-**"How do I activate a clone?"**
-→ See [MMOS Workflows](./mmos/workflows/)
-
-**"How do I generate a course?"**
-→ See [CreatorOS Documentation](../expansion-packs/creator-os/)
-
-**"How does the MMOS pipeline work?"**
-→ Read [AIOS Workflow](./mmos/workflows/aios-workflow.md)
-
-**"Where do I put new files?"**
-→ Check [Folder Structure Guide](./guides/folder-structure.md)
-
-### "What is...?"
-
-**"What is MMOS?"**
-→ Read [MMOS PRD](./prd/mmos-prd.md)
-
-**"What is DNA Mental methodology?"**
-→ See [DNA Mental Guide](./methodology/dna-mental.md)
+**"Where do files go?"**
+→ [Folder Structure Guide](./guides/folder-structure.md)
 
 **"What's the difference between outputs/ and docs/?"**
-→ Check [Outputs Guide](./guides/outputs-guide.md)
+→ [Outputs Guide](./guides/outputs-guide.md)
+
+**"What is MMOS?"**
+→ [MMOS PRD](./prd/mmos-prd.md)
+
+**"What is DNA Mental™?"**
+→ [DNA Mental Guide](./methodology/dna-mental.md)
 
 ---
 
-## 📊 Documentation by Type
-
-### Process Documentation
-- **Workflows:** [mmos/workflows/](./mmos/workflows/)
-- **Methodologies:** [methodology/](./methodology/)
-- **Guides:** [guides/](./guides/)
-
-### Product Documentation
-- **Requirements:** [prd/](./prd/)
-- **Architecture:** [architecture/](./architecture/)
-- **Epics:** [mmos/epics/](./mmos/epics/)
-
-### Historical Documentation
-- **Logs:** [logs/](./logs/)
-- **Legacy Stories:** [stories/mmos-legacy/](./stories/mmos-legacy/)
-- **Reports:** [mmos/reports/](./mmos/reports/)
-
----
-
-## 🔧 Generated Artifacts
+## Generated Artifacts
 
 **Note:** Generated outputs are in `outputs/`, not `docs/`:
 
-- **Generated courses:** [`../outputs/courses/`](../outputs/courses/)
-- **Processed minds:** [`../outputs/minds/`](../outputs/minds/)
+- **Cognitive clones:** [`../outputs/minds/`](../outputs/minds/)
+- **Courses:** [`../outputs/courses/`](../outputs/courses/)
 - **Database:** [`../outputs/database/`](../outputs/database/)
 
-See [`outputs/README.md`](../outputs/README.md) for details.
+See [`../outputs/README.md`](../outputs/README.md) for details.
 
 ---
 
-## 📚 External Documentation
+## Expansion Packs
 
-### Expansion Packs
-- **[CreatorOS](../expansion-packs/creator-os/)** - Course generation system
-- **[MMOS Mind Mapper](../expansion-packs/mmos/)** - Cognitive clone creation
+External documentation for modular extensions:
+
+- **[MMOS](../expansion-packs/mmos/)** - Cognitive clone creation
+- **[CreatorOS](../expansion-packs/creator-os/)** - Course generation
 - **[InnerLens](../expansion-packs/innerlens/)** - Psychometric profiling
-- **[ETL Data Collector](../expansion-packs/etl-data-collector/)** - Data collection tools
+- **[ETL Collector](../expansion-packs/etl-data-collector/)** - Data collection
+- **[Super Agentes](../expansion-packs/super-agentes/)** - Advanced orchestration
+- **[Fragments](../expansion-packs/fragments/)** - Knowledge extraction
 
-### Framework Documentation
+---
+
+## Framework
+
 - **[AIOS Core](../.aios-core/)** - AI orchestration framework
 - **[Claude Code Config](../.claude/CLAUDE.md)** - Development rules
 
 ---
 
-## ✍️ Contributing to Documentation
+## Contributing to Docs
 
-### Adding New Documentation
+### 1. Choose Category
 
-1. **Choose the right category:**
-   - Product vision → `prd/`
-   - Process/methodology → `methodology/`
-   - User/dev guide → `guides/`
-   - Architecture → `architecture/`
-   - Workflow → `mmos/workflows/`
+- Product vision → `prd/`
+- Process/methodology → `methodology/`
+- User/dev guide → `guides/`
+- Architecture → `architecture/`
+- Workflow → `mmos/workflows/`
+- Execution log → `logs/`
 
-2. **Follow naming conventions:**
-   - Use kebab-case: `my-document.md`
-   - Be descriptive: `brownfield-migration-workflow.md`
-   - Avoid abbreviations: `product-requirements.md` not `pr.md`
+### 2. Naming Conventions
 
-3. **Update navigation:**
-   - Add link to category README
-   - Update this master README if major addition
+- Use kebab-case: `my-document.md`
+- Be descriptive: `brownfield-migration-workflow.md`
+- Avoid abbreviations
 
-### Documentation Standards
+### 3. Update Navigation
+
+- Add link to category README
+- Update this master README if major addition
+
+---
+
+## Documentation Standards
 
 - **Start with overview** - What, why, when
 - **Use clear headings** - H2 for sections, H3 for subsections
 - **Include examples** - Show, don't just tell
-- **Link related docs** - Cross-reference relevant documents
-- **Keep it current** - Update as system evolves
+- **Link related docs** - Cross-reference
+- **Keep current** - Update as system evolves
 
 ---
 
-## 📈 Recent Changes
+## Recent Changes
 
-See [logs/](./logs/) for detailed session logs:
+See [logs/](./logs/) for detailed session logs.
 
-- **2025-10-17:** docs/ reorganization - extracted mmos/docs/ to root categories
-- **2025-10-17:** outputs/ migration - separated generated content from docs
-- **2025-10-16:** Brownfield architecture analysis
-
----
-
-## 🆘 Getting Help
-
-- **Technical questions:** Check [guides/](./guides/)
-- **Process questions:** See [methodology/](./methodology/)
-- **Product questions:** Read [prd/](./prd/)
-- **Can't find it:** Search logs in [logs/](./logs/)
+**Major reorganizations:**
+- **2025-10-27:** README.md simplified, removed outdated references
+- **2025-10-17:** docs/ reorganization - extracted mmos/docs/
+- **2025-10-17:** outputs/ migration - separated generated content
 
 ---
 
-**Last Updated:** 2025-10-17
-**Structure Version:** 2.0 (Post-reorganization)
+**Last Updated:** 2025-10-27
 **Maintainer:** Mente Lendária Team
