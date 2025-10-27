@@ -1,0 +1,1 @@
+"Danny [Kahneman] sempre tinha certeza de estar errado. Amós [Tversky], a certeza de estar sempre certo... Eu era o que tinha que tranquilizá-lo: 'Seu trabalho não é 'crap' (lixo), a evidência sugere o contrário'. Ele é um pessimista racional. 
