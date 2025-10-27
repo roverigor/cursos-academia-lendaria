@@ -41,3 +41,7 @@ coverage/
 !outputs/minds/.gitkeep
 !outputs/database/.gitkeep
 !outputs/README.md
+
+# Supabase migration artifacts (generated automatically)
+supabase/schemas/
+supabase/rollback/

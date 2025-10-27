@@ -29,7 +29,7 @@ DECLARE
 BEGIN
   IF score <= 0 THEN RETURN 0; END IF;
   IF score >= 1 THEN RETURN 10; END IF;
-  IF r >= 0.8 THEN RETURN LEAST(i+1,10);
+  IF r >= 0.8 THEN RETURN LEAST(i+1,10); END IF;
   RETURN GREATEST(i,0);
 END $$;
 
@@ -37,12 +37,6 @@ END $$;
 CREATE OR REPLACE FUNCTION set_updated_at() RETURNS trigger AS $$
 BEGIN NEW.updated_at := now(); RETURN NEW; END;
 $$ LANGUAGE plpgsql;
-
--- Current user's mind_id via Supabase auth
-CREATE OR REPLACE FUNCTION current_mind_id()
-RETURNS uuid LANGUAGE sql STABLE AS $$
-  SELECT mind_id FROM user_profiles WHERE id = auth.uid()
-$$;
 
 -- =========================================================
 -- AUTH LINKING (Supabase) — users → user_profiles → minds
@@ -85,7 +79,13 @@ BEGIN
       ADD CONSTRAINT fk_user_profiles_auth
       FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE;
   END IF;
-END$$;
+END $$;
+
+-- Current user's mind_id via Supabase auth (moved here after user_profiles creation)
+CREATE OR REPLACE FUNCTION current_mind_id()
+RETURNS uuid LANGUAGE sql STABLE AS $$
+  SELECT mind_id FROM user_profiles WHERE id = auth.uid()
+$$;
 
 -- Provisioning trigger: create mind & user_profile at signup (slug collision-safe)
 CREATE OR REPLACE FUNCTION provision_user_profile()
@@ -130,7 +130,7 @@ BEGIN
     AFTER INSERT ON auth.users
     FOR EACH ROW EXECUTE FUNCTION provision_user_profile();
   END IF;
-END$$;
+END $$;
 
 -- =========================================================
 -- LOOKUPS / TAXONOMY
@@ -543,7 +543,7 @@ BEGIN
     CREATE TRIGGER trg_psychometrics_updated BEFORE UPDATE ON mind_psychometrics
     FOR EACH ROW EXECUTE FUNCTION set_updated_at();
   END IF;
-END$$;
+END $$;
 
 -- =========================================================
 -- P0 FIX: fragments.mind_id must inherit/validate from sources
