@@ -1,0 +1,523 @@
+---
+template_name: "Supabase RLS Policies"
+template_version: "1.0.0"
+output_format: "markdown"
+destination: "rls-policies.md"
+description: "Row Level Security policies for Supabase tables"
+---
+
+sections:
+  - id: overview
+    title: "RLS Overview"
+    instruction: |
+      Document the Row Level Security strategy:
+      
+      ## Purpose
+      Explain the overall security model and why RLS is being used.
+      
+      ## Authentication Context
+      - How users are authenticated (Supabase Auth, JWT, etc)
+      - Available auth context variables:
+        - `auth.uid()` - Current user ID
+        - `auth.jwt()` - JWT claims
+        - `auth.email()` - User email
+        - Custom claims in JWT
+      
+      ## Security Model
+      - Role-based access control (RBAC)
+      - Multi-tenancy approach (if applicable)
+      - Public vs authenticated vs specific role access
+      
+      ## Performance Considerations
+      - RLS policy performance impact
+      - Indexing strategy to support policies
+      - Caching considerations
+      
+      ## Testing Strategy
+      - How policies will be tested
+      - Test users and scenarios
+    elicit: true
+    
+  - id: policy-patterns
+    title: "Common Policy Patterns"
+    instruction: |
+      Document reusable policy patterns used across tables:
+      
+      ## Pattern 1: Owner-Only Access
+      ```sql
+      -- Users can only access their own records
+      (auth.uid() = user_id)
+      ```
+      
+      ## Pattern 2: Tenant-Based Access
+      ```sql
+      -- Users can access records in their organization
+      (auth.uid() IN (
+        SELECT user_id FROM org_members 
+        WHERE org_id = table.org_id
+      ))
+      ```
+      
+      ## Pattern 3: Role-Based Access
+      ```sql
+      -- Only admins can access
+      ((auth.jwt() ->> 'role')::text = 'admin')
+      ```
+      
+      ## Pattern 4: Public Read, Authenticated Write
+      ```sql
+      -- SELECT: true (public read)
+      -- INSERT/UPDATE/DELETE: auth.uid() IS NOT NULL
+      ```
+      
+      ## Pattern 5: Hierarchical Permissions
+      ```sql
+      -- Access based on organizational hierarchy
+      ```
+      
+      Document any other patterns specific to your application.
+    elicit: true
+    
+  - id: table-policies
+    title: "Table-by-Table Policies"
+    instruction: |
+      For each table requiring RLS, document comprehensive policies:
+      
+      # Table: `table_name`
+      
+      ## Enable RLS
+      ```sql
+      ALTER TABLE table_name ENABLE ROW LEVEL SECURITY;
+      ```
+      
+      ## SELECT Policies
+      
+      ### Policy: `policy_name_select`
+      **Purpose**: Describe who can read what
+      
+      **Policy Expression**:
+      ```sql
+      CREATE POLICY "policy_name_select"
+      ON table_name
+      FOR SELECT
+      TO authenticated -- or public, anon, etc
+      USING (
+        -- Policy expression
+        auth.uid() = user_id
+      );
+      ```
+      
+      **Rationale**: Explain the business rule
+      
+      **Performance**: Any indexes needed to support this policy
+      
+      ## INSERT Policies
+      
+      ### Policy: `policy_name_insert`
+      **Purpose**: Describe who can create records
+      
+      **Policy Expression**:
+      ```sql
+      CREATE POLICY "policy_name_insert"
+      ON table_name
+      FOR INSERT
+      TO authenticated
+      WITH CHECK (
+        -- Policy expression
+        auth.uid() = user_id
+      );
+      ```
+      
+      **Validation**: What validations this ensures
+      
+      ## UPDATE Policies
+      
+      ### Policy: `policy_name_update`
+      **Purpose**: Describe who can modify records
+      
+      **Policy Expression**:
+      ```sql
+      CREATE POLICY "policy_name_update"
+      ON table_name
+      FOR UPDATE
+      TO authenticated
+      USING (
+        -- Who can see the record to update it
+        auth.uid() = user_id
+      )
+      WITH CHECK (
+        -- What values they can set
+        auth.uid() = user_id
+      );
+      ```
+      
+      **Notes**: USING checks old values, WITH CHECK validates new values
+      
+      ## DELETE Policies
+      
+      ### Policy: `policy_name_delete`
+      **Purpose**: Describe who can delete records
+      
+      **Policy Expression**:
+      ```sql
+      CREATE POLICY "policy_name_delete"
+      ON table_name
+      FOR DELETE
+      TO authenticated
+      USING (
+        -- Who can delete
+        auth.uid() = user_id OR
+        (auth.jwt() ->> 'role')::text = 'admin'
+      );
+      ```
+      
+      ## ALL Policies (if using combined policy)
+      
+      Sometimes a single policy for all operations is clearer:
+      
+      ```sql
+      CREATE POLICY "policy_name_all"
+      ON table_name
+      FOR ALL
+      TO authenticated
+      USING (auth.uid() = user_id)
+      WITH CHECK (auth.uid() = user_id);
+      ```
+      
+      ---
+      
+      Repeat this section for each table.
+    elicit: true
+    
+  - id: public-tables
+    title: "Public Tables"
+    instruction: |
+      Document tables with public read access:
+      
+      # Table: `public_table_name`
+      
+      ## Public Read Policy
+      ```sql
+      ALTER TABLE public_table_name ENABLE ROW LEVEL SECURITY;
+      
+      CREATE POLICY "public_read_policy"
+      ON public_table_name
+      FOR SELECT
+      TO anon, authenticated
+      USING (true);
+      ```
+      
+      ## Restricted Write Policy
+      ```sql
+      CREATE POLICY "authenticated_write_policy"
+      ON public_table_name
+      FOR INSERT
+      TO authenticated
+      WITH CHECK (auth.uid() IS NOT NULL);
+      ```
+      
+      **Rationale**: Why this table is public
+      
+      **Security Considerations**: What data is safe to expose
+    elicit: false
+    
+  - id: service-role
+    title: "Service Role Bypass"
+    instruction: |
+      Document scenarios where service role (bypass RLS) is used:
+      
+      ## Service Role Usage
+      
+      ### Backend Operations
+      Operations that need to bypass RLS:
+      - Scheduled jobs (cron, edge functions with service key)
+      - Admin operations
+      - Data migration
+      - Analytics aggregation
+      
+      ### Safety Measures
+      - How service key is secured
+      - Where service role operations are logged
+      - Who has access to service key
+      
+      ### Alternatives
+      When possible, prefer:
+      - Security definer functions with RLS
+      - Elevated permission policies
+      - Temporary privilege escalation
+    elicit: false
+    
+  - id: helper-functions
+    title: "Security Helper Functions"
+    instruction: |
+      Document PostgreSQL functions that support RLS:
+      
+      ## Function: `check_user_permission`
+      ```sql
+      CREATE OR REPLACE FUNCTION check_user_permission(
+        user_id uuid,
+        resource_id uuid,
+        permission_type text
+      )
+      RETURNS boolean
+      LANGUAGE plpgsql
+      SECURITY DEFINER
+      AS $$
+      BEGIN
+        -- Permission checking logic
+        RETURN EXISTS (
+          SELECT 1 FROM permissions
+          WHERE user_id = $1
+          AND resource_id = $2
+          AND permission = $3
+        );
+      END;
+      $$;
+      ```
+      
+      **Usage in Policies**:
+      ```sql
+      USING (check_user_permission(auth.uid(), id, 'read'))
+      ```
+      
+      ## Function: `get_user_org_id`
+      ```sql
+      CREATE OR REPLACE FUNCTION get_user_org_id()
+      RETURNS uuid
+      LANGUAGE sql
+      STABLE
+      AS $$
+        SELECT org_id FROM user_profiles
+        WHERE user_id = auth.uid();
+      $$;
+      ```
+      
+      **Usage in Policies**:
+      ```sql
+      USING (org_id = get_user_org_id())
+      ```
+      
+      Document all helper functions used in RLS policies.
+    elicit: false
+    
+  - id: multi-tenancy
+    title: "Multi-Tenancy Implementation"
+    condition: "multi_tenant"
+    instruction: |
+      If implementing multi-tenancy with RLS:
+      
+      ## Tenant Isolation Strategy
+      
+      ### Tenant Identification
+      - How tenants are identified (org_id, team_id, etc)
+      - Where tenant ID is stored (JWT claim, database lookup)
+      
+      ### Tenant-Scoped Tables
+      
+      For each tenant-scoped table:
+      
+      ```sql
+      -- Example: projects table
+      CREATE POLICY "tenant_isolation_policy"
+      ON projects
+      FOR ALL
+      TO authenticated
+      USING (
+        org_id = (auth.jwt() ->> 'org_id')::uuid
+      )
+      WITH CHECK (
+        org_id = (auth.jwt() ->> 'org_id')::uuid
+      );
+      ```
+      
+      ### Cross-Tenant Scenarios
+      - Shared resources across tenants
+      - Super admin access
+      - Tenant-to-tenant relationships
+      
+      ### Performance
+      - Indexes on tenant_id columns
+      - Query patterns that leverage tenant isolation
+    elicit: true
+    
+  - id: testing
+    title: "RLS Testing Strategy"
+    instruction: |
+      How to test and validate RLS policies:
+      
+      ## Unit Tests
+      
+      Test individual policies with different auth contexts:
+      
+      ```sql
+      -- Test as user A
+      SET request.jwt.claims = '{"sub": "user-a-uuid"}';
+      SELECT * FROM table_name; -- Should only see user A's records
+      
+      -- Test as user B
+      SET request.jwt.claims = '{"sub": "user-b-uuid"}';
+      SELECT * FROM table_name; -- Should only see user B's records
+      ```
+      
+      ## Integration Tests
+      
+      Test with actual Supabase client:
+      
+      ```typescript
+      // Test authenticated access
+      const { data, error } = await supabase
+        .from('table_name')
+        .select('*');
+      
+      // Verify only authorized records returned
+      ```
+      
+      ## Security Audit
+      
+      Checklist for RLS validation:
+      - [ ] All tables with sensitive data have RLS enabled
+      - [ ] No accidental policy holes (test with unauthorized users)
+      - [ ] Service role usage is documented and justified
+      - [ ] Policies perform well (no slow queries)
+      - [ ] Cross-tenant data leakage tested
+      - [ ] Anonymous vs authenticated access verified
+      - [ ] Edge cases tested (null values, missing context)
+      
+      ## Automated Testing
+      
+      Script or framework for continuous validation.
+    elicit: false
+    
+  - id: migration
+    title: "RLS Migration Scripts"
+    instruction: |
+      Concrete SQL migration for implementing these policies:
+      
+      ## Migration: `YYYYMMDDHHMMSS_add_rls_policies.sql`
+      
+      ```sql
+      -- Enable RLS on tables
+      ALTER TABLE table1 ENABLE ROW LEVEL SECURITY;
+      ALTER TABLE table2 ENABLE ROW LEVEL SECURITY;
+      
+      -- Drop existing policies if re-running
+      DROP POLICY IF EXISTS "policy_name" ON table_name;
+      
+      -- Create policies
+      CREATE POLICY "policy_name_select"
+      ON table_name
+      FOR SELECT
+      TO authenticated
+      USING (auth.uid() = user_id);
+      
+      CREATE POLICY "policy_name_insert"
+      ON table_name
+      FOR INSERT
+      TO authenticated
+      WITH CHECK (auth.uid() = user_id);
+      
+      -- ... additional policies ...
+      
+      -- Create indexes to support policies
+      CREATE INDEX IF NOT EXISTS idx_table_user_id 
+      ON table_name(user_id);
+      
+      -- Grant permissions
+      GRANT SELECT, INSERT, UPDATE, DELETE ON table_name TO authenticated;
+      GRANT SELECT ON table_name TO anon;
+      ```
+      
+      ## Rollback Migration
+      
+      ```sql
+      -- Remove policies
+      DROP POLICY IF EXISTS "policy_name_select" ON table_name;
+      DROP POLICY IF EXISTS "policy_name_insert" ON table_name;
+      
+      -- Disable RLS
+      ALTER TABLE table_name DISABLE ROW LEVEL SECURITY;
+      ```
+    elicit: false
+    
+  - id: monitoring
+    title: "RLS Monitoring & Debugging"
+    instruction: |
+      How to monitor and debug RLS policies:
+      
+      ## Query Performance
+      
+      Identify slow queries caused by RLS:
+      
+      ```sql
+      -- Check query plans
+      EXPLAIN ANALYZE
+      SELECT * FROM table_name;
+      ```
+      
+      ## Policy Effectiveness
+      
+      Verify policies are being applied:
+      
+      ```sql
+      -- Check active policies
+      SELECT schemaname, tablename, policyname, permissive, roles, cmd, qual
+      FROM pg_policies
+      WHERE tablename = 'your_table';
+      ```
+      
+      ## Common Issues
+      
+      ### Issue: Policy not applying
+      - Check RLS is enabled on table
+      - Verify user role matches policy target
+      - Check auth context is set correctly
+      
+      ### Issue: Performance degradation
+      - Add indexes for policy columns
+      - Simplify policy expressions
+      - Consider denormalization
+      
+      ### Issue: Unexpected access
+      - Audit all policies on table
+      - Check for permissive vs restrictive policies
+      - Verify no service role leakage
+      
+      ## Logging
+      
+      Log policy violations or unexpected access patterns.
+    elicit: false
+    
+  - id: best-practices
+    title: "RLS Best Practices"
+    instruction: |
+      ## Design Principles
+      
+      1. **Start Restrictive**: Default deny, explicitly allow
+      2. **Minimize Policy Complexity**: Simpler policies are easier to audit
+      3. **Use Helper Functions**: Encapsulate complex logic
+      4. **Index Policy Columns**: Performance is critical
+      5. **Test Extensively**: Security bugs are costly
+      6. **Document Everything**: Future you will thank you
+      7. **Audit Regularly**: Policies drift over time
+      8. **Avoid Service Role**: Use it only when absolutely necessary
+      
+      ## Common Pitfalls
+      
+      - Forgetting to enable RLS on new tables
+      - Policy expressions with poor performance
+      - Not testing with actual user contexts
+      - Overly permissive catch-all policies
+      - Mixing USING and WITH CHECK incorrectly
+      - Not considering null values in policies
+      
+      ## Security Checklist
+      
+      - [ ] All sensitive tables have RLS enabled
+      - [ ] Policies tested with unauthorized users
+      - [ ] Anonymous access limited to public data only
+      - [ ] Service role usage is minimal and documented
+      - [ ] Policies use indexes for performance
+      - [ ] Multi-tenant isolation is verified
+      - [ ] Edge cases tested (nulls, empty results)
+      - [ ] Policies are documented and reviewed
+    elicit: false

@@ -1,0 +1,92 @@
+---
+template_name: "Schema Migration Plan"
+template_version: "1.0.0"
+output_format: "markdown"
+destination: "migration-plan.md"
+description: "Plan and validate a safe schema migration with rollback and tests"
+
+sections:
+  - id: summary
+    title: "Executive Summary"
+    instruction: |
+      Summarize the change:
+      - Objective and scope
+      - Risk level (Low/Med/High) and why
+      - Environments impacted (dev/staging/prod)
+      - Expected migration time window and rollback window
+    elicit: true
+
+  - id: change-set
+    title: "Change Set"
+    instruction: |
+      Detail every schema change:
+      - Tables created/altered/dropped
+      - Columns added/modified/removed (types, defaults, constraints)
+      - Indexes (create/alter/drop)
+      - Functions/triggers/views (create/replace/drop)
+      - RLS policies (add/remove/modify)
+    elicit: true
+
+  - id: dependencies
+    title: "Dependencies & Ordering"
+    instruction: |
+      List dependencies and execution order:
+      1) Extensions
+      2) Tables & constraints
+      3) Functions
+      4) Triggers
+      5) RLS
+      6) Views / MatViews
+      Note any cross-object dependencies that require two-phase rollout.
+    elicit: true
+
+  - id: data-migration
+    title: "Data Migration & Backfill"
+    instruction: |
+      Describe data moves:
+      - Backfill queries or scripts
+      - Locking/impact analysis
+      - Batching strategy / throttling
+      - Verification queries for data correctness
+    elicit: true
+
+  - id: safety
+    title: "Safety & Rollback"
+    instruction: |
+      Safety plan:
+      - Pre-migration snapshot strategy
+      - Rollback script outline (what to undo, in order)
+      - Roll-forward strategy if rollback is unsafe
+      - Advisory locks to avoid concurrent runs
+    elicit: true
+
+  - id: testing
+    title: "Testing Strategy"
+    instruction: |
+      Tests to run:
+      - Dry-run (BEGIN; \i file; ROLLBACK)
+      - Smoke tests (post-migration)
+      - RLS positive/negative tests (impersonation)
+      - Performance baselines & EXPLAIN checks on hot paths
+    elicit: true
+
+  - id: operations
+    title: "Operational Runbook"
+    instruction: |
+      Provide exact commands with placeholders:
+      - Set env, check psql/pg_dump versions
+      - Take snapshot
+      - Apply migration
+      - Post snapshot
+      - Run smoke tests
+      Include expected outputs and success criteria.
+    elicit: true
+
+  - id: communication
+    title: "Communication & Approval"
+    instruction: |
+      - Stakeholders, approvers
+      - Change window notice
+      - Post-deploy validation owners
+      - Incident/rollback contact path
+    elicit: true
