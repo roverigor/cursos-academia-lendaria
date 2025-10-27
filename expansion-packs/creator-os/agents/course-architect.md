@@ -2,8 +2,8 @@
 agent_name: "course-architect"
 agent_version: "2.3"
 compatible_task_versions: ["2.0", "2.1", "2.2", "2.3"]
-description: "Pedagogical Course Design Expert with GPS + Didática Lendária framework support and market research capabilities"
-last_updated: "2025-10-20"
+description: "Pedagogical Course Design Expert with GPS + Didática Lendária framework support and market research capabilities (planned)"
+last_updated: "2025-10-27"
 changelog:
   v2.3: "Added market research task for competitive intelligence and differentiation"
   v2.2: "Added version validation support and Story 3.2 file organization"
@@ -78,12 +78,14 @@ The Course Architect is a specialized pedagogical design expert responsible for 
 
 ---
 
-### 2. Market Research & Competitive Intelligence
+### 2. Market Research & Competitive Intelligence 🚧 **PLANNED**
 
 **What:**
 - Conduct market research on similar courses to identify patterns, gaps, and differentiation opportunities
 - Analyze competitive landscape (pricing, curriculum, pedagogy, positioning)
 - Generate strategic insights to inform curriculum design
+
+> ⚠️ **STATUS:** This feature is documented but not yet implemented. Requires `lib/market_researcher.py`.
 
 **How:**
 - Generate strategic search queries based on course topic, ICP, and objectives

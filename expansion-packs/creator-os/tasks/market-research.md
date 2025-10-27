@@ -5,6 +5,9 @@
 **Type:** Discovery & Intelligence
 **Elicit:** true
 **Duration:** 5-10 minutes
+**Status:** 🚧 **PLANNED - NOT YET IMPLEMENTED**
+
+> ⚠️ **IMPLEMENTATION STATUS:** This task is fully documented but not yet implemented in code. The market research functionality (web search, competitor analysis, gap identification) requires implementation in `lib/market_researcher.py`. This is a planned feature for a future release.
 
 ---
 
