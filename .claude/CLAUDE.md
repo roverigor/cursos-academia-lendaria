@@ -1,375 +1,200 @@
-# AIOS-FULLSTACK Development Rules for Claude Code
+# MMOS Development Guide for Claude Code
 
-You are working with AIOS-FULLSTACK, an AI-Orchestrated System for Full Stack Development.
+**Project:** Mente Lendária - Mind Mapper OS (MMOS)
+**Purpose:** AI-orchestrated cognitive cloning platform
+**Tech:** Python 3, Node.js, Bash | SQLite + Supabase | Claude + Gemini APIs
 
-## Core Framework Understanding
-
-AIOS-FULLSTACK is a meta-framework that orchestrates AI agents to handle complex development workflows. Always recognize and work within this architecture.
-
-## Agent System
-
-### Agent Activation
-- Agents are activated with @agent-name syntax: @dev, @qa, @architect, @pm, @po, @sm, @analyst
-- The master agent is activated with @aios-master
-- Agent commands use the * prefix: *help, *create-story, *task, *exit
-
-### Agent Context
-When an agent is active:
-- Follow that agent's specific persona and expertise
-- Use the agent's designated workflow patterns
-- Maintain the agent's perspective throughout the interaction
-
-## Development Methodology
-
-### Story-Driven Development
-1. **Work from stories** - All development starts with a story in `docs/stories/` (development stories)
-2. **Update progress** - Mark checkboxes as tasks complete: [ ] → [x]
-3. **Track changes** - Maintain the File List section in the story
-4. **Follow criteria** - Implement exactly what the acceptance criteria specify
-
-### Code Standards
-- Write clean, self-documenting code
-- Follow existing patterns in the codebase
-- Include comprehensive error handling
-- Add unit tests for all new functionality
-- Use TypeScript/JavaScript best practices
-
-### Testing Requirements
-- Run all tests before marking tasks complete
-- Ensure linting passes: `npm run lint`
-- Verify type checking: `npm run typecheck`
-- Add tests for new features
-- Test edge cases and error scenarios
-
-## AIOS Framework Structure
-
-```
-.aios-core/
-├── agents/         # Agent persona definitions (YAML/Markdown)
-├── tasks/          # Executable task workflows
-├── workflows/      # Multi-step workflow definitions
-├── templates/      # Document and code templates
-├── checklists/     # Validation and review checklists
-├── tools/          # MCP tools, CLI tools, local tools
-└── rules/          # Framework rules and patterns
-
-docs/                       # 📚 All documentation (versioned)
-├── README.md               # Master documentation navigation
-├── prd/                    # Product requirement documents
-│   └── mmos-prd.md
-├── methodology/            # Process frameworks and methodologies
-│   ├── dna-mental.md
-│   ├── prompt-engineering.md
-│   ├── tools-guide.md
-│   └── mmos-templates/
-├── guides/                 # User and developer guides
-│   ├── folder-structure.md
-│   ├── outputs-guide.md
-│   ├── integration-etl-mmos.md
-│   └── mmos-stage-guides/
-├── architecture/           # System architecture documentation
-├── stories/                # Development stories
-│   └── mmos-legacy/        # Historical MMOS stories
-├── logs/                   # Execution logs (versioned, not outputs!)
-│   └── YYYY-MM-DD-*.md
-└── mmos/                   # MMOS-specific documentation
-    ├── workflows/          # Step-by-step workflows
-    ├── epics/              # MMOS development epics
-    ├── stories/            # MMOS stories
-    ├── reports/            # Executive reports
-    ├── qa/                 # Quality assurance
-    └── taxonomy/           # Trait taxonomies
-
-outputs/                    # 🎯 Generated artifacts (NOT versioned)
-├── courses/                # Generated courses (CreatorOS)
-├── minds/                  # Processed minds (MMOS Mind Mapper)
-└── database/               # SQLite database files
-    └── mmos.db
-
-expansion-packs/            # 🔌 Modular system extensions
-├── creator-os/             # Course generation system
-├── mmos/       # Cognitive clone creation
-├── innerlens/              # Psychometric profiling
-└── etl-data-collector/     # Data collection tools
-```
-
-## Workflow Execution
-
-### Task Execution Pattern
-1. Read the complete task/workflow definition
-2. Understand all elicitation points
-3. Execute steps sequentially
-4. Handle errors gracefully
-5. Provide clear feedback
-
-### Interactive Workflows
-- Workflows with `elicit: true` require user input
-- Present options clearly
-- Validate user responses
-- Provide helpful defaults
-
-## Best Practices
-
-### When implementing features:
-- Check existing patterns first
-- Reuse components and utilities
-- Follow naming conventions
-- Keep functions focused and testable
-- Document complex logic
-
-### When working with agents:
-- Respect agent boundaries
-- Use appropriate agent for each task
-- Follow agent communication patterns
-- Maintain agent context
-
-### When handling errors:
-```javascript
-try {
-  // Operation
-} catch (error) {
-  console.error(`Error in ${operation}:`, error);
-  // Provide helpful error message
-  throw new Error(`Failed to ${operation}: ${error.message}`);
-}
-```
-
-## Git & GitHub Integration
-
-### Commit Conventions
-- Use conventional commits: `feat:`, `fix:`, `docs:`, `chore:`, etc.
-- Reference story ID: `feat: implement IDE detection [Story 2.1]`
-- Keep commits atomic and focused
-
-### GitHub CLI Usage
-- Ensure authenticated: `gh auth status`
-- Use for PR creation: `gh pr create`
-- Check org access: `gh api user/memberships`
-
-## AIOS-Specific Patterns
-
-### Working with Templates
-```javascript
-const template = await loadTemplate('template-name');
-const rendered = await renderTemplate(template, context);
-```
-
-### Agent Command Handling
-```javascript
-if (command.startsWith('*')) {
-  const agentCommand = command.substring(1);
-  await executeAgentCommand(agentCommand, args);
-}
-```
-
-### Story Updates
-```javascript
-// Update story progress
-const story = await loadStory(storyId);
-story.updateTask(taskId, { status: 'completed' });
-await story.save();
-```
-
-## Environment Setup
-
-### Required Tools
-- Node.js 18+ 
-- GitHub CLI
-- Git
-- Your preferred package manager (npm/yarn/pnpm)
-
-### Configuration Files
-- `.aios/config.yaml` - Framework configuration
-- `.env` - Environment variables
-- `aios.config.js` - Project-specific settings
-
-## Common Commands
-
-### AIOS Master Commands
-- `*help` - Show available commands
-- `*create-story` - Create new story
-- `*task {name}` - Execute specific task
-- `*workflow {name}` - Run workflow
-
-### Development Commands
-- `npm run dev` - Start development
-- `npm test` - Run tests
-- `npm run lint` - Check code style
-- `npm run build` - Build project
-
-## Debugging
-
-### Enable Debug Mode
-```bash
-export AIOS_DEBUG=true
-```
-
-### View Agent Logs
-```bash
-tail -f .aios/logs/agent.log
-```
-
-### Trace Workflow Execution
-```bash
-npm run trace -- workflow-name
-```
-
-## Claude Code Specific Configuration
-
-### Performance Optimization
-- Prefer batched tool calls when possible for better performance
-- Use parallel execution for independent operations
-- Cache frequently accessed data in memory during sessions
-
-### Tool Usage Guidelines
-- Always use the Grep tool for searching, never `grep` or `rg` in bash
-- Use the Task tool for complex multi-step operations
-- Batch file reads/writes when processing multiple files
-- Prefer editing existing files over creating new ones
-
-### Session Management
-- Track story progress throughout the session
-- Update checkboxes immediately after completing tasks
-- Maintain context of the current story being worked on
-- Save important state before long-running operations
-
-### Error Recovery
-- Always provide recovery suggestions for failures
-- Include error context in messages to user
-- Suggest rollback procedures when appropriate
-- Document any manual fixes required
-
-### Testing Strategy
-- Run tests incrementally during development
-- Always verify lint and typecheck before marking complete
-- Test edge cases for each new feature
-- Document test scenarios in story files
-
-### Documentation
-- Update relevant docs when changing functionality
-- Include code examples in documentation
-- Keep README synchronized with actual behavior
-- Document breaking changes prominently
-
-## MMOS-Specific Rules
-
-### CRITICAL: Use Architecture Guard Checklist
-
-**Before creating ANY file in docs/mmos/ or outputs/minds/:**
-→ Review `.aios-core/checklists/mmos-architecture-guard.md`
-
-### outputs/minds/ Directory - OUTPUT ONLY
-
-**CRITICAL:** `outputs/minds/` contains ONLY the direct output of the MMOS pipeline.
-
-#### ✅ What BELONGS in outputs/minds/{mind_slug}/:
-- `sources/` - Source materials collected
-- `analysis/` - Phase 3 outputs (identity-core.yaml, cognitive-spec.yaml)
-- `synthesis/` - Phase 4 outputs (frameworks.md, communication-style.md, etc.)
-- `implementation/` - Phase 5 outputs (tools.md, system-prompt-generalista.md)
-- `system_prompts/` - Final system prompts
-- `kb/` - Knowledge base chunks
-- `docs/` - **Mind-specific process docs** (validations, migrations, reports)
-- `logs/` - **Mind-specific execution logs**
-
-#### ❌ What DOES NOT belong in outputs/minds/:
-- System-level documentation → `docs/mmos/`
-- Cross-mind comparisons → `docs/mmos/reports/`
-- MMOS process documentation → `docs/mmos/`
-
-### docs/mmos/ Directory - SYSTEM ONLY
-
-**CRITICAL:** `docs/mmos/` contains ONLY system-level MMOS content.
-
-#### ✅ What BELONGS in docs/mmos/:
-- `workflows/` - MMOS workflow documentation (step-by-step processes)
-- `architecture/` - MMOS system architecture
-- `design/` - MMOS design documentation
-- `epics/` - MMOS development epics
-- `stories/` - MMOS development stories
-- `reports/` - Executive reports, version comparisons
-- `qa/benchmarks/` - Cross-mind benchmarks
-- `taxonomy/` - Trait and personality taxonomies
-- `validations/` - System-level validation checklists
-
-#### ✅ What BELONGS in docs/ (root categories):
-- `prd/` - Product requirements (mmos-prd.md, etc.)
-- `methodology/` - Methodologies and frameworks (dna-mental.md, etc.)
-- `guides/` - User/developer guides (outputs-guide.md, etc.)
-- `architecture/` - General system architecture
-- `logs/` - Execution logs (versioned documentation!)
-- `stories/` - Development stories
-
-#### ❌ What DOES NOT belong in docs/mmos/:
-- **NEVER** create folders named after minds (`/joao_lozano/`, `/pedro_valerio/`)
-- **NEVER** create `validations/` or `migrations/` subfolders with mind names
-- Mind-specific documents → `outputs/minds/{slug}/docs/`
-
-### Decision Rule:
-
-Ask: **"Is this about a SPECIFIC mind (name appears in content)?"**
-- **YES** → `outputs/minds/{mind_slug}/docs/` or `outputs/minds/{mind_slug}/logs/`
-- **NO** → Continue...
-
-Ask: **"Is it a script/template for MMOS?"**
-- **YES** → `expansion-packs/mmos/`
-- **NO** → Continue...
-
-Ask: **"Is it about MMOS system/process?"**
-- **YES** → `docs/mmos/{workflows|epics|stories|reports|qa}/`
-- **NO** → Continue...
-
-Ask: **"Is it a methodology/framework?"**
-- **YES** → `docs/methodology/`
-- **NO** → Continue...
-
-Ask: **"Is it a user/developer guide?"**
-- **YES** → `docs/guides/`
-- **NO** → Continue...
-
-Ask: **"Is it a product requirement?"**
-- **YES** → `docs/prd/`
-- **NO** → Continue...
-
-Ask: **"Is it an execution log?"**
-- **YES** → `docs/logs/` (versioned documentation!)
-- **NO** → ⚠️ STOP - Review architecture rules
-
-### Examples:
-
-**✅ Correct:**
-- `outputs/minds/joao_lozano/docs/validation-checklist.md` (mind-specific)
-- `outputs/minds/pedro_valerio/docs/migration-progress.md` (mind-specific)
-- `outputs/minds/pedro_valerio/logs/20251016-validation-session.md` (mind-specific log)
-- `docs/mmos/reports/EXECUTIVE_SUMMARY_FOR_PO.md` (MMOS system-level)
-- `docs/mmos/epics/epic-2-clone-auth.md` (MMOS system-level)
-- `docs/mmos/workflows/brownfield-workflow.md` (MMOS workflow)
-- `docs/prd/mmos-prd.md` (product requirement)
-- `docs/methodology/dna-mental.md` (methodology)
-- `docs/guides/outputs-guide.md` (user guide)
-- `docs/logs/2025-10-17-docs-reorganization.md` (execution log - versioned!)
-- `outputs/database/mmos.db` (generated database)
-
-**❌ Wrong:**
-- `docs/mmos/validations/pedro-valerio-checklist.md` → Use `outputs/minds/pedro_valerio/docs/validation-checklist.md`
-- `docs/mmos/migrations/joao-lozano-progress.md` → Use `outputs/minds/joao_lozano/docs/migration-progress.md`
-- `expansion-packs/mmos/benchmarks/debate.yaml` → Use `docs/mmos/qa/benchmarks/debate.yaml`
-- `docs/mmos/docs/PRD.md` → Use `docs/prd/mmos-prd.md`
-- `docs/mmos/DNA_MENTAL.md` → Use `docs/methodology/dna-mental.md`
-- `outputs/logs/session.md` → Use `docs/logs/2025-10-17-session.md` (logs are docs!)
-- `docs/mmos/mmos.db` → Use `outputs/database/mmos.db`
-
-### Enforcement:
-
-Pre-commit hook will automatically reject architectural violations.
-Run manually: `.aios-core/hooks/pre-commit-mmos-guard.sh`
+**Core Capability:** `*map {name}` → 6-phase pipeline → production-ready cognitive clone
 
 ---
 
-## Quick Reference: Where Files Go
+## 1. Alan's Working Rules (Priority #1)
 
-| File Type | Location | Example |
-|-----------|----------|---------|
+### Process Mental (Validate Before Action)
+
+```python
+def validate_before_action():
+    # Foundation
+    if not matches_real_world(): return "REJECT"
+    if is_over_engineered(): return "SIMPLIFY"
+    if has_duplication(): return "EXTRACT & REUSE"
+    if violates_KISS(): return "REMOVE COMPLEXITY"
+
+    # Execution
+    if not backed_by_data(): return "GET DATA FIRST"
+    if builds_in_isolation(): return "INTEGRATE"
+    if bypasses_database(): return "PERSIST IT"
+    if cant_demo_in_5min(): return "BUILD PROOF FIRST"
+    if no_human_checkpoints(): return "ADD VALIDATION POINTS"
+
+    return "PROCEED"
+```
+
+### Communication Style
+
+**DO:**
+- Be direct and economical (no fluff)
+- Map context BEFORE executing (show structure first)
+- Present options, let Alan decide
+- Use English for code, PT-BR for discussion
+- Executive summary at top, details below
+
+**DON'T:**
+- Long explanations without being asked
+- Implement without showing structure first
+- Decide for Alan (show options instead)
+- Use emojis unless Alan does
+- Hardcode when config file works
+- Continue old task if Alan pivots (adapt fast)
+
+### Technical Preferences
+
+```yaml
+philosophy: KISS (Keep It Simple, Stupid)
+data_location: database (not files)
+configuration: YAML/JSON (not hardcoded)
+integration: systems must connect (no silos)
+validation: real data (not lorem ipsum)
+documentation: after proving it works
+```
+
+### Workflow Pattern
+
+**Before Implementation:**
+1. Show structure/flow first
+2. Ask: "where should this live?"
+3. Present: "3 approaches - which one?"
+4. Validate: "does this match your workflow?"
+
+**During Development:**
+- Strategic checkpoints (where are we? where next?)
+- Incremental validation (prove with 1 example first)
+- Config over duplication (1 flexible > N rigid)
+- Database-centric (important data = persisted)
+- Time tracking for heavy work (estimate + metrics)
+
+**Priority Handling:**
+- Alan context-switches fast (adapt, don't resist)
+- Vertical mastery (1 thing working > 5 mediocre)
+- Show don't sell (working demo > promises)
+- Fail fast loops (hours/days, not weeks/months)
+
+### Red Flags to Avoid
+- Implementing before understanding context
+- Long explanations without executive summary
+- Hardcoded solutions when config works
+- Continuing old task when Alan has pivoted
+- Theory without real-world validation
+- Over-engineering simple problems
+- No time estimate for programming/heavy tools
+
+---
+
+## 2. MMOS Quick Reference
+
+**What it does:**
+- `*map {name}` → Auto-detects workflow → 6-phase pipeline → AI clone
+- Uses DNA Mental™ methodology for cognitive profiling
+- Outputs production-ready system prompts (94% fidelity)
+
+**Expansion Packs:**
+- `mmos/` - Cognitive cloning pipeline
+- `creator-os/` - Course generation from clones
+- `etl-data-collector/` - Multimodal data collection
+- `innerlens/` - Psychometric profiling
+- `super-agentes/` - Advanced agent orchestration
+- `fragments/` - Knowledge fragment extraction
+
+**Key Directories:**
+- `.aios-core/` - AI orchestration framework (agents, tasks, workflows)
+- `expansion-packs/` - Modular system extensions
+- `docs/` - Documentation (versioned)
+- `outputs/` - Generated artifacts (NOT versioned)
+- `supabase/` - Database migrations + schemas
+- `scripts/` - Automation (db-migrate, pipeline, validation)
+
+**Full structure:** See `docs/guides/folder-structure.md`
+
+---
+
+## 3. Commands That Actually Work
+
+### MMOS Mind Mapping
+```bash
+*map {name}                    # Auto-detect + full pipeline
+*map daniel_kahneman           # Public figure (web scraping)
+*map pedro_valerio             # Private (materials-based)
+```
+
+### Database Operations
+```bash
+# Set environment first
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+export SUPABASE_DB_URL="postgresql://..."
+
+# Run operations
+./scripts/db-migrate.sh supabase/migrations/{file}.sql
+./scripts/db-rollback.sh supabase/migrations/{file}.sql
+./scripts/db-test.sh
+```
+
+### NPM Commands (Real)
+```bash
+npm test                       # Jest test suite
+npm run test:watch            # Watch mode
+npm run test:coverage         # Coverage report
+npm run validate:minds        # Validate minds
+npm run validate:sources      # Validate sources
+npm run validate:all          # All validations
+```
+
+### Data Pipeline
+```bash
+node scripts/pipeline/import-analysis.js
+node scripts/pipeline/validate-integration.js
+node scripts/pipeline/populate-sources.js
+```
+
+---
+
+## 4. MMOS Architecture Rules (CRITICAL)
+
+### File Organization Decision Tree
+
+**Before creating ANY file in docs/mmos/ or outputs/minds/:**
+
+1. **"Is this about a SPECIFIC mind (name in content)?"**
+   - **YES** → `outputs/minds/{mind_slug}/docs/` or `outputs/minds/{mind_slug}/logs/`
+   - **NO** → Continue...
+
+2. **"Is it a script/template for MMOS?"**
+   - **YES** → `expansion-packs/mmos/`
+   - **NO** → Continue...
+
+3. **"Is it about MMOS system/process?"**
+   - **YES** → `docs/mmos/{workflows|epics|stories|reports|qa}/`
+   - **NO** → Continue...
+
+4. **"Is it a methodology/framework?"**
+   - **YES** → `docs/methodology/`
+   - **NO** → Continue...
+
+5. **"Is it a user/developer guide?"**
+   - **YES** → `docs/guides/`
+   - **NO** → Continue...
+
+6. **"Is it a product requirement?"**
+   - **YES** → `docs/prd/`
+   - **NO** → Continue...
+
+7. **"Is it an execution log?"**
+   - **YES** → `docs/logs/` (versioned docs!)
+   - **NO** → ⚠️ STOP - Review architecture
+
+### What Goes Where (Quick Reference)
+
+| Type | Location | Example |
+|------|----------|---------|
 | Product requirements | `docs/prd/` | `mmos-prd.md` |
 | Methodologies | `docs/methodology/` | `dna-mental.md` |
 | User guides | `docs/guides/` | `outputs-guide.md` |
@@ -380,10 +205,217 @@ Run manually: `.aios-core/hooks/pre-commit-mmos-guard.sh`
 | MMOS epics | `docs/mmos/epics/` | `epic-2-database.md` |
 | MMOS reports | `docs/mmos/reports/` | `executive-summary.md` |
 | Mind-specific docs | `outputs/minds/{slug}/docs/` | `validation-checklist.md` |
+| Mind-specific logs | `outputs/minds/{slug}/logs/` | `20251016-session.md` |
 | Generated courses | `outputs/courses/{slug}/` | `curriculum.yaml` |
 | Database files | `outputs/database/` | `mmos.db` |
-| MMOS scripts | `expansion-packs/mmos/` | `pipeline.py` |
+| MMOS scripts | `expansion-packs/mmos/` | `map_mind.py` |
+
+### Examples
+
+**✅ Correct:**
+```
+outputs/minds/joao_lozano/docs/validation-checklist.md
+outputs/minds/pedro_valerio/logs/20251016-session.md
+docs/mmos/workflows/brownfield-workflow.md
+docs/prd/mmos-prd.md
+docs/methodology/dna-mental.md
+docs/logs/2025-10-27-session.md
+```
+
+**❌ Wrong:**
+```
+docs/mmos/validations/pedro-valerio-checklist.md
+  → Use: outputs/minds/pedro_valerio/docs/validation-checklist.md
+
+docs/mmos/DNA_MENTAL.md
+  → Use: docs/methodology/dna-mental.md
+
+outputs/logs/session.md
+  → Use: docs/logs/2025-10-27-session.md (logs are docs!)
+```
+
+### outputs/minds/{slug}/ Structure (OUTPUT ONLY)
+- `sources/` - Source materials collected
+- `analysis/` - Phase 3 (identity-core.yaml, cognitive-spec.yaml)
+- `synthesis/` - Phase 4 (frameworks.md, communication-style.md)
+- `implementation/` - Phase 5 (system-prompt-*.md)
+- `system_prompts/` - Final prompts
+- `kb/` - Knowledge base chunks
+- `docs/` - Mind-specific process docs
+- `logs/` - Mind-specific logs
+
+### docs/mmos/ (SYSTEM ONLY)
+- `workflows/` - MMOS workflows
+- `epics/` - Development epics
+- `stories/` - MMOS stories
+- `reports/` - Executive reports
+- `qa/benchmarks/` - Cross-mind benchmarks
+- `taxonomy/` - Trait taxonomies
+
+**NEVER** in docs/mmos/:
+- Folders named after minds
+- Mind-specific validations/migrations
+- Individual mind documentation
 
 ---
-*AIOS-FULLSTACK Claude Code Configuration v2.3*
-*Last Updated: 2025-10-23 - AIOS upstream sync (v4.31.0+main-8d5d3d2)*
+
+## 5. Development Workflow
+
+### Story-Driven Development
+1. Work from stories in `docs/stories/`
+2. Mark checkboxes: `[ ]` → `[x]`
+3. Maintain File List section
+4. Follow acceptance criteria exactly
+
+### Code Standards
+```python
+philosophy = "KISS"              # Simplest solution
+language = "English"             # Code, vars, comments
+structure = "clear_scope"        # System boundaries
+reusability = "extract_once"     # Use N times
+validation = "real_world"        # Actual scenarios
+
+avoid = [
+    "ceremony_blocking_mvp",
+    "isolated_systems",
+    "fake_test_data",
+    "unnecessary_complexity",
+    "hardcoded_values"
+]
+```
+
+### Git Conventions
+```bash
+feat: add brownfield detection to pipeline
+fix: correct migration rollback script
+docs: update architecture with supabase
+chore: cleanup legacy scripts
+```
+
+Format: `type: description`
+Types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`
+
+### Testing
+```bash
+npm test                  # Before marking complete
+npm run test:coverage    # Coverage report
+npm run validate:all     # All validations
+./scripts/db-test.sh     # Database tests
+```
+
+---
+
+## 6. Claude Code Specific
+
+### Tool Usage
+
+**DO:**
+- Use Grep tool (NOT bash `grep`/`rg`)
+- Use Task tool for multi-step operations
+- Batch file reads/writes
+- Edit existing files (don't create new)
+- Run independent tools in parallel
+
+**DON'T:**
+- Use bash for file operations (use Read/Write/Edit)
+- Use echo/printf for communication
+- Create files unnecessarily
+- Use emojis (unless Alan does)
+
+### Performance
+- Batch tool calls
+- Parallel execution for independent ops
+- Cache in memory during session
+- Use Explore agent for codebase searches
+
+### Time Tracking (Heavy Work Required)
+
+**Heavy work = cronômetro obrigatório:**
+- Multiple files/scripts
+- Dataset processing
+- Implementations > 5min
+- Any programming task
+
+**Pattern:**
+```python
+# Before: estimate + start
+estimate = "~X minutes"
+start = now()
+
+# After: show metrics
+{
+  "estimativa": estimate,
+  "tempo_real": elapsed,
+  "diferença": delta
+}
+```
+
+---
+
+## 7. Configuration
+
+**Root configs:**
+- `.aios-core/core-config.yaml` - Root AIOS config
+- `.aios-core/mmos-config.yaml` - MMOS overrides
+- `package.json` - Node.js (v3.0.0)
+- `.env` - API keys (NOT versioned)
+
+**Expansion pack configs:**
+- `expansion-packs/mmos/config.yaml`
+- `expansion-packs/creator-os/config.yaml`
+- `expansion-packs/etl-data-collector/config.yaml`
+- `expansion-packs/innerlens/config.yaml`
+
+**Read configs dynamically - don't hardcode values.**
+
+---
+
+## 8. Getting Data Dynamically
+
+**Status/metrics → get from source:**
+
+```bash
+# Mind count
+ls outputs/minds/ | wc -l
+
+# Course count
+ls outputs/courses/ | wc -l
+
+# Database version
+psql "$SUPABASE_DB_URL" -c "SELECT version FROM migrations ORDER BY applied_at DESC LIMIT 1"
+
+# Expansion packs
+ls expansion-packs/
+
+# Latest logs
+ls -t docs/logs/ | head -5
+```
+
+**Don't hardcode data that changes.**
+
+---
+
+## Meta-Rule
+
+**These rules themselves should be economical. If something here becomes ceremony, delete it.**
+
+**When in doubt:**
+1. Map context first
+2. Show structure before changing
+3. Present options, let Alan decide
+4. KISS principle (simplest solution)
+5. Validate with real scenario
+6. Adapt fast if Alan pivots
+
+**For details, read the actual docs:**
+- Full structure: `docs/guides/folder-structure.md`
+- MMOS workflows: `docs/mmos/workflows/`
+- Architecture: `docs/architecture/`
+- PRD: `docs/prd/mmos-prd.md`
+- DNA Mental™: `docs/methodology/dna-mental.md`
+
+---
+
+**MMOS Claude Code Configuration v3.1 (KISS Edition)**
+**Last Updated:** 2025-10-27
+**Principle:** Link to docs, don't duplicate. Get data, don't hardcode.
