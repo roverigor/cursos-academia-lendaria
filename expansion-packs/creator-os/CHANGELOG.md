@@ -7,6 +7,65 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.0] - 2025-10-27
+
+### Changed - Documentation Sync & Status Clarification
+
+**Context:** Major documentation audit and synchronization to align all docs with actual implementation status. This release represents completion of Epic 3 (Intelligent Workflow ~85%) while clarifying that Epics 0-2 remain planned.
+
+#### Core Changes
+
+**1. Version Alignment**
+- Updated all version references from 1.0.0 → 2.0.0
+- Removed duplicate QUICKSTART.md file
+- Synchronized config.yaml, README.md, PRD.md, and all related docs
+
+**2. Market Research Feature - Status Clarification**
+- Marked market research feature as 🚧 **PLANNED - NOT IMPLEMENTED**
+- Added warnings to all affected files:
+  - `tasks/market-research.md` - Implementation status banner
+  - `tasks/reformulate-course-brief.md` - Dependency warning
+  - `tasks/init-course-greenfield.md` - Future integration note
+  - `agents/course-architect.md` - Feature marked as planned
+  - `README.md` - All market research mentions marked with 🚧
+
+**3. Implementation Status Updates**
+- IMPLEMENTATION_STATUS.md: Epic 3 clarified as ~85% (10/13 stories implemented)
+- Added note about "Production Ready" status (applies to course creation only)
+- PRD.md: Status updated from "Planning Phase" → "In Development"
+- Clarified Epic 0-2 as "Planned" (blog, social, video content generation)
+
+**4. Date Updates**
+- Updated "Last Updated" dates to 2025-10-27 where applicable
+- Preserved historical dates in CHANGELOG and creation timestamps
+
+#### Files Modified (9 total)
+- config.yaml: version 2.0.0
+- README.md: market research badges, version footer, dates
+- QUICKSTART.md: deleted (duplicate)
+- QUICK-START.md: dates updated
+- PRD.md: version, date, status updated
+- IMPLEMENTATION_STATUS.md: header added, Epic 3 status clarified
+- VALIDATION-REPORT.md: version and date updated
+- tasks/market-research.md: implementation warning added
+- tasks/reformulate-course-brief.md: dependency warning added
+- tasks/init-course-greenfield.md: future integration note added
+- agents/course-architect.md: market research section marked as planned
+
+#### Migration Notes
+
+**For Developers:**
+- Market research feature is fully documented but requires implementation
+- Implementation requires creating `lib/market_researcher.py`
+- Once implemented, remove all 🚧 badges and warnings from docs
+
+**For Users:**
+- v2.0.0 represents stable course creation functionality (Epic 3)
+- Multi-format content generation (blog, social, video) remains planned
+- All documented features without 🚧 badges are production-ready
+
+---
+
 ## [1.1.0] - 2025-10-16
 
 ### Added - Course Creation Framework

@@ -5,6 +5,9 @@
 **Type:** Strategic Optimization
 **Elicit:** false (automated reformulation with manual review checkpoint)
 **Duration:** 3-5 minutes
+**Status:** 🚧 **PLANNED - Depends on market-research task**
+
+> ⚠️ **DEPENDENCY:** This task requires the `market-research` task to be implemented first. Currently fully documented but not executable.
 
 ---
 
