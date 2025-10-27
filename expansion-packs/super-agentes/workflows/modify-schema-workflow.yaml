@@ -1,0 +1,458 @@
+# Modify Schema Workflow
+# Safely apply database migrations with automated backups and verification (Story 1.3)
+
+workflow:
+  id: "modify-schema"
+  name: "Modify Database Schema Safely"
+  description: "Apply database migrations with DDL validation, dry-run testing, snapshots, and smoke tests"
+  version: "1.0.0"
+  type: "sequential"
+
+metadata:
+  author: "DB Sage"
+  created_date: "2025-10-27"
+  last_modified: "2025-10-27"
+  tags:
+    - database
+    - migration
+    - schema
+    - ddl
+    - db-sage
+  story: "expansion-packs/super-agentes/docs/stories/1.3.modify-schema-workflow.md"
+
+# Workflow inputs
+inputs:
+  migration_source:
+    type: "string"
+    description: "Migration source: new or existing"
+    required: false
+
+  migration_path:
+    type: "string"
+    description: "Path to migration file"
+    required: false
+
+steps:
+  # ========== STEP 1: Migration Source Selection ==========
+  - id: "step_1_migration_source"
+    name: "Select Migration Source"
+    type: "elicit"
+    elicit:
+      question: "Migration source:"
+      options:
+        - label: "Apply existing migration file"
+          value: "existing"
+          description: "Execute a migration SQL file"
+        - label: "Create new migration"
+          value: "new"
+          description: "Generate migration template with proper DDL ordering"
+      default: "existing"
+      output_var: "migration_source"
+    error_handling:
+      strategy: "fail"
+
+  # ========== STEP 2A: Create New Migration ==========
+  - id: "step_2a_new_migration"
+    name: "Create New Migration File"
+    type: "elicit"
+    condition: "{{migration_source}} == 'new'"
+    elicit:
+      fields:
+        - name: "migration_description"
+          label: "Migration Description (e.g., 'add users table')"
+          type: "string"
+          required: true
+          placeholder: "add_users_table"
+
+        - name: "migration_purpose"
+          label: "Purpose (why is this change needed?)"
+          type: "text"
+          multiline: true
+          required: false
+      output_vars:
+        - "migration_description"
+        - "migration_purpose"
+
+  # ========== STEP 2B: Generate Migration File ==========
+  - id: "step_2b_generate_file"
+    name: "Generate Migration Template"
+    type: "execute"
+    condition: "{{migration_source}} == 'new'"
+    description: "Create migration file with proper DDL ordering"
+    command: |
+      # Create supabase/migrations directory if not exists
+      mkdir -p supabase/migrations
+
+      # Generate timestamp-based filename
+      TIMESTAMP=$(date +%Y%m%d%H%M%S)
+      DESC=$(echo "{{migration_description}}" | tr ' ' '_' | tr '[:upper:]' '[:lower:]')
+      FILENAME="supabase/migrations/${TIMESTAMP}_${DESC}.sql"
+
+      # Create migration template with proper DDL ordering
+      cat > "$FILENAME" << 'EOF'
+-- Migration: {{migration_description}}
+-- Purpose: {{migration_purpose}}
+-- Created: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+--
+-- DDL Execution Order (CRITICAL - follow this order):
+-- 1. Extensions
+-- 2. Tables & Constraints
+-- 3. Functions
+-- 4. Triggers
+-- 5. RLS (Enable + Policies)
+-- 6. Views & Materialized Views
+
+BEGIN;
+
+-- ========================================
+-- 1. Extensions
+-- ========================================
+-- CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- CREATE EXTENSION IF NOT EXISTS "pg_trgm";
+
+-- ========================================
+-- 2. Tables & Constraints
+-- ========================================
+-- CREATE TABLE users (
+--   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+--   email TEXT NOT NULL UNIQUE,
+--   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+--   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+-- );
+--
+-- CREATE INDEX idx_users_email ON users(email);
+
+-- ========================================
+-- 3. Functions
+-- ========================================
+-- CREATE OR REPLACE FUNCTION update_updated_at_column()
+-- RETURNS TRIGGER AS $$
+-- BEGIN
+--   NEW.updated_at = NOW();
+--   RETURN NEW;
+-- END;
+-- $$ LANGUAGE plpgsql;
+
+-- ========================================
+-- 4. Triggers
+-- ========================================
+-- CREATE TRIGGER update_users_updated_at
+--   BEFORE UPDATE ON users
+--   FOR EACH ROW
+--   EXECUTE FUNCTION update_updated_at_column();
+
+-- ========================================
+-- 5. RLS (Row Level Security)
+-- ========================================
+-- ALTER TABLE users ENABLE ROW LEVEL SECURITY;
+--
+-- CREATE POLICY "users_select_own"
+--   ON users FOR SELECT
+--   TO authenticated
+--   USING ((select auth.uid()) = id);
+--
+-- CREATE POLICY "users_insert_own"
+--   ON users FOR INSERT
+--   TO authenticated
+--   WITH CHECK ((select auth.uid()) = id);
+
+-- ========================================
+-- 6. Views & Materialized Views
+-- ========================================
+-- CREATE VIEW active_users AS
+--   SELECT * FROM users
+--   WHERE deleted_at IS NULL;
+
+-- ========================================
+-- Migration Complete
+-- ========================================
+
+COMMIT;
+
+-- Rollback script (save to supabase/rollback/${TIMESTAMP}_rollback_${DESC}.sql):
+--
+-- BEGIN;
+-- DROP VIEW IF EXISTS active_users;
+-- DROP POLICY IF EXISTS "users_insert_own" ON users;
+-- DROP POLICY IF EXISTS "users_select_own" ON users;
+-- DROP TRIGGER IF EXISTS update_users_updated_at ON users;
+-- DROP FUNCTION IF EXISTS update_updated_at_column();
+-- DROP TABLE IF EXISTS users CASCADE;
+-- COMMIT;
+EOF
+
+      echo "$FILENAME"
+    outputs:
+      migration_file: "{{output}}"
+
+  # ========== STEP 2C: Select Existing Migration ==========
+  - id: "step_2c_select_existing"
+    name: "Select Existing Migration"
+    type: "elicit"
+    condition: "{{migration_source}} == 'existing'"
+    elicit:
+      help_text: "Available migrations in supabase/migrations/"
+
+      fields:
+        - name: "migration_path"
+          label: "Migration File Path"
+          type: "string"
+          required: true
+          placeholder: "supabase/migrations/20241027_add_users.sql"
+      output_vars:
+        - "migration_path"
+    outputs:
+      migration_file: "{{migration_path}}"
+
+  # ========== STEP 3: Verify DDL Ordering ==========
+  - id: "step_3_verify_order"
+    name: "Verify DDL Ordering"
+    type: "task"
+    task: "db-verify-order"
+    description: "Validate DDL execution order to prevent dependency errors"
+
+    inputs:
+      path: "{% if migration_source == 'new' %}{{migration_file}}{% else %}{{migration_path}}{% endif %}"
+
+    error_handling:
+      strategy: "warn"
+      message: |
+        ⚠️ DDL ordering issues detected
+
+        Review and fix before proceeding:
+        1. Extensions must come before tables that use them
+        2. Tables must exist before functions reference them
+        3. Functions must exist before triggers call them
+        4. RLS must be enabled before creating policies
+        5. Views must come last (they depend on tables/functions)
+
+    outputs:
+      order_valid: true
+
+  # ========== STEP 4: Offer Dry-Run ==========
+  - id: "step_4_dry_run_option"
+    name: "Offer Dry-Run Test"
+    type: "elicit"
+    elicit:
+      question: "Run dry-run test? (HIGHLY RECOMMENDED)"
+      help_text: |
+        Dry-run executes migration in BEGIN...ROLLBACK:
+        - Tests SQL syntax
+        - Validates dependencies
+        - Checks execution order
+        - NO actual changes applied
+
+      options:
+        - label: "Yes - Test migration safely (RECOMMENDED)"
+          value: "yes"
+          description: "Test without applying changes"
+        - label: "Skip - Apply immediately (RISKY)"
+          value: "no"
+          description: "Skip safety check"
+      default: "yes"
+      output_var: "run_dry_run"
+    error_handling:
+      strategy: "fail"
+
+  # ========== STEP 5: Execute Dry-Run ==========
+  - id: "step_5_dry_run"
+    name: "Execute Dry-Run Test"
+    type: "task"
+    task: "db-dry-run"
+    condition: "{{run_dry_run}} == 'yes'"
+    description: "Test migration with BEGIN...ROLLBACK"
+
+    inputs:
+      path: "{% if migration_source == 'new' %}{{migration_file}}{% else %}{{migration_path}}{% endif %}"
+
+    error_handling:
+      strategy: "fail"
+      message: |
+        ❌ Dry-run failed
+
+        Fix the migration and try again.
+        Common issues:
+        - Syntax errors
+        - Missing dependencies
+        - Wrong execution order
+        - Constraint violations
+
+    outputs:
+      dry_run_passed: true
+
+  # ========== STEP 6: Confirm Application ==========
+  - id: "step_6_confirm_apply"
+    name: "Confirm Migration Application"
+    type: "elicit"
+    condition: "{{run_dry_run}} == 'yes'"
+    elicit:
+      question: |
+        ✅ Dry-run passed successfully
+
+        Apply migration to database?
+
+      options:
+        - label: "Yes - Apply migration"
+          value: "yes"
+          description: "Proceed with migration"
+        - label: "No - Cancel"
+          value: "no"
+          description: "Review migration first"
+      default: "yes"
+      output_var: "confirm_apply"
+    error_handling:
+      strategy: "abort"
+
+  # ========== STEP 7: Create Pre-Migration Snapshot ==========
+  - id: "step_7_pre_snapshot"
+    name: "Create Pre-Migration Snapshot"
+    type: "task"
+    task: "db-snapshot"
+    condition: "{{confirm_apply}} == 'yes' OR {{run_dry_run}} == 'no'"
+    description: "Create schema-only backup before migration"
+
+    inputs:
+      label: "pre_migration_{{timestamp}}"
+      type: "schema"
+      purpose: "Safety snapshot before migration {{migration_file}}"
+
+    error_handling:
+      strategy: "warn"
+      message: "⚠️ Snapshot failed, but continuing with migration"
+
+    outputs:
+      snapshot_file: "{{output}}"
+
+  # ========== STEP 8: Apply Migration ==========
+  - id: "step_8_apply_migration"
+    name: "Apply Migration to Database"
+    type: "task"
+    task: "db-apply-migration"
+    condition: "{{confirm_apply}} == 'yes' OR {{run_dry_run}} == 'no'"
+    description: "Execute migration with advisory lock and error handling"
+
+    inputs:
+      path: "{% if migration_source == 'new' %}{{migration_file}}{% else %}{{migration_path}}{% endif %}"
+
+    error_handling:
+      strategy: "fail"
+      message: |
+        ❌ MIGRATION FAILED
+
+        Your database is unchanged (transaction rolled back).
+
+        Rollback options:
+        1. Fix migration and try again
+        2. Restore pre-migration snapshot: *rollback {{snapshot_file}}
+
+        Emergency snapshot: {{snapshot_file}}
+
+    outputs:
+      migration_success: true
+      post_snapshot_file: "{{post_snapshot}}"
+
+  # ========== STEP 9: Run Smoke Test ==========
+  - id: "step_9_smoke_test"
+    name: "Run Post-Migration Smoke Test"
+    type: "task"
+    task: "db-smoke-test"
+    condition: "{{migration_success}} == true"
+    description: "Validate schema integrity after migration"
+
+    inputs:
+      version: "{% if migration_source == 'new' %}{{migration_file}}{% else %}{{migration_path}}{% endif %}"
+
+    error_handling:
+      strategy: "warn"
+      message: |
+        ⚠️ Smoke test failed
+
+        Migration applied but validation failed.
+        Review schema integrity manually.
+
+    outputs:
+      smoke_test_passed: "{{output}}"
+
+  # ========== STEP 10: Success Summary ==========
+  - id: "step_10_success_summary"
+    name: "Display Success Summary"
+    type: "execute"
+    condition: "{{migration_success}} == true"
+    description: "Show migration summary and next steps"
+    command: |
+      echo ""
+      echo "════════════════════════════════════════"
+      echo "✅ MIGRATION APPLIED SUCCESSFULLY"
+      echo "════════════════════════════════════════"
+      echo ""
+      echo "Migration Details:"
+      echo "  File: {% if migration_source == 'new' %}{{migration_file}}{% else %}{{migration_path}}{% endif %}"
+      echo "  Pre-Snapshot: {{snapshot_file}}"
+      echo "  Post-Snapshot: {{post_snapshot_file}}"
+      echo ""
+
+      {% if smoke_test_passed %}
+      echo "Validation:"
+      echo "  ✅ Smoke test passed"
+      {% else %}
+      echo "Validation:"
+      echo "  ⚠️ Smoke test had warnings - review manually"
+      {% endif %}
+
+      echo ""
+      echo "Snapshots:"
+      echo "  Before: {{snapshot_file}}"
+      echo "  After: {{post_snapshot_file}}"
+      echo "  Diff: supabase/snapshots/diff.patch"
+      echo ""
+      echo "Next Steps:"
+      echo "  1. Verify changes in database"
+      echo "  2. Test application functionality"
+      echo "  3. Deploy to staging/production"
+      echo ""
+      echo "Rollback (if needed):"
+      echo "  *rollback {{snapshot_file}}"
+      echo ""
+
+# Workflow outputs
+outputs:
+  migration_applied:
+    type: "boolean"
+    description: "Migration successfully applied"
+    source: "step_8_apply_migration.migration_success"
+
+  migration_file:
+    type: "string"
+    description: "Path to migration file"
+    source: "{% if migration_source == 'new' %}step_2b_generate_file.migration_file{% else %}step_2c_select_existing.migration_file{% endif %}"
+
+  pre_snapshot:
+    type: "string"
+    description: "Pre-migration snapshot file"
+    source: "step_7_pre_snapshot.snapshot_file"
+
+  post_snapshot:
+    type: "string"
+    description: "Post-migration snapshot file"
+    source: "step_8_apply_migration.post_snapshot_file"
+
+  smoke_test_passed:
+    type: "boolean"
+    description: "Post-migration smoke test result"
+    source: "step_9_smoke_test.smoke_test_passed"
+
+# Global error handling
+global_error_handling:
+  on_error: "abort"
+  notification:
+    enabled: true
+    channels:
+      - console
+  rollback_on_error: true
+
+# Security settings
+security:
+  authorization_required: false
+  audit_logging: true
+  advisory_lock_required: true
+  snapshot_before_migration: true

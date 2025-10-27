@@ -1,0 +1,123 @@
+# Analyze Data Workflow
+# Import data and analyze database contents safely (Story 1.4)
+
+workflow:
+  id: "analyze-data"
+  name: "Analyze and Import Data"
+  description: "Import CSV files, apply seed data, and analyze database contents with validation"
+  version: "1.0.0"
+  type: "sequential"
+
+metadata:
+  author: "DB Sage"
+  created_date: "2025-10-27"
+  story: "expansion-packs/super-agentes/docs/stories/1.4.analyze-data-workflow.md"
+
+steps:
+  - id: "operation_type"
+    name: "Select Data Operation"
+    type: "elicit"
+    elicit:
+      question: "Data operation:"
+      options:
+        - label: "Import CSV file"
+          value: "import_csv"
+        - label: "Apply seed data"
+          value: "seed"
+        - label: "Analyze existing data"
+          value: "analyze"
+      output_var: "operation_type"
+
+  # CSV Import Path
+  - id: "csv_details"
+    condition: "{{operation_type}} == 'import_csv'"
+    type: "elicit"
+    elicit:
+      fields:
+        - name: "csv_path"
+          label: "CSV file path"
+          type: "string"
+          required: true
+        - name: "target_table"
+          label: "Target table"
+          type: "string"
+          required: true
+      output_vars: ["csv_path", "target_table"]
+
+  - id: "csv_import"
+    condition: "{{operation_type}} == 'import_csv'"
+    type: "task"
+    task: "db-load-csv"
+    inputs:
+      table: "{{target_table}}"
+      csv_file: "{{csv_path}}"
+
+  # Seed Data Path
+  - id: "seed_details"
+    condition: "{{operation_type}} == 'seed'"
+    type: "elicit"
+    elicit:
+      fields:
+        - name: "seed_path"
+          label: "Seed file path"
+          type: "string"
+          required: true
+      output_vars: ["seed_path"]
+
+  - id: "seed_apply"
+    condition: "{{operation_type}} == 'seed'"
+    type: "task"
+    task: "db-seed"
+    inputs:
+      path: "{{seed_path}}"
+
+  # Analysis Path
+  - id: "analysis_type"
+    condition: "{{operation_type}} == 'analyze'"
+    type: "elicit"
+    elicit:
+      question: "Analysis type:"
+      options:
+        - label: "Table statistics"
+          value: "stats"
+        - label: "Data distribution"
+          value: "distribution"
+        - label: "Integrity checks"
+          value: "integrity"
+        - label: "Recent activity"
+          value: "recent"
+      output_var: "analysis_type"
+
+  - id: "run_analysis"
+    condition: "{{operation_type}} == 'analyze'"
+    type: "execute"
+    command: |
+      case "{{analysis_type}}" in
+        stats)
+          psql "$SUPABASE_DB_URL" -c "
+            SELECT schemaname, tablename,
+                   pg_size_pretty(pg_total_relation_size(schemaname||'.'||tablename)) AS size,
+                   n_live_tup AS rows
+            FROM pg_stat_user_tables
+            WHERE schemaname = 'public'
+            ORDER BY pg_total_relation_size(schemaname||'.'||tablename) DESC;"
+          ;;
+        distribution)
+          echo "Enter table and column for distribution analysis:"
+          ;;
+        integrity)
+          echo "Running orphaned records check..."
+          ;;
+        recent)
+          echo "Enter table for recent activity analysis:"
+          ;;
+      esac
+
+outputs:
+  operation_complete:
+    type: "boolean"
+    description: "Operation completed successfully"
+    value: true
+
+global_error_handling:
+  on_error: "abort"

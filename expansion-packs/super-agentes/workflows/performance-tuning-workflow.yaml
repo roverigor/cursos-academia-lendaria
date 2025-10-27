@@ -1,0 +1,58 @@
+# Performance Tuning Workflow (Story 1.6)
+workflow:
+  id: "performance-tuning"
+  name: "Performance Tuning"
+  version: "1.0.0"
+metadata:
+  story: "expansion-packs/super-agentes/docs/stories/1.6.performance-tuning-workflow.md"
+steps:
+  - id: "analysis_type"
+    type: "elicit"
+    elicit:
+      question: "Performance analysis type:"
+      options:
+        - {label: "Find slow queries (pg_stat_statements)", value: "hotpaths"}
+        - {label: "Analyze specific query (EXPLAIN)", value: "explain"}
+        - {label: "Interactive optimization session", value: "optimize"}
+        - {label: "Check RLS performance", value: "rls"}
+      output_var: "analysis_type"
+
+  - id: "run_hotpaths"
+    condition: "{{analysis_type}} == 'hotpaths'"
+    type: "task"
+    task: "db-analyze-hotpaths"
+
+  - id: "query_input"
+    condition: "{{analysis_type}} == 'explain'"
+    type: "elicit"
+    elicit:
+      fields:
+        - {name: "sql", label: "SQL query to analyze", type: "text", multiline: true}
+      output_vars: ["sql"]
+
+  - id: "run_explain"
+    condition: "{{analysis_type}} == 'explain'"
+    type: "task"
+    task: "db-explain"
+    inputs: {sql: "{{sql}}"}
+
+  - id: "run_optimize"
+    condition: "{{analysis_type}} == 'optimize'"
+    type: "task"
+    task: "query-optimization"
+
+  - id: "run_rls_audit"
+    condition: "{{analysis_type}} == 'rls'"
+    type: "task"
+    task: "db-rls-audit"
+
+  - id: "rls_recommendations"
+    condition: "{{analysis_type}} == 'rls'"
+    type: "execute"
+    command: |
+      echo "=== RLS Performance Recommendations ==="
+      echo ""
+      echo "✅ FAST: (select auth.uid()) = user_id"
+      echo "❌ SLOW: auth.uid() = user_id"
+      echo ""
+      echo "Performance improvement: 99.99% faster (10,000x speedup)"

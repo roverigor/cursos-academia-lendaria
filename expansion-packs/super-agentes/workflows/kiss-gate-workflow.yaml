@@ -1,0 +1,85 @@
+# KISS Gate Validation Workflow (Story 1.7)
+workflow:
+  id: "kiss-gate"
+  name: "KISS Gate Validation"
+  version: "1.0.0"
+metadata:
+  story: "expansion-packs/super-agentes/docs/stories/1.7.kiss-gate-validation-workflow.md"
+steps:
+  - id: "use_case"
+    type: "elicit"
+    elicit:
+      fields:
+        - {name: "what_storing", label: "What are you storing?", type: "text"}
+        - {name: "how_many", label: "How many records?", type: "number"}
+        - {name: "how_often", label: "How often changes?", type: "string"}
+        - {name: "who_access", label: "Who needs access?", type: "string"}
+        - {name: "need_joins", label: "Need relationships/joins?", type: "boolean"}
+      output_vars: ["what_storing", "how_many", "how_often", "who_access", "need_joins"]
+
+  - id: "detect_red_flags"
+    type: "execute"
+    command: |
+      RED_FLAGS=0
+
+      # Small dataset
+      if [ "{{how_many}}" -lt 100 ]; then
+        echo "🚩 Small dataset (<100) → Consider JSON/YAML file"
+        RED_FLAGS=$((RED_FLAGS + 1))
+      fi
+
+      # Single user
+      if echo "{{who_access}}" | grep -qi "just me\|only me\|single"; then
+        echo "🚩 Single user → Consider SQLite local file"
+        RED_FLAGS=$((RED_FLAGS + 1))
+      fi
+
+      # No joins
+      if [ "{{need_joins}}" = "false" ]; then
+        echo "🚩 No relationships → Reconsider database"
+        RED_FLAGS=$((RED_FLAGS + 1))
+      fi
+
+      echo "red_flags=$RED_FLAGS"
+    outputs: {red_flag_count: "{{output}}"}
+
+  - id: "suggest_alternatives"
+    condition: "{{red_flag_count}} > 0"
+    type: "execute"
+    command: |
+      echo "=== KISS Gate: Simpler Solutions Available ==="
+      echo ""
+      echo "Consider these alternatives:"
+
+      if [ "{{how_many}}" -lt 100 ]; then
+        echo "• JSON/YAML file (< 100 records)"
+      fi
+
+      if echo "{{who_access}}" | grep -qi "just me"; then
+        echo "• SQLite local file (single user)"
+      fi
+
+      echo ""
+      echo "Database is appropriate if:"
+      echo "  ✓ Multi-user concurrent access"
+      echo "  ✓ Relationships/joins required"
+      echo "  ✓ ACID transactions needed"
+      echo "  ✓ > 10K records expected"
+
+  - id: "override"
+    condition: "{{red_flag_count}} > 0"
+    type: "elicit"
+    elicit:
+      question: "Continue with database anyway?"
+      options:
+        - {label: "No - Use simpler solution", value: "no"}
+        - {label: "Yes - Database is necessary", value: "yes"}
+      output_var: "override"
+
+  - id: "justification"
+    condition: "{{override}} == 'yes'"
+    type: "elicit"
+    elicit:
+      fields:
+        - {name: "why_db", label: "Why is database necessary?", type: "text", multiline: true}
+      output_vars: ["why_db"]
