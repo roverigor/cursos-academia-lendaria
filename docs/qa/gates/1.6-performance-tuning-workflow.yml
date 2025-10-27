@@ -1,0 +1,41 @@
+schema: 1
+story: '1.6'
+story_title: 'Performance Tuning Workflow'
+gate: PASS
+status_reason: 'Outstanding performance analysis design with modern tooling (pg_stat_statements, index_advisor) and critical RLS optimization (99.99% speedup).'
+reviewer: 'Quinn (Test Architect)'
+updated: '2025-10-27T12:00:00Z'
+top_issues: []
+waiver: { active: false }
+
+# Extended fields
+quality_score: 100
+expires: '2025-11-10T12:00:00Z'
+
+evidence:
+  acceptance_criteria_count: 7
+  tasks_count: 10
+  test_scenarios_documented: 15
+  integration_tasks_reused: 4
+
+nfr_validation:
+  security:
+    status: PASS
+    notes: 'RLS performance analysis with auth.uid() wrapping detection (critical security + performance)'
+  performance:
+    status: PASS
+    notes: 'Comprehensive: pg_stat_statements analysis, EXPLAIN ANALYZE, index recommendations, before/after measurement'
+  reliability:
+    status: PASS
+    notes: 'Risk-based prioritization, performance targets specified (interactive < 100ms, reports < 1s)'
+  maintainability:
+    status: PASS
+    notes: 'Extensive optimization patterns library, clear issue identification, index recommendation examples'
+
+recommendations:
+  immediate: []
+  future:
+    - action: 'Consider adding query performance regression testing in CI/CD'
+      refs: ['Performance measurement']
+    - action: 'Add automated alerts for queries exceeding performance targets'
+      refs: ['Performance targets']

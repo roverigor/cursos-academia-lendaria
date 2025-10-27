@@ -1,0 +1,41 @@
+schema: 1
+story: '1.4'
+story_title: 'Analyze Data Workflow'
+gate: PASS
+status_reason: 'Excellent implementation of PostgreSQL best practices (staging table pattern) with comprehensive validation and idempotency.'
+reviewer: 'Quinn (Test Architect)'
+updated: '2025-10-27T12:00:00Z'
+top_issues: []
+waiver: { active: false }
+
+# Extended fields
+quality_score: 100
+expires: '2025-11-10T12:00:00Z'
+
+evidence:
+  acceptance_criteria_count: 6
+  tasks_count: 8
+  test_scenarios_documented: 11
+  integration_tasks_reused: 2
+
+nfr_validation:
+  security:
+    status: PASS
+    notes: 'Staging table pattern prevents direct production writes, validation checks before merge'
+  performance:
+    status: PASS
+    notes: 'COPY command for bulk loads (10-100x faster than INSERT), batch processing for large files'
+  reliability:
+    status: PASS
+    notes: 'Validation before merge, idempotent seed pattern (ON CONFLICT), orphaned records detection'
+  maintainability:
+    status: PASS
+    notes: 'Clear CSV import safety pattern, idempotent seed examples, comprehensive error handling'
+
+recommendations:
+  immediate: []
+  future:
+    - action: 'Consider adding data validation rules library for common patterns'
+      refs: ['Validation checks']
+    - action: 'Add progress indicator for large CSV imports'
+      refs: ['Large file handling']

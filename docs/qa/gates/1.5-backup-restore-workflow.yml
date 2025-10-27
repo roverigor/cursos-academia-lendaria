@@ -1,0 +1,41 @@
+schema: 1
+story: '1.5'
+story_title: 'Backup & Restore Workflow'
+gate: PASS
+status_reason: 'Comprehensive backup strategy with excellent metadata management, retention policy, and emergency rollback support.'
+reviewer: 'Quinn (Test Architect)'
+updated: '2025-10-27T12:00:00Z'
+top_issues: []
+waiver: { active: false }
+
+# Extended fields
+quality_score: 100
+expires: '2025-11-10T12:00:00Z'
+
+evidence:
+  acceptance_criteria_count: 7
+  tasks_count: 9
+  test_scenarios_documented: 13
+  integration_tasks_reused: 2
+
+nfr_validation:
+  security:
+    status: PASS
+    notes: 'Pre-rollback snapshots (safety net before restoration), snapshot validation before restoring'
+  performance:
+    status: PASS
+    notes: 'Schema-only snapshots for fast migrations (~1MB, seconds), schema+data for full backups'
+  reliability:
+    status: PASS
+    notes: 'Snapshot metadata with restore instructions, retention policy, emergency rollback fast path'
+  maintainability:
+    status: PASS
+    notes: 'Labeled snapshots with metadata YAML, clear retention rules, snapshot listing with purpose'
+
+recommendations:
+  immediate: []
+  future:
+    - action: 'Consider automated snapshot scheduling (e.g., daily at 2am)'
+      refs: ['Retention policy']
+    - action: 'Add snapshot compression for large databases to save storage'
+      refs: ['Snapshot types']
