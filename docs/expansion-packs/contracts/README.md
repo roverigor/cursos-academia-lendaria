@@ -17,13 +17,63 @@ A **contract** is a versioned specification of how two expansion packs communica
 
 ---
 
-## Active Contracts
+## Active Contracts (4 Total)
 
-| Contract | Version | Provider | Consumer | Status |
-|----------|---------|----------|----------|--------|
-| ETL → MMOS | [1.0.0](./etl-mmos-v1.0.0.yaml) | ETL Data Collector | MMOS | ✅ Stable |
-| InnerLens → MMOS | [1.0.0](./innerlens-mmos-v1.0.0.yaml) | InnerLens | MMOS | ✅ Stable |
-| MMOS → CreatorOS | [1.0.0](./mmos-creator-os-v1.0.0.yaml) | MMOS | CreatorOS | ✅ Stable |
+### MMOS Pipeline (Orquestrador de Clonagem)
+| Contract | Version | Service | Orchestrator | Type | Status | Created |
+|----------|---------|---------|--------------|------|--------|---------|
+| [**MMOS → ETL**](./mmos-etl-v1.0.0.yaml) | 1.0.0 | ETL Data Collector | MMOS | Request | ✅ Stable | 2025-10-27 |
+| [**MMOS → InnerLens**](./mmos-innerlens-v1.0.0.yaml) | 1.0.0 | InnerLens | MMOS | Request | ✅ Stable | 2025-10-27 |
+
+### CreatorOS Pipeline (Orquestrador de Conteúdo)
+| Contract | Version | Service | Orchestrator | Type | Status | Created |
+|----------|---------|---------|--------------|------|--------|---------|
+| [**CreatorOS → MMOS**](./creator-os-mmos-v1.0.0.yaml) | 1.0.0 | MMOS | CreatorOS | Request | ✅ Stable | 2025-10-27 |
+| [**CreatorOS → InnerLens**](./creator-os-innerlens-v1.0.0.yaml) | 1.0.0 | InnerLens | CreatorOS | RAG Query | ✅ Stable | 2025-10-27 |
+
+---
+
+## Contract Summaries
+
+### MMOS → ETL (v1.0.0)
+**Purpose:** MMOS orquestra coleta de fontes no processo de clonagem
+**Integration:** MMOS invoca ETL → ETL coleta sources → retorna outputs/minds/{slug}/sources/
+**Key features:**
+- Request/response schema para orquestração
+- File naming convention: `{type}_{identifier}_{date}.{ext}`
+- Supported formats: `.md`, `.txt`, `.pdf`, `.html`, `.json`
+- COLLECTION_SUMMARY.yaml com stats
+- Error handling: partial collections, network failures
+
+### MMOS → InnerLens (v1.0.0)
+**Purpose:** MMOS orquestra análise psicométrica no processo de clonagem
+**Integration:** MMOS invoca InnerLens → InnerLens extrai fragments + Big Five → salva no DB
+**Key features:**
+- Database tables: `sources`, `fragments`, `big_five_profiles`
+- MIU fragments: Framework-agnostic behavioral units
+- Quality gate BLOCKING (min 10 MIUs)
+- Big Five scores: 0-100 range with confidence
+- Fidelity boost: +2-3% (94% → 96-97%)
+
+### CreatorOS → MMOS (v1.0.0)
+**Purpose:** CreatorOS solicita MMOS criar versão "professor" para ensino
+**Integration:** CreatorOS solicita → MMOS gera professor.md → CreatorOS usa para lições
+**Key features:**
+- **professor.md** - Sistema prompt especializado para ensino
+- Integração InnerLens: Big Five contextualizado para pedagogia
+- Voice fidelity: 96%+ (vs 92% com generalista)
+- Filosofia de ensino do frameworks.md
+- Request-based: on-demand generation
+
+### CreatorOS → InnerLens (v1.0.0)
+**Purpose:** CreatorOS consulta fragmentos via RAG durante geração de conteúdo
+**Integration:** CreatorOS query → InnerLens busca fragments → retorna top-k relevantes
+**Key features:**
+- RAG query para contextual enrichment
+- Keyword search (current) + semantic search (future)
+- Relevance scoring (0.0-1.0)
+- Top-k fragments com source attribution
+- Fidelity boost: +8% (90% → 98% com RAG)
 
 ---
 

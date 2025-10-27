@@ -319,6 +319,21 @@ Assistente para aplicar MMOS a clones existentes:
 
 ---
 
+## 🗄️ Database
+
+**Technology:** Supabase (PostgreSQL 16+)
+**Current Version:** v0.7.0
+**Documentation:** [docs/database/README.md](docs/database/README.md)
+
+O projeto utiliza Supabase como backend com schema unificado que suporta:
+- **MMOS**: Minds, sources, fragments, knowledge base
+- **CreatorOS**: Content projects, campaigns, performance tracking
+- **Auth & RLS**: Passwordless authentication com row-level security
+
+📚 **[Complete Database Documentation →](docs/database/README.md)**
+
+---
+
 ## 📚 Documentação
 
 ### Guias Principais
@@ -327,6 +342,7 @@ Assistente para aplicar MMOS a clones existentes:
 - **[AIOS Working in Brownfield](.aios-core/working-in-the-brownfield.md)** - Trabalhar com projetos existentes
 - **[MMOS README](docs/mmos/README.md)** - Visão geral do Mind Mapper OS
 - **[Minds README](outputs/minds/README.md)** - Boas práticas para clones
+- **[Database Documentation](docs/database/README.md)** - Schema, migrations, architecture
 
 ### Documentação MMOS
 
