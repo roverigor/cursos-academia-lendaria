@@ -46,6 +46,18 @@ This directory contains all project documentation organized by category for easy
   - Migration documentation
   - QA session reports
 
+### 🔌 Expansion Packs System
+- **[expansion-packs/](./expansion-packs/)** - Centralized expansion pack coordination
+  - [System Overview](./expansion-packs/README.md) - Complete expansion pack architecture
+  - [Dependency Graph](./expansion-packs/dependency-graph.md) - Integration mapping
+  - [Cross-Pack Workflows](./expansion-packs/workflows.md) - End-to-end workflows
+  - [Governance Model](./expansion-packs/governance.md) - Planning & coordination
+  - [Architecture](./expansion-packs/architecture.md) - Technical architecture
+  - [Epics](./expansion-packs/epics/) - System-level epics
+  - [Stories](./expansion-packs/stories/) - Cross-pack stories
+  - [Contracts](./expansion-packs/contracts/) - Integration contracts
+  - [ADRs](./expansion-packs/decisions/) - Architecture decisions
+
 ---
 
 ## 🧬 MMOS-Specific Documentation
@@ -104,6 +116,12 @@ The MMOS (Mind Mapper OS) system has its own dedicated documentation:
 **"Where do I put new files?"**
 → Check [Folder Structure Guide](./guides/folder-structure.md)
 
+**"How do expansion packs work together?"**
+→ See [Expansion Packs System](./expansion-packs/README.md)
+
+**"How do I create a cross-pack feature?"**
+→ Read [Governance Model](./expansion-packs/governance.md)
+
 ### "What is...?"
 
 **"What is MMOS?"**
@@ -115,19 +133,28 @@ The MMOS (Mind Mapper OS) system has its own dedicated documentation:
 **"What's the difference between outputs/ and docs/?"**
 → Check [Outputs Guide](./guides/outputs-guide.md)
 
+**"What are expansion packs?"**
+→ Read [Expansion Pack System Overview](./expansion-packs/README.md)
+
+**"How are expansion packs integrated?"**
+→ See [Dependency Graph](./expansion-packs/dependency-graph.md)
+
 ---
 
 ## 📊 Documentation by Type
 
 ### Process Documentation
 - **Workflows:** [mmos/workflows/](./mmos/workflows/)
+- **Cross-Pack Workflows:** [expansion-packs/workflows.md](./expansion-packs/workflows.md)
 - **Methodologies:** [methodology/](./methodology/)
 - **Guides:** [guides/](./guides/)
 
 ### Product Documentation
 - **Requirements:** [prd/](./prd/)
 - **Architecture:** [architecture/](./architecture/)
+- **Expansion Pack Architecture:** [expansion-packs/architecture.md](./expansion-packs/architecture.md)
 - **Epics:** [mmos/epics/](./mmos/epics/)
+- **System-Level Epics:** [expansion-packs/epics/](./expansion-packs/epics/)
 
 ### Historical Documentation
 - **Logs:** [logs/](./logs/)

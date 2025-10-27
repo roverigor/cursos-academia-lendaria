@@ -578,6 +578,110 @@ CreatorOS validates voice consistency across 4 dimensions:
 
 ---
 
+## 🔧 Troubleshooting
+
+### Common Issues
+
+#### Course Generation
+
+**Issue: "COURSE-BRIEF not found"**
+- **Cause:** Running `*new` command without initializing course
+- **Fix:** Ensure you're in correct directory or course was initialized properly
+- **Verify:** Check if `outputs/courses/{slug}/COURSE-BRIEF.md` exists
+
+**Issue: "Market research returns no results"**
+- **Cause:** Topic too niche or search queries too specific
+- **Fix:** Broaden topic in COURSE-BRIEF, check internet connection
+- **Alternative:** Run market research manually with custom queries
+
+**Issue: "Lessons fail GPS validation"**
+- **Cause:** Generated lessons missing Goal/Position/Steps structure
+- **Fix:** Regenerate specific lesson, check GPS template is loaded
+- **Verify:** Run `*validate-course {slug}` for detailed report
+
+#### Voice Fidelity
+
+**Issue: "Fidelity score < 85%"**
+- **Cause:** MMOS mind not properly loaded or transcript quality low
+- **Fix:**
+  1. Verify MMOS integration: Check if mind exists in `outputs/minds/{slug}/`
+  2. Improve source quality: Add more transcripts, writing samples
+  3. Use rule-based extraction: Falls back automatically if MMOS unavailable
+
+**Issue: "Voice inconsistent across lessons"**
+- **Cause:** Different prompts used, or persona not locked
+- **Fix:** Ensure same persona config used for all lessons in curriculum.yaml
+
+#### Brownfield Workflow
+
+**Issue: "File organization fails"**
+- **Cause:** Unsupported file types or corrupted files in /sources/
+- **Fix:** Check for non-standard files, remove corrupted files, re-run
+
+**Issue: "Video transcription times out"**
+- **Cause:** AssemblyAI API key missing or large video files
+- **Fix:**
+  1. Add `ASSEMBLYAI_API_KEY` to `.env`
+  2. Split large videos (>2GB) into smaller chunks
+  3. Use pre-transcribed files (place in /sources/transcripts/)
+
+**Issue: "ICP extraction incomplete"**
+- **Cause:** Legacy materials lack clear audience indicators
+- **Fix:**
+  1. Add explicit ICP documentation to /sources/
+  2. Manual completion in COURSE-BRIEF
+  3. Use gap analysis to identify missing sections
+
+#### Database Issues
+
+**Issue: "Database locked" error**
+- **Cause:** Multiple processes accessing database simultaneously
+- **Fix:**
+  1. Close other processes using database
+  2. Wait 10 seconds and retry
+  3. Check for zombie processes: `ps aux | grep creator`
+
+**Issue: "Migration fails"**
+- **Cause:** Database schema out of sync
+- **Fix:**
+  1. Backup database: `cp outputs/database/mmos.db outputs/database/mmos.db.backup`
+  2. Run migrations: `./scripts/db-migrate.sh`
+  3. If fails, restore backup and report issue
+
+### Performance Issues
+
+**Issue: "Curriculum generation takes >10 minutes"**
+- **Expected:** 5-8 minutes for 30-lesson course
+- **If slower:**
+  1. Check API rate limits (Claude/Gemini)
+  2. Reduce course size (modules/lessons)
+  3. Use `--resume` flag if interrupted
+
+**Issue: "Out of memory during lesson generation"**
+- **Cause:** Generating too many lessons in parallel
+- **Fix:** Reduce batch size in config or generate sequentially
+
+### Getting Help
+
+**Before Reporting Issues:**
+1. Check logs: `docs/logs/{date}-creator-os-*.md`
+2. Verify config: `expansion-packs/creator-os/config.yaml`
+3. Test with simple course (3 lessons) to isolate issue
+
+**Include in Report:**
+- CreatorOS version (`config.yaml` version field)
+- Command run (e.g., `*new curso-teste`)
+- Error message (full text)
+- COURSE-BRIEF.md (if relevant)
+- System: OS version, Python version
+
+**Where to Report:**
+- GitHub Issues: https://github.com/academia-lendaria/aios-fullstack/issues
+- Discord: #creator-os channel
+- Email: support@academialendaria.com
+
+---
+
 ## 🤝 Contributing
 
 CreatorOS is part of the AIOS-FULLSTACK framework. Contributions welcome!
