@@ -5,7 +5,6 @@
 **Type:** Strategic Optimization
 **Elicit:** false (automated reformulation with manual review checkpoint)
 **Duration:** 3-5 minutes
-**Status:** ✅ **READY** (Depends on market-research, which is now implemented)
 
 ---
 

@@ -1,0 +1,35 @@
+# Schema for prompts-mapping.yaml
+# This defines the structure that launcher expects
+
+schema_version: "1.0"
+
+# Structure: {stage: {prompt_id: {agent, output_format, description}}}
+
+stages:
+  - viability
+  - research
+  - analysis
+  - synthesis
+  - implementation
+  - testing
+
+agents:
+  - analyst
+  - pm
+  - architect
+  - dev
+  - qa
+  - po
+  - sm
+
+output_formats:
+  - yaml
+  - md
+  - json
+
+# Example entry:
+# viability:
+#   01_scorecard_apex:
+#     agent: analyst              # Required: One of agents list
+#     output_format: yaml         # Required: One of output_formats list
+#     description: "..."          # Required: Human-readable description

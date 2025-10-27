@@ -1,7 +1,7 @@
 # DB Sage - Database Architect & Operations Engineer
 
-**Versão**: 1.1.0 (Production-Ready)
-**Status**: ✅ Production - Milestones 1+2 Complete
+**Versão**: 1.0.0 (Em Revisão)
+**Status**: 🔄 Staging - Aguardando Auditoria
 **Tipo**: Agente AIOS CORE
 
 ---
@@ -44,27 +44,18 @@ docs/architecture/db-sage/           [STAGING - REVISÃO]
 ├── agents/
 │   └── db-sage.md                    ← Definição do agente (AIOS)
 │
-├── tasks/                            ← 20 tasks executáveis
-│   ├── db-env-check.md               # Validação de ambiente
-│   ├── db-bootstrap.md               # Setup inicial
-│   ├── db-snapshot.md                # Criar snapshots
-│   ├── db-apply-migration.md         # Aplicar migrations
-│   ├── db-rollback.md                # Rollback seguro
-│   ├── db-dry-run.md                 # Testar migrations
-│   ├── db-smoke-test.md              # Testes de validação
-│   ├── db-rls-audit.md               # Auditoria RLS
-│   ├── db-explain.md                 # Análise de queries
-│   ├── db-impersonate.md             # Testar como usuário
-│   ├── db-verify-order.md            # Verificar ordem de migrations
-│   ├── db-analyze-hotpaths.md        # Análise de query hotpaths
-│   ├── db-load-csv.md                # Bulk CSV loading
-│   ├── db-policy-apply.md            # Aplicar RLS policies
-│   ├── db-run-sql.md                 # Executar SQL seguro
-│   ├── db-seed.md                    # Seed data idempotente
-│   ├── domain-modeling.md            # Modelagem de domínio
-│   ├── query-optimization.md         # Otimização de queries
-│   ├── schema-audit.md               # Auditoria de schema
-│   └── supabase-setup.md             # Setup Supabase completo
+├── tasks/                            ← 11 tasks executáveis
+│   ├── db-env-check.md
+│   ├── db-bootstrap.md
+│   ├── db-snapshot.md
+│   ├── db-apply-migration.md
+│   ├── db-rollback.md
+│   ├── db-dry-run.md
+│   ├── db-smoke-test.md
+│   ├── db-rls-audit.md
+│   ├── db-explain.md
+│   ├── db-impersonate.md
+│   └── db-verify-order.md
 │
 ├── templates/                        ← 6 templates de documentação
 │   ├── schema-design-tmpl.yaml
@@ -113,52 +104,34 @@ docs/architecture/db-sage/           [STAGING - REVISÃO]
 
 ## 📋 Comandos Disponíveis
 
-### 🚀 Setup & Initialization
+### Operações Core
 | Comando | Descrição |
 |---------|-----------|
-| `*env-check` | Validar ambiente e conexão com banco |
-| `*bootstrap` | Criar estrutura supabase/ completa |
-| `*setup-supabase` | Setup Supabase completo (CLI, projeto, extensions) |
-
-### 🗄️ Migration Operations
-| Comando | Descrição |
-|---------|-----------|
-| `*snapshot {name}` | Criar snapshot de schema para rollback |
-| `*apply-migration {file}` | Aplicar migration com safety checks |
-| `*rollback {snapshot}` | Restaurar snapshot anterior |
+| `*env-check` | Validar ambiente e conexão |
+| `*bootstrap` | Criar estrutura supabase/ |
+| `*snapshot {name}` | Criar snapshot de schema |
+| `*apply-migration {file}` | Aplicar migration com safety |
+| `*rollback {snapshot}` | Restaurar snapshot |
 | `*dry-run {file}` | Testar migration sem aplicar |
-| `*verify-order` | Verificar ordem de dependências |
 | `*smoke-test {version}` | Executar testes de validação |
 
-### 🔒 Security (RLS)
+### Segurança
 | Comando | Descrição |
 |---------|-----------|
-| `*rls-audit` | Auditar cobertura RLS em todas tables |
-| `*policy-apply {table} {mode}` | Aplicar RLS policy (KISS ou granular) |
-| `*impersonate {user}` | Testar RLS como usuário específico |
+| `*rls-audit` | Auditar cobertura RLS |
+| `*impersonate {user}` | Testar RLS como usuário |
 
-### ⚡ Performance & Optimization
+### Performance
 | Comando | Descrição |
 |---------|-----------|
-| `*explain {query}` | Analisar query execution plan |
-| `*analyze-hotpaths` | Identificar queries lentas (pg_stat_statements) |
-| `*optimize-query {query}` | Sessão interativa de otimização |
+| `*explain {query}` | Analisar query plan |
 
-### 📊 Data Operations
+### Documentação
 | Comando | Descrição |
 |---------|-----------|
-| `*seed {file}` | Carregar seed data idempotente |
-| `*load-csv {file} {table}` | Bulk loading de CSV (COPY) |
-| `*run-sql {file} {mode}` | Executar SQL com safety (auto/manual/read-only) |
-
-### 🏗️ Design & Architecture
-| Comando | Descrição |
-|---------|-----------|
-| `*model-domain` | Sessão interativa de domain modeling |
-| `*audit-schema` | Auditoria completa de schema (normalization, constraints, indexes) |
-| `*create-schema` | Gerar schema design doc (YAML) |
+| `*create-schema` | Gerar schema design doc |
 | `*create-rls-policies` | Gerar RLS documentation |
-| `*create-migration-plan` | Planejar migrations complexas |
+| `*create-migration-plan` | Planejar migrations |
 | `*design-indexes` | Desenhar estratégia de indexes |
 
 ---
@@ -218,65 +191,44 @@ supabase link --project-ref {ref}
 
 | Categoria | Quantidade | Status |
 |-----------|------------|--------|
-| **Agente** | 1 | ✅ Production-ready |
-| **Tasks** | 20 | ✅ Validated (M1+M2+M3) |
-| **Templates YAML** | 4 | ✅ Expanded (+2,000 lines) |
-| **Templates SQL** | 2 | ✅ Production-ready |
-| **Documentation** | 35 files | ✅ Complete |
-
-### Quality Metrics
-- **Lines Added:** +10,000+ (templates, tasks, docs)
-- **Validation:** All tasks validated against PostgreSQL 18 + Supabase docs
-- **Best Practices:** Performance optimizations (99.99% RLS improvement)
-- **Coverage:** Setup → Design → Migration → Operations → Security
+| **Agente** | 1 | 🔍 Aguardando revisão |
+| **Tasks** | 11 | 🔍 Aguardando auditoria |
+| **Templates YAML** | 4 | 🔍 Aguardando auditoria |
+| **Templates SQL** | 2 | 🔍 Aguardando auditoria |
 
 ---
 
-## ✅ Status do Projeto
+## ⚠️ Status do Projeto
 
-### Fase Atual: PRODUCTION-READY (v1.1.0)
+### Fase Atual: FASE 0 - Auditoria
 
-**Milestones Completos:**
-1. ✅ **M1: Template Expansion** - migration-plan-tmpl (+1,199 lines), rls-policies-tmpl (+679 lines)
-2. ✅ **M2: Documentation** - Comprehensive guides, gap analysis, validation reports
-3. ✅ **M3: Task Creation** - 8 new tasks validated against official docs (PostgreSQL 18 + Supabase)
+**O que estamos fazendo:**
+1. ✅ Organizar arquivos em estrutura staging
+2. ✅ Consolidar documentação
+3. 🔄 Auditar templates contra best practices
+4. 🔄 Auditar tasks contra best practices
+5. ⏸️ Documentar gaps identificados
+6. ⏸️ Criar roadmap de correções
 
-**Total Work:**
-- **+10,000 lines** of production-ready code and documentation
-- **20 tasks** covering full database lifecycle
-- **35 documentation files**
-- **All tasks validated** against official PostgreSQL 18 and Supabase documentation
+**Após auditoria completa:**
+- Mover para `.aios-core/` (agente + tasks + templates)
+- Disponibilizar para uso em projetos
 
-### Critical Features Delivered
+### Gaps Conhecidos (Preliminares)
 
-**ARCHITECTURE:**
-✅ Schema version tracking (checksums, rollback scripts)
-✅ Zero-downtime migrations (expand/contract pattern)
-✅ Backup/restore completo (PITR, verification)
-✅ Monitoring integration (pg_stat_statements, auto_explain, pgai)
+**CRÍTICOS** (bloqueiam produção):
+1. ❌ Schema version tracking (checksums, rollback scripts)
+2. ❌ Zero-downtime migrations (expand/contract pattern)
+3. ❌ Backup/restore completo (PITR, verification)
+4. ❌ Monitoring integration (pg_stat_statements, alerting)
 
-**SECURITY:**
-✅ RLS patterns completos (KISS, granular, multi-tenant, hierarchical)
-✅ Performance optimization (99.99% improvement with cached auth.uid())
-✅ Security audit (raw_user_meta_data warnings, NULL checks)
-✅ Policy templates (17 policies in baseline)
+**ALTO** (risk mitigation):
+5. ⚠️ RLS patterns incompletos (multi-tenancy, time-based, hierarchical)
+6. ⚠️ Connection pooling strategy não detalhada
+7. ⚠️ Realtime configuration superficial
+8. ⚠️ Storage objects integration ausente
 
-**OPERATIONS:**
-✅ Domain modeling (interactive session)
-✅ Query optimization (EXPLAIN ANALYZE, modern tools 2025)
-✅ Schema audit (normalization, constraints, pgAudit, pgTAP)
-✅ Supabase setup (complete CLI workflow)
-✅ Data operations (seed, CSV bulk loading, SQL execution)
-
-### Next Steps (Optional Enhancements)
-
-**Nice-to-Have** (not blocking production):
-- Connection pooling deep-dive guide
-- Realtime configuration examples
-- Storage objects integration patterns
-- Multi-region deployment guide
-
-Ver **GAP-ANALYSIS.md** para análise histórica.
+Ver **GAP-ANALYSIS.md** para análise completa.
 
 ---
 
@@ -327,42 +279,14 @@ Ver **GAP-ANALYSIS.md** para análise histórica.
 
 ## 📝 Changelog
 
-### v1.1.0 (2025-10-27) - Production Release 🎉
-**Major Update: Milestones 1+2+3 Complete**
-- ✅ **M1: Template Expansion** (+1,878 lines total)
-  - migration-plan-tmpl.yaml: 93 → 1,292 lines (+1,199 lines, +1,289%)
-  - rls-policies-tmpl.yaml: 524 → 1,203 lines (+679 lines, +130%)
-- ✅ **M2: Documentation** (5 comprehensive documents)
-  - AUDIT-SUMMARY.md: Gap analysis, scorecard (6.5 → 9.0/10)
-  - GAP-ANALYSIS.md: 36KB detailed analysis
-  - IMPLEMENTATION-REPORT-M1-M2.md: Complete milestone report
-  - VALIDATION-supabase-docs.md: Official documentation validation
-  - SCHEMA-COMPARISON-SQLITE-SUPABASE.md: SQLite → Supabase migration guide
-- ✅ **M3: Task Creation** (8 new validated tasks, ~4,500 lines)
-  - domain-modeling.md: Interactive domain modeling
-  - query-optimization.md: Complete optimization guide (auto_explain, pev2, pgai)
-  - schema-audit.md: Advanced audit (pgAudit, pgTAP, triggers)
-  - supabase-setup.md: Complete Supabase CLI workflow
-  - db-seed.md: Idempotent seed patterns
-  - db-policy-apply.md: RLS with 99.99% performance optimization
-  - db-load-csv.md: Bulk CSV loading (10-100x faster)
-  - db-run-sql.md: Safe SQL execution with transaction modes
-  - db-analyze-hotpaths.md: Query hotpath analysis
-- ✅ **Quality Assurance**
-  - All tasks validated against PostgreSQL 18 + Supabase official docs
-  - 15+ WebSearch/WebFetch operations for best practices
-  - Critical performance discovery: 99.99% RLS optimization
-  - Modern 2025 tools added: auto_explain, pev2, pgMustard, pgai
-
-**Total Impact:** +10,000 lines, 20 tasks, 35 files, production-ready
-
 ### v1.0.0-staging (2025-10-26)
 - ✅ Estrutura inicial de 11 tasks
 - ✅ 6 templates (4 YAML + 2 SQL)
 - ✅ Agente AIOS definido
+- 🔄 Em auditoria antes de produção
 
 ---
 
 **Mantido por**: Winston (Architect Agent)
 **Última Atualização**: 2025-10-27
-**Status**: ✅ Production-Ready - Ready for `.aios-core/` promotion
+**Próximo Passo**: Auditoria de templates e tasks

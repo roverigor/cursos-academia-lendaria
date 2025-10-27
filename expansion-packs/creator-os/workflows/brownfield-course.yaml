@@ -1,7 +1,3 @@
-# ✅ IMPLEMENTATION NOTE:
-# All steps fully implemented including market-research (lib/market_researcher.py + scripts/run_market_research.py)
-# and reformulate-course-brief. Market research uses hybrid agent-Python execution model.
-
 workflow:
   id: brownfield-course
   name: Brownfield Course Migration
@@ -9,7 +5,6 @@ workflow:
     Agent workflow for upgrading existing course materials to CreatorOS structure.
     Auto-extracts ICP, voice patterns, and learning objectives from legacy content.
     Implements GPS + Didática Lendária pedagogical frameworks with quality validation.
-    Includes market research for competitive intelligence and modernization insights.
   type: brownfield
   project_types:
     - course-upgrade

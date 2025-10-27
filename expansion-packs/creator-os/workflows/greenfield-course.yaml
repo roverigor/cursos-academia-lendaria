@@ -1,14 +1,9 @@
-# ✅ IMPLEMENTATION NOTE:
-# All steps fully implemented including market-research (lib/market_researcher.py + scripts/run_market_research.py)
-# and reformulate-course-brief. Market research uses hybrid agent-Python execution model.
-
 workflow:
   id: greenfield-course
   name: Greenfield Course Creation
   description: >-
     Agent workflow for creating online courses from scratch with no existing materials.
     Implements GPS + Didática Lendária pedagogical frameworks with optional MMOS voice integration.
-    Includes market research for competitive intelligence and strategic positioning.
   type: greenfield
   project_types:
     - online-course

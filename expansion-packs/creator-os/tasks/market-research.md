@@ -5,9 +5,6 @@
 **Type:** Discovery & Intelligence
 **Elicit:** true
 **Duration:** 5-10 minutes
-**Status:** ✅ **IMPLEMENTED** (Hybrid: Python lib + Agent execution)
-
-> ℹ️ **IMPLEMENTATION:** This task is implemented as a hybrid system combining `lib/market_researcher.py` (1,155 LOC) with agent-based WebSearch/WebFetch execution. Run via `python scripts/run_market_research.py <course-slug>`.
 
 ---
 

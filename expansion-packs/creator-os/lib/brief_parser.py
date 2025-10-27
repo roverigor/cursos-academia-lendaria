@@ -20,23 +20,8 @@ Usage:
 """
 
 import re
+import yaml
 from pathlib import Path
-try:
-    import yaml
-    HAS_YAML = True
-except ImportError:
-    HAS_YAML = False
-    # Provide minimal yaml.safe_load fallback for JSON-like YAML
-    class yaml:
-        @staticmethod
-        def safe_load(content):
-            import json
-            # Simple fallback: try JSON first
-            try:
-                return json.loads(content)
-            except:
-                # Return empty dict if parsing fails
-                return {}
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any
 
