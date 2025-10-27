@@ -1,11 +1,12 @@
 name: super-agentes
-version: 1.0.0
+version: 2.0.0
 short-title: SuperAgentes Pack
 description: >-
   SuperAgentes is a meta-orchestrator expansion pack that provides unified access
   to specialized database and design system capabilities. It consolidates DB Sage
-  (database architecture & operations) and Design System (design pattern management)
-  into a single, seamless interface with intelligent command routing.
+  (database architecture & operations) and Design System (Brad Frost methodology -
+  complete UI audit, pattern consolidation, and component generation) into a single,
+  seamless interface with intelligent command routing.
 author: AIOS Community
 slashPrefix: SA
 
@@ -21,13 +22,14 @@ agents:
     file: agents/db-sage.md
     icon: 🗄️
     description: Database Architect & Operations Engineer for Supabase/PostgreSQL
+    status: production
 
   - id: design-system
-    name: Design System Engineer
+    name: Design System (Brad Frost)
     file: agents/design-system.md
     icon: 🎨
-    description: Design System Architect & Pattern Engineer (placeholder)
-    status: placeholder
+    description: Complete design system workflow - Brad Frost methodology for brownfield audit, pattern consolidation, token extraction, migration planning, and production component building
+    status: production
 
 capabilities:
   database:
@@ -39,57 +41,127 @@ capabilities:
     - SQL execution and CSV import
 
   design_system:
-    - Design pattern scanning (future)
-    - Component generation (future)
-    - Design system documentation (future)
-    - Design token management (future)
-    - Style consistency validation (future)
+    - Brownfield UI pattern audit (buttons, colors, forms, spacing, typography)
+    - Pattern redundancy detection and consolidation (HSL clustering, semantic analysis)
+    - Design token extraction and generation (semantic naming)
+    - Multi-format token export (JSON, CSS, Tailwind, SCSS)
+    - ROI calculation and cost savings analysis (pattern-weighted costs)
+    - Shock report generation with visual evidence (HTML reports)
+    - Phased migration strategy planning (4-phase rollout)
+    - Production-ready component generation (React/TypeScript)
+    - Atomic Design composition (atoms → molecules → organisms)
+    - WCAG AA/AAA accessibility compliance
+    - Unit test and documentation generation (Jest, Storybook)
+    - Pattern library building
+    - Expansion pack integration (MMOS, CreatorOS, InnerLens)
 
 command_routing:
   prefixes:
     db: Routes to DB Sage context
-    ds: Routes to Design System context
+    ds: Routes to Design System (Brad) context
 
   examples:
-    - "*db:create-schema - Design database schema"
-    - "*db:apply-migration - Run migration with snapshot"
-    - "*db:rls-audit - Audit RLS coverage"
-    - "*ds:help - Show design system commands (placeholder)"
+    database:
+      - "*agent db-sage - Full DB Sage context"
+      - "*db:create-schema - Design database schema"
+      - "*db:apply-migration - Run migration with snapshot"
+      - "*db:rls-audit - Audit RLS coverage"
+    design_system:
+      - "*agent design-system - Full Design System (Brad) context"
+      - "*ds:audit ./src - Audit UI patterns for redundancy"
+      - "*ds:consolidate - Reduce pattern redundancy using clustering"
+      - "*ds:tokenize - Generate design tokens from patterns"
+      - "*ds:migrate - Create phased migration strategy"
+      - "*ds:shock-report - Generate visual HTML shock report"
+      - "*ds:calculate-roi - Calculate cost savings and ROI"
+      - "*ds:setup - Initialize greenfield design system"
+      - "*ds:build button - Generate production-ready Button component"
+      - "*ds:compose form-field - Compose molecule from atoms"
+      - "*ds:document - Generate pattern library documentation"
+      - "*ds:integrate mmos - Integrate with MMOS expansion pack"
 
 resources:
-  tasks: 23 tasks (20 database + 3 AIOS core shared tasks)
-  templates: 12 database templates
-  checklists: 3 database quality checklists
-  data: 5 knowledge base documents
-  examples: Task execution examples
-  docs: Implementation guides and schema comparisons
+  tasks:
+    total: 35
+    database: 20 (DB Sage)
+    design_system: 12 (Design System unified - 6 brownfield + 6 greenfield)
+    shared: 3 (AIOS core)
+  templates:
+    total: 20
+    database: 12 (DB Sage)
+    design_system: 7 (Design System - tokens, components, state, reports)
+    shared: 1 (AIOS core)
+  checklists:
+    total: 7
+    database: 3 (DB Sage)
+    design_system: 4 (pattern audit, component quality, accessibility, migration)
+  data:
+    total: 11
+    database: 5 (DB Sage)
+    design_system: 6 (atomic design, tokens, consolidation, ROI, integration, WCAG)
+  workflows:
+    total: 3
+    design_system: 3 (brownfield-complete, greenfield-new, audit-only)
+  examples: Task execution examples and pattern demonstrations
+  docs: Implementation guides, schema comparisons, and design system workflows
 
 integration:
   type: Orchestrator
   pattern: Meta-agent with prefix routing
-  agents_included: 2
-  agents_complete: 1
-  agents_placeholder: 1
+  agents_included: 3
+  agents_complete: 3
+  agents_placeholder: 0
+  expansion_packs:
+    mmos: "Design System generates cognitive clone interfaces"
+    creator_os: "Design System generates course platform UIs"
+    innerlens: "Design System generates assessment forms"
 
 requires:
   aios-version: ">=4.0.0"
 
 tools:
-  - supabase-cli
-  - psql
-  - pg_dump
-  - postgres-explain-analyzer
+  database:
+    - supabase-cli
+    - psql
+    - pg_dump
+    - postgres-explain-analyzer
+  design_system:
+    - node/npm (for component scaffolding)
+    - typescript compiler
+    - jest (testing framework)
+    - react testing library
 
 notes: |
   SuperAgentes follows the AIOS Orchestrator pattern, providing both:
-  1. Agent transformation: `*agent db-sage` for extended work in one context
-  2. Prefix routing: `*db:comando` for quick single-command execution
+  1. Agent transformation: `*agent {name}` for extended work in one context
+  2. Prefix routing: `*{prefix}:{command}` for quick single-command execution
 
-  The design-system agent is currently a placeholder and will be developed
-  in future releases. DB Sage is fully functional with 20+ production-ready
-  database tasks and templates.
+  AGENTS:
+  - DB Sage: Production-ready database architecture (20 tasks, 12 templates)
+  - Design System (Brad Frost): Complete design system workflow with 12 commands
+    * Brownfield: audit → consolidate → tokenize → migrate → build → compose
+    * Greenfield: setup → build → compose → document
+    * Audit-only: audit → shock-report → calculate-roi
+
+  WORKFLOWS (3 YAML workflows):
+  - brownfield-complete.yaml: Audit existing UI chaos through component building (70% of use cases)
+  - greenfield-new.yaml: Start fresh with token-based components (20% of use cases)
+  - audit-only.yaml: Generate shock reports and ROI for stakeholders (10% of use cases)
+
+  PHILOSOPHY:
+  - Brad Frost methodology: "Show the horror, then fix it"
+  - Metric-driven decisions (47 buttons → 3 = 93.6% reduction)
+  - Visual shock therapy for stakeholder action
+  - ROI-focused with real cost calculations
+  - Zero hardcoded values (all styling from tokens)
+
+  INTEGRATION:
+  - Design System generates UI patterns for MMOS cognitive clones
+  - Design System generates course UIs for CreatorOS
+  - Design System generates assessment forms for InnerLens
 
 status:
-  db-sage: Production Ready (v1.1.0)
-  design-system: Placeholder
-  overall: Functional with one complete agent
+  version: 2.0.0
+  db_sage: Production Ready (v1.1.0)
+  design_system: Production Ready (v2.0.0 - Brad unified)
+  overall: Fully functional with 3 production agents

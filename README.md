@@ -123,13 +123,20 @@ mente_lendaria/
 │   ├── checklists/         # Quality gates
 │   └── workflows/          # Multi-step automation
 │
-├── expansion-packs/        # Modular extensions
+├── expansion-packs/        # Modular extensions (self-contained)
 │   ├── mmos/               # Mind Mapper OS (cognitive cloning)
+│   │   ├── docs/           # Pack-specific documentation
+│   │   ├── lib/            # Python/JS modules
+│   │   ├── scripts/        # Entry points
+│   │   └── config.yaml     # Pack configuration
 │   ├── creator-os/         # Course generation
+│   │   ├── docs/           # Pack-specific documentation
+│   │   └── ...
 │   ├── etl-data-collector/ # Data collection
 │   ├── innerlens/          # Psychometric profiling
 │   ├── super-agentes/      # Advanced orchestration
 │   └── fragments/          # Knowledge extraction
+│   # Each pack has its own docs/, lib/, scripts/, config.yaml
 │
 ├── docs/                   # Documentation (versioned)
 │   ├── README.md           # Documentation hub
@@ -300,13 +307,19 @@ npm run validate:all      # Validate minds + sources
 | **super-agentes** | Advanced orchestration | `expansion-packs/super-agentes/` |
 | **fragments** | Knowledge extraction | `expansion-packs/fragments/` |
 
-Each pack has its own `config.yaml` and documentation.
+**Each pack is self-contained:**
+- Own `config.yaml` configuration
+- Own `docs/` directory (pack-specific documentation stays WITH the pack)
+- Own `lib/`, `scripts/`, `tasks/`, `agents/`, `templates/`
+- Own `README.md` as entry point
+
+**Rule:** Pack documentation lives in `expansion-packs/{pack}/docs/`, NOT in root `docs/`.
 
 ---
 
 ## File Organization Rules
 
-### CRITICAL: outputs/ vs docs/
+### CRITICAL: outputs/ vs docs/ vs expansion-packs/
 
 **Decision Tree:**
 
@@ -314,23 +327,29 @@ Each pack has its own `config.yaml` and documentation.
    - **YES** → `outputs/minds/{mind_slug}/docs/`
    - **NO** → Continue...
 
-2. **"Is it a script/template for MMOS?"**
-   - **YES** → `expansion-packs/mmos/`
+2. **"Is this documentation/code for a specific expansion-pack?"**
+   - **YES** → `expansion-packs/{pack-name}/docs/` (docs stay WITH the pack)
    - **NO** → Continue...
 
-3. **"Is it about MMOS system/process?"**
+3. **"Is it a script/template for an expansion-pack?"**
+   - **YES** → `expansion-packs/{pack-name}/`
+   - **NO** → Continue...
+
+4. **"Is it about MMOS system/process (core MMOS only)?"**
    - **YES** → `docs/mmos/`
    - **NO** → Continue...
 
-4. **"Is it a methodology/framework?"**
+5. **"Is it a methodology/framework?"**
    - **YES** → `docs/methodology/`
    - **NO** → See `docs/guides/folder-structure.md`
 
 **Examples:**
 - ✅ `outputs/minds/joao_lozano/docs/validation.md` (mind-specific)
+- ✅ `expansion-packs/creator-os/docs/workflow-principles.md` (pack docs stay WITH pack)
 - ✅ `docs/mmos/workflows/brownfield.md` (system workflow)
 - ✅ `docs/methodology/dna-mental.md` (framework)
 - ❌ `docs/mmos/joao-lozano/` (mind dirs belong in outputs/)
+- ❌ `docs/creator-os/` (pack docs belong in expansion-packs/creator-os/docs/)
 
 ---
 

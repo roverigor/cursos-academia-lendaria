@@ -161,33 +161,37 @@ node scripts/pipeline/populate-sources.js
 
 ### File Organization Decision Tree
 
-**Before creating ANY file in docs/mmos/ or outputs/minds/:**
+**Before creating ANY file:**
 
 1. **"Is this about a SPECIFIC mind (name in content)?"**
    - **YES** → `outputs/minds/{mind_slug}/docs/` or `outputs/minds/{mind_slug}/logs/`
    - **NO** → Continue...
 
-2. **"Is it a script/template for MMOS?"**
-   - **YES** → `expansion-packs/mmos/`
+2. **"Is this documentation/code for a specific expansion-pack?"**
+   - **YES** → `expansion-packs/{pack-name}/docs/` (docs stay WITH the pack)
    - **NO** → Continue...
 
-3. **"Is it about MMOS system/process?"**
+3. **"Is it a script/template for an expansion-pack?"**
+   - **YES** → `expansion-packs/{pack-name}/`
+   - **NO** → Continue...
+
+4. **"Is it about MMOS system/process (core MMOS only)?"**
    - **YES** → `docs/mmos/{workflows|epics|stories|reports|qa}/`
    - **NO** → Continue...
 
-4. **"Is it a methodology/framework?"**
+5. **"Is it a methodology/framework?"**
    - **YES** → `docs/methodology/`
    - **NO** → Continue...
 
-5. **"Is it a user/developer guide?"**
+6. **"Is it a user/developer guide (cross-system)?"**
    - **YES** → `docs/guides/`
    - **NO** → Continue...
 
-6. **"Is it a product requirement?"**
+7. **"Is it a product requirement?"**
    - **YES** → `docs/prd/`
    - **NO** → Continue...
 
-7. **"Is it an execution log?"**
+8. **"Is it an execution log?"**
    - **YES** → `docs/logs/` (versioned docs!)
    - **NO** → ⚠️ STOP - Review architecture
 
@@ -197,25 +201,34 @@ node scripts/pipeline/populate-sources.js
 |------|----------|---------|
 | Product requirements | `docs/prd/` | `mmos-prd.md` |
 | Methodologies | `docs/methodology/` | `dna-mental.md` |
-| User guides | `docs/guides/` | `outputs-guide.md` |
+| User guides (cross-system) | `docs/guides/` | `outputs-guide.md` |
 | Architecture docs | `docs/architecture/` | `system-design.md` |
 | Development stories | `docs/stories/` | `story-2.1.md` |
 | Execution logs | `docs/logs/` | `2025-10-17-session.md` |
 | MMOS workflows | `docs/mmos/workflows/` | `brownfield-workflow.md` |
 | MMOS epics | `docs/mmos/epics/` | `epic-2-database.md` |
 | MMOS reports | `docs/mmos/reports/` | `executive-summary.md` |
+| **Expansion-pack docs** | `expansion-packs/{pack}/docs/` | `creator-os/docs/workflow-principles.md` |
+| **Expansion-pack scripts** | `expansion-packs/{pack}/` | `creator-os/lib/brief_parser.py` |
 | Mind-specific docs | `outputs/minds/{slug}/docs/` | `validation-checklist.md` |
 | Mind-specific logs | `outputs/minds/{slug}/logs/` | `20251016-session.md` |
 | Generated courses | `outputs/courses/{slug}/` | `curriculum.yaml` |
 | Database files | `outputs/database/` | `mmos.db` |
-| MMOS scripts | `expansion-packs/mmos/` | `map_mind.py` |
 
 ### Examples
 
 **✅ Correct:**
 ```
+# Mind-specific
 outputs/minds/joao_lozano/docs/validation-checklist.md
 outputs/minds/pedro_valerio/logs/20251016-session.md
+
+# Expansion-pack docs (stay with the pack!)
+expansion-packs/creator-os/docs/course/workflow-principles.md
+expansion-packs/mmos/docs/pipeline-architecture.md
+expansion-packs/super-agentes/docs/integration-patterns.md
+
+# Core system docs
 docs/mmos/workflows/brownfield-workflow.md
 docs/prd/mmos-prd.md
 docs/methodology/dna-mental.md
@@ -224,14 +237,24 @@ docs/logs/2025-10-27-session.md
 
 **❌ Wrong:**
 ```
+# Mind-specific content in system docs
 docs/mmos/validations/pedro-valerio-checklist.md
   → Use: outputs/minds/pedro_valerio/docs/validation-checklist.md
 
+# Methodology in wrong place
 docs/mmos/DNA_MENTAL.md
   → Use: docs/methodology/dna-mental.md
 
+# Logs outside docs/
 outputs/logs/session.md
   → Use: docs/logs/2025-10-27-session.md (logs are docs!)
+
+# Expansion-pack docs in root docs/
+docs/creator-os/workflow-principles.md
+  → Use: expansion-packs/creator-os/docs/workflow-principles.md (docs stay WITH pack!)
+
+docs/guides/super-agentes-integration.md
+  → Use: expansion-packs/super-agentes/docs/integration.md (pack-specific = pack location)
 ```
 
 ### outputs/minds/{slug}/ Structure (OUTPUT ONLY)
@@ -256,6 +279,28 @@ outputs/logs/session.md
 - Folders named after minds
 - Mind-specific validations/migrations
 - Individual mind documentation
+
+### expansion-packs/{pack}/ (SELF-CONTAINED)
+
+**Structure (each pack):**
+- `lib/` - Python/JS modules
+- `scripts/` - Executable entry points
+- `tasks/` - Task definitions
+- `agents/` - Agent definitions
+- `templates/` - Content templates
+- `docs/` - **Pack-specific documentation (stays WITH the pack!)**
+- `config.yaml` - Pack configuration
+- `README.md` - Pack overview
+
+**Rule:** Docs about a specific expansion-pack live IN that expansion-pack, NOT in root `docs/`.
+
+**Examples:**
+- ✅ `expansion-packs/creator-os/docs/workflow-principles.md`
+- ✅ `expansion-packs/super-agentes/docs/integration-patterns.md`
+- ❌ `docs/guides/creator-os-workflow.md` (pack-specific = wrong location)
+- ❌ `docs/creator-os/` (never create pack folders in root docs/)
+
+**Exception:** Cross-system integration guides that span multiple packs → `docs/guides/`
 
 ---
 
@@ -416,6 +461,7 @@ ls -t docs/logs/ | head -5
 
 ---
 
-**MMOS Claude Code Configuration v3.1 (KISS Edition)**
+**MMOS Claude Code Configuration v3.2 (KISS Edition)**
 **Last Updated:** 2025-10-27
 **Principle:** Link to docs, don't duplicate. Get data, don't hardcode.
+**Key Update:** Expansion-pack docs stay WITH the pack (self-contained).

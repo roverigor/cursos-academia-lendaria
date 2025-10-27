@@ -1,6 +1,6 @@
 # ⚡ SuperAgentes Expansion Pack
 
-**Version:** 1.0.0
+**Version:** 2.0.0
 **Command:** `/SA`
 **Type:** Meta-Orchestrator
 
@@ -8,14 +8,16 @@ SuperAgentes is a unified orchestrator expansion pack that provides seamless acc
 
 ## 🎯 Overview
 
-SuperAgentes consolidates two powerful specialized agents into a single, cohesive interface:
+SuperAgentes consolidates **3 powerful agents** into a single, cohesive interface:
 
-1. **DB Sage** (🗄️) - Database Architect & Operations Engineer
-2. **Design System** (🎨) - Design System Architect & Pattern Engineer *(placeholder)*
+1. **SuperAgentes** (⚡) - Meta-orchestrator
+2. **DB Sage** (🗄️) - Database Architect & Operations Engineer
+3. **Design System** (🎨) - Brad Frost methodology for complete design system workflow
 
 Instead of switching between different agents manually, SuperAgentes provides:
 - **Prefix Routing**: Execute commands directly with `*db:comando` or `*ds:comando`
-- **Agent Transformation**: Transform into a specialist agent for extended work with `*agent db-sage`
+- **Agent Transformation**: Transform into a specialist agent for extended work
+- **Complete Workflows**: Design System agent handles brownfield audit through component building
 - **Smart Help**: Unified help system that shows all available capabilities
 - **Context Preservation**: Maintains conversation state across agent contexts
 
@@ -69,12 +71,16 @@ All commands start with * (asterisk)
 *db:rls-audit                # Audit RLS policies
 *db:snapshot baseline        # Create rollback point
 
-# Design system (placeholder)
-*ds:help                     # Show design system commands
+# Design system operations (prefix routing)
+*ds:audit ./src              # Audit UI pattern redundancy
+*ds:consolidate              # Reduce patterns via clustering
+*ds:tokenize                 # Generate design tokens
+*ds:build button             # Generate Button component
+*ds:shock-report             # Generate visual HTML report
 
 # Agent transformation
 *agent db-sage               # Transform into DB Sage for extended work
-*agent design-system         # Transform into Design System
+*agent design-system         # Transform into Design System (Brad Frost)
 *exit                        # Return to SuperAgentes
 ```
 
@@ -111,15 +117,59 @@ All commands start with * (asterisk)
 - SQL execution (`*db:run-sql`)
 - Supabase setup (`*db:setup-supabase`)
 
-### Design System (Placeholder)
+### Design System (Production Ready)
 
-**Status:** 🚧 Planned
-**Future Capabilities:**
-- Design pattern scanning
-- Component generation
-- Design system documentation
-- Design token management
-- Style consistency validation
+**Status:** ✅ Complete (v2.0.0)
+**Resources:** 12 tasks, 7 templates, 4 checklists, 6 data files, 3 workflows
+**Persona:** Brad Frost methodology - "Show the horror, then fix it"
+
+Complete design system workflow with 12 unified commands:
+
+#### Brownfield Workflow (70% of use cases)
+**audit → consolidate → tokenize → migrate → build → compose → document**
+
+**Audit & Consolidation:**
+- Brownfield codebase audit (`*audit ./src`)
+- Pattern redundancy detection (buttons, colors, spacing, typography)
+- Intelligent consolidation via HSL clustering (>80% reduction target)
+- Design token extraction and generation
+- Multi-format token export (JSON, CSS, Tailwind, SCSS)
+
+**Analysis & Planning:**
+- ROI calculation with cost savings analysis (pattern-weighted costs)
+- Shock report generation (visual HTML report with side-by-side comparisons)
+- 4-phase migration strategy planning (foundation → high-impact → long-tail → enforcement)
+
+**Component Building:**
+- Setup design system structure (`*setup`)
+- Build production components (`*build button`)
+- Compose molecules from atoms (`*compose form-field`)
+- Extend existing patterns (`*extend button`)
+- Generate documentation (`*document`)
+- Integrate with expansion packs (`*integrate mmos`)
+
+#### Greenfield Workflow (20% of use cases)
+**setup → build → compose → document**
+
+Start fresh with token-based design system, generate production-ready components from scratch.
+
+#### Audit-Only Workflow (10% of use cases)
+**audit → shock-report → calculate-roi**
+
+Generate visual shock reports and ROI analysis for executive stakeholders without building components.
+
+#### Component Generation Standards
+- React TypeScript components (strict mode)
+- Token-based styling (zero hardcoded values)
+- WCAG AA accessibility minimum (AAA target)
+- Unit tests with >80% coverage (Jest, React Testing Library)
+- Storybook stories included
+- Atomic Design structure (atoms → molecules → organisms)
+
+#### Integration Ready
+- MMOS: Personality-based token variations for cognitive clones
+- CreatorOS: Educational tokens for course platforms
+- InnerLens: Minimal distraction tokens for assessments
 
 ## 💡 Usage Patterns
 
@@ -161,21 +211,98 @@ Combine both approaches:
 *db:apply-migration v1.sql  # Quick migration apply
 ```
 
+### Pattern 4: Design System - Brownfield Complete
+
+Complete audit through component building workflow:
+
+```bash
+/SA
+*agent design-system        # Brad activates
+
+*audit ./src                # Scan for pattern redundancy
+# Output: 47 buttons, 89 colors, 176 total patterns
+
+*consolidate                # Reduce via clustering
+# Output: 47 → 3 buttons (93.6% reduction)
+
+*tokenize                   # Generate design tokens
+# Output: tokens.yaml + JSON/CSS/Tailwind exports
+
+*migrate                    # Generate migration strategy
+# Output: 4-phase plan with component priorities
+
+*build button               # Generate Button component
+*build input                # Generate Input component
+*compose form-field         # Compose molecule from atoms
+*document                   # Generate pattern library
+
+*exit                       # Back to SuperAgentes
+```
+
+### Pattern 5: Design System - Audit Only
+
+Generate shock report and ROI for stakeholders:
+
+```bash
+/SA
+*agent design-system        # Brad activates
+
+*audit ./src                # Scan codebase
+*consolidate                # Reduce patterns
+*shock-report               # Visual HTML report
+*calculate-roi              # Cost analysis
+# Output: ROI 34.6x, breakeven 10 days, $374k/year savings
+
+*exit                       # Done - no build phase needed
+```
+
+### Pattern 6: Design System - Greenfield
+
+Start fresh with token-based components:
+
+```bash
+/SA
+*agent design-system        # Brad activates
+
+*setup                      # Initialize structure
+# Provide tokens.yaml or create starter tokens
+
+*build button               # Generate components
+*build input
+*compose form-field
+*document
+
+*exit
+```
+
 ## 🗂️ Project Structure
 
 ```
 expansion-packs/super-agentes/
 ├── agents/
-│   ├── super-agentes.md    # Meta-orchestrator
-│   ├── db-sage.md           # Database agent
-│   └── design-system.md     # Design system agent (placeholder)
-├── tasks/                   # 20+ database tasks
-├── templates/               # 12+ database templates
-├── checklists/              # Quality checklists
-├── data/                    # Knowledge base
-├── workflows/               # Future workflows
+│   ├── super-agentes.md     # Meta-orchestrator (⚡)
+│   ├── db-sage.md           # Database specialist (🗄️)
+│   └── design-system.md     # Design System - Brad Frost (🎨)
+├── tasks/                   # 35 tasks total
+│   ├── (20 database)        # DB Sage tasks
+│   ├── (12 design system)   # Design System unified (6 brownfield + 6 greenfield)
+│   └── (3 shared)           # AIOS core tasks
+├── templates/               # 20 templates total
+│   ├── (12 database)        # Schema, migration, RLS templates
+│   ├── (7 design system)    # Tokens, components, state, reports, exports
+│   └── (1 shared)           # AIOS core template
+├── checklists/              # 7 quality checklists
+│   ├── (3 database)         # DB design, migration safety
+│   └── (4 design system)    # Pattern audit, component quality, WCAG, migration
+├── data/                    # 11 knowledge base files
+│   ├── (5 database)         # DB best practices, RLS patterns
+│   └── (6 design system)    # Atomic design, tokens, consolidation, ROI, integration, WCAG
+├── workflows/               # 3 YAML workflow orchestrations
+│   ├── brownfield-complete.yaml   # 70% use case: audit → build
+│   ├── greenfield-new.yaml        # 20% use case: setup → build
+│   └── audit-only.yaml            # 10% use case: shock reports + ROI
 ├── examples/                # Usage examples
-├── config.yaml              # Expansion pack config
+├── config.yaml              # Expansion pack config (v2.0.0)
 └── README.md                # This file
 ```
 
@@ -183,11 +310,12 @@ expansion-packs/super-agentes/
 
 SuperAgentes follows the **AIOS Orchestrator Pattern**:
 
-1. **Meta-Agent Layer**: SuperAgentes orchestrator coordinates everything
-2. **Specialist Agents**: DB Sage and Design System provide deep expertise
+1. **Meta-Agent Layer**: SuperAgentes orchestrator coordinates 3 specialist agents
+2. **Specialist Agents**: DB Sage (database), Design System (Brad Frost methodology)
 3. **Shared Resources**: All agents use the same tasks, templates, and checklists
 4. **Smart Routing**: Commands with prefixes route automatically to the right context
 5. **Transformation**: Use `*agent` command for full agent immersion
+6. **Complete Workflows**: Design System handles brownfield audit through component building
 
 ### Command Flow
 
@@ -238,8 +366,8 @@ routing:
       prefixes: ['db:', 'database:', 'sql:', 'supabase:', 'pg:', 'postgres:']
       keywords: ['schema', 'migration', 'rls', 'policy', 'query', 'database']
     design_system:
-      prefixes: ['ds:', 'design:', 'component:', 'ui:', 'style:', 'theme:']
-      keywords: ['component', 'design', 'pattern', 'style', 'theme']
+      prefixes: ['ds:', 'design:', 'component:', 'ui:', 'build:', 'audit:', 'token:']
+      keywords: ['audit', 'pattern', 'redundancy', 'consolidate', 'token', 'roi', 'component', 'design', 'build', 'setup', 'document']
 ```
 
 ## 📚 Documentation
@@ -327,19 +455,21 @@ SuperAgentes inherits security from its specialist agents:
 
 ## 📈 Roadmap
 
-### Current (v1.0.0)
+### Current (v2.0.0)
 - ✅ Meta-orchestrator implementation
-- ✅ DB Sage integration (complete)
-- ✅ Prefix routing system
+- ✅ DB Sage integration (v1.1.0 - complete)
+- ✅ Design System integration (v2.0.0 - complete)
+- ✅ Prefix routing system (db:, ds:)
 - ✅ Agent transformation
 - ✅ Unified help system
+- ✅ 3 YAML workflow orchestrations (brownfield, greenfield, audit-only)
 
-### Future (v1.1.0+)
-- 🚧 Design System agent implementation
-- 🚧 Cross-agent workflows
-- 🚧 Design-to-database workflows
-- 🚧 Component generation with database backing
-- 🚧 Automated design system documentation
+### Future (v2.1.0+)
+- 🔄 Cross-agent workflows (Design System + DB Sage)
+- 🔄 Design-to-database workflows (UI components with database backing)
+- 🔄 Component library versioning and publishing
+- 🔄 Automated visual regression testing
+- 🔄 Figma token import integration
 
 ## 🤝 Contributing
 
@@ -365,4 +495,4 @@ Part of AIOS-FULLSTACK framework.
 
 **Need help?** Run `*help` after activating with `/SA`
 **Report issues:** AIOS-FULLSTACK issue tracker
-**Status:** Production ready for database operations, design system in development
+**Status:** v2.0.0 - Production ready (DB Sage + Design System complete)
