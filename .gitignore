@@ -36,11 +36,25 @@ expansion-packs/*/docs/*
 coverage/
 *.lcov
 
-# Keep directory structure
+# Outputs directory (generated artifacts, NOT versioned)
+outputs/*
+!outputs/.gitkeep
+!outputs/README.md
+!outputs/courses/
+!outputs/minds/
+!outputs/database/
+!outputs/swipe/
+!outputs/debates/
+outputs/courses/*
+outputs/minds/*
+outputs/database/*
+outputs/swipe/*
+outputs/debates/*
 !outputs/courses/.gitkeep
 !outputs/minds/.gitkeep
 !outputs/database/.gitkeep
-!outputs/README.md
+!outputs/swipe/.gitkeep
+!outputs/debates/.gitkeep
 
 # Supabase migration artifacts (generated automatically)
 supabase/schemas/

@@ -1,1 +1,0 @@
-system_prompts/System_Prompt_2.md
