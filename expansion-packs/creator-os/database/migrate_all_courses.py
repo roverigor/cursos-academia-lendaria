@@ -28,34 +28,60 @@ def load_curriculum(course_path: Path) -> Dict:
     # Convert YAML to JSON-like dict (simple key: value parsing)
     result = {}
     current_section = None
+    current_key = None
+    current_multiline = []
     current_module = None
     modules = []
     lessons = []
 
     for line in content.split('\n'):
-        line = line.rstrip()
-        if not line or line.startswith('#'):
+        line_stripped = line.strip()
+        if not line_stripped or line_stripped.startswith('#') or line_stripped.startswith('---'):
             continue
 
         indent = len(line) - len(line.lstrip())
 
-        if indent == 0 and ':' in line:
+        # Check if it's a key: value line
+        if ':' in line and not line_stripped.startswith('-'):
+            # Save previous multiline content if any
+            if current_multiline and current_key and current_section:
+                target_key = 'professor' if current_section == 'instructor' else current_section
+                if target_key not in result:
+                    result[target_key] = {}
+                result[target_key][current_key] = ' '.join(current_multiline).strip()
+                current_multiline = []
+                current_key = None
+
             key, value = line.split(':', 1)
             key = key.strip()
             value = value.strip()
-            if key in ['course', 'professor']:
-                current_section = key
-                result[key] = {}
-            elif key == 'modules':
-                current_section = 'modules'
-                modules = []
-            elif value:
-                result[key] = value.strip('"\'')
 
-        elif current_section in ['course', 'professor'] and ':' in line:
-            key, value = line.split(':', 1)
-            result[current_section][key.strip()] = value.strip().strip('"\'')
-
+            if indent == 0:
+                if key in ['course', 'professor', 'instructor', 'metadata']:
+                    current_section = key
+                    if key == 'instructor':
+                        key = 'professor'  # Normalize
+                    if key not in result:
+                        result[key] = {}
+                elif key == 'modules':
+                    current_section = 'modules'
+                    modules = []
+                elif key not in ['modules', 'lessons']:
+                    # Root level fields
+                    result[key] = value.strip('"\'').strip('|')
+            elif current_section in ['course', 'professor', 'instructor', 'metadata']:
+                # Check if it's multiline value indicator
+                if value in ['|', '>']:
+                    current_key = key
+                    current_multiline = []
+                else:
+                    target_key = 'professor' if current_section == 'instructor' else current_section
+                    if target_key not in result:
+                        result[target_key] = {}
+                    result[target_key][key] = value.strip('"\'')
+        elif current_key and indent > 0:
+            # Multiline content
+            current_multiline.append(line_stripped)
         elif current_section == 'modules':
             if '- title:' in line or indent == 2 and line.strip().startswith('- '):
                 if current_module and lessons:
@@ -111,15 +137,30 @@ def sql_escape(text: str) -> str:
 def generate_sql_for_course(course_path: Path, curriculum: Dict) -> str:
     """Generate SQL for a single course."""
     course_slug = course_path.name
-    course_info = curriculum.get('course', {})
+
+    # Try to get title from multiple locations
+    course_title = (
+        curriculum.get('title') or
+        curriculum.get('course', {}).get('title') or
+        course_slug
+    )
+
+    # Try to get description from multiple locations
+    course_desc = (
+        curriculum.get('description') or
+        curriculum.get('course', {}).get('description') or
+        curriculum.get('metadata', {}).get('description') or
+        ''
+    )
+
     professor_info = curriculum.get('professor', {})
 
     prof_slug = slugify(professor_info.get('name', 'unknown'))
     prof_name = sql_escape(professor_info.get('name', 'Unknown'))
     prof_bio = sql_escape(professor_info.get('bio', ''))
 
-    course_title = sql_escape(course_info.get('title', course_slug))
-    course_desc = sql_escape(course_info.get('description', ''))
+    course_title = sql_escape(course_title)
+    course_desc = sql_escape(course_desc)
 
     modules = curriculum.get('modules', [])
 

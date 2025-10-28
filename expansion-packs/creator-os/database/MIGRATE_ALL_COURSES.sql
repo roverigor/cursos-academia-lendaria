@@ -2,7 +2,7 @@ BEGIN;
 
 
 -- ═══════════════════════════════════════════════════════════════════
--- Course: claude-code
+-- Course: Claude Code Expert: Automação Inteligente para Founders sem Código
 -- ═══════════════════════════════════════════════════════════════════
 
 DO $$
@@ -15,17 +15,17 @@ DECLARE
 BEGIN
 
   -- Get or create professor
-  SELECT id INTO v_professor_id FROM minds WHERE slug = 'unknown';
+  SELECT id INTO v_professor_id FROM minds WHERE slug = 'jose-carlos-amorim';
 
   IF v_professor_id IS NULL THEN
     INSERT INTO minds (slug, display_name, short_bio)
-    VALUES ('unknown', 'Unknown', '')
+    VALUES ('jose-carlos-amorim', 'José Carlos Amorim', 'Transição de jornalista/gerente para AI strategist. Especialista em traduzir complexidade técnica em insights viscerais via ESPIRAL EXPANSIVA. TDAH + TAG como vantagem competitiva na era da IA.')
     RETURNING id INTO v_professor_id;
   END IF;
 
   -- Create or update project
   INSERT INTO content_projects (slug, name, description, status)
-  VALUES ('claude-code', 'claude-code', '', 'completed')
+  VALUES ('claude-code', 'Claude Code Expert: Automação Inteligente para Founders sem Código', '', 'completed')
   ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name
   RETURNING id INTO v_project_id;
 
@@ -36,10 +36,10 @@ BEGIN
   )
   VALUES (
     'claude-code-outline',
-    'claude-code - Outline',
+    'Claude Code Expert: Automação Inteligente para Founders sem Código - Outline',
     'course_outline',
     true,
-    '# claude-code
+    '# Claude Code Expert: Automação Inteligente para Founders sem Código
 
 ',
     v_project_id,
@@ -68,7 +68,7 @@ BEGIN
     true,
     '# Template: Script de Automação Base
 
-Estrutura base para qualquer script Python com error handling e logs',
+',
     v_project_id,
     v_outline_id,
     1,
@@ -95,7 +95,7 @@ Estrutura base para qualquer script Python com error handling e logs',
     true,
     '# Template: API REST Simples
 
-Flask API com 4 endpoints prontos (GET, POST, PUT, DELETE)',
+',
     v_project_id,
     v_outline_id,
     2,
@@ -122,7 +122,7 @@ Flask API com 4 endpoints prontos (GET, POST, PUT, DELETE)',
     true,
     '# Template: README.md para Projetos
 
-Documentação padrão para seus projetos (setup, uso, troubleshooting)',
+',
     v_project_id,
     v_outline_id,
     3,
@@ -149,7 +149,7 @@ Documentação padrão para seus projetos (setup, uso, troubleshooting)',
     true,
     '# Checklist: Setup Completo
 
-4 passos para validar que ambiente está pronto (Claude Pro, VS Code, terminal, teste)',
+',
     v_project_id,
     v_outline_id,
     4,
@@ -176,7 +176,7 @@ Documentação padrão para seus projetos (setup, uso, troubleshooting)',
     true,
     '# Checklist: Debugging Sistemático
 
-Framework OBSERVE → SEARCH → ASK → ITERATE em formato checklist',
+',
     v_project_id,
     v_outline_id,
     5,
@@ -203,7 +203,7 @@ Framework OBSERVE → SEARCH → ASK → ITERATE em formato checklist',
     true,
     '# Checklist: Projeto Pronto para Produção
 
-10 itens para validar antes de considerar projeto ''done'' (README, .env, error handling, etc)',
+',
     v_project_id,
     v_outline_id,
     6,
@@ -230,7 +230,7 @@ Framework OBSERVE → SEARCH → ASK → ITERATE em formato checklist',
     true,
     '# Troubleshooting Guide: 20+ Erros Comuns
 
-Erros mais frequentes + soluções passo-a-passo (syntax, deps, permissions, API)',
+',
     v_project_id,
     v_outline_id,
     7,
@@ -257,7 +257,7 @@ Erros mais frequentes + soluções passo-a-passo (syntax, deps, permissions, API
     true,
     '# Security Guide: API Keys e Secrets
 
-No-code automation para workflows híbridos',
+',
     v_project_id,
     v_outline_id,
     8,
@@ -284,7 +284,7 @@ No-code automation para workflows híbridos',
     true,
     '# Anthropic Claude Documentation
 
-Docs oficiais Claude AI (referência técnica)',
+',
     v_project_id,
     v_outline_id,
     9,
@@ -311,7 +311,7 @@ Docs oficiais Claude AI (referência técnica)',
     true,
     '# Automate the Boring Stuff with Python
 
-Livro clássico sobre automação Python (complementar)',
+',
     v_project_id,
     v_outline_id,
     10,
@@ -329,7 +329,7 @@ END $$;
 
 
 -- ═══════════════════════════════════════════════════════════════════
--- Course: didatica-lendaria
+-- Course: Didática Lendária: Como Criar Aulas que Engajam e Empolgam
 -- ═══════════════════════════════════════════════════════════════════
 
 DO $$
@@ -342,17 +342,17 @@ DECLARE
 BEGIN
 
   -- Get or create professor
-  SELECT id INTO v_professor_id FROM minds WHERE slug = 'unknown';
+  SELECT id INTO v_professor_id FROM minds WHERE slug = 'adriano-de-marqui';
 
   IF v_professor_id IS NULL THEN
     INSERT INTO minds (slug, display_name, short_bio)
-    VALUES ('unknown', 'Unknown', '')
+    VALUES ('adriano-de-marqui', 'Adriano de Marqui', 'Adriano de Marqui é empresário de tecnologia há 26 anos, professor na Academia Lendária e especialista em didática com 20+ anos de experiência. Criador dos frameworks GPS, Semiótica da Imagem e Estrutura de Aula Completa.')
     RETURNING id INTO v_professor_id;
   END IF;
 
   -- Create or update project
   INSERT INTO content_projects (slug, name, description, status)
-  VALUES ('didatica-lendaria', 'didatica-lendaria', '', 'completed')
+  VALUES ('didatica-lendaria', 'Didática Lendária: Como Criar Aulas que Engajam e Empolgam', '', 'completed')
   ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name
   RETURNING id INTO v_project_id;
 
@@ -363,10 +363,10 @@ BEGIN
   )
   VALUES (
     'didatica-lendaria-outline',
-    'didatica-lendaria - Outline',
+    'Didática Lendária: Como Criar Aulas que Engajam e Empolgam - Outline',
     'course_outline',
     true,
-    '# didatica-lendaria
+    '# Didática Lendária: Como Criar Aulas que Engajam e Empolgam
 
 ',
     v_project_id,
@@ -395,7 +395,7 @@ BEGIN
     true,
     '# Template: Estrutura de Aula Completa
 
-Template para preparar aula com 7 partes',
+',
     v_project_id,
     v_outline_id,
     1,
@@ -422,7 +422,7 @@ Template para preparar aula com 7 partes',
     true,
     '# Template: GPS Method
 
-Template para aplicar Destino + Origem + Rota',
+',
     v_project_id,
     v_outline_id,
     2,
@@ -449,7 +449,7 @@ Template para aplicar Destino + Origem + Rota',
     true,
     '# Checklist da Aula Perfeita
 
-Validação completa de qualidade pré-gravação',
+',
     v_project_id,
     v_outline_id,
     3,
@@ -476,7 +476,7 @@ Validação completa de qualidade pré-gravação',
     true,
     '# Guia de Arquétipos
 
-5 arquétipos da Academia Lendária',
+',
     v_project_id,
     v_outline_id,
     4,
@@ -503,7 +503,7 @@ Validação completa de qualidade pré-gravação',
     true,
     '# Banco de Reframes
 
-Reframes para crenças limitantes comuns',
+',
     v_project_id,
     v_outline_id,
     5,
@@ -530,7 +530,7 @@ Reframes para crenças limitantes comuns',
     true,
     '# Matriz de Antídotos
 
-Antídotos para os 5 erros fatais',
+',
     v_project_id,
     v_outline_id,
     6,
@@ -557,7 +557,7 @@ Antídotos para os 5 erros fatais',
     true,
     '# Mapa Mental: Didática Lendária
 
-Gravação rápida de vídeos',
+',
     v_project_id,
     v_outline_id,
     7,
@@ -584,7 +584,7 @@ Gravação rápida de vídeos',
     true,
     '# Exercícios ChatGPT
 
-Exercícios práticos de modulação com ChatGPT',
+',
     v_project_id,
     v_outline_id,
     8,
@@ -659,7 +659,7 @@ END $$;
 
 
 -- ═══════════════════════════════════════════════════════════════════
--- Course: Gestor de IA Generativa e fundador da Agência Lendária
+-- Course: Prompt Engineering - Arquitetura de Agentes Executivos
 -- ═══════════════════════════════════════════════════════════════════
 
 DO $$
@@ -672,17 +672,17 @@ DECLARE
 BEGIN
 
   -- Get or create professor
-  SELECT id INTO v_professor_id FROM minds WHERE slug = 'unknown';
+  SELECT id INTO v_professor_id FROM minds WHERE slug = 'rafael';
 
   IF v_professor_id IS NULL THEN
     INSERT INTO minds (slug, display_name, short_bio)
-    VALUES ('unknown', 'Unknown', '')
+    VALUES ('rafael', 'Rafael', '')
     RETURNING id INTO v_professor_id;
   END IF;
 
   -- Create or update project
   INSERT INTO content_projects (slug, name, description, status)
-  VALUES ('prompt-engineer', 'Gestor de IA Generativa e fundador da Agência Lendária', 'Precificar e vender agentes usando vocabulário técnico', 'completed')
+  VALUES ('prompt-engineer', 'Prompt Engineering - Arquitetura de Agentes Executivos', '', 'completed')
   ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name
   RETURNING id INTO v_project_id;
 
@@ -693,12 +693,12 @@ BEGIN
   )
   VALUES (
     'prompt-engineer-outline',
-    'Gestor de IA Generativa e fundador da Agência Lendária - Outline',
+    'Prompt Engineering - Arquitetura de Agentes Executivos - Outline',
     'course_outline',
     true,
-    '# Gestor de IA Generativa e fundador da Agência Lendária
+    '# Prompt Engineering - Arquitetura de Agentes Executivos
 
-Precificar e vender agentes usando vocabulário técnico',
+',
     v_project_id,
     1,
     'published',
