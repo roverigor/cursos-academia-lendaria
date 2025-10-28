@@ -93,6 +93,17 @@ expansion-packs/            # 🔌 Modular system extensions
 └── etl-data-collector/     # Data collection tools
 ```
 
+### Framework vs Project Separation
+
+**CRITICAL: Never modify `.aios-core/` - it's the AIOS framework base**
+
+- `.aios-core/` = Framework (read-only, never touch)
+- `expansion-packs/` = Project extensions (your custom code)
+- `docs/` = Project documentation
+- `outputs/` = Generated artifacts
+
+All project-specific code, configuration, and utilities must go in `expansion-packs/` or `docs/`, never in `.aios-core/`.
+
 ## Workflow Execution
 
 ### Task Execution Pattern

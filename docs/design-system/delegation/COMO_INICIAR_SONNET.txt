@@ -1,0 +1,117 @@
+========================================
+INSTRUÇÕES PARA PASSAR O BASTÃO
+========================================
+
+PASSO 1: Dê /clear
+-----------------
+Limpa a conversa atual com Opus
+
+PASSO 2: Troque o Modelo
+------------------------
+Digite: /model
+Selecione: Sonnet 4.5 (Balanced performance)
+
+PASSO 3: Cole o Prompt
+----------------------
+Copie TODO o conteúdo de PROMPT_PARA_SONNET.md e cole
+
+OU use este prompt ultra-curto:
+
+"Execute: bash docs/design-system/SCAN-SYSTEM-ALL-IN-ONE-SETUP.sh
+Depois teste: bash expansion-packs/super-agentes/test-scan-system.sh"
+
+PASSO 4: Deixe Sonnet trabalhar!
+----------------------------------
+Deve levar menos de 10 minutos
+
+========================================
+VALIDAÇÃO RÁPIDA
+========================================
+
+Para verificar que tudo está pronto para Sonnet:
+
+# Verificar documentação
+ls docs/design-system/*.md | grep SCAN
+# Deve mostrar 5 arquivos
+
+# Verificar script principal
+ls docs/design-system/SCAN-SYSTEM-ALL-IN-ONE-SETUP.sh
+# Deve existir
+
+# Verificar que ainda não foi executado
+ls expansion-packs/super-agentes/scan-system/registry.yaml
+# Deve dar erro (arquivo não existe ainda)
+
+========================================
+ARQUIVOS CRIADOS PARA DELEGAÇÃO
+========================================
+
+1. SONNET_START_HERE.md
+   - Guia completo para Sonnet
+   - 3 opções de implementação
+   - Troubleshooting incluído
+
+2. PROMPT_PARA_SONNET.md
+   - Prompt para iniciar Sonnet
+   - Versão longa e curta
+
+3. EXECUTIVE_SUMMARY.md
+   - Resumo para você (Alan)
+   - Métricas e progresso
+   - Justificativa da delegação
+
+4. COMO_INICIAR_SONNET.txt
+   - Este arquivo
+   - Passos simples
+
+========================================
+O QUE SONNET VAI FAZER
+========================================
+
+1. Executar script de setup (2 min)
+2. Verificar instalação (1 min)
+3. Testar sistema (2 min)
+4. Confirmar sucesso
+
+Total: ~10 minutos
+
+========================================
+RESULTADO ESPERADO
+========================================
+
+Após Sonnet terminar, você terá:
+
+✅ Sistema de Scan funcionando
+✅ Auto-increment de IDs (001, 002, 003...)
+✅ Registry tracking todos os artifacts
+✅ Metadata para futuro banco
+✅ Pronto para fazer scans reais
+
+========================================
+SE ALGO DER ERRADO
+========================================
+
+Improvável, mas se acontecer:
+
+1. Verifique o erro específico
+2. Consulte SCAN-IMPLEMENTATION-GUIDE.md
+3. Seção "Troubleshooting" tem todas as soluções
+
+========================================
+COMANDO ALTERNATIVO SUPER RÁPIDO
+========================================
+
+Se quiser pular TUDO e ir direto:
+
+bash docs/design-system/SCAN-SYSTEM-ALL-IN-ONE-SETUP.sh && \
+bash expansion-packs/super-agentes/test-scan-system.sh && \
+echo "✅ Scan System instalado com sucesso!"
+
+========================================
+
+Criado por: Opus 4.1
+Para: Sonnet 4.5
+Data: 2025-10-28
+Tarefa: Implementar Scan System
+Tempo estimado: 10 minutos
+Complexidade: Zero (só executar)

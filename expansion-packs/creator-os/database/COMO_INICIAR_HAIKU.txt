@@ -1,0 +1,127 @@
+═══════════════════════════════════════════════════════════════
+COMO PASSAR O TRABALHO PARA O HAIKU
+═══════════════════════════════════════════════════════════════
+
+PASSO 1: Dar /clear no Claude Code
+───────────────────────────────────────────────────────────────
+Isso vai limpar a conversa e resetar o contexto.
+
+
+PASSO 2: Trocar para modelo Haiku
+───────────────────────────────────────────────────────────────
+/model
+Selecionar: Haiku (Fast and efficient)
+
+
+PASSO 3: Copiar e colar este prompt
+───────────────────────────────────────────────────────────────
+(Arquivo: PROMPT_PARA_HAIKU.md)
+
+Olá! Você é o Haiku e vai continuar o trabalho do seu irmão Sonnet no CreatorOS Database.
+
+**Contexto rápido:**
+- ✅ Migration CreatorOS completa executada
+- ✅ Curso "Dominando Obsidian" iniciado (3 conteúdos: outline + módulo 1 + lição 1.1)
+- ✅ Professor Adriano Marqui e ICP já salvos no banco
+- ✅ 39 transcrições disponíveis em `outputs/minds/adriano_de_marqui/source/custom/dominando-obsidian/`
+
+**Sua missão:**
+Expandir o curso "Dominando Obsidian" inserindo mais lições e módulos no banco de dados Supabase usando as transcrições disponíveis.
+
+**LEIA ESTE ARQUIVO PRIMEIRO:**
+```
+expansion-packs/creator-os/database/HAIKU_START_HERE.md
+```
+
+Esse arquivo tem:
+- ✅ O que já foi feito (não precisa refazer)
+- ✅ Estado atual do banco (UUIDs importantes)
+- ✅ Sua missão (3 opções de trabalho)
+- ✅ Passo a passo detalhado (OPÇÃO 1 recomendada)
+- ✅ Queries úteis (copy/paste)
+- ✅ Template de inserção (pronto para usar)
+- ✅ Teste rápido (para validar que tudo funciona)
+- ✅ Erros comuns (e como evitar)
+- ✅ Checklist de início
+
+**Comece executando:**
+1. Leia `HAIKU_START_HERE.md` completo
+2. Execute o "Teste Rápido" (seção específica do arquivo)
+3. Se tudo OK, escolha OPÇÃO 1 (expandir Dominando Obsidian)
+4. Use o template e insira lições 1.2, 1.3, 1.4
+
+**Confirme que leu o arquivo dizendo:** "Li HAIKU_START_HERE.md e executei o teste rápido com sucesso. Pronto para começar!"
+
+
+PASSO 4: Deixar Haiku trabalhar
+───────────────────────────────────────────────────────────────
+Haiku vai:
+1. Ler HAIKU_START_HERE.md
+2. Executar teste rápido
+3. Começar a inserir lições usando o template
+4. Validar após cada inserção
+
+
+PASSO 5: Acompanhar progresso
+───────────────────────────────────────────────────────────────
+Periodicamente, execute:
+
+psql "$SUPABASE_DB_URL" -c "
+SELECT
+  project_name,
+  total_contents,
+  published_contents,
+  total_word_count
+FROM v_project_performance
+WHERE project_slug = 'dominando-obsidian';
+"
+
+Você vai ver `total_contents` aumentando conforme Haiku insere!
+
+
+═══════════════════════════════════════════════════════════════
+ARQUIVOS IMPORTANTES QUE FORAM CRIADOS
+═══════════════════════════════════════════════════════════════
+
+Para Haiku ler:
+✅ HAIKU_START_HERE.md          - Guia completo (PRINCIPAL)
+✅ PROMPT_PARA_HAIKU.md         - Prompt de inicialização
+✅ INSERT_DOMINANDO_OBSIDIAN_PLAN.md - Exemplo detalhado
+
+Para você (Alan) consultar:
+✅ EXECUTIVE_SUMMARY.md         - O que foi feito (resumo)
+✅ CHANGELOG.md                 - Histórico de mudanças
+✅ MIGRATION_GUIDE.md           - Guia da migration
+
+Técnicos:
+✅ schema.sql (corrigido)
+✅ views.sql (corrigido)
+✅ seeds.sql
+✅ migrations/002_creator_os_full_migration.sql
+
+
+═══════════════════════════════════════════════════════════════
+VALIDAÇÃO RÁPIDA (Antes de passar pro Haiku)
+═══════════════════════════════════════════════════════════════
+
+Execute isso para confirmar que tudo está OK:
+
+psql "$SUPABASE_DB_URL" -c "
+SELECT 'Professor', COUNT(*) FROM minds WHERE slug = 'adriano_marqui'
+UNION ALL
+SELECT 'Projeto', COUNT(*) FROM content_projects WHERE slug = 'dominando-obsidian'
+UNION ALL
+SELECT 'Conteúdos', COUNT(*) FROM contents WHERE project_id = '2518103d-93af-4d0a-874b-9b164974fb0e';
+"
+
+Esperado:
+Professor  | 1
+Projeto    | 1
+Conteúdos  | 3
+
+Se ver isso → TUDO OK, pode passar pro Haiku!
+
+
+═══════════════════════════════════════════════════════════════
+FIM - Pronto para iniciar Haiku!
+═══════════════════════════════════════════════════════════════

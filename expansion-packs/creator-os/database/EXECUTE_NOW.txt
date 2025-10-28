@@ -1,0 +1,118 @@
+═══════════════════════════════════════════════════════════════════════════════
+🚀 HAIKU: EXECUTE AGORA - Dominando Obsidian Course Expansion
+═══════════════════════════════════════════════════════════════════════════════
+
+QUANDO ESTIVER COM CONEXÃO AO BANCO, EXECUTE EXATAMENTE ISTO:
+
+cd /Users/alan/Library/Mobile\ Documents/com~apple~CloudDocs/Code/mente_lendaria
+source .env
+psql "$SUPABASE_DB_URL" -f expansion-packs/creator-os/database/EXPAND_DOMINANDO_OBSIDIAN.sql
+
+═══════════════════════════════════════════════════════════════════════════════
+
+ESPERADO:
+
+1. ✅ Sem erros SQL
+2. ✅ Muitas linhas de "✅ Lição X.Y criada"
+3. ✅ No final: Queries de validação rodando
+4. ✅ No final: Resultado com 16 conteúdos totais (3 antigos + 13 novos)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+O QUE FOI CRIADO:
+
+- Módulo 1: 3 lições novas (1.2, 1.3, 1.4) ← Completou módulo
+- Módulo 2: 4 lições novas (2.1, 2.2, 2.3, 2.4) ← NOVO
+- Módulo 3: 5 lições novas (3.1, 3.2, 3.3, 3.4, 3.5) ← NOVO
+
+Total: 13 lições novas + estrutura de 2 módulos
+Tempo: ~3 horas de conteúdo
+Palavras: ~8,000 novos
+
+═══════════════════════════════════════════════════════════════════════════════
+
+VALIDAÇÃO APÓS EXECUÇÃO:
+
+psql "$SUPABASE_DB_URL" << 'EOF'
+SELECT
+  project_name,
+  total_contents,
+  published_contents,
+  total_word_count,
+  avg_fidelity_score
+FROM v_project_performance
+WHERE project_slug = 'dominando-obsidian';
+EOF
+
+DEVE RETORNAR:
+- total_contents: 16 (de 3)
+- avg_fidelity_score: 0.91 (aproximadamente)
+- published_contents: 16
+
+═══════════════════════════════════════════════════════════════════════════════
+
+SE DER ERRO:
+
+1. Verifique conexão:
+   source .env
+   psql "$SUPABASE_DB_URL" -c "SELECT 1;"
+
+2. Se falhar: Problema de rede
+   - Aguarde internet voltar
+   - Tente novamente
+
+3. Se disser "Duplicate key value":
+   - Script já foi executado
+   - Confirme se conteúdos já estão lá
+   - NÃO execute de novo
+
+4. Outro erro:
+   - Copie a mensagem de erro
+   - Leia HAIKU_EXPANSION_SUMMARY.md
+   - Ou contate Sonnet
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PRÓXIMOS PASSOS APÓS SUCESSO:
+
+1. Validate hierarquia:
+   psql "$SUPABASE_DB_URL" << 'EOF'
+   SELECT slug, title, content_type, depth_level
+   FROM v_content_hierarchy
+   WHERE root_slug = 'dominando-obsidian-outline'
+   ORDER BY path;
+   EOF
+
+2. Se tudo OK: Comece Fase 2 (módulos 4-8)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+UUIDs IMPORTANTES (Já existem):
+
+Professor: 4fd9fb2c-a0ed-436d-9500-47692cd53792
+Projeto: 2518103d-93af-4d0a-874b-9b164974fb0e
+Outline: c7299a8c-6e98-4a1a-b79f-792df1cbeb1f
+Módulo 1: b39fd32c-d42d-4532-b7fe-0328bffff2d2
+
+═══════════════════════════════════════════════════════════════════════════════
+
+DOCUMENTAÇÃO COMPLETA:
+
+- HAIKU_EXPANSION_SUMMARY.md ← LER PRIMEIRO
+- EXPAND_DOMINANDO_OBSIDIAN.sql ← Script principal
+- HAIKU_START_HERE.md ← Contexto geral
+
+═══════════════════════════════════════════════════════════════════════════════
+
+DÚVIDAS?
+
+1. Leia HAIKU_EXPANSION_SUMMARY.md (seção "🚨 Se der erro")
+2. Verifique se .env está correto
+3. Confirme que SUPABASE_DB_URL está setado
+4. Execute: source .env && echo $SUPABASE_DB_URL
+
+═══════════════════════════════════════════════════════════════════════════════
+
+BOA SORTE! 🚀
+
+Você vai conseguir!
