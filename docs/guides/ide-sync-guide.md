@@ -281,6 +281,112 @@ Backups are created as `.bak` files:
 cp .cursor/rules/design-system.mdc.bak .cursor/rules/design-system.mdc
 ```
 
+## Rollback & Recovery
+
+### Emergency: Disable Auto-Sync
+
+If the sync is causing issues during commits:
+
+```bash
+# Option 1: Bypass for single commit
+git commit --no-verify -m "your message"
+
+# Option 2: Disable in config
+# Edit .aios-sync.yaml and set:
+# behavior:
+#   auto_sync_on_commit: false
+```
+
+### Restore Individual Files
+
+Restore a single file from backup:
+
+```bash
+# Find backup files
+find .claude -name "*.bak"
+find .cursor -name "*.bak"
+
+# Restore specific file
+cp .claude/commands/SA/agents/design-system.md.bak .claude/commands/SA/agents/design-system.md
+```
+
+### Restore All Files in Directory
+
+Restore all backups in a directory:
+
+```bash
+# Restore all Claude Code backups
+for file in .claude/commands/SA/agents/*.bak; do
+    cp "$file" "${file%.bak}"
+done
+
+# Restore all Cursor backups
+for file in .cursor/rules/*.bak; do
+    cp "$file" "${file%.bak}"
+done
+```
+
+### Full Rollback
+
+To completely remove all synced IDE configurations:
+
+```bash
+# WARNING: This removes all synced files!
+
+# Remove Claude Code synced files
+rm -rf .claude/commands/SA/
+rm -rf .claude/commands/CreatorOS/
+rm -rf .claude/commands/MMOS/
+rm -rf .claude/commands/InnerLens/
+rm -rf .claude/commands/ETL/
+rm -rf .claude/commands/fragments/
+
+# Remove Cursor synced files (if enabled)
+rm -rf .cursor/rules/*.mdc
+
+# Alternative: Restore from git
+git checkout .claude/commands/
+git checkout .cursor/rules/
+```
+
+### Recover from Failed Sync
+
+If a sync fails mid-operation:
+
+```bash
+# 1. Check the log for errors
+tail -50 .aios-sync.log
+
+# 2. Restore from backups if needed (see above)
+
+# 3. Fix the issue (install yq, fix permissions, etc.)
+
+# 4. Run sync again with dry-run first
+./expansion-packs/super-agentes/scripts/sync-to-ides.sh --dry-run
+
+# 5. Run actual sync
+./expansion-packs/super-agentes/scripts/sync-to-ides.sh
+```
+
+### Clean Up Backup Files
+
+Remove old backup files to save space:
+
+```bash
+# Find all backup files
+find .claude -name "*.bak"
+find .cursor -name "*.bak"
+
+# Delete all backups (CAREFUL!)
+find .claude -name "*.bak" -delete
+find .cursor -name "*.bak" -delete
+```
+
+**Note:** `.bak` files are already in `.gitignore` and won't be committed.
+
+For detailed migration and rollback procedures, see:
+- [IDE Sync Migration Guide](./ide-sync-migration-guide.md)
+
 ## Best Practices
 
 ### 1. Always Edit Source Files

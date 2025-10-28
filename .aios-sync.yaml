@@ -1,6 +1,7 @@
 # AIOS IDE Sync Configuration
 # Automatically sync agents, tasks, checklists, and workflows to IDE configurations
-# Version: 1.0.0
+
+version: "1.0.0"
 
 # Active IDEs (add/remove as needed)
 active_ides:

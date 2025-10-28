@@ -26,6 +26,9 @@ __pycache__/
 *.tmp
 *.log
 
+# AIOS IDE Sync logs
+.aios-sync.log
+
 # Documentações dos expansion-packs (não versionadas)
 # docs/ - Comentado: docs/ root deve ser versionado (AIOS)
 # EXCEÇÃO: epics/ e stories/ são versionados (desenvolvimento do sistema)

@@ -341,6 +341,9 @@ sync_mapping() {
 # ============================================================================
 
 main() {
+    # Start performance timer
+    local START_TIME=$(date +%s)
+
     # Parse arguments
     for arg in "$@"; do
         case $arg in
@@ -412,6 +415,10 @@ EOF
         sync_mapping "$mapping"
     done
 
+    # Calculate performance metrics
+    local END_TIME=$(date +%s)
+    local DURATION=$((END_TIME - START_TIME))
+
     # Summary
     echo ""
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -423,11 +430,14 @@ EOF
     if [ $SKIP_COUNT -gt 0 ]; then
         log INFO "Skipped: $SKIP_COUNT"
     fi
+    log INFO "Duration: ${DURATION}s"
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     echo ""
 
     if [ "$DRY_RUN" = false ]; then
         log INFO "Log file: $LOG_FILE"
+        # Log performance metrics
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] [METRICS] Files: $SYNC_COUNT | Errors: $ERROR_COUNT | Skipped: $SKIP_COUNT | Duration: ${DURATION}s" >> "$LOG_FILE"
     fi
 }
 
