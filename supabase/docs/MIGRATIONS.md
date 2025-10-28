@@ -90,6 +90,26 @@ See design in `/Users/alan/Library/Mobile Documents/com~apple~CloudDocs/Code/men
 
 ---
 
+## v0.8.2 - Fragments Cleanup (Applied)
+
+### 20251027100000_v0_8_2_fragments_cleanup.sql
+**Status:** ✅ Applied
+**Date:** 2025-10-27 (via psql)
+**Environment:** local Supabase (staging baseline)
+
+**Changes:**
+- Dropped legacy columns `layer` and `relevance_10` from `fragments`
+- Replaced generated score with canonical `relevance SMALLINT` (0–10)
+- Added `metadata JSONB DEFAULT '{}'` for flexible signals
+- Rebuilt indexes (`idx_frag_relevance`, `idx_frag_mind_relevance_desc`, `idx_frag_source_created`)
+- Refreshed `v_cost_per_fragment` view to reference new column
+
+**Tested:** ✅ Smoke test (`supabase/tests/v0.7.0_smoke_test.sql`) updated to use `relevance`
+**Deployment time:** < 1s
+**Deployed by:** DB Sage (automation)
+
+---
+
 ## Migration Guidelines
 
 ### Pre-Deployment Checklist

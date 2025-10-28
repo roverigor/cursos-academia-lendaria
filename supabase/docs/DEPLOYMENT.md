@@ -113,7 +113,7 @@ VALUES (
 );
 
 INSERT INTO fragments (
-  source_id, category_id, location, type, relevance_10,
+  source_id, category_id, location, type, relevance,
   content, context, insight
 )
 SELECT
