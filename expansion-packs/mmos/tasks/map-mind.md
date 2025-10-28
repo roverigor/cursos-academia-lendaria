@@ -6,6 +6,43 @@ params:
   - force_mode (optional)
   - materials_path (optional)
 elicit: true
+
+estimated-duration:
+  greenfield_public: "8-12 hours"
+  greenfield_no_public: "6-8 hours"
+  brownfield: "2-4 hours"
+
+token-estimation:
+  greenfield_public:
+    input: 955000              # Mode detection + viability + research (web heavy)
+    processing: 1250000        # 8-layer analysis + synthesis + KB generation
+    output: 400000             # System prompts + validation + documentation
+    total_min: 2000000
+    total_max: 2500000
+  greenfield_no_public:
+    input: 605000              # Mode detection + viability + research (materials only)
+    processing: 1100000        # 8-layer analysis + synthesis + KB generation
+    output: 350000             # System prompts + validation + documentation
+    total_min: 1500000
+    total_max: 2000000
+  brownfield:
+    input: 250000              # Impact analysis + incremental research
+    processing: 600000         # Targeted updates + synthesis
+    output: 150000             # Prompt updates + regression tests + docs
+    total_min: 500000
+    total_max: 1000000
+  factors:
+    - "Auto-detected mode (greenfield-public: 2-2.5M, greenfield-no-public: 1.5-2M, brownfield: 500K-1M)"
+    - "Number of sources (public: 20-30, no-public: 10-15, brownfield: 5-10)"
+    - "Layer 8 depth (productive paradoxes require extensive synthesis)"
+    - "System prompt variants generated (3-5 prompts depending on specialization needs)"
+  alternatives:
+    subagent_savings: "97%"
+    preview_mode: "Viability check only (50K tokens, 30 min) - auto-executes before full pipeline if user requests"
+    phase_execution: "Execute specific phase only: *phase {viability|research|analysis|synthesis|implementation|testing} {name}"
+    brownfield_smart: "Brownfield auto-detects which phases need re-execution based on change impact"
+
+user-confirmation-required: true
 ---
 
 # Map Mind Clone

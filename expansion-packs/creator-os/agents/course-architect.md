@@ -252,6 +252,8 @@ outputs/courses/{course-slug}/
 - Create new course from scratch
 - Runs full greenfield workflow (init → brief → research → curriculum → lessons → validation)
 - Human-in-the-loop checkpoints: COURSE-BRIEF filling, research review, curriculum approval
+- **Token Estimate:** 200K - 500K tokens (~$2-5 with Claude Sonnet)
+- **Duration:** 30-60 minutes
 
 **Usage:**
 ```
@@ -263,6 +265,8 @@ outputs/courses/{course-slug}/
 - Upgrade existing course materials
 - Runs full brownfield workflow (init → organize → extract → research → curriculum → lessons → validation)
 - Auto-extracts ICP, voice, objectives from legacy materials
+- **Token Estimate:** 100K - 300K tokens (~$1-3 with Claude Sonnet)
+- **Duration:** 20-40 minutes
 
 **Usage:**
 ```
@@ -276,6 +280,8 @@ outputs/courses/{course-slug}/
 - Conduct market research on competitive courses
 - Generates 4 research reports (market-analysis, content-gaps, differentiation, sources)
 - Informs curriculum design with competitive intelligence
+- **Token Estimate:** 50K tokens (~$0.50 with Claude Sonnet)
+- **Duration:** 10-15 minutes
 
 **Usage:**
 ```
@@ -287,6 +293,8 @@ outputs/courses/{course-slug}/
 - Run comprehensive quality validation
 - Checks alignment, completeness, fidelity, cognitive load, duration
 - Generates validation report with scores and recommendations
+- **Token Estimate:** 30K - 50K tokens (~$0.30-0.50 with Claude Sonnet)
+- **Duration:** 5-10 minutes
 
 **Usage:**
 ```
@@ -619,6 +627,110 @@ Agent: [continues with outline → approval → generation → validation]
 ```
 @course-architect
 *help
+```
+
+---
+
+## Token Estimation Guidelines
+
+**CRITICAL:** Before executing any multi-step command (*new, *upgrade, *market-research with >3 steps), you MUST:
+
+### Pre-Execution Checklist
+
+1. **Calculate Token Estimate**
+   - Read task metadata (token-estimation section)
+   - Use formulas from CLAUDE.md "Token Estimation & Resource Planning"
+   - Break down into INPUT + PROCESSING + OUTPUT
+
+2. **Present Estimate to User**
+   - Use standardized format from CLAUDE.md
+   - Show projected context usage (current → after)
+   - Indicate status: ✅ SEGURO / ⚠️ APERTADO / 🚨 RISCO
+
+3. **Offer 3 Mitigation Options**
+   - **Option 1:** Continue in current window (blocked if >85% usage)
+   - **Option 2:** Task/subagent with isolated context [RECOMMENDED >70%]
+   - **Option 3:** Generate standalone prompt for new window
+   - **Option 4 (optional):** Agent-specific alternative (preview mode, sharding, etc.)
+
+4. **Wait for User Selection**
+   - DO NOT proceed without explicit choice (1/2/3/4)
+   - If option 2: Use `Task(subagent_type="general-purpose", prompt="...")`
+   - If option 3: Generate complete standalone prompt with all context
+
+5. **Log Decision**
+   ```yaml
+   token_estimation_log:
+     operation: "{command}"
+     estimated_tokens: {tokens}
+     projected_usage: "{pct}%"
+     user_choice: {1|2|3|4}
+     timestamp: "{iso_timestamp}"
+   ```
+
+### Command-Specific Estimates
+
+- **`*new {slug}`:** 200K-500K tokens (market research + curriculum + lessons)
+- **`*upgrade {slug}`:** 100K-300K tokens (extraction + research + adaptation)
+- **`*market-research {slug}`:** 50K tokens (web searches + analysis)
+- **`*validate-course {slug}`:** 30K-50K tokens (quality checks + report)
+
+### When to Block/Recommend Alternatives
+
+- **>85% projected usage:** BLOCK option 1, REQUIRE option 2 or 3
+- **70-85% projected usage:** STRONGLY RECOMMEND option 2 (subagent)
+- **<70% projected usage:** Present all options, user decides
+
+### Example Estimation Format
+
+```
+📊 ESTIMATIVA DE TOKENS: *new clone-ia-express
+
+INPUT (Research):
+  Market research:         ~50K tokens
+  Competitor analysis:     ~40K tokens
+  MMOS persona loading:    ~10K tokens
+  ─────────────────────────────────────
+  TOTAL INPUT:             ~100K tokens
+
+PROCESSING (Curriculum):
+  Module design:           ~150K tokens
+  Lesson generation:       ~200K tokens
+  Assessment creation:     ~50K tokens
+  ─────────────────────────────────────
+  TOTAL PROCESSING:        ~400K tokens
+
+OUTPUT (Documentation):
+  Course files:            ~50K tokens
+  Validation report:       ~30K tokens
+  ─────────────────────────────────────
+  TOTAL OUTPUT:            ~80K tokens
+
+──────────────────────────────────────
+TOTAL ESTIMADO:            ~580K tokens
+
+Estado Projetado:
+  Atual:  55K tokens (27%)
+  Após:   635K tokens (317% - ESTOURO!)
+  Livre:  -435K tokens
+
+Status: 🚨 RISCO DE ESTOURO
+
+OPÇÕES:
+1. ❌ Continuar nesta janela (BLOQUEADO)
+
+2. ✅ Task/Subagent (contexto isolado) [RECOMENDADO]
+   • Retorna apenas curso final (~50K tokens)
+   • Redução: 91% de economia de contexto
+
+3. ✅ Prompt para nova janela
+   • Zero impacto no contexto atual
+
+4. Modo Market Research First
+   • Executa apenas *market-research (~50K tokens)
+   • Decide se vale prosseguir com *new após análise
+
+Sua escolha (2/3/4)?
 ```
 
 ---

@@ -22,6 +22,17 @@ activation-instructions:
   - STEP 5 CRITICAL - *help command: When user types *help, show ONLY the commands in core_commands section. Do NOT list deprecated tasks like *execute.
   - STEP 6 CRITICAL - *execute command: If user types *execute, respond: "The *execute command has been replaced by *map {name} in Epic E001. Use: *map {name} to automatically create/update clones."
   - STEP 7 CRITICAL - *map command: When user types *map {name}, load and execute IMMEDIATELY the task 'map-mind.md'. The task calls map_mind() function which executes the REAL workflow via workflow_orchestrator.py. NEVER create manual simulation. NEVER use Gemini API directly. NEVER create files manually. If execution fails, STOP and report the error. The map_mind() function already coordinates everything automatically.
+  - STEP 7.5 TOKEN ESTIMATION (CRITICAL): BEFORE executing any multi-step command (*map, *phase, etc.), you MUST:
+    1. Read task metadata (token-estimation section from task file)
+    2. Calculate token estimate using formulas from CLAUDE.md (INPUT + PROCESSING + OUTPUT)
+    3. Present estimate using standardized format from CLAUDE.md section "Token Estimation & Resource Planning"
+    4. Show 3 options: (1) Continue in current window, (2) Task/subagent (context isolated), (3) Prompt for new window, plus optional (4) Agent custom option
+    5. Wait for user choice (1/2/3/4) - DO NOT proceed without explicit selection
+    6. If user selects option 2: Use Task tool with subagent_type="general-purpose"
+    7. If user selects option 3: Generate complete standalone prompt with all context
+    8. Log decision in YAML format (operation, estimated_tokens, user_choice, timestamp)
+    9. BLOCK option 1 if projected usage >85% of context window
+    10. STRONGLY RECOMMEND option 2 if projected usage >70%
   - DO NOT: Load any other agent files during activation
   - ONLY load dependency files when user selects them for execution via command
   - The agent.customization field ALWAYS takes precedence over any conflicting instructions

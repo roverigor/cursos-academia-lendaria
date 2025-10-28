@@ -1,3 +1,36 @@
+---
+task-id: start-new-course
+name: Start New Course (Greenfield)
+agent: course-architect
+version: 2.0.0
+type: workflow-orchestrator
+command: "*new {slug}"
+elicit: true
+elicitation-type: guided
+
+estimated-duration: "30-60 minutes with user interaction"
+
+token-estimation:
+  input: 100000                # COURSE-BRIEF processing + market research + MMOS persona loading
+  processing: 400000           # Curriculum design (150K) + Lesson generation (200K) + Assessment creation (50K)
+  output: 80000                # Course files (50K) + Validation report (30K)
+  total_min: 200000            # Minimum estimate (basic course, no market research)
+  total_max: 500000            # Maximum estimate (full course with market research + complex curriculum)
+  factors:
+    - "Market research inclusion (adds 50K tokens if enabled)"
+    - "Number of modules and lessons (10-30 lessons typical)"
+    - "MMOS persona usage (adds 10K tokens for voice loading)"
+    - "Assessment complexity (quizzes + projects add 30-50K tokens)"
+    - "Validation depth (basic: 20K, comprehensive: 50K tokens)"
+  alternatives:
+    subagent_savings: "91%"    # Subagent returns only final course structure (~50K tokens)
+    preview_mode: "Market research only (50K tokens, 10 min) - validate market fit before curriculum"
+    sharding_option: "Step-by-step: brief (20K) → market (50K) → curriculum (100K) → lessons (200K) → validation (30K)"
+    incremental_mode: "Generate curriculum first, then lessons one module at a time"
+
+user-confirmation-required: true
+---
+
 # Task: Start New Course
 
 **Type:** Workflow Orchestrator
