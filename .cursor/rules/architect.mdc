@@ -86,6 +86,12 @@ dependencies:
     - architect-checklist.md
   data:
     - technical-preferences.md
+  tools:
+    - exa                # Research technologies and best practices
+    - context7           # Look up library documentation and technical references
+    - github-cli         # Manage architecture documentation and discussions
+    - supabase-cli       # Database architecture and schema management
+    - railway-cli        # Infrastructure planning and deployment
 ```
 
 ## File Reference

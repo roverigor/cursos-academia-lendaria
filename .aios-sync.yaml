@@ -1,0 +1,201 @@
+# AIOS IDE Sync Configuration
+# Automatically sync agents, tasks, checklists, and workflows to IDE configurations
+# Version: 1.0.0
+
+# Active IDEs (add/remove as needed)
+active_ides:
+  - claude    # Claude Code (.claude/)
+  - cursor    # Cursor IDE (.cursor/)
+  # Future IDEs (uncomment when active):
+  # - windsurf  # Windsurf IDE (.windsurf/)
+  # - trae      # Trae IDE (.trae/)
+  # - cline     # Cline (.cline/)
+
+# Pack aliases: Maps directory name → command alias
+# Used to translate expansion-packs/{dir}/ → .claude/commands/{alias}/
+pack_aliases:
+  super-agentes: SA
+  creator-os: CreatorOS
+  mmos: MMOS
+  innerlens: InnerLens
+  etl: ETL
+  fragments: fragments  # Same as directory name
+
+# Sync mappings: source → destination patterns
+# IMPORTANT: Only sync expansion-packs, NEVER .aios-core (it's readonly framework base)
+# Use glob patterns (expansion-packs/*/) to sync ALL expansion packs automatically
+# Use {pack} placeholder in destinations to organize by pack name
+sync_mappings:
+
+  # All Expansion Packs - Agents (auto-discovers all packs)
+  expansion_pack_agents:
+    source: "expansion-packs/*/agents/"
+    destinations:
+      claude:
+        - path: ".claude/commands/{pack}/agents/"
+          format: "md"
+          wrapper: "none"
+      cursor:
+        - path: ".cursor/rules/"
+          format: "mdc"
+          wrapper: "cursor-rule"
+      windsurf:
+        - path: ".windsurf/{pack}/agents/"
+          format: "md"
+          wrapper: "none"
+      trae:
+        - path: ".trae/{pack}/agents/"
+          format: "md"
+          wrapper: "none"
+
+  # All Expansion Packs - Tasks
+  expansion_pack_tasks:
+    source: "expansion-packs/*/tasks/"
+    destinations:
+      claude:
+        - path: ".claude/commands/{pack}/tasks/"
+          format: "md"
+          wrapper: "none"
+      cursor:
+        - path: ".cursor/rules/tasks/"
+          format: "mdc"
+          wrapper: "cursor-rule"
+      windsurf:
+        - path: ".windsurf/{pack}/tasks/"
+          format: "md"
+          wrapper: "none"
+      trae:
+        - path: ".trae/{pack}/tasks/"
+          format: "md"
+          wrapper: "none"
+
+  # All Expansion Packs - Templates
+  expansion_pack_templates:
+    source: "expansion-packs/*/templates/"
+    destinations:
+      claude:
+        - path: ".claude/commands/{pack}/templates/"
+          format: "md"
+          wrapper: "none"
+      cursor:
+        - path: ".cursor/rules/templates/"
+          format: "mdc"
+          wrapper: "cursor-rule"
+      windsurf:
+        - path: ".windsurf/{pack}/templates/"
+          format: "md"
+          wrapper: "none"
+      trae:
+        - path: ".trae/{pack}/templates/"
+          format: "md"
+          wrapper: "none"
+
+  # All Expansion Packs - Checklists
+  expansion_pack_checklists:
+    source: "expansion-packs/*/checklists/"
+    destinations:
+      claude:
+        - path: ".claude/commands/{pack}/checklists/"
+          format: "md"
+          wrapper: "none"
+      cursor:
+        - path: ".cursor/rules/checklists/"
+          format: "mdc"
+          wrapper: "cursor-rule"
+      windsurf:
+        - path: ".windsurf/{pack}/checklists/"
+          format: "md"
+          wrapper: "none"
+      trae:
+        - path: ".trae/{pack}/checklists/"
+          format: "md"
+          wrapper: "none"
+
+  # All Expansion Packs - Workflows
+  expansion_pack_workflows:
+    source: "expansion-packs/*/workflows/"
+    destinations:
+      claude:
+        - path: ".claude/commands/{pack}/workflows/"
+          format: "md"
+          wrapper: "none"
+      cursor:
+        - path: ".cursor/rules/workflows/"
+          format: "mdc"
+          wrapper: "cursor-rule"
+      windsurf:
+        - path: ".windsurf/{pack}/workflows/"
+          format: "md"
+          wrapper: "none"
+      trae:
+        - path: ".trae/{pack}/workflows/"
+          format: "md"
+          wrapper: "none"
+
+
+# Wrappers - templates for different IDE formats
+wrappers:
+  slash-command:
+    prepend: |
+      # /{filename} Command
+
+      When this command is used, adopt the following agent persona:
+
+      {content}
+
+  cursor-rule:
+    prepend: |
+      ---
+      description: {description}
+      globs: []
+      alwaysApply: false
+      ---
+
+      {content}
+    extract_description: true  # Try to extract description from YAML front matter
+
+  none:
+    prepend: ""
+
+# File filters
+file_filters:
+  include:
+    - "*.md"
+    - "*.yaml"
+    - "*.yml"
+  exclude:
+    - "README.md"
+    - "*.test.md"
+    - "*.draft.md"
+    - ".DS_Store"
+
+# Behavior
+behavior:
+  auto_sync_on_commit: true      # Run sync before every commit
+  create_missing_dirs: true       # Create destination directories if missing
+  backup_before_sync: true        # Create .bak files before overwriting
+  validate_after_sync: true       # Validate synced files
+  log_sync_operations: true       # Log to .aios-sync.log
+  fail_on_error: false           # Don't block commits if sync fails (warn only)
+
+# Exclusions - files/patterns to never sync
+exclusions:
+  - "*.bak"
+  - "*.tmp"
+  - "*-test.md"
+  - "INTERNAL-*.md"
+  - ".state.yaml"
+
+# Validation rules
+validation:
+  check_yaml_valid: true          # Validate YAML blocks in markdown
+  check_no_hardcoded_paths: true  # Warn if absolute paths found
+  check_dependencies_exist: true  # Validate referenced dependencies exist
+
+# Logging
+logging:
+  enabled: true
+  log_file: ".aios-sync.log"
+  log_level: "info"  # debug, info, warn, error
+  max_log_size_mb: 10
+  rotate_logs: true

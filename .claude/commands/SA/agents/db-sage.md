@@ -240,7 +240,7 @@ dependencies:
     
     # Operations & DBA tasks
     - db-env-check.md
-    - db-bootstrap.md3
+    - db-bootstrap.md
     - db-apply-migration.md
     - db-dry-run.md
     - db-seed.md

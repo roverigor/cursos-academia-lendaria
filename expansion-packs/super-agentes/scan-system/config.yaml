@@ -3,7 +3,8 @@
 
 scan_system:
   version: "1.0.0"
-  database_ready: false  # Will change to true when we migrate to SQLite
+  database_ready: true   # ✅ Enabled - using Supabase agent_scans table
+  database_mode: "hybrid" # Saves to DB + keeps markdown reports
   auto_commit: true      # Automatically commit to git after scan
 
 # Agent-specific configurations
@@ -65,6 +66,26 @@ agents:
           - rest_compliant
           - documentation_coverage
           - security_issues
+
+  copywriter:
+    enabled: true
+    artifact_prefix: "copy"
+    output_dir: "docs/copywriter/analysis/"
+    metadata_dir: "docs/copywriter/analysis/.metadata/"
+
+    scan_types:
+      - name: "copy-framework-extraction"
+        description: "Analyze copy to extract persuasion frameworks and patterns"
+        template: "expansion-packs/super-agentes/templates/copy-framework-analysis.md"
+        metadata_fields:
+          - headline
+          - hook_type
+          - frameworks_detected
+          - emotion_triggers
+          - cta_text
+          - word_count
+          - niche
+          - quality_score
 
 # Default settings for all agents
 defaults:

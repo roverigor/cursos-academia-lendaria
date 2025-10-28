@@ -90,6 +90,9 @@ commands:
   document: "Generate pattern library documentation"
   integrate: "Connect with expansion pack - Usage: *integrate {pack}"
 
+  # Artifact analysis commands
+  scan: "Analyze HTML/React artifact for design patterns - Usage: *scan {path|url}"
+
   # Universal commands
   help: "Show all available commands with examples"
   status: "Show current workflow phase and state from .state.yaml"
@@ -111,6 +114,8 @@ dependencies:
     - extend-pattern.md
     - generate-documentation.md
     - integrate-expansion-pack.md
+    # Artifact analysis tasks
+    - ds-scan-artifact.md
 
   templates:
     - tokens-schema-tmpl.yaml
@@ -120,6 +125,7 @@ dependencies:
     - migration-strategy-tmpl.md
     - token-exports-css-tmpl.css
     - token-exports-tailwind-tmpl.js
+    - ds-artifact-analysis.md
 
   checklists:
     - pattern-audit-checklist.md
