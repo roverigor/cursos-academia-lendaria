@@ -4,12 +4,12 @@
 
 registry_version: "1.0.0"
 created_at: "2025-10-28T14:00:00Z"
-last_updated: "2025-10-28T15:59:02-03:00"
+last_updated: "2025-10-28T16:16:55-03:00"
 # Per-agent tracking
 agents:
   design-system:
-    last_id: 03
-    total_scans: 3
+    last_id: 04
+    total_scans: 4
     artifacts:
       - id: "001"
         path: docs/design-system/analysis/artifact-001-guia-reducao-tokens-claude.md
@@ -20,6 +20,9 @@ agents:
       - id: "003"
         path: docs/design-system/analysis/artifact-003-framework-desenvolvimento-agil-ia.md
         created_at: "2025-10-28T15:59:02-03:00"
+      - id: "004"
+        path: docs/design-system/analysis/artifact-004-tools-claude-code.md
+        created_at: "2025-10-28T16:16:55-03:00"
   # Prepared for future agents
   db-sage:
     last_id: 0
