@@ -18,16 +18,11 @@ DECLARE
   v_modulo8_id UUID;
   v_licao_id UUID;
 BEGIN
-  RAISE NOTICE '═══════════════════════════════════════════════════════════';
-  RAISE NOTICE 'FASE 2: Expandindo Curso com Módulos 4-8';
-  RAISE NOTICE '═══════════════════════════════════════════════════════════';
 
   -- ════════════════════════════════════════════════════════════════════════════════
   -- MÓDULO 4: Notas e Markdown
   -- ════════════════════════════════════════════════════════════════════════════════
 
-  RAISE NOTICE '';
-  RAISE NOTICE '─── Criando Módulo 4: Notas e Markdown ───';
 
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
@@ -60,13 +55,11 @@ Dominar a criação de notas estruturadas com Markdown puro.',
     'published',
     '{"lessons_count": 4, "duration_minutes": 55, "difficulty": "intermediate"}'::jsonb
   ) RETURNING id INTO v_modulo4_id;
-  RAISE NOTICE '✅ Módulo 4 criado: %', v_modulo4_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_modulo4_id, v_professor_id, 'creator');
 
   -- Lição 4.1
-  RAISE NOTICE 'Criando Lição 4.1...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -179,13 +172,11 @@ Próxima: Markdown Essencial - Potencialize sua escrita',
     0.91,
     '{"duration_minutes": 13, "frameworks_applied": ["gps", "blooms_taxonomy"], "bloom_level": 2, "source_file": "16_conceito_de_nota_e_como_sao_os_arquivos-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 4.1 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 4.2
-  RAISE NOTICE 'Criando Lição 4.2...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -313,13 +304,11 @@ Próxima: Markdown Parte 2 (recursos avançados)',
     0.92,
     '{"duration_minutes": 15, "frameworks_applied": ["gps", "blooms_taxonomy", "didatica_lendaria"], "bloom_level": 2, "source_file": "21_potencializando_a_escrita_com_markdown_porque_voce_precisa_dele-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 4.2 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 4.3
-  RAISE NOTICE 'Criando Lição 4.3...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -458,13 +447,11 @@ Próxima: Formatação por Atalhos (escrever rápido)',
     0.90,
     '{"duration_minutes": 14, "frameworks_applied": ["gps", "blooms_taxonomy"], "bloom_level": 2, "source_file": "22_markdown_parte_2-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 4.3 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 4.4
-  RAISE NOTICE 'Criando Lição 4.4...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -519,7 +506,7 @@ Nesta lição você vai aprender:
 
 **Exemplos úteis:**
 - Cmd+L para inserir wiki link
-- Cmd+' para blockquote
+- Cmd+'' para blockquote
 - Cmd+[ para lista com bullet
 
 ### Snippets para Velocidade
@@ -568,19 +555,15 @@ Próxima: Módulo 5 - Links Bidirecionais',
     0.89,
     '{"duration_minutes": 13, "frameworks_applied": ["gps", "blooms_taxonomy"], "bloom_level": 2, "source_file": "23_formatacao_por_atalhos-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 4.4 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
-  RAISE NOTICE '✅ Módulo 4 completo com 4 lições!';
 
   -- ════════════════════════════════════════════════════════════════════════════════
   -- MÓDULO 5: Links Bidirecionais
   -- ════════════════════════════════════════════════════════════════════════════════
 
-  RAISE NOTICE '';
-  RAISE NOTICE '─── Criando Módulo 5: Links Bidirecionais ───';
 
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
@@ -613,13 +596,11 @@ Conectar notas criando um segundo cérebro que emerge naturalmente.',
     'published',
     '{"lessons_count": 4, "duration_minutes": 58, "difficulty": "intermediate"}'::jsonb
   ) RETURNING id INTO v_modulo5_id;
-  RAISE NOTICE '✅ Módulo 5 criado: %', v_modulo5_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_modulo5_id, v_professor_id, 'creator');
 
   -- Lição 5.1
-  RAISE NOTICE 'Criando Lição 5.1...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -739,13 +720,11 @@ Próxima: Tags e Sistema de Taxonomia',
     0.91,
     '{"duration_minutes": 14, "frameworks_applied": ["gps", "blooms_taxonomy"], "bloom_level": 2, "source_file": "24_links_internos_entre_as_notas-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 5.1 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 5.2
-  RAISE NOTICE 'Criando Lição 5.2...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -867,13 +846,11 @@ Próxima: Pastas e Organização',
     0.90,
     '{"duration_minutes": 15, "frameworks_applied": ["gps", "blooms_taxonomy", "didatica_lendaria"], "bloom_level": 2, "source_file": "29_tags-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 5.2 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 5.3
-  RAISE NOTICE 'Criando Lição 5.3...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -1007,13 +984,11 @@ Próxima: O Gráfico do Segundo Cérebro',
     0.89,
     '{"duration_minutes": 16, "frameworks_applied": ["gps", "blooms_taxonomy"], "bloom_level": 2, "source_file": "31_pastas-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 5.3 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 5.4
-  RAISE NOTICE 'Criando Lição 5.4...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -1151,19 +1126,15 @@ Próxima: Módulo 6 - Plugins Essenciais',
     0.92,
     '{"duration_minutes": 17, "frameworks_applied": ["gps", "blooms_taxonomy", "didatica_lendaria"], "bloom_level": 3, "source_file": "32_o_grafico_do_segundo_cerebro_e_como_usa_lo_de_verdade-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 5.4 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
-  RAISE NOTICE '✅ Módulo 5 completo com 4 lições!';
 
   -- ════════════════════════════════════════════════════════════════════════════════
   -- MÓDULO 6: Plugins Essenciais
   -- ════════════════════════════════════════════════════════════════════════════════
 
-  RAISE NOTICE '';
-  RAISE NOTICE '─── Criando Módulo 6: Plugins Essenciais ───';
 
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
@@ -1196,13 +1167,11 @@ Turbinar seu Obsidian com funcionalidades avançadas.',
     'published',
     '{"lessons_count": 4, "duration_minutes": 62, "difficulty": "advanced"}'::jsonb
   ) RETURNING id INTO v_modulo6_id;
-  RAISE NOTICE '✅ Módulo 6 criado: %', v_modulo6_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_modulo6_id, v_professor_id, 'creator');
 
   -- Lição 6.1
-  RAISE NOTICE 'Criando Lição 6.1...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -1322,13 +1291,11 @@ Próxima: Plugins da Comunidade',
     0.91,
     '{"duration_minutes": 15, "frameworks_applied": ["gps", "blooms_taxonomy"], "bloom_level": 2, "source_file": "25_superpoderes_com_plugins_nativos-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 6.1 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 6.2
-  RAISE NOTICE 'Criando Lição 6.2...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -1493,13 +1460,11 @@ Próxima: Propriedades e Metadados',
     0.90,
     '{"duration_minutes": 17, "frameworks_applied": ["gps", "blooms_taxonomy", "didatica_lendaria"], "bloom_level": 2, "source_file": "26_plugins_da_comunidade_importando_de_outras_ferramentas-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 6.2 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 6.3
-  RAISE NOTICE 'Criando Lição 6.3...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -1661,13 +1626,11 @@ Próxima: Configuração de Atalhos Avançados',
     0.89,
     '{"duration_minutes": 16, "frameworks_applied": ["gps", "blooms_taxonomy"], "bloom_level": 2, "source_file": "28_iniciando_com_propriedades-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 6.3 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 6.4
-  RAISE NOTICE 'Criando Lição 6.4...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -1818,19 +1781,15 @@ Próxima: Módulo 7 - ATLAS Method',
     0.88,
     '{"duration_minutes": 14, "frameworks_applied": ["gps", "blooms_taxonomy"], "bloom_level": 3, "source_file": "33_configuracao_de_atalhos-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 6.4 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
-  RAISE NOTICE '✅ Módulo 6 completo com 4 lições!';
 
   -- ════════════════════════════════════════════════════════════════════════════════
   -- MÓDULO 7: ATLAS Method
   -- ════════════════════════════════════════════════════════════════════════════════
 
-  RAISE NOTICE '';
-  RAISE NOTICE '─── Criando Módulo 7: ATLAS Method ───';
 
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
@@ -1863,13 +1822,11 @@ Dominar metodologia completa para aprender de forma exponencial.',
     'published',
     '{"lessons_count": 4, "duration_minutes": 68, "difficulty": "advanced"}'::jsonb
   ) RETURNING id INTO v_modulo7_id;
-  RAISE NOTICE '✅ Módulo 7 criado: %', v_modulo7_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_modulo7_id, v_professor_id, 'creator');
 
   -- Lição 7.1
-  RAISE NOTICE 'Criando Lição 7.1...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -2004,13 +1961,11 @@ Próxima: Segundo Cérebro com IA',
     0.91,
     '{"duration_minutes": 16, "frameworks_applied": ["gps", "blooms_taxonomy", "didatica_lendaria"], "bloom_level": 3, "source_file": "27_os_4_niveis_de_aprendizado_e_a_forma_de_fazer_do_obsidian_um_habito-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 7.1 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 7.2
-  RAISE NOTICE 'Criando Lição 7.2...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -2143,13 +2098,11 @@ Próxima: Workshop - Smart Connections',
     0.90,
     '{"duration_minutes": 17, "frameworks_applied": ["gps", "blooms_taxonomy", "didatica_lendaria"], "bloom_level": 3, "source_file": "32_segundo_crebro_com_ia-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 7.2 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 7.3
-  RAISE NOTICE 'Criando Lição 7.3...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -2298,13 +2251,11 @@ Próxima: Workshop - Canvas e Visualização',
     0.92,
     '{"duration_minutes": 19, "frameworks_applied": ["gps", "blooms_taxonomy", "didatica_lendaria"], "bloom_level": 3, "source_file": "34_ia_workshop_smart_connections_chat_com_o_2_cerebro-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 7.3 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 7.4
-  RAISE NOTICE 'Criando Lição 7.4...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -2462,19 +2413,15 @@ Próxima: Módulo 8 - Projeto Final',
     0.91,
     '{"duration_minutes": 17, "frameworks_applied": ["gps", "blooms_taxonomy", "didatica_lendaria"], "bloom_level": 3, "source_file": "35_canvas-transcription.txt"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 7.4 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
-  RAISE NOTICE '✅ Módulo 7 completo com 4 lições!';
 
   -- ════════════════════════════════════════════════════════════════════════════════
   -- MÓDULO 8: Projeto Final
   -- ════════════════════════════════════════════════════════════════════════════════
 
-  RAISE NOTICE '';
-  RAISE NOTICE '─── Criando Módulo 8: Projeto Final ───';
 
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
@@ -2505,13 +2452,11 @@ Ter seu segundo cérebro 100% funcional e escalável.',
     'published',
     '{"lessons_count": 2, "duration_minutes": 45, "difficulty": "advanced"}'::jsonb
   ) RETURNING id INTO v_modulo8_id;
-  RAISE NOTICE '✅ Módulo 8 criado: %', v_modulo8_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_modulo8_id, v_professor_id, 'creator');
 
   -- Lição 8.1
-  RAISE NOTICE 'Criando Lição 8.1...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -2716,13 +2661,11 @@ Próxima: Projeto Final Parte 2 - Validação',
     0.93,
     '{"duration_minutes": 24, "frameworks_applied": ["gps", "blooms_taxonomy", "didatica_lendaria"], "bloom_level": 3, "source_file": "multiple-synthesis"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 8.1 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
   -- Lição 8.2
-  RAISE NOTICE 'Criando Lição 8.2...';
   INSERT INTO contents (
     slug, title, content_type, ai_generated, content,
     project_id, parent_content_id, sequence_order, status,
@@ -2904,38 +2847,10 @@ Agora você:
     0.94,
     '{"duration_minutes": 21, "frameworks_applied": ["gps", "blooms_taxonomy", "didatica_lendaria"], "bloom_level": 4, "source_file": "course-conclusion"}'::jsonb
   ) RETURNING id INTO v_licao_id;
-  RAISE NOTICE '✅ Lição 8.2 criada: %', v_licao_id;
 
   INSERT INTO content_minds (content_id, mind_id, role)
   VALUES (v_licao_id, v_professor_id, 'creator');
 
-  RAISE NOTICE '✅ Módulo 8 completo com 2 lições!';
-
-  -- ════════════════════════════════════════════════════════════════════════════════
-  -- RESUMO FINAL
-  -- ════════════════════════════════════════════════════════════════════════════════
-
-  RAISE NOTICE '';
-  RAISE NOTICE '╔═══════════════════════════════════════════════════════════╗';
-  RAISE NOTICE '║ ✅ FASE 2 COMPLETADA COM SUCESSO!                        ║';
-  RAISE NOTICE '╚═══════════════════════════════════════════════════════════╝';
-  RAISE NOTICE '';
-  RAISE NOTICE '📊 Resumo FASE 2:';
-  RAISE NOTICE '  ✅ Módulo 4: 4 lições (Notas e Markdown)';
-  RAISE NOTICE '  ✅ Módulo 5: 4 lições (Links Bidirecionais)';
-  RAISE NOTICE '  ✅ Módulo 6: 4 lições (Plugins Essenciais)';
-  RAISE NOTICE '  ✅ Módulo 7: 4 lições (ATLAS Method)';
-  RAISE NOTICE '  ✅ Módulo 8: 2 lições (Projeto Final)';
-  RAISE NOTICE '  ────────────────────';
-  RAISE NOTICE '  📚 Total: 18 lições adicionadas';
-  RAISE NOTICE '  ⏱️  Conteúdo estimado: 4+ horas de aula';
-  RAISE NOTICE '';
-  RAISE NOTICE '🎓 Curso Completo (Fases 1 + 2):';
-  RAISE NOTICE '  Módulos: 8';
-  RAISE NOTICE '  Lições: 31 (13 + 18)';
-  RAISE NOTICE '  Horas: 7+ horas de conteúdo';
-  RAISE NOTICE '  Status: COMPLETO!';
-  RAISE NOTICE '';
 
 END $$;
 
