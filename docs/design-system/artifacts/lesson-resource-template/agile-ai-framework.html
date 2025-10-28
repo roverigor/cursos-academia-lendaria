@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile AI Driven Development</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #191919 0%, #262625 100%);
+            color: #F0F0E8;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background: #262625;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #40403E;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #919180;
+            font-size: 1rem;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #262625;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #40403E;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .nav-btn {
+            background: #2d2d2b;
+            color: #F0F0E8;
+            border: 1px solid #40403E;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            background: #40403E;
+        }
+
+        .nav-btn.active {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .nav-btn.active.phase-1 { background: #2d6a4f; border-color: #2d6a4f; }
+        .nav-btn.active.phase-2 { background: #ca6702; border-color: #ca6702; }
+        .nav-btn.active.phase-3 { background: #1e6091; border-color: #1e6091; }
+        .nav-btn.active.phase-4 { background: #5a189a; border-color: #5a189a; }
+        .nav-btn.active.phase-5 { background: #0077b6; border-color: #0077b6; }
+
+        .export-btn {
+            background: #48bb78;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .export-btn:hover {
+            background: #3da863;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Content Area */
+        .content {
+            background: #262625;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #40403E;
+        }
+
+        .content-header {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #40403E;
+        }
+
+        .content-title {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-subtitle {
+            color: #919180;
+            font-size: 0.875rem;
+        }
+
+        /* Flow Components */
+        .flow-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-box {
+            background: #2d2d2b;
+            border-radius: 0.75rem;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border: 2px solid;
+            position: relative;
+        }
+
+        .process-box .agent-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-box .content {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #F0F0E8;
+            background: transparent;
+            padding: 0;
+            border: none;
+        }
+
+        .process-box.analyst { border-color: #2d6a4f; }
+        .process-box.analyst .agent-label { color: #2d6a4f; }
+        .process-box.pm { border-color: #ca6702; }
+        .process-box.pm .agent-label { color: #ca6702; }
+        .process-box.ux { border-color: #1e6091; }
+        .process-box.ux .agent-label { color: #1e6091; }
+        .process-box.architect { border-color: #5a189a; }
+        .process-box.architect .agent-label { color: #5a189a; }
+        .process-box.po { border-color: #c77700; }
+        .process-box.po .agent-label { color: #c77700; }
+        .process-box.dev { border-color: #0077b6; }
+        .process-box.dev .agent-label { color: #0077b6; }
+        .process-box.qa { border-color: #9b870c; }
+        .process-box.qa .agent-label { color: #9b870c; }
+
+        .entry-box {
+            background: #40403E;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+        }
+
+        .success-box {
+            background: rgba(72, 187, 120, 0.15);
+            border: 2px solid #48bb78;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            text-align: center;
+            font-weight: 700;
+            color: #48bb78;
+            margin: 1rem 0;
+        }
+
+        .critical-box {
+            background: rgba(191, 77, 67, 0.15);
+            border: 2px solid #BF4D43;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            text-align: center;
+            font-weight: 700;
+            color: #EBD8BC;
+            margin: 1rem 0;
+        }
+
+        .info-box {
+            background: #3498db;
+            color: white;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            text-align: center;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        /* Decision Diamond */
+        .decision-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .decision-diamond {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .diamond-shape {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #40403E;
+            border: 2px solid #D4A27F;
+            border-radius: 0.75rem;
+            transform: rotate(45deg);
+        }
+
+        .diamond-text {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            max-width: 120px;
+        }
+
+        .diamond-text small {
+            font-size: 0.75rem;
+            color: #919180;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        /* Arrows */
+        .arrow {
+            text-align: center;
+            margin: 1rem 0;
+            color: #919180;
+        }
+
+        .arrow svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Branch Layout */
+        .branch-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .branch {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .branch-label {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .branch-label.yes { color: #48bb78; }
+        .branch-label.no { color: #919180; }
+
+        .skip-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-size: 0.875rem;
+            color: #919180;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #919180;
+            font-size: 0.875rem;
+        }
+
+        .footer p:first-child {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer p:last-child {
+            color: #D4A27F;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.75rem;
+            }
+
+            .branch-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .nav {
+                flex-direction: column;
+            }
+
+            .nav-buttons {
+                width: 100%;
+            }
+
+            .nav-btn {
+                flex: 1;
+                justify-content: center;
+            }
+
+            .export-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .phase-content {
+            display: none;
+        }
+
+        .phase-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Agile AI Driven Development</h1>
+            <p>Framework de Desenvolvimento Ágil com IA</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav">
+            <div class="nav-buttons">
+                <button class="nav-btn active phase-1" onclick="switchPhase(1)">
+                    <span>Fase 1: Pesquisa</span>
+                </button>
+                <button class="nav-btn phase-2" onclick="switchPhase(2)">
+                    <span>Fase 2: Planejamento</span>
+                </button>
+                <button class="nav-btn phase-3" onclick="switchPhase(3)">
+                    <span>Fase 3: Design UX</span>
+                </button>
+                <button class="nav-btn phase-4" onclick="switchPhase(4)">
+                    <span>Fase 4: Arquitetura</span>
+                </button>
+                <button class="nav-btn phase-5" onclick="switchPhase(5)">
+                    <span>Fase 5: Desenvolvimento</span>
+                </button>
+            </div>
+            <button class="export-btn" onclick="exportJSON()">
+                <span>↓</span>
+                <span>Exportar JSON</span>
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="content-header">
+                <div class="content-title" id="phase-title">Fase 1: Pesquisa</div>
+                <div class="content-subtitle" id="phase-subtitle">Agente Analista</div>
+            </div>
+
+            <!-- Phase 1: Research -->
+            <div class="phase-content active" id="phase-1">
+                <div class="flow-container">
+                    <div class="entry-box">Início: Ideia do Projeto</div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="decision-container">
+                        <div class="decision-diamond">
+                            <div class="diamond-shape"></div>
+                            <div class="diamond-text">
+                                Opcional: Pesquisa do Analista
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-container">
+                        <div class="branch">
+                            <div class="branch-label yes">Sim</div>
+                            <div class="process-box analyst">
+                                <div class="agent-label">Analista</div>
+                                <div class="content">Brainstorming (Opcional)</div>
+                            </div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="process-box analyst">
+                                <div class="agent-label">Analista</div>
+                                <div class="content">Pesquisa de Mercado (Opcional)</div>
+                            </div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="process-box analyst">
+                                <div class="agent-label">Analista</div>
+                                <div class="content">Análise de Concorrentes (Opcional)</div>
+                            </div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="process-box analyst">
+                                <div class="agent-label">Analista</div>
+                                <div class="content">Criar Brief do Projeto</div>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-label no">Não</div>
+                            <div class="skip-note">(Pular pesquisa)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="decision-container">
+                        <div class="decision-diamond">
+                            <div class="diamond-shape"></div>
+                            <div class="diamond-text">
+                                Brief do Projeto Disponível?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="success-box">Saída: Brief do Projeto Pronto</div>
+                    
+                    <div style="text-align: center; margin-top: 2rem; color: #919180; font-size: 0.875rem;">
+                        Próxima Fase: Planejamento
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Planning -->
+            <div class="phase-content" id="phase-2">
+                <div class="flow-container">
+                    <div class="entry-box">Entrada: Brief do Projeto</div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="decision-container">
+                        <div class="decision-diamond">
+                            <div class="diamond-shape"></div>
+                            <div class="diamond-text">
+                                Brief Disponível?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-container">
+                        <div class="branch">
+                            <div class="branch-label yes">Sim (Via Rápida)</div>
+                            <div class="process-box pm">
+                                <div class="agent-label">PM</div>
+                                <div class="content">Criar PRD do Brief</div>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-label no">Não</div>
+                            <div class="process-box pm">
+                                <div class="agent-label">PM</div>
+                                <div class="content">
+                                    Criação Interativa de PRD
+                                    <div style="font-size: 0.75rem; margin-top: 0.5rem; color: #919180;">(Mais Perguntas)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="success-box">PRD Criado com FRs, NFRs, Épicos e Stories</div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="decision-container">
+                        <div class="decision-diamond">
+                            <div class="diamond-shape"></div>
+                            <div class="diamond-text">
+                                UX Necessário?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                        <span style="font-size: 0.75rem; color: #1e6091; font-weight: 700;">Sim: Fase UX</span>
+                        <span style="font-size: 0.75rem; color: #5a189a; font-weight: 700;">Não: Fase Arquitetura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3: UX Design -->
+            <div class="phase-content" id="phase-3">
+                <div class="flow-container">
+                    <div class="entry-box">Fase Opcional: Design UX</div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="process-box ux">
+                        <div class="agent-label">Especialista UX</div>
+                        <div class="content">Criar Especificação de Front End</div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="process-box ux">
+                        <div class="agent-label">Especialista UX</div>
+                        <div class="content">
+                            Gerar Prompt de UI para Lovable/V0
+                            <div style="font-size: 0.75rem; margin-top: 0.5rem; color: #919180;">(Opcional)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="success-box">Especificação UX Completa</div>
+                    
+                    <div style="text-align: center; margin-top: 2rem; color: #919180; font-size: 0.875rem;">
+                        Próxima Fase: Arquitetura (com UX)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4: Architecture -->
+            <div class="phase-content" id="phase-4">
+                <div class="flow-container">
+                    <div class="entry-box">Entrada: PRD + Especificação UX (se disponível)</div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="process-box architect">
+                        <div class="agent-label">Arquiteto</div>
+                        <div class="content">Criar Arquitetura a partir do PRD</div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="decision-container">
+                        <div class="decision-diamond">
+                            <div class="diamond-shape"></div>
+                            <div class="diamond-text">
+                                Estratégia de Teste Antecipado?
+                                <small>(Opcional)</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-container">
+                        <div class="branch">
+                            <div class="branch-label yes">Sim</div>
+                            <div class="process-box qa">
+                                <div class="agent-label">QA</div>
+                                <div class="content">Entrada de Arquitetura de Teste em Áreas de Alto Risco</div>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-label no">Não</div>
+                            <div class="skip-note">(Pular testes antecipados)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="process-box po">
+                        <div class="agent-label">PO</div>
+                        <div class="content">Executar Checklist Master</div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="decision-container">
+                        <div class="decision-diamond">
+                            <div class="diamond-shape"></div>
+                            <div class="diamond-text">
+                                Documentos Alinhados?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-container">
+                        <div class="branch">
+                            <div class="branch-label yes">Sim</div>
+                            <div class="success-box">Planejamento Completo</div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="info-box">Mudar para IDE</div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="process-box po">
+                                <div class="agent-label">PO</div>
+                                <div class="content">Compartilhar Documentos</div>
+                            </div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="success-box">Pronto para Ciclo SM/Dev</div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-label no">Não</div>
+                            <div class="process-box po">
+                                <div class="agent-label">PO</div>
+                                <div class="content">Atualizar Épicos e Stories</div>
+                            </div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="process-box architect">
+                                <div class="agent-label">Arquiteto</div>
+                                <div class="content">Atualizar PRD/Arquitetura conforme necessário</div>
+                            </div>
+                            <div style="text-align: center; margin-top: 1rem; color: #CC785C; font-size: 0.875rem; font-weight: 600;">
+                                Voltar ao Checklist
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 5: Development -->
+            <div class="phase-content" id="phase-5">
+                <div class="flow-container">
+                    <div class="entry-box">Fase: Desenvolvimento</div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="decision-container">
+                        <div class="decision-diamond">
+                            <div class="diamond-shape"></div>
+                            <div class="diamond-text">
+                                Aprovação do Usuário
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="process-box dev">
+                        <div class="agent-label">Dev</div>
+                        <div class="content">Execução Sequencial de Tarefas</div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="process-box dev">
+                        <div class="agent-label">Dev</div>
+                        <div class="content">Implementar Tarefas + Testes</div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="decision-container">
+                        <div class="decision-diamond">
+                            <div class="diamond-shape"></div>
+                            <div class="diamond-text">
+                                Verificação QA no Meio do Dev?
+                                <small>(Opcional)</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-container">
+                        <div class="branch">
+                            <div class="branch-label yes">Sim</div>
+                            <div class="process-box qa">
+                                <div class="agent-label">QA</div>
+                                <div class="content">*trace ou *nfr para Validação Antecipada</div>
+                            </div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="process-box dev">
+                                <div class="agent-label">Dev</div>
+                                <div class="content">Resolver Gaps de Cobertura/NFR</div>
+                            </div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-label no">Não</div>
+                            <div class="skip-note">(Pular para próximo passo)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="process-box dev">
+                        <div class="agent-label">Dev</div>
+                        <div class="content">Executar Todas as Validações</div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="process-box dev">
+                        <div class="agent-label">Dev</div>
+                        <div class="content">Marcar como Pronto para Revisão + Adicionar Notas</div>
+                    </div>
+                    
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="decision-container">
+                        <div class="decision-diamond">
+                            <div class="diamond-shape"></div>
+                            <div class="diamond-text">
+                                Verificação do Usuário
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-container">
+                        <div class="branch">
+                            <div class="branch-label yes">Aprovar Sem QA</div>
+                            <div class="success-box">Marcar Story como Concluída</div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-label no">Solicitar Revisão QA</div>
+                            <div class="process-box qa">
+                                <div class="agent-label">QA</div>
+                                <div class="content">Revisão do Arquiteto de Testes + Quality Gate</div>
+                            </div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="process-box qa">
+                                <div class="agent-label">QA</div>
+                                <div class="content">Análise de Arquitetura de Testes + Refatoração Ativa</div>
+                            </div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="decision-container">
+                                <div class="decision-diamond">
+                                    <div class="diamond-shape"></div>
+                                    <div class="diamond-text">
+                                        Decisão QA: Aprovado?
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="critical-box">IMPORTANTE: Verificar Testes de Regressão e Linting</div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div style="background: rgba(191, 77, 67, 0.2); border: 3px solid #BF4D43; border-radius: 0.75rem; padding: 1.25rem; text-align: center; font-weight: 700; color: #BF4D43; margin: 1rem 0;">
+                                IMPORTANTE: COMMIT DAS MUDANÇAS ANTES DE PROSSEGUIR
+                            </div>
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                            <div class="decision-container">
+                                <div class="decision-diamond">
+                                    <div class="diamond-shape"></div>
+                                    <div class="diamond-text">
+                                        Atualização de Gate Necessária?
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 1rem;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 0.7rem; font-weight: 600; color: #48bb78; margin-bottom: 0.5rem;">Não</div>
+                                    <div style="background: rgba(72, 187, 120, 0.2); border: 2px solid #48bb78; border-radius: 0.5rem; padding: 0.75rem; font-size: 0.8rem; font-weight: 600; color: #48bb78;">
+                                        Concluir
+                                    </div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 0.7rem; font-weight: 600; color: #ecc94b; margin-bottom: 0.5rem;">Sim</div>
+                                    <div style="background: rgba(155, 135, 12, 0.2); border: 2px solid #9b870c; border-radius: 0.5rem; padding: 0.5rem; font-size: 0.75rem; color: #F0F0E8;">
+                                        QA: Atualizar Gate
+                                        <div style="font-size: 0.7rem; color: #CC785C; margin-top: 2px;">Voltar</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Framework v1.0 - Navegue entre as fases para visualizar o fluxo completo</p>
+            <p>Design System: Dark Mode Professional</p>
+        </div>
+    </div>
+
+    <script>
+        const phases = [
+            { id: 1, title: 'Fase 1: Pesquisa', subtitle: 'Agente Analista' },
+            { id: 2, title: 'Fase 2: Planejamento', subtitle: 'Agente PM' },
+            { id: 3, title: 'Fase 3: Design UX', subtitle: 'Especialista UX' },
+            { id: 4, title: 'Fase 4: Arquitetura', subtitle: 'Agente Arquiteto' },
+            { id: 5, title: 'Fase 5: Desenvolvimento', subtitle: 'Agentes Dev + QA' }
+        ];
+
+        function switchPhase(phaseNum) {
+            // Update navigation
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.phase-${phaseNum}`).classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.phase-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(`phase-${phaseNum}`).classList.add('active');
+
+            // Update header
+            const phase = phases[phaseNum - 1];
+            document.getElementById('phase-title').textContent = phase.title;
+            document.getElementById('phase-subtitle').textContent = phase.subtitle;
+
+            // Smooth scroll to top
+            document.querySelector('.content').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function exportJSON() {
+            const frameworkData = {
+                framework: "Agile AI Driven Development",
+                versao: "1.0",
+                fases: phases.map(p => ({
+                    id: p.id,
+                    titulo: p.title,
+                    agente: p.subtitle
+                }))
+            };
+
+            const blob = new Blob([JSON.stringify(frameworkData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'agile-ai-framework.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

@@ -61,6 +61,33 @@ validation:
     - "All human checkpoints validated"
 
 estimated-duration: "20-30 hours total for greenfield pipeline"
+
+token-estimation:
+  greenfield:
+    input: 955000              # Mode detection (5K) + Viability (50K) + Research (900K)
+    processing: 1250000        # Analysis 8 layers (800K) + Synthesis (300K) + KB gen (150K)
+    output: 400000             # System prompts (200K) + Validation (150K) + Docs (50K)
+    total_min: 2000000         # Minimum estimate for greenfield
+    total_max: 2500000         # Maximum estimate for greenfield
+  brownfield:
+    input: 250000              # Mode detection (5K) + Impact analysis (50K) + Incremental research (195K)
+    processing: 600000         # Targeted layer updates (400K) + Synthesis (150K) + KB update (50K)
+    output: 150000             # System prompt updates (80K) + Regression tests (50K) + Docs (20K)
+    total_min: 500000          # Minimum estimate for brownfield
+    total_max: 1000000         # Maximum estimate for brownfield
+  factors:
+    - "Workflow mode (greenfield 2-2.5M tokens vs brownfield 500K-1M tokens)"
+    - "Number of sources collected (15-30 for greenfield, 5-10 for brownfield)"
+    - "Depth of Layer 8 analysis (productive paradoxes require deep synthesis)"
+    - "System prompt variants (generalista + specialists = 3-5 prompts)"
+    - "Validation test complexity (blind testing with multiple scenarios)"
+  alternatives:
+    subagent_savings: "97%"  # Subagent returns only summary + system prompt (~80K tokens)
+    preview_mode: "Viability assessment only (50K tokens, 30 minutes) - decide GO/NO-GO before full pipeline"
+    sharding_option: "Execute by phase: viability (50K) → research (800K) → analysis (800K) → synthesis (300K) → implementation (200K) → testing (150K)"
+    incremental_mode: "For brownfield: execute only affected phases based on change impact analysis"
+
+user-confirmation-required: true
 ---
 
 # Execute MMOS Pipeline Task

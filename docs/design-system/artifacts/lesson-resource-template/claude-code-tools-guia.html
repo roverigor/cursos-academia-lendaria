@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools do Claude Code - Guia Completo 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #191919;
+            color: #F0F0E8;
+            line-height: 1.6;
+        }
+
+        .container {
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .max-w-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.375rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            background-color: #CC785C;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: Georgia, serif;
+            color: #F0F0E8;
+            margin-bottom: 0.75rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #919180;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            background-color: #262625;
+        }
+
+        .stat-card.border-orange {
+            border: 2px solid #CC785C;
+        }
+
+        .stat-card.border-green {
+            border: 2px solid #48BB78;
+        }
+
+        .stat-card.border-yellow {
+            border: 2px solid #ECC94B;
+        }
+
+        .stat-card.border-blue {
+            border: 2px solid #3498DB;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number.orange {
+            color: #CC785C;
+        }
+
+        .stat-number.green {
+            color: #48BB78;
+        }
+
+        .stat-number.yellow {
+            color: #ECC94B;
+        }
+
+        .stat-number.blue {
+            color: #3498DB;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #919180;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background-color: #262625;
+        }
+
+        .table-header {
+            padding: 1rem 1.5rem;
+            background-color: #CC785C;
+            border-bottom: 1px solid #40403E;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .table-header h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tool-count {
+            font-size: 0.875rem;
+            font-weight: normal;
+            color: #F0F0E8;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #2D2D2B;
+        }
+
+        th {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            color: #F0F0E8;
+            border-right: 1px solid #40403E;
+        }
+
+        th.center {
+            text-align: center;
+            width: 140px;
+        }
+
+        th.tool-name {
+            width: 200px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #40403E;
+            transition: background-color 0.2s;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        td {
+            padding: 1rem 1.5rem;
+            color: #F0F0E8;
+            border-right: 1px solid #40403E;
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+
+        .tool-name-cell {
+            font-weight: bold;
+            font-size: 1.125rem;
+            color: #CC785C;
+        }
+
+        .example-text {
+            color: #919180;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .complexity-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+
+        .complexity-badge.basic {
+            background-color: #48BB78;
+            color: #191919;
+        }
+
+        .complexity-badge.intermediate {
+            background-color: #ECC94B;
+            color: #191919;
+        }
+
+        .complexity-badge.advanced {
+            background-color: #CC785C;
+            color: #FFFFFF;
+        }
+
+        .complexity-badge.internal {
+            background-color: #919180;
+            color: #191919;
+        }
+
+        /* Extension Mechanisms */
+        .extension-wrapper {
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background-color: #262625;
+        }
+
+        .extension-header {
+            padding: 1rem 1.5rem;
+            background-color: #CC785C;
+            border-bottom: 1px solid #40403E;
+        }
+
+        .extension-header h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+
+        .extension-subtitle {
+            font-size: 0.875rem;
+            color: #F0F0E8;
+            margin-top: 0.25rem;
+        }
+
+        .extension-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .extension-card {
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            background-color: #2D2D2B;
+            border: 2px solid #CC785C;
+            transition: all 0.2s;
+        }
+
+        .extension-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .extension-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .extension-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #CC785C;
+        }
+
+        .check-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #48BB78;
+        }
+
+        .extension-card p {
+            line-height: 1.75;
+            color: #F0F0E8;
+            margin-bottom: 1rem;
+        }
+
+        .examples-section {
+            margin-top: 1rem;
+        }
+
+        .examples-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #919180;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background-color: #191919;
+            color: #CC785C;
+            border: 1px solid #CC785C;
+        }
+
+        /* Legend */
+        .legend {
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: #262625;
+            border: 1px solid #40403E;
+        }
+
+        .legend h3 {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: #F0F0E8;
+            margin-bottom: 1rem;
+        }
+
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .legend-item span {
+            color: #919180;
+            font-size: 0.875rem;
+        }
+
+        /* Info Cards Grid */
+        .info-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            background-color: #262625;
+            border: 1px solid #40403E;
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #F0F0E8;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-card p {
+            line-height: 1.75;
+            color: #919180;
+        }
+
+        .highlight-text {
+            font-weight: 600;
+            color: #CC785C;
+        }
+
+        /* Use Cases */
+        .use-cases-wrapper {
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background-color: #262625;
+        }
+
+        .use-cases-content {
+            padding: 1.5rem;
+        }
+
+        .use-case {
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            background-color: #2D2D2B;
+            margin-bottom: 1rem;
+        }
+
+        .use-case:last-child {
+            margin-bottom: 0;
+        }
+
+        .use-case.border-green {
+            border-left: 4px solid #48BB78;
+        }
+
+        .use-case.border-yellow {
+            border-left: 4px solid #ECC94B;
+        }
+
+        .use-case.border-orange {
+            border-left: 4px solid #CC785C;
+        }
+
+        .use-case.border-blue {
+            border-left: 4px solid #3498DB;
+        }
+
+        .use-case h4 {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .use-case h4.green {
+            color: #48BB78;
+        }
+
+        .use-case h4.yellow {
+            color: #ECC94B;
+        }
+
+        .use-case h4.orange {
+            color: #CC785C;
+        }
+
+        .use-case h4.blue {
+            color: #3498DB;
+        }
+
+        .use-case p {
+            font-size: 0.875rem;
+            color: #F0F0E8;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            border-radius: 0.75rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #CC785C 0%, #BF4D43 100%);
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+        }
+
+        .conclusion h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: Georgia, serif;
+            margin-bottom: 1rem;
+        }
+
+        .conclusion p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+            color: #F0F0E8;
+        }
+
+        .conclusion p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #919180;
+            font-size: 0.9em;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            th, td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="max-w-container">
+            <!-- Header -->
+            <div class="header">
+                <div class="badge">Guia Completo 2025</div>
+                <h1>Tools do Claude Code</h1>
+                <p class="subtitle">Todas as 16 ferramentas nativas e 4 mecanismos de extensão</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card border-orange">
+                    <div class="stat-number orange">16</div>
+                    <div class="stat-label">Tools Nativas</div>
+                </div>
+                <div class="stat-card border-green">
+                    <div class="stat-number green">7</div>
+                    <div class="stat-label">Categorias</div>
+                </div>
+                <div class="stat-card border-yellow">
+                    <div class="stat-number yellow">4</div>
+                    <div class="stat-label">Mecanismos de Extensão</div>
+                </div>
+                <div class="stat-card border-blue">
+                    <div class="stat-number blue">∞</div>
+                    <div class="stat-label">Possibilidades</div>
+                </div>
+            </div>
+
+            <!-- Manipulação de Arquivos -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h2>Manipulação de Arquivos<span class="tool-count">4 ferramentas</span></h2>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="tool-name">Tool</th>
+                                <th>Descrição</th>
+                                <th>Exemplo de Uso</th>
+                                <th class="center">Complexidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="tool-name-cell">Read</div></td>
+                                <td>Ler o conteúdo completo ou parcial de um arquivo</td>
+                                <td><span class="example-text">"Leia o package.json e identifique todos os scripts de build disponíveis."</span></td>
+                                <td class="center"><span class="complexity-badge basic">BÁSICO</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="tool-name-cell">Write</div></td>
+                                <td>Criar novos arquivos ou sobrescrever arquivos existentes</td>
+                                <td><span class="example-text">"Crie docs/setup.md com instruções completas de onboarding do projeto."</span></td>
+                                <td class="center"><span class="complexity-badge basic">BÁSICO</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="tool-name-cell">Edit</div></td>
+                                <td>Editar partes específicas de um arquivo usando patches</td>
+                                <td><span class="example-text">"No src/auth.ts, substitua bcrypt por argon2 e ajuste todas as importações."</span></td>
+                                <td class="center"><span class="complexity-badge intermediate">INTERMEDIÁRIO</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="tool-name-cell">MultiEdit</div></td>
+                                <td>Fazer múltiplas edições atomizadas em um único arquivo</td>
+                                <td><span class="example-text">"Em src/utils.ts, renomeie slugify→toSlug e atualize todas as chamadas internas."</span></td>
+                                <td class="center"><span class="complexity-badge advanced">AVANÇADO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Navegação e Busca -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h2>Navegação e Busca<span class="tool-count">3 ferramentas</span></h2>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="tool-name">Tool</th>
+                                <th>Descrição</th>
+                                <th>Exemplo de Uso</th>
+                                <th class="center">Complexidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="tool-name-cell">LS</div></td>
+                                <td>Listar diretórios e arquivos em um caminho específico</td>
+                                <td><span class="example-text">"Liste todos os arquivos em src/components e destaque os que têm mais de 500 linhas."</span></td>
+                                <td class="center"><span class="complexity-badge basic">BÁSICO</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="tool-name-cell">Glob</div></td>
+                                <td>Encontrar arquivos que correspondem a um padrão glob</td>
+                                <td><span class="example-text">"Encontre todos os arquivos src/**/*.ts e me diga quais exportam getServerSideProps."</span></td>
+                                <td class="center"><span class="complexity-badge intermediate">INTERMEDIÁRIO</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="tool-name-cell">Grep</div></td>
+                                <td>Buscar padrões de texto dentro dos arquivos</td>
+                                <td><span class="example-text">"Procure por 'TODO:' em todo o repositório e agrupe os resultados por pasta."</span></td>
+                                <td class="center"><span class="complexity-badge intermediate">INTERMEDIÁRIO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Notebooks Jupyter -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h2>Notebooks Jupyter<span class="tool-count">2 ferramentas</span></h2>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="tool-name">Tool</th>
+                                <th>Descrição</th>
+                                <th>Exemplo de Uso</th>
+                                <th class="center">Complexidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="tool-name-cell">NotebookRead</div></td>
+                                <td>Ler conteúdo, células e metadata de arquivos .ipynb</td>
+                                <td><span class="example-text">"Leia notebooks/eda.ipynb e resuma os principais gráficos e visualizações utilizados."</span></td>
+                                <td class="center"><span class="complexity-badge intermediate">INTERMEDIÁRIO</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="tool-name-cell">NotebookEdit</div></td>
+                                <td>Editar células específicas de notebooks</td>
+                                <td><span class="example-text">"No analysis.ipynb, adicione uma nova célula que plota um histograma da coluna 'price'."</span></td>
+                                <td class="center"><span class="complexity-badge advanced">AVANÇADO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Execução e Automação -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h2>Execução e Automação<span class="tool-count">1 ferramenta</span></h2>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="tool-name">Tool</th>
+                                <th>Descrição</th>
+                                <th>Exemplo de Uso</th>
+                                <th class="center">Complexidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="tool-name-cell">Bash</div></td>
+                                <td>Executar comandos de shell, scripts e automações no terminal</td>
+                                <td><span class="example-text">"Execute npm ci && npm test e mostre um resumo dos resultados dos testes."</span></td>
+                                <td class="center"><span class="complexity-badge intermediate">INTERMEDIÁRIO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Busca Web -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h2>Busca Web<span class="tool-count">2 ferramentas</span></h2>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="tool-name">Tool</th>
+                                <th>Descrição</th>
+                                <th>Exemplo de Uso</th>
+                                <th class="center">Complexidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="tool-name-cell">WebSearch</div></td>
+                                <td>Pesquisar na web para obter documentação e referências</td>
+                                <td><span class="example-text">"Busque 'React Server Components best practices' e resuma os 3 pontos principais."</span></td>
+                                <td class="center"><span class="complexity-badge basic">BÁSICO</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="tool-name-cell">WebFetch</div></td>
+                                <td>Baixar conteúdo de URLs específicas</td>
+                                <td><span class="example-text">"Faça fetch de https://api.example.com/schema.json e valide o contrato da API."</span></td>
+                                <td class="center"><span class="complexity-badge basic">BÁSICO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Gerenciamento de Tarefas -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h2>Gerenciamento de Tarefas<span class="tool-count">2 ferramentas</span></h2>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="tool-name">Tool</th>
+                                <th>Descrição</th>
+                                <th>Exemplo de Uso</th>
+                                <th class="center">Complexidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="tool-name-cell">TodoWrite</div></td>
+                                <td>Criar ou atualizar listas de tarefas do agente</td>
+                                <td><span class="example-text">"Adicione TODO: 'migrar autenticação para OAuth2', prioridade alta, status 'todo'."</span></td>
+                                <td class="center"><span class="complexity-badge basic">BÁSICO</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="tool-name-cell">TodoRead</div></td>
+                                <td>Ler a lista de tarefas atual do agente</td>
+                                <td><span class="example-text">"Liste todos os TODOs abertos e ordene por prioridade decrescente."</span></td>
+                                <td class="center"><span class="complexity-badge basic">BÁSICO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Agentes Avançados -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h2>Agentes Avançados<span class="tool-count">2 ferramentas</span></h2>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="tool-name">Tool</th>
+                                <th>Descrição</th>
+                                <th>Exemplo de Uso</th>
+                                <th class="center">Complexidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="tool-name-cell">Task</div></td>
+                                <td>Disparar um sub-agente especializado com contexto isolado</td>
+                                <td><span class="example-text">"Inicie o sub-agente 'code-reviewer' para revisar o diff atual e sugerir melhorias."</span></td>
+                                <td class="center"><span class="complexity-badge advanced">AVANÇADO</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="tool-name-cell">exit_plan_mode</div></td>
+                                <td>Sair do modo de planejamento interno do agente</td>
+                                <td><span class="example-text">Usado internamente quando o agente conclui o planejamento e passa à fase de execução.</span></td>
+                                <td class="center"><span class="complexity-badge internal">INTERNO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Mecanismos de Extensão -->
+            <div class="extension-wrapper">
+                <div class="extension-header">
+                    <h2>Mecanismos de Extensão</h2>
+                    <p class="extension-subtitle">Não são "tools", mas ampliam exponencialmente o poder do agente</p>
+                </div>
+                <div class="extension-grid">
+                    <div class="extension-card">
+                        <div class="extension-card-header">
+                            <h3>Skills</h3>
+                            <span class="check-icon">✓</span>
+                        </div>
+                        <p>Pastas com SKILL.md + scripts/templates que o modelo carrega automaticamente quando relevante (descoberta semântica).</p>
+                        <div class="examples-section">
+                            <div class="examples-label">EXEMPLOS:</div>
+                            <div class="tag-container">
+                                <span class="tag">Excel Analyst</span>
+                                <span class="tag">PR Drafter</span>
+                                <span class="tag">Database Migrator</span>
+                                <span class="tag">API Documentation Generator</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="extension-card">
+                        <div class="extension-card-header">
+                            <h3>Commands</h3>
+                            <span class="check-icon">✓</span>
+                        </div>
+                        <p>Ações explícitas do usuário no REPL com prefixo /, como /config, /permissions, /skills.</p>
+                        <div class="examples-section">
+                            <div class="examples-label">EXEMPLOS:</div>
+                            <div class="tag-container">
+                                <span class="tag">/config</span>
+                                <span class="tag">/permissions</span>
+                                <span class="tag">/skills</span>
+                                <span class="tag">/help</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="extension-card">
+                        <div class="extension-card-header">
+                            <h3>Hooks</h3>
+                            <span class="check-icon">✓</span>
+                        </div>
+                        <p>Gatilhos shell executados antes/depois de certas fases (por tool, por evento), garantindo ações determinísticas.</p>
+                        <div class="examples-section">
+                            <div class="examples-label">EXEMPLOS:</div>
+                            <div class="tag-container">
+                                <span class="tag">Formatar código após edições</span>
+                                <span class="tag">Rodar testes automaticamente</span>
+                                <span class="tag">Bloquear caminhos sensíveis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="extension-card">
+                        <div class="extension-card-header">
+                            <h3>Sub-agents</h3>
+                            <span class="check-icon">✓</span>
+                        </div>
+                        <p>Perfis especializados com contexto isolado e conjunto específico de tools permitido, invocados via Task.</p>
+                        <div class="examples-section">
+                            <div class="examples-label">EXEMPLOS:</div>
+                            <div class="tag-container">
+                                <span class="tag">code-reviewer</span>
+                                <span class="tag">test-writer</span>
+                                <span class="tag">documentation-specialist</span>
+                                <span class="tag">security-auditor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legenda -->
+            <div class="legend">
+                <h3>Legenda de Complexidade</h3>
+                <div class="legend-grid">
+                    <div class="legend-item">
+                        <span class="complexity-badge basic">BÁSICO</span>
+                        <span>Fácil de usar, ideal para começar</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="complexity-badge intermediate">INTERMEDIÁRIO</span>
+                        <span>Requer conhecimento do projeto</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="complexity-badge advanced">AVANÇADO</span>
+                        <span>Recursos poderosos e especializados</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="complexity-badge internal">INTERNO</span>
+                        <span>Usado automaticamente pelo agente</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Cards Grid -->
+            <div class="info-cards-grid">
+                <div class="info-card">
+                    <h3>Cobertura Completa</h3>
+                    <p>As <span class="highlight-text">16 tools nativas</span> cobrem todos os aspectos do desenvolvimento: desde manipulação de arquivos até execução de comandos, passando por busca web e gerenciamento de tarefas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Extensibilidade</h3>
+                    <p>Os <span class="highlight-text">4 mecanismos de extensão</span> (Skills, Commands, Hooks, Sub-agents) permitem customizar e ampliar as capacidades do Claude Code para suas necessidades específicas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Poder Real</h3>
+                    <p>A combinação de tools nativas com <span class="highlight-text">Progressive Disclosure</span> e <span class="highlight-text">Sub-agents</span> cria um sistema de automação sem precedentes.</p>
+                </div>
+            </div>
+
+            <!-- Casos de Uso Práticos -->
+            <div class="use-cases-wrapper">
+                <div class="table-header">
+                    <h2>Casos de Uso Práticos</h2>
+                </div>
+                <div class="use-cases-content">
+                    <div class="use-case border-green">
+                        <h4 class="green">Refatoração Completa de Projeto</h4>
+                        <p>Use <strong>Glob</strong> para encontrar arquivos, <strong>MultiEdit</strong> para refatorar, <strong>Bash</strong> para rodar testes e <strong>TodoWrite</strong> para acompanhar o progresso.</p>
+                    </div>
+
+                    <div class="use-case border-yellow">
+                        <h4 class="yellow">Análise de Dados em Notebooks</h4>
+                        <p>Combine <strong>NotebookRead</strong> para analisar dados existentes, <strong>WebSearch</strong> para buscar melhores práticas e <strong>NotebookEdit</strong> para implementar melhorias.</p>
+                    </div>
+
+                    <div class="use-case border-orange">
+                        <h4 class="orange">Documentação Automática</h4>
+                        <p>Use uma <strong>Skill</strong> de documentação que combina <strong>Read</strong>, <strong>Grep</strong> e <strong>Write</strong> para gerar docs automaticamente baseadas no código.</p>
+                    </div>
+
+                    <div class="use-case border-blue">
+                        <h4 class="blue">Code Review Automatizado</h4>
+                        <p>Invoque um <strong>Sub-agent</strong> especializado via <strong>Task</strong> que usa <strong>Grep</strong> e <strong>Read</strong> para revisar código e sugerir melhorias.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusão -->
+            <div class="conclusion">
+                <h3>Conclusão</h3>
+                <p>O <strong>Claude Code</strong> oferece um conjunto completo de ferramentas que cobrem todas as necessidades do desenvolvimento moderno. Das operações básicas de arquivo às capacidades avançadas de sub-agentes, cada tool foi projetada para maximizar produtividade e automação.</p>
+                <p>A combinação de <strong>16 tools nativas</strong> com <strong>4 mecanismos de extensão</strong> cria um ecossistema único que permite desde tarefas simples até automações complexas de nível empresarial.</p>
+                <p>Domine essas ferramentas e você terá o poder de automatizar praticamente qualquer aspecto do seu workflow de desenvolvimento.</p>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>Baseado em documentação oficial e análise técnica do Claude Code</p>
+                <p>Criado para o Segundo Cérebro com IA • Outubro 2025</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

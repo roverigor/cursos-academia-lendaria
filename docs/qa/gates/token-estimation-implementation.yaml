@@ -1,0 +1,500 @@
+---
+gate-id: token-estimation-implementation
+title: "Token Estimation System Implementation - QA Review"
+commit: 785854b5
+date: 2025-10-28
+reviewer: Quinn (QA Agent)
+status: PASS_WITH_CONCERNS
+
+decision:
+  gate_status: PASS_WITH_CONCERNS
+  recommendation: "Approve for merge with required follow-up tasks"
+  confidence: HIGH
+  rationale: |
+    The token estimation system is well-designed, properly documented, and correctly
+    integrated into the AIOS architecture. The implementation follows AIOS patterns
+    and provides comprehensive guidance for expansion pack agents.
+
+    However, there are important gaps in coverage (only 2 of ~8 pipeline agents
+    implemented) and some edge cases that need addressing in follow-up work.
+
+    The core framework is solid enough to merge and use immediately, with
+    remaining agents to be updated incrementally as they're used.
+
+implementation_scope:
+  files_modified: 6
+  lines_added: 697
+  agents_updated: 2
+  tasks_updated: 3
+
+requirements_traceability:
+  requirement_1:
+    description: "Add mandatory token estimation for multi-step operations"
+    implementation: CLAUDE.md:265-740 (Token Estimation & Resource Planning section)
+    test_coverage: Manual verification required
+    status: IMPLEMENTED
+
+  requirement_2:
+    description: "Provide INPUT+PROCESSING+OUTPUT breakdown format"
+    implementation: CLAUDE.md:295-347 (Standardized Presentation Format)
+    test_coverage: 3 complete examples provided
+    status: IMPLEMENTED
+
+  requirement_3:
+    description: "Offer 3 mitigation strategies with clear guidance"
+    implementation: CLAUDE.md:367-466 (Mitigation Strategies)
+    test_coverage: Examples show all 3 options
+    status: IMPLEMENTED
+
+  requirement_4:
+    description: "Block execution if >85% context usage projected"
+    implementation: CLAUDE.md:362-365 (Status Indicators), mind-mapper.md:34
+    test_coverage: NOT TESTED
+    status: IMPLEMENTED_UNTESTED
+
+  requirement_5:
+    description: "Integration with expansion pack agents"
+    implementation: mind-mapper.md:25-35, course-architect.md:634-734
+    test_coverage: 2 of ~8 pipeline agents
+    status: PARTIAL
+
+conformance_analysis:
+  aios_patterns:
+    - criterion: "Rules in CLAUDE.md for global enforcement"
+      status: PASS
+      location: ".claude/CLAUDE.md:265-740"
+      notes: "Correctly placed in Claude Code Specific Configuration section"
+
+    - criterion: "Agent YAML activation-instructions pattern"
+      status: PASS
+      location: "mind-mapper.md:25-35"
+      notes: "STEP 7.5 follows existing STEP pattern, properly integrated"
+
+    - criterion: "Task frontmatter YAML metadata"
+      status: PASS
+      location: "map-mind.md:15-45, execute-mmos-pipeline.md:65-90, start-new-course.md:13-31"
+      notes: "Follows established frontmatter pattern with token-estimation block"
+
+    - criterion: "Human-in-the-loop checkpoints"
+      status: PASS
+      location: "CLAUDE.md:274 (Wait for Explicit Confirmation)"
+      notes: "Aligns with existing elicit=true pattern"
+
+    - criterion: "Agent customization field precedence"
+      status: PASS
+      location: "mind-mapper.md:38"
+      notes: "Existing precedence rule preserved"
+
+  documentation_quality:
+    - criterion: "Comprehensive examples provided"
+      status: PASS
+      examples: 3
+      locations: "CLAUDE.md:569-731"
+
+    - criterion: "Clear formulas for estimation"
+      status: PASS
+      location: "CLAUDE.md:468-505"
+      notes: "Base rates, overhead multipliers, operation-specific estimates all defined"
+
+    - criterion: "Status indicators well-defined"
+      status: PASS
+      location: "CLAUDE.md:349-365"
+      notes: "✅ SEGURO / ⚠️ APERTADO / 🚨 RISCO clearly defined with thresholds"
+
+completeness_gaps:
+  critical_gaps: []
+
+  important_gaps:
+    - gap_id: GAP-001
+      severity: MEDIUM
+      title: "Incomplete agent coverage"
+      description: |
+        Only 2 of ~8 pipeline agents have token estimation implemented:
+        - ✅ mind-mapper (MMOS)
+        - ✅ course-architect (CreatorOS)
+
+        Missing implementations:
+        - ❌ mind-pm (MMOS)
+        - ❌ cognitive-analyst (MMOS) - if it runs full pipelines
+        - ❌ innerlens-orchestrator (InnerLens)
+        - ❌ psychologist (InnerLens) - if it runs full profiles
+        - ❌ db-sage (Super-agentes) - if multi-step
+        - ❌ design-system (Super-agentes) - if multi-step
+
+      impact: |
+        Users executing pipelines through uncovered agents won't get token
+        estimation, defeating the purpose of transparency and control.
+
+      recommendation: |
+        PHASE 2: Update remaining pipeline agents incrementally.
+        Priority order:
+        1. innerlens-orchestrator (if it's a full pipeline orchestrator)
+        2. mind-pm (MMOS project manager agent)
+        3. db-sage/design-system (if they run multi-step operations)
+
+      mitigation: |
+        Document in commit message or follow-up issue that coverage is
+        intentionally partial in Phase 1, with Phase 2 planned.
+
+    - gap_id: GAP-002
+      severity: LOW
+      title: "No validation checklist for agents to verify estimation quality"
+      description: |
+        Agents are told HOW to estimate but there's no checklist to verify:
+        - Are the formulas being applied correctly?
+        - Is the breakdown (INPUT+PROCESSING+OUTPUT) accurate?
+        - Are alternative strategies appropriate for the operation?
+
+      impact: |
+        Agents might provide inaccurate estimates, leading to poor user decisions.
+
+      recommendation: |
+        Create .aios-core/checklists/token-estimation-quality.md with criteria:
+        - [ ] INPUT calculation includes all file reads and research
+        - [ ] PROCESSING includes analysis, synthesis, generation
+        - [ ] OUTPUT includes all generated files and reports
+        - [ ] Overhead multipliers applied (20% context, 15% interactive, etc.)
+        - [ ] Status indicator matches projected usage correctly
+        - [ ] Alternative strategies are operation-appropriate
+
+      mitigation: |
+        Not critical for Phase 1. Can be added in Phase 2 after real-world usage data.
+
+  nice_to_have_gaps:
+    - gap_id: GAP-003
+      severity: VERY_LOW
+      title: "No automated token estimation helper function"
+      description: |
+        Agents must manually calculate estimates using formulas. Could be
+        error-prone for complex operations.
+
+      impact: |
+        Inconsistent estimation quality between agents/operations.
+
+      recommendation: |
+        Consider creating a helper function/tool in future:
+        ```javascript
+        estimateTokens({
+          files: ['file1.md', 'file2.md'],
+          webSearches: 5,
+          outputWords: 5000,
+          mode: 'greenfield'
+        })
+        // Returns: { input: 100K, processing: 200K, output: 50K, total: 350K }
+        ```
+
+      mitigation: |
+        Not needed for MVP. Manual calculation is acceptable for Phase 1.
+
+risk_assessment:
+  high_risks: []
+
+  medium_risks:
+    - risk_id: RISK-001
+      probability: MEDIUM
+      impact: HIGH
+      severity: MEDIUM-HIGH
+      title: "User confusion about option selection"
+      description: |
+        Users might not understand the trade-offs between options 1/2/3/4,
+        especially the technical distinction between "continue" vs "subagent"
+        vs "new window".
+
+      mitigation_status: MITIGATED
+      mitigation_notes: |
+        ✅ Clear explanations provided in format
+        ✅ Benefits listed for each option
+        ✅ Recommendations shown (e.g., "[RECOMENDADO se >70%]")
+        ⚠️ Could add brief educational note on first usage
+
+      residual_risk: LOW
+
+    - risk_id: RISK-002
+      probability: MEDIUM
+      impact: MEDIUM
+      severity: MEDIUM
+      title: "Inaccurate token estimates leading to poor decisions"
+      description: |
+        If estimates are significantly off (e.g., 200K estimated but actually 500K),
+        users might choose "continue" and hit context overflow.
+
+      mitigation_status: PARTIAL
+      mitigation_notes: |
+        ✅ Formulas provided are reasonable baselines
+        ✅ Ranges given (min-max) rather than single point
+        ⚠️ No real-world validation yet
+        ❌ No feedback loop to improve estimates
+
+      residual_risk: MEDIUM
+
+      recommendation: |
+        Phase 2: Add logging to capture (estimated vs actual) tokens and
+        refine formulas based on real usage data.
+
+  low_risks:
+    - risk_id: RISK-003
+      probability: LOW
+      impact: MEDIUM
+      severity: LOW
+      title: "Agents might skip estimation in urgent scenarios"
+      description: |
+        Agents might be tempted to bypass estimation for "quick fixes" or
+        when under time pressure.
+
+      mitigation_status: MITIGATED
+      mitigation_notes: |
+        ✅ Marked as CRITICAL in activation-instructions
+        ✅ Clear "MUST" language in CLAUDE.md
+        ✅ user-confirmation-required flag in tasks
+
+      residual_risk: VERY_LOW
+
+non_functional_requirements:
+  performance:
+    criterion: "Token estimation should not add significant latency"
+    status: PASS
+    analysis: |
+      Estimation is pure calculation (no API calls, no file I/O beyond reading
+      task metadata). Expected latency: <100ms.
+
+      Bottleneck would be generating option 3 (standalone prompt) which requires
+      assembling context, but that's only executed if user selects option 3.
+
+    verdict: NO PERFORMANCE CONCERNS
+
+  usability:
+    criterion: "Users should understand estimates and make informed decisions"
+    status: PASS_WITH_CONCERNS
+    analysis: |
+      ✅ Format is clear and visual (boxes, emoji indicators)
+      ✅ Portuguese language matches user base
+      ✅ Benefits explained for each option
+      ⚠️ Technical users will understand immediately
+      ⚠️ Non-technical users might be confused by "context window" concept
+
+      Example confusion points:
+      - "Contexto separado (não soma ao atual)" - what does this mean?
+      - "Redução: 97% de economia de contexto" - why is this good?
+
+    verdict: ACCEPTABLE FOR TECHNICAL USERS
+    recommendation: |
+      Consider adding optional "?" help text for first-time users:
+      "💡 Contexto = memória da conversa. Quanto mais usamos, menos espaço
+      sobra para novas operações. Subagent usa memória separada."
+
+  maintainability:
+    criterion: "Easy to update estimates as operations evolve"
+    status: PASS
+    analysis: |
+      ✅ Estimates defined in task frontmatter (single source of truth)
+      ✅ Formulas in CLAUDE.md easy to update globally
+      ✅ Clear separation: rules (CLAUDE.md) vs implementation (agents/tasks)
+      ✅ Examples serve as living documentation
+
+    verdict: HIGHLY MAINTAINABLE
+
+  extensibility:
+    criterion: "Easy to add token estimation to new agents/tasks"
+    status: PASS
+    analysis: |
+      ✅ Clear template provided in CLAUDE.md:524-550
+      ✅ Step-by-step instructions for agent integration (CLAUDE.md:507-522)
+      ✅ Existing implementations serve as reference (mind-mapper, course-architect)
+
+      Time to add to new agent: ~15 minutes
+      Time to add to new task: ~5 minutes (just frontmatter)
+
+    verdict: EXCELLENT EXTENSIBILITY
+
+test_recommendations:
+  manual_tests:
+    - test_id: TEST-001
+      priority: HIGH
+      title: "Verify estimation shown before execution"
+      steps:
+        - "Activate @mind-mapper"
+        - "Execute: *map test-person"
+        - "Verify estimation is shown BEFORE any execution"
+        - "Verify format matches CLAUDE.md:295-347"
+      expected: "Estimation displayed, user prompted for choice"
+
+    - test_id: TEST-002
+      priority: HIGH
+      title: "Verify option 1 blocked when >85% usage"
+      steps:
+        - "Activate @mind-mapper with high existing context (~170K tokens)"
+        - "Execute: *map test-person"
+        - "Verify option 1 shows ❌ and is marked BLOQUEADO"
+      expected: "Option 1 unavailable, only 2/3/4 shown"
+
+    - test_id: TEST-003
+      priority: MEDIUM
+      title: "Verify option 2 (subagent) executes correctly"
+      steps:
+        - "Activate @course-architect"
+        - "Execute: *new test-course"
+        - "When prompted, select option 2"
+        - "Verify Task tool is used with subagent_type='general-purpose'"
+      expected: "Operation executes in subagent, returns summary only"
+
+    - test_id: TEST-004
+      priority: MEDIUM
+      title: "Verify option 3 generates standalone prompt"
+      steps:
+        - "Activate @mind-mapper"
+        - "Execute: *map test-person"
+        - "When prompted, select option 3"
+        - "Verify complete prompt generated with all 5 sections (context, docs, inputs, instructions, handoff)"
+      expected: "Complete standalone prompt in code block"
+
+    - test_id: TEST-005
+      priority: LOW
+      title: "Verify estimation skipped for simple operations"
+      steps:
+        - "Activate @course-architect"
+        - "Execute: *help"
+        - "Verify NO estimation shown (help command exempt)"
+      expected: "Help displayed immediately"
+
+  automated_tests:
+    recommendation: |
+      Consider adding integration tests in Phase 2:
+      - Mock agent execution and verify estimation workflow
+      - Test formula calculations (unit tests)
+      - Test threshold detection (70%, 85% boundaries)
+
+action_items:
+  required_before_merge: []
+
+  required_after_merge:
+    - action_id: ACTION-001
+      priority: HIGH
+      owner: TBD
+      deadline: "Within 2 weeks of first usage"
+      title: "Manual test verification"
+      description: |
+        Execute TEST-001 through TEST-005 with real operations to verify:
+        - Estimation is shown correctly
+        - Blocking works at 85% threshold
+        - Subagent execution functions
+        - Standalone prompt generation works
+
+    - action_id: ACTION-002
+      priority: MEDIUM
+      owner: TBD
+      deadline: "Phase 2 (within 1 month)"
+      title: "Implement remaining pipeline agents"
+      description: |
+        Add token estimation to:
+        1. innerlens-orchestrator (if pipeline orchestrator)
+        2. mind-pm (MMOS)
+        3. db-sage/design-system (if multi-step)
+
+        Follow pattern established in mind-mapper.md and course-architect.md.
+
+    - action_id: ACTION-003
+      priority: LOW
+      owner: TBD
+      deadline: "Phase 2 (within 1 month)"
+      title: "Create token estimation quality checklist"
+      description: |
+        Create .aios-core/checklists/token-estimation-quality.md to help
+        agents verify their estimates are accurate.
+
+  nice_to_have:
+    - action_id: ACTION-004
+      priority: VERY_LOW
+      owner: TBD
+      deadline: "Phase 3 (future)"
+      title: "Build automated token estimation helper"
+      description: "Create helper function/tool to calculate estimates automatically"
+
+    - action_id: ACTION-005
+      priority: VERY_LOW
+      owner: TBD
+      deadline: "Phase 3 (future)"
+      title: "Add usage telemetry and estimate refinement"
+      description: |
+        Log (estimated vs actual) tokens to refine formulas over time.
+        Privacy-preserving: only log aggregated statistics.
+
+quality_scores:
+  code_quality: 9/10
+  documentation_quality: 10/10
+  test_coverage: 3/10  # Manual tests defined but not executed
+  aios_conformance: 10/10
+  completeness: 6/10  # Only 2 of ~8 agents covered
+  maintainability: 9/10
+
+  overall_score: 7.8/10
+  grade: B+
+
+  score_rationale: |
+    Excellent design, documentation, and AIOS conformance. Implementation is
+    solid for the agents that were updated. Primary deductions for:
+    - Incomplete agent coverage (2 of ~8)
+    - No test execution yet
+
+    Grade: B+ (Very Good - ready to ship with follow-up)
+
+summary:
+  strengths:
+    - "✅ Excellent documentation with 3 complete examples"
+    - "✅ Perfect AIOS pattern conformance"
+    - "✅ Clear status indicators and mitigation strategies"
+    - "✅ Comprehensive formula definitions"
+    - "✅ Well-integrated into agent activation-instructions"
+    - "✅ Task metadata follows established frontmatter pattern"
+    - "✅ Educational approach (explains why, not just what)"
+
+  weaknesses:
+    - "⚠️ Only 2 of ~8 pipeline agents implemented"
+    - "⚠️ No testing performed yet (manual tests defined but not run)"
+    - "⚠️ No validation checklist for estimation quality"
+    - "⚠️ Minor: non-technical users might need more UX guidance"
+
+  risks:
+    - "🔴 MEDIUM: Inaccurate estimates could lead to poor user decisions (mitigate with Phase 2 feedback loop)"
+    - "🟡 LOW: User confusion about option selection (mitigated with clear docs)"
+
+  recommendations:
+    phase_1_complete: YES
+    ready_to_merge: YES
+    conditions: |
+      Merge approved with these conditions:
+      1. Manual testing (ACTION-001) executed within 2 weeks of first use
+      2. Phase 2 work (ACTION-002) scheduled for remaining agents
+      3. Documentation note added about partial Phase 1 coverage
+
+reviewer_notes: |
+  This is excellent work! The implementation is thoughtful, well-documented,
+  and properly integrated into AIOS patterns. The 697 lines added provide a
+  comprehensive framework that will genuinely help users manage context usage.
+
+  The incomplete agent coverage is acceptable for Phase 1 - the two agents
+  implemented (mind-mapper, course-architect) are the highest-value targets
+  since they run the longest pipelines. Remaining agents can be updated
+  incrementally as they're used.
+
+  The lack of automated testing is a concern, but given that this is primarily
+  a UI/UX feature (showing estimates and getting user confirmation), manual
+  testing is acceptable for MVP.
+
+  Key success factor: Will users actually make better decisions with these
+  estimates? The format is clear and actionable, so I'm confident the answer
+  is yes, but real-world validation will be important in Phase 2.
+
+final_verdict:
+  decision: PASS_WITH_CONCERNS
+  gate_status: APPROVED_FOR_MERGE
+  merge_authorized: YES
+  conditions_for_merge:
+    - "Manual testing executed within 2 weeks of first use"
+    - "Phase 2 work scheduled for remaining agents within 1 month"
+
+  next_gate: |
+    Recommend Phase 2 review after:
+    - All pipeline agents updated
+    - Manual tests executed and passed
+    - Real-world usage data collected (estimated vs actual)
+---
