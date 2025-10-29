@@ -56,7 +56,7 @@ Raw Text
 
 - [ ] **Source file exists** and is readable (UTF-8)
 - [ ] **Mind configured** (or will be auto-created)
-- [ ] **MMOS database accessible** at `/SQLite legado (migrado para Supabase em 2025-10)`
+- [ ] **Supabase configurado** (`SUPABASE_URL`, `SUPABASE_SERVICE_KEY`, `SUPABASE_DB_URL`)
 - [ ] **Claude API key configured** (for LLM extraction)
 - [ ] **Agents available**: @fragment-extractor, @quality-assurance, @psychologist
 
@@ -263,7 +263,7 @@ elif validation_status in ["VALIDATED_HIGH", "VALIDATED_PROVISIONAL"]:
    • Mind: Alan Nicolas (id=25)
    • Source: Estilo Escrita Provocativa (id=42)
    • Fragments: 103 MIUs saved
-   • Database: /SQLite legado (migrado para Supabase em 2025-10)
+   • Database: Supabase (PostgreSQL)
 ```
 
 **Exit conditions:**
@@ -415,7 +415,7 @@ summary = {
 
 💾 Database Save:
    • Fragments: 103/103 saved ✅
-   • Database: /SQLite legado (migrado para Supabase em 2025-10)
+   • Database: Supabase (PostgreSQL)
    • Verified: ✅
 
 🧠 Personality Analysis (@psychologist):
