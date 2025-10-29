@@ -104,6 +104,93 @@ expansion-packs/            # 🔌 Modular system extensions
 
 All project-specific code, configuration, and utilities must go in `expansion-packs/` or `docs/`, never in `.aios-core/`.
 
+### Expansion Pack Sync Architecture
+
+**IMPORTANT: `.claude/commands/` is auto-generated - DO NOT edit directly**
+
+The AIOS system maintains two parallel structures for expansion pack content:
+
+```
+expansion-packs/{pack-name}/     # 🎯 SOURCE OF TRUTH
+├── agents/                      # Agent definitions (YAML)
+├── tasks/                       # Task workflows (Markdown)
+├── templates/                   # Document templates
+├── checklists/                  # Validation checklists
+└── workflows/                   # Multi-step workflows
+
+.claude/commands/{PackName}/     # 🔄 AUTO-SYNCED (read-only)
+├── agents/                      # ← synced from expansion-packs
+├── tasks/                       # ← synced from expansion-packs
+├── templates/                   # ← synced from expansion-packs
+└── checklists/                  # ← synced from expansion-packs
+```
+
+#### Why This Duplication Exists
+
+1. **Claude Code Integration**: `.claude/commands/` is where Claude Code discovers slash commands and agents
+2. **Modular Development**: `expansion-packs/` keeps each system's code isolated and maintainable
+3. **IDE Support**: Allows both `.mdc` (Claude) and `.md` (standard) formats to coexist
+4. **Version Control**: Only `expansion-packs/` is the source of truth for git
+
+#### How Sync Works
+
+**Pre-commit Hook** (`.aios-core/hooks/pre-commit-sync.sh`):
+- Automatically runs on every `git commit`
+- Syncs content from `expansion-packs/` → `.claude/commands/`
+- Creates both `.md` and `.mdc` versions
+- Logs sync operations to `.aios-sync.log`
+
+**What Gets Synced:**
+- ✅ `agents/*.md` → `.claude/commands/{Pack}/agents/*.{md,mdc}`
+- ✅ `tasks/*.md` → `.claude/commands/{Pack}/tasks/*.{md,mdc}`
+- ✅ `templates/*.md` → `.claude/commands/{Pack}/templates/*.{md,mdc}`
+- ✅ `checklists/*.md` → `.claude/commands/{Pack}/checklists/*.{md,mdc}`
+- ✅ `workflows/*.yaml` → `.claude/commands/{Pack}/workflows/*.{yaml,mdc}`
+
+#### Development Workflow
+
+**✅ CORRECT:**
+```bash
+# 1. Edit source in expansion-packs
+vim expansion-packs/creator-os/tasks/new-task.md
+
+# 2. Commit (auto-sync happens)
+git add expansion-packs/creator-os/tasks/new-task.md
+git commit -m "feat(creator-os): add new task"
+
+# 3. Sync runs automatically, updates .claude/commands/
+# 4. Both files committed together
+```
+
+**❌ WRONG:**
+```bash
+# DON'T edit .claude/commands/ directly
+vim .claude/commands/CreatorOS/tasks/new-task.md  # ❌
+
+# Changes will be OVERWRITTEN on next sync!
+```
+
+#### Backup Files (.bak)
+
+During sync, `.bak` files are created temporarily:
+- `.claude/commands/{Pack}/tasks/example.md.bak`
+- These are safe to delete (not needed after successful sync)
+- Consider adding `*.bak` to `.gitignore`
+
+#### Manual Sync
+
+If needed, you can manually trigger sync:
+```bash
+.aios-core/hooks/pre-commit-sync.sh
+```
+
+#### Key Rules
+
+1. **NEVER modify `.claude/commands/` directly** - changes will be lost
+2. **ALWAYS edit `expansion-packs/`** - it's the source of truth
+3. **Let the pre-commit hook handle sync** - it's automatic
+4. **Review `.aios-sync.log`** if sync issues occur
+
 ## Workflow Execution
 
 ### Task Execution Pattern

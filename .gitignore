@@ -16,6 +16,9 @@ venv/
 .venv-etl/
 __pycache__/
 *.pyc
+.pytest_cache/
+.coverage
+htmlcov/
 .env
 
 # Arquivos temporários e backup
@@ -35,6 +38,9 @@ __pycache__/
 expansion-packs/*/docs/*
 !expansion-packs/*/docs/epics/
 !expansion-packs/*/docs/stories/
+
+# Expansion packs outputs (should use root outputs/ instead)
+expansion-packs/*/outputs/
 # Coverage reports
 coverage/
 *.lcov
@@ -62,3 +68,4 @@ outputs/debates/*
 # Supabase migration artifacts (generated automatically)
 supabase/schemas/
 supabase/rollback/
+supabase/.temp/
