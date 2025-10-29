@@ -1,9 +1,10 @@
 # MMOS Admin Dashboard - Architecture Documentation
 
-**Version:** 1.1 (P0 Fixes Applied)
-**Date:** 2025-10-28
+**Version:** 1.2 (UX Enhancement)
+**Date:** 2025-10-29
 **Project:** MMOS Admin Dashboard (Mente Lendária)
 **Architect:** Winston (AIOS Architect Agent)
+**UX Lead:** Sally (UX Expert Agent)
 **Status:** ✅ Ready for Stakeholder Review
 
 **⚠️ IMPORTANT:** Read [ARCHITECTURE-ADDENDUM.md](./ARCHITECTURE-ADDENDUM.md) first for critical P0 fixes!
@@ -12,7 +13,7 @@
 
 ## 📋 Document Navigation
 
-This architecture is organized into **11 specialized documents** for easier review and maintenance:
+This architecture is organized into **14 specialized documents** for easier review and maintenance:
 
 **🔴 START HERE:** [ARCHITECTURE-ADDENDUM.md](./ARCHITECTURE-ADDENDUM.md) - **Critical P0 fixes** applied after initial review
 
@@ -89,6 +90,30 @@ This architecture is organized into **11 specialized documents** for easier revi
     - Visual regression testing
     - **👉 PRIMARY REVIEW: Design System Senior**
 
+12. **[User Research & Personas](./12-user-research.md)** 👥
+    - 4 primary user personas (PO, Admin, Creator, Analyst)
+    - User needs matrix and pain points analysis
+    - Feature prioritization by user value
+    - Success metrics and validation plan
+    - **👉 PRIMARY REVIEW: UX Senior + Product Owner**
+
+13. **[User Flows & Journey Maps](./13-user-flows.md)** 🗺️
+    - Information architecture and site map
+    - 6 core user flows (step-by-step)
+    - Complete journey maps with emotional touchpoints
+    - Navigation patterns and mobile experience
+    - Task success optimization strategies
+    - **👉 PRIMARY REVIEW: UX Senior**
+
+14. **[Interaction Design Patterns](./14-interaction-patterns.md)** ✨
+    - Micro-interactions (buttons, cards, toggles)
+    - Animation guidelines and performance
+    - Feedback mechanisms (toasts, validation, progress)
+    - Progressive disclosure patterns
+    - Data visualization best practices
+    - Accessibility interactions (keyboard, screen reader)
+    - **👉 PRIMARY REVIEW: UX Senior + Design System Senior**
+
 ---
 
 ## 🎯 Quick Start for Reviewers
@@ -106,14 +131,20 @@ This architecture is organized into **11 specialized documents** for easier revi
 ---
 
 ### For UX Senior 🎨
-**Primary Focus:** [Document #4 - Frontend Architecture](./4-frontend-architecture.md)
-**Also Review:** Documents #1 (Overview), #9 (Development Workflow)
+**Primary Focus:**
+- [Document #12 - User Research & Personas](./12-user-research.md)
+- [Document #13 - User Flows & Journey Maps](./13-user-flows.md)
+- [Document #14 - Interaction Design Patterns](./14-interaction-patterns.md)
+
+**Also Review:** Documents #4 (Frontend Architecture), #11 (Design System)
 
 **Key Questions to Validate:**
-- Do the user flows align with MMOS requirements?
-- Are the interaction patterns intuitive?
-- Is the navigation structure logical?
-- Are accessibility requirements met?
+- Are the 4 user personas accurate representations of our stakeholders?
+- Do the user flows cover all critical tasks?
+- Are pain points and solutions clearly identified?
+- Are interaction patterns delightful yet functional?
+- Does the mobile experience meet user needs?
+- Are accessibility interactions comprehensive (WCAG AA)?
 
 ---
 
@@ -170,6 +201,7 @@ This architecture is organized into **11 specialized documents** for easier revi
 
 | Date | Version | Changes | Author |
 |------|---------|---------|--------|
+| 2025-10-29 | 1.2 | UX Enhancement: Added 3 UX documents (personas, flows, interactions) | Sally (UX Expert) |
 | 2025-10-28 | 1.1 | P0 fixes: migration files location, complete env vars, auth trigger | James (Dev Senior) |
 | 2025-10-28 | 1.0 | Initial architecture documentation | Winston (Architect) |
 
@@ -212,6 +244,9 @@ Dev Senior creates implementation plan based on approved architecture.
 | 9. Development Workflow | ✅ Complete | All | 2025-10-28 |
 | 10. Stakeholder Review Guide | ✅ Complete | All | 2025-10-28 |
 | 11. Design System Guide | ✅ Complete | Design System Senior | 2025-10-28 |
+| 12. User Research & Personas | ✅ Complete | UX Senior + PO | 2025-10-29 |
+| 13. User Flows & Journey Maps | ✅ Complete | UX Senior | 2025-10-29 |
+| 14. Interaction Design Patterns | ✅ Complete | UX Senior + Design System | 2025-10-29 |
 
 ---
 

@@ -28,8 +28,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.0] - 2025-10-27
 
-### Added
-- AIOS Framework v4.31.0 integration
+### AIOS Framework Integration (@oalanicolas)
+
+#### Added
+- AIOS Framework v4.31.0 integration (framework by @pedro)
+- Configured core agent system infrastructure (22+ specialized agents)
+- Integrated task execution engine
+- Set up CLI infrastructure and tooling
+
+#### Changed
+- Major refactoring: Separated framework (`.aios-core/`) from project code (`expansion-packs/`)
+
+### Expansion Packs & Business Logic (@oalanicolas)
+
+#### Added
 - CreatorOS expansion pack with database persistence
 - MMOS expansion pack for cognitive clone creation
 - InnerLens expansion pack for psychometric profiling
@@ -37,34 +49,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic sync between `expansion-packs/` and `.claude/commands/`
 - Pre-commit hooks for IDE sync and versioned tables check
 - Comprehensive documentation system (423+ markdown files)
-- Multi-agent system (22+ specialized agents)
+- DNA Mental methodology framework
+- Token estimation system for expansion pack operations
+- Project governance (CHANGELOG, CONTRIBUTING)
 
-### Changed
-- Major refactoring: Separated framework (`.aios-core/`) from project code (`expansion-packs/`)
+#### Changed
 - Outputs moved to dedicated `outputs/` directory (not versioned)
 - Documentation reorganized into clear categories (`docs/architecture/`, `docs/methodology/`, etc.)
 - Git history cleanup (removed large binaries)
 
-### Removed
+#### Removed
 - ETL data collector (partially deprecated, functionality moved to fragments)
 - Legacy `node_modules/` from Git tracking
 - Backup files (`.bak`) from repository
 
 ## [2.0.0] - 2025-09-XX
 
-### Added
+### Architecture (@oalanicolas)
+
+#### Changed
+- Migrated from monolithic to modular architecture
+- Adopted expansion pack system
+
+### Features (@oalanicolas)
+
+#### Added
 - Initial MMOS (Mind Mapper Operating System) implementation
 - DNA Mental methodology framework
 - Course generation capabilities (CreatorOS)
 - Supabase integration for persistent storage
 
-### Changed
-- Migrated from monolithic to modular architecture
-- Adopted expansion pack system
-
 ## [1.0.0] - 2025-08-XX
 
-### Added
+### Initial Release (@oalanicolas)
+
+#### Added
 - Initial project setup
 - Basic agent system
 - Core documentation structure
