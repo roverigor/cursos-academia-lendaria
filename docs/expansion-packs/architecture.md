@@ -22,7 +22,7 @@
 
 ### 2. Single Database, Multiple Writers
 
-**Principle:** All structured data goes to one database (`SQLite legado (migrado para Supabase em 2025-10)`).
+**Principle:** All structured data goes to a single Supabase (PostgreSQL) database.
 
 **Why?**
 - ✅ **Single source of truth** - No data duplication
@@ -31,9 +31,29 @@
 - ✅ **Unified queries** - Cross-pack analytics
 
 **Table Ownership:**
-- Each pack "owns" certain tables
-- Packs can read all tables
-- Packs write only to owned tables (except SuperAgentes)
+- Each pack "owns" a bounded context inside the Supabase schema.
+- Packs can read any table (subject to RLS), but only write to their domain tables.
+- SuperAgentes (DB Sage) is the sole maintainer of migrations, RLS policies, seeds and snapshots.
+
+| Pack / Domain | Primary Tables (schema: `public`) | Notes |
+|---------------|------------------------------------|-------|
+| **MMOS Core** | `minds`, `mind_profiles`, `sources`, `fragments`, `fragment_tags`, `fragment_metadata` | Mind-centric source→fragment lineage, persisted via DB Sage migrations. |
+| **InnerLens** | Shares `fragments` + `fragment_metadata`; adds `big_five_profiles`, `fragment_quality_audits` | Writes through Supabase clients with service-role credentials and RLS bypass (server-side). |
+| **CreatorOS** | `content_projects`, `content_pieces`, `content_lessons`, `content_metadata`, `content_minds`, `audience_profiles`, `content_performance` | All writes go through `CoursePersister` (supabase-py). |
+| **SuperAgentes** | `schema_versions`, `migration_log`, `db_audit_events` | Operational tables (no RLS) used for governance + automation. |
+| **Shared / Ops** | `ingestion_batches`, `job_executions`, `task_metrics` | Cross-pack telemetry captured by orchestrators. |
+
+#### Supabase Schema Overview
+
+The production cluster runs on **Supabase Postgres 17** with timestamped migrations in `supabase/migrations/`. The current baseline is **v0.8.2 – Fragments Cleanup** (see `docs/database/README.md`). Schema design follows a mind-centric model:
+
+- **Knowledge Core** (`minds → sources → fragments`): provenance, metadata and embeddings feeding MMOS + InnerLens.
+- **CreatorOS Content Graph** (`content_projects → content_pieces → content_lessons`): dual-write pattern with filesystem snapshots for review.
+- **Audience & Analytics** (`audience_profiles`, `content_performance`, `campaign_insights`): KPI tracking for generated assets.
+- **Psychometrics** (`big_five_profiles`, `fragment_quality_audits`): InnerLens outputs and validation signals.
+- **Operations** (`schema_versions`, `migration_log`, `ingestion_batches`, `job_executions`): governance, automation, telemetry.
+
+Row Level Security is enforced by default using the `current_mind_id()` helper. Service-role operations (e.g., CreatorOS persister, InnerLens ingestion) execute on the backend with elevated credentials and explicit policies managed by DB Sage.
 
 ### 3. File-Based Contracts
 
@@ -118,13 +138,13 @@ Pack B reads: outputs/pack-a/{slug}/output.yaml
 │                                                              │
 │  ┌───────────────────────────────────────────────────┐     │
 │  │            Unified Database                        │     │
-│  │         SQLite legado (migrado para Supabase em 2025-10)                   │     │
+│  │            Supabase (PostgreSQL)                   │     │
 │  │                                                    │     │
 │  │  Tables by Pack:                                  │     │
-│  │  - MMOS: minds, cognitive_specs, mind_fragments   │     │
-│  │  - InnerLens: sources, fragments, big_five_profiles│    │
-│  │  - CreatorOS: courses, lessons, content_pieces    │     │
-│  │  - Shared: metadata, migrations                   │     │
+│  │  - MMOS: minds, mind_profiles, sources, fragments │     │
+│  │  - InnerLens: fragments, fragment_metadata, big_five_profiles││
+│  │  - CreatorOS: content_projects, content_pieces, content_lessons, content_minds, content_metadata││
+│  │  - Shared Ops: schema_versions, migration_log, ingestion_batches, job_executions││
 │  └───────────────────────────────────────────────────┘     │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -206,20 +226,29 @@ interface:
 
 **How it works:**
 
-1. **Pack A** writes to database:
-```javascript
-// InnerLens saves fragments
-await db.insert('fragments', {
-  fragment_id: 'f_001',
-  mind_slug: 'naval',
-  content: '...'
-});
+1. **Pack A** writes to the database through the Supabase client:
+```python
+from supabase import create_client
+
+supabase = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
+
+# InnerLens persists validated fragments
+supabase.table('fragments').insert({
+    'mind_id': mind_id,
+    'source_id': source_id,
+    'fragment_id': 'f_001',
+    'content': verbatim_text,
+    'metadata': fragment_metadata
+}).execute()
 ```
 
-2. **Pack B** reads from database:
-```javascript
-// MMOS reads fragments
-const fragments = await db.select('fragments', { mind_slug: 'naval' });
+2. **Pack B** reads via the same interface (respecting RLS):
+```python
+mind = supabase.table('minds') \
+    .select('id, slug, display_name, mind_profiles(*)') \
+    .eq('slug', 'naval_ravikant') \
+    .single() \
+    .execute()
 ```
 
 3. **Schema defines:**
@@ -299,7 +328,7 @@ async function createMind(slug) {
 ```
 outputs/
 ├── database/
-│   └── SQLite legado (migrado para Supabase em 2025-10)                    # Unified database (all packs)
+│   └── Supabase (PostgreSQL cluster)                    # Unified database (all packs)
 │
 ├── minds/                         # MMOS output
 │   └── {slug}/
@@ -338,7 +367,7 @@ outputs/
 | ETL | MMOS | `outputs/minds/{slug}/sources/` | Markdown |
 | InnerLens | MMOS | `outputs/minds/{slug}/analysis/` | YAML |
 | MMOS | CreatorOS | `outputs/minds/{slug}/system_prompts/` | Markdown |
-| All | All | `SQLite legado (migrado para Supabase em 2025-10)` | SQLite |
+| All | All | Supabase (PostgreSQL) | Managed Postgres |
 
 ---
 

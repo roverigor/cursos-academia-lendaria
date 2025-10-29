@@ -23,7 +23,7 @@ Mente Lendária is built as a **modular system of expansion packs** - each provi
 ✅ **Maximum integration** - Expansion packs work together seamlessly
 ✅ **Coordinated evolution** - Features are planned across the entire system
 ✅ **Clear contracts** - Well-defined interfaces between modules
-✅ **Unified data model** - Single database (`SQLite legado (migrado para Supabase em 2025-10)`)
+✅ **Unified data model** - Single database (Supabase PostgreSQL)
 ✅ **Traceability** - From epics to implementation across all packs
 
 ---
@@ -73,18 +73,28 @@ Mente Lendária is built as a **modular system of expansion packs** - each provi
                           │
 ┌─────────────────────────┴───────────────────────────────────┐
 │                    Unified Database                          │
-│               SQLite legado (migrado para Supabase em 2025-10)                       │
+│                   Supabase (PostgreSQL)                     │
 │    (Minds, Fragments, Courses, Profiles, Projects...)       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ### Design Principles
 
-1. **Single Database** - All packs write to `SQLite legado (migrado para Supabase em 2025-10)`
-2. **Contract-Based Integration** - Well-defined interfaces between packs
-3. **Optional Dependencies** - Packs work standalone, but integrate when available
-4. **Shared Outputs** - `outputs/` directory structure shared across packs
-5. **AIOS Compliance** - All packs follow agents → tasks → checklists pattern
+1. **Single Database** – All packs write to Supabase (PostgreSQL) with migrations in `supabase/migrations/`
+2. **Contract-Based Integration** – Well-defined interfaces between packs (files + DB contracts)
+3. **Optional Dependencies** – Packs work standalone, but gain fidelity with integrations
+4. **Shared Outputs** – `outputs/` directory structure shared across packs for auditability
+5. **AIOS Compliance** – All packs follow agents → tasks → checklists pattern
+
+### Supabase Schema (Current Baseline v0.8.2)
+
+- **Core Knowledge Graph** – `minds`, `mind_profiles`, `sources`, `fragments`, `fragment_metadata`, `fragment_tags`
+- **CreatorOS Content Graph** – `content_projects`, `content_pieces`, `content_lessons`, `content_metadata`, `content_minds`, `audience_profiles`, `content_performance`
+- **Psychometrics** – `big_five_profiles`, `fragment_quality_audits`
+- **Operations & Governance** – `schema_versions`, `migration_log`, `ingestion_batches`, `job_executions`, `task_metrics`
+- **Security** – RLS enforced via `current_mind_id()`; service-role workflows run under DB Sage governance
+
+> For the full schema reference see `docs/database/README.md` and the auto-generated audit in `supabase/docs/`.
 
 ---
 
@@ -127,7 +137,7 @@ graph TB
 | ETL → MMOS | Sources collection | File system (`outputs/minds/{slug}/sources/`) | Transcripts, PDFs, text |
 | InnerLens → MMOS | Personality enrichment | YAML profiles | Big Five scores |
 | MMOS → CreatorOS | Voice preservation | System prompts | Cognitive patterns |
-| All → Database | State persistence | SQLite API | Structured data |
+| All → Database | State persistence | Supabase SQL/REST API + RPC | Structured data (PostgreSQL) |
 
 ---
 

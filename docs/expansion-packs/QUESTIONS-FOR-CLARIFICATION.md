@@ -329,27 +329,18 @@ Who consumes `bigfive-profile.yaml` besides MMOS?
 
 ### 4.1 Database Architecture
 
-**Q4.1.1:** Current: Single database (`SQLite legado (migrado para Supabase em 2025-10)`).
+**Q4.1.1:** Current: single Supabase (PostgreSQL) project managed by DB Sage.
 
 Future scaling considerations:
-- What's the expected database size? (MB, GB, TB?)
-- How many minds? (10s, 100s, 1000s?)
-- How many courses? (10s, 100s, 1000s?)
+- Expected growth for `minds`, `fragments`, `content_pieces` (10^4+ rows each)
+- Storage profile (JSONB-heavy, embeddings, analytics views)
+- Multi-tenant needs vs single-tenant (RLS boundaries)
 
-Should we plan for:
-- [ ] SQLite is sufficient (< 1GB)
-- [ ] Migrate to PostgreSQL eventually (> 10GB)
-- [ ] Sharding strategy (separate DB per mind?)
+Decision: **stay on Supabase/Postgres**, plan for horizontal read replicas + vector/analytics extensions as InnerLens volume increases.
 
-Já estamos com supabase funcionando. Vamos preparar tudo para muita escala, principalmente innerlens.
+**Q4.1.2:** Database location: `SUPABASE_URL` + `SUPABASE_DB_URL` stored in secrets (`.env`, GitHub Actions, render configs). No file-based database remains.
 
-**Q4.1.2:** Database location: `SQLite legado (migrado para Supabase em 2025-10)`
-
-Should we rename to `mente-lendaria.db` (more generic)?
-- Pros: Not MMOS-specific, all packs use it
-- Cons: Historical reasons, MMOS created it
-
-Esse banco está sendo descontinuado, isso não é relevante.
+Renaming legacy SQLite files is not applicable—the artifact is archived under `supabase/backups/` for historical reference only.
 
 **Q4.1.3:** Table ownership model:
 
