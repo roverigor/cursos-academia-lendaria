@@ -1,0 +1,56 @@
+# ============================================================
+# FRAGMENT MSW_005 - Axiom: Nature's Price
+# ============================================================
+
+# OBRIGATÓRIOS (7 campos)
+id: "FRAG_MSW_005"
+category: "Philosophical"
+source: "A Master's Secret Whispers"
+location: "Chapter: How Do I Believe?, When student asks how to revisit"
+type: "direct_quote"
+relevance: 9
+content: "Nature gives nothing for Free, my student."
+
+# ENHANCEMENT (3 campos)
+context: |
+  After revealing the framework of constant revisitation, 
+  student asks "how is this revisiting done?" Master responds 
+  with this axiom and refuses to elaborate until student 
+  demonstrates authentic desire.
+
+insight: |
+  Universal law: Everything has a price. No shortcuts.
+  Master refuses to give "how-to" without evidence of 
+  authentic commitment (sincerity test).
+  
+  Teaching method: Withhold methodology until student proves 
+  worthy through demonstration of genuine longing, not 
+  intellectual curiosity.
+  
+  Anti-prescription stance: Methods are not given freely to 
+  window shoppers. Only to those with "authentic longing."
+  
+  This explains why Master doesn't write prescriptive books - 
+  prescriptions given freely are worthless.
+
+tags:
+  # Domain (2)
+  - "philosophical"
+  - "values"
+  # Theme (3)
+  - "truth"
+  - "sacrifice_pattern"
+  - "teaching_method"
+  # Specific (6)
+  - "axiom"
+  - "price_of_wisdom"
+  - "no_shortcuts"
+  - "sincerity_test"
+  - "anti_prescription"
+  - "earned_knowledge"
+
+# METADATA (3 scores)
+metadata:
+  confidence: 1.0
+  clarity: 4
+  depth: 5

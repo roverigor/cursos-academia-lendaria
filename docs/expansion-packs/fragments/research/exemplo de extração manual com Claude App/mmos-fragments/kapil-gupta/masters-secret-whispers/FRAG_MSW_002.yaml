@@ -1,0 +1,51 @@
+# ============================================================
+# FRAGMENT MSW_002 - Intellectual vs Experiential Knowing
+# ============================================================
+
+# OBRIGATÓRIOS (7 campos)
+id: "FRAG_MSW_002"
+category: "Philosophical"
+source: "A Master's Secret Whispers"
+location: "Chapter: How Do I Believe?, Discussion on types of knowing"
+type: "direct_quote"
+relevance: 9
+content: "To Know something intellectually is to never have known it at all."
+
+# ENHANCEMENT (3 campos)
+context: |
+  Student distinguishes between intellectual understanding 
+  (head knowledge) and deeper Knowing. Master confirms this 
+  distinction with an absolute statement that intellectual 
+  knowledge is not true Knowing.
+
+insight: |
+  Radical claim: Intellectual understanding is valueless for 
+  transformation. True Knowing must be experiential, embodied, 
+  "in the bones" rather than conceptual.
+  
+  This rejects the Western emphasis on intellectual comprehension 
+  as sufficient. Knowledge that remains theoretical is not Knowledge.
+  
+  Implication: Reading/understanding teachings intellectually 
+  accomplishes nothing. Must transform into lived experience.
+
+tags:
+  # Domain (2)
+  - "cognitive"
+  - "philosophical"
+  # Theme (3)
+  - "knowledge"
+  - "learning_style"
+  - "mental_model"
+  # Specific (5)
+  - "intellectual_vs_experiential"
+  - "embodied_knowledge"
+  - "transformation_path"
+  - "anti_intellectualism"
+  - "definition"
+
+# METADATA (3 scores)
+metadata:
+  confidence: 1.0
+  clarity: 5
+  depth: 5

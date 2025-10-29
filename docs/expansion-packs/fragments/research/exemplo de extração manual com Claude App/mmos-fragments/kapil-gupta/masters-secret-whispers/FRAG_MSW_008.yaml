@@ -1,0 +1,62 @@
+# ============================================================
+# FRAGMENT MSW_008 - Prerequisite for Practicality
+# ============================================================
+
+# OBRIGATÓRIOS (7 campos)
+id: "FRAG_MSW_008"
+category: "Philosophical"
+source: "A Master's Secret Whispers"
+location: "Chapter: How Do I Believe?, On practicality of lofty ideals"
+type: "direct_quote"
+relevance: 10
+content: "Nothing in the world is practical unless it is first Non-negotiable."
+
+# ENHANCEMENT (3 campos)
+context: |
+  Student asks about practicality of "lofty ideals."
+  Master responds with axiom that inverts common understanding:
+  practicality follows commitment, not vice versa.
+
+insight: |
+  Inverted logic: People seek "practical methods" first,
+  but Master says practicality only emerges AFTER something 
+  becomes non-negotiable (absolute commitment).
+  
+  Sequence:
+  1. Make ideal non-negotiable (total commitment)
+  2. THEN practicality reveals itself
+  
+  NOT:
+  1. Find practical method
+  2. Then commit
+  
+  This explains why "how-to" questions are premature before 
+  demonstrating non-negotiable commitment. The how reveals 
+  itself to the committed.
+  
+  Anti-prescription: Methods don't work for those seeking 
+  comfort/practicality. They work only for those who've 
+  already made the ideal non-negotiable.
+
+tags:
+  # Domain (2)
+  - "philosophical"
+  - "cognitive"
+  # Theme (3)
+  - "commitment"
+  - "mental_model"
+  - "paradox"
+  # Specific (7)
+  - "non_negotiable"
+  - "practicality_paradox"
+  - "inverted_logic"
+  - "commitment_first"
+  - "axiom"
+  - "prerequisite"
+  - "foundational_principle"
+
+# METADATA (3 scores)
+metadata:
+  confidence: 1.0
+  clarity: 5
+  depth: 5

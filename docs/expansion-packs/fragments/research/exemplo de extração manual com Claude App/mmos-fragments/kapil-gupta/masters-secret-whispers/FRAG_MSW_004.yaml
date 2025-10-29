@@ -1,0 +1,57 @@
+# ============================================================
+# FRAGMENT MSW_004 - Framework: Intellectual to Experiential
+# ============================================================
+
+# OBRIGATÓRIOS (7 campos)
+id: "FRAG_MSW_004"
+category: "Cognitive"
+source: "A Master's Secret Whispers"
+location: "Chapter: How Do I Believe?, Method of transformation"
+type: "framework"
+relevance: 10
+content: "It happens through a constant revisitation of the ideal that you wish to Know. A constant revisitation allows it to seep into one's bones. A constant revisitation allows one to Understand it from all angles. And that which was once Intellectual, in time becomes Experiential. And the space within oneself that was once occupied by The Mind, slowly becomes replaced by the Knowing. And the human being begins to Become the ideal that he so eagerly has revisited."
+
+# ENHANCEMENT (3 campos)
+context: |
+  Student asks HOW intellectual understanding transforms 
+  into experiential Knowing. Master provides complete framework:
+  the mechanism of transformation through constant revisitation.
+
+insight: |
+  Complete transformation methodology:
+  1. Constant revisitation (repetition with attention)
+  2. Seeps into bones (embodiment)
+  3. Understanding from all angles (multi-perspective)
+  4. Intellectual → Experiential (state change)
+  5. Mind replaced by Knowing (identity shift)
+  6. Human BECOMES the ideal (full integration)
+  
+  Key: "constant" (not occasional), "revisitation" (not just repetition).
+  Process is gradual replacement, not addition.
+  
+  This is his complete answer to "how to internalize teachings."
+  Not methods, techniques, or practices - just constant return 
+  to the ideal until you become it.
+
+tags:
+  # Domain (2)
+  - "cognitive"
+  - "behavioral"
+  # Theme (4)
+  - "transformation"
+  - "learning_style"
+  - "framework"
+  - "mental_model"
+  # Specific (6)
+  - "constant_revisitation"
+  - "embodiment_process"
+  - "intellectual_to_experiential"
+  - "identity_transformation"
+  - "becoming"
+  - "internalization_method"
+
+# METADATA (3 scores)
+metadata:
+  confidence: 1.0
+  clarity: 5
+  depth: 5

@@ -1,0 +1,111 @@
+# Category & Tag Catalog (MMOS v5.0)
+# Usar este arquivo para sincronizar categorias e tags com Supabase.
+# Cada entrada inclui slug recomendado e lista controlada de tags.
+
+version: "1.0"
+last_updated: "2025-10-27"
+
+categories:
+  - module: "M1"
+    primary_category: "BIO"
+    subcategory: "family_origin"
+    slug: "bio_family_origin"
+    description: "História familiar, raízes geográficas, composição do núcleo."
+    recommended_tags:
+      - "family_origin_m1"
+      - "childhood_context"
+      - "early_environment"
+
+  - module: "M1"
+    primary_category: "BIO"
+    subcategory: "formative_events"
+    slug: "bio_formative_events"
+    description: "Eventos marcantes que moldaram trajetória."
+    recommended_tags:
+      - "formative_events_m1"
+      - "turning_point"
+      - "defining_moment"
+
+  - module: "M2"
+    primary_category: "COG"
+    subcategory: "mental_models"
+    slug: "cog_mental_models"
+    description: "Modelos mentais e frameworks usados para pensar."
+    recommended_tags:
+      - "mental_models_m2"
+      - "knowledge_vs_belief"
+      - "decision_framework"
+
+  - module: "M2"
+    primary_category: "COG"
+    subcategory: "decision_process"
+    slug: "cog_decision_process"
+    description: "Processo de tomada de decisão, heurísticas pessoais."
+    recommended_tags:
+      - "decision_process_m2"
+      - "heuristic"
+      - "evaluation_criteria"
+
+  - module: "M3"
+    primary_category: "COM"
+    subcategory: "communication_style"
+    slug: "com_communication_style"
+    description: "Estilo verbal, tom e forma de expressar ideias."
+    recommended_tags:
+      - "communication_style_m3"
+      - "tone_marker"
+      - "signature_phrase"
+
+  - module: "M4"
+    primary_category: "BEH"
+    subcategory: "habitos_trabalho"
+    slug: "beh_work_habits"
+    description: "Rotinas e hábitos de trabalho observáveis."
+    recommended_tags:
+      - "work_habits_m4"
+      - "daily_routine"
+      - "execution_pattern"
+
+  - module: "M5"
+    primary_category: "VAL"
+    subcategory: "core_values"
+    slug: "val_core_values"
+    description: "Valores fundamentais e princípios norteadores."
+    recommended_tags:
+      - "core_values_m5"
+      - "ethical_principle"
+      - "guiding_belief"
+
+  - module: "M6"
+    primary_category: "SOC"
+    subcategory: "network_profissional"
+    slug: "soc_professional_network"
+    description: "Relações e influências profissionais."
+    recommended_tags:
+      - "network_professional_m6"
+      - "influence_circle"
+      - "collaboration_pattern"
+
+  - module: "M7"
+    primary_category: "META"
+    subcategory: "contradicoes"
+    slug: "meta_contradictions"
+    description: "Tensões internas, paradoxos percebidos."
+    recommended_tags:
+      - "contradictions_m7"
+      - "cognitive_dissonance"
+      - "self_awareness"
+
+  - module: "M8"
+    primary_category: "VAL_SRC"
+    subcategory: "citacoes_famosas"
+    slug: "val_src_famous_quotes"
+    description: "Citações reconhecidas, usadas para validação."
+    recommended_tags:
+      - "famous_quote_m8"
+      - "source_validation"
+      - "canonical_reference"
+
+notes:
+  - "Adicionar novas categorias/tags somente via revisão controlada neste catálogo."
+  - "Este arquivo serve de base para um future migration task do agente de banco de dados."

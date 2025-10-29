@@ -1,0 +1,68 @@
+# ============================================================
+# FRAGMENT MSW_009 - Three Types: Seeker, Scientist, Artist
+# ============================================================
+
+# OBRIGATÓRIOS (7 campos)
+id: "FRAG_MSW_009"
+category: "Philosophical"
+source: "A Master's Secret Whispers"
+location: "Chapter: How Do I Believe?, On who tastes life's nectar"
+type: "framework"
+relevance: 9
+content: "For a man who stands on the shore, diving into the depths of the ocean can never be practical. No methodology will suit him. For 'practicality' is not meant for the Seeker. It is meant for the scientist. And it is only The Artist who tastes the nectar of life. The scientist tastes only the bitter chemicals found in test tubes."
+
+# ENHANCEMENT (3 campos)
+context: |
+  Explaining why practicality concerns are misplaced for Seekers.
+  Master distinguishes three types of humans and their 
+  relationship to life's depth.
+
+insight: |
+  Three-type framework:
+  
+  1. SCIENTIST:
+     - Seeks practicality, methodology
+     - Stands on shore (safe, distant)
+     - Tastes bitter chemicals (analytical, sterile)
+     - Cannot dive into ocean (fear prevents depth)
+  
+  2. SEEKER:
+     - Not concerned with practicality
+     - Willing to dive into ocean
+     - Practicality not meant for them
+  
+  3. ARTIST:
+     - Tastes nectar of life (full experience)
+     - Dives fully (complete immersion)
+     - Beyond methodology
+  
+  Hierarchy: Scientist (lowest) < Seeker < Artist (highest)
+  
+  Implication: Seeking "practical methods" marks you as 
+  scientist-type, not seeker-type. Scientists never taste 
+  life's nectar because they stay safe on shore.
+  
+  This is why Master rejects "how-to" mentality.
+
+tags:
+  # Domain (2)
+  - "philosophical"
+  - "cognitive"
+  # Theme (4)
+  - "framework"
+  - "mental_model"
+  - "identity"
+  - "typology"
+  # Specific (6)
+  - "seeker_vs_scientist"
+  - "artist_archetype"
+  - "methodology_critique"
+  - "shore_vs_ocean"
+  - "life_nectar"
+  - "three_types"
+
+# METADATA (3 scores)
+metadata:
+  confidence: 1.0
+  clarity: 5
+  depth: 5

@@ -1,0 +1,51 @@
+# ============================================================
+# FRAGMENT MSW_003 - Universal Path: Fool to Wise
+# ============================================================
+
+# OBRIGATÓRIOS (7 campos)
+id: "FRAG_MSW_003"
+category: "Philosophical"
+source: "A Master's Secret Whispers"
+location: "Chapter: How Do I Believe?, Master reveals his own path"
+type: "direct_quote"
+relevance: 8
+content: "Every man who becomes wise was once a fool. In the beginning, I too understood things on a purely intellectual level."
+
+# ENHANCEMENT (3 campos)
+context: |
+  Student asks if even Master started with intellectual 
+  understanding. Master confirms universality of the path 
+  from ignorance to wisdom, including himself.
+
+insight: |
+  Humility + universality: No one begins wise. All masters 
+  were once beginners. This normalizes the student's current 
+  state and reveals the path is universal, not exceptional.
+  
+  Anti-elitism: Master was once exactly where student is now.
+  Wisdom is not innate; it's developed through process.
+  
+  Implication: Current state of "not knowing" is not a defect 
+  but the necessary starting point.
+
+tags:
+  # Domain (2)
+  - "philosophical"
+  - "behavioral"
+  # Theme (3)
+  - "learning_path"
+  - "transformation"
+  - "mastery"
+  # Specific (6)
+  - "universal_path"
+  - "fool_to_wise"
+  - "humility"
+  - "developmental_stages"
+  - "beginning_state"
+  - "paradox"
+
+# METADATA (3 scores)
+metadata:
+  confidence: 1.0
+  clarity: 5
+  depth: 4
