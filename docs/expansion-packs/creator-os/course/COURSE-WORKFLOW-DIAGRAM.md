@@ -9,6 +9,97 @@
 
 ## 📊 DIAGRAMA VISUAL DO PROCESSO COMPLETO
 
+### 🔄 Workflow + Banco (Mermaid)
+
+O diagrama abaixo mapeia o ciclo completo de criação de curso, destacando quem executa cada etapa (humano, LLM ou automação), quais tabelas do Supabase são lidas/escritas e onde o RAG da InnerLens entra para enriquecer lições.
+
+```mermaid
+flowchart TB
+    classDef human fill:#fde68a,stroke:#ca8a04,stroke-width:2px,color:#78350f
+    classDef llm fill:#bfdbfe,stroke:#1d4ed8,stroke-width:2px,color:#0f172a
+    classDef program fill:#bbf7d0,stroke:#047857,stroke-width:2px,color:#064e3b
+    classDef db fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0c4a6e
+    classDef external fill:#fef08a,stroke:#ca8a04,stroke-width:2px,color:#854d0e
+
+    DB_cp[(DB - content_pieces)]:::db
+    DB_meta[(DB - course_metadata)]:::db
+    DB_lessons[(DB - course_lessons)]:::db
+    DB_research[(DB - market_research)]:::db
+    DB_frag[(DB - fragments / big_five_profiles)]:::db
+    DB_perf[(DB - content_performance)]:::db
+
+    subgraph Legend
+        direction LR
+        LG_h[Humano HITL]:::human
+        LG_l[LLM Prompt]:::llm
+        LG_p[Automacao Scripts]:::program
+        LG_d[Tabelas Supabase]:::db
+        LG_e[Servico externo - InnerLens RAG]:::external
+    end
+
+    subgraph Phase0["Fase 0 - Kickoff & Draft"]
+        H0["@creator-os *generate-course<br/>{slug}"]:::human --> L0["LLM Orquestrador<br/>Inicializa workflow"]:::llm
+        L0 --> P0["Scripts Python<br/>Valida slug e carrega projeto"]:::program
+        P0 -- "SELECT slug" --> DB_cp
+        P0 -->|INSERT draft course| DB_cp
+    end
+
+    subgraph Phase1["Fase 1 - Brief & Metadados"]
+        H1["Humano<br/>Preenche COURSE-BRIEF.md"]:::human --> L1["LLM Parseador<br/>Le e valida brief"]:::llm
+        L1 --> P1["db_persister.persist_metadata"]:::program
+        P1 -->|UPSERT brief + curriculo inicial| DB_meta
+        P1 -->|UPDATE status='brief_loaded', keywords| DB_cp
+    end
+    P0 --> H1
+
+    subgraph Phase2["Fase 2 - Pesquisa & Outline"]
+        L2["LLM Market Researcher<br/>(consulta fontes externas)"]:::llm --> P2["persist_research"]:::program
+        P2 -->|INSERT relatorios| DB_research
+        P2 -->|UPDATE status='research_ready'| DB_cp
+        L2 --> H2["Humano<br/>Aprova outline gerado"]:::human
+        H2 --> P2b["Atualiza curriculo final<br/>(course_metadata)"]:::program
+        P2b -->|UPDATE curriculum| DB_meta
+    end
+    P1 --> L2
+
+    subgraph Phase3["Fase 3 - Geracao de Licoes (RAG)"]
+        P3a["Carregar curriculo<br/>(SELECT course_metadata)"]:::program -- "SELECT curriculum" --> DB_meta
+        P3a --> L3["LLM Lesson Generator"]:::llm
+        L3 --> IL["Servico InnerLens RAG<br/>query_fragments"]:::external
+        IL -- "SELECT top_k" --> DB_frag
+        IL --> L3
+        L3 --> P3b["persist_lesson"]:::program
+        P3b -->|INSERT modulo/lesson markdown| DB_lessons
+        P3b -->|UPDATE progresso (status, qtd licoes)| DB_cp
+    end
+    P2b --> P3a
+
+    subgraph Phase4["Fase 4 - Revisao HITL + QA"]
+        P3b --> H3["Humano<br/>Revisa cada licao"]:::human
+        H3 --> P4["Persistir feedback (UPDATE)"]:::program
+        P4 -->|UPDATE status, comentarios| DB_lessons
+        P4 --> P4b["SELECT licoes p/ QA"]:::program
+        P4b -- "SELECT licoes" --> DB_lessons
+        P4b --> L4["LLM QA (GPS + Didatica)"]:::llm
+        L4 --> P4c["Atualiza scores + resumo QA"]:::program
+        P4c -->|UPDATE gps_score, didatica_score| DB_lessons
+        P4c -->|UPDATE status='reviewed'| DB_cp
+    end
+
+    subgraph Phase5["Fase 5 - Publicacao & Metricas"]
+        P4c --> H4["Humano<br/>Aprova lancamento"]:::human
+        H4 --> P5["Publicador<br/>UPDATE content_pieces"]:::program
+        P5 -->|UPDATE status='published', published_at| DB_cp
+        P5 --> P6["Automacao metricas (cron/API)"]:::program
+        P6 -->|UPSERT metricas| DB_perf
+        DB_perf -. "SELECT para relatorios/LLM insights" .-> L5["LLM / Analistas"]:::llm
+    end
+```
+
+> **Dica:** a persistência em banco permite retomar o processo em qualquer ponto (por exemplo, regerar lições específicas) sem perder histórico ou quebrar consistência entre agentes.
+
+### 📐 Workflow detalhado (ASCII original)
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    CURSO CREATION WORKFLOW v1.0                         │
