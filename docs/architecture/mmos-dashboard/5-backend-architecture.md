@@ -440,6 +440,159 @@ export async function GET(request: Request) {
 }
 ```
 
+### User Profile Creation (Critical for RLS)
+
+**⚠️ CRITICAL:** When a user signs up, a `user_profiles` record MUST be created. Without this, RLS policies won't work and users won't be able to access their data.
+
+**Recommended Approach: Database Trigger (Automatic)**
+
+```sql
+-- File: supabase/migrations/20251028000005_create_user_trigger.sql
+
+-- Function: Create user profile automatically
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO public.user_profiles (id, email, role, created_at)
+  VALUES (
+    NEW.id,
+    NEW.email,
+    'user',  -- Default role
+    NOW()
+  );
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Trigger: On new auth user
+CREATE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW
+  EXECUTE FUNCTION public.handle_new_user();
+
+-- Grant execute permission
+GRANT EXECUTE ON FUNCTION public.handle_new_user() TO authenticated;
+```
+
+**Why This Approach:**
+- ✅ **Automatic** - No application code needed
+- ✅ **Atomic** - Happens in same transaction
+- ✅ **Reliable** - Can't forget to call it
+- ✅ **Works with OAuth** - Google, GitHub, etc. automatically trigger it
+
+**Signup Flow with Trigger:**
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Supabase Auth
+    participant Database
+    participant Trigger
+
+    User->>Frontend: Sign Up (email/password)
+    Frontend->>Supabase Auth: signUp()
+    Supabase Auth->>Database: INSERT INTO auth.users
+    Database->>Trigger: on_auth_user_created fires
+    Trigger->>Database: INSERT INTO user_profiles
+    Database-->>Supabase Auth: Success
+    Supabase Auth-->>Frontend: JWT + User object
+    Frontend-->>User: Redirect to dashboard
+```
+
+**Frontend Signup Implementation:**
+
+```typescript
+// app/(auth)/signup/page.tsx
+'use client';
+
+import { useState } from 'react';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { useRouter } from 'next/navigation';
+
+export default function SignupPage() {
+  const router = useRouter();
+  const supabase = createClientComponentClient();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  async function handleSignup(e: React.FormEvent) {
+    e.preventDefault();
+    setLoading(true);
+
+    // Signup (trigger creates user_profiles automatically)
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: `${window.location.origin}/auth/callback`,
+      },
+    });
+
+    if (error) {
+      alert(error.message);
+      setLoading(false);
+      return;
+    }
+
+    // Success - trigger already created user_profiles
+    router.push('/');
+    router.refresh();
+  }
+
+  return (
+    <form onSubmit={handleSignup}>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      <button type="submit" disabled={loading}>
+        {loading ? 'Creating account...' : 'Sign Up'}
+      </button>
+    </form>
+  );
+}
+```
+
+**Testing the Trigger:**
+
+```sql
+-- Verify trigger exists
+SELECT trigger_name, event_manipulation, event_object_table
+FROM information_schema.triggers
+WHERE trigger_name = 'on_auth_user_created';
+
+-- Test manually (creates user_profiles automatically)
+INSERT INTO auth.users (
+  instance_id, id, aud, role, email,
+  encrypted_password, email_confirmed_at,
+  created_at, updated_at
+) VALUES (
+  '00000000-0000-0000-0000-000000000000',
+  gen_random_uuid(), 'authenticated', 'authenticated',
+  'test@example.com',
+  crypt('password123', gen_salt('bf')),
+  NOW(), NOW(), NOW()
+);
+
+-- Verify user_profiles was created
+SELECT * FROM user_profiles WHERE email = 'test@example.com';
+
+-- Cleanup
+DELETE FROM auth.users WHERE email = 'test@example.com';
+```
+
+---
+
 ### Authorization (Role-Based)
 
 ```typescript

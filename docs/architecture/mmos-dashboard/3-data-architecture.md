@@ -502,6 +502,61 @@ ORDER BY je.started_at DESC;
 
 ## Migration Strategy
 
+### Migration Files Location
+
+**Directory Structure:**
+```
+supabase/migrations/
+├── 20251028000001_enable_rls_creator_os.sql      # P0: RLS for CreatorOS
+├── 20251028000002_add_missing_indexes.sql         # P1: Performance indexes
+├── 20251028000003_add_created_at_timestamps.sql   # P1: Audit timestamps
+├── 20251028000004_add_helper_functions.sql        # P2: Utility functions
+└── 20251028000005_create_user_trigger.sql         # P0: Auth user creation
+```
+
+**Naming Convention:**
+- Format: `YYYYMMDDHHMMSS_description.sql`
+- Example: `20251028_143022_enable_rls_creator_os.sql`
+- Use descriptive names that explain the change
+
+**Creating Migrations:**
+```bash
+# Using Supabase CLI (recommended)
+supabase migration new enable_rls_creator_os
+
+# Result: Creates supabase/migrations/[timestamp]_enable_rls_creator_os.sql
+
+# Manual creation (if no CLI)
+# Create file: supabase/migrations/YYYYMMDDHHMMSS_description.sql
+```
+
+**Applying Migrations:**
+```bash
+# Local development
+supabase migration up
+
+# List pending migrations
+supabase migration list
+
+# Staging/Production (via CI/CD or manual)
+supabase db push
+```
+
+**Migration File Template:**
+```sql
+-- Migration: [Brief description]
+-- Date: YYYY-MM-DD
+-- Priority: P0|P1|P2
+-- Description: [Detailed explanation of what this migration does and why]
+
+-- [Your SQL here]
+
+-- Example:
+-- ALTER TABLE content_projects ENABLE ROW LEVEL SECURITY;
+```
+
+---
+
 ### Phase 1: Pre-Launch (Week 1)
 
 1. **Apply P0 Fixes** ✅

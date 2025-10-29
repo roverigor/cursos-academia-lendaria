@@ -1,16 +1,20 @@
 # MMOS Admin Dashboard - Architecture Documentation
 
-**Version:** 1.0
+**Version:** 1.1 (P0 Fixes Applied)
 **Date:** 2025-10-28
 **Project:** MMOS Admin Dashboard (Mente Lendária)
 **Architect:** Winston (AIOS Architect Agent)
-**Status:** 🟡 Under Review
+**Status:** ✅ Ready for Stakeholder Review
+
+**⚠️ IMPORTANT:** Read [ARCHITECTURE-ADDENDUM.md](./ARCHITECTURE-ADDENDUM.md) first for critical P0 fixes!
 
 ---
 
 ## 📋 Document Navigation
 
 This architecture is organized into **10 specialized documents** for easier review and maintenance:
+
+**🔴 START HERE:** [ARCHITECTURE-ADDENDUM.md](./ARCHITECTURE-ADDENDUM.md) - **Critical P0 fixes** applied after initial review
 
 ### Core Architecture Documents
 
@@ -157,6 +161,7 @@ This architecture is organized into **10 specialized documents** for easier revi
 
 | Date | Version | Changes | Author |
 |------|---------|---------|--------|
+| 2025-10-28 | 1.1 | P0 fixes: migration files location, complete env vars, auth trigger | James (Dev Senior) |
 | 2025-10-28 | 1.0 | Initial architecture documentation | Winston (Architect) |
 
 ---

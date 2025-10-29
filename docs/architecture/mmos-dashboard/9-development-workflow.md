@@ -38,9 +38,7 @@ pnpm install
 # 3. Set up environment variables
 cp .env.example .env.local
 
-# Edit .env.local with your Supabase credentials
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+# Edit .env.local with your Supabase credentials (see below for complete list)
 
 # 4. Start Supabase locally (optional)
 supabase start
@@ -53,6 +51,117 @@ pnpm dev
 ```
 
 Navigate to `http://localhost:3000`
+
+---
+
+## Environment Variables Configuration
+
+### Frontend Environment (.env.local)
+
+**Required for local development:**
+
+```bash
+# === SUPABASE CONNECTION (Public) ===
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+# === APPLICATION URL ===
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# === OPTIONAL: FEATURE FLAGS ===
+NEXT_PUBLIC_ENABLE_ANALYTICS=false
+```
+
+### Backend Environment (Vercel Secrets - Production)
+
+**⚠️ NEVER commit these values to git!**
+
+```bash
+# === SUPABASE ADMIN (SECRET) ===
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+# === DATABASE CONNECTIONS ===
+# Transaction mode (for API routes)
+SUPABASE_DB_URL=postgresql://postgres:password@db.project.pooler.supabase.com:6543/postgres
+
+# Session mode (for migrations)
+DATABASE_URL=postgresql://postgres:password@db.project.supabase.co:5432/postgres
+
+# === WEBHOOK SECURITY ===
+WEBHOOK_SECRET=your-webhook-secret-key-here
+
+# === ERROR TRACKING (Production) ===
+SENTRY_DSN=https://abc123@o123456.ingest.sentry.io/123456
+SENTRY_AUTH_TOKEN=sntrys_your_auth_token
+SENTRY_ORG=your-org
+SENTRY_PROJECT=mmos-dashboard
+
+# === EMAIL SERVICE (Optional) ===
+RESEND_API_KEY=re_123456789
+
+# === RATE LIMITING (Optional - Upstash Redis) ===
+UPSTASH_REDIS_REST_URL=https://your-project.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your-upstash-token
+```
+
+### Getting the Values
+
+**1. Supabase Keys:**
+```bash
+# Navigate to: Supabase Dashboard → Settings → API
+# Copy:
+# - Project URL → NEXT_PUBLIC_SUPABASE_URL
+# - anon/public key → NEXT_PUBLIC_SUPABASE_ANON_KEY
+# - service_role key → SUPABASE_SERVICE_ROLE_KEY (⚠️ SECRET!)
+```
+
+**2. Database URLs:**
+```bash
+# Navigate to: Supabase Dashboard → Settings → Database
+# Copy:
+# - Connection string (Transaction mode) → SUPABASE_DB_URL
+# - Connection string (Session mode) → DATABASE_URL
+```
+
+**3. Webhook Secret:**
+```bash
+# Generate a random secret
+openssl rand -hex 32
+```
+
+**4. Sentry DSN (when ready for production):**
+```bash
+# 1. Create account at sentry.io
+# 2. Create Next.js project
+# 3. Copy DSN from project settings
+```
+
+### .env.example Template
+
+**Create this file for your team:**
+
+```bash
+# .env.example
+# Copy to .env.local and fill with your values
+
+# === REQUIRED FOR LOCAL DEVELOPMENT ===
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# === REQUIRED FOR BACKEND (Vercel Secrets in Production) ===
+# DO NOT commit these values!
+SUPABASE_SERVICE_ROLE_KEY=
+DATABASE_URL=
+SUPABASE_DB_URL=
+WEBHOOK_SECRET=
+
+# === OPTIONAL (Add when ready) ===
+# SENTRY_DSN=
+# RESEND_API_KEY=
+# UPSTASH_REDIS_REST_URL=
+# UPSTASH_REDIS_REST_TOKEN=
+```
 
 ---
 
