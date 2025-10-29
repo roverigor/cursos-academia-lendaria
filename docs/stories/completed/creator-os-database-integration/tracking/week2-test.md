@@ -267,7 +267,7 @@ Celebrate! 🎉 Then:
 
 1. **Document in tracking log:**
    ```bash
-   nano docs/stories/week2-tracking-log.md
+   nano docs/stories/completed/creator-os-database-integration/tracking/week2-tracking.md
    # Update "Day 1" section with results
    ```
 
@@ -303,7 +303,7 @@ source .env
 # Confirm it works
 
 # 3. Document issue
-nano docs/stories/week2-tracking-log.md
+nano docs/stories/completed/creator-os-database-integration/tracking/week2-tracking.md
 # Add to "Issues Found" section
 
 # 4. Debug

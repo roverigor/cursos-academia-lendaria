@@ -3,8 +3,8 @@
 **Status:** COMPLETE - Ready for Deployment  
 **Version:** v0.9.1  
 **Completion Date:** 2025-10-29  
-**Story:** [creator-os-database-integration.md](creator-os-database-integration.md)  
-**Migration Plan:** [creator-os-database-migration-plan.md](creator-os-database-migration-plan.md)
+**Story:** [story.md](story.md)
+**Migration Plan:** [migration-plan.md](migration-plan.md)
 
 ---
 
@@ -405,9 +405,9 @@ psql "$SUPABASE_DB_URL" -f supabase/tests/test_creator_os_rls.sql
 ### Documentation
 
 **Complete Documentation Set:**
-- [Story](creator-os-database-integration.md) - Original requirements
-- [Migration Plan](creator-os-database-migration-plan.md) - Detailed technical plan
-- [Rollout Guide](creator-os-rollout-guide.md) - 3-week deployment schedule
+- [Story](story.md) - Original requirements
+- [Migration Plan](migration-plan.md) - Detailed technical plan
+- [Rollout Guide](rollout-guide.md) - 3-week deployment schedule
 - [README](../../expansion-packs/creator-os/DATABASE-INTEGRATION.md) - Usage guide
 
 ### Interactive Help

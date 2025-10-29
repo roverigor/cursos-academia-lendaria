@@ -2,7 +2,7 @@
 
 **Reviewer:** DB Sage Agent
 **Date:** 2025-10-28
-**Story:** `docs/stories/creator-os-database-integration.md`
+**Story:** `docs/stories/completed/creator-os-database-integration/story.md`
 **Database Audited:** Supabase v0.7.0 (PostgreSQL 17.6)
 
 ---
