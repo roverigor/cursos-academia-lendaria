@@ -45,6 +45,9 @@ from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass, field
 import logging
 
+# Database persistence integration
+from lib.db_persister import CoursePersister
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -124,7 +127,8 @@ class LessonGenerator:
         course_slug: str,
         curriculum: Dict,
         course_brief: Dict,
-        template_path: Optional[str] = None
+        template_path: Optional[str] = None,
+        project_id: Optional[str] = None
     ):
         """
         Initialize lesson generator.
@@ -134,15 +138,20 @@ class LessonGenerator:
             curriculum: Curriculum data (from curriculum.yaml)
             course_brief: Course brief data (from COURSE-BRIEF.md)
             template_path: Optional custom template path
+            project_id: Optional project ID from database (for persistence)
         """
         self.course_slug = course_slug
         self.curriculum = curriculum
         self.course_brief = course_brief
+        self.project_id = project_id  # For database persistence
 
         # Paths
         self.base_path = Path("outputs/courses") / course_slug
         self.lessons_path = self.base_path / "lessons"
         self.lessons_path.mkdir(parents=True, exist_ok=True)
+
+        # Database persister
+        self.persister = CoursePersister()
 
         # Load GPS framework template
         if template_path:
@@ -873,12 +882,62 @@ Não feche esta aula sem fazer isto:
         filename = f"{lesson_spec.module_number}.{lesson_spec.lesson_number}-{lesson_spec.slug}.md"
         file_path = self.lessons_path / filename
 
+        # Save to filesystem (PRIMARY - source of truth)
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
 
         logger.debug(f"Saved lesson to: {file_path}")
 
+        # Persist to database (SECONDARY - optional)
+        if self.project_id:
+            self._persist_lesson_to_database(lesson_spec, content)
+
         return file_path
+
+    def _persist_lesson_to_database(self, lesson_spec: LessonSpec, content: str) -> None:
+        """
+        Persist lesson to database after filesystem write succeeds.
+
+        Args:
+            lesson_spec: Lesson specification
+            content: Generated lesson content
+        """
+        # Extract fidelity score if available (from GeneratedLesson)
+        fidelity_score = None
+        for completed in self.completed_lessons:
+            if completed.lesson_id == lesson_spec.lesson_id:
+                fidelity_score = completed.fidelity_score
+                break
+
+        # Prepare metadata
+        metadata = {
+            'lesson_id': lesson_spec.lesson_id,
+            'module_id': lesson_spec.module_id,
+            'module_title': lesson_spec.module_title,
+            'duration_minutes': lesson_spec.duration_minutes,
+            'learning_objectives': lesson_spec.learning_objectives,
+            'key_concepts': lesson_spec.key_concepts,
+            'prerequisites': lesson_spec.prerequisites,
+            'bloom_level': lesson_spec.bloom_level
+        }
+
+        # Persist to contents table
+        # Note: parent_content_id should be the module's content_id
+        # For now, we'll set it to None and can be updated later with a batch update
+        content_id = self.persister.persist_content(
+            project_id=self.project_id,
+            slug=f"{lesson_spec.module_number}.{lesson_spec.lesson_number}-{lesson_spec.slug}",
+            title=lesson_spec.lesson_title,
+            content_type='course_lesson',
+            content=content,
+            parent_content_id=None,  # TODO: Link to module content_id
+            sequence_order=lesson_spec.lesson_number,
+            metadata=metadata,
+            fidelity_score=fidelity_score
+        )
+
+        if content_id:
+            logger.debug(f"✓ Lesson persisted to database: {content_id}")
 
     def _estimate_lesson_cost(self, word_count: int) -> float:
         """

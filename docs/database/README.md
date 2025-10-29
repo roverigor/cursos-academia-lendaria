@@ -11,13 +11,38 @@
 database:
   technology: supabase
   engine: postgresql
-  version: "16.x"
+  version: "17.6"
 
   current_schema:
-    version: "v0.7.0"
-    documentation: "evolution/0.6_README_UNIFIED_DATABASE.md"
-    snapshot: "../../supabase/schemas/v0_7_0_20251026224030_after.sql"
-    deployed_date: "2025-10-26"
+    version: "v0.8.2"
+    migration: "../../supabase/migrations/20251027100000_v0_8_2_fragments_cleanup.sql"
+    documentation: "evolution/0.8_README.md"
+    snapshot: "../../supabase/schemas/v0_8_2_20251027_after.sql"
+    deployed_date: "2025-10-27"
+    last_audit: "2025-10-28"
+    audit_report: "../../supabase/docs/schema-audit-20251028.md"
+
+  pending_migrations:
+    - version: "v0.9.0"
+      file: "../../supabase/migrations/20251028_v0_9_0_agent_scans.sql"
+      description: "Agent scans platform - NOT APPROVED YET"
+      status: "awaiting approval"
+
+  evolution:
+    history: "evolution/README.md"
+    versions:
+      - version: "v0.8.0"
+        date: "2025-10-27"
+        migration: "20251027012200_v0_8_0_taxonomy_data.sql"
+        changes: "MMOS taxonomy (domains, specializations, skills, traits)"
+      - version: "v0.7.0"
+        date: "2025-10-26"
+        migration: "20251026211500_v0_7_0_baseline.sql"
+        changes: "Production baseline - unified schema with RLS, auth, CreatorOS"
+      - version: "v0.6.0"
+        date: "2025-10-26"
+        migration: "draft"
+        changes: "Unified all-in-one (had critical bugs)"
 
   structure:
     migrations: "../../supabase/migrations/"
@@ -31,17 +56,38 @@ database:
 
 ## 🎯 Current Schema
 
-**Version:** v0.7.0 (Production Baseline)
+**Version:** v0.8.2 (Fragments Cleanup)
 **Status:** ✅ Deployed and stable
-**Documentation:** [evolution/0.6_README_UNIFIED_DATABASE.md](evolution/0.6_README_UNIFIED_DATABASE.md)
-**Latest Snapshot:** [supabase/schemas/v0_7_0_20251026224030_after.sql](../../supabase/schemas/v0_7_0_20251026224030_after.sql)
+**Deployed:** 2025-10-27
+**Last Audit:** 2025-10-28 (Score: 85/100 - Production Ready)
+
+**Documentation:** [Schema Evolution 0.8](evolution/0.8_README.md)
+**Audit Report:** [Schema Audit 2025-10-28](../../supabase/docs/schema-audit-20251028.md)
+**Migration:** [20251027100000_v0_8_2_fragments_cleanup.sql](../../supabase/migrations/20251027100000_v0_8_2_fragments_cleanup.sql)
+**Snapshot:** [v0_8_2_20251027_after.sql](../../supabase/schemas/v0_8_2_20251027_after.sql)
 
 ### Architecture Overview
 
-- **30 tables** organized around mind-centric architecture
+- **34 tables** organized around mind-centric architecture
 - **3 views** for analytics and reporting
 - **5 functions** for RLS and utilities
 - **16 RLS policies** for row-level security
+
+### Changes in v0.8.x (from v0.7.0)
+
+**v0.8.0 - MMOS Taxonomy:**
+- `domains` - Knowledge areas taxonomy
+- `specializations` - Sub-domains
+- `skills` - Specific skills
+- `mind_proficiencies` - Mind skill tracking with evidence
+
+**v0.8.2 - Fragments Cleanup:**
+- `fragments.relevance_10` → `fragments.relevance` (SMALLINT 0-10)
+- Added `fragments.metadata` (JSONB for flexible future signals)
+- Removed `fragments.layer` (obsolete column)
+- Rebuilt indexes for new column structure
+
+**Why:** Simplifies fragment scoring, adds flexibility for future enhancements
 
 ### Core Components
 
@@ -126,10 +172,18 @@ Our database follows these principles:
 
 ### Version History
 
-| Version | Date | Description | Docs |
-|---------|------|-------------|------|
-| v0.7.0 | 2025-10-26 | Production baseline - 30 tables, RLS, auth | [README](evolution/0.6_README_UNIFIED_DATABASE.md) |
-| v0.8.0 | TBD | Collaboration features (planned) | - |
+| Version | Date | Description | Migration | Docs |
+|---------|------|-------------|-----------|------|
+| v0.8.2 | 2025-10-27 | **CURRENT** - Fragments cleanup (relevance, metadata JSONB) | [20251027100000](../../supabase/migrations/20251027100000_v0_8_2_fragments_cleanup.sql) | [0.8_README](evolution/0.8_README.md) |
+| v0.8.0 | 2025-10-27 | MMOS taxonomy (domains, skills, proficiencies) | [20251027012200](../../supabase/migrations/20251027012200_v0_8_0_taxonomy_data.sql) | [0.8_README](evolution/0.8_README.md) |
+| v0.7.0 | 2025-10-26 | Production baseline - 30 tables, RLS, auth | [20251026211500](../../supabase/migrations/20251026211500_v0_7_0_baseline.sql) | [Audit](../../supabase/docs/schema-audit-20251028.md) |
+| v0.6.0 | 2025-10-26 | Unified schema (had bugs, deprecated) | draft | [0.6_README](evolution/0.6_README_UNIFIED_DATABASE.md) |
+
+### Pending Migrations (Awaiting Approval)
+
+| Version | Description | Migration | Status |
+|---------|-------------|-----------|--------|
+| v0.9.0 | Agent scans platform (new `agent_scans` table) | [20251028_v0_9_0](../../supabase/migrations/20251028_v0_9_0_agent_scans.sql) | ⏸️ Not approved |
 
 📚 **[Full Evolution History →](evolution/README.md)**
 

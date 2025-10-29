@@ -21,9 +21,15 @@ Usage:
 
 import re
 import yaml
+import logging
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any
+
+# Database persistence integration
+from lib.db_persister import CoursePersister
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -151,14 +157,22 @@ class BriefParser:
     Extracts all 8 sections into structured data objects.
     """
 
-    def __init__(self, brief_path: str):
+    def __init__(self, brief_path: str, creator_mind_id: Optional[str] = None, persona_mind_id: Optional[str] = None):
         """
         Initialize parser.
 
         Args:
             brief_path: Path to COURSE-BRIEF.md file
+            creator_mind_id: UUID of mind creating the course (for database persistence)
+            persona_mind_id: UUID of persona mind (voice to emulate)
         """
         self.brief_path = Path(brief_path)
+        self.creator_mind_id = creator_mind_id
+        self.persona_mind_id = persona_mind_id
+        self.project_id = None  # Will be set after database persistence
+
+        # Initialize database persister
+        self.persister = CoursePersister()
 
         if not self.brief_path.exists():
             raise FileNotFoundError(f"COURSE-BRIEF.md not found: {brief_path}")
@@ -205,6 +219,9 @@ class BriefParser:
         brief.format = self._parse_section_5(sections.get(5, ""))
         brief.commercial = self._parse_section_6(sections.get(6, ""))
         brief.context = self._parse_section_7(sections.get(7, ""))
+
+        # Database persistence (after filesystem write succeeds)
+        self._persist_to_database(brief)
 
         return brief
 
@@ -365,6 +382,90 @@ class BriefParser:
         context.success_metrics = [m.strip() for m in metrics]
 
         return context
+
+    def _persist_to_database(self, brief: CourseBrief) -> None:
+        """
+        Persist course project to database.
+
+        This is called AFTER filesystem write succeeds. If database write fails,
+        it's logged but doesn't prevent course generation from continuing.
+
+        Args:
+            brief: Parsed CourseBrief object with all course data
+        """
+        # Prepare ICP metadata
+        icp_metadata = {
+            'demographics': brief.icp.demographics,
+            'psychographics': brief.icp.psychographics,
+            'pain_points': brief.icp.pain_points,
+            'goals': brief.icp.goals,
+            'current_state': brief.icp.current_state,
+            'desired_state': brief.icp.desired_state,
+            'archetypes': brief.icp.archetypes
+        }
+
+        # Prepare curriculum metadata
+        curriculum_metadata = {
+            'learning_objectives': brief.content.learning_objectives,
+            'pedagogical_framework': brief.content.pedagogical_framework,
+            'content_depth': brief.content.content_depth,
+            'practical_vs_theory_ratio': brief.content.practical_vs_theory_ratio,
+            'key_concepts': brief.content.key_concepts,
+            'total_modules': brief.basic_info.modules_count,
+            'total_lessons': brief.basic_info.lessons_count,
+            'total_duration_hours': brief.basic_info.total_duration_hours
+        }
+
+        # Prepare complete metadata
+        project_metadata = {
+            'icp': icp_metadata,
+            'curriculum': curriculum_metadata,
+            'voice': {
+                'mode': brief.voice.mode,
+                'instructor_name': brief.voice.instructor_name,
+                'mmos_persona_slug': brief.voice.mmos_persona_slug,
+                'tone': brief.voice.tone,
+                'style': brief.voice.style,
+                'personality_traits': brief.voice.personality_traits,
+                'teaching_approach': brief.voice.teaching_approach
+            },
+            'format': {
+                'teaching_style': brief.format.teaching_style,
+                'course_structure': brief.format.course_structure,
+                'content_formats': brief.format.content_formats,
+                'engagement_tactics': brief.format.engagement_tactics,
+                'assessment_types': brief.format.assessment_types
+            },
+            'commercial': {
+                'pricing_model': brief.commercial.pricing_model,
+                'target_price': brief.commercial.target_price,
+                'target_revenue': brief.commercial.target_revenue,
+                'launch_strategy': brief.commercial.launch_strategy,
+                'marketing_channels': brief.commercial.marketing_channels,
+                'unique_selling_points': brief.commercial.unique_selling_points
+            },
+            'tags': brief.basic_info.tags,
+            'category': brief.basic_info.category,
+            'course_type': brief.basic_info.course_type,
+            'knowledge_level': brief.basic_info.knowledge_level,
+            'prerequisites': brief.basic_info.prerequisites
+        }
+
+        # Persist to database
+        self.project_id = self.persister.persist_project(
+            slug=brief.course_slug or brief.basic_info.slug,
+            name=brief.title,
+            creator_mind_id=self.creator_mind_id,
+            persona_mind_id=self.persona_mind_id or brief.mmos_persona.get('slug'),
+            project_type='course',
+            description=brief.basic_info.subtitle,
+            metadata=project_metadata
+        )
+
+        if self.project_id:
+            logger.info(f"✓ Course project persisted to database: {self.project_id}")
+        else:
+            logger.info("Database persistence skipped (feature flag off or error)")
 
 
 # Utility functions

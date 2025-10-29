@@ -12,7 +12,7 @@
 
 ## 📋 Document Navigation
 
-This architecture is organized into **10 specialized documents** for easier review and maintenance:
+This architecture is organized into **11 specialized documents** for easier review and maintenance:
 
 **🔴 START HERE:** [ARCHITECTURE-ADDENDUM.md](./ARCHITECTURE-ADDENDUM.md) - **Critical P0 fixes** applied after initial review
 
@@ -81,6 +81,14 @@ This architecture is organized into **10 specialized documents** for easier revi
     - Focus areas by role
     - Decision points requiring validation
 
+11. **[Design System Guide](./11-design-system-guide.md)** 🎨
+    - Design token documentation (semantic tokens)
+    - Component quality standards (zero hardcoded values)
+    - Component creation process
+    - Governance model
+    - Visual regression testing
+    - **👉 PRIMARY REVIEW: Design System Senior**
+
 ---
 
 ## 🎯 Quick Start for Reviewers
@@ -110,14 +118,15 @@ This architecture is organized into **10 specialized documents** for easier revi
 ---
 
 ### For Design System Senior 🎭
-**Primary Focus:** [Document #4 - Frontend Architecture](./4-frontend-architecture.md)
-**Also Review:** Document #2 (Tech Stack - UI libraries)
+**Primary Focus:** [Document #11 - Design System Guide](./11-design-system-guide.md)
+**Also Review:** Documents #4 (Frontend Architecture), #2 (Tech Stack - UI libraries)
 
 **Key Questions to Validate:**
-- Is the component library choice appropriate?
-- Are design tokens and theming well-structured?
-- Is the responsive strategy sound?
-- Can the design system scale?
+- Are design token naming conventions clear and semantic?
+- Is the component quality checklist enforceable?
+- Does the governance model prevent UI chaos long-term?
+- Is visual regression testing properly configured?
+- Can the design system scale without hardcoded values creeping in?
 
 ---
 
@@ -202,6 +211,7 @@ Dev Senior creates implementation plan based on approved architecture.
 | 8. Testing & Monitoring | ✅ Complete | Dev Senior | 2025-10-28 |
 | 9. Development Workflow | ✅ Complete | All | 2025-10-28 |
 | 10. Stakeholder Review Guide | ✅ Complete | All | 2025-10-28 |
+| 11. Design System Guide | ✅ Complete | Design System Senior | 2025-10-28 |
 
 ---
 

@@ -123,10 +123,37 @@ workflow:
           Awaiting user decision...
 
     - agent: course-architect
+      action: validate_course_brief
+      task: validate-course-brief
+      requires:
+        - outputs/courses/{slug}/COURSE-BRIEF.md (filled)
+      outputs:
+        - outputs/courses/{slug}/validation-brief-report.md
+      notes: |
+        🔍 QA CHECKPOINT 1: Validate COURSE-BRIEF Quality
+
+        CRITICAL PRE-FLIGHT CHECK before spending 50K tokens on research.
+
+        Validates:
+          ✅ Completeness (95%+ fields filled)
+          ✅ ICP Quality (≥80/100)
+          ✅ Learning Objectives (SMART, ≥80/100)
+          ✅ Framework Coherence (no mismatches)
+          ✅ Voice Clarity (MMOS or custom defined)
+          ✅ Outline Quality (logical structure)
+          ✅ No Critical Contradictions
+
+        If FAIL (score <70): BLOCK workflow, show fixes needed
+
+        Duration: 30-60 seconds
+        SAVE OUTPUT: validation-brief-report.md
+
+    - agent: course-architect
       creates: market-research-reports
       task: market-research
       requires:
         - outputs/courses/{slug}/COURSE-BRIEF.md (filled)
+        - outputs/courses/{slug}/validation-brief-report.md (PASS)
       outputs:
         - outputs/courses/{slug}/research/market-analysis.md
         - outputs/courses/{slug}/research/content-gaps.md
@@ -271,7 +298,38 @@ workflow:
 
         When satisfied, continue with:
           @course-architect
-          *generate-curriculum {slug}
+          *validate-reformed-brief {slug}
+
+    - agent: course-architect
+      action: validate_reformed_brief
+      task: validate-reformed-brief
+      requires:
+        - outputs/courses/{slug}/COURSE-BRIEF.md (reformulated)
+        - outputs/courses/{slug}/COURSE-BRIEF-ORIGINAL.md
+        - outputs/courses/{slug}/research/content-gaps.md
+        - outputs/courses/{slug}/research/differentiation.md
+      outputs:
+        - outputs/courses/{slug}/validation-reformed-brief-report.md
+      notes: |
+        🔍 QA CHECKPOINT 2: Validate Reformed COURSE-BRIEF Quality
+
+        POST-RESEARCH INTEGRATION CHECK before spending 300K tokens on curriculum.
+
+        Validates:
+          ✅ Research Integration (≥80/100)
+            - Gap topics INTEGRATED into outline (not just Section 9)
+            - Differentiation applied to brief (not just listed)
+            - Market insights actionable (not data dump)
+          ✅ Positioning Clarity (specific, actionable statement)
+          ✅ Brief Evolution (improved, not just longer)
+          ✅ Alignment Preservation (core vision intact)
+          ✅ Gap Priority Respect (all P0 + ≥80% P1 integrated)
+          ✅ Actionability (ready for curriculum generation)
+
+        If FAIL (score <70): BLOCK workflow, must integrate research properly
+
+        Duration: 30-45 seconds
+        SAVE OUTPUT: validation-reformed-brief-report.md
 
     - agent: course-architect
       creates: curriculum.yaml
@@ -279,6 +337,7 @@ workflow:
       requires:
         - outputs/courses/{slug}/COURSE-BRIEF.md (filled)
         - outputs/courses/{slug}/research/ (optional but recommended)
+        - outputs/courses/{slug}/validation-reformed-brief-report.md (PASS)
       outputs:
         - outputs/courses/{slug}/curriculum.yaml
       notes: |
@@ -353,16 +412,31 @@ workflow:
         STEP 4: Curriculum approval checkpoint (already passed)
 
         STEP 5: Generate All Lessons (GPS + Didática Lendária)
-          For each lesson in curriculum:
-            - Build lesson spec (ID, objectives, duration, Bloom's level)
-            - Generate content with AI:
-              * IF mmos_persona enabled: Load system prompt, inject voice
-              * ELSE: Use generic pedagogical template
-            - Validate GPS structure (Goal → Position → Steps, score ≥ 30)
-            - Validate Didática Lendária (7 elements, score ≥ 70)
-            - Retry up to 3x if validation fails
-            - Save lesson to outputs/courses/{slug}/lessons/{lesson_id}.md
-            - Update checkpoint (for --resume support)
+          For each MODULE in curriculum:
+            For each LESSON in module:
+              - Build lesson spec (ID, objectives, duration, Bloom's level)
+              - Generate content with AI:
+                * IF mmos_persona enabled: Load system prompt, inject voice
+                * ELSE: Use generic pedagogical template
+              - Validate GPS structure (Goal → Position → Steps, score ≥ 30)
+              - Validate Didática Lendária (7 elements, score ≥ 70)
+              - Retry up to 3x if validation fails
+              - Save lesson to outputs/courses/{slug}/lessons/{lesson_id}.md
+              - Update checkpoint (for --resume support)
+
+            🔍 QA CHECKPOINT 3 (Per-Module - OPTIONAL but RECOMMENDED):
+              After completing all lessons in module:
+                python scripts/validate_module.py {slug} {module_id}
+
+              If FAIL:
+                - Regenerate failed lessons
+                - Re-validate module
+                - Fix before proceeding to next module
+
+              Benefits:
+                - Catch issues incrementally (not at end)
+                - Reduce regeneration cost (1 module vs. entire course)
+                - 4,800% ROI (5K validation saves 240K regeneration)
 
         STEP 6: Validate Course Quality
           - GPS validation (all lessons)

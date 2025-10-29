@@ -11,14 +11,20 @@ workflow:
 metadata:
   author: "DB Sage"
   created_date: "2025-10-27"
-  last_modified: "2025-10-27"
+  last_modified: "2025-10-28"
   tags:
     - database
     - migration
     - schema
     - ddl
     - db-sage
+    - documentation
   story: "expansion-packs/super-agentes/docs/stories/1.3.modify-schema-workflow.md"
+  changelog:
+    - version: "1.1.0"
+      date: "2025-10-28"
+      changes: "Added STEP 10 - Mandatory documentation update after migration"
+      rationale: "Prevent documentation drift (v0.7.0 docs with v0.8.2 database)"
 
 # Workflow inputs
 inputs:
@@ -373,8 +379,60 @@ EOF
     outputs:
       smoke_test_passed: "{{output}}"
 
-  # ========== STEP 10: Success Summary ==========
-  - id: "step_10_success_summary"
+  # ========== STEP 10: Update Documentation ==========
+  - id: "step_10_update_documentation"
+    name: "Update Database Documentation"
+    type: "checklist"
+    condition: "{{migration_success}} == true"
+    description: "Execute documentation update checklist (MANDATORY)"
+
+    checklist: "expansion-packs/super-agentes/checklists/database-migration-documentation-checklist.md"
+
+    required_actions:
+      - "Update docs/database/README.md metadata (version, migration, snapshot, date)"
+      - "Update version history table in README"
+      - "Update 'Current Schema' section with changes"
+      - "Create/update docs/database/evolution/X.Y_README.md (if minor/major version)"
+      - "Create post-migration snapshot with correct version"
+      - "Verify DB Sage can load new version"
+
+    help_text: |
+      🚨 DOCUMENTATION UPDATE REQUIRED 🚨
+
+      This step is MANDATORY to prevent documentation drift.
+
+      Follow the checklist to update:
+      1. Version metadata in README
+      2. Version history table
+      3. Current schema section
+      4. Evolution documentation
+      5. Schema snapshot
+
+      **Why:** Without this, documentation becomes stale and DB Sage will load wrong version.
+
+      **Time:** 10-15 minutes
+
+      Use checklist: expansion-packs/super-agentes/checklists/database-migration-documentation-checklist.md
+
+    error_handling:
+      strategy: "warn"
+      message: |
+        ⚠️ DOCUMENTATION NOT UPDATED
+
+        Migration applied successfully, but documentation is NOT updated.
+
+        **CRITICAL:** You MUST update documentation manually:
+        1. Open: expansion-packs/super-agentes/checklists/database-migration-documentation-checklist.md
+        2. Follow ALL steps in checklist
+        3. Verify DB Sage loads correct version
+
+        **Consequence if skipped:** Documentation drift, confusion, DB Sage malfunction.
+
+    outputs:
+      documentation_updated: true
+
+  # ========== STEP 11: Success Summary ==========
+  - id: "step_11_success_summary"
     name: "Display Success Summary"
     type: "execute"
     condition: "{{migration_success}} == true"
@@ -420,6 +478,11 @@ outputs:
     type: "boolean"
     description: "Migration successfully applied"
     source: "step_8_apply_migration.migration_success"
+
+  documentation_updated:
+    type: "boolean"
+    description: "Documentation updated after migration"
+    source: "step_10_update_documentation.documentation_updated"
 
   migration_file:
     type: "string"

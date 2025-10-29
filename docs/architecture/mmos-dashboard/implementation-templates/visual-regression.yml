@@ -1,0 +1,170 @@
+# Visual Regression Testing Workflow
+#
+# Purpose: Automatically detect UI changes using Chromatic
+# When: On every push to any branch
+# Output: Visual diff screenshots in Chromatic dashboard
+#
+# Location: .github/workflows/visual-regression.yml
+
+name: Visual Regression Testing
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  chromatic:
+    name: Chromatic Visual Regression
+    runs-on: ubuntu-latest
+
+    steps:
+      # ========================================
+      # Checkout code
+      # ========================================
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Required for Chromatic (full git history)
+
+      # ========================================
+      # Setup Node.js
+      # ========================================
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ========================================
+      # Setup pnpm
+      # ========================================
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      # ========================================
+      # Install dependencies (with cache)
+      # ========================================
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # ========================================
+      # Build Storybook
+      # ========================================
+      - name: Build Storybook
+        run: pnpm build-storybook
+        working-directory: apps/dashboard
+
+      # ========================================
+      # Run Chromatic
+      # ========================================
+      - name: Run Chromatic
+        uses: chromaui/action@v1
+        with:
+          # Chromatic project token (get from chromatic.com)
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+          # Storybook build directory
+          storybookBuildDir: apps/dashboard/storybook-static
+
+          # Auto-accept changes on main branch (optional)
+          autoAcceptChanges: 'main'
+
+          # Exit with error if visual changes detected (optional)
+          exitOnceUploaded: true
+          exitZeroOnChanges: false  # Fail PR if visual changes detected
+
+          # Only run on PR branches (save Chromatic snapshots)
+          skip: ${{ github.event_name == 'push' && github.ref != 'refs/heads/main' }}
+
+      # ========================================
+      # Comment on PR with Chromatic results
+      # ========================================
+      - name: Comment PR with Chromatic link
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const chromatic_url = process.env.CHROMATIC_BUILD_URL || 'Chromatic build in progress...';
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 🎨 Visual Regression Testing\n\nChromatic build complete! Review visual changes:\n\n${chromatic_url}`
+            });
+        env:
+          CHROMATIC_BUILD_URL: ${{ steps.chromatic.outputs.url }}
+
+      # ========================================
+      # Upload Storybook as artifact (for debugging)
+      # ========================================
+      - name: Upload Storybook build
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: storybook-build
+          path: apps/dashboard/storybook-static
+          retention-days: 7
+
+# ========================================
+# Configuration Notes
+# ========================================
+#
+# 1. Get Chromatic token:
+#    - Sign up at https://www.chromatic.com
+#    - Create project
+#    - Copy project token
+#
+# 2. Add token to GitHub secrets:
+#    - Go to: Settings → Secrets and variables → Actions
+#    - Add secret: CHROMATIC_PROJECT_TOKEN
+#    - Paste your Chromatic token
+#
+# 3. Customize behavior (optional):
+#    - autoAcceptChanges: Auto-approve changes on specific branches
+#    - exitZeroOnChanges: Allow PR merge even with visual changes
+#    - skip: Skip Chromatic on certain conditions
+#
+# 4. Chromatic features enabled:
+#    - ✅ Visual snapshot testing
+#    - ✅ UI component review
+#    - ✅ Automatic baseline updates
+#    - ✅ Pull request checks
+#    - ✅ Build history tracking
+#
+# ========================================
+# Monitoring Chromatic Results
+# ========================================
+#
+# After workflow runs:
+# 1. Check PR for Chromatic comment with link
+# 2. Click link to review visual diffs
+# 3. Approve or reject changes in Chromatic dashboard
+# 4. PR can only merge after Chromatic approval (if exitZeroOnChanges: false)
+#
+# Chromatic Dashboard shows:
+# - Side-by-side visual diffs
+# - Changed components highlighted
+# - Browser compatibility results
+# - Responsive viewport captures
+# - Dark mode vs light mode diffs
+#

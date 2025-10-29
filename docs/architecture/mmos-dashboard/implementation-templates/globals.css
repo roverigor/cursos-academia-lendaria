@@ -1,0 +1,236 @@
+/**
+ * MMOS Admin Dashboard - Global Styles
+ *
+ * Design System: CSS Variables (3-Level Token Hierarchy)
+ * - Primitive: Raw HSL values (internal)
+ * - Semantic: Purpose-based (recommended)
+ * - Component: Component-specific (as needed)
+ *
+ * Location: apps/dashboard/app/globals.css
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ========================================
+       PRIMITIVE COLORS (Internal Use Only)
+       ======================================== */
+    --blue-500: 221.2 83.2% 53.3%;
+    --blue-600: 221.2 83.2% 45%;
+    --gray-50: 210 40% 98%;
+    --gray-100: 210 40% 96.1%;
+    --gray-200: 214.3 31.8% 91.4%;
+    --gray-300: 213 27% 84%;
+    --gray-400: 215 20% 65%;
+    --gray-500: 220 8.9% 46.1%;
+    --gray-600: 215 16.3% 35%;
+    --gray-700: 215 19.3% 25%;
+    --gray-800: 217.2 32.6% 17.5%;
+    --gray-900: 222.2 84% 4.9%;
+    --red-500: 0 84.2% 60.2%;
+    --red-600: 0 72% 51%;
+    --green-500: 142.1 76.2% 36.3%;
+    --green-600: 142.1 70% 30%;
+    --yellow-500: 47.9 95.8% 53.1%;
+    --yellow-600: 45 93% 47%;
+    --cyan-500: 199.5 89.1% 48.4%;
+    --cyan-600: 199 89% 40%;
+
+    /* ========================================
+       SEMANTIC COLORS (Light Mode)
+       ======================================== */
+
+    /* Layout */
+    --background: 0 0% 100%;           /* Page background */
+    --foreground: var(--gray-900);     /* Primary text */
+
+    /* Brand colors */
+    --primary: var(--blue-500);
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: var(--gray-100);
+    --secondary-foreground: var(--gray-900);
+
+    /* UI elements */
+    --muted: var(--gray-100);
+    --muted-foreground: var(--gray-500);
+
+    --accent: var(--gray-100);
+    --accent-foreground: var(--gray-900);
+
+    /* Borders & inputs */
+    --border: var(--gray-200);
+    --input: var(--gray-200);
+    --ring: var(--blue-500);
+
+    /* Cards & popovers */
+    --card: 0 0% 100%;
+    --card-foreground: var(--gray-900);
+
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--gray-900);
+
+    /* Destructive */
+    --destructive: var(--red-500);
+    --destructive-foreground: 210 40% 98%;
+
+    /* ========================================
+       STATUS COLORS (NEW - Semantic)
+       ======================================== */
+
+    /* Success (green) */
+    --success: var(--green-500);       /* Background: success badges, buttons */
+    --success-foreground: 210 40% 98%; /* Text on success background */
+
+    /* Warning (yellow) */
+    --warning: var(--yellow-500);      /* Background: warning badges, alerts */
+    --warning-foreground: 26 83.3% 14.1%; /* Dark text on yellow (contrast) */
+
+    /* Error (red) */
+    --error: var(--red-500);           /* Background: error badges, alerts */
+    --error-foreground: 210 40% 98%;   /* Text on error background */
+
+    /* Info (cyan) */
+    --info: var(--cyan-500);           /* Background: info badges, alerts */
+    --info-foreground: 210 40% 98%;    /* Text on info background */
+
+    /* Border radius */
+    --radius: 0.5rem; /* 8px default */
+  }
+
+  /* ========================================
+     DARK MODE
+     ======================================== */
+  .dark {
+    /* Layout */
+    --background: var(--gray-900);
+    --foreground: 210 40% 98%;
+
+    /* Brand colors */
+    --primary: var(--blue-600);
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: var(--gray-800);
+    --secondary-foreground: 210 40% 98%;
+
+    /* UI elements */
+    --muted: var(--gray-800);
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: var(--gray-800);
+    --accent-foreground: 210 40% 98%;
+
+    /* Borders & inputs */
+    --border: var(--gray-700);
+    --input: var(--gray-700);
+    --ring: var(--blue-600);
+
+    /* Cards & popovers */
+    --card: var(--gray-800);
+    --card-foreground: 210 40% 98%;
+
+    --popover: var(--gray-800);
+    --popover-foreground: 210 40% 98%;
+
+    /* Destructive */
+    --destructive: var(--red-600);
+    --destructive-foreground: 210 40% 98%;
+
+    /* Status colors (darker variants for dark mode) */
+    --success: var(--green-600);
+    --success-foreground: 210 40% 98%;
+
+    --warning: var(--yellow-600);
+    --warning-foreground: var(--gray-900); /* Dark text on yellow */
+
+    --error: var(--red-600);
+    --error-foreground: 210 40% 98%;
+
+    --info: var(--cyan-600);
+    --info-foreground: 210 40% 98%;
+  }
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Typography base styles */
+  h1 {
+    @apply text-display;
+  }
+
+  h2 {
+    @apply text-title;
+  }
+
+  h3 {
+    @apply text-heading;
+  }
+
+  h4 {
+    @apply text-subheading;
+  }
+
+  p {
+    @apply text-body;
+  }
+
+  small {
+    @apply text-caption;
+  }
+
+  label {
+    @apply text-label;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+@layer utilities {
+  /* Focus-visible (keyboard navigation) */
+  .focus-visible-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  /* Scrollbar styles */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground));
+    border-radius: 4px;
+  }
+
+  /* Text truncate with tooltip-ready title */
+  .truncate-with-title {
+    @apply truncate;
+    &[title] {
+      cursor: help;
+    }
+  }
+}
