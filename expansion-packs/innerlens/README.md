@@ -80,7 +80,7 @@ npm run install:expansion innerlens
 # Output files:
 # - {mind}_fragments.json (validated MIU extraction)
 # - {mind}_bigfive.json (Big Five analysis)
-# Plus database entries in /outputs/database/mmos.db
+# Plus database entries no Supabase (PostgreSQL com RLS)
 ```
 
 #### Option 2: Legacy Quick Detection

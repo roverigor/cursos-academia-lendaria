@@ -338,7 +338,7 @@ python scripts/generate_course.py meu-curso --resume
 
 ## 📊 Database Integration
 
-CreatorOS integrates with the unified AIOS database (`outputs/database/mmos.db`):
+CreatorOS writes to the unified Supabase AIOS database (see `SUPABASE_DB_URL`):
 
 ### 13 Tables
 
@@ -634,19 +634,19 @@ CreatorOS validates voice consistency across 4 dimensions:
 
 #### Database Issues
 
-**Issue: "Database locked" error**
-- **Cause:** Multiple processes accessing database simultaneously
+**Issue: "password authentication failed"**
+- **Cause:** `SUPABASE_DB_URL` missing or service-role key invalid
 - **Fix:**
-  1. Close other processes using database
-  2. Wait 10 seconds and retry
-  3. Check for zombie processes: `ps aux | grep creator`
+  1. Confirm `.env` contains `SUPABASE_DB_URL` (service role with `sslmode=require`)
+  2. Re-run `source .env`
+  3. Test manually: `psql "$SUPABASE_DB_URL" -c 'select now();'`
 
 **Issue: "Migration fails"**
-- **Cause:** Database schema out of sync
+- **Cause:** Supabase schema out of sync with repository migrations
 - **Fix:**
-  1. Backup database: `cp outputs/database/mmos.db outputs/database/mmos.db.backup`
-  2. Run migrations: `./scripts/db-migrate.sh`
-  3. If fails, restore backup and report issue
+  1. Create snapshot: `./supabase/scripts/db-migrate.sh --snapshot`
+  2. Apply migrations: `./supabase/scripts/db-migrate.sh`
+  3. If failure persists, restore snapshot with `./supabase/scripts/db-rollback.sh`
 
 ### Performance Issues
 

@@ -69,7 +69,7 @@ docs/
 - `docs/mmos/docs/stories/` → `docs/stories/mmos-legacy/`
 
 #### Database → outputs/database/
-- `docs/mmos/mmos.db` → `outputs/database/mmos.db` (872KB)
+- `docs/mmos/SQLite legado (migrado para Supabase em 2025-10)` → `SQLite legado (migrado para Supabase em 2025-10)` (872KB)
 
 #### Logs → docs/logs/
 - `docs/mmos/logs/` → `docs/logs/` (74 log files)
@@ -78,7 +78,7 @@ docs/
 ### 3. Reference Updates
 
 Updated path references in **all** files:
-- ✅ Database paths: `docs/mmos/mmos.db` → `outputs/database/mmos.db`
+- ✅ Database paths: `docs/mmos/SQLite legado (migrado para Supabase em 2025-10)` → `SQLite legado (migrado para Supabase em 2025-10)`
 - ✅ Documentation paths: Updated 8 files with doc references
 - ✅ Scripts: Updated scripts in `scripts/database/`, `scripts/pipeline/`
 - ✅ Expansion packs: Updated 4 expansion pack configurations
@@ -134,7 +134,7 @@ docs/
 │   │   ├── OUTPUTS_GUIDE.md
 │   │   ├── FOLDER_STRUCTURE.md
 │   │   └── ... (14+ files)
-│   ├── mmos.db            ← 🔴 Database in docs/
+│   ├── SQLite legado (migrado para Supabase em 2025-10)            ← 🔴 Database in docs/
 │   └── logs/              ← Mixed (some should be versioned)
 ```
 
@@ -161,7 +161,7 @@ docs/
 
 outputs/
 └── database/              ← ✅ Database in outputs/
-    └── mmos.db
+    └── SQLite legado (migrado para Supabase em 2025-10)
 ```
 
 ---
@@ -258,7 +258,7 @@ ls -lh docs/guides/*.md
 ls -lh docs/mmos/workflows/*.md
 
 # Check database location
-ls -lh outputs/database/mmos.db
+ls -lh SQLite legado (migrado para Supabase em 2025-10)
 
 # Verify logs location
 ls -1 docs/logs/*.md | wc -l

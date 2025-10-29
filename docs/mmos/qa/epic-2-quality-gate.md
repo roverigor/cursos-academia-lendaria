@@ -208,12 +208,12 @@ Scenario: Script is idempotent
 3. ✅ Clear output showing inserted/updated counts
 
 **Concerns:**
-1. ⚠️ Node.js version requires `better-sqlite3` (not documented in package.json)
+1. ⚠️ Supabase credentials must be loaded (`SUPABASE_DB_URL`) before running script
 2. ⚠️ No validation that all 28 expected minds are present
 3. ⚠️ No error handling if outputs/minds/ directory is missing
 
 **Recommendations:**
-- Add `better-sqlite3` to package.json
+- Document `.env` requirements (`SUPABASE_DB_URL` + service role key)
 - Create validation script to check expected mind list
 - Add error handling for missing directories
 

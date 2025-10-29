@@ -3,7 +3,7 @@
 -- SQLite → Supabase: domains, specializations, skills, traits
 -- =========================================================
 -- Migration: Phase 1 - Taxonomy (Low Risk)
--- Source: outputs/database/mmos.db
+-- Source: Supabase taxonomy snapshot
 -- Tables: domains (6), specializations (22), skills (73), traits (35)
 -- ID Mapping: TEXT → BIGINT (with lookup tables)
 -- =========================================================

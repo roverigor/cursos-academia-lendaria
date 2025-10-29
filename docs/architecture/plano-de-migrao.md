@@ -100,15 +100,15 @@ mv docs/mmos/docs/research docs/mmos/
 mkdir -p outputs/database/
 
 # Mover database
-mv outputs/database/mmos.db outputs/database/mmos.db
+mv SQLite legado (migrado para Supabase em 2025-10) SQLite legado (migrado para Supabase em 2025-10)
 
 # Atualizar referências em scripts
 find scripts/ -name "*.js" -o -name "*.sh" | \
-  xargs sed -i '' 's|outputs/database/mmos.db|outputs/database/mmos.db|g'
+  xargs sed -i '' 's|SQLite legado (migrado para Supabase em 2025-10)|SQLite legado (migrado para Supabase em 2025-10)|g'
 
 # Atualizar em expansion packs
 find expansion-packs/ -name "*.md" -o -name "*.js" | \
-  xargs sed -i '' 's|outputs/database/mmos.db|outputs/database/mmos.db|g'
+  xargs sed -i '' 's|SQLite legado (migrado para Supabase em 2025-10)|SQLite legado (migrado para Supabase em 2025-10)|g'
 ```
 
 ### 2.2 Mover Logs
@@ -238,7 +238,7 @@ cat > docs/mmos/README.md <<'EOF'
 
 # 🗄️ Database
 
-Ver: `outputs/database/mmos.db` (gerado)
+Ver: `SQLite legado (migrado para Supabase em 2025-10)` (gerado)
 
 # 📊 Logs
 

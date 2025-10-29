@@ -141,7 +141,7 @@ Populate minds table with all 28 minds from outputs/minds/ directory.
 # Bash version
 bash scripts/database/populate_minds.sh
 
-# Node.js version (requires better-sqlite3)
+# Node.js version (uses Supabase via `pg`)
 node scripts/database/populate_minds.js
 ```
 

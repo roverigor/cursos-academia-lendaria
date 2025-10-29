@@ -51,7 +51,7 @@ mente_lendaria/
 │   ├── debates/                     💬 Debates gerados
 │   ├── swipe/                       📱 Swipe copy
 │   ├── database/                    🗄️ Databases gerados
-│   │   └── mmos.db               (mover de docs/mmos/)
+│   │   └── SQLite legado (migrado para Supabase em 2025-10)               (mover de docs/mmos/)
 │   └── logs/                        📊 Logs de execução
 │       └── mmos/                  (mover de docs/mmos/logs/)
 │

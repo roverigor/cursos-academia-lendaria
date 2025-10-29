@@ -1385,7 +1385,7 @@ file_structure:
 
 ```yaml
 database_logging:
-  step: "Save course to mmos.db for tracking"
+  step: "Save course to legacy SQLite database for tracking"
 
   table: "courses"
 
@@ -1459,7 +1459,7 @@ summary_report:
       - Resources: {num_resources} files in outputs/courses/{slug}/resources/
 
     database:
-      - Saved to: mmos.db → courses table
+      - Saved to: legacy SQLite database → courses table
       - Course ID: {uuid}
 
     next_steps:

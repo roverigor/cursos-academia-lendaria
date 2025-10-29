@@ -40,7 +40,7 @@ Este documento captura o **ESTADO ATUAL** do projeto Mente Lendária, incluindo 
 |-----------|------------|--------|-------------|
 | Runtime Principal | Node.js | - | Scripts JS + CLI tools |
 | Runtime Secundário | Python 3.13 | - | Scripts de migração |
-| Database | SQLite (better-sqlite3) | 11.7.0 | `docs/mmos/mmos.db` |
+| Database | Legacy SQLite (pre-Supabase) | 11.7.0 | Migrated to Supabase Oct/2025 |
 | YAML Parser | js-yaml | 4.1.0 | Configs e metadados |
 | UUID Generator | uuid | 11.0.3 | IDs únicos |
 | Testing | Jest | 29.7.0 | **⚠️ SEM TESTES** |
@@ -185,17 +185,16 @@ innerlens/
 **Problema**: Mesma funcionalidade implementada 2x em linguagens diferentes.
 
 **populate_minds.sh** (90 linhas):
-- Bash script
+- Bash script (legacy)
 - SQLite via comando `sqlite3`
 - Apenas slug + display_name
-- Mais simples
+- Mantido apenas para histórico
 
-**populate_minds.js** (153 linhas):
-- Node.js script
-- better-sqlite3 library
-- Lê metadata.yaml
+**populate_supabase_minds.js** (Supabase):
+- Node.js script (pg + dotenv)
+- Lê metadata.yaml (quando disponível)
 - Verifica sources/kb/prompts
-- **Mais completo e robusto**
+- **Versão atual - mantém dados no Supabase**
 
 **🎯 Decisão Necessária**: Qual manter? Provavelmente `.js` (mais completo), deprecar `.sh`.
 

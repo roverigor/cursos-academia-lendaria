@@ -40,7 +40,7 @@ mente_lendaria/
 │   ├── brownfield-architecture.md   ← Único arquivo raiz
 │   ├── stories/                     ← Development stories (OK)
 │   └── mmos/                        ← TUDO DO MMOS AQUI
-│       ├── mmos.db                    🚨 Database commitado
+│       ├── SQLite legado (migrado para Supabase em 2025-10)                    🚨 Database commitado
 │       ├── logs/                      🚨 Logs commitados (868KB)
 │       ├── docs/                      🚨 Aninhamento confuso!!!
 │       │   ├── PRD.md
@@ -112,7 +112,7 @@ docs/
 #### 🚨 Problema 3: Database e Logs Commitados
 
 **Issue:**
-- `outputs/database/mmos.db` (872KB) commitado no repo
+- `SQLite legado (migrado para Supabase em 2025-10)` (872KB) commitado no repo
 - `docs/mmos/logs/` (868KB) commitado no repo
 
 **Por quê está errado?**
@@ -121,7 +121,7 @@ docs/
 - Aumenta tamanho do repo desnecessariamente
 
 **Decisão Necessária:**
-- Mover `mmos.db` para `outputs/database/mmos.db`?
+- Mover `SQLite legado (migrado para Supabase em 2025-10)` para `SQLite legado (migrado para Supabase em 2025-10)`?
 - Ou adicionar ao `.gitignore` e manter local?
 
 ---
@@ -198,7 +198,7 @@ mente_lendaria/
 │   ├── debates/                     💬 Debates gerados
 │   ├── swipe/                       📱 Swipe copy
 │   ├── database/                    🗄️ Databases gerados
-│   │   └── mmos.db               (mover de docs/mmos/)
+│   │   └── SQLite legado (migrado para Supabase em 2025-10)               (mover de docs/mmos/)
 │   └── logs/                        📊 Logs de execução
 │       └── mmos/                  (mover de docs/mmos/logs/)
 │
@@ -328,15 +328,15 @@ mv docs/mmos/docs/research docs/mmos/
 mkdir -p outputs/database/
 
 # Mover database
-mv outputs/database/mmos.db outputs/database/mmos.db
+mv SQLite legado (migrado para Supabase em 2025-10) SQLite legado (migrado para Supabase em 2025-10)
 
 # Atualizar referências em scripts
 find scripts/ -name "*.js" -o -name "*.sh" | \
-  xargs sed -i '' 's|outputs/database/mmos.db|outputs/database/mmos.db|g'
+  xargs sed -i '' 's|SQLite legado (migrado para Supabase em 2025-10)|SQLite legado (migrado para Supabase em 2025-10)|g'
 
 # Atualizar em expansion packs
 find expansion-packs/ -name "*.md" -o -name "*.js" | \
-  xargs sed -i '' 's|outputs/database/mmos.db|outputs/database/mmos.db|g'
+  xargs sed -i '' 's|SQLite legado (migrado para Supabase em 2025-10)|SQLite legado (migrado para Supabase em 2025-10)|g'
 ```
 
 #### 2.2 Mover Logs
@@ -466,7 +466,7 @@ cat > docs/mmos/README.md <<'EOF'
 
 ## 🗄️ Database
 
-Ver: `outputs/database/mmos.db` (gerado)
+Ver: `SQLite legado (migrado para Supabase em 2025-10)` (gerado)
 
 ## 📊 Logs
 
@@ -529,13 +529,13 @@ docs/prd/mmos-prd.md
 
 **BEFORE:**
 ```
-outputs/database/mmos.db
+SQLite legado (migrado para Supabase em 2025-10)
      ^^^^ category mismatch (docs é para documentação, não artifacts)
 ```
 
 **AFTER:**
 ```
-outputs/database/mmos.db
+SQLite legado (migrado para Supabase em 2025-10)
         ^^^^^^^^ categoria correta (outputs = gerados)
 ```
 
@@ -577,7 +577,7 @@ docs/methodology/dna-mental.md
 ### Fase 2: Mover Database e Logs
 
 - [ ] Criar `outputs/database/` e `outputs/logs/mmos/`
-- [ ] Mover `outputs/database/mmos.db` → `outputs/database/mmos.db`
+- [ ] Mover `SQLite legado (migrado para Supabase em 2025-10)` → `SQLite legado (migrado para Supabase em 2025-10)`
 - [ ] Mover `docs/mmos/logs/*` → `outputs/logs/mmos/`
 - [ ] Atualizar `.gitignore` para ignorar `outputs/database/*.db` e `outputs/logs/*`
 - [ ] Criar `.gitkeep` em `outputs/database/` e `outputs/logs/`
@@ -601,7 +601,7 @@ docs/methodology/dna-mental.md
 ### Fase 5: Validação
 
 - [ ] Verificar links quebrados: `grep -r "docs/mmos/docs/" . --include="*.md"`
-- [ ] Verificar paths de database: `grep -r "outputs/database/mmos.db" . --include="*.{js,sh}"`
+- [ ] Verificar paths de database: `grep -r "SQLite legado (migrado para Supabase em 2025-10)" . --include="*.{js,sh}"`
 - [ ] Testar comandos principais: `*generate-course`, `*execute-mmos-pipeline`
 - [ ] Documentar estrutura final: `tree -L 3 docs/ > docs-structure-after.txt`
 - [ ] Comparar before/after: `diff docs-structure-{before,after}.txt`
@@ -649,7 +649,7 @@ docs/methodology/dna-mental.md
 **Impacto:** Scripts de population/import param de funcionar
 
 **Mitigação:**
-- Criar symlink temporário: `ln -s outputs/database/mmos.db outputs/database/mmos.db`
+- Criar symlink temporário: `ln -s SQLite legado (migrado para Supabase em 2025-10) SQLite legado (migrado para Supabase em 2025-10)`
 - Manter por 1-2 semanas para backward compatibility
 - Adicionar warning deprecation em scripts
 

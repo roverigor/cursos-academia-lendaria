@@ -1805,7 +1805,7 @@ SAVE ALL FILES:
 **Step 5.2: Database Logging (Optional)**
 
 ```
-IF database exists at outputs/database/mmos.db:
+IF database exists at SQLite legado (migrado para Supabase em 2025-10):
 
 TABLE: courses
 
@@ -1910,7 +1910,7 @@ Location: outputs/courses/{course-slug}/
 
 {IF database_logged}
 Database:
-  - Saved to: mmos.db → courses table
+  - Saved to: SQLite legado (migrado para Supabase em 2025-10) → courses table
   - Course ID: {uuid}
 {END IF}
 

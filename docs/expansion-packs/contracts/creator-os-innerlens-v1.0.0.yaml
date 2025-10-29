@@ -507,20 +507,22 @@ distribute_fragments_by_relevance(fragments, lesson_topics)
 ## Integration Test
 
 ```bash
-# 1. Ensure mind has fragments
-sqlite3 outputs/database/mmos.db <<EOF
-SELECT COUNT(*) FROM fragments WHERE mind_id = (SELECT id FROM minds WHERE slug = 'naval_ravikant');
-EOF
+# 1. Garantir fragments no Supabase
+psql "$SUPABASE_DB_URL" <<'SQL'
+SELECT COUNT(*)
+FROM fragments
+WHERE mind_id = (SELECT id FROM minds WHERE slug = 'naval_ravikant');
+SQL
 
-# 2. CreatorOS queries fragments during lesson generation
+# 2. Gerar lições com RAG habilitado
 @course-architect
 *generate-lessons startup-fundamentals --use-rag
 
-# 3. Verify fragments retrieved
-# Check lesson content for quotes/examples
+# 3. Validar conteúdo recuperado
+# Conferir citações / exemplos no output final
 
-# 4. Verify fidelity boost
-# Manual review: lessons should have authentic Naval voice (98%+)
+# 4. Verificar fidelidade
+# Revisão manual: lições devem manter voz do mind (≥98%)
 ```
 
 ---

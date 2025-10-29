@@ -23,7 +23,7 @@ Mente Lendária is built as a **modular system of expansion packs** - each provi
 ✅ **Maximum integration** - Expansion packs work together seamlessly
 ✅ **Coordinated evolution** - Features are planned across the entire system
 ✅ **Clear contracts** - Well-defined interfaces between modules
-✅ **Unified data model** - Single database (`outputs/database/mmos.db`)
+✅ **Unified data model** - Single database (`SQLite legado (migrado para Supabase em 2025-10)`)
 ✅ **Traceability** - From epics to implementation across all packs
 
 ---
@@ -73,14 +73,14 @@ Mente Lendária is built as a **modular system of expansion packs** - each provi
                           │
 ┌─────────────────────────┴───────────────────────────────────┐
 │                    Unified Database                          │
-│               outputs/database/mmos.db                       │
+│               SQLite legado (migrado para Supabase em 2025-10)                       │
 │    (Minds, Fragments, Courses, Profiles, Projects...)       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ### Design Principles
 
-1. **Single Database** - All packs write to `outputs/database/mmos.db`
+1. **Single Database** - All packs write to `SQLite legado (migrado para Supabase em 2025-10)`
 2. **Contract-Based Integration** - Well-defined interfaces between packs
 3. **Optional Dependencies** - Packs work standalone, but integrate when available
 4. **Shared Outputs** - `outputs/` directory structure shared across packs

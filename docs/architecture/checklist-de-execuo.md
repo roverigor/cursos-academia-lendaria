@@ -20,7 +20,7 @@
 ## Fase 2: Mover Database e Logs
 
 - [ ] Criar `outputs/database/` e `outputs/logs/mmos/`
-- [ ] Mover `outputs/database/mmos.db` → `outputs/database/mmos.db`
+- [ ] Mover `SQLite legado (migrado para Supabase em 2025-10)` → `SQLite legado (migrado para Supabase em 2025-10)`
 - [ ] Mover `docs/mmos/logs/*` → `outputs/logs/mmos/`
 - [ ] Atualizar `.gitignore` para ignorar `outputs/database/*.db` e `outputs/logs/*`
 - [ ] Criar `.gitkeep` em `outputs/database/` e `outputs/logs/`
@@ -44,7 +44,7 @@
 ## Fase 5: Validação
 
 - [ ] Verificar links quebrados: `grep -r "docs/mmos/docs/" . --include="*.md"`
-- [ ] Verificar paths de database: `grep -r "outputs/database/mmos.db" . --include="*.{js,sh}"`
+- [ ] Verificar paths de database: `grep -r "SQLite legado (migrado para Supabase em 2025-10)" . --include="*.{js,sh}"`
 - [ ] Testar comandos principais: `*generate-course`, `*execute-mmos-pipeline`
 - [ ] Documentar estrutura final: `tree -L 3 docs/ > docs-structure-after.txt`
 - [ ] Comparar before/after: `diff docs-structure-{before,after}.txt`

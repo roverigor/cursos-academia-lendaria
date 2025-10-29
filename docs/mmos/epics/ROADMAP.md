@@ -103,8 +103,9 @@
 
 ### Next Action
 - **Implement Story 2.4** (Pipeline Integration)
-  - 4 integration modules: populate-sources.js, import-analysis.js, extract-fragments.js, validate-integration.js
-  - 1 orchestrator: db-integration-v3.sh
+  - Supabase ingestion CLI (sources + analysis)
+  - Fragment automation (blocked by InnerLens v1.1)
+  - Validation suite (Supabase views/tests)
   - Test with sam_altman (pilot validation)
 
 ---

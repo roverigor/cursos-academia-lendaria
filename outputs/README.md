@@ -29,8 +29,7 @@ outputs/
 │   │   └── sources/
 │   └── ...
 │
-└── database/        ← MMOS database files
-    ├── mmos.db      ← Main SQLite database
+└── database/        ← Supabase export snapshots (optional)
     └── .gitkeep
 ```
 
@@ -127,8 +126,8 @@ rm -rf outputs/courses/*
 # Remove all processed minds
 rm -rf outputs/minds/*
 
-# Remove database (WARNING: all data will be lost!)
-rm -rf outputs/database/*
+# Remove Supabase export snapshots (keeps .gitkeep)
+find outputs/database -mindepth 1 ! -name '.gitkeep' -delete
 
 # Keep directory structure
 mkdir -p outputs/{courses,minds,database}

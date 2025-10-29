@@ -84,7 +84,7 @@ outputs/                    # 🎯 Generated artifacts (NOT versioned)
 ├── courses/                # Generated courses (CreatorOS)
 ├── minds/                  # Processed minds (MMOS Mind Mapper)
 └── database/               # SQLite database files
-    └── mmos.db
+    └── SQLite legado (migrado para Supabase em 2025-10)
 
 expansion-packs/            # 🔌 Modular system extensions
 ├── creator-os/             # Course generation system
@@ -923,7 +923,7 @@ Ask: **"Is it an execution log?"**
 - `docs/methodology/dna-mental.md` (methodology)
 - `docs/guides/outputs-guide.md` (user guide)
 - `docs/logs/2025-10-17-docs-reorganization.md` (execution log - versioned!)
-- `outputs/database/mmos.db` (generated database)
+- `SQLite legado (migrado para Supabase em 2025-10)` (generated database)
 
 **❌ Wrong:**
 - `docs/mmos/validations/pedro-valerio-checklist.md` → Use `outputs/minds/pedro_valerio/docs/validation-checklist.md`
@@ -932,7 +932,7 @@ Ask: **"Is it an execution log?"**
 - `docs/mmos/docs/PRD.md` → Use `docs/prd/mmos-prd.md`
 - `docs/mmos/DNA_MENTAL.md` → Use `docs/methodology/dna-mental.md`
 - `outputs/logs/session.md` → Use `docs/logs/2025-10-17-session.md` (logs are docs!)
-- `docs/mmos/mmos.db` → Use `outputs/database/mmos.db`
+- `docs/mmos/SQLite legado (migrado para Supabase em 2025-10)` → Use `SQLite legado (migrado para Supabase em 2025-10)`
 
 ### Enforcement:
 
@@ -956,7 +956,7 @@ Run manually: `.aios-core/hooks/pre-commit-mmos-guard.sh`
 | MMOS reports | `docs/mmos/reports/` | `executive-summary.md` |
 | Mind-specific docs | `outputs/minds/{slug}/docs/` | `validation-checklist.md` |
 | Generated courses | `outputs/courses/{slug}/` | `curriculum.yaml` |
-| Database files | `outputs/database/` | `mmos.db` |
+| Database files | `outputs/database/` | `SQLite legado (migrado para Supabase em 2025-10)` |
 | MMOS scripts | `expansion-packs/mmos/` | `pipeline.py` |
 
 ---

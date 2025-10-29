@@ -983,7 +983,7 @@ INSERT OR IGNORE INTO schema_version (version, description) VALUES
 -- Total Views: 4
 
 -- To create the database:
--- sqlite3 mmos.db < schema_complete.sql
+-- Histórico: este arquivo era aplicado via sqlite3. Hoje utilizamos migrações Supabase (`supabase/migrations/`).
 
 -- To verify:
 -- SELECT name, type FROM sqlite_master WHERE type IN ('table', 'view', 'trigger') ORDER BY type, name;

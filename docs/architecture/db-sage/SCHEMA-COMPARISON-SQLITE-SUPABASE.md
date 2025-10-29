@@ -1,7 +1,7 @@
 # 🔄 Schema Comparison: SQLite (MMOS) vs Supabase v0.7.0
 
 **Analysis Date:** 2025-10-27
-**SQLite:** `outputs/database/mmos.db` (872 KB, 18 tables)
+**SQLite:** `SQLite legado (migrado para Supabase em 2025-10)` (872 KB, 18 tables)
 **Supabase:** `v0.7.0 baseline` (30 tables, 793 lines SQL)
 
 ---

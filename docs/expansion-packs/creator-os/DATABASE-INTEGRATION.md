@@ -10,7 +10,7 @@
 
 ## Executive Summary
 
-CreatorOS will integrate with the existing unified database (`outputs/database/mmos.db`) to:
+CreatorOS integra-se com o backend Supabase (PostgreSQL) para:
 1. **Store content projects, campaigns, and generated pieces** with full traceability
 2. **Track performance metrics** and learning loops
 3. **Link content to minds** (MMOS clones as personas)
@@ -863,129 +863,48 @@ INSERT INTO content_frameworks VALUES
 
 ---
 
-## Integration Scripts
+## Integração Operacional com Supabase (Atualizado em 2025-10)
 
-### 1. Initialize CreatorOS in Database
+> Histórico: os antigos scripts `init-database.sh` e `create-project.js` foram aposentados junto com o SQLite. Eles permanecem apenas no histórico do git para consulta.
+
+### Provisionamento (DDL)
+
+- Estrutura versionada em `supabase/migrations/`.
+- Use `./scripts/db-migrate.sh <migration.sql>` para aplicar alterações com snapshot automático.
+- Rollbacks e smoke tests documentados em `supabase/docs/`.
 
 ```bash
-# scripts/creator-os/init-database.sh
-#!/bin/bash
-
-DB_PATH="outputs/database/mmos.db"
-
-echo "Initializing CreatorOS tables in mmos.db..."
-
-# Execute schema
-sqlite3 "$DB_PATH" < expansion-packs/creator-os/database/schema.sql
-
-# Seed frameworks
-sqlite3 "$DB_PATH" < expansion-packs/creator-os/database/seed_frameworks.sql
-
-echo "✅ CreatorOS database initialized"
-echo ""
-echo "Tables created:"
-echo "- content_frameworks (8 frameworks)"
-echo "- content_projects"
-echo "- audience_profiles"
-echo "- content_pieces"
-echo "- content_performance"
-echo "- content_campaigns"
-echo "- content_campaign_pieces"
-echo "- content_learnings"
-echo ""
-echo "Ready for use: @content-pm"
+./scripts/db-migrate.sh supabase/migrations/20251028120000_creator_os_schema_changes.sql
+psql "$SUPABASE_DB_URL" -f supabase/tests/test_creator_os_rls.sql
 ```
 
-### 2. Create Project (Node.js Module)
+### Persistência Aplicacional
 
-```javascript
-// scripts/creator-os/create-project.js
-const Database = require('better-sqlite3');
-const { v4: uuidv4 } = require('uuid');
-const fs = require('fs');
-const path = require('path');
+- Implementada por `expansion-packs/creator-os/lib/db_persister.py` usando `supabase-py`.
+- Habilite via `CREATOR_OS_DB_PERSIST=true` + chaves `SUPABASE_URL` e `SUPABASE_SERVICE_KEY`.
 
-async function createProject(config) {
-  const db = new Database('outputs/database/mmos.db');
+```python
+from expansion_packs.creator_os.lib.db_persister import CoursePersister
 
-  const projectId = `proj_${uuidv4()}`;
+persister = CoursePersister()
+project_id = persister.persist_project(
+    slug='curso-supabase',
+    name='Curso Oficial Supabase'
+)
 
-  // Insert project
-  db.prepare(`
-    INSERT INTO content_projects (id, project_slug, display_name, description,
-      default_persona_id, content_goals, target_frequency, status)
-    VALUES (?, ?, ?, ?, ?, ?, ?, 'active')
-  `).run(
-    projectId,
-    config.slug,
-    config.name,
-    config.description,
-    config.defaultPersonaId, // mind_id from MMOS
-    JSON.stringify(config.goals),
-    config.targetFrequency
-  );
-
-  // Insert default audience
-  const audienceId = `aud_${uuidv4()}`;
-  db.prepare(`
-    INSERT INTO audience_profiles (id, project_id, profile_slug, display_name,
-      demographics, values, pain_points, goals, tone_preference,
-      complexity_preference, is_default)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
-  `).run(
-    audienceId,
-    projectId,
-    config.audience.slug,
-    config.audience.name,
-    JSON.stringify(config.audience.demographics),
-    JSON.stringify(config.audience.values),
-    JSON.stringify(config.audience.painPoints),
-    JSON.stringify(config.audience.goals),
-    config.audience.tonePreference,
-    config.audience.complexityPreference
-  );
-
-  // Create directory structure
-  const projectDir = path.join(
-    'creator-os-workspace/projects',
-    config.slug
-  );
-
-  fs.mkdirSync(`${projectDir}/personas`, { recursive: true });
-  fs.mkdirSync(`${projectDir}/audiences`, { recursive: true });
-  fs.mkdirSync(`${projectDir}/content/blog-posts`, { recursive: true });
-  fs.mkdirSync(`${projectDir}/content/social-posts`, { recursive: true });
-  fs.mkdirSync(`${projectDir}/content/video-scripts`, { recursive: true });
-  fs.mkdirSync(`${projectDir}/strategy`, { recursive: true });
-
-  // Save config.yaml
-  const configYaml = `
-project_id: ${projectId}
-project_slug: ${config.slug}
-display_name: ${config.name}
-created_at: ${new Date().toISOString()}
-
-default_persona_id: ${config.defaultPersonaId}
-default_audience_id: ${audienceId}
-
-content_goals: ${JSON.stringify(config.goals)}
-target_frequency: "${config.targetFrequency}"
-  `;
-
-  fs.writeFileSync(`${projectDir}/config.yaml`, configYaml.trim());
-
-  db.close();
-
-  console.log(`✅ Project created: ${projectId}`);
-  console.log(`📁 Directory: ${projectDir}`);
-  console.log(`👤 Default persona: ${config.defaultPersonaId}`);
-  console.log(`🎯 Default audience: ${audienceId}`);
-
-  return { projectId, audienceId, projectDir };
-}
-
-module.exports = { createProject };
+persister.persist_content(
+    project_id=project_id,
+    slug='curso-supabase-outline',
+    title='Curso Supabase',
+    content_type='course_outline',
+    content='# Estrutura do curso'
+)
 ```
+
+### Qualidade & Auditoria
+
+- Validação pós-execução: `supabase/tests/smoke_test_creator_os.sql` e `supabase/tests/test_creator_os_rls.sql`.
+- Observabilidade e métricas documentadas no `COURSE-WORKFLOW-V2-IMPLEMENTATION.md`.
 
 ---
 
@@ -998,11 +917,11 @@ Given this database integration, **Epic 0 should be updated** to include:
 **Goal:** Integrate CreatorOS with unified database and create Project Manager agent
 
 **Deliverables:**
-1. Database schema extension (8 new tables)
-2. Seed data (8 content frameworks)
-3. Integration scripts (init-database.sh, create-project.js)
+1. Database schema extension (8 novas tabelas no Supabase)
+2. Seed data (8 content frameworks via migração)
+3. Persistência oficial (`lib/db_persister.py` + testes RLS)
 4. Project Manager agent (`agents/content-pm.md`)
-5. Database integration tests
+5. Testes de integração no Supabase
 
 **Success Criteria:**
 - All tables created without errors

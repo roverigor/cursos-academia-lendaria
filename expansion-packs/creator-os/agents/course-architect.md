@@ -215,7 +215,7 @@ outputs/courses/{slug}/research/
 **What:**
 - Generate all course files (lessons, curriculum, assessments, resources)
 - Organize files in proper structure
-- Log to database (mmos.db)
+- Persist to Supabase database
 - Provide usage instructions
 
 **Output Structure:**
@@ -527,7 +527,7 @@ Proceed? (Y/N)"
 - Adjust complexity based on Big Five traits
 - Personalize examples to audience values
 
-### With Database (mmos.db)
+### With Supabase Database
 - Log course to `courses` table
 - Track lessons in `lessons` table
 - Record assessments in `assessments` table

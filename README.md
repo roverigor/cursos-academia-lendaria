@@ -123,8 +123,7 @@ mente_lendaria/
 │   │   │   └── specialists/    # Clones especializados
 │   │   ├── README.md           # Guia de boas práticas
 │   │   └── catalog.md          # Catálogo completo
-│   └── database/               # Arquivos de database SQLite
-│       └── mmos.db             # Database principal
+│   └── database/               # (LEGADO) mantido apenas como backup histórico
 │
 ├── 📂 docs/                    # 📚 Documentação (versionada)
 │   ├── README.md               # Master documentation navigation

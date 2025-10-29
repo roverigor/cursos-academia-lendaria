@@ -9,8 +9,8 @@
 
 ## 📊 Current State Analysis
 
-### SQLite Database
-- **Location:** `outputs/database/mmos.db`
+### Legacy SQLite Backup
+- **Status:** Archived (read-only reference)
 - **Table:** `minds`
 - **Total Rows:** 28
 - **Active Rows:** 28 (deleted_at IS NULL)
@@ -154,55 +154,14 @@ COMMENT ON TABLE mmos_id_mapping IS
 'Mapping table for SQLite INTEGER PKs to Supabase UUIDs (used for migration)';
 ```
 
-### Step 3: Export SQLite Data to CSV
+### Step 3: Export Supabase Data (reference snapshot)
 
 ```bash
-#!/bin/bash
-# Export minds from SQLite to CSV
+# Export current minds table to CSV (requires SUPABASE_DB_URL)
+psql "$SUPABASE_DB_URL" -c "COPY minds TO STDOUT WITH CSV HEADER" \
+  > supabase/data/minds_export_$(date +%Y%m%d).csv
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DB_PATH="$SCRIPT_DIR/../../outputs/database/mmos.db"
-OUTPUT_CSV="$SCRIPT_DIR/data/sqlite_minds_export.csv"
-
-sqlite3 "$DB_PATH" <<EOF
-.headers on
-.mode csv
-.output $OUTPUT_CSV
-SELECT
-  id,
-  slug,
-  display_name,
-  subject_type,
-  privacy_level,
-  category,
-  primary_domain,
-  birth_year,
-  nationality,
-  known_aliases,
-  status,
-  current_phase,
-  apex_score,
-  quality_grade,
-  completeness,
-  confidence_avg,
-  total_tokens_used,
-  total_cost_usd,
-  processing_started_at,
-  processing_completed_at,
-  processing_duration_seconds,
-  pipeline_version,
-  agent_versions,
-  version,
-  created_at,
-  updated_at,
-  created_by
-FROM minds
-WHERE deleted_at IS NULL  -- Only active minds
-ORDER BY id;
-.quit
-EOF
-
-echo "✅ Exported $(wc -l < $OUTPUT_CSV) rows to $OUTPUT_CSV"
+echo "✅ Exported minds snapshot to supabase/data/minds_export_$(date +%Y%m%d).csv"
 ```
 
 ### Step 4: Migration SQL Script

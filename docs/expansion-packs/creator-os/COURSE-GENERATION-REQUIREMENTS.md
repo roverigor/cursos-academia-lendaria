@@ -1236,7 +1236,7 @@ Liste os 5-7 recursos/funcionalidades absolutamente essenciais para a primeira v
   3. Geração de aulas em Markdown com voice fidelity
   4. Validação pedagógica (alignment check, completeness)
   5. Export para arquivos (MD, YAML, JSON)
-  6. Database logging (salvar no mmos.db)
+  6. Database logging (salvar no SQLite legado (migrado para Supabase em 2025-10))
   7. Preview antes de gerar conteúdo completo
 
 

@@ -33,7 +33,7 @@ Este diretório contém configurações e scripts para os servidores MCP (Model 
      - Execução de queries SQL
      - Gerenciamento de schema
      - Análise de dados
-   - **Banco de dados**: `outputs/database/mmos.db`
+   - **Banco de dados**: `SQLite legado (migrado para Supabase em 2025-10)`
 
 4. **Git MCP** - `git`
    - **Descrição**: Operações Git no repositório

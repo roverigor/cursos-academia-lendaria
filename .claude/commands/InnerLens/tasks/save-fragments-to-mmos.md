@@ -32,7 +32,7 @@ Save InnerLens MIU fragments to the MMOS database for persistent storage and cro
 
 ## Preconditions
 
-- [ ] **MMOS database exists** at `/outputs/database/mmos.db`
+- [ ] **MMOS database exists** at `/SQLite legado (migrado para Supabase em 2025-10)`
 - [ ] **Mind already exists** in `minds` table (create if missing)
 - [ ] **Fragments file is valid** (follows InnerLens MIU schema)
 - [ ] **Source file readable** (UTF-8 encoding)

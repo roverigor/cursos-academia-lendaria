@@ -8,7 +8,7 @@ mente_lendaria/
 │   ├── brownfield-architecture.md   ← Único arquivo raiz
 │   ├── stories/                     ← Development stories (OK)
 │   └── mmos/                        ← TUDO DO MMOS AQUI
-│       ├── mmos.db                    🚨 Database commitado
+│       ├── SQLite legado (migrado para Supabase em 2025-10)                    🚨 Database commitado
 │       ├── logs/                      🚨 Logs commitados (868KB)
 │       ├── docs/                      🚨 Aninhamento confuso!!!
 │       │   ├── PRD.md
@@ -80,7 +80,7 @@ docs/
 ### 🚨 Problema 3: Database e Logs Commitados
 
 **Issue:**
-- `outputs/database/mmos.db` (872KB) commitado no repo
+- `SQLite legado (migrado para Supabase em 2025-10)` (872KB) commitado no repo
 - `docs/mmos/logs/` (868KB) commitado no repo
 
 **Por quê está errado?**
@@ -89,7 +89,7 @@ docs/
 - Aumenta tamanho do repo desnecessariamente
 
 **Decisão Necessária:**
-- Mover `mmos.db` para `outputs/database/mmos.db`?
+- Mover `SQLite legado (migrado para Supabase em 2025-10)` para `SQLite legado (migrado para Supabase em 2025-10)`?
 - Ou adicionar ao `.gitignore` e manter local?
 
 ---

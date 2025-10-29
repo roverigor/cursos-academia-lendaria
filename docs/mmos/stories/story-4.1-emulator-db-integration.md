@@ -29,7 +29,7 @@ The **emulator agent** (created in expansion pack creation workflow) currently:
 - ❌ **No Analytics**: Can't track which clones are most used
 
 ### Desired State (Database-First)
-- ✅ Query minds from `mmos.db` via mind_id (no paths exposed)
+- ✅ Query minds directly do Supabase via mind_id (sem paths expostos)
 - ✅ Load system-prompts via version_id (explicit versioning)
 - ✅ Load KB fragments via fragment_id (structured, cacheable)
 - ✅ Cache loaded clones in memory (sub-50ms activation)
@@ -62,7 +62,7 @@ The **emulator agent** (created in expansion pack creation workflow) currently:
 ## Acceptance Criteria
 
 ### AC1: Database-First Mind Loading
-**Given** a mind exists in `mmos.db` with system-prompt and KB
+**Given** a mind exists no Supabase com system-prompt e KB sincronizados
 **When** user activates clone: `@emulator *activate <mind-name>`
 **Then** the system:
 1. Queries `minds` table for mind_id by name
@@ -79,7 +79,7 @@ The **emulator agent** (created in expansion pack creation workflow) currently:
 
 🪞 Mirror → Nassim Taleb (v2.3) loaded
 
- Source: Database (mmos.db)
+ Source: Database (Supabase / fragments + profiles)
 📊 System Prompt: v2.3 (active) - 12,450 tokens
 📚 KB Fragments: 47 loaded - 18,230 tokens (91% of limit)
 🎯 Fidelity: 94% (validated 2025-10-10)
@@ -259,14 +259,14 @@ Type *help for available commands (some may be disabled)
 
 ### IV1: Database Schema Compatibility
 **Verification:**
-- ✅ Uses existing mmos.db schema (minds, system_prompts, fragments tables)
+- ✅ Usa o schema Supabase atual (minds, system_prompts, fragments tables)
 - ✅ No schema changes required (uses existing v3.0.0)
 - ✅ Adds new activation_history table for analytics
 
 **Test:**
 ```bash
 # Verify schema compatibility
-sqlite3 outputs/database/mmos.db "SELECT name FROM sqlite_master WHERE type='table';"
+psql "$SUPABASE_DB_URL" -c "SELECT tablename FROM pg_tables WHERE schemaname = 'public';"
 
 # Expected tables: minds, system_prompts, fragments, activation_history
 ```
@@ -498,7 +498,7 @@ cache:
 ## Dependencies
 
 ### Blocking
-- ✅ **mmos.db v3.0.0** - Database schema must exist (COMPLETE)
+- ✅ **Supabase v0.7.0+** - Database schema provisionado (COMPLETE)
 - ✅ **Emulator Agent** - Must be created first (COMPLETE - created in this session)
 
 ### Non-Blocking
@@ -542,7 +542,7 @@ cache:
 
 - **Story 1.4 (Auto-Execution)**: Uses database for pipeline execution
 - **Story 2.4 (Pipeline v3 Integration)**: Populates system_prompts and fragments tables
-- **Story 3.1 (Backward Compatible DB)**: Created mmos.db schema v3.0.0
+- **Story 3.1 (Histórico SQLite)**: Mantido no git para referência; hoje usamos Supabase.
 
 ---
 

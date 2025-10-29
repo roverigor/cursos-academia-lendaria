@@ -85,7 +85,7 @@ bash scripts/pipeline/db-integration-v3.sh --mind sam_altman --mode skip
 node scripts/pipeline/populate-sources.js \
   --mind sam_altman \
   --file outputs/minds/sam_altman/sources/sources_master.yaml \
-  --db outputs/database/mmos.db
+  --db SQLite legado (migrado para Supabase em 2025-10)
 
 # Output:
 # ✓ Inserted 35 new sources
@@ -117,7 +117,7 @@ node scripts/pipeline/populate-sources.js \
 node scripts/pipeline/extract-fragments.js \
   --mind sam_altman \
   --cognitive-spec outputs/minds/sam_altman/analysis/cognitive-spec.yaml \
-  --db outputs/database/mmos.db
+  --db SQLite legado (migrado para Supabase em 2025-10)
 
 # Output:
 # ✓ Extracted 142 fragments from cognitive-spec
@@ -147,7 +147,7 @@ node scripts/pipeline/extract-fragments.js \
 node scripts/pipeline/import-analysis.js \
   --mind sam_altman \
   --file outputs/minds/sam_altman/analysis/cognitive-spec.yaml \
-  --db outputs/database/mmos.db
+  --db SQLite legado (migrado para Supabase em 2025-10)
 
 # Output:
 # ✓ Imported DNA Mental™ analysis
@@ -179,7 +179,7 @@ node scripts/pipeline/import-analysis.js \
 ```bash
 node scripts/pipeline/validate-integration.js \
   --mind sam_altman \
-  --db outputs/database/mmos.db
+  --db SQLite legado (migrado para Supabase em 2025-10)
 
 # Output:
 # ✓ Checking referential integrity...

@@ -84,7 +84,7 @@ Successfully implemented and tested **Course Workflow v2.0** (unified brief docu
 
 **Step 5: Output Generation**
 - File structure creation (`lessons/`, `assessments/`, `resources/`)
-- Database logging (`mmos.db` - courses table)
+- Database logging (`SQLite legado (migrado para Supabase em 2025-10)` - courses table)
 - Summary report with quality scores
 
 **Key Features:**

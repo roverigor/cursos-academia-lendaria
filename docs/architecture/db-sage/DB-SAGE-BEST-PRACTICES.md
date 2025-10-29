@@ -172,21 +172,9 @@ psql "$SUPABASE_DB_URL" -c "SELECT * FROM minds LIMIT 5;"
 psql "$SUPABASE_DB_URL"
 ```
 
-### Exporting SQLite Data
+### Exportando Dados Legados (Histórico)
 
-```bash
-# Export table to CSV
-sqlite3 outputs/database/mmos.db <<EOF
-.headers on
-.mode csv
-.output /tmp/minds.csv
-SELECT * FROM minds WHERE deleted_at IS NULL;
-.quit
-EOF
-
-# Export as SQL INSERTs
-sqlite3 outputs/database/mmos.db .dump > /tmp/mmos_dump.sql
-```
+> Nota: o SQLite local foi descontinuado em 2025-10. Para consultar o backup histórico, acesse `supabase/backups/` e utilize ferramentas de análise offline. Não execute comandos SQLite nos pipelines atuais.
 
 ---
 

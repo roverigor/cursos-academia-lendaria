@@ -18,13 +18,13 @@ docs/prd/mmos-prd.md
 
 **BEFORE:**
 ```
-outputs/database/mmos.db
+SQLite legado (migrado para Supabase em 2025-10)
      ^^^^ category mismatch (docs é para documentação, não artifacts)
 ```
 
 **AFTER:**
 ```
-outputs/database/mmos.db
+SQLite legado (migrado para Supabase em 2025-10)
         ^^^^^^^^ categoria correta (outputs = gerados)
 ```
 

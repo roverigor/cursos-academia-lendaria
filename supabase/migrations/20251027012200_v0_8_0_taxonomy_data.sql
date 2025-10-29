@@ -1,6 +1,6 @@
 -- =========================================================
 -- v0.8.0 — MMOS Taxonomy Data
--- Generated from: outputs/database/mmos.db
+-- Generated from: Supabase taxonomy snapshot
 -- =========================================================
 
 -- ==============

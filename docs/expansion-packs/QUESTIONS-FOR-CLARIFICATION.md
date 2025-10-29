@@ -329,7 +329,7 @@ Who consumes `bigfive-profile.yaml` besides MMOS?
 
 ### 4.1 Database Architecture
 
-**Q4.1.1:** Current: Single database (`outputs/database/mmos.db`).
+**Q4.1.1:** Current: Single database (`SQLite legado (migrado para Supabase em 2025-10)`).
 
 Future scaling considerations:
 - What's the expected database size? (MB, GB, TB?)
@@ -343,7 +343,7 @@ Should we plan for:
 
 Já estamos com supabase funcionando. Vamos preparar tudo para muita escala, principalmente innerlens.
 
-**Q4.1.2:** Database location: `outputs/database/mmos.db`
+**Q4.1.2:** Database location: `SQLite legado (migrado para Supabase em 2025-10)`
 
 Should we rename to `mente-lendaria.db` (more generic)?
 - Pros: Not MMOS-specific, all packs use it
@@ -382,7 +382,7 @@ Where should migration files live?
 
 ```
 outputs/
-├── database/mmos.db
+├── database/SQLite legado (migrado para Supabase em 2025-10)
 ├── minds/{slug}/
 └── courses/{slug}/
 ```

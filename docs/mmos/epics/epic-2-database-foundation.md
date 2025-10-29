@@ -118,9 +118,9 @@ Build a unified SQLite database (v3.0.0) that integrates:
 **Commit:** `0be8803`
 
 **Deliverables:**
-- ✅ `populate_minds.sh` script
-- ✅ `populate_minds.js` (Node.js version - needs better-sqlite3)
-- ✅ 28 minds inserted into database
+- ✅ `populate_supabase_minds.js` script (Supabase/PostgreSQL)
+- ✅ CLI wrapper for bulk mind sync
+- ✅ 28 minds inserted into Supabase
 
 **Minds Populated:**
 Alan Nicolas, Alex Hormozi, Andrej Karpathy, Brad Frost, Dan Kennedy, Dan Koe, Daniel Kahneman, Elon Musk, Eugene Schwartz, Gary Vee, Jesus Cristo, Kapil Gupta, Leonardo Da Vinci, Mark Manson, Nassim Taleb, Naval Ravikant, Paul Graham, Pedro Valerio, Peter Thiel, Ricky And Morty, Russel Brunson, Sam Altman, Seth Godin, Steve Jobs, Steven Pinker, Tim Ferriss, Walt Disney, Yuval Harari
@@ -160,11 +160,10 @@ Alan Nicolas, Alex Hormozi, Andrej Karpathy, Brad Frost, Dan Kennedy, Dan Koe, D
 - Story 3.1 ✅ (for testing with sam_altman data)
 
 **Deliverables:**
-1. `populate-sources.js` - Read YAML, insert sources
-2. `import-analysis.js` - Store cognitive-spec as JSON
-3. `extract-fragments.js` - Extract evidence from layers
-4. `validate-integration.js` - Check data integrity
-5. `db-integration-v3.sh` - Orchestrate all modules
+1. Supabase ingestion CLI (sources + analysis upload)
+2. Fragment automation hooks (blocked until InnerLens v1.1)
+3. Supabase validation suite (referential integrity, counts)
+4. Observability: ingestion batches + logs
 
 **Success Metrics:**
 - <5 min total integration per mind
@@ -288,7 +287,7 @@ Alan Nicolas, Alex Hormozi, Andrej Karpathy, Brad Frost, Dan Kennedy, Dan Koe, D
 
 - **Schema:** `docs/mmos/database/schema_complete.sql`
 - **Seed Data:** `docs/mmos/database/seed_specialization_taxonomy.sql`
-- **Database:** `outputs/database/mmos.db`
+- **Database:** `SQLite legado (migrado para Supabase em 2025-10)`
 - **Story 2.4:** `docs/mmos/stories/story-2.4-pipeline-v3-integration.md`
 - **Audit Report:** `docs/mmos/EPIC-AUDIT-REPORT.md`
 

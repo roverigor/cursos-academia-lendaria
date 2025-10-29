@@ -215,7 +215,7 @@ outputs/courses/{slug}/research/
 **What:**
 - Generate all course files (lessons, curriculum, assessments, resources)
 - Organize files in proper structure
-- Log to database (mmos.db)
+- Log to database (SQLite legado (migrado para Supabase em 2025-10))
 - Provide usage instructions
 
 **Output Structure:**
@@ -527,7 +527,7 @@ Proceed? (Y/N)"
 - Adjust complexity based on Big Five traits
 - Personalize examples to audience values
 
-### With Database (mmos.db)
+### With Database (SQLite legado (migrado para Supabase em 2025-10))
 - Log course to `courses` table
 - Track lessons in `lessons` table
 - Record assessments in `assessments` table

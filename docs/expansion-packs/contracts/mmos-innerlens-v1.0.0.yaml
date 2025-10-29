@@ -434,18 +434,18 @@ profile_updated: true  # Re-analyzed with ALL 57 fragments
 
 **End-to-end test:**
 ```bash
-# 1. MMOS invokes InnerLens (after ETL complete)
+# 1. MMOS invoca InnerLens (após ETL)
 @mind-mapper *map test_person_greenfield
 
-# 2. Verify InnerLens saved to database
-sqlite3 outputs/database/mmos.db <<EOF
+# 2. Confirmar gravação no Supabase
+psql "$SUPABASE_DB_URL" <<'SQL'
 SELECT COUNT(*) FROM fragments WHERE mind_id = (SELECT id FROM minds WHERE slug = 'test_person_greenfield');
 SELECT * FROM big_five_profiles WHERE mind_id = (SELECT id FROM minds WHERE slug = 'test_person_greenfield');
-EOF
+SQL
 
-# 3. Verify MMOS received personality data
+# 3. Verificar camada de personalidade em disco
 cat outputs/minds/test_person_greenfield/metadata.yaml
-# Should show: personality_layer: innerlens_v1.1, fidelity_target: 96-97%
+# Deve constar: personality_layer: innerlens_v1.1, fidelity_target: 96-97%
 ```
 
 ---

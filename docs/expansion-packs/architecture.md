@@ -22,7 +22,7 @@
 
 ### 2. Single Database, Multiple Writers
 
-**Principle:** All structured data goes to one database (`outputs/database/mmos.db`).
+**Principle:** All structured data goes to one database (`SQLite legado (migrado para Supabase em 2025-10)`).
 
 **Why?**
 - ✅ **Single source of truth** - No data duplication
@@ -118,7 +118,7 @@ Pack B reads: outputs/pack-a/{slug}/output.yaml
 │                                                              │
 │  ┌───────────────────────────────────────────────────┐     │
 │  │            Unified Database                        │     │
-│  │         outputs/database/mmos.db                   │     │
+│  │         SQLite legado (migrado para Supabase em 2025-10)                   │     │
 │  │                                                    │     │
 │  │  Tables by Pack:                                  │     │
 │  │  - MMOS: minds, cognitive_specs, mind_fragments   │     │
@@ -299,7 +299,7 @@ async function createMind(slug) {
 ```
 outputs/
 ├── database/
-│   └── mmos.db                    # Unified database (all packs)
+│   └── SQLite legado (migrado para Supabase em 2025-10)                    # Unified database (all packs)
 │
 ├── minds/                         # MMOS output
 │   └── {slug}/
@@ -338,7 +338,7 @@ outputs/
 | ETL | MMOS | `outputs/minds/{slug}/sources/` | Markdown |
 | InnerLens | MMOS | `outputs/minds/{slug}/analysis/` | YAML |
 | MMOS | CreatorOS | `outputs/minds/{slug}/system_prompts/` | Markdown |
-| All | All | `outputs/database/mmos.db` | SQLite |
+| All | All | `SQLite legado (migrado para Supabase em 2025-10)` | SQLite |
 
 ---
 

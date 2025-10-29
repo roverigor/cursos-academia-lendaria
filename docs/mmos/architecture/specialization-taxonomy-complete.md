@@ -818,7 +818,7 @@ Save the entire SQL above into a single file:
 ```bash
 # File: seed_specialization_taxonomy.sql
 # Execute with:
-sqlite3 mmos.db < seed_specialization_taxonomy.sql
+psql "$SUPABASE_DB_URL" -f supabase/migrations/20251027012200_v0_8_0_taxonomy_data.sql
 ```
 
 ---

@@ -1,11 +1,11 @@
 # MMOS Complete Taxonomy
 # Complete hierarchy of domains, specializations, skills, proficiencies, and personality traits
-# Extracted from mmos.db database
+# Extracted from SQLite legado (migrado para Supabase em 2025-10) database
 # Generated: 2025-10-21
 
 metadata:
   version: "1.0"
-  database: "outputs/database/mmos.db"
+  database: "SQLite legado (migrado para Supabase em 2025-10)"
   total_domains: 6
   total_specializations: 22
   total_skills: 72

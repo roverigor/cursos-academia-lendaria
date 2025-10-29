@@ -235,7 +235,7 @@ Result:
     └───────────────────────┘   └───────────────────────┘
                 │                           │
                 ▼                           ▼
-    outputs/courses/{slug}/     outputs/database/mmos.db
+    outputs/courses/{slug}/     Supabase (PostgreSQL)
     ├── lessons/*.md            ├── content_pieces
     ├── COURSE-BRIEF.md         ├── course_metadata
     └── research/*.md           ├── course_lessons
@@ -625,9 +625,9 @@ def persist_lesson(self, ...):
 Database Persister for CreatorOS
 Handles all database writes for course generation
 
-This module provides a clean interface for persisting generated
-content to the unified database (outputs/database/mmos.db).
+LEGACY: Este snippet mostra a versão original baseada em SQLite (antes da migração para Supabase em 2025-10). Mantido apenas como referência histórica.
 
+The production implementation usa Supabase (ver `lib/db_persister.py`).
 Usage:
     from lib.db_persister import CoursePersister
 
@@ -639,6 +639,7 @@ Usage:
     )
 """
 
+# Legacy dependency (pré-migração): mantido apenas nesta seção histórica
 import sqlite3
 import json
 import logging
@@ -652,7 +653,7 @@ logger = logging.getLogger(__name__)
 class CoursePersister:
     """Persist CreatorOS generated content to database."""
 
-    def __init__(self, db_path: str = "outputs/database/mmos.db"):
+    def __init__(self, db_path: str = "SQLite legado (migrado para Supabase em 2025-10)"):
         self.db_path = Path(db_path)
         self._ensure_database_exists()
 
@@ -1762,22 +1763,22 @@ tail -f logs/creator-os.log | grep "Database persistence"
 ### Scenario 2: Database Corruption
 
 **Symptoms:**
-- SQLite database file corrupted
-- Queries returning unexpected results
-- Foreign key constraint violations
+- Dados inconsistentes reportados pelo Supabase
+- Queries retornando resultados inesperados
+- Violações de constraint no Supabase
 
 **Action:**
 ```bash
-# 1. Backup current database
-cp outputs/database/mmos.db outputs/database/mmos.db.backup.$(date +%Y%m%d_%H%M%S)
+# 1. Snapshot antes de qualquer tentativa de reparo
+./scripts/db-snapshot.sh incident_pre_fix
 
-# 2. Restore from last known good backup
-cp backups/mmos.db.20251028 outputs/database/mmos.db
+# 2. Restaurar snapshot válido (caso necessário)
+psql "$SUPABASE_DB_URL" -f supabase/backups/<snapshot>.sql
 
-# 3. Verify integrity
-sqlite3 outputs/database/mmos.db "PRAGMA integrity_check;"
+# 3. Verificar integridade
+psql "$SUPABASE_DB_URL" -c "SELECT COUNT(*) FROM content_pieces;"
 
-# 4. Disable DB persistence temporarily
+# 4. Desativar persistência temporária (feature flag)
 export CREATOR_OS_DB_PERSIST=false
 ```
 
@@ -1896,7 +1897,7 @@ export CREATOR_OS_DB_PERSIST=false
 ### Database Access (SQLite)
 
 **Current (Local Development):**
-- File-based SQLite: `outputs/database/mmos.db`
+- File-based SQLite: `SQLite legado (migrado para Supabase em 2025-10)`
 - No authentication required (local filesystem permissions)
 - No encryption at rest
 

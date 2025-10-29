@@ -209,7 +209,7 @@ docs/mmos/
 ├── reports/              ✅ Executive reports, version comparisons
 ├── stories/              ✅ MMOS stories
 ├── taxonomy/             ✅ System taxonomy
-└── mmos.db               ✅ Database file
+└── SQLite legado (migrado para Supabase em 2025-10)               ✅ Database file
 ```
 
 ### outputs/minds/{slug}/ (Individual Mind)

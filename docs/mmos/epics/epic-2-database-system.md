@@ -4,7 +4,9 @@
 **Status:** 📋 Ready for Development
 **Type:** Brownfield Enhancement
 **Timeline:** 1-2 weeks
-**Tech Stack:** SQLite + Python + SQLAlchemy + Alembic
+**Tech Stack:** SQLite + Python + SQLAlchemy + Alembic *(histórico — substituído por Supabase/PostgreSQL em 2025-10)*
+
+> **Nota histórica:** este epic descreve o protótipo SQLite utilizado nas fases iniciais do MMOS. O sistema atual opera 100% em Supabase (PostgreSQL). Preserve por referência, mas siga `docs/database/README.md` para o fluxo vigente.
 
 ---
 
@@ -193,19 +195,14 @@ mmos-db migrate sources --mind sam-altman
 mmos-db migrate qa --mind sam-altman
 ```
 
-**Future PostgreSQL Migration:**
-```bash
-# Quando escalar, migração é trivial:
-sqlite3 mmos.db .dump | psql mmos_production
-# Schema é 95% compatível, ajustes mínimos documentados
-```
+**Histórico:** o plano acima foi substituído pela adoção direta do Supabase (PostgreSQL gerenciado). Consulte `docs/database/README.md` e `supabase/migrations/` para o fluxo oficial.
 
 ---
 
 ### Success Criteria
 
 **Functional:**
-- [x] Database criado com 11 tabelas core (`outputs/database/mmos.db`)
+- [x] Database criado com 11 tabelas core (registro histórico do protótipo SQLite → substituído por Supabase v0.7+)
 - [x] ETL questions system funcional (add, list, answer, tag, relate)
 - [x] Pipeline progress tracking operacional
 - [x] Mind metadata centralizado (22 minds)
@@ -238,7 +235,7 @@ sqlite3 mmos.db .dump | psql mmos_production
 *As a data engineer, I want a SQLite database with PostgreSQL-compatible schema (11 core tables) and migration system, so that I can store structured data locally now and migrate to PostgreSQL later when needed.*
 
 **Scope:**
-- Create SQLite database (`outputs/database/mmos.db`)
+- (Histórico) Create SQLite database (protótipo substituído em 2025-10 pelo Supabase)
 - Implement 11 core tables with foreign keys, indexes, triggers
 - Setup Alembic migrations (SQLite-compatible)
 - SQLAlchemy ORM models
@@ -284,7 +281,7 @@ CREATE TRIGGER decrement_tag_usage (...);
 - Unit tests for CRUD operations
 
 **Acceptance Criteria:**
-1. Database created at `outputs/database/mmos.db`
+1. (Histórico) Database criado localmente em SQLite (protótipo anterior à migração Supabase)
 2. All 11 tables + 6 views + 3 triggers created successfully
 3. Foreign keys enforce referential integrity (test with invalid inserts)
 4. Indexes created on hot paths
@@ -301,7 +298,7 @@ CREATE TRIGGER decrement_tag_usage (...);
 *As a curator, I want to migrate existing data to the database and capture ETL questions during the mapping process, so that all knowledge is centralized and ETL workflow is structured.*
 
 **Scope:**
-- Migration scripts (YAML/JSON → SQLite)
+- Migration scripts (YAML/JSON → SQLite) *(histórico; fluxo atual usa Supabase)*
 - ETL question capture system (full CRUD)
 - Minds metadata population (22 minds)
 - Pipeline progress initialization
@@ -644,12 +641,12 @@ mmos-db report tags --top 20               # Most used tags
 - Autocomplete support (Click shell completion)
 - User testing with actual curators
 
-**Rollback Plan:**
-- SQLite file is just a file - delete if needed (`rm mmos.db`)
-- Original YAMLs/JSONs remain intact
-- No external dependencies to cleanup
-- Total rollback time: <5 minutes
-- Can export data before deletion if needed
+**Rollback Plan (histórico):**
+- Versão SQLite podia ser removida manualmente; hoje usamos snapshots Supabase (`supabase/backups/`).
+- Original YAMLs/JSONs permanecem intactos
+- Nenhuma dependência externa para limpar
+- Tempo estimado <5 minutos
+- Export possível antes da remoção
 
 ---
 
@@ -658,7 +655,7 @@ mmos-db report tags --top 20               # Most used tags
 ### Epic 2 Completion Criteria:
 
 **Database:**
-- [x] SQLite database created at `outputs/database/mmos.db`
+- [x] (Histórico) SQLite database criado (substituído por Supabase v0.7+)
 - [x] 11 core tables with foreign keys, indexes, triggers functional
 - [x] 6 views for common queries created
 - [x] Alembic migrations working
@@ -818,17 +815,10 @@ PG:      description TEXT  -- Same!
 
 **Migration Script:**
 ```bash
-# 1. Export from SQLite
-sqlite3 mmos.db .dump > mmos_dump.sql
-
-# 2. Convert syntax (automated script)
-python convert_sqlite_to_postgres.py mmos_dump.sql > mmos_pg.sql
-
-# 3. Import to PostgreSQL
-psql -d mmos_production -f mmos_pg.sql
-
-# 4. Verify
-python validate_migration.py
+# Flujo atual (Supabase)
+./scripts/db-snapshot.sh v0.8.2
+pg_dump "$SUPABASE_DB_URL" --schema-only > supabase/backups/v0_8_2_schema.sql
+pg_dump "$SUPABASE_DB_URL" --data-only > supabase/backups/v0_8_2_data.sql
 ```
 
 ### B. Performance Benchmarks

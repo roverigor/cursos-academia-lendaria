@@ -20,7 +20,7 @@ Você tem **TRÊS sistemas de fragmentos** coexistindo:
 
 | Sistema | Localização | Formato | Quantidade | Propósito |
 |---------|-------------|---------|------------|-----------|
-| **1. SQLite Fragments** | `outputs/database/mmos.db` | JSON estruturado | 74 | Pipeline MMOS antigo |
+| **1. SQLite Fragments** | `SQLite legado (migrado para Supabase em 2025-10)` | JSON estruturado | 74 | Pipeline MMOS antigo |
 | **2. KB Chunks** | `outputs/minds/*/kb/*.md` | Markdown RAG-ready | 51 chunks | Sistema NOVO (RAG) |
 | **3. Supabase Schema** | Schema v0.7.0 | PostgreSQL normalizado | 0 | Cloud platform |
 

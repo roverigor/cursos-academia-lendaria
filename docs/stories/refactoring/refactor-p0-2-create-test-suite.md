@@ -335,11 +335,15 @@ npm run test:coverage # With coverage report
 
 ### Mocking Strategy
 
-**Database (SQLite)**:
+**Database (Supabase/Postgres)**:
 ```javascript
-// Use in-memory SQLite for tests
-const Database = require('better-sqlite3');
-const db = new Database(':memory:');
+// Use pg + pg-mem (in-memory Postgres) for unit tests
+const { newDb } = require('pg-mem');
+
+const db = newDb({ autoCreateForeignKeyIndices: true });
+const client = db.adapters.createPg().client;
+
+await client.query('CREATE TABLE minds (slug text primary key, display_name text);');
 ```
 
 **File System**:
@@ -368,7 +372,7 @@ nock('https://api.example.com').get('/data').reply(200, mockData);
 ## Dependencies
 
 - Jest (already in package.json)
-- better-sqlite3 (already installed)
+- pg + pg-mem (already in dev dependencies)
 - mock-fs or tmp (new - for file mocking)
 - nock (new - for HTTP mocking)
 

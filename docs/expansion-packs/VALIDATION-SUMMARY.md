@@ -27,7 +27,7 @@
 
 **Database Strategy:**
 - ✅ Supabase (PostgreSQL) is the active database
-- ✅ SQLite (`outputs/database/mmos.db`) is **DEPRECATED**
+- ✅ SQLite (`SQLite legado (migrado para Supabase em 2025-10)`) is **DEPRECATED**
 - ✅ Planning for **high scale**, especially InnerLens
 - ✅ Migrations ONLY in `supabase/migrations/`
 - ✅ **DB Sage has total control** - no pack can modify database directly

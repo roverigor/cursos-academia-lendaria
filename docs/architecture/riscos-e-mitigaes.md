@@ -32,7 +32,7 @@
 **Impacto:** Scripts de population/import param de funcionar
 
 **Mitigação:**
-- Criar symlink temporário: `ln -s outputs/database/mmos.db outputs/database/mmos.db`
+- Criar symlink temporário: `ln -s SQLite legado (migrado para Supabase em 2025-10) SQLite legado (migrado para Supabase em 2025-10)`
 - Manter por 1-2 semanas para backward compatibility
 - Adicionar warning deprecation em scripts
 

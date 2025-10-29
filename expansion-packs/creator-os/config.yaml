@@ -203,7 +203,7 @@ data:
 # Database Integration
 database:
   integrated: true
-  database_path: "../../outputs/database/mmos.db"
+  connection_env: SUPABASE_DB_URL
   tables:
     core:
       - content_frameworks
@@ -338,7 +338,7 @@ installation:
     Database Integration
     ═══════════════════════════════════════════════════════════
 
-    CreatorOS uses unified database (outputs/database/mmos.db):
+    CreatorOS uses the unified Supabase database (`SUPABASE_DB_URL`):
     - 13 tables (projects, content, performance, funnels, A/B tests)
     - Full traceability (content → persona → mind → fragments)
     - Cross-studio analytics (MMOS + InnerLens + CreatorOS)
