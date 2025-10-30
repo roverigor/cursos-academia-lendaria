@@ -1,0 +1,39 @@
+debate_id: 2bc5cf80
+timestamp: '2025-10-30T17:27:37.988627'
+topic: "Um t\xE1 tentando convencer o outro de que ele \xE9 mais filho da puta, como\
+  \ se isso fosse bom, apresentando provas reais e inrefut\xE1veis"
+framework: Steel Man Debate
+clones:
+  Sam Altman:
+    version: unknown
+    role: advocate_a
+    scores:
+      framework_application: 85.0
+      style_consistency: 88.0
+      knowledge_depth: 85.0
+      argument_coherence: 90.0
+      personality_fidelity: 86.0
+    overall: 86.75
+  Elon Musk:
+    version: unknown
+    role: advocate_b
+    scores:
+      framework_application: 90.0
+      style_consistency: 92.0
+      knowledge_depth: 90.0
+      argument_coherence: 92.0
+      personality_fidelity: 92.0
+    overall: 91.10000000000001
+results:
+  winner: Elon Musk
+  win_margin: 4.3500000000000085
+analysis:
+  strengths:
+  - Excellent style consistency by Elon Musk (92.0%)
+  - Deep knowledge demonstrated by Elon Musk (90.0%)
+  weaknesses: []
+  recommendations: []
+metadata:
+  total_rounds: 3
+  duration_seconds: 0
+  transcript_path: temp/debates/debate-2bc5cf80-20251030-172737.md

@@ -28,6 +28,7 @@ htmlcov/
 *.swo
 *.tmp
 *.log
+temp/
 
 # AIOS IDE Sync logs
 .aios-sync.log
