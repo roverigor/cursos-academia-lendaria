@@ -251,8 +251,8 @@ outputs/minds/*
 ### 4.1 CreatorOS Expansion Pack
 
 **Config File:** `/expansion-packs/creator-os/config.yaml`
-- Line 165: `database_path: "../../SQLite legado (migrado para Supabase em 2025-10)"` ✅ (Correct - DB not in outputs)
-- Line 300: `CreatorOS uses unified database (SQLite legado (migrado para Supabase em 2025-10))` ✅
+- Line 165: `supabase_env: { url: "<SUPABASE_URL>", service_key: "***" }` ✅ (Database connection lives in secrets, not outputs)
+- Line 300: `CreatorOS uses unified database (Supabase PostgreSQL cluster)` ✅
 
 **Status:** ⚠️ **NEEDS UPDATES**
 - ✅ Main task files updated (`generate-course.md`)

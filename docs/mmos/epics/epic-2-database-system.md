@@ -1,5 +1,15 @@
 # Epic 2: MMOS Knowledge Base & Database System
 
+> **Historical context:** This epic captured the SQLite-based knowledge base initiative prior to the Supabase migration (Oct 2025). The production system now relies on the Supabase schema described in `docs/database/README.md`. Keep the legacy content for auditability, but consult the Supabase documentation for current implementation details.
+
+### Current Snapshot (Supabase v0.8.2+)
+
+- Single managed Postgres cluster (Supabase) with migrations in `supabase/migrations/`
+- Core knowledge tables: `minds`, `sources`, `fragments`, `mind_profiles`, `fragment_metadata`, `fragment_tags`
+- CreatorOS graph: `content_projects`, `content_pieces`, `content_lessons`, `content_metadata`, `content_minds`, `audience_profiles`
+- Psychometrics: `big_five_profiles`, `fragment_quality_audits`
+- Operations: `schema_versions`, `migration_log`, `ingestion_batches`, `job_executions`
+
 **Epic ID:** Epic 2
 **Status:** 📋 Ready for Development
 **Type:** Brownfield Enhancement

@@ -1,5 +1,21 @@
 # Epic 2: Database & Backend Foundation
 
+> **Historical Note (updated 2025-10-29):** This epic documents the **legacy SQLite prototype** that bootstrapped MMOS before the Supabase migration. The production database is now Supabase Postgres v0.8.2+. Use this document for context only and refer to `docs/database/README.md` plus `supabase/migrations/` for the live schema. A short summary of the current architecture is included below.
+
+### Current Supabase Architecture
+
+- **Platform:** Supabase Postgres 17 with migrations managed by DB Sage (`supabase/migrations/`)
+- **Core modules:**
+  - `minds`, `mind_profiles`, `sources`, `fragments`, `fragment_metadata`, `fragment_tags`
+  - `content_projects`, `content_pieces`, `content_lessons`, `content_metadata`, `content_minds`, `audience_profiles`, `content_performance`
+  - `big_five_profiles`, `fragment_quality_audits` (InnerLens psychometrics)
+  - `schema_versions`, `migration_log`, `ingestion_batches`, `job_executions`, `task_metrics`
+- **Security:** Row Level Security via `current_mind_id()`; backend services run with service-role keys under DB Sage governance
+- **Backups & Snapshots:** `supabase/backups/` (managed by automation scripts) replacing file-based `.db` copies
+- **Clients:** `supabase-py` (CreatorOS), `psycopg2` / `pg` (automation scripts), Supabase REST for dashboards
+
+The remainder of the epic remains unchanged to preserve historical traceability of the SQLite effort.
+
 **Epic ID:** MMOS-Epic-2
 **Status:** 🚧 75% Complete (3/4 stories done)
 **Priority:** HIGH

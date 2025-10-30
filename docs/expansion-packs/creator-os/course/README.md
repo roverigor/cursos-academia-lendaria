@@ -249,7 +249,7 @@ All documents include:
 ### Tools Mentioned
 - Claude Sonnet 4.5 (LLM for content generation)
 - MMOS Mind Mapper (persona integration)
-- SQLite legado (migrado para Supabase em 2025-10) (SQLite database for course tracking)
+- Supabase PostgreSQL (primary datastore for course tracking)
 
 ---
 

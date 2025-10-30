@@ -396,7 +396,7 @@ FILES:
 - resources/ (checklist-setup.md, template-prompt-library.md, troubleshooting-guide.md, glossario.md)
 
 DATABASE:
-- SQLite legado (migrado para Supabase em 2025-10) record (courses table)
+- Supabase PostgreSQL record (`content_projects`, `content_pieces`, `content_lessons` tables)
 - Metadata: course_id, title, slug, status, created_date, completion_criteria
 ```
 
@@ -455,7 +455,7 @@ DATABASE:
 - [ ] Resources are practical and immediately usable (not generic)
 - [ ] curriculum.yaml properly structured and complete
 - [ ] README.md includes course overview, prerequisites, outcomes
-- [ ] Database record created in SQLite legado (migrado para Supabase em 2025-10) (courses table)
+- [ ] Database record created in Supabase (`content_projects`, `content_pieces`, `content_lessons`)
 
 ---
 

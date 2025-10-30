@@ -116,7 +116,7 @@
 | Cognitive load balance | ⏸️ NOT TESTED | - | MEDIUM |
 | Duration realism | ⏸️ NOT TESTED | - | LOW |
 | File output (correct structure) | ⏸️ NOT TESTED | - | **HIGH** |
-| Database logging (SQLite legado (migrado para Supabase em 2025-10)) | ⏸️ NOT TESTED | - | MEDIUM |
+| Database logging (Supabase PostgreSQL) | ⏸️ NOT TESTED | - | MEDIUM |
 | Error handling (incomplete brief) | ⏸️ NOT TESTED | - | **HIGH** |
 | Error handling (invalid MMOS mind) | ⏸️ NOT TESTED | - | MEDIUM |
 

@@ -116,7 +116,7 @@
 | Cognitive load balance | ⏸️ NOT TESTED | - | MEDIUM |
 | Duration realism | ⏸️ NOT TESTED | - | LOW |
 | File output (correct structure) | ⏸️ NOT TESTED | - | **HIGH** |
-| Database logging (SQLite legado (migrado para Supabase em 2025-10)) | ⏸️ NOT TESTED | - | MEDIUM |
+| Database logging (Supabase PostgreSQL) | ⏸️ NOT TESTED | - | MEDIUM |
 | Error handling (incomplete brief) | ⏸️ NOT TESTED | - | **HIGH** |
 | Error handling (invalid MMOS mind) | ⏸️ NOT TESTED | - | MEDIUM |
 
@@ -223,7 +223,7 @@
 - **Impact:** LOW (course still works)
 - **Risk Score:** LOW
 - **Mitigation:**
-  - Test SQLite legado (migrado para Supabase em 2025-10) insertion
+  - Test Supabase insertion (`content_projects`, `content_pieces`, `content_lessons`)
   - Validate schema compliance
   - Test related tables (lessons, assessments)
 - **Status:** ⚠️ NOT MITIGATED (testing pending)
@@ -352,7 +352,7 @@ Scenario: Generated lessons require minimal editing
 
 **Strengths:**
 - ✅ Comprehensive validation scores (alignment, completeness, fidelity)
-- ✅ Database logging (SQLite legado (migrado para Supabase em 2025-10))
+- ✅ Database logging (Supabase PostgreSQL)
 - ✅ File outputs easy to inspect
 - ✅ Summary report with quality grades
 
@@ -746,7 +746,7 @@ And: YAML syntax valid
 ```gherkin
 Given: Course generation complete
 When: System logs to database
-Then: Record created in SQLite legado (migrado para Supabase em 2025-10) courses table
+Then: Record created in Supabase (`content_projects` + related tables)
 And: All metadata fields populated
 And: Related tables updated (lessons, assessments)
 ```

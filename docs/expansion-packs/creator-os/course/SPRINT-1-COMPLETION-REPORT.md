@@ -84,7 +84,7 @@ Successfully implemented and tested **Course Workflow v2.0** (unified brief docu
 
 **Step 5: Output Generation**
 - File structure creation (`lessons/`, `assessments/`, `resources/`)
-- Database logging (`SQLite legado (migrado para Supabase em 2025-10)` - courses table)
+- Database logging (Supabase PostgreSQL - `content_projects` graph)
 - Summary report with quality scores
 
 **Key Features:**

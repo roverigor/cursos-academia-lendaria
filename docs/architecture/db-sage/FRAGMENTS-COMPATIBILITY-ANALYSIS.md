@@ -20,15 +20,15 @@ Você tem **TRÊS sistemas de fragmentos** coexistindo:
 
 | Sistema | Localização | Formato | Quantidade | Propósito |
 |---------|-------------|---------|------------|-----------|
-| **1. SQLite Fragments** | `SQLite legado (migrado para Supabase em 2025-10)` | JSON estruturado | 74 | Pipeline MMOS antigo |
-| **2. KB Chunks** | `outputs/minds/*/kb/*.md` | Markdown RAG-ready | 51 chunks | Sistema NOVO (RAG) |
-| **3. Supabase Schema** | Schema v0.7.0 | PostgreSQL normalizado | 0 | Cloud platform |
+| **1. Legacy SQLite Fragments** | `supabase/backups/legacy/sqlite_fragments.db` | Structured JSON | 74 (archived) | Historical MMOS pipeline (no new writes) |
+| **2. KB Chunks** | `outputs/minds/*/kb/*.md` | Markdown RAG-ready | 51 chunks | New KB system (RAG) |
+| **3. Supabase Schema (v0.8.2+)** | Supabase PostgreSQL | Normalized tables (`fragments`, `fragment_metadata`, `fragment_tags`) | 300+ (growing) | Production platform |
 
 ---
 
 ## 📋 Análise Detalhada de Cada Sistema
 
-### 1️⃣ SQLite Fragments (Sistema Antigo - 74 registros)
+### 1️⃣ Legacy SQLite Fragments (Sistema Antigo - 74 registros)
 
 **Estrutura:**
 ```sql
