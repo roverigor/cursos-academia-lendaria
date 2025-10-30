@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework de Desenvolvimento com IA - M.A.P.A.</title>
+    <style>
+        /**
+         * AIOS Design System Tokens - CSS Custom Properties
+         * Version: 1.0.0
+         */
+
+        :root {
+            /* Color Tokens */
+            --color-bg-primary: #191919;
+            --color-bg-secondary: #262625;
+            --color-bg-tertiary: #2d2d2b;
+            --color-bg-elevated: #40403E;
+
+            --color-accent-primary: #CC785C;
+            --color-accent-secondary: #BF4D43;
+            --color-accent-tertiary: #D4A27F;
+            --color-accent-light: #EBD8BC;
+
+            --color-text-primary: #F0F0E8;
+            --color-text-secondary: #919180;
+            --color-text-inverted: #FFFFFF;
+
+            --color-status-success: #48bb78;
+            --color-status-warning: #ecc94b;
+            --color-status-error: #f56565;
+            --color-status-info: #3498db;
+
+            /* Spacing Tokens */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 0.75rem;
+            --spacing-lg: 1rem;
+            --spacing-xl: 1.5rem;
+            --spacing-2xl: 2rem;
+            --spacing-3xl: 3rem;
+
+            /* Border Radius Tokens */
+            --radius-sm: 0.5rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --radius-full: 9999px;
+
+            /* Typography Tokens */
+            --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-family-serif: Georgia, serif;
+            --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Courier New', monospace;
+
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.25rem;
+            --font-size-xl: 1.5rem;
+            --font-size-2xl: 2rem;
+            --font-size-3xl: 3rem;
+
+            --line-height-tight: 1.25;
+            --line-height-normal: 1.5;
+            --line-height-relaxed: 1.625;
+            --line-height-loose: 1.75;
+
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+
+            /* Shadow Tokens */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+            /* Transition Tokens */
+            --transition-fast: 150ms;
+            --transition-base: 300ms;
+            --transition-slow: 500ms;
+
+            --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+            --easing-in: cubic-bezier(0.4, 0, 1, 1);
+            --easing-out: cubic-bezier(0, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-sans);
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            padding: var(--spacing-3xl) var(--spacing-xl);
+            line-height: var(--line-height-relaxed);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+            padding: var(--spacing-3xl) var(--spacing-xl);
+            background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--color-bg-elevated);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: var(--spacing-sm) var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-bold);
+            background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+            color: var(--color-text-inverted);
+            margin-bottom: var(--spacing-xl);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .title {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            font-family: var(--font-family-serif);
+            background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 50%, var(--color-accent-tertiary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-xl);
+            line-height: var(--line-height-tight);
+        }
+
+        .subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-lg);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .description {
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: var(--line-height-loose);
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            margin-bottom: var(--spacing-3xl);
+            background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-3xl);
+            border: 1px solid var(--color-bg-elevated);
+        }
+
+        .comparison-title {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+            color: var(--color-text-primary);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-2xl);
+        }
+
+        .comparison-card {
+            background-color: var(--color-bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+            border: 2px solid;
+        }
+
+        .comparison-card.old {
+            border-color: var(--color-status-error);
+        }
+
+        .comparison-card.new {
+            border-color: var(--color-status-success);
+        }
+
+        .comparison-card-header {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        .comparison-card.old .comparison-card-header {
+            color: var(--color-status-error);
+        }
+
+        .comparison-card.new .comparison-card-header {
+            color: var(--color-status-success);
+        }
+
+        .comparison-item {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+            position: relative;
+            color: var(--color-text-primary);
+            line-height: var(--line-height-relaxed);
+        }
+
+        .comparison-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: var(--radius-full);
+        }
+
+        .comparison-card.old .comparison-item::before {
+            background-color: var(--color-status-error);
+        }
+
+        .comparison-card.new .comparison-item::before {
+            background-color: var(--color-status-success);
+        }
+
+        /* Phase Container */
+        .phase {
+            background-color: var(--color-bg-secondary);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            margin-bottom: var(--spacing-3xl);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--color-bg-elevated);
+        }
+
+        .phase-header {
+            padding: var(--spacing-2xl) var(--spacing-3xl);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .phase-header-left {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xl);
+        }
+
+        .phase-number {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            opacity: 0.3;
+        }
+
+        .phase-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .phase-subtitle {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-semibold);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .phase-content {
+            padding: var(--spacing-3xl);
+        }
+
+        /* Phase 1: MAPEAR */
+        .phase-1 .phase-header {
+            background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+        }
+
+        .mapear-grid {
+            display: grid;
+            grid-template-columns: 25% 42% 33%;
+            gap: var(--spacing-2xl);
+        }
+
+        .director-box {
+            background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-elevated) 100%);
+            border: 3px solid var(--color-accent-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .director-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-accent-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .director-desc {
+            font-size: var(--font-size-base);
+            color: var(--color-text-primary);
+        }
+
+        .processes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
+        }
+
+        .process-box {
+            background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-elevated) 100%);
+            border: 2px solid var(--color-accent-primary);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            text-align: center;
+            transition: all var(--transition-base) var(--easing-default);
+        }
+
+        .process-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(204, 120, 92, 0.3);
+        }
+
+        .process-name {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+        }
+
+        .deliverables-box {
+            background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-elevated) 100%);
+            border: 3px dashed var(--color-accent-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+        }
+
+        .section-title {
+            font-size: var(--font-size-base);
+            font-weight: 800;
+            margin-bottom: var(--spacing-xl);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title-primary { color: var(--color-accent-primary); }
+        .section-title-success { color: var(--color-status-success); }
+        .section-title-info { color: var(--color-status-info); }
+        .section-title-warning { color: var(--color-status-warning); }
+
+        .deliverable-item {
+            font-size: var(--font-size-base);
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+            position: relative;
+            line-height: var(--line-height-relaxed);
+        }
+
+        .deliverable-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--color-accent-primary);
+            border-radius: var(--radius-full);
+        }
+
+        /* Phase 2: ATOMIZAR */
+        .phase-2 .phase-header {
+            background: linear-gradient(135deg, var(--color-status-success) 0%, #38a169 100%);
+        }
+
+        .atomizar-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-2xl);
+        }
+
+        .process-framework {
+            background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-elevated) 100%);
+            border: 3px solid var(--color-status-success);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+        }
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
+        }
+
+        .framework-item {
+            background-color: var(--color-bg-primary);
+            border: 2px solid var(--color-status-success);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            transition: all var(--transition-base) var(--easing-default);
+        }
+
+        .framework-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(72, 187, 120, 0.3);
+        }
+
+        .framework-item-name {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .framework-item-desc {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .atomic-tasks {
+            background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-elevated) 100%);
+            border: 3px solid var(--color-status-success);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+        }
+
+        .task-card {
+            background-color: var(--color-bg-primary);
+            border: 2px solid var(--color-status-success);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .task-name {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .task-desc {
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+        }
+
+        /* Phase 3: PROGRAMAR */
+        .phase-3 .phase-header {
+            background: linear-gradient(135deg, var(--color-status-info) 0%, #3182ce 100%);
+        }
+
+        .programar-grid {
+            display: grid;
+            grid-template-columns: 35% 65%;
+            gap: var(--spacing-2xl);
+        }
+
+        .delegation-box {
+            background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-elevated) 100%);
+            border: 3px solid var(--color-status-info);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .delegation-desc {
+            font-size: var(--font-size-base);
+            color: var(--color-text-primary);
+            line-height: var(--line-height-loose);
+        }
+
+        .autonomous-execution {
+            background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-elevated) 100%);
+            border: 3px solid var(--color-status-info);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+        }
+
+        .execution-card {
+            background-color: var(--color-bg-primary);
+            border: 2px solid var(--color-status-info);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .execution-name {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .execution-desc {
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+        }
+
+        /* Phase 4: ATIVAR */
+        .phase-4 .phase-header {
+            background: linear-gradient(135deg, var(--color-status-warning) 0%, #d69e2e 100%);
+        }
+
+        .ativar-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-xl);
+        }
+
+        .activation-box {
+            background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-elevated) 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            transition: all var(--transition-base) var(--easing-default);
+        }
+
+        .activation-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .activation-box-1 { border: 3px solid var(--color-status-info); }
+        .activation-box-2 { border: 3px solid var(--color-accent-primary); }
+        .activation-box-3 { border: 3px solid var(--color-status-success); }
+        .activation-box-4 { border: 3px solid var(--color-status-warning); }
+
+        .activation-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-lg);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .activation-title-1 { color: var(--color-status-info); }
+        .activation-title-2 { color: var(--color-accent-primary); }
+        .activation-title-3 { color: var(--color-status-success); }
+        .activation-title-4 { color: var(--color-status-warning); }
+
+        .activation-desc {
+            font-size: var(--font-size-base);
+            color: var(--color-text-primary);
+            line-height: var(--line-height-relaxed);
+        }
+
+        /* Arrow */
+        .arrow {
+            display: flex;
+            justify-content: center;
+            margin: var(--spacing-3xl) 0;
+        }
+
+        .arrow-line {
+            width: 4px;
+            height: 60px;
+            background: linear-gradient(180deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+            border-radius: 2px;
+        }
+
+        /* Benefits */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+            border: 2px solid var(--color-bg-elevated);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+            transition: all var(--transition-base) var(--easing-default);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .benefit-title {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .benefit-title-1 { color: var(--color-accent-primary); }
+        .benefit-title-2 { color: var(--color-status-success); }
+        .benefit-title-3 { color: var(--color-status-info); }
+
+        .benefit-text {
+            font-size: var(--font-size-base);
+            color: var(--color-text-primary);
+            line-height: var(--line-height-loose);
+        }
+
+        /* Footer */
+        .footer-section {
+            background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-3xl);
+            text-align: center;
+            color: var(--color-text-inverted);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .footer-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            font-family: var(--font-family-serif);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer-intro {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-3xl);
+            color: var(--color-text-primary);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: var(--line-height-loose);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-3xl);
+            text-align: left;
+        }
+
+        .footer-item-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-item-text {
+            font-size: var(--font-size-base);
+            color: var(--color-text-primary);
+            opacity: 0.95;
+            line-height: var(--line-height-relaxed);
+        }
+
+        /* AI Tools */
+        .ai-tools-section {
+            background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-3xl);
+            margin-bottom: var(--spacing-3xl);
+            border: 1px solid var(--color-bg-elevated);
+        }
+
+        .ai-tools-title {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            color: var(--color-text-primary);
+        }
+
+        .ai-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--spacing-xl);
+            align-items: center;
+            justify-items: center;
+        }
+
+        .ai-tool-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-bg-secondary);
+            border: 2px solid var(--color-accent-primary);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            width: 100%;
+            height: 100px;
+            text-decoration: none;
+            transition: all var(--transition-base) var(--easing-default);
+        }
+
+        .ai-tool-link:hover {
+            background-color: var(--color-bg-tertiary);
+            border-color: var(--color-accent-secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(204, 120, 92, 0.3);
+        }
+
+        .ai-tool-link img {
+            max-width: 140px;
+            max-height: 60px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .ai-tool-link:hover img {
+            filter: brightness(0) invert(1);
+            opacity: 1;
+        }
+
+        /* Attribution */
+        .attribution {
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-loose);
+            padding: var(--spacing-xl);
+        }
+
+        .attribution strong {
+            color: var(--color-text-primary);
+        }
+
+        @media (max-width: 1200px) {
+            .title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .mapear-grid,
+            .atomizar-grid,
+            .programar-grid,
+            .benefits,
+            .footer-grid,
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ativar-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: var(--font-size-xl);
+            }
+
+            .ativar-grid,
+            .ai-tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phase-content,
+            .footer-section,
+            .comparison-section {
+                padding: var(--spacing-2xl);
+            }
+
+            .phase-title {
+                font-size: var(--font-size-xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="badge">Framework Universal 2025</div>
+            <h1 class="title">Método M.A.P.A.</h1>
+            <p class="subtitle">Mapear · Atomizar · Programar · Ativar</p>
+            <p class="description">Framework Universal para Desenvolvimento com IAs Autônomas. Substitua a programação intuitiva por um sistema estruturado que permite às IAs trabalharem horas de forma autônoma com 95% de precisão.</p>
+        </div>
+
+        <!-- Comparison Section -->
+        <div class="comparison-section">
+            <h2 class="comparison-title">Desenvolvimento Intuitivo vs. Método M.A.P.A.</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card old">
+                    <div class="comparison-card-header">
+                        Desenvolvimento Intuitivo
+                    </div>
+                    <div class="comparison-item">Tentativa e erro constante</div>
+                    <div class="comparison-item">IA perde contexto após 20-30 minutos</div>
+                    <div class="comparison-item">Supervisão constante necessária</div>
+                    <div class="comparison-item">Resultados imprevisíveis</div>
+                    <div class="comparison-item">Alta taxa de retrabalho</div>
+                    <div class="comparison-item">Dependência de programadores</div>
+                </div>
+                <div class="comparison-card new">
+                    <div class="comparison-card-header">
+                        Método M.A.P.A.
+                    </div>
+                    <div class="comparison-item">Coordenadas exatas do destino</div>
+                    <div class="comparison-item">IA trabalha 2-8 horas autonomamente</div>
+                    <div class="comparison-item">Supervisão apenas em checkpoints</div>
+                    <div class="comparison-item">95% de precisão garantida</div>
+                    <div class="comparison-item">Tarefas atômicas eliminam retrabalho</div>
+                    <div class="comparison-item">90% de redução em dependência técnica</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 1: MAPEAR -->
+        <div class="phase phase-1">
+            <div class="phase-header">
+                <div class="phase-header-left">
+                    <span class="phase-number" style="color: #FFFFFF;">01</span>
+                    <h2 class="phase-title" style="color: #FFFFFF;">MAPEAR</h2>
+                </div>
+                <span class="phase-subtitle">Coordenadas do Destino</span>
+            </div>
+            <div class="phase-content">
+                <div class="mapear-grid">
+                    <!-- Diretor Humano -->
+                    <div class="director-box">
+                        <div>
+                            <div class="director-title">Você (Humano)</div>
+                            <div class="director-desc">Define o destino final com clareza absoluta</div>
+                        </div>
+                    </div>
+
+                    <!-- Processos de Mapeamento -->
+                    <div class="processes-grid">
+                        <div class="process-box">
+                            <span class="process-name">Objetivo Final</span>
+                        </div>
+                        <div class="process-box">
+                            <span class="process-name">Funcionalidades Essenciais</span>
+                        </div>
+                        <div class="process-box">
+                            <span class="process-name">Integrações Necessárias</span>
+                        </div>
+                        <div class="process-box">
+                            <span class="process-name">Critérios de Sucesso</span>
+                        </div>
+                    </div>
+
+                    <!-- Entregas -->
+                    <div class="deliverables-box">
+                        <div class="section-title section-title-primary">ENTREGAS</div>
+                        <div class="deliverable-item">Documento de Destino (2 páginas)</div>
+                        <div class="deliverable-item">3-5 Funcionalidades Essenciais</div>
+                        <div class="deliverable-item">Especificações Técnicas Claras</div>
+                        <div class="deliverable-item">Métricas de "Chegada" Definidas</div>
+                        <div class="deliverable-item">Stack Tecnológica Escolhida</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="arrow">
+            <div class="arrow-line"></div>
+        </div>
+
+        <!-- Phase 2: ATOMIZAR -->
+        <div class="phase phase-2">
+            <div class="phase-header">
+                <div class="phase-header-left">
+                    <span class="phase-number" style="color: #FFFFFF;">02</span>
+                    <h2 class="phase-title" style="color: #FFFFFF;">ATOMIZAR</h2>
+                </div>
+                <span class="phase-subtitle">Quebra em Tarefas Autônomas</span>
+            </div>
+            <div class="phase-content">
+                <div class="atomizar-grid">
+                    <!-- Framework de Atomização -->
+                    <div class="process-framework">
+                        <div class="section-title section-title-success">PROCESSO DE ATOMIZAÇÃO</div>
+                        <div class="framework-grid">
+                            <div class="framework-item">
+                                <div class="framework-item-name">Estrutura Base</div>
+                                <div class="framework-item-desc">Pastas, arquivos, configurações</div>
+                            </div>
+                            <div class="framework-item">
+                                <div class="framework-item-name">Módulos Core</div>
+                                <div class="framework-item-desc">Componentes isolados e testáveis</div>
+                            </div>
+                            <div class="framework-item">
+                                <div class="framework-item-name">Integrações</div>
+                                <div class="framework-item-desc">APIs e serviços externos</div>
+                            </div>
+                            <div class="framework-item">
+                                <div class="framework-item-name">Testes & Deploy</div>
+                                <div class="framework-item-desc">Validação e publicação</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarefas Atômicas -->
+                    <div class="atomic-tasks">
+                        <div class="section-title section-title-success">TAREFAS ATÔMICAS</div>
+                        <div class="task-card">
+                            <div class="task-name">Tarefas 1-3</div>
+                            <div class="task-desc">Estrutura e Configuração (15-30 minutos de IA autônoma)</div>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-name">Tarefas 4-8</div>
+                            <div class="task-desc">Módulos Core e Lógica de Negócio (2-4 horas de IA autônoma)</div>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-name">Tarefas 9-12</div>
+                            <div class="task-desc">Integrações e Interface do Usuário (1-2 horas de IA autônoma)</div>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-name">Tarefas 13-15</div>
+                            <div class="task-desc">Testes, Otimização e Deploy (1-2 horas de IA autônoma)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="arrow">
+            <div class="arrow-line"></div>
+        </div>
+
+        <!-- Phase 3: PROGRAMAR -->
+        <div class="phase phase-3">
+            <div class="phase-header">
+                <div class="phase-header-left">
+                    <span class="phase-number" style="color: #FFFFFF;">03</span>
+                    <h2 class="phase-title" style="color: #FFFFFF;">PROGRAMAR</h2>
+                </div>
+                <span class="phase-subtitle">IA Trabalha Autonomamente</span>
+            </div>
+            <div class="phase-content">
+                <div class="programar-grid">
+                    <!-- Delegação Estruturada -->
+                    <div class="delegation-box">
+                        <div class="section-title section-title-info">DELEGAÇÃO ESTRUTURADA</div>
+                        <div class="delegation-desc">Você fornece uma tarefa atômica com contexto completo. A IA autônoma (Claude Code, Cursor, Manus, etc.) trabalha por horas sem necessidade de supervisão constante. Cada tarefa é autocontida e executável de forma independente.</div>
+                    </div>
+
+                    <!-- Execução Autônoma -->
+                    <div class="autonomous-execution">
+                        <div class="section-title section-title-info">EXECUÇÃO AUTÔNOMA</div>
+                        <div class="execution-card">
+                            <div class="execution-name">Tarefa 1: Estrutura Base</div>
+                            <div class="execution-desc">IA cria estrutura de pastas, arquivos de configuração, instala dependências e configura ambiente (30 minutos trabalhando sozinha)</div>
+                        </div>
+                        <div class="execution-card">
+                            <div class="execution-name">Tarefa 2: Backend & Lógica</div>
+                            <div class="execution-desc">IA desenvolve APIs, configura banco de dados, implementa regras de negócio e validações (2 horas trabalhando sozinha)</div>
+                        </div>
+                        <div class="execution-card">
+                            <div class="execution-name">Tarefa 3: Frontend & UI</div>
+                            <div class="execution-desc">IA cria interface do usuário, componentes reutilizáveis, integra com backend (1.5 horas trabalhando sozinha)</div>
+                        </div>
+                        <div class="execution-card">
+                            <div class="execution-name">Tarefa 4: Testes & Deploy</div>
+                            <div class="execution-desc">IA executa testes automatizados, corrige bugs, prepara e faz deploy (1 hora trabalhando sozinha)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="arrow">
+            <div class="arrow-line"></div>
+        </div>
+
+        <!-- Phase 4: ATIVAR -->
+        <div class="phase phase-4">
+            <div class="phase-header">
+                <div class="phase-header-left">
+                    <span class="phase-number" style="color: #FFFFFF;">04</span>
+                    <h2 class="phase-title" style="color: #FFFFFF;">ATIVAR</h2>
+                </div>
+                <span class="phase-subtitle">Sistema em Produção</span>
+            </div>
+            <div class="phase-content">
+                <div class="ativar-grid">
+                    <div class="activation-box activation-box-1">
+                        <div class="activation-title activation-title-1">Deploy Automatizado</div>
+                        <div class="activation-desc">IA executa deploy completo em ambiente de produção com configurações otimizadas</div>
+                    </div>
+                    <div class="activation-box activation-box-2">
+                        <div class="activation-title activation-title-2">Testes Finais</div>
+                        <div class="activation-desc">Validação completa de funcionalidades, performance, segurança e experiência do usuário</div>
+                    </div>
+                    <div class="activation-box activation-box-3">
+                        <div class="activation-title activation-title-3">Documentação</div>
+                        <div class="activation-desc">IA gera documentação completa: guia de uso, APIs, manutenção e troubleshooting</div>
+                    </div>
+                    <div class="activation-box activation-box-4">
+                        <div class="activation-title activation-title-4">Sistema Ativo</div>
+                        <div class="activation-desc">Aplicação rodando, testada, documentada e pronta para ser usada em produção</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="benefits">
+            <div class="benefit-card">
+                <h3 class="benefit-title benefit-title-1">Trabalho Autônomo Real</h3>
+                <p class="benefit-text">IAs autônomas (Claude Code, Cursor, Manus, Codex, Gemini CLI) trabalham por horas sem supervisão constante graças à atomização de tarefas e contexto claro fornecido pelo M.A.P.A.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title benefit-title-2">95% de Precisão</h3>
+                <p class="benefit-text">Tarefas atômicas combinadas com coordenadas exatas eliminam 95% dos erros. A IA não se perde quando cada tarefa é pequena, específica e sequencial.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title benefit-title-3">Universal & Future-Proof</h3>
+                <p class="benefit-text">M.A.P.A. funciona com qualquer IA autônoma atual ou futura. Aprenda uma vez, use para sempre. Framework independente de tecnologia.</p>
+            </div>
+        </div>
+
+        <!-- AI Tools Section -->
+        <div class="ai-tools-section">
+            <h3 class="ai-tools-title">Compatível com Todas as IAs Autônomas</h3>
+            <div class="ai-tools-grid">
+                <a href="https://www.anthropic.com/claude/code" target="_blank" rel="noopener noreferrer" class="ai-tool-link">
+                    <img src="https://www.anthropic.com/_next/static/media/claude-logo.6c5c97da.svg" alt="Claude Code">
+                </a>
+                <a href="https://www.cursor.com/" target="_blank" rel="noopener noreferrer" class="ai-tool-link">
+                    <img src="https://www.cursor.com/brand/icon.svg" alt="Cursor">
+                </a>
+                <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" class="ai-tool-link">
+                    <img src="https://github.githubassets.com/images/modules/site/copilot/copilot.png" alt="GitHub Copilot">
+                </a>
+                <a href="https://openai.com/index/openai-codex/" target="_blank" rel="noopener noreferrer" class="ai-tool-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI Codex">
+                </a>
+                <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="ai-tool-link">
+                    <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Gemini CLI">
+                </a>
+                <a href="https://aider.chat/" target="_blank" rel="noopener noreferrer" class="ai-tool-link">
+                    <img src="https://aider.chat/assets/aider-logo.svg" alt="Aider">
+                </a>
+                <a href="https://www.cognition.ai/" target="_blank" rel="noopener noreferrer" class="ai-tool-link">
+                    <img src="https://www.cognition.ai/images/devin-logo.svg" alt="Devin">
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-section">
+            <h3 class="footer-title">Por Que o Método M.A.P.A. Funciona</h3>
+            <p class="footer-intro">O Método M.A.P.A. substitui a "programação por tentativa e erro" por um framework sistemático validado por centenas de empresários que garante resultados previsíveis e de alta qualidade.</p>
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-item-title">Coordenadas Exatas</div>
+                    <div class="footer-item-text">A IA autônoma sabe EXATAMENTE o destino e o caminho a seguir. Sem adivinhação, sem perda de contexto durante horas de trabalho contínuo.</div>
+                </div>
+                <div>
+                    <div class="footer-item-title">Autonomia Real</div>
+                    <div class="footer-item-text">IAs trabalham de 2 a 8 horas sozinhas em tarefas atômicas. Você supervisiona apenas checkpoints estratégicos, não cada linha de código.</div>
+                </div>
+                <div>
+                    <div class="footer-item-title">Resultados Previsíveis</div>
+                    <div class="footer-item-text">Framework testado e validado. 90% de redução em dependência de programadores. 95% de precisão no código gerado pelas IAs.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Attribution -->
+        <div class="attribution">
+            <p><strong>Método M.A.P.A.</strong> - Framework Universal para IAs Autônomas de Desenvolvimento</p>
+            <p>Rico em contexto · Autonomia real · Qualidade garantida · Future-proof</p>
+            <p>Compatível com Claude Code · Cursor · Manus · Codex · Gemini CLI · Aider · Devin</p>
+        </div>
+    </div>
+</body>
+</html>
