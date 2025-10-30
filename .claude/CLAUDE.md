@@ -19,122 +19,90 @@ When an agent is active:
 - Use the agent's designated workflow patterns
 - Maintain the agent's perspective throughout the interaction
 
-## Developer Interaction Guidelines
+## Working with Alan - Core Principles
 
 ### Priority Check Framework
 
-Before any implementation, validate against these principles:
-
 ```python
 def validate_before_action():
-    # Foundation Checks
-    if not matches_real_world(): return "REJECT - Use real scenarios"
-    if is_over_engineered(): return "SIMPLIFY"
-    if has_duplication(): return "EXTRACT & REUSE"
-
-    # Execution Checks
-    if not backed_by_data(): return "GET DATA FIRST"
-    if builds_in_isolation(): return "INTEGRATE"
-    if bypasses_database(): return "PERSIST IMPORTANT DATA"
-    if cant_demo_in_5min(): return "BUILD PROOF FIRST"
-    if no_human_checkpoints(): return "ADD VALIDATION POINTS"
-
-    return "PROCEED"
+    # Check against Technical Philosophy (see below)
+    # Check against Anti-Patterns (see below)
+    # If any violation: STOP and present options
+    return "PROCEED" or "SHOW_OPTIONS"
 ```
 
-### Communication Style
+### Communication Protocol
 
-**DO:**
-- Be direct and economical (no unnecessary explanations)
+**Executive Summary Pattern:**
+- Start with 2-4 sentence summary
+- Details available below if needed
+- No fluff or unnecessary context
+
+**Interaction Rules:**
 - Map context BEFORE executing ("where is this defined?")
-- Present options with tradeoffs, let Alan decide
-- Document structure before modifying files
-- Use English for code/comments, PT-BR for discussion when appropriate
-- Provide executive summary at top, details available below
+- Present 2-3 options with tradeoffs, let Alan decide
+- English for code/comments, PT-BR for discussion when appropriate
+- No emojis unless Alan uses them first
+- Adapt immediately when Alan pivots (don't continue old task)
 
-**DON'T:**
-- Long explanations unless specifically requested
-- Implement without showing structure first
-- Decide for Alan (show 2-3 approaches instead numbered)
-- Use emojis unless Alan asks for
-- Hardcode values when config file works better
-- Continue old task if Alan pivots (adapt immediately)
-- Estime datas e cronogramas
-
-### Decision & Workflow Patterns
+### Workflow Execution
 
 **Before Implementation:**
-1. Show structure/flow diagram first
-2. Ask: "Where should this live in the architecture?"
-3. Present: "3 approaches - which fits your workflow?"
-4. Validate: "Does this match your actual usage scenario?"
+1. Show structure/flow first
+2. Ask: "Where should this live?"
+3. Present: "Which approach fits your workflow?"
+4. Validate: "Does this match your actual scenario?"
 
 **During Development:**
-- Strategic checkpoints: "Where are we? What's next?" IF NOT YOLO MODE
+- Strategic checkpoints: "Where are we? What's next?"
 - Incremental validation: Prove with 1 example before scaling
-- Config over duplication: 1 flexible solution > N rigid ones
-- Database-centric: Important data = persisted, not in files
-
-**Priority Handling:**
-- Alan context-switches rapidly (adapt, don't resist)
-- Vertical mastery: 1 working feature > 5 mediocre ones
-- Show don't sell: Working demo > promises
-- Fail fast loops: Hours/days, not weeks/months
+- Show working demo before continuing
+- Fail fast: Hours/days iteration, not weeks/months
 
 ### Technical Philosophy
 
-**Architecture Preferences:**
 ```yaml
-data_location: database (not files for structured data)
-configuration: YAML/JSON (not hardcoded)
-integration: systems must connect (no silos)
-validation: real data from actual workflow
-documentation: after proving it works
+architecture:
+  data_location: database  # not files for structured data
+  configuration: YAML/JSON  # not hardcoded
+  integration: connected    # no isolated systems
+  validation: real_data    # not lorem ipsum
+  documentation: after_proof  # not before
+
+principles:
+  language: English  # all code, variables, functions, comments
+  reusability: DRY  # extract once, use N times
+  scope: clear_boundaries  # lite vs pro features
+  flexibility: config_over_code  # change without recompiling
 ```
 
-**Anti-Patterns to Avoid:**
-- Ceremony blocking MVP/validation
-- Vanity metrics without real impact
-- Isolated systems that don't integrate
-- Fake test data instead of real scenarios
-- Rigid automations without flexibility
-
-### Success Metrics
+### Anti-Patterns to Avoid
 
 ```python
-good_interaction = {
-    "understood_context": True,
-    "presented_options": True,
-    "direct_communication": True,
-    "configurable_output": True,
-    "validated_with_real_scenario": True
-}
-
-bad_interaction = {
-    "implemented_without_mapping": True,
-    "verbose_without_reason": True,
-    "hardcoded_solution": True,
-    "theoretical_validation": True,
-    "forced_linearity": True
-}
+REJECT = [
+    "ceremony_blocking_mvp",
+    "vanity_metrics",
+    "isolated_systems",
+    "fake_test_data",
+    "rigid_automations",
+    "implementing_without_context",
+    "verbose_without_summary",
+    "hardcoded_values",
+    "theoretical_validation",
+    "ignoring_pivot"
+]
 ```
 
 ## Development Methodology
 
 ### Story-Driven Development
-1. **Work from stories** - All development starts with a story in `docs/stories/` (development stories)
+1. **Work from stories** - All development starts with a story in `docs/stories/`
 2. **Update progress** - Mark checkboxes as tasks complete: [ ] → [x]
 3. **Track changes** - Maintain the File List section in the story
 4. **Follow criteria** - Implement exactly what the acceptance criteria specify
 
 ### Code Standards
-
-**Professional Standards:**
 - Write clean, self-documenting code
-- **Language**: English for all code, variables, functions, and comments
-- **Structure**: Clear scope boundaries (e.g., lite vs pro features)
-- **Reusability**: Extract once, use N times (DRY principle)
-- **Validation**: Real-world analogy test (does this match actual usage?)
 - Follow existing patterns in the codebase
 - Include comprehensive error handling
 - Add unit tests for all new functionality
@@ -144,8 +112,8 @@ bad_interaction = {
 - Run all tests before marking tasks complete
 - Ensure linting passes: `npm run lint`
 - Verify type checking: `npm run typecheck`
-- Add tests for new features
-- Test edge cases and error scenarios
+- Test edge cases and real scenarios
+- Document test scenarios in story files
 
 ## AIOS Framework Structure
 
@@ -162,39 +130,21 @@ bad_interaction = {
 docs/                       # 📚 All documentation (versioned)
 ├── README.md               # Master documentation navigation
 ├── prd/                    # Product requirement documents
-│   └── mmos-prd.md
 ├── methodology/            # Process frameworks and methodologies
-│   ├── dna-mental.md
-│   ├── prompt-engineering.md
-│   ├── tools-guide.md
-│   └── mmos-templates/
 ├── guides/                 # User and developer guides
-│   ├── folder-structure.md
-│   ├── outputs-guide.md
-│   ├── integration-etl-mmos.md
-│   └── mmos-stage-guides/
 ├── architecture/           # System architecture documentation
 ├── stories/                # Development stories
-│   └── mmos-legacy/        # Historical MMOS stories
 ├── logs/                   # Execution logs (versioned, not outputs!)
-│   └── YYYY-MM-DD-*.md
 └── mmos/                   # MMOS-specific documentation
-    ├── workflows/          # Step-by-step workflows
-    ├── epics/              # MMOS development epics
-    ├── stories/            # MMOS stories
-    ├── reports/            # Executive reports
-    ├── qa/                 # Quality assurance
-    └── taxonomy/           # Trait taxonomies
 
 outputs/                    # 🎯 Generated artifacts (NOT versioned)
 ├── courses/                # Generated courses (CreatorOS)
 ├── minds/                  # Processed minds (MMOS Mind Mapper)
 └── database/               # SQLite database files
-    └── SQLite legado (migrado para Supabase em 2025-10)
 
 expansion-packs/            # 🔌 Modular system extensions
 ├── creator-os/             # Course generation system
-├── mmos/       # Cognitive clone creation
+├── mmos/                   # Cognitive clone creation
 ├── innerlens/              # Psychometric profiling
 └── etl-data-collector/     # Data collection tools
 ```
@@ -208,124 +158,38 @@ expansion-packs/            # 🔌 Modular system extensions
 - `docs/` = Project documentation
 - `outputs/` = Generated artifacts
 
-All project-specific code, configuration, and utilities must go in `expansion-packs/` or `docs/`, never in `.aios-core/`.
-
 ### Expansion Pack Sync Architecture
 
 **IMPORTANT: `.claude/commands/` is auto-generated - DO NOT edit directly**
 
-The AIOS system maintains two parallel structures for expansion pack content:
-
 ```
 expansion-packs/{pack-name}/     # 🎯 SOURCE OF TRUTH
-├── agents/                      # Agent definitions (YAML)
-├── tasks/                       # Task workflows (Markdown)
-├── templates/                   # Document templates
-├── checklists/                  # Validation checklists
-└── workflows/                   # Multi-step workflows
-
 .claude/commands/{PackName}/     # 🔄 AUTO-SYNCED (read-only)
-├── agents/                      # ← synced from expansion-packs
-├── tasks/                       # ← synced from expansion-packs
-├── templates/                   # ← synced from expansion-packs
-└── checklists/                  # ← synced from expansion-packs
 ```
-
-#### Why This Duplication Exists
-
-1. **Claude Code Integration**: `.claude/commands/` is where Claude Code discovers slash commands and agents
-2. **Modular Development**: `expansion-packs/` keeps each system's code isolated and maintainable
-3. **IDE Support**: Allows both `.mdc` (Claude) and `.md` (standard) formats to coexist
-4. **Version Control**: Only `expansion-packs/` is the source of truth for git
-
-#### How Sync Works
 
 **Pre-commit Hook** (`.aios-core/hooks/pre-commit-sync.sh`):
 - Automatically runs on every `git commit`
 - Syncs content from `expansion-packs/` → `.claude/commands/`
 - Creates both `.md` and `.mdc` versions
-- Logs sync operations to `.aios-sync.log`
 
-**What Gets Synced:**
-- ✅ `agents/*.md` → `.claude/commands/{Pack}/agents/*.{md,mdc}`
-- ✅ `tasks/*.md` → `.claude/commands/{Pack}/tasks/*.{md,mdc}`
-- ✅ `templates/*.md` → `.claude/commands/{Pack}/templates/*.{md,mdc}`
-- ✅ `checklists/*.md` → `.claude/commands/{Pack}/checklists/*.{md,mdc}`
-- ✅ `workflows/*.yaml` → `.claude/commands/{Pack}/workflows/*.{yaml,mdc}`
-
-#### Development Workflow
-
-**✅ CORRECT:**
-```bash
-# 1. Edit source in expansion-packs
-vim expansion-packs/creator-os/tasks/new-task.md
-
-# 2. Commit (auto-sync happens)
-git add expansion-packs/creator-os/tasks/new-task.md
-git commit -m "feat(creator-os): add new task"
-
-# 3. Sync runs automatically, updates .claude/commands/
-# 4. Both files committed together
-```
-
-**❌ WRONG:**
-```bash
-# DON'T edit .claude/commands/ directly
-vim .claude/commands/CreatorOS/tasks/new-task.md  # ❌
-
-# Changes will be OVERWRITTEN on next sync!
-```
-
-#### Backup Files (.bak)
-
-During sync, `.bak` files are created temporarily:
-- `.claude/commands/{Pack}/tasks/example.md.bak`
-- These are safe to delete (not needed after successful sync)
-- Consider adding `*.bak` to `.gitignore`
-
-#### Manual Sync
-
-If needed, you can manually trigger sync:
-```bash
-.aios-core/hooks/pre-commit-sync.sh
-```
-
-#### Key Rules
-
-1. **NEVER modify `.claude/commands/` directly** - changes will be lost
-2. **ALWAYS edit `expansion-packs/`** - it's the source of truth
-3. **Let the pre-commit hook handle sync** - it's automatic
-4. **Review `.aios-sync.log`** if sync issues occur
-
-## Workflow Execution
-
-### Task Execution Pattern
-1. Read the complete task/workflow definition
-2. Understand all elicitation points
-3. Execute steps sequentially
-4. Handle errors gracefully
-5. Provide clear feedback
-
-### Interactive Workflows
-- Workflows with `elicit: true` require user input
-- Present options clearly
-- Validate user responses
-- Provide helpful defaults
+**Development Workflow:**
+1. Edit source in `expansion-packs/`
+2. Commit (auto-sync happens)
+3. Never edit `.claude/commands/` directly
 
 ## Best Practices
+
+### Version Control
+- **Use Git for versioning** - Never create multiple backup files (e.g., CLAUDE-backup.md)
+- **Commit before major changes** - Create checkpoint commits before refactoring
+- **Clean working directory** - No temporary or backup files, Git handles history
+- **Meaningful commits** - Clear messages about what changed and why
 
 ### When implementing features:
 - Check existing patterns first
 - Reuse components and utilities
 - Follow naming conventions
 - Keep functions focused and testable
-- Document complex logic
-
-### When working with agents:
-- Respect agent boundaries
-- Use appropriate agent for each task
-- Follow agent communication patterns
-- Maintain agent context
 
 ### When handling errors:
 ```javascript
@@ -377,7 +241,7 @@ await story.save();
 ## Environment Setup
 
 ### Required Tools
-- Node.js 18+ 
+- Node.js 18+
 - GitHub CLI
 - Git
 - Your preferred package manager (npm/yarn/pnpm)
@@ -421,14 +285,13 @@ npm run trace -- workflow-name
 ## Claude Code Specific Configuration
 
 ### Performance Optimization
-- Prefer batched tool calls when possible for better performance
+- Batch tool calls when possible for better performance
 - Use parallel execution for independent operations
 - Cache frequently accessed data in memory during sessions
 
 ### Tool Usage Guidelines
 - Always use the Grep tool for searching, never `grep` or `rg` in bash
 - Use the Task tool for complex multi-step operations
-- Batch file reads/writes when processing multiple files
 - Prefer editing existing files over creating new ones
 
 ### Session Management
@@ -443,68 +306,11 @@ npm run trace -- workflow-name
 - Suggest rollback procedures when appropriate
 - Document any manual fixes required
 
-### Testing Strategy
-- Run tests incrementally during development
-- Always verify lint and typecheck before marking complete
-- Test edge cases for each new feature
-- Document test scenarios in story files
-
-### Documentation
-- Update relevant docs when changing functionality
-- Include code examples in documentation
-- Keep README synchronized with actual behavior
-- Document breaking changes prominently
-
-### Alan-Specific Interaction Patterns
-
-**Executive Summaries:**
-- Start responses with executive summary (2-4 sentences)
-- Details available below summary for reference
-- No fluff or unnecessary context setting
-- Focus on actionable information first
-
-**Show Before Execute:**
-- Present file structure before modifying
-- Show flow diagram before implementing workflow
-- Ask "where should this live?" before creating files
-- Map dependencies before making changes
-
-**Options Not Decisions:**
-- Present 2-3 approaches with tradeoffs
-- Let Alan make architectural decisions
-- Don't assume preferences without asking
-- Provide recommendations but defer to Alan's choice
-
-**Pivot Handling:**
-- Alan context-switches rapidly - adapt immediately
-- Don't continue previous task when new direction given
-- Re-validate context when topic changes
-- Ask clarifying questions if direction unclear
-
-**Real-World Validation:**
-- Use Alan's actual data/workflow for testing
-- Avoid lorem ipsum or theoretical examples
-- Validate against real scenarios before scaling
-- Prove with 1 example before implementing for N cases
-
-**Human Checkpoints:**
-- Strategic checkpoints: "Where are we? What's next?"
-- Incremental demos: Show working feature before continuing
-- Validation points: "Does this match your workflow?"
-- Fail fast: Hours/days iteration, not weeks/months
-
 ## Token Estimation & Resource Planning
 
 For complex multi-step operations, expansion pack pipelines, and resource-intensive workflows, token estimation is critical to prevent context overflow.
 
-**Full guide:** See `docs/guides/token-estimation-guide.md` for:
-- When estimation is required vs when to skip
-- Standardized presentation format
-- Token calculation formulas
-- Mitigation strategies (continue/subagent/new window)
-- Implementation requirements for expansion pack agents
-- Task metadata requirements
-- Detailed examples
+**Full guide:** See `docs/guides/token-estimation-guide.md`
 
 **Quick reference:**
 - Multi-step operations (>3 steps): Estimate required
@@ -541,34 +347,10 @@ For complex multi-step operations, expansion pack pipelines, and resource-intens
 
 **CRITICAL:** `docs/mmos/` contains ONLY system-level MMOS content.
 
-#### ✅ What BELONGS in docs/mmos/:
-- `workflows/` - MMOS workflow documentation (step-by-step processes)
-- `architecture/` - MMOS system architecture
-- `design/` - MMOS design documentation
-- `epics/` - MMOS development epics
-- `stories/` - MMOS development stories
-- `reports/` - Executive reports, version comparisons
-- `qa/benchmarks/` - Cross-mind benchmarks
-- `taxonomy/` - Trait and personality taxonomies
-- `validations/` - System-level validation checklists
-
-#### ✅ What BELONGS in docs/ (root categories):
-- `prd/` - Product requirements (mmos-prd.md, etc.)
-- `methodology/` - Methodologies and frameworks (dna-mental.md, etc.)
-- `guides/` - User/developer guides (outputs-guide.md, etc.)
-- `architecture/` - General system architecture
-- `logs/` - Execution logs (versioned documentation!)
-- `stories/` - Development stories
-
-#### ❌ What DOES NOT belong in docs/mmos/:
-- **NEVER** create folders named after minds (`/joao_lozano/`, `/pedro_valerio/`)
-- **NEVER** create `validations/` or `migrations/` subfolders with mind names
-- Mind-specific documents → `outputs/minds/{slug}/docs/`
-
 ### Decision Rule:
 
-Ask: **"Is this about a SPECIFIC mind (name appears in content)?"**
-- **YES** → `outputs/minds/{mind_slug}/docs/` or `outputs/minds/{mind_slug}/logs/`
+Ask: **"Is this about a SPECIFIC mind?"**
+- **YES** → `outputs/minds/{mind_slug}/`
 - **NO** → Continue...
 
 Ask: **"Is it a script/template for MMOS?"**
@@ -576,7 +358,7 @@ Ask: **"Is it a script/template for MMOS?"**
 - **NO** → Continue...
 
 Ask: **"Is it about MMOS system/process?"**
-- **YES** → `docs/mmos/{workflows|epics|stories|reports|qa}/`
+- **YES** → `docs/mmos/`
 - **NO** → Continue...
 
 Ask: **"Is it a methodology/framework?"**
@@ -585,39 +367,7 @@ Ask: **"Is it a methodology/framework?"**
 
 Ask: **"Is it a user/developer guide?"**
 - **YES** → `docs/guides/`
-- **NO** → Continue...
-
-Ask: **"Is it a product requirement?"**
-- **YES** → `docs/prd/`
-- **NO** → Continue...
-
-Ask: **"Is it an execution log?"**
-- **YES** → `docs/logs/` (versioned documentation!)
 - **NO** → ⚠️ STOP - Review architecture rules
-
-### Examples:
-
-**✅ Correct:**
-- `outputs/minds/joao_lozano/docs/validation-checklist.md` (mind-specific)
-- `outputs/minds/pedro_valerio/docs/migration-progress.md` (mind-specific)
-- `outputs/minds/pedro_valerio/logs/20251016-validation-session.md` (mind-specific log)
-- `docs/mmos/reports/EXECUTIVE_SUMMARY_FOR_PO.md` (MMOS system-level)
-- `docs/mmos/epics/epic-2-clone-auth.md` (MMOS system-level)
-- `docs/mmos/workflows/brownfield-workflow.md` (MMOS workflow)
-- `docs/prd/mmos-prd.md` (product requirement)
-- `docs/methodology/dna-mental.md` (methodology)
-- `docs/guides/outputs-guide.md` (user guide)
-- `docs/logs/2025-10-17-docs-reorganization.md` (execution log - versioned!)
-- `SQLite legado (migrado para Supabase em 2025-10)` (generated database)
-
-**❌ Wrong:**
-- `docs/mmos/validations/pedro-valerio-checklist.md` → Use `outputs/minds/pedro_valerio/docs/validation-checklist.md`
-- `docs/mmos/migrations/joao-lozano-progress.md` → Use `outputs/minds/joao_lozano/docs/migration-progress.md`
-- `expansion-packs/mmos/benchmarks/debate.yaml` → Use `docs/mmos/qa/benchmarks/debate.yaml`
-- `docs/mmos/docs/PRD.md` → Use `docs/prd/mmos-prd.md`
-- `docs/mmos/DNA_MENTAL.md` → Use `docs/methodology/dna-mental.md`
-- `outputs/logs/session.md` → Use `docs/logs/2025-10-17-session.md` (logs are docs!)
-- `docs/mmos/SQLite legado (migrado para Supabase em 2025-10)` → Use `SQLite legado (migrado para Supabase em 2025-10)`
 
 ### Enforcement:
 
@@ -641,38 +391,13 @@ Run manually: `.aios-core/hooks/pre-commit-mmos-guard.sh`
 | MMOS reports | `docs/mmos/reports/` | `executive-summary.md` |
 | Mind-specific docs | `outputs/minds/{slug}/docs/` | `validation-checklist.md` |
 | Generated courses | `outputs/courses/{slug}/` | `curriculum.yaml` |
-| Database files | `outputs/database/` | `SQLite legado (migrado para Supabase em 2025-10)` |
+| Database files | `outputs/database/` | `minds.db` |
 | MMOS scripts | `expansion-packs/mmos/` | `pipeline.py` |
 
 ---
 
-## Quick Reference: Working with Alan
-
-**When working with Alan, prioritize:**
-
-1. **Map first, execute second** - Show structure before changing files
-2. **Options, not decisions** - Present 2-3 approaches with tradeoffs
-3. **Direct communication** - Economical responses, no fluff
-4. **Config over code** - YAML/JSON for flexibility, avoid hardcoding
-5. **Real scenarios** - Validate against actual workflow, not theory
-6. **Pivot-friendly** - If Alan changes focus, adapt immediately
-7. **Database-centric** - Structured data = persisted, not files
-8. **Prove before scale** - Working example before expanding to N cases
-
-### Red Flags to Avoid
-
-⚠️ **Stop and reconsider if you're about to:**
-- Implement before understanding context/location
-- Write long explanations without executive summary
-- Hardcode values when config works better
-- Continue old task when Alan has pivoted
-- Validate with theory instead of real-world data
-- Build isolated components that don't integrate
-- Use lorem ipsum instead of Alan's actual data
-- Create ceremony that blocks rapid validation
-
 **Meta-rule:** These rules should be economical. If anything becomes ceremony, delete it.
 
 ---
-*AIOS-FULLSTACK Claude Code Configuration v3.0*
-*Last Updated: 2025-10-30 - Integrated Alan's Development Rules*
+*AIOS-FULLSTACK Claude Code Configuration v4.0*
+*Last Updated: 2025-10-30 - Consolidated to remove all redundancies*
