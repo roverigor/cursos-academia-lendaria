@@ -235,48 +235,125 @@ framework_definitions:
 
   x_thread:
     name: "X (Twitter) Thread Battle"
-    description: "Real-time social media debate simulating viral X/Twitter thread with engagement metrics, memes, and personality-driven attacks"
-    rounds: "Dynamic (10-30 tweets each, responds to opponent)"
+    description: "Real-time social media debate simulating viral X/Twitter thread with engagement metrics, memes, and personality-driven attacks. Optimized for maximum treta (drama/beef)."
+    optimal_length: "5-10 tweets per salvo (7 tweets = sweet spot for virality)"
+    rounds: "Dynamic (minimum 3 salvos each, up to 10 salvos depending on escalation)"
     structure:
-      - opening: "Clone 1 drops provocative thread (3-5 tweets)"
-      - response: "Clone 2 responds with counter-thread"
-      - escalation: "Back-and-forth with increasing intensity"
-      - climax: "Peak engagement moment (viral tweet/meme)"
-      - resolution: "Final positions or truce/continued beef"
+      - opening_salvo: "Clone 1 drops provocative hook thread (5-7 tweets)"
+      - counter_salvo: "Clone 2 responds with ratio attempt (5-7 tweets)"
+      - escalation_rounds: "Back-and-forth with increasing intensity (3-6 salvos)"
+      - viral_peak: "Peak engagement moment - someone gets ratio'd or drops mic tweet"
+      - resolution: "Final positions, mic drop, or 'continued beef' promise"
+
+    hook_patterns:
+      controversial_statement: "Bold claim that triggers immediate response (research shows negativity increases RT probability)"
+      personal_attack: "Subtle or direct jab at opponent's credibility/hypocrisy"
+      exposed_contradiction: "Receipts of opponent flip-flopping or lying"
+      challenge: "Direct confrontation (e.g., 'Send me location', 'Prove it')"
+      meme_weaponization: "Turn opponent into meme to ridicule"
+
+    escalation_tactics:
+      stage_1_poke: "Mild disagreement, professional tone but with edge"
+      stage_2_jab: "Direct criticism, starts getting personal"
+      stage_3_shots_fired: "Accusations, receipts, exposing hypocrisy"
+      stage_4_ratio_war: "Attempting to ratio opponent (more replies than likes = public loss)"
+      stage_5_nuclear: "Personal attacks, bringing up past drama, mobilizing followers"
+      stage_6_meme_death: "Opponent becomes meme, reputation damage"
+
+    viral_mechanics:
+      negativity_boost: "Negative sentiment increases retweet probability (research-proven)"
+      ratio_dynamics: "When replies > likes, it's a public loss - amplifies virally"
+      screenshot_worthy: "Each tweet must work standalone if screenshotted"
+      cliffhanger_hooks: "Every 1-2 tweets needs reason to keep scrolling"
+      algorithm_exploit: "Emotionally charged + out-group hostile content = algorithm amplification"
+      self_reinforcing_cycle: "One ratio spirals into viral backlash cycle"
+
     format_rules:
-      tweet_length: "280 characters max per tweet"
-      threading: "Use 🧵 notation and numbered threads (1/X)"
-      timing: "Include timestamps (realistic 2-5AM for Elon)"
-      engagement: "Simulate views, likes, retweets, replies"
-      emojis: "Encouraged - personality dependent"
-      memes: "Use text-based memes (💀, 😂, 🚀, etc)"
-      tone: "Authentic to clone personality (Elon: sarcastic/Demon Mode optional, Sam: measured)"
-      @mentions: "Use @username format"
-      hashtags: "Optional, personality dependent"
+      tweet_length: "280 characters max per tweet (strict)"
+      threading: "Use 🧵 notation for threads, numbered (1/7), (2/7), etc."
+      timing: "Include realistic timestamps (2-5AM for Elon-types, business hours for professionals)"
+      engagement_metrics: "Simulate views, likes, RTs, replies per tweet"
+      engagement_ratios: "Calculate ratio score (replies/likes) - higher = losing"
+      emojis: "Encouraged - personality dependent (💀☠️ for death blows, 😂 for mockery, 🚀 for Elon)"
+      memes: "Text-based memes, skull emojis for kills, fire for burns"
+      tone: "Authentic to clone (Elon: sarcastic/aggressive, Sam: measured but cutting)"
+      @mentions: "Direct @username callouts increase engagement"
+      quote_tweets: "Devastating when used to expose/mock opponent"
+      hashtags: "Optional, can amplify reach or become meme"
+
     special_modes:
-      demon_mode: "For Elon clone - activates aggressive/sarcastic mode"
-      ratio_mode: "One clone gets significantly more engagement"
-      viral_moment: "Identify the tweet that would go most viral"
-    scoring_adjustments:
-      engagement_weight: "Add 'viral potential' to personality_fidelity (did tweets sound authentic?)"
-      brevity_weight: "Reward concise, punchy arguments over verbose ones"
-      meme_effectiveness: "Score use of humor/memes if appropriate to personality"
-      thread_coherence: "Maintain coherence across multi-tweet threads"
+      demon_mode: "Activated for personalities like Elon - aggressive, no-filter, brutal honesty"
+      ratio_mode: "Intentionally create scenario where one clone gets ratio'd"
+      viral_moment_mode: "Identify and optimize the ONE tweet that would break the internet"
+      proxy_war_mode: "Simulate followers/fans joining the fight in replies"
+      receipts_mode: "Pull up old tweets/quotes to expose hypocrisy"
+      meme_lord_mode: "Heavy meme usage, turns opponent into joke"
+
+    scoring_dimensions:
+      viral_potential: "Would this tweet actually go viral? (negativity, controversy, quotability)"
+      ratio_resistance: "Can clone avoid getting ratio'd while ratio'ing opponent?"
+      personality_authenticity: "Does this sound EXACTLY like the clone would tweet?"
+      screenshot_worthiness: "Can each tweet stand alone as viral screenshot?"
+      escalation_mastery: "Does clone escalate at right pace (not too fast/slow)?"
+      mic_drop_capability: "Does clone have devastating final tweet?"
+      meme_effectiveness: "If using humor/memes, does it land or cringe?"
+      thread_flow: "Cliffhangers, hooks, pacing - does thread pull you in?"
+
+    engagement_simulation:
+      view_patterns: "First tweet highest views, exponential decay unless viral moment"
+      like_patterns: "Negativity gets engagement but also ratio risk"
+      retweet_patterns: "Most RT'able = quotable one-liners, devastating burns"
+      reply_patterns: "Ratio happens when replies >> likes (public disagreement)"
+      quote_tweet_patterns: "Used to mock/expose opponent = high damage"
+      viral_coefficient: "Some tweets 10x others in engagement - identify which"
+
+    real_world_patterns:
+      musk_pattern: "2-5AM tweets, sarcasm, 'lol', emojis, one-word dunks, physics references"
+      zuck_pattern: "Measured, data-driven, subtle jabs, 'Send me location' energy"
+      altman_pattern: "Long-term thinking frame, admits nuance, then drops receipts"
+      trump_pattern: "ALL CAPS, nicknames, '!!', claims without evidence, doubling down"
+      aoc_pattern: "Clap backs, ratio mastery, policy mixed with personal, thread game strong"
+
+    timing_optimization:
+      peak_engagement_windows:
+        - "Tuesdays 9-11AM ET (highest engagement)"
+        - "Fridays 1-3PM ET (high engagement + weekend wind-down)"
+        - "Late night 2-5AM (Elon timezone, less competition)"
+      avoid_windows:
+        - "Weekends (lower engagement except drama)"
+        - "Early morning 5-8AM (people commuting)"
+
     output_format:
-      - Full thread with @username, timestamp, tweet content
-      - Engagement metrics per tweet (views, likes, RTs, replies)
-      - Final engagement totals
-      - "Winner" by engagement + argument quality
-      - Most viral tweet highlighted
-    use_cases: "Controversial topics, personality clash testing, viral moment simulation, testing clone's social media authenticity"
-    difficulty: "Medium - requires brevity, personality, and viral instinct"
-    examples:
-      - "Sam vs Elon on OpenAI not being open"
-      - "Naval vs Tim Ferriss on 4-hour work week"
-      - "PG vs DHH on startup culture"
-      - "Two politicians on policy"
+      thread_structure: "@username timestamp (e.g., 2:47 AM) + tweet content + engagement"
+      engagement_per_tweet: "[Views | Likes | RTs | Replies] + ratio score if applicable"
+      viral_moments: "Highlight the 1-3 tweets that would go most viral with 🔥"
+      ratio_alerts: "Flag when someone gets ratio'd with ⚠️ RATIO'D badge"
+      final_stats: "Total engagement both sides + declare winner by engagement + argument quality"
+      mic_drop_tweet: "Identify the single most devastating tweet with 🎤⬇️"
+      meme_potential: "Flag tweets that would become memes with 🤡"
+
+    use_cases: "Controversial topics, exposing hypocrisy, personality clashes, testing social media combat skills, viral moment simulation, ratio warfare"
+    difficulty: "Medium-High - requires brevity, personality, timing, viral instinct, and ruthless escalation"
+
+    examples_from_history:
+      - "Musk vs Zuckerberg: 'cage match if he is lol' → 'Send me location' (viral peak)"
+      - "Musk vs Trump: 'too old' vs 'bullshit artist' (mutual destruction)"
+      - "Musk vs Altman: 'OpenAI not open' + receipts (hypocrisy exposure)"
+      - "AOC ratio'd Ted Cruz: Perfect example of ratio mastery"
+
     best_for_clones:
-      - "Tech personalities with strong Twitter presence"
-      - "Clones with distinct communication styles"
-      - "Personalities known for online debates"
+      - "Tech CEOs with strong Twitter presence (Musk, Altman, Zuckerberg)"
+      - "Politicians known for Twitter battles (AOC, Trump)"
+      - "Personalities with public beef history"
+      - "Anyone with contrarian/controversial positions"
+      - "Clones with distinct aggressive vs measured styles"
+
+    treta_maximization_tips:
+      - "Start with mild jab, let opponent over-react, then destroy with receipts"
+      - "Use opponent's own words against them (quote old tweets)"
+      - "Time bombs: Thread at 2AM when opponent likely to see and can't sleep"
+      - "Ratio hunting: Craft tweets designed to get more replies than likes on opponent"
+      - "Meme creation: Turn opponent's statement into copypasta/meme"
+      - "Proxy mobilization: 'My followers are asking...' to pile on"
+      - "Mic drop then silence: Devastating final tweet + no response to replies"
 ```
