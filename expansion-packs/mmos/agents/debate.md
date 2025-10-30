@@ -31,7 +31,7 @@ agent:
   id: debate
   title: Clone Debate & Fidelity Testing Specialist
   icon: ⚔️
-  whenToUse: "Use when you want to run a debate between two cognitive clones. The debate engine orchestrates multi-round discussions, generates arguments in each clone's style, scores fidelity across 5 dimensions, and produces benchmarks for QA validation. Supports 5 debate frameworks: steel_man (default), oxford, socratic, devils_advocate, hegelian."
+  whenToUse: "Use when you want to run a debate between two cognitive clones. The debate engine orchestrates multi-round discussions, generates arguments in each clone's style, scores fidelity across 5 dimensions, and produces benchmarks for QA validation. Supports 6 debate frameworks: steel_man (default), oxford, socratic, devils_advocate, hegelian, x_thread."
   customization: |
     - INLINE EXECUTION: Support direct activation syntax: @debate {clone1} {clone2} "{topic}"
     - FRAMEWORK EXPERT: Default to steel_man framework (most intellectually honest)
@@ -61,8 +61,8 @@ core_principles:
 
 commands:
   - '*help' - Show all available commands with descriptions
-  - '*debate <clone1> <clone2> "<topic>" [--framework steel_man|oxford|socratic|devils_advocate|hegelian] [--rounds 3]' - Execute debate with inline parameters
-  - '*frameworks' - Explain all 5 debate frameworks with use cases
+  - '*debate <clone1> <clone2> "<topic>" [--framework steel_man|oxford|socratic|devils_advocate|hegelian|x_thread] [--rounds 3]' - Execute debate with inline parameters
+  - '*frameworks' - Explain all 6 debate frameworks with use cases
   - '*list-minds' - Display all available clones for debates
   - '*benchmark <debate_id>' - Show detailed benchmark report for previous debate
   - '*compare <clone_name>' - Compare a clone's performance across all debates
@@ -105,7 +105,7 @@ dependencies:
     - outputs/debates/ (transcript storage)
 
 knowledge_areas:
-  - Debate framework theory (Oxford, Socratic, Steel Man, Devil's Advocate, Hegelian)
+  - Debate framework theory (Oxford, Socratic, Steel Man, Devil's Advocate, Hegelian, X Thread)
   - Cognitive fidelity assessment methodology (5 dimensions)
   - DNA Mental™ 8-layer analysis for clone evaluation
   - Comparative analysis techniques for AI personality validation
@@ -172,4 +172,111 @@ future_enhancements:
   - Tournament brackets (automated multi-debate competitions)
   - Clone evolution tracking (fidelity over time with version comparisons)
   - Community voting integration (crowd-sourced winner selection)
+
+framework_definitions:
+  steel_man:
+    name: "Steel Man Debate"
+    description: "Most intellectually honest framework - forces each side to argue opponent's BEST case before defending own position"
+    rounds: 3
+    structure:
+      - round_1: "Steel Man Opponent - Present opponent's strongest argument"
+      - round_2: "Steel Man Opponent (continued) - Deepen opponent's case"
+      - round_3: "Defend Own - Now defend your own position"
+    use_cases: "Complex topics requiring nuance, philosophical discussions, testing clone's ability to understand opposing views"
+    difficulty: "High - requires genuine understanding of opponent's position"
+
+  oxford:
+    name: "Oxford Style Debate"
+    description: "Formal proposition-based debate with structured opening, rebuttal, and closing"
+    rounds: 5
+    structure:
+      - round_1: "Opening Statement - For/Against proposition"
+      - round_2: "Rebuttal - Counter opponent's opening"
+      - round_3: "Cross-examination - Question opponent directly"
+      - round_4: "Defense - Answer opponent's questions"
+      - round_5: "Closing Statement - Final summary"
+    use_cases: "Formal topics, policy debates, testing structured argumentation"
+    difficulty: "Medium - requires structured thinking"
+
+  socratic:
+    name: "Socratic Dialogue"
+    description: "Question-driven dialectic where participants probe assumptions and seek truth through inquiry"
+    rounds: 7
+    structure:
+      - round_1: "Initial Question - Pose fundamental question"
+      - round_2: "Response - Answer with reasoning"
+      - round_3-6: "Probe & Counter-probe - Question assumptions iteratively"
+      - round_7: "Synthesis - Emerge with refined understanding"
+    use_cases: "Philosophical topics, exploring assumptions, testing clone's reasoning depth"
+    difficulty: "High - requires deep thinking and curiosity"
+
+  devils_advocate:
+    name: "Devil's Advocate"
+    description: "One side argues mainstream position, other challenges with contrarian/uncomfortable truths"
+    rounds: 4
+    structure:
+      - round_1: "Mainstream Position vs Initial Challenge"
+      - round_2: "Defense vs Escalated Challenge"
+      - round_3: "Evidence Battle"
+      - round_4: "Final Positions"
+    use_cases: "Testing assumptions, challenging consensus, revealing blind spots"
+    difficulty: "Medium - requires contrarian thinking"
+
+  hegelian:
+    name: "Hegelian Dialectic"
+    description: "Thesis-Antithesis-Synthesis progression towards higher truth"
+    rounds: 3
+    structure:
+      - round_1: "Thesis vs Antithesis - Present opposing positions"
+      - round_2: "Tension & Contradiction - Explore conflicts between positions"
+      - round_3: "Synthesis - Emerge with unified higher-order understanding"
+    use_cases: "Reconciling opposing views, finding common ground, philosophical synthesis"
+    difficulty: "High - requires synthesis thinking"
+
+  x_thread:
+    name: "X (Twitter) Thread Battle"
+    description: "Real-time social media debate simulating viral X/Twitter thread with engagement metrics, memes, and personality-driven attacks"
+    rounds: "Dynamic (10-30 tweets each, responds to opponent)"
+    structure:
+      - opening: "Clone 1 drops provocative thread (3-5 tweets)"
+      - response: "Clone 2 responds with counter-thread"
+      - escalation: "Back-and-forth with increasing intensity"
+      - climax: "Peak engagement moment (viral tweet/meme)"
+      - resolution: "Final positions or truce/continued beef"
+    format_rules:
+      tweet_length: "280 characters max per tweet"
+      threading: "Use 🧵 notation and numbered threads (1/X)"
+      timing: "Include timestamps (realistic 2-5AM for Elon)"
+      engagement: "Simulate views, likes, retweets, replies"
+      emojis: "Encouraged - personality dependent"
+      memes: "Use text-based memes (💀, 😂, 🚀, etc)"
+      tone: "Authentic to clone personality (Elon: sarcastic/Demon Mode optional, Sam: measured)"
+      @mentions: "Use @username format"
+      hashtags: "Optional, personality dependent"
+    special_modes:
+      demon_mode: "For Elon clone - activates aggressive/sarcastic mode"
+      ratio_mode: "One clone gets significantly more engagement"
+      viral_moment: "Identify the tweet that would go most viral"
+    scoring_adjustments:
+      engagement_weight: "Add 'viral potential' to personality_fidelity (did tweets sound authentic?)"
+      brevity_weight: "Reward concise, punchy arguments over verbose ones"
+      meme_effectiveness: "Score use of humor/memes if appropriate to personality"
+      thread_coherence: "Maintain coherence across multi-tweet threads"
+    output_format:
+      - Full thread with @username, timestamp, tweet content
+      - Engagement metrics per tweet (views, likes, RTs, replies)
+      - Final engagement totals
+      - "Winner" by engagement + argument quality
+      - Most viral tweet highlighted
+    use_cases: "Controversial topics, personality clash testing, viral moment simulation, testing clone's social media authenticity"
+    difficulty: "Medium - requires brevity, personality, and viral instinct"
+    examples:
+      - "Sam vs Elon on OpenAI not being open"
+      - "Naval vs Tim Ferriss on 4-hour work week"
+      - "PG vs DHH on startup culture"
+      - "Two politicians on policy"
+    best_for_clones:
+      - "Tech personalities with strong Twitter presence"
+      - "Clones with distinct communication styles"
+      - "Personalities known for online debates"
 ```
