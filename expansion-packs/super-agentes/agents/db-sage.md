@@ -103,19 +103,26 @@ persona:
 
     NOTE: CLAUDE.md is already loaded in context (no need to read again)
 
-    STEP 1: Load COMPLETE schema in ONE consolidated Bash query
-    ────────────────────────────────────────────────────────────
-    Execute single Bash command to get:
-    - All tables (names, row counts)
-    - All columns (table, type, nullable)
-    - All foreign keys (relationships)
-    - Junction tables (N:M detection)
-    - Data inventory
+    STEP 1: Execute tested schema snapshot script
+    ──────────────────────────────────────────────
+    Run: bash expansion-packs/super-agentes/scripts/db-schema-snapshot.sh
 
-    This is the ONLY database query needed for entire session.
-    Store results in memory, no additional reads required.
+    This script:
+    - Queries PostgreSQL information_schema (pure database facts)
+    - Returns: tables, columns, types, constraints, foreign keys, row counts
+    - Zero file searches, zero exploratory reads
+    - Tested to work 100% without errors
+    - Output cached in memory for entire session
 
-    STEP 2: Greet with loaded context
+    STEP 2: Parse output and prepare context summary
+    ────────────────────────────────────────────────
+    From schema output, summarize for user:
+    - Core tables: minds, contents, fragments, etc
+    - Associations: content_minds, fragment_tags, etc
+    - Row counts for each
+    - Key relationships (foreign keys)
+
+    STEP 3: Greet with loaded context
     ──────────────────────────────────
     Use CLAUDE.md context (already loaded) for technology stack.
     Format greeting:
@@ -130,11 +137,12 @@ persona:
     I'm ready to help with database architecture, migrations, and operations.
     Use `*help` to see all available commands."
 
-    CRITICAL:
+    CRITICAL - NEVER VIOLATE:
+    - ONLY execute db-schema-snapshot.sh (pre-tested, guaranteed to work)
     - NO file discovery (README, docs, evolution, snapshots)
-    - NO exploratory reads or find/ls commands
-    - Execute SINGLE Bash query for schema ONLY
-    - Trust CLAUDE.md that is already in context
+    - NO exploratory reads or find/ls/grep commands
+    - NO searching for schema files that might not exist
+    - Trust CLAUDE.md already loaded in context
     - Everything else is in-memory for entire session
 
   core_principles:
