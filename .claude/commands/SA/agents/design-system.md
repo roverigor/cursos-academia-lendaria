@@ -191,6 +191,8 @@ knowledge_areas:
   - Migration strategy design (4-phase approach)
   - ROI calculation (maintenance costs, developer time savings)
   - Shock report generation (HTML with visual comparisons)
+  - Tailwind CSS v4 upgrade planning (Oxide engine, @theme, container queries)
+  - W3C Design Tokens (DTCG v2025.10) adoption and OKLCH color systems
 
   # Component building expertise
   - React TypeScript component generation
@@ -199,6 +201,8 @@ knowledge_areas:
   - WCAG AA/AAA accessibility compliance
   - Component testing (Jest, React Testing Library)
   - Multi-format token export (JSON, CSS, SCSS, Tailwind)
+  - Tailwind utility-first architectures (clsx/tailwind-merge/cva)
+  - Shadcn UI / Radix primitives integration
   - CSS Modules, styled-components, Tailwind integration
   - Storybook integration
   - Pattern library documentation

@@ -49,68 +49,35 @@ sync_mappings:
           format: "md"
           wrapper: "none"
 
-  # All Expansion Packs - Tasks
-  expansion_pack_tasks:
-    source: "expansion-packs/*/tasks/"
-    destinations:
-      claude:
-        - path: ".claude/commands/{pack}/tasks/"
-          format: "md"
-          wrapper: "none"
-      cursor:
-        - path: ".cursor/rules/tasks/"
-          format: "mdc"
-          wrapper: "cursor-rule"
-      windsurf:
-        - path: ".windsurf/{pack}/tasks/"
-          format: "md"
-          wrapper: "none"
-      trae:
-        - path: ".trae/{pack}/tasks/"
-          format: "md"
-          wrapper: "none"
+  # DISABLED: Tasks, Templates, Checklists sync
+  # Uncomment individual sections below to re-enable sync for specific types
 
-  # All Expansion Packs - Templates
-  expansion_pack_templates:
-    source: "expansion-packs/*/templates/"
-    destinations:
-      claude:
-        - path: ".claude/commands/{pack}/templates/"
-          format: "md"
-          wrapper: "none"
-      cursor:
-        - path: ".cursor/rules/templates/"
-          format: "mdc"
-          wrapper: "cursor-rule"
-      windsurf:
-        - path: ".windsurf/{pack}/templates/"
-          format: "md"
-          wrapper: "none"
-      trae:
-        - path: ".trae/{pack}/templates/"
-          format: "md"
-          wrapper: "none"
+  # # All Expansion Packs - Tasks
+  # expansion_pack_tasks:
+  #   source: "expansion-packs/*/tasks/"
+  #   destinations:
+  #     claude:
+  #       - path: ".claude/commands/{pack}/tasks/"
+  #         format: "md"
+  #         wrapper: "none"
 
-  # All Expansion Packs - Checklists
-  expansion_pack_checklists:
-    source: "expansion-packs/*/checklists/"
-    destinations:
-      claude:
-        - path: ".claude/commands/{pack}/checklists/"
-          format: "md"
-          wrapper: "none"
-      cursor:
-        - path: ".cursor/rules/checklists/"
-          format: "mdc"
-          wrapper: "cursor-rule"
-      windsurf:
-        - path: ".windsurf/{pack}/checklists/"
-          format: "md"
-          wrapper: "none"
-      trae:
-        - path: ".trae/{pack}/checklists/"
-          format: "md"
-          wrapper: "none"
+  # # All Expansion Packs - Templates
+  # expansion_pack_templates:
+  #   source: "expansion-packs/*/templates/"
+  #   destinations:
+  #     claude:
+  #       - path: ".claude/commands/{pack}/templates/"
+  #         format: "md"
+  #         wrapper: "none"
+
+  # # All Expansion Packs - Checklists
+  # expansion_pack_checklists:
+  #   source: "expansion-packs/*/checklists/"
+  #   destinations:
+  #     claude:
+  #       - path: ".claude/commands/{pack}/checklists/"
+  #         format: "md"
+  #         wrapper: "none"
 
   # All Expansion Packs - Workflows
   expansion_pack_workflows:
