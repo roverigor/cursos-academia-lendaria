@@ -1,0 +1,365 @@
+# Vibecoding Course Curriculum
+# Structured metadata for course management and analytics
+
+course:
+  id: vibecoding-v1
+  title: "Vibecoding - Criação de Apps Sem Código com IA"
+  slug: vibecoding
+  version: "1.0"
+  created_date: "2025-10-15"
+  last_updated: "2025-10-15"
+  status: active
+
+  instructor:
+    name: "José Carlos Amorim"
+    role: "Nexialista & IA Specialist"
+    credentials:
+      - "Leaders of Learning - Harvard"
+      - "AI for Business - IBM"
+      - "AI Fluency - Anthropic"
+      - "Técnico em Mecatrônica"
+    experience: "5000+ horas ao vivo em telejornalismo, 3000+ reportagens"
+    voice_profile: custom
+    voice_fidelity_target: 90
+
+  metadata:
+    duration_minutes: 120
+    duration_hours: 2
+    level: beginner
+    language: pt-BR
+    format: hands-on-immersion
+    delivery_mode: online-sync
+    practice_ratio: 80  # 80% prática, 20% teoria
+
+  target_audience:
+    demographics:
+      age_range: "25-45"
+      professions:
+        - "Empreendedores digitais"
+        - "Prestadores de serviço"
+        - "Profissionais em transição de carreira"
+    psychographics:
+      pain_points:
+        - "Falta de conhecimento técnico"
+        - "Dependência de desenvolvedores caros"
+        - "Demora para validar ideias"
+      motivations:
+        - "Autonomia técnica"
+        - "Monetização através de apps/MicroSaaS"
+        - "Reduzir custos de desenvolvimento"
+      time_availability: "1-2 horas para conteúdo desafiador"
+
+    prerequisites:
+      technical:
+        - "Nenhum conhecimento de programação necessário"
+        - "Saber usar computador e navegar na internet"
+      accounts_required:
+        - "Claude.ai (gratuito)"
+        - "GitHub (gratuito)"
+        - "Bolt.new (free tier ou $20/mês recomendado)"
+        - "Supabase (gratuito)"
+      optional:
+        - "OpenAI API ($5 crédito mínimo)"
+        - "Stripe (para pagamentos)"
+
+  learning_objectives:
+    bloom_level_1:  # Lembrar/Compreender
+      - "Definir HTML, CSS, JavaScript, API usando metáforas visuais"
+      - "Explicar diferença entre Artifacts (protótipo) e Bolt (produção)"
+    bloom_level_2:  # Aplicar
+      - "Criar formulários interativos com Claude Artifacts"
+      - "Publicar landing pages na internet com Bolt.new"
+      - "Integrar banco de dados Supabase"
+    bloom_level_3:  # Criar
+      - "Construir MicroSaaS funcional com autenticação e pagamento"
+      - "Desenvolver landing page de vendas otimizada"
+
+  deliverables:
+    apps_created:
+      - name: "Mapa da Clareza"
+        tool: "Claude Artifacts + Anthropic API"
+        complexity: 2
+      - name: "Landing Page Publicada"
+        tool: "Bolt.new"
+        complexity: 3
+      - name: "App com Banco de Dados"
+        tool: "Bolt + Supabase"
+        complexity: 4
+      - name: "App com Autenticação"
+        tool: "Bolt + Supabase Auth"
+        complexity: 4
+      - name: "Hub de GPTs (MicroSaaS)"
+        tool: "Bolt + Supabase + Stripe + OpenAI"
+        complexity: 5
+      - name: "Landing Page de Vendas"
+        tool: "Bolt"
+        complexity: 3
+
+    total_apps: 6
+    monetizable_apps: 3  # Landing, MicroSaaS, Landing de Vendas
+
+modules:
+  - id: modulo-1
+    title: "DO ZERO AO PRIMEIRO APP"
+    duration_minutes: 30
+    objective: "Quebrar barreira mental + primeira vitória rápida"
+    lessons:
+      - id: "1.1"
+        title: "A Máquina que Você Não Sabia Operar"
+        duration_minutes: 10
+        format: theory-demo
+        tools: ["Claude Artifacts"]
+        file: "lessons/1.1-maquina-que-nao-sabia-operar.md"
+        learning_objectives:
+          - "Entender HTML, CSS, JavaScript, API sem terror técnico"
+          - "Ver código sendo gerado em tempo real"
+          - "Perder medo de 'não sei programar'"
+        deliverables:
+          - "Referência mental clara de frontend vs backend"
+        assessment_type: self-check
+
+      - id: "1.2"
+        title: "Mapa da Clareza - Seu Primeiro App Funcional"
+        duration_minutes: 20
+        format: hands-on
+        tools: ["Claude Artifacts", "Anthropic API"]
+        file: "lessons/1.2-mapa-da-clareza.md"
+        learning_objectives:
+          - "Criar formulário interativo"
+          - "Integrar API da Anthropic"
+          - "Processar texto com IA"
+        deliverables:
+          - "App funcional Mapa da Clareza"
+        assessment_type: practical
+        assessment_criteria:
+          - "Formulário criado e estilizado"
+          - "API key configurada corretamente"
+          - "App processa texto e exibe categorizado"
+
+    assessment:
+      quiz: "assessments/quiz-modulo-1.yaml"
+      passing_score: 80
+
+  - id: modulo-2
+    title: "ARSENAL NO-CODE"
+    duration_minutes: 60
+    objective: "Dominar Bolt.new + Supabase + criar 3 apps"
+    lessons:
+      - id: "2.1"
+        title: "Bolt.new - De Protótipo a Produção"
+        duration_minutes: 15
+        format: hands-on
+        tools: ["Bolt.new", "GitHub"]
+        file: "lessons/2.1-bolt-prototipo-producao.md"
+        learning_objectives:
+          - "Criar landing page completa"
+          - "Publicar site online com URL real"
+          - "Iterar design com prompts"
+        deliverables:
+          - "Landing page publicada online"
+        assessment_type: practical
+        assessment_criteria:
+          - "Landing page com Header, Hero, Benefícios, Footer"
+          - "Customizada (cores/textos)"
+          - "URL acessível online"
+
+      - id: "2.2"
+        title: "Supabase - O Armário que Lembra Tudo"
+        duration_minutes: 20
+        format: hands-on
+        tools: ["Bolt.new", "Supabase"]
+        file: "lessons/2.2-supabase-armario.md"
+        learning_objectives:
+          - "Criar tabelas no Supabase"
+          - "Integrar banco de dados no Bolt"
+          - "CRUD básico (Create, Read)"
+        deliverables:
+          - "App com persistência de dados"
+        assessment_type: practical
+        assessment_criteria:
+          - "Tabela criada no Supabase"
+          - "API keys configuradas"
+          - "App salva e exibe dados"
+
+      - id: "2.3"
+        title: "Auth - O Porteiro do Seu App"
+        duration_minutes: 25
+        format: hands-on
+        tools: ["Bolt.new", "Supabase Auth"]
+        file: "lessons/2.3-auth-porteiro.md"
+        learning_objectives:
+          - "Adicionar sistema de login"
+          - "Proteger rotas/áreas"
+          - "Gerenciar sessões de usuário"
+        deliverables:
+          - "App com login funcional"
+        assessment_type: practical
+        assessment_criteria:
+          - "Tela de cadastro criada"
+          - "Login funcional"
+          - "Área protegida acessível só após login"
+
+    assessment:
+      quiz: "assessments/quiz-modulo-2.yaml"
+      passing_score: 80
+
+  - id: modulo-3
+    title: "VIRANDO DINHEIRO"
+    duration_minutes: 30
+    objective: "Criar MicroSaaS comercializável"
+    lessons:
+      - id: "3.1"
+        title: "Hub de GPTs - Seu Primeiro MicroSaaS"
+        duration_minutes: 20
+        format: hands-on
+        tools: ["Bolt.new", "Supabase", "OpenAI API", "Stripe"]
+        file: "lessons/3.1-hub-gpts-microsaas.md"
+        learning_objectives:
+          - "Integrar OpenAI Assistants API"
+          - "Adicionar sistema de pagamento (Stripe)"
+          - "Criar fluxo completo: Cadastro → Paga → Acessa"
+        deliverables:
+          - "MicroSaaS Hub de GPTs funcional"
+        assessment_type: project
+        assessment_criteria:
+          - "Hub conecta com assistentes OpenAI"
+          - "Stripe modo teste funcional"
+          - "Fluxo completo testado"
+
+      - id: "3.2"
+        title: "Landing que Vende no Automático"
+        duration_minutes: 10
+        format: hands-on
+        tools: ["Bolt.new", "Supabase"]
+        file: "lessons/3.2-landing-vende-automatico.md"
+        learning_objectives:
+          - "Criar landing page otimizada"
+          - "Estrutura: Isca → Captura → Pitch"
+          - "Integrar formulário de leads"
+        deliverables:
+          - "Landing page de vendas"
+        assessment_type: practical
+        assessment_criteria:
+          - "Landing com estrutura Isca → Captura → Pitch"
+          - "Formulário salva leads no Supabase"
+          - "CTA claro para MicroSaaS"
+
+    assessment:
+      final_project: "assessments/projeto-final-microsaas.md"
+      passing_score: 90
+
+tools_stack:
+  primary:
+    - name: "Claude.ai"
+      purpose: "Prototipagem + IA processing"
+      cost: free
+      required: true
+    - name: "Bolt.new"
+      purpose: "Criação de apps full-stack"
+      cost: "$20/mês (free tier limitado)"
+      required: true
+    - name: "Supabase"
+      purpose: "Banco de dados + Auth"
+      cost: free
+      required: true
+    - name: "GitHub"
+      purpose: "Versionamento + Deploy"
+      cost: free
+      required: true
+
+  apis:
+    - name: "Anthropic API"
+      purpose: "Claude para processing de texto"
+      cost: "$5 mínimo"
+      required: false
+    - name: "OpenAI API"
+      purpose: "GPT-4 + Assistants"
+      cost: "$5 mínimo"
+      required: false
+    - name: "Stripe"
+      purpose: "Pagamentos"
+      cost: "free (modo teste)"
+      required: false
+
+pedagogical_framework:
+  primary: "Backward Design"
+  secondary: ["Microlearning", "Scaffolding Progressivo"]
+  rationale: "Começa pelo fim desejado (MicroSaaS), trabalha de trás pra frente, do concreto ao abstrato"
+
+  instructional_strategies:
+    - "Metáforas visuais (Casa FullStack)"
+    - "Do concreto ao abstrato (ver funcionando ANTES da teoria)"
+    - "Hands-on total (80% prática)"
+    - "Linguagem adaptativa (termo técnico + metáfora)"
+    - "Celebração de vitórias (cada app é conquista)"
+
+voice_fidelity:
+  instructor_voice: "José Carlos Amorim"
+  tone: "Coloquial, entusiasta, confessional"
+  signatures:
+    phrases:
+      - "Olha só..."
+      - "Vem comigo..."
+      - "Rapaz..."
+      - "Pô show..."
+      - "Bacana..."
+      - "Vamos lá então..."
+    patterns:
+      - "Começa com metáfora visual"
+      - "Confessa dificuldades ('Eu demorei muito tempo pra entender')"
+      - "Celebra vitórias ('Pronto!', 'Fechou!')"
+      - "Pergunta engajamento ('Tá fazendo sentido?', 'Dúvidas?')"
+  target_fidelity: 90
+
+resources:
+  templates:
+    - "resources/biblioteca-prompts.md"
+    - "resources/template-microsaas-canvas.md"
+    - "resources/checklist-setup-ferramentas.md"
+  guides:
+    - "resources/troubleshooting-comum.md"
+
+assessments:
+  quizzes:
+    - "assessments/quiz-modulo-1.yaml"
+    - "assessments/quiz-modulo-2.yaml"
+    - "assessments/quiz-modulo-3.yaml"
+  projects:
+    - "assessments/projeto-final-microsaas.md"
+
+monetization_potential:
+  freelancer:
+    min: 1000
+    max: 3500
+    currency: BRL
+    unit: "por projeto"
+  microsaas:
+    min: 97
+    max: 497
+    currency: BRL
+    unit: "mês (recorrente)"
+  products:
+    examples:
+      - "Vender templates criados"
+      - "Cursos sobre o que aprendeu"
+      - "Consultoria no-code"
+
+certification:
+  criteria:
+    - "Completar 7 lessons (100%)"
+    - "Submeter 3 apps obrigatórios"
+  submission_format:
+    - "URL do app publicado"
+    - "Print da tela funcional"
+    - "Descrição 50-100 palavras"
+  apps_required:
+    - "Mapa da Clareza"
+    - "App com Auth"
+    - "Hub de GPTs (MicroSaaS)"
+
+success_metrics:
+  completion_rate_target: 80
+  voice_fidelity_score: 90
+  student_satisfaction_target: 9.0
+  time_savings_vs_manual: "80%"
+  manual_editing_required: "<20%"

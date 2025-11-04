@@ -1,0 +1,660 @@
+---
+version: "1.0"
+generated_at: "2025-10-30T17:30:00Z"
+generated_by: "CreatorOS Course Architect v2.2"
+---
+
+# Curriculum: Método M.A.P.A.™
+# Elimine 90% da Dependência de Programadores com IAs Autônomas
+
+course:
+  title: "Método M.A.P.A.™: Elimine 90% da Dependência de Programadores com IAs Autônomas"
+  tagline: "Pare de ver sua IA 'se perder' após 30 minutos de trabalho. Aprenda as 4 coordenadas do M.A.P.A.™ e deixe IAs autônomas trabalharem 8 horas sozinhas entregando código limpo e testado"
+  slug: "metodo-mapa-ias-autonomas"
+  version: "1.0"
+  language: "pt-BR"
+  instructor: "clone_alan_nicolas"
+
+metadata:
+  duration_total: "14 hours"
+  duration_per_lesson: "60 minutes"
+  num_modules: 2
+  num_lessons: 14
+  delivery_model: "async_with_sync_mentoring"
+  level: "beginner_intermediate"
+  certification: true
+  price_standalone: "R$ 2,000"
+
+categories:
+  primary: "Tecnologia & Programação"
+  secondary: "Negócios & Empreendedorismo"
+  tags:
+    - "M.A.P.A.™"
+    - "IAs Autônomas"
+    - "Claude Code"
+    - "Desenvolvimento Sem Código"
+    - "Automação"
+    - "Founders"
+    - "Cursor"
+
+pedagogical_framework:
+  approach: "Microlearning + Project-Based Learning"
+  theory_practice_ratio: "30:70"
+  validation: "dual_ai_human"
+  quick_win: "day_1_15_minutes"
+
+learning_objectives:
+  - objective: "Explicar por que IAs autônomas se perdem sem framework estruturado"
+    bloom_level: "understand"
+    assessment: "quiz_day_2"
+
+  - objective: "Usar Agente de Mapeamento para gerar Documento de Coordenadas automático em 15 min"
+    bloom_level: "apply"
+    assessment: "practical_day_1"
+
+  - objective: "Criar um Documento de Coordenadas completo manualmente (2-3 páginas)"
+    bloom_level: "create"
+    assessment: "checkpoint_day_4"
+
+  - objective: "Atomizar qualquer projeto digital em 5-7 Blocos com 3-5 Entregas cada"
+    bloom_level: "apply"
+    assessment: "checkpoint_day_7"
+
+  - objective: "Delegar Entregas para IAs autônomas usando Briefing estruturado"
+    bloom_level: "apply"
+    assessment: "practical_day_8"
+
+  - objective: "Acompanhar execução de IA em 3 níveis progressivos"
+    bloom_level: "apply"
+    assessment: "observation_day_9"
+
+  - objective: "Validar outputs de IA usando Checklist de Qualidade"
+    bloom_level: "evaluate"
+    assessment: "checkpoint_day_10"
+
+  - objective: "Ativar sistema completo em produção seguindo protocolo M.A.P.A.™"
+    bloom_level: "apply"
+    assessment: "deployment_day_12"
+
+  - objective: "Resolver os 2 problemas mais comuns usando troubleshooting guide"
+    bloom_level: "apply"
+    assessment: "scenario_based"
+
+  - objective: "Construir 1 sistema completo do zero ao deploy em 14 dias"
+    bloom_level: "create"
+    assessment: "final_project"
+
+  - objective: "Apresentar projeto final em mentoria para validação humana"
+    bloom_level: "evaluate"
+    assessment: "live_presentation_day_14"
+
+modules:
+  - id: "week_1"
+    title: "SEMANA 1: FUNDAMENTOS + MAPEAR + ATOMIZAR"
+    description: "Compreenda o problema, aprenda o framework M.A.P.A.™ e estruture seu projeto"
+    duration: "7 hours"
+    lessons: 7
+
+  - id: "week_2"
+    title: "SEMANA 2: PROGRAMAR + ATIVAR + CASO REAL"
+    description: "Execute com IAs autônomas, valide qualidade e coloque em produção"
+    duration: "7 hours"
+    lessons: 7
+
+lessons:
+  # SEMANA 1
+  - id: "day_1"
+    module: "week_1"
+    title: "INTRODUÇÃO + QUICK WIN"
+    duration_minutes: 60
+    bloom_level: "apply"
+    milestone: true
+
+    objectives:
+      - "Compreender o framework M.A.P.A.™ e suas 4 fases"
+      - "Visualizar a jornada completa de 14 dias"
+      - "Gerar primeiro mapeamento automático em 15 minutos"
+
+    structure:
+      - segment: "intro"
+        duration: 10
+        content: "Apresentação do M.A.P.A.™ (4 fases, por que funciona)"
+      - segment: "overview"
+        duration: 15
+        content: "O que você vai construir em 14 dias"
+      - segment: "quick_win"
+        duration: 20
+        content: "QUICK WIN - Usar Agente de Mapeamento"
+      - segment: "next_steps"
+        duration: 15
+        content: "O que vem nos próximos 13 dias"
+
+    deliverables:
+      - "Mapeamento automático do seu projeto"
+
+    tools_used:
+      - "Agente de Mapeamento"
+
+    checkpoint: null
+
+  - id: "day_2"
+    module: "week_1"
+    title: "POR QUE IAS AUTÔNOMAS SE PERDEM"
+    duration_minutes: 60
+    bloom_level: "understand"
+
+    objectives:
+      - "Compreender o problema da perda de contexto"
+      - "Identificar os 3 erros fatais ao delegar para IA"
+      - "Entender a solução através das 4 coordenadas"
+
+    structure:
+      - segment: "context_loss"
+        duration: 15
+        content: "O problema da perda de contexto (telefone sem fio)"
+      - segment: "case_study"
+        duration: 20
+        content: "Caso real: 'Cria um CRM' sem framework (fracasso)"
+      - segment: "fatal_errors"
+        duration: 15
+        content: "Os 3 erros fatais: vago, sem docs, sem validação"
+      - segment: "solution"
+        duration: 10
+        content: "A solução: 4 coordenadas do M.A.P.A.™"
+
+    deliverables:
+      - "Compreensão dos erros (quiz curto)"
+
+  - id: "day_3"
+    module: "week_1"
+    title: "DOCUMENTO DE COORDENADAS - TEMPLATE COMPLETO"
+    duration_minutes: 60
+    bloom_level: "understand"
+
+    objectives:
+      - "Entender cada campo do Documento de Coordenadas"
+      - "Conhecer os 6 componentes essenciais"
+      - "Analisar 3 exemplos prontos"
+
+    structure:
+      - segment: "overview"
+        duration: 10
+        content: "Visão geral do template (6 seções principais)"
+      - segment: "deep_dive"
+        duration: 40
+        content: "Detalhamento de cada seção"
+      - segment: "examples"
+        duration: 10
+        content: "3 Exemplos prontos (CRM, Automação, Dashboard)"
+
+    templates:
+      - "Documento de Coordenadas"
+
+  - id: "day_4"
+    module: "week_1"
+    title: "PRÁTICA - MAPEAR SEU PROJETO"
+    duration_minutes: 60
+    bloom_level: "apply"
+    checkpoint: true
+
+    objectives:
+      - "Preencher Documento de Coordenadas completo"
+      - "Ajustar mapeamento gerado no Dia 1"
+      - "Validar com Agente Validador"
+
+    structure:
+      - segment: "review"
+        duration: 10
+        content: "Revisão do mapeamento do Dia 1"
+      - segment: "guided_practice"
+        duration: 40
+        content: "PRÁTICA GUIADA - Preencher cada seção"
+      - segment: "validation"
+        duration: 10
+        content: "Submeter para validação IA"
+
+    deliverables:
+      - "Documento de Coordenadas completo (2-3 páginas)"
+
+    tools_used:
+      - "Agente Validador de Coordenadas"
+
+    validation_criteria:
+      clarity: ">80%"
+      completeness: ">90%"
+      specificity: ">75%"
+
+  - id: "day_5"
+    module: "week_1"
+    title: "CONCEITO DE ATOMIZAÇÃO - BLOCOS + ENTREGAS"
+    duration_minutes: 60
+    bloom_level: "understand"
+
+    objectives:
+      - "Entender o conceito de atomização"
+      - "Diferenciar Blocos de Entregas"
+      - "Compreender por que IA não se perde com atomização"
+
+    structure:
+      - segment: "concept"
+        duration: 15
+        content: "O que é atomizar (quebrar grande em pequeno)"
+      - segment: "blocks_vs_deliveries"
+        duration: 20
+        content: "Diferença entre Bloco e Entrega"
+      - segment: "why_it_works"
+        duration: 15
+        content: "Por que IA não se perde em Entregas atômicas"
+      - segment: "visual_example"
+        duration: 10
+        content: "Exemplo visual: CRM atomizado"
+
+  - id: "day_6"
+    module: "week_1"
+    title: "FRAMEWORK DE ATOMIZAÇÃO - 5-7 BLOCOS"
+    duration_minutes: 60
+    bloom_level: "apply"
+
+    objectives:
+      - "Aplicar padrão de divisão em Blocos"
+      - "Adaptar framework para diferentes projetos"
+      - "Usar template Ficha de Bloco"
+
+    structure:
+      - segment: "universal_pattern"
+        duration: 10
+        content: "Padrão universal: 5-7 Blocos para qualquer projeto"
+      - segment: "adaptation"
+        duration: 30
+        content: "Como adaptar para seu projeto específico"
+      - segment: "template"
+        duration: 20
+        content: "Template Ficha de Bloco"
+
+    templates:
+      - "Ficha de Bloco"
+
+  - id: "day_7"
+    module: "week_1"
+    title: "PRÁTICA - ATOMIZAR + INICIAR BLOCO 1"
+    duration_minutes: 60
+    bloom_level: "apply"
+    milestone: true
+    checkpoint: true
+
+    objectives:
+      - "Atomizar projeto em Blocos e Entregas"
+      - "Validar com Agente de QA"
+      - "Iniciar Bloco 1"
+
+    structure:
+      - segment: "guided_atomization"
+        duration: 20
+        content: "PRÁTICA GUIADA - Atomizar projeto"
+      - segment: "qa_validation"
+        duration: 20
+        content: "Validação com Agente de QA"
+      - segment: "start_block_1"
+        duration: 20
+        content: "Preparar briefing da Entrega 1"
+
+    deliverables:
+      - "Projeto atomizado completo"
+      - "Documentação com QA aprovado"
+      - "Bloco 1 iniciado"
+
+    tools_used:
+      - "Agente de QA de Atomização"
+
+  # SEMANA 2
+  - id: "day_8"
+    module: "week_2"
+    title: "BRIEFING PARA IA - DELEGAR ENTREGAS"
+    duration_minutes: 60
+    bloom_level: "apply"
+
+    objectives:
+      - "Estruturar Briefing para IA"
+      - "Delegar primeira Entrega"
+      - "Adaptar para diferentes IAs"
+
+    structure:
+      - segment: "briefing_structure"
+        duration: 15
+        content: "Estrutura do Briefing para IA"
+      - segment: "live_demo"
+        duration: 25
+        content: "DEMO AO VIVO - Delegando para Claude Code"
+      - segment: "adaptation"
+        duration: 20
+        content: "Adaptar para Claude, Cursor, Manus"
+
+    templates:
+      - "Briefing para IA"
+
+    deliverables:
+      - "Briefing da Entrega 1 pronto"
+
+  - id: "day_9"
+    module: "week_2"
+    title: "ACOMPANHAMENTO PROGRESSIVO - 3 NÍVEIS"
+    duration_minutes: 60
+    bloom_level: "apply"
+
+    objectives:
+      - "Dominar 3 formas de acompanhar IA"
+      - "Evoluir de observação direta para autonomia"
+      - "Configurar notificações automáticas"
+
+    structure:
+      - segment: "level_1"
+        duration: 15
+        content: "NÍVEL 1 - Olhar Tela"
+      - segment: "level_2"
+        duration: 20
+        content: "NÍVEL 2 - Servidor + Logs"
+      - segment: "level_3"
+        duration: 25
+        content: "NÍVEL 3 - Dashboard + WhatsApp"
+
+    levels:
+      - level: 1
+        name: "Olhar Tela"
+        when: "Dias 1-5"
+        purpose: "Aprender padrões"
+      - level: 2
+        name: "Servidor + Logs"
+        when: "Dias 6-10"
+        purpose: "Monitorar progresso"
+      - level: 3
+        name: "Dashboard + WhatsApp"
+        when: "Dias 11-14"
+        purpose: "Total autonomia"
+
+  - id: "day_10"
+    module: "week_2"
+    title: "VALIDAÇÃO COM IA - CHECKPOINTS AUTOMÁTICOS"
+    duration_minutes: 60
+    bloom_level: "evaluate"
+    checkpoint: true
+
+    objectives:
+      - "Usar agentes validadores"
+      - "Detectar erros cedo"
+      - "Validar Entrega 1"
+
+    structure:
+      - segment: "why_validate"
+        duration: 15
+        content: "Por que validar DURANTE"
+      - segment: "validators"
+        duration: 25
+        content: "Como funcionam Agentes Validadores"
+      - segment: "practice"
+        duration: 20
+        content: "PRÁTICA - Validar Entrega 1"
+
+    deliverables:
+      - "Entrega 1 validada e aprovada"
+
+    tools_used:
+      - "Agente Validador de Entrega"
+
+    templates:
+      - "Checklist Validação de Qualidade"
+
+  - id: "day_11"
+    module: "week_2"
+    title: "DASHBOARD + NOTIFICAÇÕES WHATSAPP"
+    duration_minutes: 60
+    bloom_level: "apply"
+
+    objectives:
+      - "Construir sistema de notificações"
+      - "Atingir Nível 3 de autonomia"
+      - "Configurar alertas WhatsApp"
+
+    structure:
+      - segment: "architecture"
+        duration: 10
+        content: "Arquitetura do sistema"
+      - segment: "live_build"
+        duration: 30
+        content: "DEMO AO VIVO - Construindo com M.A.P.A.™"
+      - segment: "whatsapp_setup"
+        duration: 20
+        content: "Setup notificações WhatsApp"
+
+    meta_learning: true
+
+  - id: "day_12"
+    module: "week_2"
+    title: "CHECKLIST DE ATIVAÇÃO - DEPLOY + TESTES"
+    duration_minutes: 60
+    bloom_level: "apply"
+
+    objectives:
+      - "Executar checklist de ativação"
+      - "Deploy automatizado com IA"
+      - "Troubleshooting comum"
+
+    structure:
+      - segment: "activation_checklist"
+        duration: 15
+        content: "Checklist de Ativação (10 itens)"
+      - segment: "automated_deploy"
+        duration: 25
+        content: "Deploy automatizado (Vercel, Railway, Render)"
+      - segment: "troubleshooting"
+        duration: 20
+        content: "3 problemas mais comuns"
+
+    templates:
+      - "Checklist Ativação de Sistema"
+
+    deliverables:
+      - "Sistema pronto para ativação"
+
+  - id: "day_13"
+    module: "week_2"
+    title: "CASO REAL - SISTEMA VALIDAÇÃO M.A.P.A.™"
+    duration_minutes: 60
+    bloom_level: "create"
+    case_study: true
+    checkpoint: true
+
+    objectives:
+      - "Ver método aplicado a si mesmo"
+      - "Compreender meta-learning"
+      - "Validar projeto final"
+
+    structure:
+      - segment: "project_intro"
+        duration: 10
+        content: "Sistema de Validação M.A.P.A.™"
+      - segment: "screencast"
+        duration: 40
+        content: "SCREENCAST COMPLETO - Construção do zero"
+      - segment: "lessons_learned"
+        duration: 10
+        content: "Lições aprendidas"
+
+    tools_used:
+      - "Agente Validador de Projeto Final"
+
+    meta_project: "Sistema Validação M.A.P.A.™"
+
+  - id: "day_14"
+    module: "week_2"
+    title: "APRESENTAÇÃO FINAL + CERTIFICAÇÃO"
+    duration_minutes: 60
+    bloom_level: "evaluate"
+    milestone: true
+    final: true
+
+    objectives:
+      - "Apresentar sistema completo"
+      - "Receber validação humana"
+      - "Obter certificação M.A.P.A.™"
+
+    structure:
+      - segment: "live_presentation"
+        duration: 30
+        content: "Apresentação em mentoria ao vivo"
+      - segment: "retrospective"
+        duration: 30
+        content: "Retrospectiva dos 14 dias"
+
+    deliverables:
+      - "Sistema completo apresentado"
+      - "Certificado M.A.P.A.™ (se aprovado)"
+
+    validation:
+      type: "human"
+      evaluators:
+        - "Professor Técnico"
+        - "Setor Pedagógico"
+
+assessments:
+  checkpoints_ai:
+    - day: 4
+      agent: "Agente Validador de Coordenadas"
+      validates: "Documento de Coordenadas"
+      pass_criteria: ">70/100"
+
+    - day: 7
+      agent: "Agente de QA de Atomização"
+      validates: "Atomização em Blocos/Entregas"
+      pass_criteria: ">75/100"
+
+    - day: 10
+      agent: "Agente Validador de Entrega"
+      validates: "Entrega 1 completa"
+      pass_criteria: ">80/100"
+
+    - day: 13
+      agent: "Agente Validador de Projeto Final"
+      validates: "Sistema completo"
+      pass_criteria: "9/10 items OK"
+
+  checkpoint_human:
+    day: 14
+    evaluators:
+      - "Professor Técnico"
+      - "Setor Pedagógico"
+    criteria:
+      - "Funcionalidade do sistema"
+      - "Qualidade do código"
+      - "Aplicação correta do método"
+      - "Apresentação clara"
+
+resources:
+  templates:
+    - name: "Documento de Coordenadas"
+      type: "planning"
+      format: ["markdown", "notion", "google_docs"]
+
+    - name: "Ficha de Bloco"
+      type: "organization"
+      format: ["markdown", "notion", "google_docs"]
+
+    - name: "Briefing para IA"
+      type: "execution"
+      format: ["markdown", "notion", "google_docs"]
+
+    - name: "Checklist Validação de Qualidade"
+      type: "validation"
+      format: ["markdown", "checklist"]
+
+    - name: "Checklist Ativação de Sistema"
+      type: "deployment"
+      format: ["markdown", "checklist"]
+
+  agents:
+    - name: "Agente de Mapeamento"
+      purpose: "Quick Win Dia 1"
+      input: "Descrição do projeto"
+      output: "Documento de Coordenadas 80% pronto"
+
+    - name: "Agente Validador de Coordenadas"
+      purpose: "Checkpoint Dia 4"
+      validates: "Clareza, completude, especificidade"
+
+    - name: "Agente de QA de Atomização"
+      purpose: "Checkpoint Dia 7"
+      validates: "Independência, clareza, ordem lógica"
+
+    - name: "Agente Validador de Entrega"
+      purpose: "Checkpoint Dia 10"
+      validates: "Funcionalidade, testes, documentação"
+
+    - name: "Agente Validador de Projeto Final"
+      purpose: "Checkpoint Dia 13"
+      validates: "Sistema completo, 10 critérios"
+
+  additional:
+    - "Infográfico M.A.P.A.™ 14 Dias"
+    - "Glossário M.A.P.A.™"
+    - "Troubleshooting Guide"
+    - "Caso Real: Sistema Validação"
+
+support:
+  mentoring:
+    schedule:
+      - day: "Segunda a Sexta"
+        times: ["10:30", "18:30"]
+        duration: "30-60 min"
+        type: "on_demand"
+        mandatory: false
+
+  community:
+    platform: "Comunidade Legendária"
+    members: "150+"
+    channels:
+      - "duvidas-tecnicas"
+      - "showcase-projetos"
+      - "networking"
+
+success_metrics:
+  student:
+    - metric: "Quick Win Dia 1"
+      target: "100% generate mapping"
+
+    - metric: "Documento Coordenadas Dia 4"
+      target: "AI approval >80%"
+
+    - metric: "Projeto atomizado Dia 7"
+      target: "QA approved"
+
+    - metric: "Sistema completo Dia 14"
+      target: "Human validated"
+
+    - metric: "Redução dependência"
+      target: "90% less programmer dependency"
+
+  course:
+    - metric: "Taxa de conclusão"
+      target: ">70%"
+
+    - metric: "NPS"
+      target: ">80"
+
+    - metric: "Tempo até certificação"
+      target: "<30 dias"
+
+    - metric: "Aprovação checkpoints"
+      target: ">80% first attempt"
+
+delivery:
+  platform: "Comunidade Legendária"
+  format: "async_videos_with_sync_support"
+  access: "lifetime"
+  updates: "included"
+
+pricing:
+  standalone: "R$ 2,000"
+  bundle: "Included in Formação Legendária"
+  guarantee: "7 days"
+
+---
+# END OF CURRICULUM

@@ -1,0 +1,33 @@
+# AULAS FALTANTES - FILA DE GERAÇÃO (21 aulas)
+
+## MÓDULO 3 (5 aulas faltantes)
+3.3-conhecendo-aluno-lendario.md
+3.4-linguagem-tom-lendario.md
+3.5-adaptando-cinco-arquetipos.md
+3.6-enderecando-medos-aulas.md
+3.7-desmontando-crencas-limitantes.md
+
+## MÓDULO 4 (2 aulas faltantes)
+4.3-storytelling-aplicado.md
+4.4-logos-etos-patos-aristoteles.md
+
+## MÓDULO 5 (5 aulas - REGENERAR 5.1 que está vazio!)
+5.1-estrutura-completa-aula.md
+5.2-como-dividir-conceitos.md
+5.3-links-hooks-entre-aulas.md
+5.4-processo-consciente-inconsciente.md
+5.5-preparando-aula-passo-passo.md
+
+## MÓDULO 6 (4 aulas faltantes)
+6.2-eliminando-monotonia-modulacao.md
+6.3-diccao-clareza-falar.md
+6.4-expressoes-faciais-corporais.md
+6.5-evocando-emocao.md
+
+## MÓDULO 7 (5 aulas faltantes - 7.4 e 7.5 são síncronas)
+7.2-preparando-primeira-aula-template.md
+7.3-gravando-analisando-feedback.md
+7.4-sessao-pratica-vivo-1.md (placeholder - síncrono)
+7.5-sessao-pratica-vivo-2.md (placeholder - síncrono)
+7.6-iteracao-melhoria-continua.md
+7.7-seu-proximo-passo.md

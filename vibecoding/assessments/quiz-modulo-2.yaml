@@ -1,0 +1,197 @@
+# Quiz Módulo 2: ARSENAL NO-CODE
+# Vibecoding Course Assessment
+
+quiz:
+  id: vibecoding-m2-quiz
+  module: 2
+  title: "Quiz Módulo 2: ARSENAL NO-CODE"
+  passing_score: 80
+  total_questions: 10
+  time_limit_minutes: 12
+  attempts_allowed: 3
+
+questions:
+  - id: q1
+    type: multiple_choice
+    points: 10
+    question: "Qual a principal diferença entre Claude Artifacts e Bolt.new?"
+    options:
+      - text: "Artifacts é pago, Bolt é gratuito"
+        correct: false
+      - text: "Artifacts é para protótipo/teste, Bolt é para produção/publicação"
+        correct: true
+        feedback: "Correto! Artifacts = maquete. Bolt = casa de verdade que você pode morar/vender."
+      - text: "Bolt só funciona em Python, Artifacts em JavaScript"
+        correct: false
+      - text: "São exatamente iguais, só muda o nome"
+        correct: false
+    bloom_level: understand
+
+  - id: q2
+    type: multiple_choice
+    points: 10
+    question: "Na metáfora do 'Armário Organizado', o que o Supabase representa?"
+    options:
+      - text: "A parte visual do app"
+        correct: false
+      - text: "O banco de dados que guarda informações em 'gavetas' (tabelas)"
+        correct: true
+        feedback: "Isso! Supabase = armário com gavetas etiquetadas. Cada gaveta = uma tabela."
+      - text: "O sistema de login"
+        correct: false
+      - text: "A hospedagem do app"
+        correct: false
+    bloom_level: remember
+
+  - id: q3
+    type: multiple_choice
+    points: 10
+    question: "O que significa CRUD em banco de dados?"
+    options:
+      - text: "Create, Read, Update, Delete"
+        correct: true
+        feedback: "Perfeito! São as 4 operações básicas: Criar, Ler, Atualizar, Apagar."
+      - text: "Connect, Run, Upload, Download"
+        correct: false
+      - text: "Code, Review, Update, Deploy"
+        correct: false
+      - text: "Configure, Read, Use, Delete"
+        correct: false
+    bloom_level: remember
+
+  - id: q4
+    type: true_false
+    points: 10
+    question: "Quando você publica um app no Bolt.new, ele automaticamente fica hospedado online com uma URL acessível."
+    options:
+      - text: "Verdadeiro"
+        correct: true
+        feedback: "Correto! Bolt faz deploy automático na Vercel. Você clica 'Deploy' e já tem URL online."
+      - text: "Falso"
+        correct: false
+    bloom_level: apply
+
+  - id: q5
+    type: multiple_choice
+    points: 10
+    question: "Por que autenticação (login/senha) é importante além de segurança?"
+    options:
+      - text: "Só serve para segurança mesmo"
+        correct: false
+      - text: "Permite personalização ('Olá, José!'), monetização (planos), e separar dados por usuário"
+        correct: true
+        feedback: "Exatamente! Auth não é só segurança. É personalização, monetização e usabilidade."
+      - text: "É obrigatório por lei em todos os apps"
+        correct: false
+      - text: "Só apps grandes precisam de autenticação"
+        correct: false
+    bloom_level: understand
+
+  - id: q6
+    type: multiple_choice
+    points: 10
+    question: "Qual componente do Supabase permite adicionar login/senha ao app?"
+    options:
+      - text: "Supabase Storage"
+        correct: false
+      - text: "Supabase Auth"
+        correct: true
+        feedback: "Isso! Supabase Auth já vem embutido e cuida de cadastro, login, sessões, e-mail de confirmação."
+      - text: "Supabase Functions"
+        correct: false
+      - text: "Supabase Realtime"
+        correct: false
+    bloom_level: remember
+
+  - id: q7
+    type: multiple_choice
+    points: 10
+    question: "O que são RLS Policies no Supabase?"
+    options:
+      - text: "Regras de estilização CSS"
+        correct: false
+      - text: "Row Level Security - regras que definem quem pode acessar/modificar cada dado"
+        correct: true
+        feedback: "Correto! RLS garante que usuário A não vê dados do usuário B. Cada linha tem permissões."
+      - text: "Configuração de servidor"
+        correct: false
+      - text: "Tipo de banco de dados"
+        correct: false
+    bloom_level: understand
+
+  - id: q8
+    type: true_false
+    points: 10
+    question: "Um app com Bolt + Supabase + Auth pode ser vendido como serviço para clientes reais."
+    options:
+      - text: "Verdadeiro"
+        correct: true
+        feedback: "Sim! Você pode cobrar R$ 2.000-8.000 por apps assim. É produção real, não protótipo."
+      - text: "Falso"
+        correct: false
+    bloom_level: evaluate
+
+  - id: q9
+    type: multiple_choice
+    points: 10
+    question: "Quando você cria uma tabela no Supabase via SQL Editor, o que você está criando?"
+    options:
+      - text: "Uma página web"
+        correct: false
+      - text: "Uma 'gaveta' do armário onde dados serão guardados"
+        correct: true
+        feedback: "Exato! Tabela = gaveta do armário. Colunas = compartimentos da gaveta."
+      - text: "Um arquivo de código"
+        correct: false
+      - text: "Uma função JavaScript"
+        correct: false
+    bloom_level: apply
+
+  - id: q10
+    type: open_ended
+    points: 10
+    question: "Descreva o fluxo completo de um usuário desde cadastro até acessar área protegida num app com Bolt + Supabase Auth."
+    rubric:
+      - criteria: "Menciona cadastro (/signup) e envio de e-mail de confirmação"
+        points: 3
+      - criteria: "Menciona login (/login) com credenciais"
+        points: 3
+      - criteria: "Menciona redirecionamento para área protegida (/dashboard) após login bem-sucedido"
+        points: 2
+      - criteria: "Menciona que sem login, usuário é redirecionado para /login"
+        points: 2
+    sample_answer: "Usuário vai em /signup, preenche e-mail e senha, Supabase envia e-mail de confirmação. Usuário confirma e-mail. Depois, vai em /login, digita credenciais, e se correto é redirecionado para /dashboard (área protegida). Se tentar acessar /dashboard sem login, é redirecionado para /login automaticamente."
+    bloom_level: apply
+
+feedback_by_score:
+  90-100:
+    message: "🔥 EXCELENTE! Você dominou Bolt + Supabase + Auth! Tá pronto pra criar apps profissionais. Bora pro Módulo 3 monetizar!"
+    next_steps:
+      - "Comece o Módulo 3: MicroSaaS"
+      - "Pratique: Crie um mini-CRM com Bolt + Supabase"
+      - "Se ainda não publicou um app, publique agora!"
+  80-89:
+    message: "👏 MUITO BOM! Você passou e entendeu o essencial. Revise os conceitos que errou e prossiga!"
+    next_steps:
+      - "Revise as questões que errou"
+      - "Releia as sections sobre RLS Policies se precisar"
+      - "Prossiga para o Módulo 3"
+  60-79:
+    message: "⚠️ QUASE LÁ! Você tem uma base, mas precisa reforçar alguns pontos práticos. Refaça os projetos das lessons."
+    next_steps:
+      - "Releia Lessons 2.1, 2.2, 2.3"
+      - "Refaça o app com Supabase + Auth do zero"
+      - "Retome o quiz após praticar"
+  0-59:
+    message: "📚 PRECISA REVISAR. Módulo 2 é técnico! Volte, faça os projetos passo a passo, teste tudo. Aprendizado vem com prática!"
+    next_steps:
+      - "Revise todo o Módulo 2"
+      - "Faça TODOS os projetos práticos"
+      - "Pede ajuda no grupo se travar em algum ponto"
+      - "Refaça o quiz quando se sentir confiante"
+
+reflection_questions:
+  - "Você conseguiu publicar um app online no Bolt?"
+  - "Seus dados estão sendo salvos no Supabase corretamente?"
+  - "O sistema de login/autenticação está funcionando?"
+  - "Qual foi a parte mais desafiadora do Módulo 2?"

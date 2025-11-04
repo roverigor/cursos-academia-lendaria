@@ -1,0 +1,127 @@
+# Quiz Módulo 3: VIRANDO DINHEIRO
+# Vibecoding Course Assessment
+
+quiz:
+  id: vibecoding-m3-quiz
+  module: 3
+  title: "Quiz Módulo 3: VIRANDO DINHEIRO"
+  passing_score: 80
+  total_questions: 6
+  time_limit_minutes: 10
+  attempts_allowed: 3
+
+questions:
+  - id: q1
+    type: multiple_choice
+    points: 10
+    question: "Qual é o principal objetivo do Módulo 3?"
+    options:
+      - text: "Criar um formulário com IA"
+        correct: false
+      - text: "Publicar um site no Bolt.new"
+        correct: false
+      - text: "Criar um MicroSaaS comercializável (produto que pode ser vendido)"
+        correct: true
+        feedback: "Correto! O foco é transformar skill em produto com potencial de receita."
+      - text: "Aprender SQL avançado"
+        correct: false
+    bloom_level: understand
+
+  - id: q2
+    type: multiple_choice
+    points: 10
+    question: "No fluxo do MicroSaaS (Lesson 3.1), qual ordem está correta?"
+    options:
+      - text: "Paga → Cadastra → Acessa"
+        correct: false
+      - text: "Cadastra → Acessa → Paga"
+        correct: false
+      - text: "Cadastra → Paga → Acessa"
+        correct: true
+        feedback: "Exato! Cadastro, pagamento (Stripe teste) e acesso às features."
+      - text: "Acessa → Cadastra → Paga"
+        correct: false
+    bloom_level: apply
+
+  - id: q3
+    type: multiple_choice
+    points: 10
+    question: "Qual é a função da landing de vendas (Lesson 3.2)?"
+    options:
+      - text: "Mostrar o código do produto"
+        correct: false
+      - text: "Gerar demanda e capturar leads para conversão"
+        correct: true
+        feedback: "Perfeito! Landing = Isca → Captura → Pitch, com formulário integrado."
+      - text: "Substituir o app principal"
+        correct: false
+      - text: "Servir de painel administrativo"
+        correct: false
+    bloom_level: understand
+
+  - id: q4
+    type: true_false
+    points: 10
+    question: "Stripe em modo teste é suficiente para o Projeto Final."
+    options:
+      - text: "Verdadeiro"
+        correct: true
+        feedback: "Correto! Produção real é opcional. Para o curso, modo teste basta."
+      - text: "Falso"
+        correct: false
+    bloom_level: apply
+
+  - id: q5
+    type: multiple_choice
+    points: 10
+    question: "Qual métrica é mais relevante para validar viabilidade comercial inicial?"
+    options:
+      - text: "Quantidade de linhas de código"
+        correct: false
+      - text: "Número de páginas da documentação"
+        correct: false
+      - text: "Taxa de conversão da landing e interesse de leads"
+        correct: true
+        feedback: "Isso! Conversão e leads validados > vaidade técnica."
+      - text: "Quantidade de frameworks usados"
+        correct: false
+    bloom_level: analyze
+
+  - id: q6
+    type: open_ended
+    points: 10
+    question: "Descreva brevemente seu plano de preços (Free/Pro) e o que cada plano inclui."
+    rubric:
+      - criteria: "Define pelo menos 2 planos (Free e Pro)"
+        points: 4
+      - criteria: "Justifica valor do plano pago com feature(s) chave"
+        points: 4
+      - criteria: "Clareza e objetividade"
+        points: 2
+    sample_answer: "Free: acesso limitado a 2 GPTs; Pro (R$ 97/mês): 10 GPTs, histórico salvo, prioridade no processamento."
+    bloom_level: create
+
+feedback_by_score:
+  90-100:
+    message: "🚀 EXCELENTE! Você está pronto para lançar seu MicroSaaS. Foque em conversão e feedback dos primeiros usuários."
+    next_steps:
+      - "Finalize o Projeto Final e publique as URLs"
+      - "Compartilhe seu case no grupo"
+  80-89:
+    message: "👏 MUITO BOM! Ajuste pequenos pontos e siga para a entrega final."
+    next_steps:
+      - "Refine a landing (headline/CTA)"
+      - "Teste o fluxo de pagamento novamente"
+  0-79:
+    message: "📚 QUASE LÁ! Reforce a parte de monetização e revise o funil da landing."
+    next_steps:
+      - "Releia Lessons 3.1 e 3.2"
+      - "Valide o plano de preços com 2 amigos potenciais clientes"
+
+reflection_questions:
+  - "Qual canal você usará para levar tráfego para sua landing?"
+  - "Como você validará o interesse antes de investir mais?"
+  - "Qual é o primeiro marco (milestone) de sucesso nas próximas 2 semanas?"
+
+
+
