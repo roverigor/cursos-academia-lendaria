@@ -2,7 +2,7 @@
 
 **Version:** 1.0.0-MVP  
 **Date:** 2025-10-06  
-**Status:** 🟢 Ready for Testing (MVP)
+**Status:** 🟡 MVP Ready for Testing
 
 ---
 
@@ -99,7 +99,7 @@ node scripts/orchestrator/parallel-collector.js \
 
 ## 📝 Notes
 
-- Pack **100% concluído** (documentação + testes rodados)
+- Pack **MVP funcional** (core utilities completos, monitoramento em progresso)
 - Suite de coletores validada com fontes reais
 - Total de ~4,000 linhas de código criadas
 

@@ -1,5 +1,9 @@
 # Fragments Expansion Pack
 
+**Status:** 🚧 RESEARCH PHASE - Not Production Ready
+**Version:** v0.1.0-alpha
+**Last Updated:** 2025-11-04
+
 > AIOS-FULLSTACK Expansion Pack for Fragment Processing
 
 ## Overview

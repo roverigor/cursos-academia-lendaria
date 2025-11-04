@@ -12,7 +12,7 @@ This document consolidates every active initiative, partially delivered idea, an
 |------------|-------|--------|----------------|------------------|--------|
 | MMOS Epics | Core platform orchestration, database, taxonomy, automation | 🚧 Epic 2 75% · Epic 1 25% · Epic 3 8% | Story 2.4 (Pipeline Integration) | Story 3.1.1 and Epic 4 wait on Story 2.4 completion | docs/mmos/epics/ROADMAP.md:1 |
 | MMOS Next Steps | Product-level execution phases | 🟠 Fase 1 partially delivered | Finalize Stories 1.2–1.4 deliverables & documentation refresh | Requires telemetry board + brownfield assistant | docs/prd/5-next-steps.md:1 |
-| Supabase Platform | Production Supabase schema + ingestion pipeline | ✅ v0.7.0 baseline live; Story 2.4 scripts ready | Ship fragments automation + advanced validation on new schema | Fragment automation waits for InnerLens upgrade; monitoring tooling pending | supabase/README.md:1 |
+| Supabase Platform | Production Supabase schema + ingestion pipeline | ✅ v0.8.2 baseline live; Story 2.4 scripts ready | Ship fragments automation + advanced validation on new schema | Fragment automation waits for InnerLens upgrade; monitoring tooling pending | supabase/README.md:1 |
 | CreatorOS | Multi-format creator operating system | ✅ Phase 0 · ⏳ Phases 1-4 | Ship Phase 1 agents & tasks (blog MVP) | Needs MMOS persona integration & fidelity validation | expansion-packs/creator-os/README.md:516 |
 | InnerLens Lite | Psychometric quick-scan pack | ✅ v1.0 live · ⏳ v1.1–v2.0 | Deliver HEXACO & multimodal upgrades (v1.1) | Enables MMOS fragment automation and future triangulation | expansion-packs/innerlens/README 2.md:461 |
 | SuperAgentes | Meta-orchestrator for DB & Design System | ✅ v2.0.0 deployed | Plan v2.1 cross-agent workflows | Dependent on design-to-db contract definitions | expansion-packs/super-agentes/README.md:456 |
@@ -53,7 +53,7 @@ This document consolidates every active initiative, partially delivered idea, an
 
 ## 2. Supabase Platform & Ingestion Pipeline
 
-- **Current State:** Supabase baseline v0.7.0 is deployed with migrations, RLS policies, rollback scripts, and automated snapshots [supabase/README.md:1]. Story 2.4 ingestion scripts now target this Supabase backend instead of the legacy SQLite file.
+- **Current State:** Supabase baseline v0.8.2 is deployed with migrations, RLS policies, rollback scripts, and automated snapshots [supabase/README.md:1]. Story 2.4 ingestion scripts now target this Supabase backend instead of the legacy SQLite file.
 - **Recent Deliverables:** CreatorOS database persistence, RLS tests, and deployment scripts were delivered via the October rollout package [docs/stories/DELIVERABLES-SUMMARY.md:12].
 - **Upcoming Work:** Complete fragments automation, advanced validation, proficiency scoring, and tag generation to fully leverage the Supabase schema [scripts/pipeline/README.md:574].
 - **Dependencies:** InnerLens roadmaps must land fragment support to unlock Story 2.4 follow-ups; MMOS Epic 3 depends on validated Supabase ingestion before scaling migrations.

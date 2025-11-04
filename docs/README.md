@@ -6,6 +6,13 @@ This directory contains all project documentation organized by category for easy
 
 ---
 
+## 🚀 Quick Status
+
+**→ Want to know what's in production right now?**
+See **[STATUS-SNAPSHOT.md](./STATUS-SNAPSHOT.md)** for the current state of all packs, epics, and system components.
+
+---
+
 ## 📁 Documentation Structure
 
 ### 🏗️ Architecture & System Design
