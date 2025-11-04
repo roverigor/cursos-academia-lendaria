@@ -50,5 +50,3 @@ coverage/
 supabase/schemas/
 supabase/rollback/
 supabase/.temp/
-
-*output*
