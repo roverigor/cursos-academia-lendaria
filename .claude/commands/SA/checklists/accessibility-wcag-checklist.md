@@ -2,7 +2,7 @@
 
 **Purpose:** Ensure WCAG AA compliance for design system components
 **Agent:** Atlas (Design System Builder)
-**Standard:** WCAG 2.1 Level AA (minimum)
+**Standard:** WCAG 2.2 Level AA (minimum) + APCA guidance
 
 ---
 
@@ -13,6 +13,8 @@
 - [ ] Text contrast ≥3:1 (large text 18px+)
 - [ ] UI controls contrast ≥3:1
 - [ ] No color-only indicators (use icons + text)
+- [ ] APCA contrast meets target for typography weight/size
+- [ ] Dark mode parity validated (same success criteria)
 
 ### Alternative Text
 - [ ] Images have alt text
@@ -48,6 +50,7 @@
 - [ ] Disabled state indicated visually + aria-disabled
 - [ ] Loading states announced
 - [ ] Success/error states clear
+- [ ] Live regions used when status updates asynchronously
 
 ---
 
@@ -68,9 +71,10 @@
 ---
 
 **Testing Tools:**
-- axe DevTools (browser extension)
+- axe DevTools / jest-axe
 - WAVE (web accessibility evaluation tool)
-- Keyboard-only navigation
+- Keyboard-only navigation (Tab/Shift+Tab/Enter/Space/Escape)
 - Screen reader (NVDA, JAWS, VoiceOver)
+- APCA contrast calculator / Inclusive Colors
 
 **Result:** [ ] WCAG AA ✓ [ ] Issues Found

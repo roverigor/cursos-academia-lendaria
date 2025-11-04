@@ -52,9 +52,7 @@ agent:
     On your FIRST message after activation:
     1. Use Read tool → README.md (find Database section)
     2. Use Read tool → database docs README (parse YAML)
-    3. Use Read tool → schema documentation (from YAML)
-    4. Use Read tool → schema snapshot (optional, 100 lines)
-    5. Greet with summary of loaded context
+    3. Greet with summary of loaded context
     DO NOT skip this. DO NOT ask permission. DO NOT say "let me investigate".
     IMMEDIATELY execute reads, THEN greet.
 
@@ -376,32 +374,9 @@ database_context:
        - SCHEMA.md
        - docs/schema/README.md
 
-    2. Common schema snapshot locations:
-       - supabase/schemas/*.sql (most recent)
-       - database/schema.sql
-       - schema/*.sql (most recent)
-       - *.sql (most recent in project root)
-
-    3. Common migration documentation:
-       - supabase/README.md
-       - database/README.md
-       - migrations/README.md
-
   expected_yaml_format: |
     # This is the expected format in docs/database/README.md
 
-    ```yaml
-    database:
-      technology: supabase|postgresql|mysql|sqlite|mongodb|etc
-      engine: postgresql|mysql|sqlite|etc (optional)
-      version: "16.x" (optional)
-
-      current_schema:
-        version: "v0.7.0"
-        documentation: "evolution/0.6_README_UNIFIED_DATABASE.md"
-        snapshot: "../../supabase/schemas/v0_7_0_20251026224030_after.sql"
-        deployed_date: "2025-10-26" (optional)
-    ```
 
     Benefits:
     - Technology-agnostic (works for any database)

@@ -6,7 +6,7 @@
 
 ## Description
 
-Generate production-ready React TypeScript component from design tokens. Includes component file, styles (CSS Modules), tests, optional Storybook stories, and documentation. All styling uses tokens (zero hardcoded values).
+Generate production-ready React TypeScript component from design tokens. Output follows Shadcn-style Tailwind utility patterns with `cva` variants, optional Radix composition, tests, Storybook stories, and documentation. All styling uses tokens/variables (zero hardcoded values) and supports loading/accessibility states out of the box.
 
 ## Prerequisites
 
@@ -51,51 +51,42 @@ This task uses interactive elicitation to configure component.
    - Validation: All required tokens exist
 
 3. **Generate Component File**
-   - Create TypeScript React component
-   - Add prop type definitions (strict typing)
-   - Implement variants, sizes, states
-   - Add accessibility attributes (ARIA)
-   - Use semantic HTML elements
-   - Validation: Valid TypeScript, compiles without errors
+   - Create React component using `React.forwardRef` + `Slot` (Radix pattern)
+   - Import `cva` + `cn` helpers (`class-variance-authority`, `tailwind-merge`)
+   - Implement variants, sizes, density, and loading states
+   - Wire ARIA attributes, keyboard handling, dark mode parity
+   - Validation: Valid TypeScript (strict), lint clean, no hardcoded CSS values
 
-4. **Generate Component Styles**
-   - Create CSS Module file ({Component}.module.css)
-   - Use CSS custom properties from tokens
-   - Implement all variants and states
-   - Add responsive styles if needed
-   - Zero hardcoded values (all from tokens)
-   - Validation: Valid CSS, tokens referenced correctly
+4. **Author Variant Catalogue**
+   - Define `cva` config (base classes, variants, compound variants, defaults)
+   - Map variant classes to tokens (Tailwind utilities referencing design tokens)
+   - Generate story-friendly helper types (VariantProps)
+   - Validation: Variants align with consolidated tokens and atomic level
 
 5. **Generate Unit Tests**
-   - Create test file ({Component}.test.tsx)
-   - Test all variants render correctly
-   - Test all sizes work
-   - Test disabled state
-   - Test onClick/events
-   - Aim for >80% coverage
-   - Validation: Tests pass, good coverage
+   - Create test file ({Component}.test.tsx) with RTL + jest-axe
+   - Snapshot default render, variant permutations, responsive classes
+   - Test loading/disabled state interactions and event handlers
+   - Aim for >85% coverage including accessibility assertions
+   - Validation: Tests pass locally (npm test) with coverage gated
 
 6. **Generate Storybook Stories (Optional)**
-   - If Storybook enabled, create {Component}.stories.tsx
-   - Story for each variant
-   - Story for each size
-   - Interactive controls for props
-   - Validation: Stories display correctly
+   - If Storybook enabled, create {Component}.stories.tsx (Storybook 8 syntax)
+   - Provide CSF stories for each variant/size & loading state
+   - Configure controls, play functions, a11y addon
+   - Validation: `npm run storybook` renders without warnings
 
 7. **Run Accessibility Checks**
-   - Validate ARIA attributes present
-   - Check color contrast (WCAG AA minimum)
-   - Ensure keyboard navigation works
-   - Add focus indicators
-   - Validation: Meets WCAG AA standards
+   - Validate ARIA attributes + keyboard flows (Tab/Shift+Tab/Space/Enter)
+   - Check WCAG 2.2 AA + APCA contrast, including dark mode tokens
+   - Ensure focus-visible styles present and themable
+   - Validation: jest-axe passes, manual keyboard traversal verified
 
 8. **Generate Component Documentation**
-   - Create {Component}.md in docs/
-   - Document props and types
-   - Show usage examples
-   - List variants and sizes
-   - Include accessibility notes
-   - Validation: Documentation complete
+   - Create {Component}.md in docs/ with overview + variant tables
+   - Document props, TypeScript types, default variants, composition notes
+   - Include usage for light/dark themes, loading state, accessibility guidance
+   - Validation: Docs align with generated code and tokens
 
 9. **Update Component Index**
    - Add to design-system/index.ts
@@ -111,119 +102,90 @@ This task uses interactive elicitation to configure component.
 
 ## Output
 
-- **{Component}.tsx**: React TypeScript component
-- **{Component}.module.css**: Styles using tokens
-- **{Component}.test.tsx**: Unit tests
+- **{Component}.tsx**: React TypeScript component (forwardRef + cva)
+- **{Component}.test.tsx**: Unit + accessibility tests
 - **{Component}.stories.tsx**: Storybook stories (optional)
-- **{Component}.md**: Component documentation
-- **Updated index.ts**: Component exported
-- **.state.yaml**: Updated with component metadata
+- **{Component}.md**: Component reference documentation
+- **ui/index.ts**: Barrel export updated
+- **.state.yaml**: Updated with component metadata + variant catalog
 
 ### Output Format
 
 ```typescript
-// Button.tsx
-import React from 'react';
-import styles from './Button.module.css';
+// button.tsx
+import * as React from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
+import { Spinner } from '@/components/ui/spinner';
 
-export interface ButtonProps {
-  /** Visual style variant */
-  variant?: 'primary' | 'secondary' | 'destructive';
-  /** Size variant */
-  size?: 'sm' | 'md' | 'lg';
-  /** Button content */
-  children: React.ReactNode;
-  /** Click handler */
-  onClick?: () => void;
-  /** Disabled state */
-  disabled?: boolean;
-  /** HTML type attribute */
-  type?: 'button' | 'submit' | 'reset';
+export const buttonVariants = cva(
+  'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-70',
+  {
+    variants: {
+      variant: {
+        primary: 'bg-primary text-primary-foreground hover:bg-primary/90',
+        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/90',
+        outline: 'border border-border bg-transparent hover:bg-muted'
+      },
+      size: {
+        sm: 'h-9 px-3',
+        md: 'h-10 px-4',
+        lg: 'h-12 px-6 text-base',
+        icon: 'h-10 w-10'
+      }
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md'
+    }
+  }
+);
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+  isLoading?: boolean;
+  loadingIcon?: React.ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  size = 'md',
-  children,
-  onClick,
-  disabled = false,
-  type = 'button',
-}) => {
-  const className = `${styles.btn} ${styles[`btn-${variant}`]} ${styles[`btn-${size}`]}`;
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    { className, variant, size, asChild = false, isLoading = false, loadingIcon, children, ...props },
+    ref
+  ) => {
+    const Comp = asChild ? Slot : 'button';
 
-  return (
-    <button
-      type={type}
-      className={className}
-      onClick={onClick}
-      disabled={disabled}
-      aria-disabled={disabled}
-    >
-      {children}
-    </button>
-  );
-};
-```
+    return (
+      <Comp
+        ref={ref}
+        className={cn(buttonVariants({ variant, size }), className, isLoading && 'pointer-events-none')}
+        data-state={isLoading ? 'loading' : props['data-state']}
+        aria-busy={isLoading}
+        {...props}
+      >
+        {isLoading && (loadingIcon ?? <Spinner className="mr-2 h-4 w-4 animate-spin" />)}
+        <span className="inline-flex items-center gap-1">{children}</span>
+      </Comp>
+    );
+  }
+);
+Button.displayName = 'Button';
 
-```css
-/* Button.module.css */
-.btn {
-  font-family: var(--font-base);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  border-radius: var(--radius-base);
-  padding: var(--space-md) var(--space-lg);
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.btn-primary {
-  background: var(--color-primary);
-  color: white;
-}
-
-.btn-primary:hover:not(:disabled) {
-  background: var(--color-primary-dark);
-}
-
-.btn-secondary {
-  background: var(--color-secondary);
-  color: white;
-}
-
-.btn-destructive {
-  background: var(--color-error);
-  color: white;
-}
-
-.btn-sm {
-  font-size: var(--font-size-sm);
-  padding: var(--space-sm) var(--space-md);
-}
-
-.btn-lg {
-  font-size: var(--font-size-lg);
-  padding: var(--space-lg) var(--space-xl);
-}
+export { Button };
 ```
 
 ## Success Criteria
 
-- [ ] Component compiles without TypeScript errors
-- [ ] All styling uses tokens (zero hardcoded values)
-- [ ] Props fully typed with TSDoc comments
-- [ ] All variants and sizes implemented
-- [ ] Disabled state handled correctly
-- [ ] WCAG AA accessibility standards met
-- [ ] Unit tests pass with >80% coverage
-- [ ] Component documented with examples
-- [ ] Storybook stories work (if enabled)
+- [ ] Component compiles without TypeScript errors (strict) and passes lint
+- [ ] Variants implemented via `cva` with token-backed Tailwind utilities
+- [ ] Props fully typed (VariantProps + custom props) with TSDoc
+- [ ] Loading/disabled states, accessibility attributes, and dark mode supported
+- [ ] Unit + jest-axe tests pass with ≥85% coverage
+- [ ] Storybook stories render (if enabled) with controls + docs tab
+- [ ] Component documentation published with variant/density tables
+- [ ] .state.yaml updated with variant catalogue + QA status
 
 ## Error Handling
 
@@ -254,25 +216,24 @@ Output:
 
 📋 Configuration:
   - Type: Atom
-  - Variants: primary, secondary, destructive
-  - Sizes: sm, md, lg
-  - Tests: Yes (>80% coverage)
+  - Variants: primary, secondary, outline
+  - Sizes: sm, md, lg, icon
+  - Loading state: enabled (spinner)
+  - Tests: RTL + jest-axe (>85% coverage)
   - Storybook: Yes
 
-✓ Generated Button.tsx (142 lines)
-✓ Generated Button.module.css (89 lines, 0 hardcoded values)
-✓ Generated Button.test.tsx (18 tests)
-✓ Generated Button.stories.tsx (6 stories)
-✓ Generated Button.md (documentation)
+✓ Generated button.tsx (Shadcn-style, cva variants)
+✓ Generated button.test.tsx (22 tests, jest-axe assertions)
+✓ Generated button.stories.tsx (8 stories, controls + docs)
+✓ Generated button.md (usage + theming guidance)
 
 🧪 Running tests...
-  ✓ renders with default props
-  ✓ renders all variants correctly
-  ✓ renders all sizes correctly
-  ✓ handles disabled state
-  ✓ calls onClick handler
-  ... 13 more tests
-  Coverage: 94.2%
+  ✓ renders default button (matches snapshot)
+  ✓ applies variant classes via cva
+  ✓ shows spinner + disables interactions when loading
+  ✓ passes accessibility audit (jest-axe)
+  ✓ supports asChild slot rendering
+  Coverage: 96.4%
 
 ♿ Accessibility check:
   ✓ ARIA attributes present
@@ -282,8 +243,8 @@ Output:
 
 ✅ Button component ready!
 
-Import: import { Button } from '@/design-system';
-Usage: <Button variant="primary">Click me</Button>
+Import: `import { Button } from '@/components/ui/button';`
+Usage: `<Button variant="primary" isLoading>Saving</Button>`
 
 Atlas says: "Built right. Built once."
 ```
@@ -306,10 +267,10 @@ Output includes additional features:
 - Zero hardcoded values enforced (tokens only)
 - Accessibility is non-negotiable (WCAG AA minimum)
 - Test coverage >80% required
-- CSS Modules scope styles automatically
-- Variants and sizes are extensible
-- Components are tree-shakeable
-- Storybook stories enable visual testing
-- Documentation auto-generated from types
+- Tailwind utilities + tokens ensure zero hardcoded values
+- Variants and sizes extend via `cva` without editing component body
+- Components are tree-shakeable and server-component friendly
+- Storybook stories enable visual + interaction testing
+- Documentation mirrors props/types for instant onboarding
 - Components follow Atomic Design principles
 - Atlas ensures quality at every step

@@ -56,6 +56,7 @@
 - [ ] .state.yaml created
 - [ ] State file has valid YAML syntax
 - [ ] Phase set to "audit_complete"
+- [ ] Tailwind version/config path captured (if applicable)
 
 ---
 

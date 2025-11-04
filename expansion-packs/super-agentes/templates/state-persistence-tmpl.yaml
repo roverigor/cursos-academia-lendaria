@@ -8,6 +8,7 @@ version: "1.0"
 project_name: "{{project_name}}"
 created_at: "{{created_timestamp}}"
 updated_at: "{{updated_timestamp}}"
+tailwind_version: "{{tailwind_version}}"
 
 # Current phase in design system workflow
 system_state:
@@ -81,6 +82,7 @@ system_state:
       - tokens.css
       - tokens.tailwind.js
       - tokens.scss
+      - tokens.dtcg.json
     categories:
       color: {{token_color_count}}
       spacing: {{token_spacing_count}}
@@ -89,6 +91,8 @@ system_state:
       shadow: {{token_shadow_count}}
     total_tokens: {{total_tokens}}
     coverage: "{{token_coverage}}%"
+    dtcg_compliant: {{token_dtcg_compliant}}
+    color_space: "{{token_color_space}}"
 
   # Phase 4: ROI Analysis (Brad)
   roi:
@@ -178,6 +182,27 @@ system_state:
     innerlens:
       status: {{innerlens_integration_status}}
       components: {{innerlens_components}}
+
+  tooling:
+    tailwind:
+      version: "{{tailwind_version}}"
+      upgraded_at: "{{tailwind_upgraded_at}}"
+      oxide_benchmark:
+        full_build_ms: {{tailwind_full_build_ms}}
+        incremental_build_us: {{tailwind_incremental_build_us}}
+      theme_layers_validated: {{tailwind_theme_validated}}
+    design_tokens:
+      dtcg_version: "{{dtcg_version}}"
+      exports:
+        json: {{dtcg_json_path}}
+        yaml: {{dtcg_yaml_path}}
+      okclh_coverage: "{{oklch_coverage}}"
+    shadcn:
+      bootstrap_completed_at: "{{shadcn_bootstrap_timestamp}}"
+      components_installed: {{shadcn_components}}
+    dark_mode:
+      enabled: {{dark_mode_enabled}}
+      parity_score: "{{dark_mode_parity_score}}"
 
 # Agent execution history (for debugging and handoff)
 agent_history:

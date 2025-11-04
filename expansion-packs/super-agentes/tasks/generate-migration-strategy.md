@@ -192,6 +192,34 @@ This task uses interactive elicitation to customize migration strategy.
 **Success Criteria**: System enforced, adoption sustained
 ```
 
+## Critical References
+
+**ALWAYS include these in migration strategy docs:**
+
+- **Migration Validation Checklist** (`migration-validation-checklist.md`)
+  - Run AFTER every migration script execution
+  - Detects corrupted classes, build failures, visual regressions
+  - 5-10 min validation saves hours of debugging
+  - **Non-negotiable** - must be followed before committing
+
+- **Migration Pitfalls** (`migration-pitfalls.md`)
+  - Common mistakes and how to avoid them
+  - Anti-patterns from real incidents
+  - Detection patterns for corruption
+  - Prevention strategies
+
+**In every phase guide, include:**
+```markdown
+## Validation
+
+After executing migration scripts:
+1. Run migration-validation-checklist.md (ALL steps)
+2. Review migration-pitfalls.md for common issues
+3. Do NOT commit until validation passes
+
+See: expansion-packs/super-agentes/checklists/migration-validation-checklist.md
+```
+
 ## Success Criteria
 
 - [ ] 4 distinct phases defined with clear goals

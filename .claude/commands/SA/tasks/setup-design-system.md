@@ -6,7 +6,7 @@
 
 ## Description
 
-Initialize design system structure for greenfield or brownfield projects. Loads tokens from Brad's .state.yaml or prompts for manual setup. Creates directory structure, validates tokens, prepares for component generation.
+Initialize design system structure for greenfield or brownfield projects. Load tokens from Brad's .state.yaml or manual input, configure Tailwind v4 (`@theme`), bootstrap Shadcn utilities, and prepare Atlas for component generation.
 
 ## Prerequisites
 
@@ -31,10 +31,10 @@ This task uses interactive elicitation to configure setup.
    - Validate token schema
 
 3. **Configure Project Structure**
-   - Ask for component output directory (default: src/design-system)
-   - CSS approach (CSS Modules, styled-components, Tailwind)
-   - Test framework (Jest default)
-   - Storybook (yes/no)
+   - Ask for component output directory (default: `src/components/ui`)
+   - Confirm Tailwind v4 entry file (`app.css`) and token sources
+   - Decide on Radix/Slot usage, Shadcn component seeding
+   - Test framework (Jest/Vitest) + Storybook (yes/no)
 
 ### Steps
 
@@ -52,48 +52,48 @@ This task uses interactive elicitation to configure setup.
    - Validation: Tokens loaded and valid
 
 3. **Create Directory Structure**
-   - Create design-system/ root directory
-   - Create subdirectories: atoms/, molecules/, organisms/, templates/
-   - Create tokens/ directory for token files
-   - Create docs/ for pattern library documentation
-   - Create __tests__/ for test files
-   - Validation: Directory structure created
+   - Create `components/ui/` (atoms/molecules), `components/composite/`, `components/layout/`
+   - Create `lib/` for utilities (`utils.ts`, `cn`, helpers)
+   - Create `tokens/` directory (YAML, JSON, DTCG, platform exports)
+   - Create `docs/` (component docs, design guidelines)
+   - Create `__tests__/` for shared testing utilities
+   - Validation: Directory structure aligns with Atomic Design + Shadcn conventions
 
 4. **Copy Token Files**
-   - Copy tokens.yaml to design-system/tokens/
-   - Copy token exports (JSON, CSS, Tailwind, SCSS)
-   - Generate index files for easy imports
-   - Validation: Tokens accessible in project
+   - Copy tokens.yaml + tokens.dtcg.json + companion exports into `tokens/`
+   - Generate tokens/index.ts for centralized imports
+   - Ensure dark mode + semantic aliases available
+   - Validation: Tokens accessible in project (TS + runtime)
 
 5. **Initialize Package Dependencies**
-   - Check for React and TypeScript in package.json
-   - Add missing dependencies (if needed)
-   - Add testing library dependencies
-   - Add Storybook dependencies (if requested)
-   - Validation: All dependencies installed
+   - Check for React, TypeScript, and Tailwind packages
+   - Install `class-variance-authority`, `tailwind-merge`, `@radix-ui/react-slot`, `lucide-react`
+   - Add testing (`@testing-library/react`, `@testing-library/jest-dom`, `jest-axe`)
+   - Install Storybook 8 (if requested)
+   - Validation: `npm install` (or pnpm) completes without errors
 
 6. **Create Configuration Files**
-   - Generate tsconfig.json for design system (if needed)
-   - Create jest.config.js for tests
-   - Create .storybook/ config (if Storybook enabled)
-   - Create design-system.config.yaml for Atlas settings
-   - Validation: Configuration files valid
+   - Generate/merge `tsconfig.json`, `jest.config.js`, `.storybook/` configs
+   - Create `app.css` (or `globals.css`) with `@import "tailwindcss";` and `@theme` definitions
+   - Add `.cursorrules`, ESLint, Prettier configs aligned with Tailwind v4
+   - Create `design-system.config.yaml` for Atlas settings
+   - Validation: Configuration files valid and documented
 
 7. **Generate Token Index**
-   - Create tokens/index.ts for centralized token imports
-   - Export all token categories
-   - Add TypeScript types for tokens
-   - Validation: Tokens importable from components
+   - Create tokens/index.ts exporting typed getters (core/semantic/component)
+   - Provide helper functions for CSS variable access, `theme` helper for Tailwind
+   - Validation: `import { tokens } from '@/tokens'` works across components
 
 8. **Create Base Styles**
-   - Generate global.css with token CSS variables
-   - Create reset/normalize styles
-   - Add base typography styles using tokens
-   - Validation: Base styles use tokens
+   - Populate `app.css` with `@theme`, `@layer base/components/utilities`
+   - Add reset (modern-normalize), focus-visible, typography defaults
+   - Implement `[data-theme="dark"]` overrides and container queries
+   - Validation: Running Tailwind build yields expected utilities without warnings
 
 9. **Initialize State Tracking**
-   - Create or update .state.yaml for Atlas
-   - Record setup configuration
+   - Create or update `.state.yaml` for Atlas
+   - Record setup configuration (directories, tooling, dependencies)
+   - Capture Tailwind version, token coverage, Shadcn components installed
    - Set phase to "setup_complete"
    - Validation: State file created
 
@@ -105,12 +105,12 @@ This task uses interactive elicitation to configure setup.
 
 ## Output
 
-- **design-system/** directory structure
-- **tokens/** with all token files and index
-- **docs/** for documentation
-- **global.css** with base styles
+- **components/** directory structure (ui/, composite/, layout/)
+- **tokens/** with YAML + JSON + DTCG exports
+- **app.css** (or globals.css) with Tailwind `@theme` and base styles
+- **lib/utils.ts** with `cn` helper + shared utilities
 - **setup-summary.md** with configuration details
-- **.state.yaml** updated with Atlas setup data
+- **.state.yaml** updated with Atlas setup data (tailwind/shadcn metadata)
 
 ### Output Format
 
@@ -121,10 +121,11 @@ atlas_setup:
   starting_point: "brownfield"  # or "greenfield"
 
   configuration:
-    component_directory: "src/design-system"
-    css_approach: "css_modules"
+    component_directory: "src/components/ui"
+    css_approach: "tailwind_v4"
     test_framework: "jest"
     storybook_enabled: true
+    shadcn_enabled: true
 
   tokens_loaded:
     source: "Brad tokenization"
@@ -138,18 +139,21 @@ atlas_setup:
     validation: "passed"
 
   directory_structure:
-    - design-system/atoms/
-    - design-system/molecules/
-    - design-system/organisms/
-    - design-system/templates/
-    - design-system/tokens/
-    - design-system/docs/
-    - design-system/__tests__/
+    - components/ui/
+    - components/composite/
+    - components/layout/
+    - tokens/
+    - lib/
+    - docs/
+    - __tests__/
 
   dependencies_added:
     - "@testing-library/react"
     - "@testing-library/jest-dom"
     - "@storybook/react"
+    - "class-variance-authority"
+    - "tailwind-merge"
+    - "@radix-ui/react-slot"
 
   phase: "setup_complete"
   ready_for: "component_building"
@@ -157,14 +161,13 @@ atlas_setup:
 
 ## Success Criteria
 
-- [ ] Directory structure follows Atomic Design principles
-- [ ] Tokens loaded and validated successfully
-- [ ] All token exports accessible (JSON, CSS, etc)
-- [ ] Package dependencies installed
-- [ ] Configuration files valid and working
-- [ ] Base styles generated using tokens
-- [ ] State tracking initialized
-- [ ] Setup documented clearly
+- [ ] Tokens (YAML + DTCG) loaded and validated successfully
+- [ ] Tailwind v4 `@theme` + layers configured and build succeeds
+- [ ] Package dependencies installed (React, Tailwind, cva, tailwind-merge, Radix)
+- [ ] Configuration files valid (tsconfig, jest, Storybook, .cursorrules)
+- [ ] Base styles created with tokens + dark mode parity
+- [ ] State tracking initialized (tooling, benchmarks, component paths)
+- [ ] Setup documented clearly (setup-summary.md)
 
 ## Error Handling
 
@@ -195,38 +198,40 @@ Output:
 
 ✓ Detected Brad's state: outputs/design-system/my-app/.state.yaml
 ✓ Loading tokens from Brad's tokenization...
-  - 12 color tokens
+  - 12 color tokens (OKLCH)
   - 7 spacing tokens
   - 10 typography tokens
+  - 6 component mappings
   - Total: 36 tokens validated
 
 📁 Creating directory structure...
-  ✓ src/design-system/
-  ✓ src/design-system/atoms/
-  ✓ src/design-system/molecules/
-  ✓ src/design-system/organisms/
-  ✓ src/design-system/tokens/
+  ✓ src/components/ui/
+  ✓ src/components/composite/
+  ✓ src/lib/utils.ts
+  ✓ tokens/ (yaml/json/dtcg)
 
 📦 Installing dependencies...
-  ✓ @testing-library/react
-  ✓ @testing-library/jest-dom
+  ✓ class-variance-authority
+  ✓ tailwind-merge
+  ✓ @radix-ui/react-slot
+  ✓ @testing-library/react + jest-axe
   ✓ @storybook/react (optional)
 
 ⚙️ Generating configuration...
-  ✓ tokens/index.ts (centralized exports)
-  ✓ global.css (base styles)
-  ✓ jest.config.js
-  ✓ .storybook/main.js
+  ✓ tokens/index.ts (typed exports)
+  ✓ app.css with @theme + dark mode
+  ✓ jest.config.js / storybook-main.ts
+  ✓ .cursorrules (Tailwind v4 + Shadcn patterns)
 
 ✅ Setup complete!
 
 Next steps:
-  1. Build components: *build button
-  2. Generate docs: *document
-  3. See component list: *help
+  1. Bootstrap Shadcn library: *bootstrap-shadcn
+  2. Build components: *build button
+  3. Generate docs: *document
+```
 
 Atlas says: "Foundation is solid. Ready to build."
-```
 
 ### Example 2: Greenfield Setup
 
@@ -249,9 +254,9 @@ User selects 1
 
 ✓ Tokens loaded and validated (24 tokens)
 
-? Component directory: src/design-system
-? CSS approach: CSS Modules
-? Enable Storybook? Yes
+? Component directory: src/components/ui
+? Tailwind entry file: src/app/app.css
+? Bootstrap Shadcn starter kit? Yes
 
 [...setup continues...]
 ```
@@ -260,10 +265,7 @@ User selects 1
 
 - Brownfield setup is faster (tokens from Brad)
 - Greenfield requires manual token creation or import
-- Atomic Design structure (atoms → molecules → organisms → templates)
-- All styling must use tokens (enforced in component generation)
-- Storybook is optional but recommended for component showcase
-- Atlas automatically creates TypeScript types for tokens
-- Base styles include CSS reset and token variables
-- Setup can be re-run safely (asks before overwriting)
-- Next step after setup: *build {pattern} to generate components
+- Atomic Design + Shadcn structure (ui/, composite/, layout/)
+- All styling must use tokens/Tailwind utilities (no CSS modules)
+- Storybook 8 recommended for visual QA
+- `class-variance-authority`, `tailwind-merge`, Radix Slot installed by default

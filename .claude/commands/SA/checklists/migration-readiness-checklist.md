@@ -8,10 +8,11 @@
 
 ## FOUNDATION (Phase 1 Ready)
 
-- [ ] Tokens generated and validated
-- [ ] Token exports created (JSON, CSS, Tailwind, SCSS)
-- [ ] Token coverage >95%
-- [ ] Build pipeline configured
+- [ ] Tokens generated (core/semantic/component) and validated
+- [ ] DTCG export created + validator passes
+- [ ] Token coverage >95% with dark mode parity recorded
+- [ ] Tailwind v4 (`@theme`, Oxide benchmarks) configured
+- [ ] Build pipeline configured (CI + lint + visual regression)
 - [ ] No visual regressions in test environment
 
 ---
@@ -19,10 +20,10 @@
 ## COMPONENTS (Phase 2 Ready)
 
 - [ ] High-impact components built (Button, Input, Card minimum)
-- [ ] All components pass quality checklist
-- [ ] Component tests passing (>80% coverage)
-- [ ] Documentation complete
-- [ ] Storybook deployed (if using)
+- [ ] Components adhere to Tailwind+cva patterns, pass quality checklist
+- [ ] Component tests passing (≥85% coverage + jest-axe)
+- [ ] Documentation + Storybook 8 (if using) updated
+- [ ] Shadcn/Radix library bootstrap completed (if adopted)
 
 ---
 
@@ -33,12 +34,14 @@
 - [ ] Rollback procedures defined
 - [ ] Timeline realistic for team velocity
 - [ ] Stakeholder approval obtained
+- [ ] Tailwind upgrade + token rollout sequencing communicated
 
 ---
 
 ## TEAM READINESS
 
 - [ ] Team trained on design system usage
+- [ ] Tailwind v4 + Shadcn guidelines shared (.cursorrules updated)
 - [ ] Migration guide distributed
 - [ ] Support channel established
 - [ ] Code review process updated
@@ -61,6 +64,7 @@
 - [ ] ROI tracking dashboard ready
 - [ ] Pattern usage monitoring enabled
 - [ ] Velocity metrics defined
+- [ ] Oxide build metrics + CSS bundle size monitored (CI dashboards)
 
 ---
 
