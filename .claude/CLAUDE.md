@@ -306,17 +306,6 @@ npm run trace -- workflow-name
 - Suggest rollback procedures when appropriate
 - Document any manual fixes required
 
-## Token Estimation & Resource Planning
-
-For complex multi-step operations, expansion pack pipelines, and resource-intensive workflows, token estimation is critical to prevent context overflow.
-
-**Full guide:** See `docs/guides/token-estimation-guide.md`
-
-**Quick reference:**
-- Multi-step operations (>3 steps): Estimate required
-- Large operations (>70% projected usage): Use Task/subagent recommended
-- Critical operations (>85% projected usage): Must use subagent or new window
-
 ## MMOS-Specific Rules
 
 ### CRITICAL: Use Architecture Guard Checklist
