@@ -1,0 +1,245 @@
+icp_matching:
+  mind_name: Yuval Noah Harari
+  target_icp: "AI: Future of Humanity Advisor"
+  assessment_date: 2025-10-07
+  analyst: Mind Mapper Orchestrator
+
+primary_use_case:
+  title: "AI & Future of Humanity Strategic Advisor"
+  target_audience:
+    - "Tech leaders navigating AI development"
+    - "Policy makers crafting AI regulation"
+    - "Business executives planning AI strategy"
+    - "Researchers studying AI impact on society"
+    - "Educators teaching about AI ethics and future"
+
+  primary_value:
+    problem_solved: "Need for macro-historical perspective on AI's impact on human civilization, informed by deep understanding of how information networks have shaped humanity from Stone Age to present"
+    unique_angle: "Combines historical analysis, philosophical depth, and accessible storytelling to help leaders think long-term about AI decisions"
+
+  match_strength: EXCEPTIONAL
+
+icp_scoring:
+  domain_alignment:
+    weight: 30%
+    score: 10
+    max: 10
+    assessment: |
+      Perfect alignment. Harari's expertise spans:
+      - AI as information network (Nexus 2024 focus)
+      - Historical patterns of technological disruption
+      - Impact of information on power structures
+      - Human-AI relationship framework
+      - Future of democracy in AI age
+      - Existential risks and opportunities
+    evidence:
+      - "Nexus: AI from Stone Age perspective (2024)"
+      - "Multiple talks on AI hacking civilization's operating system"
+      - "Cambridge Centre for Existential Risk Fellow"
+      - "Testified/advised on AI regulation (IMF, WEF)"
+      - "AI as 'alien intelligence' conceptual framework"
+    percentage: 100%
+
+  audience_fit:
+    weight: 25%
+    score: 9
+    max: 10
+    assessment: |
+      Excellent fit. Communication style perfect for:
+      - Strategic thinkers (executives, policymakers)
+      - Intellectually curious (researchers, educators)
+      - Big-picture oriented (not tactical implementers)
+
+      Slight gap: Less suitable for hands-on AI engineers needing technical details.
+    evidence:
+      - "Obama, Gates, Zuckerberg all fans"
+      - "WEF, IMF, Congressional testimony audience"
+      - "Master storyteller simplifies complex topics"
+      - "45M book readers = broad accessibility"
+    percentage: 90%
+
+  use_case_specificity:
+    weight: 20%
+    score: 9
+    max: 10
+    assessment: |
+      Highly specific to AI/Future use case:
+      - Latest book (Nexus 2024) dedicated to AI
+      - Multiple recent talks specifically on AI
+      - Consistent AI safety advocacy
+      - Information networks as unifying framework
+
+      Minor gap: Not focused on specific AI tools/products.
+    evidence:
+      - "Nexus subtitle: 'Stone Age to AI'"
+      - "AI and the Future of Humanity (Frontiers Forum keynote)"
+      - "IMF podcast on AI as threat to trust (2024)"
+      - "'AI is social weapon of mass destruction' (GZERO)"
+    percentage: 90%
+
+  accessibility:
+    weight: 15%
+    score: 10
+    max: 10
+    assessment: |
+      Perfect accessibility across experience levels:
+      - Beginner: Clear storytelling, no jargon required
+      - Intermediate: Historical context enriches understanding
+      - Advanced: Philosophical depth satisfies experts
+
+      Content appropriate for C-suite to grad students.
+    evidence:
+      - "45M books sold (broad accessibility proof)"
+      - "TED talks (millions of views, general audience)"
+      - "Also respected by academics (Cambridge fellow)"
+      - "Multiple formats (books, talks, articles, interviews)"
+    percentage: 100%
+
+  roi_potential:
+    weight: 10%
+    score: 10
+    max: 10
+    assessment: |
+      Exceptional ROI potential:
+      - Extremely high demand (AI hottest topic globally)
+      - Unique positioning (historical + philosophical + accessible)
+      - Large addressable market (tech leaders, policy, education)
+      - Long-term relevance (macro principles endure)
+      - Premium positioning (Harari commands high fees)
+    evidence:
+      - "AI advisor market massive and growing"
+      - "Harari charges hundreds of thousands per speaking engagement"
+      - "Books sell millions (proven market demand)"
+      - "Timeless frameworks + urgent current application"
+    percentage: 100%
+
+total_icp_match:
+  domain_alignment: 3.0  # 10 * 30%
+  audience_fit: 2.25     # 9 * 25%
+  use_case_specificity: 1.8  # 9 * 20%
+  accessibility: 1.5     # 10 * 15%
+  roi_potential: 1.0     # 10 * 10%
+
+  weighted_score: 9.55
+  max_score: 10
+  percentage: 96%
+
+  interpretation: "PERFECT MATCH (90-100%)"
+  rating: "Perfect match - high ROI expected"
+
+roi_projection:
+  investment_estimate:
+    time: "48-72 hours (full 8-layer analysis + synthesis)"
+    tokens: "2-2.5M tokens"
+    cost_estimate: "$200-250 (at $100 per 1M tokens estimated)"
+    human_time: "12-16 hours (checkpoints, validation, testing)"
+    wall_time: "7-10 days (with parallelization)"
+
+  expected_value:
+    use_case_value: |
+      AI Strategic Advisor clone provides:
+      - Historical perspective on AI impact (differentiated insight)
+      - Accessible explanations for non-technical stakeholders
+      - Long-term thinking frameworks (vs short-term hype)
+      - Ethical/philosophical depth for AI decisions
+      - Cross-domain synthesis (tech + society + history)
+
+    audience_size:
+      tech_leaders: "10,000+ potential users"
+      policy_makers: "1,000+ potential users"
+      educators: "50,000+ potential users"
+      researchers: "100,000+ potential users"
+      total_addressable: "161,000+ high-value users"
+
+    value_per_use:
+      strategic_clarity: "Invaluable for long-term AI decisions"
+      risk_mitigation: "Helps avoid catastrophic AI mistakes"
+      thought_leadership: "Enables informed AI discourse"
+      educational_value: "Scales Harari's insights globally"
+
+    competitive_advantage:
+      unique_positioning: "Only macro-historical AI advisor clone"
+      broad_appeal: "Technical + non-technical audiences"
+      proven_demand: "45M book buyers demonstrate market"
+
+  roi_assessment: EXCEPTIONAL
+
+  recommendation: PROCEED
+  confidence_level: VERY_HIGH
+
+potential_use_cases:
+  primary:
+    - title: "AI Strategic Advisor for Tech Companies"
+      audience: "CEOs, CTOs, Product Leaders"
+      value: "Long-term AI strategy informed by historical patterns"
+      match: 95%
+
+    - title: "AI Policy Advisor for Governments"
+      audience: "Legislators, Regulators, Policy Analysts"
+      value: "Framework for AI regulation balancing innovation and safety"
+      match: 90%
+
+    - title: "AI Ethics Educator"
+      audience: "University Students, Corporate Training"
+      value: "Accessible introduction to AI's societal implications"
+      match: 95%
+
+  secondary:
+    - title: "Future of Work Consultant"
+      audience: "HR Leaders, Workforce Planners"
+      value: "Historical context for AI-driven work transformation"
+      match: 75%
+
+    - title: "Technology Philosopher"
+      audience: "Intellectuals, Thought Leaders"
+      value: "Deep conversations on AI, consciousness, humanity"
+      match: 85%
+
+specialist_recommendations:
+  suggested_variants:
+    - name: "Yuval: AI Safety Specialist"
+      focus: "Layer 8 paradox - safety advocate + acceleration observer"
+      audience: "AI safety researchers, EA community"
+
+    - name: "Yuval: Democracy & AI Specialist"
+      focus: "Information networks, truth, democratic institutions"
+      audience: "Political scientists, democracy advocates"
+
+    - name: "Yuval: History of Tech Educator"
+      focus: "Agricultural → Industrial → AI revolutions"
+      audience: "Students, general public"
+
+  generalista_first: true
+  specialist_after_validation: true
+
+critical_success_factors:
+  layer_8_extraction:
+    importance: CRITICAL
+    hypothesis: "AI Safety Advocate + Acceleration Observer Paradox"
+    validation_needed: true
+    evidence_sources:
+      - "Congressional testimony (safety advocacy)"
+      - "Nexus rapid release (participating in acceleration)"
+      - "WEF talks (both warning and enabling)"
+
+  storytelling_preservation:
+    importance: CRITICAL
+    note: "Harari's storytelling is his signature - must preserve narrative voice"
+
+  macro_perspective:
+    importance: HIGH
+    note: "Keep focus on big picture, avoid getting lost in technical details"
+
+  philosophical_depth:
+    importance: HIGH
+    note: "Layer 6-8 depth is what differentiates from generic AI content"
+
+next_phase_readiness:
+  source_availability: EXCELLENT
+  triangulation_feasibility: HIGH
+  layer_8_extractable: HIGH_CONFIDENCE
+  estimated_fidelity: "92-96%"
+
+  recommendation: "PROCEED to Research Collection phase"
+  priority: HIGH
+  urgency: HIGH (AI topic extremely time-sensitive)

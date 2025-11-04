@@ -1,0 +1,34 @@
+# Módulos e Aulas Dominando Obsidian
+
+- Módulo: Introdução
+    - Introdução ao Segundo Cérebro com IA
+    - Por que Obsidian?
+    - Instalando o Obsidian, criando seu cofre e sua primeira nota
+    - Kit Starter | Obsidian em 30s ou menos
+- Módulo: Obsidian Fundamentos
+    - Conhecendo sua nova casa (Interface)
+    - Configurações Iniciais
+    - Markdown Essencial
+    - Markdown Turbinado
+    - Dominando as Tags
+    - Hora da Magia (Links)
+    - Hora do Print (Gráfico de Notas)
+    - Criando Templates (Modelos de Notas)
+    - Meus Atalhos Preferidos (Produtividade)
+    - Turbinando Obsidian (Plugins)
+- Módulo: Obsidian com IA
+    - IA: Hora de Turbinar o Obsidian com IA
+    - IA: Workshop Text Generator (Plugin)
+    - IA: Workshop Smart Connections (Chat com o 2° Cérebro)
+- Módulo: Obsidian Avançado
+    - Canvas (Anotações Visuais)
+    - Metadata (YAML) + Dataview (Plugin)
+    - Integração com Livros (Book Search) (Plugin)
+    - Migrando suas anotações (Kindle e iBook) (Plugin)
+    - Excalidraw (Plugin) (Com Adriano de Marqui)
+    - Propriedades (Com Adriano de Marqui)
+- Módulo: Extras
+    - Diagramas (Mermaid)
+    - Como começar a criar a Mente Lendária?
+- Módulo: Recursos
+    - Mentes Lendárias

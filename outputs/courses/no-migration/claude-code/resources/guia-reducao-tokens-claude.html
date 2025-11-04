@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Definitivo: Redução de 50-70% no Uso de Tokens no Claude Code</title>
+    <style>
+        :root {
+            /* Color Tokens */
+            --bg-primary: #191919;
+            --bg-secondary: #262625;
+            --bg-tertiary: #2d2d2b;
+            --bg-elevated: #40403E;
+            
+            --accent-primary: #CC785C;
+            --accent-secondary: #BF4D43;
+            --accent-tertiary: #D4A27F;
+            --accent-light: #EBD8BC;
+            
+            --text-primary: #F0F0E8;
+            --text-secondary: #919180;
+            --text-inverted: #FFFFFF;
+            
+            --status-success: #48bb78;
+            --status-warning: #ecc94b;
+            --status-error: #f56565;
+            --status-info: #3498db;
+            
+            /* Spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 0.75rem;
+            --spacing-lg: 1rem;
+            --spacing-xl: 1.5rem;
+            --spacing-2xl: 2rem;
+            --spacing-3xl: 3rem;
+            
+            /* Border Radius */
+            --radius-sm: 0.5rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.625;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-2xl);
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: Georgia, serif;
+            margin-bottom: var(--spacing-xl);
+            color: var(--accent-primary);
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: var(--spacing-3xl);
+            margin-bottom: var(--spacing-xl);
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-primary);
+            padding-bottom: var(--spacing-sm);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: var(--spacing-2xl);
+            margin-bottom: var(--spacing-lg);
+            color: var(--accent-tertiary);
+        }
+        
+        h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-secondary);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-3xl);
+            margin-bottom: var(--spacing-3xl);
+            text-align: center;
+        }
+        
+        .pricing-comparison {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .equation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-primary);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .equation .arrow {
+            color: var(--accent-tertiary);
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            border: 1px solid var(--bg-elevated);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .badge-success {
+            background: var(--status-success);
+            color: var(--bg-primary);
+        }
+        
+        .badge-warning {
+            background: var(--status-warning);
+            color: var(--bg-primary);
+        }
+        
+        .badge-error {
+            background: var(--accent-primary);
+            color: var(--text-inverted);
+        }
+        
+        .badge-info {
+            background: var(--status-info);
+            color: var(--text-inverted);
+        }
+        
+        /* Status Icons */
+        .status-icon {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .status-yes {
+            color: var(--status-success);
+        }
+        
+        .status-partial {
+            color: var(--status-warning);
+        }
+        
+        .status-no {
+            color: var(--status-error);
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin: var(--spacing-xl) 0;
+        }
+        
+        th {
+            background: var(--bg-elevated);
+            color: var(--accent-primary);
+            padding: var(--spacing-md);
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--bg-tertiary);
+            color: var(--text-secondary);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Code Blocks */
+        pre, code {
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-sm);
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+        }
+        
+        code {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            color: var(--accent-tertiary);
+            font-size: 0.9em;
+        }
+        
+        pre {
+            padding: var(--spacing-lg);
+            overflow-x: auto;
+            margin: var(--spacing-lg) 0;
+        }
+        
+        pre code {
+            padding: 0;
+            background: transparent;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin: var(--spacing-lg) 0;
+            padding-left: var(--spacing-2xl);
+            color: var(--text-secondary);
+        }
+        
+        li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            gap: var(--spacing-xl);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        /* Metric Cards */
+        .metric-card {
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            border: 2px solid var(--bg-elevated);
+            transition: all 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Comparison Blocks */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .comparison-bad {
+            background: var(--bg-secondary);
+            border: 2px solid var(--status-error);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+        }
+        
+        .comparison-good {
+            background: var(--bg-secondary);
+            border: 2px solid var(--status-success);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+        }
+        
+        .comparison-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            font-weight: bold;
+        }
+        
+        /* Callout Boxes */
+        .callout {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-primary);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .callout-warning {
+            border-left-color: var(--status-warning);
+        }
+        
+        .callout-success {
+            border-left-color: var(--status-success);
+        }
+        
+        .callout-info {
+            border-left-color: var(--status-info);
+        }
+        
+        /* Progress Tracker */
+        .progress-tracker {
+            display: flex;
+            justify-content: space-between;
+            margin: var(--spacing-2xl) 0;
+            position: relative;
+        }
+        
+        .progress-tracker::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--bg-elevated);
+            z-index: 0;
+        }
+        
+        .progress-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .progress-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-elevated);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-sm);
+            font-weight: bold;
+        }
+        
+        .progress-step.active .progress-circle {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+        
+        .progress-step.completed .progress-circle {
+            background: var(--status-success);
+            color: var(--bg-primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .equation {
+                font-size: 1.5rem;
+                flex-direction: column;
+            }
+            
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Guia Definitivo: Redução de 50-70% no Uso de Tokens</h1>
+            <p style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: var(--spacing-2xl);">
+                Otimize seu uso do Claude Code e multiplique sua produtividade
+            </p>
+            
+            <!-- Quick Navigation -->
+            <div style="display: flex; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-2xl); flex-wrap: wrap;">
+                <a href="#config-section" class="badge badge-error" style="text-decoration: none; padding: var(--spacing-sm) var(--spacing-lg); font-size: 1rem;">
+                    ⚙️ Configurações /config
+                </a>
+                <a href="#quick-wins" class="badge badge-warning" style="text-decoration: none; padding: var(--spacing-sm) var(--spacing-lg); font-size: 1rem;">
+                    🚀 Vitórias Rápidas
+                </a>
+                <a href="#models" class="badge badge-info" style="text-decoration: none; padding: var(--spacing-sm) var(--spacing-lg); font-size: 1rem;">
+                    🤖 Modelos
+                </a>
+                <a href="#workflow" class="badge badge-success" style="text-decoration: none; padding: var(--spacing-sm) var(--spacing-lg); font-size: 1rem;">
+                    📋 Workflow
+                </a>
+            </div>
+            
+            <!-- Pricing Equation -->
+            <div class="pricing-comparison">
+                <h3 style="text-align: center; margin-bottom: var(--spacing-xl);">Como o consumo de tokens afeta seus limites</h3>
+                <div class="equation">
+                    <span>↑ tokens</span>
+                    <span class="arrow">=</span>
+                    <span>↑ processamento</span>
+                    <span class="arrow">=</span>
+                    <span>↑ consumo da cota</span>
+                </div>
+            </div>
+            
+            <!-- Key Metrics -->
+            <div class="grid grid-3">
+                <div class="metric-card">
+                    <div class="metric-value">50-70%</div>
+                    <div class="metric-label">Redução de Tokens</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">3x</div>
+                    <div class="metric-label">Mais Produtividade</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">15-30</div>
+                    <div class="metric-label">Sessões/Semana</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Model Comparison -->
+        <h2 id="models">Comparação de Modelos e Consumo</h2>
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Capacidade</th>
+                        <th>Consumo de Cota</th>
+                        <th>Melhor Para</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Opus</strong></td>
+                        <td>Máxima inteligência</td>
+                        <td><span class="badge badge-error">Alto</span></td>
+                        <td>Arquitetura, análise complexa</td>
+                        <td><span class="status-icon status-yes">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sonnet</strong></td>
+                        <td>Balanceado</td>
+                        <td><span class="badge badge-warning">Médio</span></td>
+                        <td>Implementação, features</td>
+                        <td><span class="status-icon status-yes">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Haiku</strong></td>
+                        <td>Rápido e eficiente</td>
+                        <td><span class="badge badge-success">Baixo</span></td>
+                        <td>Formatação, testes simples</td>
+                        <td><span class="status-icon status-yes">✓</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Quick Wins Section -->
+        <h2 id="quick-wins">Vitórias Rápidas: Economize 30-40% Imediatamente</h2>
+        
+        <div class="callout callout-info" style="margin-bottom: var(--spacing-2xl);">
+            <strong>Primeiro Passo Essencial:</strong> Acesse <code>/config</code> e ajuste as configurações antes de qualquer trabalho. 
+            As configurações abaixo, especialmente desabilitar auto-compact, podem economizar 30-40% dos tokens antes mesmo de começar.
+        </div>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-header">
+                    <span class="status-icon status-yes">✓</span>
+                    <h4>Desabilitar Autocompact</h4>
+                </div>
+                <p>Recupere 45k tokens (22.5% da janela) instantaneamente</p>
+                <pre><code>/config
+# Selecione: Disable autocompact</code></pre>
+                <div class="badge badge-success">Ganho: +45k tokens</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="status-icon status-yes">✓</span>
+                    <h4>Limpar Entre Tarefas</h4>
+                </div>
+                <p>Reset completo do contexto entre atividades diferentes</p>
+                <pre><code>/clear  # SEMPRE entre tarefas</code></pre>
+                <div class="badge badge-success">Ganho: 70% menos acúmulo</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="status-icon status-yes">✓</span>
+                    <h4>Desabilitar MCP Desnecessários</h4>
+                </div>
+                <p>Cada servidor MCP consome 2-5k tokens</p>
+                <pre><code>/context  # Verificar consumo
+@server-name disable</code></pre>
+                <div class="badge badge-success">Ganho: 10-20k tokens</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="status-icon status-yes">✓</span>
+                    <h4>CLAUDE.md Otimizado</h4>
+                </div>
+                <p>Mantenha abaixo de 5k tokens sempre</p>
+                <pre><code># Estrutura ideal:
+# Project: [2 linhas]
+# Stack: [3 items]
+# Commands: [3 items]
+# Current: [1 linha]</code></pre>
+                <div class="badge badge-success">Ganho: 5-10k tokens/sessão</div>
+            </div>
+        </div>
+        
+        <!-- Comparison Section -->
+        <h2>Otimização de Prompts: Antes vs Depois</h2>
+        
+        <div class="comparison">
+            <div class="comparison-bad">
+                <div class="comparison-header">
+                    <span class="status-icon status-no">✕</span>
+                    <span>Ineficiente (127 tokens)</span>
+                </div>
+                <pre><code>"I would like you to please analyze 
+the following customer feedback data 
+that we have collected from our 
+recent survey. Please take your time 
+to carefully review each response..."</code></pre>
+            </div>
+            
+            <div class="comparison-good">
+                <div class="comparison-header">
+                    <span class="status-icon status-yes">✓</span>
+                    <span>Otimizado (45 tokens)</span>
+                </div>
+                <pre><code>"Analyze feedback. Extract patterns 
+and themes. Data: [...]"</code></pre>
+                <div class="badge badge-success" style="margin-top: var(--spacing-md);">
+                    65% menos tokens
+                </div>
+            </div>
+        </div>
+        
+        <!-- Workflow Strategy -->
+        <h2 id="workflow">Estratégia de Workflow por Modelo</h2>
+        
+        <div class="card">
+            <h3>Seleção Inteligente de Modelos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fase do Projeto</th>
+                        <th>Modelo Ideal</th>
+                        <th>Justificativa</th>
+                        <th>Economia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Planejamento</strong></td>
+                        <td><span class="badge badge-error">Opus</span></td>
+                        <td>Raciocínio complexo necessário</td>
+                        <td>1x uso apenas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Implementação</strong></td>
+                        <td><span class="badge badge-warning">Sonnet</span></td>
+                        <td>Equilíbrio qualidade/consumo</td>
+                        <td>50% menos que Opus</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Testes</strong></td>
+                        <td><span class="badge badge-success">Haiku</span></td>
+                        <td>Tarefas diretas e repetitivas</td>
+                        <td>80% menos que Opus</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Formatação</strong></td>
+                        <td><span class="badge badge-success">Haiku</span></td>
+                        <td>Processamento simples</td>
+                        <td>80% menos que Opus</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Context Management Timeline -->
+        <h2>Linha do Tempo de Gestão de Contexto</h2>
+        
+        <div class="card">
+            <div class="progress-tracker">
+                <div class="progress-step completed">
+                    <div class="progress-circle">0%</div>
+                    <small>Início Limpo</small>
+                </div>
+                <div class="progress-step completed">
+                    <div class="progress-circle">30%</div>
+                    <small>Monitorar</small>
+                </div>
+                <div class="progress-step active">
+                    <div class="progress-circle">70%</div>
+                    <small>Compactar</small>
+                </div>
+                <div class="progress-step">
+                    <div class="progress-circle">90%</div>
+                    <small>Finalizar</small>
+                </div>
+                <div class="progress-step">
+                    <div class="progress-circle">✓</div>
+                    <small>Clear</small>
+                </div>
+            </div>
+            
+            <div class="callout callout-warning">
+                <strong>Regra de Ouro:</strong> Sempre compacte ao atingir 70% do contexto (140k tokens)
+                <pre><code>/compact preserve: implementation, decisions, active todos</code></pre>
+            </div>
+        </div>
+        
+        <!-- Consumption Metrics -->
+        <h2>Métricas de Consumo Real</h2>
+        
+        <div class="grid grid-3">
+            <div class="metric-card">
+                <h4>Bug Fix Simples</h4>
+                <div style="margin: var(--spacing-lg) 0;">
+                    <div style="color: var(--status-error);">Sem otimização: 1 sessão Sonnet</div>
+                    <div style="color: var(--status-success);">Com otimização: 0.3 sessão Haiku</div>
+                </div>
+                <div class="badge badge-success">3x mais fixes</div>
+            </div>
+            
+            <div class="metric-card">
+                <h4>Feature Completa</h4>
+                <div style="margin: var(--spacing-lg) 0;">
+                    <div style="color: var(--status-error);">Sem otimização: 3 sessões Opus</div>
+                    <div style="color: var(--status-success);">Com otimização: 1 Opus + 1 Sonnet</div>
+                </div>
+                <div class="badge badge-success">50% mais features</div>
+            </div>
+            
+            <div class="metric-card">
+                <h4>Refatoração</h4>
+                <div style="margin: var(--spacing-lg) 0;">
+                    <div style="color: var(--status-error);">Sem otimização: 2 sessões Sonnet</div>
+                    <div style="color: var(--status-success);">Com otimização: 0.5 Sonnet + 0.5 Haiku</div>
+                </div>
+                <div class="badge badge-success">3x mais refatorações</div>
+            </div>
+        </div>
+        
+        <!-- Commands Reference -->
+        <h2>Referência Rápida de Comandos</h2>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <h4>Comandos Essenciais</h4>
+                <pre><code>/clear     # Reset completo
+/compact   # Sumarizar contexto
+/context   # Ver uso atual
+/model     # Trocar modelo
+/memory    # Editar CLAUDE.md
+/init      # Setup inicial</code></pre>
+            </div>
+            
+            <div class="card">
+                <h4>Flags de Otimização</h4>
+                <pre><code># Sem interrupções
+claude --dangerously-skip-permissions
+
+# Debug MCP
+claude --mcp-debug
+
+# Automação
+claude -p "task" --output-format stream-json</code></pre>
+            </div>
+        </div>
+        
+        <!-- Anti-patterns -->
+        <h2>Antipadrões que Destroem sua Cota</h2>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-header">
+                    <span class="status-icon status-no">✕</span>
+                    <h4>O que EVITAR</h4>
+                </div>
+                <ul>
+                    <li>Sessões de mais de 2 horas</li>
+                    <li>CLAUDE.md com mais de 5k tokens</li>
+                    <li>Não usar /clear entre tarefas</li>
+                    <li>Manter todos os MCP servers ativos</li>
+                    <li>Usar Opus para tarefas simples</li>
+                    <li>Prompts verbosos e explicativos</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="status-icon status-yes">✓</span>
+                    <h4>O que FAZER</h4>
+                </div>
+                <ul>
+                    <li>Sessões focadas e curtas</li>
+                    <li>CLAUDE.md conciso e modular</li>
+                    <li>/clear religiosamente</li>
+                    <li>Apenas MCP essenciais</li>
+                    <li>Modelo adequado por tarefa</li>
+                    <li>Prompts numerados e diretos</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Configuration Settings Deep Dive -->
+        <h2 id="config-section">Configurações Detalhadas do Claude Code (/config)</h2>
+        
+        <!-- Most Important Setting Alert -->
+        <div class="card" style="background: linear-gradient(135deg, var(--status-error), var(--accent-primary)); color: var(--text-inverted); text-align: center;">
+            <h3 style="margin: 0; color: var(--text-inverted);">⚠️ Configuração Mais Importante</h3>
+            <div style="font-size: 1.5rem; margin: var(--spacing-lg) 0;">
+                <strong>Auto-compact = false</strong>
+            </div>
+            <p style="color: var(--text-inverted);">
+                Esta única mudança libera <strong>45.000 tokens extras</strong> (22.5% da janela total) imediatamente!
+            </p>
+        </div>
+        
+        <!-- Quick Setup Box -->
+        <div class="card" style="background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary)); border: 2px solid var(--accent-primary);">
+            <h3 style="margin-top: 0; color: var(--accent-primary);">Setup Rápido para Máxima Economia</h3>
+            <p>Execute estes comandos na sequência para configuração otimizada:</p>
+            <pre style="background: var(--bg-primary);"><code># 1. Abra as configurações
+/config
+
+# 2. Configure para economia máxima:
+# - Auto-compact → false (tecle para desativar)
+# - Verbose output → false
+# - Output style → concise
+# - Respect .gitignore → true
+# - Rewind code → true
+
+# 3. Salve com Esc
+
+# 4. Verifique o contexto livre
+/context</code></pre>
+            <div class="badge badge-success">Economia imediata: +45k tokens (22.5% mais contexto)</div>
+        </div>
+        
+        <!-- Configuration Comparison -->
+        <div class="comparison" style="margin-bottom: var(--spacing-2xl);">
+            <div class="comparison-bad">
+                <div class="comparison-header">
+                    <span class="status-icon status-no">✕</span>
+                    <span>Configuração Padrão</span>
+                </div>
+                <ul style="list-style: none; padding: 0;">
+                    <li>• Auto-compact: <strong style="color: var(--status-error);">true</strong></li>
+                    <li>• Verbose output: <strong style="color: var(--status-warning);">true</strong></li>
+                    <li>• Output style: <strong style="color: var(--status-warning);">default</strong></li>
+                    <li>• Show tips: <strong style="color: var(--status-warning);">true</strong></li>
+                </ul>
+                <div style="margin-top: var(--spacing-lg);">
+                    <strong>Resultado:</strong><br>
+                    • Apenas 155k tokens disponíveis<br>
+                    • Outputs longos e verbosos<br>
+                    • Mais consumo por sessão
+                </div>
+            </div>
+            
+            <div class="comparison-good">
+                <div class="comparison-header">
+                    <span class="status-icon status-yes">✓</span>
+                    <span>Configuração Otimizada</span>
+                </div>
+                <ul style="list-style: none; padding: 0;">
+                    <li>• Auto-compact: <strong style="color: var(--status-success);">false</strong></li>
+                    <li>• Verbose output: <strong style="color: var(--status-success);">false</strong></li>
+                    <li>• Output style: <strong style="color: var(--status-success);">concise</strong></li>
+                    <li>• Show tips: <strong style="color: var(--status-success);">false</strong></li>
+                </ul>
+                <div style="margin-top: var(--spacing-lg);">
+                    <strong>Resultado:</strong><br>
+                    • 200k tokens completos<br>
+                    • Respostas concisas<br>
+                    • 50-70% menos consumo
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <p style="margin-bottom: var(--spacing-xl);">
+                Acesse com <code>/config</code> e use <code>Tab</code> para navegar entre opções. <code>Enter/Space</code> para alterar, <code>Esc</code> para sair.
+            </p>
+            
+            <div class="grid grid-2">
+                <!-- Auto-compact -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Auto-compact</h4>
+                        <span class="badge badge-error">false (recomendado)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Compacta automaticamente conversas quando o contexto atinge ~95%.</p>
+                    <p><strong>Por que desabilitar:</strong> Reserva 45k tokens (22.5%) como buffer, reduzindo seu contexto útil de 200k para 155k.</p>
+                    <div class="callout callout-success">
+                        <strong>Economia:</strong> +45k tokens por sessão
+                    </div>
+                </div>
+                
+                <!-- Show tips -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Show tips</h4>
+                        <span class="badge badge-info">false (opcional)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Exibe dicas e sugestões durante o uso.</p>
+                    <p><strong>Por que desabilitar:</strong> Reduz distrações visuais para usuários experientes.</p>
+                    <div class="callout callout-info">
+                        <strong>Dica:</strong> Mantenha ativo se estiver aprendendo
+                    </div>
+                </div>
+                
+                <!-- Rewind code (checkpoints) -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Rewind code (checkpoints)</h4>
+                        <span class="badge badge-success">true (recomendado)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Cria pontos de restauração automáticos antes de mudanças.</p>
+                    <p><strong>Por que ativar:</strong> Permite reverter código quebrado rapidamente sem perder contexto.</p>
+                    <div class="callout callout-warning">
+                        <strong>Importante:</strong> Essencial para debugging seguro
+                    </div>
+                </div>
+                
+                <!-- Verbose output -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Verbose output</h4>
+                        <span class="badge badge-info">false (recomendado)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Mostra logs detalhados de todas as operações.</p>
+                    <p><strong>Por que desabilitar:</strong> Saídas verbosas consomem mais tokens e poluem o contexto.</p>
+                    <div class="callout callout-success">
+                        <strong>Economia:</strong> ~10-15% menos tokens
+                    </div>
+                </div>
+                
+                <!-- Respect .gitignore -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Respect .gitignore in file picker</h4>
+                        <span class="badge badge-success">true (recomendado)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Oculta arquivos ignorados pelo Git no seletor.</p>
+                    <p><strong>Por que ativar:</strong> Evita que Claude leia node_modules, builds e outros arquivos desnecessários.</p>
+                    <div class="callout callout-success">
+                        <strong>Economia:</strong> Previne leitura acidental de arquivos grandes
+                    </div>
+                </div>
+                
+                <!-- Theme -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Theme</h4>
+                        <span class="badge badge-info">Dark mode (preferência)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Define o tema visual da interface.</p>
+                    <p><strong>Opções:</strong> Dark mode, Light mode, Auto (segue o sistema).</p>
+                    <div class="callout callout-info">
+                        <strong>Nota:</strong> Não afeta consumo de tokens
+                    </div>
+                </div>
+                
+                <!-- Notifications -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Notifications</h4>
+                        <span class="badge badge-warning">Auto (recomendado)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Controla notificações do sistema.</p>
+                    <p><strong>Opções:</strong> Auto (inteligente), All (todas), None (nenhuma).</p>
+                    <div class="callout callout-info">
+                        <strong>Dica:</strong> Auto notifica apenas eventos importantes
+                    </div>
+                </div>
+                
+                <!-- Output style -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Output style</h4>
+                        <span class="badge badge-warning">default (recomendado)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Define formato de saída das respostas.</p>
+                    <p><strong>Opções:</strong> default (balanceado), concise (mínimo), detailed (máximo).</p>
+                    <div class="callout callout-warning">
+                        <strong>Para economia:</strong> Use "concise" para menos tokens
+                    </div>
+                </div>
+                
+                <!-- Editor mode -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Editor mode</h4>
+                        <span class="badge badge-info">normal (recomendado)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Define comportamento do editor de código.</p>
+                    <p><strong>Opções:</strong> normal (padrão), vim (comandos vim), emacs (comandos emacs).</p>
+                    <div class="callout callout-info">
+                        <strong>Nota:</strong> Para usuários familiarizados com vim/emacs
+                    </div>
+                </div>
+                
+                <!-- Model -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Model</h4>
+                        <span class="badge badge-success">default (recommended)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Define o modelo padrão a ser usado.</p>
+                    <p><strong>Estratégia:</strong> Use default e mude com <code>/model</code> conforme necessidade.</p>
+                    <div class="callout callout-warning">
+                        <strong>Dica:</strong> Opus para complexo, Sonnet para geral, Haiku para simples
+                    </div>
+                </div>
+                
+                <!-- Auto-connect to IDE -->
+                <div class="card" style="background: var(--bg-tertiary);">
+                    <div class="card-header">
+                        <h4>Auto-connect to IDE</h4>
+                        <span class="badge badge-info">false (situacional)</span>
+                    </div>
+                    <p><strong>O que faz:</strong> Conecta automaticamente com IDEs externos via terminal.</p>
+                    <p><strong>Quando ativar:</strong> Se usa VSCode/Cursor com extensões Claude.</p>
+                    <div class="callout callout-info">
+                        <strong>Nota:</strong> Requer configuração adicional do IDE
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Optimal Configuration Summary -->
+            <div class="callout callout-success" style="margin-top: var(--spacing-2xl);">
+                <h4 style="margin-top: 0;">Configuração Otimizada para Máxima Economia</h4>
+                <div class="grid grid-2">
+                    <div>
+                        <strong>Essenciais para economia:</strong>
+                        <ul style="margin-top: var(--spacing-sm);">
+                            <li>✓ Auto-compact: <strong>false</strong> (+45k tokens)</li>
+                            <li>✓ Verbose output: <strong>false</strong> (-15% tokens)</li>
+                            <li>✓ Output style: <strong>concise</strong> (-20% tokens)</li>
+                            <li>✓ Respect .gitignore: <strong>true</strong> (evita arquivos grandes)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Segurança e produtividade:</strong>
+                        <ul style="margin-top: var(--spacing-sm);">
+                            <li>✓ Rewind code: <strong>true</strong> (restauração segura)</li>
+                            <li>✓ Notifications: <strong>Auto</strong> (foco sem perder alertas)</li>
+                            <li>✓ Model: <strong>default</strong> (flexibilidade com /model)</li>
+                            <li>✓ Show tips: <strong>false</strong> (usuários experientes)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Impact Table -->
+                <h4 style="margin-top: var(--spacing-2xl);">Impacto de Cada Configuração no Consumo</h4>
+                <table style="margin: var(--spacing-lg) 0;">
+                    <thead>
+                        <tr>
+                            <th>Configuração</th>
+                            <th>Valor Otimizado</th>
+                            <th>Impacto</th>
+                            <th>Economia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Auto-compact</strong></td>
+                            <td><span class="badge badge-error">false</span></td>
+                            <td>Libera buffer reservado</td>
+                            <td style="color: var(--status-success);"><strong>+45k tokens</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Output style</strong></td>
+                            <td><span class="badge badge-warning">concise</span></td>
+                            <td>Respostas mais diretas</td>
+                            <td style="color: var(--status-success);"><strong>-20% output</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Verbose output</strong></td>
+                            <td><span class="badge badge-warning">false</span></td>
+                            <td>Menos logs desnecessários</td>
+                            <td style="color: var(--status-success);"><strong>-15% geral</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Show tips</strong></td>
+                            <td><span class="badge badge-info">false</span></td>
+                            <td>Remove mensagens extras</td>
+                            <td style="color: var(--status-warning);">-5% mensagens</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Respect .gitignore</strong></td>
+                            <td><span class="badge badge-success">true</span></td>
+                            <td>Evita ler node_modules</td>
+                            <td style="color: var(--status-success);"><strong>Previne erros</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="text-align: center; padding: var(--spacing-lg); background: var(--bg-primary); border-radius: var(--radius-md); margin-top: var(--spacing-xl);">
+                    <strong style="font-size: 1.25rem; color: var(--accent-primary);">
+                        Economia Total Combinada: 50-70% menos consumo por sessão
+                    </strong>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Configuration Settings Section -->
+        <h2>Configurações Essenciais do Claude Code</h2>
+        
+        <div class="card">
+            <h3>Menu Config: Otimizações Críticas para Economia de Tokens</h3>
+            <p style="margin-bottom: var(--spacing-xl);">Acesse com <code>/config</code> ou <code>Tab</code> para navegar entre opções</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Configuração</th>
+                        <th>Valor Recomendado</th>
+                        <th>Explicação</th>
+                        <th>Impacto na Economia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: rgba(204, 120, 92, 0.1);">
+                        <td><strong>Auto-compact</strong></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td>Desativa compactação automática que reserva 45k tokens como buffer. Com false, você controla manualmente quando compactar.</td>
+                        <td><span class="badge badge-success">+45k tokens disponíveis</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Show tips</strong></td>
+                        <td><span class="badge badge-warning">false</span></td>
+                        <td>Desativa dicas automáticas que consomem espaço na interface e podem adicionar contexto desnecessário.</td>
+                        <td>Interface mais limpa</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rewind code (checkpoints)</strong></td>
+                        <td><span class="badge badge-success">true</span></td>
+                        <td>Mantém pontos de restauração do código. Essencial para reverter mudanças sem reprocessar todo o contexto.</td>
+                        <td>Evita reprocessamento</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Save logs output</strong></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td>Desativa salvamento de logs que podem acumular no contexto. Ative apenas para debug específico.</td>
+                        <td>Menos poluição de contexto</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Respect .gitignore in file picker</strong></td>
+                        <td><span class="badge badge-success">true</span></td>
+                        <td>Evita que Claude leia arquivos desnecessários (node_modules, build, etc), economizando tokens significativos.</td>
+                        <td><span class="badge badge-success">-20k a -100k tokens</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Theme</strong></td>
+                        <td>Dark mode</td>
+                        <td>Preferência visual, não afeta tokens mas reduz fadiga ocular em sessões longas.</td>
+                        <td>Conforto visual</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Notifications</strong></td>
+                        <td><span class="badge badge-info">Auto</span></td>
+                        <td>Notificações automáticas para quando Claude precisa de input. Evita que sessões fiquem paradas consumindo contexto.</td>
+                        <td>Eficiência de tempo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Output style</strong></td>
+                        <td><span class="badge badge-success">default</span></td>
+                        <td>Mantém output padrão sem formatações extras. Outputs mais elaborados consomem mais tokens.</td>
+                        <td>Respostas concisas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Editor mode</strong></td>
+                        <td>normal</td>
+                        <td>Modo padrão de edição. Modos avançados podem adicionar features que consomem mais processamento.</td>
+                        <td>Operação eficiente</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Model</strong></td>
+                        <td><span class="badge badge-warning">default (recommended)</span></td>
+                        <td>Usa seleção automática baseada no uso. Mude manualmente com /model para tarefas específicas.</td>
+                        <td>Otimização automática</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Auto-connect to IDE</strong></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td>Evita conexões automáticas com IDEs externos que podem sincronizar contexto desnecessário.</td>
+                        <td>Controle de contexto</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="callout callout-warning">
+            <h4>Configuração Prioritária para Máxima Economia</h4>
+            <ol style="margin-top: var(--spacing-lg);">
+                <li><strong>Auto-compact = false</strong> - Ganho imediato de 45k tokens (22.5% da janela)</li>
+                <li><strong>Respect .gitignore = true</strong> - Evita carregar node_modules e builds</li>
+                <li><strong>Save logs = false</strong> - Previne acúmulo de contexto desnecessário</li>
+                <li><strong>Rewind code = true</strong> - Permite reverter sem reprocessar</li>
+            </ol>
+            <p style="margin-top: var(--spacing-lg);">
+                Com estas 4 configurações, você já economiza <strong>30-40% dos tokens</strong> antes mesmo de começar a trabalhar.
+            </p>
+        </div>
+        
+        <!-- Configuration Trade-offs -->
+        <h3>Trade-offs e Cenários Específicos</h3>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <h4>Quando MANTER Auto-compact Ativo</h4>
+                <ul>
+                    <li><strong>Sessões muito longas (4h+):</strong> Se você precisa trabalhar continuamente sem pausas</li>
+                    <li><strong>Debugging complexo:</strong> Quando rastrear todo o histórico é crítico</li>
+                    <li><strong>Projetos com muitas dependências:</strong> Contexto interconectado que não pode ser perdido</li>
+                </ul>
+                <div class="callout callout-warning" style="margin-top: var(--spacing-lg);">
+                    <strong>Trade-off:</strong> Perde 45k tokens mas evita perda acidental de contexto
+                </div>
+            </div>
+            
+            <div class="card">
+                <h4>Quando ATIVAR Save Logs</h4>
+                <ul>
+                    <li><strong>Debugging de erros intermitentes:</strong> Precisa analisar padrões ao longo do tempo</li>
+                    <li><strong>Compliance e auditoria:</strong> Requisitos de documentação detalhada</li>
+                    <li><strong>Aprendizado e análise:</strong> Estudar como Claude resolve problemas</li>
+                </ul>
+                <div class="callout callout-warning" style="margin-top: var(--spacing-lg);">
+                    <strong>Trade-off:</strong> Consome mais contexto mas mantém histórico completo
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" style="margin-top: var(--spacing-xl);">
+            <h4>Configurações por Tipo de Projeto</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Projeto</th>
+                        <th>Auto-compact</th>
+                        <th>Save logs</th>
+                        <th>Checkpoints</th>
+                        <th>Model Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>MVP/Protótipo Rápido</strong></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td><span class="badge badge-success">true</span></td>
+                        <td>Sonnet/Haiku</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Refatoração Grande</strong></td>
+                        <td><span class="badge badge-success">true</span></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td><span class="badge badge-success">true</span></td>
+                        <td>Sonnet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Debug Complexo</strong></td>
+                        <td><span class="badge badge-success">true</span></td>
+                        <td><span class="badge badge-success">true</span></td>
+                        <td><span class="badge badge-success">true</span></td>
+                        <td>Opus/Sonnet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Features Isoladas</strong></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td><span class="badge badge-success">true</span></td>
+                        <td>Haiku/Sonnet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Documentação/Testes</strong></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td><span class="badge badge-error">false</span></td>
+                        <td>Haiku</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Configuration Quick Reference -->
+        <div class="card" style="background: var(--bg-elevated); border: 2px solid var(--accent-primary); margin: var(--spacing-2xl) 0;">
+            <h3 style="color: var(--accent-primary); margin-top: 0;">Referência Rápida: Comandos de Configuração</h3>
+            <div class="grid grid-2" style="margin-top: var(--spacing-xl);">
+                <div>
+                    <h4>Acesso e Navegação</h4>
+                    <pre><code>/config          # Abrir menu de configurações
+Tab              # Navegar entre opções
+Enter/Space      # Alterar configuração
+Esc              # Sair do menu</code></pre>
+                </div>
+                <div>
+                    <h4>Comandos Relacionados</h4>
+                    <pre><code>/model [nome]    # Trocar modelo manualmente
+/context         # Ver uso atual de tokens
+/compact         # Compactar manualmente
+/clear           # Limpar contexto</code></pre>
+                </div>
+            </div>
+            <div class="callout" style="background: var(--bg-tertiary); margin-top: var(--spacing-xl);">
+                <strong>Sequência Otimizada de Setup:</strong>
+                <ol style="margin-top: var(--spacing-md);">
+                    <li><code>/config</code> → Desabilitar auto-compact</li>
+                    <li><code>/config</code> → Ativar respect .gitignore</li>
+                    <li><code>/init</code> → Criar CLAUDE.md otimizado</li>
+                    <li><code>/model haiku</code> → Começar com modelo econômico</li>
+                </ol>
+            </div>
+        </div>
+        
+        <!-- Model Selection Strategy -->
+        <h2>Estratégia de Seleção Manual de Modelos</h2>
+        
+        <div class="card">
+            <h3>Como e Quando Trocar de Modelo</h3>
+            <p>Use <code>/model</code> para alternar entre modelos conforme a necessidade:</p>
+            
+            <div class="comparison">
+                <div style="background: var(--bg-tertiary); padding: var(--spacing-lg); border-radius: var(--radius-md);">
+                    <h4 style="color: var(--accent-primary);">Workflow Otimizado</h4>
+                    <pre><code># 1. Arquitetura (início do projeto)
+/model opus
+"Design the authentication system architecture"
+
+# 2. Implementação (desenvolvimento)
+/model sonnet  
+"Implement the login feature"
+
+# 3. Testes e Docs (finalização)
+/model haiku
+"Write unit tests and documentation"</code></pre>
+                </div>
+                
+                <div style="background: var(--bg-tertiary); padding: var(--spacing-lg); border-radius: var(--radius-md);">
+                    <h4 style="color: var(--accent-primary);">Economia por Fase</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: var(--spacing-md);">
+                            <strong>Opus → Sonnet:</strong> 50% menos consumo
+                        </li>
+                        <li style="margin-bottom: var(--spacing-md);">
+                            <strong>Sonnet → Haiku:</strong> 60% menos consumo
+                        </li>
+                        <li style="margin-bottom: var(--spacing-md);">
+                            <strong>Opus → Haiku:</strong> 80% menos consumo
+                        </li>
+                    </ul>
+                    <div class="badge badge-success" style="margin-top: var(--spacing-lg);">
+                        Total: 3x mais tarefas no mesmo limite
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Implementation Plan -->
+        <h2>Plano de Implementação em 3 Semanas</h2>
+        
+        <div class="card">
+            <div class="grid grid-3">
+                <div>
+                    <h4 style="color: var(--accent-primary);">Semana 1: Fundamentos</h4>
+                    <ul>
+                        <li>✓ Configurar /config otimizado</li>
+                        <li>✓ Implementar /clear sistemático</li>
+                        <li>✓ Otimizar CLAUDE.md</li>
+                        <li>✓ Criar workflow de sessões</li>
+                    </ul>
+                    <div class="badge badge-info">30% economia</div>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--accent-primary);">Semana 2: Refinamento</h4>
+                    <ul>
+                        <li>○ Configurar imports modulares</li>
+                        <li>○ Padronizar prompts numerados</li>
+                        <li>○ Rotina de compactação</li>
+                        <li>○ Seleção de modelos</li>
+                    </ul>
+                    <div class="badge badge-warning">50% economia</div>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--accent-primary);">Semana 3: Maestria</h4>
+                    <ul>
+                        <li>○ Otimizar MCP servers</li>
+                        <li>○ Automatizar workflows</li>
+                        <li>○ Templates de prompts</li>
+                        <li>○ Métricas de acompanhamento</li>
+                    </ul>
+                    <div class="badge badge-success">70% economia</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Final Checklist -->
+        <h2>Checklist Final de Otimização</h2>
+        
+        <div class="card">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                    <input type="checkbox" style="width: 20px; height: 20px;">
+                    <span>CLAUDE.md menor que 5k tokens</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                    <input type="checkbox" style="width: 20px; height: 20px;">
+                    <span>Autocompact desabilitado</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                    <input type="checkbox" style="width: 20px; height: 20px;">
+                    <span>Apenas MCP essenciais ativos</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                    <input type="checkbox" style="width: 20px; height: 20px;">
+                    <span>/clear entre tarefas distintas</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                    <input type="checkbox" style="width: 20px; height: 20px;">
+                    <span>/compact em 70% do contexto</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                    <input type="checkbox" style="width: 20px; height: 20px;">
+                    <span>Prompts numerados e diretos</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                    <input type="checkbox" style="width: 20px; height: 20px;">
+                    <span>Arquivo de progresso atualizado</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                    <input type="checkbox" style="width: 20px; height: 20px;">
+                    <span>Modelo apropriado para cada tarefa</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                    <input type="checkbox" style="width: 20px; height: 20px;">
+                    <span>Monitoramento com /context regular</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Conclusion -->
+        <div class="callout callout-success" style="margin-top: var(--spacing-3xl);">
+            <h3 style="margin-top: 0;">Conclusão: Multiplique sua Produtividade</h3>
+            <p>
+                Com estas estratégias implementadas, você pode facilmente triplicar sua capacidade produtiva 
+                dentro dos mesmos limites do plano. A chave está na disciplina e no monitoramento constante.
+            </p>
+            <div class="grid grid-3" style="margin-top: var(--spacing-xl);">
+                <div>
+                    <strong>Plano Pro</strong><br>
+                    De 5-10 para 15-30 tarefas/semana
+                </div>
+                <div>
+                    <strong>Plano Max5x</strong><br>
+                    De 25-50 para 75-150 tarefas/semana
+                </div>
+                <div>
+                    <strong>Plano Max20x</strong><br>
+                    De 100-200 para 300-600 tarefas/semana
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: var(--spacing-3xl); padding-top: var(--spacing-2xl); border-top: 1px solid var(--bg-elevated);">
+            <p style="color: var(--text-secondary);">
+                Guia baseado em práticas comprovadas pela comunidade Claude • Janeiro 2025
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Add interactive checkbox functionality
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    this.parentElement.style.opacity = '0.6';
+                    this.parentElement.style.textDecoration = 'line-through';
+                } else {
+                    this.parentElement.style.opacity = '1';
+                    this.parentElement.style.textDecoration = 'none';
+                }
+            });
+        });
+        
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

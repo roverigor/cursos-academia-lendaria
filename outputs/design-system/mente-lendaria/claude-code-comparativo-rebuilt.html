@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code vs Alternativas - Análise Comparativa 2025</title>
+    <link rel="stylesheet" href="tokens.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .max-w-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.375rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            background-color: var(--accent-primary);
+            color: var(--text-inverted);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: Georgia, serif;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        /* Tables */
+        .table-wrapper {
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background-color: var(--bg-secondary);
+        }
+
+        .table-header {
+            padding: 1rem 1.5rem;
+            background-color: var(--accent-primary);
+            border-bottom: 1px solid var(--bg-elevated);
+        }
+
+        .table-header h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--text-inverted);
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: var(--accent-primary);
+        }
+
+        th {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-inverted);
+            border-right: 1px solid var(--bg-elevated);
+            min-width: 140px;
+        }
+
+        th:first-child {
+            text-align: left;
+            min-width: 280px;
+        }
+
+        th.leader {
+            background-color: var(--accent-tertiary);
+        }
+
+        .leader-badge {
+            display: inline-block;
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-weight: bold;
+            background-color: var(--accent-light);
+            color: var(--bg-primary);
+            margin-top: 4px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--bg-elevated);
+            transition: background-color 0.2s;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        td {
+            padding: 1rem;
+            text-align: center;
+            background-color: var(--bg-secondary);
+        }
+
+        td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: var(--text-primary);
+            background-color: var(--bg-tertiary);
+            border-right: 1px solid var(--bg-elevated);
+        }
+
+        td.highlight {
+            background-color: var(--bg-elevated);
+        }
+
+        .symbol {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .symbol.yes {
+            color: var(--status-success);
+        }
+
+        .symbol.partial {
+            color: var(--status-warning);
+        }
+
+        .symbol.no {
+            color: var(--status-error);
+        }
+
+        .note {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Legend */
+        .legend {
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--bg-elevated);
+        }
+
+        .legend h3 {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .legend-item .symbol {
+            font-size: 1.5rem;
+        }
+
+        .legend-item span {
+            color: var(--text-secondary);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--bg-elevated);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+
+        .card .highlight-text {
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        /* Conclusion */
+        .conclusion {
+            border-radius: 0.75rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            color: var(--text-inverted);
+        }
+
+        .conclusion h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: Georgia, serif;
+            margin-bottom: 1rem;
+        }
+
+        .conclusion p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+            color: var(--text-primary);
+        }
+
+        .conclusion p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            th, td {
+                padding: 0.75rem 0.5rem;
+                min-width: 100px;
+                font-size: 0.875rem;
+            }
+
+            th:first-child, td:first-child {
+                min-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="max-w-container">
+            <!-- Header -->
+            <div class="header">
+                <div class="badge">Análise Comparativa Completa 2025</div>
+                <h1>Claude Code vs Alternativas</h1>
+                <p class="subtitle">Matriz detalhada incluindo diferenciais técnicos e capacidades avançadas</p>
+            </div>
+
+            <!-- Recursos Principais -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h2>Recursos Principais</h2>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Recurso / Ferramenta</th>
+                                <th class="leader">
+                                    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                                        Claude Code
+                                        <span class="leader-badge">LÍDER</span>
+                                    </div>
+                                </th>
+                                <th>Gemini CLI</th>
+                                <th>Codex CLI</th>
+                                <th>Cursor (IDE)</th>
+                                <th>Copilot Chat</th>
+                                <th>Cody (Sourcegraph)</th>
+                                <th>Replit Agent</th>
+                                <th>GPT Code Interpreter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Agente via CLI (terminal)</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                            </tr>
+                            <tr>
+                                <td>Carregamento automático de contexto do projeto</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                            </tr>
+                            <tr>
+                                <td>Entendimento de repositório grande (busca/razão semântica)</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Execução de comandos/shell</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="note">Sandbox</span></td>
+                            </tr>
+                            <tr>
+                                <td>Refatoração multi-arquivo com plano</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                            </tr>
+                            <tr>
+                                <td>Geração de PRs/commits/documentação</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                            </tr>
+                            <tr>
+                                <td>Divulgação progressiva de contexto</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Eficiência de tokens (caching/seleção)</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Integração GitHub/GitLab</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                            </tr>
+                            <tr>
+                                <td>Multimodelo (poder usar modelos diferentes)</td>
+                                <td class="highlight"><span class="note">Sim (via Skills/pipe)</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Open-source/customizável</td>
+                                <td class="highlight"><span class="symbol no">✕</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Nível de autonomia (loop de pensar-executar-verificar)</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Maturidade de UX para tarefas complexas</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Diferenciais Fortes -->
+            <div class="table-wrapper">
+                <div class="table-header">
+                    <h2>Diferenciais Fortes (onde o Claude Code se destaca)</h2>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Diferencial</th>
+                                <th class="leader">Claude Code</th>
+                                <th>Gemini CLI</th>
+                                <th>Codex CLI</th>
+                                <th>Cursor (IDE)</th>
+                                <th>Copilot Chat</th>
+                                <th>Cody (Sourcegraph)</th>
+                                <th>Replit Agent</th>
+                                <th>GPT Code Interpreter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Skills (capacidades modulares carregáveis)</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="note">Parcial (extensões/recipes)</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Comandos nativos (ações rápidas tipo /refatorar)</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Hooks (gatilhos que disparam ações em eventos)</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="note">Não documentado</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Sub-agents (agentes especializados com contexto isolado)</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="note">Não documentado</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Manifesto de projeto (memória contextual persistente)</td>
+                                <td class="highlight"><span class="note">Sim (CLAUDE.md)</span></td>
+                                <td><span class="note">Sim (GEMINI.md)</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="note">Parcial (config/notes)</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td>Motor de divulgação progressiva (economia real de tokens)</td>
+                                <td class="highlight"><span class="symbol yes">✓</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol partial">◐</span></td>
+                                <td><span class="symbol no">✕</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Legenda -->
+            <div class="legend">
+                <h3>Legenda</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="symbol yes">✓</span>
+                        <span>Sim / Alto / Alta - Funcionalidade completa e otimizada</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="symbol partial">◐</span>
+                        <span>Parcial / Médio / Média - Funcionalidade parcial ou limitada</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="symbol no">✕</span>
+                        <span>Não / Baixo / Baixa - Não disponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Vantagem Sistêmica</h3>
+                    <p>O conjunto <span class="highlight-text">Hooks + Skills + Sub-agents + Progressive Disclosure</span> no mesmo pipeline dá ao Claude Code uma vantagem sistêmica em fluxo real de engenharia que nenhuma outra ferramenta consegue replicar.</p>
+                </div>
+                <div class="card">
+                    <h3>Capacidades Exclusivas</h3>
+                    <p><span class="highlight-text">Skills modulares</span>, <span class="highlight-text">hooks reativos</span> e <span class="highlight-text">sub-agentes especializados</span> são recursos que apenas o Claude Code oferece de forma completa e documentada, elevando o nível de automação possível.</p>
+                </div>
+                <div class="card">
+                    <h3>Economia de Tokens</h3>
+                    <p>O motor de <span class="highlight-text">divulgação progressiva</span> carrega apenas o contexto necessário, resultando em economia real de tokens e respostas mais focadas, especialmente crucial em projetos grandes.</p>
+                </div>
+                <div class="card">
+                    <h3>Alto Nível de Autonomia</h3>
+                    <p>Apenas Claude Code e Gemini CLI atingem <span class="highlight-text">alto nível de autonomia</span> com loop completo de pensar-executar-verificar, essencial para tarefas complexas que exigem múltiplas iterações.</p>
+                </div>
+            </div>
+
+            <!-- Conclusão -->
+            <div class="conclusion">
+                <h3>Conclusão da Análise</h3>
+                <p>Enquanto várias ferramentas oferecem funcionalidades básicas de assistência de código, o <strong>Claude Code</strong> se destaca por ser uma plataforma completa com recursos avançados que simplesmente não existem em outras soluções.</p>
+                <p>A combinação de <strong>Skills modulares</strong>, <strong>Hooks reativos</strong>, <strong>Sub-agents especializados</strong> e <strong>Progressive Disclosure</strong> cria um ecossistema único que permite automação de nível empresarial com controle granular.</p>
+                <p>Para projetos que exigem máxima autonomia, eficiência de tokens e capacidades avançadas de engenharia, Claude Code é atualmente a escolha mais completa do mercado.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

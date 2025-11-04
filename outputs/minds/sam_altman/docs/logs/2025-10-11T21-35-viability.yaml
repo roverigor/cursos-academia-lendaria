@@ -1,0 +1,203 @@
+---
+viability_assessment:
+  mind_name: sam_altman
+  assessed_at: 2025-10-11T21:35:00Z
+  assessed_by: mind-mapper (execute-mmos-pipeline)
+  mode: greenfield
+
+apex_scoring:
+  dimensions:
+    availability:
+      score: 18
+      max: 20
+      assessment: "Excepcional"
+      rationale: |
+        Sam Altman possui vasta produção de conteúdo público:
+        - Blog pessoal (blog.samaltman.com) com 50+ posts
+        - Entrevistas extensas (Lex Fridman, Tim Ferriss, etc)
+        - Testemunho no Congresso (transcrições disponíveis)
+        - Palestras na Stanford, Y Combinator
+        - Twitter/X prolífico
+        - "The Intelligence Age" e outros ensaios recentes
+
+        Único gap: não tem livro publicado (ainda)
+
+    public_persona:
+      score: 14
+      max: 15
+      assessment: "Muito Alto"
+      rationale: |
+        Figura pública extremamente conhecida:
+        - CEO da OpenAI (empresa mais disruptiva em AI)
+        - Ex-presidente Y Combinator (16-19)
+        - Investidor em Stripe, Airbnb, Reddit
+        - Personalidade polarizadora (drama OpenAI board 2023)
+        - Voz influente em AI safety e policy
+
+        Persona clara: otimista tecnológico, pragmático, visionário
+
+    expertise_depth:
+      score: 19
+      max: 20
+      assessment: "Excepcional"
+      rationale: |
+        Expertise profunda em múltiplas áreas:
+        - Startups: fundou Loopt aos 19, vendeu para $43M
+        - Venture Capital: parte do "PayPal Mafia" adjacente
+        - Y Combinator: escalou de 2 batches/ano para machine contínua
+        - AI/AGI: lidera desenvolvimento GPT-4, GPT-4o, o1
+        - Policy: testemunha expert no Congresso, AI safety
+
+        Track record comprovado: investiu early em unicórnios
+
+    x_factor:
+      score: 15
+      max: 15
+      assessment: "Único"
+      rationale: |
+        X-factor indiscutível:
+        - Única pessoa que foi presidente YC E CEO OpenAI
+        - Drama do board OpenAI 2023: demitido e recontratado em 5 dias
+        - Visão de longo prazo: AGI, UBI, fusão nuclear
+        - Coragem: enfrentou board, testificou no Congresso
+        - Paradoxos produtivos: otimista cauteloso, mover rápido com safety
+
+        Ninguém mais tem essa combinação única
+
+    temporal_relevance:
+      score: 15
+      max: 15
+      assessment: "Máxima"
+      rationale: |
+        Relevância temporal peak:
+        - OpenAI lançou ChatGPT (Nov 2022) - revolução AI
+        - GPT-4 (Mar 2023), GPT-4o (2024), o1 (2024)
+        - Drama board (Nov 2023) - evento global
+        - "The Intelligence Age" (Set 2024) - essay viral
+        - Debate AI safety vs aceleração: figura central
+
+        Impossível ser mais relevante agora
+
+    value_density:
+      score: 14
+      max: 15
+      assessment: "Muito Alto"
+      rationale: |
+        Densidade de valor excepcional:
+        - Frameworks: "How to be Successful", "Idea Maze"
+        - Principles: compound growth, long-term thinking
+        - Tactical advice: fundraising, hiring, product
+        - Strategic vision: AGI timeline, UBI, policy
+        - Mental models: first principles, Moore's Law for Everything
+
+        Cada source tem insights práticos e visionários
+
+  total_score: 95
+  max_score: 100
+  percentage: 95%
+  recommendation: "AUTO-APPROVE"
+  decision: "GO"
+
+icp_match:
+  target_audience:
+    - Tech entrepreneurs e startup founders
+    - AI/ML practitioners e researchers
+    - Investors e venture capitalists
+    - Policy makers em tech/AI
+    - Futurists e long-term thinkers
+
+  use_cases:
+    primary: "Startup advisor e mentor de founders"
+    secondary:
+      - "AI strategy consultant"
+      - "Tech policy advisor"
+      - "Investment thesis evaluator"
+      - "Long-term vision planner"
+
+  match_score: 95
+  percentage: 95%
+  assessment: "Perfect Match"
+  rationale: |
+    Sam Altman é ICP perfeito para:
+
+    1. Startup Founders (100% match):
+       - Foi founder (Loopt)
+       - Liderou YC (3 anos, 1000+ companies)
+       - Investiu em centenas de startups
+       - Conhece toda jornada: ideation → exit
+
+    2. AI Leaders (100% match):
+       - CEO da empresa líder em AI
+       - Visão clara de AGI timeline
+       - Balance: capability vs safety
+       - Experiência real shipping products
+
+    3. Long-term Thinkers (95% match):
+       - Essays sobre futuro: UBI, fusão nuclear
+       - Horizonte 10-50 anos
+       - "Moore's Law for Everything"
+       - AGI como próxima revolução industrial
+
+    4. Policy/Regulation (90% match):
+       - Testificou no Congresso
+       - Conversa com líderes globais
+       - Nuance: regulation vs innovation
+
+  roi_projection: "Muito Alto"
+  roi_rationale: |
+    ROI esperado extremamente alto:
+    - Audience size: milhões (founders, AI practitioners)
+    - Relevância temporal: peak (AI revolution)
+    - Uniqueness: única voz com YC + OpenAI
+    - Actionable insights: frameworks práticos + visão
+    - Longevity: continuará relevante 10+ anos
+
+estimated_resources:
+  time_hours: 10-12
+  time_rationale: "Greenfield completo com 6 fases"
+
+  tokens: 2500000-3000000
+  tokens_rationale: |
+    - Viability: 50K
+    - Research: 500K (50+ sources)
+    - Analysis: 1M (8 layers, triangulation)
+    - Synthesis: 400K (frameworks + KB)
+    - Implementation: 300K (system prompts)
+    - Testing: 250K (validation suite)
+
+  key_challenges:
+    - "Separar Sam founder vs Sam YC vs Sam OpenAI (3 personas)"
+    - "Capturar paradoxo: otimismo + cautela em AI safety"
+    - "Balance: tactical startup advice + long-term AGI vision"
+    - "Drama OpenAI board: contexto sem sensacionalismo"
+
+final_recommendation:
+  decision: "GO"
+  confidence: "Muito Alta (95%)"
+  reasoning: |
+    Sam Altman é candidato EXCEPCIONAL para mind mapping:
+
+    ✅ APEX 95/100 (threshold: 50)
+    ✅ ICP Match 95% (threshold: 50%)
+    ✅ Fontes abundantes e de alta qualidade
+    ✅ Relevância temporal máxima
+    ✅ Expertise profunda e comprovada
+    ✅ X-factor único (YC + OpenAI)
+    ✅ ROI projetado muito alto
+
+    Único ponto de atenção:
+    - Cuidado com recency bias (drama board)
+    - Separar 3 fases de carreira claramente
+    - Capturar nuance em AI safety debate
+
+    RECOMENDAÇÃO: Proceder para Research Collection
+
+next_steps:
+  immediate: "Generate PRD and TODO"
+  phase_2: "Research Collection (50+ sources)"
+  estimated_completion: "2025-10-13"
+
+metadata:
+  pipeline_version: "3.0"
+  methodology: "DNA Mental™ 8-Layer"
+  assessor: "mind-mapper orchestrator"

@@ -46,26 +46,6 @@ expansion-packs/*/outputs/
 coverage/
 *.lcov
 
-# Outputs directory (generated artifacts, NOT versioned)
-outputs/*
-!outputs/.gitkeep
-!outputs/README.md
-!outputs/courses/
-!outputs/minds/
-!outputs/database/
-!outputs/swipe/
-!outputs/debates/
-outputs/courses/*
-outputs/minds/*
-outputs/database/*
-outputs/swipe/*
-outputs/debates/*
-!outputs/courses/.gitkeep
-!outputs/minds/.gitkeep
-!outputs/database/.gitkeep
-!outputs/swipe/.gitkeep
-!outputs/debates/.gitkeep
-
 # Supabase migration artifacts (generated automatically)
 supabase/schemas/
 supabase/rollback/

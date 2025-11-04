@@ -1,0 +1,167 @@
+priority_matrix:
+  mind_name: "Sam Altman"
+  generated_date: "2025-10-11T21:00:00Z"
+
+  priority_calculation:
+    factors:
+      confidence_tier:
+        weight: 40%
+        description: "Tier 1 = 10, Tier 2 = 7, Tier 3 = 4"
+
+      content_depth:
+        weight: 30%
+        description: "Deep (testimony/podcast) = 10, Medium (long essay) = 7, Light (blog) = 5"
+
+      recency:
+        weight: 15%
+        description: "Last 2 years = 10, 2-5 years = 7, >5 years = 5"
+
+      accessibility:
+        weight: 15%
+        description: "Already collected = 10, Easy web = 8, Requires API = 5"
+
+  source_rankings:
+    # BATCH 1 - CRITICAL (Score >= 9.0)
+    - source_id: T1-002
+      title: "The Intelligence Age"
+      priority_score: 9.7
+      rank: 1
+      status: "COLLECTED"
+      rationale: "Most recent (2024), Tier 1, long-form vision essay, already collected"
+
+    - source_id: T1-006
+      title: "Lex Fridman #419"
+      priority_score: 9.5
+      rank: 2
+      status: "NEEDS_COLLECTION"
+      rationale: "Most recent podcast (2024), 150min deep dive, covers AGI/board saga"
+
+    - source_id: T1-005
+      title: "Lex Fridman #367"
+      priority_score: 9.3
+      rank: 3
+      status: "NEEDS_COLLECTION"
+      rationale: "2023 podcast, 120min, covers GPT-4 launch period"
+
+    - source_id: T1-004
+      title: "Congressional Testimony"
+      priority_score: 9.2
+      rank: 4
+      status: "COLLECTED"
+      rationale: "Official testimony (2023), reveals values/mental models, collected"
+
+    - source_id: T1-001
+      title: "How to Be Successful"
+      priority_score: 9.1
+      rank: 5
+      status: "COLLECTED"
+      rationale: "Explicit mental models/values essay, widely cited, collected"
+
+    - source_id: T1-003
+      title: "Moore's Law for Everything"
+      priority_score: 9.0
+      rank: 6
+      status: "COLLECTED"
+      rationale: "Core economic/tech vision (2021), long-form, collected"
+
+    # BATCH 2 - IMPORTANT (Score >= 7.5)
+    - source_id: T1-012
+      title: "Reflections"
+      priority_score: 8.8
+      rank: 7
+      status: "COLLECTED"
+      rationale: "Most recent reflection (2025), current thinking, collected"
+
+    - source_id: T1-010
+      title: "What I Wish Someone Had Told Me"
+      priority_score: 8.5
+      rank: 8
+      status: "COLLECTED"
+      rationale: "Explicit wisdom/values (2023), practical advice, collected"
+
+    - source_id: T1-007
+      title: "Startup Playbook"
+      priority_score: 8.2
+      rank: 9
+      status: "NEEDS_COLLECTION"
+      rationale: "Comprehensive startup guide (2014-2019), foundational thinking"
+
+    - source_id: T1-009
+      title: "Idea Generation"
+      priority_score: 7.8
+      rank: 10
+      status: "COLLECTED"
+      rationale: "Mental models for innovation (2017), YC era, collected"
+
+    - source_id: T1-011
+      title: "Productivity"
+      priority_score: 7.7
+      rank: 11
+      status: "COLLECTED"
+      rationale: "Behavioral patterns/routines (2018), practical, collected"
+
+    - source_id: T1-008
+      title: "The Days are Long but the Decades are Short"
+      priority_score: 7.6
+      rank: 12
+      status: "NEEDS_COLLECTION"
+      rationale: "Values/life philosophy (2016), widely shared, YC era"
+
+  collection_batches:
+    batch_1_critical:
+      total: 6
+      collected: 4
+      pending: 2
+      sources:
+        - T1-002 ✅
+        - T1-006 ⏳ (podcast transcript needed)
+        - T1-005 ⏳ (podcast transcript needed)
+        - T1-004 ✅
+        - T1-001 ✅
+        - T1-003 ✅
+
+    batch_2_important:
+      total: 6
+      collected: 4
+      pending: 2
+      sources:
+        - T1-012 ✅
+        - T1-010 ✅
+        - T1-007 ⏳ (blog post)
+        - T1-009 ✅
+        - T1-011 ✅
+        - T1-008 ⏳ (blog post)
+
+    batch_3_supplementary:
+      total: 20
+      collected: 20
+      pending: 0
+      description: "Additional blog posts from blog.samaltman.com (full archive capture)"
+
+  next_actions:
+    immediate:
+      - action: "Collect T1-006 (Lex Fridman #419)"
+        method: "Search for web-based transcript first, fallback to YouTube API"
+        priority: "CRITICAL"
+
+      - action: "Collect T1-005 (Lex Fridman #367)"
+        method: "Search for web-based transcript first, fallback to YouTube API"
+        priority: "CRITICAL"
+
+      - action: "Collect T1-007 (Startup Playbook)"
+        method: "Web scraping from playbook.samaltman.com"
+        priority: "HIGH"
+
+      - action: "Collect T1-008 (The Days are Long)"
+        method: "Web scraping from blog.samaltman.com"
+        priority: "HIGH"
+
+    post_collection:
+      - "Generate sources_master.yaml with all 33+ sources"
+      - "Validate minimum requirements (should pass all)"
+      - "Proceed to Phase 3: Cognitive Analysis"
+
+  estimated_effort:
+    transcript_search: "30-60 min (manual search for Lex Fridman transcripts)"
+    blog_collection: "5-10 min (2 missing blog posts)"
+    total_time: "45-90 min to complete Tier 1 collection"

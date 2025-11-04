@@ -1,0 +1,90 @@
+# Sam Altman Q&A - Conteúdo Expandido
+
+## Resumo
+
+Este arquivo contém **58 novas perguntas e respostas** baseadas em conteúdo real de Sam Altman, extraídas de:
+
+### Fontes Principais:
+- Entrevista com Tucker Carlson (2025)
+- TED 2025 Conference
+- Entrevista Bloomberg (2025)
+- Entrevista Stratechery com Ben Thompson (2025)
+- Y Combinator Interview (2024)
+- Múltiplos artigos sobre investimentos em energia nuclear (Helion, Oklo)
+- Startup Playbook
+- How to Be Successful (blog)
+- Lex Fridman Podcast #419 e #367
+
+### Categorias de Novas Perguntas:
+
+1. **Responsabilidade e Ética (8 perguntas)**
+   - Responsabilidade com centenas de milhões de usuários
+   - Compensação de artistas
+   - Prevenção de suicídio
+   - Alinhamento de IA
+   - Democracia vs controle centralizado
+
+2. **Crescimento e Escala (6 perguntas)**
+   - Crescimento explosivo do ChatGPT (800M usuários)
+   - Infraestrutura sob pressão
+   - GPUs derretendo
+
+3. **AGI e Timeline (5 perguntas)**
+   - Previsões para AGI até 2028
+   - Definição de AGI
+   - Path para superinteligência
+
+4. **Energia e Infraestrutura (6 perguntas)**
+   - Nuclear fusion (Helion)
+   - Nuclear fission (Oklo)
+   - Energia como commodity do futuro
+   - Necessidade de breakthroughs energéticos
+
+5. **Startup Advice (20 perguntas)**
+   - Make something people want
+   - Speed vs quality
+   - Hiring
+   - Fundraising
+   - Product development
+   - Cofounders
+   - Press launches
+   - Market selection
+
+6. **Liderança e Decisão (8 perguntas)**
+   - Priorização
+   - Tomada de decisão rápida
+   - Cultura de empresa
+   - Outsourcing vs hands-on
+
+7. **Filosofia e Futuro (5 perguntas)**
+   - Vida alienígena
+   - Poder e influência
+   - Futuro do trabalho
+   - AI e criadores
+
+## Formato
+
+Cada entrada segue o formato JSON original:
+```json
+{
+  "question": "...",
+  "answer": "...",
+  "source": "...",
+  "layer": "X",
+  "confidence": XX
+}
+```
+
+## Como Usar
+
+1. Este arquivo complementa o documento original de 47 perguntas
+2. Total combinado: **105 perguntas e respostas**
+3. Todas baseadas em conteúdo real verificável de Sam Altman
+4. Fontes citadas para referência
+
+## Próximos Passos Sugeridos
+
+1. Combinar com documento original para base completa
+2. Usar para treinar modelo de chat
+3. Criar sistema de busca semântica
+4. Adicionar embeddings para RAG (Retrieval-Augmented Generation)

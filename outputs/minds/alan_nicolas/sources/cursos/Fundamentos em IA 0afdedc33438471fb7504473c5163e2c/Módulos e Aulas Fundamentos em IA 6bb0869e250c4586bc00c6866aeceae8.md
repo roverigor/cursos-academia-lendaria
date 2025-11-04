@@ -1,0 +1,67 @@
+# Módulos e Aulas Fundamentos em IA
+
+- Introdução ao 80/20 da IA
+    - Zoom Introdução 80/20 da IA
+- Introdução a IA
+    - Glossário IA
+    - Funcionamento básico de LLMs
+    - Limitações e vieses de LLMs
+- Fundamentos de Prompt
+    - Tipos de Prompt
+    - Formatação e estrutura de Prompts
+    - 5 características dos melhores prompts
+    - Atribuição de funções
+    - Método Learn Prompting para resolver problemas
+    - Megaprompts
+    - Prompts Progressivos
+    - Prompts de Imagem
+    - Voz, Tom e Estilo (IA sem parecer IA)
+    - Emoções na IA ("Hacks")
+    - Workshop - Engenharia de Prompts
+    - Workshop - Engenharia Avançada de Prompts
+    - Recursos Adicionais
+- Fundamentos de GPT's
+    - Como fico a frente de todos?
+    - O que são GPTs e como usar?
+    - Alternativas ao GPT: Forefront vs. Poe
+    - Custom Instructions Vs GPTs
+    - Formatação de Prompt
+    - Configurando o seu GPT
+    - Estrutura dos GPT's
+    - GPT Executor
+    - GPT Experts
+    - Estilo e Personalidade
+    - Como Proteger seus GPT's
+    - 🎩 Engenharia Reversa de GPTs
+    - Multiplas Ações (Multi-Prompt)
+    - Menus no ChatGPT
+    - GPTs vs Assistentes
+    - Assistente x GPT x Claude: Quem vence? 🤔
+    - Galeria de GPTs
+    - Problemas Comuns
+    - FAQ GPT (Dúvidas Gerais)
+- Fundamentos de Automação (c/ Davi Ribeiro)
+    - Boas Vindas
+    - Conceitos Básicos: APIs, Webhooks e Requisições HTTP
+    - Principais Ferramentas de Automação
+    - Introdução ao Make
+    - Chatbot com IA para o WhatsApp (Make + Assistant + Z-API)
+    - Chatbot com IA para o WhatsApp (Make + DIFY + Z-API)
+    - Introdução ao Manychat
+    - Chatbot com IA para o Instagram (Manychat + Assistant + Make)
+    - Diagramação das automações
+    - 🔒 Bônus: Adicionar memória no seu Chatbot (Make + Assistant + Z-API)
+- Introdução à Agentes IA
+    - Quando prompt não é suficiente? 🤔
+    - Conceito de Agente
+    - O que é um Agente IA?
+    - Uma forma simplificada (sem códigos) de criar Agentes IA
+    - 🚨 Pré Requisitos para Continuar (Não diga que eu não avisei! 👀)
+    - Preparando seu Computador para Começar (Visual Studio Code) (c/ Luan Detoni)
+    - Instalando Python (com Luan Detoni)
+    - Criando Ambiente Virtual Venv (com Luan Detoni)
+    - Instalando e Configurando CrewAI (com Luan Detoni)
+    - Criando seu primeiro Agente IA (com Luan Detoni)
+    - O que é Enxame de Agentes (Agent Swarm)?
+    - Planejando Seu Enxame de Agentes (Conversa com aluno da Formação Vagner Campos)
+    - Próximo Passo em Agentes IA (Quer uma mãozinha? 👋)
