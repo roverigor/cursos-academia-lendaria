@@ -1,0 +1,62 @@
+## Page Template with Metaphor-Driven Design - José Amorim Method
+## Heavy visual metaphor integration as PRIMARY teaching mechanism
+
+template:
+  id: page-with-metaphors
+  name: "Educational Page with Metaphor-Driven Design"
+  version: "1.0"
+  author: "Alan Nicolas"
+  description: |
+    Template optimized for metaphor-driven learning where visual and conceptual
+    metaphors are the PRIMARY teaching mechanism. Perfect for abstract concepts
+    that need grounding in the concrete and familiar.
+
+## Page Structure
+structure:
+  type: "metaphor-interactive-page"
+  framework: "responsive-web"
+  components:
+    - hero-with-central-metaphor
+    - visual-metaphor-explorer
+    - metaphor-to-concept-mapping
+    - metaphor-progression-journey
+    - visual-storytelling-narrative
+    - metaphor-application-challenge
+
+## Quick Summary
+This template makes metaphors the HEART of the learning experience. Rather than
+using metaphors as decorative illustrations, metaphors become the tool for
+understanding. Learners explore the metaphor, map it to concepts, and use it
+to solve problems.
+
+## Key Features
+- Central metaphor as teaching tool (not decoration)
+- Interactive metaphor exploration with visual mapping
+- Metaphor-to-concept explicit connections
+- Visual narrative journey through metaphor
+- Real-world problem solving using metaphor
+- Progressive deepening through metaphor layers
+
+## Usage
+Use this template when:
+- Concept is highly abstract
+- Strong metaphor exists (familiar, accurate, complete)
+- Visual metaphor can be primary teaching tool
+- Learners benefit from metaphor-based reasoning
+- Concept benefits from concrete analog
+- Multiple layers of complexity benefit from metaphor progression
+
+## Pedagogical Power
+Metaphors work because they:
+1. Ground abstract in concrete/familiar
+2. Leverage existing knowledge structures
+3. Enable transfer of understanding
+4. Create visual-spatial understanding
+5. Make complex seem simple without losing depth
+
+## Designer Notes
+- Metaphor must be FAMILIAR to target audience
+- Mapping must be ACCURATE (no misleading associations)
+- Metaphor must be COMPLETE (covers key aspects)
+- Progression should go: understand metaphor → map to concept → apply to solve
+- Always include textual alternative to visuals for accessibility
