@@ -1,0 +1,370 @@
+{
+  "name": "Marketing ROI Dashboard - Métricas Real-Time",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{"field": "hours", "triggerAtHour": 6}]
+        }
+      },
+      "id": "daily-sync",
+      "name": "Daily Sync (6AM)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "notes": "Atualiza dashboard diariamente às 6h"
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "getAll",
+        "returnAll": false,
+        "limit": 1000,
+        "filters": {
+          "createdate": "={{$now.minus({days: 30}).toISO()}}"
+        }
+      },
+      "id": "hubspot-contacts",
+      "name": "Get HubSpot Contacts",
+      "type": "n8n-nodes-base.hubspot",
+      "typeVersion": 2,
+      "position": [450, 200],
+      "notes": "Busca contatos dos últimos 30 dias"
+    },
+    {
+      "parameters": {
+        "resource": "deal",
+        "operation": "getAll",
+        "returnAll": false,
+        "limit": 500,
+        "filters": {
+          "createdate": "={{$now.minus({days: 30}).toISO()}}"
+        }
+      },
+      "id": "hubspot-deals",
+      "name": "Get HubSpot Deals",
+      "type": "n8n-nodes-base.hubspot",
+      "typeVersion": 2,
+      "position": [450, 350],
+      "notes": "Busca deals dos últimos 30 dias"
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": {"__rl": true, "value": "={{$env.LEADS_SHEET_ID}}"},
+        "sheetName": "Leads"
+      },
+      "id": "sheets-leads",
+      "name": "Get Leads from Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [450, 500],
+      "notes": "Busca leads da planilha"
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": {"__rl": true, "value": "={{$env.COSTS_SHEET_ID}}"},
+        "sheetName": "Costs"
+      },
+      "id": "sheets-costs",
+      "name": "Get Marketing Costs",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [450, 650],
+      "notes": "Busca custos de marketing"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calcula métricas de leads\nconst leads = $input.all();\n\nconst metrics = {\n  total_leads: leads.length,\n  by_source: {},\n  by_tier: {HOT: 0, WARM: 0, COLD: 0},\n  by_status: {},\n  conversion_funnel: {\n    prospected: 0,\n    enriched: 0,\n    qualified: 0,\n    contacted: 0,\n    replied: 0,\n    meeting_booked: 0\n  }\n};\n\nfor (const lead of leads) {\n  const data = lead.json;\n  \n  // Por fonte\n  const source = data.Source || 'unknown';\n  metrics.by_source[source] = (metrics.by_source[source] || 0) + 1;\n  \n  // Por tier\n  const tier = data.Tier || 'COLD';\n  metrics.by_tier[tier]++;\n  \n  // Por status\n  const status = data.Status || 'new';\n  metrics.by_status[status] = (metrics.by_status[status] || 0) + 1;\n  \n  // Funil\n  metrics.conversion_funnel.prospected++;\n  if (data.Email) metrics.conversion_funnel.enriched++;\n  if (data.Score >= 50) metrics.conversion_funnel.qualified++;\n  if (data.Status === 'contacted' || data.Status === 'replied') {\n    metrics.conversion_funnel.contacted++;\n  }\n  if (data.Status === 'replied') metrics.conversion_funnel.replied++;\n  if (data.Status === 'meeting_booked') metrics.conversion_funnel.meeting_booked++;\n}\n\nreturn [{json: metrics}];"
+      },
+      "id": "calc-lead-metrics",
+      "name": "Calculate Lead Metrics",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300],
+      "notes": "Calcula métricas de leads"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calcula métricas de deals/vendas\nconst deals = $input.all();\n\nconst metrics = {\n  total_deals: deals.length,\n  total_value: 0,\n  by_stage: {},\n  closed_won: {count: 0, value: 0},\n  closed_lost: {count: 0, value: 0},\n  pipeline_value: 0,\n  average_deal_size: 0,\n  win_rate: 0\n};\n\nfor (const deal of deals) {\n  const data = deal.json;\n  const value = parseFloat(data.amount) || 0;\n  const stage = data.dealstage || 'unknown';\n  \n  metrics.total_value += value;\n  \n  // Por estágio\n  if (!metrics.by_stage[stage]) {\n    metrics.by_stage[stage] = {count: 0, value: 0};\n  }\n  metrics.by_stage[stage].count++;\n  metrics.by_stage[stage].value += value;\n  \n  // Fechados\n  if (stage === 'closedwon') {\n    metrics.closed_won.count++;\n    metrics.closed_won.value += value;\n  } else if (stage === 'closedlost') {\n    metrics.closed_lost.count++;\n    metrics.closed_lost.value += value;\n  } else {\n    metrics.pipeline_value += value;\n  }\n}\n\nmetrics.average_deal_size = metrics.closed_won.count > 0 \n  ? metrics.closed_won.value / metrics.closed_won.count \n  : 0;\n\nconst totalClosed = metrics.closed_won.count + metrics.closed_lost.count;\nmetrics.win_rate = totalClosed > 0 \n  ? (metrics.closed_won.count / totalClosed * 100).toFixed(1) \n  : 0;\n\nreturn [{json: metrics}];"
+      },
+      "id": "calc-deal-metrics",
+      "name": "Calculate Deal Metrics",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 450],
+      "notes": "Calcula métricas de deals"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calcula ROI e CAC\nconst leadMetrics = $('Calculate Lead Metrics').first().json;\nconst dealMetrics = $('Calculate Deal Metrics').first().json;\nconst costs = $('Get Marketing Costs').all();\n\n// Soma custos do mês\nlet totalCost = 0;\nfor (const cost of costs) {\n  totalCost += parseFloat(cost.json.Amount) || 0;\n}\n\n// Métricas financeiras\nconst revenue = dealMetrics.closed_won.value;\nconst leads = leadMetrics.total_leads;\nconst customers = dealMetrics.closed_won.count;\n\nconst cac = customers > 0 ? totalCost / customers : 0;\nconst cpl = leads > 0 ? totalCost / leads : 0;\nconst roi = totalCost > 0 ? ((revenue - totalCost) / totalCost * 100) : 0;\nconst roas = totalCost > 0 ? (revenue / totalCost) : 0;\n\n// LTV estimado (ticket médio * 12 meses)\nconst ltv = dealMetrics.average_deal_size * 12;\nconst ltv_cac_ratio = cac > 0 ? ltv / cac : 0;\n\nreturn [{\n  json: {\n    financial_metrics: {\n      revenue: revenue,\n      total_cost: totalCost,\n      profit: revenue - totalCost,\n      roi_percentage: roi.toFixed(1),\n      roas: roas.toFixed(2)\n    },\n    acquisition_metrics: {\n      cac: cac.toFixed(2),\n      cpl: cpl.toFixed(2),\n      ltv: ltv.toFixed(2),\n      ltv_cac_ratio: ltv_cac_ratio.toFixed(2)\n    },\n    lead_metrics: leadMetrics,\n    deal_metrics: dealMetrics,\n    period: '30 days',\n    generated_at: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "calc-roi",
+      "name": "Calculate ROI & CAC",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 400],
+      "notes": "Calcula ROI, CAC, LTV, ROAS"
+    },
+    {
+      "parameters": {
+        "operation": "clear",
+        "documentId": {"__rl": true, "value": "={{$env.DASHBOARD_SHEET_ID}}"},
+        "sheetName": "Dashboard"
+      },
+      "id": "clear-dashboard",
+      "name": "Clear Dashboard Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1050, 300],
+      "notes": "Limpa dados antigos"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {"__rl": true, "value": "={{$env.DASHBOARD_SHEET_ID}}"},
+        "sheetName": "Dashboard",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Metric": "Revenue",
+            "Value": "={{$json.financial_metrics.revenue}}",
+            "Unit": "BRL",
+            "Period": "30 days"
+          }
+        }
+      },
+      "id": "write-revenue",
+      "name": "Write Revenue",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1250, 200],
+      "notes": "Escreve receita"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {"__rl": true, "value": "={{$env.DASHBOARD_SHEET_ID}}"},
+        "sheetName": "Dashboard",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Metric": "CAC",
+            "Value": "={{$json.acquisition_metrics.cac}}",
+            "Unit": "BRL",
+            "Period": "30 days"
+          }
+        }
+      },
+      "id": "write-cac",
+      "name": "Write CAC",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1250, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {"__rl": true, "value": "={{$env.DASHBOARD_SHEET_ID}}"},
+        "sheetName": "Dashboard",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Metric": "ROI",
+            "Value": "={{$json.financial_metrics.roi_percentage}}",
+            "Unit": "%",
+            "Period": "30 days"
+          }
+        }
+      },
+      "id": "write-roi",
+      "name": "Write ROI",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1250, 400]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {"__rl": true, "value": "={{$env.DASHBOARD_SHEET_ID}}"},
+        "sheetName": "Dashboard",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Metric": "Total Leads",
+            "Value": "={{$json.lead_metrics.total_leads}}",
+            "Unit": "count",
+            "Period": "30 days"
+          }
+        }
+      },
+      "id": "write-leads",
+      "name": "Write Leads",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1250, 500]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {"__rl": true, "value": "={{$env.DASHBOARD_SHEET_ID}}"},
+        "sheetName": "Dashboard",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Metric": "Win Rate",
+            "Value": "={{$json.deal_metrics.win_rate}}",
+            "Unit": "%",
+            "Period": "30 days"
+          }
+        }
+      },
+      "id": "write-winrate",
+      "name": "Write Win Rate",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1250, 600]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {"__rl": true, "value": "={{$env.DASHBOARD_SHEET_ID}}"},
+        "sheetName": "History",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{$now.format('YYYY-MM-DD')}}",
+            "Revenue": "={{$json.financial_metrics.revenue}}",
+            "Cost": "={{$json.financial_metrics.total_cost}}",
+            "Profit": "={{$json.financial_metrics.profit}}",
+            "CAC": "={{$json.acquisition_metrics.cac}}",
+            "LTV": "={{$json.acquisition_metrics.ltv}}",
+            "ROI": "={{$json.financial_metrics.roi_percentage}}",
+            "Leads": "={{$json.lead_metrics.total_leads}}",
+            "Deals_Won": "={{$json.deal_metrics.closed_won.count}}",
+            "Win_Rate": "={{$json.deal_metrics.win_rate}}"
+          }
+        }
+      },
+      "id": "write-history",
+      "name": "Write History",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1450, 400],
+      "notes": "Salva histórico para tendências"
+    },
+    {
+      "parameters": {
+        "channel": "#marketing-metrics",
+        "text": "📊 *Daily Marketing Dashboard* ({{$now.format('DD/MM/YYYY')}})\n\n💰 *Financial*\n• Revenue: R$ {{$json.financial_metrics.revenue}}\n• Cost: R$ {{$json.financial_metrics.total_cost}}\n• Profit: R$ {{$json.financial_metrics.profit}}\n• ROI: {{$json.financial_metrics.roi_percentage}}%\n\n📈 *Acquisition*\n• CAC: R$ {{$json.acquisition_metrics.cac}}\n• LTV: R$ {{$json.acquisition_metrics.ltv}}\n• LTV:CAC: {{$json.acquisition_metrics.ltv_cac_ratio}}x\n\n👥 *Pipeline*\n• Total Leads: {{$json.lead_metrics.total_leads}}\n• Deals Won: {{$json.deal_metrics.closed_won.count}}\n• Win Rate: {{$json.deal_metrics.win_rate}}%\n• Pipeline Value: R$ {{$json.deal_metrics.pipeline_value}}",
+        "otherOptions": {}
+      },
+      "id": "slack-daily",
+      "name": "Send Daily Slack Report",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1650, 400],
+      "notes": "Envia relatório diário no Slack"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {"value1": "={{$json.acquisition_metrics.cac}}", "operation": "larger", "value2": "={{$env.CAC_ALERT_THRESHOLD}}"}
+          ]
+        }
+      },
+      "id": "check-cac-alert",
+      "name": "CAC Above Threshold?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1050, 600],
+      "notes": "Verifica se CAC está acima do limite"
+    },
+    {
+      "parameters": {
+        "channel": "#marketing-alerts",
+        "text": "🚨 *CAC ALERT*\n\nCAC atual: R$ {{$json.acquisition_metrics.cac}}\nThreshold: R$ {{$env.CAC_ALERT_THRESHOLD}}\n\n⚠️ CAC está {{Math.round(($json.acquisition_metrics.cac / $env.CAC_ALERT_THRESHOLD - 1) * 100)}}% acima do limite!\n\n*Ações sugeridas:*\n1. Revisar fontes de leads (qual converte melhor?)\n2. Otimizar sequences de email\n3. Ajustar ICP scoring",
+        "otherOptions": {}
+      },
+      "id": "slack-alert",
+      "name": "Send CAC Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1250, 700],
+      "notes": "Alerta quando CAC está alto"
+    }
+  ],
+  "connections": {
+    "Daily Sync (6AM)": {
+      "main": [
+        [{"node": "Get HubSpot Contacts", "type": "main", "index": 0}],
+        [{"node": "Get HubSpot Deals", "type": "main", "index": 0}],
+        [{"node": "Get Leads from Sheets", "type": "main", "index": 0}],
+        [{"node": "Get Marketing Costs", "type": "main", "index": 0}]
+      ]
+    },
+    "Get HubSpot Contacts": {
+      "main": [[{"node": "Calculate Lead Metrics", "type": "main", "index": 0}]]
+    },
+    "Get Leads from Sheets": {
+      "main": [[{"node": "Calculate Lead Metrics", "type": "main", "index": 0}]]
+    },
+    "Get HubSpot Deals": {
+      "main": [[{"node": "Calculate Deal Metrics", "type": "main", "index": 0}]]
+    },
+    "Calculate Lead Metrics": {
+      "main": [[{"node": "Calculate ROI & CAC", "type": "main", "index": 0}]]
+    },
+    "Calculate Deal Metrics": {
+      "main": [[{"node": "Calculate ROI & CAC", "type": "main", "index": 0}]]
+    },
+    "Get Marketing Costs": {
+      "main": [[{"node": "Calculate ROI & CAC", "type": "main", "index": 0}]]
+    },
+    "Calculate ROI & CAC": {
+      "main": [
+        [{"node": "Clear Dashboard Sheet", "type": "main", "index": 0}],
+        [{"node": "Check CAC Above Threshold?", "type": "main", "index": 0}]
+      ]
+    },
+    "Clear Dashboard Sheet": {
+      "main": [
+        [{"node": "Write Revenue", "type": "main", "index": 0}],
+        [{"node": "Write CAC", "type": "main", "index": 0}],
+        [{"node": "Write ROI", "type": "main", "index": 0}],
+        [{"node": "Write Leads", "type": "main", "index": 0}],
+        [{"node": "Write Win Rate", "type": "main", "index": 0}]
+      ]
+    },
+    "Write Win Rate": {
+      "main": [[{"node": "Write History", "type": "main", "index": 0}]]
+    },
+    "Write History": {
+      "main": [[{"node": "Send Daily Slack Report", "type": "main", "index": 0}]]
+    },
+    "Check CAC Above Threshold?": {
+      "main": [
+        [{"node": "Send CAC Alert", "type": "main", "index": 0}],
+        []
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "tags": [
+    {"name": "Dashboard"},
+    {"name": "ROI"},
+    {"name": "Analytics"}
+  ],
+  "meta": {
+    "templateId": "marketing-roi-dashboard",
+    "templateVersion": "1.0",
+    "author": "Course Architect (CreatorOS)",
+    "description": "Dashboard de métricas em tempo real: Revenue, CAC, LTV, ROI, Win Rate. Integra HubSpot + Sheets + Slack. Alertas automáticos quando CAC sobe.",
+    "metrics": ["Revenue", "CAC", "LTV", "ROI", "ROAS", "Win Rate", "Pipeline Value"]
+  }
+}

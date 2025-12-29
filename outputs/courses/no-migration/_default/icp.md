@@ -811,3 +811,99 @@ Abandonar após a venda
 
 Conclusão Psicográfica: A Comunidade Lendária é formada por profissionais complexos em momento de profunda transformação pessoal e profissional. Não buscam apenas conhecimento técnico, mas sim uma nova identidade profissional que integre experiência passada com possibilidades futuras. O sucesso está em endereçar tanto as necessidades práticas quanto as emocionais e existenciais desta jornada.
 
+---
+
+## 📚 NÍVEIS DE ENGAJAMENTO COM CURSOS
+
+A comunidade se divide em 3 níveis distintos de consumo de conteúdo educacional:
+
+| Nível | Perfil | Tempo | O que faz | Aprendizado |
+|-------|--------|-------|-----------|-------------|
+| **1** | Empresário apressado | 15 min | Importa templates e configura variáveis | Baixo (usa pronto) |
+| **2** | Funcionário aprendendo | 45 min | Constrói do zero seguindo as aulas | Alto (entende tudo) |
+| **3** | Expert customizando | 2h | Adapta para necessidades específicas | Máximo (personaliza) |
+
+### Detalhamento dos Níveis
+
+#### Nível 1: O Empresário Apressado (Template-First)
+- **Mindset:** "Me dá o que funciona, não quero entender como"
+- **Tempo disponível:** 15 minutos máximo por aula
+- **Comportamento:** Pula direto para templates e recursos
+- **Necessidade:** Resultados imediatos, zero fricção
+- **O que espera do curso:**
+  - Templates prontos para importar
+  - Configuração em 3 cliques
+  - Vídeos curtos (máx 5 min)
+  - Checklist de implementação rápida
+- **Arquétipos predominantes:** Empreendedor Digital Travado, Executivo Exausto
+
+#### Nível 2: O Funcionário Aprendendo (Build-Along)
+- **Mindset:** "Quero entender para replicar e ensinar"
+- **Tempo disponível:** 45 minutos por sessão
+- **Comportamento:** Segue aula passo-a-passo, faz junto
+- **Necessidade:** Compreensão completa do processo
+- **O que espera do curso:**
+  - Explicação do "porquê" de cada passo
+  - Exercícios práticos guiados
+  - Tempo para praticar durante a aula
+  - Certificação/prova de conhecimento
+- **Arquétipos predominantes:** Técnico Visionário, Veterano Desprezado
+
+#### Nível 3: O Expert Customizando (Deep-Dive)
+- **Mindset:** "Preciso adaptar para meu contexto específico"
+- **Tempo disponível:** 2+ horas (imersão)
+- **Comportamento:** Modifica, testa variações, documenta aprendizados
+- **Necessidade:** Flexibilidade e profundidade técnica
+- **O que espera do curso:**
+  - Acesso ao "código fonte" / lógica por trás
+  - Casos de uso avançados
+  - Integração com outras ferramentas
+  - Comunidade para trocar customizações
+- **Arquétipos predominantes:** Técnico Visionário, Multipotencial Ansioso
+
+### Implicações para Design de Cursos
+
+#### Estrutura de Aulas Recomendada (Multi-Nível)
+
+```
+📹 Aula X: [Título]
+
+├── ⚡ Quick Start (Nível 1) - 5 min
+│   └── Template pronto + 3 passos de config
+│
+├── 🎓 Tutorial Completo (Nível 2) - 30-45 min
+│   └── Construção do zero com explicações
+│
+└── 🔧 Customização Avançada (Nível 3) - Bônus
+    └── Variações, integrações, casos edge
+```
+
+#### Recursos por Nível
+
+| Recurso | Nível 1 | Nível 2 | Nível 3 |
+|---------|---------|---------|---------|
+| Templates prontos | ✅ Essencial | ✅ Referência | ✅ Base |
+| Vídeo passo-a-passo | ⏭️ Pula | ✅ Assiste todo | ⏩ 2x speed |
+| Documentação escrita | ❌ Ignora | 📖 Consulta | 📚 Estuda |
+| Exercícios práticos | ❌ Não faz | ✅ Faz todos | 🔄 Cria novos |
+| Comunidade/Fórum | 🆘 Só se travar | 💬 Participa | 🏆 Contribui |
+| Código/Lógica avançada | ❌ Não quer | 👀 Curiosidade | 🔬 Disseca |
+
+#### Métricas de Sucesso por Nível
+
+| Nível | Métrica Principal | Meta |
+|-------|-------------------|------|
+| **1** | Tempo até primeiro resultado | < 15 min |
+| **2** | % de conclusão do curso | > 70% |
+| **3** | Customizações criadas/compartilhadas | > 3 |
+
+### Distribuição Estimada na Comunidade
+
+Com base nos arquétipos e comportamentos observados:
+
+- **Nível 1 (Template-First):** ~40% da comunidade
+- **Nível 2 (Build-Along):** ~45% da comunidade
+- **Nível 3 (Deep-Dive):** ~15% da comunidade
+
+**Insight:** A maioria (85%) quer resultado rápido OU aprendizado estruturado. Apenas 15% busca profundidade máxima. Cursos devem priorizar Níveis 1 e 2, com Nível 3 como bônus/upsell.
+

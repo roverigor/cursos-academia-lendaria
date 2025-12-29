@@ -1,0 +1,306 @@
+course:
+  metadata:
+    slug: marketing-ia-roi-optimization
+    title: "Marketing com IA: Estratégia, Automação e ROI"
+    version: "1.0"
+    created_at: "2025-12-02"
+    updated_at: "2025-12-11"
+    language: "pt-BR"
+    level: advanced
+
+  description:
+    short: "Curso prático de Marketing com IA para C-Level focado em ROI, automação e redução de CAC"
+    long: |
+      Curso microlearning (<15min/aula) para empresários e gestores sênior que buscam resultados
+      mensuráveis: reduzir despesas de marketing (até 50% CAC) e aumentar receita (20-30% ROI)
+      através de IA e automação. Inclui 6 workflows n8n prontos e 3 missões práticas.
+
+  target_audience:
+    primary:
+      - role: "Empresários"
+        seniority: "C-Level"
+        company_size: ["ME", "EPP", "Médio Porte"]
+      - role: "CMOs / Diretores de Marketing"
+        seniority: "Sênior"
+        company_size: ["ME", "EPP", "Médio Porte"]
+      - role: "Gestores de Marketing"
+        seniority: "Sênior"
+        company_size: ["ME", "EPP", "Médio Porte"]
+
+    psychographics:
+      mindset: ["Orientado a resultados", "Tech-savvy", "Rotina apertada"]
+      pains:
+        - "CAC alto, receita estagnada"
+        - "Processos manuais ineficientes"
+        - "Falta de dados para decisões estratégicas"
+        - "Dificuldade em escalar marketing"
+      goals:
+        - "Reduzir CAC em 30-50%"
+        - "Aumentar ROI em 20-30%"
+        - "Economizar 2h/dia em automação"
+        - "Implementar workflows prontos"
+
+  prerequisites:
+    required:
+      - name: "Engenharia de Prompt"
+        level: "Avançado"
+      - name: "Engenharia de Contexto"
+        level: "Avançado"
+      - name: "LLMs (Large Language Models)"
+        level: "Profundo"
+      - name: "RAG (Retrieval-Augmented Generation)"
+        level: "Intermediário"
+      - name: "n8n (Workflow Automation)"
+        level: "Intermediário"
+
+    tools:
+      - "n8n instalado e rodando"
+      - "Acesso a APIs (OpenAI, Anthropic, Google)"
+      - "CRM configurado (HubSpot, Salesforce, ou Pipedrive)"
+      - "Google Sheets + Gmail"
+
+  learning_objectives:
+    primary: "Reduzir despesas de marketing e aumentar receita através de IA e automação"
+    specific:
+      strategy:
+        - "Construir estratégia de marca data-driven com AI"
+        - "Executar pesquisa de mercado automatizada"
+        - "Implementar Go-to-Market automation end-to-end"
+      execution:
+        - "Automatizar lead generation completo (detect → enrich → CRM → email)"
+        - "Criar sequences de email inteligentes com personalização AI"
+        - "Gerar conteúdo em escala através de Content Factory"
+        - "Publicar conteúdo multi-plataforma automatizado"
+      metrics:
+        - "Calcular e otimizar CAC, LTV, ROAS, NPS"
+        - "Construir dashboard real-time de métricas de marketing"
+        - "Implementar Marketing Mix Modeling para budget optimization"
+        - "Reduzir CAC em 30-50% sistematicamente"
+
+  pedagogical_framework:
+    primary: "Microlearning + Backward Design"
+    principles:
+      - "Aulas <15min focadas em 1 objetivo executável"
+      - "Começa com resultado final (ROI) e trabalha backwards"
+      - "Zero teoria que não leva a ação prática"
+      - "Workflows n8n prontos (plug & play)"
+
+    instructional_design:
+      blooms_taxonomy: ["Apply", "Analyze", "Evaluate", "Create"]
+      cognitive_load: "Balanced (concepts < 5 per lesson)"
+      assessment: "Projeto prático (3 missões hands-on)"
+
+  voice_profile:
+    tone: "Acolhedora, animada, alto astral (sem exageros)"
+    style: "Prático, direto, orientado a resultados"
+    language_characteristics:
+      - "Empresarial mas acessível"
+      - "Dados concretos (stats, percentuais, ROI)"
+      - "Zero redundância ou teoria acadêmica"
+      - "Exemplos reais de empresas ME/EPP brasileiras"
+      - "Celebra vitórias e mostra ROI claro"
+
+  structure:
+    format: "Modular microlearning"
+    total_duration:
+      lessons: "5-6 horas"
+      projects: "15-20 horas"
+      total: "20-26 horas"
+
+    modules:
+      - id: "modulo-1"
+        name: "Fundamentos & Estratégia"
+        lessons: 10
+        duration: "120-150 min"
+        topics:
+          - "1.1a - Panorama: Evolução e Oportunidades (4 Ondas AI + 7 Áreas ROI)"
+          - "1.1b - Panorama: Casos Reais e Tendências 2025"
+          - "1.2a - ROI: Categorias e Fórmula Master"
+          - "1.2b - ROI: Cenários e Variáveis Críticas"
+          - "1.3a - Marca: Análise Competitiva e Posicionamento"
+          - "1.3b - Marca: Brand Voice, Sentiment e Personas"
+          - "1.4a - Pesquisa: Reviews e Surveys Inteligentes"
+          - "1.4b - Pesquisa: Trend Detection e ICP Refinement"
+          - "1.5a - GTM: PMF, Messaging e Distribution"
+          - "1.5b - GTM: Growth Loops, Metrics e Launch"
+
+      - id: "modulo-2"
+        name: "Aquisição & Conversão"
+        lessons: 6
+        duration: "72-90 min"
+        topics:
+          - "Lead Generation Agent (n8n workflow)"
+          - "Email Marketing & Automação Inteligente"
+          - "SEO & Marketing de Busca com AI"
+          - "Gestão de Campanhas (Online & Offline)"
+          - "Social Media Automation"
+          - "Análise de Métricas (CAC, ROI, Conversão)"
+
+      - id: "modulo-3"
+        name: "Conteúdo & Engajamento"
+        lessons: 5
+        duration: "60-75 min"
+        topics:
+          - "Fábrica de Conteúdo AI"
+          - "Product Marketing Automation"
+          - "Branding e Identidade Visual com AI"
+          - "Relações Públicas & Assessoria de Imprensa"
+          - "Eventos & Patrocínios com AI"
+
+      - id: "modulo-4"
+        name: "Parcerias & Otimização"
+        lessons: 4
+        duration: "48-60 min"
+        topics:
+          - "Parcerias e Co-Marketing"
+          - "Marketing Mix Modeling (MMM)"
+          - "Experimentação & A/B Testing"
+          - "Otimização Contínua de CAC"
+
+      - id: "modulo-5"
+        name: "Missões Práticas"
+        projects: 3
+        duration: "15-21 horas"
+        missions:
+          - name: "M1: Fábrica de Conteúdo"
+            duration: "4-6 horas"
+            deliverable: "Pipeline n8n completo de geração de conteúdo"
+          - name: "M2: Consultor de Marca AI"
+            duration: "5-7 horas"
+            deliverable: "Sistema de brand strategy automation"
+          - name: "M3: Dashboard de ROI"
+            duration: "6-8 horas"
+            deliverable: "Dashboard real-time com CAC, LTV, ROAS, NPS"
+
+  workflows:
+    included_count: 6
+    templates:
+      - name: "Lead Generation Agent"
+        file: "workflows/lead-generation-agent.json"
+        integrations: ["Google Sheets", "HubSpot", "Mailchimp", "GPT-4"]
+        use_case: "Automação completa de lead gen (detect → enrich → CRM → email)"
+
+      - name: "Smart Email Outreach Sequence"
+        file: "workflows/smart-email-outreach.json"
+        integrations: ["Gmail", "GPT-3.5", "Google Sheets"]
+        use_case: "Personalização AI + follow-ups automatizados"
+
+      - name: "Technical SEO Audit"
+        file: "workflows/technical-seo-audit.json"
+        integrations: ["GPT-4o", "Google Sheets"]
+        use_case: "Audit SEO automatizado + relatórios multi-formato"
+
+      - name: "LinkedIn Content Creation + Multi-Platform"
+        file: "workflows/linkedin-content-creation.json"
+        integrations: ["GPT-4", "DALL-E", "LinkedIn", "Instagram", "TikTok"]
+        use_case: "Geração de posts com visual + publicação multi-plataforma"
+
+      - name: "Content Factory Pipeline"
+        file: "workflows/content-factory-pipeline.json"
+        integrations: ["Google Sheets", "OpenAI", "CMS", "Social Media"]
+        use_case: "Pipeline completo de geração de conteúdo em escala"
+
+      - name: "Marketing ROI Dashboard"
+        file: "workflows/marketing-roi-dashboard.json"
+        integrations: ["Hurree", "Looker", "Google Analytics", "CRM"]
+        use_case: "Dashboard real-time com CAC, LTV, ROAS, NPS"
+
+  competitive_intelligence:
+    competitors_analyzed: 10
+    key_competitors:
+      international:
+        - "Harvard DCE - AI Marketing Course (6+ semanas, $$$$)"
+        - "MIT xPRO - AI for Senior Executives (6 meses, $$$$)"
+        - "Kellogg - AI Strategies (8 semanas, $$$$)"
+        - "London Business School - AI Marketing Strategy (6 semanas, $$$$)"
+      brazil:
+        - "FGV - Formação Executiva em IA no Marketing ($$$)"
+        - "ESPM - IA Aplicada à Marketing, Vendas e Serviços ($$$)"
+        - "Ibmec - Certificação em IA para Negócios ($$$)"
+        - "StartSe - IA para Marketing ($)"
+
+    gaps_identified:
+      - "Duração excessiva (6 semanas a 6 meses)"
+      - "Teoria acadêmica pesada"
+      - "Zero workflows prontos para uso"
+      - "ROI vago (não mostra frameworks práticos)"
+      - "Go-to-Market automation ausente"
+      - "Não aproveitam conhecimento técnico prévio"
+
+    differentiation:
+      - "Único com Go-to-Market Automation dedicado"
+      - "6 workflows n8n prontos customizados"
+      - "Microlearning real (<15min vs. aulas longas)"
+      - "Pré-requisito técnico (alunos já são avançados)"
+      - "3 missões práticas com entregáveis reais"
+      - "Foco absoluto em ROI/CAC mensurável"
+
+  market_insights_2025:
+    statistics:
+      - metric: "CMOs veem AI como essencial"
+        value: "79%"
+        source: "Market research 2025"
+      - metric: "Empresas B2B com +35% ROI usando AI"
+        value: "67%"
+        source: "McKinsey 2024"
+      - metric: "Redução de CAC com AI automation"
+        value: "até 50%"
+        source: "Industry reports"
+      - metric: "Aumento de receita com automation"
+        value: "15%"
+        source: "Market research 2025"
+      - metric: "Economia em tarefas rotineiras"
+        value: "2h/dia"
+        source: "Productivity studies"
+      - metric: "Conversões com AI vs tradicional"
+        value: "4-7x higher"
+        source: "Case studies"
+
+    market_growth:
+      2025: "$58 bilhões"
+      2030: "$240 bilhões"
+      cagr: "32.9%"
+
+    trends:
+      - "RevOps → GTM Engineers (automation-first)"
+      - "Traditional SDRs → AI-powered outreach"
+      - "Campaign managers → Growth Architects"
+
+  success_metrics:
+    course_quality:
+      alignment_score: ">= 90%"
+      completeness_score: "100%"
+      voice_fidelity: ">= 85%"
+      cognitive_load: "Balanced"
+
+    learner_outcomes:
+      cac_reduction: "30-50%"
+      roi_improvement: "20-30%"
+      time_savings: "2h/dia"
+      workflows_implemented: ">= 3"
+      dashboard_created: true
+
+  resources:
+    included:
+      - "ROI Calculator (Excel)"
+      - "CAC Optimization Checklist"
+      - "GTM Automation Framework (PDF)"
+      - "Market Stats 2025 (MD)"
+      - "6 n8n Workflow Templates (JSON)"
+
+    external:
+      - name: "n8nworkflows.xyz"
+        type: "Workflow Library"
+        url: "https://n8nworkflows.xyz/categories/Marketing"
+      - name: "OpenAI API Docs"
+        type: "API Reference"
+      - name: "HubSpot API Docs"
+        type: "API Reference"
+
+  generation_metadata:
+    generated_by: "Course Architect Agent (CreatorOS)"
+    generation_date: "2025-12-02"
+    framework_version: "CreatorOS 2.2"
+    total_tokens_estimated: "~295K"
+    total_files: 55
+    validation_status: "pending"

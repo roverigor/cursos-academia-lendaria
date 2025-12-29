@@ -1,0 +1,523 @@
+WEBVTT
+
+00:00:00.050 --> 00:00:04.130
+Olá, e se você chegou nessa etapa do
+curso, quer dizer que você já passou por
+
+00:00:04.130 --> 00:00:07.650
+todos os códigos internos, já fez o teu
+teste, já entendeu um pouquinho mais das
+
+00:00:07.650 --> 00:00:11.550
+tríades, e assim, tá pronto pra se
+identificar cada vez mais.
+
+00:00:11.870 --> 00:00:17.190
+Quando eu comecei a estudar isso tudo,
+há vários anos atrás, eu no momento da
+
+00:00:17.190 --> 00:00:20.190
+identificação que eu tive, assim, foi o
+tanto quanto doloroso pra mim.
+
+00:00:20.350 --> 00:00:24.210
+Eu lembro de ter ficado alguns dias
+negando, negando, negando, porque eu
+
+00:00:24.210 --> 00:00:27.330
+lembrava de situações que eu não
+gostaria de ter feito, de pensamentos
+
+00:00:27.330 --> 00:00:30.710
+que eu não gostaria de ter tido, e de
+situações que eu não poderia mais voltar
+
+00:00:30.710 --> 00:00:32.390
+no tempo, porque já era tarde demais.
+
+00:00:32.730 --> 00:00:36.650
+E eu fiquei me culpando muito, e quando
+a culpa vinha, a dor me acompanhava, e
+
+00:00:36.650 --> 00:00:38.070
+aquilo fazia com que eu negasse.
+
+00:00:38.230 --> 00:00:40.870
+Eu não queria ser este código interno.
+
+00:00:40.930 --> 00:00:45.310
+Durou aproximadamente três meses pra que
+eu aceitasse de fato quem eu era.
+
+00:00:45.390 --> 00:00:48.810
+E olha só, tô falando de três meses pra
+alguém que já tava ali no
+
+00:00:48.810 --> 00:00:51.050
+desenvolvimento humano há pelo menos uns
+quatro anos.
+
+00:00:51.230 --> 00:00:55.530
+E eu pude entender ali na prática como
+de fato a verdade dói.
+
+00:00:55.530 --> 00:00:59.970
+E a verdade sobre nós, ela nem sempre
+vem no mar de rosa, e você já deve ter
+
+00:00:59.970 --> 00:01:00.510
+percebido.
+
+00:01:00.610 --> 00:01:04.430
+Você ouviu coisas aqui que, de repente,
+você amou sobre o teu código interno, e
+
+00:01:04.430 --> 00:01:05.390
+outras que você odiou.
+
+00:01:05.570 --> 00:01:09.310
+Eu te convido a ficar com aquelas que
+você odiou, porque são nelas que mora o
+
+00:01:09.310 --> 00:01:09.910
+teu crescimento.
+
+00:01:10.270 --> 00:01:15.250
+E a partir de agora, eu quero que você
+foque essencialmente no teu eu
+
+00:01:15.250 --> 00:01:15.970
+observador.
+
+00:01:16.090 --> 00:01:19.410
+É aquele que vai fazer com que você
+pegue o comportamento antes que ele
+
+00:01:19.410 --> 00:01:20.010
+aconteça.
+
+00:01:20.110 --> 00:01:23.770
+Por exemplo, o código interno número
+três, ele é extremamente vaidoso, ele
+
+00:01:23.770 --> 00:01:27.690
+pode em algum momento querer passar por
+cima do outro pra obter vantagem
+
+00:01:27.690 --> 00:01:27.930
+própria.
+
+00:01:28.250 --> 00:01:32.350
+Bom, nesse momento, se você é o código
+interno três, então que você comece a
+
+00:01:32.350 --> 00:01:35.830
+pensar um pouco mais os seus valores pra
+que naquele momento em que a dúvida
+
+00:01:35.830 --> 00:01:39.370
+vier, será que eu faço isso ou aquilo,
+que você possa ter a melhor decisão pra
+
+00:01:39.370 --> 00:01:39.670
+tomar.
+
+00:01:39.870 --> 00:01:41.730
+É quase que uma doutrinação.
+
+00:01:41.830 --> 00:01:45.050
+É o momento pelo qual você começa a se
+entender de uma nova maneira.
+
+00:01:45.290 --> 00:01:47.550
+Você começa a se olhar de uma nova
+ótica.
+
+00:01:47.590 --> 00:01:51.250
+E você começa a não aceitar alguns
+comportamentos que, tudo bem, se você
+
+00:01:51.250 --> 00:01:52.810
+fez, já tá feito, não tem o que fazer.
+
+00:01:53.090 --> 00:01:54.710
+Mas, literalmente, você vai começar a
+aprender.
+
+00:01:54.810 --> 00:01:56.110
+Você vai começar a aprender com os seus
+erros.
+
+00:01:57.170 --> 00:02:01.470
+Mapear, listar, eu quero que você liste
+agora pelo menos três grandes erros que
+
+00:02:01.470 --> 00:02:03.410
+a sua personalidade acaba cometendo.
+
+00:02:03.470 --> 00:02:05.750
+E quando você comete, você se sente mal.
+
+00:02:05.990 --> 00:02:09.090
+Você acaba pensando, meu Deus, eu não
+queria ter feito isso, eu não gosto de
+
+00:02:09.090 --> 00:02:11.450
+ser assim, eu não gosto de tratar as
+pessoas dessa maneira.
+
+00:02:11.750 --> 00:02:15.330
+Faça essa atividade, coloque no seu
+celular ou escreva mesmo aí nesse
+
+00:02:15.330 --> 00:02:16.230
+material de apoio.
+
+00:02:16.270 --> 00:02:19.710
+Porque aqui mora algo muito libertador
+pra você.
+
+00:02:19.910 --> 00:02:24.790
+Nesse momento, você vai começar a
+mapear, controlar aquilo que outrora...
+
+00:02:24.810 --> 00:02:29.250
+Ou seja, você vai começar a ter mais
+domínio das suas ações.
+
+00:02:29.390 --> 00:02:31.510
+E é isso que eu espero de você aqui
+nesse curso.
+
+00:02:31.730 --> 00:02:34.710
+Eu não quero que você saia liderando as
+outras pessoas, influenciando.
+
+00:02:34.830 --> 00:02:36.210
+Pode até ser que aconteça.
+
+00:02:36.290 --> 00:02:39.530
+Mas esse é um curso básico sobre o poder
+do código interno.
+
+00:02:39.590 --> 00:02:40.830
+Esse é o primeiro grande passo.
+
+00:02:41.110 --> 00:02:42.530
+E olha que passo que você deu.
+
+00:02:42.730 --> 00:02:46.330
+Então não resolve nada queremos, de
+fato, mudar o mundo, enquanto nós não
+
+00:02:46.330 --> 00:02:47.170
+mudamos ainda.
+
+00:02:47.470 --> 00:02:49.950
+Então não sai por aí apontando as outras
+pessoas.
+
+00:02:50.110 --> 00:02:52.290
+Ah, ela é o código tal, por isso que ela
+faz aquilo.
+
+00:02:52.330 --> 00:02:52.930
+Não faça.
+
+00:02:53.170 --> 00:02:54.130
+Olhe pra si.
+
+00:02:54.130 --> 00:02:55.750
+Olhe pro seu crescimento.
+
+00:02:55.910 --> 00:02:59.470
+Olhe pra todas as dificuldades que você
+ainda tem, que eu tenho pra melhorar a
+
+00:02:59.470 --> 00:03:00.010
+minha performance.
+
+00:03:00.370 --> 00:03:02.410
+Tudo aquilo que tá ligado ao meu vício
+emocional.
+
+00:03:02.630 --> 00:03:04.430
+Pega o código interno 7, por exemplo.
+
+00:03:04.690 --> 00:03:06.510
+Ah, ele não gosta de terminar as coisas.
+
+00:03:06.690 --> 00:03:07.550
+Caramba, mas é verdade.
+
+00:03:07.670 --> 00:03:08.950
+Eu comecei tal curso, parei.
+
+00:03:09.010 --> 00:03:10.090
+Tal emprego, eu desisti.
+
+00:03:10.450 --> 00:03:12.350
+Eu comecei tal namoro e abandonei.
+
+00:03:12.410 --> 00:03:14.090
+Tal livro, eu comecei e logo parei.
+
+00:03:14.150 --> 00:03:19.330
+Tudo isso você mapeia e começa a listar
+e começa a agir diretamente neste vício
+
+00:03:19.330 --> 00:03:19.870
+emocional.
+
+00:03:19.950 --> 00:03:22.070
+Que traz o comportamento que você não
+gosta.
+
+00:03:22.210 --> 00:03:22.970
+Agora lembre -se.
+
+00:03:23.090 --> 00:03:24.110
+Nós somos pacientes.
+
+00:03:24.130 --> 00:03:25.550
+Pacientes de transformação.
+
+00:03:25.630 --> 00:03:29.170
+E é por isso que o autoconhecimento cura
+e ele também liberta.
+
+00:03:29.250 --> 00:03:31.530
+Porque eu começo a entender melhor de
+mim.
+
+00:03:31.650 --> 00:03:33.990
+Eu começo a mapear melhor os
+comportamentos.
+
+00:03:33.990 --> 00:03:35.870
+Eu começo, de fato, a me desenvolver.
+
+00:03:36.090 --> 00:03:37.930
+Daí surge o autodesenvolvimento.
+
+00:03:38.110 --> 00:03:42.290
+Eu, por benefício próprio, por minha
+busca, começo a melhorar a minha forma
+
+00:03:42.290 --> 00:03:42.630
+de ser.
+
+00:03:42.770 --> 00:03:45.850
+E quando eu melhoro comigo,
+inevitavelmente eu melhoro com as outras
+
+00:03:45.850 --> 00:03:46.250
+pessoas.
+
+00:03:46.570 --> 00:03:48.530
+Então pense nas pessoas que te rodeiam.
+
+00:03:48.690 --> 00:03:49.870
+Pense no seu emprego.
+
+00:03:49.930 --> 00:03:51.010
+Pense nos seus clientes.
+
+00:03:51.010 --> 00:03:51.850
+Pense na sua família.
+
+00:03:52.390 --> 00:03:54.110
+Qual eu você quer apresentar?
+
+00:03:54.130 --> 00:03:58.110
+Aquele que é literalmente cego, que não
+consegue comandar as ações e
+
+00:03:58.110 --> 00:03:59.730
+simplesmente fala Ah, mas eu sou assim.
+
+00:03:59.930 --> 00:04:01.330
+E você casou comigo assim.
+
+00:04:01.550 --> 00:04:03.490
+É esse cara que você quer apresentar?
+
+00:04:03.550 --> 00:04:04.770
+Eu acredito que não.
+
+00:04:04.850 --> 00:04:06.670
+Senão você não estaria num curso como
+esse.
+
+00:04:06.830 --> 00:04:09.890
+Eu acredito que você, assim como eu,
+busca se desenvolver.
+
+00:04:10.050 --> 00:04:11.750
+Busca mais que tudo se aceitar.
+
+00:04:11.890 --> 00:04:15.050
+E sobretudo entender que há uma busca,
+há um processo.
+
+00:04:15.370 --> 00:04:20.210
+E nesse processo o primeiro grande passo
+é sim, se reconhecer por completo.
+
+00:04:20.590 --> 00:04:22.390
+Tudo o que é bom e tudo o que é ruim.
+
+00:04:22.570 --> 00:04:23.710
+Mas principalmente entendendo.
+
+00:04:24.130 --> 00:04:24.930
+Entender o que é de ruim.
+
+00:04:25.070 --> 00:04:26.470
+E o quão grave isso pode ser.
+
+00:04:26.810 --> 00:04:30.870
+Eu já adianto para vocês que o código
+interno 2, o código interno 4, muitas
+
+00:04:30.870 --> 00:04:31.490
+vezes o 6.
+
+00:04:31.810 --> 00:04:35.250
+Nesse momento eles ficam negando,
+negando, negando, negando quem são.
+
+00:04:35.430 --> 00:04:36.690
+Não faça isso com você.
+
+00:04:37.110 --> 00:04:40.470
+Busque de fato essa identificação o mais
+apto que você puder.
+
+00:04:40.590 --> 00:04:43.210
+Não tenha pressa para forçar e se
+precipitar.
+
+00:04:43.350 --> 00:04:46.210
+Mas também não seja negligente com o
+próprio crescimento e saiba.
+
+00:04:46.370 --> 00:04:50.490
+A partir da tua identificação real, da
+alma, de ser humano, daquela que você
+
+00:04:50.490 --> 00:04:53.870
+fala Caramba, eu de fato me conecto
+muito com esse código interno.
+
+00:04:54.130 --> 00:04:55.690
+É ali que mora o teu crescimento.
+
+00:04:55.830 --> 00:04:58.730
+Eu quero que você haja essencialmente
+nesse vício emocional.
+
+00:04:59.150 --> 00:05:01.350
+Melhorando a si mesmo, melhorando as
+suas reações.
+
+00:05:01.770 --> 00:05:05.090
+Melhorando a sua forma de se comportar
+nos sistemas que você hoje compõe.
+
+00:05:05.210 --> 00:05:09.010
+Para que você melhore como um todo o
+nosso país, a nossa sociedade e o mundo
+
+00:05:09.010 --> 00:05:09.690
+que nós vivemos.
+
+00:05:09.850 --> 00:05:11.430
+Pode até parecer utopia, eu sei.
+
+00:05:11.570 --> 00:05:15.310
+Mas é assim que nós criamos o nosso
+ecossistema.
+
+00:05:15.430 --> 00:05:17.250
+É assim que nós criamos a nossa
+realidade.
+
+00:05:17.610 --> 00:05:20.610
+Quando eu de fato mudo, tudo ao meu
+entorno começa a mudar.
+
+00:05:20.870 --> 00:05:23.890
+E quando Gandhi falava, seja a mudança
+que você quer ser no mundo.
+
+00:05:24.130 --> 00:05:27.010
+Para mim, não tem frase que venha
+ilustrar melhor esse momento pelo qual
+
+00:05:27.010 --> 00:05:27.830
+você está vivendo.
+
+00:05:27.950 --> 00:05:28.830
+Eu estou vivendo.
+
+00:05:29.230 --> 00:05:33.570
+Assumirmos a responsabilidade de um novo
+eu, de um novo momento e de um novo
+
+00:05:33.570 --> 00:05:34.230
+recomeço.
+
+00:05:34.330 --> 00:05:35.730
+É isso que eu desejo para você.
+
+00:05:35.830 --> 00:05:38.650
+Que você tenha em mente que é o seu
+primeiro grande passo.
+
+00:05:38.830 --> 00:05:42.510
+E que a todo momento que você quiser
+avançar, nós temos uma bateria de curso
+
+00:05:42.510 --> 00:05:43.290
+à disposição.
+
+00:05:43.470 --> 00:05:46.170
+Fique à vontade e faça no teu tempo.
+
+00:05:46.250 --> 00:05:48.210
+Porque esse é o melhor tempo para você.
+
+00:05:48.330 --> 00:05:51.650
+Não se acomode, mas também não deixa
+isso para outro momento.
+
+00:05:51.870 --> 00:05:54.110
+Não se afobe, mas também não deixa isso
+para outro momento.
+
+00:05:54.130 --> 00:05:58.670
+No seu tempo, no seu momento, tudo vai
+fazer muito sentido para você.
+
+00:05:58.810 --> 00:06:02.490
+E é essa a verdadeira função dessa
+poderosa ferramenta a qual nós
+
+00:06:02.490 --> 00:06:03.490
+apresentamos para você.
+
+00:06:03.650 --> 00:06:04.210
+Um sucesso.
+
+00:06:04.730 --> 00:06:09.050
+E eu te vejo sempre, cada dia melhor,
+cada vez mais desenvolvido.
+
+00:06:09.090 --> 00:06:13.330
+E simplesmente, cada dia que passa, nem
+se reconhecendo.
+
+00:06:13.470 --> 00:06:16.770
+De tão melhor que você está, de tão
+maior que você passe a ser.

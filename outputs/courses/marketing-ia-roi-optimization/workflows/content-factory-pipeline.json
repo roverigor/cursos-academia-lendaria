@@ -1,0 +1,295 @@
+{
+  "name": "Content Factory Pipeline - 1 Blog → 16+ Assets",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "content-factory",
+        "responseMode": "responseNode"
+      },
+      "id": "webhook-new-content",
+      "name": "New Content Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "webhookId": "content-factory",
+      "notes": "Recebe URL de blog post para processar"
+    },
+    {
+      "parameters": {
+        "url": "={{$json.blog_url}}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "id": "fetch-blog",
+      "name": "Fetch Blog Content",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [450, 300],
+      "notes": "Busca conteúdo do blog post"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrai conteúdo do HTML\nconst cheerio = require('cheerio');\nconst html = $input.first().json.body;\nconst $ = cheerio.load(html);\n\n// Remove scripts, styles, nav, footer\n$('script, style, nav, footer, aside').remove();\n\n// Extrai conteúdo principal\nconst title = $('h1').first().text() || $('title').text();\nconst content = $('article').text() || $('main').text() || $('body').text();\nconst images = [];\n$('img').each((i, el) => {\n  const src = $(el).attr('src');\n  if (src) images.push(src);\n});\n\nreturn [{\n  json: {\n    title: title.trim(),\n    content: content.trim().substring(0, 15000), // Limita tamanho\n    images: images.slice(0, 5),\n    word_count: content.split(/\\s+/).length,\n    url: $input.first().json.blog_url\n  }\n}];"
+      },
+      "id": "extract-content",
+      "name": "Extract Content",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300],
+      "notes": "Extrai texto e imagens do HTML"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "messages": {
+          "values": [
+            {
+              "content": "Analise este blog post e extraia informações para repurposing:\n\nTÍTULO: {{$json.title}}\n\nCONTEÚDO:\n{{$json.content}}\n\nEXTRAIA:\n1. Main Idea (1 frase, max 120 caracteres)\n2. Key Insights (5 insights principais, cada um 1-2 frases)\n3. Impactful Quotes (3 citações marcantes do texto)\n4. Statistics (todos os números/dados mencionados)\n5. Target Audience (quem se beneficia deste conteúdo)\n6. Tone (professional, casual, inspirational, educational, etc)\n7. CTA sugerido\n8. Hashtags relevantes (10)\n\nRetorne JSON:\n{\n  \"main_idea\": \"string\",\n  \"key_insights\": [\"insight1\", \"insight2\", \"insight3\", \"insight4\", \"insight5\"],\n  \"quotes\": [\"quote1\", \"quote2\", \"quote3\"],\n  \"statistics\": [\"stat1\", \"stat2\"],\n  \"target_audience\": \"string\",\n  \"tone\": \"string\",\n  \"cta\": \"string\",\n  \"hashtags\": [\"#hash1\", \"#hash2\", ...]\n}"
+            }
+          ]
+        }
+      },
+      "id": "gpt4-analyze",
+      "name": "GPT-4 Content Analysis",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [850, 300],
+      "notes": "Analisa conteúdo e extrai elementos-chave"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "messages": {
+          "values": [
+            {
+              "content": "Crie 5 posts para LinkedIn baseado neste conteúdo:\n\nMAIN IDEA: {{$json.main_idea}}\nKEY INSIGHTS: {{$json.key_insights}}\nQUOTES: {{$json.quotes}}\nTONE: {{$json.tone}}\nHASHTAGS: {{$json.hashtags}}\n\nCrie 5 posts DIFERENTES:\n1. Story post (história pessoal/caso)\n2. Data post (foco em estatísticas)\n3. Quote post (citação impactante)\n4. How-to post (passo a passo)\n5. Carousel post (5 slides)\n\nREGRAS:\n- Max 1300 caracteres por post\n- Hook forte na primeira linha\n- Quebras de linha para leitura fácil\n- 3-5 hashtags por post\n- CTA no final\n- Tom: {{$json.tone}}\n\nRetorne JSON array:\n[\n  {\n    \"type\": \"story\",\n    \"content\": \"texto do post\",\n    \"hashtags\": [\"#hash1\"],\n    \"image_prompt\": \"prompt para gerar imagem\"\n  },\n  ...\n]"
+            }
+          ]
+        }
+      },
+      "id": "gpt4-linkedin",
+      "name": "Generate LinkedIn Posts",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [1050, 200],
+      "notes": "Gera 5 posts para LinkedIn"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "messages": {
+          "values": [
+            {
+              "content": "Crie 5 posts para Instagram baseado neste conteúdo:\n\nMAIN IDEA: {{$json.main_idea}}\nKEY INSIGHTS: {{$json.key_insights}}\nTONE: {{$json.tone}}\n\nCrie 5 posts DIFERENTES:\n1. Feed post (imagem única + caption)\n2. Carousel educativo (5-7 slides)\n3. Reel script (30 segundos)\n4. Story sequence (5 stories)\n5. Quote card\n\nREGRAS:\n- Caption max 2200 caracteres\n- Hook nas primeiras 125 caracteres\n- 20-30 hashtags\n- CTA (\"Salve este post\", \"Compartilhe\")\n- Tom mais casual que LinkedIn\n\nRetorne JSON array:\n[\n  {\n    \"type\": \"feed\",\n    \"caption\": \"texto da caption\",\n    \"hashtags\": [\"#hash1\", ...],\n    \"image_prompt\": \"prompt para DALL-E\",\n    \"carousel_slides\": null\n  },\n  {\n    \"type\": \"carousel\",\n    \"caption\": \"texto\",\n    \"hashtags\": [...],\n    \"carousel_slides\": [\"slide1 text\", \"slide2 text\", ...]\n  },\n  ...\n]"
+            }
+          ]
+        }
+      },
+      "id": "gpt4-instagram",
+      "name": "Generate Instagram Posts",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [1050, 350],
+      "notes": "Gera 5 posts para Instagram"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "messages": {
+          "values": [
+            {
+              "content": "Crie 3 threads para Twitter/X baseado neste conteúdo:\n\nMAIN IDEA: {{$json.main_idea}}\nKEY INSIGHTS: {{$json.key_insights}}\nSTATISTICS: {{$json.statistics}}\n\nCrie 3 threads DIFERENTES:\n1. Thread educativa (7-10 tweets)\n2. Thread de dados (5-7 tweets com stats)\n3. Thread storytelling (5-7 tweets)\n\nREGRAS:\n- Max 280 caracteres por tweet\n- Tweet 1: Hook forte + \"🧵\"\n- Último tweet: CTA + link\n- 1-2 hashtags por thread\n- Numeração opcional (1/, 2/, etc)\n\nRetorne JSON array:\n[\n  {\n    \"type\": \"educational\",\n    \"tweets\": [\"tweet1\", \"tweet2\", ...],\n    \"hashtags\": [\"#hash1\"]\n  },\n  ...\n]"
+            }
+          ]
+        }
+      },
+      "id": "gpt4-twitter",
+      "name": "Generate Twitter Threads",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [1050, 500],
+      "notes": "Gera 3 threads para Twitter"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "messages": {
+          "values": [
+            {
+              "content": "Crie um script de vídeo curto (Reels/TikTok/Shorts) baseado neste conteúdo:\n\nMAIN IDEA: {{$json.main_idea}}\nKEY INSIGHTS: {{$json.key_insights}}\nQUOTES: {{$json.quotes}}\n\nCrie script de 45-60 segundos:\n\nFORMATO:\n[00:00-00:05] HOOK - Frase impactante que prende atenção\n[00:05-00:15] PROBLEMA - Dor/desafio do público\n[00:15-00:40] SOLUÇÃO - 3 pontos principais\n[00:40-00:50] PROVA - Dado/resultado\n[00:50-00:60] CTA - Call to action\n\nRetorne JSON:\n{\n  \"title\": \"título do vídeo\",\n  \"duration\": 45,\n  \"script\": [\n    {\"time\": \"00:00-00:05\", \"section\": \"hook\", \"text\": \"texto a falar\", \"visual\": \"descrição do que mostrar\"},\n    ...\n  ],\n  \"music_style\": \"upbeat/calm/dramatic\",\n  \"text_overlays\": [\"texto1\", \"texto2\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "gpt4-video-script",
+      "name": "Generate Video Script",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [1050, 650],
+      "notes": "Gera script para vídeo curto"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "messages": {
+          "values": [
+            {
+              "content": "Crie uma newsletter baseada neste conteúdo:\n\nTÍTULO ORIGINAL: {{$json.title}}\nMAIN IDEA: {{$json.main_idea}}\nKEY INSIGHTS: {{$json.key_insights}}\nCONTEÚDO COMPLETO: {{$json.content}}\n\nCrie newsletter com:\n1. Subject line (max 50 chars, curiosidade)\n2. Preview text (max 100 chars)\n3. Intro hook (2-3 frases)\n4. Conteúdo principal (resumo do blog, 300-500 palavras)\n5. Key takeaways (3-5 bullet points)\n6. CTA principal\n7. PS (curiosidade para próxima edição)\n\nRetorne JSON:\n{\n  \"subject\": \"subject line\",\n  \"preview\": \"preview text\",\n  \"intro\": \"texto intro\",\n  \"body\": \"conteúdo principal\",\n  \"takeaways\": [\"takeaway1\", ...],\n  \"cta\": {\"text\": \"texto do botão\", \"url\": \"{{$json.url}}\"},\n  \"ps\": \"texto do PS\"\n}"
+            }
+          ]
+        }
+      },
+      "id": "gpt4-newsletter",
+      "name": "Generate Newsletter",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [1050, 800],
+      "notes": "Gera newsletter completa"
+    },
+    {
+      "parameters": {
+        "model": "dall-e-3",
+        "prompt": "={{$json.image_prompt}}",
+        "options": {
+          "size": "1024x1024",
+          "quality": "standard",
+          "style": "vivid"
+        }
+      },
+      "id": "dalle-generate",
+      "name": "Generate Images (DALL-E)",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [1300, 200],
+      "notes": "Gera imagens com DALL-E 3"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {"__rl": true, "value": "={{$env.CONTENT_CALENDAR_SHEET_ID}}"},
+        "sheetName": "Generated Content",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Source_URL": "={{$json.url}}",
+            "Title": "={{$json.title}}",
+            "Platform": "={{$json.platform}}",
+            "Content_Type": "={{$json.type}}",
+            "Content": "={{$json.content}}",
+            "Image_URL": "={{$json.image_url}}",
+            "Scheduled_Date": "={{$json.scheduled_date}}",
+            "Status": "draft",
+            "Created": "={{$now.format('YYYY-MM-DD HH:mm')}}"
+          }
+        }
+      },
+      "id": "save-content",
+      "name": "Save to Content Calendar",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1500, 400],
+      "notes": "Salva conteúdo gerado no calendário"
+    },
+    {
+      "parameters": {
+        "url": "https://api.buffer.com/1/updates/create.json",
+        "authentication": "oAuth2Api",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "profile_ids", "value": "={{$env.BUFFER_PROFILE_IDS}}"},
+            {"name": "text", "value": "={{$json.content}}"},
+            {"name": "media", "value": "={{$json.image_url}}"},
+            {"name": "scheduled_at", "value": "={{$json.scheduled_timestamp}}"}
+          ]
+        }
+      },
+      "id": "buffer-schedule",
+      "name": "Schedule to Buffer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1700, 400],
+      "notes": "Agenda publicação no Buffer"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calcula melhores horários para cada plataforma\nconst content = $input.all();\nconst scheduled = [];\n\nconst bestTimes = {\n  linkedin: ['Tue 10:00', 'Wed 12:00', 'Thu 09:00', 'Tue 14:00', 'Wed 09:00'],\n  instagram: ['Mon 11:00', 'Wed 14:00', 'Fri 09:00', 'Sat 10:00', 'Sun 19:00'],\n  twitter: ['Mon 08:00', 'Wed 15:00', 'Fri 11:00']\n};\n\nlet dayOffset = 0;\nfor (const item of content) {\n  const platform = item.json.platform;\n  const times = bestTimes[platform] || bestTimes.linkedin;\n  \n  for (let i = 0; i < item.json.posts.length; i++) {\n    const post = item.json.posts[i];\n    const scheduleTime = times[i % times.length];\n    \n    scheduled.push({\n      ...post,\n      platform,\n      scheduled_date: calculateDate(dayOffset, scheduleTime)\n    });\n    dayOffset++;\n  }\n}\n\nfunction calculateDate(daysFromNow, timeStr) {\n  const date = new Date();\n  date.setDate(date.getDate() + daysFromNow);\n  return date.toISOString().split('T')[0] + ' ' + timeStr.split(' ')[1];\n}\n\nreturn scheduled.map(s => ({json: s}));"
+      },
+      "id": "schedule-optimizer",
+      "name": "Optimize Schedule",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1300, 400],
+      "notes": "Calcula melhores horários por plataforma"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"status\": \"success\",\n  \"message\": \"Content generated successfully\",\n  \"assets_created\": {\n    \"linkedin_posts\": 5,\n    \"instagram_posts\": 5,\n    \"twitter_threads\": 3,\n    \"video_scripts\": 1,\n    \"newsletters\": 1,\n    \"images\": {{$json.images_generated}},\n    \"total\": 16\n  },\n  \"scheduled_dates\": {{$json.schedule_summary}}\n}"
+      },
+      "id": "response",
+      "name": "Return Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1900, 300],
+      "notes": "Retorna resumo do que foi gerado"
+    }
+  ],
+  "connections": {
+    "New Content Webhook": {
+      "main": [[{"node": "Fetch Blog Content", "type": "main", "index": 0}]]
+    },
+    "Fetch Blog Content": {
+      "main": [[{"node": "Extract Content", "type": "main", "index": 0}]]
+    },
+    "Extract Content": {
+      "main": [[{"node": "GPT-4 Content Analysis", "type": "main", "index": 0}]]
+    },
+    "GPT-4 Content Analysis": {
+      "main": [
+        [{"node": "Generate LinkedIn Posts", "type": "main", "index": 0}],
+        [{"node": "Generate Instagram Posts", "type": "main", "index": 0}],
+        [{"node": "Generate Twitter Threads", "type": "main", "index": 0}],
+        [{"node": "Generate Video Script", "type": "main", "index": 0}],
+        [{"node": "Generate Newsletter", "type": "main", "index": 0}]
+      ]
+    },
+    "Generate LinkedIn Posts": {
+      "main": [[{"node": "Generate Images (DALL-E)", "type": "main", "index": 0}]]
+    },
+    "Generate Images (DALL-E)": {
+      "main": [[{"node": "Optimize Schedule", "type": "main", "index": 0}]]
+    },
+    "Optimize Schedule": {
+      "main": [[{"node": "Save to Content Calendar", "type": "main", "index": 0}]]
+    },
+    "Save to Content Calendar": {
+      "main": [[{"node": "Schedule to Buffer", "type": "main", "index": 0}]]
+    },
+    "Schedule to Buffer": {
+      "main": [[{"node": "Return Response", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "tags": [
+    {"name": "Content Factory"},
+    {"name": "Repurposing"},
+    {"name": "Social Media"}
+  ],
+  "meta": {
+    "templateId": "content-factory-pipeline",
+    "templateVersion": "1.0",
+    "author": "Course Architect (CreatorOS)",
+    "description": "Transforma 1 blog post em 16+ assets: 5 LinkedIn, 5 Instagram, 3 Twitter threads, 1 video script, 1 newsletter, imagens DALL-E",
+    "economy": "R$ 8-12k/mês (substitui Designer + Social Media)"
+  }
+}

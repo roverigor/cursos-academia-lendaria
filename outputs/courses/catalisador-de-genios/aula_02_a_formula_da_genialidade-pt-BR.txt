@@ -1,0 +1,677 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.220
+Bem -vindos à aula número 1, a fórmula
+da genialidade.
+
+00:00:05.020 --> 00:00:10.020
+E se a gente vai falar em uma fórmula da
+genialidade, a primeira coisa a definir
+
+00:00:10.020 --> 00:00:13.460
+aqui é o que é genialidade, para a gente
+poder dar sequência, o que é isso.
+
+00:00:14.640 --> 00:00:19.000
+E o que eu trago como definição de
+genialidade é significativamente
+
+00:00:19.000 --> 00:00:21.680
+diferente do que o senso comum costuma
+ter por genialidade.
+
+00:00:23.020 --> 00:00:28.900
+Genialidade, talvez seja uma perspectiva
+muito mais próxima da noção aristotélica
+
+00:00:28.900 --> 00:00:30.180
+do que seria genialidade.
+
+00:00:33.630 --> 00:00:40.110
+O senso comum costuma ver como você está
+ali aleatoriamente, vivendo, e de
+
+00:00:40.110 --> 00:00:41.890
+repente, uau!
+
+00:00:43.450 --> 00:00:47.910
+Uma inspiração, um tipo de inspiração
+divina te traz uma ideia genial que vai
+
+00:00:47.910 --> 00:00:54.160
+revolucionar o mundo, que subverterá
+séculos de
+
+00:00:54.160 --> 00:00:54.760
+paradigmas.
+
+00:00:59.570 --> 00:01:00.830
+Acontece que isso...
+
+00:01:01.250 --> 00:01:02.890
+Não faz sentido como genialidade.
+
+00:01:05.070 --> 00:01:10.570
+Mesmo que, porventura, seja uma ideia
+genial, a probabilidade maior é de que
+
+00:01:10.570 --> 00:01:14.230
+você, se não estiver acostumado a ter
+ideias geniais, desperdice e não faça
+
+00:01:14.230 --> 00:01:15.230
+nada prático com ela.
+
+00:01:19.020 --> 00:01:24.020
+E, da minha perspectiva, uma ideia vale
+tanto quanto o impacto social gerado por
+
+00:01:24.020 --> 00:01:24.260
+ela.
+
+00:01:24.540 --> 00:01:29.200
+Em outras palavras, uma ideia vale tanto
+quanto o impacto que ela consegue gerar
+
+00:01:29.200 --> 00:01:29.580
+na sociedade.
+
+00:01:30.600 --> 00:01:34.140
+Quando eu falo de impacto social, veja,
+eu não estou falando sobre...
+
+00:01:35.500 --> 00:01:37.780
+Nenhum tipo de ideia socialista, ou sei
+lá.
+
+00:01:38.140 --> 00:01:42.740
+Eu estou falando sobre o impacto social,
+o impacto gerado na sociedade, graças à
+
+00:01:42.740 --> 00:01:44.100
+solução que surgiu com aquela ideia.
+
+00:01:45.020 --> 00:01:47.040
+Uma ideia que morre como uma ideia não
+vale pra
+
+00:01:47.040 --> 00:01:47.300
+nada.
+
+00:01:58.560 --> 00:02:00.460
+Uma ideia que morre como uma ideia...
+
+00:02:01.660 --> 00:02:04.260
+É só uma ideia, sem nenhum valor.
+
+00:02:04.540 --> 00:02:09.380
+Ideias precisam se transformar em
+soluções, soluções pra serem geniais,
+
+00:02:09.400 --> 00:02:14.920
+soluções que causem impacto
+significativo, que subvertam...
+
+00:02:15.840 --> 00:02:18.680
+a ordem anterior, os paradigmas
+anteriores.
+
+00:02:19.940 --> 00:02:24.380
+Isso, na prática, significa, então, que
+uma ideia genial...
+
+00:02:24.380 --> 00:02:25.680
+O que ela precisa ter pra ser genial?
+
+00:02:25.920 --> 00:02:32.620
+Ela precisa propor uma solução,
+solucionar um problema...
+
+00:02:33.480 --> 00:02:39.700
+de forma mais eficiente, mais divertida
+ou mais simples do que todo o resto que
+
+00:02:39.700 --> 00:02:40.260
+já existia.
+
+00:02:41.160 --> 00:02:43.480
+Porque esse é o problema que você está
+procurando resolver.
+
+00:02:43.860 --> 00:02:45.440
+Já tem outras soluções.
+
+00:02:46.360 --> 00:02:46.600
+A sua não é.
+
+00:02:46.720 --> 00:02:52.740
+Nem mais simples, nem mais eficiente e
+nem mais divertida do que as outras que
+
+00:02:52.740 --> 00:02:52.980
+existem.
+
+00:02:53.600 --> 00:02:55.000
+Então, o que você está fazendo?
+
+00:02:57.160 --> 00:02:57.900
+Você não está fazendo...
+
+00:02:57.900 --> 00:02:59.100
+não serve pra muita coisa.
+
+00:03:00.280 --> 00:03:01.500
+Já tem soluções melhores.
+
+00:03:02.420 --> 00:03:04.040
+A sua não tem nada de mais.
+
+00:03:04.780 --> 00:03:10.560
+Sua solução, pra ser uma solução, uma
+ideia pra ser genial, ela precisa
+
+00:03:10.560 --> 00:03:13.280
+subverter os paradigmas anteriores.
+
+00:03:14.300 --> 00:03:17.360
+Ela precisa concatenar...
+
+00:03:17.800 --> 00:03:21.720
+outras ideias, que, às vezes, podem ser
+ideias comuns, outras ideias comuns,
+
+00:03:23.520 --> 00:03:27.500
+usando, em uma direção que ainda não
+existia, com uma finalidade que ainda
+
+00:03:27.500 --> 00:03:32.140
+não existia, um problema, resolvendo um
+problema que ainda não tinha solução.
+
+00:03:32.160 --> 00:03:36.740
+Ou resolvendo um problema que já tinha
+solução, mas de uma forma, de novo, mais
+
+00:03:36.740 --> 00:03:38.700
+simples, mais divertida ou mais
+eficiente.
+
+00:03:39.020 --> 00:03:44.780
+A genialidade, então, é a capacidade de
+ter essas ideias geniais como parte
+
+00:03:44.780 --> 00:03:47.320
+rotineira da sua vida, como parte do
+cotidiano.
+
+00:03:51.610 --> 00:03:57.310
+Só que, custa muito caro, em primeiro
+lugar, energeticamente, ter ideias
+
+00:03:57.310 --> 00:04:00.770
+geniais o tempo todo, conscientemente,
+estar se forçando a isso,
+
+00:04:00.910 --> 00:04:06.000
+não é a forma mais eficiente de fazer.
+
+00:04:07.600 --> 00:04:11.300
+Aí sim, agora a gente pode entrar na
+fórmula da
+
+00:04:11.300 --> 00:04:19.050
+genialidade, que vai ser composta por
+esses elementos que você está vendo
+
+00:04:19.050 --> 00:04:19.290
+aqui.
+
+00:04:21.550 --> 00:04:27.810
+Polifonia discursiva, mapeamento
+polifônico, criatividade e o scanner.
+
+00:04:28.490 --> 00:04:28.970
+Filtro.
+
+00:04:31.400 --> 00:04:38.500
+A polifonia discursiva, é um conceito
+que vem de Mikhail Bakhtin, russo.
+
+00:04:38.800 --> 00:04:45.840
+Polifonia discursiva nada mais é na
+prática do que todas as vozes, todos os
+
+00:04:45.840 --> 00:04:49.800
+discursos, todas as informações e
+aprendizados que você teve acesso ao
+
+00:04:49.800 --> 00:04:50.240
+longo da vida.
+
+00:04:52.360 --> 00:04:56.060
+A gente vai acabar vendo mais pra frente
+que nem toda polifonia discursiva que
+
+00:04:56.060 --> 00:05:01.940
+você já teve acesso está à disposição
+mentalmente, mas não é relevante nesse
+
+00:05:01.940 --> 00:05:03.060
+momento, não é relevante nesse momento
+específico.
+
+00:05:03.580 --> 00:05:09.280
+Polifonia discursiva, então, a gente vai
+entender como todo o conhecimento a que
+
+00:05:09.280 --> 00:05:11.520
+você tem acesso, a que você já teve
+acesso.
+
+00:05:12.100 --> 00:05:14.580
+Então está disponível na sua cabeça para
+rearticular.
+
+00:05:15.160 --> 00:05:18.520
+O que nos leva à criatividade.
+
+00:05:18.820 --> 00:05:28.960
+A gente vai ter criatividade aqui como a
+capacidade de rearticular de maneira
+
+00:05:28.960 --> 00:05:33.020
+logicamente consistente os fatores de
+uma profissão, de uma polifonia
+
+00:05:33.020 --> 00:05:34.900
+discursiva à disposição.
+
+00:05:34.980 --> 00:05:41.160
+Em outras palavras, rearticular, testar
+em posições diferentes de conexão lógica
+
+00:05:41.160 --> 00:05:44.260
+os fatores de uma polifonia discursiva
+que você já tem à
+
+00:05:44.260 --> 00:05:44.660
+disposição.
+
+00:05:46.890 --> 00:05:50.550
+Lembra que não é muito diferente do que
+eu disse antes, do que eu mencionei,
+
+00:05:50.570 --> 00:05:59.230
+como sendo rearticular ideias comuns,
+concatenar elas de forma a utilizá -las
+
+00:05:59.230 --> 00:06:00.290
+em uma nova direção.
+
+00:06:01.490 --> 00:06:03.550
+A isso chamamos criatividade.
+
+00:06:04.430 --> 00:06:09.410
+O mais próximo que a gente vai ter aqui
+do que se chama normalmente de fator G,
+
+00:06:09.450 --> 00:06:10.990
+fator geral de inteligência.
+
+00:06:12.170 --> 00:06:14.190
+E que é mensurado pelo QI.
+
+00:06:15.450 --> 00:06:19.230
+Então ele é uma constante, você não pode
+alterar, não sei, eu sei que dizem pela
+
+00:06:19.230 --> 00:06:21.950
+internet aí ah, você pode aprender a ser
+mais criativo.
+
+00:06:22.030 --> 00:06:24.090
+Não pode, muda muito pouco.
+
+00:06:26.160 --> 00:06:30.180
+Você é meio predestinado a isso, você
+nasce com uma tendência biológica,
+
+00:06:30.260 --> 00:06:31.760
+queira você ou não.
+
+00:06:33.360 --> 00:06:35.500
+Mas os outros elementos são variáveis.
+
+00:06:37.160 --> 00:06:41.280
+A polifonia discursiva, você pode
+estudar mais, ter acesso a uma variedade
+
+00:06:41.280 --> 00:06:43.780
+maior de discursos, de aprendizados.
+
+00:06:44.240 --> 00:06:46.580
+E aí você amplia a sua polifonia
+discursiva.
+
+00:06:46.580 --> 00:06:50.700
+Quando eu falo polifonia discursiva, eu
+me refiro à amplitude da polifonia
+
+00:06:50.700 --> 00:06:51.940
+discursiva que você tem à disposição.
+
+00:06:54.310 --> 00:06:58.910
+E isso nos leva então ao mapeamento
+polifônico, que nada mais é do que a
+
+00:06:58.910 --> 00:07:04.510
+capacidade de mapear toda a polifonia
+discursiva que você tem à disposição.
+
+00:07:05.490 --> 00:07:12.450
+Esse mapeamento polifônico você pode
+fazer é como um mapa geográfico mesmo.
+
+00:07:12.530 --> 00:07:17.610
+Você pode colocar no papel um mapa
+intelectual, você pode colocar no papel
+
+00:07:17.610 --> 00:07:24.210
+esses conceitos pode começar dividindo
+na metade e depois você vai verificando
+
+00:07:24.210 --> 00:07:26.730
+as distâncias entre um conceito e outro.
+
+00:07:26.850 --> 00:07:31.750
+As distâncias entre uma linha de
+pensamento, uma linha filosófica e
+
+00:07:31.750 --> 00:07:31.950
+outra.
+
+00:07:32.550 --> 00:07:34.930
+Quando eu falo filosófica é de
+pensamento mesmo.
+
+00:07:34.990 --> 00:07:37.450
+Quando eu falo da história da filosofia,
+eu falo da história do pensamento.
+
+00:07:37.530 --> 00:07:41.570
+Nesse caso você pode entender como a
+mesma coisa, nesse caso específico da
+
+00:07:41.570 --> 00:07:44.950
+forma como eu estou tratando aqui para
+ficar mais didático, mais fácil de
+
+00:07:44.950 --> 00:07:45.350
+compreender.
+
+00:07:47.190 --> 00:07:52.710
+Então, para facilitar a sua visualização
+de como é esse mapeamento eu vou trazer
+
+00:07:52.710 --> 00:08:00.750
+aqui na estrutura de figuras geográficas
+eu quero que você imagine que o mundo é
+
+00:08:00.750 --> 00:08:04.030
+um lugar cheio de informações e cada
+informação dessa é uma figura
+
+00:08:04.030 --> 00:08:04.950
+geométrica.
+
+00:08:07.170 --> 00:08:11.630
+E na sua cabeça você mapeia essas
+figuras geométricas em uma cidade.
+
+00:08:12.070 --> 00:08:16.330
+Nessa cidade você tem lá o bairro das
+bolinhas mais para o lado você pode ter
+
+00:08:16.330 --> 00:08:20.950
+o bairro dos quadrados entre os dois
+talvez você tenha ali o bairro dos
+
+00:08:20.950 --> 00:08:26.710
+quadrados com bordas arredondadas e você
+consegue ir fazendo esse mapeamento de
+
+00:08:26.710 --> 00:08:27.670
+forma muito precisa.
+
+00:08:28.330 --> 00:08:32.410
+A questão é, a maior parte das pessoas
+não tem mapeamento nenhum praticamente.
+
+00:08:32.870 --> 00:08:37.410
+Então, passou lá pelo filtro dela, ela
+aprendeu uma informação que vai ser uma
+
+00:08:37.410 --> 00:08:42.010
+bolinha e o cérebro dela vai perceber
+olha, eu acho que tem uma bolinha ali e
+
+00:08:42.010 --> 00:08:45.010
+ele joga a bolinha perto da outra
+bolinha o problema é que tinha uma
+
+00:08:45.010 --> 00:08:47.990
+bolinha ali mas também tinha outra
+bolinha lá, outra lá, outra lá tinha um
+
+00:08:47.990 --> 00:08:51.870
+triângulo, um quadrado tudo
+consideravelmente misturado então quando
+
+00:08:51.870 --> 00:08:56.030
+o cérebro vai concatenar as informações
+ele joga a bolinha perto da bolinha e
+
+00:08:56.030 --> 00:09:00.790
+ele testa contra aquela uma bolinha às
+vezes ele dá meio que a sorte de
+
+00:09:00.790 --> 00:09:06.650
+encaixar contra uma bolinha que vai se
+tornar uma solução genial aleatoriamente
+
+00:09:06.650 --> 00:09:12.510
+quase quase aleatoriamente agora imagina
+se ao invés disso, o teu cérebro
+
+00:09:12.510 --> 00:09:15.550
+precisar jogar uma bolinha só e de vez
+em quando acabar vendo que a outra lá
+
+00:09:15.550 --> 00:09:21.350
+também serve você tivesse na verdade
+jogando essa nova bolinha dentro de um
+
+00:09:21.350 --> 00:09:28.140
+bairro na tua cidade mental que é um
+bairro só de bolinhas e naturalmente o
+
+00:09:28.140 --> 00:09:32.040
+teu cérebro então já colocasse essa
+bolinha essa nova informação no lugar
+
+00:09:32.040 --> 00:09:36.640
+mais estratégico de todos para testar
+contra o máximo de informações de forma
+
+00:09:36.640 --> 00:09:41.480
+imediata e testar com quais delas você
+vai acabar se tornando uma ideia
+
+00:09:41.480 --> 00:09:49.930
+genial imagina o teu cérebro podendo
+fazer isso naturalmente depois que você
+
+00:09:49.930 --> 00:09:57.330
+tiver um mapeamento polifônico
+estruturado então quando eu falo de
+
+00:09:57.330 --> 00:10:02.610
+mapeamento polifônico você pode partir
+até de uma percepção muito
+
+00:10:02.610 --> 00:10:11.700
+inicial você pode literalmente dividir
+toda a história do pensamento de um lado
+
+00:10:11.700 --> 00:10:16.820
+vai ter o dualismo do outro lado vai ter
+monismo que inicialmente foi chamado de
+
+00:10:16.820 --> 00:10:21.120
+atomismo mais tarde de materialismo
+vamos jogar tudo em monismo do outro
+
+00:10:21.120 --> 00:10:26.980
+lado tudo dualismo e esse já é um
+mapeamento muito melhor do que a larga
+
+00:10:26.980 --> 00:10:34.000
+maioria das pessoas faz já vai te ajudar
+a evitar muitas incoerências eu vejo
+
+00:10:34.000 --> 00:10:38.220
+pessoas de altíssima inteligência, de
+altíssimo consciente de inteligência eu
+
+00:10:38.220 --> 00:10:45.100
+vejo muitas dessas pessoas cometendo
+erros crassos na vida, sendo altamente
+
+00:10:45.100 --> 00:10:51.700
+incoerentes por falta de capacidade de
+mapeamento polifônico eu conheço uma
+
+00:10:51.700 --> 00:10:59.380
+menina que ela é vegana então muito da
+vida dela gira em torno disso de ter uma
+
+00:10:59.380 --> 00:11:04.140
+vida vegana ela também se considera
+cristã e considera que o cristianismo
+
+00:11:04.140 --> 00:11:08.900
+influencia muito na vida dela na verdade
+ela considera que as duas coisas
+
+00:11:08.900 --> 00:11:15.120
+influenciam totalmente a vida dela, o
+que é muito interessante e ela também é
+
+00:11:15.880 --> 00:11:20.960
+, estuda a neurociência e diz que a
+neurociência tem uma influência gigante
+
+00:11:20.960 --> 00:11:26.480
+na vida dela também acontece que eu não
+sei se percebe, mas são três elementos
+
+00:11:26.480 --> 00:11:32.800
+altamente incoerentes entre si
+incoerentes entre si porque que eles são
+
+00:11:32.800 --> 00:11:34.040
+incoerentes entre si?
+
+00:11:35.400 --> 00:11:40.160
+o cristianismo tem como elemento
+fundamental a perspectiva de um deus
+
+00:11:40.160 --> 00:11:47.320
+todo poderoso que definiu ali umas
+regras para todo mundo seguir e se tu
+
+00:11:47.320 --> 00:11:50.980
+seguir tu de repente vai para o céu se
+tu não seguir muito bem talvez tu vá
+
+00:11:50.980 --> 00:11:56.200
+para o inferno é mais ou menos isso ah,
+mas é mais complicado tudo bem, eu estou
+
+00:11:56.200 --> 00:12:01.700
+simplificando mesmo é só para te dar o
+conceito de mapeamento
+
+00:12:01.700 --> 00:12:07.820
+polifônico e e o veganismo?
+
+00:12:07.940 --> 00:12:14.100
+bom, tem como fundamento uma perspectiva
+relacionada uma atualização do
+
+00:12:14.100 --> 00:12:18.640
+pensamento do cosmos grego onde o mundo
+não era visto como é hoje em dia, o
+
+00:12:18.640 --> 00:12:23.520
+universo não era visto como a gente
+acredita que ele é hoje e como é que
+
+00:12:23.520 --> 00:12:24.300
+acredita que ele é hoje?
+
+00:12:24.420 --> 00:12:36.700
+bom caótico vazio infinito a perspectiva
+do cosmos grego era do universo como um
+
+00:12:36.700 --> 00:12:44.460
+lugar altamente organizado uma estrutura
+organizacional bem estabelecida e cada
+
+00:12:44.460 --> 00:12:54.780
+um nasce para exercer certa função o
+gato gateia a maré marea o sapo sapeia a
+
+00:12:54.780 --> 00:12:59.340
+neurociência está muito mais associada a
+perspectiva científica atual que está
+
+00:12:59.340 --> 00:13:06.160
+totalmente relacionada com o que
+aconteceu depois das descobertas de
+
+00:13:07.260 --> 00:13:16.020
+galileu, newton copérnico ou seja o
+universo como esse lugar caótico, são
+
+00:13:16.020 --> 00:13:20.980
+fundamentos totalmente diferentes, e se
+você não sabe fazer esse mapeamento
+
+00:13:20.980 --> 00:13:24.340
+minimamente você pode cair nesse tipo de
+incoerência eu garanto sem essas
+
+00:13:24.340 --> 00:13:29.580
+incoerências se tu consegue ajudar o teu
+cérebro a colocar no lugar certo cada
+
+00:13:29.580 --> 00:13:34.900
+informação assim que ela chega vai ser
+muito mais fácil muito menos complicado
+
+00:13:34.900 --> 00:13:38.220
+para o teu cérebro trabalhar e
+desenvolver soluções geniais já que ele
+
+00:13:38.220 --> 00:13:44.220
+está colocando elas num lugar mais
+coerente de imediato ou num lugar com
+
+00:13:44.220 --> 00:13:47.460
+uma probabilidade muito maior de ter
+alta coerência entre os pensamentos ou
+
+00:13:47.460 --> 00:13:48.000
+num lugar com uma probabilidade muito
+maior de ter alta coerência entre os
