@@ -1,0 +1,98 @@
+Criando Repositorio Certo
+	Anatomia Repo Profissional
+		README.md
+			O que e o projeto
+			Como usar
+			Por que existe
+		.gitignore
+			O que NAO versionar
+		LICENSE
+			Como outros podem usar
+		src/
+			Codigo fonte
+		.github/
+			Workflows (opcional)
+	Criando no GitHub
+		Opcao 1: GitHub primeiro
+			github.com/new
+			Repository name (kebab-case)
+			Description clara
+			Public ou Private
+			Initialize with
+				Add README
+				Add .gitignore
+				Choose license
+		Opcao 2: Local primeiro
+			mkdir projeto
+			git init
+			git add README.md
+			git commit -m "Initial commit"
+			git remote add origin
+			git push -u origin main
+	README.md Profissional
+		Estrutura minima
+			Titulo do projeto
+			Descricao (1-2 frases)
+			Sobre
+			Tecnologias
+			Instalacao
+			Uso
+			License
+		Boas praticas
+			Emojis com moderacao
+			Badges (build, version)
+			Screenshots se UI
+			Especifico, nao generico
+		Evitar
+			Deixar em branco
+			Texto generico
+			Informacao desatualizada
+	.gitignore
+		O que nunca versionar
+			Credenciais (.env)
+			Dependencias (node_modules)
+			Arquivos gerados (dist, build)
+			IDEs (.vscode, .idea)
+			Sistema (.DS_Store)
+		Templates prontos
+			github.com/github/gitignore
+			Por linguagem
+			Node.js
+				node_modules/
+				.env
+				dist/
+			Python
+				venv/
+				__pycache__/
+				.env
+		Comandos uteis
+			git status --ignored
+			git add -f (forcar)
+			git rm --cached (parar rastrear)
+	LICENSE
+		Por que adicionar
+			Sem licenca = ninguem pode usar
+			Mesmo em repo publico
+		Licencas populares
+			MIT
+				Permissiva
+				Recomendada portfolio
+			Apache 2.0
+				Corporativo
+				Patentes
+			GPL 3.0
+				"Viral"
+				Software livre
+			Unlicense
+				Dominio publico
+		Quando usar MIT
+			Simples e permissiva
+			Empresas aceitam
+			Mais usada JS/Python
+	Checklist Repo Profissional
+		README.md completo
+		.gitignore apropriado
+		LICENSE clara (MIT)
+		Codigo funcional
+		Sem credenciais
+		Nome descritivo

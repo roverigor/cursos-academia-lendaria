@@ -1,0 +1,168 @@
+Code Review
+	O Que e Code Review
+		Analise de codigo por colegas
+		Objetivos
+			1. Qualidade
+				Bugs, melhorias, edge cases
+			2. Conhecimento
+				Time aprende mudancas
+			3. Padroes
+				Consistencia de codigo
+			4. Mentoria
+				Seniores guiam juniors
+		NAO e
+			Fiscalizacao
+			Critica pessoal
+			Barreira burocratica
+	Mentalidade do Revisor
+		Atitude correta
+			Colaborativa
+			Ensina e aprende
+			Foca em codigo, nao pessoa
+			Busca entender antes criticar
+		Atitude errada
+			Superioridade
+			Perfeccionismo
+			Pressa (LGTM fake)
+			Pessoal
+		Lembre
+			Revisa CODIGO, nao PESSOA
+	Processo Review GitHub
+		1. Acessar PR
+			github.com/user/repo/pulls
+			Clicar no PR
+			Aba "Files changed"
+		2. Analisar mudancas
+			+ linha adicionada (verde)
+			- linha removida (vermelho)
+			linha sem mudanca (branco)
+		3. Fazer comentarios
+			Linha especifica: botao +
+			Comentario geral: Review changes
+	Tipos de Comentarios
+		1. Questoes (Perguntas)
+			Quando: nao claro
+			Bom: "Pode explicar por que Map?"
+			Ruim: "Isso esta errado"
+		2. Sugestoes (Melhorias)
+			Quando: ideia de melhoria
+			Bom: "Que tal renomear data → userProfile?"
+			Ruim: "Nome horrivel"
+			GitHub: sugestao de codigo
+		3. Problemas (Bugs)
+			Quando: encontra erro
+			Bom: "Se user.email = null, TypeError"
+			Ruim: "Vai quebrar!"
+			Incluir: sugestao de fix
+		4. Elogios (Reconhecimento)
+			Quando: bem feito
+			Bom: "Excelente uso Promise.allSettled!"
+			NAO fazer: so criticar
+		5. Nitpicks (Detalhes)
+			Quando: detalhe pequeno
+			Prefixo: "Nit:"
+			Nao bloqueia merge
+	Estrutura Comentario
+		Tipo
+			Observacao clara
+		Contexto
+			Por que importa
+		Sugestao
+			Como melhorar
+		Exemplo
+			Preocupacao performance
+			Loop O(n²)
+			Sugestao: usar Map O(1)
+	Checklist Review
+		Funcionalidade
+			Faz o que diz
+			Testa edge cases
+			Tratamento erros
+		Qualidade
+			Codigo legivel
+			Nomes claros
+			Funcoes pequenas
+			Sem duplicacao
+		Seguranca
+			Inputs validados
+			Sem secrets hardcoded
+			SQL injection, XSS
+		Performance
+			Sem loops desnecessarios
+			Queries otimizadas
+		Testes
+			Mudancas testadas
+			Cobrem casos principais
+			Testes passam
+		Documentacao
+			Codigo complexo comentado
+			README atualizado
+	Tipos de Review
+		1. Approve
+			Quando: codigo bom
+			Mensagem: LGTM
+			Elogio trabalho
+		2. Request Changes
+			Quando: bugs criticos
+			Mensagem: pontos a ajustar
+			Lista numerada
+		3. Comment
+			Quando: nao revisor oficial
+			Feedback sem aprovar
+	Respondendo Comentarios
+		Como Autor
+			Concordar: "Boa, vou ajustar"
+			Discordar: explicar raciocinio
+			Nao entender: pedir clarificacao
+		Marcar resolvido
+			Apos fix
+			Fixed in abc1234
+	Tom e Linguagem
+		Use linguagem inclusiva
+			Evitar: "Obviamente errado"
+			Usar: "Podemos melhorar..."
+		Critique codigo
+			Evitar: "Voce fez errado"
+			Usar: "Esse trecho pode melhorar"
+		Use perguntas
+			Evitar: "Mude para arrow function"
+			Usar: "Que tal arrow function?"
+		Seja especifico
+			Vago: "Melhorar performance"
+			Especifico: "Mover calculo fora loop"
+	Conflitos em Review
+		NAO fazer
+			Insistir "meu jeito"
+			Apelar autoridade
+			Discussao infinita
+		Fazer
+			Entender perspectiva
+			Dados objetivos
+			Envolver terceiros
+			Aceitar estar errado
+	Boas Praticas
+		Faca
+			Revisar em 24h
+			Elogiar bom codigo
+			Explicar POR QUE
+			Ser educado
+			Aprender com outros
+			Fazer perguntas
+		Evite
+			Revisar so criticar
+			Deixar PR dias
+			Comentarios vagos
+			Exigir seu jeito
+			Ser condescendente
+			LGTM fake
+	Self-Review
+		Antes pedir review
+			Revisar proprio PR
+		Procurar
+			console.logs esquecidos
+			Comentarios debug
+			Codigo comentado
+			Formatacao
+			TODOs resolver
+		Comentarios preventivos
+			Explicar decisoes estranhas

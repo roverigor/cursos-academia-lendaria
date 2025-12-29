@@ -1,0 +1,96 @@
+Push e Pull
+	Modelo Local ↔ Remoto
+		Local Repository
+			Commits A, B, C
+			Seu computador
+		Sincronizacao
+			git push (enviar)
+			git pull (receber)
+		Remote Repository
+			GitHub (nuvem)
+			Backup + colaboracao
+	git push
+		O que faz
+			Envia commits locais para remoto
+		Push basico
+			git push
+			git push origin main
+		Primeiro push
+			git push -u origin main
+			Estabelece upstream
+		Push forcado (CUIDADO)
+			git push --force
+			Quando NAO usar
+				Branch compartilhada
+				Main/master producao
+			Alternativa segura
+				git push --force-with-lease
+	git pull
+		O que faz
+			Baixa commits do GitHub
+			Integra com trabalho local
+		Pull basico
+			git pull
+			git pull origin main
+		Pull = fetch + merge
+			git fetch origin
+			git merge origin/main
+		Pull com rebase
+			git pull --rebase
+			Historico mais limpo
+			Configurar globalmente
+	Quando Usar Cada
+		Acabei de commitar
+			git push
+			Backup + compartilhar
+		Comeco do dia
+			git pull
+			Atualizar com time
+		Antes de criar PR
+			git pull
+			Garantir atualizado
+		Erro ao push
+			git pull primeiro
+			Resolver conflitos
+	Workflow Diario
+		Manha
+			git pull
+			Atualizar repo
+		Trabalhar
+			Editar arquivos
+			git add .
+			git commit -m
+		Enviar
+			git push
+		Fim do dia
+			git push
+			Sincronizar
+	Ver Status Sincronizacao
+		git remote -v
+			Ver conexoes remotas
+		git status
+			Ahead: local a frente
+			Behind: remoto a frente
+			Diverged: ambos diferentes
+	Troubleshooting
+		rejected non-fast-forward
+			GitHub tem commits novos
+			Solucao: git pull --rebase + git push
+		Please commit or stash
+			Mudancas nao commitadas
+			Solucao 1: git commit
+			Solucao 2: git stash
+		Permission denied
+			SSH nao configurado
+			Revisar licao 1.3
+	Boas Praticas
+		Faca
+			Pull inicio do dia
+			Push fim de cada feature
+			Commit pequeno, push frequente
+			Pull antes de PR
+		Evite
+			Commits so locais por dias
+			Push codigo quebrado
+			Force push branches compartilhadas
+			Pull sem commitar
