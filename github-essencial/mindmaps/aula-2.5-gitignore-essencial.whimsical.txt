@@ -1,0 +1,145 @@
+.gitignore Essencial
+	O Que NUNCA Versionar
+		1. Credenciais e Segredos
+			.env
+			.env.local
+			credentials.json
+			*.pem, *.key
+			id_rsa, id_ed25519
+		2. Dependencias (Baixaveis)
+			Node.js
+				node_modules/
+				npm-debug.log
+			Python
+				venv/, env/
+				__pycache__/
+				*.pyc
+			Ruby
+				vendor/bundle/
+			Java
+				target/
+				*.class
+		3. Arquivos Build
+			dist/, build/, out/
+			*.min.js
+			*.bundle.js
+			*.log
+		4. IDEs e Editores
+			.vscode/
+			.idea/
+			*.swp
+			*.sublime-project
+		5. Sistema Operacional
+			macOS: .DS_Store
+			Windows: Thumbs.db
+			Linux: *~, .directory
+		6. Temporarios
+			*.tmp
+			*.temp
+			*.cache
+			*.bak
+	.gitignore por Linguagem
+		Node.js / JavaScript
+			node_modules/
+			npm-debug.log
+			coverage/
+			dist/, build/
+			.env
+			.vscode/, .idea/
+			.DS_Store
+		Python
+			__pycache__/
+			*.pyc
+			venv/, env/
+			dist/, build/
+			*.egg-info/
+			.ipynb_checkpoints
+			.env
+		Java
+			*.class
+			*.jar, *.war
+			target/, build/
+			.gradle/
+			.idea/
+			*.log
+	Sintaxe .gitignore
+		Comentario
+			# Comentario
+		Arquivo especifico
+			config.local.js
+		Todos com extensao
+			*.log
+		Diretorio
+			node_modules/
+		Qualquer nivel
+			**/temp/
+		Negacao (NAO ignore)
+			!important.log
+		Apenas no root
+			/README.local.md
+		Diretorio especifico
+			src/**/*.test.js
+	Templates Prontos
+		GitHub
+			github.com/github/gitignore
+			Node, Python, Java
+		Site gerador
+			gitignore.io
+			Escolhe linguagem + IDE + OS
+	Aplicando .gitignore
+		Criar arquivo
+			touch .gitignore
+			Editar conteudo
+		Commitar
+			git add .gitignore
+			git commit -m "Add .gitignore"
+		IMPORTANTE
+			.gitignore deve ser versionado
+	Arquivo Ja Commitado
+		Problema
+			.gitignore so afeta nao rastreados
+		Solucao
+			git rm --cached arquivo.env
+			git rm -r --cached node_modules/
+			Adicionar ao .gitignore
+			git commit
+		ATENCAO
+			Arquivo fica no historico
+			Use BFG para remover completamente
+	.gitignore Global
+		Para todos projetos
+			~/.gitignore_global
+			git config --global core.excludesfile
+		Adicionar
+			.DS_Store
+			Thumbs.db
+			.vscode/, .idea/
+			*.swp
+	Ver Arquivos Ignorados
+		Listar ignorados
+			git status --ignored
+		Verificar especifico
+			git check-ignore -v arquivo.txt
+	.env.example Pattern
+		Problema
+			.env tem senhas
+			Nao pode versionar
+		Solucao
+			Versionar .env.example
+			Template sem valores reais
+		.gitignore
+			.env
+			.env.local
+			!.env.example
+		README
+			Copy .env.example to .env
+			Fill actual credentials
+	Troubleshooting
+		.gitignore nao funciona
+			Arquivo ja rastreado
+			git rm --cached
+		Checklist
+			Nome: .gitignore (com ponto)
+			No root do projeto
+			Sintaxe correta
+			Nao estava rastreado antes

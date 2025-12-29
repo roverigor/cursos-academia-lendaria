@@ -1,0 +1,115 @@
+Commits que Comunicam
+	Commit Profissional
+		Atomico
+			Uma mudanca logica
+			Testavel isoladamente
+		Mensagem clara
+			Titulo (50 chars)
+			Corpo (72 chars por linha)
+		Mudancas relacionadas
+			Tudo contribui para mesma funcionalidade
+	Commits Atomicos
+		Bom: Separados
+			git commit "Add user auth"
+			git commit "Update README"
+			git commit "Fix typo"
+		Ruim: Tudo junto
+			"Add auth, update readme, fix typos"
+		Regra
+			Se usa "e" ou ","
+			Provavelmente 2 commits
+	Mensagens Claras
+		Anatomia
+			Titulo: O que + Onde (50 chars)
+			Corpo: Por que + Como (72 chars)
+		Exemplo completo
+			Add password reset functionality
+			Corpo explicando motivo
+			Como foi implementado
+			Lista de mudancas
+	Formato Imperativo
+		Correto
+			Add login form
+			Fix navbar alignment
+			Update dependencies
+			Remove deprecated API
+		Errado
+			Added (passado)
+			Fixing (gerundio)
+			Updated some stuff (vago)
+			Changes (generico)
+		Regra
+			"If applied, this commit will..."
+	Conventional Commits
+		Types comuns
+			feat: Nova funcionalidade
+			fix: Correcao de bug
+			docs: Documentacao
+			style: Formatacao
+			refactor: Reescrita
+			test: Testes
+			chore: Manutencao
+		Exemplos
+			feat: add user profile page
+			fix: resolve memory leak
+			docs: update API docs
+			refactor: extract validation
+			test: add auth tests
+			chore: update dependencies
+	Tamanho Mensagem
+		Titulo
+			Max 50 caracteres
+			GitHub trunca em 72
+			Legivel em todos lugares
+		Corpo
+			Wrap 72 chars por linha
+			Mudancas complexas
+			Precisa contexto
+	Exemplos: Ruim vs Bom
+		Vago vs Especifico
+			Ruim: "fix bug"
+			Bom: "fix: null pointer in profile"
+		Generico vs Descritivo
+			Ruim: "updates"
+			Bom: "docs: update Windows install"
+		Multiplas vs Atomico
+			Ruim: "Add feature, fix bugs"
+			Bom: 3 commits separados
+		Passado vs Imperativo
+			Ruim: "Added authentication"
+			Bom: "Add authentication"
+	Referencias
+		Linkando Issues
+			Fixes #123
+			Closes #456
+			Resolves #789
+		Multiplas issues
+			Closes #123, #124, #125
+		Apenas referenciar
+			Related to #123
+			See #456
+		Pull Requests
+			Implement feedback from PR #45
+		Mencionando pessoas
+			Suggested by @username
+	Work in Progress
+		Durante desenvolvimento
+			git commit -m "WIP: building dashboard"
+		Antes de merge
+			Squash commits
+			Reescrever historico
+			git rebase -i HEAD~3
+	Ferramentas
+		Ver tamanho
+			git log --oneline
+		Template de commit
+			~/.gitmessage
+			git config commit.template
+	Checklist Commit
+		Max 50 chars titulo
+		Imperativo
+		Especifico
+		Mudancas relacionadas
+		Atomico
+		Outro dev entenderia
+		Referencia issue se relevante
