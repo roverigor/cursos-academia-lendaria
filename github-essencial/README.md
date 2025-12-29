@@ -1,125 +1,181 @@
-# GitHub Essencial para Devs
+# GitHub Essencial para Empresarios
 
 **Slug:** github-essencial
-**Duração:** 2h30 (150 min)
-**Nível:** Iniciante
-**Idioma:** Português (PT-BR)
+**Duracao:** 2h55 (175 min)
+**Nivel:** Iniciante
+**Idioma:** Portugues (PT-BR)
 
-## Descrição
+## Descricao
 
-Aprenda GitHub do jeito certo desde o início. Setup moderno com SSH Ed25519, workflow profissional de colaboração e práticas que empresas de tecnologia realmente valorizam. Sem enrolação, só o essencial para começar sua carreira.
+Organize suas automacoes, SOPs e projetos de IA em um so lugar. Aprenda a usar GitHub para versionar e colaborar em tudo que voce constroi com Claude, n8n e outras ferramentas - sem depender de pastas baguncadas ou da sua memoria.
 
-## Para quem é este curso
+## Para quem e este curso
 
-### Perfil Ideal do Aluno (ICP)
+### Perfil Ideal do Aluno
 
-**Quem você é:**
-- Desenvolvedor iniciante ou estudante de programação
-- Já sabe o básico de alguma linguagem (Python, JavaScript, Java, etc)
-- Quer trabalhar em empresas de tecnologia
-- Precisa colaborar em projetos de código
+**Quem voce e:**
+- Empresario ou dono de negocio (R$ 50K-250K/mes)
+- Criando automacoes com IA (n8n, Make, Claude, etc)
+- Iniciante em tecnologia - usa ChatGPT basico
+- Quer organizar seus projetos de uma vez por todas
 
 **Seus desafios:**
-- "Git e GitHub parecem complicados demais"
-- "Tenho medo de estragar o código do time"
-- "Não sei como contribuir em projetos open source"
-- "Meu perfil no GitHub está vazio"
+- "Minhas automacoes estao espalhadas em pastas sem organizacao"
+- "Se meu computador travar, perco meses de trabalho"
+- "Nao sei como colaborar com o dev freelancer que contratei"
+- "Qual era a versao do prompt que funcionava bem?"
 
-**O que você busca:**
-- Aprender o workflow que empresas realmente usam
-- Configurar tudo do jeito moderno (não tutoriais de 2015)
-- Sentir confiança para colaborar em projetos
-- Construir um portfólio profissional no GitHub
+**O que voce busca:**
+- Central unica para todas as automacoes e SOPs
+- Backup automatico na nuvem
+- Historico completo de mudancas
+- Forma profissional de colaborar com equipe e devs
 
-## O que você vai aprender
+## O que voce vai conseguir fazer
 
-Ao final deste curso, você será capaz de:
+Ao final deste curso, voce sera capaz de:
 
-1. **Configurar ambiente profissional** - Git + GitHub com SSH Ed25519, do jeito que empresas de 2025 fazem
-2. **Gerenciar repositórios** - Criar, versionar e sincronizar código com boas práticas desde o início
-3. **Trabalhar em equipe** - Branches, Pull Requests e Code Review como em times reais
-4. **Resolver problemas** - Desfazer erros, resolver conflitos e recuperar código sem pânico
-5. **Construir presença profissional** - Perfil no GitHub que impressiona recrutadores
+1. **Criar sua central de automacoes** - Um repositorio organizado com pastas para automacoes, SOPs, prompts
+2. **Versionar tudo** - Historico completo de mudancas, voltar para versoes anteriores
+3. **Backup automatico** - Seus projetos seguros na nuvem, acessiveis de qualquer lugar
+4. **Colaborar com equipe** - Receber trabalho de devs freelancers de forma organizada
+5. **Nunca mais perder trabalho** - Recuperar qualquer versao de qualquer arquivo
 
 ## Estrutura do Curso
 
-### Módulo 1: Setup Moderno (25 min)
-Fundação correta: diferença entre Git e GitHub, instalação e configuração com SSH Ed25519.
+### Modulo 0: Introducao (25 min)
+Por que empresarios precisam de GitHub e a historia por tras dessa ferramenta.
 
-| Lição | Título | Duração |
+| Licao | Titulo | Duracao |
 |-------|--------|---------|
-| 1.1 | Git vs GitHub | 5 min |
-| 1.2 | Instalação + Config | 10 min |
-| 1.3 | SSH com Ed25519 | 10 min |
+| 0.0 | Por Que Voce Precisa de GitHub | 15 min |
+| 0.1 | A Historia do Git e GitHub | 10 min |
 
-### Módulo 2: Seu Primeiro Repo Real (50 min)
-Workflow completo de versionamento: do clone ao push, commits profissionais e .gitignore.
+### Modulo 1: Setup em 20 Minutos (25 min)
+Configuracao simples e direta - sem complicacao tecnica.
 
-| Lição | Título | Duração |
+| Licao | Titulo | Duracao |
 |-------|--------|---------|
-| 2.1 | Criando repo certo | 10 min |
-| 2.2 | O ciclo básico | 15 min |
-| 2.3 | Push e Pull | 10 min |
-| 2.4 | Commits que comunicam | 10 min |
-| 2.5 | .gitignore essencial | 5 min |
+| 1.1 | Git vs GitHub - Entenda de Uma Vez | 5 min |
+| 1.2 | Instalacao Passo a Passo | 10 min |
+| 1.3 | Conexao Segura (SSH) | 10 min |
 
-### Módulo 3: Colaboração Profissional (55 min)
-Trabalho em equipe como nas empresas: branches, PRs, code review e resolução de conflitos.
+### Modulo 2: Seu Primeiro Projeto (50 min)
+Criar sua central de automacoes e aprender o ciclo basico.
 
-| Lição | Título | Duração |
+| Licao | Titulo | Duracao |
 |-------|--------|---------|
-| 3.1 | Branches | 12 min |
-| 3.2 | Pull Request | 15 min |
-| 3.3 | Code Review | 13 min |
-| 3.4 | Merge + Conflitos | 15 min |
+| 2.1 | Criando Sua Central de Automacoes | 10 min |
+| 2.2 | Salvando Versoes (O Ciclo Basico) | 15 min |
+| 2.3 | Sincronizando com a Nuvem | 10 min |
+| 2.4 | Mensagens que Explicam | 10 min |
+| 2.5 | O Que NAO Guardar | 5 min |
 
-### Módulo 4: Sobrevivência + Próximos Passos (20 min)
-Ferramentas de emergência e como continuar evoluindo.
+### Modulo 3: Colaborando com Sua Equipe (55 min)
+Trabalhar com devs freelancers, equipe ou ate com IA.
 
-| Lição | Título | Duração |
+| Licao | Titulo | Duracao |
 |-------|--------|---------|
-| 4.1 | Desfazendo erros | 10 min |
-| 4.2 | Perfil profissional | 5 min |
-| 4.3 | O que vem depois | 5 min |
+| 3.1 | Versoes Paralelas (Branches) | 12 min |
+| 3.2 | Pedindo Revisao (Pull Request) | 15 min |
+| 3.3 | Revisando Trabalho de Outros | 13 min |
+| 3.4 | Juntando Versoes | 15 min |
+
+### Modulo 4: Sobrevivencia e Proximos Passos (20 min)
+Recuperar versoes antigas e integrar com suas ferramentas.
+
+| Licao | Titulo | Duracao |
+|-------|--------|---------|
+| 4.1 | Voltando no Tempo | 10 min |
+| 4.2 | Organizando Seu Hub | 5 min |
+| 4.3 | Integrando com Suas Ferramentas | 5 min |
+
+## Por Que GitHub (e nao Google Drive)?
+
+| Aspecto | Google Drive | GitHub |
+|---------|--------------|--------|
+| **Versoes** | Confuso, sobrescreve | Historico completo de TUDO |
+| **Colaboracao** | "Manda por email" | Pull Request organizado |
+| **Voltar atras** | Depende de backup | Qualquer versao em 2 cliques |
+| **Organizacao** | Pastas baguncadas | Estrutura padrao |
+| **Para IAs** | Nao integra | Claude Code conecta direto |
+
+## Estrutura Ideal do Seu Repositorio
+
+```
+minha-empresa-automacoes/
+├── README.md                    # Indice de tudo
+├── automacoes/
+│   ├── vendas/                  # Fluxos n8n de vendas
+│   ├── atendimento/             # Bots e agentes
+│   └── marketing/               # Automacoes de conteudo
+├── sops/
+│   ├── onboarding.md            # SOP de onboarding
+│   ├── atendimento.md           # SOP de atendimento
+│   └── vendas.md                # SOP comercial
+├── prompts/
+│   ├── agente-vendas.md         # Prompt do agente de vendas
+│   └── agente-suporte.md        # Prompt do agente de suporte
+└── docs/
+    └── decisoes.md              # Por que fizemos cada escolha
+```
+
+## Casos de Uso Reais
+
+**Automacao de Vendas:**
+> Voce criou um fluxo n8n que qualifica leads. Semana que vem quer mudar a logica. Com GitHub, voce volta para a versao anterior se der errado.
+
+**Agente Claude:**
+> Seu agente de atendimento tem um prompt longo. Voce quer testar uma versao nova sem perder a atual. Branches resolvem isso.
+
+**Colaboracao com Dev:**
+> Voce contratou um dev freelancer para criar uma automacao. Ele entrega via Pull Request, voce revisa e aprova. Profissional.
+
+**Backup Inteligente:**
+> Seu computador morreu. Com GitHub, voce clona o repositorio em 2 minutos e continua de onde parou.
+
+## Pre-requisitos
+
+- Computador com Windows, macOS ou Linux
+- Conexao com internet
+- Vontade de organizar seus projetos
+
+**Nao precisa:**
+- Saber programar
+- Experiencia com terminal
+- Conhecimento tecnico avancado
 
 ## Diferenciais deste Curso
 
-1. **Setup 2025** - SSH Ed25519 (não RSA), branch `main` (não `master`), práticas atuais
-2. **Portfolio-first** - Cada repo que você criar será real, não descartável
-3. **Foco em carreira** - Conexão direta com o que o mercado valoriza
-4. **Workflow de time** - Simula processos de empresas reais
-5. **Direto ao ponto** - Aulas curtas, conteúdo acionável, zero enrolação
-6. **Exemplos reais** - Código e situações do mundo real, não foo/bar
-
-## Pré-requisitos
-
-- Conhecimento básico de programação (qualquer linguagem)
-- Computador com Windows, macOS ou Linux
-- Vontade de aprender o jeito profissional de versionar código
+1. **Feito para empresarios** - Nao para programadores
+2. **Exemplos reais** - Automacoes, SOPs, prompts (nao codigo)
+3. **Linguagem simples** - Zero jargao tecnico
+4. **Resultado em 48h** - Central de automacoes funcionando
+5. **Integra com IA** - Conexao com Claude Code, n8n
 
 ## Recursos Inclusos
 
-- 15 lições práticas em markdown
-- Cheatsheet de comandos Git/GitHub
-- Exemplos de código reais
-- Checklists de verificação
+- 15 licoes praticas
+- Comandos essenciais (cheatsheet)
+- Estrutura de pastas pronta para usar
+- Checklists de verificacao
 
 ## Como Usar Este Curso
 
-1. **Siga a ordem** - As lições são sequenciais e constroem conhecimento progressivo
-2. **Pratique tudo** - Cada lição tem exercício prático, faça todos
-3. **Use os checkpoints** - Verifique se completou cada objetivo antes de avançar
-4. **Construa real** - Não faça repos de teste, construa seu portfólio desde agora
+1. **Siga a ordem** - As licoes constroem conhecimento progressivo
+2. **Faca junto** - Cada licao tem pratica, faca no seu computador
+3. **Use seu negocio** - Os exemplos sao para adaptar ao seu contexto
+4. **48h para funcionar** - Ao final do Modulo 2, sua central ja esta no ar
 
-## Próximos Passos Após o Curso
+## Proximos Passos Apos o Curso
 
-- Contribuir em projetos open source
-- Aprender GitHub Actions para CI/CD
-- Explorar GitHub Copilot para produtividade
-- Participar de hackathons e colaborações
+- Conectar GitHub com Claude Code
+- Criar automacoes que puxam dados do repositorio
+- Configurar backups automaticos
+- Integrar com n8n/Make
 
 ---
 
-**Pronto para começar?** Vá para o Módulo 1, Lição 1.1: Git vs GitHub
+**Pronto para organizar suas automacoes?** Comece pelo Modulo 0: Por Que Voce Precisa de GitHub
 
-**Dúvidas ou feedback?** Abra uma issue neste repositório.
+**Duvidas ou feedback?** Entre em contato com o suporte.

@@ -2,7 +2,7 @@ course:
   slug: github-essencial
   title: GitHub Essencial para Empresarios
   description: Organize suas automacoes, SOPs e projetos de IA em um so lugar. Aprenda a usar GitHub para versionar e colaborar em tudo que voce constroi com Claude, n8n e outras ferramentas - sem depender de pastas baguncadas ou da sua memoria.
-  duration_minutes: 165
+  duration_minutes: 175
   level: beginner
   language: pt-BR
   framework: microlearning
@@ -30,17 +30,26 @@ course:
 modules:
   - id: 0
     title: Introducao
-    duration_minutes: 15
-    description: Por que empresarios precisam de GitHub para gerenciar automacoes e projetos de IA
+    duration_minutes: 25
+    description: Por que empresarios precisam de GitHub e a historia por tras dessa ferramenta
     lessons:
       - id: "0.0"
         title: Por Que Voce Precisa de GitHub
         file: lessons/0.0-introducao.md
         duration_minutes: 15
         objectives:
-          - Entender o problema de automacoes espalhadas
+          - Entender o problema de arquivos espalhados
           - Ver como GitHub resolve isso
           - Criar conta e primeiro repositorio
+
+      - id: "0.1"
+        title: A Historia do Git e GitHub
+        file: lessons/0.1-historia-git-github.md
+        duration_minutes: 10
+        objectives:
+          - Conhecer Linus Torvalds e a criacao do Git (2005)
+          - Entender como o GitHub surgiu (2008)
+          - Saber sobre a compra pela Microsoft (2018)
 
   - id: 1
     title: Setup em 20 Minutos
