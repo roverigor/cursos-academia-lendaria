@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework de Desenvolvimento Ágil com IA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #191919;
+            color: #F0F0E8;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            background-color: #CC785C;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 3.5em;
+            font-weight: 700;
+            font-family: Georgia, serif;
+            color: #F0F0E8;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #CBD5E0;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 1em;
+            color: #A0AEC0;
+        }
+
+        /* Phase Container */
+        .phase {
+            background-color: #262625;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .phase-header {
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #40403E;
+        }
+
+        .phase-header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .phase-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            opacity: 0.5;
+        }
+
+        .phase-title {
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .phase-subtitle {
+            font-size: 1em;
+            font-weight: 500;
+            color: #F0F0E8;
+        }
+
+        .phase-content {
+            padding: 40px;
+        }
+
+        /* Phase 1: BLUEPRINT */
+        .phase-1 .phase-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .blueprint-grid {
+            display: grid;
+            grid-template-columns: 25% 42% 33%;
+            gap: 25px;
+        }
+
+        .director-box {
+            background-color: #2d2d2b;
+            border: 2px solid #4facfe;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .director-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #4facfe;
+            margin-bottom: 10px;
+        }
+
+        .director-desc {
+            font-size: 0.9em;
+            color: #CBD5E0;
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .agent-box {
+            background-color: #2d2d2b;
+            border: 2px solid #4facfe;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80px;
+        }
+
+        .agent-name {
+            font-size: 1em;
+            font-weight: 600;
+            color: #F0F0E8;
+        }
+
+        .outputs-box {
+            background-color: #2d2d2b;
+            border: 2px dashed #4facfe;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .section-title {
+            font-size: 1em;
+            font-weight: 700;
+            color: #4facfe;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .output-item {
+            font-size: 0.95em;
+            color: #CBD5E0;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        /* Phase 2: MAP */
+        .phase-2 .phase-header {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .framework-box, .documents-box {
+            background-color: #2d2d2b;
+            border: 2px solid #43e97b;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .section-title-green {
+            color: #43e97b;
+        }
+
+        .framework-agents {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .framework-agent {
+            background-color: #1a1a1a;
+            border: 2px solid #43e97b;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .framework-agent-name {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #F0F0E8;
+            margin-bottom: 8px;
+        }
+
+        .framework-agent-desc {
+            font-size: 0.85em;
+            color: #A0AEC0;
+        }
+
+        .document-item {
+            background-color: #1a1a1a;
+            border: 2px solid #43e97b;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .document-name {
+            font-size: 1em;
+            font-weight: 600;
+            color: #F0F0E8;
+            margin-bottom: 8px;
+        }
+
+        .document-desc {
+            font-size: 0.9em;
+            color: #A0AEC0;
+        }
+
+        /* Phase 3: ARCHITECT */
+        .phase-3 .phase-header {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .architect-grid {
+            display: grid;
+            grid-template-columns: 35% 65%;
+            gap: 25px;
+        }
+
+        .scrum-box {
+            background-color: #2d2d2b;
+            border: 2px solid #fa709a;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title-pink {
+            color: #fa709a;
+        }
+
+        .scrum-desc {
+            font-size: 0.95em;
+            color: #CBD5E0;
+            line-height: 1.7;
+        }
+
+        .stories-box {
+            background-color: #2d2d2b;
+            border: 2px solid #fa709a;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .story-item {
+            background-color: #1a1a1a;
+            border: 2px solid #fa709a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .story-name {
+            font-size: 1em;
+            font-weight: 600;
+            color: #F0F0E8;
+            margin-bottom: 8px;
+        }
+
+        .story-desc {
+            font-size: 0.9em;
+            color: #A0AEC0;
+        }
+
+        /* Phase 4: DEVELOP */
+        .phase-4 .phase-header {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .develop-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .flow-box {
+            background-color: #2d2d2b;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .flow-box-1 {
+            border: 2px solid #30cfd0;
+        }
+
+        .flow-box-2 {
+            border: 2px solid #764ba2;
+        }
+
+        .flow-box-3 {
+            border: 2px solid #fa709a;
+        }
+
+        .flow-box-4 {
+            border: 2px solid #43e97b;
+        }
+
+        .flow-title {
+            font-size: 1em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .flow-title-1 { color: #30cfd0; }
+        .flow-title-2 { color: #b794f6; }
+        .flow-title-3 { color: #fa709a; }
+        .flow-title-4 { color: #43e97b; }
+
+        .flow-desc {
+            font-size: 0.9em;
+            color: #CBD5E0;
+            line-height: 1.7;
+        }
+
+        /* Arrow */
+        .arrow {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .arrow-line {
+            width: 3px;
+            height: 50px;
+            background-color: #40403E;
+        }
+
+        /* Benefits */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .benefit-card {
+            background-color: #262625;
+            border: 1px solid #40403E;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .benefit-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .benefit-title-1 { color: #4facfe; }
+        .benefit-title-2 { color: #43e97b; }
+        .benefit-title-3 { color: #fa709a; }
+
+        .benefit-text {
+            font-size: 0.95em;
+            color: #CBD5E0;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer-box {
+            background: linear-gradient(135deg, #CC785C 0%, #BF4D43 100%);
+            border-radius: 15px;
+            padding: 50px;
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 30px;
+        }
+
+        .footer-title {
+            font-size: 2em;
+            font-weight: 700;
+            font-family: Georgia, serif;
+            margin-bottom: 20px;
+        }
+
+        .footer-intro {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: #F0F0E8;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: left;
+        }
+
+        .footer-item-title {
+            font-size: 1em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .footer-item-text {
+            font-size: 0.9em;
+            color: #F0F0E8;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Attribution */
+        .attribution {
+            text-align: center;
+            color: #919180;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 1200px) {
+            .title {
+                font-size: 2.5em;
+            }
+
+            .blueprint-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-grid, .benefits, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .architect-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .develop-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2em;
+            }
+
+            .develop-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phase-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="badge">Framework Estruturado 2025</div>
+            <h1 class="title">Framework de Desenvolvimento Ágil com IA</h1>
+            <p class="subtitle">Blueprint → Map → Architect → Develop</p>
+            <p class="description">Framework Estruturado de Desenvolvimento com Inteligência Artificial</p>
+        </div>
+
+        <!-- Phase 1: BLUEPRINT -->
+        <div class="phase phase-1">
+            <div class="phase-header">
+                <div class="phase-header-left">
+                    <span class="phase-number" style="color: #FFFFFF;">01</span>
+                    <h2 class="phase-title" style="color: #FFFFFF;">BLUEPRINT</h2>
+                </div>
+                <span class="phase-subtitle">Planejamento</span>
+            </div>
+            <div class="phase-content">
+                <div class="blueprint-grid">
+                    <!-- Diretor Humano -->
+                    <div class="director-box">
+                        <div>
+                            <div class="director-title">Diretor Humano</div>
+                            <div class="director-desc">Supervisão estratégica</div>
+                        </div>
+                    </div>
+
+                    <!-- Agentes -->
+                    <div class="agents-grid">
+                        <div class="agent-box">
+                            <span class="agent-name">Agente Analista</span>
+                        </div>
+                        <div class="agent-box">
+                            <span class="agent-name">Agente PM</span>
+                        </div>
+                        <div class="agent-box">
+                            <span class="agent-name">Agente Arquiteto</span>
+                        </div>
+                        <div class="agent-box">
+                            <span class="agent-name">Agente UX</span>
+                        </div>
+                    </div>
+
+                    <!-- Outputs -->
+                    <div class="outputs-box">
+                        <div class="section-title">ENTREGAS</div>
+                        <div class="output-item">• Documentos PRD</div>
+                        <div class="output-item">• Especificações de Arquitetura</div>
+                        <div class="output-item">• Análise de Mercado</div>
+                        <div class="output-item">• Design de Sistema</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="arrow">
+            <div class="arrow-line"></div>
+        </div>
+
+        <!-- Phase 2: MAP -->
+        <div class="phase phase-2">
+            <div class="phase-header">
+                <div class="phase-header-left">
+                    <span class="phase-number" style="color: #FFFFFF;">02</span>
+                    <h2 class="phase-title" style="color: #FFFFFF;">MAP</h2>
+                </div>
+                <span class="phase-subtitle">Documentação</span>
+            </div>
+            <div class="phase-content">
+                <div class="map-grid">
+                    <!-- Framework de Investigação -->
+                    <div class="framework-box">
+                        <div class="section-title section-title-green">FRAMEWORK DE INVESTIGAÇÃO</div>
+                        <div class="framework-agents">
+                            <div class="framework-agent">
+                                <div class="framework-agent-name">Agente PM</div>
+                                <div class="framework-agent-desc">Papel & Protocolos</div>
+                            </div>
+                            <div class="framework-agent">
+                                <div class="framework-agent-name">Arquiteto</div>
+                                <div class="framework-agent-desc">Decisões</div>
+                            </div>
+                            <div class="framework-agent">
+                                <div class="framework-agent-name">Designer UX</div>
+                                <div class="framework-agent-desc">Fluxos</div>
+                            </div>
+                            <div class="framework-agent">
+                                <div class="framework-agent-name">Tech Lead</div>
+                                <div class="framework-agent-desc">Stack</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Documentos-Chave -->
+                    <div class="documents-box">
+                        <div class="section-title section-title-green">DOCUMENTOS-CHAVE</div>
+                        <div class="document-item">
+                            <div class="document-name">Context.md</div>
+                            <div class="document-desc">Visão Geral do Projeto</div>
+                        </div>
+                        <div class="document-item">
+                            <div class="document-name">Architecture.md</div>
+                            <div class="document-desc">Arquitetura do Sistema</div>
+                        </div>
+                        <div class="document-item">
+                            <div class="document-name">UX-flows.md</div>
+                            <div class="document-desc">Experiência do Usuário</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="arrow">
+            <div class="arrow-line"></div>
+        </div>
+
+        <!-- Phase 3: ARCHITECT -->
+        <div class="phase phase-3">
+            <div class="phase-header">
+                <div class="phase-header-left">
+                    <span class="phase-number" style="color: #FFFFFF;">03</span>
+                    <h2 class="phase-title" style="color: #FFFFFF;">ARCHITECT</h2>
+                </div>
+                <span class="phase-subtitle">Criação de Stories</span>
+            </div>
+            <div class="phase-content">
+                <div class="architect-grid">
+                    <!-- Scrum Master -->
+                    <div class="scrum-box">
+                        <div class="section-title section-title-pink">AGENTE SCRUM MASTER</div>
+                        <div class="scrum-desc">Cria stories hiper-detalhadas com contexto completo dos documentos</div>
+                    </div>
+
+                    <!-- Stories -->
+                    <div class="stories-box">
+                        <div class="section-title section-title-pink">ANÁLISE ESPECIALIZADA</div>
+                        <div class="story-item">
+                            <div class="story-name">Story 1.1: Autenticação</div>
+                            <div class="story-desc">Especificações do fluxo de autenticação</div>
+                        </div>
+                        <div class="story-item">
+                            <div class="story-name">Story 1.2: Dashboard</div>
+                            <div class="story-desc">Componentes da interface principal</div>
+                        </div>
+                        <div class="story-item">
+                            <div class="story-name">Story 1.3: Transações</div>
+                            <div class="story-desc">Detalhes da lógica de negócio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="arrow">
+            <div class="arrow-line"></div>
+        </div>
+
+        <!-- Phase 4: DEVELOP -->
+        <div class="phase phase-4">
+            <div class="phase-header">
+                <div class="phase-header-left">
+                    <span class="phase-number" style="color: #FFFFFF;">04</span>
+                    <h2 class="phase-title" style="color: #FFFFFF;">DEVELOP</h2>
+                </div>
+                <span class="phase-subtitle">Implementação</span>
+            </div>
+            <div class="phase-content">
+                <div class="develop-grid">
+                    <div class="flow-box flow-box-1">
+                        <div class="flow-title flow-title-1">Agente Desenvolvedor</div>
+                        <div class="flow-desc">Implementa com orientação arquitetural</div>
+                    </div>
+                    <div class="flow-box flow-box-2">
+                        <div class="flow-title flow-title-2">Agente QA</div>
+                        <div class="flow-desc">Revisão de qualidade & feedback ao humano</div>
+                    </div>
+                    <div class="flow-box flow-box-3">
+                        <div class="flow-title flow-title-3">Ciclo Iterativo</div>
+                        <div class="flow-desc">Preservação de contexto, Colaboração entre agentes, Garantia de qualidade</div>
+                    </div>
+                    <div class="flow-box flow-box-4">
+                        <div class="flow-title flow-title-4">Entregas</div>
+                        <div class="flow-desc">Implementação funcional, Features testadas, Próxima iteração pronta</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="benefits">
+            <div class="benefit-card">
+                <h3 class="benefit-title benefit-title-1">Rico em Contexto</h3>
+                <p class="benefit-text">Cada fase constrói documentação abrangente que os agentes podem referenciar, garantindo que as decisões sejam informadas pelo contexto completo do projeto.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title benefit-title-2">Colaborativo com Agentes</h3>
+                <p class="benefit-text">Agentes especializados trabalham juntos com papéis e protocolos definidos, criando um fluxo de desenvolvimento coeso com supervisão humana.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title benefit-title-3">Qualidade Assegurada</h3>
+                <p class="benefit-text">Processos de QA integrados e ciclos iterativos garantem entregas de alta qualidade com feedback contínuo e melhoria constante.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-box">
+            <h3 class="footer-title">Desenvolvimento Estruturado vs. Intuitivo</h3>
+            <p class="footer-intro">O Framework de Desenvolvimento Ágil com IA substitui a <strong>"programação intuitiva"</strong> por um framework sistemático que garante:</p>
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-item-title">Planejamento Abrangente</div>
+                    <div class="footer-item-text">Cada funcionalidade é minuciosamente analisada e documentada antes do início da implementação</div>
+                </div>
+                <div>
+                    <div class="footer-item-title">Preservação de Contexto</div>
+                    <div class="footer-item-text">Todas as decisões arquiteturais e requisitos permanecem acessíveis durante todo o desenvolvimento</div>
+                </div>
+                <div>
+                    <div class="footer-item-title">Qualidade Previsível</div>
+                    <div class="footer-item-text">Processos estruturados garantem resultados consistentes e de alta qualidade em todas as entregas</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Attribution -->
+        <div class="attribution">
+            <p>Framework Estruturado de Desenvolvimento com Inteligência Artificial</p>
+            <p>Rico em contexto • Colaborativo com agentes • Qualidade assegurada</p>
+        </div>
+    </div>
+</body>
+</html>

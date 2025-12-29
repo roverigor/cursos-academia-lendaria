@@ -1,0 +1,78 @@
+Introducao: Bem-vindo ao GitHub Essencial
+	Historia do Git
+		Linus Torvalds e Linux
+			1991: Linus cria Linux
+			Sistema operacional open source
+			90%+ dos servidores usam Linux
+		O Problema (1991-2002)
+			Milhares de contribuidores
+			Patches via email
+			Linus juntava manualmente
+			Sem historico organizado
+		BitKeeper (2002-2005)
+			Solucao temporaria
+			Proprietario mas gratuito para Linux
+			Controversia no movimento livre
+		A Crise de Abril 2005
+			Licenca revogada
+			Linux ficou sem ferramenta
+			Necessidade urgente de solucao
+		Git Nasce em 10 Dias
+			3 Abril: Linus comeca
+			7 Abril: Primeiro commit
+			18 Abril: Primeiro merge
+			16 Junho: Gerencia Linux 2.6.12
+		Significado do Nome "Git"
+			Giria britanica: pessoa teimosa
+			Piada de Linus consigo mesmo
+			"stupid content tracker"
+			4 interpretacoes oficiais
+		Git Distribuido
+			Cada PC tem historico completo
+			Funciona 100% offline
+			Servidor e conveniencia
+	Historia do GitHub
+		O Problema (2007)
+			Git era poderoso
+			Mas dificil colaborativamente
+			Sem interface amigavel
+			Code review trabalhoso
+		A Faisca
+			Tom Preston-Werner + Chris Wanstrath
+			Bar em San Francisco
+			"Por que nao tornar Git facil?"
+		Fundadores
+			Tom Preston-Werner
+				Criador Gravatar, Jekyll
+				TOML, SemVer
+			Chris Wanstrath
+				Criador Atom
+				Primeiro CEO
+			P.J. Hyett
+				Ex-CNET
+				Arquiteto
+			Scott Chacon
+				Autor "Pro Git"
+				Evangelista Git
+		Timeline
+			OUT 2007: Ideia no bar
+			ABR 2008: GitHub lanca
+			2012: 1 milhao de usuarios
+			2015: $2 bilhoes valuation
+			JUN 2018: Microsoft compra por $7.5 bilhoes
+			2024: 100+ milhoes desenvolvedores
+	Filosofia do Curso
+		Setup 2025
+			SSH Ed25519
+			Branch main
+			Praticas atuais
+		Portfolio-first
+			Repos reais
+			Nao descartaveis
+		Foco em carreira
+			O que mercado valoriza
+		Workflow de time
+			Processos de empresas reais
+		Direto ao ponto
+			2.5h total
+			Zero enrolacao

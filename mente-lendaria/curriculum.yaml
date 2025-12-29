@@ -1,0 +1,342 @@
+# Mente Lendária - Curriculum
+# Generated from VTT transcript analysis
+# Framework: 4C Method (Consumir, Capturar, Conectar, Criar)
+
+course:
+  title: "Mente Lendária"
+  subtitle: "Construa seu Segundo Cérebro com o Método 4C"
+  language: "pt-BR"
+  version: "1.0"
+  total_lessons: 24
+  estimated_duration: "8-10 hours"
+
+  description: |
+    Aprenda a construir um Segundo Cérebro usando o Método 4C:
+    Consumir, Capturar, Conectar e Criar. Transforme informação em
+    conhecimento acionável e desenvolva uma mente verdadeiramente lendária.
+
+  target_audience:
+    - Criadores de conteúdo
+    - Profissionais do conhecimento
+    - Estudantes e pesquisadores
+    - Empreendedores digitais
+    - Qualquer pessoa que quer organizar ideias
+
+  prerequisites:
+    - Conhecimento básico de computador
+    - Disposição para aprender ferramentas novas
+    - Conta gratuita no Obsidian (recomendado)
+
+  tools:
+    primary:
+      - name: "Obsidian"
+        type: "Note-taking"
+        required: true
+    optional:
+      - name: "ChatGPT"
+        type: "AI Assistant"
+      - name: "Readwise"
+        type: "Highlight Management"
+      - name: "Midjourney"
+        type: "AI Image Generation"
+
+  learning_outcomes:
+    - Dominar a mentalidade de caçador para filtrar informação
+    - Implementar os 12 Problemas Favoritos de Feynman
+    - Criar notas atômicas no estilo Zettelkasten (Anotação Lego)
+    - Construir Mapas de Conteúdo (MOCs) para conectar ideias
+    - Transformar consumo passivo em criação ativa
+
+  methodology_references:
+    - name: "Zettelkasten"
+      author: "Niklas Luhmann"
+    - name: "Building a Second Brain"
+      author: "Tiago Forte"
+    - name: "Linking Your Thinking"
+      author: "Nick Milo"
+    - name: "12 Favorite Problems"
+      author: "Richard Feynman"
+
+modules:
+  - id: "M0"
+    title: "Introdução"
+    description: "Boas-vindas e visão geral do método 4C"
+    lessons:
+      - id: "01"
+        title: "Seja Bem-Vindo(a)"
+        file: "aula_01_seja_bem_vindoa-pt-BR.vtt"
+        type: "introduction"
+        objectives:
+          - Entender a proposta do curso
+          - Conhecer o instrutor
+          - Preparar-se para a jornada
+      - id: "02"
+        title: "Estrutura 4C - Visão Geral"
+        file: "aula_02_estrutura_4c_visao_geral-pt-BR.vtt"
+        type: "framework"
+        objectives:
+          - Compreender o framework 4C completo
+          - Entender como os 4 pilares se conectam
+          - Visualizar a jornada de transformação
+      - id: "03"
+        title: "Próximos Passos"
+        file: "aula_03_proximos_passos-pt-BR.vtt"
+        type: "orientation"
+        objectives:
+          - Definir expectativas
+          - Configurar ambiente de estudo
+          - Estabelecer ritmo de aprendizado
+
+  - id: "M1"
+    title: "Consumir"
+    subtitle: "A Mentalidade do Caçador"
+    description: "Aprenda a filtrar informação com intencionalidade"
+    icon: "hunter"
+    color: "#E74C3C"
+    lessons:
+      - id: "04"
+        title: "Mentalidade Caçador"
+        file: "aula_04_mentalidade_cacador-pt-BR.vtt"
+        type: "concept"
+        key_concepts:
+          - "Caçador vs Colecionador"
+          - "Consumo intencional"
+          - "Filtro de relevância"
+        objectives:
+          - Desenvolver mentalidade seletiva
+          - Parar de acumular conteúdo sem propósito
+          - Consumir com intenção clara
+      - id: "05"
+        title: "Eliminar Ruídos"
+        file: "aula_05_eliminar_ruidos-pt-BR.vtt"
+        type: "practical"
+        objectives:
+          - Identificar fontes de ruído informacional
+          - Implementar filtros de conteúdo
+          - Criar ambiente de foco
+      - id: "06"
+        title: "Horizontal vs Vertical"
+        file: "aula_06_horizontal_vs_vertical-pt-BR.vtt"
+        type: "strategy"
+        key_concepts:
+          - "Consumo horizontal (amplitude)"
+          - "Consumo vertical (profundidade)"
+          - "Quando usar cada estratégia"
+        objectives:
+          - Distinguir entre exploração e especialização
+          - Balancear amplitude e profundidade
+          - Escolher estratégia por contexto
+      - id: "07"
+        title: "Geladeira de Ideias"
+        file: "aula_07_geladeira_de_ideias-pt-BR.vtt"
+        type: "tool"
+        objectives:
+          - Criar sistema de armazenamento temporário
+          - Implementar fluxo de triagem
+          - Evitar perda de ideias valiosas
+      - id: "08"
+        title: "Consuma Melhor, Crie Melhor"
+        file: "aula_08_consuma_melhor_crie_melhor-pt-BR.vtt"
+        type: "synthesis"
+        objectives:
+          - Conectar qualidade de input com output
+          - Estabelecer padrões de consumo
+          - Preparar transição para captura
+
+  - id: "M2"
+    title: "Capturar"
+    subtitle: "A Mentalidade do Curador"
+    description: "Domine a arte de capturar e organizar conhecimento"
+    icon: "curator"
+    color: "#3498DB"
+    lessons:
+      - id: "09"
+        title: "A Mentalidade Curador"
+        file: "aula_09_a_mentalidade_curador-pt-BR.vtt"
+        type: "concept"
+        key_concepts:
+          - "Curadoria como arte"
+          - "Seleção vs Acumulação"
+          - "Contexto pessoal"
+        objectives:
+          - Desenvolver olhar de curador
+          - Selecionar o que realmente importa
+          - Adicionar contexto pessoal às capturas
+      - id: "10"
+        title: "12 Problemas Favoritos de Feynman"
+        file: "aula_10_12_problemas_favoritos_de_feyman-pt-BR.vtt"
+        type: "framework"
+        key_concepts:
+          - "Framework de Feynman"
+          - "Problemas como filtros"
+          - "Conexões inesperadas"
+        objectives:
+          - Definir seus 12 problemas favoritos
+          - Usar problemas como lentes de captura
+          - Filtrar informação com propósito
+      - id: "11"
+        title: "Formas de Captura"
+        file: "aula_11_formas_de_captura-pt-BR.vtt"
+        type: "practical"
+        objectives:
+          - Conhecer diferentes métodos de captura
+          - Escolher ferramentas adequadas
+          - Implementar fluxo de captura
+      - id: "12"
+        title: "Anotação Lego"
+        file: "aula_12_anotacao_lego-pt-BR.vtt"
+        type: "methodology"
+        key_concepts:
+          - "Notas atômicas"
+          - "Estrutura de/para/similar/oposto"
+          - "Zettelkasten simplificado"
+        objectives:
+          - Criar notas atômicas reutilizáveis
+          - Implementar estrutura de conexões
+          - Construir base de conhecimento modular
+      - id: "13"
+        title: "Anotação Tetris"
+        file: "aula_13_anotacao_tetris-pt-BR.vtt"
+        type: "methodology"
+        key_concepts:
+          - "Notas expandidas"
+          - "Evolução de Lego para Tetris"
+          - "Quando expandir vs manter atômico"
+        objectives:
+          - Evoluir notas Lego em notas Tetris
+          - Saber quando expandir uma nota
+          - Manter equilíbrio entre atomicidade e completude
+      - id: "14"
+        title: "Capturar Livro - Templates e Integrações"
+        file: "aula_14_capturar_livro_templates_integracoes-pt-BR.vtt"
+        type: "practical"
+        objectives:
+          - Configurar templates para livros
+          - Integrar ferramentas de leitura
+          - Automatizar fluxo de captura
+      - id: "15"
+        title: "Capturar Livro - Utilizando IA"
+        file: "aula_15_capturar_livro_utilizando_ia-pt-BR.vtt"
+        type: "practical"
+        key_concepts:
+          - "ChatGPT para processamento"
+          - "Prompts de captura"
+          - "IA como assistente de curadoria"
+        objectives:
+          - Usar IA para processar livros
+          - Criar prompts eficientes
+          - Acelerar captura sem perder qualidade
+      - id: "16"
+        title: "Capturar Livro - Prompts e Recursos Avançados"
+        file: "aula_16_capturar_livro_prompts_e_recursos_avancados-pt-BR.vtt"
+        type: "advanced"
+        objectives:
+          - Dominar prompts avançados
+          - Integrar múltiplas ferramentas
+          - Otimizar workflow de captura
+      - id: "17"
+        title: "Capturar Vídeo, Podcast, YouTube e Outros"
+        file: "aula_17_capturar_video_podcast_youtube_e_outros-pt-BR.vtt"
+        type: "practical"
+        objectives:
+          - Capturar de fontes audiovisuais
+          - Extrair insights de podcasts
+          - Processar conteúdo do YouTube
+
+  - id: "M3"
+    title: "Conectar"
+    subtitle: "A Arte do Sexo de Ideias"
+    description: "Conecte ideias para gerar insights únicos"
+    icon: "connector"
+    color: "#9B59B6"
+    lessons:
+      - id: "18"
+        title: "Sexo de Ideias - Como a Conexão Gera Inovação"
+        file: "aula_18_sexo_de_ideias_como_a_conexao_de_ideias_gera_inovacao-pt-BR.vtt"
+        type: "concept"
+        key_concepts:
+          - "Ideias combinatórias"
+          - "Conexões não-óbvias"
+          - "Inovação por recombinação"
+        objectives:
+          - Entender como ideias se reproduzem
+          - Identificar conexões não-óbvias
+          - Gerar insights originais
+      - id: "19"
+        title: "Acelerando Ideias com MOCs"
+        file: "aula_19_acelerando_ideias_com_mapas_de_conteudo_mocs-pt-BR.vtt"
+        type: "framework"
+        key_concepts:
+          - "Maps of Content (MOCs)"
+          - "Nick Milo - Linking Your Thinking"
+          - "Estrutura emergente"
+        objectives:
+          - Criar Mapas de Conteúdo eficientes
+          - Organizar conhecimento de forma fluida
+          - Acelerar descoberta de conexões
+      - id: "20"
+        title: "Divergir para Convergir - A Dança Criativa"
+        file: "aula_20_divergir_para_convergir_a_danca_criativa-pt-BR.vtt"
+        type: "strategy"
+        key_concepts:
+          - "Pensamento divergente"
+          - "Pensamento convergente"
+          - "Double Diamond"
+        objectives:
+          - Alternar entre expansão e foco
+          - Dominar o ritmo criativo
+          - Saber quando explorar vs decidir
+      - id: "21"
+        title: "Como Parar de Divergir para Convergir"
+        file: "aula_21_como_parar_de_divergir_para_convergir-pt-BR.vtt"
+        type: "practical"
+        objectives:
+          - Reconhecer momento de convergência
+          - Técnicas para focar
+          - Evitar paralisia por excesso de opções
+
+  - id: "M4"
+    title: "Criar"
+    subtitle: "Suas Ideias no Mundo"
+    description: "Transforme conhecimento em criação ativa"
+    icon: "creator"
+    color: "#27AE60"
+    lessons:
+      - id: "22"
+        title: "Introdução - Suas Ideias no Mundo"
+        file: "aula_22_introducao_suas_ideias_no_mundo-pt-BR.vtt"
+        type: "concept"
+        key_concepts:
+          - "Transição de consumidor para criador"
+          - "Responsabilidade criativa"
+          - "Impacto no mundo"
+        objectives:
+          - Entender a importância de criar
+          - Superar bloqueios criativos
+          - Assumir papel de criador
+      - id: "23"
+        title: "Modo Consumidor x Modo Criador"
+        file: "aula_23_modo_consumidor_x_modo_criador-pt-BR.vtt"
+        type: "mindset"
+        key_concepts:
+          - "Alternância de modos"
+          - "Ciclos criativos"
+          - "Equilíbrio input/output"
+        objectives:
+          - Distinguir momentos de consumo e criação
+          - Estabelecer rotinas criativas
+          - Maximizar produção de output
+      - id: "24"
+        title: "Criando Episódio Vida Lendária - Ideia Central"
+        file: "aula_24_criando_episodio_vida_lendaria_ideia_central-pt-BR.vtt"
+        type: "practical"
+        objectives:
+          - Aplicar todo o método 4C
+          - Criar conteúdo real
+          - Consolidar aprendizado através da prática
+
+metadata:
+  created_at: "2025-12-10"
+  source: "VTT transcript analysis"
+  generator: "CreatorOS Course Architect"
+  files_analyzed: 24

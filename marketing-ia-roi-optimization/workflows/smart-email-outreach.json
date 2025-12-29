@@ -1,0 +1,288 @@
+{
+  "name": "Smart Email Outreach - Sequences Inteligentes",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "webhook-trigger",
+      "name": "New Lead Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "webhookId": "smart-email-outreach",
+      "notes": "Recebe novos leads para sequence"
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": {"__rl": true, "value": "={{$env.SEQUENCE_SHEET_ID}}"},
+        "sheetName": "Sequences"
+      },
+      "id": "load-sequence",
+      "name": "Load Sequence Config",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [450, 300],
+      "notes": "Carrega configuração da sequence (7-12 toques)"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "messages": {
+          "values": [
+            {
+              "content": "Pesquise informações sobre esta empresa/pessoa para personalizar outreach:\n\nNOME: {{$json.name}}\nEMPRESA: {{$json.company}}\nCARGO: {{$json.title}}\nLINKEDIN: {{$json.linkedin_url}}\nWEBSITE: {{$json.company_website}}\n\nBusque e retorne:\n1. Notícias recentes da empresa (últimos 90 dias)\n2. Posts recentes do LinkedIn da pessoa\n3. Tecnologias que a empresa usa\n4. Funding/investimentos recentes\n5. Pain points prováveis baseado no cargo/indústria\n\nRetorne JSON:\n{\n  \"recent_news\": \"resumo de notícias\",\n  \"linkedin_activity\": \"resumo de posts\",\n  \"tech_stack\": [\"tech1\", \"tech2\"],\n  \"funding_info\": \"info de funding se houver\",\n  \"pain_points\": [\"pain1\", \"pain2\", \"pain3\"],\n  \"personalization_hooks\": [\"hook1\", \"hook2\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "gpt4-research",
+      "name": "GPT-4 Lead Research",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "notes": "Pesquisa informações para personalização"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "messages": {
+          "values": [
+            {
+              "content": "Crie uma sequência de 7 emails para este lead:\n\nLEAD:\n- Nome: {{$json.name}}\n- Cargo: {{$json.title}}\n- Empresa: {{$json.company}}\n- Pain Points: {{$json.pain_points}}\n- Hooks de Personalização: {{$json.personalization_hooks}}\n\nNOSSO PRODUTO: AI Sales Machine (R$ 58k/mês impacto)\n\nSEQUÊNCIA DE 7 EMAILS:\n\nEmail 1 (Day 0): Hook personalizado + problem\nEmail 2 (Day 3): Case study relevante\nEmail 3 (Day 6): ROI/dados concretos\nEmail 4 (Day 10): Social proof (testimonials)\nEmail 5 (Day 15): Objeção antecipada\nEmail 6 (Day 20): Urgência suave\nEmail 7 (Day 30): Breakup email\n\nREGRAS:\n- Cada email max 100 palavras\n- Subject lines únicas e curiosas\n- CTA claro em cada email\n- Referência ao email anterior (a partir do 2)\n- Tom: profissional mas humano\n\nRetorne JSON array com 7 objetos:\n[\n  {\n    \"day\": 0,\n    \"subject\": \"subject line\",\n    \"body\": \"corpo do email\",\n    \"cta\": \"call to action\"\n  },\n  ...\n]"
+            }
+          ]
+        }
+      },
+      "id": "gpt4-sequence",
+      "name": "GPT-4 Generate Sequence",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [850, 300],
+      "notes": "Gera sequência de 7 emails personalizados"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {"__rl": true, "value": "={{$env.SEQUENCE_SHEET_ID}}"},
+        "sheetName": "Queue",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Lead_ID": "={{$json.lead_id}}",
+            "Email": "={{$json.email}}",
+            "Sequence_JSON": "={{JSON.stringify($json.sequence)}}",
+            "Current_Step": "1",
+            "Status": "active",
+            "Created": "={{$now.format('YYYY-MM-DD')}}"
+          }
+        }
+      },
+      "id": "save-queue",
+      "name": "Save to Queue",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1050, 300],
+      "notes": "Salva sequência na fila de envio"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{"field": "hours", "triggerAtHour": 9}]
+        }
+      },
+      "id": "daily-sender",
+      "name": "Daily Sender (9AM)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 500],
+      "notes": "Executa diariamente às 9h para enviar emails"
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": {"__rl": true, "value": "={{$env.SEQUENCE_SHEET_ID}}"},
+        "sheetName": "Queue",
+        "filters": {
+          "conditions": [
+            {"value1": "={{$json.Status}}", "value2": "active"}
+          ]
+        }
+      },
+      "id": "load-queue",
+      "name": "Load Active Sequences",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [450, 500],
+      "notes": "Carrega sequências ativas"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calcula quais emails devem ser enviados hoje\nconst today = new Date();\nconst items = $input.all();\nconst toSend = [];\n\nfor (const item of items) {\n  const sequence = JSON.parse(item.json.Sequence_JSON);\n  const created = new Date(item.json.Created);\n  const daysSinceStart = Math.floor((today - created) / (1000 * 60 * 60 * 24));\n  const currentStep = parseInt(item.json.Current_Step);\n  \n  // Encontra próximo email a enviar\n  for (const email of sequence) {\n    if (email.day === daysSinceStart && currentStep <= sequence.indexOf(email) + 1) {\n      toSend.push({\n        ...item.json,\n        emailToSend: email,\n        nextStep: currentStep + 1\n      });\n      break;\n    }\n  }\n}\n\nreturn toSend.map(item => ({json: item}));"
+      },
+      "id": "calculate-sends",
+      "name": "Calculate Today's Sends",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 500],
+      "notes": "Calcula quais emails enviar hoje baseado no timing"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{$json.Email}}",
+        "subject": "={{$json.emailToSend.subject}}",
+        "emailType": "text",
+        "message": "={{$json.emailToSend.body}}\n\n{{$json.emailToSend.cta}}"
+      },
+      "id": "send-sequence-email",
+      "name": "Send Sequence Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [850, 500],
+      "notes": "Envia email da sequência"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {"__rl": true, "value": "={{$env.SEQUENCE_SHEET_ID}}"},
+        "sheetName": "Queue",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Current_Step": "={{$json.nextStep}}",
+            "Last_Sent": "={{$now.format('YYYY-MM-DD HH:mm')}}"
+          }
+        }
+      },
+      "id": "update-queue",
+      "name": "Update Queue Status",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1050, 500],
+      "notes": "Atualiza status da sequência"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "getAll",
+        "returnAll": false,
+        "limit": 100,
+        "filters": {
+          "q": "is:unread in:inbox"
+        }
+      },
+      "id": "check-replies",
+      "name": "Check for Replies",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [250, 700],
+      "notes": "Verifica respostas recebidas"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "messages": {
+          "values": [
+            {
+              "content": "Classifique esta resposta de email:\n\nRESPOSTA:\n{{$json.snippet}}\n\nCLASSIFIQUE:\n1. \"positive\" - Interessado, quer saber mais\n2. \"objection\" - Tem objeção (preço, timing, etc)\n3. \"meeting_request\" - Quer agendar call\n4. \"not_interested\" - Não tem interesse\n5. \"out_of_office\" - Auto-reply/férias\n6. \"unsubscribe\" - Pediu para parar\n\nRetorne JSON:\n{\n  \"classification\": \"tipo\",\n  \"confidence\": 0-100,\n  \"suggested_action\": \"ação sugerida\",\n  \"should_stop_sequence\": true/false\n}"
+            }
+          ]
+        }
+      },
+      "id": "classify-reply",
+      "name": "Classify Reply (GPT-4)",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [450, 700],
+      "notes": "Classifica tipo de resposta"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {"value1": "={{$json.should_stop_sequence}}", "value2": true}
+          ]
+        }
+      },
+      "id": "check-stop",
+      "name": "Should Stop Sequence?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 700],
+      "notes": "Verifica se deve parar sequência"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {"__rl": true, "value": "={{$env.SEQUENCE_SHEET_ID}}"},
+        "sheetName": "Queue",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Status": "={{$json.classification}}",
+            "Stopped_At": "={{$now.format('YYYY-MM-DD HH:mm')}}",
+            "Stop_Reason": "={{$json.suggested_action}}"
+          }
+        }
+      },
+      "id": "stop-sequence",
+      "name": "Stop Sequence",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [850, 650],
+      "notes": "Para sequência quando lead responde"
+    }
+  ],
+  "connections": {
+    "New Lead Webhook": {
+      "main": [[{"node": "Load Sequence Config", "type": "main", "index": 0}]]
+    },
+    "Load Sequence Config": {
+      "main": [[{"node": "GPT-4 Lead Research", "type": "main", "index": 0}]]
+    },
+    "GPT-4 Lead Research": {
+      "main": [[{"node": "GPT-4 Generate Sequence", "type": "main", "index": 0}]]
+    },
+    "GPT-4 Generate Sequence": {
+      "main": [[{"node": "Save to Queue", "type": "main", "index": 0}]]
+    },
+    "Daily Sender (9AM)": {
+      "main": [[{"node": "Load Active Sequences", "type": "main", "index": 0}]]
+    },
+    "Load Active Sequences": {
+      "main": [[{"node": "Calculate Today's Sends", "type": "main", "index": 0}]]
+    },
+    "Calculate Today's Sends": {
+      "main": [[{"node": "Send Sequence Email", "type": "main", "index": 0}]]
+    },
+    "Send Sequence Email": {
+      "main": [[{"node": "Update Queue Status", "type": "main", "index": 0}]]
+    },
+    "Check for Replies": {
+      "main": [[{"node": "Classify Reply (GPT-4)", "type": "main", "index": 0}]]
+    },
+    "Classify Reply (GPT-4)": {
+      "main": [[{"node": "Should Stop Sequence?", "type": "main", "index": 0}]]
+    },
+    "Should Stop Sequence?": {
+      "main": [
+        [{"node": "Stop Sequence", "type": "main", "index": 0}],
+        []
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "tags": [
+    {"name": "Email Outreach"},
+    {"name": "Sequences"},
+    {"name": "Follow-up"}
+  ],
+  "meta": {
+    "templateId": "smart-email-outreach",
+    "templateVersion": "1.0",
+    "author": "Course Architect (CreatorOS)",
+    "description": "Sequences de email inteligentes com GPT-4: pesquisa, personalização, 7 toques automatizados, detecção de resposta"
+  }
+}

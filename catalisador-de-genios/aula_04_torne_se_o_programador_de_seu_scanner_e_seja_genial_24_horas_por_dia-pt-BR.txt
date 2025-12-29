@@ -1,0 +1,1552 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.220
+Bem -vindo à aula 3 do Catalisador de
+Gênios.
+
+00:00:03.880 --> 00:00:11.600
+Você deve estar ansioso para começar a
+finalmente programar o filtro pelo
+
+00:00:11.600 --> 00:00:14.860
+qual o teu cérebro naturalmente absorve
+conhecimento.
+
+00:00:16.760 --> 00:00:20.580
+O scanner pelo qual o teu cérebro filtra
+o
+
+00:00:20.580 --> 00:00:20.980
+mundo.
+
+00:00:23.180 --> 00:00:29.430
+E te faz aprender, criar ideias como
+cria, ou não criar, se não estiver
+
+00:00:29.430 --> 00:00:33.550
+criando, e que te faz sentir o mundo.
+
+00:00:33.550 --> 00:00:36.610
+É também o filtro pelo qual você
+experiencia o mundo.
+
+00:00:38.410 --> 00:00:46.550
+Eu garanto experienciar o mundo como um
+gênio, da perspectiva de experienciar o
+
+00:00:46.550 --> 00:00:51.210
+mundo como alguém que está tendo ideias
+geniais todo santo dia, e desenvolvendo
+
+00:00:51.210 --> 00:00:51.830
+soluções.
+
+00:00:52.110 --> 00:00:54.290
+A vida fica muito mais divertida.
+
+00:00:59.570 --> 00:01:01.350
+Sinceramente, você vai adorar.
+
+00:01:01.390 --> 00:01:03.470
+Se ainda não está tendo isso, vai
+adorar.
+
+00:01:04.370 --> 00:01:05.250
+E vai ter.
+
+00:01:08.470 --> 00:01:11.310
+Então vamos logo programar esse filtro.
+
+00:01:12.090 --> 00:01:13.370
+A gente vai usar...
+
+00:01:14.930 --> 00:01:15.610
+Aqui.
+
+00:01:15.710 --> 00:01:22.190
+Talvez alguns de vocês já tenham visto
+aulas sobre os 12 problemas de Feynman.
+
+00:01:23.310 --> 00:01:26.570
+Eu vou contextualizar rapidamente, para
+quem possa não ter
+
+00:01:26.570 --> 00:01:26.850
+visto.
+
+00:01:29.010 --> 00:01:29.690
+Mas...
+
+00:01:30.850 --> 00:01:37.910
+Feynman propôs, basicamente, que todas
+as pessoas criativas deveriam manter uma
+
+00:01:39.740 --> 00:01:41.740
+dúzia de problemas em mente.
+
+00:01:42.100 --> 00:01:45.420
+Ou seja, ter os seus 12 problemas
+preferidos na vida.
+
+00:01:45.920 --> 00:01:47.020
+Uma dúzia de problemas.
+
+00:01:47.120 --> 00:01:48.140
+Dois problemas que elas vão manter em
+mente.
+
+00:01:48.660 --> 00:01:52.060
+Para que, em segundo plano, o seu
+cérebro continue trabalhando nelas.
+
+00:01:53.160 --> 00:01:57.260
+E aí, qualquer coisa que elas aprendam,
+qualquer novo truque, nova ideia, nova
+
+00:01:57.260 --> 00:01:58.140
+informação...
+
+00:01:58.640 --> 00:02:02.500
+Elas vão lá e testam contra cada um
+desses 12 problemas e, talvez, de vez em
+
+00:02:02.500 --> 00:02:05.140
+quando, uma dessas ideias vai...
+
+00:02:06.440 --> 00:02:08.660
+...configurar para solucionar um
+daqueles 12 problemas.
+
+00:02:09.860 --> 00:02:11.280
+Uma dessas vai encaixar.
+
+00:02:12.500 --> 00:02:16.280
+E aí, segundo Feynman, quando isso
+acontecer, as pessoas vão se
+
+00:02:16.280 --> 00:02:16.840
+perguntar...
+
+00:02:17.120 --> 00:02:18.380
+Caramba, como que você fez isso?
+
+00:02:18.480 --> 00:02:19.260
+Você deve ser um gênio.
+
+00:02:20.600 --> 00:02:27.510
+Eu percebi que, da forma como o Feynman
+propôs, não era tão útil na prática para
+
+00:02:27.510 --> 00:02:28.210
+a maioria das pessoas.
+
+00:02:28.490 --> 00:02:33.130
+Porque era muito difícil de memorizar 12
+problemas avulsos, são difíceis de
+
+00:02:33.130 --> 00:02:37.710
+manter em mente, de forma efetiva, em
+segundo plano, para que o teu cérebro
+
+00:02:37.710 --> 00:02:40.330
+trabalhe até quando você não está
+conscientemente pensando
+
+00:02:40.330 --> 00:02:40.670
+nisso.
+
+00:02:43.590 --> 00:02:46.870
+Eu estudo mnemônica já há um tempo
+relevante.
+
+00:02:49.380 --> 00:02:52.500
+E eu sei que o cérebro trabalha muito
+melhor com o número
+
+00:02:52.500 --> 00:02:52.820
+3.
+
+00:02:56.970 --> 00:02:59.230
+Mas 3 não eram problemas suficientes
+para a
+
+00:02:59.230 --> 00:02:59.350
+vida.
+
+00:03:04.890 --> 00:03:10.030
+Então, eu adaptei a proposta de Feynman
+para tornar mais útil no sentido da
+
+00:03:10.030 --> 00:03:12.370
+memorização e mais útil para qualquer
+pessoa.
+
+00:03:13.990 --> 00:03:18.610
+E transformei em algo que eu posso te
+ensinar, agora, em poucos
+
+00:03:18.610 --> 00:03:24.850
+minutos, a transformar isso efetivamente
+no filtro pelo qual você experiencia o
+
+00:03:24.850 --> 00:03:25.010
+mundo.
+
+00:03:25.130 --> 00:03:28.050
+Não era exatamente a proposta de Feynman
+e é por isso que eu precisei
+
+00:03:28.050 --> 00:03:28.410
+adaptar.
+
+00:03:30.740 --> 00:03:33.520
+Para que se torne, de fato, o filtro do
+seu
+
+00:03:33.520 --> 00:03:33.860
+escândalo.
+
+00:03:36.860 --> 00:03:42.740
+3 problemas, 9 problemas ao todo, 3
+problemas em cada 3 chunks.
+
+00:03:42.900 --> 00:03:45.200
+Então, você vai dividir os problemas da
+sua vida em 3 chunks.
+
+00:03:45.700 --> 00:03:48.200
+Se perceber aqui, eu não tenho 9
+problemas, eu tenho 6.
+
+00:03:49.080 --> 00:03:51.160
+Porque 9 é o máximo que eu proponho.
+
+00:03:52.080 --> 00:03:55.660
+Para que o teu cérebro consiga lidar bem
+com isso e usar como filtro, 9 é o
+
+00:03:55.660 --> 00:03:55.900
+máximo.
+
+00:03:56.100 --> 00:03:58.700
+Para mim, 6 até agora está mais que
+suficiente.
+
+00:04:00.340 --> 00:04:02.140
+6 encaixou muito bem na minha vida.
+
+00:04:03.220 --> 00:04:05.240
+Então, você não tem que se sentir
+obrigado a ter 9.
+
+00:04:05.240 --> 00:04:09.860
+No meu caso, 6 é o bastante.
+
+00:04:10.760 --> 00:04:11.820
+Divididos em 3 chunks.
+
+00:04:12.040 --> 00:04:12.780
+O que são esses chunks?
+
+00:04:13.040 --> 00:04:15.800
+São blocos de problemas.
+
+00:04:18.120 --> 00:04:19.020
+Blocos de problemas.
+
+00:04:19.080 --> 00:04:22.060
+3 blocos de problemas com 3 problemas em
+cada
+
+00:04:22.060 --> 00:04:22.380
+bloco.
+
+00:04:24.680 --> 00:04:30.940
+No meu caso, os blocos ficaram aprender
+rápido, bem -estar e família.
+
+00:04:32.040 --> 00:04:34.940
+No aprender rápido, eu tenho como posso
+dar o máximo de utilidade.
+
+00:04:35.020 --> 00:04:35.800
+É quando eu entro aqui.
+
+00:04:36.960 --> 00:04:38.420
+Eu tenho explicação.
+
+00:04:39.820 --> 00:04:41.760
+Eu tenho o complemento, o problema
+inteiro.
+
+00:04:43.060 --> 00:04:45.420
+Como posso dar o máximo de utilidade
+para as minhas ideias.
+
+00:04:46.240 --> 00:04:50.760
+Como unir as minhas habilidades em um
+único projeto.
+
+00:04:51.900 --> 00:04:56.680
+Quando eu fui contar quantas profissões
+eu tive na vida.
+
+00:04:56.720 --> 00:05:02.640
+Por exemplo, eu percebi que eu exerci e
+me tornei bom em 34 profissões em 27
+
+00:05:02.640 --> 00:05:03.220
+anos de vida.
+
+00:05:05.870 --> 00:05:08.690
+E eu estava cansado de precisar
+escolher.
+
+00:05:08.690 --> 00:05:10.390
+Eu sei que tem muitos polímatas aqui.
+
+00:05:11.510 --> 00:05:12.770
+Entre os lendários.
+
+00:05:15.300 --> 00:05:24.980
+Bom, essa aula vai ser disponibilizada
+também na comunidade AHSD do Jean
+
+00:05:24.980 --> 00:05:25.420
+Alessandro.
+
+00:05:25.680 --> 00:05:30.100
+Eu sei que nos dois casos existem muitos
+polímatas.
+
+00:05:32.740 --> 00:05:37.580
+E talvez assim como eu estava, você
+esteja cansado de precisar escolher
+
+00:05:37.580 --> 00:05:42.320
+entre qual dos interesses você vai usar
+em certo momento.
+
+00:05:42.320 --> 00:05:45.220
+Entre, sabe, qual de mim eu vou ser
+agora.
+
+00:05:45.580 --> 00:05:47.640
+Eu estava cansado de fazer essa escolha.
+
+00:05:48.380 --> 00:05:50.420
+E eu comecei, eu coloquei então aqui.
+
+00:05:51.520 --> 00:05:55.240
+Um dos meus problemas é como unir o
+máximo das minhas habilidades em um
+
+00:05:55.240 --> 00:05:55.900
+único projeto.
+
+00:05:56.980 --> 00:06:01.080
+Como posso unir as minhas habilidades em
+um único projeto ou atividade para poder
+
+00:06:01.080 --> 00:06:01.900
+entrar em Race to Master.
+
+00:06:03.400 --> 00:06:07.180
+E permanecer em um estado que eu consiga
+gerar contribuição máxima.
+
+00:06:07.180 --> 00:06:08.780
+Que projeto ou atividade é essa?
+
+00:06:15.920 --> 00:06:16.420
+Perceba.
+
+00:06:16.420 --> 00:06:27.870
+O próprio catalisador de genes surgiu
+exatamente solucionando alguns desses
+
+00:06:27.870 --> 00:06:28.110
+problemas.
+
+00:06:29.730 --> 00:06:32.670
+E de forma natural com o meu cérebro
+fazendo exatamente o que eu estou
+
+00:06:32.670 --> 00:06:32.890
+mostrando.
+
+00:06:32.990 --> 00:06:33.950
+Tudo o que eu estou ensinando aqui.
+
+00:06:34.550 --> 00:06:36.070
+Eu vivo isso também.
+
+00:06:36.830 --> 00:06:41.530
+Eu mostrei como logicamente isso encaixa
+na história do pensamento.
+
+00:06:41.710 --> 00:06:50.160
+Eu mostrei, eu mostro o tempo todo quais
+são os fundamentos que mostram o
+
+00:06:50.160 --> 00:06:50.960
+funcionamento disso.
+
+00:06:50.960 --> 00:06:56.280
+Eu poderia falar de todas as pessoas que
+já tem usado isso.
+
+00:06:56.420 --> 00:06:59.520
+E visto na prática, testado isso na
+prática os
+
+00:06:59.520 --> 00:06:59.840
+resultados.
+
+00:07:02.810 --> 00:07:06.150
+Você certamente está percebendo muito
+disso já consigo mesmo.
+
+00:07:08.060 --> 00:07:12.360
+Mas eu também quero mostrar como eu uso
+isso na minha própria
+
+00:07:12.360 --> 00:07:12.640
+vida.
+
+00:07:19.500 --> 00:07:24.300
+Então a primeira tarefa que você vai
+executar aí.
+
+00:07:25.920 --> 00:07:33.290
+Vai ser liste o máximo de problemas.
+
+00:07:33.290 --> 00:07:40.160
+Problemas relevantes, problemas
+importantes.
+
+00:07:40.320 --> 00:07:41.960
+Problemas que você passaria a vida
+inteira
+
+00:07:41.960 --> 00:07:42.540
+resolvendo.
+
+00:07:45.350 --> 00:07:46.030
+Quantos?
+
+00:07:46.130 --> 00:07:47.770
+Quantos vierem à cabeça?
+
+00:07:47.830 --> 00:07:48.630
+Vai listando.
+
+00:07:48.970 --> 00:07:50.350
+Não se limita agora.
+
+00:07:55.300 --> 00:07:59.240
+Eu gosto de começar com como.
+
+00:08:00.140 --> 00:08:01.980
+Como posso fazer algo.
+
+00:08:02.120 --> 00:08:02.860
+Como posso.
+
+00:08:04.100 --> 00:08:05.180
+Como posso.
+
+00:08:08.010 --> 00:08:09.190
+Como posso.
+
+00:08:10.730 --> 00:08:12.270
+Vamos ver se eu fiz algo diferente.
+
+00:08:12.410 --> 00:08:13.150
+Como posso.
+
+00:08:16.380 --> 00:08:18.180
+O que eu posso.
+
+00:08:18.800 --> 00:08:22.160
+O que eu posso fazer para que meus
+filhos não precisem lidar com os custos
+
+00:08:22.160 --> 00:08:23.980
+da superdotação durante o período de
+formação.
+
+00:08:24.080 --> 00:08:25.180
+Como aconteceu comigo.
+
+00:08:27.960 --> 00:08:28.940
+E como posso.
+
+00:08:29.300 --> 00:08:35.580
+E como posso ajuda muito a encontrar
+esse tipo de problema.
+
+00:08:35.780 --> 00:08:37.640
+Não é problema tipo, ah, sabe.
+
+00:08:38.340 --> 00:08:40.580
+Eu preciso de dinheiro esse mês.
+
+00:08:40.900 --> 00:08:42.940
+Eu preciso, sabe.
+
+00:08:48.310 --> 00:08:49.630
+Não é esse tipo de problema.
+
+00:08:49.690 --> 00:08:51.370
+São problemas que você passaria a vida
+inteira
+
+00:08:51.370 --> 00:08:51.790
+resolvendo.
+
+00:08:54.550 --> 00:08:57.290
+Problemas que tem uma conexão
+existencial com você.
+
+00:08:59.220 --> 00:09:00.660
+Um valor existencial.
+
+00:09:01.680 --> 00:09:02.820
+Esse tipo de problema.
+
+00:09:02.880 --> 00:09:03.240
+Então vai lá.
+
+00:09:03.400 --> 00:09:04.300
+Lista esses problemas.
+
+00:09:07.930 --> 00:09:10.990
+E depois, você vai seguir alguns passos.
+
+00:09:11.010 --> 00:09:12.430
+Os passos vão ficar aqui abaixo.
+
+00:09:14.680 --> 00:09:15.460
+Abaixo da aula.
+
+00:09:15.620 --> 00:09:17.000
+Esses passos vão ficar escritos ali
+também.
+
+00:09:17.500 --> 00:09:24.880
+Mas você vai, depois de listar, começar
+a condensar esses
+
+00:09:24.880 --> 00:09:25.740
+problemas.
+
+00:09:28.640 --> 00:09:29.760
+Até que chegue.
+
+00:09:30.180 --> 00:09:35.740
+Até que você perceba que os mais
+importantes deles formam três chunks.
+
+00:09:36.020 --> 00:09:37.140
+Ou seja, eles formam três chunks.
+
+00:09:37.140 --> 00:09:39.340
+Eles podem ser agrupados no mesmo bloco.
+
+00:09:40.140 --> 00:09:41.280
+Com sentido, obviamente.
+
+00:09:45.620 --> 00:09:47.780
+Aí você vai vendo quais que são
+parecidos.
+
+00:09:47.820 --> 00:09:48.860
+E vai condensando.
+
+00:09:49.760 --> 00:09:50.940
+Até que fique um só.
+
+00:09:51.140 --> 00:09:53.000
+Que não tenha exatamente semelhantes.
+
+00:09:56.770 --> 00:09:59.610
+E você vai retirando aqueles que não são
+tão importantes assim.
+
+00:09:59.730 --> 00:10:00.950
+Você vai perceber que alguns não são.
+
+00:10:01.350 --> 00:10:06.930
+E você tem que ficar com, no máximo,
+nove problemas divididos em, no máximo,
+
+00:10:06.950 --> 00:10:07.430
+três chunks.
+
+00:10:07.650 --> 00:10:09.690
+E agora você vai entender exatamente por
+quê.
+
+00:10:09.770 --> 00:10:12.930
+A gente vai usar a técnica de palácio de
+memórias.
+
+00:10:12.930 --> 00:10:17.030
+Ou técnica de loss.
+
+00:10:17.310 --> 00:10:18.470
+Como também é chamada.
+
+00:10:22.580 --> 00:10:23.640
+Para memorizar isso.
+
+00:10:23.740 --> 00:10:24.340
+A gente vai colocar.
+
+00:10:25.000 --> 00:10:25.520
+Entenda.
+
+00:10:25.660 --> 00:10:27.720
+Quem nunca ouviu falar na técnica de
+palácio de
+
+00:10:27.720 --> 00:10:28.080
+memórias.
+
+00:10:30.440 --> 00:10:33.840
+É como se você pudesse caminhar pelas
+suas
+
+00:10:33.840 --> 00:10:34.260
+memórias.
+
+00:10:36.500 --> 00:10:39.100
+Visualizar elas em um local,
+fisicamente.
+
+00:10:40.120 --> 00:10:41.620
+Físico, mais ou menos.
+
+00:10:41.680 --> 00:10:42.900
+Porque é um palácio mental.
+
+00:10:45.670 --> 00:10:48.610
+Mas que guarda locais que existem na
+realidade.
+
+00:10:49.210 --> 00:10:50.250
+Na sua realidade.
+
+00:10:52.670 --> 00:10:54.810
+Então o que eu quero que você faça nesse
+primeiro...
+
+00:10:54.810 --> 00:10:56.750
+Ah, e cada partezinha.
+
+00:10:56.830 --> 00:11:01.030
+Ou seja, cada coisa física que tenha no
+seu palácio de memórias.
+
+00:11:01.890 --> 00:11:02.870
+Em cada sala.
+
+00:11:03.170 --> 00:11:04.030
+Em cada...
+
+00:11:04.030 --> 00:11:05.630
+Ele não precisa ser literalmente um
+palácio.
+
+00:11:05.650 --> 00:11:06.450
+É o nome da técnica.
+
+00:11:06.470 --> 00:11:06.870
+Mas...
+
+00:11:06.870 --> 00:11:09.470
+Esse palácio, na verdade, vai ser
+formado...
+
+00:11:10.830 --> 00:11:11.270
+Pelo...
+
+00:11:12.950 --> 00:11:13.390
+Seu...
+
+00:11:14.290 --> 00:11:16.310
+Esse palácio, na verdade, vai ser
+formado...
+
+00:11:18.460 --> 00:11:22.160
+Pela sua casa ou por lugares que sejam
+relevantes na sua
+
+00:11:22.160 --> 00:11:22.420
+vida.
+
+00:11:25.680 --> 00:11:26.460
+Relevantes para ti.
+
+00:11:27.800 --> 00:11:29.440
+Que tenham um significado para ti.
+
+00:11:30.260 --> 00:11:32.240
+Então, normalmente, um dos lugares...
+
+00:11:32.240 --> 00:11:33.480
+Um dos melhores lugares.
+
+00:11:33.700 --> 00:11:35.760
+Um dos lugares mais nobres para guardar
+memórias.
+
+00:11:35.860 --> 00:11:36.140
+Assim.
+
+00:11:36.340 --> 00:11:37.300
+Vai ser o teu quarto.
+
+00:11:39.590 --> 00:11:42.110
+E dentro do teu quarto, talvez, tenha
+algo ainda mais importante.
+
+00:11:42.170 --> 00:11:43.470
+Por exemplo, eu usei aqui...
+
+00:11:43.470 --> 00:11:44.590
+Esses livros.
+
+00:11:44.870 --> 00:11:45.790
+O chapéu.
+
+00:11:45.890 --> 00:11:47.950
+E aqui, atrás de mim, tem o Baal.
+
+00:11:48.110 --> 00:11:49.190
+Que é um jogo africano.
+
+00:11:49.230 --> 00:11:51.050
+Um jogo de matemática africano.
+
+00:11:52.330 --> 00:11:53.870
+Com feijões africanos, etc.
+
+00:11:56.480 --> 00:11:57.360
+Para memorizar...
+
+00:11:57.880 --> 00:11:58.600
+Os meus problemas.
+
+00:11:58.600 --> 00:12:01.920
+Primeira coisa que você vai fazer,
+então, nesse sistema de memorização.
+
+00:12:03.280 --> 00:12:04.780
+É que você não esqueça.
+
+00:12:04.820 --> 00:12:06.640
+É para que isso fique gravado.
+
+00:12:08.770 --> 00:12:11.250
+Esses problemas não podem ficar
+oscilando, mudando muito.
+
+00:12:11.310 --> 00:12:13.530
+Senão, eles não têm utilidade como
+filtro.
+
+00:12:14.810 --> 00:12:16.530
+Você perde a parte mais importante
+deles.
+
+00:12:17.350 --> 00:12:19.090
+Então, você tem que solidificar eles.
+
+00:12:19.590 --> 00:12:21.070
+E depois fazer a memorização.
+
+00:12:21.390 --> 00:12:22.850
+Essa memorização, então...
+
+00:12:24.390 --> 00:12:26.450
+Vou dar o exemplo de como eu fiz.
+
+00:12:27.410 --> 00:12:29.410
+Meu palácio é relativamente grande.
+
+00:12:29.410 --> 00:12:31.310
+Eu tenho muitas coisas no meu palácio.
+
+00:12:31.450 --> 00:12:34.410
+Mas eu estou mostrando como eu fiz essa
+parte da memorização.
+
+00:12:35.130 --> 00:12:35.890
+Eu escolhi...
+
+00:12:37.610 --> 00:12:38.710
+Dentro do meu escritório.
+
+00:12:38.730 --> 00:12:40.430
+Um lugar que eu estou todo dia.
+
+00:12:44.210 --> 00:12:44.970
+Os livros.
+
+00:12:46.270 --> 00:12:47.770
+E a primeira coisa que eu...
+
+00:12:47.770 --> 00:12:50.150
+Quando eu olho o livro ali, então, já
+vem a imaginação.
+
+00:12:50.290 --> 00:12:52.690
+Tem que ser a imaginação mais maluca
+possível.
+
+00:12:55.500 --> 00:12:57.280
+Porque quanto mais maluca, mais
+emocional.
+
+00:12:57.320 --> 00:12:59.780
+Quanto mais emocional, mais o teu
+cérebro vai
+
+00:12:59.780 --> 00:13:00.140
+gravar.
+
+00:13:03.160 --> 00:13:04.780
+Toda vez que eu olho para aqueles
+livros.
+
+00:13:04.820 --> 00:13:06.380
+Aquilo ativa a minha memória.
+
+00:13:06.380 --> 00:13:07.680
+A minha memória relacionada a aprender
+rápido.
+
+00:13:08.300 --> 00:13:09.640
+Então, aprender rápido.
+
+00:13:09.700 --> 00:13:11.700
+O principal projeto que eu tenho sobre
+aprendizado rápido.
+
+00:13:11.840 --> 00:13:15.500
+Está relacionado ao projeto catalisador
+de gênios.
+
+00:13:16.040 --> 00:13:17.260
+Então, quando eu olho os livros.
+
+00:13:17.300 --> 00:13:19.280
+Eu imagino subindo um letreiro.
+
+00:13:19.760 --> 00:13:21.000
+Grande e brilhante.
+
+00:13:21.340 --> 00:13:22.100
+Aqui atrás.
+
+00:13:24.260 --> 00:13:25.840
+Escrito catalisador de gênios.
+
+00:13:26.080 --> 00:13:28.520
+E uma lâmpada acende com ele.
+
+00:13:30.620 --> 00:13:32.860
+Lâmpada é o símbolo do catalisador de
+gênios.
+
+00:13:32.940 --> 00:13:33.660
+Lâmpada gênio.
+
+00:13:35.500 --> 00:13:36.300
+E é esse.
+
+00:13:41.730 --> 00:13:46.950
+Porque ele é a referência sobre como dar
+o máximo de utilidade para as minhas
+
+00:13:46.950 --> 00:13:47.290
+ideias.
+
+00:13:48.690 --> 00:13:50.310
+Então, já conecta com a primeira.
+
+00:13:51.070 --> 00:13:52.650
+Em seguida, eu olho para baixo.
+
+00:13:53.130 --> 00:13:54.990
+Os livros se juntam todos.
+
+00:13:55.110 --> 00:13:56.250
+Eles se aglutinam.
+
+00:13:56.710 --> 00:13:58.190
+Se tornam uma coisa só.
+
+00:13:58.250 --> 00:13:59.030
+E se juntam.
+
+00:13:59.430 --> 00:14:00.370
+Se unem.
+
+00:14:00.430 --> 00:14:01.430
+Se fundem.
+
+00:14:01.730 --> 00:14:03.830
+Ao letreiro do catalisador de gênios.
+
+00:14:03.910 --> 00:14:06.250
+Ou seja, unir minhas habilidades todas
+em um projeto.
+
+00:14:06.690 --> 00:14:08.570
+Como dar o máximo de utilidade para as
+minhas ideias.
+
+00:14:08.570 --> 00:14:10.650
+Como unir as habilidades de um único
+projeto.
+
+00:14:11.670 --> 00:14:12.110
+Pronto.
+
+00:14:12.150 --> 00:14:13.790
+Esse é o primeiro chunk memorizado.
+
+00:14:17.670 --> 00:14:18.290
+Segundo chunk.
+
+00:14:18.450 --> 00:14:18.930
+Bem -estado.
+
+00:14:19.130 --> 00:14:20.390
+Eu chego aqui no chapéu.
+
+00:14:20.670 --> 00:14:21.470
+Coloco o chapéu.
+
+00:14:21.530 --> 00:14:22.550
+Isso é tudo uma imaginação.
+
+00:14:23.690 --> 00:14:24.650
+Coloco o chapéu.
+
+00:14:26.090 --> 00:14:26.690
+Por que?
+
+00:14:26.770 --> 00:14:27.350
+Bem -estado.
+
+00:14:29.680 --> 00:14:30.900
+Estás coletando o chapéu?
+
+00:14:35.170 --> 00:14:36.890
+Em seguida, eu olho para baixo.
+
+00:14:36.930 --> 00:14:38.050
+Assim, coloco o chapéu.
+
+00:14:38.070 --> 00:14:38.990
+E eu enxergo ali.
+
+00:14:43.130 --> 00:14:45.130
+As esferas de controle de epiteto.
+
+00:14:45.130 --> 00:14:52.020
+Que é uma das principais ferramentas que
+eu uso para me manter mais positivo.
+
+00:14:52.020 --> 00:14:52.640
+Resiliente.
+
+00:14:55.060 --> 00:14:57.040
+E isso já me ativa essa memória.
+
+00:14:57.520 --> 00:14:58.600
+Em seguida.
+
+00:14:59.200 --> 00:15:02.960
+Essa visualização das esferas de
+controle de
+
+00:15:02.960 --> 00:15:03.420
+epiteto.
+
+00:15:05.600 --> 00:15:06.920
+Se misturam.
+
+00:15:06.920 --> 00:15:07.420
+Se fundem.
+
+00:15:07.460 --> 00:15:08.960
+E acabam se transformando.
+
+00:15:09.860 --> 00:15:12.460
+Em desenhos de engramas mentais.
+
+00:15:12.860 --> 00:15:14.040
+Engramas cerebrais.
+
+00:15:15.800 --> 00:15:17.120
+Que me faz lembrar.
+
+00:15:17.180 --> 00:15:19.880
+Os protocolos para a renovação dos
+engramas.
+
+00:15:19.920 --> 00:15:20.500
+Ou seja.
+
+00:15:20.500 --> 00:15:23.140
+Como posso criar protocolos que acelerem
+a renovação dos
+
+00:15:23.140 --> 00:15:23.520
+engramas.
+
+00:15:27.860 --> 00:15:28.820
+Na sequência.
+
+00:15:29.220 --> 00:15:30.520
+O baú aqui do lado.
+
+00:15:31.280 --> 00:15:31.720
+Baú.
+
+00:15:33.900 --> 00:15:34.980
+Acho que dá para ver na câmera.
+
+00:15:37.660 --> 00:15:40.900
+E eu imagino que estou jogando o baú com
+o meu filho.
+
+00:15:42.440 --> 00:15:44.020
+E o meu filho está me vencendo.
+
+00:15:44.520 --> 00:15:46.700
+E a cada vez que ele faz uma boa jogada.
+
+00:15:46.700 --> 00:15:47.340
+Me vencendo.
+
+00:15:47.460 --> 00:15:48.660
+Ele é obrigado a me pagar.
+
+00:15:49.520 --> 00:15:50.320
+50 reais.
+
+00:15:51.680 --> 00:15:53.320
+Os custos da supernotação.
+
+00:15:53.480 --> 00:15:54.260
+Eu quero que vocês percebam.
+
+00:15:54.360 --> 00:15:55.840
+A lógica da memorização.
+
+00:15:58.160 --> 00:15:59.540
+Ele está me vencendo.
+
+00:16:00.420 --> 00:16:00.780
+Supernotação.
+
+00:16:02.300 --> 00:16:02.660
+Inteligente.
+
+00:16:02.920 --> 00:16:04.100
+Ele está me vencendo.
+
+00:16:04.120 --> 00:16:05.420
+E a cada vez que ele me vence.
+
+00:16:05.420 --> 00:16:06.680
+Ele é obrigado a pagar alguma coisa.
+
+00:16:06.820 --> 00:16:08.400
+Ele está pagando os custos da
+supernotação.
+
+00:16:12.720 --> 00:16:13.340
+Em seguida.
+
+00:16:13.340 --> 00:16:14.080
+O jogo termina.
+
+00:16:14.080 --> 00:16:14.680
+Ele me vence.
+
+00:16:16.770 --> 00:16:18.490
+E eu devolvo todo o dinheiro para ele.
+
+00:16:19.090 --> 00:16:20.790
+O melhor exemplo para os meus filhos.
+
+00:16:23.320 --> 00:16:23.680
+Ah.
+
+00:16:23.700 --> 00:16:24.520
+Mas isso é longo demais.
+
+00:16:24.620 --> 00:16:24.820
+Sim.
+
+00:16:24.860 --> 00:16:27.120
+Só que hoje eu não fico pensando em tudo
+isso o tempo todo.
+
+00:16:27.540 --> 00:16:30.140
+Já está mais do que pacificado na minha
+cabeça.
+
+00:16:30.820 --> 00:16:31.900
+Mais do que memorizado.
+
+00:16:34.040 --> 00:16:35.380
+E essas memórias passam.
+
+00:16:36.960 --> 00:16:37.440
+Segundinhos.
+
+00:16:37.440 --> 00:16:38.220
+Na minha cabeça.
+
+00:16:38.400 --> 00:16:39.000
+Muito rápido.
+
+00:16:42.760 --> 00:16:44.520
+Tudo isso já está muito forte na minha
+cabeça.
+
+00:16:48.140 --> 00:16:49.180
+Para vocês terem uma ideia.
+
+00:16:49.560 --> 00:16:49.620
+Da.
+
+00:16:50.760 --> 00:16:52.560
+Do potencial dessa técnica.
+
+00:16:53.380 --> 00:16:54.480
+No início do ano.
+
+00:16:54.540 --> 00:16:56.000
+Eu fiz uma brincadeira com uma amiga.
+
+00:16:57.960 --> 00:16:59.860
+Para ver quem memorizava mais pássaros.
+
+00:17:03.120 --> 00:17:03.520
+E.
+
+00:17:04.660 --> 00:17:05.880
+Três dias e um pouquinho.
+
+00:17:06.080 --> 00:17:07.440
+Eu tinha memorizado isso.
+
+00:17:08.080 --> 00:17:09.360
+Poucos minutos por dia.
+
+00:17:11.400 --> 00:17:12.620
+Eu tinha memorizado.
+
+00:17:14.360 --> 00:17:15.660
+Pouco mais de 100 pássaros.
+
+00:17:17.180 --> 00:17:17.540
+Nossa.
+
+00:17:17.540 --> 00:17:18.560
+A pior coisa que eu fiz depois.
+
+00:17:18.620 --> 00:17:20.380
+Foi difícil esquecer esse espaço ali.
+
+00:17:21.260 --> 00:17:23.240
+Ou a partir deles eu ainda não consegui
+esquecer.
+
+00:17:27.840 --> 00:17:29.480
+Isso vai ficar tão forte na sua cabeça.
+
+00:17:29.580 --> 00:17:33.420
+E aí você vai rever essa memória na sua
+cabeça.
+
+00:17:33.500 --> 00:17:34.660
+Pelo menos uma vez por dia.
+
+00:17:34.700 --> 00:17:35.400
+Pelos próximos dias.
+
+00:17:35.980 --> 00:17:39.160
+Ela vai ficar pacificada naturalmente na
+sua cabeça.
+
+00:17:40.040 --> 00:17:42.260
+E vai se tornar o filtro pelo qual você
+vai ao mundo.
+
+00:17:42.340 --> 00:17:42.680
+Por quê?
+
+00:17:42.700 --> 00:17:43.860
+Porque não são quaisquer problemas.
+
+00:17:46.690 --> 00:17:49.050
+São os problemas mais importantes da sua
+vida.
+
+00:17:50.590 --> 00:17:51.830
+E o teu cérebro vai passar.
+
+00:17:51.830 --> 00:17:52.950
+Todo santo dia.
+
+00:17:53.010 --> 00:17:53.370
+O dia todo.
+
+00:17:53.410 --> 00:17:54.210
+Procurando soluções.
+
+00:17:54.350 --> 00:17:55.250
+Para esses problemas.
+
+00:17:55.850 --> 00:17:57.910
+Tendo ideias geniais relacionadas a
+isso.
+
+00:18:11.800 --> 00:18:13.100
+E o teu cérebro vai passar.
+
+00:18:13.200 --> 00:18:13.900
+Todo santo dia.
+
+00:18:15.460 --> 00:18:16.420
+Tendo ideias.
+
+00:18:16.420 --> 00:18:18.540
+Para solucionar especificamente esses
+problemas.
+
+00:18:21.750 --> 00:18:23.310
+Você consegue perceber o poder disso?
+
+00:18:25.780 --> 00:18:26.580
+É simples.
+
+00:18:26.820 --> 00:18:29.280
+Eu tornei o mais simples que eu
+consegui.
+
+00:18:31.610 --> 00:18:34.150
+É tão importante para mim que tudo seja
+simples.
+
+00:18:37.120 --> 00:18:38.740
+Que eu estou escrevendo um livro que
+chama.
+
+00:18:38.780 --> 00:18:40.120
+O mínimo necessário para ser incrível.
+
+00:18:40.180 --> 00:18:41.360
+É sempre o mínimo necessário.
+
+00:18:41.380 --> 00:18:42.400
+Doze problemas eram demais.
+
+00:18:42.400 --> 00:18:45.660
+Que tal três chunks com três problemas
+então?
+
+00:18:46.560 --> 00:18:47.220
+Chegamos aqui.
+
+00:18:49.380 --> 00:18:49.940
+Lembre -se.
+
+00:18:50.020 --> 00:18:54.900
+Crie as memórias, as imaginações mais
+estafafúrdias que puder.
+
+00:18:55.820 --> 00:18:57.700
+Para acelerar o processo de memorização.
+
+00:18:58.940 --> 00:19:01.780
+E escolha o lugar mais nobre da sua
+memória.
+
+00:19:01.880 --> 00:19:02.580
+Lugar, fisicamente.
+
+00:19:03.140 --> 00:19:03.620
+Escolha.
+
+00:19:04.540 --> 00:19:06.020
+Talvez o seu quarto, o seu escritório.
+
+00:19:06.400 --> 00:19:07.760
+E dentro do escritório, do quarto.
+
+00:19:07.840 --> 00:19:09.620
+Aquilo que você ver com mais frequência.
+
+00:19:11.100 --> 00:19:13.420
+E de preferência algo que não mude
+muito.
+
+00:19:13.420 --> 00:19:16.900
+Que não esteja mudando a posição demais.
+
+00:19:17.820 --> 00:19:19.500
+Algo que seja mais estável.
+
+00:19:23.220 --> 00:19:25.800
+Porque esses problemas se tornarão na
+prática.
+
+00:19:25.800 --> 00:19:27.900
+O filtro pelo qual você, o seu cérebro.
+
+00:19:28.060 --> 00:19:30.780
+Naturalmente absorve conhecimento do
+mundo.
+
+00:19:30.960 --> 00:19:33.840
+Ele vai selecionar de tudo que você
+enxergar no mundo.
+
+00:19:33.880 --> 00:19:35.420
+O tempo todo o seu cérebro vai estar
+filtrando.
+
+00:19:35.560 --> 00:19:36.460
+E deixando passar.
+
+00:19:37.320 --> 00:19:39.980
+Aquilo que pode solucionar algum desses
+problemas.
+
+00:19:40.080 --> 00:19:41.120
+Ou ajudar a solucionar.
+
+00:19:42.060 --> 00:19:43.440
+Você vai estar o tempo todo.
+
+00:19:43.540 --> 00:19:44.620
+Tendo soluções.
+
+00:19:46.360 --> 00:19:46.840
+Geniais.
+
+00:19:46.840 --> 00:19:47.600
+Quando esses problemas.
+
+00:19:47.880 --> 00:19:50.840
+Quando essas informações que já são as
+mais relevantes.
+
+00:19:50.840 --> 00:19:51.700
+Para os seus problemas.
+
+00:19:52.220 --> 00:19:53.920
+Passarem para o pensamento complexo.
+
+00:19:54.000 --> 00:19:54.660
+E aí sim.
+
+00:19:54.720 --> 00:19:55.280
+Deixa eu abrir aqui.
+
+00:19:55.740 --> 00:19:57.460
+Passarem para o pensamento complexo.
+
+00:19:57.780 --> 00:19:59.360
+E lá no pensamento complexo.
+
+00:19:59.360 --> 00:20:01.160
+Se estabelecerem dentro de um
+mapeamento.
+
+00:20:01.240 --> 00:20:03.860
+Já no lugar estrategicamente mais
+funcional.
+
+00:20:03.940 --> 00:20:05.940
+Para se conectarem com o máximo de
+ideias funcionais.
+
+00:20:06.120 --> 00:20:07.740
+Na resolução desses problemas.
+
+00:20:08.000 --> 00:20:09.060
+Do seu propósito de vida.
+
+00:20:11.850 --> 00:20:14.790
+Com o máximo de amplitude da sua
+polifonia discursiva.
+
+00:20:14.950 --> 00:20:16.570
+Não tem como não ter ideias geniais.
+
+00:20:16.570 --> 00:20:22.660
+Como parte da sua rotina.
+
+00:20:24.700 --> 00:20:26.220
+O que eu quero que perceba é.
+
+00:20:26.300 --> 00:20:28.600
+Não é ter ideias geniais
+conscientemente.
+
+00:20:28.600 --> 00:20:29.980
+Se esforçando para isso o tempo todo.
+
+00:20:30.100 --> 00:20:30.680
+Porque isso é difícil.
+
+00:20:31.320 --> 00:20:32.600
+É custoso demais.
+
+00:20:33.380 --> 00:20:34.460
+E funciona pouco.
+
+00:20:36.330 --> 00:20:38.970
+É criar todo o contexto.
+
+00:20:40.730 --> 00:20:41.270
+Intelectivo.
+
+00:20:42.990 --> 00:20:44.530
+Para que o seu cérebro.
+
+00:20:44.650 --> 00:20:46.610
+Com o mínimo de gasto energético
+possível.
+
+00:20:46.910 --> 00:20:48.550
+Tenha ideias geniais naturalmente.
+
+00:20:53.150 --> 00:20:55.010
+Não é ter ideias de vez em quando.
+
+00:20:55.130 --> 00:20:55.790
+É ter ideias.
+
+00:20:57.030 --> 00:20:57.470
+Consistentemente.
+
+00:20:57.470 --> 00:20:59.150
+Sem se esforçar pela consistência.
+
+00:20:59.970 --> 00:21:01.110
+A consistência real.
+
+00:21:01.310 --> 00:21:03.870
+Não é a consistência que você se esforça
+por ela.
+
+00:21:03.910 --> 00:21:05.770
+É a consistência que acontece
+naturalmente.
+
+00:21:07.780 --> 00:21:09.240
+Tudo aquilo que é realmente importante.
+
+00:21:09.380 --> 00:21:10.400
+Você precisa conseguir.
+
+00:21:10.480 --> 00:21:11.240
+Encontrar um jeito de fazer.
+
+00:21:11.300 --> 00:21:12.380
+Sem precisar de esforço.
+
+00:21:13.940 --> 00:21:16.040
+Ou de um grande gasto energético.
+
+00:21:19.580 --> 00:21:20.940
+Construído o seu filtro então.
+
+00:21:23.380 --> 00:21:24.440
+Vamos nos preparar.
+
+00:21:25.540 --> 00:21:26.780
+Vamos para a próxima aula.
+
+00:21:26.860 --> 00:21:27.900
+Qual vai ser a próxima aula aqui?
+
+00:21:28.520 --> 00:21:29.600
+Vamos verificar juntos.
+
+00:21:32.890 --> 00:21:34.830
+Vamos agora se tornar o programador.
+
+00:21:35.330 --> 00:21:36.730
+Do seu próprio filtro.
+
+00:21:36.770 --> 00:21:37.510
+Do seu próprio scanner.
+
+00:21:37.950 --> 00:21:39.990
+Para ter ideias geniais todo santo dia.
+
+00:21:43.380 --> 00:21:45.980
+Nossa última aula juntos aqui então é.
+
+00:21:46.800 --> 00:21:47.440
+Ah não.
+
+00:21:47.540 --> 00:21:48.520
+Ainda estamos na penúltima.
+
+00:21:48.840 --> 00:21:50.380
+Programe o scanner da sua IA.
+
+00:21:50.520 --> 00:21:53.840
+E tenha um assistente genial.
+
+00:21:55.120 --> 00:21:56.680
+O que a gente vai fazer aqui?
+
+00:21:57.600 --> 00:22:00.100
+A gente vai programar a IA.
+
+00:22:00.240 --> 00:22:02.400
+Para funcionar através do mesmo filtro.
+
+00:22:02.440 --> 00:22:03.720
+Que você usa na sua própria cabeça.
+
+00:22:04.540 --> 00:22:05.680
+Então a IA também.
+
+00:22:05.740 --> 00:22:07.000
+Vai estar o tempo todo filtrando.
+
+00:22:07.660 --> 00:22:09.100
+Soluções possíveis para esses problemas.
+
+00:22:09.540 --> 00:22:11.440
+Você vai ver que isso vai te levar para
+outro patamar.
+
+00:22:12.260 --> 00:22:13.840
+O próprio catalisador de gênios.
+
+00:22:13.860 --> 00:22:14.740
+Não existiria como é.
+
+00:22:14.960 --> 00:22:16.220
+Se não fosse graças.
+
+00:22:16.560 --> 00:22:17.740
+A junção de tudo isso.

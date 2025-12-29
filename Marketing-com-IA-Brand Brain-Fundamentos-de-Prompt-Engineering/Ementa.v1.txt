@@ -1,0 +1,848 @@
+# **Marketing com IA - Módulo 1: Brand Brain + Fundamentos de Prompt Engineering**
+
+## Roteiros
+
+[M1-AULA1-Poder-do-Prompt-Engineering.md](attachment:21fe129e-01bf-4eb0-87b1-87bc53654c18:M1-AULA1-Poder-do-Prompt-Engineering.md)
+
+[M1-AULA2-Brand-Brain.md](attachment:8c412e43-a8c8-4760-8115-801228c0bee8:M1-AULA2-Brand-Brain.md)
+
+[M1-AULA3-3-Tecnicas-Essenciais.md](attachment:d0a9b91d-9357-40c1-b31c-438e72b75827:M1-AULA3-3-Tecnicas-Essenciais.md)
+
+[M1-AULA4-Personas-Mapa-Empatia.md](attachment:833f2314-8abb-400f-b77c-5fe534af215a:M1-AULA4-Personas-Mapa-Empatia.md)
+
+[M1-AULA5-Jornada-Consciencia.md](attachment:97d31365-4ad9-4dca-a638-56aa77b7b568:M1-AULA5-Jornada-Consciencia.md)
+
+# **Marketing com IA - Módulo 1: Brand Brain + Fundamentos de Prompt Engineering**
+
+---
+
+## **INFORMAÇÕES GERAIS**
+
+| Item | Descrição |
+| --- | --- |
+| **Título do Módulo** | Brand Brain + Fundamentos de Prompt Engineering |
+| **Objetivo Geral** | Capacitar empresários e profissionais de marketing a dominar técnicas de Prompt Engineering para criar conteúdo de marketing profissional, consistente e escalável usando IA, estabelecendo o "Brand Brain" como base de todo o sistema de marketing automatizado. |
+| **Objetivos Específicos** | 1. Compreender os conceitos fundamentais de Prompt Engineering aplicados ao marketing2. Criar e implementar o "Brand Brain" (prompt de sistema da marca)3. Dominar as 3 técnicas essenciais: Zero-Shot, Few-Shot e Chain-of-Thought4. Gerar personas detalhadas e mapas de empatia usando IA5. Criar mensagens específicas para cada estágio da jornada de consciência6. Construir biblioteca de 50+ prompts testados e organizados |
+| **Estrutura do Módulo** | **5 AulasDuração:** 12-15 minutos por aula**Carga Horária Total:** 4-5 horas (1h de vídeo + 3-4h de exercícios práticos) |
+| **Metodologia** | Aulas expositivas com demonstrações práticas passo a passo de uso do ChatGPT, exercícios guiados de criação de prompts e aplicação imediata em cenários reais de marketing. O módulo adota abordagem hands-on, com alunos criando prompts, testando resultados e documentando o que funciona para construir uma biblioteca reutilizável. |
+| **Avaliação** | Desenvolvimento de Brand Brain completo e biblioteca de prompts funcionais (60% prática), criação de 3 personas com mapa de empatia (20% prática) e quiz sobre conceitos de Prompt Engineering (20% teoria). |
+
+---
+
+## **CONTEÚDO PROGRAMÁTICO**
+
+### **Aula 1: O Poder do Prompt Engineering no Marketing (15 min)**
+
+- O que é Prompt Engineering e sua importância no marketing
+- 40% das tarefas de marketing automatizáveis com IA
+- Exemplos práticos: prompts ruins vs. prompts eficazes
+- As 3 camadas do prompt perfeito (contexto, instrução, formato)
+- Setup inicial do ChatGPT
+
+### **Aula 2: Brand Brain - Criando o Cérebro da Sua Marca (15 min)**
+
+- Conceito de Brand Brain (prompt de sistema da marca)
+- Estrutura do Brand Brain: Identidade, Tom de Voz, Linguagem, Exemplos
+- Template fornecido para criação
+- Processo de teste e refinamento
+
+### **Aula 3: As 3 Técnicas Essenciais de Prompt Engineering (15 min)**
+
+- Técnica 1: Zero-Shot (instrução direta sem exemplos)
+- Técnica 2: Few-Shot (aprendizado por exemplos)
+- Técnica 3: Chain-of-Thought (pensamento passo a passo)
+- Quando usar cada técnica
+- Follow-ups encadeados para aprofundamento
+
+### **Aula 4: Personas e Mapa de Empatia com IA (12 min)**
+
+- Por que personas geradas por IA são poderosas
+- Estrutura de prompt para persona completa
+- Mapa de empatia automatizado (6 perguntas essenciais)
+- Criando 3 personas: ICP principal, secundário e anti-persona
+
+### **Aula 5: Jornada de Consciência - Mensagens para Cada Estágio (13 min)**
+
+- Os 5 estágios de consciência do cliente
+- Estrutura de prompt para gerar copy por estágio
+- Mapeamento de canais por estágio (topo, meio, fundo de funil)
+- Criando funil completo com IA
+
+**Projeto Final:** Implementação completa de Brand Brain, biblioteca de 50 prompts organizados por categoria, 3 personas com mapa de empatia e mensagens para os 5 estágios da jornada de consciência.
+
+---
+
+## **PLANO DE AULAS DETALHADO**
+
+---
+
+### **AULA 1: O Poder do Prompt Engineering no Marketing**
+
+**Duração:** 15 minutos
+
+### **Objetivos:**
+
+- Compreender o que é Prompt Engineering e sua importância no marketing moderno
+- Identificar quais tarefas de marketing podem ser automatizadas com IA
+- Distinguir entre prompts genéricos (ineficazes) e prompts engenheirados (profissionais)
+- Aprender a estrutura das 3 camadas do prompt perfeito
+- Configurar o ambiente de trabalho (ChatGPT)
+
+### **Conteúdo Principal:**
+
+1. **Introdução ao Prompt Engineering (3 min)**
+    - Definição: arte e ciência de formular instruções para LLMs
+    - Por que virou skill obrigatória no marketing
+    - Diferença entre usar IA "casualmente" vs. "profissionalmente"
+2. **O que pode ser automatizado (4 min)**
+    - 40% das tarefas de marketing segundo pesquisas
+    - Lista de tarefas automatizáveis:
+        - Criação de conteúdo (posts, emails, anúncios, artigos)
+        - Pesquisa de mercado e análise competitiva
+        - Geração de personas e segmentação
+        - Ideação e brainstorming
+        - Otimização de copy e headlines
+    - ROI esperado: 15-20h/semana economizadas
+3. **Exemplos práticos: Antes vs. Depois (5 min)**
+    - **Exemplo 1 - Post para Instagram:**
+        - ❌ Prompt ruim: "Crie um post para Instagram"
+        - ✅ Prompt bom: [demonstração com contexto, persona, objetivo, formato]
+        - Comparação de resultados lado a lado
+    - **Exemplo 2 - Email de vendas:**
+        - ❌ Prompt ruim: "Escreva um email de vendas"
+        - ✅ Prompt bom: [exemplo com jornada, objeções, CTA específico]
+        - Análise da diferença de conversão
+4. **As 3 camadas do prompt perfeito (2 min)**
+    - **Camada 1 - CONTEXTO:** Quem você é, qual sua marca, objetivo
+    - **Camada 2 - INSTRUÇÃO:** O que a IA deve fazer exatamente
+    - **Camada 3 - FORMATO:** Como deve entregar (bullets, tabela, etc.)
+5. **Setup inicial (1 min)**
+    - Configurar ChatGPT Plus (ou alternativa gratuita)
+    - Criar pasta "Prompts de Marketing" (Google Docs/Notion)
+
+### **Atividades Práticas (30 min):**
+
+1. Testar 2 prompts no ChatGPT:
+    - Prompt genérico: "Crie um post de Instagram sobre marketing"
+    - Prompt estruturado: Aplicar as 3 camadas para o mesmo pedido
+    - Comparar e documentar a diferença de qualidade
+2. Identificar 10 tarefas específicas do seu marketing que quer automatizar
+3. Criar pasta organizada para documentar prompts
+
+### **Recursos:**
+
+- ChatGPT (gratuito ou Plus - recomendado)
+- Google Docs ou Notion para documentação
+- Template de planilha para lista de tarefas
+- Exemplos de prompts bons e ruins (fornecido)
+
+---
+
+### **AULA 2: Brand Brain - Criando o Cérebro da Sua Marca**
+
+**Duração:** 15 minutos
+
+### **Objetivos:**
+
+- Compreender o conceito de Brand Brain e sua função central
+- Criar o prompt de sistema que define a identidade da marca
+- Preencher as 4 seções do Brand Brain de forma completa
+- Testar e refinar o Brand Brain até gerar resultados consistentes
+- Salvar o Brand Brain para uso permanente
+
+### **Conteúdo Principal:**
+
+1. **O conceito de Brand Brain (3 min)**
+    - Definição: prompt de sistema que define identidade da marca
+    - Por que é a base de TODO o curso
+    - Como funciona: IA "carrega" o Brand Brain antes de gerar conteúdo
+    - Exemplos de marcas com vozes distintas:
+        - Nubank (amigável, descomplicado, jovem)
+        - Magazine Luiza (acolhedor, próximo, brasileiro)
+        - Empiricus (sério, técnico, autoridade)
+2. **Estrutura do Brand Brain (8 min)**
+    
+    **Seção 1: Identidade (2 min)**
+    
+    - Missão (por que existimos)
+    - Visão (onde queremos chegar)
+    - Valores (o que defendemos)
+    - Proposta de valor única (o que nos diferencia)
+    - Posicionamento vs. concorrentes
+    
+    **Seção 2: Tom de Voz (2 min)**
+    
+    - 5 adjetivos que descrevem a marca
+    - O que a marca É vs. NÃO É
+        - Exemplo: "É acolhedora, NÃO é corporativa fria"
+    - Nível de formalidade (escala 1-10)
+    - Como a marca fala sobre problema, solução e resultados
+    
+    **Seção 3: Linguagem (2 min)**
+    
+    - Palavras que usa frequentemente (20-30 palavras)
+        - Ex: "automatizar, escalar, prático, direto"
+    - Palavras que EVITA (10-15 palavras)
+        - Ex: "sinérgico, disruptivo, revolucionário"
+    - Expressões características
+    - Metáforas e analogias recorrentes
+    
+    **Seção 4: Exemplos Reais - Few-Shot Learning (2 min)**
+    
+    - 5-10 mensagens que a marca criou e funcionaram
+    - Posts que geraram engajamento
+    - Emails com alta taxa de abertura
+    - Por que exemplos importam: IA aprende o padrão
+3. **Template de Brand Brain fornecido (2 min)**
+    - Walkthrough do template editável
+    - Como preencher cada seção
+    - Onde buscar informações (site, redes, comunicações antigas)
+4. **Testando e refinando (2 min)**
+    - Copiar/colar Brand Brain no ChatGPT
+    - Pedir: "Crie 5 posts sobre [tema] no tom da marca"
+    - Avaliar consistência
+    - Refinar até sair perfeito (processo iterativo)
+    - Salvar como "Custom Instructions" (ChatGPT Plus)
+
+### **Atividades Práticas (1h 30min):**
+
+1. **Preencher template de Brand Brain (45 min)**
+    - Identidade: missão, visão, valores (15 min)
+    - Tom de voz: adjetivos, formal/informal (10 min)
+    - Linguagem: palavras que usa/evita (10 min)
+    - Exemplos reais: 5-10 mensagens (10 min)
+2. **Testar com ChatGPT (30 min)**
+    - Gerar 5 posts sobre tema do negócio
+    - Avaliar: Parece com a marca? Consistente?
+    - Ajustar Brand Brain conforme necessário
+    - Repetir até 90%+ de satisfação
+3. **Documentar versão final (15 min)**
+    - Salvar Brand Brain em documento
+    - Configurar como Custom Instructions (se Plus)
+    - Adicionar à biblioteca de prompts
+
+### **Recursos:**
+
+- Template de Brand Brain editável (fornecido)
+- Exemplos de 10 Brand Brains completos (fornecido)
+- ChatGPT para testes
+- Guia de como preencher cada seção (PDF)
+
+---
+
+### **AULA 3: As 3 Técnicas Essenciais de Prompt Engineering**
+
+**Duração:** 15 minutos
+
+### **Objetivos:**
+
+- Dominar a técnica Zero-Shot (instrução direta)
+- Dominar a técnica Few-Shot (aprendizado por exemplos)
+- Dominar a técnica Chain-of-Thought (pensamento passo a passo)
+- Identificar quando usar cada técnica
+- Aplicar follow-ups encadeados para aprofundar resultados
+
+### **Conteúdo Principal:**
+
+1. **Técnica 1: Zero-Shot - Instrução Direta (4 min)**
+    
+    **O que é:**
+    
+    - Dar instrução clara SEM exemplos
+    - IA resolve baseada no conhecimento treinado
+    
+    **Quando usar:**
+    
+    - Tarefas simples e diretas
+    - Quando não tem exemplos
+    - Geração rápida de ideias
+    
+    **Estrutura:**
+    
+    ```
+    Você é [especialista em X].
+    
+    Contexto: [situação, marca, objetivo]
+    
+    Tarefa: [o que fazer exatamente]
+    
+    Formato: [como entregar]
+    
+    Tom: [usar Brand Brain]
+    
+    ```
+    
+    **Exemplos práticos:**
+    
+    - Gerar 20 ideias de posts
+    - Escrever email de boas-vindas
+    - Criar lista de palavras-chave SEO
+    - Rascunhar copy de landing page
+2. **Técnica 2: Few-Shot - Aprendizado por Exemplos (5 min)**
+    
+    **O que é:**
+    
+    - Dar 2-5 exemplos BONS
+    - IA aprende o padrão e replica
+    
+    **Quando usar:**
+    
+    - Resultado muito específico
+    - Tem exemplos de sucesso
+    - Manter consistência de estilo
+    
+    **Estrutura:**
+    
+    ```
+    Você é [especialista].
+    
+    Contexto: [situação]
+    
+    Aqui estão 3 exemplos do resultado que quero:
+    
+    Exemplo 1: [copiar completo]
+    Exemplo 2: [copiar completo]
+    Exemplo 3: [copiar completo]
+    
+    Agora crie mais 5 seguindo esse EXATO padrão para: [novo contexto]
+    
+    ```
+    
+    **Exemplos práticos:**
+    
+    - Copy de anúncios (dar 3 que converteram)
+    - Subject lines (dar 3 com alta taxa de abertura)
+    - Posts que geraram engajamento
+    - Headlines que clicaram
+3. **Técnica 3: Chain-of-Thought - Pensamento Passo a Passo (4 min)**
+    
+    **O que é:**
+    
+    - Pedir que IA "pense em voz alta"
+    - Mostra raciocínio antes de responder
+    
+    **Quando usar:**
+    
+    - Problemas complexos
+    - Estratégias que exigem análise
+    - Múltiplas variáveis
+    - Otimização e troubleshooting
+    
+    **Estrutura:**
+    
+    ```
+    Você é [especialista].
+    
+    Problema: [situação complexa]
+    
+    Pense passo a passo:
+    1. Primeiro, analise [X]
+    2. Depois, considere [Y]
+    3. Avalie [Z]
+    4. Por fim, recomende [solução]
+    
+    IMPORTANTE: Mostre seu raciocínio completo antes da resposta final.
+    
+    ```
+    
+    **Exemplos práticos:**
+    
+    - Desenhar funil de vendas completo
+    - Analisar por que campanha falhou
+    - Criar estratégia de lançamento
+    - Otimizar CAC (identificar desperdícios)
+4. **Follow-Ups Encadeados (2 min)**
+    - Por que iteração > prompt gigante
+    - Sequência: cada resposta alimenta próximo
+    - Exemplo de cadeia:
+        1. "Crie persona"
+        2. "Quais top 3 dores dessa persona?"
+        3. "Quais objeções ela teria?"
+        4. "Crie 5 ângulos de campanha"
+        5. "Escreva copy usando ângulo #2"
+
+### **Atividades Práticas (45 min):**
+
+1. **Criar 1 prompt de cada técnica (15 min cada):**
+    - Zero-shot: Gerar 20 ideias de conteúdo para seu negócio
+    - Few-shot: Criar copy de email (fornecer 2 exemplos seus)
+    - Chain-of-thought: Desenhar funil simples do seu produto
+2. **Testar no ChatGPT e comparar resultados**
+    - Qual gerou melhor resultado?
+    - Quando usar cada um?
+3. **Documentar na biblioteca de prompts**
+    - Salvar os 3 prompts testados
+    - Anotar quando usar cada técnica
+
+### **Recursos:**
+
+- Template de estrutura para cada técnica (fornecido)
+- 30 exemplos de prompts usando as 3 técnicas (fornecido)
+- Guia de decisão: qual técnica usar quando (flowchart)
+- ChatGPT para testes
+
+---
+
+### **AULA 4: Personas e Mapa de Empatia com IA**
+
+**Duração:** 12 minutos
+
+### **Objetivos:**
+
+- Compreender por que personas geradas por IA são superiores
+- Dominar a estrutura de prompt para criar personas completas
+- Aplicar o framework de mapa de empatia com 6 perguntas essenciais
+- Criar 3 personas: ICP principal, secundário e anti-persona
+- Identificar top 3 dores de cada persona para usar em marketing
+
+### **Conteúdo Principal:**
+
+1. **Por que personas geradas por IA são poderosas (2 min)**
+    - IA analisa padrões de milhões de pessoas
+    - Gera insights profundos em minutos
+    - Mapa de empatia automático e detalhado
+    - Economiza semanas de pesquisa de mercado
+2. **Estrutura de prompt para persona completa (3 min)**
+    
+    **Template fornecido:**
+    
+    ```
+    Você é um pesquisador de mercado sênior com 15 anos de experiência.
+    
+    Contexto do Negócio:
+    - Produto/serviço: [descrever]
+    - Problema que resolve: [dor principal]
+    - Diferencial: [o que te diferencia]
+    - Ticket médio: [valor]
+    - Ciclo de venda: [tempo]
+    
+    Tarefa:
+    Crie uma persona extremamente detalhada incluindo:
+    
+    1. DEMOGRAFIA
+       - Nome fictício, idade, localização
+       - Cargo/profissão, renda mensal
+       - Educação, estado civil, filhos
+    
+    2. PSICOGRAFIA
+       - Valores principais (top 5)
+       - Medos e inseguranças
+       - Sonhos e aspirações
+       - Rotina típica
+       - Hobbies, interesses, influências
+    
+    3. COMPORTAMENTO DE COMPRA
+       - Onde busca informação
+       - Como decide compra
+       - Tempo para decidir
+       - Quem influencia decisão
+       - Objeções típicas
+    
+    4. DORES E FRUSTRAÇÕES
+       - Top 3 dores relacionadas ao problema
+       - Consequências (vida, trabalho, financeiro)
+       - Já tentou resolver antes?
+    
+    5. OBJETIVOS E GANHOS
+       - O que considera sucesso
+       - Como mede progresso
+       - O que mudaria após resolver problema
+    
+    Formato: Estruturado, narrativo, profundo.
+    
+    ```
+    
+3. **Mapa de Empatia Automatizado - 6 Perguntas Essenciais (5 min)**
+    
+    **1. O que PENSA e SENTE?**
+    
+    - "O que realmente importa para [persona]?"
+    - "Quais preocupações principais sobre [problema]?"
+    - "Quais aspirações tem?"
+    
+    **2. O que VÊ?**
+    
+    - "O que [persona] vê no ambiente dela?"
+    - "O que vê no mercado de [categoria]?"
+    - "O que vê amigos/colegas fazendo?"
+    
+    **3. O que OUVE?**
+    
+    - "O que ouve de amigos sobre [problema]?"
+    - "O que ouve da mídia/influencers?"
+    - "Que conselhos recebe?"
+    
+    **4. O que DIZ e FAZ?**
+    
+    - "Como fala sobre [problema] publicamente?"
+    - "Que comportamentos apresenta?"
+    - "Contradições entre o que diz e faz?"
+    
+    **5. DORES:**
+    
+    - "O que mantém acordada à noite?"
+    - "De que tem medo?"
+    - "Quais frustrações enfrenta?"
+    
+    **6. GANHOS:**
+    
+    - "O que considera sucesso?"
+    - "Como mede progresso?"
+    - "O que a deixaria feliz?"
+4. **Criando 3 personas (2 min)**
+    - **Persona 1:** ICP principal (80% da receita)
+    - **Persona 2:** ICP secundário (potencial diferente)
+    - **Persona 3:** Anti-persona (quem NÃO é cliente)
+        - Por que anti-persona importa: economizar esforço
+
+### **Atividades Práticas (1h 30min):**
+
+1. **Criar Persona 1 - ICP principal (40 min)**
+    - Usar template de prompt fornecido
+    - Fazer follow-ups para aprofundar
+    - Criar mapa de empatia completo (6 perguntas)
+    - Identificar top 3 dores
+2. **Criar Persona 2 - ICP secundário (30 min)**
+    - Mesmo processo, diferente perfil
+    - Comparar com Persona 1 (diferenças-chave)
+3. **Criar Persona 3 - Anti-persona (20 min)**
+    - Quem NÃO queremos como cliente
+    - Por que não se encaixa
+    - Como identificar e filtrar
+4. **Documentar na biblioteca**
+    - Salvar as 3 personas (2-3 páginas cada)
+    - Salvar prompts usados para replicar
+
+### **Recursos:**
+
+- Template de prompt para persona (fornecido)
+- Template de mapa de empatia (fornecido)
+- 15 exemplos de personas completas (diversos nichos)
+- Guia de como fazer follow-ups para aprofundar
+- ChatGPT para geração
+
+---
+
+### **AULA 5: Jornada de Consciência - Mensagens para Cada Estágio**
+
+**Duração:** 13 minutos
+
+### **Objetivos:**
+
+- Compreender os 5 estágios de consciência do cliente
+- Identificar características e necessidades de cada estágio
+- Criar mensagens específicas e apropriadas para cada estágio
+- Mapear canais de marketing por estágio do funil
+- Construir um funil completo (topo, meio, fundo)
+
+### **Conteúdo Principal:**
+
+1. **Os 5 Estágios de Consciência (6 min)**
+    
+    **Estágio 1: INCONSCIENTE (1 min)**
+    
+    - Não sabe que tem problema
+    - Objetivo: Despertar consciência, educar
+    - Tipo de conteúdo: Blog, vídeos educativos, posts
+    - Exemplo:
+        - ❌ "Compre agora!"
+        - ✅ "70% das pequenas empresas perdem R$5k/mês com processos manuais"
+    
+    **Estágio 2: CONSCIENTE DO PROBLEMA (1 min)**
+    
+    - Sabe que tem problema, não entende gravidade
+    - Objetivo: Aprofundar dor, mostrar consequências
+    - Tipo de conteúdo: Artigos de diagnóstico, quizzes, webinars
+    - Exemplo:
+        - "CAC alto está matando sua margem. A cada mês você perde competitividade."
+    
+    **Estágio 3: CONSCIENTE DA SOLUÇÃO (1 min)**
+    
+    - Quer resolver, mas não sabe COMO
+    - Objetivo: Educar sobre categoria de solução
+    - Tipo de conteúdo: Guias, comparativos, cases
+    - Exemplo:
+        - "Automação de marketing reduz CAC em 50% e economiza 15h/semana"
+    
+    **Estágio 4: CONSCIENTE DO PRODUTO (1 min)**
+    
+    - Conhece opções, comparando
+    - Objetivo: Diferenciais, prova social, superar objeções
+    - Tipo de conteúdo: Demos, trials, comparativos, depoimentos
+    - Exemplo:
+        - "Diferente de HubSpot ($800/mês), nossa solução custa R$0-100/mês"
+    
+    **Estágio 5: MAIS CONSCIENTE (1 min)**
+    
+    - Pronto para comprar AGORA
+    - Objetivo: Urgência, oferta, garantia, facilidade
+    - Tipo de conteúdo: Emails de venda, ofertas, checkout
+    - Exemplo:
+        - "Comece hoje: setup em 1h, primeiros resultados em 7 dias. Garantia 30 dias."
+2. **Estrutura de prompt para gerar copy por estágio (3 min)**
+    
+    **Template completo:**
+    
+    ```
+    Você é um copywriter sênior especializado em jornada do cliente.
+    
+    Contexto:
+    - Produto: [descrever]
+    - Persona: [usar persona criada na Aula 4]
+    - Objetivo: [leads, vendas, educar]
+    - Canal: [email, anúncio, post, landing page]
+    
+    Tarefa:
+    Crie 1 mensagem de marketing para cada estágio de consciência.
+    
+    Para cada mensagem, inclua:
+    - Headline principal
+    - Body copy (2-4 parágrafos)
+    - CTA apropriado ao estágio
+    - Formato: [especificar]
+    
+    ESTÁGIO 1: Inconsciente
+    [IA gera mensagem educacional]
+    
+    ESTÁGIO 2: Consciente do problema
+    [IA gera mensagem aprofundando dor]
+    
+    ESTÁGIO 3: Consciente da solução
+    [IA gera mensagem sobre categoria]
+    
+    ESTÁGIO 4: Consciente do produto
+    [IA gera mensagem com diferenciais]
+    
+    ESTÁGIO 5: Mais consciente
+    [IA gera mensagem de urgência/oferta]
+    
+    Tom: [usar Brand Brain]
+    
+    ```
+    
+3. **Mapeando canais por estágio (2 min)**
+    
+    **Estágios 1-2 (TOPO DE FUNIL):**
+    
+    - Canais: Blog/SEO, Redes Sociais, YouTube, Podcasts
+    - Objetivo: Atrair e educar
+    - Métricas: Tráfego, alcance, engajamento
+    
+    **Estágio 3 (MEIO DE FUNIL):**
+    
+    - Canais: Webinars, E-books, Email nurturing, Retargeting
+    - Objetivo: Nutrir e qualificar
+    - Métricas: Leads gerados, downloads
+    
+    **Estágios 4-5 (FUNDO DE FUNIL):**
+    
+    - Canais: Demos, Trials, Email de vendas, Remarketing, Landing pages
+    - Objetivo: Converter e fechar
+    - Métricas: Conversão, vendas, CAC
+4. **Criando funil completo (2 min)**
+    - Usar ChatGPT para gerar conteúdo de cada etapa
+    - Sequência lógica (educar → nutrir → converter)
+    - Follow-ups encadeados (mensagem 1 leva para 2)
+
+### **Atividades Práticas (1h):**
+
+1. **Criar mensagens para os 5 estágios (40 min)**
+    - Usar Persona #1 (criada na Aula 4)
+    - Aplicar Brand Brain (criado na Aula 2)
+    - Gerar 1 versão para cada estágio
+    - Testar e refinar
+2. **Mapear canais apropriados (10 min)**
+    - Para cada estágio, listar 2-3 canais
+    - Definir tipo de conteúdo para cada
+    - Especificar métricas-chave
+3. **Montar esboço visual de funil (10 min)**
+    - Desenhar funil (topo, meio, fundo)
+    - Posicionar mensagens nos estágios
+    - Adicionar canais em cada etapa
+
+### **Recursos:**
+
+- Template de prompt para jornada de consciência (fornecido)
+- Matriz de mensagens por estágio (planilha editável)
+- Exemplos de 5 funis completos (fornecido)
+- Guia de mapeamento de canais por estágio
+- ChatGPT para geração
+
+---
+
+## **PROJETO FINAL DO MÓDULO**
+
+### **Implementação Completa do Sistema de Prompt Engineering**
+
+**Objetivo:** Consolidar todo o aprendizado criando um sistema completo de Prompt Engineering pronto para uso imediato no negócio.
+
+### **Entregáveis Obrigatórios:**
+
+1. **Brand Brain Completo (20 pontos)**
+    - Documento de 1-2 páginas com:
+        - Identidade (missão, visão, valores, proposta de valor)
+        - Tom de voz (5 adjetivos, formalidade, características)
+        - Linguagem (palavras que usa/evita)
+        - 5-10 exemplos reais de mensagens
+    - Testado e validado (gera conteúdo no tom da marca)
+    - Salvo como Custom Instructions (ChatGPT Plus) ou documento separado
+2. **Biblioteca de 50 Prompts Organizados (30 pontos)**
+    - Planilha organizada em 5 categorias:
+        - 10 prompts de conteúdo (posts, emails, artigos, vídeos, anúncios)
+        - 10 prompts de estratégia (funis, calendários, SEO, parcerias)
+        - 10 prompts de pesquisa (mercado, concorrentes, palavras-chave)
+        - 10 prompts de otimização (melhorar copy, conversão, CAC)
+        - 10 prompts de personas (criar, segmentar, mapear)
+    - Cada prompt deve ter:
+        - Nome descritivo
+        - Categoria
+        - Prompt completo (pronto para copiar/colar)
+        - Quando usar
+        - Exemplo de resultado
+3. **3 Personas Completas com Mapa de Empatia (30 pontos)**
+    - Persona 1: ICP principal (2-3 páginas)
+    - Persona 2: ICP secundário (2-3 páginas)
+    - Persona 3: Anti-persona (1-2 páginas)
+    - Cada persona deve incluir:
+        - Demografia completa
+        - Psicografia detalhada
+        - Comportamento de compra
+        - Mapa de empatia (6 perguntas respondidas)
+        - Top 3 dores identificadas
+4. **Mensagens para os 5 Estágios de Consciência (20 pontos)**
+    - 5 mensagens completas (1 por estágio)
+    - Cada mensagem deve ter:
+        - Headline
+        - Body copy (2-4 parágrafos)
+        - CTA apropriado ao estágio
+    - Mapa de canais por estágio
+    - Esboço visual de funil (topo, meio, fundo)
+
+### **Critérios de Avaliação:**
+
+| Critério | Peso | Descrição |
+| --- | --- | --- |
+| **Completude** | 25% | Todos os entregáveis foram criados |
+| **Qualidade** | 35% | Brand Brain funciona, prompts geram bons resultados, personas são detalhadas |
+| **Aplicabilidade** | 25% | Tudo é aplicável ao negócio real (não genérico) |
+| **Organização** | 15% | Documentação clara, fácil de usar e reutilizar |
+
+### **Nota Mínima para Aprovação: 70%**
+
+### **Tempo Estimado para Conclusão: 8-10 horas**
+
+### **Formato de Entrega:**
+
+- Pasta digital (Google Drive ou similar) contendo:
+    - `brand-brain.pdf` ou `.docx`
+    - `biblioteca-prompts.xlsx`
+    - `personas.pdf` ou `.docx` (com as 3 personas)
+    - `jornada-consciencia.pdf` ou `.docx` (com mensagens e funil)
+
+### **Bônus (Opcional - +10 pontos):**
+
+- Criar 10 prompts adicionais específicos para seu nicho
+- Gravar vídeo de 5 min demonstrando uso do Brand Brain
+- Criar 1 funil completo adicional para outro produto/serviço
+
+---
+
+## **MATERIAIS FORNECIDOS**
+
+### **Templates Editáveis:**
+
+1. `brand-brain-template.docx` - Template com 4 seções
+2. `biblioteca-prompts-template.xlsx` - Planilha organizada por categoria
+3. `persona-template.docx` - Template de persona + mapa de empatia
+4. `jornada-consciencia-template.xlsx` - Matriz de mensagens por estágio
+5. `prompt-quality-checklist.pdf` - Checklist de validação
+
+### **Biblioteca de Exemplos:**
+
+1. 10 Brand Brains completos (empresas reais, anonimizados)
+2. 50 prompts testados e validados
+3. 15 personas detalhadas (diversos nichos)
+4. 5 funis completos (diferentes produtos)
+5. 20 exemplos de antes/depois (prompts ruins → bons)
+
+### **Recursos de Referência:**
+
+1. `chatgpt-best-practices.pdf` - Boas práticas oficiais OpenAI
+2. `prompt-engineering-complete-guide.pdf` - Guia de 25 páginas
+3. Vídeos de walkthrough (5 vídeos x 10 min - opcional)
+
+---
+
+## **PRÉ-REQUISITOS**
+
+### **Conhecimentos:**
+
+- Conhecimento básico de marketing (persona, funil, copy)
+- Experiência mínima com ChatGPT (já testou algumas vezes)
+- **NÃO precisa** saber programar
+- **NÃO precisa** experiência avançada em IA
+
+### **Ferramentas Necessárias:**
+
+- **ChatGPT Plus** ($20/mês) - RECOMENDADO para melhores resultados
+    - Alternativas gratuitas: ChatGPT free, Google Gemini (qualidade menor)
+- Google Docs ou Notion (gratuito)
+- Google Sheets ou Excel (gratuito)
+- Acesso à internet
+
+### **Mindset:**
+
+- Disposição para testar e iterar (prompt engineering é experimental)
+- Paciência para refinar prompts (não funciona 100% na primeira)
+- Vontade de documentar o que funciona (criar biblioteca reutilizável)
+
+---
+
+## **CONEXÃO COM PRÓXIMOS MÓDULOS**
+
+### **Como Módulo 1 Alimenta o Restante do Curso:**
+
+```
+MÓDULO 1 (CÉREBRO)
+Brand Brain + Biblioteca de Prompts + Personas + Jornada
+         ↓
+MÓDULO 2 (MÃOS - Vibe Coding)
+- Brand Brain garante tom em ferramentas criadas
+- Prompts alimentam calculadoras e quizzes
+- Personas guiam lógica de qualificação
+         ↓
+MÓDULO 3 (SISTEMA NERVOSO - n8n)
+- Prompts viram workflows automatizados
+- Jornada de consciência vira funil automatizado
+- Brand Brain em emails/posts automáticos
+         ↓
+MÓDULO 4 (OLHOS - Estratégia & Otimização)
+- Prompts de análise otimizam campanhas
+- Personas segmentam audiências
+- ChatGPT analisa métricas
+         ↓
+MÓDULO 5 (CORPO COMPLETO - Implementação)
+- Todo sistema roda baseado no M1
+- Brand Brain + Biblioteca = Motor 24/7
+
+```
+
+---
+
+## **PERGUNTAS FREQUENTES**
+
+**P: Preciso de ChatGPT Plus ou o gratuito funciona?** R: Funciona com gratuito, mas Plus é MUITO recomendado (GPT-4 gera resultados significativamente melhores, especialmente para Brand Brain e personas). Alternativas gratuitas: Google Gemini, Claude.
+
+**P: Quanto tempo leva para completar o módulo?** R: Vídeos: 1h. Exercícios: 3-4h. Projeto final: 8-10h. Total: 12-15h. Pode fazer em 3-5 sessões ao longo de 1-2 semanas.
+
+**P: E se minha marca não tiver "voz" definida ainda?** R: Perfeito! A Aula 2 ensina exatamente como CRIAR a voz da marca do zero usando IA.
+
+**P: 50 prompts não é demais para decorar?** R: Não precisa decorar! Você terá planilha organizada para copiar/colar quando precisar. É uma biblioteca de referência.
+
+**P: Posso pular para Módulo 2 sem terminar M1?** R: NÃO recomendado. O Brand Brain é essencial para TODOS os módulos seguintes. Sem ele, resultados serão genéricos e inconsistentes.
+
+**P: Vou economizar tempo mesmo?** R: SIM! Alunos reportam economia de 5-10h/semana apenas com Prompt Engineering. Investimento de 12-15h no módulo retorna em 2-3 semanas.
+
+---
+
+**Versão:** 1.0 **Última Atualização:** 2025-12-03 **Responsável:** Course Architect (CreatorOS)

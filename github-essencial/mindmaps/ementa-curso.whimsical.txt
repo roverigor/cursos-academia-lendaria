@@ -1,0 +1,80 @@
+GitHub Essencial para Devs
+	Modulo 0: Introducao (15 min)
+		Historia do Git
+			Linus Torvalds e Linux (1991)
+			BitKeeper e a Crise (2005)
+			Git nasce em 10 dias
+		Historia do GitHub
+			Fundadores (2007-2008)
+			Microsoft compra (2018)
+		Estrutura do Curso
+	Modulo 1: Setup Moderno (25 min)
+		1.1 Git vs GitHub (5 min)
+			Git = Local
+			GitHub = Nuvem
+			Por que empresas exigem
+		1.2 Instalacao + Config (10 min)
+			Windows / Mac / Linux
+			git config
+			Nome, email, editor
+		1.3 SSH com Ed25519 (10 min)
+			Por que SSH
+			Gerar chave Ed25519
+			Adicionar no GitHub
+			Testar conexao
+	Modulo 2: Primeiro Repo Real (50 min)
+		2.1 Criando repo certo (10 min)
+			README.md
+			.gitignore
+			LICENSE
+		2.2 Ciclo basico (15 min)
+			Working Directory
+			Staging Area
+			Repository
+			clone, status, add, commit
+		2.3 Push e Pull (10 min)
+			push (local → remoto)
+			pull (remoto → local)
+			fetch vs pull
+		2.4 Commits que comunicam (10 min)
+			Mensagens claras
+			Commits atomicos
+			Conventional Commits
+		2.5 .gitignore essencial (5 min)
+			O que ignorar
+			Templates
+			.env.example pattern
+	Modulo 3: Colaboracao Profissional (55 min)
+		3.1 Branches (12 min)
+			Por que branches
+			Criar, listar, deletar
+			Convencoes de nome
+		3.2 Pull Request (15 min)
+			O que e PR
+			Como criar
+			Descricao profissional
+			Draft PR
+		3.3 Code Review (13 min)
+			Como revisar
+			Comentarios construtivos
+			Aprovar vs Request Changes
+		3.4 Merge + Conflitos (15 min)
+			Tipos de merge
+			Conflitos
+			Marcadores <<<<<<<
+			Resolver passo a passo
+	Modulo 4: Sobrevivencia + Proximos Passos (20 min)
+		4.1 Desfazendo erros (10 min)
+			reset (soft, mixed, hard)
+			revert
+			stash
+			restore
+		4.2 Perfil profissional (5 min)
+			README de perfil
+			Repos destacados
+			Contribution graph
+		4.3 Proximos passos (5 min)
+			GitHub Actions
+			GitHub Copilot
+			Open Source
+			Roadmap de evolucao

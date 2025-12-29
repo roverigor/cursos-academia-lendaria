@@ -1,0 +1,73 @@
+Git vs GitHub
+	Git: Sistema Local
+		O que e
+			Software no seu computador
+			Rastreia mudancas no codigo
+			Super "Ctrl+Z" infinito
+		Caracteristicas
+			Guarda todas versoes
+			Permite voltar no tempo
+			Funciona 100% offline
+			Criado por Linus (2005)
+		Exemplo pratico
+			git init
+			git add README.md
+			git commit
+			Tudo local, sem internet
+	GitHub: Plataforma Nuvem
+		O que e
+			Site: github.com
+			Hospeda repos Git na nuvem
+			Ferramentas de colaboracao
+		Caracteristicas
+			Armazena codigo na nuvem
+			Pull Requests
+			Issues
+			GitHub Actions
+			Portfolio profissional
+		Exemplo pratico
+			git push origin main
+			Precisa internet
+			Envia para nuvem
+	Relacao Entre Eles
+		Git (local)
+			commits
+			branches
+			historico
+		Push/Pull
+			Sincronizacao
+		GitHub (remoto)
+			backup
+			colaboracao
+			portfolio
+	Por Que Empresas Exigem
+		Colaboracao distribuida
+			Times globais
+			Code review
+			Historico completo
+		Portfolio vivo
+			Recrutadores verificam
+			Open source = experiencia
+			Codigo publico
+		Workflow padronizado
+			Git Flow
+			Pull Requests universais
+			CI/CD integrado
+		Dados do mercado
+			100+ milhoes de devs (2024)
+			90% empresas usam Git
+			70% vagas exigem GitHub
+	Alternativas
+		GitLab
+			CI/CD forte
+			Popular em empresas
+		Bitbucket
+			Integra Jira
+			Empresas
+		Gitea
+			Self-hosted
+			Open source
+		Mas aprenda GitHub primeiro
+			Maior comunidade
+			Melhor para portfolio
+			Mais vagas

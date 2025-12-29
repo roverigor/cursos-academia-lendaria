@@ -1,0 +1,104 @@
+Ciclo Basico do Git
+	Modelo Mental
+		Working Directory
+			Arquivos que voce edita
+			Rascunho
+		Staging Area
+			Arquivos marcados para commit
+			Envelope pronto para selar
+		Repository
+			Historico de versoes salvas
+			Carta enviada (permanente)
+	Comando 1: git clone
+		O que faz
+			Copia repo remoto para local
+		Sintaxe
+			git clone git@github.com:user/repo.git
+			git clone https://github.com/user/repo.git
+		O que acontece
+			Cria pasta com nome do repo
+			Baixa todo historico
+			Cria remote "origin"
+			Checkout branch principal
+		Voce clona uma vez
+			Depois usa git pull
+	Comando 2: git status
+		O que faz
+			Mostra situacao atual
+		Saida tipica
+			On branch main
+			Changes not staged
+			Untracked files
+		Use sempre
+			Antes de add
+			Antes de commit
+			Quando perdido
+		Versao curta
+			git status -s
+	Comando 3: git add
+		O que faz
+			Move para Staging Area
+		Arquivo especifico
+			git add index.js
+		Multiplos arquivos
+			git add file1 file2 file3
+		Todos os arquivos
+			git add .
+			git add --all
+		Adicionar interativo
+			git add -p
+	Comando 4: git commit
+		O que faz
+			Salva snapshot no Repository
+		Mensagem inline
+			git commit -m "mensagem"
+		Mensagem detalhada
+			git commit (abre editor)
+		Regras de mensagem
+			Imperativo: Add, Fix, Update
+			Especifico
+			Max 50 chars titulo
+			Em ingles
+		Atalho add + commit
+			git commit -am "mensagem"
+			So arquivos ja rastreados
+	Ciclo Completo
+		1. git status
+			Ver estado atual
+		2. Editar arquivos
+			Criar/modificar codigo
+		3. git status
+			Ver mudancas
+		4. git add .
+			Marcar para salvar
+		5. git status
+			Confirmar staging
+		6. git commit -m
+			Salvar versao
+		7. git status
+			Working tree clean
+	Ver Historico
+		git log
+			Historico completo
+		git log --oneline
+			Versao compacta
+		git log --oneline -5
+			Ultimos 5 commits
+		git log --graph --all
+			Com grafico branches
+	Comandos Verificacao
+		git diff
+			Diferencas antes de add
+		git diff --staged
+			Diferencas ja em staging
+		git show
+			Ver ultimo commit
+		git show abc1234
+			Ver commit especifico
+	Erros Comuns
+		Commit sem add
+			Esqueceu git add
+		Mensagem generica
+			"changes", "update"
+		Esquecer mensagem
+			Editor vazio

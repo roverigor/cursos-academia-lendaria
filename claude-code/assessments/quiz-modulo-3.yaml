@@ -1,0 +1,273 @@
+# Quiz: Módulo 3 - Casos Reais de Alto ROI
+# Curso: Claude Code Expert
+# Instrutor: José Carlos Amorim
+
+quiz_info:
+  module: 3
+  module_name: "Casos Reais de Alto ROI"
+  total_questions: 10
+  passing_score: 70  # %
+  time_limit_minutes: 20
+  attempts_allowed: 3
+
+questions:
+  - id: 3.1
+    type: multiple_choice
+    question: "Quais são os 4 módulos do CRM automatizado end-to-end?"
+    points: 10
+    options:
+      - text: "Setup, Configuração, Execução, Finalização"
+        correct: false
+      - text: "Coleta, Enriquecimento, Scoring, Ação Automática"
+        correct: true
+      - text: "Input, Processing, Output, Storage"
+        correct: false
+      - text: "Leads, Vendas, Suporte, Analytics"
+        correct: false
+    explanation: |
+      Pipeline CRM completo:
+      1. COLETA: Scraping LinkedIn + Webhooks forms + Email parser
+      2. ENRIQUECIMENTO: APIs (Clearbit, Hunter) + Claude parsing
+      3. SCORING: Algoritmo pondera cargo, empresa, setor, fonte
+      4. AÇÃO: HOT→email+Slack, WARM→nurturing, COLD→newsletter
+
+  - id: 3.2
+    type: multiple_choice
+    question: "O que é Lead Scoring no contexto do CRM automatizado?"
+    points: 10
+    options:
+      - text: "Número de vezes que lead abriu email"
+        correct: false
+      - text: "Algoritmo que calcula pontuação (0-100) baseado em critérios como cargo, tamanho empresa, setor"
+        correct: true
+      - text: "Nota que vendedor dá manualmente para cada lead"
+        correct: false
+      - text: "Valor em R$ que lead pode gerar"
+        correct: false
+    explanation: |
+      Lead Scoring = pontuação automática (0-100pts) baseada em:
+      - Cargo (+25pts se CEO/Founder)
+      - Tamanho empresa (+20pts se 50-500 funcionários)
+      - Setor (+15pts se tech/fintech)
+      - Fonte (+30pts indicação, +20pts form, +10pts LinkedIn)
+      - Engajamento (+15pts se clicou link)
+      
+      >70pts = HOT, 40-69 = WARM, <40 = COLD
+
+  - id: 3.3
+    type: true_false
+    question: "APIs de enriquecimento como Clearbit são sempre gratuitas."
+    points: 10
+    correct: false
+    explanation: |
+      FALSO. Clearbit, Hunter.io, etc têm:
+      - Free tier: 50-100 lookups/mês
+      - Paid: $99-499/mês para volumes maiores
+      
+      Estratégia: Usar free tier para validar MVP, depois escalar para paid
+      quando ROI justificar (se economiza R$8k/mês, pagar R$200/mês vale muito).
+
+  - id: 3.4
+    type: multiple_choice
+    question: "Qual é a ação correta para lead classificado como HOT (score 70-100)?"
+    points: 10
+    options:
+      - text: "Adicionar em newsletter semanal"
+        correct: false
+      - text: "Notificar vendedor imediatamente (Slack/email) + email personalizado"
+        correct: true
+      - text: "Aguardar 30 dias antes de contatar"
+        correct: false
+      - text: "Marcar para revisão manual futura"
+        correct: false
+    explanation: |
+      HOT leads (70-100pts) = URGÊNCIA
+      - Notificação Slack IMEDIATA para vendedor
+      - Email personalizado automático com dados enriquecidos
+      - Objetivo: Contato em < 15min (resposta rápida = +35% conversão)
+      
+      WARM: Nurturing 5 emails/15d
+      COLD: Newsletter + remarketing
+
+  - id: 3.5
+    type: multiple_choice
+    question: "Qual é o ROI calculado do CRM automatizado no caso real do curso?"
+    points: 10
+    options:
+      - text: "Economiza 5h/semana = R$2k/mês"
+        correct: false
+      - text: "Economiza 28h/semana = R$11k/mês (se hora = R$100)"
+        correct: true
+      - text: "Economiza 10h/semana = R$4k/mês"
+        correct: false
+      - text: "Sem ROI quantificável, apenas qualitativo"
+        correct: false
+    explanation: |
+      ANTES (manual):
+      - Coleta: 2h/dia
+      - Enriquecimento: 1h/dia
+      - Qualificação: 2h/dia
+      - Follow-ups: 1h/dia
+      TOTAL: 6h/dia x 5 dias = 30h/semana
+      
+      DEPOIS (automatizado):
+      - Manutenção: 2h/semana
+      
+      ECONOMIA: 28h/semana x R$100/h x 4 semanas = R$11.200/mês
+
+  - id: 3.6
+    type: multiple_choice
+    question: "O que significa monitorar 'vagas abertas' de concorrentes no sistema de inteligência competitiva?"
+    points: 10
+    options:
+      - text: "Para se candidatar às vagas"
+        correct: false
+      - text: "Vagas indicam expansão, áreas de foco estratégico e possível round de investimento"
+        correct: true
+      - text: "Para recrutar funcionários deles"
+        correct: false
+      - text: "É ilegal e não deveria ser feito"
+        correct: false
+    explanation: |
+      Vagas abertas = TRANSPARÊNCIA ESTRATÉGICA:
+      - 15 vagas (+200%) = Expansão agressiva (possível funding round)
+      - 8 vagas Engenharia = Investimento pesado em produto
+      - 5 vagas SDR = Expansão comercial iminente
+      - "VP Engineering" = Reestruturação ou problema interno
+      
+      Informação PÚBLICA (LinkedIn Jobs) usada para antecipar movimentos.
+
+  - id: 3.7
+    type: multiple_choice
+    question: "Qual é o maior benefício de monitorar reviews negativos de concorrentes (G2, Capterra)?"
+    points: 10
+    options:
+      - text: "Para criticar concorrentes publicamente"
+        correct: false
+      - text: "Identificar problemas recorrentes = oportunidades para seu produto destacar solução"
+        correct: true
+      - text: "Para copiar features deles"
+        correct: false
+      - text: "Não há benefício, é perda de tempo"
+        correct: false
+    explanation: |
+      Reviews negativos = OPORTUNIDADES:
+      
+      Se concorrente A tem 12 reclamações "suporte lento":
+      → SEU produto destaca "Suporte 24h com SLA <2h"
+      
+      Se concorrente B tem 8 reviews "UI confusa":
+      → SEU produto enfatiza "Onboarding guiado em 5min"
+      
+      Dor do cliente do concorrente = Seu diferencial competitivo.
+
+  - id: 3.8
+    type: true_false
+    question: "O sistema de monitor de concorrentes deve rodar 24/7 checando mudanças a cada segundo."
+    points: 10
+    correct: false
+    explanation: |
+      FALSO. Frequências recomendadas:
+      - Preços: 1x/dia (suficiente, preços não mudam toda hora)
+      - Blog/Conteúdo: 1x/dia
+      - Vagas: 1x/semana
+      - Reviews: 1x/semana
+      
+      Checar a cada segundo:
+      - Desperdiça recursos
+      - Sobrecarga APIs (rate limit / ban)
+      - Dados não mudam tão rápido
+      
+      1x/dia captura 99% das mudanças relevantes.
+
+  - id: 3.9
+    type: multiple_choice
+    question: "Qual foi o impacto financeiro REAL mencionado no caso de monitor de concorrentes?"
+    points: 10
+    options:
+      - text: "Economizou R$50k em marketing"
+        correct: false
+      - text: "Detectou queda de preço 25% em 48h, reagiu rápido, evitou R$180k ARR de churn"
+        correct: true
+      - text: "Aumentou vendas em R$500k/ano"
+        correct: false
+      - text: "Reduziu custos operacionais em R$20k/mês"
+        correct: false
+    explanation: |
+      CASO REAL (startup B2B SaaS):
+      1. Monitor detectou concorrente baixou preço 25%
+      2. Startup reagiu em 48h com promo competitiva
+      3. Manteve 89% dos clientes (vs 60% esperado se não reagisse)
+      4. ECONOMIA: R$180k ARR em churn evitado
+      
+      Sem monitor: descobriria 2-4 semanas depois (tarde demais).
+
+  - id: 3.10
+    type: multiple_choice
+    question: "Qual é o mindset shift mais importante do curso inteiro?"
+    points: 10
+    options:
+      - text: "Aprender a programar perfeitamente"
+        correct: false
+      - text: "Comprar todas as ferramentas SaaS do mercado"
+        correct: false
+      - text: "Quando pegar tarefa repetitiva, pensar 'vou fazer 1 com Claude, depois boto pra rodar nas 1000'"
+        correct: true
+      - text: "Terceirizar tudo para desenvolvedores"
+        correct: false
+    explanation: |
+      MINDSET SHIFT FUNDAMENTAL:
+      
+      ANTES: "Tenho 1000 tarefas repetitivas → vou fazer as 1000"
+      (Burnout, lento, não escala)
+      
+      DEPOIS: "Tenho 1000 tarefas → vou automatizar 1 com Claude → rodar nas 1000"
+      (Escala, rápido, você foca em estratégia)
+      
+      Diferença entre founders que escalam vs que travam operacionalmente.
+      Esse mindset vale mais que todas as técnicas juntas.
+
+feedback:
+  passing: |
+    🎉🎉🎉 CURSO COMPLETO! Você agora é Claude Code Expert!
+    
+    Skills dominadas:
+    ✅ Fundamentos Claude Code
+    ✅ Setup profissional
+    ✅ Scraping inteligente
+    ✅ Batch processing
+    ✅ APIs REST
+    ✅ Dashboards ao vivo
+    ✅ Schedulers 24/7
+    ✅ CRM end-to-end (20h/sem → 0h)
+    ✅ Inteligência competitiva (R$180k ARR saved)
+    
+    PRÓXIMOS PASSOS:
+    1. Implementar 1 automação REAL essa semana
+    2. Entrar na comunidade e compartilhar caso
+    3. Iterar e expandir (cada automação abre 3 novas oportunidades)
+    
+    Você não precisa ser programador para automatizar.
+    Só precisa fazer as perguntas certas para Claude Code.
+    
+    E isso, você agora domina. 🚀💪
+  
+  failing: |
+    😊 Review Módulo 3 (casos end-to-end):
+    
+    - 3.1: CRM Automatizado (4 módulos: coleta → enrich → score → ação)
+    - 3.2: Monitor Concorrentes (5 pilares: preços, produto, marketing, pessoas, reputação)
+    
+    Esses casos combinam TUDO que você aprendeu nos Módulos 1 e 2.
+    
+    Dica: Implemente um MVP de cada caso (não precisa ser perfeito).
+    Aprendizado real vem de FAZER, não de ler.
+
+resources:
+  - title: "Projeto Final: CRM ou Monitor"
+    path: "assessments/final-project.md"
+  - title: "Checklist: Projeto Pronto para Produção"
+    path: "resources/checklist-producao.md"
+  - title: "Template: README Profissional"
+    path: "resources/template-readme-projeto.md"
+

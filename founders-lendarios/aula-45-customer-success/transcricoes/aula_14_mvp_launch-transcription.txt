@@ -1,0 +1,7192 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.360
+Boa noite aí o Sérgio, falou um boa
+noite aí, acabou.
+
+00:00:05.460 --> 00:00:10.540
+Vamos lá, vamos ver quem tá aí já,
+esperar até os cinco minutinhos aí.
+
+00:00:10.640 --> 00:00:12.320
+Opa, boa noite.
+
+00:00:12.420 --> 00:00:15.240
+Boa noite.
+
+00:00:15.340 --> 00:00:16.720
+Emílio, né?
+
+00:00:16.820 --> 00:00:17.260
+Eu.
+
+00:00:17.360 --> 00:00:22.440
+Emílio, Sérgio, Renan, o Alberto, eu só
+falo o nome de quem tá com a câmera
+
+00:00:22.540 --> 00:00:23.320
+aberta.
+
+00:00:23.420 --> 00:00:32.220
+O Maicon, a Rafaela, a Rafaela Amaro, o
+Alexandre de Moraes, o Ricardo,
+
+00:00:32.320 --> 00:00:37.460
+desculpa, confundi aí.
+
+00:00:37.560 --> 00:00:42.920
+É o Ricardo, é o Ricardo, sempre
+confundo.
+
+00:00:43.020 --> 00:00:47.160
+Edilson.
+
+00:00:47.260 --> 00:00:51.480
+Cris tá aí, boa noite, Cris.
+
+00:00:51.580 --> 00:00:52.680
+Vamos entrando aí.
+
+00:00:52.780 --> 00:01:00.660
+Vamos entrando aí, pessoal.
+
+00:01:00.760 --> 00:01:03.720
+Andei, o Marco.
+
+00:01:03.820 --> 00:01:08.440
+Cadê a da Finlândia?
+
+00:01:08.540 --> 00:01:09.220
+Dormiu?
+
+00:01:09.320 --> 00:01:13.380
+Não, tá chegando, tá chegando, ela tava
+comigo, acordada.
+
+00:01:13.480 --> 00:01:23.280
+Peraí.
+
+00:01:23.380 --> 00:01:27.760
+Hoje mais uma aula aí com o Léo Valença,
+já tá aí.
+
+00:01:27.860 --> 00:01:34.140
+Opa, deixa eu até colocar, Léo, esqueci
+aqui de te colocar como, com o rosto
+
+00:01:34.240 --> 00:01:36.840
+aqui.
+
+00:01:36.940 --> 00:01:38.380
+Maravilha.
+
+00:01:38.480 --> 00:01:45.980
+Maravilha.
+
+00:01:46.080 --> 00:01:47.560
+Apareceu aí, né, Léo, pra você...
+
+00:01:47.660 --> 00:01:48.920
+Ah, não, peraí, peraí.
+
+00:01:49.020 --> 00:01:56.840
+Agora.
+
+00:01:56.940 --> 00:01:57.240
+Agora.
+
+00:01:57.340 --> 00:02:04.600
+Isso aí.
+
+00:02:04.700 --> 00:02:08.620
+Post.
+
+00:02:08.720 --> 00:02:11.760
+40 pessoas já.
+
+00:02:11.860 --> 00:02:14.380
+Só mais um minutinho aí, pessoal.
+
+00:02:14.480 --> 00:02:18.220
+A gente já começa pra honrar vocês aí
+que chega um horário.
+
+00:02:18.320 --> 00:02:21.380
+E aí, pessoal?
+
+00:02:21.480 --> 00:02:23.060
+E aí, pessoal?
+
+00:02:23.160 --> 00:02:35.980
+Mais uma aula fantástica aí.
+
+00:02:36.080 --> 00:02:41.880
+Boa noite, Uzaka.
+
+00:02:41.980 --> 00:02:47.420
+A Marta.
+
+00:02:47.520 --> 00:02:50.240
+Facinho identificar quem é do Sul,
+rapaz.
+
+00:02:50.340 --> 00:02:56.900
+Já tudo tomando o chimarrão ali.
+
+00:02:57.000 --> 00:03:00.500
+E casacados.
+
+00:03:00.600 --> 00:03:08.280
+Pois é, rapaz.
+
+00:03:08.380 --> 00:03:14.940
+São de fácil identificação, né?
+
+00:03:15.040 --> 00:03:37.280
+Vamos pegar aqui.
+
+00:03:37.380 --> 00:03:38.740
+Vamos lá, Léo.
+
+00:03:38.840 --> 00:03:41.180
+Dezenove e seis, acho que podemos
+começar aí.
+
+00:03:41.280 --> 00:03:42.260
+Bora?
+
+00:03:42.360 --> 00:03:45.800
+Seis horas de Brasília, vamos lá.
+
+00:03:45.900 --> 00:03:45.800
+Maravilha.
+
+00:03:45.900 --> 00:03:51.460
+Se você está no tema da aula aí, pode
+mandar brasa.
+
+00:03:51.560 --> 00:03:52.400
+Excelente, excelente.
+
+00:03:52.500 --> 00:03:55.140
+Bom, pessoal, acho que todo mundo aqui
+estava na terça -feira, né?
+
+00:03:55.240 --> 00:03:59.160
+Quando a gente bateu um papo, começou a
+fazer o nosso Deep Dive.
+
+00:03:59.260 --> 00:04:01.580
+O tema central da nossa aula hoje é MVP.
+
+00:04:01.680 --> 00:04:04.480
+Vamos falar bastante de MVP.
+
+00:04:04.580 --> 00:04:09.720
+Só que como eu tinha prometido para
+vocês, eu pedi para o Roger rodar um
+
+00:04:09.820 --> 00:04:10.620
+Forms.
+
+00:04:10.720 --> 00:04:14.420
+A gente teve aí 30 pessoas que
+responderam o Forms.
+
+00:04:14.520 --> 00:04:18.000
+Para eu poder entender aonde vocês
+estavam, né?
+
+00:04:18.100 --> 00:04:19.960
+Quais que eram os estágios que vocês...
+
+00:04:20.060 --> 00:04:24.060
+Estavam eventualmente patinando, os
+principais obstáculos.
+
+00:04:24.160 --> 00:04:26.400
+E para a minha surpresa, né?
+
+00:04:26.500 --> 00:04:31.720
+Que obviamente faz parte do processo,
+uns aceleram mais, outros estão ainda
+
+00:04:31.820 --> 00:04:33.140
+patinando na fase do problema.
+
+00:04:33.240 --> 00:04:35.320
+Mas eu tive bastante gente, né?
+
+00:04:35.420 --> 00:04:42.560
+Eu não sei se o Roger compartilhou isso
+com vocês, mas eu queria compartilhar
+
+00:04:42.660 --> 00:04:48.320
+para vocês verem aí onde que a gente
+está em relação ao desenvolvimento do
+
+00:04:48.420 --> 00:04:49.120
+grupo, né?
+
+00:04:49.220 --> 00:04:53.760
+Então, vocês estão vendo a minha tela ou
+não?
+
+00:04:53.860 --> 00:04:55.400
+É, então assim...
+
+00:04:55.500 --> 00:05:04.560
+Então, como eu falei para vocês, o meu
+principal objetivo é tentar, de forma
+
+00:05:04.660 --> 00:05:08.680
+coletiva, ter um olhar individualizado
+para a gente poder ser assertivo naquilo
+
+00:05:08.780 --> 00:05:13.200
+que a gente fala e no valor que eu estou
+entregando para vocês aqui e nessas
+
+00:05:13.300 --> 00:05:15.460
+aulas, tá?
+
+00:05:15.560 --> 00:05:19.180
+E aí, o que a gente descobriu aqui em
+termos de fricção?
+
+00:05:19.280 --> 00:05:26.380
+A maioria de vocês aí, dos que
+responderam, está trabalhando aí
+
+00:05:26.480 --> 00:05:30.160
+desenvolvimento do MVP e está com
+dificuldade na hora de criar o MVP.
+
+00:05:30.260 --> 00:05:38.400
+Há problemas com as ferramentas aí de
+criação do MVP, o Bolt, Superbase.
+
+00:05:38.500 --> 00:05:40.280
+Então, nós vamos falar sobre isso.
+
+00:05:40.380 --> 00:05:45.360
+Tem muita gente também preso na etapa
+anterior ou nas etapas anteriores, né?
+
+00:05:45.460 --> 00:05:48.620
+E uma grande relevância, mais uma vez,
+dentro desse...
+
+00:05:48.720 --> 00:05:53.460
+desse espaço amostral dos respondentes
+da pesquisa é que falaram que ainda
+
+00:05:53.560 --> 00:05:58.500
+estão com insegurança em relação à
+definição do problema, né?
+
+00:05:58.600 --> 00:06:04.140
+A parte de Problem Discovery, Problem
+Definition, para poder definir de forma
+
+00:06:04.240 --> 00:06:07.400
+segura aquilo que precisa ser...
+
+00:06:07.500 --> 00:06:10.020
+ou melhor, qual é o problema que precisa
+ser atacado, né?
+
+00:06:10.120 --> 00:06:13.840
+Qual é o problema que, de fato, precisa
+ser resolvido para assinar do cliente.
+
+00:06:13.940 --> 00:06:17.740
+E junto com isso, né, tem a parte de
+documentação, do preenchimento do MVP e
+
+00:06:17.840 --> 00:06:21.540
+SPEC, e da validação.
+
+00:06:21.640 --> 00:06:25.040
+Bom, validação, vou falar aqui com o
+MVP, e eu preparei só uma rápida
+
+00:06:25.140 --> 00:06:29.440
+introdução para quem ainda estiver, né,
+patinando com a parte de definição do
+
+00:06:29.540 --> 00:06:29.660
+problema.
+
+00:06:29.760 --> 00:06:33.620
+Então, eu vou ser bem breve, só para
+fazer um prelude, porque eu não quero
+
+00:06:33.720 --> 00:06:38.560
+começar já a colocar toda a carga no MVP
+e deixar essas pessoas que estão
+
+00:06:38.660 --> 00:06:42.820
+patinando em relação à definição do
+problema, a parte de Problem Discovery,
+
+00:06:42.920 --> 00:06:45.000
+Problem Definition, para trás.
+
+00:06:45.100 --> 00:06:46.500
+Pode ser assim?
+
+00:06:46.600 --> 00:06:48.520
+Podemos falar um pouquinho, então, sobre
+a parte de...
+
+00:06:48.620 --> 00:06:53.500
+de definição de problema, e aí a gente
+já muda, né, já pula para o MVP.
+
+00:06:53.600 --> 00:06:57.600
+Vou descompartilhar e compartilhar a
+minha tela de novo, já trazendo aqui a
+
+00:06:57.700 --> 00:07:01.600
+minha apresentação do dia.
+
+00:07:01.700 --> 00:07:05.000
+Vocês estão vendo aí ou não?
+
+00:07:05.100 --> 00:07:05.620
+Conseguem ver?
+
+00:07:05.720 --> 00:07:06.540
+Deep dive?
+
+00:07:06.640 --> 00:07:08.320
+Boa, excelente.
+
+00:07:08.420 --> 00:07:11.600
+Bom, então, com base na...
+
+00:07:11.700 --> 00:07:14.420
+nessa pesquisa, né, nesse levantamento
+que a gente fez, então, o que eu
+
+00:07:14.520 --> 00:07:17.540
+preparei de material aqui para a gente,
+tá?
+
+00:07:17.640 --> 00:07:17.720
+Ah...
+
+00:07:17.820 --> 00:07:24.620
+O material que vai nos guiar e vai
+ajudar você a priorizar problemas que
+
+00:07:24.720 --> 00:07:26.640
+podem, devem ser resolvidos.
+
+00:07:26.740 --> 00:07:30.760
+O que que acontece muito, e eu li, fiz
+questão de ler todas as...
+
+00:07:30.860 --> 00:07:36.620
+os comentários em relação ao que vocês
+responderam, né, na pesquisa, e uma das
+
+00:07:36.720 --> 00:07:42.760
+coisas que eu vi foi, ah, fiz a
+entrevista, obtive dados, não sei o que
+
+00:07:42.860 --> 00:07:46.600
+fazer com isso, né, não sei como dar o
+próximo passo.
+
+00:07:46.700 --> 00:07:46.860
+É...
+
+00:07:46.960 --> 00:07:48.100
+Ou fiz...
+
+00:07:48.200 --> 00:07:52.600
+Algumas entrevistas, os dados que eu
+recebi foram mais ou menos genéricos ou
+
+00:07:52.700 --> 00:07:56.240
+desconectos entre si, não sei como dar
+um próximo passo.
+
+00:07:56.340 --> 00:07:57.860
+Então, o que que a gente precisa, né?
+
+00:07:57.960 --> 00:08:00.340
+Voltando para a ideia do design
+thinking.
+
+00:08:00.440 --> 00:08:06.080
+Toda vez que eu estou iniciando um
+processo de design thinking dentro
+
+00:08:06.180 --> 00:08:10.720
+daquela metodologia do Double Diamond,
+né, que eu mostrei para vocês, ou seja,
+
+00:08:10.820 --> 00:08:14.940
+que eu estou querendo escutar o mercado
+de forma primária ou de forma
+
+00:08:15.040 --> 00:08:17.280
+secundária, eu sempre vou usar o que a
+gente...
+
+00:08:17.380 --> 00:08:20.040
+a gente chama de abordagem divergente,
+tá?
+
+00:08:20.140 --> 00:08:21.720
+O que que é essa abordagem divergente?
+
+00:08:21.820 --> 00:08:27.620
+A abordagem divergente é, eu quero abrir
+o espectro, que seria a figura, né,
+
+00:08:27.720 --> 00:08:31.600
+desse primeiro diamante, desse primeiro
+diamante do Double Diamond, eu vou abrir
+
+00:08:31.700 --> 00:08:34.540
+o espectro para poder captar a
+informação.
+
+00:08:34.640 --> 00:08:39.540
+Quero ter uma visão geral, para depois
+aterrissar num problema específico.
+
+00:08:39.640 --> 00:08:41.620
+Nessa visão geral, eu estou querendo
+buscar dados.
+
+00:08:41.720 --> 00:08:46.300
+A ideia do que eu falei para vocês na
+terça -feira da mineração de ouro.
+
+00:08:46.400 --> 00:08:47.280
+Preciso buscar o mundo...
+
+00:08:47.380 --> 00:08:53.520
+Um monte de dado e depois a
+clusterização, né, e a definição disso,
+
+00:08:53.620 --> 00:08:57.900
+a mineração disso vai me levar a um
+lugar de definição do problema, tá?
+
+00:08:58.000 --> 00:09:00.440
+Então, o nosso papo aqui agora é...
+
+00:09:00.540 --> 00:09:04.040
+E beleza, eu recebi uma massa de dados
+das minhas entrevistas.
+
+00:09:04.140 --> 00:09:09.080
+Como que eu vou entender esse problema,
+priorizar os problemas e principalmente
+
+00:09:09.180 --> 00:09:12.680
+usar dado, que seja quantitativo e
+qualitativo para tomar a decisão do que
+
+00:09:12.780 --> 00:09:14.480
+eu preciso fazer, tá?
+
+00:09:14.580 --> 00:09:17.920
+Então, a gente está fazendo uma deep
+dive aqui em relação ao nosso problema,
+
+00:09:18.020 --> 00:09:21.300
+discovery e principalmente problem
+definition.
+
+00:09:21.400 --> 00:09:27.360
+Primeiro, né, o que eu quero dizer,
+pessoal, em termos de dados
+
+00:09:27.460 --> 00:09:29.280
+quantitativos e dados qualitativos.
+
+00:09:29.380 --> 00:09:33.680
+O dado qualitativo da sua pesquisa, ele
+vai estar sempre olhando para a
+
+00:09:33.780 --> 00:09:35.340
+profundidade, tá?
+
+00:09:35.440 --> 00:09:41.880
+Ele está sempre olhando de forma
+transversal para a pessoa que está
+
+00:09:41.980 --> 00:09:46.820
+sofrendo aquela dor, tendo aquela dor e
+o que você quer é saber por que aquela
+
+00:09:46.920 --> 00:09:51.580
+dor existe, dentro daquela entrevista
+específica, ok?
+
+00:09:51.680 --> 00:09:56.960
+Enquanto o dado quantitativo, ele mostra
+de forma longitudinal o tamanho dessa
+
+00:09:57.060 --> 00:09:59.740
+dor, o tamanho desse espectro de dor.
+
+00:09:59.840 --> 00:10:04.620
+Eu vou trazer um exemplo aqui que eu
+preparei para trazer para vocês, mas de
+
+00:10:04.720 --> 00:10:07.580
+forma bem objetiva.
+
+00:10:07.680 --> 00:10:11.980
+Eu começo a fazer uma entrevista com um
+grupo pequeno de usuários.
+
+00:10:12.080 --> 00:10:17.520
+Opa, eu observei que existe uma dor
+real, uma dor clara, uma dor latente,
+
+00:10:17.620 --> 00:10:20.180
+nesse grupo de usuários aqui que eu
+entrevistei.
+
+00:10:20.280 --> 00:10:21.220
+Beleza.
+
+00:10:21.320 --> 00:10:26.840
+Como que eu faço para poder verificar se
+essa dor é comum em uma amostra maior de
+
+00:10:26.940 --> 00:10:27.460
+usuários?
+
+00:10:27.560 --> 00:10:32.560
+Aí eu saio da abordagem qualitativa e
+vou para a abordagem quantitativa.
+
+00:10:32.660 --> 00:10:37.080
+Porque, mais uma vez, não adianta nada
+você investir na construção de uma
+
+00:10:37.180 --> 00:10:42.640
+pesquisa que seja só qualitativa,
+olhando para um grupo, uma amostra de
+
+00:10:42.740 --> 00:10:43.360
+usuários.
+
+00:10:43.460 --> 00:10:46.360
+Uma amostra pequena de usuários.
+
+00:10:46.460 --> 00:10:49.580
+Ou uma amostra de usuários pequenos, que
+seja viciado, como eu falei pra vocês na
+
+00:10:49.680 --> 00:10:50.300
+última terça -feira.
+
+00:10:50.400 --> 00:10:52.200
+Ah, usuário que te conhece.
+
+00:10:52.300 --> 00:10:56.440
+Usuário que te conhece é péssimo porque
+a tendência natural, intrínseca dele é
+
+00:10:56.540 --> 00:10:59.820
+te agradar ou responder aquilo que você
+quer, tá?
+
+00:10:59.920 --> 00:11:01.460
+Então, o que a gente precisa fazer?
+
+00:11:01.560 --> 00:11:06.020
+O primeiro passo pra gente poder
+priorizar os dados, nessa massa de dados
+
+00:11:06.120 --> 00:11:10.260
+que eu tô levantando é o que é
+qualitativo e o que é quantitativo.
+
+00:11:10.360 --> 00:11:12.300
+Ok?
+
+00:11:12.400 --> 00:11:15.680
+Quantitativo, nessa analogia aqui que eu
+trouxe, o qualitativo seria a lupa, né?
+
+00:11:15.780 --> 00:11:17.620
+Eu tô olhando de forma transversal.
+
+00:11:17.720 --> 00:11:19.400
+O quantitativo é longitudinal.
+
+00:11:19.500 --> 00:11:21.580
+Eu tô olhando o amplo, né?
+
+00:11:21.680 --> 00:11:25.100
+Eu tô olhando a disseminação dessa dor.
+
+00:11:25.200 --> 00:11:29.140
+Eu posso até encontrar uma dor que seja
+latente, mas se essa dor não tiver um
+
+00:11:29.240 --> 00:11:34.000
+espaço amostral suficiente que
+justifique eu investir no
+
+00:11:34.100 --> 00:11:37.240
+desenvolvimento de uma solução, não
+serve pra nada, porque ela é dor de uma
+
+00:11:37.340 --> 00:11:37.980
+pessoa.
+
+00:11:38.080 --> 00:11:39.440
+Ok?
+
+00:11:39.540 --> 00:11:43.260
+Bom, como que eu posso combinar os dois?
+
+00:11:43.360 --> 00:11:45.400
+Então, primeiro passo.
+
+00:11:45.500 --> 00:11:48.720
+Pra fazer descoberta qualitativa,
+começamos a falar, falamos de novo sobre
+
+00:11:48.820 --> 00:11:52.960
+isso na terça -feira, então vou fazer
+entrevista, vou fazer shadowing, como eu
+
+00:11:53.060 --> 00:11:55.920
+trouxe aqui pro Bruno, né, na nossa
+interação na terça -feira.
+
+00:11:56.020 --> 00:11:57.460
+Cara, eu quero ouvir o advogado
+trabalhando.
+
+00:11:57.560 --> 00:12:00.840
+Vou ficar sentado do lado dele lá, ou
+sentar ali num cantinho e ver como é que
+
+00:12:00.940 --> 00:12:06.300
+ele vai proceder lá dentro do trabalho
+dele, dentro do consumo de informação,
+
+00:12:06.400 --> 00:12:09.020
+das interações que ele faz com o
+sistema, com o sistema de busca de
+
+00:12:09.120 --> 00:12:11.740
+informação, busca de jurisprudência,
+etc.
+
+00:12:11.840 --> 00:12:13.800
+Tá?
+
+00:12:13.900 --> 00:12:18.520
+E aí, dentro dessa busca, dessa pesquisa
+qualitativa, eu quero listar os
+
+00:12:18.620 --> 00:12:22.120
+problemas que foram percebidos pelos
+usuários, ok?
+
+00:12:22.220 --> 00:12:29.740
+E capturar as frases, as expressões, as
+sensações que demonstrem o impacto, seja
+
+00:12:29.840 --> 00:12:34.380
+emocional, operacional, funcional do
+problema que eu identifiquei ali
+
+00:12:34.480 --> 00:12:37.620
+naquelas entrevistas, naquelas
+interações, tá?
+
+00:12:37.720 --> 00:12:44.600
+No momento que eu consigo identificar
+uma dor, opa, então eu vou verificar, eu
+
+00:12:44.700 --> 00:12:48.840
+vou checar se aquela dor, ela é ampla,
+ok?
+
+00:12:48.940 --> 00:12:53.220
+Pra isso a gente roda o passo dois, que
+seria o passo qualitativo, que é
+
+00:12:53.320 --> 00:12:56.240
+transformar essa lista de problemas em
+uma pesquisa mais estruturada, conseguir
+
+00:12:56.340 --> 00:12:59.480
+identificar alguns problemas lá, vou
+usar o exemplo do Bruno aqui, tá, Bruno?
+
+00:12:59.580 --> 00:13:00.700
+Tá bem fresco.
+
+00:13:00.800 --> 00:13:03.740
+Problemas na hora de buscar
+jurisprudência.
+
+00:13:03.840 --> 00:13:06.960
+Conseguir listar três, quatro problemas,
+beleza.
+
+00:13:07.060 --> 00:13:12.460
+Deixa eu fazer uma pesquisa estruturada,
+mais ampla, mais longitudinal, pra ver o
+
+00:13:12.560 --> 00:13:18.120
+quantas pessoas do universo jurídico, ou
+se você quiser fazer um, um, um recorte
+
+00:13:18.220 --> 00:13:23.440
+geográfico, ou um recorte setorial, do
+tipo, ou quantos, quantos, quantos
+
+00:13:23.540 --> 00:13:29.220
+advogados do estado do Paraná, ou do
+sudeste, tem esse mesmo problema?
+
+00:13:29.320 --> 00:13:34.540
+Ou quantos advogados tributaristas, ou
+quantos advogados de direito
+
+00:13:34.640 --> 00:13:39.040
+empresarial, de advogados, de sei lá,
+direito, que trabalha com direito de
+
+00:13:39.140 --> 00:13:40.820
+família, tem esse mesmo problema?
+
+00:13:40.920 --> 00:13:43.760
+Então, tanto setorial quanto geográfico,
+você pode usar como recorte pra fazer
+
+00:13:43.860 --> 00:13:47.280
+sua pesquisa longitudinal, tá?
+
+00:13:47.380 --> 00:13:54.980
+É, e aí aqui, você tem dois elementos
+chave, é a frequência e é o impacto.
+
+00:13:55.080 --> 00:14:00.280
+Quão frequente esse problema acontece e
+quanto isso atrapalha a vida da pessoa,
+
+00:14:00.380 --> 00:14:07.440
+ou de fato é um obstáculo, ou de fato é
+uma obstrução, uma fricção na vida
+
+00:14:07.540 --> 00:14:11.400
+daquele usuário, daquela persona com
+quem eu estou interagindo pra descobrir
+
+00:14:11.500 --> 00:14:14.240
+o problema que eu preciso resolver, tá?
+
+00:14:14.340 --> 00:14:18.140
+Normalmente, tanto pra frequência,
+quanto pra impacto, a gente usa uma
+
+00:14:18.240 --> 00:14:20.340
+escala de 1 a 5, tá bom?
+
+00:14:20.440 --> 00:14:25.740
+E aqui tem a matriz, essa apresentação
+aqui eu vou mandar pra vocês via Roger,
+
+00:14:25.840 --> 00:14:26.160
+tá?
+
+00:14:26.260 --> 00:14:27.940
+Vocês vão ter acesso a isso aqui.
+
+00:14:28.040 --> 00:14:28.520
+Então, beleza.
+
+00:14:28.620 --> 00:14:30.280
+Como é que a gente faz essa matriz?
+
+00:14:30.380 --> 00:14:33.740
+Então, eu tenho impacto e frequência.
+
+00:14:33.840 --> 00:14:37.920
+Se o impacto é alto e a frequência é
+alta, a prioridade de resolução desse
+
+00:14:38.020 --> 00:14:40.380
+problema, ela também é alta.
+
+00:14:40.480 --> 00:14:45.340
+Ou seja, é o problema que provavelmente,
+via de regra, condições tomais,
+
+00:14:45.440 --> 00:14:45.820
+temperaturas e pressão.
+
+00:14:45.920 --> 00:14:51.380
+Se não tiver viés, se não tiver vício
+aqui de resposta de um usuário viciado,
+
+00:14:51.480 --> 00:14:56.680
+um usuário amigo respondendo a pesquisa,
+via de regra, esse é o problema que você
+
+00:14:56.780 --> 00:14:57.780
+tem que fazer um pick -up, né?
+
+00:14:57.880 --> 00:15:00.520
+Que você tem que pensar pra poder
+resolver.
+
+00:15:00.620 --> 00:15:06.080
+No universo de 3, 4 problemas que você
+identificou, você consegue categorizar e
+
+00:15:06.180 --> 00:15:10.040
+priorizar o problema que é o maior
+problema, o problema mais agudo, de
+
+00:15:10.140 --> 00:15:11.820
+forma matemática.
+
+00:15:11.920 --> 00:15:14.080
+Isso aqui não é empírico, isso aqui é
+ciência.
+
+00:15:14.180 --> 00:15:19.260
+Eu medi de forma transversal, de forma
+longitudinal, consegui fazer um score
+
+00:15:19.360 --> 00:15:24.220
+disso aqui e eu sei de forma clara qual
+é o problema que eu tenho que pensar pra
+
+00:15:24.320 --> 00:15:26.560
+poder resolver, ok?
+
+00:15:26.660 --> 00:15:29.660
+Mais uma vez, gente, a hora que vocês
+quiserem me interromper, tiverem dúvida
+
+00:15:29.760 --> 00:15:31.240
+e tal, fiquem à vontade.
+
+00:15:31.340 --> 00:15:34.520
+Tô vendo que tem algumas coisas no chat
+aqui, não tô abrindo o chat, mas fiquem
+
+00:15:34.620 --> 00:15:38.620
+à vontade pra me interromper, tá bom?
+
+00:15:38.720 --> 00:15:41.420
+Aqui, ó, quantitativo.
+
+00:15:41.520 --> 00:15:44.160
+Clientes reclamam, qualitativo,
+desculpa, clientes reclamam que a
+
+00:15:44.260 --> 00:15:46.560
+interface é confusa na hora de pagar.
+
+00:15:46.660 --> 00:15:46.980
+Tá?
+
+00:15:47.080 --> 00:15:52.500
+Imagina que eu tô analisando aqui o
+universo de compras
+
+00:15:52.600 --> 00:15:54.920
+pelo aplicativo, ou por um aplicativo
+específico.
+
+00:15:55.020 --> 00:15:57.880
+Clientes reclamam que a interface é
+confusa na hora de pagar.
+
+00:15:57.980 --> 00:16:02.300
+E o quantitativo, ou seja, opa, peraí,
+consegui identificar um problema aqui
+
+00:16:02.400 --> 00:16:05.980
+que é, na hora do pagamento, a interface
+é confusa.
+
+00:16:06.080 --> 00:16:08.860
+Vamos aplicar isso de forma
+longitudinal.
+
+00:16:08.960 --> 00:16:13.440
+67 % dos usuários dizem que já
+abandonaram uma compra por confusão no
+
+00:16:13.540 --> 00:16:15.100
+checkout.
+
+00:16:15.200 --> 00:16:19.340
+Veja, eu tenho qualitativamente um
+problema identificado e eu tenho
+
+00:16:19.440 --> 00:16:25.500
+quantitativamente a confirmação de que
+esse problema não só existe, mas ele é
+
+00:16:25.600 --> 00:16:26.140
+agudo.
+
+00:16:26.240 --> 00:16:32.780
+Ele é, de fato, consistente, frequente e
+tem um alto impacto ou gera um alto
+
+00:16:32.880 --> 00:16:35.760
+obstáculo na vida do meu usuário, tá?
+
+00:16:35.860 --> 00:16:38.520
+Ou seja, eu tenho uma prioridade alta.
+
+00:16:38.620 --> 00:16:43.600
+Se o impacto é alto, a frequência é
+alta, eu tenho uma prioridade alta na
+
+00:16:43.700 --> 00:16:45.260
+resolução daquele problema.
+
+00:16:45.360 --> 00:16:48.560
+Quanto aqui, por exemplo, no segundo
+caso embaixo, alguns usuários pedem
+
+00:16:48.660 --> 00:16:50.420
+integração com o smartwatch.
+
+00:16:50.520 --> 00:16:52.540
+Estou vendo aqui integração no
+aplicativo.
+
+00:16:52.640 --> 00:16:57.300
+E o quantitativo fala que, opa, só 4 %
+dos usuários dizem que integração com o
+
+00:16:57.400 --> 00:17:00.460
+smartwatch é, de fato, algo essencial.
+
+00:17:00.560 --> 00:17:05.540
+Se eu tenho só uma amostra de 4 %
+pedindo isso, isso não é algo agudo para
+
+00:17:05.640 --> 00:17:09.440
+eu poder resolver, para eu poder
+desenvolver, para eu poder fazer.
+
+00:17:09.540 --> 00:17:09.880
+Ok?
+
+00:17:09.980 --> 00:17:11.260
+Está claro isso?
+
+00:17:11.360 --> 00:17:13.060
+Maravilha.
+
+00:17:13.160 --> 00:17:19.300
+Aqui um case de exemplo, para vocês
+verem como que se daria isso de forma
+
+00:17:19.400 --> 00:17:20.480
+cadenciada, tá?
+
+00:17:20.580 --> 00:17:22.400
+Etapa por etapa.
+
+00:17:22.500 --> 00:17:25.800
+Então, aqui o exemplo é de um app para
+facilitar compras em supermercados.
+
+00:17:25.900 --> 00:17:27.240
+Aqui é um exemplo fictício, tá?
+
+00:17:27.340 --> 00:17:29.800
+Que eu preparei pateticamente para
+vocês.
+
+00:17:29.900 --> 00:17:31.480
+Então, descoberta qualitativa.
+
+00:17:31.580 --> 00:17:34.660
+Imagine um grupo de alunos, um grupo de
+alunos que está desenvolvendo um
+
+00:17:34.760 --> 00:17:38.160
+aplicativo para facilitar compras em
+supermercados.
+
+00:17:38.260 --> 00:17:44.620
+Depois de 10 entrevistas em profundidade
+com consumidores, eles levantaram 4
+
+00:17:44.720 --> 00:17:45.640
+problemas principais.
+
+00:17:45.740 --> 00:17:49.820
+Veja que a amostra não é muito alta,
+porque estou investindo em uma abordagem
+
+00:17:49.920 --> 00:17:50.800
+qualitativa.
+
+00:17:50.900 --> 00:17:53.620
+10 entrevistas com profundidade.
+
+00:17:53.720 --> 00:17:56.840
+Quais os problemas que eles enumeraram
+aí?
+
+00:17:56.940 --> 00:18:02.480
+Filas longas no caixa, produtos em
+promoção acabam rápido, dificuldade para
+
+00:18:02.580 --> 00:18:07.820
+encontrar produtos na loja e aplicativo
+de ofertas do mercado trava muito.
+
+00:18:07.920 --> 00:18:14.820
+Opa, parece que eu tenho 4 problemas já
+claramente aí mapeados.
+
+00:18:14.920 --> 00:18:15.460
+Beleza.
+
+00:18:15.560 --> 00:18:18.600
+Como que eu faço a priorização de qual
+problema desses aqui eu vou pegar para
+
+00:18:18.700 --> 00:18:19.420
+resolver?
+
+00:18:19.520 --> 00:18:24.700
+Aí a gente começa a perspectiva, o
+aspecto
+
+00:18:24.800 --> 00:18:27.720
+longitudinal de priorização desse
+problema.
+
+00:18:27.820 --> 00:18:29.620
+Então, pesquisa qualitativa.
+
+00:18:29.720 --> 00:18:34.200
+Eu peguei esses 4 problemas e eu vou
+fazer uma pesquisa estruturada com 100
+
+00:18:34.300 --> 00:18:36.820
+pessoas para poder medir.
+
+00:18:36.920 --> 00:18:37.060
+Beleza.
+
+00:18:37.160 --> 00:18:41.800
+Desses 4 problemas, qual é o impacto de
+1 a 5 em relação a esse problema e qual
+
+00:18:41.900 --> 00:18:44.520
+é a frequência, com que frequência isso
+acontece?
+
+00:18:44.620 --> 00:18:46.760
+Também de 1 a 5, usando uma escala de 1
+a 5.
+
+00:18:46.860 --> 00:18:49.700
+Aqui, pessoal, isso aqui é muito
+importante porque isso aqui é um guia
+
+00:18:49.800 --> 00:18:53.580
+para você fazer o seu próprio discovery
+de forma decente.
+
+00:18:53.680 --> 00:18:58.020
+Fez uma pesquisa inicial qualitativa,
+descobriu o problema, vamos aumentar
+
+00:18:58.120 --> 00:18:59.780
+essa amostra fazendo ela quantitativa.
+
+00:18:59.880 --> 00:19:05.380
+E para fazer a pesquisa qualitativa,
+você pode rodar via forms, distribuindo
+
+00:19:05.480 --> 00:19:08.880
+isso em grupo de WhatsApp desde que
+aquele usuário seja qualificado, você
+
+00:19:08.980 --> 00:19:11.420
+tenha certeza de que aquele usuário é
+qualificado.
+
+00:19:11.520 --> 00:19:14.560
+Você não precisa sentar para conversar
+com 100 pessoas.
+
+00:19:14.660 --> 00:19:20.260
+Isso é importante porque isso te dá uma
+escala de capacidade de ouvir, de
+
+00:19:20.360 --> 00:19:24.360
+escutar um público que você talvez não
+teria tempo, não seria nem viável sentar
+
+00:19:24.460 --> 00:19:29.060
+com 100 pessoas em poucas semanas para
+poder conversar.
+
+00:19:29.160 --> 00:19:34.780
+Dito essas escalas, essa escala de 1 a 5
+para frequência e impacto, então, aquilo
+
+00:19:34.880 --> 00:19:40.260
+que eu falei, se eu tenho impacto alto e
+uma frequência alta, a prioridade de
+
+00:19:40.360 --> 00:19:43.320
+resolução daquele problema, ela é alta.
+
+00:19:43.420 --> 00:19:47.320
+Então, eu jogo ele para cima e vou
+fazendo um ranqueamento disso aí.
+
+00:19:47.420 --> 00:19:50.920
+Eu tenho então aqui, então a gente fez
+uma pesquisa quantitativa, dentro desse
+
+00:19:51.020 --> 00:19:55.920
+exemplo hipotético que eu trouxe para
+vocês, que desses quatro problemas, de
+
+00:19:56.020 --> 00:20:02.440
+longe, filas longas no caixa, tem um
+alto impacto e tem uma alta frequência.
+
+00:20:02.540 --> 00:20:07.820
+Opa, se tem um alto impacto e tem uma
+alta frequência, significa que é o
+
+00:20:07.920 --> 00:20:12.620
+problema que eu preciso pensar para
+poder de fato resolver, ok?
+
+00:20:12.720 --> 00:20:16.440
+Então, o problema número um aqui é filas
+longas no caixa.
+
+00:20:16.540 --> 00:20:16.940
+Por quê?
+
+00:20:17.040 --> 00:20:25.020
+Porque a relevância é alta de impacto e
+a recorrência também ela é alta, tá?
+
+00:20:25.120 --> 00:20:29.700
+E aí, beleza, Léo, o que é que eu faço
+com isso?
+
+00:20:29.800 --> 00:20:36.700
+Aqui, pessoal, isso aqui é o fechamento
+do nosso problem definition.
+
+00:20:36.800 --> 00:20:40.360
+Comecei a escutar dentro de uma massa de
+dados.
+
+00:20:40.460 --> 00:20:45.860
+Tive algumas impressões, tive algumas
+constatações.
+
+00:20:45.960 --> 00:20:49.740
+Consegui enumerar alguns problemas, um
+conjunto de problemas.
+
+00:20:49.840 --> 00:20:53.320
+Rodei uma pesquisa estruturada para
+fazer uma análise longitudinal desses
+
+00:20:53.420 --> 00:20:55.860
+problemas.
+
+00:20:55.960 --> 00:20:59.440
+Priorizei o problema que é mais agudo.
+
+00:20:59.540 --> 00:21:00.520
+Bingo!
+
+00:21:00.620 --> 00:21:04.640
+Tenho a definição do problema que
+precisa ser resolvido, ok?
+
+00:21:04.740 --> 00:21:08.340
+Então, se você está, e aqui é a minha
+contribuição para você que respondeu na
+
+00:21:08.440 --> 00:21:12.100
+pesquisa, que está patinando com a sua
+definição de problema.
+
+00:21:12.200 --> 00:21:16.600
+Então, se você está tendo problema com a
+sua massa de dados, tenta fazer um split
+
+00:21:16.700 --> 00:21:20.580
+de passo 1, passo 2, qualitativo e
+depois quantitativo.
+
+00:21:20.680 --> 00:21:25.080
+No seu quali, aplique essa matriz aqui
+que eu estou te mostrando, para que você
+
+00:21:25.180 --> 00:21:32.740
+consiga com muita clareza, assertividade
+e consistência, aterrissar no problema
+
+00:21:32.840 --> 00:21:34.580
+específico que você precisa resolver.
+
+00:21:34.680 --> 00:21:39.420
+Nesse caso aqui do exemplo, o problema
+de filas longas no caixa, ok?
+
+00:21:39.520 --> 00:21:42.620
+E aí, pessoal, o que eu faço a partir
+disso?
+
+00:21:42.720 --> 00:21:47.160
+A partir do momento que eu tenho a
+definição clara do problema, eu vou para
+
+00:21:47.260 --> 00:21:51.060
+a próxima etapa, que é a etapa que o
+Design Thinking nos ensina, que é a
+
+00:21:51.160 --> 00:21:57.140
+etapa de Solution Discovery, Solution
+Definition, Prototype, MVP, etc.
+
+00:21:57.240 --> 00:22:02.560
+Então, dentro dessa definição de
+problema, meu próximo passo é, beleza,
+
+00:22:02.660 --> 00:22:07.040
+vou fazer um brainstorming para poder
+saber qual que é a solução que eu vou
+
+00:22:07.140 --> 00:22:13.240
+utilizar para resolver, esse problema, e
+imagine que eu já tenha essa solução,
+
+00:22:13.340 --> 00:22:13.960
+ok?
+
+00:22:14.060 --> 00:22:22.620
+Aqui eu peguei um exemplo com base de um
+conteúdo de A, que é até muito próprio
+
+00:22:22.720 --> 00:22:27.040
+dentro do que vocês estão, que a gente
+está olhando aqui na Academia Lendária,
+
+00:22:27.140 --> 00:22:32.100
+que é o desenvolvimento de um negócio
+que você possa criar um MVP rápido com a
+
+00:22:32.200 --> 00:22:33.820
+utilização de A, tá?
+
+00:22:33.920 --> 00:22:36.500
+E aí eu não usei o exemplo do
+supermercado, porque o supermercado
+
+00:22:36.600 --> 00:22:38.340
+estava olhando para o desenvolvimento de
+um app, ok?
+
+00:22:38.440 --> 00:22:42.780
+Então, eu quero expandir a consciência
+de vocês, até porque eu vi também, muita
+
+00:22:42.880 --> 00:22:47.200
+gente falando no formulário o seguinte,
+ah, não sou técnico, sou de business,
+
+00:22:47.300 --> 00:22:51.960
+não tenho um founder técnico, não tenho
+um co -founder técnico, não consigo
+
+00:22:52.060 --> 00:22:56.140
+desenvolver aplicativo, não consigo
+desenvolver nada que seja muito técnico.
+
+00:22:56.240 --> 00:22:57.740
+Beleza, não tem problema.
+
+00:22:57.840 --> 00:23:03.720
+Se você não é técnico, se você não tem
+condições de desenvolver, mesmo usando o
+
+00:23:03.820 --> 00:23:08.560
+Logo, não tem condições, ou não está
+afim de botar a mão em código, ou gerar
+
+00:23:08.660 --> 00:23:10.860
+código de alguma forma, não tem
+problema.
+
+00:23:10.960 --> 00:23:16.020
+Com a inteligência artificial existe uma
+série de possibilidades, uma série de
+
+00:23:16.120 --> 00:23:20.460
+caminhos que você pode explorar para
+poder colocar, de fato, uma solução de
+
+00:23:20.560 --> 00:23:22.480
+pé, usando IA single.
+
+00:23:22.580 --> 00:23:26.360
+Quando eu falo single, é você on your
+own, você por sua própria conta, por
+
+00:23:26.460 --> 00:23:27.680
+conta própria, tá?
+
+00:23:27.780 --> 00:23:31.460
+E eu quero mostrar esse exemplo para
+vocês dentro da seguinte hipótese, que
+
+00:23:31.560 --> 00:23:34.260
+eu acho que é uma hipótese muito
+própria, acho que até alguns aqui já
+
+00:23:34.360 --> 00:23:37.900
+trouxeram isso, né, aqui para dentro
+da...
+
+00:23:38.000 --> 00:23:41.820
+do nosso exemplo no Lendários, que é
+isso aqui, ó.
+
+00:23:41.920 --> 00:23:43.400
+É um aplicativo...
+
+00:23:43.500 --> 00:23:45.520
+Calma aí que está em cima aqui do meu
+negócio.
+
+00:23:45.620 --> 00:23:51.840
+Um aplicativo, né, a hipótese é um
+aplicativo que possa funcionar como um
+
+00:23:51.940 --> 00:23:58.240
+bot de nutricionista dentro do WhatsApp,
+respondendo dúvida, pergunta e dúvida em
+
+00:23:58.340 --> 00:24:02.300
+relação, questionamentos em relação à
+dieta, de forma automática, sem que o
+
+00:24:02.400 --> 00:24:06.880
+nutricionista possa, tenha que ficar
+entrando lá no WhatsApp e responder o
+
+00:24:06.980 --> 00:24:08.020
+cliente.
+
+00:24:08.120 --> 00:24:11.680
+Parênteses, isso aqui que eu vou mostrar
+para vocês é extremamente próprio, é
+
+00:24:11.780 --> 00:24:15.880
+extremamente aplicável para várias
+outras profissões.
+
+00:24:15.980 --> 00:24:18.220
+Então eu posso usar isso aqui para
+contador, posso usar isso aqui para
+
+00:24:18.320 --> 00:24:21.680
+advogado, posso usar isso aqui para
+eventualmente para psicólogo, ou para
+
+00:24:21.780 --> 00:24:25.680
+qualquer setor que eu tenha um
+atendimento one -on -one, que eu já
+
+00:24:25.780 --> 00:24:28.020
+consigo criar uma base estruturada em
+relação a isso.
+
+00:24:28.120 --> 00:24:29.000
+Tá?
+
+00:24:29.100 --> 00:24:34.300
+Então a ideia é beleza, tenho esse
+problema aqui do nutricionista que não
+
+00:24:34.400 --> 00:24:39.520
+consegue responder em tempo hábil, as
+dúvidas dos pacientes.
+
+00:24:39.620 --> 00:24:42.480
+Imagina um nutricionista que tem lá 200,
+250 pacientes.
+
+00:24:42.580 --> 00:24:45.420
+Como que ele poderia, como que a gente
+poderia criar uma solução para poder
+
+00:24:45.520 --> 00:24:47.720
+automatizar esse atendimento, agregando
+valor para ele?
+
+00:24:47.820 --> 00:24:49.720
+Então, qual é o segmento de clientes
+aqui?
+
+00:24:49.820 --> 00:24:53.700
+Eu estou utilizando o MVP SpecLite, que
+foi o mesmo template que vocês usaram,
+
+00:24:53.800 --> 00:24:54.680
+tá?
+
+00:24:54.780 --> 00:24:58.880
+No processo de vocês, ou estão usando
+aí, se vocês estiverem nesse momento de
+
+00:24:58.980 --> 00:25:03.880
+preenchimento dentro do processo de
+vocês.
+
+00:25:03.980 --> 00:25:05.880
+Qual é o segmento de clientes aqui?
+
+00:25:05.980 --> 00:25:10.580
+Nutricionistas autônomos ou de pequenas
+clínicas, com uma base de pacientes
+
+00:25:10.680 --> 00:25:11.620
+ativos, né?
+
+00:25:11.720 --> 00:25:16.600
+20 mais pacientes ativos e comunicação
+frequente via WhatsApp.
+
+00:25:16.700 --> 00:25:18.220
+Veja um ponto importante.
+
+00:25:18.320 --> 00:25:24.260
+E aqui também eu trago um disclaimer,
+uma...
+
+00:25:24.360 --> 00:25:28.540
+Eu chamo a atenção de vocês para um
+ponto muito, muito, muito importante que
+
+00:25:28.640 --> 00:25:30.160
+muitas pessoas pecam.
+
+00:25:30.260 --> 00:25:36.640
+Você precisa ser específico na descrição
+do seu segmento de clientes.
+
+00:25:36.740 --> 00:25:37.600
+Por quê?
+
+00:25:37.700 --> 00:25:42.700
+Se você for muito amplo na definição do
+seu segmento de clientes, pessoal,
+
+00:25:42.800 --> 00:25:46.660
+necessariamente você vai incorrer no
+qualquer coisa pra qualquer um.
+
+00:25:46.760 --> 00:25:49.940
+Qualquer coisa pra qualquer um não
+agrega valor.
+
+00:25:50.040 --> 00:25:57.200
+E aí você pode ter, como eu já tive no
+passado, aquele temor, ou aquela...
+
+00:25:57.300 --> 00:25:59.940
+Aquele receio de estar fechando demais o
+mercado.
+
+00:26:00.040 --> 00:26:01.440
+Nossa, mas vai ficar muito pequenininho.
+
+00:26:01.540 --> 00:26:04.260
+Vou excluir um monte de gente que eu
+poderia conversar.
+
+00:26:04.360 --> 00:26:09.140
+Não tenha medo de fazer um downsizing em
+relação ao seu público -alvo, ao seu
+
+00:26:09.240 --> 00:26:15.820
+segmento de mercado para você iniciar
+para você iniciar o teste do seu MVP.
+
+00:26:15.920 --> 00:26:18.940
+Precisa ser para um público específico.
+
+00:26:19.040 --> 00:26:19.560
+Claro.
+
+00:26:19.660 --> 00:26:20.540
+Por quê, Léo?
+
+00:26:20.640 --> 00:26:22.080
+Por um motivo simples.
+
+00:26:22.180 --> 00:26:25.340
+Se o seu público for muito amplo, você
+vai ter que testar com todo mundo dentro
+
+00:26:25.440 --> 00:26:29.440
+da amplitude do seu público pra saber se
+de fato aquele negócio agrega valor.
+
+00:26:29.540 --> 00:26:34.660
+Se o seu público é menor, com muita
+rapidez ou com muita clareza, você vai
+
+00:26:34.760 --> 00:26:39.120
+saber se, binariamente, agrega valor,
+que é o desenvolvimento do MVP, ou não
+
+00:26:39.220 --> 00:26:39.760
+agrega valor.
+
+00:26:39.860 --> 00:26:41.000
+E tudo bem.
+
+00:26:41.100 --> 00:26:44.660
+Aqui, então, o que a gente está falando
+é nutricionista, autônomo, pequena
+
+00:26:44.760 --> 00:26:48.800
+clínica, com uma base de pacientes, de
+mais de 20 pacientes ativos, ok?
+
+00:26:48.900 --> 00:26:52.180
+E que se comunica muito via WhatsApp com
+os seus pacientes.
+
+00:26:52.280 --> 00:26:52.600
+Beleza.
+
+00:26:52.700 --> 00:26:56.040
+Estabelecer o escopo, estabelecer o
+segmento de clientes, tá?
+
+00:26:56.140 --> 00:26:58.780
+Qual é a proposta de valor?
+
+00:26:58.880 --> 00:27:02.640
+Responder automaticamente dúvidas
+frequentes de pacientes usando IA
+
+00:27:02.740 --> 00:27:06.560
+treinada com o próprio conteúdo do
+nutricionista ou, eventualmente, algum
+
+00:27:06.660 --> 00:27:11.480
+outro conteúdo que ele queira importar
+pra dentro da base de
+
+00:27:11.580 --> 00:27:16.680
+conhecimento dele, economizando tempo e
+mantendo a personalização.
+
+00:27:16.780 --> 00:27:23.020
+Veja, se eu consigo fazer isso, parece
+que eu estou agregando valor.
+
+00:27:23.120 --> 00:27:23.860
+Por quê?
+
+00:27:23.960 --> 00:27:27.460
+Eu tenho, e aí a sua pesquisa de
+definição do problema vai ter que te
+
+00:27:27.560 --> 00:27:32.640
+levar a essa conclusão, que eu tenho um
+universo X de nutricionistas que
+
+00:27:32.740 --> 00:27:36.540
+reclamam que não conseguem dar atenção
+devida pro paciente e perdem muitos
+
+00:27:36.640 --> 00:27:39.440
+pacientes, porque, às vezes, demoram
+duas horas pra responder, às vezes,
+
+00:27:39.540 --> 00:27:43.140
+demoram o dia inteiro pra responder, às
+vezes, só respondem no outro dia, tá?
+
+00:27:43.240 --> 00:27:45.540
+Então, essa aqui é a nossa proposta de
+valor.
+
+00:27:45.640 --> 00:27:48.420
+Qual é o formato desse MVP, pessoal?
+
+00:27:48.520 --> 00:27:53.200
+Bot no WhatsApp, utilizando automação.
+
+00:27:53.300 --> 00:27:53.820
+Simples assim.
+
+00:27:53.920 --> 00:27:55.880
+Bot no WhatsApp, utilizando automação.
+
+00:27:55.980 --> 00:27:59.520
+Vamos entrar no fluxo já, já, porque aí
+o buraco é um pouquinho mais embaixo.
+
+00:27:59.620 --> 00:28:02.520
+Então, qual que é a aplicação da IA
+nesse caso?
+
+00:28:02.620 --> 00:28:07.360
+A IA recebe mensagem no WhatsApp,
+interpreta o sentido e a intenção da
+
+00:28:07.460 --> 00:28:11.740
+mensagem, busca no conteúdo base, por
+exemplo, do Notion, pode ser um Google
+
+00:28:11.840 --> 00:28:16.760
+Docs também, a resposta mais relevante e
+adapta pra linguagem natural pra ficar
+
+00:28:16.860 --> 00:28:19.860
+coerente com o tom profissional daquele
+nutricionista.
+
+00:28:19.960 --> 00:28:22.720
+Ah, Léo, mas isso é muito complexo de
+ser feito.
+
+00:28:22.820 --> 00:28:27.640
+Não é, e eu vou mostrar pra vocês como
+não é complexo de ser feito, tá bom?
+
+00:28:27.740 --> 00:28:31.580
+Qual que seria o fluxo funcional desse
+MVP, pessoal?
+
+00:28:31.680 --> 00:28:33.040
+Então, como é que é o fluxo funcional?
+
+00:28:33.140 --> 00:28:39.060
+O paciente envia a pergunta no WhatsApp,
+imagina que o Bruno lá é o meu
+
+00:28:39.160 --> 00:28:39.260
+nutricionista.
+
+00:28:39.360 --> 00:28:40.420
+Fala, ei, Bruno, tudo bem?
+
+00:28:40.520 --> 00:28:47.060
+Nossa, ô Bruno, é o seguinte, tô
+querendo substituir o arroz integral
+
+00:28:47.160 --> 00:28:50.460
+pela mandioca hoje na minha dieta e no
+almoço.
+
+00:28:50.560 --> 00:28:51.460
+Posso?
+
+00:28:51.560 --> 00:28:53.600
+É só isso que eu quero saber.
+
+00:28:53.700 --> 00:28:59.180
+E aí, a automação vai capturar essa
+mensagem, e eu vou mostrar pra vocês
+
+00:28:59.280 --> 00:29:03.540
+como é que vai funcionar essa automação,
+vai capturar, vai mandar essa mensagem
+
+00:29:03.640 --> 00:29:08.240
+pra IA, pode ser o GPT -4, 4 -O, né?
+
+00:29:08.340 --> 00:29:11.020
+4ª geração, ou 5 agora, acabou de ser
+lançado.
+
+00:29:11.120 --> 00:29:19.600
+A mensagem volta com a interpretação da
+IA, com a busca no conteúdo base, e aí a
+
+00:29:19.700 --> 00:29:23.520
+IA vai lá no conteúdo base, na minha
+base de conhecimento, constrói a
+
+00:29:23.620 --> 00:29:28.000
+resposta e manda a resposta
+personalizada para o paciente no
+
+00:29:28.100 --> 00:29:28.960
+WhatsApp.
+
+00:29:29.060 --> 00:29:34.700
+Aí você pode perguntar assim, ah, Léo,
+mas o paciente não poderia entrar no
+
+00:29:34.800 --> 00:29:36.200
+próprio GPT e fazer essa pergunta?
+
+00:29:36.300 --> 00:29:39.220
+Ele pode substituir o arroz pela
+mandioca?
+
+00:29:39.320 --> 00:29:40.560
+Com certeza.
+
+00:29:40.660 --> 00:29:46.420
+Porém, entretanto, contudo, todavia, se
+eu tenho uma base de dados que é
+
+00:29:46.520 --> 00:29:50.880
+específica do nutricionista, podem ter
+informações lá que não necessariamente a
+
+00:29:50.980 --> 00:29:52.740
+IA sabe.
+
+00:29:52.840 --> 00:29:58.200
+Até porque a IA ela vai responder com
+base em dados gerais, não
+
+00:29:58.300 --> 00:30:02.940
+necessariamente aqueles dados estão
+qualificados para olhar a dieta
+
+00:30:03.040 --> 00:30:04.560
+específica daquele paciente.
+
+00:30:04.660 --> 00:30:05.240
+Ok?
+
+00:30:05.340 --> 00:30:11.600
+Então, existe uma, existe um valor
+claro, do seu ponto de vista de base de
+
+00:30:11.700 --> 00:30:18.020
+dados estruturada de nutrição que o GPT
+de forma geral, ele não vai te entregar.
+
+00:30:18.120 --> 00:30:21.260
+Ele vai te entregar sim uma dieta, ele
+vai te entregar sim uma opinião, se você
+
+00:30:21.360 --> 00:30:28.440
+pode substituir o arroz pela mandioca
+sim também, mas se eu tenho uma base de
+
+00:30:28.540 --> 00:30:33.640
+dados bem estruturada e eventualmente lá
+com textos, com opiniões, com impressões
+
+00:30:33.740 --> 00:30:37.940
+do nutricionista ou com a própria dieta
+ali no meio daquela base de conhecimento
+
+00:30:38.040 --> 00:30:45.320
+do que tem aquele paciente, ela consegue
+ser mais assertiva em relação àquele
+
+00:30:45.420 --> 00:30:47.660
+paciente, em relação àquela dúvida que o
+paciente mandou.
+
+00:30:47.760 --> 00:30:49.280
+Bom?
+
+00:30:49.380 --> 00:30:50.640
+Tá bom, Léo, beleza.
+
+00:30:50.740 --> 00:30:53.840
+Estamos falando aqui da criação desse
+MVP de bot de WhatsApp para o
+
+00:30:53.940 --> 00:30:54.160
+nutricionista.
+
+00:30:54.260 --> 00:30:54.660
+Tá.
+
+00:30:54.760 --> 00:30:59.420
+Quais ferramentas eu utilizaria para
+poder construir esse MVP?
+
+00:30:59.520 --> 00:31:01.300
+Estou falando aqui de quatro
+ferramentas.
+
+00:31:01.400 --> 00:31:01.460
+Tá?
+
+00:31:01.560 --> 00:31:09.560
+E todas elas você não precisa de um
+desenvolvedor, de um cara técnico, você
+
+00:31:09.660 --> 00:31:15.780
+consegue você pode saber zero de
+tecnologia, você é capaz, você tiver boa
+
+00:31:15.880 --> 00:31:19.960
+vontade e paciência, você é capaz de
+botar isso aqui de pé.
+
+00:31:20.060 --> 00:31:24.400
+Você precisa de uma conta no WhatsApp
+Business, você precisa de uma conta no
+
+00:31:24.500 --> 00:31:25.400
+Zapier, tá?
+
+00:31:25.500 --> 00:31:29.660
+Ou no Make, ou no Zenvia, tem vários
+outros aplicativos de integração de API
+
+00:31:29.760 --> 00:31:33.160
+com o WhatsApp Business, então você
+consegue criar conta no WhatsApp
+
+00:31:33.260 --> 00:31:38.840
+Business, criar conta no Zapier, criar
+conta no GPT -4, criar conta no Nusha.
+
+00:31:38.940 --> 00:31:44.480
+Então esses quatro caras é o que você
+precisa para botar esse fluxo de pé.
+
+00:31:44.580 --> 00:31:48.420
+Como que funcionaria esse fluxo, Léo?
+
+00:31:48.520 --> 00:31:50.940
+Funcionaria mais ou menos assim, ó.
+
+00:31:51.040 --> 00:31:55.080
+Eu tenho usuário no WhatsApp que envia
+mensagem, esse usuário aqui é o paciente
+
+00:31:55.180 --> 00:31:56.980
+do nutricionista, tá?
+
+00:31:57.080 --> 00:32:03.200
+Ele vai enviar a mensagem, o WhatsApp
+Business via API, que pode ser via
+
+00:32:03.300 --> 00:32:06.420
+Twitter, via Zenvia, como eu falei pra
+vocês, via Minichat, também o Minichat
+
+00:32:06.520 --> 00:32:10.580
+faz isso, recebe, ok?
+
+00:32:10.680 --> 00:32:15.500
+Recebe essa mensagem, ou seja, ele tá
+escutando o seu WhatsApp Business, o
+
+00:32:15.600 --> 00:32:20.500
+Zenvia, por exemplo, o Twilio, recebe
+essa mensagem, joga isso na automação,
+
+00:32:20.600 --> 00:32:21.840
+tá?
+
+00:32:21.940 --> 00:32:29.820
+Que vai buscar informação dentro da base
+de conhecimento, que pode ser o Notion,
+
+00:32:29.920 --> 00:32:34.420
+o Airtable, pode ser o Google Sheets, o
+Google Docs, etc.
+
+00:32:34.520 --> 00:32:38.900
+Essa resposta volta via automação e a
+automação prepara a resposta e responde
+
+00:32:39.000 --> 00:32:41.240
+pro usuário no WhatsApp.
+
+00:32:41.340 --> 00:32:45.780
+Léo, dá pra fazer isso em quantos dias
+dá pra gente colocar isso de pé?
+
+00:32:45.880 --> 00:32:47.920
+Dias não, horas, tá?
+
+00:32:48.020 --> 00:32:52.920
+Em poucas horas, mais uma vez, se você
+tiver uma conta de WhatsApp Business, se
+
+00:32:53.020 --> 00:32:58.400
+você tiver uma conta de Zenvia, Twilio,
+Minichat ou Zapia, se você tiver uma
+
+00:32:58.500 --> 00:33:03.020
+conta paga de GPT -4O ou 5, ou whatever,
+tá?
+
+00:33:03.120 --> 00:33:07.580
+E organizar isso no Notion direitinho,
+essa base de conhecimento que, via de
+
+00:33:07.680 --> 00:33:11.140
+regra, ele pode consultar diretamente no
+Notion ou não.
+
+00:33:11.240 --> 00:33:13.540
+Você pode apontar isso pro prompt de
+nutrição.
+
+00:33:13.640 --> 00:33:17.240
+O ideal é que o próprio nutricionista,
+ele tenha a sua base de dados, até
+
+00:33:17.340 --> 00:33:23.600
+porque isso gera uma autoridade um poder
+autoral dos dados e como é que eu posso
+
+00:33:23.700 --> 00:33:23.940
+dizer?
+
+00:33:24.040 --> 00:33:30.260
+E uma relevância do que ele tem de base
+de conhecimento como nutricionista pra
+
+00:33:30.360 --> 00:33:32.360
+aquele paciente, tá?
+
+00:33:32.460 --> 00:33:37.740
+Então, esse fluxo todo aqui, você, em
+poucas horas, você consegue colocar de
+
+00:33:37.840 --> 00:33:38.440
+pé, tá?
+
+00:33:38.540 --> 00:33:42.880
+Se você for um nutricionista, ou se o
+seu nutricionista, ele já tiver uma base
+
+00:33:42.980 --> 00:33:46.380
+de conhecimento, em poucas horas você
+consegue botar de pé, sob o ponto de
+
+00:33:46.480 --> 00:33:51.520
+vista de fluxo funcional, utilizando o
+IA, tá?
+
+00:33:51.620 --> 00:33:54.740
+Se não tiver a base de conhecimento,
+então você tem que sentar com o
+
+00:33:54.840 --> 00:33:58.640
+nutricionista e ajudá -lo a estruturar
+isso em uma dessas ferramentas que mais
+
+00:33:58.740 --> 00:34:01.900
+uma vez são bastante conhecidas, né?
+
+00:34:02.000 --> 00:34:07.700
+Notion, Work Table, Sheets, Docs, gelar
+o que for, tá bom?
+
+00:34:07.800 --> 00:34:13.300
+Pergunta sobre isso, pessoal, sei que
+tem muita gente que fez criação de bot,
+
+00:34:13.400 --> 00:34:17.440
+que tava pensando em criação de bot, em
+automação de processo, usando o
+
+00:34:17.540 --> 00:34:21.100
+WhatsApp, alguém quer perguntar, quer
+falar alguma coisa sobre isso, ou
+
+00:34:21.200 --> 00:34:22.220
+podemos seguir?
+
+00:34:22.320 --> 00:34:23.160
+Léo?
+
+00:34:23.260 --> 00:34:25.660
+Oi.
+
+00:34:25.760 --> 00:34:27.160
+Márcio aqui?
+
+00:34:27.260 --> 00:34:28.820
+Opa, Márcio, tudo bem?
+
+00:34:28.920 --> 00:34:30.060
+Tudo bem.
+
+00:34:30.160 --> 00:34:36.640
+Então, lá na minha pesquisa, no meu
+estudo, eu vou criar, essa nutricionista
+
+00:34:36.740 --> 00:34:43.740
+e o terapeuta e o personal, certo?
+
+00:34:43.840 --> 00:34:46.060
+Que é a equipe que vai cuidar do
+usuário.
+
+00:34:46.160 --> 00:34:52.280
+No caso, eu vou precisar fazer, pra não
+separar por três agentes diferentes, eu
+
+00:34:52.380 --> 00:34:55.420
+vou nomear um só, né?
+
+00:34:55.520 --> 00:35:02.260
+Como se fosse um coach, e ele vai falar
+sobre os três assuntos.
+
+00:35:02.360 --> 00:35:02.600
+Entendeu?
+
+00:35:02.700 --> 00:35:09.740
+Então, a base de dados, vai ter lá o
+conhecimento técnico da nutrição,
+
+00:35:09.840 --> 00:35:15.140
+conhecimento técnico do exercício
+físico, e o conhecimento técnico de
+
+00:35:15.240 --> 00:35:20.700
+terapia, da parte emocional, que é o
+principal, que foi detectado ali.
+
+00:35:20.800 --> 00:35:25.520
+Então, esse cara, ele vai fazer o papel
+dos três em conhecimento, pra economizar
+
+00:35:25.620 --> 00:35:27.480
+e pra ficar mais dinâmico.
+
+00:35:27.580 --> 00:35:29.700
+O que você acha?
+
+00:35:29.800 --> 00:35:33.720
+Olha, Márcio, o seu ponto de vista de
+fluxo funcional é perfeitamente viável
+
+00:35:33.820 --> 00:35:40.080
+você fazer, porque, sob o ponto de vista
+de resolução do problema do seu cliente,
+
+00:35:40.180 --> 00:35:41.540
+qual que é dos três é o mais agudo?
+
+00:35:41.640 --> 00:35:47.500
+É o terapeuta, é o nutricionista ou o
+personal?
+
+00:35:47.600 --> 00:35:52.340
+Ele é assim, pelo que eu entendi ali,
+pelos cálculos que eu fiz em relação a
+
+00:35:52.440 --> 00:35:55.980
+isso, tá assim, tá muito próximo, mas é
+a parte
+
+00:35:56.080 --> 00:35:59.620
+emocional.
+
+00:35:59.720 --> 00:36:03.300
+Bom, independente de ser emocional,
+funcional, físico, etc., eu, no seu
+
+00:36:03.400 --> 00:36:09.720
+lugar, eu começaria, primeiro, com a
+calibração de um, uma persona, um
+
+00:36:09.820 --> 00:36:14.620
+agente, deixaria esse agente muito bom,
+pra depois eu tombar pra os outros
+
+00:36:14.720 --> 00:36:15.680
+caras.
+
+00:36:15.780 --> 00:36:16.540
+Por quê?
+
+00:36:16.640 --> 00:36:23.340
+Porque tudo na IA, né, e quem entende já
+que tá aqui no nosso grupo, não vai me
+
+00:36:23.440 --> 00:36:28.060
+deixar mentir, tudo na IA, você precisa
+de treinamento de dados.
+
+00:36:28.160 --> 00:36:31.620
+Inclusive, o próprio GPT, que erra pra
+cacete, dependendo do que você pergunte
+
+00:36:31.720 --> 00:36:33.800
+pra ele, passou e passou.
+
+00:36:33.900 --> 00:36:34.500
+Não é um sinal.
+
+00:36:34.600 --> 00:36:37.400
+Exatamente o treinamento de dados,
+entendeu?
+
+00:36:37.500 --> 00:36:41.300
+Então, é muito importante pra você
+conseguir criar uma autoridade e a
+
+00:36:41.400 --> 00:36:44.540
+assertividade, que é a palavra -chave,
+em relação ao que você tá fazendo com o
+
+00:36:44.640 --> 00:36:49.920
+seu paciente, com o seu cliente, a focar
+num assunto unidirecional.
+
+00:36:50.020 --> 00:36:55.000
+Depois que você tiver muito bom o seu
+modelo de linguagem, que você vai pegar
+
+00:36:55.100 --> 00:37:00.860
+emprestado lá o LLM, no GPT, ou seja lá
+qual for, mas que o seu, a sua base
+
+00:37:00.960 --> 00:37:07.360
+estruturada, né, o seu prompt tiver
+bastante bem, calibrado, refinado, aí
+
+00:37:07.460 --> 00:37:10.400
+sim você gera, você toma pros outros,
+entendeu?
+
+00:37:10.500 --> 00:37:11.660
+Por quê?
+
+00:37:11.760 --> 00:37:15.000
+Porque você precisa, e aí tô falando de
+MVP, tá?
+
+00:37:15.100 --> 00:37:20.100
+Você precisa, em relação ao MVP, testar
+a hipótese de que você, de fato,
+
+00:37:20.200 --> 00:37:21.960
+consegue agregar valor.
+
+00:37:22.060 --> 00:37:25.500
+Porque senão você vai gastar um tempo
+muito maior pra poder deixar calibrado
+
+00:37:25.600 --> 00:37:30.620
+três agentes, mesmo que sejam só três
+bases de dados, né, apontando pro mesmo
+
+00:37:30.720 --> 00:37:35.460
+agente, sendo que pra você agregar o
+nível de valor que você pode agregar,
+
+00:37:35.560 --> 00:37:37.160
+isso vai tomar muito mais tempo.
+
+00:37:37.260 --> 00:37:40.680
+E o delta T do MVP, ele precisa ser
+pequeno.
+
+00:37:40.780 --> 00:37:41.740
+Por quê?
+
+00:37:41.840 --> 00:37:44.720
+Porque você precisa testar gastando o
+mínimo de tempo e de dinheiro e de
+
+00:37:44.820 --> 00:37:45.120
+energia.
+
+00:37:45.220 --> 00:37:47.500
+Essa é a melhor prática em termos de
+literatura.
+
+00:37:47.600 --> 00:37:54.120
+Então eu crio ali o terapeuta do
+emagrecimento e deixo ele trabalhar ali
+
+00:37:54.220 --> 00:37:59.460
+e depois deu certo, beleza, tá bem
+calibrado, o pessoal gostou, gerou
+
+00:37:59.560 --> 00:38:06.120
+valor, aí eu posso nas perguntas, né,
+né, que o pessoal vai falar alguma coisa
+
+00:38:06.220 --> 00:38:10.720
+ali e tal, aí depois, se precisar, eu
+coloco outro agente.
+
+00:38:10.820 --> 00:38:15.160
+Você vai expandir a atuação dele, tá?
+
+00:38:15.260 --> 00:38:18.560
+Esse é um conceito, só fazendo um
+parênteses aqui, Bruno, ou Márcio,
+
+00:38:18.660 --> 00:38:23.360
+desculpa, Bruno levantou o mão, é um
+conceito que a literatura chama de
+
+00:38:23.460 --> 00:38:24.220
+beachhead.
+
+00:38:24.320 --> 00:38:26.100
+O que é beachhead?
+
+00:38:26.200 --> 00:38:31.040
+Beachhead é uma estratégia militar que o
+pessoal usava lá, o pessoal que
+
+00:38:31.140 --> 00:38:36.200
+conquistou Normandia lá atrás, ele usou
+que é o cabeça de praia, é, pra eu
+
+00:38:36.300 --> 00:38:40.120
+conquistar um território, eu sempre
+começo com um território pequeno, onde
+
+00:38:40.220 --> 00:38:43.420
+eu consiga usar, ao invés de um navio,
+eu consigo usar um soldado, dois
+
+00:38:43.520 --> 00:38:45.500
+soldados e um jet ski.
+
+00:38:45.600 --> 00:38:46.700
+Então, o que que significa isso?
+
+00:38:46.800 --> 00:38:52.120
+Eu consigo rapidamente alcançar o
+terapeuta, o inverso terapeuta, ganho
+
+00:38:52.220 --> 00:38:56.100
+relevância nisso pra depois tombar pro
+universo do personal trainer, ou para o
+
+00:38:56.200 --> 00:38:59.700
+universo do, né, do nutricionista,
+entendeu?
+
+00:38:59.800 --> 00:39:04.900
+Então, é, cara, dá um sizing aí no seu
+segmento, se a dor aguda está maior no
+
+00:39:05.000 --> 00:39:08.820
+terapeuta, investe no terapeuta, treina,
+refina e depois toma pra outros lugares.
+
+00:39:08.920 --> 00:39:13.820
+Porque pode ser, só um último
+parênteses, Márcio, pode ser que o seu
+
+00:39:13.920 --> 00:39:18.460
+terapeuta ele fique tão bom que o valor
+tá tão alto, que você não precise pensar
+
+00:39:18.560 --> 00:39:22.740
+mais em nutricionista e nem em personal
+trainer, porque o terapeuta, ele vai
+
+00:39:22.840 --> 00:39:27.340
+resolver o problema ou problema central
+em relação a autoestima do seu cliente,
+
+00:39:27.440 --> 00:39:30.900
+ou a relação dele com comida.
+
+00:39:31.000 --> 00:39:32.000
+Beleza.
+
+00:39:32.100 --> 00:39:32.960
+Posso aqui te ajudar?
+
+00:39:33.060 --> 00:39:34.400
+Bilbios!
+
+00:39:34.500 --> 00:39:36.520
+Silvio tá com a mão levantada aí, né,
+Silvio?
+
+00:39:36.620 --> 00:39:37.820
+Vai lá.
+
+00:39:37.920 --> 00:39:44.080
+É, a dúvida é mais com relação à parte
+de base de conhecimento, ali, falando
+
+00:39:44.180 --> 00:39:49.580
+pra aplicativo web, né, no WhatsApp a
+gente dá pra colocar lá um agente, no
+
+00:39:49.680 --> 00:39:54.700
+fluxo do N8N, por exemplo, que é o que
+eu uso mais aqui, e dá pra conectar uma
+
+00:39:54.800 --> 00:39:58.540
+base de conhecimento, mas quando eu faço
+uma aplicação web, né, eu preciso
+
+00:39:58.640 --> 00:40:02.540
+colocar algum conhecimento ali na
+aplicação, por exemplo, de legislação,
+
+00:40:02.640 --> 00:40:06.680
+é, tem alguns documentos, tem PDF, que
+eu até, tem um GPT que eu já tenho,
+
+00:40:06.780 --> 00:40:10.400
+digamos assim, eu tô validando o GPT,
+mas eu vou precisar na aplicação deixar,
+
+00:40:10.500 --> 00:40:14.040
+porque é, porque ele não pode tipo,
+pensando na legislação, né, técnica, ele
+
+00:40:14.140 --> 00:40:17.360
+não pode supor, né, ele tem que olhar o
+que tem na legislação e fazer a
+
+00:40:17.460 --> 00:40:19.840
+referência pra ele dar as respostas.
+
+00:40:19.940 --> 00:40:23.020
+Nesse caso, eu tô com dúvida de como é
+que eu faço isso, porque eu tenho uma
+
+00:40:23.120 --> 00:40:28.800
+aplicação web que vai tá rodando, vai tá
+conectado ao GPT -4, mini -4, que agora
+
+00:40:28.900 --> 00:40:32.800
+não pode ser mais, vai ser o 5, enfim, e
+ele é via API pra buscar, pra fazer
+
+00:40:32.900 --> 00:40:38.120
+essa, digamos assim, essa consulta nas
+informações, vai dar as respostas pro
+
+00:40:38.220 --> 00:40:42.180
+usuário, ou também vai fazer uma análise
+dos cálculos e tudo mais, jogar esses
+
+00:40:42.280 --> 00:40:48.800
+dados pra GPT, pro prompt ali, e
+retornar uma
+
+00:40:48.900 --> 00:40:49.700
+resposta, né.
+
+00:40:49.800 --> 00:40:52.160
+A minha dúvida é com relação à
+legislação, quando o cara tiver uma
+
+00:40:52.260 --> 00:40:56.500
+dúvida, como é que eu faço esse processo
+aí, porque aqui tá bem claro, na parte
+
+00:40:56.600 --> 00:40:59.660
+do end -to -end ali, eu já consegui
+entender ali como é que funciona colocar
+
+00:40:59.760 --> 00:41:02.660
+um abaixo de conhecimento e tudo mais,
+não tenho dúvida, né.
+
+00:41:02.760 --> 00:41:06.100
+Mas uma aplicação web, eu já fico com um
+pouco de dúvida de como fazer, sabe.
+
+00:41:06.200 --> 00:41:09.100
+Tá, quando você tá falando de aplicação
+web, eu tiro o WhatsApp, mas a própria
+
+00:41:09.200 --> 00:41:13.940
+aplicação web, você pode usar o Zapier,
+você conhece o Zapier, Silvio?
+
+00:41:14.040 --> 00:41:17.880
+Sim, já usei ele, mas eu prefiro o N8n,
+me dou melhor com ele.
+
+00:41:17.980 --> 00:41:19.700
+E eu uso ele na aplicação web também.
+
+00:41:19.800 --> 00:41:25.900
+O N8n, mas assim, eu não tô lembrando de
+nenhum caso de uso assim na minha, aqui
+
+00:41:26.000 --> 00:41:31.520
+agora, mas estou certo de que com o N8n,
+ou com o Zapier, qualquer outro
+
+00:41:31.620 --> 00:41:34.380
+mecanismo de integração, você consegue
+conectar em qualquer base de dados pra
+
+00:41:34.480 --> 00:41:37.340
+via interface web, você consumir isso.
+
+00:41:37.440 --> 00:41:39.160
+Isso, isso eu já fiz já.
+
+00:41:39.260 --> 00:41:40.360
+É, então, mas qual que é a dúvida?
+
+00:41:40.460 --> 00:41:42.300
+Então, não entendi.
+
+00:41:42.400 --> 00:41:45.980
+É, a minha dúvida é se teria alguma
+forma de fazer isso direto, consumindo
+
+00:41:46.080 --> 00:41:51.020
+API, sabe, sem fazer via automação.
+
+00:41:51.120 --> 00:41:54.440
+Direto na web, não sei se você entendeu,
+como se fosse uma aplicação que
+
+00:41:54.540 --> 00:41:57.520
+consultasse, por exemplo, um agente
+treinado, como se fosse.
+
+00:41:57.620 --> 00:41:58.780
+Com essa base.
+
+00:41:58.880 --> 00:42:01.820
+Você já ouviu falar de MCP, não?
+
+00:42:01.920 --> 00:42:03.700
+Já, mas não, não me aprofundei muito.
+
+00:42:03.800 --> 00:42:06.540
+Tá, a resposta pra sua pergunta é o MCP.
+
+00:42:06.640 --> 00:42:11.620
+O MCP, ele tá substituindo a API
+RESTful.
+
+00:42:11.720 --> 00:42:14.900
+O MCP é o futuro da API RESTful.
+
+00:42:15.000 --> 00:42:21.020
+Porque ele vai, porque o MCP, ele vai
+entrar exatamente nesse midway, fazendo
+
+00:42:21.120 --> 00:42:26.100
+as construções de integração num
+movimento mais extensivo que você
+
+00:42:26.200 --> 00:42:28.900
+consegue hoje com a API RESTful.
+
+00:42:29.000 --> 00:42:29.540
+Tá?
+
+00:42:29.640 --> 00:42:33.380
+Dá uma precisada do MCP, eu tenho 99 %
+de certeza que com o MCP você vai
+
+00:42:33.480 --> 00:42:35.140
+conseguir resolver.
+
+00:42:35.240 --> 00:42:38.200
+Beleza, porque eu tenho medo de usar uma
+automação, por exemplo, e devido a
+
+00:42:38.300 --> 00:42:41.600
+algumas coisas de segurança que eu tava
+falando em algumas aulas anteriores e
+
+00:42:41.700 --> 00:42:47.160
+também devido a alguma limitação, daqui
+a pouco, por exemplo, parar, sabe?
+
+00:42:47.260 --> 00:42:50.660
+Já tive algumas aqui que pararam,
+algumas coisas e tal, então acho que é
+
+00:42:50.760 --> 00:42:53.360
+um pouco crítico a gente ter que estar
+toda hora monitorando, né, e tudo mais,
+
+00:42:53.460 --> 00:42:54.520
+mas enfim.
+
+00:42:54.620 --> 00:42:59.140
+Mas normalmente a API para quando você
+tem uma, por exemplo, a API do LinkedIn
+
+00:42:59.240 --> 00:43:03.020
+é uma bosta, não sei como é que é hoje,
+mas uns 10 anos atrás era uma porcaria,
+
+00:43:03.120 --> 00:43:08.120
+você ficava, você consumia, você
+consumia, sei lá, 5 vezes em 1 minuto,
+
+00:43:08.220 --> 00:43:13.540
+ela já entendia que era um spam consume
+de get da API e ela te bloqueava, era
+
+00:43:13.640 --> 00:43:17.800
+uma porcaria a API do LinkedIn.
+
+00:43:17.900 --> 00:43:22.060
+Mas aí eu acho que é a regra de
+utilização da API que você vai usar do
+
+00:43:22.160 --> 00:43:25.560
+que você estiver consumindo, da API que
+você estiver usando pra poder puxar
+
+00:43:25.660 --> 00:43:26.560
+dado, entendeu?
+
+00:43:26.660 --> 00:43:29.640
+Porque, por exemplo, esse dado de
+utilização, você tá puxando de uma base
+
+00:43:29.740 --> 00:43:29.820
+o quê?
+
+00:43:29.920 --> 00:43:31.920
+De uma base pública?
+
+00:43:32.020 --> 00:43:36.480
+Na verdade é, é alguns documentos, né,
+como tem muita coisa nova, então assim,
+
+00:43:36.580 --> 00:43:41.680
+tem lá uma legislação, não tô consumindo
+de base pública, tô colocando os
+
+00:43:41.780 --> 00:43:42.660
+documentos ali.
+
+00:43:42.760 --> 00:43:45.060
+Como tem muito documento e muita
+informação, então eu tô criando alguns
+
+00:43:45.160 --> 00:43:48.600
+documentos e anexando ali no, é que nem
+eu falei, no ponto de um GPT pra mim,
+
+00:43:48.700 --> 00:43:52.260
+testando, validando as perguntas, né, e
+aí depois eu vou pegar essa base e
+
+00:43:52.360 --> 00:43:55.180
+transferir ela pro agente daí também.
+
+00:43:55.280 --> 00:43:58.440
+E aí sim, vou construir o fluxo, porque
+eu ainda não construí o fluxo ainda do
+
+00:43:58.540 --> 00:44:01.500
+agente lá no N8N, eu tenho outros
+rodando, mas esse eu ainda não
+
+00:44:01.600 --> 00:44:02.600
+finalizei.
+
+00:44:02.700 --> 00:44:07.680
+Só um último detalhe aqui, por
+curiosidade, o que você tá entregando de
+
+00:44:07.780 --> 00:44:10.160
+valor, o que você tá fazendo, o que você
+tá querendo entregar de valor pro seu
+
+00:44:10.260 --> 00:44:13.660
+cliente?
+
+00:44:13.760 --> 00:44:17.400
+O agente, ele vai tirar dúvidas sobre,
+por exemplo, a reforma tributária, que é
+
+00:44:17.500 --> 00:44:21.900
+o meu projeto, o caso ali, né, então já
+tem a calculadora, ele vai também pegar
+
+00:44:22.000 --> 00:44:25.780
+alguns insights sobre os cálculos que
+são feitos ali com relação a mudança de
+
+00:44:25.880 --> 00:44:30.020
+parâmetro, e esse agente vai dar esse,
+digamos assim, essa complementação dessa
+
+00:44:30.120 --> 00:44:30.920
+análise, entende?
+
+00:44:31.020 --> 00:44:35.480
+E também o usuário pode, eu já tenho
+uma, um MVP ali básico, digamos assim,
+
+00:44:35.580 --> 00:44:39.620
+que é pra testes, né, uma base de
+testes, que ele já faz isso, ele já faz
+
+00:44:39.720 --> 00:44:42.360
+isso, já consulta, já tá no N8N e tudo
+mais.
+
+00:44:42.460 --> 00:44:44.900
+Eu só não coloquei ainda a parte da
+legislação e não coloquei nessa nova
+
+00:44:45.000 --> 00:44:47.000
+versão ainda, né.
+
+00:44:47.100 --> 00:44:50.820
+Mas um básico, um prompt específico eu
+já tenho, entendeu?
+
+00:44:50.920 --> 00:44:54.660
+Você conhece o LexML do Senado, não?
+
+00:44:54.760 --> 00:44:55.500
+Não.
+
+00:44:55.600 --> 00:44:59.580
+O LexML é uma base, se eu não me engano,
+eles têm a API atualizada pra você, a
+
+00:44:59.680 --> 00:45:04.040
+API disponível pra você consumir dado, e
+toda a reforma tributária tá lá.
+
+00:45:04.140 --> 00:45:06.840
+Dá um pesquisado nisso também.
+
+00:45:06.940 --> 00:45:07.260
+Beleza.
+
+00:45:07.360 --> 00:45:07.980
+Tá bom?
+
+00:45:08.080 --> 00:45:10.060
+Consegui te ajudar?
+
+00:45:10.160 --> 00:45:10.700
+Certeza, certeza.
+
+00:45:10.800 --> 00:45:13.040
+Por isso que eu tava falando que eu ia
+trazer esse ponto aí, que eu também
+
+00:45:13.140 --> 00:45:15.720
+tenho um pouco de dúvida pra uma
+sequência aí.
+
+00:45:15.820 --> 00:45:15.860
+Obrigado.
+
+00:45:15.960 --> 00:45:21.680
+Eu tenho uma coisinha pra complementar
+pra ti, Silvio.
+
+00:45:21.780 --> 00:45:26.860
+Eu sou um pouco técnico, então vou
+desenhar um pouquinho aqui, Léo.
+
+00:45:26.960 --> 00:45:27.960
+Pode, tá bom.
+
+00:45:28.060 --> 00:45:38.080
+Se tu criar um N8N, essa setinha aqui,
+vai ser a mesma pra o N8N ou pra a tua
+
+00:45:38.180 --> 00:45:39.120
+página web.
+
+00:45:39.220 --> 00:45:45.460
+Então, tipo, se tu consegue resolver
+isso de forma simples pra um chat
+
+00:45:45.560 --> 00:45:50.340
+conversacional, essa peça aqui pode ser
+Sapper, Make, Nchat
+
+00:45:50.440 --> 00:45:55.400
+ou...
+
+00:45:55.500 --> 00:45:57.080
+Acho que ficou mudo, Ramiro.
+
+00:45:57.180 --> 00:46:00.060
+Em algum momento ficou mudo.
+
+00:46:00.160 --> 00:46:02.000
+No finalzinho.
+
+00:46:02.100 --> 00:46:03.700
+Tá vendo?
+
+00:46:03.800 --> 00:46:06.300
+Sumiu o seu microfone.
+
+00:46:06.400 --> 00:46:09.780
+Acabou a bateria do headset.
+
+00:46:09.880 --> 00:46:11.460
+Tá mudo ainda.
+
+00:46:11.560 --> 00:46:17.080
+Eu não sei se sonhou, mas a gente não tá
+ouvindo.
+
+00:46:17.180 --> 00:46:20.500
+Tá mutado agora.
+
+00:46:20.600 --> 00:46:22.340
+Agora voltou.
+
+00:46:22.440 --> 00:46:27.740
+Mas deu pra entender o raciocínio ou
+cortei no meio?
+
+00:46:27.840 --> 00:46:28.720
+Não, eu entendi sim.
+
+00:46:28.820 --> 00:46:32.300
+E eu tenho um agente que já faz isso no
+N8N, entende?
+
+00:46:32.400 --> 00:46:38.960
+Eu queria ver uma outra forma, talvez,
+de pôr API também, eu sei que dá, pra
+
+00:46:39.060 --> 00:46:39.540
+fazer API.
+
+00:46:39.640 --> 00:46:43.280
+Mas tu consegue reutilizar o mesmo que
+tu já tem pra WhatsApp.
+
+00:46:43.380 --> 00:46:44.000
+Exatamente o mesmo.
+
+00:46:44.100 --> 00:46:47.140
+É, eu só vou colocar base de
+conhecimento e fazer umas alterações lá.
+
+00:46:47.240 --> 00:46:48.620
+E eu não uso ele no WhatsApp.
+
+00:46:48.720 --> 00:46:51.480
+Minha ideia é usar no app, porque eu não
+consigo monitorar o uso, por enquanto.
+
+00:46:51.580 --> 00:46:53.720
+Depois eu vou colocar no WhatsApp
+também, mas enfim.
+
+00:46:53.820 --> 00:46:54.840
+Obrigado, obrigado.
+
+00:46:54.940 --> 00:46:58.640
+Se quiser trocar uma ideia aí no
+privado, eu tô à disposição também.
+
+00:46:58.740 --> 00:46:59.280
+Beleza, obrigadão.
+
+00:46:59.380 --> 00:47:00.780
+Vamos conversando.
+
+00:47:00.880 --> 00:47:03.320
+Depois a gente vai dividir vocês, vocês
+em breakout rooms, tem um exercício que
+
+00:47:03.420 --> 00:47:08.520
+a gente vai fazer do MDP, aí você pode
+juntar com o Ramiro, viu, Silvio?
+
+00:47:08.620 --> 00:47:09.760
+Boa, boa, obrigado.
+
+00:47:09.860 --> 00:47:10.760
+Vamos lá.
+
+00:47:10.860 --> 00:47:14.140
+Bruno, você tava com a mão levantada,
+depois Cris.
+
+00:47:14.240 --> 00:47:18.240
+Primeiro a Cris, que eu sempre dou minha
+vez pras damas.
+
+00:47:18.340 --> 00:47:22.860
+Vamos lá, Cris.
+
+00:47:22.960 --> 00:47:28.460
+Gente, eu vou fazer uma pergunta muito,
+muito básica, tá bom?
+
+00:47:28.560 --> 00:47:31.200
+Sem problema, fica à vontade, fica
+tranquila, tá?
+
+00:47:31.300 --> 00:47:32.740
+É bem básico.
+
+00:47:32.840 --> 00:47:38.300
+Então, assim, primeiro, eu não sei
+integrar nada disso.
+
+00:47:38.400 --> 00:47:41.280
+Então, assim, até fazer o prompt, eu não
+sei fazer um agente.
+
+00:47:41.380 --> 00:47:46.420
+Fazer prompt, ok, tudo bem, mas eu não
+sei como que faz um agente, não sei como
+
+00:47:46.520 --> 00:47:50.300
+que conecta, eu vi que você tá falando
+aí, né?
+
+00:47:50.400 --> 00:47:56.360
+E aí queria colocar um pouquinho sobre a
+solução do que é a minha proposta, tá?
+
+00:47:56.460 --> 00:47:57.600
+Não, não, não.
+
+00:47:57.700 --> 00:48:02.340
+Você precisa saber do problema e da
+proposta, ou só posso...
+
+00:48:02.440 --> 00:48:05.340
+Se você tiver um problema definido, você
+me fala o problema definido, que aí eu
+
+00:48:05.440 --> 00:48:07.580
+consigo conectar a solução com o
+problema definido.
+
+00:48:07.680 --> 00:48:08.460
+Tá bom.
+
+00:48:08.560 --> 00:48:12.220
+Então, o problema é a falta de clareza
+sobre qual conhecimento pode virar
+
+00:48:12.320 --> 00:48:14.960
+negócio.
+
+00:48:15.060 --> 00:48:20.560
+Tá, dá um exemplo do que você tá
+falando.
+
+00:48:20.660 --> 00:48:24.920
+Por exemplo, eu vou criar um negócio no
+mercado digital, eu tenho muito
+
+00:48:25.020 --> 00:48:27.320
+conhecimento, eu não sei por onde que eu
+começo ou qual que eu
+
+00:48:27.420 --> 00:48:32.620
+escolho.
+
+00:48:32.720 --> 00:48:36.860
+Tá, como que você chegou a essa
+conclusão?
+
+00:48:36.960 --> 00:48:41.080
+Olha, geralmente a gente tem mulheres de
+30, 50 anos, né, que elas estão aí em
+
+00:48:41.180 --> 00:48:45.480
+transição profissional, que elas têm
+acesso à internet, elas têm interesse de
+
+00:48:45.580 --> 00:48:48.200
+empreender digitalmente.
+
+00:48:48.300 --> 00:48:50.960
+Tá, é...
+
+00:48:51.060 --> 00:48:53.000
+Elas têm interesse...
+
+00:48:53.100 --> 00:48:55.200
+Desculpa, continua, elas não sabem...
+
+00:48:55.300 --> 00:48:58.720
+Elas não sabem por onde que elas
+começam, né?
+
+00:48:58.820 --> 00:49:06.200
+Então, a minha proposta é uma gente que
+vai extrair da história, da experiência
+
+00:49:06.300 --> 00:49:12.840
+de vida dela, pessoal e profissional,
+três possibilidades do negócio digital.
+
+00:49:12.940 --> 00:49:13.360
+Tá.
+
+00:49:13.460 --> 00:49:17.640
+Uma orientação vocacional profissional,
+empreendedora.
+
+00:49:17.740 --> 00:49:23.240
+É, não tinha visto por esse nome, mas
+cabe bem isso.
+
+00:49:23.340 --> 00:49:25.300
+Orientação empreendedora, muito bem.
+
+00:49:25.400 --> 00:49:26.420
+Tá.
+
+00:49:26.520 --> 00:49:27.280
+É...
+
+00:49:27.380 --> 00:49:32.820
+Me conta o seguinte, o Cris, o que que
+essa empreendedora tá fazendo pra tentar
+
+00:49:32.920 --> 00:49:36.520
+resolver o problema dela hoje?
+
+00:49:36.620 --> 00:49:40.700
+Então, eu fiz um formulário com 55
+mulheres de pesquisa, né?
+
+00:49:40.800 --> 00:49:42.840
+Então, o que que acontece?
+
+00:49:42.940 --> 00:49:43.240
+Elas...
+
+00:49:43.340 --> 00:49:49.020
+Tem muitos cursos na internet, mas eles
+ensinam a fazer, não ensinam por onde
+
+00:49:49.120 --> 00:49:49.460
+começar.
+
+00:49:49.560 --> 00:49:54.500
+Então, aí elas ficam paralisadas, porque
+elas não sabem elas começam o quê, com
+
+00:49:54.600 --> 00:49:58.840
+que know -how que elas podem começar o
+negócio, né?
+
+00:49:58.940 --> 00:50:05.140
+E tem muitas pessoas que não sabem que
+tem que tem essa uma história de muito
+
+00:50:05.240 --> 00:50:08.200
+valor que pode virar um negócio digital.
+
+00:50:08.300 --> 00:50:08.800
+Tá.
+
+00:50:08.900 --> 00:50:09.200
+Vamos lá.
+
+00:50:09.300 --> 00:50:13.300
+Como é que você resolveria esse
+problema?
+
+00:50:13.400 --> 00:50:18.360
+Então, a proposta de solução seria um
+questionário estratégico, né?
+
+00:50:18.460 --> 00:50:21.820
+De uma autodescoberta.
+
+00:50:21.920 --> 00:50:28.200
+E aí, levando tanto pras experiências
+pessoais, profissionais, com a visão
+
+00:50:28.300 --> 00:50:29.960
+sistêmica do negócio.
+
+00:50:30.060 --> 00:50:36.060
+Pra daí, então, oferecer de acordo com o
+padrão, com o perfil dela, três
+
+00:50:36.160 --> 00:50:41.780
+possibilidades de negócios que tem a ver
+com com paixão, com talento e
+
+00:50:41.880 --> 00:50:44.920
+habilidades dela, vamos assim dizer.
+
+00:50:45.020 --> 00:50:46.480
+Tá bom.
+
+00:50:46.580 --> 00:50:53.960
+Dessas 55 mulheres que você entrevistou,
+qual o percentual, falou que tá parada,
+
+00:50:54.060 --> 00:50:58.920
+paralisada, que não consegue enxergar
+uma solução pro problema delas hoje?
+
+00:50:59.020 --> 00:51:01.540
+Cerca de 65 % 65%.
+
+00:51:01.640 --> 00:51:02.020
+Tá.
+
+00:51:02.120 --> 00:51:05.760
+Então, você tem um universo amostral de
+65%, que daria mais ou menos umas 40
+
+00:51:05.860 --> 00:51:12.240
+mulheres, que topariam testar qualquer
+coisa que você desenvolvesse de MVP.
+
+00:51:12.340 --> 00:51:14.320
+É.
+
+00:51:14.420 --> 00:51:14.800
+Ótimo.
+
+00:51:14.900 --> 00:51:19.320
+Bom, meu insight aqui pra você, Cris,
+é...
+
+00:51:19.420 --> 00:51:22.480
+Primeiro, né, voltando pro problema,
+acho que você pode ter um pouquinho mais
+
+00:51:22.580 --> 00:51:27.340
+de profundidade em termos de
+entendimento de ah, essas mulheres, elas
+
+00:51:27.440 --> 00:51:29.960
+querem empreender.
+
+00:51:30.060 --> 00:51:33.060
+Essas querem empreender por
+oportunidade, por necessidade, elas já
+
+00:51:33.160 --> 00:51:34.620
+têm uma profissão.
+
+00:51:34.720 --> 00:51:40.060
+Qual o universo amostral, seu ponto de
+vista etnográfico, geográfico,
+
+00:51:40.160 --> 00:51:41.500
+demográfico dessas mulheres?
+
+00:51:41.600 --> 00:51:48.200
+Talvez isso consiga te dar alguma pista
+de...
+
+00:51:48.300 --> 00:51:52.040
+referência específica do porquê esse
+problema existe.
+
+00:51:52.140 --> 00:51:58.600
+Me parece, escutando você, que me parece
+que é o desejo, é mais um desejo do que
+
+00:51:58.700 --> 00:52:00.220
+um problema, entende?
+
+00:52:00.320 --> 00:52:02.420
+Porque o problema é...
+
+00:52:02.520 --> 00:52:06.160
+Elas têm um desejo de empreender, mas
+essas mulheres, e aí vou fazer uma outra
+
+00:52:06.260 --> 00:52:11.780
+pergunta pra você aqui, elas empreendem
+por oportunidade ou por necessidade,
+
+00:52:11.880 --> 00:52:15.340
+elas já têm um emprego, querem fazer
+renda complementar, você chegou a ir
+
+00:52:15.440 --> 00:52:19.700
+nesse nível de profundidade do seu
+discovery ou não?
+
+00:52:19.800 --> 00:52:20.720
+Sim.
+
+00:52:20.820 --> 00:52:27.700
+São inúmeros casos, né, mas a maioria
+elas desejam uma segunda profissão.
+
+00:52:27.800 --> 00:52:31.620
+Começar um outro negócio, ter mais
+independência, né, não tão satisfeita
+
+00:52:31.720 --> 00:52:36.420
+com o que fazem, querem mais liberdade
+de tempo, porque tem família, e elas
+
+00:52:36.520 --> 00:52:40.940
+querem ir pro mercado digital, mas elas
+não sabem por onde que elas começam, e
+
+00:52:41.040 --> 00:52:45.580
+elas têm muitas experiências, mas às
+vezes elas não conseguem valorizar a
+
+00:52:45.680 --> 00:52:47.180
+experiência dela.
+
+00:52:47.280 --> 00:52:52.340
+Tá, então, vamos lá, vamos recortar um
+segmento mais claro de público.
+
+00:52:52.440 --> 00:52:54.780
+Mulheres de 35, 45, você falou?
+
+00:52:54.880 --> 00:52:59.760
+De 30 a 50 anos, em transição
+profissional, né, que tem as...
+
+00:52:59.860 --> 00:53:04.840
+Tem acesso à internet e tem interesse em
+empreender digitalmente.
+
+00:53:04.940 --> 00:53:07.660
+Quando você fala muita experiência, eu
+preciso qualificar essa muita
+
+00:53:07.760 --> 00:53:10.560
+experiência, porque isso vai te ajudar a
+recortar ao público.
+
+00:53:10.660 --> 00:53:14.720
+Porque mulheres de 30 e 50 anos, me
+parece um universo, vai mostrar muito
+
+00:53:14.820 --> 00:53:15.400
+amplo.
+
+00:53:15.500 --> 00:53:18.860
+Então, eu preciso colocar, tá, se é
+mulher de 30 e 50 anos, beleza.
+
+00:53:18.960 --> 00:53:22.100
+Qual é a alavanca que eu vou utilizar em
+termos de background?
+
+00:53:22.200 --> 00:53:25.700
+É mulheres que têm pelo menos 15 anos de
+experiência no mercado?
+
+00:53:25.800 --> 00:53:29.100
+É mulheres que ocupam a posição XPTO no
+mercado?
+
+00:53:29.200 --> 00:53:29.580
+Mulheres que já...
+
+00:53:29.680 --> 00:53:35.800
+É porque, assim, quando eu falo que eu
+vou extrair da experiência de vida dela
+
+00:53:35.900 --> 00:53:40.960
+um produto digital, é da experiência
+pessoal e profissional.
+
+00:53:41.060 --> 00:53:43.300
+Então, tem mulheres que passaram por
+muitas...
+
+00:53:43.400 --> 00:53:48.040
+Uma mulher de 50 anos, por exemplo, elas
+passaram por muitas experiências de vida
+
+00:53:48.140 --> 00:53:49.860
+pessoal, entendeu?
+
+00:53:49.960 --> 00:53:51.600
+Então, não é só profissional.
+
+00:53:51.700 --> 00:53:53.260
+Então, ela tem...
+
+00:53:53.360 --> 00:53:57.680
+Ela pode ter habilidades na área pessoal
+que pode virar um produto digital.
+
+00:53:57.780 --> 00:54:00.380
+Não necessariamente ser profissional,
+não.
+
+00:54:00.480 --> 00:54:01.000
+Tá, eu entendo.
+
+00:54:01.100 --> 00:54:05.400
+Você já chegou a testar, esquece
+tecnologia, uma orientação profissional
+
+00:54:05.500 --> 00:54:07.880
+dessa como empreendedora, ou não?
+
+00:54:07.980 --> 00:54:08.280
+Já.
+
+00:54:08.380 --> 00:54:12.580
+Eu tinha uma mentoria eu tinha uma
+mentoria a respeito disso, só pra
+
+00:54:12.680 --> 00:54:14.220
+mulheres.
+
+00:54:14.320 --> 00:54:14.620
+Legal.
+
+00:54:14.720 --> 00:54:15.040
+Tá.
+
+00:54:15.140 --> 00:54:19.580
+Então, se você já tinha essa mentoria,
+de alguma forma você já estava
+
+00:54:19.680 --> 00:54:20.720
+oferecendo esse serviço, né?
+
+00:54:20.820 --> 00:54:24.140
+O que você quer agora é utilizar a
+tecnologia pra gente poder ampliar.
+
+00:54:24.240 --> 00:54:25.320
+Exato, exato.
+
+00:54:25.420 --> 00:54:25.600
+Ótimo.
+
+00:54:25.700 --> 00:54:29.360
+Então, o que me veio de insight aqui, o
+Cris, do que você estava falando?
+
+00:54:29.460 --> 00:54:30.660
+Ah, não se constitui a gente e tal.
+
+00:54:30.760 --> 00:54:31.820
+A gente é uma possibilidade.
+
+00:54:31.920 --> 00:54:33.880
+Não precisa ser a gente, não precisa ser
+o WhatsApp.
+
+00:54:33.980 --> 00:54:38.060
+Você pode fazer o que você está me
+falando por um exemplo, por um Google
+
+00:54:38.160 --> 00:54:41.940
+Forms bem feito, bem estruturado.
+
+00:54:42.040 --> 00:54:46.580
+Manda o Google Forms com as perguntas
+estruturadas, com a sequência de
+
+00:54:46.680 --> 00:54:50.900
+perguntas pra você fazer o assessment
+dessas empreendedoras, dessas mulheres.
+
+00:54:51.000 --> 00:54:55.040
+E a partir dessas perguntas, você pode
+usar o prompt que você falou que você
+
+00:54:55.140 --> 00:55:01.300
+sabe fazer pra poder validar e processar
+essas perguntas e gerar o relatório
+
+00:55:01.400 --> 00:55:03.720
+estruturado com a sua visão.
+
+00:55:03.820 --> 00:55:04.220
+Entendeu?
+
+00:55:04.320 --> 00:55:08.480
+Porque eu estou entendendo o seguinte,
+você vai gerar com base no assessment
+
+00:55:08.580 --> 00:55:13.520
+que você fazia, sei lá, tete a tete, ou
+na sua mentoria, você faz um relatório,
+
+00:55:13.620 --> 00:55:16.880
+indica um próximo passo pra ser
+empreendedora, correto?
+
+00:55:16.980 --> 00:55:17.920
+Isso.
+
+00:55:18.020 --> 00:55:22.740
+Nesse questionário estratégico que eu
+vou extrair informações, a devolutiva
+
+00:55:22.840 --> 00:55:28.140
+dele são três possibilidades de negócio
+pra ela, de acordo com o perfil dela,
+
+00:55:28.240 --> 00:55:29.060
+entendeu?
+
+00:55:29.160 --> 00:55:30.540
+Aí o que eu pensei?
+
+00:55:30.640 --> 00:55:37.700
+Se ela quiser uma mentoria express, ela
+ganha de bônus mais duas outras
+
+00:55:37.800 --> 00:55:39.260
+possibilidades de produto digital.
+
+00:55:39.360 --> 00:55:45.500
+Aí ela já vai pra mentoria express pra
+identificar por onde que eu vou começar.
+
+00:55:45.600 --> 00:55:48.560
+E nessa mentoria ela sai com um plano de
+ação básico.
+
+00:55:48.660 --> 00:55:51.340
+E esse assessment você cobraria por ele,
+ou não?
+
+00:55:51.440 --> 00:55:55.580
+Ou ele é só uma isca de boca de funil
+pra você converter a mentoria?
+
+00:55:55.680 --> 00:55:58.960
+Esse seria só uma isca, pensei.
+
+00:55:59.060 --> 00:55:59.080
+Ótimo.
+
+00:55:59.180 --> 00:55:59.740
+Ótimo.
+
+00:55:59.840 --> 00:56:02.940
+Minha sugestão pra vocês, se esse é só
+uma isca, então que seja um produto
+
+00:56:03.040 --> 00:56:07.000
+fácil, rápido, simples, barato e
+conveniente pra você desenvolver.
+
+00:56:07.100 --> 00:56:13.960
+Me parece que só com um Forms, no
+WhatsApp, no Google Forms, bem feito,
+
+00:56:14.060 --> 00:56:17.220
+que você vai botar na sua landing page,
+ou você pode até pegar o link do Forms e
+
+00:56:17.320 --> 00:56:21.340
+mandar via WhatsApp pra quem você
+quiser, ou deixar no seu link tri do seu
+
+00:56:21.440 --> 00:56:25.020
+Instagram, por exemplo, ou no TikTok, ou
+seja lá qual for a sua página que você
+
+00:56:25.120 --> 00:56:28.020
+usa, ou LinkedIn, enfim.
+
+00:56:28.120 --> 00:56:35.740
+Você pegar isso, você gerar um fluxo
+onde essa informação do Forms ela bate
+
+00:56:35.840 --> 00:56:39.060
+no seu prompt, e pode ser esse bater
+pode ser manual no primeiro momento,
+
+00:56:39.160 --> 00:56:40.680
+depois você pode automatizar isso.
+
+00:56:40.780 --> 00:56:46.620
+Ela bate no prompt, e o prompt que você
+calibrou, vai exatamente fazer, gerar
+
+00:56:46.720 --> 00:56:52.920
+esse relatório com as três áreas de
+potencial empreendedorismo dessa mulher.
+
+00:56:53.020 --> 00:56:58.340
+O que você precisa fazer aqui, Cris, é
+estruturar isso, conseguir gerar um,
+
+00:56:58.440 --> 00:57:02.400
+primeiro passo, manualmente esse
+processo, então você manda o Forms, ela
+
+00:57:02.500 --> 00:57:06.680
+responde, você recebe a resposta, sobe
+no prompt, ou constrói o prompt, pra
+
+00:57:06.780 --> 00:57:10.180
+poder subir no prompt, gera o relatório
+em PDF do prompt, e manda pra ela via
+
+00:57:10.280 --> 00:57:10.980
+WhatsApp.
+
+00:57:11.080 --> 00:57:12.160
+O que nós queremos aqui?
+
+00:57:12.260 --> 00:57:15.480
+Nós queremos criar um fluxo onde isso
+esteja automatizado.
+
+00:57:15.580 --> 00:57:17.980
+Como que você vai fazer a sua automação?
+
+00:57:18.080 --> 00:57:18.700
+Simples.
+
+00:57:18.800 --> 00:57:23.300
+Você vai pegar o seu você tem o WhatsApp
+Business, não?
+
+00:57:23.400 --> 00:57:24.340
+Tem.
+
+00:57:24.440 --> 00:57:29.500
+No próprio WhatsApp Business, você
+consegue calibrar a mensagem automática.
+
+00:57:29.600 --> 00:57:32.220
+Você já fez isso no seu WhatsApp, né?
+
+00:57:32.320 --> 00:57:33.180
+Não.
+
+00:57:33.280 --> 00:57:33.400
+Não.
+
+00:57:33.500 --> 00:57:36.520
+No WhatsApp Business, tem uma
+funcionalidade lá de responder
+
+00:57:36.620 --> 00:57:38.960
+automático.
+
+00:57:39.060 --> 00:57:42.180
+Quando a pessoa te der oi, você pode
+responder, oi, tudo bem?
+
+00:57:42.280 --> 00:57:44.260
+Oi, aqui é Cris França e tal.
+
+00:57:44.360 --> 00:57:48.980
+Faz uma apresentação rápida, que você
+está fazendo, de quem é você e tal, e
+
+00:57:49.080 --> 00:57:53.160
+deixa, que você está falando de ISCA,
+deixa o link do Forms.
+
+00:57:53.260 --> 00:57:57.560
+Para que eu possa te conhecer melhor, te
+deixo aqui o link do Forms de acesso
+
+00:57:57.660 --> 00:58:01.720
+gratuito, que eu faço para
+empreendedores como você, que desejam
+
+00:58:01.820 --> 00:58:05.920
+descobrir a área que podem dar o próximo
+passo na sua jornada de empreendedor.
+
+00:58:06.020 --> 00:58:07.320
+Responde aqui e vamos falar.
+
+00:58:07.420 --> 00:58:09.140
+Pronto, só precisa disso, no primeiro
+passo.
+
+00:58:09.240 --> 00:58:13.920
+Aí a pessoa vai clicar no Forms, vai
+responder.
+
+00:58:14.020 --> 00:58:14.220
+Respondeu?
+
+00:58:14.320 --> 00:58:20.940
+Aí a gente precisa criar um outro fluxo
+que talvez, o Cris, anote aí, por favor.
+
+00:58:21.040 --> 00:58:24.840
+Talvez, via Zapier, você consiga fazer.
+
+00:58:24.940 --> 00:58:27.840
+Tenho 90 % de certeza que via Zapier
+você consiga fazer.
+
+00:58:27.940 --> 00:58:30.320
+Anota aí o Zapier, para você dar uma
+estudada, tá?
+
+00:58:30.420 --> 00:58:33.700
+Que é, você vai criar um gatilho no
+Zapier, Zapier ou Zapier, tá?
+
+00:58:33.800 --> 00:58:35.280
+Do jeito que vocês quiserem falar.
+
+00:58:35.380 --> 00:58:38.020
+Você vai criar um gatilho no Zapier
+onde?
+
+00:58:38.120 --> 00:58:44.480
+O Zapier ele vai para todas as respostas
+daquele Forms, em específico, você vai
+
+00:58:44.580 --> 00:58:47.780
+botar lá o URL do Forms, da resposta do
+Forms.
+
+00:58:47.880 --> 00:58:52.220
+Todas as respostas que baterem naquele
+Forms, o Zapier vai pegar aquela
+
+00:58:52.320 --> 00:58:55.940
+resposta, você vai criar um fluxo, não
+precisa de código, não precisa de
+
+00:58:56.040 --> 00:58:57.500
+conhecimento técnico para isso, tá?
+
+00:58:57.600 --> 00:59:00.820
+Você vai só criar o gatilho, gatilho de
+integração.
+
+00:59:00.920 --> 00:59:05.020
+Pega a URL do Forms, joga lá e cria um
+gatilho onde?
+
+00:59:05.120 --> 00:59:10.320
+Bateu a resposta no Forms, o Zapier vai
+mandar aquela resposta, daquela fulana
+
+00:59:10.420 --> 00:59:13.480
+de tal, para o seu prompt do GPT.
+
+00:59:13.580 --> 00:59:18.900
+Você também vai botar o URL do prompt,
+que vai gerar automaticamente, processar
+
+00:59:19.000 --> 00:59:21.760
+e gerar o relatório em PDF.
+
+00:59:21.860 --> 00:59:26.820
+E aí você precisa criar um outro gatilho
+onde o Zapier vai lá, escuta esse
+
+00:59:26.920 --> 00:59:32.020
+relatório gerado e viu, conectado com o
+WhatsApp Business, gera esse relatório
+
+00:59:32.120 --> 00:59:34.660
+de volta para a fulana de tal.
+
+00:59:34.760 --> 00:59:37.200
+Qual é a minha sugestão para você?
+
+00:59:37.300 --> 00:59:43.720
+Construa o processo de forma manual
+primeiro, estrutura o Forms e vai
+
+00:59:43.820 --> 00:59:46.560
+devagarzinho, automatizando etapa por
+etapa.
+
+00:59:46.660 --> 00:59:51.760
+Para que você consiga chegar no estado e
+você, mais uma vez, não precisa ter
+
+00:59:51.860 --> 00:59:54.800
+conhecimento profundo técnico nenhum
+para você botar isso de pé.
+
+00:59:54.900 --> 00:59:58.240
+Até que você consiga chegar, em poucas
+semanas você consiga chegar no movimento
+
+00:59:58.340 --> 01:00:04.260
+onde a pessoa deu oi para a Cris, eu
+mando o link do Forms, eu respondo o
+
+01:00:04.360 --> 01:00:07.200
+Forms e em cinco minutos depois que eu
+responder o Forms eu já recebo uma
+
+01:00:07.300 --> 01:00:08.400
+mensagem dizendo assim.
+
+01:00:08.500 --> 01:00:12.640
+Aí pensa comigo que está a mensagem
+dizendo assim, oi fulano de tal, tudo
+
+01:00:12.740 --> 01:00:13.060
+bem?
+
+01:00:13.160 --> 01:00:14.580
+Está pronto o seu assessment.
+
+01:00:14.680 --> 01:00:17.220
+Obrigado por participar.
+
+01:00:17.320 --> 01:00:22.900
+E se você tiver interesse em marcar um
+horário comigo, segue o link do meu
+
+01:00:23.000 --> 01:00:26.260
+Calendly para eu conversar com você a
+respeito das nossas mentorias.
+
+01:00:26.360 --> 01:00:28.640
+Um beijo, um abraço, tchau, te espero.
+
+01:00:28.740 --> 01:00:33.240
+Ou se você quiser ir um pouco mais fundo
+que você já deu o produto gratuito que é
+
+01:00:33.340 --> 01:00:37.980
+o assessment, você vai falar, segue aqui
+o link caso você tenha interesse em
+
+01:00:38.080 --> 01:00:41.800
+participar das nossas mentorias, segue
+aqui o link de pagamento no Stripe ou no
+
+01:00:41.900 --> 01:00:46.060
+PagSeguro, seja lá onde for para que
+você possa pagar e entrar nas nossas
+
+01:00:46.160 --> 01:00:50.360
+mentorias que acontecem toda quinta e
+terça e quinta de 19h, 21h no
+
+01:00:50.460 --> 01:00:53.420
+Zoom.
+
+01:00:53.520 --> 01:00:54.680
+Entendi.
+
+01:00:54.780 --> 01:00:58.000
+É, eu já queria uma página com os links
+tudo pronto, com os links tudo pronto,
+
+01:00:58.100 --> 01:00:59.940
+com os agentes tudo pronto.
+
+01:01:00.040 --> 01:01:05.640
+Então, mas não, o Cris, do mais simples
+para o mais complexo.
+
+01:01:05.740 --> 01:01:11.320
+O mais complexo vai durar muito tempo e
+a graça disso tudo é que se você for
+
+01:01:11.420 --> 01:01:15.760
+etapa por etapa fazendo esse processo de
+automação, você vai ganhando
+
+01:01:15.860 --> 01:01:18.720
+conhecimento do que você precisa
+refinar.
+
+01:01:18.820 --> 01:01:20.420
+E isso aqui é o pulo do gato.
+
+01:01:20.520 --> 01:01:23.940
+Eu que trabalho com desenvolvimento de
+software já há mais de 10 anos, posso
+
+01:01:24.040 --> 01:01:25.500
+dizer com categoria.
+
+01:01:25.600 --> 01:01:30.160
+É muito mais fácil, você desenvolve um
+pouquinho, testa, vê o que precisa
+
+01:01:30.260 --> 01:01:34.200
+melhorar, refina, vai para a próxima
+etapa, testa, vê o que precisa melhorar,
+
+01:01:34.300 --> 01:01:37.980
+refina, automatiza, até você ter todo o
+ciclo automatizado, que mais uma vez,
+
+01:01:38.080 --> 01:01:42.820
+você não precisa de uma linha de código
+desenvolvida, escrita, para poder fazer
+
+01:01:42.920 --> 01:01:43.740
+isso que você quer fazer.
+
+01:01:43.840 --> 01:01:46.080
+Isso que eu te falei que você pode
+fazer.
+
+01:01:46.180 --> 01:01:48.340
+Entendi.
+
+01:01:48.440 --> 01:01:54.940
+Quando eu, conversando com o chat de PT,
+ele sugeriu o motor de ANLP para análise
+
+01:01:55.040 --> 01:01:56.680
+e identificação de oportunidades.
+
+01:01:56.780 --> 01:01:58.320
+O que é isso?
+
+01:01:58.420 --> 01:02:02.220
+LLP motor de A.
+
+01:02:02.320 --> 01:02:06.760
+LLP Natural Language Processing,
+processamento de linguagem natural, que
+
+01:02:06.860 --> 01:02:11.340
+basicamente é o LLM do GPT, que
+basicamente vai...
+
+01:02:11.440 --> 01:02:16.780
+Para quem não é técnico, então para você
+e todo mundo que não tem informação mais
+
+01:02:16.880 --> 01:02:19.640
+aprofundada de técnico sobre o GPT.
+
+01:02:19.740 --> 01:02:21.180
+O que é o GPT, pessoal?
+
+01:02:21.280 --> 01:02:28.920
+O GPT é o seguinte, imagina que por trás
+daquele chat tem todos os sites, do
+
+01:02:29.020 --> 01:02:33.380
+planeta Terra, varridos, o que que
+varridos?
+
+01:02:33.480 --> 01:02:37.140
+Processados, absorvidos por dentro da
+banca de dados do GPT, com todos os
+
+01:02:37.240 --> 01:02:41.000
+livros disponíveis, com todos os
+artigos, com todos os comentários de
+
+01:02:41.100 --> 01:02:45.640
+Amazon, com tudo, tudo, tudo que foi
+lido e foi trazido para uma base de
+
+01:02:45.740 --> 01:02:53.560
+dados e esse negócio foi sendo
+processado e testado e treinado, essa
+
+01:02:53.660 --> 01:02:58.180
+palavra chave, treinado para responder
+como se eu fosse humano, o terapeuta, lá
+
+01:02:58.280 --> 01:03:02.040
+no caso do Márcio, o terapeuta Márcio
+conversando com você de igual para
+
+01:03:02.140 --> 01:03:03.380
+igual.
+
+01:03:03.480 --> 01:03:09.400
+Então, é uma maçaroca de dados bem
+estruturados e treinados para poder te
+
+01:03:09.500 --> 01:03:10.680
+responder como humano.
+
+01:03:10.780 --> 01:03:15.500
+Esse é o NLP, o Natural Language
+Processing, quando você conversa com o
+
+01:03:15.600 --> 01:03:18.580
+WhatsApp da Cris e parece que é a Cris
+que está respondendo ali três horas da
+
+01:03:18.680 --> 01:03:21.040
+manhã.
+
+01:03:21.140 --> 01:03:24.840
+E essa questão de API, vou precisar?
+
+01:03:24.940 --> 01:03:30.700
+Sim, então, a API você vai, para esse
+fluxo que eu te falei, anota aí, Zenvia
+
+01:03:30.800 --> 01:03:37.020
+ou Zapier, desculpa, Zapier, Zenvia do
+WhatsApp aqui, o Zapier, para você poder
+
+01:03:37.120 --> 01:03:43.860
+conectar com o seu WhatsApp Business,
+para ele poder construir um gatilho
+
+01:03:43.960 --> 01:03:47.400
+nele, tem um Make também, o Make é muito
+bom também e tem um custo -benefício
+
+01:03:47.500 --> 01:03:48.520
+melhor, tá?
+
+01:03:48.620 --> 01:03:52.800
+Ou o Zapier, o Make é para você
+construir, fazer, faz uma conta lá no
+
+01:03:52.900 --> 01:03:57.260
+Zapier, você pode testar grátis, eu acho
+que até X automações você consegue
+
+01:03:57.360 --> 01:04:02.100
+testar grátis, e aí você vai construindo
+os gatilhos, então conecta a sua conta
+
+01:04:02.200 --> 01:04:04.900
+de WhatsApp Business e constrói o
+primeiro gatilho, qual é o primeiro
+
+01:04:05.000 --> 01:04:05.480
+gatilho?
+
+01:04:05.580 --> 01:04:11.740
+É o fulano falar oi e ele responder já
+com o link do Forms, responder link do
+
+01:04:11.840 --> 01:04:15.460
+Forms, responder Forms, aí você vai
+criar outro gatilho e enviar a resposta
+
+01:04:15.560 --> 01:04:20.020
+do Forms para o GPT, para o prompt lá
+que você criou no GPT para gerar o
+
+01:04:20.120 --> 01:04:24.140
+relatório, gerou do GPT, você vai criar
+um outro gatilho voltando, para enviar
+
+01:04:24.240 --> 01:04:27.600
+de volta a resposta para a fulana,
+aquela fulana digital especificamente
+
+01:04:27.700 --> 01:04:33.000
+que mandou o oi para você cinco minutos
+atrás do WhatsApp.
+
+01:04:33.100 --> 01:04:35.360
+Entendi.
+
+01:04:35.460 --> 01:04:40.620
+Deixa eu só fazer uma explicação, se eu
+não me engano, nós que somos os
+
+01:04:40.720 --> 01:04:44.880
+founders, temos a liberação de
+superagentes por um tempo, e os
+
+01:04:44.980 --> 01:04:48.720
+superagentes, eles podem resolver essa
+conexão de forma extremamente rápida com
+
+01:04:48.820 --> 01:04:55.100
+o teu WhatsApp Business, ou com o N8N,
+que tem as aulas aqui dentro do founders
+
+01:04:55.200 --> 01:05:02.020
+e da formação lá no dashboard principal
+da vitrine, tem lá N8N para iniciantes,
+
+01:05:02.120 --> 01:05:04.520
+que a gente consegue construir
+rapidinho, e qualquer coisa que você
+
+01:05:04.620 --> 01:05:06.600
+precisar também eu posso te ajudar,
+Cris.
+
+01:05:06.700 --> 01:05:07.920
+Ah, beleza.
+
+01:05:08.020 --> 01:05:09.260
+Obrigadão.
+
+01:05:09.360 --> 01:05:10.020
+Maravilha, Emma.
+
+01:05:10.120 --> 01:05:12.480
+Obrigado aí, viu, pela informação.
+
+01:05:12.580 --> 01:05:13.980
+Uma última pergunta.
+
+01:05:14.080 --> 01:05:20.120
+WhatsApp Business.
+
+01:05:20.220 --> 01:05:25.940
+No caso, bom, é outra questão, acho que
+no meu caso vai ter que ser usar um
+
+01:05:26.040 --> 01:05:28.380
+outro número, com outro WhatsApp
+Business.
+
+01:05:28.480 --> 01:05:31.820
+Não, não, você pode fazer, então, você
+pode pegar, qual é o pulo do gado do
+
+01:05:31.920 --> 01:05:34.340
+WhatsApp Business, tá, pra você não
+trocar de telefone, tá?
+
+01:05:34.440 --> 01:05:40.640
+Pega um chip pré -pago qualquer, compra
+cinco reais ali na TIN, na Vivo, etc,
+
+01:05:40.740 --> 01:05:43.840
+troca o seu chip, só pra você fazer a
+validação de número do WhatsApp
+
+01:05:43.940 --> 01:05:47.020
+Business, depois você tira esse chip,
+joga fora, e fica usando o seu chip
+
+01:05:47.120 --> 01:05:47.620
+normal.
+
+01:05:47.720 --> 01:05:50.460
+É só pra você fazer a validação, porque
+aí você consegue entrar no celular e
+
+01:05:50.560 --> 01:05:53.200
+depois na web também, pra poder
+responder os seus clientes.
+
+01:05:53.300 --> 01:05:56.740
+Você precisa misturar o seu número
+pessoal com o seu número profissional.
+
+01:05:56.840 --> 01:05:58.140
+Tá certo.
+
+01:05:58.240 --> 01:05:59.640
+Não, beleza.
+
+01:05:59.740 --> 01:06:01.120
+Valeu, muito obrigada.
+
+01:06:01.220 --> 01:06:02.800
+Consegui te ajudar, Cris?
+
+01:06:02.900 --> 01:06:04.000
+Sim, bastante.
+
+01:06:04.100 --> 01:06:04.940
+Brigadão.
+
+01:06:05.040 --> 01:06:06.240
+Obrigado a você.
+
+01:06:06.340 --> 01:06:07.480
+Dani, levantou a mão.
+
+01:06:07.580 --> 01:06:12.800
+Dani, eu não estou te vendo.
+
+01:06:12.900 --> 01:06:13.180
+Desculpa.
+
+01:06:13.280 --> 01:06:15.720
+Tá me ouvindo?
+
+01:06:15.820 --> 01:06:17.980
+Agora sim, Dani.
+
+01:06:18.080 --> 01:06:20.980
+Desculpa, eu não vou ligar a câmera,
+porque eu não estou no Brasil, é muito
+
+01:06:21.080 --> 01:06:24.900
+tarde aqui, eu tenho que falar bem
+baixinho, tá bom?
+
+01:06:25.000 --> 01:06:25.540
+Tranquilo.
+
+01:06:25.640 --> 01:06:26.340
+Tá ótimo.
+
+01:06:26.440 --> 01:06:33.560
+A minha dúvida é sobre o MVP, mas é
+ligado aos créditos, porque assim, eu
+
+01:06:33.660 --> 01:06:40.700
+vou captar créditos de empresas como
+NVIDIA, Google, etc.
+
+01:06:40.800 --> 01:06:46.700
+E quando eu estava lendo a documentação,
+eles falam que você precisa ter um site
+
+01:06:46.800 --> 01:06:52.120
+institucional, que eu estou finalizando
+agora, e ele precisa também que você
+
+01:06:52.220 --> 01:06:56.340
+envie um vídeo do MVP.
+
+01:06:56.440 --> 01:07:00.660
+Então, agora eu estou com dúvida, porque
+você falou do MVP muito simples, e eu
+
+01:07:00.760 --> 01:07:07.180
+não sei se o MVP é tão simples assim,
+passaria pela parte para obter os
+
+01:07:07.280 --> 01:07:07.520
+créditos.
+
+01:07:07.620 --> 01:07:10.740
+Essa é a minha dúvida.
+
+01:07:10.840 --> 01:07:14.620
+Então, Dani, me explica um pouquinho
+mais como é que seria o seu MVP.
+
+01:07:14.720 --> 01:07:21.100
+O meu MVP, ele é bem técnico, eu teria
+que fazer mais ou menos uns três
+
+01:07:21.200 --> 01:07:31.140
+aplicativos, que eu vou fazer uma
+aplicação, que é uma plataforma
+
+01:07:31.240 --> 01:07:34.680
+corporativa, para treinamento
+corporativo.
+
+01:07:34.780 --> 01:07:38.940
+Hoje eu já trabalho com treinamento
+corporativo, mas eles não trabalham com
+
+01:07:39.040 --> 01:07:41.700
+a parte de inteligência artificial.
+
+01:07:41.800 --> 01:07:46.180
+Então, eu adicionaria essa parte de
+inteligência artificial lá, então eu vou
+
+01:07:46.280 --> 01:07:51.280
+ter os meus mentores, os mentores vão
+fazer os treinamentos, então é algo bem
+
+01:07:51.380 --> 01:07:58.080
+específico, mas eles pedem um MVP,
+assim, bem bonitinho, pelo que eu
+
+01:07:58.180 --> 01:08:05.000
+entendi no material, eles querem um MVP
+que funcione, para poder eles entenderem
+
+01:08:05.100 --> 01:08:08.020
+onde que eu vou precisar desses
+créditos, para então liberar os
+
+01:08:08.120 --> 01:08:08.960
+créditos.
+
+01:08:09.060 --> 01:08:13.780
+Então, eu não sei se um MVP tão simples
+como esse com o WhatsApp, seria
+
+01:08:13.880 --> 01:08:16.400
+suficiente para liberar os créditos.
+
+01:08:16.500 --> 01:08:19.500
+Olha, Dani, eu vou te falar com a minha
+experiência, porque, e aí contando um
+
+01:08:19.600 --> 01:08:23.880
+pouquinho da nossa empresa, a gente
+usava a WS desde o início da nossa
+
+01:08:23.980 --> 01:08:30.140
+empresa e a gente mudou, para o GCP, há
+pouco mais de dois meses, tá?
+
+01:08:30.240 --> 01:08:33.960
+E nessa mudança, o GCP deu 250 mil
+dólares para a gente de crédito.
+
+01:08:34.060 --> 01:08:38.440
+É claro que nós somos uma empresa que
+existe há 10 anos, só que, eu não me
+
+01:08:38.540 --> 01:08:44.180
+lembro do Google fazendo qualquer
+escrutínio com a nossa solução, em
+
+01:08:44.280 --> 01:08:46.460
+nenhum momento antes da liberação do
+crédito.
+
+01:08:46.560 --> 01:08:51.620
+Foi muito mais em relação ao relatório,
+né, do que a gente contou, em termos de
+
+01:08:51.720 --> 01:08:55.240
+quem a gente era, onde a gente estava, o
+que a gente estava fazendo, do que, de
+
+01:08:55.340 --> 01:08:57.920
+fato, uma validação técnica, tá?
+
+01:08:58.020 --> 01:08:59.180
+Por que eu estou dizendo isso para você?
+
+01:08:59.280 --> 01:09:03.760
+Porque, talvez, o ponto de ameaça em
+relação à obtenção de crédito não seja
+
+01:09:03.860 --> 01:09:06.840
+técnico, ele seja de negócio.
+
+01:09:06.940 --> 01:09:11.300
+Ou seja, uma coisa é você falar para o
+Google o seguinte, ah, tem uma solução
+
+01:09:11.400 --> 01:09:15.480
+assim, assim, assado, que tem não sei
+quantos agentes, não sei quantas milhões
+
+01:09:15.580 --> 01:09:17.820
+de linhas de código usadas e tal.
+
+01:09:17.920 --> 01:09:20.740
+Tá, mas qual que é a entrega de valor
+dessa solução e para quem está
+
+01:09:20.840 --> 01:09:21.460
+entregando o valor?
+
+01:09:21.560 --> 01:09:24.840
+Se tiver pouquíssimo cliente ou nenhum
+cliente, mesmo que a sua solução seja
+
+01:09:24.940 --> 01:09:30.180
+complexa, não me parece que o Google é
+uma compelling message para o Google,
+
+01:09:30.280 --> 01:09:30.560
+entendeu?
+
+01:09:30.660 --> 01:09:33.660
+Para o GCP ou para seja lá qual outro
+mecanismo for.
+
+01:09:33.760 --> 01:09:35.320
+Agora, tem um detalhe importante.
+
+01:09:35.420 --> 01:09:39.220
+Se você está começando agora, existem
+programas da AWS, depois eu até posso
+
+01:09:39.320 --> 01:09:45.900
+passar alguns links aqui para você, que
+são programas de kick -off de projetos,
+
+01:09:46.000 --> 01:09:52.780
+né, e voltados para AWS startups e tal,
+que você consegue obter, se eu não me
+
+01:09:52.880 --> 01:09:53.180
+engano, tá?
+
+01:09:53.280 --> 01:09:56.560
+Mil dólares inicialmente, mil dólares
+para você que está começando agora, é
+
+01:09:56.660 --> 01:09:58.960
+muito crédito.
+
+01:09:59.060 --> 01:10:03.560
+Depois você pode subir para 5 mil
+dólares, aí subindo para 5 mil dólares,
+
+01:10:03.660 --> 01:10:09.240
+você tendo de fato uma solução no ar,
+você pode ir atrás de uma entidade, né,
+
+01:10:09.340 --> 01:10:12.880
+das entidades parceiras da Amazon, tem
+várias aí no mercado, para poder ir
+
+01:10:12.980 --> 01:10:13.140
+subindo.
+
+01:10:13.240 --> 01:10:18.620
+Então, se eu não me engano, a escala do
+Google é mil, 5 mil, 10 mil, 15 mil, 25
+
+01:10:18.720 --> 01:10:19.820
+mil e 100 mil dólares.
+
+01:10:19.920 --> 01:10:23.480
+A gente, quando a gente fazia parte do
+ecossistema AWS, a gente chegou até 25
+
+01:10:23.580 --> 01:10:25.280
+mil dólares de crédito.
+
+01:10:25.380 --> 01:10:27.380
+Então, essa é a nossa trajetória, tá?
+
+01:10:27.480 --> 01:10:29.120
+Mil dólares eu sei que você consegue
+fácil.
+
+01:10:29.220 --> 01:10:34.660
+5 mil, talvez você precise de alguma
+referral aí, de alguma entidade
+
+01:10:34.760 --> 01:10:38.320
+promotora de inovação, de startup para
+poder te dar um carimbo.
+
+01:10:38.420 --> 01:10:42.900
+Mas mil dólares eu tenho 99 % de certeza
+que você consegue muito fácil.
+
+01:10:43.000 --> 01:10:48.960
+É que assim, quando eu, minha startup,
+eu tenho uma empresa, empresa
+
+01:10:49.060 --> 01:10:56.920
+estabelecida onde eu moro, no país onde
+eu moro, na Estônia, e aí, eu vou
+
+01:10:57.020 --> 01:10:58.500
+aplicar pela minha empresa.
+
+01:10:58.600 --> 01:11:03.740
+Ela não é uma empresa de título startup,
+mas pelo que eu entendi, não é isso que
+
+01:11:03.840 --> 01:11:04.980
+seria o problema.
+
+01:11:05.080 --> 01:11:11.120
+E quando eu fiz aqui com os founders, a
+informação é que a gente teria mais ou
+
+01:11:11.220 --> 01:11:17.300
+menos uns créditos desbloqueados entre
+20 a 30 mil dólares.
+
+01:11:17.400 --> 01:11:22.900
+E aí eu não vejo isso com um EVP tão
+simples assim, eles não me dariam 20
+
+01:11:23.000 --> 01:11:23.880
+mil.
+
+01:11:23.980 --> 01:11:29.840
+Talvez porque eu preciso, hoje, um MVP
+de 3 aplicativos, os 20 mil dólares
+
+01:11:29.940 --> 01:11:34.340
+seriam suficientes para eu trabalhar,
+porque aí eu precisaria ter alguém me
+
+01:11:34.440 --> 01:11:35.000
+ajudando.
+
+01:11:35.100 --> 01:11:36.780
+Não necessariamente, Dani.
+
+01:11:36.880 --> 01:11:43.320
+Você tem um capacity planning do seu
+print, um capacity planning do seu
+
+01:11:43.420 --> 01:11:44.440
+aplicativo em termos de infraestrutura?
+
+01:11:44.540 --> 01:11:45.540
+Não.
+
+01:11:45.640 --> 01:11:46.520
+Não, não, não.
+
+01:11:46.620 --> 01:11:47.040
+Ainda não.
+
+01:11:47.140 --> 01:11:50.060
+Porque como eu falei, eu estou
+terminando o site institucional.
+
+01:11:50.160 --> 01:11:54.780
+Eu estou terminando o roadmap do meu
+aplicativo.
+
+01:11:54.880 --> 01:12:00.460
+Aí, a partir disso, é que eu queria
+entender, assim, eu consigo os créditos
+
+01:12:00.560 --> 01:12:04.080
+antes de fazer o meu aplicativo, ou eu
+tenho que fazer o meu aplicativo.
+
+01:12:04.180 --> 01:12:09.840
+E hoje, quando eu comecei a fazer, eu
+falei, eu preciso dessa API, eu preciso
+
+01:12:09.940 --> 01:12:11.860
+desse tipo de VPS.
+
+01:12:11.960 --> 01:12:15.340
+E aí, quando eu fui buscar, eles
+falaram, não, mas você precisa do
+
+01:12:15.440 --> 01:12:19.040
+institucional e precisa também do MVP.
+
+01:12:19.140 --> 01:12:21.020
+Aí eu estou travada.
+
+01:12:21.120 --> 01:12:23.060
+Minha sugestão para você, mas quem falou
+isso?
+
+01:12:23.160 --> 01:12:25.080
+Foi o Google que falou isso para você?
+
+01:12:25.180 --> 01:12:25.440
+Não, não.
+
+01:12:25.540 --> 01:12:29.520
+Quando eu fui ler os documentos mesmo de
+cada um, por exemplo, eu comecei pela
+
+01:12:29.620 --> 01:12:34.920
+NVIDIA, e aí eu vi alguma coisa do
+Google, eu vi a AWS, eu não cheguei a
+
+01:12:35.020 --> 01:12:40.160
+ler, porque quando eu li o segundo, que
+aí falava também do MVP, aí eu parei.
+
+01:12:40.260 --> 01:12:43.900
+Eu falei, então, eu preciso realmente
+ter mais informações.
+
+01:12:44.000 --> 01:12:48.280
+A não ser que o que você esteja querendo
+desenvolver é uma coisa muito peculiar e
+
+01:12:48.380 --> 01:12:53.540
+que envolve uma massa de dados com um
+processamento de GPU bastante acentuado,
+
+01:12:53.640 --> 01:12:57.220
+não me parece o caso, não precisa de 20
+mil dólares, tá?
+
+01:12:57.320 --> 01:12:58.960
+Você precisa de mil dólares para
+começar.
+
+01:12:59.060 --> 01:13:02.040
+E mil dólares, como eu falei para você,
+eu acho que você consegue bem rápido e
+
+01:13:02.140 --> 01:13:03.180
+fácil.
+
+01:13:03.280 --> 01:13:06.940
+Você não precisa ter complexidade
+nenhuma tecnológica para conseguir esse
+
+01:13:07.040 --> 01:13:07.960
+kick -off de mil dólares.
+
+01:13:08.060 --> 01:13:11.160
+Claro, é importante você ter uma landing
+page, é importante você ter, talvez, um
+
+01:13:11.260 --> 01:13:17.200
+MVP simples, funcional, mas nada mais do
+que isso para você conseguir na AWS mil
+
+01:13:17.300 --> 01:13:18.480
+dólares.
+
+01:13:18.580 --> 01:13:19.640
+Tá.
+
+01:13:19.740 --> 01:13:20.820
+Entendi.
+
+01:13:20.920 --> 01:13:22.980
+Você tem uma ideia de termos de
+referência, tá?
+
+01:13:23.080 --> 01:13:25.400
+Em termos de custo de infraestrutura.
+
+01:13:25.500 --> 01:13:30.540
+Quando a gente tinha, bateu 300 mil
+usuários ativos no mês lá no
+
+01:13:30.640 --> 01:13:38.000
+iMail, eu estava pagando 7 mil dólares
+por mês.
+
+01:13:38.100 --> 01:13:40.840
+7 mil dólares para 300 mil usuários
+ativos no mês.
+
+01:13:40.940 --> 01:13:46.160
+Então, só para você ter uma ideia, que
+20 mil dólares seria muita grana.
+
+01:13:46.260 --> 01:13:50.560
+Muita grana para esse início aí, você
+não precisa disso.
+
+01:13:50.660 --> 01:13:52.940
+Então, é, tá certo, tá ótimo.
+
+01:13:53.040 --> 01:13:53.940
+Obrigada, Leo.
+
+01:13:54.040 --> 01:13:55.800
+Obrigado a você.
+
+01:13:55.900 --> 01:13:58.640
+Muito bem, pessoal, que bom, boas
+interações.
+
+01:13:58.740 --> 01:14:00.780
+Vamos seguir aqui, mais uma vez, né?
+
+01:14:00.880 --> 01:14:06.960
+Se vocês tiverem mais dúvidas, vamos, a
+gente pode continuar, tá?
+
+01:14:07.060 --> 01:14:10.640
+Bom, vamos falar um pouquinho sobre
+estratégia de lançamento do MVP, tá?
+
+01:14:10.740 --> 01:14:16.560
+À medida que você tem o seu MVP
+estruturado, e mais uma vez, lembrando,
+
+01:14:16.660 --> 01:14:22.380
+né, o MVP é a versão mais simples do seu
+produto, que é capaz de entregar valor
+
+01:14:22.480 --> 01:14:24.500
+para o seu cliente.
+
+01:14:24.600 --> 01:14:28.880
+Não tente trazer camada de complexidade
+para o seu MVP, porque você pode até
+
+01:14:28.980 --> 01:14:33.240
+vender o seu MVP, e, de fato, isso ser
+uma primeira versão do produto
+
+01:14:33.340 --> 01:14:38.720
+comercializável, mas o objetivo
+principal não é vender e não é ganhar
+
+01:14:38.820 --> 01:14:43.500
+dinheiro, não é escalar dinheiro em cima
+do MVP, é você aprender a respeito do
+
+01:14:43.600 --> 01:14:47.800
+valor que você está entregando e como
+você pode entregar mais valor de forma
+
+01:14:47.900 --> 01:14:51.860
+estruturada, de forma refinada para o
+seu cliente, tá?
+
+01:14:51.960 --> 01:14:54.580
+Esse é o grande objetivo do MVP.
+
+01:14:54.680 --> 01:14:57.940
+Demorou muito, muito para lançar, e aí
+você já está perdendo tempo.
+
+01:14:58.040 --> 01:15:02.080
+Lance com simplesmente aquilo que você
+já consegue entregar de valor.
+
+01:15:02.180 --> 01:15:09.160
+Como eu falei ali para a Cris, se eu não
+me engano, né, Cris, você é capaz de
+
+01:15:09.260 --> 01:15:12.820
+gerar valor sem ter que automatizar tudo
+de uma vez.
+
+01:15:12.920 --> 01:15:15.200
+Automatize a primeira perna.
+
+01:15:15.300 --> 01:15:18.060
+Vá estabelecendo aí o compartilhamento
+dos seus formulários.
+
+01:15:18.160 --> 01:15:21.880
+Deixe o pessoal preencher, faz o
+assessment, vai mandando e você
+
+01:15:21.980 --> 01:15:23.380
+devagarinho vai automatizando isso.
+
+01:15:23.480 --> 01:15:28.100
+Se com uma mensagem, se com o WhatsApp
+Business e uma resposta automatizada,
+
+01:15:28.200 --> 01:15:33.140
+onde já ponho lá o link do meu Forms, eu
+já consigo aumentar a minha conversão em
+
+01:15:33.240 --> 01:15:38.440
+30%, opa, parece que eu já tenho um MVP
+bom ali para poder começar a testar e a
+
+01:15:38.540 --> 01:15:40.140
+caminhar com o meu projeto, tá?
+
+01:15:40.240 --> 01:15:42.780
+E essa é a mentalidade que vocês têm que
+ter.
+
+01:15:42.880 --> 01:15:48.560
+A gente falou lá, né, nas primeiras
+aulas sobre MVP mágico, de Oz, MVP
+
+01:15:48.660 --> 01:15:50.620
+protótipo, MVP concierge.
+
+01:15:50.720 --> 01:15:55.060
+Aqui, só do ponto de vista prático, né,
+você pode usar o concierge, o concierge
+
+01:15:55.160 --> 01:15:58.060
+seria muito parecido com o que eu falei
+para a Cris, né?
+
+01:15:58.160 --> 01:16:04.500
+Ela tem uma entrada de dados via
+WhatsApp, mas a criação de valor
+
+01:16:04.600 --> 01:16:11.180
+acontece de forma manual ou com um alto
+envolvimento, né, o high touch, um high
+
+01:16:11.280 --> 01:16:16.400
+touch point, né, do humano para poder
+gerar, por exemplo, lá o relatório em
+
+01:16:16.500 --> 01:16:16.740
+PDF.
+
+01:16:16.840 --> 01:16:18.740
+Então, o que a gente chama de MVP
+concierge.
+
+01:16:18.840 --> 01:16:25.800
+Eu começo fazendo algo de forma manual,
+entrego o valor de forma manual, para
+
+01:16:25.900 --> 01:16:30.800
+depois, como alguém falou aí na terça
+-feira, né, ah, eu vou ter seis pessoas,
+
+01:16:30.900 --> 01:16:35.340
+não sei se foi o Ramiro que trouxe isso,
+eu tenho seis pessoas que vão receber a
+
+01:16:35.440 --> 01:16:39.140
+demanda de informação em respeito de
+informações regulatórias de arquitetura
+
+01:16:39.240 --> 01:16:41.780
+e com 15 minutos elas vão responder o
+cliente.
+
+01:16:41.880 --> 01:16:43.560
+É um MVP concierge.
+
+01:16:43.660 --> 01:16:46.440
+E se você conseguir entregar valor com
+MVP concierge e conseguir cobrar por
+
+01:16:46.540 --> 01:16:49.140
+isso, ótimo, você já está no caminho
+muito bom.
+
+01:16:49.240 --> 01:16:53.520
+Então, MVP landing page, né, e com a
+ideia do que a gente está chamando de
+
+01:16:53.620 --> 01:16:58.340
+micro SaaS, atualmente, o MVP landing
+page tem sido bastante, bastante
+
+01:16:58.440 --> 01:17:00.900
+utilizado, com a facilidade de você
+colocar uma landing page no ar, né, com
+
+01:17:01.000 --> 01:17:06.360
+esses geradores de código e de página, o
+landing page tem sido bastante
+
+01:17:06.460 --> 01:17:07.040
+utilizado.
+
+01:17:07.140 --> 01:17:10.520
+E tem o MVP bot automation, né, que é o
+exemplo que eu dei do nutricionista, é o
+
+01:17:10.620 --> 01:17:14.920
+exemplo do Marcio, que você de forma
+facilitada, em poucas horas consegue
+
+01:17:15.020 --> 01:17:19.840
+colocar, conectar as coisas, criar
+gatilhos para fazer com que a sua
+
+01:17:19.940 --> 01:17:25.660
+comunicação no WhatsApp, sendo você um
+profissional, né, da área de nutrição,
+
+01:17:25.760 --> 01:17:30.480
+terapeuta, etc., seja automatizado, tá?
+
+01:17:30.580 --> 01:17:33.520
+Bom, quais são as estratégias de
+lançamento que a gente tem aqui que você
+
+01:17:33.620 --> 01:17:34.960
+pode utilizar, pessoal?
+
+01:17:35.060 --> 01:17:39.220
+Então, você tem um soft launch, né, que
+é um lançamento para um grupo pequeno e
+
+01:17:39.320 --> 01:17:45.200
+controlado de clientes, que seria ali
+mais ou menos o Marcio, né, colocando,
+
+01:17:45.300 --> 01:17:51.780
+fazendo um soft launch para um grupo lá
+de pacientes de terapia ou de um
+
+01:17:51.880 --> 01:17:55.280
+terapeuta específico, né, ou que
+consomem produto
+
+01:17:55.380 --> 01:18:02.400
+de terapia, ou seria um lançamento para
+um grupo pequeno, né, controlado de
+
+01:18:02.500 --> 01:18:05.760
+clientes, por que um grupo pequeno?
+
+01:18:05.860 --> 01:18:09.960
+Porque a depender da fragilidade inicial
+do meu produto, eu me repito, de alguma
+
+01:18:10.060 --> 01:18:13.880
+forma ele precisa ser frágil também, eu
+não vou soltar para todo mundo, não, eu
+
+01:18:13.980 --> 01:18:17.920
+quero trabalhar não só com o senso de
+escassez, mas eu quero trabalhar também
+
+01:18:18.020 --> 01:18:21.760
+com alto senso de controle, para eu
+poder aprender com aquela amostra de
+
+01:18:21.860 --> 01:18:26.180
+usuários para melhorar, e aí sim eu vou
+aumentando, o espectro da amostra
+
+01:18:26.280 --> 01:18:27.680
+paulatinamente, tá?
+
+01:18:27.780 --> 01:18:33.160
+Tenho a ideia do beta fechado, né, que é
+aquela ideia do convite, que lá atrás o
+
+01:18:33.260 --> 01:18:37.180
+Orkut era assim, o Facebook começou
+assim também, só com invitation only,
+
+01:18:37.280 --> 01:18:43.440
+né, acesso limitado para usuários
+selecionados ou via convite, e a
+
+01:18:43.540 --> 01:18:47.160
+campanha de pré -vendas também, né, o
+Dropbox, não sei se vocês conhecem o
+
+01:18:47.260 --> 01:18:51.980
+Dropbox, que foi durante muito tempo,
+hoje está mais, menos relevante, mas
+
+01:18:52.080 --> 01:18:55.260
+durante muito tempo foi um grande
+concorrente do Google, o Drive, o
+
+01:18:55.360 --> 01:18:57.920
+Dropbox, ele fez uma campanha de pré
+-vendas muito bem sucedida, como é que
+
+01:18:58.020 --> 01:18:59.100
+ele fez?
+
+01:18:59.200 --> 01:19:03.520
+Antes de ter o produto lançado, estavam
+desenvolvendo ainda a primeira versão de
+
+01:19:03.620 --> 01:19:10.840
+produto, eles soltaram um vídeo de pré
+-vendas para um espectro específico de
+
+01:19:10.940 --> 01:19:18.180
+empresas, para poder medir o interesse
+real da empresa e gerar ali um tracking
+
+01:19:18.280 --> 01:19:23.360
+de receita inicial, então os primeiros
+clientes pagantes da Dropbox vieram por
+
+01:19:23.460 --> 01:19:28.140
+meio dessa pré -venda, que eles fizeram
+via vídeo, quando o produto não ainda
+
+01:19:28.240 --> 01:19:30.840
+estava lançado.
+
+01:19:30.940 --> 01:19:35.340
+Outro parêntese importante nessa mesma
+fala, de campanha de pré -venda, se você
+
+01:19:35.440 --> 01:19:40.800
+for assistir o filme do Steve Jobs, tem
+uns 10 anos esse filme, que foi feito
+
+01:19:40.900 --> 01:19:46.980
+pelo Aston Kutcher, muito bom filme, ele
+mostra o lançamento do Macintosh,
+
+01:19:47.080 --> 01:19:49.380
+basicamente todos os lançamentos do
+Jobs, tá, pessoal?
+
+01:19:49.480 --> 01:19:53.380
+Mas tem um lançamento do Macintosh muito
+interessante, que ele lançou lá na
+
+01:19:53.480 --> 01:19:59.140
+década de, sei lá, 99, 2000, enfim, o
+Macintosh, e ao lançar o Macintosh, o
+
+01:19:59.240 --> 01:20:03.260
+que ele mostrou lá no teatro, né, que
+ele usou lá para poder fazer o
+
+01:20:03.360 --> 01:20:08.580
+lançamento, era o mock -up, não era um
+computador terminado.
+
+01:20:08.680 --> 01:20:13.740
+E ele ficou, pasme em vocês, ele lançou,
+e esse produto ele foi chegar na
+
+01:20:13.840 --> 01:20:18.740
+prateleira do mercado, sabe quanto tempo
+depois?
+
+01:20:18.840 --> 01:20:21.220
+Dois anos depois.
+
+01:20:21.320 --> 01:20:24.020
+Dois anos depois.
+
+01:20:24.120 --> 01:20:29.140
+Então, ah, eu tenho que fazer uma
+campanha e no outro dia tentar, não
+
+01:20:29.240 --> 01:20:29.620
+necessariamente.
+
+01:20:29.720 --> 01:20:33.500
+Claro que os tempos hoje, os tempos e
+movimentos hoje são absolutamente
+
+01:20:33.600 --> 01:20:37.580
+distintos do que eram em 2000,
+obviamente, em relação à tecnologia.
+
+01:20:37.680 --> 01:20:41.960
+Mas ele usou isso e pra ele, né, naquele
+tempo foi uma estratégia extremamente
+
+01:20:42.060 --> 01:20:46.500
+bem sucedida, porque sem ter finalizado
+o produto, ele vendeu milhares de
+
+01:20:46.600 --> 01:20:49.920
+unidades do produto na pré -venda, e
+quando o produto foi pra prateleira do
+
+01:20:50.020 --> 01:20:55.560
+mercado, ele já tinha um estoque de
+receita, é, é, é, é, garantido, né, pra
+
+01:20:55.660 --> 01:21:00.040
+aquele, ah, pra aquele produto, né, que
+ele tava, tava ainda em fase de
+
+01:21:00.140 --> 01:21:00.160
+desenvolvimento.
+
+01:21:00.260 --> 01:21:04.300
+Os jobs era, era muito, muito, muito bom
+em fazer isso, tá?
+
+01:21:04.400 --> 01:21:08.060
+Eu queria aproveitar, a gente ainda tem
+35 minutos ainda da nossa aula, passou
+
+01:21:08.160 --> 01:21:11.700
+rápido pra caramba, queria aproveitar
+pra gente poder fazer um exercício de
+
+01:21:11.800 --> 01:21:16.320
+construção do MVP, pra quem ainda não
+construiu a primeira versão do MVP, que
+
+01:21:16.420 --> 01:21:19.600
+eu acredito que seja a maioria de vocês,
+tá?
+
+01:21:19.700 --> 01:21:23.000
+Adriano, você tá por aí?
+
+01:21:23.100 --> 01:21:25.020
+Opa, tô aqui!
+
+01:21:25.120 --> 01:21:26.080
+Maravilha, o que que eu vou pedir?
+
+01:21:26.180 --> 01:21:30.940
+Vou pedir pra gente, é, é, a gente vai
+dividir, pessoal, um breakout de uns em
+
+01:21:31.040 --> 01:21:32.940
+duplas, tá?
+
+01:21:33.040 --> 01:21:38.780
+É, e cada dupla, né, cada integrante aí
+da dupla vai apresentar o seu MVP e,
+
+01:21:38.880 --> 01:21:43.020
+obviamente, pessoal, se não tiver o MVP
+pronto, não tem problema.
+
+01:21:43.120 --> 01:21:47.380
+Apresenta a ideia do MVP, apresenta o
+desenho do MVP no caderno, o diagrama do
+
+01:21:47.480 --> 01:21:50.960
+MVP, o que você que você tiver do MVP
+anotado, né, o que você tiver mesmo que
+
+01:21:51.060 --> 01:21:55.560
+seja uma ideia que você queira falar
+sobre isso, pro seu colega, tá?
+
+01:21:55.660 --> 01:22:01.820
+A gente vai dividir esse, esse, esse
+exercício em 10 minutos, são 10 minutos,
+
+01:22:01.920 --> 01:22:06.920
+5 minutos pra um apresentar, falar um
+pouquinho do MVP, mostrar o diagrama e,
+
+01:22:07.020 --> 01:22:10.860
+em cada um desse bloco de 5 minutos, o
+colega que estiver recebendo a
+
+01:22:10.960 --> 01:22:15.960
+apresentação do MVP, deve criar 3
+perguntas -chave pro colega coletar
+
+01:22:16.060 --> 01:22:18.660
+feedback dos clientes sobre o MVP, tá?
+
+01:22:18.760 --> 01:22:20.260
+Por que que a gente vai fazer esse
+exercício?
+
+01:22:20.360 --> 01:22:25.420
+Pra, porque, às vezes, você tá viciado
+num escopo muito fechado e apaixonado,
+
+01:22:25.520 --> 01:22:28.300
+né, pelo produto que você tá
+desenvolvendo, e você não consegue
+
+01:22:28.400 --> 01:22:33.420
+pensar fora da caixa pra poder pensar em
+perguntas capciosas, perguntas
+
+01:22:33.520 --> 01:22:37.460
+importantes, perguntas assertivas,
+necessárias, das pessoas que vão tá
+
+01:22:37.560 --> 01:22:43.740
+consumindo o seu MVP e que vão te fazer
+pra você pra você coletar feedback
+
+01:22:43.840 --> 01:22:45.840
+valioso delas, tá bom?
+
+01:22:45.940 --> 01:22:49.780
+Então, 3 perguntas -chave pra coletar
+feedback de clientes sobre o MVP.
+
+01:22:49.880 --> 01:22:52.700
+Então, quando você estiver apresentando
+pro seu colega, ele assiste sua
+
+01:22:52.800 --> 01:22:56.860
+apresentação do MVP, ou sua fala sobre o
+MVP, e depois ele tem que fazer 3
+
+01:22:56.960 --> 01:23:01.380
+perguntas importantes, né, pra coletar o
+feedback aí dos clientes sobre o MVP.
+
+01:23:01.480 --> 01:23:07.100
+A mesma coisa vira, 5 minutos, o outro
+colega faz, e aí em 10 minutos do mar,
+
+01:23:07.200 --> 01:23:11.000
+10 minutos, contados no relógio,
+Adriano, pode botar o timer aí e a gente
+
+01:23:11.100 --> 01:23:11.680
+volta.
+
+01:23:11.780 --> 01:23:12.040
+Pode ser assim?
+
+01:23:12.140 --> 01:23:13.440
+Tá bom.
+
+01:23:13.540 --> 01:23:16.460
+Eu vou colocar 11 minutos, mas é o
+seguinte, tá?
+
+01:23:16.560 --> 01:23:21.760
+Como tem pessoal aqui que entrou com
+fato, com aqueles resumidores de
+
+01:23:21.860 --> 01:23:27.440
+reunião, então eu vou dar um minuto aí
+pra eu varrer todo o grupo, as salvas
+
+01:23:27.540 --> 01:23:31.940
+que foram criadas e garantir que vocês
+estejam com alguém aí, tá bom?
+
+01:23:32.040 --> 01:23:39.580
+Então, se você cair numa dupla e você tá
+com uma IA aí, eu vou colocar alguém pra
+
+01:23:39.680 --> 01:23:40.920
+você, tá bom?
+
+01:23:41.020 --> 01:23:44.700
+Então, daí você aguenta esse primeiro
+minuto que eu vou fazer isso.
+
+01:23:44.800 --> 01:23:45.400
+Então, vamos lá.
+
+01:23:45.500 --> 01:23:50.400
+Eu tenho uma perguntinha antes de entrar
+pra o exercício, Léo.
+
+01:23:50.500 --> 01:23:54.840
+Que tipo de perguntas assim, pra fazer
+bem o exercício?
+
+01:23:54.940 --> 01:23:56.700
+Vou aproveitar o momento.
+
+01:23:56.800 --> 01:23:57.360
+Tá bom.
+
+01:23:57.460 --> 01:24:00.120
+Boa, boa, boa, boa provocação, tá?
+
+01:24:00.220 --> 01:24:02.540
+Vou pegar o exemplo do Márcio, tá?
+
+01:24:02.640 --> 01:24:07.980
+Que ele trouxe aqui do do terapeuta lá
+via bot de WhatsApp.
+
+01:24:08.080 --> 01:24:10.320
+Terapeuta do emagrecimento.
+
+01:24:10.420 --> 01:24:11.760
+Isso, terapeuta do emagrecimento.
+
+01:24:11.860 --> 01:24:13.940
+Muito boa, Márcio.
+
+01:24:14.040 --> 01:24:21.460
+Que tipo de pergunta, Ramiro, você faria
+para o cliente do Márcio que está
+
+01:24:21.560 --> 01:24:26.260
+testando o bot da terapia do
+emagrecimento?
+
+01:24:26.360 --> 01:24:28.820
+Pra coletar o feedback desse cliente.
+
+01:24:28.920 --> 01:24:29.940
+Vou dar uma pergunta aqui.
+
+01:24:30.040 --> 01:24:33.160
+Imagina que eu estivesse no breakout
+room com o Márcio interagindo com ele.
+
+01:24:33.260 --> 01:24:35.460
+Ele foi lá, me apresentou todo o fluxo e
+tal.
+
+01:24:35.560 --> 01:24:37.860
+Eu vou fazer a seguinte pergunta pra
+ele.
+
+01:24:37.960 --> 01:24:42.160
+Pergunta pra ele e fazer pro cliente.
+
+01:24:42.260 --> 01:24:47.940
+Dentro da interação que você teve com o
+bot, com o terapeuta de emagrecimento, o
+
+01:24:48.040 --> 01:24:53.080
+que você faria diferente daquilo que foi
+feito em termos de interação com você?
+
+01:24:53.180 --> 01:24:54.980
+É uma pergunta.
+
+01:24:55.080 --> 01:24:58.980
+Então, o ponto central desse exercício,
+Ramiro, é ajudar o seu colega a pensar
+
+01:24:59.080 --> 01:25:03.380
+fora da caixa em termos de perguntas
+qualitativas que vão ajudar ele a obter
+
+01:25:03.480 --> 01:25:08.880
+feedback estruturado sobre o MVP.
+
+01:25:08.980 --> 01:25:09.720
+Perfeito.
+
+01:25:09.820 --> 01:25:10.780
+Ficou claro.
+
+01:25:10.880 --> 01:25:12.220
+Tá bom.
+
+01:25:12.320 --> 01:25:13.860
+Vamos lá, Adriano.
+
+01:25:13.960 --> 01:25:15.660
+Taca ali, Paulo.
+
+01:25:15.760 --> 01:25:17.900
+Beleza, peraí.
+
+01:25:18.000 --> 01:25:19.480
+Deixa eu colocar aqui, então.
+
+01:25:19.580 --> 01:25:24.660
+Então, 11 minutos e 10 segundos
+
+01:25:24.760 --> 01:25:27.840
+aqui.
+
+01:25:27.940 --> 01:25:33.480
+Ok.
+
+01:25:33.580 --> 01:25:35.140
+Opa, tem gente entrando aqui agora.
+
+01:25:35.240 --> 01:25:39.500
+Peraí que o pessoal vai entrar agora,
+rapaz.
+
+01:25:39.600 --> 01:25:45.040
+Melhor entrar 8h30 antes muito tarde do
+que nunca, né, Adriano?
+
+01:25:45.140 --> 01:25:47.560
+Vou criar, então, 25.
+
+01:25:47.660 --> 01:25:50.880
+Dá mais exemplo aí, Léo.
+
+01:25:50.980 --> 01:25:53.300
+Mais exemplo, Renata.
+
+01:25:53.400 --> 01:25:55.180
+Tá.
+
+01:25:55.280 --> 01:25:59.380
+Deixa eu dar mais um exemplo de
+perguntas.
+
+01:25:59.480 --> 01:26:01.940
+Eu tenho 50 perguntas aqui.
+
+01:26:02.040 --> 01:26:03.480
+Léo.
+
+01:26:03.580 --> 01:26:04.360
+Oi.
+
+01:26:04.460 --> 01:26:05.480
+Léo, uma pergunta.
+
+01:26:05.580 --> 01:26:10.980
+No meu caso, como eu estou indo para uma
+segunda fase do meu MVP, faz sentido eu
+
+01:26:11.080 --> 01:26:15.460
+falar do que eu já fiz ou do que eu
+estou visualizando agora?
+
+01:26:15.560 --> 01:26:20.940
+Porque quando eu entrei para o Founders
+e eu fui estruturada a minha ideia, eu
+
+01:26:21.040 --> 01:26:25.620
+já tinha feito um MVP acidentalmente,
+assim.
+
+01:26:25.720 --> 01:26:32.400
+Eu fiz um Notion para poder fomentar a
+economia local e tal.
+
+01:26:32.500 --> 01:26:34.760
+E foi assim que eu consegui descobrir
+várias coisas.
+
+01:26:34.860 --> 01:26:38.820
+Então, eu já estou estruturando a
+documentação do meu MVP inicial, o meu
+
+01:26:38.920 --> 01:26:39.560
+primeiro.
+
+01:26:39.660 --> 01:26:42.980
+Então, eu estou indo para um segundo MVP
+que é para entregar valor para o meu
+
+01:26:43.080 --> 01:26:43.880
+cliente.
+
+01:26:43.980 --> 01:26:49.680
+Então, eu explico essa segunda parte
+agora e esqueço o começo para tentar...
+
+01:26:49.780 --> 01:26:51.640
+Tentar deixar a dinâmica melhor.
+
+01:26:51.740 --> 01:26:52.920
+Não, acho que eu posso explicar as duas
+coisas.
+
+01:26:53.020 --> 01:26:57.360
+Quanto mais informação, mais completude
+do seu processo você trouxer para o seu
+
+01:26:57.460 --> 01:26:59.880
+colega, melhor para ele poder entender
+de onde você veio e para onde você está
+
+01:26:59.980 --> 01:27:02.440
+indo.
+
+01:27:02.540 --> 01:27:03.300
+Melhor.
+
+01:27:03.400 --> 01:27:05.140
+Bom?
+
+01:27:05.240 --> 01:27:06.100
+Bora lá.
+
+01:27:06.200 --> 01:27:07.500
+Bora lá, então.
+
+01:27:07.600 --> 01:27:08.220
+Vamos lá.
+
+01:27:08.320 --> 01:27:10.720
+Renato, eu vou pensar aqui e eu peço
+para o Adriano mandar via chat para
+
+01:27:10.820 --> 01:27:11.100
+você, tá?
+
+01:27:11.200 --> 01:27:17.260
+Em algumas opções aqui.
+
+01:27:17.360 --> 01:27:17.420
+Beleza.
+
+01:27:17.520 --> 01:27:18.860
+Já deve estar aparecendo aí para você.
+
+01:27:18.960 --> 01:27:21.560
+Para vocês se dividirem.
+
+01:27:21.660 --> 01:27:25.400
+Deixa eu já ir olhando aqui.
+
+01:27:25.500 --> 01:27:38.540
+Quem que ficou com...
+
+01:27:38.640 --> 01:27:40.320
+Grupo 8.
+
+01:27:40.420 --> 01:27:44.840
+O Adriano vai para o grupo 8.
+
+01:27:44.940 --> 01:27:50.000
+Muita gente usando...
+
+01:27:50.100 --> 01:27:54.500
+Esses anotadores de reunião.
+
+01:27:54.600 --> 01:27:56.000
+Eles entram com os anotadores, né?
+
+01:27:56.100 --> 01:27:57.620
+O Firefly.
+
+01:27:57.720 --> 01:28:00.640
+É.
+
+01:28:00.740 --> 01:28:05.400
+Deixa eu pegar aqui.
+
+01:28:05.500 --> 01:28:08.300
+Nove.
+
+01:28:08.400 --> 01:28:14.860
+Tchurururu.
+
+01:28:14.960 --> 01:28:16.120
+Tchurururu.
+
+01:28:16.220 --> 01:28:18.020
+Pô, o Ramiro ficou sozinho, Ramiro?
+
+01:28:18.120 --> 01:28:18.640
+Não, não.
+
+01:28:18.740 --> 01:28:19.560
+Entrei numa...
+
+01:28:19.660 --> 01:28:22.800
+Num room aí que tem um cara que não
+responde aí.
+
+01:28:22.900 --> 01:28:23.820
+Então...
+
+01:28:23.920 --> 01:28:26.340
+Só que eu não consigo entrar em outro.
+
+01:28:26.440 --> 01:28:27.800
+Então vamos lá.
+
+01:28:27.900 --> 01:28:27.980
+Ramiro.
+
+01:28:28.080 --> 01:28:30.380
+Não tem problema não, Adriano.
+
+01:28:30.480 --> 01:28:32.140
+Pode pôr?
+
+01:28:32.240 --> 01:28:32.920
+Então, Ramiro...
+
+01:28:33.020 --> 01:28:33.180
+Ah, não.
+
+01:28:33.280 --> 01:28:36.800
+Tem um sozinho na 23, o Rafael Rosa.
+
+01:28:36.900 --> 01:28:38.060
+Será que era esse?
+
+01:28:38.160 --> 01:28:40.860
+Não, era na 19 que eu estava.
+
+01:28:40.960 --> 01:28:41.260
+19.
+
+01:28:41.360 --> 01:28:42.640
+Então, Ramiro...
+
+01:28:42.740 --> 01:28:44.900
+Só que tem um Dani aqui, então pode
+ser...
+
+01:28:45.000 --> 01:28:45.860
+Será ele?
+
+01:28:45.960 --> 01:28:47.500
+Acho que é a Dani, né?
+
+01:28:47.600 --> 01:28:48.620
+Ah, a Dani.
+
+01:28:48.720 --> 01:28:50.620
+Ah, é verdade.
+
+01:28:50.720 --> 01:28:54.780
+É, eu estava tendo problema, eu voltei.
+
+01:28:54.880 --> 01:28:56.800
+Está na vida.
+
+01:28:56.900 --> 01:28:59.520
+Adriano, você botou os 11 minutos, não?
+
+01:28:59.620 --> 01:29:00.540
+Sim.
+
+01:29:00.640 --> 01:29:03.620
+Ah, eu vou só ao toalete aqui pegar uma
+água e já...
+
+01:29:03.720 --> 01:29:09.280
+Boa, vá lá.
+
+01:29:09.380 --> 01:29:12.720
+Eu não consigo ver que nem a outra vez,
+Adriano.
+
+01:29:12.820 --> 01:29:14.980
+Daí tu tem que me realocar, eu acho.
+
+01:29:15.080 --> 01:29:19.500
+Eu só consigo entrar no 19.
+
+01:29:19.600 --> 01:29:20.300
+Isso, então.
+
+01:29:20.400 --> 01:29:22.220
+Deixa eu ver.
+
+01:29:22.320 --> 01:29:23.940
+Você está desavocado.
+
+01:29:24.040 --> 01:29:26.860
+Ou você está na 19?
+
+01:29:26.960 --> 01:29:31.560
+Eu toco no breakout rooms aqui e só me
+deixa ver a 19.
+
+01:29:31.660 --> 01:29:33.780
+Só posso voltar para a 19.
+
+01:29:33.880 --> 01:29:37.720
+Então, eu vou mover você para...
+
+01:29:37.820 --> 01:29:39.620
+Opa, Ramiro.
+
+01:29:39.720 --> 01:29:51.740
+Ah...
+
+01:29:51.840 --> 01:30:02.880
+E aí, Dani?
+
+01:30:02.980 --> 01:30:05.000
+Dani está perdida aí também.
+
+01:30:05.100 --> 01:30:06.900
+Hum?
+
+01:30:07.000 --> 01:30:07.940
+Não, tudo bem.
+
+01:30:08.040 --> 01:30:11.040
+Se não conseguir colocar em nenhuma
+sala, não tem problema, não.
+
+01:30:11.140 --> 01:30:11.780
+Não.
+
+01:30:11.880 --> 01:30:12.900
+Vou colocar aqui, ó.
+
+01:30:13.000 --> 01:30:33.500
+Mesmo que seja 3, por exemplo, aqui, ó.
+
+01:30:33.600 --> 01:30:50.840
+Não.
+
+01:30:50.940 --> 01:31:29.460
+E aí Ué, voltou,
+
+01:31:29.560 --> 01:31:32.540
+Dani?
+
+01:31:32.640 --> 01:31:34.860
+Eu nunca fui.
+
+01:31:34.960 --> 01:31:49.900
+Veja aí, se aparece pra você aí.
+
+01:31:50.000 --> 01:32:44.480
+E aí Ué,
+
+01:32:44.580 --> 01:32:47.360
+Adriano?
+
+01:32:47.460 --> 01:32:48.420
+Beleza, eu avotei todo mundo.
+
+01:32:48.520 --> 01:32:49.620
+Todo mundo aqui.
+
+01:32:49.720 --> 01:32:52.100
+Teve grupo que ficou com três.
+
+01:32:52.200 --> 01:32:53.800
+Sem problemas.
+
+01:32:53.900 --> 01:32:57.900
+Só pra eu me organizar aqui, falta
+quantos minutos aí ainda?
+
+01:32:58.000 --> 01:32:59.780
+Deixa eu ver.
+
+01:32:59.880 --> 01:33:01.360
+Deixa eu ver, deixa eu ver.
+
+01:33:01.460 --> 01:33:07.700
+Tem mais um tentando entrar aqui.
+
+01:33:07.800 --> 01:33:09.480
+É, tem cinco minutos.
+
+01:33:09.580 --> 01:33:14.660
+Ah, beleza.
+
+01:33:14.760 --> 01:33:19.300
+O Adriano e o pessoal tem mais quantas
+aulas ainda, hein?
+
+01:33:19.400 --> 01:33:20.420
+Ixi, tem bastante.
+
+01:33:20.520 --> 01:33:21.920
+Peraí que eu vou pegar aqui.
+
+01:33:22.020 --> 01:33:23.420
+Ó, Kelly e Carlos.
+
+01:33:23.520 --> 01:33:28.620
+Kelly e Carlos, vocês entraram agora,
+né?
+
+01:33:28.720 --> 01:33:31.360
+Tinha caído aqui minha conexão bem na
+hora ali da...
+
+01:33:31.460 --> 01:33:34.060
+Aí, agora eu consegui voltar agora.
+
+01:33:34.160 --> 01:33:37.080
+Tá, então vou colocar você aqui.
+
+01:33:37.180 --> 01:33:38.660
+Mas acho que não precisa, viu?
+
+01:33:38.760 --> 01:33:42.240
+Eu não consegui acompanhar a partezinha
+antes, caiu um pouco antes dele explicar
+
+01:33:42.340 --> 01:33:44.080
+as duplas e agora tô voltando.
+
+01:33:44.180 --> 01:33:46.180
+Então acho que não precisa.
+
+01:33:46.280 --> 01:33:47.660
+Acompanhe, então, só num grupo aí.
+
+01:33:47.760 --> 01:33:48.700
+Isso.
+
+01:33:48.800 --> 01:33:57.660
+Vou acompanhar de agora em diante.
+
+01:33:57.760 --> 01:33:59.460
+Mandei você pro grupo dois.
+
+01:33:59.560 --> 01:34:00.920
+Aí.
+
+01:34:01.020 --> 01:34:02.100
+Vamos lá.
+
+01:34:02.200 --> 01:34:03.940
+Quantas aulas?
+
+01:34:04.040 --> 01:34:06.040
+No geral, o programa todo?
+
+01:34:06.140 --> 01:34:08.960
+Não, ainda faltam.
+
+01:34:09.060 --> 01:34:10.680
+Então, ainda faltam...
+
+01:34:10.780 --> 01:34:12.340
+Pera lá.
+
+01:34:12.440 --> 01:34:16.240
+O Roger saberia dizer de cabeça aqui,
+mas eu vou olhar na plataforma
+
+01:34:16.340 --> 01:34:19.060
+aqui.
+
+01:34:19.160 --> 01:34:22.420
+joined.
+
+01:34:22.520 --> 01:34:27.940
+Ou melhor ainda, a planilha.
+
+01:34:28.040 --> 01:34:31.140
+Nós estamos na fase dois.
+
+01:34:31.240 --> 01:34:31.220
+Dois.
+
+01:34:31.320 --> 01:34:43.720
+Duas.
+
+01:34:43.820 --> 01:34:48.560
+Trinta e cinco ainda.
+
+01:34:48.660 --> 01:34:50.540
+35 aulas?
+
+01:34:50.640 --> 01:34:57.640
+É, 35 noites dessas quartas -feiras ali
+Meu pai do céu Rapaz, eu tô pensando que
+
+01:34:57.740 --> 01:35:02.180
+a gente tava no terceiro quarto já do
+programa Já foram quantas?
+
+01:35:02.280 --> 01:35:12.560
+Na verdade, cara Na verdade é o seguinte
+Essa aqui é a 14, tá?
+
+01:35:12.660 --> 01:35:21.060
+Ou seja, são 40 aulas É, 48 porque são
+24 semanas Mas aí é o seguinte, tá?
+
+01:35:21.160 --> 01:35:28.440
+Eles venderam o produto e daí depois
+foram atrás do PM pro produto E o Roger,
+
+01:35:28.540 --> 01:35:36.460
+ele tem aí uma uma convicção que é o
+seguinte tem que ser metade disso É
+
+01:35:36.560 --> 01:35:44.240
+muito tempo É muito 24 semanas a gente
+tá falando de 6 meses É muito tempo Ele
+
+01:35:44.340 --> 01:35:48.660
+falou 3 meses já é sabe?
+
+01:35:48.760 --> 01:35:53.820
+É, porque o porque o ideal, Adriano, do
+seu ponto de vista de construção de
+
+01:35:53.920 --> 01:36:01.900
+produto é você ter uma sprint, sei lá,
+no primeiro mês 12 pontos por semana no
+
+01:36:02.000 --> 01:36:05.760
+segundo mês eu diminuo isso e depois eu
+vou pingando só fazendo encontros de
+
+01:36:05.860 --> 01:36:15.820
+manutenção que aí fica mais fácil Pois é
+Puxa, 6 meses Nossa, mãe Foi muito 3
+
+01:36:15.920 --> 01:36:24.660
+meses, cara, tem que ser É, 3 meses, 12
+semanas Ele ficou doido Mas aí, né, cara
+
+01:36:24.760 --> 01:36:33.960
+já teve a teve a promessa a expectativa
+gerada Mas aí uma pergunta A gente tá
+
+01:36:34.060 --> 01:36:39.180
+falando de MVP o pessoal já botando a
+mão Essas tem que ser 4 aulas que vão
+
+01:36:39.280 --> 01:36:42.120
+acontecer pra frente Qual que é o macro
+tema delas?
+
+01:36:42.220 --> 01:36:47.740
+Os eixos temáticos Você tem aqui, ó A
+fase 1 foi essa, né?
+
+01:36:47.840 --> 01:36:51.860
+Você acompanhou bastante A fase 2 agora,
+né?
+
+01:36:51.960 --> 01:37:00.860
+Vai ter parte de de pitch Vai ter
+bastante
+
+01:37:00.960 --> 01:37:06.940
+coisa aí voltada pra vai ter o X e o I
+nessa parte que eles estão construindo
+
+01:37:07.040 --> 01:37:13.300
+de MVP Vai ter um pouco desse MCP que cê
+falou aí, né?
+
+01:37:13.400 --> 01:37:17.820
+De eles construírem alguma coisa com MCP
+E vai
+
+01:37:17.920 --> 01:37:27.780
+ter fundamentos de lead growth Depois
+entra a parte de precificação Financial
+
+01:37:27.880 --> 01:37:36.840
+Modeling Economies Depois vem Venture
+Caption Depois tem a parte de vendas
+
+01:37:36.940 --> 01:37:37.840
+Parcerias Estaduais, né?
+
+01:37:37.940 --> 01:37:45.020
+estratégicas Customer Success Scamming
+Operations Frameworks
+
+01:37:45.120 --> 01:37:51.360
+de Growth avançado Simulações de
+Investimento Percebe?
+
+01:37:51.460 --> 01:37:52.420
+É, sabe qual é o problema?
+
+01:37:52.520 --> 01:37:57.720
+O problema é que o público não consegue
+acompanhar É Se o público não consegue
+
+01:37:57.820 --> 01:38:03.740
+acompanhar aí acaba deixando alguns
+corpos no meio do caminho e e o pessoal
+
+01:38:03.840 --> 01:38:05.160
+acaba desmotivando, entendeu?
+
+01:38:05.260 --> 01:38:13.520
+Porque ele não tá conseguindo acompanhar
+Pois é E eles estavam tendo Pelo menos
+
+01:38:13.620 --> 01:38:20.740
+eu estava acompanhando As weakness aí E
+até as Davis Que eu acompanhei Que se
+
+01:38:20.840 --> 01:38:24.800
+falava do programa do Founders Eles tem
+essa preocupação aí Claro, já estão
+
+01:38:24.900 --> 01:38:30.440
+pensando no modelo Readaptado disso Dos
+três meses que a gente está imaginando
+
+01:38:30.540 --> 01:38:37.360
+Mas o que eu pude sentir É que O pessoal
+está no MVP Você viu esses topics que eu
+
+01:38:37.460 --> 01:38:44.960
+te falei aqui E o pessoal está no MVP Ou
+na validação ali Tendo, nossa, muito Aí
+
+01:38:45.060 --> 01:38:49.400
+o que eles disponibilizaram para eles O
+programa de monitoria Que os alunos da
+
+01:38:49.500 --> 01:38:58.400
+formação tem Foi disponibilizado agora
+Entendi Viu, você vai até que horas?
+
+01:38:58.500 --> 01:39:03.200
+Eu vou até nove
+
+01:39:03.300 --> 01:39:09.560
+Maravilha Everyone is back Everybody is
+back Muito
+
+01:39:09.660 --> 01:39:16.600
+rápido Não depostei em nada Acabei e
+achei que foi muito rápido Esses dez
+
+01:39:16.700 --> 01:39:20.080
+minutos aí Eu estava no meio do caminho
+Muito
+
+01:39:20.180 --> 01:39:28.300
+rápido Tu conversa muito, Bruno Eu nem
+falei muito, cara Eles falaram que ia
+
+01:39:28.400 --> 01:39:33.060
+dar um minuto a mais Eu nem falei muito
+Hoje eu dei até minha voz Deixei três
+
+01:39:33.160 --> 01:39:35.520
+mulheres passar na minha frente Tanto
+que eu estou quietinho hoje Gente, eu
+
+01:39:35.620 --> 01:39:42.900
+não vou falar mais nada É verdade Essa
+turma aqui não foi treinada Pelo Pablo
+
+01:39:43.000 --> 01:39:50.640
+Marçal ainda Ai, Jesus Vamos lá, pessoal
+Que bom receber vocês de volta A Dani
+
+01:39:50.740 --> 01:39:54.700
+está pedindo aqui os links Depois eu
+mando o link do AWS Para você, tá, Dani?
+
+01:39:54.800 --> 01:39:59.740
+Vou ver se eu consigo aqui Bom, antes da
+gente retomar aqui para o nosso final
+
+01:39:59.840 --> 01:40:04.180
+Estamos chegando aos 15 minutos finais
+da aula Eu queria pegar aí Dois ou três
+
+01:40:04.280 --> 01:40:07.880
+rápidos depoimentos De como foi a nossa
+jornada Foi o exercício Alguém se
+
+01:40:07.980 --> 01:40:11.360
+voluntaria a compartilhar?
+
+01:40:11.460 --> 01:40:16.460
+Cara, eu gostei Eu gostei, assim Porque
+deu com uma pessoa que é bem bacana O
+
+01:40:16.560 --> 01:40:17.600
+Paulo Cadê o Paulo aqui?
+
+01:40:17.700 --> 01:40:23.880
+Aparece aqui, Paulo Levanta a mão O
+Paulo Roberto Está com um software bem
+
+01:40:23.980 --> 01:40:27.460
+bacana de medicina Eu fui da área de
+medicina há muitos anos Você viu aqui,
+
+01:40:27.560 --> 01:40:33.620
+da MET Uma brincadeira dessa da MET Fiz
+uma pergunta só para ele Que era de CID
+
+01:40:33.720 --> 01:40:39.060
+Para ele não Porque ele estava me
+apresentando Se iria só para os médicos
+
+01:40:39.160 --> 01:40:42.480
+Ou se iria para os pacientes Porque se
+fosse para os pacientes É um risco
+
+01:40:42.580 --> 01:40:45.900
+danado Mas está indo para o médico Tinha
+umas sugestões Mas a gente trocou o
+
+01:40:46.000 --> 01:40:50.980
+telefone Acho que é excelente Apesar do
+tempo ser curto É excelente para a gente
+
+01:40:51.080 --> 01:40:55.460
+poder trocar a ideia de MVP Ter mais
+exercícios desses de tarde Poderia rodar
+
+01:40:55.560 --> 01:40:58.840
+assim Os falders se inscreviam Quem já
+estava afim de trocar Jogava uma sala
+
+01:40:58.940 --> 01:41:04.800
+dessa Colocava a área afim Além de
+ajudar no MET Ajuda no processo da MVP E
+
+01:41:04.900 --> 01:41:05.680
+aí, o que aconteceu?
+
+01:41:05.780 --> 01:41:11.400
+E só fazendo três comentários rápidos
+Bem rápidos mesmo Para a Cris França
+
+01:41:11.500 --> 01:41:15.680
+Cris, vai assistir a aula do Pedro
+Gaioso E do Lucas Charão Sobre o início
+
+01:41:15.780 --> 01:41:20.860
+de um processo Até do José Carlos De
+como começar isso Porque você tem que
+
+01:41:20.960 --> 01:41:24.240
+ter sócio, menina Não vai levar isso aí
+Apesar do Léo falar assim Não, não
+
+01:41:24.340 --> 01:41:28.320
+precisa De área técnica, não sei o que
+Então, pega uma pessoa Para entrar
+
+01:41:28.420 --> 01:41:32.860
+contigo no negócio Técnico, que vai te
+ajudar demais E para o meu amigo Marcio
+
+01:41:32.960 --> 01:41:40.720
+Que está aí com uma super homem Um
+agente que tem três Tinha um
+
+01:41:40.820 --> 01:41:45.600
+médico Quando eu entrei na formação Que
+o Alan me apresentou Bem há um ano e
+
+01:41:45.700 --> 01:41:49.960
+meio atrás Que ele era da área de
+medicina Eu acho que ele era até um
+
+01:41:50.060 --> 01:41:54.160
+oncologista E a IA dele Que ele já
+estava colocando no sistema Ela era
+
+01:41:54.260 --> 01:41:58.580
+nutricionista Ela era enfermeira E ela
+era médica E ela era mais alguma coisa E
+
+01:41:58.680 --> 01:42:03.260
+aí vem a questão Do que o Léo falou Da
+base De você misturar os resultados da
+
+01:42:03.360 --> 01:42:06.080
+base Você lembra que Para você conseguir
+dinheiro Com a indústria Você vai ter
+
+01:42:06.180 --> 01:42:10.740
+que fazer Dados que não são estruturados
+Transformar em estruturados Para ser
+
+01:42:10.840 --> 01:42:14.280
+interessante Para treinamento de robô e
+tal E assim a indústria vai se
+
+01:42:14.380 --> 01:42:17.880
+interessar Por você Além de você ter
+dados estruturados Para poder tocar seu
+
+01:42:17.980 --> 01:42:22.600
+negócio E criar indexadores Então, acho
+que também Nessa história do MVP Que a
+
+01:42:22.700 --> 01:42:26.980
+gente aprendeu aí A gente tem que ir
+Como o Léo falou Faz um agente Cole as
+
+01:42:27.080 --> 01:42:30.900
+informações Refina ele E depois você
+mete o outro E mete o outro E eu como
+
+01:42:31.000 --> 01:42:34.140
+cliente do cara Que ele foi me mostrar
+Ele queria vender para a Redditor Na
+
+01:42:34.240 --> 01:42:38.580
+época eu estava na Redditor Ainda Cara,
+eu fiquei até confuso Porque você
+
+01:42:38.680 --> 01:42:41.880
+imagina Lidar com um agente Monstro
+desse Eu não sabia nem o que perguntar
+
+01:42:41.980 --> 01:42:45.040
+Para ela O que eu estou falando Eu estou
+nutricionista?
+
+01:42:45.140 --> 01:42:45.860
+Eu estou com médico?
+
+01:42:45.960 --> 01:42:46.540
+Eu estou com enfermeiro?
+
+01:42:46.640 --> 01:42:50.220
+Então, me causou Uma estranheza danada
+As pessoas estão acostumadas A lidar com
+
+01:42:50.320 --> 01:42:55.600
+Um profissional específico Então, acho
+que Isso é bom Obrigado, Bruno Por
+
+01:42:55.700 --> 01:43:00.740
+compartilhar Edilson Levantou a mão Quer
+compartilhar,
+
+01:43:00.840 --> 01:43:07.320
+Edilson?
+
+01:43:07.420 --> 01:43:18.820
+Você está mutado Está mudo, Edilson
+Edilson está que nem o Ramiro
+
+01:43:18.920 --> 01:43:24.580
+Acabou a bateria do headset Vamos para
+outra pessoa Achei, achei, achei É que
+
+01:43:24.680 --> 01:43:29.620
+eu estou com várias telas Nesta hora O
+Maule ficou perdidão aqui Eu estava
+
+01:43:29.720 --> 01:43:35.740
+procurando ele Eu entrei com o Mário Só
+que o Mário não podia falar E nem podia
+
+01:43:35.840 --> 01:43:41.580
+também mostrar o vídeo Porque estava com
+o celular E estava sem áudio também
+
+01:43:41.680 --> 01:43:46.560
+Então, eu fiquei falando E ele ficava
+digitando lá Falando algumas coisas Mas,
+
+01:43:46.660 --> 01:43:51.820
+assim, rapidamente Já como eu não pude
+Saber do produto dele Até porque também
+
+01:43:51.920 --> 01:43:56.880
+Ele não montou ainda Ele está ainda na
+validação das ideias Mas eu tenho o meu
+
+01:43:56.980 --> 01:44:01.380
+produto Que eu estou junto com o Rafael
+O Rafael, eu acredito Que ele não esteja
+
+01:44:01.480 --> 01:44:06.940
+aqui Que eu já procurei e não encontrei
+O Rafael, ele é o técnico Mesmo embora
+
+01:44:07.040 --> 01:44:13.260
+também Eu tenha a base Uma boa base
+também Nessa área técnica Mas ele está
+
+01:44:13.360 --> 01:44:21.460
+como técnico E o meu produto Ele é um
+produto próprio Para infoprodutores Já
+
+01:44:21.560 --> 01:44:26.340
+até conversei com o Roger Com algumas
+outras pessoas Eu queria também o seu
+
+01:44:26.440 --> 01:44:31.140
+posicionamento Em relação a isto O meu
+produto é o seguinte Vários
+
+01:44:31.240 --> 01:44:35.960
+infoprodutores estão frustrados
+Justamente porque Seguiram a fórmula do
+
+01:44:36.060 --> 01:44:41.940
+lançamento E não conseguiram fazer o CV
+-7 Ou se não Segue o perpétuo do
+
+01:44:42.040 --> 01:44:46.440
+Ladeirinha E não conseguem vender Todo
+santo dia E eu já estou nesta área Há
+
+01:44:46.540 --> 01:44:50.980
+mais de cinco anos Já conversei com
+centenas de especialistas Porque eu
+
+01:44:51.080 --> 01:44:55.820
+tenho uma agência de marketing Com
+centenas realmente E fiz também várias
+
+01:44:55.920 --> 01:45:01.120
+entrevistas O meu produto já está no
+processo do MVP E qual é o produto?
+
+01:45:01.220 --> 01:45:05.540
+Antes mesmo do profissional Do
+infoprodutor Ele lançar O seu produto no
+
+01:45:05.640 --> 01:45:11.420
+mercado Utilizando qualquer um Destes
+dois métodos Ou outro método qualquer
+
+01:45:11.520 --> 01:45:17.500
+Ele vai fazer uma pré -validação
+Utilizando o processo de startup Então
+
+01:45:17.600 --> 01:45:21.480
+Já estou com o MVP Vai ter todo um
+processo lá dentro Onde ele vai fazer
+
+01:45:21.580 --> 01:45:26.860
+também as entrevistas Com aquele seu
+infoproduto Seja ele um e -book Seja ele
+
+01:45:26.960 --> 01:45:32.060
+um curso em vídeo Uma mentoria, uma
+consultoria Não importa qual seja o
+
+01:45:32.160 --> 01:45:37.500
+infoproduto A partir daí Se ele
+Conseguir validar esse produto Sem
+
+01:45:37.600 --> 01:45:44.080
+precisar gastar Rios de dinheiro em
+tráfego Sem precisar Fazer um monte de
+
+01:45:44.180 --> 01:45:50.440
+live Um monte de coisas Ele vai ver
+através de um ranking de pontuação Se
+
+01:45:50.540 --> 01:45:55.320
+vale a pena Pivotar Se vale a pena
+seguir adiante Ou mudar alguma coisa
+
+01:45:55.420 --> 01:46:01.260
+nesse método Uma vez estando validado
+Então dentro do meu aplicativo web Eu já
+
+01:46:01.360 --> 01:46:04.500
+comecei a montar junto com o Rafael Na
+verdade o Rafael já me aprendeu O que
+
+01:46:04.600 --> 01:46:10.740
+ele apresentou hoje Nós iremos fazer
+todo o processo De produção Da produção
+
+01:46:10.840 --> 01:46:15.780
+deste produto Seja para vender no
+perpétuo Lá dentro Ou até fazer o
+
+01:46:15.880 --> 01:46:21.800
+lançamento Seguindo qualquer um dos
+métodos Que essa pessoa queira fazer
+
+01:46:21.900 --> 01:46:27.440
+Então ele é um processo bem robusto Que
+vai requerer Muitas ferramentas Muitas
+
+01:46:27.540 --> 01:46:32.920
+APIs E eu queria o seu posicionamento em
+relação a isso O que você acha?
+
+01:46:33.020 --> 01:46:37.400
+Tá bom Edilson Vamos lá Descreve o seu
+produto para mim em uma
+
+01:46:37.500 --> 01:46:42.080
+frase O problema?
+
+01:46:42.180 --> 01:46:42.800
+Descrever o produto?
+
+01:46:42.900 --> 01:46:49.860
+Ah, o produto O meu produto vai se
+chamar o lançar fácil Ele vai ser uma
+
+01:46:49.960 --> 01:46:55.280
+forma De você Antes mesmo de lançar o
+seu produto no mercado Sem gastar rios
+
+01:46:55.380 --> 01:47:00.220
+de dinheiro Você vai fazer uma pré
+-validação Para ver se ele vai ter uma
+
+01:47:00.320 --> 01:47:06.640
+aceitação No mercado Dentro do nicho Do
+especialista Será qual for o nicho que
+
+01:47:06.740 --> 01:47:12.280
+ele estiver trabalhando Seria quase um
+teste de adesão Ou um teste de tração Do
+
+01:47:12.380 --> 01:47:17.120
+infoproduto Do infoprodutor No mercado
+Passa para você É uma validação Por
+
+01:47:17.220 --> 01:47:22.080
+exemplo Uma nutricionista A
+nutricionista tem um infoproduto Ela tem
+
+01:47:22.180 --> 01:47:27.280
+um curso lá de emagrecimento E ela não
+conseguiu ter sucesso Então ela antes
+
+01:47:27.380 --> 01:47:27.920
+mesmo vai fazer o que?
+
+01:47:28.020 --> 01:47:32.520
+Para um processo de validação Se fosse
+uma startup Tentar validar esse produto
+
+01:47:32.620 --> 01:47:37.600
+dela Fazer entrevista Fazer entrevista
+Ver se vai ter uma aceitação no mercado
+
+01:47:37.700 --> 01:47:44.060
+Saber as dores dessa pessoa A partir daí
+Foi validado Vale a pena eu realmente
+
+01:47:44.160 --> 01:47:48.100
+colocar esse produto no mercado Então
+ela vai ter toda uma construção Dentro
+
+01:47:48.200 --> 01:47:56.380
+desse aplicativo web Sem precisar Pagar
+uma Empresa de marketing digital Está
+
+01:47:56.480 --> 01:48:01.340
+entendendo que é muito caro Todo o
+processo Vai ser direcionado dentro
+
+01:48:01.440 --> 01:48:05.620
+dessa plataforma Para ela fazer o
+tráfego Para ela hospedar o seu produto
+
+01:48:05.720 --> 01:48:12.740
+Para ela fazer todo o processo Que um
+infoprodutor faria Para colocar o seu
+
+01:48:12.840 --> 01:48:19.480
+produto no mercado A minha pergunta é
+Você tem mapeado Quanto em média O
+
+01:48:19.580 --> 01:48:25.640
+infoprodutor que não explode Que não
+consegue fazer 6 e 7 Quanto ele gasta
+
+01:48:25.740 --> 01:48:28.780
+Até botar a viola no saco?
+
+01:48:28.880 --> 01:48:33.840
+Tenho Tenho porque eu já fiz vários
+lançamentos Então o que acontece?
+
+01:48:33.940 --> 01:48:40.180
+Geralmente Eles gastam no mínimo 10 mil
+reais Para tentar em dois meses No
+
+01:48:40.280 --> 01:48:46.060
+mínimo Tentar lançar o seu infoproduto
+Esse 10 mil é pulverizado Em várias
+
+01:48:46.160 --> 01:48:49.440
+instâncias Quanto você vai cobrar dele?
+
+01:48:49.540 --> 01:48:53.460
+Olha, inicialmente pelo MVP Eu vou
+cobrar um valor muito baixo Para testar
+
+01:48:53.560 --> 01:48:58.200
+esse produto Mas depois que esse produto
+começar a sofrer Uma escala, o preço
+
+01:48:58.300 --> 01:49:05.340
+dele vai ser salgado Me fala o preço
+inicial 400 reais 997 inicialmente Um
+
+01:49:05.440 --> 01:49:13.680
+básico, um intermediário Por volta de
+697 E um mais Salgadinho de 997
+
+01:49:13.780 --> 01:49:18.360
+Dependendo do que a pessoa For fazer
+dentro desse aplicativo Ah, veja só O
+
+01:49:18.460 --> 01:49:20.060
+que eu estou perguntando isso para você,
+Dilson?
+
+01:49:20.160 --> 01:49:26.420
+Você está entregando 10 mil reais de
+economia Para capturar 497 A sua
+
+01:49:26.520 --> 01:49:29.820
+proposta de valor Tem que estar muito
+direcionada para isso Para não parecer
+
+01:49:29.920 --> 01:49:33.660
+que você está querendo ser Uma
+hospedagem De infoprodutor De
+
+01:49:33.760 --> 01:49:39.160
+infoprodutores Isso, sob o meu ponto de
+vista Te escutando não é compelling Essa
+
+01:49:39.260 --> 01:49:42.740
+mensagem não é compelling Não é
+atrativa, entendeu?
+
+01:49:42.840 --> 01:49:46.960
+Você precisa ir direto ao ponto Querido,
+você sabe que Eu estou imaginando a sua
+
+01:49:47.060 --> 01:49:53.000
+lenda de empenho Você sabia que 8 em
+cada 10 infoprodutores Gastam 10 mil
+
+01:49:53.100 --> 01:49:55.260
+reais e são um fracasso?
+
+01:49:55.360 --> 01:49:56.100
+Não acontece?
+
+01:49:56.200 --> 01:49:56.880
+Não explode?
+
+01:49:56.980 --> 01:49:59.080
+Não alcança o resultado que está
+esperado?
+
+01:49:59.180 --> 01:50:03.860
+Então para você poder economizar 10 mil
+reais Paga 497 Para mim que eu vou te
+
+01:50:03.960 --> 01:50:06.060
+garantir Que 10 mil reais você não vai
+gastar Porque aqui você vai passar por
+
+01:50:06.160 --> 01:50:10.340
+um filtro E eu vou te dizer Lança essa
+merda ou não lança Lança porque é bom ou
+
+01:50:10.440 --> 01:50:17.080
+não lança porque é uma merda Mas é isso
+mesmo É essa a ideia Você conseguiu
+
+01:50:17.180 --> 01:50:21.420
+colocar em palavras que eu não pude
+colocar Mas essa é a ideia realmente
+
+01:50:21.520 --> 01:50:24.680
+Então, mas você precisa ser claro Em
+termos da sua comunicação de proposta de
+
+01:50:24.780 --> 01:50:31.760
+valor Caso contrário Você vai estar
+Vinculado A sua proposta está
+
+01:50:31.860 --> 01:50:34.140
+vinculada ao desenvolvimento de um
+produto de valor O produto em si não tem
+
+01:50:34.240 --> 01:50:38.300
+valor nenhum O que tem valor é o que
+você entrega De benefício para o usuário
+
+01:50:38.400 --> 01:50:41.500
+E isso é o que tem valor E o que você
+está entregando de benefício no final do
+
+01:50:41.600 --> 01:50:47.000
+dia é Meu irmão, estou fazendo você
+economizar 10 mil reais Você quer?
+
+01:50:47.100 --> 01:50:50.840
+Não, eu tenho um bolso fundo Dane -se,
+eu vou jogar 10 mil reais no lixo Então
+
+01:50:50.940 --> 01:50:55.040
+esse não vai ser seu cliente Agora o
+cara que está querendo ser cauteloso E
+
+01:50:55.140 --> 01:50:57.760
+quer passar por um filtro de pré
+-validação Para poder lançar o produto
+
+01:50:57.860 --> 01:51:01.760
+dele Opa, eu estou afim de economizar 10
+mil reais Vou pagar feliz 497
+
+01:51:01.860 --> 01:51:07.420
+perdidos Consegui te ajudar?
+
+01:51:07.520 --> 01:51:14.580
+Não, com certeza Você conseguiu Clarear
+realmente Porque assim Isso que você
+
+01:51:14.680 --> 01:51:18.160
+acabou de falar É o que eu vou propor Só
+que o que está faltando em mim na
+
+01:51:18.260 --> 01:51:26.260
+verdade É essa comunicação Eu colocar
+essa Não é oferta Eu não sei se essa
+
+01:51:26.360 --> 01:51:34.140
+palavra seria oferta Essa copy Da
+proposta de valor Da proposta de valor
+
+01:51:34.240 --> 01:51:40.480
+Isso mesmo Mas valeu Valeu mesmo
+Obrigado Ricardo, depois Marcos Eu
+
+01:51:40.580 --> 01:51:42.460
+preciso terminar aqui Porque eu tenho
+uns negocinhos para falar para vocês
+
+01:51:42.560 --> 01:51:49.580
+ainda Vamos lá, Ricardo Coisa rápida A
+minha parceira foi a Renata hoje E a
+
+01:51:49.680 --> 01:51:55.200
+gente estava conversando sobre o produto
+dela Que é um aplicativo para advogados
+
+01:51:55.300 --> 01:51:59.400
+Então Só como um complemento Que o tempo
+acabou Não deu para conversar com ela
+
+01:51:59.500 --> 01:52:03.060
+direito Qual que é a dúvida que a gente
+tem?
+
+01:52:03.160 --> 01:52:07.460
+Primeiro se a legislação está atual Que
+é o que a gente usa muito Na elaboração
+
+01:52:07.560 --> 01:52:13.820
+de processos trabalhistas Eu preciso
+citar A legislação atual Para sustentar
+
+01:52:13.920 --> 01:52:18.960
+o meu cálculo E a mesma coisa o advogado
+faz Para sustentar a tese de defesa dele
+
+01:52:19.060 --> 01:52:23.660
+Porque é um embate Você tem advogado do
+reclamante e do reclamado E um tem que
+
+01:52:23.760 --> 01:52:29.320
+vencer o outro em cima da legislação E a
+questão Do tempo de resposta De se daqui
+
+01:52:29.420 --> 01:52:34.820
+como é que funciona É um produto
+interessante Para o pessoal da conversa
+
+01:52:34.920 --> 01:52:39.440
+Que vem em contato com os procuradores
+Eles têm uma necessidade crescente De
+
+01:52:39.540 --> 01:52:43.700
+você ter uma legislação Que dê suporte
+para eles Mas da mesma forma que você
+
+01:52:43.800 --> 01:52:48.400
+tem decisões Que dão suporte para o
+reclamante Também tem decisões que dão
+
+01:52:48.500 --> 01:52:52.340
+suporte para o reclamado E aí é questão
+de conseguir convencer os juízes Nesse
+
+01:52:52.440 --> 01:52:59.980
+sentido Só isso Tá Você falou rápido Eu
+não peguei um ponto aqui O Ricardo O que
+
+01:53:00.080 --> 01:53:03.980
+você está entregando de benefício Frente
+A forma como o usuário está fazendo hoje
+
+01:53:04.080 --> 01:53:10.940
+Para resolver o problema dele Então Aí
+no caso A Renata Ela propôs um projeto
+
+01:53:11.040 --> 01:53:15.820
+Uma espécie de um site Que te dê
+consultas Então você sobe os arquivos
+
+01:53:15.920 --> 01:53:22.880
+Que você tem de defesa Ele vai te criar
+Uma espécie de um mapa mental Em cima
+
+01:53:22.980 --> 01:53:27.860
+daquela defesa Tá Então você tem
+insights Você pode usar Próximo
+
+01:53:27.960 --> 01:53:31.800
+emprestado De outros processos Que te
+ajudam a sustentar isso daqui E aí você
+
+01:53:31.900 --> 01:53:35.700
+tem um site Você tem a ideia De como que
+a decisão do juiz A Como que a decisão
+
+01:53:35.800 --> 01:53:41.600
+do juiz B Isso varia de vara para vara
+Pode ter duas pessoas Que entraram com
+
+01:53:41.700 --> 01:53:48.700
+processos idênticos O processo A caiu na
+vara 1 E o processo 2 caiu na vara 2 E
+
+01:53:48.800 --> 01:53:53.300
+os juízes Podem ter decisões diferentes
+Numa mesma situação Já peguei vários
+
+01:53:53.400 --> 01:53:59.120
+casos assim Então a ideia dela Do site é
+bem interessante nesse sentido Você
+
+01:53:59.220 --> 01:54:04.120
+conseguir uniformizar a resposta Tá Só
+que para isso A questão é a seguinte
+
+01:54:04.220 --> 01:54:09.060
+Quando for buscar o processo Para ser
+referência Que a gente chama de Próximo
+
+01:54:09.160 --> 01:54:13.860
+emprestado É se esse processo atual
+Seria antigo Para que o juiz
+
+01:54:13.960 --> 01:54:18.760
+Simplesmente não desconsidere O juiz não
+é obrigado A responder aquilo que você
+
+01:54:18.860 --> 01:54:23.920
+pede Ele pode simplesmente responder Ou
+simplesmente ignorar Essa diferença
+
+01:54:24.020 --> 01:54:27.440
+Entendi Maravilha Bastante útil Essa
+interação que você teve com a Renata
+
+01:54:27.540 --> 01:54:34.680
+Ricardo Obrigado por compartilhar Viu
+Maravilha Marcos Opa, boa noite Léo Boa
+
+01:54:34.780 --> 01:54:38.380
+noite pessoal Léo, então queria te
+perguntar Você citou antes aquela
+
+01:54:38.480 --> 01:54:43.140
+questão do chatbot E eu tô me batendo
+nisso Que é uma das principais
+
+01:54:43.240 --> 01:54:46.720
+funcionalidades do SAS Que eu tô
+desenvolvendo E aí eu não sei Eu tava na
+
+01:54:46.820 --> 01:54:51.340
+questão de pegar ou não A API oficial de
+uma vez Porque eu vejo que muitos
+
+01:54:51.440 --> 01:54:55.420
+clientes Eles têm já um número ativo E
+aí eu preciso Muitas vezes eles querem
+
+01:54:55.520 --> 01:54:59.220
+utilizar Esse mesmo número ativo E
+também querem ver no celular deles Vendo
+
+01:54:59.320 --> 01:55:02.780
+o WhatsApp web ali E aí eu vejo que pela
+parte Da API oficial Tu acaba tendo
+
+01:55:02.880 --> 01:55:07.580
+algumas travas Enfim Às vezes dá alguns
+problemas Tu não consegue ver mais no
+
+01:55:07.680 --> 01:55:11.460
+celular Enfim Então eu queria te pedir
+Até que ponto que tu usaria Realmente
+
+01:55:11.560 --> 01:55:16.220
+uma API não oficial Ali pra Pra uma
+automação E quando que você partiria Pra
+
+01:55:16.320 --> 01:55:23.540
+API oficial de fato Tá É Uma resposta
+curta e rápida Assim Marcos A não
+
+01:55:23.640 --> 01:55:29.560
+oficial pra testar A medida que esse
+modelo Ele tem adesão Você tem que virar
+
+01:55:29.660 --> 01:55:33.200
+pra oficial Pra poder escalar Porque
+senão Você vai ter Vai tá criando um
+
+01:55:33.300 --> 01:55:37.380
+risco gigantesco De deliverable do seu
+negócio Porque vai que O negócio começa
+
+01:55:37.480 --> 01:55:41.520
+a escalar Você começa a vender Começa a
+ganhar dinheiro Aí lá no capítulo 3 Do
+
+01:55:41.620 --> 01:55:48.380
+negócio O WhatsApp Tum Te dá um Um ban
+Em cima da sua comunicação Aí enferrou
+
+01:55:48.480 --> 01:55:53.820
+Aí você cai por terra Todo o seu
+mecanismo De entrega de valor Pra testar
+
+01:55:53.920 --> 01:55:58.880
+Não vejo problema Mas tu percebe Por
+exemplo Eu vou testar o produto Já numa
+
+01:55:58.980 --> 01:56:03.540
+clínica Por exemplo Então se for uma
+clínica Com mais volume né Se for a
+
+01:56:03.640 --> 01:56:07.400
+partir De algum número De mensagens por
+dia E tudo mais Tem alguma Alguma
+
+01:56:07.500 --> 01:56:11.260
+métrica assim Que eu teria que ficar de
+olho Tu acha ou Não então Veja mais uma
+
+01:56:11.360 --> 01:56:18.540
+vez Se você tá Se o Se o nome do jogo É
+teste E a API oficial Ela vai te Ela vai
+
+01:56:18.640 --> 01:56:24.380
+te cobrar Pra você entregar a mensagem
+Minha sugestão é Keep it simple Keep it
+
+01:56:24.480 --> 01:56:30.180
+cheap Que é cheap Ou seja Mantenha
+simple Mantenha barato Então pode usar A
+
+01:56:30.280 --> 01:56:34.560
+A , P, I No oficial A não ser que isso
+Possa gerar algum tipo De ocorrência
+
+01:56:34.660 --> 01:56:40.140
+legal Pro consultor Pra empresa Etc e
+tal Se não houver isso Se for só uma
+
+01:56:40.240 --> 01:56:44.580
+biblioteca Que se integra O WhatsApp Que
+consegue fazer Automação de envio De
+
+01:56:44.680 --> 01:56:49.340
+mensagem É Não vejo problema nenhum
+Agora Na hora que isso Deixa de ser um
+
+01:56:49.440 --> 01:56:53.420
+teste E passa a ser um produto Você tem
+risco de produto Que você tá cobrando
+
+01:56:53.520 --> 01:56:58.560
+Por algo E você precisa entregar E você
+garantir entrega Sim A sua biblioteca
+
+01:56:58.660 --> 01:57:02.480
+Não consegue garantir Uma entrega perene
+Porque ela pode Ser bloqueada Você tem
+
+01:57:02.580 --> 01:57:07.700
+um problema aí Não, perfeito E eu nunca
+usei De fato Eu só usei a não oficial
+
+01:57:07.800 --> 01:57:11.260
+Usei a Evolution Nas vezes que eu
+utilizei Na oficial Realmente tu não
+
+01:57:11.360 --> 01:57:15.140
+consegue Mais ver a mensagem No celular
+Que é do cliente Tu consegue só ver Na
+
+01:57:15.240 --> 01:57:18.720
+aplicação Que tu colocou Eu tava
+pesquisando E apareceu isso pra mim
+
+01:57:18.820 --> 01:57:23.480
+Várias vezes Mas não sabia Se era a
+realidade Não tenho essa informação Não
+
+01:57:23.580 --> 01:57:27.420
+Porque existem Vários aplicativos Que
+conectam com a payoficial Mas que geram
+
+01:57:27.520 --> 01:57:34.420
+números Uhum São E tem geradores de
+números E aí você usa Dentro do
+
+01:57:34.520 --> 01:57:37.580
+aplicativo Aí você não baixa Isso no
+celular A não ser que seja Dentro do
+
+01:57:37.680 --> 01:57:44.720
+próprio aplicativo De sistema de chamado
+E tal Né O atendimento Mas Não me parece
+
+01:57:44.820 --> 01:57:47.760
+Que sendo single Ou seja Você tendo um
+número só Você tem qualquer problema De
+
+01:57:47.860 --> 01:57:51.400
+fazer isso Ah sim, perfeito E seria
+dentro do caso Sempre um número novo Eu
+
+01:57:51.500 --> 01:57:57.120
+não consigo pegar Um número já existente
+E jogar na oficial Ou dá pra fazer isso
+
+01:57:57.220 --> 01:58:00.740
+Não Dá pra você fazer Mas aí você vai
+Ter que converter O seu WhatsApp Pessoal
+
+01:58:00.840 --> 01:58:03.320
+Pro WhatsApp Business Você não pode ter
+O WhatsApp Business E pessoal com o
+
+01:58:03.420 --> 01:58:07.900
+mesmo número Certo Certo Uma coisa ou
+outra Que aí você vai ter que Ah, não
+
+01:58:08.000 --> 01:58:11.460
+quero Não faço questão De ficar com o
+meu WhatsApp pessoal Quero migrar tudo
+
+01:58:11.560 --> 01:58:14.240
+pro Business Você vai pegar o mesmo
+número E migrar pro Business Mas você
+
+01:58:14.340 --> 01:58:21.020
+vai ter que Deslogar do seu WhatsApp
+pessoal Beleza Brigadão É isso Pessoal A
+
+01:58:21.120 --> 01:58:24.320
+gente chegou no horário Eu vou pedir só
+Cinco minutos pra vocês Pra eu poder
+
+01:58:24.420 --> 01:58:28.940
+terminar Aqui a minha fala Porque tem
+algumas Informações importantes Que tem
+
+01:58:29.040 --> 01:58:32.300
+totalmente A ver com o que A gente tá
+falando aqui Essa interação Que vocês
+
+01:58:32.400 --> 01:58:36.620
+fizeram E essa parte aqui Deixa eu só
+botar aqui No modo de apresentação De
+
+01:58:36.720 --> 01:58:40.380
+como captar Feedbacks rápidos E ajustá
+-lo Em relação ao seu produto Na hora
+
+01:58:40.480 --> 01:58:47.180
+que você estiver Testando o seu MVP Tá
+Então assim ó É Lançou o MVP Mais uma
+
+01:58:47.280 --> 01:58:51.760
+vez Não é produto É MVP Primeira versão
+Pra você obter feedback Você pode obter
+
+01:58:51.860 --> 01:58:56.860
+feedback Qualitativo e quantitativo Né
+Ou seja Qualitativo Máximo Você senta do
+
+01:58:56.960 --> 01:59:00.180
+lado Do usuário Você pode fazer O mesmo
+shadowing No uso do Do usuário Em
+
+01:59:00.280 --> 01:59:04.900
+relação ao seu produto Tá O que que o
+Lean Startup Ele nos ensina Que é o
+
+01:59:05.000 --> 01:59:10.320
+ciclo De construir Ou seja Construir um
+MVP Eu aplico Meço Como que foi a
+
+01:59:10.420 --> 01:59:16.340
+performance Disso E aprendo Faço de novo
+Construo Meço Aprendo Faço de novo Esse
+
+01:59:16.440 --> 01:59:21.140
+é o Lean Startup Isso aqui é o resumo Do
+Lean Startup Pra vocês Tá E a coleta de
+
+01:59:21.240 --> 01:59:25.800
+feedback Ela pode ser Via teste Via
+formulário De pesquisa Via entrevista
+
+01:59:25.900 --> 01:59:30.080
+estruturada Do jeito que você achar Que
+faz mais sentido O mais importante É
+
+01:59:30.180 --> 01:59:34.520
+Tenha o mesmo cuidado Que você teve na
+pesquisa Ou maior No processo de
+
+01:59:34.620 --> 01:59:37.200
+feedback De coleta de feedback Quando
+você soltar O seu produto Porque isso
+
+01:59:37.300 --> 01:59:43.640
+vai ser Muito importante Para você
+refinar A sua entrega de valor Tá Dica
+
+01:59:43.740 --> 01:59:47.680
+útil Pode colocar dentro Do grupo Do
+grupo Que fizemos a entrevista Por
+
+01:59:47.780 --> 01:59:52.520
+exemplo Eu tenho 20 entrevistas lá Eu
+tenho todo mundo No WhatsApp Não vejo
+
+01:59:52.620 --> 01:59:57.280
+problema Beleza Tá Cria uma pesquisinha
+lá E joga lá Pro pessoal responder
+
+01:59:57.380 --> 02:00:02.620
+Márcio É Dica útil Não pergunte Você
+gostou Você gostou Não quer dizer bosta
+
+02:00:02.720 --> 02:00:08.500
+nenhuma Desculpa a palavra feia Não
+adianta nada Você perguntar Você gostou
+
+02:00:08.600 --> 02:00:12.040
+Pergunte Como eu falei aqui No exemplo
+que a Renata perguntou Você faria
+
+02:00:12.140 --> 02:00:13.480
+diferente?
+
+02:00:13.580 --> 02:00:14.660
+Como que você faria?
+
+02:00:14.760 --> 02:00:16.300
+Você sentiu falta De alguma coisa?
+
+02:00:16.400 --> 02:00:18.420
+O que você sentiu falta?
+
+02:00:18.520 --> 02:00:22.320
+Priorize o feedback Valida as hipóteses
+centrais Que hipóteses?
+
+02:00:22.420 --> 02:00:24.560
+Dê solução Você tá conseguindo Resolver
+o problema?
+
+02:00:24.660 --> 02:00:26.340
+Você tá conseguindo Entregar o valor?
+
+02:00:26.440 --> 02:00:29.340
+Não a opinião geral A opinião geral Não
+serve pra nada Você precisa conectar O
+
+02:00:29.440 --> 02:00:33.920
+feedback com a hipótese Ação prática Pra
+gerar a primeira venda E validar no
+
+02:00:34.020 --> 02:00:38.800
+mercado Então Estratégia de lançamento
+Como eu falei Pode fazer pré -venda Usa
+
+02:00:38.900 --> 02:00:42.800
+sua rede de contato Marque direcionado
+Pra campanha digital Uma coisa que
+
+02:00:42.900 --> 02:00:51.000
+funciona muito É Faz uma landing page
+Simples Cria lá Sei lá Uma campanha de 7
+
+02:00:51.100 --> 02:00:55.460
+dias 50 reais por dia 40 reais por dia
+Você gasta menos de 300 reais E seta
+
+02:00:55.560 --> 02:00:59.540
+isso no Google Pra um público específico
+E tenta ver Como é que vai ser A adesão
+
+02:00:59.640 --> 02:01:03.260
+disso Pra um público Que eventualmente
+Tá fora do seu escopo De controle Que
+
+02:01:03.360 --> 02:01:08.600
+pode estar enviesado Inclusive E aí você
+vai medir A validação disso Beleza
+
+02:01:08.700 --> 02:01:13.300
+Gastei 300 reais Quantas pessoas Eu tive
+clicando Nesse negócio Entrando nesse
+
+02:01:13.400 --> 02:01:17.440
+negócio Eventualmente pagando Por esse
+negócio Com a retenção Que eu tive Do
+
+02:01:17.540 --> 02:01:22.260
+pessoal que pagou Voltou Recomprou Você
+está buscando Quando você lança o MVP
+
+02:01:22.360 --> 02:01:26.440
+Você não tá buscando Nem vender Nem
+ficar rico Você tá buscando Conhecer a
+
+02:01:26.540 --> 02:01:31.540
+respeito Da sua capacidade De entrega de
+valor Aqui eu tinha colocado Eu tinha
+
+02:01:31.640 --> 02:01:34.340
+colocado Um exercício Mas não vai dar
+tempo De a gente fazer Tá?
+
+02:01:34.440 --> 02:01:38.240
+Depois eu mando pra vocês Vocês podem
+praticar isso aí Com a equipe de vocês
+
+02:01:38.340 --> 02:01:40.960
+Com os sócios de vocês Tá bom?
+
+02:01:41.060 --> 02:01:43.260
+Respeitando aqui O nosso tempo Que eu
+tinha prometido
+
+02:01:43.360 --> 02:01:49.340
+9h04 Eu vou pedir pessoal E aí eu tinha
+prometido Isso lá na minha primeira aula
+
+02:01:49.440 --> 02:01:51.220
+Vou pedir depois Pro Adriano Viu
+Adriano?
+
+02:01:51.320 --> 02:01:55.920
+Você e Roger Vou pegar o nome do pessoal
+Que eu quero sortear Uma mentoria one on
+
+02:01:56.020 --> 02:02:00.100
+one Com o pessoal Que tava nessa sessão
+aqui Nessa sessão Na última Isso aí
+
+02:02:00.200 --> 02:02:05.660
+Arrasou Léo Ô Léo Manda esse PDF Pra
+gente Vou mandar Vou mandar pro Roger
+
+02:02:05.760 --> 02:02:07.420
+Ele já manda pra vocês No grupo Tá bom?
+
+02:02:07.520 --> 02:02:11.300
+Já ganhei Tá?
+
+02:02:11.400 --> 02:02:16.300
+Então Então como é que vai ser Todo
+mundo que tava nessa aqui É você vai
+
+02:02:16.400 --> 02:02:19.420
+fazer o seguinte Isso Adriano Você vai
+pegar a lista De presença do pessoal
+
+02:02:19.520 --> 02:02:25.000
+Dessa sessão Da última Da quinta -feira
+Joga Pede pro prompt Fazer um sorteio
+
+02:02:25.100 --> 02:02:28.280
+Randomico Dessa cinquenta Duas pessoas
+aí Que a gente teve Teve um pouquinho
+
+02:02:28.380 --> 02:02:31.260
+Mais né Agora tá um pouquinho menos
+Bateu até uns setenta Setenta e cinco
+
+02:02:31.360 --> 02:02:36.180
+hoje Pega o nome dessas pessoas Que
+entraram hoje E pede pra fazer um
+
+02:02:36.280 --> 02:02:39.060
+sorteio Quem for sorteado Eu vou marcar
+uma mentoria One on one De uma horinha
+
+02:02:39.160 --> 02:02:41.920
+Pra gente bater um pau Tá bom?
+
+02:02:42.020 --> 02:02:49.460
+Não vale Não vale Não take it Não take
+it Com o duplo Não vale Ah é Se tiver
+
+02:02:49.560 --> 02:02:55.780
+Pronto Me escolher Tô até pegando Aqui
+certinho Mas tem que ir lá No GPT Deixar
+
+02:02:55.880 --> 02:03:01.100
+tudo Todos prontos Preparado Pra ir pra
+Pra mentoria com ele Uma hora
+
+02:03:01.200 --> 02:03:05.260
+bombardeando Um homem É isso aí Vambora
+Vambora Vai ser muito bom Adoro Adoro
+
+02:03:05.360 --> 02:03:08.540
+Adoro Pessoal que eu puder contribuir
+Conte comigo Isso faz parte Da missão da
+
+02:03:08.640 --> 02:03:15.420
+minha vida Para além de dar aula Isso tá
+muito dentro Do meu propósito Viu?
+
+02:03:15.520 --> 02:03:19.460
+Obrigado mais uma vez Pelo tempo de
+vocês Pelo carinho aí Pela presença Pela
+
+02:03:19.560 --> 02:03:25.060
+atenção Fica à disposição Me mandem lá
+Mensagem no Instagram No LinkedIn Do
+
+02:03:25.160 --> 02:03:30.000
+jeito que vocês quiserem A gente vai
+Trocando ideia E espero aí Que você seja
+
+02:03:30.100 --> 02:03:31.760
+Sorteado Pra gente bater um papo Tá bom?
+
+02:03:31.860 --> 02:03:33.620
+Quais são as suas redes aí, Leo?
+
+02:03:33.720 --> 02:03:39.720
+Pode compartilhar Eu não Eu posto aqui,
+ó Meu Instagram É Leo É a mesma coisa os
+
+02:03:39.820 --> 02:03:46.940
+dois É Leo Underline Valenca Aqui eu vou
+botar o arroba Leo Underline Valenca É o
+
+02:03:47.040 --> 02:03:53.660
+Instagram Instagram Insta E Leo Valenca
+Pera aí Acho que é Leonardo Valença Lá
+
+02:03:53.760 --> 02:03:59.620
+no Leo Underline Valenca Leonardo
+Valenca No Instagram E o Leonardo
+
+02:03:59.720 --> 02:04:03.860
+Valenca No LinkedIn E acha lá A gente
+vai bater um papo Tá bom?
+
+02:04:03.960 --> 02:04:06.220
+Obrigado, gente Um abraço pra vocês,
+viu?
+
+02:04:06.320 --> 02:04:10.940
+Obrigada, Leonardo Boa noite Boa noite a
+todos Valeu, valeu Pode questionar aí
+
+02:04:11.040 --> 02:04:13.680
+Pra gente fazer Você sempre tem a
+pesquisa No final da aula Não vai
+
+02:04:13.780 --> 02:04:16.480
+soltar, não?
+
+02:04:16.580 --> 02:04:22.660
+Já foi Mas devem soltar depois Valeu,
+galera Boa noite O Roger deve mandar
+
+02:04:22.760 --> 02:04:25.880
+Gente, o Roger Professora de N8N E a
+Emily, viu?
+
+02:04:25.980 --> 02:04:32.040
+Já se candidatou Então, gente Já vamos
+todo mundo Rapaz Roger, socorro Não, eu
+
+02:04:32.140 --> 02:04:36.900
+não solto você Segura o bombardeio aí
+agora, viu?
+
+02:04:37.000 --> 02:04:42.180
+Pessoal O Roger não esteve com a gente
+hoje Ele não pôde Ele estava num evento
+
+02:04:42.280 --> 02:04:48.220
+Ele ia palestrar, inclusive E eu vou
+levar pra ele Tudo isso aqui Que vocês
+
+02:04:48.320 --> 02:04:53.040
+tiveram de perguntas Necessidades
+Provavelmente ele vai lançar Outra
+
+02:04:53.140 --> 02:04:57.300
+pesquisa Outro forms pra você Porque é
+aquilo Ninguém larga a mão De ninguém,
+
+02:04:57.400 --> 02:04:58.540
+tá bom?
+
+02:04:58.640 --> 02:05:06.020
+Não se preocupem Não se amedrontem Não
+fiquem aí Com medo Ou estou atrasado Ou
+
+02:05:06.120 --> 02:05:08.520
+não estou Ninguém larga a mão, tá bom?
+
+02:05:08.620 --> 02:05:13.480
+Nós vamos chegar junto Com relação Com
+relação aos créditos Adriano, não
+
+02:05:13.580 --> 02:05:18.540
+esquece de ver Como que nós poderíamos
+ter acesso A esses créditos Tá bom Eu já
+
+02:05:18.640 --> 02:05:23.800
+anotei Já anotei aqui tudo Já tirei
+print Já anotei seu nome aqui Eu fui
+
+02:05:23.900 --> 02:05:26.460
+acompanhando Tudo que estava aí, tá bom?
+
+02:05:26.560 --> 02:05:30.560
+Beleza, então Tchau de volta Maravilha
+Um abração pra vocês aí, viu?
+
+02:05:30.660 --> 02:05:34.300
+Boa noite, pessoal Boa noite Boa noite,
+tudo Valeu Tchau, tchau aí Tchau, tchau,
+
+02:05:34.400 --> 02:05:40.980
+Brunão Tchau, tchau, Sergião Ricardo
+Tchau, Tchau Tua ame Tua ame, até mais
+
+02:05:41.080 --> 02:05:45.720
+Boa noite Valeu, gente Tchau Que bom
+Tchau Realmente era até duas horas da
+
+02:05:45.820 --> 02:05:50.920
+manhã Não De novo Nutella, né?
+
+02:05:51.020 --> 02:05:56.540
+Para os fracos, bicho Para os fracos Só
+a Renata que é forte A Renata madruga
+
+02:05:56.640 --> 02:06:00.320
+Que é forte Ô, Bruno Mas a gente podia
+marcar De fazer reuniões entre a gente
+
+02:06:00.420 --> 02:06:06.360
+também Isso aqui Dá pra acontecer em
+outros horários Já tava Eu não tô
+
+02:06:06.460 --> 02:06:07.000
+inclusa por quê?
+
+02:06:07.100 --> 02:06:07.840
+O que aconteceu?
+
+02:06:07.940 --> 02:06:14.500
+E as pessoas vão se comunicando Mas me
+coloquem lá também Que eu Oxa Tô ficando
+
+02:06:14.600 --> 02:06:22.140
+triste Ô, Suami Tchau, Suami Tchau,
+querida Tchau, tchau Tchau, tchau Tchau
+
+02:06:22.240 --> 02:06:24.340
+pra todos Gente, boa noite Fiquem com
+Deus Boa noite

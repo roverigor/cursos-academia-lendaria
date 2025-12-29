@@ -1,0 +1,152 @@
+Perfil Profissional GitHub
+	O Que Recrutadores Procuram
+		Checklist mental
+			Perfil completo
+			Atividade consistente
+			READMEs claros
+			Codigo de qualidade
+			Projetos reais
+			Open source (plus)
+		Tempo atencao
+			30 segundos iniciais
+	Anatomia Perfil
+		Foto
+		Nome e username
+		Bio clara
+		Localizacao
+		Links (portfolio, LinkedIn)
+		README perfil
+		Pinned Repositories (6)
+		Contribution Graph
+	Configuracao Basica
+		Foto de Perfil
+			Bom
+				Foto profissional
+				Rosto visivel
+				Fundo neutro
+				Estilo LinkedIn
+			Evitar
+				Sem foto
+				Foto grupo
+				Memes
+				Muito informal
+		Bio (160 chars)
+			Formato
+				[Funcao] | [Techs] | [Diferencial]
+			Exemplos
+				Full-Stack | React, Node | Building scalable apps
+				Frontend | Vue, TypeScript | UX focused
+			Dicas
+				Especifico
+				2-3 tecnologias
+				Mostrar foco
+		Localizacao e Links
+			Localizacao
+			Portfolio URL
+			LinkedIn
+	README de Perfil
+		Como criar
+			Repo: seu-username
+			Publico
+			Add README
+			Aparece no perfil
+		Template Iniciante
+			Ola! Eu sou [Nome]
+			Sobre Mim
+			Tecnologias que Uso
+				Frontend
+				Backend
+				Ferramentas
+			Estatisticas GitHub
+			Como me Encontrar
+		Template Avancado
+			Header centralizado
+			Visitas counter
+			Atualmente trabalhando
+			Objetivos 2025
+			Tech Stack (icons)
+			GitHub Stats
+			Streak stats
+			Contato
+		Badges populares
+			shields.io
+			devicon
+	Destacar Repositorios
+		Como pinar
+			Perfil → Customize pins
+			Selecionar ate 6 repos
+			Save pins
+		Quais pinar
+			Prioridade
+				1. Mais impressionante
+				2. Tecnologias diferentes
+				3. Open source
+				4. Bom README
+				5. Codigo de qualidade
+				6. Projetos recentes
+		Bons para pinar
+			task-manager-api
+			react-dashboard
+			python-ml-sentiment
+			open-source-contribution
+		Evitar pinar
+			tutorial-youtube
+			projeto-teste-123
+			primeiro-repo
+			fork-sem-mudancas
+	Atividade Consistente
+		Contribution Graph
+			Graminha verde
+			Ultimos 12 meses
+		Como manter verde
+			Commit regularmente
+			Open source
+			Consistente > bursts
+		NAO fazer
+			Commits fake
+			So para "grama verde"
+	READMEs dos Projetos
+		Template minimo
+			Nome do Projeto
+			Descricao (1-2 frases)
+			Features
+			Tecnologias
+			Como Rodar
+			Screenshots
+			License
+	Boas Praticas
+		Faca
+			Perfil atualizado
+			READMEs em ingles/PT-BR
+			Codigo limpo
+			Commits claros
+			License em repos
+			.gitignore correto
+		Evite
+			Perfil vazio
+			Apenas tutoriais
+			Codigo desorganizado
+			Repos sem README
+			Commits "asdf"
+			Repos nao terminados
+	Exemplos Inspiradores
+		Buscar
+			Devs da sua area
+			Contributors projetos
+			Empresas dos sonhos
+		Analisar
+			Organizacao repos
+			Estilo README
+			Tipos projetos
+			Frequencia commits
+	Checklist Perfil Pronto
+		Foto profissional
+		Bio clara
+		Localizacao e links
+		README de perfil
+		3-6 repos pinados
+		READMEs profissionais
+		.gitignore correto
+		Codigo qualidade
+		Commits regulares
+		Sem repos "teste"

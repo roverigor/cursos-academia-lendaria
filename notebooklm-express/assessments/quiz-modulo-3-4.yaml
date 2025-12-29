@@ -1,0 +1,118 @@
+quiz:
+  id: quiz-modulo-3-4
+  title: "Quiz: Outputs Visuais e Aplicações Práticas"
+  description: "Avalie seu conhecimento sobre os Módulos 3 (Laboratório Visual) e 4 (Aplicações de Elite)"
+  passing_score: 70
+  time_limit_minutes: 10
+
+questions:
+  - id: q1
+    type: multiple_choice
+    question: "Como o NotebookLM gera mind maps?"
+    options:
+      - "Automaticamente com visualização gráfica"
+      - "Via chat, gerando estrutura de texto que pode ser visualizada em outras ferramentas"
+      - "Exportando diretamente para Miro ou Mural"
+      - "Usando o botão 'Generate Mind Map' no Studio"
+    correct_answer: 1
+    explanation: "NotebookLM gera estruturas de texto via chat que você pode visualizar em ferramentas como Mermaid.live, Obsidian Canvas, etc."
+
+  - id: q2
+    type: multiple_choice
+    question: "Qual é a estrutura recomendada para um Executive Summary?"
+    options:
+      - "Introdução, Desenvolvimento, Conclusão"
+      - "Situation, Key Findings, Implications, Recommendations, Bottom Line"
+      - "Problema, Solução, Benefícios"
+      - "Título, Subtítulo, Corpo, Rodapé"
+    correct_answer: 1
+    explanation: "A estrutura SITUATION → KEY FINDINGS → IMPLICATIONS → RECOMMENDATIONS → BOTTOM LINE é ideal para executivos com pouco tempo."
+
+  - id: q3
+    type: multiple_choice
+    question: "Para criar flashcards exportáveis para Anki/Quizlet, qual formato você deve solicitar?"
+    options:
+      - "JSON"
+      - "Markdown"
+      - "CSV (question;answer;tags)"
+      - "XML"
+    correct_answer: 2
+    explanation: "O formato CSV com separador por ponto-e-vírgula (question;answer;tags) é compatível com importação do Anki e Quizlet."
+
+  - id: q4
+    type: multiple_choice
+    question: "Qual regra de ouro foi ensinada para criação de slides?"
+    options:
+      - "1 slide = 5 ideias completas"
+      - "1 slide = 1 ideia + Regra 6x6 (max 6 bullets, max 6 palavras)"
+      - "Quanto mais texto, melhor"
+      - "Usar apenas imagens, sem texto"
+    correct_answer: 1
+    explanation: "A regra é 1 SLIDE = 1 IDEIA, com máximo de 6 bullets e 6 palavras cada (Regra 6x6)."
+
+  - id: q5
+    type: multiple_choice
+    question: "Na análise de inteligência competitiva, qual prompt analisa o posicionamento do concorrente?"
+    options:
+      - "Extract all pricing information"
+      - "Analyze positioning: Target Audience, Value Prop, Key Messages, Tone, Gaps"
+      - "List all employees mentioned"
+      - "Compare financial statements"
+    correct_answer: 1
+    explanation: "O prompt de posicionamento analisa: público-alvo, proposta de valor, mensagens-chave, tom/personalidade e gaps."
+
+  - id: q6
+    type: multiple_choice
+    question: "Qual é a diferença entre FAQ automático e FAQ customizado no NotebookLM?"
+    options:
+      - "Não existe diferença"
+      - "FAQ automático é do Studio; FAQ customizado é via chat com prompts específicos"
+      - "FAQ automático é pago; FAQ customizado é gratuito"
+      - "FAQ automático gera menos perguntas"
+    correct_answer: 1
+    explanation: "O Studio gera FAQ automaticamente. Via chat você pode customizar tipo de perguntas, nível (iniciante/avançado), quantidade, etc."
+
+  - id: q7
+    type: multiple_choice
+    question: "Para gerar conteúdo baseado em dados das sources, qual tipo de prompt é mais efetivo?"
+    options:
+      - "Me dê ideias de conteúdo"
+      - "Find all statistics and data points, suggest content piece for each"
+      - "Escreva um artigo sobre o tema"
+      - "Liste tudo que está nas sources"
+    correct_answer: 1
+    explanation: "Pedir para encontrar dados/estatísticas e sugerir conteúdo para cada um gera ideias diferenciadas baseadas em evidências."
+
+  - id: q8
+    type: multiple_choice
+    question: "Na aula 'De Áudio para Texto', qual limitação foi mencionada sobre vídeos do YouTube?"
+    options:
+      - "Apenas vídeos em inglês funcionam"
+      - "Vídeos precisam ter legendas para funcionar"
+      - "Vídeos não podem ter mais de 10 minutos"
+      - "Apenas vídeos de canais verificados"
+    correct_answer: 1
+    explanation: "NotebookLM usa as legendas (automáticas ou manuais) do YouTube. Sem legendas, não há transcrição disponível."
+
+  - id: q9
+    type: true_false
+    question: "É ético usar NotebookLM para analisar relatórios anuais públicos de empresas concorrentes."
+    correct_answer: true
+    explanation: "Sim! Informações públicas como relatórios de investidores, press releases e conteúdo de marketing são fair game para análise competitiva."
+
+  - id: q10
+    type: multiple_choice
+    question: "No workflow de criação de conteúdo, qual é a ordem correta das etapas?"
+    options:
+      - "Escrever → Pesquisar → Publicar"
+      - "Sources de qualidade → Gerar ideias → Criar estrutura → Draft → Refinar"
+      - "Draft → Edição → Publicação → Research"
+      - "Publicar → Analisar → Melhorar"
+    correct_answer: 1
+    explanation: "O workflow correto é: alimentar com sources de qualidade, gerar ideias baseadas em dados, criar estrutura, produzir draft e refinar."
+
+scoring:
+  10_correct: "🏆 Excelente! Você domina outputs visuais e aplicações práticas!"
+  8-9_correct: "✅ Muito bom! Pronto para aplicar no dia a dia."
+  7_correct: "👍 Bom! Pratique mais com os prompts ensinados."
+  below_7: "📚 Recomendamos revisar os Módulos 3 e 4 antes do desafio final."
