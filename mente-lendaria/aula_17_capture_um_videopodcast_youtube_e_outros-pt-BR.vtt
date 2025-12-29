@@ -1,0 +1,3312 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.800
+Chegou a hora de a gente capturar
+vídeos.
+
+00:00:02.160 --> 00:00:06.340
+Eu vou mostrar como capturar vídeos do
+YouTube, mas isso serve para
+
+00:00:06.340 --> 00:00:08.240
+praticamente qualquer vídeo.
+
+00:00:08.460 --> 00:00:12.600
+Ou seja, o vídeo de um curso que você
+estiver fazendo, um vídeo do Vimeo.
+
+00:00:12.680 --> 00:00:17.120
+A única coisa que vai mudar, na verdade,
+vai ser a forma de captura desse vídeo
+
+00:00:17.120 --> 00:00:19.280
+em relação a como você vai mandar ele
+para alguns lugares.
+
+00:00:19.920 --> 00:00:25.500
+Mas o que eu vou ensinar aqui se aplica
+a todos os tipos de captura de vídeo.
+
+00:00:25.700 --> 00:00:26.360
+Então vamos lá.
+
+00:00:26.360 --> 00:00:30.480
+Aqui, até deixei aberto um dos vídeos
+que eu capturei.
+
+00:00:30.600 --> 00:00:35.720
+Então aqui dentro do Obsidian você
+consegue colocar o seu vídeo.
+
+00:00:35.880 --> 00:00:37.260
+E eu vou mostrar como fazer isso.
+
+00:00:37.340 --> 00:00:39.120
+Você pode incorporar ele.
+
+00:00:39.660 --> 00:00:42.460
+E aqui está basicamente toda a
+transcrição.
+
+00:00:42.780 --> 00:00:48.080
+Novamente lembrando vocês em relação às
+pastas, que quando é toda a transcrição
+
+00:00:48.080 --> 00:00:53.140
+assim, isso aqui não é uma nota nem
+Tetris, porque eu não criei ela, eu só
+
+00:00:53.140 --> 00:00:56.200
+transcrivi, e nem é uma nota Lego.
+
+00:00:56.360 --> 00:01:01.060
+Isso aqui é um recurso onde eu tenho uma
+documentação, onde eu tenho um conteúdo
+
+00:01:01.060 --> 00:01:06.940
+que vou extrair informações para daí
+então criar notas Tetris ou criar notas
+
+00:01:06.940 --> 00:01:07.200
+Lego.
+
+00:01:07.760 --> 00:01:10.540
+Então assim, quando eu encontro um
+conteúdo que ele é muito bom, que eu
+
+00:01:10.540 --> 00:01:13.400
+quero extrair as informações dele, eu
+faço isso aqui.
+
+00:01:13.780 --> 00:01:16.960
+Esse vídeo, por exemplo, foi um vídeo
+que me chamou muita atenção, porque ele
+
+00:01:16.960 --> 00:01:19.800
+trouxe perspectivas totalmente
+diferentes dessas que eu tinha.
+
+00:01:20.000 --> 00:01:22.340
+Então eu resolvi salvar ele aqui dentro.
+
+00:01:22.440 --> 00:01:24.300
+Pode ver que ele é o único vídeo, por
+enquanto, do YouTube.
+
+00:01:24.420 --> 00:01:27.920
+E não que eu não consuma muitos vídeos
+do YouTube, mas digamos assim, eu
+
+00:01:27.920 --> 00:01:32.140
+consumo normalmente, eu pego uma, duas
+ideias e crio uma nota Lego já, ou crio
+
+00:01:32.140 --> 00:01:34.480
+uma nota Tetris com base nessas ideias.
+
+00:01:34.680 --> 00:01:39.620
+Só que esse aqui, eu resolvi transcrever
+todo ele aqui, porque ele tinha muitas
+
+00:01:39.620 --> 00:01:40.720
+informações relevantes.
+
+00:01:41.340 --> 00:01:45.640
+E eu vou fazer isso agora com outro
+vídeo para vocês conseguirem entender
+
+00:01:45.640 --> 00:01:46.900
+como esse processo funciona.
+
+00:01:47.600 --> 00:01:48.780
+Eu já escolhi o vídeo.
+
+00:01:48.940 --> 00:01:53.640
+O vídeo vai ser esse aqui, que é o vídeo
+da Vicky, Vicky Zahal.
+
+00:01:53.640 --> 00:01:56.820
+Eu até já deixei alguns vídeos dela
+linkados aqui.
+
+00:01:56.840 --> 00:01:59.620
+É uma pessoa incrível, já pude conversar
+com ela várias vezes.
+
+00:02:00.420 --> 00:02:05.200
+E ela fala muito sobre frameworks de
+pensamento, inclusive sobre obsidian,
+
+00:02:05.460 --> 00:02:07.700
+sobre várias coisas extremamente
+interessantes.
+
+00:02:07.740 --> 00:02:11.380
+Inclusive foi com ela que eu aprendi
+sobre os 12 problemas de Feynman.
+
+00:02:12.220 --> 00:02:13.460
+Então, vamos lá.
+
+00:02:13.600 --> 00:02:16.840
+Agora chegou a hora, você sabe, quando
+eu sento assim na cadeira é porque eu
+
+00:02:16.840 --> 00:02:18.380
+não vou entrar com tudo agora.
+
+00:02:18.920 --> 00:02:20.280
+Então, o que eu vou fazer?
+
+00:02:20.360 --> 00:02:21.860
+Beleza, o que normalmente eu fazia?
+
+00:02:21.900 --> 00:02:23.020
+Eu escutava o vídeo inteiro.
+
+00:02:23.640 --> 00:02:24.900
+Então, eu ficava escutando aqui o vídeo.
+
+00:02:25.660 --> 00:02:29.260
+Quando eu pegava uma parte que eu
+gostava muito, beleza, daí eu pegava e
+
+00:02:29.260 --> 00:02:29.740
+anotava.
+
+00:02:29.880 --> 00:02:33.160
+Esse era o meu processo bastante tempo
+atrás, um, dois anos atrás.
+
+00:02:34.140 --> 00:02:36.120
+Aos poucos, eu fui melhorando um pouco
+esse processo.
+
+00:02:36.640 --> 00:02:39.240
+Por exemplo, eu comecei a utilizar...
+
+00:02:39.240 --> 00:02:41.200
+Essa aqui é uma plataforma paga.
+
+00:02:42.540 --> 00:02:44.000
+Alan, tu acha que vale a pena?
+
+00:02:44.240 --> 00:02:47.680
+Custa 8 dólares por mês, se eu não me
+engano.
+
+00:02:47.840 --> 00:02:52.040
+Então, assim, para um leitor assíduo
+como eu, compensa.
+
+00:02:52.040 --> 00:02:53.540
+É 50 reais ali, mais ou menos.
+
+00:02:53.640 --> 00:02:55.180
+60 reais que vai custar por mês.
+
+00:02:56.060 --> 00:03:01.440
+E como minha hora vale muito mais do que
+isso, compensa para mim porque eu uso
+
+00:03:01.440 --> 00:03:04.920
+bastante, acabo usando bastante a
+ferramenta.
+
+00:03:05.100 --> 00:03:09.580
+Para ser bem sincero, eu usei muito ela
+ano passado, daí cancelei porque eu
+
+00:03:09.580 --> 00:03:10.880
+achei que não ia usar mais tanto.
+
+00:03:11.260 --> 00:03:15.740
+Quando eu descobri que ela tem
+integração nativa aqui com o Obsidian,
+
+00:03:15.860 --> 00:03:21.780
+Readwise Official, eu consigo integrar
+diretamente tudo o que eu fizer lá.
+
+00:03:21.780 --> 00:03:28.580
+Para salvar aqui dentro do meu cofre, do
+meu Obsidian, que nem está aqui.
+
+00:03:28.900 --> 00:03:30.260
+Tem uma pastinha Readwise.
+
+00:03:30.600 --> 00:03:31.820
+Aqui tem livros, por exemplo.
+
+00:03:32.620 --> 00:03:36.440
+Aqui, o que eu vou anotando nos livros
+com o Readwise, ele já vai me trazendo
+
+00:03:36.440 --> 00:03:36.680
+aqui.
+
+00:03:36.700 --> 00:03:39.840
+Segundo Célebro, Factfulness.
+
+00:03:40.380 --> 00:03:43.980
+E assim, não só livros, mas vídeos do
+YouTube.
+
+00:03:44.340 --> 00:03:50.000
+Tudo o que eu quiser aqui, basicamente,
+linkar com o Readwise, ele me traz para
+
+00:03:50.000 --> 00:03:50.220
+cá.
+
+00:03:50.220 --> 00:03:53.020
+Às vezes fica mais fácil, porque muitas
+vezes eu não estou a fim de ficar
+
+00:03:53.020 --> 00:03:55.140
+copiando e colando trecho de livro, por
+exemplo, para salvar.
+
+00:03:55.640 --> 00:03:57.680
+Ah, mas você pode usar o iBook.
+
+00:03:57.760 --> 00:04:00.140
+Sim, eu posso usar o iBook, como vocês
+viram, que é de graça.
+
+00:04:00.160 --> 00:04:04.900
+Ou uma integração direta com o Kindle,
+que é de graça também.
+
+00:04:05.380 --> 00:04:09.600
+Aqui a diferença é que eu consigo
+concentrar em um único lugar as
+
+00:04:09.600 --> 00:04:14.040
+anotações de vídeos do YouTube, de
+artigos, de tweets.
+
+00:04:14.320 --> 00:04:15.240
+Então eu posso integrar.
+
+00:04:15.600 --> 00:04:19.220
+O Readwise tem aqui esse painel.
+
+00:04:19.220 --> 00:04:23.420
+Eu consigo fazer integrações de tweets,
+de vídeos, de um monte de coisa.
+
+00:04:24.760 --> 00:04:27.500
+Assinar alguns feeds para receber aqui
+as informações que eu quero ler.
+
+00:04:28.040 --> 00:04:29.000
+Então eu vou começar.
+
+00:04:29.420 --> 00:04:32.620
+Para ser 100 % sério com vocês, eu
+acabei de assinar ele de novo.
+
+00:04:32.900 --> 00:04:34.560
+Então eu usei ele no ano passado.
+
+00:04:35.480 --> 00:04:37.440
+Agora que eu estou utilizando o
+Obsidian, eu percebi que, cara, faz
+
+00:04:37.440 --> 00:04:38.600
+sentido eu voltar a usar ele.
+
+00:04:38.720 --> 00:04:40.500
+Então eu assinei, inclusive, para essa
+aula aqui.
+
+00:04:40.700 --> 00:04:43.280
+Porque eu queria mandar um vídeo para cá
+para mostrar para vocês como ele
+
+00:04:43.280 --> 00:04:43.600
+funciona.
+
+00:04:44.160 --> 00:04:48.260
+Então uma das formas que eu tenho de
+fazer esses resumos de livros, por
+
+00:04:48.260 --> 00:04:50.300
+exemplo, seria jogar para cá o vídeo.
+
+00:04:51.580 --> 00:04:56.440
+E caso você consiga ler em inglês, você
+vai poder ler o livro aqui em inglês.
+
+00:04:56.600 --> 00:04:59.240
+Porque ele não tem, se eu não me engano,
+ele não tem o formato aqui de tradução
+
+00:04:59.240 --> 00:04:59.720
+já.
+
+00:05:00.180 --> 00:05:01.680
+Pelo menos não tinha quando eu usava
+ele.
+
+00:05:02.320 --> 00:05:03.820
+Então aqui o que eu posso fazer, né?
+
+00:05:03.860 --> 00:05:04.760
+Vou selecionar aqui.
+
+00:05:05.040 --> 00:05:06.240
+Bom, selecionei aqui.
+
+00:05:06.720 --> 00:05:07.400
+Digamos que eu...
+
+00:05:07.400 --> 00:05:07.840
+Ah, aqui ó.
+
+00:05:07.840 --> 00:05:10.420
+Teoria de Teor of Constraints.
+
+00:05:10.660 --> 00:05:12.700
+Ah, selecionei isso aqui que eu quero
+também no meu cofre.
+
+00:05:12.780 --> 00:05:14.440
+Vou até botar uma anotação para ver se
+ele vai trazer.
+
+00:05:16.320 --> 00:05:18.500
+Só testando para ver se...
+
+00:05:18.500 --> 00:05:20.060
+Se vai vir.
+
+00:05:20.840 --> 00:05:22.700
+Eu sei que o meu sol está errado ali,
+gente.
+
+00:05:23.600 --> 00:05:24.000
+Pronto.
+
+00:05:24.460 --> 00:05:25.040
+É isso.
+
+00:05:25.180 --> 00:05:27.840
+Quero ver agora se ele vai fazer essa...
+
+00:05:28.840 --> 00:05:30.200
+Ele vai trazer para cá?
+
+00:05:30.240 --> 00:05:31.560
+Quanto tempo demora?
+
+00:05:31.700 --> 00:05:32.300
+Não veio.
+
+00:05:32.400 --> 00:05:35.340
+Deixa eu ver se eu tenho que dar alguma
+atualização aqui.
+
+00:05:35.780 --> 00:05:36.420
+Eu nunca...
+
+00:05:36.420 --> 00:05:37.740
+Eu não estava usando esse Readwise.
+
+00:05:38.820 --> 00:05:40.400
+Readwise, sync your data now.
+
+00:05:40.540 --> 00:05:41.060
+Aqui, ó.
+
+00:05:41.240 --> 00:05:41.640
+Cliquei.
+
+00:05:42.680 --> 00:05:44.200
+Ó, trouxe artigos.
+
+00:05:44.260 --> 00:05:45.260
+Ele trouxe como artigo.
+
+00:05:46.420 --> 00:05:47.740
+Daí ele já trouxe aqui, ó.
+
+00:05:47.760 --> 00:05:48.120
+Que legal.
+
+00:05:48.500 --> 00:05:48.840
+Eu gostei.
+
+00:05:49.080 --> 00:05:51.740
+Ele trouxe o nome do autor.
+
+00:05:52.220 --> 00:05:53.960
+Ó, que eu posso daí linkar.
+
+00:05:54.580 --> 00:05:56.700
+Ele trouxe aqui o URL do vídeo do
+YouTube.
+
+00:05:56.760 --> 00:05:57.860
+E trouxe os highlights.
+
+00:05:58.220 --> 00:05:59.840
+E aqui eu trouxe a minha nota também, ó.
+
+00:06:00.660 --> 00:06:02.660
+Então isso aqui é legal que já faz
+uma...
+
+00:06:03.120 --> 00:06:03.700
+Facilita, né?
+
+00:06:03.740 --> 00:06:04.300
+Digamos assim.
+
+00:06:04.380 --> 00:06:04.940
+Eu não estou...
+
+00:06:04.940 --> 00:06:07.020
+Eu estou estudando, por exemplo, um
+artigo lá e tal.
+
+00:06:07.360 --> 00:06:10.140
+Só vai trazer as informações relevantes
+do artigo para cá.
+
+00:06:10.260 --> 00:06:12.800
+Então é uma forma de vocês fazerem
+captura.
+
+00:06:13.120 --> 00:06:16.620
+Aqui nem só captura de vídeos, mas
+captura de artigos também.
+
+00:06:16.720 --> 00:06:17.160
+Então assim.
+
+00:06:17.160 --> 00:06:18.120
+Eu posso, por exemplo...
+
+00:06:18.120 --> 00:06:21.220
+Deixa eu ver se não está integrado com o
+Twitter.
+
+00:06:22.620 --> 00:06:25.340
+Mas depois eu vou integrar com o meu
+Twitter aqui para poder...
+
+00:06:25.340 --> 00:06:27.320
+Porque eu gosto muito de utilizar o
+Twitter.
+
+00:06:27.460 --> 00:06:31.600
+Até já na parte de consumos eu indiquei
+as pessoas que eu sigo no Twitter e que
+
+00:06:31.600 --> 00:06:32.260
+tem conteúdo de qualidade.
+
+00:06:32.700 --> 00:06:35.520
+Aqui eu posso inserir alguns feeds, né?
+
+00:06:35.580 --> 00:06:40.080
+Para ele me trazer os feeds atualizados
+de e -mails e blogs para eu poder já ler
+
+00:06:40.080 --> 00:06:40.960
+na ordem que eu quiser.
+
+00:06:41.560 --> 00:06:42.020
+Então assim.
+
+00:06:43.980 --> 00:06:45.960
+Vou ser bem sincero com vocês.
+
+00:06:46.000 --> 00:06:47.080
+100 % sincero com vocês.
+
+00:06:47.860 --> 00:06:52.000
+Não testei ainda ela muito porque ela
+teve várias atualizações interessantes.
+
+00:06:52.180 --> 00:06:54.160
+Eu vou ter que estudar de novo sobre
+essa ferramenta.
+
+00:06:55.600 --> 00:06:57.640
+Mas eu já vi que ela vai ser promissora.
+
+00:06:58.080 --> 00:06:59.260
+Então é uma das formas.
+
+00:06:59.460 --> 00:07:01.860
+Eu até assinei ela aqui para poder
+mostrar para vocês.
+
+00:07:02.140 --> 00:07:03.380
+Porque eu vou começar a utilizar.
+
+00:07:03.540 --> 00:07:05.580
+Eu ia deixar para começar a utilizar mês
+que vem.
+
+00:07:05.760 --> 00:07:08.500
+E eu pensei, já que eu vou gravar essa
+aula, eu vou já assinar.
+
+00:07:08.500 --> 00:07:12.040
+Já vou colocar um vídeo lá para mostrar
+essa integração nativa que ele tem.
+
+00:07:12.260 --> 00:07:13.960
+Então você pode inclusive botar play
+aqui.
+
+00:07:17.480 --> 00:07:20.320
+Ele vai mostrando exatamente aonde que
+está.
+
+00:07:22.700 --> 00:07:26.900
+Então se eu acelerar o vídeo, ele vai
+também mostrar aonde vai
+
+00:07:26.900 --> 00:07:27.200
+estar.
+
+00:07:31.640 --> 00:07:32.240
+Então assim.
+
+00:07:32.320 --> 00:07:34.200
+Ele facilita nessa questão.
+
+00:07:34.340 --> 00:07:35.180
+Estou assistindo vídeo.
+
+00:07:35.380 --> 00:07:36.180
+Tem aqui o texto.
+
+00:07:36.380 --> 00:07:37.740
+Eu seleciono e colo.
+
+00:07:38.300 --> 00:07:39.840
+Não sei se ele tem tradução aqui.
+
+00:07:39.980 --> 00:07:41.520
+Como eu falei, eu assinei agora.
+
+00:07:41.800 --> 00:07:43.400
+Eu vou estudar essa ferramenta.
+
+00:07:43.480 --> 00:07:45.600
+Eu até posso fazer um vídeo mais para
+frente falando mais sobre ela.
+
+00:07:45.700 --> 00:07:46.260
+Vou fazer isso.
+
+00:07:46.720 --> 00:07:47.120
+Ah.
+
+00:07:48.060 --> 00:07:49.220
+Mas o que eu quero aqui.
+
+00:07:50.360 --> 00:07:51.100
+Deixa eu ver aqui.
+
+00:07:51.220 --> 00:07:51.520
+Software.
+
+00:07:51.900 --> 00:07:52.680
+Slow play.
+
+00:07:52.900 --> 00:07:53.360
+Speed play.
+
+00:07:53.520 --> 00:07:53.620
+Ah.
+
+00:07:54.060 --> 00:07:55.280
+Posso botar atalhos aqui.
+
+00:07:56.220 --> 00:07:57.080
+Mas não tem aqui.
+
+00:07:57.260 --> 00:07:57.440
+Então.
+
+00:07:57.440 --> 00:07:57.620
+Ah.
+
+00:07:57.740 --> 00:07:59.260
+Não sei inglês.
+
+00:08:00.180 --> 00:08:00.580
+Beleza.
+
+00:08:00.580 --> 00:08:01.020
+Não tem problema.
+
+00:08:02.660 --> 00:08:03.680
+Vamos fazer o seguinte.
+
+00:08:03.900 --> 00:08:08.200
+Vou mostrar para vocês agora outra forma
+da gente poder fazer essa captura de
+
+00:08:08.200 --> 00:08:08.420
+vídeo.
+
+00:08:08.560 --> 00:08:09.300
+Então vou fazer aqui.
+
+00:08:09.540 --> 00:08:10.200
+Poderia botar.
+
+00:08:10.240 --> 00:08:11.980
+Eu vou criar um template para captura de
+vídeo também.
+
+00:08:12.100 --> 00:08:13.760
+Por enquanto eu vou criar aqui na pasta
+certinho.
+
+00:08:14.860 --> 00:08:17.040
+Dez modelos mentais explicados.
+
+00:08:17.420 --> 00:08:18.600
+Botei aqui o nome do vídeo.
+
+00:08:19.220 --> 00:08:20.820
+Vou botar agora o vídeo aqui.
+
+00:08:21.420 --> 00:08:22.240
+Dentro do meu Obsidian.
+
+00:08:23.540 --> 00:08:24.440
+Então vou botar aqui.
+
+00:08:24.460 --> 00:08:25.260
+Como é que eu faço isso?
+
+00:08:25.400 --> 00:08:25.940
+Está lá.
+
+00:08:26.160 --> 00:08:28.520
+No dominando Obsidian eu já ensino a
+fazer isso em links.
+
+00:08:28.620 --> 00:08:29.860
+Mas eu vou mostrar aqui para vocês de
+novo.
+
+00:08:30.060 --> 00:08:30.220
+É.
+
+00:08:31.020 --> 00:08:31.340
+Exclama.
+
+00:08:31.920 --> 00:08:32.640
+Abre e fecha.
+
+00:08:33.400 --> 00:08:33.720
+Colchetes.
+
+00:08:33.840 --> 00:08:34.520
+Abre e fecha.
+
+00:08:34.860 --> 00:08:35.180
+Parênteses.
+
+00:08:35.200 --> 00:08:35.980
+E cola o vídeo aqui.
+
+00:08:36.040 --> 00:08:36.200
+Deu.
+
+00:08:36.440 --> 00:08:36.960
+É isso.
+
+00:08:37.920 --> 00:08:38.240
+Novamente.
+
+00:08:38.300 --> 00:08:40.160
+Eu vou botar o código aqui embaixo para
+vocês já saberem.
+
+00:08:40.300 --> 00:08:41.100
+Melhor aqui em cima.
+
+00:08:41.700 --> 00:08:43.340
+Em cima do vídeo eu vou deixar o código.
+
+00:08:43.680 --> 00:08:43.940
+Opa.
+
+00:08:46.840 --> 00:08:47.720
+Isso aqui é o código.
+
+00:08:49.280 --> 00:08:49.720
+Exclamação.
+
+00:08:50.380 --> 00:08:51.060
+Abre e fecha.
+
+00:08:51.180 --> 00:08:51.620
+Colchetes.
+
+00:08:51.800 --> 00:08:52.660
+Abre e fecha.
+
+00:08:52.860 --> 00:08:53.300
+Parênteses.
+
+00:08:53.360 --> 00:08:53.740
+É isso.
+
+00:08:53.900 --> 00:08:54.820
+Se você fizer isso.
+
+00:08:54.980 --> 00:08:56.500
+Vai e colocar o link aqui dentro.
+
+00:08:57.720 --> 00:08:58.980
+Link do vídeo.
+
+00:08:59.840 --> 00:09:00.200
+Ó.
+
+00:09:00.380 --> 00:09:02.080
+Ele vai começar a criar Thumbnail.
+
+00:09:02.120 --> 00:09:02.800
+Ou um Array.
+
+00:09:02.880 --> 00:09:03.060
+Ah.
+
+00:09:03.160 --> 00:09:03.840
+Eu quero botar foto.
+
+00:09:04.240 --> 00:09:05.380
+Mesma coisa para imagens também.
+
+00:09:05.520 --> 00:09:06.300
+Então eu quero botar.
+
+00:09:06.520 --> 00:09:07.400
+Por exemplo.
+
+00:09:08.460 --> 00:09:09.420
+Vamos botar aqui.
+
+00:09:10.960 --> 00:09:11.400
+Models.
+
+00:09:12.680 --> 00:09:13.120
+Framework.
+
+00:09:15.260 --> 00:09:15.700
+Models.
+
+00:09:20.520 --> 00:09:21.120
+Aqui ó.
+
+00:09:21.280 --> 00:09:21.720
+Framework.
+
+00:09:21.720 --> 00:09:22.020
+Vamos botar aqui.
+
+00:09:22.040 --> 00:09:23.500
+Vou pegar essa imagem aqui.
+
+00:09:24.420 --> 00:09:24.860
+Copiar.
+
+00:09:25.120 --> 00:09:26.180
+O endereço da imagem.
+
+00:09:27.260 --> 00:09:28.760
+Vou botar essa imagem aqui.
+
+00:09:29.700 --> 00:09:30.380
+E pronto.
+
+00:09:30.980 --> 00:09:32.660
+Então é uma forma de vocês anexarem.
+
+00:09:32.700 --> 00:09:36.120
+Já dou uma reforçada no conhecimento que
+vocês tem aí de Obsidian.
+
+00:09:37.100 --> 00:09:39.040
+Então aqui eu vou deixar um espaçozinho.
+
+00:09:40.440 --> 00:09:40.880
+Beleza.
+
+00:09:40.960 --> 00:09:42.140
+Agora vamos para.
+
+00:09:43.500 --> 00:09:44.220
+Para o vídeo.
+
+00:09:44.880 --> 00:09:45.480
+Transcript aqui.
+
+00:09:45.640 --> 00:09:45.680
+Vou.
+
+00:09:46.400 --> 00:09:47.300
+Transcript do vídeo.
+
+00:09:47.880 --> 00:09:49.560
+Como é que eu posso pegar esse
+transcript.
+
+00:09:49.840 --> 00:09:50.540
+Para jogar para cá.
+
+00:09:51.160 --> 00:09:52.020
+Eu posso fazer uma coisa.
+
+00:09:52.020 --> 00:09:52.440
+Eu vou fazer o seguinte.
+
+00:09:52.640 --> 00:09:53.640
+Eu tenho um plugin chamado.
+
+00:09:54.480 --> 00:09:54.920
+Ah.
+
+00:09:55.160 --> 00:09:57.540
+Youtube Subtitle Download Helper.
+
+00:09:57.820 --> 00:09:59.900
+Daí você pode baixar ele em TXT.
+
+00:10:00.160 --> 00:10:00.720
+Por exemplo.
+
+00:10:01.040 --> 00:10:01.940
+E clica aqui.
+
+00:10:02.040 --> 00:10:03.060
+E basicamente o que ele vai fazer.
+
+00:10:03.120 --> 00:10:04.020
+Vai ser baixar.
+
+00:10:04.040 --> 00:10:04.820
+O TXT.
+
+00:10:05.220 --> 00:10:05.940
+Do vídeo.
+
+00:10:06.200 --> 00:10:07.140
+Então está aqui o vídeo.
+
+00:10:07.260 --> 00:10:07.340
+Ó.
+
+00:10:07.340 --> 00:10:08.280
+O TXT do vídeo está aqui.
+
+00:10:09.000 --> 00:10:09.440
+Copio.
+
+00:10:10.020 --> 00:10:10.900
+Deixa eu fechar.
+
+00:10:11.540 --> 00:10:12.540
+E jogo aqui dentro.
+
+00:10:12.960 --> 00:10:13.400
+Bom.
+
+00:10:13.480 --> 00:10:14.440
+Está aqui agora o transcript.
+
+00:10:14.760 --> 00:10:15.460
+Todo do vídeo.
+
+00:10:16.460 --> 00:10:16.900
+Conforme.
+
+00:10:17.320 --> 00:10:17.540
+Ah.
+
+00:10:17.760 --> 00:10:18.660
+Aqui até eu vou botar.
+
+00:10:18.760 --> 00:10:19.880
+Youtube Download Helper.
+
+00:10:20.080 --> 00:10:20.800
+Para a gente saber.
+
+00:10:21.100 --> 00:10:21.540
+Transcript.
+
+00:10:23.500 --> 00:10:23.900
+Youtube.
+
+00:10:25.660 --> 00:10:26.060
+Download.
+
+00:10:26.940 --> 00:10:27.340
+Helper.
+
+00:10:28.800 --> 00:10:29.360
+Tá Alan.
+
+00:10:29.420 --> 00:10:30.180
+Como é que eu vou fazer agora.
+
+00:10:30.300 --> 00:10:31.040
+Porque está em inglês ainda.
+
+00:10:31.480 --> 00:10:32.480
+Daí você vai ter.
+
+00:10:32.520 --> 00:10:32.980
+Um plugin.
+
+00:10:33.100 --> 00:10:33.720
+Que se chama.
+
+00:10:34.380 --> 00:10:35.180
+Language Translator.
+
+00:10:35.980 --> 00:10:37.200
+Eu vou mostrar para vocês aqui.
+
+00:10:37.700 --> 00:10:37.800
+Ó.
+
+00:10:37.900 --> 00:10:39.040
+Não oficiais.
+
+00:10:39.700 --> 00:10:40.100
+Ah.
+
+00:10:42.440 --> 00:10:43.240
+Language Translator.
+
+00:10:43.440 --> 00:10:43.880
+Esse aqui.
+
+00:10:44.980 --> 00:10:45.820
+Então esse aqui.
+
+00:10:45.880 --> 00:10:46.080
+É um plugin.
+
+00:10:46.180 --> 00:10:46.740
+Que é de graça.
+
+00:10:47.260 --> 00:10:47.660
+Ah.
+
+00:10:47.760 --> 00:10:48.300
+Você tem.
+
+00:10:48.400 --> 00:10:49.120
+Você pode utilizar.
+
+00:10:49.240 --> 00:10:49.640
+Um número.
+
+00:10:49.760 --> 00:10:50.020
+Bem.
+
+00:10:50.180 --> 00:10:50.780
+Bem alto.
+
+00:10:50.880 --> 00:10:51.040
+Assim.
+
+00:10:51.060 --> 00:10:51.240
+De.
+
+00:10:51.280 --> 00:10:51.520
+De.
+
+00:10:51.540 --> 00:10:51.960
+As traduções.
+
+00:10:52.060 --> 00:10:52.800
+De graça.
+
+00:10:52.860 --> 00:10:53.200
+Por mês.
+
+00:10:54.020 --> 00:10:54.420
+E.
+
+00:10:54.480 --> 00:10:54.980
+Caso você.
+
+00:10:55.060 --> 00:10:56.120
+Utilize muito isso.
+
+00:10:56.300 --> 00:10:56.860
+Daí eu aconselho.
+
+00:10:56.940 --> 00:10:57.880
+Você vai fazer a assinatura.
+
+00:10:58.080 --> 00:10:59.140
+E aqui você vai botar o token.
+
+00:11:00.040 --> 00:11:00.960
+Mas eu também tenho.
+
+00:11:01.260 --> 00:11:01.840
+Uma aula.
+
+00:11:01.920 --> 00:11:02.520
+Eu ensino.
+
+00:11:02.640 --> 00:11:03.200
+A mexer nele.
+
+00:11:03.800 --> 00:11:04.460
+Então aqui.
+
+00:11:04.980 --> 00:11:05.520
+Eu só.
+
+00:11:05.580 --> 00:11:06.280
+Simplesmente aqui ó.
+
+00:11:06.360 --> 00:11:07.420
+Eu tenho outro plugin aqui.
+
+00:11:07.460 --> 00:11:08.300
+Que conta as palavras.
+
+00:11:08.460 --> 00:11:08.760
+Para mim.
+
+00:11:09.700 --> 00:11:10.740
+Que é esse aqui ó.
+
+00:11:11.900 --> 00:11:12.300
+Count.
+
+00:11:12.520 --> 00:11:13.480
+Deixa eu ver aqui ó.
+
+00:11:13.640 --> 00:11:14.680
+Não oficiais.
+
+00:11:17.700 --> 00:11:18.500
+Custom data.
+
+00:11:23.060 --> 00:11:23.860
+Deixa eu lembrar.
+
+00:11:23.940 --> 00:11:24.340
+Não me lembro.
+
+00:11:24.420 --> 00:11:25.120
+Qual que é esse plugin.
+
+00:11:25.280 --> 00:11:26.200
+Que conta as notas.
+
+00:11:26.200 --> 00:11:26.560
+Para mim.
+
+00:11:27.100 --> 00:11:27.940
+Read in time.
+
+00:11:28.160 --> 00:11:28.360
+É.
+
+00:11:28.380 --> 00:11:29.320
+Eu acho bem legal esse aqui.
+
+00:11:29.500 --> 00:11:30.520
+Eu aconselho já vocês lá.
+
+00:11:30.980 --> 00:11:31.700
+Recent files.
+
+00:11:32.080 --> 00:11:32.880
+Smart connections.
+
+00:11:33.060 --> 00:11:33.520
+Super simple.
+
+00:11:33.620 --> 00:11:33.940
+Template.
+
+00:11:34.420 --> 00:11:34.800
+Textulator.
+
+00:11:36.900 --> 00:11:37.660
+Advanced slides.
+
+00:11:37.760 --> 00:11:38.380
+Advanced tables.
+
+00:11:38.540 --> 00:11:38.820
+Aqui ó.
+
+00:11:38.880 --> 00:11:40.160
+Better word count.
+
+00:11:40.480 --> 00:11:41.440
+É esse plugin aqui.
+
+00:11:41.620 --> 00:11:42.940
+Better word count.
+
+00:11:43.540 --> 00:11:44.580
+O que que esse plugin faz.
+
+00:11:44.740 --> 00:11:46.000
+Ele mostra para mim aqui ó.
+
+00:11:46.260 --> 00:11:48.140
+O número de palavras que eu selecionei.
+
+00:11:48.200 --> 00:11:50.100
+E o número de caracteres que eu
+selecionei.
+
+00:11:50.140 --> 00:11:51.200
+Por que que isso é importante Alan?
+
+00:11:51.300 --> 00:11:52.620
+Porque quando tu for selecionar aqui.
+
+00:11:53.100 --> 00:11:53.480
+Ó.
+
+00:11:53.600 --> 00:11:54.120
+Tá ali ó.
+
+00:11:54.480 --> 00:11:55.640
+Você pode traduzir até.
+
+00:11:55.880 --> 00:11:56.540
+Dois mil caracteres.
+
+00:11:56.560 --> 00:11:57.420
+Por vezes.
+
+00:11:57.520 --> 00:11:57.820
+Quer ver.
+
+00:11:57.860 --> 00:11:58.720
+Eu vou passar de dois mil.
+
+00:11:58.940 --> 00:11:59.280
+Ó.
+
+00:11:59.280 --> 00:12:00.500
+Vou passar um de dois mil.
+
+00:12:01.320 --> 00:12:01.680
+Cadê.
+
+00:12:02.320 --> 00:12:02.800
+Aqui ó.
+
+00:12:03.060 --> 00:12:03.880
+Dois mil e vinte e três.
+
+00:12:04.920 --> 00:12:06.440
+Se eu apertar comand shift r.
+
+00:12:06.500 --> 00:12:07.600
+Que é o que eu botei aqui ó.
+
+00:12:07.980 --> 00:12:09.480
+Excedeu o número máximo de caracteres.
+
+00:12:09.560 --> 00:12:10.240
+Então eu vou ter que.
+
+00:12:11.340 --> 00:12:11.920
+Selecionar menos.
+
+00:12:12.120 --> 00:12:12.220
+Ó.
+
+00:12:12.360 --> 00:12:13.320
+Selecionei dois mil e dezoito.
+
+00:12:13.960 --> 00:12:14.320
+Agora.
+
+00:12:14.540 --> 00:12:15.440
+Eu aperto aqui.
+
+00:12:16.100 --> 00:12:16.460
+Vê.
+
+00:12:16.500 --> 00:12:17.740
+Ele tá dizendo que eu excedi também.
+
+00:12:24.660 --> 00:12:25.140
+Agora foi.
+
+00:12:25.380 --> 00:12:26.060
+Ele traduz.
+
+00:12:26.460 --> 00:12:26.820
+Então.
+
+00:12:27.180 --> 00:12:28.300
+Agora tá traduzido.
+
+00:12:29.420 --> 00:12:30.180
+Olá a todos.
+
+00:12:30.240 --> 00:12:31.440
+Bem vindos de volta ao meu canal.
+
+00:12:31.500 --> 00:12:31.900
+Eu sou o Vick.
+
+00:12:32.020 --> 00:12:32.380
+Obrigado.
+
+00:12:32.380 --> 00:12:32.720
+Para quem não sabe.
+
+00:12:32.720 --> 00:12:33.280
+Aqueles que tem.
+
+00:12:33.900 --> 00:12:34.260
+Participado.
+
+00:12:34.340 --> 00:12:34.540
+De repente.
+
+00:12:34.560 --> 00:12:35.080
+Da enquete.
+
+00:12:35.220 --> 00:12:36.100
+Se você é novo aqui.
+
+00:12:36.200 --> 00:12:37.100
+Compartilha estruturas.
+
+00:12:37.140 --> 00:12:37.600
+De modelos.
+
+00:12:37.600 --> 00:12:37.940
+Ventais.
+
+00:12:37.940 --> 00:12:38.180
+E claro.
+
+00:12:38.240 --> 00:12:38.560
+Pensamento.
+
+00:12:39.160 --> 00:12:39.880
+O que acontece.
+
+00:12:40.260 --> 00:12:40.620
+Tipo.
+
+00:12:40.740 --> 00:12:41.180
+O que.
+
+00:12:41.500 --> 00:12:42.600
+Eu não gosto muito.
+
+00:12:42.680 --> 00:12:43.420
+Do download helper.
+
+00:12:43.760 --> 00:12:44.280
+Eu gosto sim.
+
+00:12:44.720 --> 00:12:45.900
+Se não tem outra opção.
+
+00:12:46.080 --> 00:12:46.580
+Usa ele.
+
+00:12:46.620 --> 00:12:47.160
+Que ele é muito rápido.
+
+00:12:47.300 --> 00:12:48.040
+Só vai clicar aqui.
+
+00:12:48.160 --> 00:12:48.820
+Porque ele vai baixar.
+
+00:12:48.840 --> 00:12:49.940
+A tradução direto.
+
+00:12:50.000 --> 00:12:50.460
+Do Google.
+
+00:12:51.040 --> 00:12:52.020
+Só que tem uma ferramenta.
+
+00:12:52.080 --> 00:12:52.880
+Bem melhor para isso.
+
+00:12:53.160 --> 00:12:54.220
+Que eu vou mostrar para vocês.
+
+00:12:54.340 --> 00:12:54.760
+Que é a seguinte.
+
+00:12:56.040 --> 00:12:56.720
+Essa aqui ó.
+
+00:12:57.280 --> 00:12:58.160
+Então essa aqui.
+
+00:12:58.720 --> 00:12:59.280
+Que é.
+
+00:13:02.720 --> 00:13:03.440
+O download.
+
+00:13:03.440 --> 00:13:03.700
+Se você.
+
+00:13:03.980 --> 00:13:04.740
+Fazer o download.
+
+00:13:04.880 --> 00:13:05.560
+Do áudio.
+
+00:13:05.980 --> 00:13:06.600
+Por exemplo.
+
+00:13:06.600 --> 00:13:06.800
+Assim.
+
+00:13:06.880 --> 00:13:07.500
+Não precisa necessariamente.
+
+00:13:07.540 --> 00:13:07.940
+Ser um vídeo.
+
+00:13:08.140 --> 00:13:08.720
+Pode ser.
+
+00:13:08.800 --> 00:13:09.140
+O download.
+
+00:13:09.280 --> 00:13:09.760
+De um áudio.
+
+00:13:09.820 --> 00:13:10.180
+Por exemplo.
+
+00:13:10.180 --> 00:13:10.940
+De uma reunião.
+
+00:13:11.960 --> 00:13:12.620
+Via zoom.
+
+00:13:12.980 --> 00:13:13.660
+Pode ser.
+
+00:13:13.740 --> 00:13:14.320
+O download.
+
+00:13:14.480 --> 00:13:14.980
+Do vídeo.
+
+00:13:15.180 --> 00:13:16.040
+Se for uma plataforma.
+
+00:13:16.300 --> 00:13:16.960
+Que você não consegue.
+
+00:13:17.300 --> 00:13:17.960
+Pegar o link.
+
+00:13:18.440 --> 00:13:18.840
+Dele.
+
+00:13:18.900 --> 00:13:19.440
+Alguma coisa assim.
+
+00:13:20.180 --> 00:13:20.580
+Então.
+
+00:13:20.620 --> 00:13:21.360
+Você pode fazer o upload.
+
+00:13:21.540 --> 00:13:22.160
+Dos outros vídeos.
+
+00:13:22.220 --> 00:13:22.480
+Aqui.
+
+00:13:23.180 --> 00:13:23.960
+Daí você vem aqui.
+
+00:13:24.280 --> 00:13:24.680
+Coloca.
+
+00:13:24.880 --> 00:13:25.280
+Transcrever.
+
+00:13:32.720 --> 00:13:32.880
+Os tópicos.
+
+00:13:32.960 --> 00:13:33.400
+Mas assim.
+
+00:13:33.440 --> 00:13:34.480
+Não gostei muito deles.
+
+00:13:34.880 --> 00:13:35.620
+Esse sentimento.
+
+00:13:35.740 --> 00:13:36.280
+Análise de sentimento.
+
+00:13:36.320 --> 00:13:36.560
+Também.
+
+00:13:36.560 --> 00:13:37.000
+Eu achei interessante.
+
+00:13:37.220 --> 00:13:37.540
+Mas também.
+
+00:13:37.660 --> 00:13:38.380
+Nada demais.
+
+00:13:38.580 --> 00:13:38.720
+Assim.
+
+00:13:38.760 --> 00:13:38.960
+Então.
+
+00:13:39.340 --> 00:13:40.460
+Eu boto só aqui.
+
+00:13:40.740 --> 00:13:41.160
+Ele.
+
+00:13:41.220 --> 00:13:41.820
+Que que ele vai.
+
+00:13:42.100 --> 00:13:42.520
+Demorar.
+
+00:13:42.640 --> 00:13:42.800
+Né.
+
+00:13:42.840 --> 00:13:43.700
+Ele vai demorar.
+
+00:13:43.980 --> 00:13:45.300
+De 15 a 30%.
+
+00:13:45.300 --> 00:13:45.880
+Do tempo.
+
+00:13:46.000 --> 00:13:46.420
+Da duração.
+
+00:13:46.460 --> 00:13:46.920
+Do vídeo.
+
+00:13:47.540 --> 00:13:47.960
+Então.
+
+00:13:48.000 --> 00:13:48.720
+Se o vídeo.
+
+00:13:48.860 --> 00:13:49.620
+Tem aqui ó.
+
+00:13:50.720 --> 00:13:51.560
+14 minutos.
+
+00:13:52.540 --> 00:13:53.460
+Ele vai durar.
+
+00:13:53.520 --> 00:13:54.220
+De 15.
+
+00:13:54.300 --> 00:13:55.000
+De 15%.
+
+00:13:55.000 --> 00:13:56.100
+A 30 % disso.
+
+00:13:56.100 --> 00:13:56.180
+Aqui.
+
+00:13:56.800 --> 00:13:57.200
+10%.
+
+00:13:57.200 --> 00:13:57.620
+Ruim.
+
+00:13:57.700 --> 00:13:58.440
+Funciona na minha cabeça.
+
+00:13:58.500 --> 00:13:59.380
+10 % vai ser.
+
+00:14:00.460 --> 00:14:01.460
+1 minuto e.
+
+00:14:02.300 --> 00:14:02.700
+40.
+
+00:14:03.400 --> 00:14:03.800
+Então.
+
+00:14:03.840 --> 00:14:04.320
+Vai ser.
+
+00:14:04.480 --> 00:14:05.180
+Pelo menos.
+
+00:14:05.200 --> 00:14:06.080
+De 2 minutos.
+
+00:14:06.320 --> 00:14:06.560
+Assim.
+
+00:14:06.600 --> 00:14:07.420
+2 minutos e meio.
+
+00:14:08.100 --> 00:14:08.780
+Até uns.
+
+00:14:09.760 --> 00:14:10.560
+6 minutos.
+
+00:14:10.700 --> 00:14:11.140
+Por aí.
+
+00:14:11.180 --> 00:14:11.700
+No máximo.
+
+00:14:11.840 --> 00:14:12.000
+Mas.
+
+00:14:12.020 --> 00:14:12.420
+Normalmente.
+
+00:14:12.420 --> 00:14:12.920
+É bem rápido.
+
+00:14:13.120 --> 00:14:13.540
+Vai ser.
+
+00:14:13.600 --> 00:14:14.200
+1 minuto e pouquinho.
+
+00:14:14.380 --> 00:14:14.580
+Aqui.
+
+00:14:14.700 --> 00:14:14.940
+Ó.
+
+00:14:14.940 --> 00:14:15.220
+Já foi.
+
+00:14:16.200 --> 00:14:16.600
+E.
+
+00:14:17.400 --> 00:14:18.020
+Tá aqui.
+
+00:14:18.080 --> 00:14:18.300
+Agora.
+
+00:14:18.440 --> 00:14:18.980
+O que que acontece.
+
+00:14:18.980 --> 00:14:19.940
+Aqui ele separa.
+
+00:14:20.000 --> 00:14:20.140
+Tá vendo.
+
+00:14:20.180 --> 00:14:20.560
+Olha a diferença.
+
+00:14:21.820 --> 00:14:22.400
+Hey everyone.
+
+00:14:22.540 --> 00:14:23.820
+Welcome back to my channel.
+
+00:14:23.900 --> 00:14:24.280
+I am Vicky.
+
+00:14:24.820 --> 00:14:25.520
+Hey everyone.
+
+00:14:25.700 --> 00:14:26.040
+Welcome.
+
+00:14:26.180 --> 00:14:26.200
+Ó.
+
+00:14:26.420 --> 00:14:26.780
+Ponto.
+
+00:14:26.840 --> 00:14:28.040
+Welcome back to my channel.
+
+00:14:28.200 --> 00:14:28.700
+I am Vicky.
+
+00:14:28.920 --> 00:14:30.100
+And thank you for.
+
+00:14:30.220 --> 00:14:31.560
+To all of those.
+
+00:14:31.700 --> 00:14:31.960
+Who.
+
+00:14:32.200 --> 00:14:33.220
+Has participated.
+
+00:14:33.380 --> 00:14:34.060
+In the pool.
+
+00:14:34.340 --> 00:14:34.880
+Olha só.
+
+00:14:34.980 --> 00:14:35.740
+Como é melhor.
+
+00:14:36.360 --> 00:14:36.900
+Hey everyone.
+
+00:14:37.080 --> 00:14:38.180
+Welcome back to my channel.
+
+00:14:38.400 --> 00:14:39.620
+And thank you for all.
+
+00:14:39.760 --> 00:14:41.720
+A tradução.
+
+00:14:42.080 --> 00:14:42.480
+É que.
+
+00:14:42.580 --> 00:14:43.000
+É que tá boa.
+
+00:14:43.080 --> 00:14:43.540
+Mas tipo assim.
+
+00:14:43.620 --> 00:14:43.860
+Aqui.
+
+00:14:44.080 --> 00:14:45.080
+Eu tenho toda a separação.
+
+00:14:45.540 --> 00:14:45.900
+Organizadinha.
+
+00:14:45.900 --> 00:14:46.580
+Bonitinha.
+
+00:14:46.860 --> 00:14:47.220
+Então.
+
+00:14:47.300 --> 00:14:47.940
+Fica muito melhor.
+
+00:14:48.020 --> 00:14:48.300
+Inclusive.
+
+00:14:48.360 --> 00:14:49.180
+De depois traduzir.
+
+00:14:49.240 --> 00:14:49.380
+Então.
+
+00:14:49.440 --> 00:14:49.660
+Aqui.
+
+00:14:49.720 --> 00:14:50.380
+Eu copio.
+
+00:14:52.260 --> 00:14:52.920
+E colo.
+
+00:14:52.980 --> 00:14:53.160
+Então.
+
+00:14:53.240 --> 00:14:54.020
+Quando eu vou fazer.
+
+00:14:54.180 --> 00:14:54.460
+Assim.
+
+00:14:54.480 --> 00:14:55.420
+Uma captura de um vídeo inteiro.
+
+00:14:55.560 --> 00:14:56.120
+É isso que eu faço.
+
+00:14:56.200 --> 00:14:57.060
+Eu jogo no assembly AI.
+
+00:14:57.760 --> 00:14:58.120
+Pego.
+
+00:14:58.300 --> 00:14:58.660
+Copio.
+
+00:14:58.740 --> 00:14:59.720
+E eu vou jogar aqui agora.
+
+00:15:02.840 --> 00:15:03.360
+Lá embaixo.
+
+00:15:04.160 --> 00:15:04.520
+Ó.
+
+00:15:05.840 --> 00:15:06.200
+Transcript.
+
+00:15:13.980 --> 00:15:14.340
+Então.
+
+00:15:14.440 --> 00:15:14.800
+Agora.
+
+00:15:14.840 --> 00:15:15.580
+Eu traduzo aqui.
+
+00:15:15.840 --> 00:15:16.180
+Então.
+
+00:15:16.220 --> 00:15:17.400
+Eu vou dividir a tela.
+
+00:15:17.480 --> 00:15:17.760
+Aqui ó.
+
+00:15:20.000 --> 00:15:20.620
+Dividir tela.
+
+00:15:21.400 --> 00:15:22.340
+Para a direita.
+
+00:15:22.760 --> 00:15:23.560
+Tem um atalho.
+
+00:15:23.680 --> 00:15:24.240
+Que eu tinha criado para isso.
+
+00:15:24.280 --> 00:15:24.700
+Mas eu esqueci.
+
+00:15:24.700 --> 00:15:25.220
+Qual que é o atalho.
+
+00:15:25.760 --> 00:15:26.080
+Então.
+
+00:15:26.120 --> 00:15:26.780
+Aqui eu vou mostrar.
+
+00:15:26.800 --> 00:15:27.420
+A diferença.
+
+00:15:27.640 --> 00:15:28.260
+Vou botar aqui no meio.
+
+00:15:28.340 --> 00:15:28.500
+De novo.
+
+00:15:28.600 --> 00:15:28.980
+Para poder.
+
+00:15:29.800 --> 00:15:30.480
+Comparar os dois.
+
+00:15:32.980 --> 00:15:33.780
+E vamos lá.
+
+00:15:33.840 --> 00:15:34.560
+Para o outro.
+
+00:15:34.740 --> 00:15:34.900
+Ah.
+
+00:15:34.920 --> 00:15:35.140
+Inclusive.
+
+00:15:35.160 --> 00:15:36.100
+Se eu tivesse botado.
+
+00:15:36.160 --> 00:15:36.420
+Assim.
+
+00:15:37.620 --> 00:15:38.500
+Vou fazer o seguinte.
+
+00:15:39.120 --> 00:15:39.880
+Se eu boto.
+
+00:15:41.020 --> 00:15:41.340
+Aqui.
+
+00:15:41.460 --> 00:15:41.700
+Como.
+
+00:15:42.080 --> 00:15:42.400
+Um.
+
+00:15:43.500 --> 00:15:43.820
+Título.
+
+00:15:45.140 --> 00:15:45.460
+Né.
+
+00:15:45.520 --> 00:15:45.980
+Eu consigo.
+
+00:15:46.220 --> 00:15:47.320
+Até fazer isso aqui ó.
+
+00:15:48.740 --> 00:15:49.060
+Reduzir.
+
+00:15:49.800 --> 00:15:50.120
+Só.
+
+00:15:50.160 --> 00:15:51.160
+Como o outro ainda não é título.
+
+00:15:51.260 --> 00:15:51.820
+Se eu tivesse título.
+
+00:15:54.220 --> 00:15:54.580
+Então.
+
+00:15:54.740 --> 00:15:55.320
+Vou botar agora.
+
+00:15:55.360 --> 00:15:56.180
+Título no outro também.
+
+00:15:56.300 --> 00:15:56.760
+Aqui ó.
+
+00:15:57.540 --> 00:15:57.900
+Ó.
+
+00:15:57.920 --> 00:15:58.700
+Bem mais bonitinho.
+
+00:15:59.080 --> 00:15:59.440
+Organizadinho.
+
+00:16:03.090 --> 00:16:03.450
+Aqui.
+
+00:16:06.640 --> 00:16:07.000
+Beleza.
+
+00:16:07.100 --> 00:16:07.460
+Então.
+
+00:16:07.500 --> 00:16:08.300
+Agora vamos comparar eles.
+
+00:16:09.120 --> 00:16:09.460
+Ah.
+
+00:16:10.140 --> 00:16:10.500
+Então.
+
+00:16:11.900 --> 00:16:12.260
+Aqui.
+
+00:16:12.440 --> 00:16:13.000
+Você vê.
+
+00:16:13.060 --> 00:16:14.240
+Que tem a formatação certa.
+
+00:16:14.920 --> 00:16:15.640
+Vírgula certo.
+
+00:16:15.920 --> 00:16:16.180
+Ponto.
+
+00:16:16.280 --> 00:16:16.540
+Então.
+
+00:16:16.600 --> 00:16:16.720
+Assim.
+
+00:16:16.740 --> 00:16:17.720
+Se você for traduzir daqui.
+
+00:16:17.880 --> 00:16:18.120
+Por exemplo.
+
+00:16:18.200 --> 00:16:18.740
+Agora vamos.
+
+00:16:19.100 --> 00:16:19.460
+Eu.
+
+00:16:19.500 --> 00:16:19.800
+O que eu gosto.
+
+00:16:19.880 --> 00:16:20.000
+É assim.
+
+00:16:20.080 --> 00:16:21.460
+Eu deixar a transcrição em inglês.
+
+00:16:21.560 --> 00:16:22.360
+E depois fazer a tradução.
+
+00:16:22.900 --> 00:16:23.380
+Mas vamos.
+
+00:16:23.740 --> 00:16:24.060
+Traduzir.
+
+00:16:24.240 --> 00:16:24.540
+Só.
+
+00:16:24.540 --> 00:16:25.400
+Como exemplo mesmo.
+
+00:16:26.000 --> 00:16:26.640
+Um pedaço.
+
+00:16:27.840 --> 00:16:28.160
+Ó.
+
+00:16:28.240 --> 00:16:29.040
+Vou traduzir aqui.
+
+00:16:29.780 --> 00:16:30.100
+Ó.
+
+00:16:30.120 --> 00:16:30.920
+Fica tudo quebrado.
+
+00:16:30.920 --> 00:16:32.100
+Você vai ter que ficar organizando.
+
+00:16:32.160 --> 00:16:32.500
+Aqui não.
+
+00:16:32.640 --> 00:16:32.740
+Ó.
+
+00:16:32.800 --> 00:16:33.540
+Aqui eu venho aqui.
+
+00:16:33.720 --> 00:16:34.040
+Traduzo.
+
+00:16:34.060 --> 00:16:34.240
+Por exemplo.
+
+00:16:34.280 --> 00:16:34.800
+Só essa parte.
+
+00:16:35.700 --> 00:16:36.620
+Como estipe de R.
+
+00:16:37.080 --> 00:16:37.400
+Bom.
+
+00:16:37.580 --> 00:16:37.900
+Traduzir.
+
+00:16:37.900 --> 00:16:38.420
+Vocês veem que é.
+
+00:16:38.500 --> 00:16:39.200
+Traduz na hora.
+
+00:16:39.540 --> 00:16:39.860
+Instantâneo.
+
+00:16:40.020 --> 00:16:40.600
+Ei pessoal.
+
+00:16:40.660 --> 00:16:41.880
+Bem vindo de volta ao meu canal.
+
+00:16:41.980 --> 00:16:42.500
+Eu sou o Vick.
+
+00:16:42.580 --> 00:16:43.880
+Obrigado a todos que participaram da
+enquete.
+
+00:16:44.620 --> 00:16:45.780
+Como ele está quebrado aqui.
+
+00:16:45.860 --> 00:16:46.620
+Ele nem consegue entender.
+
+00:16:46.880 --> 00:16:47.120
+Sabe.
+
+00:16:47.120 --> 00:16:47.260
+Olha.
+
+00:16:47.620 --> 00:16:48.020
+Olá.
+
+00:16:48.180 --> 00:16:49.520
+Todos bem vindos de volta ao meu canal.
+
+00:16:49.580 --> 00:16:49.980
+Eu sou o Vick.
+
+00:16:49.980 --> 00:16:51.060
+Obrigado a todos aqueles que.
+
+00:16:51.460 --> 00:16:51.860
+Participou.
+
+00:16:51.880 --> 00:16:52.380
+Na enquete.
+
+00:16:52.580 --> 00:16:53.620
+E se você é novo aqui.
+
+00:16:53.720 --> 00:16:54.700
+Eu compartilhar.
+
+00:16:55.280 --> 00:16:55.860
+Olha só.
+
+00:16:55.920 --> 00:16:56.680
+E se você é novo aqui.
+
+00:16:56.780 --> 00:16:58.180
+Eu compartilho estruturas.
+
+00:16:58.180 --> 00:16:59.020
+De modelos mentais.
+
+00:16:59.020 --> 00:16:59.940
+Sobre pensamento claro.
+
+00:17:00.020 --> 00:17:00.680
+Comunicação clara.
+
+00:17:00.720 --> 00:17:01.220
+Então hoje.
+
+00:17:01.500 --> 00:17:02.960
+Como vocês me disseram.
+
+00:17:02.980 --> 00:17:03.700
+Vamos falar sobre.
+
+00:17:04.000 --> 00:17:04.400
+Perfeito.
+
+00:17:04.780 --> 00:17:05.380
+Então hoje.
+
+00:17:05.460 --> 00:17:06.300
+Como vocês me disseram.
+
+00:17:06.320 --> 00:17:06.640
+Que somos.
+
+00:17:06.960 --> 00:17:07.520
+Olha que somos.
+
+00:17:07.840 --> 00:17:08.700
+Vai falar sobre.
+
+00:17:08.920 --> 00:17:09.640
+Porque ele não pega.
+
+00:17:09.760 --> 00:17:10.760
+Como está separado por.
+
+00:17:11.260 --> 00:17:11.660
+Ah.
+
+00:17:13.800 --> 00:17:14.600
+Por frases.
+
+00:17:14.680 --> 00:17:14.880
+Né.
+
+00:17:14.880 --> 00:17:15.480
+Por.
+
+00:17:16.320 --> 00:17:16.680
+Quebrando.
+
+00:17:16.780 --> 00:17:17.540
+Ele não consegue pegar.
+
+00:17:17.620 --> 00:17:18.360
+A contextualização.
+
+00:17:18.620 --> 00:17:19.240
+Com as vírgulas.
+
+00:17:19.300 --> 00:17:19.740
+Com os pontos.
+
+00:17:20.160 --> 00:17:20.520
+Então.
+
+00:17:20.580 --> 00:17:21.440
+Vou até fazer o seguinte.
+
+00:17:22.300 --> 00:17:22.460
+Ah.
+
+00:17:22.860 --> 00:17:24.200
+Eu vou deletar cem por cento.
+
+00:17:24.200 --> 00:17:24.480
+Esse aqui.
+
+00:17:24.620 --> 00:17:24.860
+Tipo.
+
+00:17:25.020 --> 00:17:26.140
+Eu nem conselho vocês.
+
+00:17:26.240 --> 00:17:26.420
+Eu.
+
+00:17:26.440 --> 00:17:27.520
+Eu utilizo de vez em quando ele.
+
+00:17:27.580 --> 00:17:28.660
+Para poder pegar algumas coisas.
+
+00:17:28.880 --> 00:17:29.900
+Mandar para alguma informação.
+
+00:17:30.620 --> 00:17:31.720
+Mas deu para notar.
+
+00:17:31.740 --> 00:17:31.940
+Já.
+
+00:17:32.000 --> 00:17:32.980
+Que é terrível.
+
+00:17:33.080 --> 00:17:33.500
+Tipo assim.
+
+00:17:34.220 --> 00:17:34.580
+Ah.
+
+00:17:35.440 --> 00:17:36.260
+Não vale a pena.
+
+00:17:36.420 --> 00:17:36.680
+Então.
+
+00:17:36.760 --> 00:17:37.300
+Aconselho vocês.
+
+00:17:37.380 --> 00:17:38.600
+A ficar só com acendo mesmo.
+
+00:17:38.940 --> 00:17:39.920
+Foi boa essa comparação.
+
+00:17:39.960 --> 00:17:40.800
+Para a gente poder ver isso.
+
+00:17:41.440 --> 00:17:42.540
+Vamos ficar só com acendo.
+
+00:17:42.940 --> 00:17:43.300
+Ah.
+
+00:17:44.880 --> 00:17:45.000
+Então.
+
+00:17:45.000 --> 00:17:45.440
+Vamos fazer o caso agora.
+
+00:17:45.680 --> 00:17:45.700
+Né.
+
+00:17:45.700 --> 00:17:46.920
+Eu quero deixar uma tradução.
+
+00:17:47.100 --> 00:17:47.820
+E um inglês.
+
+00:17:47.880 --> 00:17:48.140
+Então.
+
+00:17:48.520 --> 00:17:49.060
+Bota aqui.
+
+00:17:49.100 --> 00:17:49.340
+En.
+
+00:17:51.840 --> 00:17:52.720
+Vou selecionar agora.
+
+00:17:52.840 --> 00:17:53.400
+O que eu quero deixar.
+
+00:17:53.460 --> 00:17:54.200
+Voltar para o inglês.
+
+00:17:54.440 --> 00:17:54.960
+E dou.
+
+00:17:55.040 --> 00:17:55.800
+Como shift R.
+
+00:17:55.960 --> 00:17:56.320
+Pronto.
+
+00:17:56.380 --> 00:17:56.940
+Voltou para o inglês.
+
+00:17:57.140 --> 00:17:57.360
+Então.
+
+00:17:57.560 --> 00:17:57.920
+Ah.
+
+00:17:57.940 --> 00:17:58.060
+Não.
+
+00:17:58.060 --> 00:17:59.020
+Eu quero traduzir para italiano.
+
+00:17:59.640 --> 00:18:00.000
+Então.
+
+00:18:00.040 --> 00:18:00.460
+Só bota.
+
+00:18:00.600 --> 00:18:00.960
+En.
+
+00:18:01.400 --> 00:18:01.760
+It.
+
+00:18:02.120 --> 00:18:02.480
+It.
+
+00:18:02.680 --> 00:18:02.940
+It.
+
+00:18:03.940 --> 00:18:04.760
+Bota It aqui.
+
+00:18:05.980 --> 00:18:06.520
+Vem aqui.
+
+00:18:07.020 --> 00:18:07.380
+Seleciona.
+
+00:18:07.900 --> 00:18:08.600
+E aperta.
+
+00:18:08.600 --> 00:18:09.160
+Como shift R.
+
+00:18:16.480 --> 00:18:17.860
+Vou pegar só um pedaço aqui.
+
+00:18:17.920 --> 00:18:18.400
+Não vou pegar tudo.
+
+00:18:18.620 --> 00:18:19.940
+Só para mostrar para vocês isso.
+
+00:18:20.320 --> 00:18:21.440
+Porque daí vocês vão entender.
+
+00:18:22.180 --> 00:18:24.080
+E aí vocês podem já aplicar.
+
+00:18:24.180 --> 00:18:24.540
+Então.
+
+00:18:24.560 --> 00:18:25.340
+Aqui vai ser a tradução.
+
+00:18:31.480 --> 00:18:33.180
+Eu não vou mostrar como linkar isso.
+
+00:18:33.320 --> 00:18:33.860
+Porque a gente vai.
+
+00:18:33.860 --> 00:18:34.060
+Isso.
+
+00:18:34.100 --> 00:18:34.600
+É isso aqui.
+
+00:18:34.660 --> 00:18:36.120
+Assim como o livro.
+
+00:18:36.280 --> 00:18:37.120
+A gente vai linkar.
+
+00:18:37.200 --> 00:18:38.940
+Na aula de conexões de ideias.
+
+00:18:39.420 --> 00:18:39.780
+Aqui.
+
+00:18:39.860 --> 00:18:41.400
+Eu estou mostrando só como capturar.
+
+00:18:41.900 --> 00:18:42.800
+Segundo série para vocês.
+
+00:18:43.560 --> 00:18:43.920
+Então.
+
+00:18:44.000 --> 00:18:44.620
+Como shift R.
+
+00:18:44.700 --> 00:18:44.860
+Aqui.
+
+00:18:45.380 --> 00:18:45.740
+Traduzir.
+
+00:18:45.780 --> 00:18:46.720
+Eu gosto de manter os dois.
+
+00:18:46.760 --> 00:18:47.700
+Até para poder comparar.
+
+00:18:47.700 --> 00:18:48.280
+Às vezes a tradução.
+
+00:18:48.380 --> 00:18:48.840
+Se ficou boa.
+
+00:18:48.920 --> 00:18:49.240
+Se não ficou.
+
+00:18:49.760 --> 00:18:50.120
+Ah.
+
+00:18:50.120 --> 00:18:51.020
+Mas eu nem sei inglês.
+
+00:18:51.020 --> 00:18:51.580
+Se eu puder comparar.
+
+00:18:51.580 --> 00:18:51.740
+Então.
+
+00:18:51.900 --> 00:18:52.300
+Só traduz.
+
+00:18:52.460 --> 00:18:53.860
+Não precisa criar as duas versões.
+
+00:18:54.160 --> 00:18:54.480
+Então.
+
+00:18:54.800 --> 00:18:55.720
+Essa é uma das formas.
+
+00:18:55.800 --> 00:18:56.560
+De captura de vídeo.
+
+00:18:56.700 --> 00:18:56.940
+Ah.
+
+00:18:57.020 --> 00:18:57.940
+Não tem outras formas.
+
+00:18:58.040 --> 00:18:58.260
+Tem.
+
+00:18:58.520 --> 00:18:59.280
+Eu por exemplo.
+
+00:18:59.380 --> 00:19:00.000
+Integrei aqui.
+
+00:19:00.520 --> 00:19:00.920
+Com.
+
+00:19:01.140 --> 00:19:01.800
+O YouTube.
+
+00:19:02.200 --> 00:19:02.800
+O meu.
+
+00:19:03.740 --> 00:19:04.140
+Obsidian.
+
+00:19:04.360 --> 00:19:04.760
+Basicamente.
+
+00:19:04.760 --> 00:19:05.940
+Eu fiz um custom frame aqui.
+
+00:19:06.320 --> 00:19:06.720
+Então.
+
+00:19:06.760 --> 00:19:07.060
+Se.
+
+00:19:07.200 --> 00:19:08.060
+Eu estou aqui.
+
+00:19:08.140 --> 00:19:08.880
+Quero estudar.
+
+00:19:08.920 --> 00:19:09.120
+Por exemplo.
+
+00:19:09.120 --> 00:19:09.660
+Tem gente oficial.
+
+00:19:10.160 --> 00:19:11.180
+Aqui tem várias coisas.
+
+00:19:11.360 --> 00:19:11.440
+Olha.
+
+00:19:11.460 --> 00:19:12.740
+O Code Interpreter.
+
+00:19:13.100 --> 00:19:14.480
+Eu quero estudar sobre ele.
+
+00:19:14.880 --> 00:19:16.020
+Eu boto aqui o vídeo.
+
+00:19:16.240 --> 00:19:16.660
+E às vezes.
+
+00:19:16.680 --> 00:19:17.620
+Eu vou fazendo anotações.
+
+00:19:21.580 --> 00:19:21.620
+Aí.
+
+00:19:21.940 --> 00:19:22.760
+Boto aqui o vídeo.
+
+00:19:22.880 --> 00:19:23.340
+Vai falando.
+
+00:19:23.820 --> 00:19:25.140
+E eu vou olhando.
+
+00:19:25.140 --> 00:19:25.660
+O que está acontecendo.
+
+00:19:25.820 --> 00:19:25.940
+Às vezes.
+
+00:19:26.000 --> 00:19:26.520
+Eu tiro um print.
+
+00:19:26.780 --> 00:19:27.140
+Por exemplo.
+
+00:19:27.140 --> 00:19:27.360
+Aqui.
+
+00:19:27.980 --> 00:19:28.560
+Tiro um print.
+
+00:19:29.280 --> 00:19:29.800
+Do vídeo.
+
+00:19:29.920 --> 00:19:30.020
+Ah.
+
+00:19:30.100 --> 00:19:31.040
+Que interessante isso aqui.
+
+00:19:31.200 --> 00:19:32.040
+Já tiro um print.
+
+00:19:32.620 --> 00:19:33.440
+E já jogo.
+
+00:19:33.620 --> 00:19:33.940
+Aqui.
+
+00:19:34.000 --> 00:19:34.400
+Por exemplo.
+
+00:19:34.640 --> 00:19:35.680
+E escrevo sobre ele.
+
+00:19:36.300 --> 00:19:37.600
+O que é legal daqui.
+
+00:19:37.800 --> 00:19:38.080
+Porque.
+
+00:19:38.660 --> 00:19:39.280
+Fazer isso aqui.
+
+00:19:39.440 --> 00:19:39.960
+Dentro do Obsidian.
+
+00:19:40.100 --> 00:19:40.480
+Porque daí.
+
+00:19:40.740 --> 00:19:41.580
+Eu não preciso ficar.
+
+00:19:41.680 --> 00:19:41.940
+Imagina.
+
+00:19:41.980 --> 00:19:43.320
+Eu não preciso ficar com duas coisas
+abertas.
+
+00:19:43.520 --> 00:19:44.800
+Por isso que eu gosto de botar tudo
+dentro do Obsidian.
+
+00:19:44.900 --> 00:19:45.320
+Que eu estou usando.
+
+00:19:45.960 --> 00:19:46.280
+Então.
+
+00:19:46.280 --> 00:19:47.080
+Eu vou trabalhar.
+
+00:19:47.280 --> 00:19:48.480
+Eu só abro o meu Obsidian.
+
+00:19:48.620 --> 00:19:49.060
+E deu.
+
+00:19:49.240 --> 00:19:50.900
+Eu não preciso mais ficar abrindo outras
+coisas.
+
+00:19:51.260 --> 00:19:52.300
+É tudo no mesmo lugar.
+
+00:19:52.920 --> 00:19:53.120
+Então.
+
+00:19:53.280 --> 00:19:54.680
+Isso é uma coisa legal de fazer.
+
+00:19:54.940 --> 00:19:55.320
+Eu faço.
+
+00:19:55.780 --> 00:19:56.340
+Direto isso.
+
+00:19:56.520 --> 00:19:56.900
+Eu vou dizer.
+
+00:19:56.980 --> 00:19:57.460
+Que a forma hoje.
+
+00:19:57.540 --> 00:19:58.100
+Que eu mais faço.
+
+00:19:58.740 --> 00:19:59.100
+Resumos.
+
+00:19:59.140 --> 00:20:00.020
+De vídeos.
+
+00:20:00.060 --> 00:20:00.620
+Que eu estou assistindo.
+
+00:20:00.640 --> 00:20:00.920
+É aqui.
+
+00:20:01.020 --> 00:20:01.740
+Eu jogo aqui.
+
+00:20:01.960 --> 00:20:02.220
+Ah.
+
+00:20:02.280 --> 00:20:03.460
+Quero estudar alguma coisa.
+
+00:20:03.820 --> 00:20:04.420
+Jogo aqui.
+
+00:20:04.500 --> 00:20:05.180
+Tiro alguns prints.
+
+00:20:05.540 --> 00:20:06.500
+Vou escrevendo.
+
+00:20:07.000 --> 00:20:07.620
+E beleza.
+
+00:20:08.140 --> 00:20:08.500
+Agora.
+
+00:20:08.540 --> 00:20:09.700
+Só que existe outra forma também.
+
+00:20:09.940 --> 00:20:10.460
+Por exemplo.
+
+00:20:10.460 --> 00:20:10.660
+Aqui.
+
+00:20:10.700 --> 00:20:11.840
+Os dez modelos mentais.
+
+00:20:11.900 --> 00:20:12.020
+Aqui.
+
+00:20:12.080 --> 00:20:12.160
+Eu vou.
+
+00:20:18.170 --> 00:20:18.490
+Fazer.
+
+00:20:18.490 --> 00:20:18.990
+Aqui dentro.
+
+00:20:19.910 --> 00:20:20.790
+Eu poderia fazer.
+
+00:20:20.870 --> 00:20:21.490
+Algumas coisas.
+
+00:20:21.630 --> 00:20:22.710
+Eu poderia selecionar.
+
+00:20:22.710 --> 00:20:23.250
+Todo esse texto.
+
+00:20:23.370 --> 00:20:23.530
+Aqui.
+
+00:20:23.610 --> 00:20:24.670
+E pedir para ele resumir.
+
+00:20:24.690 --> 00:20:24.950
+Para mim.
+
+00:20:25.150 --> 00:20:26.250
+Só que é muita informação.
+
+00:20:26.390 --> 00:20:27.450
+Como eu já mostrei para vocês.
+
+00:20:27.490 --> 00:20:27.830
+No vídeo.
+
+00:20:28.730 --> 00:20:29.430
+Tanta informação.
+
+00:20:29.630 --> 00:20:29.870
+Assim.
+
+00:20:29.930 --> 00:20:30.590
+Ele não vai conseguir.
+
+00:20:30.770 --> 00:20:31.390
+Resumir direito.
+
+00:20:31.910 --> 00:20:32.830
+Você poderia jogar.
+
+00:20:32.950 --> 00:20:33.450
+Esse transcript.
+
+00:20:33.590 --> 00:20:33.950
+Lá.
+
+00:20:33.950 --> 00:20:34.630
+No cheat base.
+
+00:20:34.990 --> 00:20:35.250
+No.
+
+00:20:35.770 --> 00:20:36.130
+Desculpa.
+
+00:20:36.130 --> 00:20:36.550
+No Cloud AI.
+
+00:20:36.790 --> 00:20:37.690
+Ele conseguiria fazer.
+
+00:20:38.570 --> 00:20:39.550
+Mas se você tem.
+
+00:20:39.710 --> 00:20:40.850
+Vou fazer das duas formas.
+
+00:20:40.910 --> 00:20:41.550
+Se você tem chat.
+
+00:20:41.650 --> 00:20:41.910
+Ept.
+
+00:20:42.050 --> 00:20:42.410
+Pago.
+
+00:20:42.770 --> 00:20:43.450
+Existe um plugin.
+
+00:20:48.170 --> 00:20:48.190
+Aqui.
+
+00:20:48.210 --> 00:20:48.870
+É o RL do vídeo.
+
+00:20:49.050 --> 00:20:49.630
+Vou pegar aqui.
+
+00:20:49.670 --> 00:20:50.030
+É o RL.
+
+00:20:50.470 --> 00:20:50.830
+Compartilhar.
+
+00:20:51.230 --> 00:20:51.590
+Copiar.
+
+00:20:53.270 --> 00:20:54.090
+Vou jogar aqui.
+
+00:20:54.110 --> 00:20:54.570
+É o RL do vídeo.
+
+00:20:54.630 --> 00:20:55.350
+Vou pedir para ele.
+
+00:20:55.390 --> 00:20:55.590
+Assim.
+
+00:20:56.630 --> 00:20:56.990
+Resuma.
+
+00:20:57.690 --> 00:20:58.050
+Os.
+
+00:20:58.990 --> 00:20:59.350
+Dez.
+
+00:21:00.470 --> 00:21:00.830
+Modelos.
+
+00:21:01.290 --> 00:21:01.650
+Mentais.
+
+00:21:02.010 --> 00:21:02.370
+Que.
+
+00:21:02.450 --> 00:21:02.810
+Vic.
+
+00:21:03.710 --> 00:21:04.070
+Ensina.
+
+00:21:04.630 --> 00:21:04.990
+Neste.
+
+00:21:05.450 --> 00:21:05.810
+Vídeo.
+
+00:21:06.490 --> 00:21:06.950
+Eu até.
+
+00:21:06.990 --> 00:21:07.710
+Vou ser bonzinho.
+
+00:21:07.770 --> 00:21:07.970
+Aqui.
+
+00:21:08.050 --> 00:21:08.290
+Com.
+
+00:21:08.910 --> 00:21:09.550
+O jpt.
+
+00:21:10.050 --> 00:21:10.370
+Que nem.
+
+00:21:10.450 --> 00:21:10.950
+O André C.
+
+00:21:11.030 --> 00:21:11.390
+Falou.
+
+00:21:11.970 --> 00:21:12.330
+Normalmente.
+
+00:21:12.450 --> 00:21:12.810
+Ele.
+
+00:21:18.170 --> 00:21:18.310
+Os.
+
+00:21:18.390 --> 00:21:18.510
+Dez.
+
+00:21:18.570 --> 00:21:18.890
+Modelos.
+
+00:21:18.890 --> 00:21:19.250
+Mentais.
+
+00:21:19.250 --> 00:21:19.430
+Que.
+
+00:21:19.450 --> 00:21:19.630
+Vic.
+
+00:21:19.630 --> 00:21:19.950
+Ensina.
+
+00:21:19.990 --> 00:21:20.130
+Neste.
+
+00:21:20.310 --> 00:21:20.710
+Vídeo.
+
+00:21:21.630 --> 00:21:22.030
+E.
+
+00:21:22.090 --> 00:21:22.450
+Me.
+
+00:21:22.570 --> 00:21:22.770
+Dê.
+
+00:21:23.750 --> 00:21:24.150
+Me.
+
+00:21:24.250 --> 00:21:24.530
+Dando.
+
+00:21:26.230 --> 00:21:26.630
+Me.
+
+00:21:26.710 --> 00:21:27.110
+Trazendo.
+
+00:21:27.290 --> 00:21:27.610
+É.
+
+00:21:27.710 --> 00:21:27.930
+Me.
+
+00:21:28.510 --> 00:21:28.910
+Trazendo.
+
+00:21:30.110 --> 00:21:30.510
+E.
+
+00:21:30.610 --> 00:21:31.010
+Também.
+
+00:21:31.690 --> 00:21:32.090
+Insira.
+
+00:21:32.290 --> 00:21:32.670
+Um.
+
+00:21:34.990 --> 00:21:35.390
+Exemplo.
+
+00:21:36.010 --> 00:21:36.410
+Prático.
+
+00:21:38.310 --> 00:21:38.710
+E.
+
+00:21:38.850 --> 00:21:39.190
+Uma.
+
+00:21:39.630 --> 00:21:40.030
+Citação.
+
+00:21:41.210 --> 00:21:41.610
+Famosa.
+
+00:21:42.230 --> 00:21:42.630
+Em.
+
+00:21:54.520 --> 00:21:54.780
+Esse.
+
+00:21:54.920 --> 00:21:54.980
+É.
+
+00:21:55.140 --> 00:21:55.280
+Pronto.
+
+00:21:56.520 --> 00:21:56.780
+Muito.
+
+00:21:56.980 --> 00:21:57.240
+Fraquinho.
+
+00:21:57.380 --> 00:21:57.580
+Digamos.
+
+00:21:57.640 --> 00:21:57.880
+Assim.
+
+00:21:57.960 --> 00:21:58.160
+Sabe.
+
+00:21:58.380 --> 00:21:58.640
+Poderia.
+
+00:21:58.680 --> 00:21:58.820
+Ter.
+
+00:21:59.020 --> 00:21:59.280
+Feito.
+
+00:21:59.360 --> 00:21:59.380
+Um.
+
+00:21:59.460 --> 00:21:59.540
+Pronto.
+
+00:21:59.620 --> 00:21:59.880
+Bem.
+
+00:22:00.360 --> 00:22:00.620
+Melhor.
+
+00:22:01.480 --> 00:22:01.740
+Mas.
+
+00:22:02.920 --> 00:22:03.180
+Só.
+
+00:22:03.620 --> 00:22:03.880
+Intuito.
+
+00:22:03.980 --> 00:22:04.100
+Aqui.
+
+00:22:04.200 --> 00:22:04.460
+Realmente.
+
+00:22:04.580 --> 00:22:04.780
+De.
+
+00:22:05.160 --> 00:22:05.420
+Mostrar.
+
+00:22:05.460 --> 00:22:05.560
+Para.
+
+00:22:05.620 --> 00:22:05.760
+Vocês.
+
+00:22:05.820 --> 00:22:05.980
+Como.
+
+00:22:06.260 --> 00:22:06.520
+Funciona.
+
+00:22:06.520 --> 00:22:06.780
+Então.
+
+00:22:07.300 --> 00:22:07.560
+A.
+
+00:22:07.620 --> 00:22:07.860
+Adeia.
+
+00:22:08.200 --> 00:22:08.440
+Realmente.
+
+00:22:09.260 --> 00:22:09.500
+Com.
+
+00:22:09.620 --> 00:22:09.980
+Base em isso.
+
+00:22:10.060 --> 00:22:10.180
+Vocês.
+
+00:22:10.320 --> 00:22:10.560
+Poderiam.
+
+00:22:10.600 --> 00:22:10.740
+Criar.
+
+00:22:10.780 --> 00:22:11.260
+chassis melhores.
+
+00:22:13.040 --> 00:22:13.280
+De.
+
+00:22:13.380 --> 00:22:13.420
+Um.
+
+00:22:13.540 --> 00:22:13.780
+Erro.
+
+00:22:13.860 --> 00:22:14.100
+Vou.
+
+00:22:15.260 --> 00:22:15.500
+Tentar.
+
+00:22:15.540 --> 00:22:15.820
+De novo.
+
+00:22:16.040 --> 00:22:16.440
+Se não.
+
+00:22:16.600 --> 00:22:16.840
+Conseguiu.
+
+00:22:16.880 --> 00:22:17.020
+Se não.
+
+00:22:17.100 --> 00:22:17.240
+Conseguir.
+
+00:22:17.320 --> 00:22:17.380
+Por.
+
+00:22:17.480 --> 00:22:17.700
+Aqui.
+
+00:22:17.880 --> 00:22:18.120
+Eu.
+
+00:22:18.180 --> 00:22:18.200
+Vou.
+
+00:22:18.300 --> 00:22:18.500
+Tentar.
+
+00:22:18.660 --> 00:22:18.900
+Um.
+
+00:22:19.160 --> 00:22:19.400
+Navegador.
+
+00:22:19.540 --> 00:22:19.780
+Nunca.
+
+00:22:19.800 --> 00:22:19.980
+Usei.
+
+00:22:20.060 --> 00:22:20.300
+Plugins.
+
+00:22:20.300 --> 00:22:24.780
+por aqui, através do Obsidian não sei se
+é alguma coisa em relação a isso eu até
+
+00:22:24.780 --> 00:22:32.020
+vou copiar já aqui é a primeira vez que
+eu estou
+
+00:22:32.020 --> 00:22:35.480
+utilizando agora normalmente quando eu
+vou utilizar vamos fazer o seguinte,
+
+00:22:35.540 --> 00:22:40.260
+vamos testar só para desencargo de
+consciência vamos testar
+
+00:22:40.260 --> 00:22:50.800
+aqui plugins cadê ele?
+
+00:22:51.800 --> 00:22:58.940
+video captions, aqui tem esse aqui
+também, mas eu vou
+
+00:22:58.940 --> 00:23:09.130
+testar só o video captions enquanto ele
+está processando
+
+00:23:09.130 --> 00:23:15.630
+aqui eu vou vir aqui no Cloud AI vou
+criar um novo vou copiar todo esse texto
+
+00:23:15.630 --> 00:23:21.750
+aqui em inglês, porque ele aguenta então
+vou copiar o texto todo aqui eu tenho
+
+00:23:21.750 --> 00:23:27.970
+que desativar esse dicionário nossa, é
+tão pequenininho esse texto tradução eu
+
+00:23:27.970 --> 00:23:41.880
+não tinha copiado todo o texto pronto,
+vou colar aqui e vou pedir
+
+00:23:42.600 --> 00:23:48.720
+vou dar o mesmo comando olha, aqui está
+dando erro realmente é no plugin então
+
+00:23:48.720 --> 00:23:55.800
+vou fazer o seguinte vou botar aqui vou
+dar um enter enquanto isso eu venho aqui
+
+00:23:55.800 --> 00:23:58.920
+eu vou pedir para ele fazer isso com
+outro plugin talvez seja um erro no
+
+00:23:58.920 --> 00:24:05.120
+plugin mesmo então vou pegar aqui um
+novo chat venho aqui, plugins vou tirar
+
+00:24:05.120 --> 00:24:12.840
+esse cara aqui e tem outro aqui que eu
+usava que é o video hummm aqui é o video
+
+00:24:12.840 --> 00:24:17.140
+highlights, então eu vou fazer o
+seguinte eu vou na loja vou digitar aqui
+
+00:24:17.600 --> 00:24:26.100
+youtube youtube summary chat with video
+ah não, já está
+
+00:24:26.100 --> 00:24:29.380
+aqui então vou usar esse aqui esse aqui
+eu sei que ele não me deixa tanto na mão
+
+00:24:29.380 --> 00:24:36.940
+assim ah, está aqui então vamos lá vamos
+ver o que o Cloud AI está
+
+00:24:36.940 --> 00:24:43.020
+fazendo já está fazendo aqui para mim
+ele trouxe os 10 aqui está o resumo dos
+
+00:24:43.020 --> 00:24:46.400
+10 modelos mentais do vídeo prático, que
+são famosos para cada um ele vai
+
+00:24:46.400 --> 00:24:51.980
+integrar 80 % e 20 % dos seus esforços
+então aqui está o Cloud AI nunca, nunca
+
+00:24:52.740 --> 00:24:58.080
+deixa na mão estou apaixonado pelo Cloud
+AI eu vou perceber então aqui o resumo
+
+00:24:58.900 --> 00:25:04.480
+está aqui o Cloud AI então isso aqui já
+dá um muitas vezes você vai querer ah eu
+
+00:25:04.480 --> 00:25:09.580
+já assisti esse vídeo só queria pegar as
+informações relevantes que tem nele eu
+
+00:25:09.580 --> 00:25:17.260
+venho aqui e faço isso poupa muito tempo
+então aqui trouxe o resumo do vídeo aqui
+
+00:25:17.260 --> 00:25:23.040
+ele conseguiu vou dizer que ficou até
+talvez melhor só que ele não fez dos 10,
+
+00:25:23.200 --> 00:25:29.040
+ele fez só dos 5 aproximadamente porque
+ele não tem faltou o token para ele
+
+00:25:29.040 --> 00:25:41.580
+então aqui eu gostei mais até do daqui,
+
+00:25:41.580 --> 00:25:44.820
+desculpa parece que estou enfrentando um
+problema técnico ao tentar acessar o
+
+00:25:44.820 --> 00:25:51.820
+conteúdo do vídeo, entanto hum é, ele
+não me trouxe estranho porque, olha só
+
+00:25:52.640 --> 00:25:58.820
+ele trouxe 8020 o 2, teoria de
+restrições não, causa e efeito modelo de
+
+00:25:58.820 --> 00:26:05.600
+pensamento sistêmico navalha de Ockham
+é, ele não conseguiu ler o vídeo e ele
+
+00:26:05.600 --> 00:26:10.080
+está trazendo outros pensamentos, outros
+modelos mentais então esse é um problema
+
+00:26:10.080 --> 00:26:14.680
+que eu estou tendo direto com o chat ele
+está dando erro direto nos plugins erro
+
+00:26:14.680 --> 00:26:19.640
+direto com PDFs então, mas você tem a
+opção agora que é até de graça de usar o
+
+00:26:19.640 --> 00:26:23.420
+Cloud AI para fazer esses resumos, então
+basicamente para esse vídeo é isso, só
+
+00:26:23.420 --> 00:26:27.080
+queria mostrar para vocês a captura, não
+vou mostrar ainda como usar isso e nem
+
+00:26:27.080 --> 00:26:30.140
+como para criar conteúdos, nem como
+conectar, isso vai ficar para os
+
+00:26:30.140 --> 00:26:33.640
+próximos módulos, espero que esse vídeo
+tenha sido proveitoso, agora você sabe
+
+00:26:34.340 --> 00:26:38.040
+basicamente fazer a captura e isso você
+pode aplicar para podcasts, para vídeo
+
+00:26:38.040 --> 00:26:41.980
+aulas, para vídeo de dicas para tudo
+aquilo que você achar que é interessante
+
+00:26:41.980 --> 00:26:46.540
+inclusive vídeos sobre filmes sobre
+tutoriais, sobre dicas de qualquer coisa
+
+00:26:46.540 --> 00:26:49.520
+que você imaginar, porque tudo isso vai
+gerar insumos para o seu segundo cérebro
+
+00:26:49.520 --> 00:26:51.760
+poder trabalhar melhor está ótimo, até o

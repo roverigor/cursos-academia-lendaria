@@ -1,0 +1,1565 @@
+---
+# Curso: Agência IA Express - Currículo Microlearning GPS
+# Version: 2.0-Microlearning-GPS
+# Created: 2025-12-08
+# Instructor: Marcondes (CEO Agência Lendária)
+
+course_metadata:
+  title: "Agência IA Express: Como Vender Soluções High Ticket Sem Construir Chatbots Genéricos"
+  subtitle: "O ÚNICO curso que ensina a VENDER antes de CONSTRUIR"
+  positioning: "Frameworks proprietários (Triple P + PASTOR) + Foco em NEGÓCIO (não técnica) + Credibilidade Real (CEO de agência)"
+
+  duration:
+    total_hours: 6.5
+    total_lessons: 26
+    lesson_duration_minutes: 15
+    weeks: 4
+    pace: "2 horas/semana (8-10 aulas)"
+
+  price:
+    recommended: "R$ 1.497"
+    installments: "12x R$ 147"
+    justification: "Frameworks proprietários + High ticket focus + CEO real de agência + R$8.000 em bônus"
+    guarantee: "30 dias"
+
+  differentiation:
+    ocean_blue: "Validação de Problema (Triple P) + Vendas High Ticket (PASTOR)"
+    competition: "ZERO em validação e vendas estruturadas"
+    focus_split:
+      validation_sales: "58% (15 aulas)"
+      construction: "27% (7 aulas)"
+      ecosystem_positioning: "15% (4 aulas)"
+
+  pedagogical_framework:
+    method: "GPS (Goal-Position-Steps) by Adriano de Marqui"
+    format: "Microlearning (10-15 min por aula)"
+    required_elements:
+      - "Goal: Promessa clara em 60s"
+      - "Position: Empatia e múltiplos caminhos"
+      - "Steps: Conteúdo prático com analogia + visual + perguntas reflexivas"
+      - "Ação imediata: Micro-tarefa de 2 min"
+
+  instructor_voice:
+    name: "Marcondes"
+    signature_phrases:
+      - "Pessoal, vamos lá"
+      - "Perfeito?"
+      - "Track record"
+      - "Indústria de gambiarras"
+      - "Cadeira estratégica"
+      - "Não é só um chatbot camuflado de inovação"
+    tone: "Direto, prático, conversacional mas profissional"
+    frameworks:
+      - "Triple P (Pain, Pocket, Priority)"
+      - "PASTOR (Problema, Amplificação, Solução, Transformação, Objeção, Resultado)"
+
+# ==============================================================================
+# MÓDULO 1: VALIDAÇÃO DE PROBLEMAS (Triple P Framework)
+# ==============================================================================
+
+modules:
+  - module_number: 1
+    title: "Validação de Problemas: O Framework Triple P"
+    tagline: "Não construa o que ninguém quer comprar"
+    duration_minutes: 105  # 7 aulas x 15 min
+    lesson_count: 7
+    percentage_of_course: "27%"
+
+    learning_outcomes:
+      - "Identificar problemas rentáveis usando Triple P (Pain, Pocket, Priority)"
+      - "Validar SE vale a pena construir (antes de perder meses)"
+      - "Reconhecer sinais de dor genuína vs. dor superficial"
+      - "Calcular custo da inação (quanto o cliente perde por não resolver)"
+
+    differentiation_notes: |
+      GAP CRÍTICO: Nenhum competidor ensina validação estruturada.
+      Framework Triple P é 100% proprietário do Marcondes.
+
+    lessons:
+
+      # -------------------------------------------------------------------------
+      # Aula 1.1: Introdução ao Triple P
+      # -------------------------------------------------------------------------
+      - lesson_id: "1.1"
+        title: "Por Que 90% das Agências de IA Falham (Não é Técnica)"
+        duration_minutes: 12
+        lesson_type: "conceptual"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai entender por que a maioria das agências de IA não escala - e não tem nada a ver com código."
+            outcomes:
+              - "Identificar o erro fatal (construir ANTES de validar)"
+              - "Conhecer o Framework Triple P (visão geral)"
+              - "Entender a diferença entre problema técnico e problema rentável"
+            motivation: "Isso vai economizar 3 meses de trabalho perdido construindo soluções que ninguém quer comprar."
+
+          position:
+            empathy: "Talvez você esteja pensando: 'Marcondes, eu preciso aprender N8N/Make logo, sem tempo pra teoria'. Eu entendo - a tentação é pular direto pro código. Mas escuta: eu perdi 4 meses num projeto que virou elefante branco. Esse framework nasceu dessa dor."
+            starting_points:
+              - "Se você NUNCA criou agência: perfeito, vai começar certo"
+              - "Se você JÁ TEM clientes: vai entender por que alguns projetos travam"
+
+          steps:
+            - step_number: 1
+              title: "O Erro Fatal: Construir Antes de Validar"
+              analogy: "É como construir uma casa sem saber se tem alguém querendo morar lá. Você gasta 6 meses, R$ 50 mil, e descobre que ninguém quer."
+              visual: "[DIAGRAMA: Fluxo ERRADO (Ideia → Construir → Tentar vender ❌) vs. Fluxo CERTO (Ideia → Validar → Vender → Construir ✅)]"
+              content: |
+                Maioria dos cursos ensina:
+                1. Aprenda N8N
+                2. Construa agente de SDR
+                3. Agora tenta vender
+
+                Problema: Você passa 3 meses construindo algo genérico que 100 agências já oferecem por R$ 500.
+
+                O que deveria ser:
+                1. Encontre DOR específica (Triple P)
+                2. Valide que alguém pagaria R$ 10k+
+                3. Venda a solução (proposta)
+                4. AÍ SIM constrói
+
+              reflective_questions:
+                - "Você já construiu algo que achou incrível mas não conseguiu vender?"
+                - "Quanto tempo você perdeu desenvolvendo antes de validar com cliente real?"
+
+            - step_number: 2
+              title: "Triple P: A Bússola de Validação"
+              visual: "[DIAGRAMA: Triângulo com P-P-P nos vértices: PAIN (Dor), POCKET (Bolso), PRIORITY (Prioridade)]"
+              content: |
+                Triple P = Filtro de 3 perguntas:
+
+                **P1 - PAIN (Dor):**
+                "Esse problema dói de verdade ou é só incômodo?"
+                → Se não dói R$ 10k, não vale R$ 10k
+
+                **P2 - POCKET (Bolso):**
+                "Eles TÊM dinheiro pra resolver?"
+                → Dor sem budget = hobby, não negócio
+
+                **P3 - PRIORITY (Prioridade):**
+                "Isso tá no TOP 3 de urgência deles?"
+                → Se for prioridade #8, vai pro backlog eterno
+
+                Se QUALQUER P = NÃO → Não construa.
+
+              reflective_questions:
+                - "Qual problema você quer resolver? Ele passa no Triple P?"
+
+        deliverables:
+          - "Checklist Mental: 'Antes de construir, valido Triple P'"
+
+        immediate_action:
+          task: "Pense num problema que VOCÊ tem no seu trabalho. Responda: (1) Dói quanto? (2) Você pagaria R$ 5k pra resolver? (3) Tá no TOP 3 de urgência?"
+          validation:
+            - "Você tem 3 respostas honestas (sim/não)"
+            - "Se algum P = NÃO, você entendeu por que não vale construir"
+
+        next_lesson_teaser: "Na próxima aula: Como identificar se a DOR é genuína ou só reclamação de boteco."
+
+      # -------------------------------------------------------------------------
+      # Aula 1.2: Pain - Sinais de Dor Genuína
+      # -------------------------------------------------------------------------
+      - lesson_id: "1.2"
+        title: "Pain: Como Saber Se a Dor É Real (Indústria de Gambiarras)"
+        duration_minutes: 15
+        lesson_type: "conceptual + hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber diferenciar dor genuína (que paga R$ 10k+) de reclamação superficial (que não fecha)."
+            outcomes:
+              - "Identificar 'indústria de gambiarras' como validação"
+              - "Reconhecer 3 sinais de dor genuína"
+              - "Calcular custo da inação"
+            motivation: "Isso vai te poupar de perder tempo com prospects que 'acham interessante' mas nunca fecham."
+
+          position:
+            empathy: "Talvez você já ouviu: 'Nossa, que legal! Vamos conversar...' e nunca mais voltaram. Eu também. O problema não é você - é que a DOR não era real."
+            starting_points:
+              - "Se você tem medo de perder tempo: exato, é pra isso que serve"
+              - "Se você quer filtrar leads rápido: vai aprender aqui"
+
+          steps:
+            - step_number: 1
+              title: "Indústria de Gambiarras: O Sinal Mais Confiável"
+              analogy: "Dor genuína é como sede no deserto. Você não 'acha interessante' beber água - você FAZ QUALQUER COISA pra conseguir."
+              visual: "[FOTO: Planilha Excel com 50 abas, fórmulas quebradas, colorido manual = INDÚSTRIA DE GAMBIARRAS]"
+              content: |
+                **Indústria de Gambiarras = Prova de dor genuína**
+
+                Se eles JÁ tentaram resolver de 5 formas diferentes (e todas são gambiarras), a dor é REAL.
+
+                Exemplos:
+                - Imobiliária: WhatsApp com 30 grupos, Google Sheets sincronizado manualmente
+                - Jurídico: Estagiário copiando dados de e-mail pro sistema (8h/dia)
+                - Clínica: Recepcionista confirmando consultas no papel e depois digitando
+
+                Pergunta matadora:
+                "Como vocês resolvem isso HOJE?"
+
+                Se a resposta for uma gambiarra complexa → DOR GENUÍNA ✅
+                Se for "ah, nem fazemos isso" → Dor superficial ❌
+
+              reflective_questions:
+                - "Qual gambiarra VOCÊ usa no dia a dia que gostaria de automatizar?"
+                - "Se você vê gambiarra no cliente, o que isso revela sobre a dor?"
+
+            - step_number: 2
+              title: "Custo da Inação: Quanto Eles PERDEM?"
+              visual: "[DIAGRAMA: Timeline - Dia 1: R$ 500 perdido | Mês 1: R$ 10.000 | Ano 1: R$ 120.000]"
+              content: |
+                Dor genuína = custo MENSURÁVEL de não resolver
+
+                Como calcular:
+                1. Tempo perdido por dia (em horas)
+                2. Custo/hora da pessoa (salário ÷ 160h)
+                3. Multiplicar por 30 dias
+
+                Exemplo (Clínica):
+                - Recepcionista: 2h/dia confirmando consultas
+                - Salário: R$ 3.000/mês = R$ 18,75/hora
+                - Custo/dia: 2h × R$ 18,75 = R$ 37,50
+                - Custo/mês: R$ 37,50 × 22 dias = R$ 825
+                - Custo/ano: R$ 9.900
+
+                + No-shows evitados (20% das consultas) = R$ 800/mês de receita recuperada
+
+                **Total: R$ 1.625/mês de impacto**
+
+                Agora você justifica R$ 5.000 de projeto + R$ 500/mês de manutenção.
+
+              reflective_questions:
+                - "Qual o custo da inação no problema que você quer resolver?"
+
+        deliverables:
+          - "Calculadora de Custo da Inação (template)"
+          - "Checklist de Sinais de Dor Genuína"
+
+        immediate_action:
+          task: "Escolha 1 problema real. Calcule: Quanto tempo perdido/dia? Qual o custo/hora? Quanto = 1 mês de inação?"
+          validation:
+            - "Você tem um número (ex: R$ 1.200/mês de desperdício)"
+            - "Esse número justifica seu preço de solução?"
+
+        next_lesson_teaser: "Próxima aula: Pocket - Como saber se eles TÊM dinheiro (não adianta dor sem budget)."
+
+      # -------------------------------------------------------------------------
+      # Aula 1.3: Pocket - Capacidade de Pagamento
+      # -------------------------------------------------------------------------
+      - lesson_id: "1.3"
+        title: "Pocket: Cadeira Estratégica vs. Operacional (Quem Tem Budget)"
+        duration_minutes: 15
+        lesson_type: "strategy"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber identificar quem TEM dinheiro pra pagar R$ 5k-50k (e parar de perder tempo com quem não tem)."
+            outcomes:
+              - "Diferenciar Cadeira Estratégica (paga) vs. Cadeira Operacional (não paga)"
+              - "Encontrar decisores com budget"
+              - "Qualificar prospect por capacidade financeira"
+            motivation: "Você vai parar de fazer propostas de R$ 20k pra analista que ganha R$ 4k (e não tem poder de decisão)."
+
+          position:
+            empathy: "Você já deve ter feito proposta linda, apresentação perfeita, e no fim o cara falou 'vou levar pro meu gestor'. E sumiu. O problema: você vendeu pra cadeira ERRADA."
+            starting_points:
+              - "Se você quer economizar tempo: aprenda a qualificar antes de propor"
+              - "Se você quer high ticket: precisa falar com quem decide budget"
+
+          steps:
+            - step_number: 1
+              title: "Cadeira Estratégica vs. Operacional"
+              analogy: "Cadeira Operacional vê IA como CONCORRENTE (vai me substituir). Cadeira Estratégica vê como ESCALA (vou vender mais sem contratar 10 pessoas)."
+              visual: "[DIAGRAMA: Pirâmide organizacional - Topo (CEO, Diretor) = ESTRATÉGICA ✅ | Meio (Coordenador, Supervisor) = ZONA CINZA ⚠️ | Base (Analista, Assistente) = OPERACIONAL ❌]"
+              content: |
+                **Cadeira Operacional (NÃO venda aqui):**
+                - Analista, Assistente, Estagiário
+                - Não decide budget
+                - Vê IA como ameaça ao emprego
+                - Vai sabotar ou adiar
+
+                **Cadeira Estratégica (VENDA aqui):**
+                - CEO, Diretor, Sócio, Dono
+                - Decide budget de 5 cifras
+                - Vê IA como multiplicador de resultado
+                - Quer ROI, não quer "ferramenta legal"
+
+                Pergunta matadora:
+                "Quem decide investimentos de tecnologia acima de R$ 10k na empresa?"
+
+                Se não for a pessoa na reunião → Não gaste tempo.
+
+              reflective_questions:
+                - "Você já vendeu pra quem não decidia? O que aconteceu?"
+                - "Como você vai garantir que fala direto com cadeira estratégica?"
+
+            - step_number: 2
+              title: "Como Encontrar Cadeira Estratégica"
+              visual: "[CHECKLIST: LinkedIn → Cargo (CEO, Diretor, Sócio) | Empresa → Faturamento (acima de R$ 500k/ano) | Setor → Nichos rentáveis (imobiliário, jurídico, clínicas)]"
+              content: |
+                **Onde estão:**
+                - LinkedIn: Buscar "CEO", "Diretor Comercial", "Sócio"
+                - Eventos de negócios (não eventos de IA/tech)
+                - Indicações de clientes atuais
+
+                **Como qualificar:**
+                1. Empresa fatura R$ 500k/ano ou mais? (senão não tem budget)
+                2. Tem equipe de 5+ pessoas? (senão problema é pequeno)
+                3. Já investiu em tecnologia antes? (senão vai ter fricção cultural)
+
+                **Red flags (fuja):**
+                - "Preciso aprovar com sócio/contador/TI" (não decide)
+                - "Nosso budget é apertado" (não tem pocket)
+                - "Vamos começar pequeno pra testar" (não vê valor)
+
+              reflective_questions:
+                - "Qual nicho você conhece onde decisores têm R$ 10k+ de budget?"
+
+        deliverables:
+          - "Matriz de Qualificação: Cadeira + Budget + Urgência"
+
+        immediate_action:
+          task: "Pesquisa LinkedIn: Encontre 3 CEOs/Diretores do nicho que você escolheu. Veja se empresa tem 5+ funcionários e fatura estimado acima de R$ 500k/ano."
+          validation:
+            - "Você tem 3 nomes de decisores reais"
+            - "Todos são cadeira estratégica (não operacional)"
+
+        next_lesson_teaser: "Próxima: Priority - Por que problemas urgentes fecham, e 'gostaria de ter' não."
+
+      # -------------------------------------------------------------------------
+      # Aula 1.4: Priority - Urgência do Problema
+      # -------------------------------------------------------------------------
+      - lesson_id: "1.4"
+        title: "Priority: TOP 3 ou Backlog Eterno (O Que Fecha vs. O Que Engaveta)"
+        duration_minutes: 12
+        lesson_type: "strategy"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber identificar se o problema tá no TOP 3 de urgência do cliente (e fecha) ou se é só 'algum dia talvez' (e vai pro backlog eterno)."
+            outcomes:
+              - "Identificar sinais de urgência real"
+              - "Qualificar timing de compra"
+              - "Evitar prospects que 'acham legal mas não é prioridade agora'"
+
+          position:
+            empathy: "Você já deve ter feito proposta que o cliente adorou, disse 'vamos fazer', mas nunca saiu do papel. Não é você - é que não era TOP 3 de prioridade."
+
+          steps:
+            - step_number: 1
+              title: "TOP 3 vs. Backlog"
+              analogy: "Problema TOP 3 é como vazamento no teto. Você resolve AGORA. Backlog é 'seria legal pintar a sala' - fica pra 2027."
+              visual: "[DIAGRAMA: Lista de prioridades - TOP 3 (🔥 Urgente) = Fecha em 30 dias | Prioridade 4-10 (⏳ Importante) = Fecha em 6+ meses | Backlog (💭 Interessante) = Nunca fecha]"
+              content: |
+                **Pergunta matadora:**
+                "Dos 10 projetos que você tem na mesa, onde isso se encaixa em ordem de urgência?"
+
+                Se responder "TOP 3" → Vai fechar em 30-60 dias ✅
+                Se responder "TOP 5-10" → Vai adiar 6+ meses ⚠️
+                Se responder "É importante mas não urgente" → Backlog eterno ❌
+
+                **Sinais de urgência real:**
+                - Já alocou budget este trimestre
+                - Já conversou com outras agências (tá comprando, não pesquisando)
+                - Tem deadline externo (lei, auditoria, perda de cliente)
+                - CEO/Diretor tá cobrando solução
+
+              reflective_questions:
+                - "Como você vai filtrar prospects que 'acham legal' mas não vão fechar?"
+
+        deliverables:
+          - "Script de Qualificação: Perguntas de Urgência"
+
+        immediate_action:
+          task: "Pense num problema que você quer resolver pra alguém. Pergunte: 'De 1 a 10, qual a urgência disso pra você HOJE?' Se for <8, não é prioridade."
+
+        next_lesson_teaser: "Próxima: Como fazer entrevistas de descoberta que revelam Triple P em 20 minutos."
+
+      # -------------------------------------------------------------------------
+      # Aula 1.5: Entrevista de Descoberta
+      # -------------------------------------------------------------------------
+      - lesson_id: "1.5"
+        title: "Entrevista de Descoberta: As 7 Perguntas que Revelam Triple P"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai ter um script de 7 perguntas que revela se o problema passa no Triple P - em 20 minutos de conversa."
+            outcomes:
+              - "Fazer entrevista de descoberta (não pitch)"
+              - "Extrair Pain, Pocket, Priority sem ser invasivo"
+              - "Qualificar ou desqualificar rápido"
+
+          position:
+            empathy: "Talvez você não saiba o que perguntar numa primeira conversa. Ou tem medo de parecer interrogatório. Relaxa - essas perguntas fluem natural numa conversa."
+
+          steps:
+            - step_number: 1
+              title: "As 7 Perguntas do Triple P"
+              visual: "[SCRIPT: Pergunta → O que revela → Resposta ideal]"
+              content: |
+                **Pergunta 1 (Pain - Situação Atual):**
+                "Como vocês resolvem [problema] HOJE?"
+                → Revela gambiarras e custo da inação
+                → Resposta ideal: Processo manual complexo
+
+                **Pergunta 2 (Pain - Impacto):**
+                "Quanto tempo/dinheiro isso consome por mês?"
+                → Revela custo mensurável
+                → Resposta ideal: Número específico (ex: "10h/semana")
+
+                **Pergunta 3 (Pain - Consequência):**
+                "O que acontece se não resolver?"
+                → Revela gravidade
+                → Resposta ideal: Perda de cliente, multa, gargalo de crescimento
+
+                **Pergunta 4 (Priority - Timing):**
+                "Dos projetos na sua mesa, onde isso se encaixa em urgência?"
+                → Revela prioridade
+                → Resposta ideal: "TOP 3"
+
+                **Pergunta 5 (Pocket - Budget):**
+                "Vocês já alocaram budget pra resolver isso?"
+                → Revela se tem dinheiro
+                → Resposta ideal: "Sim, entre R$ X e Y"
+
+                **Pergunta 6 (Pocket - Decisão):**
+                "Quem decide investimentos de tecnologia acima de R$ 10k?"
+                → Revela se você tá falando com decisor
+                → Resposta ideal: "Eu decido" ou "Eu e meu sócio"
+
+                **Pergunta 7 (Priority - Alternativas):**
+                "Já conversaram com outras empresas/soluções?"
+                → Revela se tá comprando ou só pesquisando
+                → Resposta ideal: "Sim, já orçamos com 2 agências"
+
+              reflective_questions:
+                - "Qual dessas perguntas você NUNCA fez e deveria ter feito?"
+
+        deliverables:
+          - "Script de Entrevista de Descoberta (template editável)"
+
+        immediate_action:
+          task: "Grave (áudio ou escrito) você fazendo essas 7 perguntas pra alguém sobre um problema real. Analise se conseguiu extrair Pain, Pocket, Priority."
+          validation:
+            - "Você tem respostas pras 7 perguntas"
+            - "Você sabe se o problema passa ou não no Triple P"
+
+        next_lesson_teaser: "Próxima: Proximidade com dor - por que resolver seu PRÓPRIO problema primeiro é a jogada mais inteligente."
+
+      # -------------------------------------------------------------------------
+      # Aula 1.6: Proximidade com Dor
+      # -------------------------------------------------------------------------
+      - lesson_id: "1.6"
+        title: "Proximidade com Dor: Por Que Resolver Seu Problema PRIMEIRO"
+        duration_minutes: 12
+        lesson_type: "strategy"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai entender por que resolver um problema que VOCÊ tem é a forma mais rápida de validar, construir track record e vender."
+            outcomes:
+              - "Entender conceito de proximidade com dor"
+              - "Mapear problemas do seu contexto"
+              - "Planejar progressão: dor própria → cliente próximo → nicho → escala"
+
+          position:
+            empathy: "Talvez você esteja pensando: 'Mas Marcondes, eu quero resolver problema de OUTROS, não meu'. Entendo. Mas escuta: seu primeiro cliente mais fácil é você mesmo."
+
+          steps:
+            - step_number: 1
+              title: "Progressão de Proximidade"
+              analogy: "É como aprender a nadar. Você não pula direto no mar aberto. Começa na piscina rasa (você), depois piscina funda (amigos), depois mar (nicho), depois oceano (escala)."
+              visual: "[DIAGRAMA: Escada - Degrau 1: Seu problema | Degrau 2: Problema de amigo/colega | Degrau 3: Problema do nicho que você conhece | Degrau 4: Escala pra outros nichos]"
+              content: |
+                **Degrau 1: Resolva SEU problema**
+                - Você conhece a dor profundamente
+                - Validação = você mesmo usa
+                - Track record = "Eu criei isso pra MIM, funcionou, agora vendo"
+
+                **Degrau 2: Resolva problema de AMIGO/COLEGA**
+                - Acesso fácil (não precisa prospecção fria)
+                - Feedback honesto
+                - Primeiro case de sucesso
+
+                **Degrau 3: Nicho que VOCÊ conhece**
+                - Ex: Se você trabalhou em imobiliária, sabe as dores
+                - Credibilidade instantânea ("Eu trabalhei nisso 5 anos")
+                - Fala a língua do cliente
+
+                **Degrau 4: Escala pra outros nichos**
+                - Agora sim você tem track record
+                - Frameworks validados
+                - Pode atacar nichos que não conhece
+
+              reflective_questions:
+                - "Qual problema VOCÊ tem no dia a dia que poderia resolver com IA?"
+                - "Quem você conhece que tem o mesmo problema e confiaria em você?"
+
+        deliverables:
+          - "Mapa de Proximidade: Problemas que você conhece de perto"
+
+        immediate_action:
+          task: "Liste 3 problemas: (1) Um que VOCÊ tem, (2) Um que seu amigo/colega tem, (3) Um do nicho que você conhece."
+          validation:
+            - "Você tem 3 problemas listados"
+            - "Pelo menos 1 passa no Triple P"
+
+        next_lesson_teaser: "Próxima (última do módulo): Quando NÃO construir - 5 red flags que salvam meses de trabalho perdido."
+
+      # -------------------------------------------------------------------------
+      # Aula 1.7: Quando NÃO Construir
+      # -------------------------------------------------------------------------
+      - lesson_id: "1.7"
+        title: "Quando NÃO Construir: 5 Red Flags que Salvam Meses de Trabalho"
+        duration_minutes: 12
+        lesson_type: "conceptual"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber quando RECUSAR um projeto - e isso vai te poupar de pesadelos de escopo infinito, cliente difícil e faturamento zero."
+            outcomes:
+              - "Identificar 5 red flags de projetos ruins"
+              - "Ter coragem de dizer 'não' (e por quê)"
+              - "Focar energia nos projetos certos"
+
+          position:
+            empathy: "Você já deve ter aceitado projeto 'só pra faturar' e se arrependeu. Eu também. Aprendi que dizer NÃO é mais lucrativo que dizer SIM errado."
+
+          steps:
+            - step_number: 1
+              title: "Os 5 Red Flags Mortais"
+              visual: "[CHECKLIST: 🚩 Red Flag → Por que é ruim → O que fazer]"
+              content: |
+                **🚩 Red Flag 1: "Vamos começar pequeno pra testar"**
+                - Tradução: "Não vejo valor suficiente"
+                - Resultado: Projeto de R$ 500 que consome 40h
+                - O que fazer: Recuse ou exija R$ 5k mínimo
+
+                **🚩 Red Flag 2: "Preciso aprovar com [sócio/contador/TI]"**
+                - Tradução: "Não sou decisor"
+                - Resultado: Vai pro backlog eterno
+                - O que fazer: Peça reunião com decisor ou desqualifique
+
+                **🚩 Red Flag 3: "Nosso budget é R$ 2k mas podemos conversar"**
+                - Tradução: "Vamos negociar até você baixar o preço"
+                - Resultado: Você aceita R$ 1k e se arrepende
+                - O que fazer: "Entendo. Quando tiverem R$ 10k, me chamem"
+
+                **🚩 Red Flag 4: "Queremos TUDO: SDR + CS + vendas + análise..."**
+                - Tradução: Scope creep garantido
+                - Resultado: Projeto de 20 dias vira 4 meses
+                - O que fazer: Quebre em fases. Fase 1 = MVP de 1 funcionalidade
+
+                **🚩 Red Flag 5: Cliente operacional (analista/coordenador)**
+                - Tradução: Vai sabotar (medo de perder emprego)
+                - Resultado: "Não funcionou" mesmo funcionando
+                - O que fazer: Só trabalhe com cadeira estratégica
+
+              reflective_questions:
+                - "Qual red flag você já ignorou e se arrependeu?"
+                - "Como você vai ter coragem de dizer NÃO na próxima?"
+
+        deliverables:
+          - "Checklist de Red Flags (imprimir e consultar antes de aceitar projeto)"
+          - "Script de Recusa Educada"
+
+        immediate_action:
+          task: "Pense num projeto atual ou passado. Ele tinha algum red flag? O que você deveria ter feito diferente?"
+          validation:
+            - "Você identificou pelo menos 1 red flag"
+            - "Você sabe o que faria diferente"
+
+        module_conclusion:
+          key_takeaways:
+            - "Triple P (Pain, Pocket, Priority) é o filtro que separa oportunidade real de perda de tempo"
+            - "Problema rentável = dor genuína + cliente com dinheiro + urgência TOP 3"
+            - "Resolver problemas próximos (seus ou de nicho que conhece) é a jogada mais inteligente"
+            - "Dizer NÃO pra projeto ruim é mais lucrativo que dizer SIM errado"
+
+          transformation:
+            before: "Você achava que precisava aprender técnica primeiro, depois pensar em cliente"
+            after: "Agora você sabe que VALIDAR problema vem ANTES de escrever 1 linha de código - e isso te diferencia de 90% das agências"
+
+        next_module_teaser: "Módulo 2: Agora que você sabe VALIDAR, vamos aprender a VENDER soluções de R$ 5k-50k usando o Framework PASTOR."
+
+# ==============================================================================
+# MÓDULO 2: VENDAS HIGH TICKET (Framework PASTOR)
+# ==============================================================================
+
+  - module_number: 2
+    title: "Vendas High Ticket: O Framework PASTOR"
+    tagline: "Como vender R$ 5k-50k (não R$ 500)"
+    duration_minutes: 135  # 9 aulas x 15 min
+    lesson_count: 9
+    percentage_of_course: "35%"
+
+    learning_outcomes:
+      - "Aplicar Framework PASTOR (Problema, Amplificação, Solução, Transformação, Objeção, Resultado)"
+      - "Vender para Cadeira Estratégica (CEOs, diretores)"
+      - "Precificar por VALOR (não por horas)"
+      - "Quebrar objeções específicas de IA"
+      - "Fazer demos que vendem (não que impressionam)"
+
+    differentiation_notes: |
+      GAP CRÍTICO: Nenhum competidor ensina vendas high ticket estruturadas.
+      Framework PASTOR é proprietário e testado em vendas reais de R$ 20k-50k.
+
+    lessons:
+
+      # -------------------------------------------------------------------------
+      # Aula 2.1: Introdução ao PASTOR
+      # -------------------------------------------------------------------------
+      - lesson_id: "2.1"
+        title: "PASTOR: O Framework de Vendas High Ticket (Visão Geral)"
+        duration_minutes: 12
+        lesson_type: "conceptual"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai conhecer o Framework PASTOR - a estrutura de 6 passos que fecha vendas de R$ 5k-50k."
+            outcomes:
+              - "Entender os 6 passos: Problema, Amplificação, Solução, Transformação, Objeção, Resultado"
+              - "Ver como PASTOR diferencia de pitch genérico"
+            motivation: "Esse framework é o que me permitiu vender projetos de R$ 35k quando outros vendiam por R$ 2k."
+
+          position:
+            empathy: "Talvez você nunca vendeu nada acima de R$ 5k. Ou tentou e travou nas objeções. PASTOR é o mapa que destrava isso."
+
+          steps:
+            - step_number: 1
+              title: "Os 6 Passos do PASTOR"
+              analogy: "PASTOR é como GPS de vendas. Você sabe exatamente onde está, pra onde vai, e qual o próximo passo."
+              visual: "[DIAGRAMA: Funil PASTOR - P (Problema) → A (Amplificação) → S (Solução) → T (Transformação) → O (Objeção) → R (Resultado/Fechamento)]"
+              content: |
+                **P - PROBLEMA:**
+                Identifique a dor específica (usamos Triple P aqui)
+
+                **A - AMPLIFICAÇÃO:**
+                Mostre o custo de NÃO resolver (urgência)
+
+                **S - SOLUÇÃO:**
+                Apresente o ecossistema (não chatbot)
+
+                **T - TRANSFORMAÇÃO:**
+                Pinte o "depois" (resultado, não features)
+
+                **O - OBJEÇÃO:**
+                Antecipe e quebre objeções antes de surgirem
+
+                **R - RESULTADO:**
+                Feche com próximo passo claro (não "vamos pensar")
+
+              reflective_questions:
+                - "Qual passo você normalmente pula nas suas vendas?"
+
+        deliverables:
+          - "Mapa Visual do PASTOR (1 página)"
+
+        immediate_action:
+          task: "Pense numa venda que você tentou e não fechou. Qual passo do PASTOR estava faltando?"
+
+        next_lesson_teaser: "Próxima: P de Problema - Como apresentar o problema de forma que o cliente SINTA a dor."
+
+      # -------------------------------------------------------------------------
+      # Aula 2.2: P - Problema
+      # -------------------------------------------------------------------------
+      - lesson_id: "2.2"
+        title: "P de Problema: Fazer o Cliente SENTIR a Dor (Não Só Mencionar)"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber apresentar o problema de forma que o cliente diga 'é EXATAMENTE isso que eu tô passando'."
+            outcomes:
+              - "Usar linguagem do cliente (não jargão técnico)"
+              - "Contar história de dor (não listar features)"
+              - "Validar que entendeu o problema antes de pular pra solução"
+
+          position:
+            empathy: "Você já deve ter feito reunião onde apresentou solução incrível e o cliente ficou 'meh'. Problema: você não conectou com a DOR primeiro."
+
+          steps:
+            - step_number: 1
+              title: "A Fórmula do Problema"
+              analogy: "É como médico diagnosticando. Antes de prescrever remédio, ele descreve os SINTOMAS que você tá sentindo. Você diz 'SIM, é isso!'."
+              visual: "[SCRIPT: 'Você me disse que [situação atual]. Isso gera [consequência 1] e [consequência 2], correto?']"
+              content: |
+                **Estrutura:**
+                1. Situação atual (gambiarra/processo manual)
+                2. Consequência #1 (tempo perdido)
+                3. Consequência #2 (dinheiro perdido)
+                4. Consequência #3 (oportunidade perdida)
+                5. Validação: "Tô no caminho certo?"
+
+                **Exemplo (Imobiliária):**
+                "Vocês me disseram que hoje os corretores fazem follow-up manual via WhatsApp, correto?
+
+                Isso gera 2 problemas:
+                1. 30% dos leads esfriam porque demoram pra responder
+                2. Corretores gastam 2h/dia copiando info de WhatsApp pro CRM
+
+                E o pior: vocês perdem pelo menos 5 vendas/mês porque lead ficou sem resposta rápida.
+
+                Tô entendendo certo?"
+
+                → Cliente diz: "EXATAMENTE!"
+                → Agora você tem permissão pra apresentar solução
+
+              reflective_questions:
+                - "Como você descreveria o problema do cliente usando as palavras DELE?"
+
+        deliverables:
+          - "Template: Fórmula do Problema"
+
+        immediate_action:
+          task: "Escreva a descrição do problema de 1 cliente (real ou hipotético) usando a fórmula: Situação atual + 3 consequências + validação."
+
+        next_lesson_teaser: "Próxima: A de Amplificação - Como criar urgência mostrando o custo de NÃO resolver."
+
+      # -------------------------------------------------------------------------
+      # Aula 2.3: A - Amplificação
+      # -------------------------------------------------------------------------
+      - lesson_id: "2.3"
+        title: "A de Amplificação: Criar Urgência (Custo de Não Resolver AGORA)"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber criar urgência genuína (não pressão de vendedor) mostrando o custo de adiar a solução."
+            outcomes:
+              - "Calcular custo mensal de inação"
+              - "Projetar custo acumulado (6 meses, 1 ano)"
+              - "Apresentar urgência sem ser agressivo"
+
+          steps:
+            - step_number: 1
+              title: "A Matemática da Urgência"
+              analogy: "É como vazamento no encanamento. Cada dia que você adia, a conta de água sobe. Depois de 6 meses, você pagou R$ 5.000 de desperdício."
+              visual: "[TABELA: Mês 1: -R$ 1.625 | Mês 6: -R$ 9.750 | Ano 1: -R$ 19.500 | Vs. Investir R$ 5k HOJE]"
+              content: |
+                **Fórmula:**
+                Custo mensal × 6 meses = Custo de adiar
+
+                **Exemplo (Clínica):**
+                - Custo atual: R$ 1.625/mês (tempo perdido + no-shows)
+                - Custo em 6 meses: R$ 9.750
+                - Custo em 1 ano: R$ 19.500
+
+                **Como apresentar:**
+                "Se vocês resolverem isso HOJE, investem R$ 5.000 uma vez.
+
+                Se adiarem por 6 meses, vão perder R$ 9.750 em desperdício.
+
+                Em 1 ano, são R$ 19.500.
+
+                A conta é simples: cada mês que passa sem solução, vocês perdem R$ 1.625.
+
+                Faz sentido agir agora?"
+
+              reflective_questions:
+                - "Qual o custo de 6 meses de inação no problema que você quer resolver?"
+
+        deliverables:
+          - "Calculadora de Urgência (template)"
+
+        immediate_action:
+          task: "Calcule o custo de 1 ano de inação num problema real. Compare com o preço da solução. Qual é maior?"
+
+        next_lesson_teaser: "Próxima: S de Solução - Como apresentar ecossistema (não chatbot) de forma que o cliente veja o valor."
+
+      # -------------------------------------------------------------------------
+      # Aula 2.4: S - Solução (Ecossistema, não chatbot)
+      # -------------------------------------------------------------------------
+      - lesson_id: "2.4"
+        title: "S de Solução: Ecossistema Completo (Não Chatbot Camuflado)"
+        duration_minutes: 15
+        lesson_type: "conceptual + hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber apresentar a solução como ECOSSISTEMA (agente + dashboard + análises + integrações) - não como chatbot simples."
+            outcomes:
+              - "Estruturar entrega em camadas (agente, dados, insights, automações)"
+              - "Diferenciar solução high ticket de chatbot commodity"
+              - "Mostrar como cada camada agrega valor"
+
+          steps:
+            - step_number: 1
+              title: "As 4 Camadas do Ecossistema"
+              analogy: "Chatbot é como dar peixe. Ecossistema é ensinar a pescar, dar vara, anzol, e mapa dos melhores lugares."
+              visual: "[DIAGRAMA: Pirâmide - Base (Agente conversacional) → Camada 2 (Integrações CRM/WhatsApp) → Camada 3 (Dashboard de métricas) → Topo (Análises e insights)]"
+              content: |
+                **Camada 1: Agente Conversacional**
+                - SDR, CS, Closer (o que todo mundo faz)
+
+                **Camada 2: Integrações**
+                - CRM, WhatsApp, e-mail, calendário
+                - Dados fluem automaticamente
+
+                **Camada 3: Dashboard de Resultados**
+                - Métricas em tempo real
+                - ROI visível (leads gerados, vendas fechadas)
+
+                **Camada 4: Análises e Insights**
+                - Quais objeções mais comuns?
+                - Qual horário converte mais?
+                - Alertas automáticos (lead quente, problema recorrente)
+
+                **Como apresentar:**
+                "Vocês não vão ter só um agente no WhatsApp.
+
+                Vão ter um SISTEMA COMPLETO:
+                - Agente conversa com leads 24/7
+                - Dados vão direto pro CRM (zero digitação)
+                - Dashboard mostra quantos leads viraram vendas
+                - Relatório semanal: quais objeções estão travando, onde melhorar
+
+                Não é chatbot. É ecossistema de vendas."
+
+              reflective_questions:
+                - "Como você transformaria um 'chatbot simples' em ecossistema de 4 camadas?"
+
+        deliverables:
+          - "Template de Proposta: Ecossistema 4 Camadas"
+
+        immediate_action:
+          task: "Escolha 1 caso de uso (ex: SDR pra imobiliária). Descreva as 4 camadas do ecossistema."
+
+        next_lesson_teaser: "Próxima: T de Transformação - Pintar o 'depois' (resultado, não features)."
+
+      # -------------------------------------------------------------------------
+      # Aula 2.5: T - Transformação
+      # -------------------------------------------------------------------------
+      - lesson_id: "2.5"
+        title: "T de Transformação: Pintar o 'Depois' (Resultado, Não Features)"
+        duration_minutes: 12
+        lesson_type: "storytelling"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber pintar a transformação - o 'antes vs. depois' - de forma que o cliente SINTA o resultado (não só entenda)."
+            outcomes:
+              - "Focar em resultado (não em features)"
+              - "Usar storytelling de transformação"
+              - "Quantificar benefícios (tempo economizado, receita aumentada)"
+
+          steps:
+            - step_number: 1
+              title: "Antes vs. Depois"
+              analogy: "É como propaganda de academia. Não vendem 'equipamentos modernos'. Vendem a TRANSFORMAÇÃO: foto antes (fora de forma) vs. depois (sarado)."
+              visual: "[TABELA: ANTES (Hoje) → DEPOIS (Com solução) | Tempo perdido: 10h/semana → 0h | Leads perdidos: 30% → 5% | Receita: R$ 50k/mês → R$ 80k/mês]"
+              content: |
+                **Fórmula:**
+                1. Situação ANTES (dor atual)
+                2. Situação DEPOIS (resultado com solução)
+                3. Quantificar ganho (tempo, dinheiro, oportunidade)
+
+                **Exemplo (Imobiliária):**
+                "ANTES:
+                - Corretores gastam 2h/dia fazendo follow-up manual
+                - 30% dos leads esfriam sem resposta
+                - 5 vendas/mês perdidas = R$ 25k de comissão
+
+                DEPOIS (com ecossistema):
+                - Agente responde em 2 minutos (24/7)
+                - Leads quentes notificados automaticamente
+                - 90% dos leads recebem follow-up
+                - +3 vendas/mês recuperadas = +R$ 15k de comissão
+
+                Resultado líquido:
+                - 2h/dia economizadas por corretor (10h/semana)
+                - +R$ 15k/mês de receita recuperada
+                - ROI: 3x em 4 meses"
+
+              reflective_questions:
+                - "Qual a transformação mais poderosa que sua solução entrega?"
+
+        deliverables:
+          - "Template Antes/Depois (storytelling)"
+
+        immediate_action:
+          task: "Descreva ANTES vs. DEPOIS de 1 problema real. Quantifique tempo economizado e receita aumentada."
+
+        next_lesson_teaser: "Próxima: O de Objeção - Como antecipar e quebrar as 5 objeções mais comuns de IA."
+
+      # -------------------------------------------------------------------------
+      # Aula 2.6: O - Objeções (Parte 1: As 5 Mais Comuns)
+      # -------------------------------------------------------------------------
+      - lesson_id: "2.6"
+        title: "O de Objeção (Parte 1): As 5 Objeções Mais Comuns de IA"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber quebrar as 5 objeções mais comuns que travam vendas de IA."
+            outcomes:
+              - "Identificar objeções reais vs. desculpas"
+              - "Usar framework de quebra de objeção"
+              - "Antecipar objeções ANTES de surgirem"
+
+          steps:
+            - step_number: 1
+              title: "As 5 Objeções e Como Quebrar"
+              visual: "[TABELA: Objeção → Por que surge → Como quebrar]"
+              content: |
+                **Objeção 1: "IA vai substituir meus funcionários"**
+                Por que surge: Medo de demitir gente
+                Como quebrar:
+                "Não substitui. MULTIPLICA capacidade.
+
+                Seus funcionários vão focar no que humano faz melhor: fechar venda, resolver caso complexo, criar relacionamento.
+
+                IA cuida do repetitivo: follow-up, qualificação, agendamento.
+
+                Resultado: mesma equipe, 3x mais produtiva."
+
+                **Objeção 2: "É só um chatbot, não vale R$ 20k"**
+                Por que surge: Cliente só viu chatbot ruim
+                Como quebrar:
+                "Entendo a preocupação. Chatbot genérico vale R$ 500 mesmo.
+
+                Mas aqui não é chatbot. É ECOSSISTEMA:
+                - Agente + Dashboard + Análises + Integrações
+
+                Você não paga pela ferramenta. Paga pelo RESULTADO:
+                - +R$ 15k/mês de receita recuperada
+                - ROI de 3x em 4 meses
+
+                A conta fecha?"
+
+                **Objeção 3: "E se a IA errar?"**
+                Por que surge: Medo de risco
+                Como quebrar:
+                "Ótima pergunta. Toda IA tem limites.
+
+                Por isso:
+                1. IA cuida do que é previsível (80% dos casos)
+                2. Casos complexos vão pra humano
+                3. Dashboard monitora qualidade em tempo real
+                4. Ajustes contínuos baseados em resultado
+
+                Erros vão acontecer? Sim. Menos que humano cansado às 18h? Também sim."
+
+                **Objeção 4: "Posso fazer no ChatGPT de graça"**
+                Por que surge: Commodity thinking
+                Como quebrar:
+                "Você pode criar um agente básico? Sim.
+
+                Mas:
+                - ChatGPT não integra com seu CRM
+                - Não tem dashboard de ROI
+                - Não escala pra 1.000 leads/mês
+                - Não aprende com seu negócio específico
+
+                É como comparar Excel com ERP. Tecnicamente ambos organizam dados. Mas ERP resolve o problema DE VERDADE."
+
+                **Objeção 5: "Vamos pensar e te retorno"**
+                Por que surge: Falta de urgência ou decisor
+                Como quebrar:
+                "Entendo. Posso perguntar:
+
+                1. Falta alguma informação pra decidir?
+                2. Tem alguém mais que precisa aprovar?
+                3. Qual a preocupação principal?
+
+                Porque cada mês que passa, são R$ 1.625 de desperdício.
+
+                Se começarmos hoje, entrego em 30 dias. Topa marcar kickoff?"
+
+              reflective_questions:
+                - "Qual objeção você mais ouve? Como você responde hoje?"
+
+        deliverables:
+          - "Script de Quebra de Objeções (5 principais)"
+
+        immediate_action:
+          task: "Escolha 1 objeção que você já ouviu. Escreva a resposta usando a estrutura: Validar → Contra-argumento → Evidência → Perguntar."
+
+        next_lesson_teaser: "Próxima: Precificação por valor (não por horas) - como justificar R$ 20k+."
+
+      # -------------------------------------------------------------------------
+      # Aula 2.7: Precificação por Valor
+      # -------------------------------------------------------------------------
+      - lesson_id: "2.7"
+        title: "Precificação por VALOR (Não por Horas): Como Justificar R$ 20k+"
+        duration_minutes: 15
+        lesson_type: "strategy + hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber precificar por VALOR (ROI do cliente) - não por horas trabalhadas - e justificar R$ 5k-50k."
+            outcomes:
+              - "Calcular valor entregue (não custo de desenvolvimento)"
+              - "Estruturar precificação: projeto + recorrência"
+              - "Apresentar preço com ancoragem"
+
+          steps:
+            - step_number: 1
+              title: "Fórmula de Precificação por Valor"
+              analogy: "Você não paga cirurgião por hora. Paga pelo RESULTADO (salvar vida). IA é igual: preço = valor entregue."
+              visual: "[FÓRMULA: Preço = 20-30% do valor anual gerado | Exemplo: Gera R$ 180k/ano → Preço = R$ 36k-54k]"
+              content: |
+                **Passo 1: Calcular valor gerado**
+                - Receita aumentada (vendas recuperadas)
+                - Custo evitado (tempo economizado × custo/hora)
+                - Oportunidade capturada (expansão de mercado)
+
+                **Passo 2: Precificar 20-30% do valor anual**
+
+                Exemplo (Imobiliária):
+                - Receita recuperada: +3 vendas/mês × R$ 5k comissão = +R$ 15k/mês
+                - Tempo economizado: 10h/semana × 4 corretores × R$ 25/h = R$ 4k/mês
+                - **Valor total/mês: R$ 19k**
+                - **Valor anual: R$ 228k**
+
+                Preço justo:
+                - 20% do valor anual = R$ 45.600
+                - Ou: Projeto R$ 25k + R$ 2k/mês recorrente
+
+                **Passo 3: Apresentar com ancoragem**
+                "Se eu dissesse que o investimento é R$ 100k, o que você diria?"
+                → Cliente: "Caramba, muito!"
+
+                "Relaxa, não é. O investimento real é R$ 25k inicial + R$ 2k/mês.
+
+                Considerando que vocês vão recuperar R$ 19k/mês, o ROI é de 9.5x no primeiro mês.
+
+                Faz sentido?"
+
+              reflective_questions:
+                - "Quanto valor (R$/mês) sua solução gera pro cliente? Quanto você deveria cobrar?"
+
+        deliverables:
+          - "Calculadora de Precificação por Valor"
+
+        immediate_action:
+          task: "Escolha 1 caso de uso. Calcule: (1) Valor gerado/mês, (2) Valor anual, (3) Preço = 20-30% do valor anual."
+
+        next_lesson_teaser: "Próxima: R de Resultado - Como fechar com próximo passo claro (não 'vamos pensar')."
+
+      # -------------------------------------------------------------------------
+      # Aula 2.8: R - Resultado (Fechamento)
+      # -------------------------------------------------------------------------
+      - lesson_id: "2.8"
+        title: "R de Resultado: Fechar com Próximo Passo Claro (Não 'Vamos Pensar')"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber fechar vendas com próximo passo claro - evitando o 'vamos pensar e te retorno' que nunca retorna."
+            outcomes:
+              - "Propor próximo passo concreto (não vago)"
+              - "Agendar kickoff ou reunião de aprovação"
+              - "Lidar com 'preciso pensar'"
+
+          steps:
+            - step_number: 1
+              title: "Os 3 Fechamentos"
+              visual: "[FLUXO: Fechamento Ideal → Fechamento Condicional → Desqualificação Educada]"
+              content: |
+                **Fechamento Ideal (cliente decide SIM hoje):**
+                "Perfeito. Vamos agendar o kickoff?
+
+                Eu preciso de:
+                - Acesso ao CRM
+                - 1 reunião com equipe (2h)
+                - Aprovação do escopo
+
+                Consigo isso até sexta? Aí entrego em 30 dias."
+
+                → Próximo passo: Kickoff agendado + contrato assinado
+
+                **Fechamento Condicional (cliente precisa aprovar com alguém):**
+                "Entendo. Você precisa aprovar com [sócio/diretor].
+
+                Que tal marcarmos reunião com ele? Eu apresento, você valida, decidem juntos.
+
+                Amanhã 15h funciona?"
+
+                → Próximo passo: Reunião de aprovação agendada
+
+                **Desqualificação Educada (cliente não vai fechar):**
+                "Olha, sinto que não é prioridade TOP 3 pra vocês agora. Tudo bem.
+
+                Quando isso virar urgência, me chama. Vou deixar proposta no e-mail.
+
+                Fechou?"
+
+                → Próximo passo: Follow-up em 60 dias
+
+              reflective_questions:
+                - "Como você vai reagir se o cliente disser 'vamos pensar'?"
+
+        deliverables:
+          - "Scripts de Fechamento (3 cenários)"
+
+        immediate_action:
+          task: "Roleplay: Pratique fechar uma venda imaginária. Use Fechamento Ideal. O que você diria?"
+
+        next_lesson_teaser: "Próxima (última do módulo): Como fazer demos que VENDEM (não que impressionam)."
+
+      # -------------------------------------------------------------------------
+      # Aula 2.9: Demo que Vende
+      # -------------------------------------------------------------------------
+      - lesson_id: "2.9"
+        title: "Demo que Vende (Não que Impressiona): Mostre Resultado, Não Código"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber fazer demos que VENDEM - focando em resultado (não em features técnicas)."
+            outcomes:
+              - "Estruturar demo em 3 atos (problema → solução → resultado)"
+              - "Deixar cliente USAR (não só assistir)"
+              - "Evitar armadilha de 'show técnico'"
+
+          steps:
+            - step_number: 1
+              title: "A Estrutura da Demo que Vende"
+              analogy: "Demo ruim é como trailer de filme mostrando cena aleatória. Demo boa é como trailer mostrando: problema → tensão → resolução."
+              visual: "[ROTEIRO: Ato 1 (Problema - 2 min) → Ato 2 (Solução ao vivo - 5 min) → Ato 3 (Resultado - 3 min)]"
+              content: |
+                **Ato 1: Problema (2 min)**
+                "Lembra que você disse que corretores perdem 30% dos leads?
+
+                Vou mostrar EXATAMENTE como resolver isso."
+
+                **Ato 2: Solução ao Vivo (5 min)**
+                "Aqui está o agente. Vou mandar mensagem como se fosse um lead...
+
+                [Envia WhatsApp]
+
+                Olha - resposta em 8 segundos. Agora ele vai qualificar...
+
+                [Mostra conversa fluindo]
+
+                Viu? Ele detectou que é lead quente. Notificação pro corretor...
+
+                [Mostra notificação no dashboard]
+
+                Agora o corretor entra e assume a conversa."
+
+                **Ato 3: Resultado (3 min)**
+                "No dashboard, vocês veem:
+                - 47 leads atendidos essa semana
+                - 12 qualificados como quentes
+                - 3 viraram vendas
+                - Tempo de resposta: 2 minutos (antes era 2 horas)
+
+                Esse é o resultado que vocês vão ter."
+
+                **Momento Decisivo:**
+                "Quer testar? Manda uma mensagem agora como se fosse lead."
+
+                → Cliente INTERAGE com solução = engajamento 10x
+
+              reflective_questions:
+                - "Como você deixaria o cliente USAR a solução na demo (não só assistir)?"
+
+        deliverables:
+          - "Roteiro de Demo (3 atos)"
+          - "Checklist: O que NÃO mostrar (código, configurações, bugs)"
+
+        immediate_action:
+          task: "Escreva o roteiro de 1 demo (problema → solução → resultado) de 10 minutos."
+
+        module_conclusion:
+          key_takeaways:
+            - "PASTOR (Problema, Amplificação, Solução, Transformação, Objeção, Resultado) é o GPS de vendas high ticket"
+            - "Precifique por VALOR (20-30% do ROI anual), não por horas"
+            - "Quebra de objeções ANTES de surgirem = fechamento mais rápido"
+            - "Demo que vende mostra RESULTADO, não features técnicas"
+
+          transformation:
+            before: "Você achava que precisava ser 'vendedor nato' pra fechar high ticket"
+            after: "Agora você tem um FRAMEWORK testado (PASTOR) que qualquer pessoa pode seguir e fechar vendas de R$ 5k-50k"
+
+        next_module_teaser: "Módulo 3: Agora que você sabe VALIDAR e VENDER, vamos aprender a CONSTRUIR (só o essencial - 30% do curso)."
+
+# ==============================================================================
+# MÓDULO 3: CONSTRUÇÃO ESSENCIAL (Ferramentas e Agentes)
+# ==============================================================================
+
+  - module_number: 3
+    title: "Construção Essencial: Ferramentas e Agentes"
+    tagline: "Só o necessário - sem enrolação"
+    duration_minutes: 105  # 7 aulas x 15 min
+    lesson_count: 7
+    percentage_of_course: "27%"
+
+    learning_outcomes:
+      - "Construir SDR Agent end-to-end (caso real)"
+      - "Integrar N8N + WhatsApp + CRM"
+      - "Usar vibe coding (Cursor, Replit) pra criar dashboards rápidos"
+      - "Entregar MVP em 2 semanas (não 3 meses)"
+
+    differentiation_notes: |
+      SATURADO no mercado, mas necessário.
+      Diferencial: FOCO em 1 caso de uso completo (não 10 superficiais).
+      Vibe coding (Cursor, Bolt) pra acelerar dashboards.
+
+    lessons:
+
+      # -------------------------------------------------------------------------
+      # Aula 3.1: Visão Geral - Stack Recomendada
+      # -------------------------------------------------------------------------
+      - lesson_id: "3.1"
+        title: "Stack Recomendada: N8N + Make + Vibe Coding (O Que Usar Quando)"
+        duration_minutes: 12
+        lesson_type: "conceptual"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber qual ferramenta usar pra cada parte da solução (agente, automação, dashboard)."
+            outcomes:
+              - "Entender stack: N8N (automação) + Make (integrações) + Cursor (dashboard)"
+              - "Decidir quando usar no-code vs. vibe coding"
+            motivation: "Isso vai te poupar de perder semanas aprendendo ferramenta errada pro problema errado."
+
+          position:
+            empathy: "Você deve estar confuso com tantas opções: N8N, Make, Zapier, CrewAI, LangChain... Relaxa, vou simplificar."
+
+          steps:
+            - step_number: 1
+              title: "A Stack Mínima"
+              analogy: "É como cozinha. Você não precisa de 50 panelas. Precisa de: panela, frigideira, faca. Stack de IA é igual."
+              visual: "[DIAGRAMA: 3 camadas - Agente (N8N/Make) | Integrações (APIs) | Dashboard (Cursor/Replit)]"
+              content: |
+                **Camada 1: Agente Conversacional**
+                - **N8N:** Melhor pra fluxos complexos (loops, condicionais)
+                - **Make:** Melhor pra integrações rápidas (conecta 500+ apps)
+                - **Escolha:** N8N se controle total, Make se velocidade
+
+                **Camada 2: Integrações**
+                - WhatsApp (Evolution API, Typebot)
+                - CRM (APIs diretas: Pipedrive, HubSpot)
+                - Google Sheets / Airtable (banco temporário)
+
+                **Camada 3: Dashboard**
+                - **Vibe Coding (Cursor, Bolt, Replit):** Cria dashboard em 2h (vs. 2 semanas)
+                - **Dados:** Puxa de N8N via webhook ou banco
+
+                **Quando usar o quê:**
+                - Prototipo rápido → Make
+                - Produção complexa → N8N
+                - Dashboard personalizado → Cursor (vibe coding)
+
+              reflective_questions:
+                - "Qual ferramenta você já conhece? Qual precisa aprender?"
+
+        deliverables:
+          - "Mapa de Ferramentas (1 página)"
+
+        next_lesson_teaser: "Próxima: Caso Real - SDR Agent pra Imobiliária (passo a passo)."
+
+      # -------------------------------------------------------------------------
+      # Aula 3.2 a 3.6: Caso Real - SDR Agent (5 aulas práticas)
+      # -------------------------------------------------------------------------
+      - lesson_id: "3.2"
+        title: "SDR Agent (Parte 1): Fluxo de Qualificação no N8N"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai ter o fluxo básico de qualificação de leads no N8N (recebe mensagem → qualifica → notifica)."
+
+          steps:
+            - step_number: 1
+              title: "Estrutura do Fluxo"
+              visual: "[FLOWCHART: Webhook WhatsApp → GPT-4 (qualifica) → IF (quente?) → Notifica corretor | Se frio → Follow-up automático]"
+              content: |
+                **Passo 1: Receber mensagem (Webhook)**
+                **Passo 2: Enviar pra GPT-4 (qualificação)**
+                **Passo 3: Decisão (lead quente ou frio?)**
+                **Passo 4: Ação (notificar ou follow-up)**
+
+                [Instruções passo a passo com prints - fora do escopo desta aula resumida]
+
+        deliverables:
+          - "N8N Workflow Template (exportável)"
+
+        immediate_action:
+          task: "Crie conta no N8N. Importe o template. Teste enviando 1 mensagem."
+
+      - lesson_id: "3.3"
+        title: "SDR Agent (Parte 2): Integração WhatsApp + CRM"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        deliverables:
+          - "Script de Integração Evolution API → Pipedrive"
+
+      - lesson_id: "3.4"
+        title: "SDR Agent (Parte 3): Personalização do Prompt (Voz da Empresa)"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        deliverables:
+          - "Template de Prompt: SDR Personalizado"
+
+      - lesson_id: "3.5"
+        title: "Dashboard de Resultados: Vibe Coding com Cursor (2 Horas pra Deploy)"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber usar Cursor pra criar dashboard de métricas em 2 horas (vs. 2 semanas de código manual)."
+
+          steps:
+            - step_number: 1
+              title: "Vibe Coding: O Atalho"
+              analogy: "É como ter um dev júnior que escreve 80% do código. Você só dirige e valida."
+              visual: "[SCREENSHOT: Cursor gerando código React de dashboard]"
+              content: |
+                **O que é Vibe Coding:**
+                - Você descreve o que quer em linguagem natural
+                - IA gera código funcional
+                - Você ajusta e deploya
+
+                **Ferramentas:**
+                - **Cursor:** Melhor pra apps complexos
+                - **Bolt:** Melhor pra prototipos ultra-rápidos
+                - **Replit:** Melhor pra deploy instantâneo
+
+                **Prompt exemplo:**
+                "Cria dashboard com:
+                - Card 1: Total de leads atendidos (número grande)
+                - Card 2: Taxa de conversão (%)
+                - Gráfico: Leads por dia (últimos 7 dias)
+                - Tabela: Top 5 objeções mais comuns
+
+                Dados vêm de API /metrics (GET).
+
+                Stack: React + TailwindCSS."
+
+                [IA gera código completo em 3 minutos]
+
+              reflective_questions:
+                - "Qual dashboard você precisa criar? Como descreveria pro Cursor?"
+
+        deliverables:
+          - "Template de Dashboard (código React)"
+          - "Guia: Deploy Rápido (Vercel, Netlify)"
+
+        immediate_action:
+          task: "Crie conta no Cursor. Teste prompt: 'Cria dashboard com 3 cards mostrando métricas fictícias'."
+
+      - lesson_id: "3.6"
+        title: "Testes e Ajustes: Como Validar Antes de Entregar pro Cliente"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        deliverables:
+          - "Checklist de QA: 15 Testes Antes de Entregar"
+
+      - lesson_id: "3.7"
+        title: "Gestão de Escopo: Como Não Transformar Projeto de 20 Dias em 4 Meses"
+        duration_minutes: 12
+        lesson_type: "strategy"
+
+        gps_structure:
+          goal:
+            promise: "Ao final desta aula, você vai saber gerenciar escopo pra não cair na armadilha de 'só mais essa funcionalidade' que nunca termina."
+            outcomes:
+              - "Definir escopo claro no kickoff"
+              - "Dizer NÃO pra mudanças fora de escopo"
+              - "Negociar Fase 2 (em vez de inflação de Fase 1)"
+
+          steps:
+            - step_number: 1
+              title: "Escopo Blindado"
+              analogy: "É como construir casa. Você não muda a planta no meio da obra. Mudanças = orçamento novo."
+              visual: "[TEMPLATE: Escopo de Projeto - O que TÁ | O que NÃO TÁ | Mudanças = Fase 2]"
+              content: |
+                **Kickoff: Definir Escopo CLARO**
+                1. Funcionalidades incluídas (listar 5-7 máximo)
+                2. Funcionalidades NÃO incluídas (listar exemplos)
+                3. Critérios de sucesso (como saber que tá pronto?)
+
+                **Durante desenvolvimento: Cliente pede mudança**
+                ❌ RUIM: "Ok, vou adicionar"
+                ✅ BOM: "Ótima ideia! Isso fica pra Fase 2. Quer orçamento?"
+
+                **Template de Resposta:**
+                "Adorei a ideia de [feature nova].
+
+                Como isso não tava no escopo original, tenho 2 opções:
+
+                1. Entrego Fase 1 conforme combinado (30 dias)
+                2. Ou adiciono isso agora (+15 dias + R$ 8k)
+
+                O que prefere?"
+
+                → Cliente quase sempre escolhe Fase 1 primeiro
+
+              reflective_questions:
+                - "Como você vai reagir quando cliente pedir 'só mais uma coisinha'?"
+
+        deliverables:
+          - "Template de Escopo de Projeto"
+          - "Scripts de Negociação de Mudanças"
+
+        module_conclusion:
+          key_takeaways:
+            - "Stack mínima: N8N (automação) + Vibe Coding (dashboard) + APIs (integrações)"
+            - "Foco em 1 caso de uso COMPLETO (não 10 superficiais)"
+            - "Vibe coding (Cursor, Bolt) reduz tempo de dashboard de 2 semanas pra 2 horas"
+            - "Escopo blindado = projeto entregue em 30 dias (não 4 meses)"
+
+          transformation:
+            before: "Você achava que precisava ser dev sênior pra construir soluções de IA"
+            after: "Agora você sabe que no-code (N8N) + vibe coding (Cursor) te deixam operacional em 2 semanas"
+
+        next_module_teaser: "Módulo 4: Ecossistema e Posicionamento - Como se diferenciar e escalar."
+
+# ==============================================================================
+# MÓDULO 4: ECOSSISTEMA E POSICIONAMENTO
+# ==============================================================================
+
+  - module_number: 4
+    title: "Ecossistema e Posicionamento"
+    tagline: "Diferenciação + Track Record Rápido"
+    duration_minutes: 60  # 4 aulas x 15 min
+    lesson_count: 4
+    percentage_of_course: "15%"
+
+    learning_outcomes:
+      - "Escolher nicho rentável (dor + pocket + acesso)"
+      - "Construir track record em 60 dias"
+      - "Posicionar-se como especialista (não mais um)"
+
+    lessons:
+
+      - lesson_id: "4.1"
+        title: "Escolha de Nicho Rentável: Dor + Pocket + Acesso"
+        duration_minutes: 15
+        lesson_type: "strategy"
+
+        deliverables:
+          - "Matriz de Escolha de Nicho (5 nichos validados: imobiliário, jurídico, clínicas, contabilidade, creators)"
+
+      - lesson_id: "4.2"
+        title: "Track Record em 60 Dias: Primeiros 3 Clientes (Próximos → Nicho → Escala)"
+        duration_minutes: 15
+        lesson_type: "strategy + hands-on"
+
+        deliverables:
+          - "Roadmap: 0 a 3 Clientes em 60 Dias"
+
+      - lesson_id: "4.3"
+        title: "Personal Branding no LinkedIn: Conteúdo que Atrai Cadeira Estratégica"
+        duration_minutes: 15
+        lesson_type: "marketing"
+
+        deliverables:
+          - "Calendário de Conteúdo: 30 Posts pra LinkedIn"
+
+      - lesson_id: "4.4"
+        title: "Case de Sucesso: Como Documentar e Divulgar Resultados"
+        duration_minutes: 15
+        lesson_type: "hands-on"
+
+        deliverables:
+          - "Template de Case de Sucesso (formato LinkedIn + PDF)"
+
+        module_conclusion:
+          key_takeaways:
+            - "Nicho rentável = dor aguda + pocket grande + você tem acesso"
+            - "Track record se constrói em 60 dias (não 2 anos): dor própria → amigo → nicho"
+            - "Personal branding = conteúdo que demonstra expertise (não propaganda)"
+            - "Case de sucesso = prova social que vende sozinho"
+
+        next_module_teaser: "Módulo Final: Resumo e Próximos Passos - De aluno a agência operacional."
+
+# ==============================================================================
+# BÔNUS E EXTRAS
+# ==============================================================================
+
+bonuses:
+  total_value_declared: "R$ 8.000"
+
+  items:
+    - name: "Frameworks Proprietários (PDF + Planilhas)"
+      value: "R$ 2.000"
+      contents:
+        - "Triple P Framework (PDF detalhado + Planilha de validação)"
+        - "PASTOR Framework (PDF + Scripts editáveis)"
+
+    - name: "Templates Prontos"
+      value: "R$ 1.500"
+      contents:
+        - "Proposta High Ticket (R$ 20k+) - Word editável"
+        - "Dashboard de Métricas (N8N template + React código)"
+        - "Case de Sucesso (LinkedIn + PDF)"
+
+    - name: "Scripts de Vendas"
+      value: "R$ 1.000"
+      contents:
+        - "Prospecção LinkedIn (cadeira estratégica)"
+        - "Quebra de 10 Objeções Mais Comuns"
+        - "Follow-up Pós-Demo"
+
+    - name: "Workflows N8N Prontos"
+      value: "R$ 2.000"
+      contents:
+        - "SDR Agent Completo (importável)"
+        - "CS Agent (suporte)"
+        - "Closer Agent (vendas)"
+
+    - name: "Comunidade + Hot Seats"
+      value: "R$ 1.500"
+      contents:
+        - "Grupo privado de alunos (Telegram/Discord)"
+        - "Hot seats semanais com Marcondes (4x/mês)"
+        - "Network com outros donos de agência"
+
+# ==============================================================================
+# MÉTRICAS DE VALIDAÇÃO
+# ==============================================================================
+
+validation:
+  gps_compliance_target: "100%"  # Todas as aulas seguem GPS
+  voice_fidelity_target: "90%"   # Voz do Marcondes em todas as aulas
+  microlearning_format: "26 aulas x 10-15 min"
+
+  semiotic_elements_per_lesson:
+    analogies: "1-2"
+    visuals: "1-2"
+    reflective_questions: "2-3"
+
+  distribution_validation:
+    validation_sales: "58% (15 aulas) - GAP CRÍTICO"
+    construction: "27% (7 aulas) - SATURADO (só essencial)"
+    ecosystem_positioning: "15% (4 aulas) - DIFERENCIAL"
+
+# ==============================================================================
+# PRÓXIMOS PASSOS (PÓS-APROVAÇÃO)
+# ==============================================================================
+
+next_steps:
+  phase_4_lesson_generation:
+    description: "Gerar as 26 aulas completas em Markdown (GPS + voz do Marcondes)"
+    estimated_time: "12-15 horas (IA-assisted)"
+    delivery_format: "outputs/courses/agencia-ia/lessons/{module}/{lesson_id}.md"
+
+  phase_5_video_scripts:
+    description: "Adaptar aulas Markdown para scripts de vídeo (teleprompter)"
+    estimated_time: "6-8 horas"
+
+  phase_6_visual_assets:
+    description: "Criar diagramas, slides, e elementos visuais obrigatórios (GPS)"
+    estimated_time: "10-12 horas"
+
+---
+
+# FIM DO CURRÍCULO MICROLEARNING GPS

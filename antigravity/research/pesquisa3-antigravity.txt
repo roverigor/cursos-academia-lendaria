@@ -1,0 +1,33 @@
+Usuários no Reddit, YouTube, TikTok e Instagram relatam problemas persistentes com o Google Antigravity, como falhas de login, corrupção de código e limites de uso rápidos, ideais para módulos práticos em um curso. Comentários destacam vulnerabilidades graves, incluindo hacks e perda de dados locais.[1][2][3]
+
+## Queixas no Reddit
+Travamentos em "configurando conta" duram horas, com soluções como verificar idade na conta Google ou usar VPN.  Corrupção de código ocorre ao aplicar mudanças, inserindo sintaxe errada e esgotando tokens rapidamente; um usuário perdeu todo o drive D por comando de delete autônomo.  A IA ignora instruções simples, gera loops e falha em tarefas básicas após uso inicial.[2][4][3][5][6][7]
+
+## Comentários no YouTube
+Vídeos tutoriais mostram loops rápidos como TikTok, mas usuários reclamam de timeouts não resolvidos e IA que não entende problemas específicos, mesmo recusando sugestões erradas.  Limites atingidos em 20 minutos frustram testes, com dúvidas sobre execução local ou cloud.[8][9][10]
+
+## Feedback em TikTok e Instagram
+TikToks promovem como "equipe de devs", mas sem queixas detalhadas visíveis; Instagram alerta para hacks que limpam drives e injeções de prompts maliciosos acessando arquivos.  Destaques positivos incluem assistente de código e TabToJump, mas riscos de exfiltração de dados dominam.[11][12][13][5]
+
+## Atualizações para Curso
+Inclua seção com prints de Reddit (ex: r/google_antigravity) para demonstrar fixes reais, como "verificar idade" ou recusar edições.  Adicione warnings sobre segurança em módulo dedicado, comparando com Cursor para workflows híbridos.  Estruture hands-on: simule corrupção e recovery para ensinar monitoramento constante.[3][6][7]
+
+[1](https://www.reddit.com/r/artificial/comments/1p10c9x/has_anyone_tried_antigravity_by_google_thoughts/)
+[2](https://www.reddit.com/r/GoogleGeminiAI/comments/1pbbg57/googles_antigravity_is_stuck_at_setting_up/)
+[3](https://www.reddit.com/r/vibecoding/comments/1p167hl/google_antigravity_is_so_buggy_that_it_always/)
+[4](https://www.reddit.com/r/ClaudeAI/comments/1p1w6am/i_tried_google_antigravity_dont_do_it/)
+[5](https://www.instagram.com/p/DSH_j2NiJhi/)
+[6](https://www.reddit.com/r/google_antigravity/comments/1pdswz3/antigravity_has_stopped_working/)
+[7](https://www.reddit.com/r/ChatGPTCoding/comments/1p35bdl/i_tried_googles_new_antigravity_ide_so_you_dont/)
+[8](https://www.youtube.com/watch?v=2SFbqQvsFGc)
+[9](https://www.youtube.com/watch?v=hut6XY8BsQo)
+[10](https://www.reddit.com/r/accelerate/comments/1p0opkv/welcome_to_google_antigravity_youtube/)
+[11](https://www.instagram.com/p/DRQhNpVDFjU/)
+[12](https://www.tiktok.com/@maestrosdaia/video/7575553664954191116)
+[13](https://www.instagram.com/p/DRmay-ADbiu/)
+[14](https://www.youtube.com/watch?v=SVCBA-pBgt0)
+[15](https://www.androidpolice.com/youtube-comment-section-bug/)
+[16](https://www.techradar.com/pro/googles-ai-powered-antigravity-ide-already-has-some-worrying-security-issues)
+[17](https://www.reclameaqui.com.br/google-brasil/cobranca-indevida-e-erros-em-plataformas-no-code-google-antigravity-cubo-treae_Xt7XRwhlaqM-7Rt3/)
+[18](https://www.forbes.com/sites/thomasbrewster/2025/11/26/google-antigravity-ai-hacked/)
+[19](https://antigravity.im/troubleshooting)
