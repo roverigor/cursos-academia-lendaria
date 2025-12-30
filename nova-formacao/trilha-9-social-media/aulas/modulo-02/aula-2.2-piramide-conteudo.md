@@ -5,18 +5,214 @@
 ---
 
 > **Duracao:** 8 minutos
-> **Tipo:** Teoria
-> **Conceito-Chave:** Conteudo para cada etapa do funil
+> **Tipo:** Teoria Aplicada
+> **Conceito-Chave:** Conteudo certo para cada etapa do funil
+> **Linha do DRE:** Custo de aquisicao / Conversao
+> **IA Aplicada:** Classificacao de posts (exercicio final)
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Voce nao vende para quem acabou de te conhecer. E nao educa quem ja quer comprar. Cada etapa do funil pede um tipo de conteudo."**
+### ABERTURA (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Voce nao vende para quem acabou de te conhecer.
+E nao educa quem ja quer comprar.
+
+Cada etapa do funil pede um tipo de conteudo.
+
+Erra isso e voce perde dinheiro dos dois lados:
+- Afasta quem ainda nao ta pronto
+- Frustra quem ja quer comprar
+
+Hoje voce vai aprender a Piramide de Conteudo.
+E nunca mais vai errar o timing."
+```
 
 ---
 
-## A PIRAMIDE DE CONTEUDO
+### BLOCO 1: A PIRAMIDE (2 minutos)
+
+```
+[MOSTRAR PIRAMIDE NA TELA]
+
+"A Piramide tem 3 niveis.
+
+[APONTAR PARA BASE]
+
+TOPO - 50% do seu conteudo.
+Atrai gente NOVA.
+Quem nunca te viu.
+
+Dicas rapidas, listas, memes do nicho.
+Conteudo facil de consumir.
+Alto compartilhamento.
+
+[APONTAR PARA MEIO]
+
+MEIO - 30% do seu conteudo.
+Nutre quem ja te CONHECE.
+Quem te segue mas ainda nao comprou.
+
+Cases, bastidores, tutoriais profundos.
+Mostra sua metodologia.
+Gera confianca.
+
+[APONTAR PARA TOPO DA PIRAMIDE]
+
+FUNDO - 20% do seu conteudo.
+Converte quem ta PRONTO.
+Quem ja confia e quer comprar.
+
+Ofertas diretas, urgencia, garantias.
+CTA claro.
+Venda.
+
+[OLHAR PARA CAMERA]
+
+50-30-20. Essa e a proporcao."
+```
+
+---
+
+### BLOCO 2: O QUE POSTAR EM CADA NIVEL (2,5 minutos)
+
+```
+[MOSTRAR TABELA NA TELA]
+
+"Vou ser pratico.
+
+[APONTAR PARA TOPO]
+
+TOPO - Atrair:
+- '5 erros que todo empresario comete'
+- Trend adaptada pro seu nicho
+- Meme que seu ICP se identifica
+- Lista rapida de dicas
+
+Metrica que importa: alcance, novos seguidores.
+
+[APONTAR PARA MEIO]
+
+MEIO - Nutrir:
+- 'Como meu cliente saiu de X para Y'
+- Bastidores do seu processo
+- Tutorial passo a passo
+- Mito vs verdade
+
+Metrica que importa: salvamentos, DMs.
+
+[APONTAR PARA FUNDO]
+
+FUNDO - Converter:
+- 'Ultimas 5 vagas para mentoria'
+- Depoimento de cliente com CTA
+- FAQ de compra
+- Oferta com urgencia
+
+Metrica que importa: cliques, vendas.
+
+[OLHAR PARA CAMERA]
+
+Se voce so posta topo, vira criador de conteudo.
+Se voce so posta fundo, vira vendedor chato.
+Precisa dos 3."
+```
+
+---
+
+### BLOCO 3: EXEMPLO DE SEMANA (1,5 minuto)
+
+```
+[MOSTRAR CALENDARIO NA TELA]
+
+"Na pratica, se voce posta 5 vezes por semana:
+
+[MOSTRAR]
+
+Segunda: TOPO - Dica rapida do nicho
+Terca: MEIO - Case de cliente
+Quarta: TOPO - Mito vs verdade
+Quinta: MEIO - Bastidores do processo
+Sexta: FUNDO - Oferta com CTA
+
+[CONTAR]
+
+3 topo, 2 meio-fundo.
+Proporcao aproximada: 60-40.
+
+[OLHAR PARA CAMERA]
+
+Nao precisa ser exato.
+Precisa ter equilibrio.
+
+Erra pra mais no topo se tiver duvida.
+Melhor atrair demais do que vender demais."
+```
+
+---
+
+### BLOCO 4: EXERCICIO RAPIDO (1 minuto)
+
+```
+[OLHAR PARA CAMERA]
+
+"Exercicio rapido.
+
+Pensa nos seus ultimos 5 posts.
+Classifica cada um:
+
+T de Topo - atrai gente nova.
+M de Meio - nutre quem te segue.
+F de Fundo - converte quem ta pronto.
+
+[PAUSA]
+
+Qual a sua proporcao atual?
+
+Se e 0-0-5, voce ta vendendo demais.
+Se e 5-0-0, voce ta entretendo demais.
+
+[OLHAR PARA CAMERA]
+
+Se quiser, usa a IA pra classificar.
+Tem um prompt no material.
+Mas nao e obrigatorio.
+
+O importante e ter consciencia."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Resumindo:
+
+Piramide de Conteudo.
+Topo atrai. Meio nutre. Fundo converte.
+
+Proporcao ideal: 50-30-20.
+
+A partir de agora, antes de postar, pergunta:
+'Isso e topo, meio ou fundo?'
+
+Na proxima aula, vamos ver os 8 formatos
+que mais convertem em cada etapa.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### A Piramide de Conteudo
 
 ```
            /\
@@ -25,121 +221,25 @@
         /      \    → Conversao, oferta
        /--------\
       /    M     \   MEIO (30%)
-     /            \  → Consideracao, comparacao
+     /            \  → Consideracao, confianca
     /--------------\
    /       T        \ TOPO (50%)
   /                  \→ Awareness, descoberta
  /____________________\
 ```
 
----
+### Tipos de Post por Nivel
 
-## TOPO DE FUNIL (ToFu) - 50%
+| Nivel | Objetivo | Tipos de Post | Metrica |
+|-------|----------|---------------|---------|
+| TOPO | Atrair | Dicas, listas, memes, trends | Alcance, seguidores |
+| MEIO | Nutrir | Cases, tutoriais, bastidores | Salvamentos, DMs |
+| FUNDO | Converter | Ofertas, depoimentos, urgencia | Cliques, vendas |
 
-### Objetivo
-Atrair pessoas que NAO te conhecem
+### Exemplo de Semana Equilibrada
 
-### Caracteristicas
-- Conteudo amplo
-- Temas populares do nicho
-- Facil de consumir
-- Alto compartilhamento
-
-### Tipos de Post
-- Dicas rapidas
-- Listas ("7 formas de...")
-- Memes do nicho
-- Trends adaptadas
-- Conteudo educativo basico
-
-### Metricas Importantes
-- Alcance
-- Compartilhamentos
-- Novos seguidores
-
-### Exemplo
-> "5 erros que todo empresario comete nas redes sociais"
-
----
-
-## MEIO DE FUNIL (MoFu) - 30%
-
-### Objetivo
-Nutrir quem ja te conhece, gerar consideracao
-
-### Caracteristicas
-- Conteudo mais profundo
-- Mostra sua metodologia
-- Diferencia de concorrentes
-- Gera confianca
-
-### Tipos de Post
-- Cases de sucesso
-- Bastidores do processo
-- Comparativos
-- Tutoriais detalhados
-- Mitos vs verdades
-
-### Metricas Importantes
-- Saves (salvamentos)
-- Tempo de visualizacao
-- Comentarios qualificados
-- DMs
-
-### Exemplo
-> "Como meu cliente saiu de 0 para 50 leads/mes em 30 dias (passo a passo)"
-
----
-
-## FUNDO DE FUNIL (BoFu) - 20%
-
-### Objetivo
-Converter quem ja esta pronto para comprar
-
-### Caracteristicas
-- Oferta clara
-- CTA direto
-- Urgencia/escassez
-- Remove objecoes
-
-### Tipos de Post
-- Ofertas diretas
-- Depoimentos de clientes
-- FAQ de compra
-- Garantias
-- Bônus e diferenciais
-
-### Metricas Importantes
-- Cliques no link
-- DMs pedindo preco
-- Vendas
-- Leads qualificados
-
-### Exemplo
-> "Ultimas 5 vagas para a mentoria de marco. DM 'MENTORIA' para saber mais."
-
----
-
-## A PROPORCAO IDEAL
-
-| Etapa | % do Calendario | Posts/Semana (5 posts) |
-|-------|-----------------|------------------------|
-| Topo | 50% | 2-3 posts |
-| Meio | 30% | 1-2 posts |
-| Fundo | 20% | 1 post |
-
-### Por Que Essa Proporcao?
-
-- **Topo demais:** Muita gente nova, ninguem compra
-- **Fundo demais:** Parece vendedor desesperado
-- **Sem meio:** Pessoas conhecem mas nao confiam
-
----
-
-## EXEMPLO DE SEMANA
-
-| Dia | Etapa | Tipo de Post |
-|-----|-------|--------------|
+| Dia | Nivel | Exemplo |
+|-----|-------|---------|
 | Segunda | TOPO | Dica rapida do nicho |
 | Terca | MEIO | Case de cliente |
 | Quarta | TOPO | Mito vs verdade |
@@ -148,40 +248,51 @@ Converter quem ja esta pronto para comprar
 
 ---
 
-## EXERCICIO RAPIDO (2 min)
+## PROMPT DE IA - CLASSIFICACAO (OPCIONAL)
 
-Classifique seus ultimos 5 posts:
+Se quiser classificar seus posts automaticamente:
 
-| Post | Etapa (T/M/F) |
-|------|---------------|
-| 1 | |
-| 2 | |
-| 3 | |
-| 4 | |
-| 5 | |
+```
+Classifique meus ultimos posts na Piramide de Conteudo:
 
-**Sua proporcao atual:**
-- Topo: ___
-- Meio: ___
-- Fundo: ___
+MEUS POSTS:
+1. [descreva brevemente]
+2. [descreva brevemente]
+3. [descreva brevemente]
+4. [descreva brevemente]
+5. [descreva brevemente]
 
-**Esta equilibrado?**
+CLASSIFIQUE CADA UM:
+- T = Topo (atrai gente nova)
+- M = Meio (nutre quem ja segue)
+- F = Fundo (converte quem ta pronto)
+
+RETORNE:
+1. Classificacao de cada post
+2. Proporcao atual (ex: 60% T, 20% M, 20% F)
+3. Esta equilibrado? Sim/Nao
+4. O que ajustar?
+```
 
 ---
 
-## INSIGHT PRINCIPAL
+## CHECKPOINT
 
-> **"Topo atrai. Meio nutre. Fundo converte. Voce precisa dos 3 em equilibrio."**
+- [ ] Entendi os 3 niveis da piramide
+- [ ] Sei a proporcao ideal (50-30-20)
+- [ ] Classifiquei meus ultimos 5 posts
+- [ ] Sei onde estou desequilibrado
 
 ---
 
 ## CONEXAO COM PROXIMA AULA
 
-Agora que voce sabe QUANDO usar cada tipo, na proxima aula vamos ver OS 7 FORMATOS que mais convertem em cada etapa.
+> Agora que voce sabe QUANDO usar cada tipo de post, na proxima aula vamos ver OS 8 FORMATOS que mais convertem em cada nivel.
 
-**Proxima Aula:** 2.3 - Os 7 Formatos Que Mais Convertem
+**Proxima:** Aula 2.3 - Os 8 Formatos Que Mais Convertem
 
 ---
 
 **Tempo real:** 8 minutos
 **Conceito-chave:** Piramide Topo-Meio-Fundo (50-30-20)
+**IA:** Classificacao opcional no exercicio
