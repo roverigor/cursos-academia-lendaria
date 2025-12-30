@@ -4,209 +4,325 @@
 
 ---
 
-> **Duracao:** 10 minutos
-> **Tipo:** Validacao
-> **Objetivo:** Garantir que o sistema esta pronto para rodar
+> **Duracao:** 9 minutos
+> **Tipo:** Validacao + Fechamento de Modulo
+> **Entregavel:** Sistema Validado + Compromisso 48h
+> **Linha do DRE:** Eficiencia operacional
+> **IA Aplicada:** Recomendada - Auditoria do sistema
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Antes de colocar no piloto automatico, vamos validar se seu sistema de escuta esta configurado corretamente."**
+### ABERTURA (30 segundos)
 
----
+```
+[OLHAR PARA CAMERA]
 
-## CHECKLIST DE VALIDACAO
+"Antes de fechar o modulo,
+vamos validar.
 
-### 1. Palavras-Chave Definidas
+Garantir que seu sistema
+de escuta esta pronto.
 
-| Item | Status | Acao se Faltando |
-|------|--------|------------------|
-| Termos da marca (3+) | [ ] | Voltar ao Bloco 1 |
-| Termos de concorrentes (2+) | [ ] | Adicionar agora |
-| Termos de mercado (2+) | [ ] | Adicionar agora |
-| Total: 5-10 termos | [ ] | Ajustar quantidade |
+Checklist rapido.
+Acao 48 horas.
+E fechamos o Modulo 4.
 
-### 2. Alertas Configurados
-
-| Item | Status | Acao se Faltando |
-|------|--------|------------------|
-| Google Alerts criado | [ ] | Configurar agora |
-| 5+ alertas ativos | [ ] | Criar os faltantes |
-| Email de destino correto | [ ] | Verificar |
-| Frequencias adequadas | [ ] | Ajustar |
-
-### 3. Dashboard Criado
-
-| Item | Status | Acao se Faltando |
-|------|--------|------------------|
-| Planilha/doc criado | [ ] | Criar agora |
-| Estrutura basica OK | [ ] | Adicionar abas |
-| Primeiros dados inseridos | [ ] | Preencher |
-| Link salvo/favoritado | [ ] | Salvar |
-
-### 4. Primeira Analise Feita
-
-| Item | Status | Acao se Faltando |
-|------|--------|------------------|
-| Varredura inicial completa | [ ] | Fazer busca |
-| Mencoes encontradas | [ ] | Ampliar termos |
-| Sentimento classificado | [ ] | Usar IA |
-| 1+ insight identificado | [ ] | Analisar melhor |
+Bora?"
+```
 
 ---
 
-## PROMPT IA: AUDITORIA DO SISTEMA
+### BLOCO 1: CHECKLIST DE VALIDACAO (2 minutos)
+
+```
+[MOSTRAR CHECKLIST NA TELA]
+
+"Checklist rapido.
+
+[MOSTRAR]
+
+1. PALAVRAS-CHAVE?
+- 10 termos definidos
+- Marca, concorrentes, mercado
+
+2. GOOGLE ALERTS?
+- 5 alertas criados
+- Frequencia configurada
+- Email correto
+
+3. DASHBOARD?
+- Planilha criada
+- Estrutura basica
+- Link salvo
+
+4. PRIMEIRA BUSCA?
+- Varredura feita
+- Mencoes anotadas
+- (ou zero mencoes, ta OK)
+
+5. ROTINA DEFINIDA?
+- Dia escolhido
+- Horario definido
+- Alarme configurado
+
+[OLHAR PARA CAMERA]
+
+Quantos criterios voce passou?
+
+5/5: Perfeito. Sistema pronto.
+3-4: Bom. Pequenos ajustes.
+0-2: Volte e complete antes de continuar."
+```
+
+---
+
+### BLOCO 2: AUDITORIA COM IA (2 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Se quiser validar mais profundamente,
+usa a IA.
+
+[MOSTRAR PROMPT]
+
+'Faca uma auditoria do meu sistema de escuta.
+
+MEU SISTEMA:
+- Termos monitorados: [lista]
+- Ferramentas: [lista]
+- Frequencia de analise: [qual]
+
+VERIFIQUE:
+1. Gaps nos termos
+2. Ferramentas faltando
+3. Riscos do sistema atual
+4. Sugestoes de melhoria
+
+Retorne score de 0-100.'
+
+[PAUSA - 30 SEGUNDOS]
+
+A IA vai identificar pontos cegos.
+
+Se o score for abaixo de 70,
+ajusta antes de prosseguir.
+
+[OLHAR PARA CAMERA]
+
+Isso e RECOMENDADO, nao obrigatorio.
+Mas ajuda."
+```
+
+---
+
+### BLOCO 3: RECAPITULACAO DO MODULO (2 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"O que voce aprendeu no Modulo 4:
+
+[CONTAR NOS DEDOS]
+
+1. QUICK WIN: 3 MENCOES
+Primeira descoberta.
+O que falam de voce.
+
+2. POR QUE CONCORRENCIA JA FAZ
+O custo de nao escutar.
+R$ 24.000/ano em leads perdidos.
+
+3. O QUE MONITORAR
+3 camadas: marca, concorrentes, mercado.
+10-15 termos.
+
+4. ANALISE DE SENTIMENTO
+IA classifica automaticamente.
+Positivo, negativo, neutro.
+
+5. TEMPLATE DASHBOARD
+5 partes num lugar so.
+Mencoes, metricas, insights.
+
+6. DEMO SISTEMA
+Google Alerts + Planilha + IA.
+Zero custo.
+
+7. EXERCICIO SISTEMA
+25 minutos.
+Seu sistema configurado.
+
+[PAUSA]
+
+Seu entregavel do Modulo 4:
+
+SISTEMA DE SOCIAL LISTENING.
+Funcionando no piloto automatico."
+```
+
+---
+
+### BLOCO 4: ACAO 48 HORAS (2 minutos)
+
+```
+[TOM SERIO]
+
+"Agora a parte mais importante.
+
+[MOSTRAR ACOES]
+
+ACAO 48 HORAS:
+
+1. HOJE: Verificar alertas
+Confere se recebeu algum email.
+Adiciona mencao no dashboard.
+
+2. EM 24H: Responder 1 mencao
+Se encontrou algo na busca,
+responde.
+
+3. EM 48H: Primeira analise semanal
+Consolida mencoes.
+Passa pela IA.
+Identifica 1 insight.
+
+[MOSTRAR COMPROMISSO]
+
+Fala em voz alta:
+
+'Minha proxima revisao de escuta social
+sera em: ____/____/____ as ____h.'
+
+[PAUSA]
+
+Anota. Configura alarme."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[TOM DE CELEBRACAO]
+
+"Parabens.
+
+Voce concluiu o Modulo 4.
+Sistema de Social Listening.
+
+Voce tem:
+- Palavras-chave definidas
+- Alertas automaticos
+- Dashboard centralizado
+- Rotina semanal
+
+[PAUSA]
+
+No Modulo 5, vamos alem.
+Viral Tracker.
+
+Identificar posts com potencial viral.
+Capitalizar quando viraliza.
+Escalar o que funciona.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### Checklist de Validacao Completo
+
+| Item | Status |
+|------|--------|
+| 10 palavras-chave definidas | [ ] |
+| 5 Google Alerts criados | [ ] |
+| Dashboard criado | [ ] |
+| Primeira busca feita | [ ] |
+| Rotina definida | [ ] |
+| Alarme configurado | [ ] |
+
+### Recapitulacao do Modulo 4
+
+| Aula | Conceito-Chave |
+|------|----------------|
+| 4.1 | Quick Win - 3 mencoes |
+| 4.2 | Por que concorrencia ja faz |
+| 4.3 | O que monitorar - 3 camadas |
+| 4.4 | Analise de sentimento com IA |
+| 4.5 | Template Dashboard |
+| 4.6 | Demo sistema completo |
+| 4.7 | Exercicio: seu sistema |
+| 4.8 | Validacao e proximos passos |
+
+---
+
+## PROMPT DE IA - AUDITORIA (RECOMENDADO)
 
 ```
 Faca uma auditoria do meu sistema de social listening.
 
 MEU SISTEMA:
 - Termos monitorados: [lista]
-- Ferramentas usadas: [lista]
-- Mencoes encontradas: [quantidade]
-- Dashboard: [descricao]
+- Ferramentas: [lista]
+- Frequencia de analise: [qual]
 
 VERIFIQUE:
-1. Gaps nos termos monitorados
-2. Ferramentas que estao faltando
-3. Riscos do sistema atual
-4. Oportunidades de melhoria
+1. Gaps nos termos
+2. Ferramentas faltando
+3. Riscos do sistema
+4. Sugestoes de melhoria
 
 RETORNE:
-- Score de prontidao (0-100)
+- Score de 0-100
 - Top 3 ajustes prioritarios
-- Rotina semanal recomendada
 ```
-
----
-
-## ENTREGAVEL DO MODULO 4
-
-### Sistema de Social Listening
-
-Voce deve ter:
-
-| Componente | Descricao | Status |
-|------------|-----------|--------|
-| Palavras-Chave | Lista de 5-10 termos | [ ] |
-| Alertas | Google Alerts + manual | [ ] |
-| Dashboard | Planilha centralizada | [ ] |
-| Rotina | 15 min/semana | [ ] |
-
-### Metricas de Sucesso do Sistema
-
-| Antes | Depois |
-|-------|--------|
-| Nao sabia o que falavam | Escuta ativa 24/7 |
-| Perdia oportunidades | Detecta leads |
-| Crises viralizavam | Responde rapido |
-| Conteudo no escuro | Baseado em dados |
-
----
-
-## ROTINA SEMANAL DEFINIDA
-
-### Sua Rotina (15 min/semana)
-
-| Dia | Tarefa | Tempo | Status |
-|-----|--------|-------|--------|
-| [Dia] | Revisar alertas de email | 5 min | [ ] Definido |
-| [Dia] | Consolidar mencoes no dashboard | 5 min | [ ] Definido |
-| [Dia] | Analisar com IA + Agir | 5 min | [ ] Definido |
-
-### Alarmes Configurados
-
-- [ ] Alarme para revisao de alertas: ___
-- [ ] Alarme para consolidacao: ___
-- [ ] Alarme para analise: ___
 
 ---
 
 ## ACAO 48 HORAS
 
-### Nas proximas 48 horas, faca:
+| Prazo | Acao |
+|-------|------|
+| HOJE | Verificar alertas de email |
+| 24h | Responder 1 mencao |
+| 48h | Primeira analise semanal com IA |
 
-1. **Verificar primeiro alerta**
-   - Voce deve receber 1+ emails do Google Alerts
-   - Se nao receber, verifique configuracao
+### Compromisso
 
-2. **Responder 1 mencao**
-   - Escolha a mais relevante
-   - Responda de forma genuina
-   - Anote o resultado
+> "Minha proxima revisao de escuta social sera em: ____/____/____ as ____h"
 
-3. **Gerar 1 ideia de conteudo**
-   - Baseada nos insights da escuta
-   - Adicionar ao Banco de Conteudo (Modulo 2)
+---
 
-4. **Agendar rotina semanal**
-   - Defina dia/horario fixo
-   - Configure lembrete
+## CHECKPOINT
+
+- [ ] Passei pelo checklist de 5 criterios
+- [ ] Fiz auditoria com IA (opcional)
+- [ ] Me comprometi com acao 48h
+- [ ] Estou pronto pro Modulo 5
 
 ---
 
 ## CONEXAO COM MODULO 5
 
-### O Que Vem a Seguir
+> Com o sistema de escuta ativo, no Modulo 5 vamos identificar posts com potencial viral, capitalizar quando viraliza, e escalar o que funciona.
 
-Com seu sistema de escuta ativo, voce agora precisa:
-- **IDENTIFICAR** posts com potencial viral
-- **CAPITALIZAR** quando algo viraliza
-- **ESCALAR** o que funciona
-
-### Modulo 5: Viral Tracker e Decisao Final
-
-Voce vai aprender a:
-- Identificar anatomia de posts virais
-- Calcular metricas de viralizacao
-- Capitalizar virais para vendas
-- Criar um plano de escala de 30 dias
-
-**Por que e importante:**
-> "Saber quando algo vai viralizar - e ter um plano para quando acontecer - pode ser a diferenca entre 1.000 seguidores e 1.000 clientes."
+**Proximo:** Modulo 5 - Viral Tracker e Decisao Final
 
 ---
 
-## REFLEXAO FINAL DO MODULO
-
-### Responda mentalmente:
-
-1. Quantas oportunidades voce perdeu por nao estar escutando?
-2. O que descobriu sobre sua marca/mercado hoje?
-3. Como vai usar os insights para criar conteudo melhor?
-
-### Celebre
-
-Voce acabou de criar um sistema que:
-- Escuta o mercado 24/7
-- Te avisa de oportunidades
-- Detecta crises cedo
-- Funciona automaticamente
+**Tempo real:** 9 minutos
+**Entregavel:** Sistema Validado + Compromisso 48h
+**IA:** Recomendada para auditoria
 
 ---
 
-## RECURSOS DO MODULO
+## CONCLUSAO DO MODULO 4
 
-| Recurso | Localizacao |
-|---------|-------------|
-| Template Dashboard | `/templates/dashboard-social-listening.md` |
-| Prompts de Analise | `/prompts/prompts-social-listening.md` |
-| Lista de Ferramentas | `/templates/ferramentas-listening.md` |
-
----
-
-**Modulo 4 Completo!**
-
-**Duracao Total:** 90 minutos
-**Entregavel:** Sistema de Social Listening
-**Resultado:** Escuta social ativa + insights
-
----
-
-**Proximo Modulo:** 5 - Viral Tracker e Decisao Final
-
----
-
-**Tempo real:** 10 minutos
-**Resultado:** Sistema validado e rotina definida
+**Tempo total do modulo:** ~90 minutos
+**Entregavel final:** Sistema de Social Listening funcional
+**Nivel de IA:** Core em 4.1, 4.4, 4.6, 4.7 / Opcional em 4.2, 4.3, 4.5 / Recomendada em 4.8
