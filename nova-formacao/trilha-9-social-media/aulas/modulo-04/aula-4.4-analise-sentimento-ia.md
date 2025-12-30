@@ -5,216 +5,342 @@
 ---
 
 > **Duracao:** 10 minutos
-> **Tipo:** Teoria
-> **Conceito:** Usando IA para classificar mencoes automaticamente
+> **Tipo:** Teoria + Demonstracao
+> **Conceito-Chave:** IA classifica mencoes automaticamente
+> **Linha do DRE:** Eficiencia operacional / Tempo de resposta
+> **IA Aplicada:** Core - Classificacao automatica de sentimento
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"IA pode ler 1.000 comentarios em 1 minuto e te dizer se sao positivos, negativos ou neutros. Voce leva horas. Veja como usar isso."**
-
----
-
-## O QUE E ANALISE DE SENTIMENTO
-
-### Definicao
-
-Classificar automaticamente mencoes em:
-- **Positivo** - Elogios, recomendacoes, satisfacao
-- **Negativo** - Reclamacoes, criticas, insatisfacao
-- **Neutro** - Perguntas, informacoes, mencoes neutras
-
-### Por Que Importa
-
-| Sentimento | Acao Recomendada |
-|------------|------------------|
-| Positivo | Agradecer, repostar, pedir case |
-| Negativo | Responder rapido, resolver, escalar se grave |
-| Neutro | Informar, educar, engajar |
-
----
-
-## PROMPT PRINCIPAL DE ANALISE
-
-### Prompt Basico
+### ABERTURA (30 segundos)
 
 ```
-Analise o sentimento destas mencoes sobre [sua marca]:
+[OLHAR PARA CAMERA]
 
-MENCOES:
+"IA pode ler 100 comentarios
+em 1 minuto.
+
+E te dizer quais sao positivos,
+quais sao negativos,
+e quais precisam de resposta urgente.
+
+Voce levaria horas.
+
+Hoje vou te mostrar como usar IA
+pra analisar sentimento.
+
+Automatizar a triagem.
+Focar no que importa."
+```
+
+---
+
+### BLOCO 1: O QUE E ANALISE DE SENTIMENTO (1,5 minuto)
+
+```
+[OLHAR PARA CAMERA]
+
+"Analise de sentimento e simples.
+
+Classificar mencoes em 3 categorias:
+
+[MOSTRAR NA TELA]
+
+POSITIVO:
+Elogios. Recomendacoes.
+'Adorei o curso!'
+'Empresa X e otima!'
+
+NEGATIVO:
+Reclamacoes. Criticas.
+'Decepcionado com o servico.'
+'Nao recomendo.'
+
+NEUTRO:
+Perguntas. Informacoes.
+'Quanto custa?'
+'Alguem indica?'
+
+[OLHAR PARA CAMERA]
+
+Cada categoria tem uma acao diferente.
+
+Positivo: agradecer, amplificar.
+Negativo: resolver RAPIDO.
+Neutro: informar, converter."
+```
+
+---
+
+### BLOCO 2: O PROMPT BASICO (2 minutos)
+
+```
+[MOSTRAR NA TELA]
+
+"O prompt basico e esse.
+
+[MOSTRAR PROMPT]
+
+'Analise o sentimento destas mencoes:
+
 1. [Cole mencao 1]
 2. [Cole mencao 2]
 3. [Cole mencao 3]
-...
 
-PARA CADA MENCAO, CLASSIFIQUE:
-1. Sentimento: Positivo / Negativo / Neutro
-2. Intensidade: Baixa / Media / Alta
-3. Urgencia: Responder agora / Pode esperar / Ignorar
-4. Acao sugerida: [acao especifica]
+Para cada uma, classifique:
+- Sentimento: Positivo/Negativo/Neutro
+- Urgencia: Alta/Media/Baixa
+- Acao recomendada'
 
-RESUMO GERAL:
-- Total positivos: X
-- Total negativos: X
-- Total neutros: X
-- Sentimento predominante: [qual]
-- Acao prioritaria: [qual]
+[OLHAR PARA CAMERA]
+
+E so isso.
+Cola as mencoes.
+A IA classifica.
+
+Vou fazer ao vivo.
+
+[MOSTRAR CHATGPT]
+
+Mencoes de exemplo:
+1. 'Adorei o atendimento da Empresa X!'
+2. 'Esperei 3 dias por resposta, pessimo.'
+3. 'Alguem sabe se eles fazem consultoria?'
+
+[COLAR E EXECUTAR]
+
+[MOSTRAR RESULTADO]
+
+Olha.
+Positivo, Negativo, Neutro.
+Com acao pra cada.
+
+30 segundos."
 ```
 
-### Prompt Avancado
+---
+
+### BLOCO 3: PROMPT AVANCADO (2 minutos)
 
 ```
-Voce e um analista de social listening com expertise em [seu nicho].
+[OLHAR PARA CAMERA]
 
-CONTEXTO:
-- Marca: [sua marca]
-- Produtos: [seus produtos]
-- ICP: [seu cliente ideal]
-- Tom de voz: [seu tom]
+"Pra quem quer ir alem.
 
-MENCOES PARA ANALISAR:
-[Cole todas as mencoes]
+[MOSTRAR PROMPT AVANCADO]
 
-ANALISE DETALHADA:
-Para cada mencao, forneca:
+'Voce e um analista de social listening.
 
-| # | Sentimento | Score (-10 a +10) | Urgencia | Topico | Acao |
-|---|------------|-------------------|----------|--------|------|
+MINHA MARCA: [nome]
+MEU NICHO: [nicho]
 
-INSIGHTS:
-1. Temas recorrentes nas mencoes positivas
-2. Temas recorrentes nas mencoes negativas
-3. Oportunidades de conteudo identificadas
-4. Riscos de reputacao detectados
-5. Leads potenciais identificados
+MENCOES:
+[Cole todas]
 
-PRIORIDADES:
+ANALISE CADA UMA:
+- Sentimento (score de -10 a +10)
+- Urgencia (Alta/Media/Baixa)
+- Topico principal
+- Acao recomendada
+
+IDENTIFIQUE:
 - Top 3 mencoes para responder primeiro
-- Mencao com maior potencial de viralizar (positivo ou negativo)
+- Temas recorrentes
+- Oportunidades de conteudo
+- Riscos de reputacao
 
-SUGESTOES DE RESPOSTA:
-Para as 3 mencoes prioritarias, sugira uma resposta.
+SUGIRA RESPOSTA para as 3 prioritarias.'
+
+[OLHAR PARA CAMERA]
+
+Com isso a IA faz mais:
+- Score numerico
+- Prioriza as urgentes
+- Sugere respostas prontas
+- Identifica padroes
+
+Mas o basico ja resolve."
 ```
 
 ---
 
-## FLUXO DE TRABALHO COM IA
-
-### Processo Semanal
+### BLOCO 4: FLUXO SEMANAL (2 minutos)
 
 ```
-1. COLETAR (15 min)
-   Google Alerts → Email
-   Busca manual → Planilha
+[OLHAR PARA CAMERA]
 
-2. CONSOLIDAR (5 min)
-   Todas mencoes → Um documento
+"Como usar isso na rotina.
 
-3. ANALISAR COM IA (5 min)
-   Documento → ChatGPT/Claude
-   Resposta → Dashboard
+[MOSTRAR FLUXO]
 
-4. AGIR (20 min)
-   Prioridades → Respostas
-   Insights → Conteudo
+PASSO 1: COLETAR (10 min)
+Durante a semana, Google Alerts
+manda emails com mencoes.
+Voce junta tudo num documento.
 
-TOTAL: 45 min/semana
+PASSO 2: ANALISAR COM IA (5 min)
+Cola tudo no ChatGPT.
+Usa o prompt.
+Recebe classificacao.
+
+PASSO 3: AGIR (15 min)
+Responde as negativas primeiro.
+Depois as positivas.
+Depois as neutras se der tempo.
+
+[OLHAR PARA CAMERA]
+
+Total: 30 minutos por semana.
+
+E tudo.
+
+Sem IA, voce levaria 2-3 horas
+lendo e classificando manualmente."
 ```
 
 ---
 
-## CATEGORIAS DE RESPOSTA
+### BLOCO 5: RESPOSTAS POR SENTIMENTO (2 minutos)
 
-### Por Sentimento
+```
+[OLHAR PARA CAMERA]
 
-| Sentimento | Resposta Tipo | Exemplo |
-|------------|---------------|---------|
-| Positivo | Agradecer + Ampliar | "Muito obrigado! Posso compartilhar seu feedback?" |
-| Negativo | Reconhecer + Resolver | "Sinto muito por isso. Me chama no DM que resolvo." |
-| Neutro | Informar + Engajar | "Boa pergunta! [resposta]. O que mais posso ajudar?" |
+"Pra cada sentimento, um tipo de resposta.
 
-### Por Urgencia
+[MOSTRAR TABELA]
 
-| Urgencia | Tempo de Resposta | Acao |
-|----------|-------------------|------|
+POSITIVO:
+'Muito obrigado! Fico feliz que gostou.
+Posso compartilhar seu feedback?'
+→ Agradecer + Pedir permissao pra case
+
+NEGATIVO:
+'Sinto muito por isso.
+Me chama no DM que resolvo.'
+→ Reconhecer + Resolver no privado
+
+NEUTRO:
+'Sim, oferecemos consultoria.
+Quer saber mais? Me chama.'
+→ Informar + CTA
+
+[OLHAR PARA CAMERA]
+
+A IA pode sugerir respostas tambem.
+Mas voce adapta pro seu tom."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Resumindo:
+
+Analise de sentimento com IA:
+- Cola as mencoes
+- IA classifica
+- Voce age
+
+30 minutos por semana.
+Vs 3 horas manual.
+
+Na proxima aula,
+vou te dar o Template do Dashboard.
+
+Pra organizar tudo isso
+num lugar so.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### Categorias de Sentimento
+
+| Sentimento | Caracteristicas | Acao |
+|------------|-----------------|------|
+| Positivo | Elogios, satisfacao | Agradecer, amplificar |
+| Negativo | Reclamacoes, criticas | Resolver rapido |
+| Neutro | Perguntas, informacoes | Informar, converter |
+
+### Tempo de Resposta
+
+| Urgencia | Tempo | Acao |
+|----------|-------|------|
 | Alta | < 1 hora | Responder imediatamente |
 | Media | < 24 horas | Responder no mesmo dia |
 | Baixa | < 72 horas | Responder quando possivel |
 
 ---
 
-## PROMPT IA: GERAR RESPOSTAS
+## PROMPT DE IA - ANALISE DE SENTIMENTO
+
+### Prompt Basico
 
 ```
-Gere respostas para estas mencoes baseado no sentimento.
+Analise o sentimento destas mencoes:
 
-MENCOES E SENTIMENTOS:
-1. [Mencao positiva] → Agradecer
-2. [Mencao negativa] → Resolver
-3. [Mencao neutra] → Informar
+MENCOES:
+1. [Cole mencao 1]
+2. [Cole mencao 2]
+3. [Cole mencao 3]
 
-MEU TOM DE VOZ: [profissional/casual/amigavel]
+PARA CADA UMA:
+- Sentimento: Positivo/Negativo/Neutro
+- Urgencia: Alta/Media/Baixa
+- Acao recomendada
+```
+
+### Prompt Avancado
+
+```
+Voce e um analista de social listening.
+
 MINHA MARCA: [nome]
+MEU NICHO: [nicho]
 
-PARA CADA RESPOSTA:
-- Mantenha meu tom de voz
-- Seja conciso (max 2 frases)
-- Inclua CTA quando apropriado
-- Personalize com nome se disponivel
+MENCOES:
+[Cole todas]
 
-FORMATO:
-Mencao: [texto]
-Sentimento: [classificacao]
-Resposta sugerida: [resposta]
+ANALISE CADA UMA:
+- Sentimento (score -10 a +10)
+- Urgencia
+- Acao recomendada
+
+IDENTIFIQUE:
+- Top 3 para responder primeiro
+- Temas recorrentes
+- Riscos de reputacao
+
+SUGIRA RESPOSTA para as 3 prioritarias.
 ```
 
 ---
 
-## METRICAS DE SENTIMENTO
+## CHECKPOINT
 
-### Dashboard Semanal
-
-| Metrica | Esta Semana | Semana Anterior | Tendencia |
-|---------|-------------|-----------------|-----------|
-| Total mencoes | | | ↑↓→ |
-| % Positivas | | | ↑↓→ |
-| % Negativas | | | ↑↓→ |
-| % Neutras | | | ↑↓→ |
-| Tempo resposta (media) | | | ↑↓→ |
-| Taxa resolucao negativas | | | ↑↓→ |
-
-### Metas Recomendadas
-
-- **70%+ positivas** = Marca saudavel
-- **<10% negativas** = Sob controle
-- **100% negativas respondidas em 24h**
-- **Taxa resolucao > 80%**
-
----
-
-## INSIGHT PRINCIPAL
-
-> **"IA nao substitui sua empatia. Ela acelera a triagem. Voce ainda precisa responder como humano - mas agora sabe por onde comecar."**
-
----
-
-## EXERCICIO RAPIDO
-
-Pegue 3 comentarios reais do seu Instagram e:
-1. Cole no ChatGPT com o prompt basico
-2. Veja a classificacao
-3. Use a resposta sugerida (ou adapte)
+- [ ] Entendi as 3 categorias de sentimento
+- [ ] Conhego o prompt basico
+- [ ] Sei o fluxo semanal de analise
+- [ ] Sei como responder cada tipo
 
 ---
 
 ## CONEXAO COM PROXIMA AULA
 
-Agora que voce sabe analisar sentimento, na proxima aula vamos criar seu Dashboard de Social Listening completo.
+> Com a analise de sentimento dominada, na proxima aula vou te dar o Template do Dashboard. Pra organizar mencoes, metricas e insights num lugar so.
 
-**Proxima Aula:** 4.5 - Template: Dashboard de Social Listening
+**Proxima:** Aula 4.5 - Template: Dashboard de Social Listening
 
 ---
 
 **Tempo real:** 10 minutos
-**Conceito:** IA para Analise de Sentimento
+**Conceito-chave:** IA para Analise de Sentimento
+**IA:** Core - Classificacao automatica de mencoes

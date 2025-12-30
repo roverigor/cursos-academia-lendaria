@@ -6,124 +6,292 @@
 
 > **Duracao:** 15 minutos
 > **Tipo:** Quick Win (Exercicio Guiado)
-> **Entregavel:** 7 posts agendados + rotina semanal
+> **Entregavel:** 7 Posts Agendados + Rotina Semanal
+> **Linha do DRE:** Custo de producao / Tempo
+> **IA Aplicada:** Opcional - Otimizacao de horarios
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Em 15 minutos, voce vai agendar uma semana inteira de conteudo. Nunca mais vai postar correndo."**
-
----
-
-## O QUE VOCE VAI SAIR COM
-
-- [ ] 7 posts agendados para proxima semana
-- [ ] Horarios otimizados configurados
-- [ ] Rotina de 30 min/semana definida
-- [ ] IA configurada para sugerir melhores horarios
-
----
-
-## EXERCICIO GUIADO (15 MINUTOS)
-
-### Passo 1: Escolha a Ferramenta (2 min)
-
-| Ferramenta | Melhor Para | Gratis? | IA Integrada |
-|------------|-------------|---------|--------------|
-| Meta Business Suite | Instagram/Facebook | Sim | Sim (horarios) |
-| Buffer | Multi-plataforma | Ate 3 canais | Sim |
-| Later | Visual (feed) | Sim | Sim (hashtags) |
-| Publer | Automacao avancada | Trial | Sim (geracao) |
-
-**Recomendacao:** Comece com Meta Business Suite (100% gratis, IA nativa)
-
-### Passo 2: Selecione 7 Posts do Banco (3 min)
-
-Do seu Banco de Conteudo (Modulo 2), escolha:
-- 3 posts Topo (awareness)
-- 3 posts Meio (consideracao)
-- 1 post Fundo (conversao)
-
-### Passo 3: Use IA Para Otimizar Horarios (5 min)
-
-**Prompt para ChatGPT/Claude:**
+### ABERTURA (30 segundos)
 
 ```
-Analise os melhores horarios para postar no Instagram para:
+[OLHAR PARA CAMERA - ENERGIA]
 
-NICHO: [seu nicho]
-PUBLICO: [empresarios/profissionais/etc]
-OBJETIVO: [engajamento/leads/vendas]
+"Bem-vindo ao Modulo 3.
 
-Considere:
+Nos proximos 15 minutos,
+voce vai agendar uma semana inteira de conteudo.
+
+7 posts. Automatico.
+Nunca mais vai postar correndo.
+
+Pega seu celular ou computador.
+Vamos fazer juntos."
+```
+
+---
+
+### BLOCO 1: ESCOLHA SUA FERRAMENTA (2 minutos)
+
+```
+[MOSTRAR TABELA NA TELA]
+
+"Primeiro, a ferramenta.
+
+Tem varias opcoes. Vou simplificar.
+
+[MOSTRAR LISTA]
+
+Se voce usa SO Instagram e Facebook:
+→ Meta Business Suite. Gratis. Nativo.
+
+Se voce usa VARIAS redes:
+→ Buffer. Gratis ate 3 canais. Simples.
+
+Se voce quer PREVIEW visual:
+→ Later. Mostra como vai ficar o feed.
+
+[OLHAR PARA CAMERA]
+
+Pra esse exercicio, vou assumir
+que voce vai usar o Meta Business Suite.
+
+E o mais simples pra comecar.
+Funciona direto do celular.
+
+Se voce ja tem outra, pode usar.
+O processo e o mesmo."
+```
+
+---
+
+### BLOCO 2: SELECIONE 7 POSTS DO BANCO (3 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Agora, pega seu Banco de Conteudo.
+O que voce criou no Modulo 2.
+
+[PAUSA]
+
+Escolhe 7 posts.
+
+Regra de ouro:
+3 de Topo - pra atrair
+3 de Meio - pra nutrir
+1 de Fundo - pra converter
+
+[MOSTRAR EXEMPLO]
+
+Segunda: Topo
+Terca: Meio
+Quarta: Topo
+Quinta: Meio
+Sexta: Topo
+Sabado: Meio (se quiser)
+Domingo: Fundo (melhor engajamento)
+
+[PAUSA - 60 SEGUNDOS]
+
+Selecionou? Anota os 7.
+
+[OLHAR PARA CAMERA]
+
+Se nao tem 7, pode repetir um Topo.
+Nao precisa ser perfeito.
+Precisa existir."
+```
+
+---
+
+### BLOCO 3: OTIMIZE OS HORARIOS (3 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Agora os horarios.
+
+Se quiser, pode usar a IA pra otimizar.
+Nao e obrigatorio, mas ajuda.
+
+[MOSTRAR PROMPT]
+
+Prompt opcional:
+
+'Melhores horarios para postar no Instagram
+para empresarios de [seu nicho].
+Objetivo: [leads/engajamento/vendas].'
+
+[PAUSA]
+
+A IA vai sugerir baseado em dados.
+
+[MOSTRAR PADRAO]
+
+Se nao quiser usar IA, vai no padrao:
+
+Segunda a Sexta: 11h ou 19h
+Sabado: 11h
+Domingo: 19h
+
+[OLHAR PARA CAMERA]
+
+Esses horarios funcionam pra maioria.
+Depois voce ajusta com seus dados."
+```
+
+---
+
+### BLOCO 4: AGENDE TUDO (6 minutos)
+
+```
+[COMPARTILHAR TELA - META BUSINESS SUITE]
+
+"Agora vamos agendar.
+
+[ABRIR APP]
+
+Se voce nunca usou o Meta Business Suite:
+1. Baixa o app no celular
+2. Entra com sua conta do Instagram
+3. Conecta sua conta comercial
+
+[MOSTRAR]
+
+Pra agendar:
+1. Clica em 'Criar publicacao'
+2. Cola o texto do seu post
+3. Adiciona imagem ou video
+4. Clica em 'Agendar'
+5. Escolhe data e hora
+6. Confirma
+
+[FAZER AO VIVO]
+
+Vou agendar o primeiro agora.
+
+[AGENDAR 1 POST]
+
+Pronto. 1 de 7.
+
+[OLHAR PARA CAMERA]
+
+Agora faca os outros 6.
+
+[PAUSA - 3 MINUTOS]
+
+Vou esperar.
+
+[PAUSA]
+
+Agendou tudo?"
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Pronto.
+
+Em 15 minutos voce criou:
+- 7 posts agendados
+- 1 semana no automatico
+- Rotina que se repete
+
+[PAUSA]
+
+A partir de agora, sua unica tarefa
+e repetir isso toda semana.
+
+15 minutos. 7 posts. Feito.
+
+Na proxima aula, vou te mostrar
+por que publicar manualmente
+e a forma MAIS CARA de fazer social media.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### Distribuicao Semanal Recomendada
+
+| Dia | Etapa | Objetivo |
+|-----|-------|----------|
+| Segunda | TOPO | Atrair |
+| Terca | MEIO | Nutrir |
+| Quarta | TOPO | Atrair |
+| Quinta | MEIO | Nutrir |
+| Sexta | TOPO | Atrair |
+| Sabado | MEIO | Nutrir |
+| Domingo | FUNDO | Converter |
+
+### Horarios Padrao (se nao usar IA)
+
+| Dia | Horario |
+|-----|---------|
+| Seg-Sex | 11h ou 19h |
+| Sabado | 11h |
+| Domingo | 19h |
+
+### Ferramentas por Perfil
+
+| Perfil | Ferramenta |
+|--------|------------|
+| So Instagram/Facebook | Meta Business Suite (gratis) |
+| Multi-plataforma simples | Buffer (gratis ate 3 canais) |
+| Visual/Feed preview | Later |
+| IA avancada | Publer |
+
+---
+
+## PROMPT DE IA - OTIMIZAR HORARIOS (OPCIONAL)
+
+```
+Analise os melhores horarios para postar no Instagram.
+
+MEU CONTEXTO:
+- Nicho: [seu nicho]
+- Publico: [empresarios/profissionais/etc]
+- Objetivo: [engajamento/leads/vendas]
+
+CONSIDERE:
 1. Horarios de maior atividade do publico
-2. Dias da semana com melhor performance
-3. Concorrencia de conteudo
+2. Dias com melhor performance
+3. Meu fuso horario: [seu fuso]
 
-Retorne uma tabela com:
-- Segunda a Sexta
-- Horario recomendado
-- Tipo de post ideal para cada dia
-```
-
-**Resultado Esperado:**
-
-| Dia | Horario | Tipo de Post |
-|-----|---------|--------------|
-| Segunda | 11h | Topo - Educativo |
-| Terca | 19h | Meio - Case |
-| Quarta | 12h | Topo - Dica rapida |
-| Quinta | 18h | Meio - Tutorial |
-| Sexta | 11h | Fundo - Oferta |
-
-### Passo 4: Agende Tudo (5 min)
-
-1. Abra sua ferramenta de agendamento
-2. Crie os 7 posts
-3. Configure os horarios otimizados
-4. Ative notificacoes de lembrete
-
----
-
-## PROMPT DE IA BONUS
-
-Use este prompt para a IA revisar seus posts antes de agendar:
-
-```
-Revise estes 7 posts para Instagram antes de agendar:
-
-[Cole seus posts aqui]
-
-Para cada post, avalie:
-1. Gancho forte? (1-10)
-2. CTA claro? (Sim/Nao)
-3. Legibilidade? (facil/medio/dificil)
-4. Sugestao de melhoria (1 frase)
-
-Formato: Tabela
+RETORNE:
+Tabela Segunda a Domingo com horario ideal.
 ```
 
 ---
 
 ## CHECKPOINT
 
-Antes de prosseguir, confirme:
-
-- [ ] 7 posts agendados na ferramenta
-- [ ] Horarios otimizados com IA
-- [ ] Rotina semanal definida
-- [ ] Notificacoes configuradas
+- [ ] Ferramenta escolhida e instalada
+- [ ] 7 posts selecionados do Banco
+- [ ] Horarios definidos (IA ou padrao)
+- [ ] Todos os 7 posts agendados
+- [ ] Preview verificado
 
 ---
 
 ## CONEXAO COM PROXIMA AULA
 
-Agora que voce tem posts agendados, na proxima aula vamos entender por que publicar manualmente todo dia e a forma mais cara de fazer social media.
+> Com posts agendados, voce ja saiu do modo reativo. Na proxima aula, vou te mostrar os NUMEROS de por que publicar manualmente custa tao caro.
 
-**Proxima Aula:** 3.2 - A Armadilha da Publicacao Manual
+**Proxima:** Aula 3.2 - A Armadilha da Publicacao Manual
 
 ---
 
 **Tempo real:** 15 minutos
-**Resultado:** 7 dias de conteudo agendado
+**Entregavel:** 7 posts agendados + rotina semanal
+**IA:** Opcional para otimizacao de horarios

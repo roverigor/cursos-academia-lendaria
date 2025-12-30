@@ -6,94 +6,233 @@
 
 > **Duracao:** 7 minutos
 > **Tipo:** Template
-> **Entregavel:** Estrutura do Banco de Conteudo
+> **Entregavel:** Estrutura do Banco configurada
+> **Linha do DRE:** Eficiencia operacional
+> **IA Aplicada:** Preenchimento de pilares e ganchos
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Nunca mais fique sem saber o que postar. O Banco de Conteudo e seu estoque infinito de posts prontos."**
+### ABERTURA (30 segundos)
 
----
+```
+[OLHAR PARA CAMERA]
 
-## O QUE E O BANCO DE CONTEUDO
+"Nunca mais fique sem saber o que postar.
 
-### Definicao
-Um repositorio organizado com:
-- Posts prontos para publicar
-- Ideias para desenvolver
-- Templates reutilizaveis
-- Copies validadas
+O Banco de Conteudo e seu estoque infinito
+de posts prontos pra publicar.
 
-### Para Que Serve
-- Eliminar o "o que postar hoje?"
-- Manter consistencia
-- Escalar producao
-- Ter backup para dias sem criatividade
+Hoje voce vai montar a estrutura.
+Na proxima aula, a IA vai preencher.
+
+Abre o template que ta no material.
+Vamos configurar juntos."
+```
 
 ---
 
-## ESTRUTURA DO BANCO
+### BLOCO 1: O QUE E O BANCO (1 minuto)
 
-### Secao 1: Pilares de Conteudo
+```
+[MOSTRAR TEMPLATE NA TELA]
 
-Defina 3-5 temas principais:
+"O Banco de Conteudo e um repositorio com:
 
-| Pilar | Descricao | % do Calendario |
-|-------|-----------|-----------------|
-| Pilar 1: | Ex: Vendas | 25% |
-| Pilar 2: | Ex: Mindset | 25% |
-| Pilar 3: | Ex: Bastidores | 25% |
-| Pilar 4: | Ex: Cases | 15% |
-| Pilar 5: | Ex: Ofertas | 10% |
+[APONTAR]
 
----
+- Posts PRONTOS pra publicar
+- Ideias pra desenvolver
+- Ganchos validados
+- CTAs que funcionam
 
-### Secao 2: Biblioteca de Ganchos
+[OLHAR PARA CAMERA]
 
-Ganchos testados por pilar:
+E como ter uma geladeira cheia.
 
-| Pilar | Gancho | Performance |
-|-------|--------|-------------|
-| Vendas | "O erro que custa R$ 10K/mes" | Alta |
-| Mindset | "Eu desisti 3 vezes antes de..." | Media |
-| Cases | "Meu cliente saiu de X para Y" | Alta |
-| ... | ... | ... |
+Quando bate a fome de conteudo,
+voce abre e escolhe.
+
+Sem desespero.
+Sem 'o que vou postar hoje?'"
+```
 
 ---
 
-### Secao 3: Posts por Etapa do Funil
+### BLOCO 2: AS 5 SECOES (3,5 minutos)
 
-#### TOPO (Atrair)
+```
+[MOSTRAR ESTRUTURA NA TELA]
 
-| # | Titulo/Gancho | Formato | Status |
-|---|---------------|---------|--------|
-| T1 | | Carrossel/Reels | Rascunho/Pronto |
-| T2 | | Carrossel/Reels | Rascunho/Pronto |
-| T3 | | Carrossel/Reels | Rascunho/Pronto |
-| ... | | | |
+"O Banco tem 5 secoes.
 
-#### MEIO (Nutrir)
+[MOSTRAR SECAO 1]
 
-| # | Titulo/Gancho | Formato | Status |
-|---|---------------|---------|--------|
-| M1 | | Case/Tutorial | Rascunho/Pronto |
-| M2 | | Case/Tutorial | Rascunho/Pronto |
-| M3 | | Case/Tutorial | Rascunho/Pronto |
-| ... | | | |
+SECAO 1: PILARES DE CONTEUDO
+Seus 3-5 temas principais.
 
-#### FUNDO (Converter)
+Exemplo pra consultoria:
+- Pilar 1: Vendas (30%)
+- Pilar 2: Gestao (25%)
+- Pilar 3: Mindset (20%)
+- Pilar 4: Cases (15%)
+- Pilar 5: Ofertas (10%)
 
-| # | Titulo/Gancho | Formato | Status |
-|---|---------------|---------|--------|
-| F1 | | Oferta | Rascunho/Pronto |
-| F2 | | Oferta | Rascunho/Pronto |
-| F3 | | Oferta | Rascunho/Pronto |
-| ... | | | |
+Cada pilar tem uma % do calendario.
+
+[MOSTRAR SECAO 2]
+
+SECAO 2: BIBLIOTECA DE GANCHOS
+Ganchos testados por pilar.
+
+Voce vai preencher isso com a IA.
+10 ganchos por pilar = 50 ganchos prontos.
+
+[MOSTRAR SECAO 3]
+
+SECAO 3: POSTS POR FUNIL
+Organizado por Topo, Meio, Fundo.
+
+Cada post tem:
+- Titulo/gancho
+- Formato
+- Status (rascunho/pronto/publicado)
+
+[MOSTRAR SECAO 4]
+
+SECAO 4: CTAs VALIDADOS
+Os CTAs que funcionaram.
+
+Depois de testar, voce salva aqui
+os que tiveram melhor conversao.
+
+[MOSTRAR SECAO 5]
+
+SECAO 5: CALENDARIO SUGERIDO
+Mapeamento da semana.
+
+Segunda: post T1
+Terca: post M1
+E assim por diante.
+
+[OLHAR PARA CAMERA]
+
+5 secoes. Sistema completo."
+```
 
 ---
 
-### Secao 4: Calendario Sugerido
+### BLOCO 3: CONFIGURANDO SEUS PILARES (1,5 minuto)
+
+```
+[OLHAR PARA CAMERA]
+
+"Vamos configurar seus pilares agora.
+
+Pensa: quais sao os 3-5 temas
+que voce MAIS fala no seu negocio?
+
+[PAUSA]
+
+Exemplos por nicho:
+
+Consultoria: Vendas, Gestao, Mindset, Cases.
+Coaching: Carreira, Produtividade, Mentalidade.
+E-commerce: Produtos, Bastidores, Clientes.
+SaaS: Funcionalidades, Dicas, Cases.
+
+[OLHAR PARA CAMERA]
+
+Anota seus 3-5 pilares agora.
+
+Se nao sabe, pode usar a IA.
+Tem um prompt no material.
+
+'Me sugira 5 pilares de conteudo
+para [seu nicho] voltado para [seu ICP].'
+
+Em 30 segundos voce tem os pilares."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Resumindo:
+
+Banco de Conteudo = sua geladeira de posts.
+5 secoes: Pilares, Ganchos, Posts, CTAs, Calendario.
+
+Sua tarefa:
+1. Abre o template
+2. Define seus 3-5 pilares
+3. Atribui % pra cada um
+
+Na proxima aula, vou te mostrar como
+criar 30 posts com IA em 20 minutos.
+
+E preencher seu Banco de uma vez.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### Estrutura do Banco de Conteudo
+
+**SECAO 1: Pilares de Conteudo**
+
+| Pilar | Descricao | % Calendario |
+|-------|-----------|--------------|
+| Pilar 1 | | % |
+| Pilar 2 | | % |
+| Pilar 3 | | % |
+| Pilar 4 | | % |
+| Pilar 5 | | % |
+| **TOTAL** | | **100%** |
+
+**SECAO 2: Biblioteca de Ganchos**
+
+| Pilar | Gancho | Testado? | Performance |
+|-------|--------|----------|-------------|
+| | | Sim/Nao | Alta/Media/Baixa |
+| | | | |
+
+**SECAO 3: Posts por Funil**
+
+*TOPO (50%)*
+| # | Gancho/Titulo | Formato | Pilar | Status |
+|---|---------------|---------|-------|--------|
+| T1 | | | | Rascunho/Pronto |
+| T2 | | | | |
+
+*MEIO (30%)*
+| # | Gancho/Titulo | Formato | Pilar | Status |
+|---|---------------|---------|-------|--------|
+| M1 | | | | |
+| M2 | | | | |
+
+*FUNDO (20%)*
+| # | Gancho/Titulo | Formato | Pilar | Status |
+|---|---------------|---------|-------|--------|
+| F1 | | | | |
+| F2 | | | | |
+
+**SECAO 4: CTAs Validados**
+
+| Objetivo | CTA | Plataforma | Performance |
+|----------|-----|------------|-------------|
+| Lead | | IG/LI | Alta/Media |
+| Venda | | | |
+| Engajamento | | | |
+
+**SECAO 5: Calendario Sugerido**
 
 | Semana | Seg | Ter | Qua | Qui | Sex |
 |--------|-----|-----|-----|-----|-----|
@@ -104,73 +243,95 @@ Ganchos testados por pilar:
 
 ---
 
-### Secao 5: CTAs Validados
-
-| Objetivo | CTA | Performance |
-|----------|-----|-------------|
-| Lead | "Comenta X que eu mando" | Alta |
-| Call | "DM 'CONVERSAR'" | Media |
-| Venda | "Link na bio" | Baixa |
-| ... | ... | ... |
-
----
-
-### Secao 6: Prompts de IA
-
-Prompts para gerar mais conteudo:
+## PROMPT DE IA - DEFINIR PILARES
 
 ```
-PROMPT 1: Gerar ideias de post
-"Gere 10 ideias de post sobre [tema] para [ICP].
-Cada ideia deve ter: gancho + angulo unico.
-Formato: lista numerada."
+Me sugira 5 pilares de conteudo para redes sociais.
 
-PROMPT 2: Transformar ideia em post
-"Transforme esta ideia em post de Instagram:
-[ideia]
-Use a estrutura: gancho, problema, solucao, CTA.
-Tom: [profissional/descontraido]
-Maximo: 150 palavras."
+MEU NEGOCIO:
+- Nicho: [seu nicho]
+- ICP: [seu cliente ideal]
+- Objetivo principal: [leads/vendas/autoridade]
 
-PROMPT 3: Criar variações
-"Crie 3 variacoes deste post:
-[post original]
-Mantenha a mensagem, mude o angulo."
+PARA CADA PILAR:
+1. Nome do pilar
+2. Descricao em 1 linha
+3. % sugerida do calendario
+4. 3 exemplos de temas
+
+REGRAS:
+- Os pilares devem cobrir Topo, Meio e Fundo
+- A soma deve dar 100%
+- Pelo menos 1 pilar de conversao
 ```
 
 ---
 
-### Secao 7: Metricas de Performance
+## PROMPT DE IA - GERAR GANCHOS POR PILAR
 
-| Post | Data | Alcance | Engaj. | Cliques | Leads |
-|------|------|---------|--------|---------|-------|
-| T1 | | | | | |
-| M1 | | | | | |
-| F1 | | | | | |
+```
+Gere 10 ganchos para o pilar [NOME DO PILAR].
+
+CONTEXTO:
+- Nicho: [seu nicho]
+- ICP: [seu cliente ideal]
+- Pilar: [nome e descricao]
+
+USE FORMULAS VARIADAS:
+- Numero + Beneficio
+- Pergunta provocativa
+- Controversia
+- Historia
+- Resultado surpresa
+
+RETORNE:
+10 ganchos prontos pra usar, um por linha.
+```
 
 ---
 
-## ONDE ACESSAR O TEMPLATE
+## EXEMPLOS DE PILARES POR NICHO
 
-O template completo esta disponivel em:
-- `/templates/02-banco-conteudo-estrategico.md`
-- Formatos: Notion, Google Sheets, Airtable
+**Consultoria B2B:**
+1. Vendas (30%) - Tecnicas, objecoes, fechamento
+2. Gestao (25%) - Processos, produtividade, time
+3. Mindset (20%) - Mentalidade, lideranca
+4. Cases (15%) - Resultados de clientes
+5. Ofertas (10%) - Servicos, convites
+
+**Coach de Carreira:**
+1. Desenvolvimento (30%) - Habilidades, crescimento
+2. Produtividade (25%) - Organizacao, foco
+3. Networking (20%) - Relacionamentos, LinkedIn
+4. Transicao (15%) - Mudanca de carreira
+5. Ofertas (10%) - Mentorias, cursos
+
+**E-commerce:**
+1. Produtos (35%) - Lancamentos, beneficios
+2. Bastidores (25%) - Producao, equipe
+3. Clientes (20%) - Depoimentos, unboxing
+4. Dicas (10%) - Como usar, combinacoes
+5. Ofertas (10%) - Promocoes, exclusivos
 
 ---
 
-## INSIGHT PRINCIPAL
+## CHECKPOINT
 
-> **"Com um Banco de Conteudo, voce nunca mais posta no desespero. Voce posta com estrategia."**
+- [ ] Entendi a estrutura do Banco
+- [ ] Defini meus 3-5 pilares
+- [ ] Atribui % pra cada pilar
+- [ ] Template configurado e pronto
 
 ---
 
 ## CONEXAO COM PROXIMA AULA
 
-Na proxima aula, voce vai ver uma DEMO de como criar 30 posts em 20 minutos usando IA + o Banco de Conteudo.
+> Com a estrutura pronta, na proxima aula voce vai ver uma DEMO de como criar 30 posts em 20 minutos usando IA. E preencher seu Banco de uma vez.
 
-**Proxima Aula:** 2.6 - Demo: 30 Posts Criados com IA em 20 Minutos
+**Proxima:** Aula 2.6 - Demo: 30 Posts Criados com IA
 
 ---
 
 **Tempo real:** 7 minutos
-**Entregavel:** Estrutura do Banco de Conteudo
+**Entregavel:** Estrutura do Banco configurada
+**IA:** Geracao de pilares e ganchos

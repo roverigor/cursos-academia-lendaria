@@ -4,63 +4,291 @@
 
 ---
 
-> **Duracao:** 28 minutos
-> **Tipo:** Pratica Guiada
+> **Duracao:** 25 minutos
+> **Tipo:** Exercicio Guiado
 > **Entregavel:** Sistema de Social Listening configurado
+> **Linha do DRE:** Eficiencia operacional
+> **IA Aplicada:** Core - Analise e organizacao
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Nos proximos 28 minutos, voce vai sair com um sistema de escuta social funcional. Vamos fazer juntos, passo a passo."**
-
----
-
-## INSTRUCOES GERAIS
-
-- Use as ferramentas gratuitas primeiro
-- Comece com 5-10 termos, nao mais
-- Configure alertas apenas para o essencial
-- Perfeicao depois, funcional agora
-
----
-
-## BLOCO 1: DEFINIR PALAVRAS-CHAVE (5 min)
-
-### Tarefas
-
-- [ ] Listar termos da sua marca
-- [ ] Listar termos de 1-2 concorrentes
-- [ ] Listar termos do mercado/dores
-- [ ] Priorizar top 10
-
-### Prompt IA: Gerar Lista
+### ABERTURA (30 segundos)
 
 ```
-Crie minha lista de palavras-chave para social listening.
+[OLHAR PARA CAMERA]
 
-MEU NEGOCIO: [tipo]
-MINHA MARCA: [nome]
-MEUS PRODUTOS: [lista]
-MEUS CONCORRENTES: [2-3 principais]
-DORES DO MEU ICP: [lista]
+"Agora e sua vez.
 
-GERE:
-- 5 termos da minha marca (incluindo variacoes)
-- 3 termos de concorrentes
-- 3 termos de mercado/dores
+Nos proximos 25 minutos,
+voce vai configurar SEU sistema
+de escuta social.
 
-PRIORIZE por:
-- Probabilidade de gerar leads
-- Volume esperado de mencoes
-- Relevancia estrategica
+Palavras-chave.
+Google Alerts.
+Dashboard.
+Primeira analise.
 
-FORMATO: Lista numerada com justificativa
+Abre seu navegador.
+Desliga notificacoes.
+
+Vamos fazer juntos."
 ```
 
-### Sua Lista Final
+---
 
-Preencha:
+### BLOCO 1: DEFINIR PALAVRAS-CHAVE (5 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Primeiro passo: suas palavras-chave.
+
+Voce ja fez isso na aula 4.3.
+Vamos formalizar.
+
+[MOSTRAR TEMPLATE]
+
+MARCA (5 termos):
+1. Nome da empresa
+2. Seu nome pessoal
+3. Produto 1
+4. Produto 2
+5. Hashtag principal
+
+CONCORRENTES (2-3 termos):
+6. Concorrente A
+7. Concorrente B
+
+MERCADO (2-3 termos):
+8. Dor do ICP
+9. Pedido de indicacao
+
+[PAUSA - 2 MINUTOS]
+
+Anota os seus.
+Se precisar, usa a IA:
+
+[MOSTRAR PROMPT]
+
+'Gere 10 termos para monitorar minha marca.
+Marca: [nome].
+Nicho: [nicho].
+Concorrentes: [lista].'
+
+[PAUSA - 1 MINUTO]
+
+[OLHAR PARA CAMERA]
+
+Quantos termos voce tem?
+8-12 e ideal.
+Mais que isso, complicar."
+```
+
+---
+
+### BLOCO 2: CONFIGURAR GOOGLE ALERTS (7 minutos)
+
+```
+[MOSTRAR TELA]
+
+"Abre google.com/alerts agora.
+
+[PAUSA - 30 SEGUNDOS]
+
+Vamos criar 5 alertas.
+Os mais importantes.
+
+[MOSTRAR PASSO A PASSO]
+
+ALERTA 1: Sua marca
+Digita o nome entre aspas.
+Clica em 'Mostrar opcoes'.
+Frequencia: Diario.
+Cria.
+
+[PAUSA - 60 SEGUNDOS]
+
+ALERTA 2: Seu nome pessoal
+Mesmo processo.
+Frequencia: Semanal.
+
+[PAUSA - 60 SEGUNDOS]
+
+ALERTA 3: Concorrente principal
+Entre aspas.
+Frequencia: Semanal.
+
+[PAUSA - 60 SEGUNDOS]
+
+ALERTA 4 e 5: Dores do mercado
+'Preciso de [seu nicho]'
+'Alguem indica [seu nicho]'
+
+[PAUSA - 90 SEGUNDOS]
+
+[OLHAR PARA CAMERA]
+
+Pronto?
+5 alertas criados.
+A partir de agora,
+voce recebe email
+quando alguem falar de voce."
+```
+
+---
+
+### BLOCO 3: CRIAR DASHBOARD (5 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Terceiro passo: dashboard.
+
+Abre o Google Sheets ou Notion.
+Cria um documento novo.
+
+[PAUSA - 30 SEGUNDOS]
+
+Cria 2 abas:
+
+[MOSTRAR]
+
+ABA 1: PALAVRAS-CHAVE
+Colunas: Termo | Camada | Status
+
+ABA 2: MENCOES
+Colunas: Data | Fonte | Mencao | Sentimento | Acao | Status
+
+[PAUSA - 2 MINUTOS]
+
+Cria a estrutura agora.
+Nao precisa preencher tudo.
+So a estrutura.
+
+[OLHAR PARA CAMERA]
+
+Feito?
+Salva o link.
+Favorita."
+```
+
+---
+
+### BLOCO 4: PRIMEIRA BUSCA (5 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Ultimo passo: primeira busca.
+
+Abre o Instagram ou LinkedIn.
+
+[PAUSA - 30 SEGUNDOS]
+
+Busca pelos seus termos.
+Anota o que encontrar.
+
+[PAUSA - 3 MINUTOS]
+
+[OLHAR PARA CAMERA]
+
+Achou mencoes?
+Anota na planilha.
+
+Se quiser analisar com IA:
+
+[MOSTRAR PROMPT]
+
+'Analise estas mencoes:
+1. [mencao 1]
+2. [mencao 2]
+Classifique sentimento e urgencia.'
+
+[PAUSA - 60 SEGUNDOS]
+
+Se nao achou nada,
+ta tudo bem.
+Os alertas vao trazer.
+
+O importante:
+sistema esta configurado."
+```
+
+---
+
+### BLOCO 5: DEFINIR ROTINA (2 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Ultimo: sua rotina.
+
+[MOSTRAR TEMPLATE]
+
+DIA DE REVISAO: ____________
+HORARIO: ___h
+DURACAO: 15-30 min
+
+[PAUSA - 30 SEGUNDOS]
+
+Escolhe um dia.
+Sexta-feira e bom.
+Consolida a semana.
+
+Configura alarme no celular.
+Agora.
+
+[PAUSA - 30 SEGUNDOS]
+
+[OLHAR PARA CAMERA]
+
+Pronto."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Em 25 minutos voce:
+- Definiu 10 palavras-chave
+- Configurou 5 alertas
+- Criou seu dashboard
+- Fez primeira busca
+- Definiu rotina semanal
+
+Sistema de escuta social.
+Configurado.
+Funcionando.
+
+Na proxima aula,
+validamos tudo.
+
+E fechamos o Modulo 4.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### Checklist de Conclusao
+
+| Item | Status |
+|------|--------|
+| 10 palavras-chave definidas | [ ] |
+| 5 Google Alerts criados | [ ] |
+| Dashboard criado | [ ] |
+| Primeira busca feita | [ ] |
+| Rotina semanal definida | [ ] |
+| Alarme configurado | [ ] |
+
+### Template de Palavras-Chave
 
 | # | Termo | Camada | Prioridade |
 |---|-------|--------|------------|
@@ -71,197 +299,48 @@ Preencha:
 | 5 | | Concorrente | Media |
 | 6 | | Mercado | Alta |
 | 7 | | Mercado | Media |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
 
 ---
 
-## BLOCO 2: CONFIGURAR ALERTAS (10 min)
-
-### Tarefas
-
-- [ ] Criar conta Google Alerts (se nao tiver)
-- [ ] Configurar 5 alertas principais
-- [ ] Definir frequencia de cada
-- [ ] Verificar email de destino
-
-### Passo a Passo Google Alerts
-
-1. Acesse: **google.com/alerts**
-2. Para cada termo:
-   - Digite o termo na caixa
-   - Clique em "Mostrar opcoes"
-   - Configure:
-     - Frequencia: Diario (marca) ou Semanal (outros)
-     - Fontes: Automatico
-     - Idioma: Portugues
-     - Regiao: Brasil
-     - Quantidade: Todos os resultados
-   - Clique em "Criar alerta"
-
-### Checklist de Alertas
-
-| Termo | Configurado? | Frequencia |
-|-------|--------------|------------|
-| [Sua marca] | [ ] | Diario |
-| [Seu nome] | [ ] | Semanal |
-| [Concorrente 1] | [ ] | Semanal |
-| [Dor do ICP] | [ ] | Semanal |
-| [Termo mercado] | [ ] | Semanal |
-
----
-
-## BLOCO 3: PRIMEIRA VARREDURA (8 min)
-
-### Tarefas
-
-- [ ] Fazer busca manual em 2-3 plataformas
-- [ ] Anotar mencoes encontradas
-- [ ] Classificar sentimento
-- [ ] Identificar 1 insight
-
-### Onde Buscar
-
-| Plataforma | Como Buscar | Tempo |
-|------------|-------------|-------|
-| Instagram | Busca por hashtag/nome | 2 min |
-| Twitter/X | Busca avancada | 2 min |
-| LinkedIn | Busca por posts | 2 min |
-| Google | "nome" site:twitter.com | 2 min |
-
-### Template de Registro
-
-| Plataforma | Mencao | Autor | Sentimento | Acao |
-|------------|--------|-------|------------|------|
-| | | | Pos/Neg/Neu | |
-| | | | | |
-| | | | | |
-
-### Prompt IA: Analisar Mencoes
+## PROMPT DE IA - GERAR TERMOS
 
 ```
-Analise as mencoes que encontrei:
+Gere 10 termos para monitorar minha marca.
 
-MENCOES:
-1. [Mencao 1 - plataforma]
-2. [Mencao 2 - plataforma]
-3. [Mencao 3 - plataforma]
+MINHA MARCA: [nome]
+MEU NICHO: [nicho]
+MEUS CONCORRENTES: [lista]
+DORES DO MEU ICP: [lista]
 
-CLASSIFIQUE:
-- Sentimento de cada
-- Urgencia de resposta
-- Acao recomendada
+RETORNE:
+- 5 termos da marca
+- 2 termos de concorrentes
+- 3 termos de mercado/dores
 
-IDENTIFIQUE:
-- 1 insight principal
-- 1 oportunidade de lead (se houver)
-- 1 ideia de conteudo baseada nas mencoes
+Priorize por probabilidade de gerar leads.
 ```
 
 ---
 
-## BLOCO 4: CRIAR DASHBOARD (5 min)
+## CHECKPOINT
 
-### Tarefas
-
-- [ ] Criar planilha ou documento
-- [ ] Adicionar estrutura do template
-- [ ] Preencher com dados de hoje
-- [ ] Salvar link para acesso rapido
-
-### Estrutura Minima
-
-Crie uma planilha com estas abas:
-
-**Aba 1: Palavras-Chave**
-| Termo | Camada | Fonte | Status |
-
-**Aba 2: Mencoes**
-| Data | Fonte | Mencao | Sentimento | Acao | Status |
-
-**Aba 3: Metricas**
-| Semana | Positivas | Negativas | Neutras | Insights |
-
-### Prompt IA: Gerar Estrutura
-
-```
-Crie a estrutura completa do meu dashboard de social listening.
-
-FORMATO: Google Sheets
-MINHA REALIDADE: [iniciante, pouco tempo]
-
-INCLUA:
-1. Aba de palavras-chave
-2. Aba de registro de mencoes
-3. Aba de metricas semanais
-4. Aba de insights
-
-PARA CADA ABA:
-- Colunas necessarias
-- Exemplo de preenchimento
-- Formulas uteis (se aplicavel)
-
-FORMATO: Descricao textual que eu possa replicar
-```
-
----
-
-## CHECKPOINT FINAL
-
-### Confirmacao
-
-| Criterio | Status |
-|----------|--------|
-| 5+ termos definidos | [ ] |
-| Google Alerts configurado | [ ] |
-| Primeira varredura feita | [ ] |
-| Mencoes encontradas e anotadas | [ ] |
-| Dashboard criado | [ ] |
-| Insight identificado | [ ] |
-
-### Metricas de Sucesso
-
-- Alertas criados: ___/5
-- Mencoes encontradas: ___
-- Tempo total do exercicio: ___ min
-- Proxima verificacao: ___/___
-
----
-
-## PROBLEMAS COMUNS
-
-### "Nao encontrei mencoes"
-→ Amplie os termos (use dores genericas do nicho)
-→ Busque em mais plataformas
-
-### "Encontrei mencoes demais"
-→ Reduza para termos mais especificos
-→ Foque nos prioritarios primeiro
-
-### "Nao sei classificar sentimento"
-→ Use a IA para ajudar
-→ Na duvida, marque como Neutro
-
-### "Dashboard muito complexo"
-→ Comece so com 2 abas
-→ Sofistique depois
-
----
-
-## INSIGHT PRINCIPAL
-
-> **"Um sistema simples que voce usa e melhor que um sistema perfeito que voce abandona. Comece hoje, melhore amanha."**
+- [ ] 10 palavras-chave definidas
+- [ ] 5 Google Alerts configurados
+- [ ] Dashboard criado (2 abas)
+- [ ] Primeira busca realizada
+- [ ] Rotina semanal definida
+- [ ] Alarme configurado
 
 ---
 
 ## CONEXAO COM PROXIMA AULA
 
-Na proxima aula, vamos validar seu sistema e garantir que esta pronto para rodar semanalmente.
+> Com o sistema configurado, na proxima aula validamos tudo e fechamos o Modulo 4. Acao 48 horas definida.
 
-**Proxima Aula:** 4.8 - Validacao e Proximos Passos
+**Proxima:** Aula 4.8 - Validacao e Proximos Passos
 
 ---
 
-**Tempo real:** 28 minutos
-**Entregavel:** Sistema de Social Listening funcional
+**Tempo real:** 25 minutos
+**Entregavel:** Sistema de Social Listening configurado
+**IA:** Core para analise e organizacao

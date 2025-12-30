@@ -5,57 +5,353 @@
 ---
 
 > **Duracao:** 25 minutos
-> **Tipo:** Pratica Individual
+> **Tipo:** Exercicio Guiado
 > **Entregavel:** Banco de Conteudo com 30 Posts
+> **Linha do DRE:** Custo de producao / Eficiencia
+> **IA Aplicada:** CORE - Geracao completa dos posts
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Nos proximos 25 minutos, voce vai criar um mes inteiro de conteudo. Siga o processo, confie no metodo."**
+### ABERTURA (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Agora e sua vez.
+
+Nos proximos 25 minutos,
+voce vai criar seu Banco de Conteudo.
+
+30 posts. Um mes inteiro.
+Seguindo exatamente o que eu fiz.
+
+Abre o ChatGPT ou Claude.
+Abre o template do Banco.
+Desliga notificacoes.
+
+Eu vou guiar cada etapa.
+Voce executa junto.
+
+Pronto? Vamos."
+```
 
 ---
 
-## INSTRUCOES
+### BLOCO 1: DEFININDO SEUS PILARES (3 minutos)
 
-### Materiais Necessarios
-- [ ] Template do Banco de Conteudo
-- [ ] ChatGPT ou Claude aberto
-- [ ] Prompts da aula anterior
-- [ ] 25 minutos sem interrupcao
+```
+[MOSTRAR PROMPT NA TELA]
+
+"Primeiro, seus pilares.
+
+Copia esse prompt:
+
+'Sou [sua profissao/nicho].
+Meu ICP: [seu cliente ideal].
+Principais dores: [liste 3 dores].
+
+Sugira 5 pilares de conteudo para meu Instagram.
+Para cada pilar, de 3 subtemas.'
+
+[PAUSA - 10 SEGUNDOS]
+
+Preenche com seus dados.
+Roda na IA.
+
+[PAUSA - 60 SEGUNDOS]
+
+Quando terminar, anota os 5 pilares
+na primeira aba do seu Banco.
+
+[OLHAR PARA CAMERA]
+
+Pronto? Proxima etapa."
+```
 
 ---
 
-## EXERCICIO GUIADO
+### BLOCO 2: GERANDO 15 POSTS TOPO (7 minutos)
 
-### BLOCO 1: Definir Pilares (3 min)
+```
+[MOSTRAR PROMPT NA TELA]
 
-Use este prompt:
+"Agora o Topo. 15 posts de atracao.
+
+Copia:
+
+'Gere 15 ideias de post TOPO DE FUNIL para Instagram.
+Tema: [seu nicho].
+Pilares: [seus 5 pilares].
+
+Cada ideia deve ter:
+- Gancho (primeira linha)
+- Formato sugerido
+
+Ideias devem atrair pessoas que NAO me conhecem.'
+
+[PAUSA - 10 SEGUNDOS]
+
+Preenche seus pilares.
+Roda.
+
+[PAUSA - 90 SEGUNDOS]
+
+Enquanto a IA gera, prepara o Banco.
+Secao TOPO.
+
+[PAUSA - 60 SEGUNDOS]
+
+Copia os 15 resultados pro Banco.
+Nao edita agora. So copia.
+
+[PAUSA - 60 SEGUNDOS]
+
+[OLHAR PARA CAMERA]
+
+15 posts de Topo prontos.
+Segue."
+```
+
+---
+
+### BLOCO 3: GERANDO 10 POSTS MEIO (5 minutos)
+
+```
+[MOSTRAR PROMPT NA TELA]
+
+"Meio do funil. 10 posts de confianca.
+
+Copia:
+
+'Gere 10 ideias de post MEIO DE FUNIL.
+Para pessoas que ja me seguem.
+Foco em: cases, tutoriais, bastidores.
+
+Cada ideia deve gerar CONFIANCA
+e mostrar minha metodologia.'
+
+[PAUSA - 10 SEGUNDOS]
+
+Roda.
+
+[PAUSA - 60 SEGUNDOS]
+
+Enquanto espera, revisa os posts de Topo.
+Tem algum que nao faz sentido?
+Marca pra ajustar depois.
+
+[PAUSA - 60 SEGUNDOS]
+
+Copia os 10 resultados pro Banco.
+Secao MEIO.
+
+[PAUSA - 60 SEGUNDOS]
+
+[OLHAR PARA CAMERA]
+
+25 posts no Banco.
+Faltam 5."
+```
+
+---
+
+### BLOCO 4: GERANDO 5 POSTS FUNDO (3 minutos)
+
+```
+[MOSTRAR PROMPT NA TELA]
+
+"Fundo do funil. 5 posts de conversao.
+
+Copia:
+
+'Gere 5 ideias de post FUNDO DE FUNIL.
+Para pessoas prontas para comprar.
+Minha oferta: [seu produto/servico principal].
+
+Cada post deve ter CTA claro.
+Use gatilhos: escassez, urgencia, prova social.'
+
+[PAUSA - 10 SEGUNDOS]
+
+Coloca sua oferta real.
+Roda.
+
+[PAUSA - 60 SEGUNDOS]
+
+Esses sao os posts que vendem.
+CTAs devem ser especificos.
+
+[PAUSA - 60 SEGUNDOS]
+
+Copia pro Banco.
+Secao FUNDO.
+
+[OLHAR PARA CAMERA]
+
+30 posts no Banco.
+Agora vamos desenvolver 3."
+```
+
+---
+
+### BLOCO 5: DESENVOLVENDO 3 POSTS COMPLETOS (5 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Escolhe 3 posts: 1 Topo, 1 Meio, 1 Fundo.
+Os que voce mais gostou.
+
+Vou te dar o prompt de desenvolvimento.
+
+[MOSTRAR PROMPT]
+
+'Desenvolva este post para Instagram:
+
+IDEIA: [gancho do post]
+FORMATO: [carrossel/reels/texto]
+TOM: [seu tom - profissional/descontraido]
+CTA: [acao que voce quer]
+
+Estrutura:
+- [defina a estrutura]
+
+Para cada ponto: seja especifico e pratico.'
+
+[PAUSA - 10 SEGUNDOS]
+
+Desenvolve 1 post de Topo.
+
+[PAUSA - 60 SEGUNDOS]
+
+Agora 1 de Meio.
+
+[PAUSA - 60 SEGUNDOS]
+
+Por fim, 1 de Fundo.
+
+[PAUSA - 60 SEGUNDOS]
+
+[OLHAR PARA CAMERA]
+
+3 posts completos.
+Prontos pra design e publicacao."
+```
+
+---
+
+### BLOCO 6: MONTANDO O CALENDARIO (2 minutos)
+
+```
+[MOSTRAR CALENDARIO NA TELA]
+
+"Ultimo passo: distribuir no calendario.
+
+5 posts por semana.
+3 Topo, 1 Meio, 1 Fundo.
+
+[MOSTRAR]
+
+Segunda: Topo (T1)
+Terca: Meio (M1)
+Quarta: Topo (T2)
+Quinta: Topo (T3)
+Sexta: Fundo (F1)
+
+[PAUSA - 30 SEGUNDOS]
+
+Preenche as 4 semanas no seu Banco.
+
+[PAUSA - 60 SEGUNDOS]
+
+[OLHAR PARA CAMERA]
+
+4 semanas de conteudo.
+20 posts no calendario.
+10 de backup."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Pronto.
+
+Em 25 minutos voce criou:
+- 5 pilares de conteudo
+- 15 posts de Topo
+- 10 posts de Meio
+- 5 posts de Fundo
+- 3 posts desenvolvidos
+- 4 semanas de calendario
+
+[PAUSA]
+
+Isso normalmente leva 1 semana.
+Voce fez em 25 minutos.
+
+Na proxima aula, validamos tudo
+e definimos proximos passos.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### Checklist de Conclusao
+
+| Item | Quantidade | Status |
+|------|------------|--------|
+| Pilares definidos | 5 | [ ] |
+| Posts Topo | 15 | [ ] |
+| Posts Meio | 10 | [ ] |
+| Posts Fundo | 5 | [ ] |
+| Posts desenvolvidos | 3 | [ ] |
+| Calendario preenchido | 4 semanas | [ ] |
+
+### Estrutura do Calendario Semanal
+
+| Dia | Nivel | Objetivo |
+|-----|-------|----------|
+| Segunda | TOPO | Atrair |
+| Terca | MEIO | Nutrir |
+| Quarta | TOPO | Atrair |
+| Quinta | TOPO | Atrair |
+| Sexta | FUNDO | Converter |
+
+### Distribuicao Total
+
+| Semana | T | M | F | Total |
+|--------|---|---|---|-------|
+| 1 | T1, T2, T3 | M1 | F1 | 5 |
+| 2 | T4, T5, T6 | M2 | F2 | 5 |
+| 3 | T7, T8, T9 | M3 | F3 | 5 |
+| 4 | T10, T11, T12 | M4 | F4 | 5 |
+| Backup | T13-T15 | M5-M10 | F5 | 10 |
+
+---
+
+## PROMPTS COMPLETOS
+
+### Prompt 1: Pilares
 
 ```
 Sou [sua profissao/nicho].
-Meu ICP: [descreva seu cliente ideal].
+Meu ICP: [seu cliente ideal].
 Principais dores: [liste 3 dores].
 
 Sugira 5 pilares de conteudo para meu Instagram.
 Para cada pilar, de 3 subtemas.
 ```
 
-**Seus Pilares:**
-
-| # | Pilar | Subtemas |
-|---|-------|----------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
-
----
-
-### BLOCO 2: Gerar 15 Posts Topo (7 min)
-
-Use este prompt:
+### Prompt 2: Posts Topo (15)
 
 ```
 Gere 15 ideias de post TOPO DE FUNIL para Instagram.
@@ -69,31 +365,7 @@ Cada ideia deve ter:
 Ideias devem atrair pessoas que NAO me conhecem.
 ```
 
-**Cole os resultados aqui:**
-
-| # | Gancho | Formato |
-|---|--------|---------|
-| T1 | | |
-| T2 | | |
-| T3 | | |
-| T4 | | |
-| T5 | | |
-| T6 | | |
-| T7 | | |
-| T8 | | |
-| T9 | | |
-| T10 | | |
-| T11 | | |
-| T12 | | |
-| T13 | | |
-| T14 | | |
-| T15 | | |
-
----
-
-### BLOCO 3: Gerar 10 Posts Meio (5 min)
-
-Use este prompt:
+### Prompt 3: Posts Meio (10)
 
 ```
 Gere 10 ideias de post MEIO DE FUNIL.
@@ -104,26 +376,7 @@ Cada ideia deve gerar CONFIANCA e mostrar minha metodologia.
 Inclua gancho + formato.
 ```
 
-**Cole os resultados aqui:**
-
-| # | Gancho | Formato |
-|---|--------|---------|
-| M1 | | |
-| M2 | | |
-| M3 | | |
-| M4 | | |
-| M5 | | |
-| M6 | | |
-| M7 | | |
-| M8 | | |
-| M9 | | |
-| M10 | | |
-
----
-
-### BLOCO 4: Gerar 5 Posts Fundo (3 min)
-
-Use este prompt:
+### Prompt 4: Posts Fundo (5)
 
 ```
 Gere 5 ideias de post FUNDO DE FUNIL.
@@ -134,102 +387,43 @@ Cada post deve ter CTA claro.
 Use gatilhos: escassez, urgencia, prova social.
 ```
 
-**Cole os resultados aqui:**
+### Prompt 5: Desenvolver Post
 
-| # | Gancho | CTA |
-|---|--------|-----|
-| F1 | | |
-| F2 | | |
-| F3 | | |
-| F4 | | |
-| F5 | | |
-
----
-
-### BLOCO 5: Desenvolver 3 Posts Completos (5 min)
-
-Escolha 3 posts (1 de cada etapa) e desenvolva:
-
-**Post Topo (T__):**
 ```
-[Cole o post desenvolvido]
-```
+Desenvolva este post para Instagram:
 
-**Post Meio (M__):**
-```
-[Cole o post desenvolvido]
-```
+IDEIA: [titulo/gancho do post]
+FORMATO: [carrossel X slides / reels / texto]
+TOM: [profissional/descontraido/provocativo]
+CTA: [acao desejada]
 
-**Post Fundo (F__):**
-```
-[Cole o post desenvolvido]
+Estrutura:
+[descreva a estrutura]
+
+Para cada ponto: seja especifico e pratico.
 ```
 
 ---
 
-### BLOCO 6: Organizar Calendario (2 min)
+## CHECKPOINT
 
-Distribua os 30 posts nas 4 semanas:
-
-| Semana | Seg | Ter | Qua | Qui | Sex |
-|--------|-----|-----|-----|-----|-----|
-| 1 | T__ | M__ | T__ | M__ | F__ |
-| 2 | T__ | M__ | T__ | M__ | F__ |
-| 3 | T__ | M__ | T__ | M__ | F__ |
-| 4 | T__ | M__ | T__ | M__ | F__ |
-
-**Sobram 10 posts para:**
-- [ ] Semana 5 (se o mes tiver)
-- [ ] Backup para dias sem inspiracao
-- [ ] Stories
-
----
-
-## CHECKPOINT DE CONCLUSAO
-
-Antes de prosseguir, confirme:
-
-- [ ] 5 pilares de conteudo definidos
-- [ ] 15 posts Topo gerados
-- [ ] 10 posts Meio gerados
-- [ ] 5 posts Fundo gerados
+- [ ] 5 pilares no Banco
+- [ ] 15 posts Topo no Banco
+- [ ] 10 posts Meio no Banco
+- [ ] 5 posts Fundo no Banco
 - [ ] 3 posts completamente desenvolvidos
 - [ ] Calendario de 4 semanas preenchido
 
 ---
 
-## PROMPT DE VALIDACAO
-
-```
-Revise meu Banco de Conteudo:
-
-PILARES:
-[Liste seus 5 pilares]
-
-DISTRIBUICAO:
-- Topo: 15 posts
-- Meio: 10 posts
-- Fundo: 5 posts
-
-AMOSTRA DE 3 POSTS:
-[Cole os 3 posts desenvolvidos]
-
-Perguntas:
-1. A distribuicao esta equilibrada?
-2. Os ganchos sao fortes?
-3. Tem variedade de formatos?
-4. O que esta faltando?
-```
-
----
-
 ## CONEXAO COM PROXIMA AULA
 
-Com seu Banco pronto, na proxima aula vamos validar a qualidade e definir os proximos passos para o Modulo 3.
+> Com o Banco pronto, na proxima aula vamos validar a qualidade do conteudo e definir a acao das proximas 48 horas.
 
-**Proxima Aula:** 2.8 - Validacao e Proximos Passos
+**Proxima:** Aula 2.8 - Validacao e Proximos Passos
 
 ---
 
 **Tempo real:** 25 minutos
-**Entregavel:** Banco de Conteudo com 30 posts
+**Entregavel:** Banco de Conteudo com 30 Posts
+**IA:** Core - Geracao completa dos posts
