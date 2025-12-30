@@ -5,18 +5,228 @@
 ---
 
 > **Duracao:** 28 minutos
-> **Tipo:** Pratica Guiada
-> **Entregavel:** Viral Tracker + Plano de Escala
+> **Tipo:** Exercicio Guiado
+> **Entregavel:** Viral Tracker + Plano de Escala 30 dias
+> **Linha do DRE:** Eficiencia operacional / Escala de conteudo
+> **IA Aplicada:** Core - Analise de padroes e validacao
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Nos proximos 28 minutos, voce vai sair com um sistema de identificacao de virais E um plano concreto para escalar o que funciona."**
+### ABERTURA (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Agora e sua vez.
+
+Nos proximos 28 minutos,
+voce vai criar:
+
+1. Seu Viral Tracker
+2. Seu Plano de 30 dias
+
+Abre o navegador.
+Desliga notificacoes.
+
+Vamos fazer juntos."
+```
 
 ---
 
-## INSTRUCOES GERAIS
+### BLOCO 1: CRIAR TRACKER (8 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Primeiro passo: criar o tracker.
+
+Abre Google Sheets ou Notion.
+Cria documento novo.
+
+[PAUSA - 30 SEGUNDOS]
+
+[MOSTRAR ESTRUTURA]
+
+Cria 3 abas:
+
+ABA 1: POSTS EM MONITORAMENTO
+Colunas: Post | Data | Alcance | Salvamentos | Compartilhamentos | Score
+
+ABA 2: ALERTAS
+Colunas: Gatilho | Threshold | Acao
+
+ABA 3: HISTORICO
+Colunas: Post Viral | Data | Resultado | Licao
+
+[PAUSA - 5 MINUTOS]
+
+Criou?
+Salva o link.
+Favorita."
+```
+
+---
+
+### BLOCO 2: CALCULAR METRICAS (8 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Segundo passo: seus dados.
+
+Abre o Instagram Insights.
+Vai em Conteudo.
+Ultimos 30 dias.
+
+[PAUSA - 30 SEGUNDOS]
+
+Anota os 5 melhores posts.
+
+[MOSTRAR TEMPLATE]
+
+| Post | Salvamentos x3 | Compartilhamentos x5 | Comentarios x2 | Score |
+
+[PAUSA - 5 MINUTOS]
+
+Calculou?
+
+Qual o maior score?
+Esse e seu ouro."
+```
+
+---
+
+### BLOCO 3: ANALISAR COM IA (5 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Terceiro passo: entender por que funcionou.
+
+Usa esse prompt:
+
+[MOSTRAR PROMPT]
+
+'Analise estes 5 posts e identifique padroes.
+
+POST 1: [tema, formato, horario, metricas]
+POST 2: [...]
+...
+
+IDENTIFIQUE:
+1. Padrao de tema
+2. Padrao de formato
+3. Padrao de horario
+4. O que mais engaja
+
+RECOMENDE:
+- Proximo post com maior probabilidade de viralizar'
+
+[PAUSA - 3 MINUTOS]
+
+O que a IA identificou?
+
+Anota os padroes."
+```
+
+---
+
+### BLOCO 4: PLANO DE 30 DIAS (5 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Quarto passo: seu plano.
+
+[MOSTRAR TEMPLATE]
+
+SEMANA 1: REPLICAR
+Criar 1 variacao do melhor post.
+
+SEMANA 2: TESTAR
+Experimentar formato diferente.
+
+SEMANA 3: OTIMIZAR
+Postar no melhor horario identificado.
+
+SEMANA 4: CONVERTER
+Usar tema viral pra campanha com CTA.
+
+[PAUSA - 3 MINUTOS]
+
+Preenche com seus dados:
+
+- Qual post vai variar na semana 1?
+- Qual formato testar na semana 2?
+- Qual horario otimizar?
+- Qual oferta na semana 4?"
+```
+
+---
+
+### BLOCO 5: VALIDAR COM IA (2 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Ultimo passo: validar.
+
+Se quiser, usa a IA:
+
+[MOSTRAR PROMPT]
+
+'Valide meu plano de 30 dias.
+
+PADROES IDENTIFICADOS:
+- Tema: [...]
+- Formato: [...]
+- Horario: [...]
+
+MEU PLANO:
+[cole o plano]
+
+AVALIE:
+1. Esta realista?
+2. Falta algo?
+3. Ajustes sugeridos?'
+
+[PAUSA - 1 MINUTO]
+
+Isso e OPCIONAL.
+O importante e ter o plano."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Em 28 minutos voce:
+
+- Criou seu Viral Tracker
+- Calculou metricas dos posts
+- Identificou padroes
+- Definiu plano de 30 dias
+
+Sistema pronto.
+Plano definido.
+
+Na proxima aula,
+validamos tudo
+e encerramos a trilha.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### Instrucoes Gerais
 
 - Use os dados reais da sua conta
 - Nao busque perfeicao, busque acao
@@ -25,7 +235,7 @@
 
 ---
 
-## BLOCO 1: CRIAR TRACKER (8 min)
+### Bloco 1: Criar Tracker
 
 ### Tarefas
 

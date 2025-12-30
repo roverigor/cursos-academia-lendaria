@@ -7,18 +7,215 @@
 > **Duracao:** 7 minutos
 > **Tipo:** Template
 > **Entregavel:** Viral Tracker configurado
+> **Linha do DRE:** Eficiencia operacional
+> **IA Aplicada:** Opcional - Configurar tracker personalizado
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Este dashboard vai te avisar ANTES de um post viralizar. Voce vai saber exatamente quando agir e como."**
+### ABERTURA (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Este dashboard vai te avisar
+ANTES de um post viralizar.
+
+Voce vai saber:
+- Quando agir
+- O que fazer
+- Como capitalizar
+
+Abre o material.
+Vamos configurar juntos."
+```
 
 ---
 
-## ESTRUTURA DO VIRAL TRACKER
+### BLOCO 1: ESTRUTURA DO TRACKER (1 minuto)
 
-### Visao Geral
+```
+[MOSTRAR NA TELA]
+
+"O Viral Tracker tem 6 partes:
+
+[MOSTRAR ESTRUTURA]
+
+1. POSTS EM MONITORAMENTO
+Posts ativos das ultimas 48h.
+
+2. METRICAS DE VIRALIZACAO
+Velocity, Share Rate, Save Rate.
+
+3. ALERTAS E GATILHOS
+Quando agir automaticamente.
+
+4. HISTORICO DE VIRAIS
+O que ja funcionou.
+
+5. PADROES IDENTIFICADOS
+O que se repete.
+
+6. PLAYBOOK DE ACAO
+O que fazer em cada situacao.
+
+[OLHAR PARA CAMERA]
+
+Vamos ver cada parte."
+```
+
+---
+
+### BLOCO 2: MONITORAMENTO ATIVO (1,5 minuto)
+
+```
+[MOSTRAR TEMPLATE]
+
+"Primeira aba: Posts em Monitoramento.
+
+[MOSTRAR]
+
+| Post | Data | Velocity 1h | Share Rate | Save Rate | Status |
+
+[PAUSA]
+
+Regra de monitoramento:
+
+Primeiras 24h: verifica a cada 2h
+24-48h: verifica 2x ao dia
+48h+: verifica 1x ao dia
+
+[OLHAR PARA CAMERA]
+
+Nao precisa ficar obcecado.
+So ter um ritual simples."
+```
+
+---
+
+### BLOCO 3: ALERTAS (1,5 minuto)
+
+```
+[MOSTRAR NA TELA]
+
+"Segunda parte: Alertas.
+
+[MOSTRAR TABELA]
+
+| Gatilho | Acao |
+|---------|------|
+| Velocity > 10% | Verificar e preparar |
+| Share Rate > 3% | Ativar playbook |
+| Save Rate > 5% | Criar variacao |
+| 50+ comentarios | Responder todos |
+
+[OLHAR PARA CAMERA]
+
+Configura alarme no celular
+pra verificar 1h apos postar.
+
+Se algum gatilho disparar,
+voce age.
+
+Se nao disparar,
+vida normal."
+```
+
+---
+
+### BLOCO 4: HISTORICO E PADROES (1,5 minuto)
+
+```
+[OLHAR PARA CAMERA]
+
+"Terceira parte: Historico.
+
+[MOSTRAR]
+
+Toda vez que algo viralizar,
+anota:
+
+- O que era
+- Quando postou
+- Por que funcionou
+- O que aprendeu
+
+[PAUSA]
+
+Com o tempo,
+voce identifica PADROES.
+
+Tema que funciona.
+Formato que funciona.
+Horario que funciona.
+
+E replica."
+```
+
+---
+
+### BLOCO 5: PLAYBOOK (1 minuto)
+
+```
+[MOSTRAR NA TELA]
+
+"Ultima parte: Playbook.
+
+[MOSTRAR]
+
+STATUS NORMAL:
+Observar. Nao agir.
+
+STATUS AQUECENDO:
+Responder comentarios.
+Preparar Story.
+
+STATUS VIRAL:
+Ativar playbook completo.
+Tudo que vimos na aula anterior.
+
+[OLHAR PARA CAMERA]
+
+Decisao pre-configurada.
+Quando acontecer,
+voce ja sabe o que fazer."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Resumindo:
+
+Viral Tracker com 6 partes:
+- Monitoramento
+- Metricas
+- Alertas
+- Historico
+- Padroes
+- Playbook
+
+Configura agora.
+Pelo menos as 3 primeiras abas.
+
+Na proxima aula,
+vou fazer uma DEMO ao vivo.
+
+Tracker funcionando
+com decisoes em tempo real.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### Estrutura do Viral Tracker
 
 ```
 VIRAL TRACKER DASHBOARD

@@ -5,18 +5,236 @@
 ---
 
 > **Duracao:** 10 minutos
-> **Tipo:** Fechamento
-> **Objetivo:** Validar entregaveis e definir proximos passos
+> **Tipo:** Validacao + Fechamento de Trilha
+> **Entregavel:** Trilha validada + Compromisso 30 dias
+> **Linha do DRE:** Aumento de receita / Eficiencia operacional
+> **IA Aplicada:** Recomendada - Auditoria do sistema completo
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Voce chegou ao final da Trilha 9. Vamos validar tudo que voce construiu e definir os proximos passos para colocar seu social media no piloto automatico DE VERDADE."**
+### ABERTURA (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Voce chegou ao final.
+
+Trilha 9.
+Social Media em Piloto.
+
+Vamos validar tudo que voce construiu.
+Garantir que o sistema ta pronto.
+E definir seus proximos passos.
+
+Vamos la."
+```
 
 ---
 
-## CHECKLIST FINAL DO MODULO 5
+### BLOCO 1: CHECKLIST MODULO 5 (1,5 minuto)
+
+```
+[MOSTRAR CHECKLIST]
+
+"Checklist do Modulo 5:
+
+[MOSTRAR]
+
+1. VIRAL TRACKER CRIADO?
+3 abas configuradas?
+
+2. METRICAS DOS 5 POSTS?
+Score Viral calculado?
+
+3. PADROES IDENTIFICADOS?
+Tema, formato, horario?
+
+4. PLANO 30 DIAS?
+4 semanas definidas?
+
+5. PLAYBOOK DE CAPITALIZACAO?
+Sabe o que fazer quando viralizar?
+
+[OLHAR PARA CAMERA]
+
+Quantos voce passou?
+
+5/5: Perfeito.
+3-4: Pequenos ajustes.
+0-2: Volte e complete."
+```
+
+---
+
+### BLOCO 2: RECAPITULACAO DA TRILHA (2 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"O que voce construiu na Trilha 9:
+
+[CONTAR NOS DEDOS]
+
+MODULO 1: DIAGNOSTICO
+Mapa de Presenca Digital.
+Entendeu onde voce esta.
+
+MODULO 2: CONTEUDO
+Banco de 30 posts.
+Conteudo que converte.
+
+MODULO 3: PIPELINE
+Sistema de Publicacao.
+Consistencia automatica.
+
+MODULO 4: LISTENING
+Sistema de Escuta Social.
+Ouve o mercado.
+
+MODULO 5: VIRAL
+Viral Tracker + Plano de Escala.
+Identifica e capitaliza.
+
+[PAUSA]
+
+5 modulos.
+5 entregaveis.
+1 sistema completo."
+```
+
+---
+
+### BLOCO 3: ANTES E DEPOIS (1,5 minuto)
+
+```
+[MOSTRAR NA TELA]
+
+"Sua transformacao:
+
+[MOSTRAR COMPARACAO]
+
+ANTES:
+- Postava sem estrategia
+- Metricas de vaidade
+- Criava na correria
+- Nao ouvia o mercado
+- Dependia de sorte
+
+DEPOIS:
+- Sistema completo rodando
+- Foco em conversao
+- Batch content semanal
+- Social Listening ativo
+- Replica padroes virais
+
+[OLHAR PARA CAMERA]
+
+Voce nao precisa ser influenciador.
+
+Voce precisa de SISTEMA.
+Agora voce tem."
+```
+
+---
+
+### BLOCO 4: AUDITORIA COM IA (2 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Se quiser validar o sistema completo,
+usa a IA.
+
+[MOSTRAR PROMPT]
+
+'Faca uma auditoria do meu sistema de social media.
+
+MEUS ENTREGAVEIS:
+1. Mapa de Presenca: [descricao]
+2. Banco de Conteudo: [quantos posts]
+3. Sistema Publicacao: [ferramenta, rotina]
+4. Social Listening: [termos, alertas]
+5. Viral Tracker: [status, padroes]
+
+AVALIE:
+1. O que esta funcionando?
+2. Gaps no sistema?
+3. Proxima acao prioritaria?
+
+SCORE: De 0-100, quao pronto esta?'
+
+[PAUSA - 30 SEGUNDOS]
+
+Isso e RECOMENDADO, nao obrigatorio.
+Mas ajuda a identificar gaps."
+```
+
+---
+
+### BLOCO 5: SEU COMPROMISSO (2 minutos)
+
+```
+[TOM SERIO]
+
+"Agora a parte mais importante.
+
+[MOSTRAR]
+
+Escreva seu compromisso:
+
+'Eu me comprometo a:
+
+1. Manter rotina de ___ posts/semana
+2. Dedicar ___h/semana para social media
+3. Revisar metricas a cada ___ dias
+4. Capitalizar quando um post viralizar
+
+Data: ___/___/___'
+
+[PAUSA - 1 MINUTO]
+
+Escreve.
+Fala em voz alta.
+Configura alarme."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[TOM DE CELEBRACAO]
+
+"Parabens.
+
+Voce concluiu a Trilha 9.
+Social Media em Piloto.
+
+[MOSTRAR RESULTADO]
+
+Resultado esperado:
+-50% tempo
++30% leads
+100% consistencia
++25% engajamento
+
+[PAUSA]
+
+Redes sociais gerando leads e vendas.
+Nao apenas likes.
+
+Agora va implementar.
+
+Sucesso."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### Checklist Final do Modulo 5
 
 ### Validacao de Entregaveis
 

@@ -6,19 +6,197 @@
 
 > **Duracao:** 8 minutos
 > **Tipo:** Teoria
-> **Conceito:** Transformar atencao em receita
+> **Conceito-Chave:** Transformar atencao em receita
+> **Linha do DRE:** Aumento de receita / Leads organicos
+> **IA Aplicada:** Opcional - Criar playbook de capitalizacao
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Post viral sem estrategia = seguidores que nunca compram. A diferenca entre 5.000 seguidores e 5.000 clientes e o que voce FAZ quando viraliza."**
+### ABERTURA (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Post viraliza.
+5.000 seguidores novos.
+
+E ai?
+
+Se voce nao tem plano,
+esses 5.000 viram
+5.000 pessoas que nunca compram.
+
+A diferenca entre
+viral que vende e viral que nao vende
+e o que voce FAZ quando viraliza.
+
+Vamos ver o plano."
+```
 
 ---
 
-## O ERRO COMUM
+### BLOCO 1: O ERRO COMUM (1 minuto)
 
-### O Que a Maioria Faz
+```
+[MOSTRAR NA TELA]
+
+"O que a maioria faz:
+
+[MOSTRAR FLUXO]
+
+Post viraliza
+  ↓
+'Que legal!'
+  ↓
+Volta a postar normal
+  ↓
+Seguidores esfriam
+  ↓
+Zero vendas
+  ↓
+'Viralizar nao funciona...'
+
+[OLHAR PARA CAMERA]
+
+Viralizar funciona.
+O que nao funciona
+e nao ter plano."
+```
+
+---
+
+### BLOCO 2: O PLAYBOOK - PRIMEIRAS 24H (2 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"O que fazer nas primeiras 24 horas.
+
+[MOSTRAR LISTA]
+
+1. NAO MEXA NO POST
+Algoritmo ta distribuindo.
+Resista a editar.
+
+2. RESPONDA TODOS OS COMENTARIOS
+Mantem o post ativo.
+Respostas curtas mas pessoais.
+
+3. POSTE STORY
+'Voces amaram esse post...'
+Amplifica pra quem ja te segue.
+
+4. PREPARE A OFERTA
+Link na bio atualizado.
+Tenha algo pra vender.
+
+[OLHAR PARA CAMERA]
+
+Primeiras 24h: nao atrapalha,
+responde, amplifica, prepara."
+```
+
+---
+
+### BLOCO 3: O PLAYBOOK - 24 A 72H (2 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"De 24 a 72 horas.
+
+[MOSTRAR LISTA]
+
+1. POST DE FOLLOW-UP
+'Voces piraram naquele post.
+Recebi X DMs perguntando mais.
+Entao resolvi aprofundar...'
+
+2. CTA CLARO
+Direciona pra oferta.
+Bio, DM, link.
+
+3. DMS ESTRATEGICOS
+Manda mensagem pros
+top engajadores.
+
+4. LEAD MAGNET
+Cria material relacionado.
+Captura email.
+
+[OLHAR PARA CAMERA]
+
+Essa e a fase de capitalizacao.
+Onde viral vira lead."
+```
+
+---
+
+### BLOCO 4: TEMPLATES PRONTOS (1,5 minuto)
+
+```
+[MOSTRAR NA TELA]
+
+"Templates pra usar:
+
+[MOSTRAR TEMPLATE POST]
+
+POST FOLLOW-UP:
+'Voces piraram naquele post sobre [tema].
+Recebi [numero] DMs perguntando mais.
+Entao resolvi aprofundar:
+[conteudo extra]
+Se voce quer [beneficio], criei [oferta].
+Comenta X ou clica no link.'
+
+[MOSTRAR TEMPLATE DM]
+
+DM ESTRATEGICO:
+'Vi que voce [comentou/compartilhou]
+aquele post sobre [tema].
+Tenho material extra sobre isso.
+Quer que eu envie?'
+
+[OLHAR PARA CAMERA]
+
+Simples. Direto.
+Funciona."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Resumindo:
+
+Viral sem plano = entretenimento.
+Viral com plano = negocio.
+
+[MOSTRAR]
+
+0-24h: Nao mexa, responda, amplifique
+24-72h: Follow-up, CTA, DMs, Lead Magnet
+
+[PAUSA]
+
+Na proxima aula,
+vou te dar o Template do Viral Tracker.
+
+Dashboard pra monitorar tudo isso.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### O Erro Comum
 
 ```
 Post viraliza

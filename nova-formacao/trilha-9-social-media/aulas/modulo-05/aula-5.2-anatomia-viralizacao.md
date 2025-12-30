@@ -6,19 +6,249 @@
 
 > **Duracao:** 10 minutos
 > **Tipo:** Teoria
-> **Conceito:** Os 5 elementos que fazem conteudo viralizar
+> **Conceito-Chave:** Os 5 elementos que fazem conteudo viralizar
+> **Linha do DRE:** Eficiencia operacional / Escala de conteudo
+> **IA Aplicada:** Opcional - Adicionar elementos virais
 
 ---
 
-## GANCHO DE ABERTURA
+## ROTEIRO DE FALA
 
-**"Viralizacao nao e sorte. E ciencia. E voce pode replicar. Veja os 5 elementos presentes em TODO viral."**
+### ABERTURA (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Viralizacao nao e sorte.
+
+E ciencia.
+
+Todo post que explode tem
+os mesmos 5 elementos.
+
+Depois dessa aula,
+voce vai reconhecer esses elementos.
+
+E saber como colocar
+nos seus posts.
+
+Vamos ver."
+```
 
 ---
 
-## OS 5 ELEMENTOS DO VIRAL
+### BLOCO 1: A FORMULA (1 minuto)
 
-### Visao Geral
+```
+[MOSTRAR NA TELA]
+
+"A formula do viral.
+
+[MOSTRAR]
+
+EMOCAO + SIMPLICIDADE + UTILIDADE + HISTORIA + TIMING
+
+5 elementos.
+Presentes em TUDO que viraliza.
+
+[OLHAR PARA CAMERA]
+
+Nao precisa ter os 5.
+Mas quanto mais elementos,
+maior a chance de explodir.
+
+Vamos ver cada um."
+```
+
+---
+
+### BLOCO 2: GATILHO EMOCIONAL (2 minutos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Elemento 1: Emocao.
+
+Conteudo que viraliza
+provoca reacao FORTE.
+
+[MOSTRAR TABELA]
+
+SURPRESA: 'Eu nao sabia disso!'
+Pessoa quer compartilhar a descoberta.
+
+RAIVA: 'Isso me irrita!'
+Pessoa quer validacao.
+
+ALEGRIA: 'Preciso mostrar isso!'
+Pessoa quer espalhar felicidade.
+
+MEDO: 'E se acontecer comigo?'
+Pessoa quer alertar outros.
+
+[OLHAR PARA CAMERA]
+
+Qual emocao seu conteudo provoca?
+
+Se a resposta for 'nenhuma',
+ta ai o problema."
+```
+
+---
+
+### BLOCO 3: SIMPLICIDADE (1,5 minuto)
+
+```
+[OLHAR PARA CAMERA]
+
+"Elemento 2: Simplicidade.
+
+[MOSTRAR COMPARACAO]
+
+COMPLEXO:
+'As sinergias entre IA e automacao
+de processos podem otimizar...'
+
+SIMPLES:
+'IA faz em 5 min o que voce faz em 5 horas.'
+
+[PAUSA]
+
+Regra: Se voce nao consegue explicar
+em UMA frase, ta complexo demais.
+
+Teste: leu em 3 segundos?
+Entendeu?
+
+Se nao, simplifica."
+```
+
+---
+
+### BLOCO 4: UTILIDADE PRATICA (1,5 minuto)
+
+```
+[OLHAR PARA CAMERA]
+
+"Elemento 3: Utilidade.
+
+Conteudo que:
+- Resolve um problema
+- Ensina algo aplicavel
+- Economiza tempo ou dinheiro
+
+[MOSTRAR]
+
+Regra: Leitor sai sabendo
+EXATAMENTE o que fazer.
+
+Nao so 'interessante'.
+UTIL.
+
+Se voce ensina algo,
+a pessoa salva.
+Se ela salva, viraliza."
+```
+
+---
+
+### BLOCO 5: HISTORIA (1,5 minuto)
+
+```
+[OLHAR PARA CAMERA]
+
+"Elemento 4: Historia.
+
+[MOSTRAR ESTRUTURA]
+
+1. ANTES: Situacao problema
+2. VIRADA: O que mudou
+3. DEPOIS: Resultado
+4. MORAL: O que aprender
+
+[PAUSA]
+
+Exemplo rapido:
+
+'Perdi 3 clientes por nao responder DM.
+Comecei a usar automacao.
+Agora fecho 2 clientes por semana no DM.
+A licao: velocidade de resposta vende.'
+
+Historia simples.
+Transformacao clara.
+Funciona."
+```
+
+---
+
+### BLOCO 6: TIMING (1,5 minuto)
+
+```
+[OLHAR PARA CAMERA]
+
+"Elemento 5: Timing.
+
+3 tipos:
+
+[MOSTRAR]
+
+1. CULTURAL
+Copa do Mundo, eleicoes, eventos.
+Relaciona seu tema ao momento.
+
+2. TREND
+Meme do momento.
+Noticia quente.
+Surf rapido.
+
+3. HORARIO
+Seu melhor horario de postagem.
+Teste e otimize.
+
+[OLHAR PARA CAMERA]
+
+Conteudo certo no momento errado
+morre.
+
+Mesmo conteudo no momento certo
+explode."
+```
+
+---
+
+### FECHAMENTO (30 segundos)
+
+```
+[OLHAR PARA CAMERA]
+
+"Os 5 elementos:
+
+1. Emocao forte
+2. Simplicidade
+3. Utilidade pratica
+4. Historia
+5. Timing
+
+[PAUSA]
+
+Meta: 4 de 5 elementos
+em cada post importante.
+
+Na proxima aula,
+vamos ver as METRICAS
+que indicam se um post vai viralizar.
+
+ANTES de explodir.
+
+Te vejo la."
+```
+
+---
+
+## MATERIAL DE APOIO
+
+### Os 5 Elementos do Viral
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -31,7 +261,7 @@
 
 ---
 
-## ELEMENTO 1: GATILHO EMOCIONAL
+### Elemento 1: Gatilho Emocional
 
 ### O Que E
 
