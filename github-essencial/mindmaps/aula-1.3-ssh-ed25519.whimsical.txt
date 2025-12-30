@@ -1,74 +1,77 @@
-SSH com Ed25519
+Conexao Segura (SSH)
 	O Que e SSH
+		Forma segura de conectar dois computadores
 		Secure Shell
-			Protocolo criptografado
+		Depois de configurar
+			Nunca mais digita senha
+			Funciona para sempre
+	Como Funciona
 		Par de chaves
-			Chave privada (seu PC)
-			Chave publica (GitHub)
-		Analogia
-			GitHub = cadeado
-			Seu PC = chave
-		Seguranca
-			Nao compartilhe chave privada
-	Por Que Ed25519
-		Comparacao algoritmos
-			RSA
-				2048-4096 bits
-				Lenta
-				Boa seguranca
-				Antigo
-			Ed25519
-				256 bits
-				Rapida
-				Excelente seguranca
-				Recomendado 2024
-		GitHub recomenda
-			Padrao desde 2022
-			Mais seguro e rapido
-	Passos de Configuracao
-		1. Verificar chave existente
-			ls -la ~/.ssh/id_ed25519.pub
-			Se existe, pular para passo 3
-		2. Gerar nova chave
-			ssh-keygen -t ed25519 -C "email"
-			Aceitar local padrao
-			Passphrase (opcional)
-		3. Adicionar ao SSH agent
+			Chave privada
+				Fica no seu computador
+				Nunca compartilha
+				Como chave da sua casa
+			Chave publica
+				Envia para o GitHub
+				Como um cadeado
+		Teste de conexao
+			GitHub testa se sua chave abre o cadeado
+			Se combina, libera conexao
+		Tipo Ed25519
+			Mais moderno e seguro
+			GitHub recomenda desde 2022
+	Passo 1: Verificar Se Ja Tem
+		Comando
+			ls ~/.ssh/id_ed25519.pub
+		Resultado
+			Arquivo existe: pular para adicionar no GitHub
+			Erro: criar a chave
+	Passo 2: Criar a Chave
+		Comando
+			ssh-keygen -t ed25519 -C "seu@email.com"
+		Perguntas
+			Onde salvar: Enter (aceitar padrao)
+			Passphrase (senha)
+				Computador so seu: deixar em branco
+				Computador compartilhado: criar senha
+	Passo 3: Ativar a Chave
+		Mac/Linux
 			eval "$(ssh-agent -s)"
 			ssh-add ~/.ssh/id_ed25519
-		4. Copiar chave publica
-			macOS: pbcopy
-			Linux: cat e copiar
-			Windows: clip
-		5. Adicionar no GitHub
-			Settings → SSH and GPG keys
-			New SSH key
-			Colar chave publica
-		6. Testar conexao
-			ssh -T git@github.com
-			Mensagem: "Hi username!"
-	SSH vs HTTPS
-		SSH
-			git@github.com:user/repo.git
-			Mais seguro
-			Nao pede senha
-			Recomendado
-		HTTPS
-			https://github.com/user/repo.git
-			Computador compartilhado
-			CI/CD
-	Configuracao Automatica
-		macOS
-			~/.ssh/config
-			AddKeysToAgent yes
-			UseKeychain yes
+		Windows (Git Bash)
+			eval `ssh-agent -s`
+			ssh-add ~/.ssh/id_ed25519
+	Passo 4: Copiar Chave Publica
+		Mac
+			pbcopy < ~/.ssh/id_ed25519.pub
+		Windows (Git Bash)
+			cat ~/.ssh/id_ed25519.pub | clip
 		Linux
-			~/.bashrc ou ~/.zshrc
-			Iniciar ssh-agent
-	Troubleshooting
-		Permission denied
-			Chave nao adicionada no GitHub
-			Ou usando HTTPS
-		Could not open connection
-			eval "$(ssh-agent -s)"
-			ssh-add ~/.ssh/id_ed25519
+			cat ~/.ssh/id_ed25519.pub
+			Copiar manualmente o texto
+		Formato da chave
+			Comeca com ssh-ed25519
+			Termina com seu email
+	Passo 5: Adicionar no GitHub
+		github.com → sua foto → Settings
+		SSH and GPG keys
+		New SSH key
+		Preencher
+			Title: nome do computador
+			Key: colar a chave copiada
+		Add SSH key
+	Passo 6: Testar Conexao
+		Comando
+			ssh -T git@github.com
+		Primeira vez
+			Pergunta sobre fingerprint
+			Digitar yes
+		Sucesso
+			"Hi SeuUsuario! You've successfully authenticated..."
+		Conexao funcionando
+			Nunca mais digita senha
+	Modulo 1 Completo
+		Git instalado
+		Nome e email configurados
+		Conexao segura com GitHub
+		Pronto para trabalhar

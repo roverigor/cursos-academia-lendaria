@@ -1,158 +1,106 @@
-Merge + Conflitos
-	O Que e Merge
-		Integrar branches
-		Commit de merge
-			Junta historico
-		Quando acontece
-			PR aprovado
-			Sincronizar branch
-			git pull
-	Merge Sem Conflitos
-		Fast-Forward
-			main nao mudou
-			Apenas avanca ponteiro
-			Historico linear
-		Comando
-			git checkout main
-			git merge feature/branch
-	Merge com Conflitos
-		Cenario
-			Mesma parte do mesmo arquivo
-			Modificada diferentemente
-		Git nao sabe
-			Qual mudanca manter
-			Voce decide
+Juntando Versoes (Merge e Conflitos)
 	Como Conflitos Acontecem
-		Exemplo pratico
-			Estado inicial
-				function greet(name)
-			Branch A (voce)
-				"Good morning, " + name
-			Branch B (colega)
-				"Hey " + name
-			Conflito!
-				Ambos linha 2
-	Detectando Conflitos
-		Ao tentar merge
-			git merge feature/branch
-			CONFLICT in arquivo.js
+		Duas pessoas editam
+			Mesma parte do mesmo arquivo
+			De formas diferentes
+		Exemplo
+			Voce muda telefone para 99999-1111
+			Outra pessoa muda para 99999-2222
+			Mesma linha do documento
+		Ao tentar juntar (merge)
+			Git nao sabe qual manter
+			Voce precisa decidir
+		Importante
+			Conflito so na mesma parte
+			Partes diferentes: Git junta automatico
+	Identificando Conflitos
+		Mensagem ao tentar merge
+			CONFLICT in documento.txt
 			Automatic merge failed
+		Nao e erro grave
+			Git pedindo sua decisao
 		git status
-			You have unmerged paths
-			both modified: arquivo.js
-	Anatomia Conflito
-		Estrutura
+			Mostra arquivos em conflito
+			both modified: documento.txt
+	Os Marcadores de Conflito
+		Quando abrir arquivo
 			<<<<<<< HEAD
-			[Versao atual]
+			(11) 99999-1111
 			=======
-			[Versao outra branch]
-			>>>>>>> branch-name
-		Marcadores
-			<<<<<<< inicio conflito
-			======= separador
-			>>>>>>> fim conflito
-	Resolvendo Conflitos
-		Passo 1: Identificar
+			(11) 99999-2222
+			>>>>>>> outra-branch
+		Significado
+			<<<<<<< HEAD = inicio, sua versao
+			======= = separador
+			>>>>>>> branch = fim, outra versao
+		Seu trabalho
+			Escolher qual versao manter
+			Ou combinar as duas
+			Apagar todos os marcadores
+	Resolvendo Passo a Passo
+		Passo 1: Identificar arquivos
 			git status
-			Lista "both modified"
-		Passo 2: Escolher versao
-			Opcao 1: Manter sua
-			Opcao 2: Manter deles
-			Opcao 3: Combinar ambas
-			Opcao 4: Solucao nova
-		Passo 3: Testar
-			npm test
-			node index.js
-			NUNCA commite sem testar
-		Passo 4: Marcar resolvido
-			git add arquivo.js
-		Passo 5: Complete merge
+			Ver quais estao em both modified
+		Passo 2: Abrir arquivo e escolher
+			Opcao 1: Manter sua versao
+				(11) 99999-1111
+			Opcao 2: Manter outra versao
+				(11) 99999-2222
+			Opcao 3: Combinar as duas
+				Telefone matriz: (11) 99999-1111
+				Telefone filial: (11) 99999-2222
+		Passo 3: Apagar marcadores
+			Remover <<<<<< ====== >>>>>>
+			Todas as linhas de marcador
+		Passo 4: Salvar arquivo
+		Passo 5: Marcar como resolvido
+			git add documento.txt
+		Passo 6: Finalizar merge
 			git commit
-			Mensagem pre-preenchida
-		Passo 6: Push
+			Git sugere mensagem padrao
+		Passo 7: Enviar
 			git push
-	Ferramentas Merge
-		VS Code
-			Accept Current Change
-			Accept Incoming Change
-			Accept Both Changes
-			Compare Changes
-		Git Merge Tool
-			git config merge.tool vscode
-			git mergetool
-		Meld, KDiff3
-			Ferramentas visuais
-	Tipos de Conflito
-		1. Conflito conteudo
-			Mesma linha modificada
-			Editar manualmente
-		2. Conflito rename
-			Arquivo renomeado diferente
-			Escolher um nome
-		3. Conflito delete
-			Um deletou, outro modificou
-			Decidir manter ou deletar
-	Prevenindo Conflitos
-		1. Sync frequente
-			git pull origin main diario
-		2. PRs pequenos
-			Menos linhas = menos conflito
-		3. Comunicar mudancas
-			Avisar refactors grandes
-		4. Dividir responsabilidades
-			Cada dev area diferente
-		5. Commits atomicos
-			Faceis de resolver
-	Abortando Merge
+		Conflito resolvido!
+	Se Quiser Desistir
 		Comando
 			git merge --abort
+		O que faz
+			Cancela o merge
+			Volta tudo como estava antes
+			Nenhum dano
 		Quando usar
-			Conflitos complexos
-			Quer revisar antes
-			Merge errado
-	Conflitos em Pull Request
-		GitHub mostra
-			"This branch has conflicts"
-		Opcao 1: Local (recomendado)
+			Conflito muito complicado
+			Quer pensar melhor
+			Fez merge da branch errada
+			Quer pedir ajuda antes
+	Exercicio
+		Criar conflito de proposito
+			Duas branches mudando mesma linha
+		Criar branch 1
 			git checkout main
-			git pull
-			git checkout feature/branch
-			git merge main
-			Resolver conflitos
+			git checkout -b versao-matriz
+			Editar README.md: Telefone 99999-1111
+			git add . && git commit -m "Telefone matriz"
+		Criar branch 2
+			git checkout main
+			git checkout -b versao-filial
+			Editar README.md: Telefone 99999-2222
+			git add . && git commit -m "Telefone filial"
+		Causar conflito
+			git checkout main
+			git merge versao-matriz (funciona)
+			git merge versao-filial (CONFLITO!)
+		Resolver
+			Abrir README.md (ver marcadores)
+			Editar para combinar ambos
+			Remover marcadores
+			git add README.md
+			git commit
 			git push
-		Opcao 2: GitHub web
-			Resolve conflicts
-			Editar interface
-			Limitado: 1-2 arquivos simples
-	Merge vs Rebase
-		Merge
-			Preserva historico
-			Cria merge commit
-		Rebase
-			Reaplica commits
-			Historico linear
-		Quando usar
-			Feature pessoal: Rebase
-			Branch compartilhada: Merge
-			Sincronizar: Rebase
-			Finalizar PR: Merge/Squash
-	Rebase com Conflitos
-		Comando
-			git rebase main
-		Se conflito
-			1. Resolver
-			2. git add
-			3. git rebase --continue
-			4. Repetir ate terminar
-		Abortar
-			git rebase --abort
-	Troubleshooting
-		Unstaged changes
-			git stash
-			git merge
-			git stash pop
-		Status mostra conflito
-			Certificar git add
-			Ver "All conflicts fixed"
-		Merge commit acidental
-			git reset --soft HEAD~1
+	Resumo
+		Conflitos: duas pessoas editam mesma parte
+		Marcadores: <<<<<<< ======= >>>>>>>
+		Resolver: escolher versao ou combinar
+		Apagar todos os marcadores
+		git merge --abort para voltar atras
+		Modulo 3 completo!

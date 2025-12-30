@@ -1,59 +1,58 @@
-Instalacao + Configuracao
-	Instalacao por OS
-		Windows
-			Git for Windows
-			git-scm.com/download/win
-			Escolher VS Code como editor
-			Branch inicial: main
-			Usar Git Bash
-		macOS
-			Homebrew: brew install git
-			Xcode Command Line Tools
-			Verificar versao
-		Linux (Ubuntu/Debian)
-			sudo apt update
-			sudo apt install git
-		Linux (Fedora)
-			sudo dnf install git
-		Verificacao
+Instalacao Passo a Passo
+	Por Que Configurar Nome e Email
+		Git registra quem fez cada mudanca
+		Voce ve no historico
+		Outras pessoas sabem quem fez
+		Configuracao feita uma vez so
+	Verificar Se Ja Tem Git
+		Abrir terminal
+			Windows: cmd ou Prompt de Comando
+			Mac: Terminal (pasta Utilitarios)
+		Comando
 			git --version
-			Versao 2.30+ recomendada
-	Configuracao Essencial
-		Nome e Email
-			git config --global user.name
-			git config --global user.email
-			Usar email do GitHub
-			Aparece em todos commits
-		Email Privado GitHub
-			Settings → Emails
-			Keep email private
-			username@users.noreply.github.com
-		Editor Padrao
-			VS Code
-				git config --global core.editor "code --wait"
-			Nano
-				Simples para iniciantes
-			Vim
-				Se sabe sair dele
-		Branch Padrao
+		Resultado
+			Versao aparece: ja tem Git
+			Erro: precisa instalar
+	Instalacao por Sistema
+		Windows
+			Acesse git-scm.com
+			Download for Windows
+			Execute o instalador
+			Opcoes importantes
+				Branch padrao: main
+				Terminal: Git Bash
+			Depois: abrir Git Bash
+		Mac
+			Forma simples
+				Terminal: git --version
+				Mac pergunta se quer instalar
+				Aceite Command Line Tools
+				Aguarde 2-3 minutos
+			Forma alternativa (Homebrew)
+				brew install git
+		Linux
+			Ubuntu/Debian
+				sudo apt update && sudo apt install git
+			Fedora
+				sudo dnf install git
+	Configuracao
+		Nome
+			git config --global user.name "Seu Nome"
+		Email
+			git config --global user.email "seu@email.com"
+			Usar mesmo email do GitHub
+		Branch padrao
 			git config --global init.defaultBranch main
-			Padrao atual da industria
-		Cores no Terminal
-			git config --global color.ui auto
-			Facilita leitura
-	Verificando Config
-		Listar todas
+			Padrao que todo mundo usa
+	Verificar Configuracao
+		Comando
 			git config --list
-		Config especifica
-			git config user.name
-		Onde fica salvo
-			Global: ~/.gitconfig
-			Local: .git/config
-	Configuracoes Extras
-		Pull com rebase
-			git config --global pull.rebase true
-			Evita merge commits
-		Credential helper
-			Windows: wincred
-			macOS: osxkeychain
-			Linux: cache
+		Deve mostrar
+			user.name=Seu Nome
+			user.email=seu@email.com
+			init.defaultbranch=main
+	Checklist
+		Git instalado (git --version funciona)
+		Nome configurado
+		Email configurado (mesmo do GitHub)
+		Branch padrao: main

@@ -1,145 +1,99 @@
 .gitignore Essencial
+	Por Que Isso Importa
+		Caso Uber 2019
+			57 milhoes de dados vazados
+			Credenciais AWS no GitHub
+		Desenvolvedor
+			Chave AWS commitada
+			24 horas: $6.000 prejuizo
+		Nao pode acontecer com voce
 	O Que NUNCA Versionar
-		1. Credenciais e Segredos
+		Credenciais e segredos
+			Arquivos .env
+			Senhas, chaves API, tokens
+			Se commitar, fica no historico PARA SEMPRE
+		Dependencias
+			node_modules (JavaScript)
+			venv (Python)
+			Baixaveis com npm install ou pip install
+			Podem ter 200MB
+		Arquivos de build
+			Pasta dist, build
+			Arquivos minificados
+			Gerados automaticamente
+		Configuracoes de IDE
+			Pasta .vscode, .idea
+			Preferencias pessoais
+			Cada dev tem a sua
+		Arquivos do sistema
+			.DS_Store (Mac)
+			Thumbs.db (Windows)
+			Nada a ver com seu codigo
+	Criando .gitignore
+		Exemplo basico JavaScript
+			# Variaveis de ambiente
 			.env
 			.env.local
-			credentials.json
-			*.pem, *.key
-			id_rsa, id_ed25519
-		2. Dependencias (Baixaveis)
-			Node.js
-				node_modules/
-				npm-debug.log
-			Python
-				venv/, env/
-				__pycache__/
-				*.pyc
-			Ruby
-				vendor/bundle/
-			Java
-				target/
-				*.class
-		3. Arquivos Build
-			dist/, build/, out/
-			*.min.js
-			*.bundle.js
-			*.log
-		4. IDEs e Editores
+			# Dependencias
+			node_modules/
+			# Build
+			dist/
+			build/
+			# IDEs
 			.vscode/
 			.idea/
-			*.swp
-			*.sublime-project
-		5. Sistema Operacional
-			macOS: .DS_Store
-			Windows: Thumbs.db
-			Linux: *~, .directory
-		6. Temporarios
-			*.tmp
-			*.temp
-			*.cache
-			*.bak
-	.gitignore por Linguagem
-		Node.js / JavaScript
-			node_modules/
-			npm-debug.log
-			coverage/
-			dist/, build/
-			.env
-			.vscode/, .idea/
-			.DS_Store
-		Python
-			__pycache__/
-			*.pyc
-			venv/, env/
-			dist/, build/
-			*.egg-info/
-			.ipynb_checkpoints
-			.env
-		Java
-			*.class
-			*.jar, *.war
-			target/, build/
-			.gradle/
-			.idea/
-			*.log
-	Sintaxe .gitignore
-		Comentario
-			# Comentario
-		Arquivo especifico
-			config.local.js
-		Todos com extensao
-			*.log
-		Diretorio
-			node_modules/
-		Qualquer nivel
-			**/temp/
-		Negacao (NAO ignore)
-			!important.log
-		Apenas no root
-			/README.local.md
-		Diretorio especifico
-			src/**/*.test.js
-	Templates Prontos
-		GitHub
-			github.com/github/gitignore
-			Node, Python, Java
-		Site gerador
-			gitignore.io
-			Escolhe linguagem + IDE + OS
-	Aplicando .gitignore
-		Criar arquivo
-			touch .gitignore
-			Editar conteudo
-		Commitar
-			git add .gitignore
-			git commit -m "Add .gitignore"
-		IMPORTANTE
-			.gitignore deve ser versionado
-	Arquivo Ja Commitado
-		Problema
-			.gitignore so afeta nao rastreados
-		Solucao
-			git rm --cached arquivo.env
-			git rm -r --cached node_modules/
-			Adicionar ao .gitignore
-			git commit
-		ATENCAO
-			Arquivo fica no historico
-			Use BFG para remover completamente
-	.gitignore Global
-		Para todos projetos
-			~/.gitignore_global
-			git config --global core.excludesfile
-		Adicionar
+			# Sistema
 			.DS_Store
 			Thumbs.db
-			.vscode/, .idea/
-			*.swp
-	Ver Arquivos Ignorados
-		Listar ignorados
-			git status --ignored
-		Verificar especifico
-			git check-ignore -v arquivo.txt
-	.env.example Pattern
+		Sintaxe
+			# = comentario
+			barra no final = diretorio
+			asterisco = coringa (*.log)
+	Templates Prontos
+		github.com/github/gitignore
+			Templates por linguagem
+			Node, Python, Java, tudo
+		gitignore.io
+			Escolhe linguagem + IDE + sistema
+			Gera automaticamente
+	Padrao .env.example
 		Problema
 			.env tem senhas
 			Nao pode versionar
 		Solucao
-			Versionar .env.example
-			Template sem valores reais
-		.gitignore
+			.env.example sem senhas reais
+		.env (NAO versionar)
+			DATABASE_URL=postgres://user:SENHA_SECRETA@localhost/db
+			API_KEY=chave_secreta_real_123
+		.env.example (versionar)
+			DATABASE_URL=postgres://user:password@localhost/dbname
+			API_KEY=your_api_key_here
+		No .gitignore
 			.env
-			.env.local
 			!.env.example
-		README
-			Copy .env.example to .env
-			Fill actual credentials
-	Troubleshooting
-		.gitignore nao funciona
-			Arquivo ja rastreado
-			git rm --cached
-		Checklist
-			Nome: .gitignore (com ponto)
-			No root do projeto
-			Sintaxe correta
-			Nao estava rastreado antes
+			Exclamacao = NAO ignore
+		Quem clonar
+			Copia .env.example para .env
+			Preenche credenciais reais
+	Exercicio
+		Criar .env fake
+			echo "API_KEY=secret123" > .env
+		git status
+			.env aparece (perigoso!)
+		Criar .gitignore
+			echo ".env" > .gitignore
+			echo "node_modules/" >> .gitignore
+		git status de novo
+			.env sumiu!
+		Criar .env.example
+			echo "API_KEY=your_api_key_here" > .env.example
+		Commitar
+			git add .gitignore .env.example
+			git commit -m "chore: add .gitignore and env template"
+			git push
+	Resumo
+		.gitignore lista o que Git ignora
+		Nunca versione .env, node_modules, builds
+		Use .env.example como template
+		Credenciais no historico ficam la PARA SEMPRE
+		Configuracao critica de seguranca

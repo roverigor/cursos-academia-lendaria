@@ -1,206 +1,104 @@
-O Que Vem Depois
-	Voce Ja Sabe Essencial
-		Git local
-			add, commit, reset, stash
-		GitHub remoto
-			push, pull, clone
-		Branches e workflow
-		Pull Requests
-		Code Review
-		Merge e conflitos
-		Perfil profissional
-		Cobre 80% uso diario
-	GitHub Actions
-		O que e
-			Automatizar workflows
-			Rodar testes
-			Deploy
-			Publicar packages
-		Exemplo: Testes Auto
-			.github/workflows/test.yml
-			on: push, pull_request
-			jobs: test
-			runs-on: ubuntu-latest
-		Quando usar
-			Garantir testes
-			Deploy automatico
-			Gerar documentacao
-		Aprender mais
-			docs.github.com/actions
-			GitHub Marketplace
-	GitHub Copilot
-		O que e
-			IA que sugere codigo
-		Como funciona
-			Voce escreve comentario
-			Copilot sugere codigo
-		Gratis
-			GitHub Student Pack
-		Vantagens
-			Boilerplate rapido
-			Aprende padroes
-			Sugere testes, docs
-		Limitacoes
-			Nao substitui entender
-			Revisar sugestoes
-			Assistente, nao autor
-		Vale a pena
-			Sim, para acelerar
-			Sempre entender codigo
-	Open Source
-		Por que contribuir
-			Aprende com qualidade
-			Devs experientes
-			Constroi portfolio
-			Retribui comunidade
-			Networking global
-		Como comecar
-			1. Encontrar projeto
-				Projetos que usa
-				good first issue
-				First Timers Only
-			2. Entender projeto
-				README, CONTRIBUTING
-				Configure ambiente
-				Rode testes
-			3. Contribuicoes faceis
-				Typos em docs
-				Exemplos README
-				Traducoes
-				good first issue
-			4. Processo
-				Fork projeto
-				Clone fork
-				Criar branch
-				Commit
-				Push
-				Abrir PR
-			5. Seguir guidelines
-				CONTRIBUTING.md
-				Style guide
-				Ser paciente
-		Projetos brasileiros
-			Brasil.IO
-			Forum Dev
-			language:Portuguese
-	Recursos Avancados Git
-		git rebase -i
-			Reescrever historico
-			Squash commits
-			Reordenar
-			Editar mensagens
-		git bisect
-			Busca binaria
-			Encontrar bug
-			good/bad commits
-		git submodules
-			Repo dentro de repo
-		git hooks
-			Automatizar acoes
-			pre-commit
-			Husky
-	Ferramentas CLI
-		GitHub CLI (gh)
-			gh pr create
-			gh pr list
-			gh pr merge
-			gh issue create
-			Nunca sair terminal
-		lazygit
-			Interface TUI
-			Git visual terminal
-	Roadmap Evolucao
-		Iniciante → Intermediario
-			1-3 meses
-				Open source (1 projeto)
-				GitHub Actions
-				Rebase interativo
-				cherry-pick
-			3-6 meses
-				Dominar Git Flow
-				CI/CD completo
-				Open source medio
-				Mentorar colega
-		Intermediario → Avancado
-			6-12 meses
-				Git internals
-				Monorepo
-				GitHub App/Action custom
-				Maintainer open source
-	Recursos Aprendizado
-		Documentacao
-			git-scm.com/doc
-			docs.github.com
-			GitHub Skills
-		Livros
-			Pro Git (gratuito)
-			GitHub for Dummies
-		Pratica
-			learngitbranching.js.org
-			ohmygit.org (jogo)
-		Comunidades
-			GitHub Community
-			Dev.to #git
-			Stack Overflow
-	Certificacoes
-		GitHub Certifications
-			Actions
-			Advanced Security
-			Administration
-		Nao obrigatorias
-			Mostram expertise
-	Habilidades Complementares
-		CI/CD
-			Jenkins, CircleCI
-		Cloud
-			AWS, Azure, Google Cloud
-		DevOps
-			Docker, Kubernetes
-		Seguranca
-			Dependabot, secrets
-		Monorepo
-			Nx, Turborepo
-		Package Management
-			npm, PyPI
-	Mantenha Aprendizado
-		Praticas diarias
-			Commit todo dia
-			Ler code reviews
-			Comando novo/semana
-			Contribuir open source
-		Red flags
-			So "git add . && commit"
-			Nunca rebase
-			Evita conflitos
-			Nao contribui outros
-	Checklist Proximos
-		GitHub Actions basico
-		Primeira contribuicao OS
-		GitHub CLI
-		Rebase interativo
-		README perfil stats
-		GitHub Copilot
-		git bisect
-		Pre-commit hook
-		Doc projeto brasileiro
-	Marcos Futuros
-		1. Primeira contribuicao OS
-		2. Primeiro projeto CI/CD
-		3. Primeiro mentoring Git
-	Curso Completo
-		Voce sabe
-			Configurar Git/GitHub
-			Workflow completo
-			Branches e features
+Integrando com Suas Ferramentas
+	O Que Voce Conquistou
+		Modulo 1: Configuracao
+			Git instalado
+			SSH configurado
+			GitHub conectado
+		Modulo 2: Fluxo completo
+			Guardar mudancas
+			Sincronizar com nuvem
+			Mensagens claras
+			Proteger informacoes
+		Modulo 3: Colaboracao
+			Versoes paralelas
 			Pull Requests
-			Code Review
-			Resolver conflitos
-			Desfazer erros
-			Perfil profissional
-			Proximos passos
-		Continue
-			Commitando
-			Colaborando
-			Construindo
-		GitHub = Portfolio vivo
-		Bons commits!
+			Revisao
+			Conflitos
+		Modulo 4: Sobrevivencia
+			Voltar atras
+			Organizar perfil
+		80% do uso diario coberto
+	Integrando com Notion
+		Como usar junto
+			Links entre Notion e GitHub
+			Atualiza um, mostra no outro
+		Usos praticos
+			Pagina no Notion listando repositorios
+			Acompanhar o que foi feito
+			Notion para planejamento
+			GitHub para versoes
+	Integrando com Google Drive
+		Pergunta comum
+			Posso usar os dois?
+			Sim, para coisas diferentes
+		Google Drive
+			Documentos colaborativos
+			Google Docs, Sheets
+			Varias pessoas ao mesmo tempo
+		GitHub
+			Arquivos de texto puro
+			Manuais, processos
+			Historico de versoes importante
+		Regra simples
+			Colaboracao tempo real: Google Drive
+			Historico completo: GitHub
+		Podem trabalhar juntos
+			Links de um para outro
+	Integrando com Ferramentas de Gestao
+		Trello, Asana, Monday
+			Podem conectar com GitHub
+		Integracao simples
+			Links nos cartoes
+			Link do repositorio na tarefa
+			Link do projeto no README
+		Issues do GitHub
+			Gestao basica dentro do repositorio
+			Cada Issue e uma tarefa
+			Marcar como feita
+			Comentar
+			Atribuir
+			Pode ser suficiente para projetos simples
+	Seus Proximos Passos
+		1. Use por uma semana
+			Escolha um projeto
+			Use GitHub durante uma semana
+			Commits diarios
+			Veja como se sente
+		2. Traga sua equipe
+			Convide uma pessoa
+			Colaborar em um repositorio
+			Freelancer ou membro da equipe
+		3. Organize seus documentos
+			Escolha 3-5 documentos importantes
+			Coloque no GitHub
+			Crie historico de versoes
+		A habilidade melhora com pratica
+	Recursos para Continuar
+		GitHub Docs
+			docs.github.com
+			Documentacao oficial
+		GitHub Skills
+			skills.github.com
+			Tutoriais interativos
+		IAs
+			ChatGPT, Claude
+			Ajudam com comandos especificos
+		Se der erro
+			Volte ao material do curso
+			As solucoes estao la
+	O Que Voce Sabe Agora
+		Configurar Git e GitHub seguro
+		Guardar e sincronizar arquivos
+		Colaborar com equipe ou freelancers
+		Resolver conflitos
+		Voltar atras quando erra
+		Organizar seu espaco
+	Conclusao
+		Ferramenta poderosa para organizar projetos
+		Trabalhar com mais seguranca
+		Nao precisa mais ter medo
+			De perder arquivos
+			De nao saber qual versao e certa
+		Obrigado por fazer o curso
+		Agora e hora de colocar em pratica
+		Bom trabalho!

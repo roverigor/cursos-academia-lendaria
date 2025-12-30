@@ -1,140 +1,94 @@
-Branches
+Versoes Paralelas (Branches)
 	O Que Sao Branches
-		Linha independente de desenvolvimento
+		Branch = ramo em ingles
 		Analogia
-			main = Rodovia principal (estavel)
-			Branches = Vias paralelas (construcao)
-			Merge = Retornar para rodovia
+			main = tronco da arvore
+			Versao estavel que funciona
+			branch = galho que sai do tronco
+			Versao para experimentar
 		Isolamento
-			Mudancas nao afetam main
-	Por Que Usar Branches
-		1. Protecao codigo estavel
-			main sempre funcional
-			Experimente em branches
-		2. Trabalho paralelo
-			Alice, Bob, Carol
-			Simultaneamente sem interferencia
-		3. Code Review
-			feature → PR → Review → Merge
-		4. Experimentos seguros
-			Se funcionar: merge
-			Se falhar: delete branch
+			Mudancas no galho nao afetam o tronco
+			Se funcionar: junta de volta (merge)
+			Se nao funcionar: apaga o galho
+	Exemplo Pratico
+		Manual de processos funcionando bem
+		Quer reorganizar completamente
+		Em vez de editar direto
+			Cria branch
+			Faz todas as mudancas la
+			Se ficar melhor: integra
+			Se ficar pior: volta para original
+	Quando Usar Branches
+		Testar mudanca grande
+			Reorganizar documento
+			Mudar estrutura de pastas
+			Nova abordagem
+		Pedir ajuda para alguem
+			Freelancer ou membro da equipe
+			Trabalha em branch separada
+			Voce revisa antes de integrar
+		Manter main sempre funcionando
+			Enquanto trabalha em mudancas
+			Versao principal continua estavel
+		Regra simples
+			Mudanca pequena: edite direto
+			Mudanca maior: crie branch
+	Nomes de Branches
+		Bons nomes
+			nova-tabela-precos
+			reorganiza-manual
+			adiciona-faq
+			corrige-processos-venda
+			Explicam o que esta fazendo
+		Nomes ruins
+			teste (teste de que?)
+			branch1 (o que tem nessa branch?)
+			nova (nova o que?)
 	Comandos Basicos
 		Ver branches
-			git branch (locais)
-			git branch -a (todas)
-			* indica branch atual
-		Criar branch
-			git branch nome
-			git checkout -b nome
-			git switch -c nome
-		Mudar de branch
+			git branch
+			Asterisco indica qual voce esta
+		Criar branch e entrar
+			git checkout -b nome-da-branch
+			-b = criar nova branch
+		Voltar para main
 			git checkout main
-			git switch main
-		Deletar branch
-			git branch -d (se merged)
-			git branch -D (forcar)
-			git push origin --delete (remota)
-	Convencoes Nomenclatura
-		Formato: type/description
-		Types
-			feature/
-				Nova funcionalidade
-			fix/ ou bugfix/
-				Correcao de bug
-			hotfix/
-				Correcao urgente
-			refactor/
-				Refatoracao
-			docs/
-				Documentacao
-			test/
-				Testes
-			chore/
-				Manutencao
-		Boas praticas
-			kebab-case
-			Descritivo mas conciso
-			Prefixo com tipo
-			Sem espacos
-			Em ingles
-		Exemplos bons
-			feature/dark-mode-toggle
-			fix/navbar-mobile-overflow
-			hotfix/critical-security
-		Evitar
-			branch1 (sem contexto)
-			test (generico)
-			my-branch (pessoal)
-	Workflow de Branch
-		1. Atualizar main
-			git checkout main
-			git pull
-		2. Criar branch
-			git checkout -b feature/nome
-		3. Trabalhar
-			Editar arquivos
+		Enviar branch para GitHub
+			git push -u origin nome-da-branch
+			-u origin configura conexao
+			Depois: apenas git push
+		Apagar branch
+			git branch -d nome-da-branch
+			Usar depois de integrar
+	Exercicio
+		Ver branches atuais
+			git branch
+			Provavelmente so main
+		Criar nova branch
+			git checkout -b teste-nova-secao
+		Confirmar que mudou
+			git branch
+			Asterisco em teste-nova-secao
+		Fazer mudanca
+			Editar README.md
+			Adicionar nova secao
+		Salvar versao
 			git add .
-			git commit -m
-		4. Push branch
-			git push -u origin feature/nome
-		5. Abrir Pull Request
-		6. Apos merge
+			git commit -m "Adiciona nova secao para teste"
+		Voltar para main
 			git checkout main
-			git pull
-			git branch -d feature/nome
-	Branch main vs master
-		Historia
-			Git usava master ate 2020
-		Mudanca
-			GitHub mudou para main
-			Mais inclusivo
-		Hoje
-			Novos: main
-			Antigos: podem ter master
-		Renomear
-			git branch -m master main
-			git push -u origin main
-			Settings → Default branch
-			git push origin --delete master
-	Sincronizando Branches
-		Atualizar com main
-			Metodo 1: Merge
-				git merge main
-				Cria merge commit
-			Metodo 2: Rebase
-				git rebase main
-				Historico linear
-		Push de branch
-			Primeira vez: -u
-			Seguintes: git push
-		Pull de branch
-			git pull
-	Ver Diferencas
-		Commits diferentes
-			git log main..feature/login
-		Arquivos diferentes
-			git diff main..feature/login
-		Apenas nomes
-			git diff --name-only
-	Estrategias Branch
-		Git Flow
-			main (producao)
-			develop (integracao)
-			feature/*, release/*, hotfix/*
-			Times grandes
-		GitHub Flow
-			main (producao)
-			feature/*, fix/*, hotfix/*
-			Deploy continuo
-			Recomendado iniciar
-			Regras
-				main sempre estavel
-				Branch para qualquer mudanca
-				Merge via PR
-				Delete apos merge
-	Troubleshooting
-		Please commit or stash
-			git commit ou git stash
-		Branch already exists
-			git branch -d nome-existente
+		Verificar isolamento
+			Abrir README.md
+			Secao nao esta la!
+		Voltar para branch
+			git checkout teste-nova-secao
+			Secao aparece de novo
+		Enviar para GitHub
+			git push -u origin teste-nova-secao
+			Ver branch no GitHub
+	Resumo
+		Branch = versao paralela do projeto
+		Use para mudancas grandes ou testes
+		git checkout -b nome (criar e entrar)
+		git checkout main (voltar)
+		git push -u origin nome (enviar)

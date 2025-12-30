@@ -1,153 +1,109 @@
-Desfazendo Erros
-	Cenarios Comuns
-		Mudancas para descartar
-		Editar commit/mensagem
-		Commit branch errada
-		Guardar temporariamente
-		Pushed algo errado
-	git restore
-		Desfazer nao commitadas
+Voltando no Tempo (Desfazendo Erros)
+	Erros Sao Normais
+		Todo mundo erra
+		Git foi feito para permitir voltar atras
+		Nao precisa ter medo
+	git restore (Descartar Mudancas)
+		Quando usar
+			Editou um arquivo
+			Quer voltar como estava antes
 		Arquivo especifico
-			git restore index.js
-			git checkout -- index.js
-		Todos arquivos
+			git restore nome-do-arquivo.txt
+			Arquivo volta ao estado anterior
+		Tirar do staging
+			git restore --staged nome-do-arquivo.txt
+			Remove da preparacao
+			Mantem suas mudancas no arquivo
+		Descartar TODAS mudancas
 			git restore .
-		ATENCAO
-			Mudancas perdidas permanentemente
-		Unstage
-			git restore --staged
-			git reset HEAD
-	git reset
-		Desfazer commits
-		CUIDADO
-			Reescreve historico
-			Nao usar em pushed compartilhado
-		3 Modos
-			--soft
-				Mantém: Working + Staging
-				Volta: Repository
-			--mixed (padrao)
-				Mantém: Working
-				Limpa: Staging
-				Volta: Repository
-			--hard (PERIGOSO)
-				Limpa: Working + Staging
-				Volta: Repository
-		soft reset
+			CUIDADO: mudancas sao perdidas
+	git stash (Guardar Temporariamente)
+		Quando usar
+			Precisa mudar de branch urgente
+			Mudancas nao estao prontas para salvar
+		Guardar
+			git stash
+			Mudancas vao para uma "gaveta"
+			Pasta de trabalho fica limpa
+		Recuperar
+			git stash pop
+			Mudancas voltam
+			Gaveta e esvaziada
+		Com descricao
+			git stash save "Trabalhando na tabela de precos"
+		Ver o que esta guardado
+			git stash list
+	git reset (Desfazer Versao Nao Enviada)
+		Quando usar
+			Salvou versao (commit)
+			Ainda NAO enviou para GitHub
+		Manter mudancas
 			git reset --soft HEAD~1
-			Util: editar mensagem
-		mixed reset
-			git reset HEAD~1
-			Util: reorganizar commits
-		hard reset
+			Desfaz commit
+			Mudancas continuam no arquivo
+		Descartar tudo
 			git reset --hard HEAD~1
-			PERIGO: perde mudancas
-		Voltar multiplos
-			HEAD~3 (3 commits)
-			abc1234 (commit especifico)
-		Ver historico
-			git reflog
-			Recuperar apos reset
-	git revert
-		Desfazer publicamente
-		Ja fez push
-			Nao pode reset
-		Cria novo commit
-			Desfaz mudancas
-			Preserva historico
+			CUIDADO: apaga tudo
+			Usar so quando tem certeza
+		HEAD~1
+			Uma versao antes da atual
+			HEAD~2 = duas versoes
+		IMPORTANTE
+			So usar se NAO enviou para GitHub
+	git revert (Desfazer Versao Ja Enviada)
+		Quando usar
+			Salvou E enviou para GitHub
+			Precisa desfazer
 		Comando
 			git revert HEAD
-			git revert abc1234
-		Diferenca reset
-			Reset: reescreve
-			Revert: adiciona commit
-		Sem commit auto
-			git revert --no-commit
-			Revisar antes commitar
-	git stash
-		Guardar temporariamente
-		Quando
-			Mudar branch urgente
-			Trabalho incompleto
-		Stash basico
-			git stash
-			git stash save "mensagem"
-		Listar
-			git stash list
-		Recuperar
-			git stash pop (remove)
-			git stash apply (mantem)
-		Ver conteudo
-			git stash show
-			git stash show -p
-		Deletar
-			git stash drop
-			git stash clear (todos)
-		Incluir untracked
-			git stash -u
-	git commit --amend
-		Corrigir ultimo commit
-		Editar mensagem
-			git commit --amend
-			git commit --amend -m "nova"
-		Adicionar arquivo
-			git add forgotten.js
+		O que acontece
+			Cria NOVA versao que desfaz a anterior
+			Historico e preservado
+			Todo mundo pode ver o que aconteceu
+		Depois do revert
+			git push
+			Envia a correcao
+	git commit --amend (Corrigir Ultimo Commit)
+		Quando usar
+			Acabou de salvar
+			Mensagem ficou errada
+			Esqueceu arquivo
+		Corrigir mensagem
+			git commit --amend -m "Nova mensagem corrigida"
+		Adicionar arquivo esquecido
+			git add arquivo-esquecido.txt
 			git commit --amend --no-edit
+			--no-edit mantem mensagem atual
 		IMPORTANTE
-			Reescreve commit
-			Nao se ja pushed
-	git clean
-		Remover nao rastreados
-		Dry-run
-			git clean -n
-		Deletar
-			git clean -f (arquivos)
-			git clean -fd (+ diretorios)
-			git clean -fdx (+ ignorados)
-		CUIDADO
-			Deleta permanentemente
-	Arvore Decisao
-		Nao commitou
-			Descartar → restore
-			Guardar → stash
-			Limpar → clean
-		Commitou localmente
-			Nao pushed
-				Editar ultimo → amend
-				Desfazer mantendo → reset --soft
-				Desfazer descartando → reset --hard
-			Ja pushed
-				Desfazer → revert (nunca reset!)
-		Branch errada
-			Nao pushed → reset + cherry-pick
-			Pushed → PR da branch errada
-	Recuperando Desastres
-		Commit apos reset
-			git reflog
-			Encontrar commit perdido
-			git reset --hard abc1234
-		Arquivo deletado
-			git log --diff-filter=D
-			git checkout abc1234^ -- file.js
-	Boas Praticas
-		Faca
-			stash para mudar contexto
-			revert em pushed
-			Testar apos desfazer
-			reflog para recuperar
-		Evite
-			reset --hard sem backup
-			reset em pushed
-			push --force compartilhado
-			clean sem -n antes
-	Comandos Emergencia
-		"Estraguei tudo"
-			git reflog
-			git reset --hard HEAD@{X}
-		"Branch errada"
-			git reset --hard HEAD~1
-			git checkout branch-certa
-			git cherry-pick abc1234
-		"Voltar para GitHub"
-			git fetch origin
-			git reset --hard origin/main
+			So usar se NAO enviou para GitHub
+	Quando Usar Cada Comando
+		Mudanca NAO salva ainda?
+			git restore: descartar
+			git stash: guardar temporariamente
+		Versao salva mas NAO enviada?
+			git reset --soft: desfazer (manter mudancas)
+			git commit --amend: corrigir mensagem
+		Versao ja enviada para GitHub?
+			git revert: criar versao que desfaz
+		Regra principal
+			Ja enviou para GitHub: use revert
+			Nao enviou: pode usar reset
+	Exercicio
+		Teste restore
+			Editar README.md
+			git status (mostra modificado)
+			git restore README.md
+			Arquivo voltou ao estado anterior
+		Teste stash
+			Editar README.md
+			git stash
+			git status (pasta limpa)
+			git stash pop
+			Mudanca voltou
+	Resumo
+		git restore: descartar mudancas nao salvas
+		git stash: guardar temporariamente
+		git reset --soft: desfazer versao nao enviada
+		git revert: desfazer versao ja enviada
+		git commit --amend: corrigir ultima versao
+		Regra de ouro: ja enviou para GitHub, use revert

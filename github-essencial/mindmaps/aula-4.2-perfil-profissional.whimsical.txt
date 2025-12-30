@@ -1,152 +1,85 @@
-Perfil Profissional GitHub
-	O Que Recrutadores Procuram
-		Checklist mental
-			Perfil completo
-			Atividade consistente
-			READMEs claros
-			Codigo de qualidade
-			Projetos reais
-			Open source (plus)
-		Tempo atencao
-			30 segundos iniciais
-	Anatomia Perfil
-		Foto
-		Nome e username
-		Bio clara
-		Localizacao
-		Links (portfolio, LinkedIn)
-		README perfil
-		Pinned Repositories (6)
-		Contribution Graph
+Organizando Seu Hub
+	Por Que Organizar
+		Acesso rapido
+			Abre GitHub e ve projetos principais
+		Clareza
+			Sabe o que cada projeto contem
+		Compartilhamento
+			Mostrar para parceiros ou equipe
+		Investir minutos
+			Economiza tempo toda vez que acessa
 	Configuracao Basica
-		Foto de Perfil
-			Bom
-				Foto profissional
-				Rosto visivel
-				Fundo neutro
-				Estilo LinkedIn
-			Evitar
-				Sem foto
-				Foto grupo
-				Memes
-				Muito informal
-		Bio (160 chars)
-			Formato
-				[Funcao] | [Techs] | [Diferencial]
+		Foto
+			Sua foto ou logo da empresa
+			Algo que identifique voce
+		Bio (descricao curta)
+			Uma frase do que voce faz
 			Exemplos
-				Full-Stack | React, Node | Building scalable apps
-				Frontend | Vue, TypeScript | UX focused
-			Dicas
-				Especifico
-				2-3 tecnologias
-				Mostrar foco
-		Localizacao e Links
-			Localizacao
-			Portfolio URL
-			LinkedIn
+				Empresario | Organizando projetos com GitHub
+				Dono de agencia | Documentos e processos organizados
+		Links uteis
+			Site, LinkedIn
+			Forma de contato
+			Fica visivel no perfil
 	README de Perfil
+		O que e
+			Apresentacao no topo do perfil
+			Funcao especial do GitHub
 		Como criar
-			Repo: seu-username
-			Publico
-			Add README
-			Aparece no perfil
-		Template Iniciante
-			Ola! Eu sou [Nome]
-			Sobre Mim
-			Tecnologias que Uso
-				Frontend
-				Backend
-				Ferramentas
-			Estatisticas GitHub
-			Como me Encontrar
-		Template Avancado
-			Header centralizado
-			Visitas counter
-			Atualmente trabalhando
-			Objetivos 2025
-			Tech Stack (icons)
-			GitHub Stats
-			Streak stats
-			Contato
-		Badges populares
-			shields.io
-			devicon
-	Destacar Repositorios
-		Como pinar
-			Perfil → Customize pins
-			Selecionar ate 6 repos
-			Save pins
-		Quais pinar
-			Prioridade
-				1. Mais impressionante
-				2. Tecnologias diferentes
-				3. Open source
-				4. Bom README
-				5. Codigo de qualidade
-				6. Projetos recentes
-		Bons para pinar
-			task-manager-api
-			react-dashboard
-			python-ml-sentiment
-			open-source-contribution
-		Evitar pinar
-			tutorial-youtube
-			projeto-teste-123
-			primeiro-repo
-			fork-sem-mudancas
-	Atividade Consistente
-		Contribution Graph
-			Graminha verde
-			Ultimos 12 meses
-		Como manter verde
-			Commit regularmente
-			Open source
-			Consistente > bursts
-		NAO fazer
-			Commits fake
-			So para "grama verde"
-	READMEs dos Projetos
-		Template minimo
-			Nome do Projeto
-			Descricao (1-2 frases)
-			Features
-			Tecnologias
-			Como Rodar
-			Screenshots
-			License
-	Boas Praticas
-		Faca
-			Perfil atualizado
-			READMEs em ingles/PT-BR
-			Codigo limpo
-			Commits claros
-			License em repos
-			.gitignore correto
-		Evite
-			Perfil vazio
-			Apenas tutoriais
-			Codigo desorganizado
-			Repos sem README
-			Commits "asdf"
-			Repos nao terminados
-	Exemplos Inspiradores
-		Buscar
-			Devs da sua area
-			Contributors projetos
-			Empresas dos sonhos
-		Analisar
-			Organizacao repos
-			Estilo README
-			Tipos projetos
-			Frequencia commits
-	Checklist Perfil Pronto
-		Foto profissional
-		Bio clara
-		Localizacao e links
-		README de perfil
-		3-6 repos pinados
-		READMEs profissionais
-		.gitignore correto
-		Codigo qualidade
-		Commits regulares
-		Sem repos "teste"
+			Criar repositorio com nome do seu usuario
+			Se voce e joaosilva
+			Crie repositorio joaosilva
+			Marque Add a README file
+		GitHub avisa
+			This is a special repository
+			Confirma que fez certo
+		Conteudo sugerido
+			# Ola! Eu sou [Seu Nome]
+			## Sobre
+			Empresario focado em [sua area]
+			Uso GitHub para organizar projetos
+			## Meus Projetos Principais
+			- Projeto 1: descricao
+			- Projeto 2: descricao
+			## Contato
+			Site, Email
+		Aparece automaticamente
+			Quando alguem visita seu perfil
+	Projetos em Destaque
+		O que e
+			Ate 6 projetos no topo do perfil
+			Primeiros que aparecem
+		Como fazer
+			Ir no perfil
+			Clicar em Customize your pins
+			Selecionar ate 6 repositorios
+			Clicar em Save pins
+		O que destacar
+			Projetos que acessa com frequencia
+			Documentos importantes
+			Manuais e processos
+			Projetos compartilhados com equipe
+		O que NAO destacar
+			Testes que nao usa mais
+			Repositorios com nomes confusos
+			Projetos abandonados
+	Descricoes Claras
+		Cada repositorio pode ter descricao
+		Em vez de: docs
+			Nao explica nada
+		Coloque: Manuais de processos da equipe de vendas
+			Ajuda a encontrar rapidamente
+	Exercicio
+		Abrir perfil GitHub
+		Clicar em Edit profile
+		Adicionar bio curta
+		Salvar
+		Ir em Customize your pins
+		Selecionar projetos importantes
+		Opcional: criar README de perfil
+	Resumo
+		Bio clara que explica quem voce e
+		README de perfil para apresentacao visual
+		Ate 6 projetos em destaque
+		Descricoes claras em cada repositorio
+		Menos tempo procurando, mais tempo trabalhando

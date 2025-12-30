@@ -1,98 +1,67 @@
-Criando Repositorio Certo
-	Anatomia Repo Profissional
+Criando Sua Central de Projetos
+	Por Que Organizacao Importa
+		Duas pastas no computador
+			Baguncada: arquivos jogados
+			Organizada: estrutura clara
+		Repositorio bem organizado
+			Economiza tempo
+			Sabe onde procurar
+	Arquivos Iniciais
 		README.md
-			O que e o projeto
-			Como usar
-			Por que existe
+			Apresentacao do projeto
+			Primeira coisa que aparece
+			Explica o que tem ali
+			.md = Markdown (formato simples)
 		.gitignore
-			O que NAO versionar
+			Diz ao Git o que ignorar
+			Arquivos que NAO devem ser salvos
+			Temporarios, senhas, configs pessoais
+			Protege voce de subir algo errado
 		LICENSE
-			Como outros podem usar
-		src/
-			Codigo fonte
-		.github/
-			Workflows (opcional)
+			Regras de uso
+			Quem pode usar, como pode usar
+			MIT: pode usar, mantenha creditos
 	Criando no GitHub
-		Opcao 1: GitHub primeiro
-			github.com/new
-			Repository name (kebab-case)
-			Description clara
-			Public ou Private
-			Initialize with
-				Add README
-				Add .gitignore
-				Choose license
-		Opcao 2: Local primeiro
-			mkdir projeto
-			git init
-			git add README.md
-			git commit -m "Initial commit"
-			git remote add origin
-			git push -u origin main
-	README.md Profissional
-		Estrutura minima
-			Titulo do projeto
-			Descricao (1-2 frases)
-			Sobre
-			Tecnologias
-			Instalacao
-			Uso
-			License
-		Boas praticas
-			Emojis com moderacao
-			Badges (build, version)
-			Screenshots se UI
-			Especifico, nao generico
-		Evitar
-			Deixar em branco
-			Texto generico
-			Informacao desatualizada
-	.gitignore
-		O que nunca versionar
-			Credenciais (.env)
-			Dependencias (node_modules)
-			Arquivos gerados (dist, build)
-			IDEs (.vscode, .idea)
-			Sistema (.DS_Store)
-		Templates prontos
-			github.com/github/gitignore
-			Por linguagem
-			Node.js
-				node_modules/
-				.env
-				dist/
-			Python
-				venv/
-				__pycache__/
-				.env
-		Comandos uteis
-			git status --ignored
-			git add -f (forcar)
-			git rm --cached (parar rastrear)
-	LICENSE
-		Por que adicionar
-			Sem licenca = ninguem pode usar
-			Mesmo em repo publico
-		Licencas populares
-			MIT
-				Permissiva
-				Recomendada portfolio
-			Apache 2.0
-				Corporativo
-				Patentes
-			GPL 3.0
-				"Viral"
-				Software livre
-			Unlicense
-				Dominio publico
-		Quando usar MIT
-			Simples e permissiva
-			Empresas aceitam
-			Mais usada JS/Python
-	Checklist Repo Profissional
-		README.md completo
-		.gitignore apropriado
-		LICENSE clara (MIT)
-		Codigo funcional
-		Sem credenciais
-		Nome descritivo
+		github.com → login
+		Clique no + → New repository
+		Preencher
+			Nome: simples, descritivo
+			Letras minusculas, tracos
+			Exemplos: meus-projetos, documentos-empresa
+		Descricao
+			Uma frase do que vai guardar
+		Visibilidade
+			Private: so voce ve
+			Public: qualquer pessoa ve
+		Opcoes para marcar
+			Add a README file
+			Add .gitignore (opcional)
+		Create repository
+	Baixando para o Computador
+		Clonar = baixar repositorio
+		No GitHub
+			Botao verde Code
+			Aba SSH (nao HTTPS)
+			Copiar endereco (git@github.com:...)
+		No terminal
+			Navegar para pasta desejada
+			git clone [endereco]
+			Exemplo: git clone git@github.com:usuario/repo.git
+		Entrar na pasta
+			cd nome-do-repo
+			ls (ver arquivos)
+	Verificando Conexao
+		Comando
+			git remote -v
+		Resultado esperado
+			origin git@github.com:usuario/repo.git (fetch)
+			origin git@github.com:usuario/repo.git (push)
+		Se aparecer git@github.com
+			Conexao segura (SSH) funcionando
+		Se aparecer https://
+			Clonou diferente, vai pedir senha
+	Resumo
+		Repositorio criado no GitHub
+		Arquivos basicos entendidos
+		Projeto baixado no computador
+		Conexao verificada

@@ -1,0 +1,94 @@
+Historia do Git e GitHub
+	O Problema Original
+		Projeto Linux
+			Sistema operacional gratuito
+			Milhares de colaboradores
+			Mundo inteiro
+		Desafio
+			Centenas de pessoas
+			Arquivos diferentes
+			Mesmo arquivo editado
+			Como organizar tudo?
+	Linus Torvalds e o Git
+		Quem e Linus
+			Finlandes
+			Criou Linux em 1991
+			Tinha 21 anos
+		BitKeeper
+			Ferramenta usada pelo Linux
+			Pertencia a uma empresa
+			2005: empresa mudou as regras
+			Linux perdeu acesso
+		Git nasce
+			Linus criou em 10 dias
+			Abril de 2005
+			Rapido e eficiente
+			Livre - ninguem pode tirar
+		Curiosidade do nome
+			Git = pessoa irritante (giria)
+			Linus descrevendo a si mesmo
+	Nascimento do GitHub
+		O problema
+			Git era dificil de usar
+			Linha de comando
+			Sem interface visual
+			Nada na nuvem
+		4 fundadores
+			Chris Wanstrath
+			Tom Preston-Werner
+			P.J. Hyett
+			Scott Chacon
+		Desenvolvimento
+			San Francisco, 2007
+			Trabalhavam de dia
+			Desenvolviam de noite
+			Cafes e bares do SoMa
+		Lancamento
+			Abril de 2008
+			Git + Hub = centro de conexao
+		Crescimento
+			2009: 46 mil projetos
+			2010: 1 milhao de projetos
+			2011: 2 milhoes de projetos
+	Compra pela Microsoft
+		Contexto
+			Microsoft vs software livre
+			Eram inimigos
+		Mudanca
+			2014: Satya Nadella assume
+			Nova visao: abracar software livre
+		Aquisicao
+			Junho de 2018
+			7,5 bilhoes de dolares
+			3a maior compra da Microsoft
+		Resultado
+			GitHub cresceu mais
+			28 milhoes → 100 milhoes usuarios
+	GitHub Hoje
+		Numeros
+			100+ milhoes de desenvolvedores
+			420+ milhoes de projetos
+			Empresas de todos tamanhos
+		GitHub Copilot
+			Lancado em 2021
+			IA que ajuda escrever codigo
+			55% mais produtivos
+		Meta futura
+			1 bilhao de desenvolvedores
+	Por Que Isso Importa
+		Ferramentas de bilhoes
+			Investidas para resolver problemas reais
+			Disponiveis de graca
+		Seus problemas
+			Organizacao
+			Colaboracao
+			Nao perder trabalho
+		Mais que codigo
+			Documentos, projetos, ideias
+			Qualquer coisa que precise historico
+	Linha do Tempo
+		2005: Linus cria Git (10 dias)
+		2008: GitHub lancado
+		2018: Microsoft compra (7,5 bi)
+		2021: GitHub Copilot
+		Hoje: 100+ milhoes usuarios

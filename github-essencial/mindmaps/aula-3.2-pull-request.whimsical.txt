@@ -1,170 +1,83 @@
-Pull Request
+Pedindo Revisao (Pull Request)
 	O Que e Pull Request
 		Proposta de mudanca
-		Fluxo colaborativo
-			Voce: propoe mudanca
-			Time: revisa, comenta
-			Voce: ajusta feedback
-			Time: aprova
-			Merge: integra ao main
-		Nome confuso
-			Deveria ser "Merge Request"
-			GitLab usa esse nome
-	Quando Criar PR
-		Completou feature
-		Corrigiu bug
-		Atualizou documentacao
-		Qualquer mudanca para main
-		Regra de ouro
-			Nada entra em main sem PR
-	Anatomia PR Profissional
-		Descricao
-			O que o projeto faz
-			Problema resolvido
-		Motivacao
-			Closes #42
-			Por que necessario
-		Mudancas
-			Lista de implementacoes
-			Bullet points
-		Como Testar
-			Passos para validar
-			Comandos
-		Screenshots
-			Se UI
-		Checklist
-			Codigo segue style guide
-			Testes passam
-			Documentacao atualizada
-			Sem breaking changes
-	Criando PR no GitHub
-		Passo 1: Push branch
-			git push -u origin feature/nome
-		Passo 2: Abrir PR
-			Metodo 1: Banner amarelo
-				Compare & pull request
-			Metodo 2: Manual
-				Pull requests → New
-				base: main ← compare: feature
-		Passo 3: Preencher
-			Titulo claro
-				[type] Description
-			Descricao completa
-			Reviewers (se aplicavel)
-			Labels
-				enhancement, bug, docs
-			Milestone (opcional)
-		Passo 4: Create PR
-	Tipos de Pull Request
-		1. Feature PR
-			[Feature] Add dark mode
-			Nova funcionalidade
-			Closes #23
-		2. Bug Fix PR
-			[Fix] Resolve navbar overflow
-			Corrige problema
-			Fixes #56
-		3. Documentation PR
-			[Docs] Update install instructions
-			Apenas documentacao
-		4. Refactor PR
-			[Refactor] Extract validation
-			Melhora codigo
-			No breaking changes
-	Draft Pull Request
-		Quando usar
-			Nao pronto para review
-			Quer mostrar progresso
-			Feedback antecipado
-		Caracteristicas
-			Marcado "Draft"
-			Nao pode merge
-			Converter: "Ready for review"
-	Linkando Issues
-		Fecha automaticamente
-			Closes #123
-			Fixes #456
-			Resolves #789
-		Multiplas issues
-			Closes #123, #124
-		Apenas referencia
-			Related to #123
-			See #456
-	Template PR
-		Criar arquivo
-			.github/pull_request_template.md
-		Conteudo
-			Descricao
-			Tipo de mudanca
-			Como foi testado
-			Checklist
-		Auto-preenche
-			Todo novo PR
-	Fluxo de Revisao
-		1. Criar PR
-		2. Automatic checks
-			Testes automaticos
-			Linting
-			Build
-		3. Code Review
-			Reviewers comentam
-			Sugerem mudancas
-		4. Responder feedback
-			Commits adicionais
-			Resolver conversas
-		5. Aprovacao
-			Reviewer aprova
-			Checks passam
-		6. Merge
-			Integra ao main
-			Delete branch
-	Atualizando PR
-		Novos commits
-			git checkout feature/branch
-			Fazer mudancas
-			git commit -m
-			git push
-		PR atualiza automaticamente
-	Merge Strategies
-		1. Merge Commit
-			Preserva historico completo
-			Cria merge commit
-		2. Squash and Merge
-			Todos commits → 1 commit
-			Historico limpo
-			Recomendado
-		3. Rebase and Merge
-			Linear
-			Commits bem organizados
-	Deletando Branch
-		GitHub
-			Botao "Delete branch"
-		Manual
-			git push origin --delete
-			git branch -d local
-	PR Open Source
-		Diferencas
-			1. Fork projeto
-			2. Branch no fork
-			3. PR fork → original
-			4. Paciencia (pode demorar)
-		Processo
-			Fork no navegador
-			Clone seu fork
-			Criar branch
-			Push
-			PR do fork
-	Boas Praticas
-		Faca
-			PRs pequenos (max 400 linhas)
-			Um proposito por PR
-			Descricao detalhada
-			Auto-review primeiro
-			Responder rapido
-			Agradecer reviewers
-		Evite
-			PRs gigantes (1000+ linhas)
-			Multiplas features
-			Descricao vaga
-			Commits quebrados
-			Ignorar feedback
+		Pede revisao antes de integrar
+		Mostra o que voce fez
+		Outra pessoa aprova ou pede ajustes
+	Por Que Usar
+		Evitar erros
+			Alguem revisa seu trabalho
+			Pega problemas antes de integrar
+		Documentar mudancas
+			Historico do que foi feito
+			Por que foi feito
+		Colaborar
+			Mesmo trabalhando sozinho
+			Voce futuro vai agradecer
+	Criando um Pull Request
+		Ter branch com mudancas
+			Ja enviada para GitHub (git push)
+		No GitHub
+			Botao verde "Compare & pull request"
+			Ou: Pull requests → New pull request
+		Escolher branches
+			base = onde quer integrar (main)
+			compare = sua branch com mudancas
+	Escrevendo Boa Descricao
+		Estrutura simples
+			O que mudou
+			Por que mudou
+			O que foi alterado
+		Exemplo
+			Titulo: Adiciona secao de perguntas frequentes
+			Descricao:
+				O que mudou: Adicionei uma nova secao ao manual
+				Por que: Clientes sempre perguntam as mesmas coisas
+				O que foi alterado: README.md
+		Dica
+			Voce mesmo vai agradecer depois
+			Quando olhar o historico
+	Depois de Criar
+		Esperar revisao
+			Outra pessoa vai olhar
+			Pode fazer comentarios
+			Pode pedir ajustes
+		Se pedirem mudancas
+			Faca as correcoes na sua branch
+			git add, git commit, git push
+			Mudancas aparecem automaticamente no PR
+	Aprovacao e Merge
+		Quando aprovarem
+			Botao verde "Merge pull request"
+			Clique e confirme
+		Depois do merge
+			Mudancas vao para main
+			Pode apagar a branch
+			GitHub oferece essa opcao
+	Exercicio
+		Criar branch nova
+			git checkout -b minha-mudanca
+		Fazer mudanca
+			Editar README.md
+			Adicionar informacao
+		Salvar e enviar
+			git add .
+			git commit -m "Adiciona nova informacao"
+			git push -u origin minha-mudanca
+		Criar Pull Request
+			Ir para GitHub
+			Clicar em Compare & pull request
+			Preencher titulo e descricao
+			Clicar em Create pull request
+		Revisar e aprovar
+			Aba Files changed (ver mudancas)
+			Botao Merge pull request
+		Atualizar local
+			git checkout main
+			git pull
+	Resumo
+		Pull Request = proposta de mudanca
+		Crie para suas branches antes de integrar
+		Escreva descricao clara: o que, por que, o que mudou
+		Espere revisao, faca ajustes se pedirem
+		Merge quando aprovado

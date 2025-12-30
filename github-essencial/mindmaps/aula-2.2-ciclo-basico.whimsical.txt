@@ -1,104 +1,93 @@
-Ciclo Basico do Git
-	Modelo Mental
-		Working Directory
-			Arquivos que voce edita
-			Rascunho
-		Staging Area
-			Arquivos marcados para commit
-			Envelope pronto para selar
-		Repository
-			Historico de versoes salvas
-			Carta enviada (permanente)
-	Comando 1: git clone
+Salvando Versoes (O Ciclo Basico)
+	As 3 Areas do Git
+		Area 1: Pasta de trabalho
+			Pasta do projeto no computador
+			Onde voce edita arquivos
+		Area 2: Area de preparacao
+			Caixa para arquivos que quer salvar
+			Voce decide o que entra
+		Area 3: Historico
+			Versoes salvas permanentemente
+			Fica para sempre
+		Analogia
+			Pasta de trabalho = Mesa com papeis
+			Area de preparacao = Envelope
+			Historico = Arquivo guardado
+		Processo
+			Editar → Preparar → Salvar
+	Comando 1: git status
 		O que faz
-			Copia repo remoto para local
-		Sintaxe
-			git clone git@github.com:user/repo.git
-			git clone https://github.com/user/repo.git
-		O que acontece
-			Cria pasta com nome do repo
-			Baixa todo historico
-			Cria remote "origin"
-			Checkout branch principal
-		Voce clona uma vez
-			Depois usa git pull
-	Comando 2: git status
-		O que faz
-			Mostra situacao atual
-		Saida tipica
-			On branch main
-			Changes not staged
+			Mostra situacao dos arquivos
+			Raio-x do projeto
+		Mensagens comuns
+			Changes not staged for commit
+				Arquivos modificados
+				Precisa usar add
 			Untracked files
-		Use sempre
-			Antes de add
-			Antes de commit
-			Quando perdido
-		Versao curta
-			git status -s
-	Comando 3: git add
+				Arquivos novos
+				Git nao conhece ainda
+			Changes to be committed
+				Prontos para salvar
+			nothing to commit, working tree clean
+				Tudo ja foi salvo
+		Quando usar
+			Sempre que quiser saber o status
+	Comando 2: git add
 		O que faz
-			Move para Staging Area
+			Prepara arquivos para salvar
+			Move para area de preparacao
 		Arquivo especifico
-			git add index.js
-		Multiplos arquivos
-			git add file1 file2 file3
+			git add nome-do-arquivo.txt
 		Todos os arquivos
 			git add .
-			git add --all
-		Adicionar interativo
-			git add -p
-	Comando 4: git commit
+			Ponto = todos desta pasta
+		Desfazer add por engano
+			git restore --staged nome-do-arquivo.txt
+			Remove da preparacao
+			Nao apaga mudancas
+	Comando 3: git commit
 		O que faz
-			Salva snapshot no Repository
-		Mensagem inline
-			git commit -m "mensagem"
-		Mensagem detalhada
-			git commit (abre editor)
-		Regras de mensagem
-			Imperativo: Add, Fix, Update
-			Especifico
-			Max 50 chars titulo
-			Em ingles
-		Atalho add + commit
-			git commit -am "mensagem"
-			So arquivos ja rastreados
-	Ciclo Completo
+			Salva a versao no historico
+		Formato
+			git commit -m "sua mensagem aqui"
+			-m = message (mensagem)
+		Mensagens
+			Descricao do que mudou
+			Fica no historico
+			Exemplos bons
+				Atualiza documento de processos
+				Adiciona secao de perguntas frequentes
+				Corrige erro no calculo
+			Evitar mensagens vagas
+				alteracoes
+				update
+	O Ciclo Completo
 		1. git status
-			Ver estado atual
+			Ver situacao atual
 		2. Editar arquivos
-			Criar/modificar codigo
+			Fazer mudancas normalmente
 		3. git status
-			Ver mudancas
+			Ver o que mudou
 		4. git add .
-			Marcar para salvar
+			Preparar arquivos
 		5. git status
-			Confirmar staging
-		6. git commit -m
+			Confirmar preparacao
+		6. git commit -m "mensagem"
 			Salvar versao
 		7. git status
-			Working tree clean
+			Confirmar que salvou
+		Resumo
+			status, add, commit
+			Com tempo fica automatico
 	Ver Historico
-		git log
-			Historico completo
-		git log --oneline
-			Versao compacta
-		git log --oneline -5
-			Ultimos 5 commits
-		git log --graph --all
-			Com grafico branches
-	Comandos Verificacao
-		git diff
-			Diferencas antes de add
-		git diff --staged
-			Diferencas ja em staging
-		git show
-			Ver ultimo commit
-		git show abc1234
-			Ver commit especifico
-	Erros Comuns
-		Commit sem add
-			Esqueceu git add
-		Mensagem generica
-			"changes", "update"
-		Esquecer mensagem
-			Editor vazio
+		Comando
+			git log --oneline
+		O que mostra
+			Uma linha por versao
+			Mensagem que voce escreveu
+	Checklist
+		Entendi as 3 areas
+		Sei usar git status
+		Sei usar git add
+		Sei usar git commit
+		Fiz pelo menos 3 commits

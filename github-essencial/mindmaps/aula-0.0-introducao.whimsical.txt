@@ -1,78 +1,75 @@
-Introducao: Bem-vindo ao GitHub Essencial
-	Historia do Git
-		Linus Torvalds e Linux
-			1991: Linus cria Linux
-			Sistema operacional open source
-			90%+ dos servidores usam Linux
-		O Problema (1991-2002)
-			Milhares de contribuidores
-			Patches via email
-			Linus juntava manualmente
-			Sem historico organizado
-		BitKeeper (2002-2005)
-			Solucao temporaria
-			Proprietario mas gratuito para Linux
-			Controversia no movimento livre
-		A Crise de Abril 2005
-			Licenca revogada
-			Linux ficou sem ferramenta
-			Necessidade urgente de solucao
-		Git Nasce em 10 Dias
-			3 Abril: Linus comeca
-			7 Abril: Primeiro commit
-			18 Abril: Primeiro merge
-			16 Junho: Gerencia Linux 2.6.12
-		Significado do Nome "Git"
-			Giria britanica: pessoa teimosa
-			Piada de Linus consigo mesmo
-			"stupid content tracker"
-			4 interpretacoes oficiais
-		Git Distribuido
-			Cada PC tem historico completo
-			Funciona 100% offline
-			Servidor e conveniencia
-	Historia do GitHub
-		O Problema (2007)
-			Git era poderoso
-			Mas dificil colaborativamente
-			Sem interface amigavel
-			Code review trabalhoso
-		A Faisca
-			Tom Preston-Werner + Chris Wanstrath
-			Bar em San Francisco
-			"Por que nao tornar Git facil?"
-		Fundadores
-			Tom Preston-Werner
-				Criador Gravatar, Jekyll
-				TOML, SemVer
-			Chris Wanstrath
-				Criador Atom
-				Primeiro CEO
-			P.J. Hyett
-				Ex-CNET
-				Arquiteto
-			Scott Chacon
-				Autor "Pro Git"
-				Evangelista Git
-		Timeline
-			OUT 2007: Ideia no bar
-			ABR 2008: GitHub lanca
-			2012: 1 milhao de usuarios
-			2015: $2 bilhoes valuation
-			JUN 2018: Microsoft compra por $7.5 bilhoes
-			2024: 100+ milhoes desenvolvedores
-	Filosofia do Curso
-		Setup 2025
-			SSH Ed25519
-			Branch main
-			Praticas atuais
-		Portfolio-first
-			Repos reais
-			Nao descartaveis
-		Foco em carreira
-			O que mercado valoriza
-		Workflow de time
-			Processos de empresas reais
-		Direto ao ponto
-			2.5h total
-			Zero enrolacao
+Por Que Voce Precisa de GitHub
+	O Problema Sem GitHub
+		Versoes confusas
+			proposta_v1, v2, final, final_revisado
+			Qual era a versao aprovada?
+		Mudancas perdidas
+			Editou e ficou pior
+			Nao lembra como era antes
+		Arquivos vulneraveis
+			Computador trava
+			HD queima
+			Notebook roubado
+		Colaboracao confusa
+			Arquivos por email/WhatsApp
+			Nao sabe o que mudou
+	GitHub: A Solucao
+		Google Drive mais inteligente
+			Guarda arquivos
+			Guarda historico de mudancas
+		Comparativo
+			Google Drive
+				Guarda arquivos
+				Versoes confusas
+				Backup quando lembra
+			GitHub
+				Guarda arquivos + historico
+				Cada mudanca registrada
+				Backup automatico
+		Beneficios
+			Nunca perde uma versao
+			Volta para qualquer momento
+			Colaboracao documentada
+			Menos retrabalho
+	Exemplos do Dia a Dia
+		Documento importante
+			Proposta comercial
+			Cada versao salva automatico
+			Volta em segundos
+		Instrucoes de trabalho
+			SOP de atendimento
+			Ve quando alterou
+			Pode voltar atras
+		Trabalho com outras pessoas
+			Entrega pelo GitHub
+			Ve o que foi feito
+			Comenta, aprova ou ajusta
+		Seguranca
+			Computador morre
+			Acessa de outro em minutos
+	Estrutura do Curso
+		Modulo 1
+			Instalacao e configuracao
+		Modulo 2
+			Salvar versoes e sincronizar
+		Modulo 3
+			Colaborar com outras pessoas
+		Modulo 4
+			Recuperar versoes e organizar
+	Mao na Massa
+		Criar conta
+			github.com
+			Sign up
+			Email, senha, usuario
+		Criar primeiro repositorio
+			Clica no +
+			New repository
+			Nome simples (ex: meus-projetos)
+			Descricao curta
+			Private (so voce ve)
+			Add a README file
+			Create repository
+		Verificar
+			Pagina do repositorio
+			Arquivo README.md
+			Endereco: github.com/usuario/repo
