@@ -1,0 +1,7465 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.420
+24 aqui só para nós conduzir na verdade
+dentro da grade que nós temos essa aula
+
+00:00:06.520 --> 00:00:13.700
+ela finaliza a fase 2 fase 2 e aí o
+nosso objetivo desse entregado é o MVP
+
+00:00:13.800 --> 00:00:20.500
+funcional principalmente aí os primeiros
+clientes usuários na semana que vem como
+
+00:00:20.600 --> 00:00:26.060
+a gente fez a pesquisa junto com vocês
+que demonstrou que tinha alguns entraves
+
+00:00:26.160 --> 00:00:31.380
+ali dos projetos então na terça e na
+quinta -feira a gente vai ter aula sobre
+
+00:00:31.480 --> 00:00:36.640
+tech o lado tech de colocar esse MVP no
+ar para quem ainda não conseguiu ou está
+
+00:00:36.740 --> 00:00:41.940
+travado em alguma coisa de vibe coding
+no N8N ou no super agentes o objetivo da
+
+00:00:42.040 --> 00:00:46.880
+aula de terça -feira vai ser isso antes
+que vocês nos perguntem aqui eu já vou
+
+00:00:46.980 --> 00:00:51.300
+dar esse recadinho então se preparem com
+algumas perguntas e algumas dúvidas que
+
+00:00:51.400 --> 00:00:56.880
+vocês terão na parte técnica para terça
+-feira as duas horas a gente vai ter as
+
+00:00:56.980 --> 00:01:02.780
+duas horas de aula 19h às 21h sobre a
+parte tech principalmente para ajudar a
+
+00:01:02.880 --> 00:01:07.120
+destravar e na quinta -feira a gente vai
+ter aula mais voltada para automação com
+
+00:01:07.220 --> 00:01:11.060
+N8N, então quem está fazendo algum tipo
+de integração com WhatsApp ou tem que
+
+00:01:11.160 --> 00:01:14.080
+fazer alguma coisa um pouco mais
+elaborada tranquilo?
+
+00:01:14.180 --> 00:01:17.440
+e além disso a gente tem lá o pronto
+-socorro que acontece todos os dias
+
+00:01:17.540 --> 00:01:22.640
+também com suporte técnico enfim, que
+vocês podem usar e abusar no bom sentido
+
+00:01:22.740 --> 00:01:28.100
+que o pessoal vai estar lá justamente
+para ajudá -los também então bora lá
+
+00:01:28.200 --> 00:01:29.040
+Giovanni, está contigo?
+
+00:01:29.140 --> 00:01:33.120
+contigo a bola, vamos em frente vou
+ficar aqui no apoio, qualquer dúvida me
+
+00:01:33.220 --> 00:01:39.360
+chamem, não me chamem por qualquer coisa
+muito bom, valeu Roger obrigado aí pela
+
+00:01:39.460 --> 00:01:43.580
+intro vocês estão me ouvindo, né?
+
+00:01:43.680 --> 00:01:51.880
+sim então obrigado pela intro vamos
+nessa galera eu deixo aqui as minhas
+
+00:01:51.980 --> 00:01:57.520
+conexões por uma questão de conteúdo
+vocês podem ver quem me seguiu ali,
+
+00:01:57.620 --> 00:02:00.460
+vocês veem que tem conteúdo todos os
+dias sobre o que a gente está falando
+
+00:02:00.560 --> 00:02:04.480
+tanto na newsletter, quanto no LinkedIn,
+quanto no Instagram então, quem quiser
+
+00:02:04.580 --> 00:02:09.580
+aí manter o estudo principalmente, mais
+do que manter contato quem quiser manter
+
+00:02:09.680 --> 00:02:13.700
+o estudo saiba que em qualquer uma
+dessas redes sociais a gente vai ter
+
+00:02:13.800 --> 00:02:17.840
+conteúdo sempre aí para vocês
+continuarem estudando Go to Market como
+
+00:02:17.940 --> 00:02:20.900
+ciência, arquitetura de receita e etc,
+beleza?
+
+00:02:21.000 --> 00:02:27.940
+bom, eu vou começar o nosso papo de hoje
+fazendo uma uma recapitulando de onde
+
+00:02:28.040 --> 00:02:32.420
+nós paramos para vocês lembrarem aí de
+todos os pontos que a gente estava
+
+00:02:32.520 --> 00:02:36.520
+conversando na semana, na terça -feira
+na verdade não faz muito tempo foi na
+
+00:02:36.620 --> 00:02:43.800
+terça -feira e só para refrescar um
+pouco a memória, porque como eu sou, na
+
+00:02:43.900 --> 00:02:47.200
+maior parte do tempo meu papel é um
+papel de professor então é uma questão
+
+00:02:47.300 --> 00:02:52.820
+de taxonomia de aprendizado isso daqui é
+para garantir que existe aderência e
+
+00:02:52.920 --> 00:02:57.660
+para que vocês possam compor aí o
+conteúdo conforme a gente for evoluindo
+
+00:02:57.760 --> 00:03:04.200
+hoje, a nossa ideia é entrar numa camada
+um pouco mais tática eu vou propor para
+
+00:03:04.300 --> 00:03:11.660
+vocês exatamente algumas como eu posso
+dizer algumas tarefas mesmo que vocês
+
+00:03:11.760 --> 00:03:18.380
+vão precisar fazer quando vocês
+começarem quando vocês começarem a
+
+00:03:18.480 --> 00:03:23.320
+executar isso aqui na prática, mas antes
+eu vou só fazer esse recap rapidão aqui
+
+00:03:23.420 --> 00:03:30.180
+para a gente ficar alinhado então a
+gente falou na terça -feira que o grande
+
+00:03:30.280 --> 00:03:34.220
+desafio que a gente quer resolver aqui
+com essa abordagem metodológica de Bonto
+
+00:03:34.320 --> 00:03:42.960
+Market é unir todas as coisas que a
+gente faz para que o nosso cliente ele
+
+00:03:43.060 --> 00:03:49.940
+saia de um lead um lead que como eu
+sempre gosto de lembrar, o lead ele
+
+00:03:50.040 --> 00:03:57.400
+começa aqui nessa etapa então aqui a
+gente está entrando com o lead deixa eu
+
+00:03:57.500 --> 00:04:01.820
+escrever o que você tem aqui então aqui
+a gente está começando com o lead e esse
+
+00:04:01.920 --> 00:04:08.480
+lead vai percorrendo essas etapas aqui
+de gerar esses leads desenvolver esses
+
+00:04:08.580 --> 00:04:13.240
+leads transformar esses leads em
+oportunidades fazer vendas de fechamento
+
+00:04:13.340 --> 00:04:19.880
+e essa parte aqui ela é o que a gente
+conhece de marketing vendas o funil de
+
+00:04:19.980 --> 00:04:28.080
+aquisição de marketing vendas o problema
+é quando essas práticas aqui estão desse
+
+00:04:28.180 --> 00:04:35.160
+jeito desconhecidos conectadas entre si
+não estão com uma lógica estruturada que
+
+00:04:35.260 --> 00:04:39.880
+permite que a gente consiga fazer as
+conexões e levar um cliente de um lado
+
+00:04:39.980 --> 00:04:47.520
+para o outro da forma ideal como está
+nesse slide seguinte aqui e aqui a gente
+
+00:04:47.620 --> 00:04:54.420
+pode ver que é o caminho entre o tal do
+lead e aquilo que todo mundo que tem uma
+
+00:04:54.520 --> 00:05:00.560
+empresa e quer ser bem sucedido com uma
+empresa visa, que é ter o tal do LTV
+
+00:05:00.660 --> 00:05:05.860
+então lembrando aqui o que é o conceito
+de LTV é a maior quantidade de tempo que
+
+00:05:05.960 --> 00:05:09.800
+o seu cliente vai ficar na sua empresa
+te dando dinheiro certo?
+
+00:05:09.900 --> 00:05:15.520
+então você quer ter o maior LTV possível
+quanto maior for o seu LTV melhor será a
+
+00:05:15.620 --> 00:05:21.600
+sua empresa ao longo da sua trajetória
+como empreendedor como empreendedor só
+
+00:05:21.700 --> 00:05:27.020
+que para você levar do lead até o LTV
+você precisa passar pelo lead
+
+00:05:27.120 --> 00:05:28.960
+qualificado pelo marketing pelo lead
+qualificado pelo marketing qualificado
+
+00:05:29.060 --> 00:05:36.480
+por vendas esse S é de sales esse M é de
+marketing então lead lead qualificado
+
+00:05:36.580 --> 00:05:41.580
+pelo marketing lead qualificado por
+vendas lead aceito por vendas então
+
+00:05:41.680 --> 00:05:47.320
+sales accepted lead como nós falamos um
+contrato assinado um cliente ativo o que
+
+00:05:47.420 --> 00:05:48.220
+é um cliente ativo?
+
+00:05:48.320 --> 00:05:51.360
+é um cliente que passou por um processo
+de onboarding estruturado e está pronto
+
+00:05:51.460 --> 00:05:56.280
+para ter sucesso o que é um cliente que
+está pronto para ter sucesso?
+
+00:05:56.380 --> 00:05:59.980
+você botou ele para dentro você ensinou
+como ele vai usar sua solução você
+
+00:06:00.080 --> 00:06:03.860
+explicou que ao utilizar sua solução de
+determinada forma ele vai conseguir ter
+
+00:06:03.960 --> 00:06:08.600
+retorno e a partir disso você vai
+conseguir fazer o seu cliente
+
+00:06:08.700 --> 00:06:13.180
+efetivamente adotar o seu produto o que
+é adotar o produto?
+
+00:06:13.280 --> 00:06:20.260
+usar recorrentemente extraindo valor
+toda vez que usa ou período a período
+
+00:06:20.360 --> 00:06:25.560
+lembra que a gente falou que impacto
+recorrente é uma consequência natural de
+
+00:06:25.660 --> 00:06:29.740
+receita recorrente desculpa, receita
+recorrente é uma consequência natural de
+
+00:06:29.840 --> 00:06:34.960
+impacto recorrente pois é porque aqui a
+gente está levando o nosso cliente ao
+
+00:06:35.060 --> 00:06:40.160
+longo da jornada até o impacto só que
+para o impacto ser recorrente você
+
+00:06:40.260 --> 00:06:46.620
+precisa entregar valor para esse cliente
+de forma recorrente beleza?
+
+00:06:46.720 --> 00:06:51.940
+então a gente explicou aqui como é que
+funcionava esse funil depois disso a
+
+00:06:52.040 --> 00:06:58.100
+gente entrou nessa lógica do que é o que
+a gente está chamando de go to market
+
+00:06:58.200 --> 00:06:58.660
+né?
+
+00:06:58.760 --> 00:07:02.960
+então o que a gente chama de go to
+market é quando a gente junta marketing
+
+00:07:03.060 --> 00:07:05.620
+vendas e CS certo?
+
+00:07:05.720 --> 00:07:11.540
+juntos para transformar a estratégia da
+empresa em objetivos do cliente quando a
+
+00:07:11.640 --> 00:07:16.860
+gente fala de objetivos a gente está
+falando de objetivos realizados então
+
+00:07:16.960 --> 00:07:21.460
+vou repetir aqui para quem ainda não
+tiver captado o conceito de forma
+
+00:07:21.560 --> 00:07:26.920
+completa quando a gente fala de go to
+market a gente está falando que a gente
+
+00:07:27.020 --> 00:07:33.980
+está unindo as disciplinas de marketing
+vendas e pós -vendas para conseguir
+
+00:07:34.080 --> 00:07:40.380
+levar um produto ao mercado e fazer com
+que o cliente tenha sucesso porque que
+
+00:07:40.480 --> 00:07:45.620
+go to market porque traduzindo
+literalmente go to market seria ir da
+
+00:07:45.720 --> 00:07:52.780
+mercado só que muita gente fala de go to
+market como se fosse só a venda só que a
+
+00:07:52.880 --> 00:07:57.380
+pessoa que cunhou esse termo go to
+market que é o Jeffrey Moore ele mesmo
+
+00:07:57.480 --> 00:08:03.020
+disse que ao longo dos últimos 10 anos
+go to market evoluiu não só para você
+
+00:08:03.120 --> 00:08:07.220
+levar o produto ao mercado mas para você
+levar o produto ao mercado e reter o seu
+
+00:08:07.320 --> 00:08:13.420
+cliente reter cliente é mais importante
+do que você levar o produto ao mercado a
+
+00:08:13.520 --> 00:08:22.480
+gente disse isso algumas vezes e bom eu
+falei para vocês aqui que a receita da
+
+00:08:22.580 --> 00:08:29.660
+empresa ao longo do tempo vai se
+tornando cada vez mais uma receita
+
+00:08:29.760 --> 00:08:36.340
+retida do que uma receita nova se você
+pega um gráfico se você pega um gráfico
+
+00:08:36.440 --> 00:08:44.900
+ao longo do tempo de como a receita de
+uma empresa evolui você vai perceber que
+
+00:08:45.000 --> 00:08:51.620
+o gráfico de vendas ele vai ser mais ou
+menos assim e o gráfico de retenção ele
+
+00:08:51.720 --> 00:08:57.360
+vai ser assim então a partir de um
+determinado ponto da empresa você vai
+
+00:08:57.460 --> 00:09:03.400
+ter uma receita a quantidade de dinheiro
+que vem de retenção é muito mais
+
+00:09:03.500 --> 00:09:08.420
+relevante do que a quantidade de
+dinheiro que vem de vendas é por isso
+
+00:09:08.520 --> 00:09:13.340
+que a gente está falando dessa lógica
+aqui de go to market e garantindo que a
+
+00:09:13.440 --> 00:09:18.220
+gente está olhando uma experiência de
+marca conectada entre a estratégia da
+
+00:09:18.320 --> 00:09:27.360
+empresa e os objetivos do cliente nós
+também falamos que existem determinadas
+
+00:09:27.460 --> 00:09:35.480
+etapas de crescimento da empresa e que
+na sua maioria entre nós todos aqui nós
+
+00:09:35.580 --> 00:09:39.940
+estamos mais ou menos nesse lugar o que
+é esse lugar?
+
+00:09:40.040 --> 00:09:47.940
+o lugar onde ou você está pré -receita
+como fundador sozinho buscando essa
+
+00:09:48.040 --> 00:09:51.920
+construção de um produto que faça
+sentido para você começar a levar ele ao
+
+00:09:52.020 --> 00:09:57.320
+mercado e quando você começa a ter
+receita aqui você precisa achar o pitch
+
+00:09:57.420 --> 00:10:02.080
+certo e melhorar o seu produto para
+chegar no produto certo quando a gente
+
+00:10:02.180 --> 00:10:06.120
+fala de achar o pitch o produto certo é
+porque a primeira versão do produto que
+
+00:10:06.220 --> 00:10:11.460
+você tem com certeza não será a versão
+que vai ter sucesso isso a gente sabe a
+
+00:10:11.560 --> 00:10:16.220
+versão que vai ter sucesso
+necessariamente vai depender de muitas
+
+00:10:16.320 --> 00:10:22.740
+melhorias, muitas interações como a
+gente fala e para que você consiga fazer
+
+00:10:22.840 --> 00:10:27.840
+isso você vai ter que adquirir os seus
+primeiros clientes a qualquer custo
+
+00:10:27.940 --> 00:10:30.760
+porque a qualquer custo porque uma
+empresa sem cliente é uma empresa que
+
+00:10:30.860 --> 00:10:35.380
+não tem sentido não tem razão de
+existência então você tem que investir
+
+00:10:35.480 --> 00:10:40.440
+energia para você adquirir os seus
+clientes e dessa forma você iterar o seu
+
+00:10:40.540 --> 00:10:43.280
+produto, melhorar o seu produto
+melhorando o seu produto você vai
+
+00:10:43.380 --> 00:10:47.240
+entregar valor para o seu cliente e
+assim você vai ter um cliente que você
+
+00:10:47.340 --> 00:10:50.700
+consegue vender um produto que faz
+sentido que tem razão de existência e
+
+00:10:50.800 --> 00:10:57.160
+que tem potencial de retenção alta a
+partir do momento que a gente chega
+
+00:10:57.260 --> 00:11:01.160
+nesse momento ou seja, no primeiro
+milhão de receita então colocando a
+
+00:11:01.260 --> 00:11:07.140
+nossa meta que é chegar ao faturamento
+de 60 mil por mês 80 mil por mês na
+
+00:11:07.240 --> 00:11:12.540
+verdade se você faturar 80 mil por mês
+você vai faturar um milhão no ano então
+
+00:11:12.640 --> 00:11:17.520
+para você faturar um milhão no ano você
+precisa conseguir vender e reter os
+
+00:11:17.620 --> 00:11:24.940
+clientes então a gente falou bastante
+disso também na última aula e a gente
+
+00:11:25.040 --> 00:11:33.000
+trouxe aqui também um cuidado que você
+tem que ter na hora de pensar a sua
+
+00:11:33.100 --> 00:11:38.640
+estratégia de crescimento que é para
+você como fundador não virar o centro da
+
+00:11:38.740 --> 00:11:44.680
+aquisição você precisa viabilizar a
+aquisição de clientes você não pode ser
+
+00:11:44.780 --> 00:11:49.940
+a aquisição de clientes porque se você
+for a única pessoa capaz de adquirir
+
+00:11:50.040 --> 00:11:54.420
+cliente aqui a sua empresa
+necessariamente vai incorrer num platô
+
+00:11:54.520 --> 00:11:58.560
+de crescimento claro que isso é um
+problema para você pensar lá quando você
+
+00:11:58.660 --> 00:12:03.640
+estiver faturando 15 milhões de reais 10
+milhões de reais mas se você puder desde
+
+00:12:03.740 --> 00:12:08.440
+já ter em mente que a construção de
+processos e análise dos dados vai te
+
+00:12:08.540 --> 00:12:14.980
+permitir não estar nesse lugar quando a
+sua empresa começar a ter algum corpo
+
+00:12:15.080 --> 00:12:19.900
+isso com certeza vai te poupar muito
+dinheiro e muito tempo certo?
+
+00:12:20.000 --> 00:12:29.600
+bom, por fim a gente explicou aqui volta
+um então aqui 162 é um crescimento que
+
+00:12:29.700 --> 00:12:35.420
+tem até chegar em 10 milhões 124 depois
+o ritmo diminui que é esse platô que
+
+00:12:35.520 --> 00:12:43.540
+você diz e é nesse momento que a gente
+tem que tirar tudo de si montar,
+
+00:12:43.640 --> 00:12:47.820
+contratar ou a equipe de seiros ou então
+automatizar da maneira correta enfim, o
+
+00:12:47.920 --> 00:12:51.760
+modelo que você for usar para voltar a
+crescer e você nunca volta a crescer
+
+00:12:51.860 --> 00:12:59.720
+como antes é, o ponto principal deixa eu
+avisar um negócio, Roger?
+
+00:12:59.820 --> 00:13:03.680
+as admissões da turma na sala estão
+vindo para mim aqui, vê se está certo
+
+00:13:03.780 --> 00:13:10.540
+isso ou se vocês também chegam para você
+estou admitindo aqui é porque eu estou
+
+00:13:10.640 --> 00:13:16.260
+vendo aqui, eu não sabia se tinha alguém
+então, Bruno exatamente essa leitura
+
+00:13:16.360 --> 00:13:23.300
+então, a leitura é a empresa as empresas
+que tem o ritmo de crescimento legal de
+
+00:13:23.400 --> 00:13:29.400
+tecnologia entre os 5 e 10 milhões de
+receita, elas crescem a uma média de 162
+
+00:13:29.500 --> 00:13:35.540
+% ao ano quando ela passa dos 10
+milhões, esse crescimento cai para 124 %
+
+00:13:35.640 --> 00:13:39.220
+ao ano porque conforme a empresa cresce
+vai ficando mais difícil de crescer
+
+00:13:39.320 --> 00:13:42.700
+porque você levar uma empresa dos 10
+para os 15 é mais difícil do que você
+
+00:13:42.800 --> 00:13:47.220
+levar uma empresa dos 5 para os 10
+porque conforme ela vai crescendo ela
+
+00:13:47.320 --> 00:13:51.580
+vai ficando mais complexa a gente acha
+que conforme cresce fica mais fácil mas
+
+00:13:51.680 --> 00:13:57.940
+conforme cresce fica mais difícil então,
+na verdade é mais fácil você levar dos 5
+
+00:13:58.040 --> 00:14:02.920
+para os 10 dos 10 para os 15 é mais
+difícil exatamente, vai ficando mais
+
+00:14:03.020 --> 00:14:06.240
+complexo porque você, dos 5 para os 10
+você vai precisar de recursos, você vai
+
+00:14:06.340 --> 00:14:08.380
+precisar de gente você vai precisar de
+processo, você vai precisar de um
+
+00:14:08.480 --> 00:14:12.380
+produto legal você vai precisar de um
+monte de coisa então, o que eu estou
+
+00:14:12.480 --> 00:14:17.100
+querendo dizer aqui é em média esse é um
+processo natural, tá, Bruno?
+
+00:14:17.200 --> 00:14:24.880
+é natural essa queda acontecer o que não
+deveria acontecer é este platô aqui esse
+
+00:14:24.980 --> 00:14:28.400
+platô não deveria acontecer por que ele
+não deveria acontecer?
+
+00:14:28.500 --> 00:14:33.000
+porque a imunidade a empresa, ela
+deveria vir pra cá depois, na verdade
+
+00:14:33.100 --> 00:14:38.300
+ela deveria vir pra cá, pra cá e depois
+se manter aqui, né ficar mais ou menos
+
+00:14:38.400 --> 00:14:44.160
+nessa linha esse gap aqui é um gap que
+não faz sentido por que que ele
+
+00:14:44.260 --> 00:14:44.560
+acontece?
+
+00:14:44.660 --> 00:14:51.440
+foi o que a gente disse na aula passada
+ele acontece esse gap acontece porque,
+
+00:14:51.540 --> 00:14:58.640
+um nós como fundadores viramos o centro
+da máquina de aquisição e não é só o
+
+00:14:58.740 --> 00:15:02.040
+centro da máquina de aquisição não
+conseguimos fazer a transição do
+
+00:15:02.140 --> 00:15:10.900
+fundador vendendo pro time vendendo e o
+segundo ponto é que a gente tende a ter
+
+00:15:11.000 --> 00:15:17.920
+dificuldade de sair do mercado inicial e
+ir pra aquela primeira maioria então a
+
+00:15:18.020 --> 00:15:24.620
+gente falou dessa curva de gaules aqui,
+a gente falou eu dei um exemplo pra
+
+00:15:24.720 --> 00:15:28.620
+vocês de que meus primeiros clientes
+foram escritórios de arquitetura e a
+
+00:15:28.720 --> 00:15:31.880
+gente falou que a gente não tinha
+escritório de advocacia amigo, família,
+
+00:15:31.980 --> 00:15:37.920
+né esses early adopters aqui eram
+startups e aí quando a gente começou a
+
+00:15:38.020 --> 00:15:42.260
+ir pra startup maior e grande empresa,
+existe um abismo aqui, né, que é
+
+00:15:42.360 --> 00:15:48.020
+justamente o que a gente quer evitar, a
+dificuldade de cruzar esse abismo então,
+
+00:15:48.120 --> 00:15:53.080
+o ponto principal do que a gente tá
+trazendo aqui é pra gente tomar cuidado
+
+00:15:53.180 --> 00:15:57.600
+com esses dois pontos o primeiro ponto é
+a transição do fundador pro time, o
+
+00:15:57.700 --> 00:16:01.720
+segundo ponto é a transição do mercado
+inicial pro mercado mainstream, né, que
+
+00:16:01.820 --> 00:16:04.920
+é o mercado da grande maioria, certo?
+
+00:16:05.020 --> 00:16:08.180
+tinha respondido na sua pergunta?
+
+00:16:08.280 --> 00:16:12.020
+respondeu, o ideal era a gente estar
+preparado pra montar uma equipe, né,
+
+00:16:12.120 --> 00:16:16.320
+conseguir fazer essa força de vendas pra
+uma equipe de vendas pra gente não
+
+00:16:16.420 --> 00:16:22.600
+enfrentar o o platô e também o modelo, o
+framework muda um pouco, né, porque dá
+
+00:16:22.700 --> 00:16:27.840
+pra vender pra empresas grandes, né
+exatamente a empresa que vender, né, se
+
+00:16:27.940 --> 00:16:34.740
+é grande ela ela espera que você tenha
+um produto mais maduro dependendo do
+
+00:16:34.840 --> 00:16:40.940
+nível de ticket também, além de estar no
+mercado mais maduro, ela espera mais
+
+00:16:41.040 --> 00:16:45.420
+você tenha uma equipe mais preparada pra
+dar suporte, um contato muito
+
+00:16:45.520 --> 00:16:53.680
+diferenciado, né mas o CS também já
+começa a ter que nascer, né exatamente,
+
+00:16:53.780 --> 00:17:01.140
+perfeito e a gente vai entrar exatamente
+nisso hoje pra falar de forma mais
+
+00:17:01.240 --> 00:17:05.640
+prática sobre essa parte, esse é o tema
+que eu gostaria de cobrir hoje a gente
+
+00:17:05.740 --> 00:17:11.780
+vai entrar exatamente nesse ponto que
+você acabou de levantar bom, a outra
+
+00:17:11.880 --> 00:17:18.840
+coisa que nós avaliamos aqui juntos é
+como criar uma ARMG quem que lembra o
+
+00:17:18.940 --> 00:17:23.870
+que é uma ARMG?
+
+00:17:23.970 --> 00:17:24.710
+ninguém?
+
+00:17:24.810 --> 00:17:32.530
+você até falou que é múltiplo viável é o
+área de receita a área de receita é
+
+00:17:32.630 --> 00:17:36.790
+recorrente a área de receita é a área de
+receita a área de receita é a mínima
+
+00:17:36.890 --> 00:17:42.390
+viável lembre de um MVP é o MVP da área
+de receita a área de receita é a mínima
+
+00:17:42.490 --> 00:17:46.490
+viável produto mínimo viável, área de
+receita é a mínima viável, certo?
+
+00:17:46.590 --> 00:17:49.190
+e por que a gente está falando que é uma
+área de receita mínima viável?
+
+00:17:49.290 --> 00:17:54.010
+porque é o mínimo que você precisa criar
+pra conseguir ter uma área que para de
+
+00:17:54.110 --> 00:17:59.570
+pé e a gente disse aqui sobre os
+primeiros cases de sucesso e quem que
+
+00:17:59.670 --> 00:18:03.910
+consegue me lembrar aqui o que eu chamei
+de case de sucesso só pra ver se vocês
+
+00:18:04.010 --> 00:18:12.790
+estão espertos pô cara, a gente tem
+amnésia aí pera aí tem que lembrar os
+
+00:18:12.890 --> 00:18:21.570
+dez primeiros clientes de sucesso seriam
+aqueles caras que realmente usaram e tem
+
+00:18:21.670 --> 00:18:28.130
+estatisticamente peso e influência na
+solução da tour dele é isso aí, é o cara
+
+00:18:28.230 --> 00:18:32.130
+que está vendo retorno, lembra que eu
+falei bastante de retorno
+
+00:18:32.230 --> 00:18:36.750
+estatisticamente tem retorno, esse ponto
+do Arthur é bem válido o que eu chamei
+
+00:18:36.850 --> 00:18:41.170
+de case de sucesso não é simplesmente
+você vender e ter o cliente lá, isso não
+
+00:18:41.270 --> 00:18:45.390
+é um case de sucesso um case de sucesso
+é um cliente que comprou sua solução e
+
+00:18:45.490 --> 00:18:50.470
+falou assim eu preciso dessa parada aqui
+pra continuar a fazer o que eu estou
+
+00:18:50.570 --> 00:18:57.350
+fazendo inclusive tem um teste muito
+legal presta atenção nesse teste aí que
+
+00:18:57.450 --> 00:19:02.310
+vocês vão fazer esse teste tem um teste
+muito legal que é o
+
+00:19:02.410 --> 00:19:10.690
+seguinte uma empresa dos Estados Unidos
+chamada Superhuman que é um cliente de e
+
+00:19:10.790 --> 00:19:15.730
+-mail com inteligência artificial já que
+tem um tempo que eles existem não é da
+
+00:19:15.830 --> 00:19:23.530
+era do chat GPT é de bem antes e esses
+caras eles fizeram um modelo porque eles
+
+00:19:23.630 --> 00:19:28.630
+queriam saber se eles tinham eles
+queriam ter um teste pra saber se eles
+
+00:19:28.730 --> 00:19:33.450
+tinham um Product Market Fit SPMF e sabe
+o que eles fizeram?
+
+00:19:33.550 --> 00:19:40.690
+olha que interessante eles perceberam
+que quando eles rodavam uma pesquisa pro
+
+00:19:40.790 --> 00:19:49.170
+cliente deles e perguntavam o seguinte
+quão insatisfeito você ficaria
+
+00:19:49.270 --> 00:19:58.800
+se eu tirasse o meu produto de você hoje
+e aí ele colocava lá muito insatisfeito
+
+00:19:58.900 --> 00:20:03.820
+insatisfeito não faria diferença não
+faria nenhuma diferença e aí eles
+
+00:20:03.920 --> 00:20:11.720
+ficaram quando 40 % dos clientes
+respondiam que eles ficariam muito
+
+00:20:11.820 --> 00:20:17.940
+insatisfeitos se a empresa tirasse o
+produto deles é quando eles consideravam
+
+00:20:18.040 --> 00:20:24.860
+que eles tinham um PMF porque se 40 % da
+sua base defende de você pra conseguir
+
+00:20:24.960 --> 00:20:28.100
+continuar fazendo o que você tá fazendo
+isso quer dizer que você tá fazendo
+
+00:20:28.200 --> 00:20:31.360
+alguma coisa certa concorda?
+
+00:20:31.460 --> 00:20:35.300
+então guarda esse teste aí pra vocês que
+vão desenvolver software com AI pra
+
+00:20:35.400 --> 00:20:39.680
+vocês perguntarem pros clientes de vocês
+quão insatisfeitos eles ficariam se você
+
+00:20:39.780 --> 00:20:43.820
+tirasse o software deles numa pesquisa
+de PMF que você vai fazer aí de vez em
+
+00:20:43.920 --> 00:20:47.540
+quando certo?
+
+00:20:47.640 --> 00:20:53.920
+boa a outra coisa que nós falamos era
+sobre você montar as primeiras duas
+
+00:20:54.020 --> 00:21:02.420
+estruturas as primeiras duas estruturas
+via contratação que são vendas e CS
+
+00:21:02.520 --> 00:21:05.420
+alguém consegue lembrar porque que eu
+falei que essas são as duas primeiras
+
+00:21:05.520 --> 00:21:12.160
+estruturas que são importantes de serem
+construídas?
+
+00:21:12.260 --> 00:21:20.640
+é a ideia do da borboleta da entrada e
+da recorrência então você garante que
+
+00:21:20.740 --> 00:21:29.420
+fica girando ali o Arthurzão tá esperto
+o Arthurzão tá usando o cloud ele tá
+
+00:21:29.520 --> 00:21:34.820
+usando o cloud ele colocou a transcrição
+e tá com a cola aí do lado tá mais do
+
+00:21:34.920 --> 00:21:38.100
+que certo eu uso também não, mas pra que
+não...
+
+00:21:38.200 --> 00:21:43.700
+não, eu preciso aprender a fazer isso eu
+não vou voltar não tá bom, então é isso
+
+00:21:43.800 --> 00:21:51.840
+mas eu uso o cloud pra porra toda também
+muito bom, muito bom é um pulheta, né?
+
+00:21:51.940 --> 00:21:53.760
+é um pulheta é um pulheta, viu?
+
+00:21:53.860 --> 00:22:00.040
+até falei errado porque foi da cadeira
+ó, é um pulheta é, mas pode ser
+
+00:22:00.140 --> 00:22:05.160
+borboleta tem gente que fala borboleta o
+nome pulheta tem que ter perigo aqui no
+
+00:22:05.260 --> 00:22:08.940
+Brasil agora, o lance é o seguinte hoje
+eu passei por um pulheta é tarde
+
+00:22:09.040 --> 00:22:15.060
+discutindo isso, cara foi muito bom não,
+porque as pessoas só tem preocupação
+
+00:22:15.160 --> 00:22:18.640
+principalmente gestores de tráfego pago
+antigamente os servidores só tinham
+
+00:22:18.740 --> 00:22:23.600
+preocupação da primeira etapa que era o
+funil quando os gestores começaram a
+
+00:22:23.700 --> 00:22:26.940
+perceber que eles tinham que cuidar do
+cliente e fazer a experiência do cliente
+
+00:22:27.040 --> 00:22:31.120
+acontecer e cuidar com que eles se
+tornassem recorrentes aí sim a empresa
+
+00:22:31.220 --> 00:22:34.680
+começa a ficar interessante, né?
+
+00:22:34.780 --> 00:22:38.540
+inclusive eu fui numa porrada de
+mastermind Bruno, por causa disso nos
+
+00:22:38.640 --> 00:22:42.320
+mastermind eu não pagava nenhum eu só ia
+fazer palestra pra explicar pros caras o
+
+00:22:42.420 --> 00:22:47.320
+que eles estavam fazendo mesmo eu ia pra
+bater em gestor de tráfego eu ia nos
+
+00:22:47.420 --> 00:22:50.760
+mastermind pra falar assim bicho, vocês
+só se importam com o funil, velho vocês
+
+00:22:50.860 --> 00:22:53.920
+tem que se importar com a ampulheta se
+vocês só se importarem com o funil vocês
+
+00:22:54.020 --> 00:22:56.580
+vão vender um monte de produto de
+educação que o cliente nunca mais vai
+
+00:22:56.680 --> 00:23:02.880
+comprar de você de novo eu bati muito
+nessa na turma do marketing Gabriel é um
+
+00:23:02.980 --> 00:23:06.520
+deles que já trabalhou em altas empresas
+grandes esqueci o sobrenome, mas eu pego
+
+00:23:06.620 --> 00:23:09.740
+pra vocês se vocês quiserem, excelente o
+cara, e ele chegou num nível que ele
+
+00:23:09.840 --> 00:23:17.060
+automatizou então ele começou a fazer o
+framework e automatizava que aí até o
+
+00:23:17.160 --> 00:23:24.140
+gestor de tráfego do esquema já
+entregava o relatório todo dia é isso
+
+00:23:24.240 --> 00:23:30.180
+muito bom, fala aí fala Giovanni,
+beleza?
+
+00:23:30.280 --> 00:23:33.220
+eu tô com uma dúvida aqui sobre a
+questão que você falou as quatro
+
+00:23:33.320 --> 00:23:36.680
+primeiras contratações, dois CS, dois
+vendedores mas aí eu fico um pouco na
+
+00:23:36.780 --> 00:23:42.160
+dúvida no seguinte sentido
+principalmente na questão de negócios
+
+00:23:42.260 --> 00:23:48.120
+tech se eu tiver vendedores, por exemplo
+digamos que eu tô vendendo, eu contrato
+
+00:23:48.220 --> 00:23:52.040
+mais dois vendedores se eu tiver muitas
+pessoas vendendo mas será que não seria
+
+00:23:52.140 --> 00:23:56.640
+interessante de alguma forma eu ter
+alguém da parte técnica que consiga dar
+
+00:23:56.740 --> 00:24:01.080
+vazão e saída pra certas necessidades
+que naturalmente vão acontecer com mais
+
+00:24:01.180 --> 00:24:06.440
+clientes então, mas calma aí porra,
+calma aí eu não tô falando do resto da
+
+00:24:06.540 --> 00:24:13.520
+empresa não eu só tô falando de receita
+no resto da empresa aí Arthur, ô Léo eu
+
+00:24:13.620 --> 00:24:21.060
+entendi seu ponto, mas eu tô brincando
+mas é assim eu aqui com vocês tô falando
+
+00:24:21.160 --> 00:24:26.540
+sempre da parte de marketing vendas e CS
+com certeza, Léo, você precisa ter um
+
+00:24:26.640 --> 00:24:32.260
+cargo de produto sem dúvida nenhuma
+agora, o que você vai priorizar aí vai
+
+00:24:32.360 --> 00:24:37.180
+depender um pouco do seu business plan
+mas, do seu plano de negócios só que o
+
+00:24:37.280 --> 00:24:44.520
+que eu tô dizendo aqui é cursos que você
+for usar dentro da área de crescimento
+
+00:24:44.620 --> 00:24:52.220
+de receita eu sugiro que você divida ele
+dessa maneira tá certo?
+
+00:24:52.320 --> 00:24:59.360
+se você quiser um número pra dar uma
+resposta pra isso aí que você falou o
+
+00:24:59.460 --> 00:25:05.120
+número é o seguinte de todas as despesas
+das empresas que mais crescem no mundo
+
+00:25:05.220 --> 00:25:13.120
+nos primeiros anos de vida cerca de 40 %
+da despesa está em marketing vendas e CS
+
+00:25:13.220 --> 00:25:25.180
+40 % 60 % tem que estar em produto
+finanças, RH e outras coisas beleza?
+
+00:25:25.280 --> 00:25:33.380
+então, o ponto é as despesas
+operacionais o tal do OPEX você precisa
+
+00:25:33.480 --> 00:25:39.400
+usar 40 % pra garantir o crescimento da
+empresa beleza?
+
+00:25:39.500 --> 00:25:44.720
+isso é importante pra gente saber quanto
+custa a venda ver no mercado quanto
+
+00:25:44.820 --> 00:25:52.100
+custa cada um e montar uma equipe boa é
+isso aí então a gente falou de achar o
+
+00:25:52.200 --> 00:25:57.140
+PMF que significa ter os cases de
+sucesso e o case de sucesso é igual a
+
+00:25:57.240 --> 00:26:03.020
+ROI fazer as primeiras 4 contratações
+então ter vendedores CS aqui pra gente
+
+00:26:03.120 --> 00:26:07.820
+conseguir crescer a empresa fazer a
+transição do fundador vendendo pro time
+
+00:26:07.920 --> 00:26:13.840
+vendendo venda feita pelo fundador pra
+venda do time vendendo feita pelo time e
+
+00:26:13.940 --> 00:26:19.080
+por último criar os incentivos pro
+crescimento quer dizer, comissão,
+
+00:26:19.180 --> 00:26:24.720
+acelerador bônus, que a gente também
+falou bastante na última aula beleza?
+
+00:26:24.820 --> 00:26:25.700
+podemos seguir galera?
+
+00:26:25.800 --> 00:26:28.600
+alguma dúvida aqui?
+
+00:26:28.700 --> 00:26:33.100
+tudo certo todo mundo entendeu isso
+aqui?
+
+00:26:33.200 --> 00:26:43.250
+porque eu vou começar coisa nova então
+tá bom então vamos lá o que que a
+
+00:26:43.350 --> 00:26:46.250
+gente entendeu aqui até agora?
+
+00:26:46.350 --> 00:26:47.630
+o que a gente entendeu aqui até agora?
+
+00:26:47.730 --> 00:26:54.930
+primeira coisa a importância de sucesso
+do cliente se não ficou claro até agora
+
+00:26:55.030 --> 00:27:02.290
+eu me demito, brincadeira mas se não
+ficou claro até agora você anote aí que
+
+00:27:02.390 --> 00:27:10.310
+uma empresa nos primeiros anos da sua
+vida que tem uma retenção fantástica e
+
+00:27:10.410 --> 00:27:15.970
+um crescimento medíocre é melhor do que
+uma empresa que tem um crescimento
+
+00:27:16.070 --> 00:27:22.010
+fantástico e uma retenção medíocre então
+lembre -se disso retenção fantástica é
+
+00:27:22.110 --> 00:27:29.610
+igual a sucesso do cliente sucesso do
+cliente beleza?
+
+00:27:29.710 --> 00:27:35.550
+segunda coisa essa parte de ciências e
+dados, ciência e dados pra hora de
+
+00:27:35.650 --> 00:27:42.070
+construir a máquina de crescimento
+ajudam bastante a ir na direção certa
+
+00:27:42.170 --> 00:27:46.270
+então essa foi a outra coisa que a gente
+conversou aqui a terceira coisa a
+
+00:27:46.370 --> 00:27:49.270
+primeira coisa que a gente acredita
+bastante tô falando do que a gente
+
+00:27:49.370 --> 00:27:53.710
+acredita como empresa que disciplina
+operacional é fundamental, o que é
+
+00:27:53.810 --> 00:27:54.790
+disciplina operacional?
+
+00:27:54.890 --> 00:28:00.750
+isso aqui é um negócio legal teve uma eu
+diria
+
+00:28:00.850 --> 00:28:07.030
+que quando eu fui fazer aquela pesquisa
+que eu falei pra vocês que eu fiz lá no
+
+00:28:07.130 --> 00:28:12.970
+Vale do Silício que eu morei oito meses
+lá pra estudar quando que as empresas
+
+00:28:13.070 --> 00:28:21.650
+crescem aprendi algumas coisas mas como
+eu fiz muitas aulas muitos workshops
+
+00:28:21.750 --> 00:28:27.930
+depois dessa estadia lá muitas vezes as
+pessoas me fizeram uma pergunta muito
+
+00:28:28.030 --> 00:28:34.310
+legal que é assim cara, se você pudesse
+resumir a um aprendizado que você teve
+
+00:28:34.410 --> 00:28:37.550
+lá com o pessoal qual seria?
+
+00:28:37.650 --> 00:28:45.970
+um aprendizado de seis meses no Vale do
+Silício seria esse aqui que disciplina
+
+00:28:46.070 --> 00:28:47.870
+operacional é a coisa mais importante
+que você tem que fazer é a coisa mais
+
+00:28:47.970 --> 00:28:53.290
+importante que tem numa empresa porque
+bicho uma coisa que ficou muito clara
+
+00:28:53.390 --> 00:28:58.150
+pra mim quando eu tava falando com os
+gringos, com os americanos é que os
+
+00:28:58.250 --> 00:29:03.710
+caras bicho eles são uma máquina de
+fazer acontecer o cara falou que vai
+
+00:29:03.810 --> 00:29:08.950
+fazer ele faz o cara começou um trem,
+ele termina eles tem disciplina pra
+
+00:29:09.050 --> 00:29:13.450
+cacete na hora de analisar dados, na
+hora de executar playbook na hora de
+
+00:29:13.550 --> 00:29:18.010
+implementar CRM de treinar o time eles
+tem muita disciplina com essa parada
+
+00:29:18.110 --> 00:29:24.370
+muita disciplina então, se tem uma coisa
+isso tanto é verdade isso tanto ficou
+
+00:29:24.470 --> 00:29:31.290
+forte pra mim que eu tatuei essa porra
+que disciplina é liberdade porque a
+
+00:29:31.390 --> 00:29:36.150
+única forma de você conseguir construir
+uma empresa que não depende de você é
+
+00:29:36.250 --> 00:29:39.450
+com disciplina operacional, criação de
+processo estruturação de dados e
+
+00:29:39.550 --> 00:29:45.250
+treinamento de time só que pra isso você
+precisa de disciplina quarto ponto
+
+00:29:45.350 --> 00:29:49.630
+modelos e templates encurtam muito o
+aprendizado porque se você vai lá estuda
+
+00:29:49.730 --> 00:29:53.610
+os caras que já fizeram pega o modelo do
+cara pega o template do cara e executa
+
+00:29:53.710 --> 00:29:59.230
+em cima do que ele construiu porra, você
+vai economizar muito tempo e o quinto
+
+00:29:59.330 --> 00:30:04.490
+ponto é que não existe bala de prata
+existe melhoria contínua então, não
+
+00:30:04.590 --> 00:30:08.810
+existe uma quando eu falo assim, bala de
+prata não existe uma coisa que você vai
+
+00:30:08.910 --> 00:30:14.110
+fazer que vai fazer com que o seu
+crescimento tenha um ponto de inflexão
+
+00:30:14.210 --> 00:30:17.050
+geralmente, o crescimento de uma empresa
+vem de pequenas melhorias ao longo do
+
+00:30:17.150 --> 00:30:22.190
+tempo isso é uma outra coisa que eu
+também aprendi beleza?
+
+00:30:22.290 --> 00:30:29.980
+bom, então, vamos lá agora, galera eu
+vou falar pra vocês o que eu acho que
+
+00:30:30.080 --> 00:30:37.480
+são os principais componentes do que a
+gente chama de arquitetura de receita
+
+00:30:37.580 --> 00:30:46.680
+arquitetura de receita é uma composição
+de primeiro estratégia você precisa ter
+
+00:30:46.780 --> 00:30:53.280
+uma estratégia clara segundo, clientes
+você precisa ter
+
+00:30:53.380 --> 00:30:57.760
+clientes senão você não vai não vai
+funcionar mas isso aqui não é só ter
+
+00:30:57.860 --> 00:31:05.080
+clientes isso aqui eu estou falando de
+ICP você ter clareza do seu ICP muita
+
+00:31:05.180 --> 00:31:09.440
+clareza ter uma estratégia que faz
+sentido ter um perfil de cliente que faz
+
+00:31:09.540 --> 00:31:17.180
+sentido ter metas pra você conseguir
+desenhar o futuro da sua
+
+00:31:17.280 --> 00:31:21.210
+empresa analisar os dados analisar os
+dados do que você está fazendo analisar
+
+00:31:21.310 --> 00:31:26.710
+o que está acontecendo com a empresa
+desenhar os processos pra você conseguir
+
+00:31:26.810 --> 00:31:33.490
+a partir desses processos ir fazendo as
+melhorias na estrutura desenhar e ter um
+
+00:31:33.590 --> 00:31:40.170
+modelo de gestão dessa estrutura e
+contratar, gerir, rampar e treinar um
+
+00:31:40.270 --> 00:31:45.270
+time de qualidade bom por que eu estou
+falando isso?
+
+00:31:45.370 --> 00:31:51.390
+porque agora a gente vai entrar em cada
+um desses aspectos beleza?
+
+00:31:51.490 --> 00:31:59.790
+vamos lá o que que é a tal da ARMV na
+prática agora eu vou desdobrar cada um
+
+00:31:59.890 --> 00:32:04.670
+dos itens e vou explicar o que que eu
+acredito ser cada um desses itens,
+
+00:32:04.770 --> 00:32:06.090
+beleza?
+
+00:32:06.190 --> 00:32:11.160
+então, vamos lá espera um pouquinho o
+que que vem primeiro?
+
+00:32:11.260 --> 00:32:13.860
+vem o time ou a gestão?
+
+00:32:13.960 --> 00:32:18.410
+primeiro o time primeiro você contrata e
+aí depois
+
+00:32:18.510 --> 00:32:29.660
+você implementa uma estrutura de gestão
+é importante dizer Renata que , a
+
+00:32:29.760 --> 00:32:35.080
+perspectiva que eu estou trazendo aqui
+ela não necessariamente é linear ela
+
+00:32:35.180 --> 00:32:38.920
+pode ter as suas variações de negócio
+pra negócio de prioridade pra prioridade
+
+00:32:39.020 --> 00:32:43.900
+o grande ponto é que toda vez que você
+quiser construir a máquina você vai
+
+00:32:44.000 --> 00:32:47.680
+precisar ter todos os componentes sem
+esses componentes você não vai construir
+
+00:32:47.780 --> 00:32:54.220
+a máquina a ordem que você vai fazer as
+coisas tem uma proposta aqui aí você que
+
+00:32:54.320 --> 00:32:58.280
+vai me dizer na minha perspectiva a
+estratégia, primeiro o cliente depois
+
+00:32:58.380 --> 00:33:05.700
+dados, processos, metas, time e gestão
+construindo uma área do zero, tá Renata?
+
+00:33:05.800 --> 00:33:15.090
+do zero isso aqui bom vamos lá na minha
+visão, galera agora você, assim pra
+
+00:33:15.190 --> 00:33:19.870
+vocês entenderem a reflexão que está
+nesse slide aqui que eu vou compor
+
+00:33:19.970 --> 00:33:27.550
+vários blocos é importante vocês irem
+escrevendo entre vocês mesmos essa essa
+
+00:33:27.650 --> 00:33:29.930
+, essa lógica, tá?
+
+00:33:30.030 --> 00:33:33.970
+vocês o que eu estou dizendo é o
+seguinte vai anotando pra você poder
+
+00:33:34.070 --> 00:33:45.570
+depois digerir isso então a primeira
+coisa aqui é que a estratégia inicial de
+
+00:33:45.670 --> 00:33:52.110
+uma empresa que está começando a
+construir sua área de receita é buscar
+
+00:33:52.210 --> 00:33:55.970
+product market fit que é o a cola, né?
+
+00:33:56.070 --> 00:33:57.390
+entre o produto e o mercado, né?
+
+00:33:57.490 --> 00:34:01.070
+você tem o produto que você está
+construindo você tem o mercado por causa
+
+00:34:01.170 --> 00:34:05.510
+que quer vender e qualquer empresa só dá
+certo se existir uma intersecção entre o
+
+00:34:05.610 --> 00:34:10.610
+produto que você quer vender e o que o
+mercado quer comprar as vezes o produto
+
+00:34:10.710 --> 00:34:13.810
+que você vende o mercado não quer
+comprar as vezes o mercado quer uma
+
+00:34:13.910 --> 00:34:17.950
+coisa que você não vende você as vezes
+acha que o produto é bom mas o mercado
+
+00:34:18.050 --> 00:34:24.770
+não compra as vezes enfim uma série de
+coisas podem acontecer o grande ponto é
+
+00:34:24.870 --> 00:34:31.050
+que você precisa buscar essa validação
+do fit entre o seu produto e o que o
+
+00:34:31.150 --> 00:34:37.050
+mercado está buscando nessa etapa a
+gente vai olhar para as vendas desculpa
+
+00:34:37.150 --> 00:34:44.190
+a ti então, P só pra trazer de novo um
+reforço aqui 41 % das startups morrem
+
+00:34:44.290 --> 00:34:48.590
+por fazerem algo que o mercado não está
+disposto a pagar por isso então esse eu
+
+00:34:48.690 --> 00:34:54.530
+acho que é um ponto a gente falou sobre
+isso lá no início mas veja que isso faz
+
+00:34:54.630 --> 00:35:00.190
+parte do PNF daqui a pouco você está
+gastando força e energia mas você não
+
+00:35:00.290 --> 00:35:04.510
+conseguiu tracionar porque você fez algo
+que o mercado não está querendo comprar
+
+00:35:04.610 --> 00:35:11.610
+então só pra trazer esse ponto aqui
+validação validação validação pura eu
+
+00:35:11.710 --> 00:35:18.810
+estou lendo de novo na terça -feira o
+startup é em chuta cara é impressionante
+
+00:35:18.910 --> 00:35:23.150
+coloca rápido a validação porque é ela
+que vai virar e vai mostrar pra você se
+
+00:35:23.250 --> 00:35:25.150
+o mercado vai querer comprar e ninguém
+não faz né e
+
+00:35:25.250 --> 00:35:35.540
+aí , exatamente exatamente por isso que
+mesmo eu tratando aqui de vendas,
+
+00:35:35.640 --> 00:35:40.440
+marketing e CS, eu estou trazendo essa
+questão do Product Market Fit porque
+
+00:35:40.540 --> 00:35:46.820
+cara, sem isso daqui não tem empresa,
+não tem empresa então é um belo ponto aí
+
+00:35:46.920 --> 00:35:56.140
+que o Roger trouxe pra reforçar o que a
+gente está falando é nessa parte de PMF
+
+00:35:56.240 --> 00:36:04.240
+o que que nessa parte de PMF o que é a
+responsabilidade de marketing, vendas e
+
+00:36:04.340 --> 00:36:07.840
+CS nessa parte de PMF?
+
+00:36:07.940 --> 00:36:10.740
+Primeiro, vendas o que eu estou chamando
+de vendas?
+
+00:36:10.840 --> 00:36:17.040
+cara, o produto que você desenhou tem
+que vender se ele não vende é porque ele
+
+00:36:17.140 --> 00:36:22.840
+não faz sentido se as pessoas não
+compram é porque ou elas não entendem ou
+
+00:36:22.940 --> 00:36:29.620
+elas não querem né outra coisa que está
+escrito ali
+
+00:36:29.720 --> 00:36:38.620
+Value Proposition que é proposta de
+valor proposta de valor é qual é a sua
+
+00:36:38.720 --> 00:36:43.500
+entrega principal para que o seu cliente
+queira comprar o seu produto então a
+
+00:36:43.600 --> 00:36:49.300
+proposta de valor da Science é a gente
+ajuda fundadores de empresas B2B a
+
+00:36:49.400 --> 00:36:52.940
+estruturarem suas áreas de receita com
+base nas empresas que mais crescem no
+
+00:36:53.040 --> 00:36:59.750
+mundo, essa é a nossa proposta de valor
+é quase um mantra quase um mantra,
+
+00:36:59.850 --> 00:37:01.650
+podemos dizer que é seria o que?
+
+00:37:01.750 --> 00:37:04.670
+uma missão ou uma visão?
+
+00:37:04.770 --> 00:37:11.190
+não, nenhum dos dois proposta de valor
+ela é como você vai conectar o seu
+
+00:37:11.290 --> 00:37:18.470
+produto ao mercado missão, visão são
+coisas mais aspiracionais mais internas
+
+00:37:18.570 --> 00:37:25.310
+mais culturais elas têm outro objetivo
+então proposta de valor é uma terceira
+
+00:37:25.410 --> 00:37:30.590
+coisa ó, Bruno então proposta de valor
+depois pra quem lolgy é?!
+
+00:37:30.690 --> 00:37:38.690
+pede aí, joga as coisas no GPT da turma
+da Academia Lendária e constrói a
+
+00:37:38.790 --> 00:37:42.870
+proposta de valor do seu produto com
+base no MEI para você entender o que ela
+
+00:37:42.970 --> 00:37:44.210
+vai te trazer de bom.
+
+00:37:44.310 --> 00:37:45.770
+É uma proposta de valor matadora.
+
+00:37:45.870 --> 00:37:48.250
+O Roger passou para a gente já.
+
+00:37:48.350 --> 00:37:54.010
+Estou falando do Roger aí que não deu o
+sentido certo.
+
+00:37:54.110 --> 00:37:56.630
+Boa.
+
+00:37:56.730 --> 00:37:59.210
+Segunda coisa.
+
+00:37:59.310 --> 00:38:04.770
+Você precisa neste estágio da empresa,
+quando você construir uma proposta de
+
+00:38:04.870 --> 00:38:10.950
+valor que faça sentido conseguir do
+ponto de vista de estratégia nesse
+
+00:38:11.050 --> 00:38:14.110
+estágio Gente, vou te ensinar uma coisa.
+
+00:38:14.210 --> 00:38:19.190
+Isso que eu estou mostrando para vocês é
+que esses blocos, eles são o conjunto de
+
+00:38:19.290 --> 00:38:25.170
+coisas que precisam estar construídas
+para que você consiga consolidar uma
+
+00:38:25.270 --> 00:38:27.850
+área de receita mínima viável.
+
+00:38:27.950 --> 00:38:29.230
+Então o que eu estou dizendo?
+
+00:38:29.330 --> 00:38:34.550
+Eu estou dizendo que você conseguir
+fazer a transição de founder para time é
+
+00:38:34.650 --> 00:38:38.690
+uma condição necessária para você
+conseguir construir essa área de receita
+
+00:38:38.790 --> 00:38:40.330
+mínima viável.
+
+00:38:40.430 --> 00:38:43.910
+Ela não vai ser uma área de receita
+mínima viável enquanto você não tiver
+
+00:38:44.010 --> 00:38:49.030
+gente entregando resultado para você.
+
+00:38:49.130 --> 00:38:53.490
+A métrica desse estágio aqui é volume de
+vendas.
+
+00:38:53.590 --> 00:38:59.270
+Você precisa garantir que as pessoas
+estão comprando o seu produto.
+
+00:38:59.370 --> 00:39:10.010
+Eu falei que do ponto de vista prático
+retenção de receita ela é uma premissa
+
+00:39:10.110 --> 00:39:12.270
+para você conseguir sair desse estágio.
+
+00:39:12.370 --> 00:39:17.160
+Só que sem vendas não tem nem o que você
+reter.
+
+00:39:17.260 --> 00:39:17.760
+Certo?
+
+00:39:17.860 --> 00:39:22.180
+Então eu estou colocando aqui que nesse
+momento aqui da empresa você precisa
+
+00:39:22.280 --> 00:39:25.900
+garantir que você está vendendo.
+
+00:39:26.000 --> 00:39:26.600
+Sobre clientes.
+
+00:39:26.700 --> 00:39:29.100
+O que a gente tem sobre clientes?
+
+00:39:29.200 --> 00:39:36.140
+Tem uma outra uma outra como é que eu
+posso dizer isso?
+
+00:39:36.240 --> 00:39:41.940
+Uma subcategoria do Product Market Fit
+que é o Channel Market Fit.
+
+00:39:42.040 --> 00:39:42.720
+Que é o que?
+
+00:39:42.820 --> 00:39:48.040
+Qual é o canal que você vai usar para
+conseguir adquirir os seus primeiros
+
+00:39:48.140 --> 00:39:49.400
+clientes?
+
+00:39:49.500 --> 00:39:59.380
+Ads, conteúdo, networking, eventos,
+prospecção ativa,
+
+00:39:59.480 --> 00:40:05.250
+produto, ecossistema, comunidade.
+
+00:40:05.350 --> 00:40:07.930
+Eu te dei oito opções.
+
+00:40:08.030 --> 00:40:13.010
+Naquele livro que a turma falou na
+semana passada, o Tração ou Traction,
+
+00:40:13.110 --> 00:40:17.530
+tem lá 18 canais que você pode usar para
+você conseguir construir uma
+
+00:40:17.630 --> 00:40:20.100
+empresa.
+
+00:40:20.200 --> 00:40:25.920
+Então, o ponto é para conseguir
+construir uma área de receita mínima
+
+00:40:26.020 --> 00:40:33.140
+viável você tem que ter um canal que
+entregue 80 % dos seus leads para você
+
+00:40:33.240 --> 00:40:36.240
+dizer que esse canal funciona.
+
+00:40:36.340 --> 00:40:40.470
+Quem?
+
+00:40:40.570 --> 00:40:43.790
+Fala, Adriele.
+
+00:40:43.890 --> 00:40:44.570
+Andriele, né?
+
+00:40:44.670 --> 00:40:45.310
+Isso.
+
+00:40:45.410 --> 00:40:46.530
+Boa noite, Andriele.
+
+00:40:46.630 --> 00:40:53.050
+A minha dúvida é o seguinte, como que eu
+faço para metrificar esses 40 % do PMF
+
+00:40:53.150 --> 00:40:56.330
+para conseguir validar o produto?
+
+00:40:56.430 --> 00:41:01.070
+Em casos que o produto é, por exemplo,
+como o Airbnb ou o Uber.
+
+00:41:01.170 --> 00:41:08.770
+Então, a pessoa vai usar ali em viagem e
+depois vai ficar um tempo sem usar, né?
+
+00:41:08.870 --> 00:41:10.910
+Não é um produto que ela vai usar todos
+os dias, no
+
+00:41:11.010 --> 00:41:14.070
+caso.
+
+00:41:14.170 --> 00:41:18.910
+Andriele, a recorrência de uso de um
+produto muda muito, né?
+
+00:41:19.010 --> 00:41:29.010
+De produto para produto, mas num caso
+como um Uber ou um Airbnb,
+
+00:41:29.110 --> 00:41:34.750
+eles são produtos de natureza
+recorrente, só que a análise deles não é
+
+00:41:34.850 --> 00:41:36.930
+uma análise de receita recorrente, né?
+
+00:41:37.030 --> 00:41:39.190
+Você olha a FD, um caso como esse, né?
+
+00:41:39.290 --> 00:41:43.730
+Que é a recença, a frequência e o valor.
+
+00:41:43.830 --> 00:41:46.070
+Então, eles vão olhar com que frequência
+você...
+
+00:41:46.170 --> 00:41:50.330
+Porque, assim, se você é uma usuária do
+Airbnb, vamos supor que você use duas
+
+00:41:50.430 --> 00:41:51.930
+vezes por ano.
+
+00:41:52.030 --> 00:41:54.690
+Mas você usa duas vezes por ano, então
+você é uma usuária recorrente, só que a
+
+00:41:54.790 --> 00:41:56.910
+sua frequência é baixa.
+
+00:41:57.010 --> 00:41:59.330
+Só que você é uma usuária recorrente.
+
+00:41:59.430 --> 00:42:06.650
+E aí, quando eu falei daquele modelinho
+lá dos 40%, te respondendo de forma
+
+00:42:06.750 --> 00:42:13.150
+categórica, esse é um caso, é uma
+ferramenta que você vai
+
+00:42:13.250 --> 00:42:21.050
+usar rodando um formulário para a sua
+base de clientes que pode ser um pop -up
+
+00:42:21.150 --> 00:42:24.110
+no seu site ou pode ser um form que você
+envia.
+
+00:42:24.210 --> 00:42:33.340
+Que você vai perguntar quanto infeliz ou
+insatisfeito você ficaria se você não
+
+00:42:33.440 --> 00:42:35.840
+pudesse usar o meu produto.
+
+00:42:35.940 --> 00:42:42.000
+Quando 40 % da sua base diz que ficaria
+muito insatisfeita, quer dizer que você
+
+00:42:42.100 --> 00:42:43.640
+tem o produto...
+
+00:42:43.740 --> 00:42:48.080
+É uma regra simples para você dizer que
+você tem o Product Market Fit.
+
+00:42:48.180 --> 00:42:51.480
+Não é isso que vai definir se você tem
+ou não tem, mas isso é uma
+
+00:42:51.580 --> 00:42:54.030
+aproximação.
+
+00:42:54.130 --> 00:42:54.270
+Entendeu?
+
+00:42:54.370 --> 00:43:00.480
+Então, seria esse formato de pesquisa,
+né?
+
+00:43:00.580 --> 00:43:03.400
+Uma pergunta, uma pesquisa.
+
+00:43:03.500 --> 00:43:08.120
+Obrigada.
+
+00:43:08.220 --> 00:43:12.860
+Você também tem que ter, galera, daqui
+do ponto de vista de clientes, é
+
+00:43:12.960 --> 00:43:17.680
+importantíssimo que você tenha hipóteses
+do seu ICP.
+
+00:43:17.780 --> 00:43:22.380
+Quando você for começar a rodar a sua
+empresa na prática, você vai pegar lá
+
+00:43:22.480 --> 00:43:29.360
+todos os perfis de clientes que você
+gostaria de ter.
+
+00:43:29.460 --> 00:43:35.740
+Você vai levantar hipóteses desse perfil
+de cliente e você vai colocar aí pelo
+
+00:43:35.840 --> 00:43:38.420
+menos três hipóteses.
+
+00:43:38.520 --> 00:43:44.120
+Vamos supor que você está vendendo um
+produto de IA para médicos.
+
+00:43:44.220 --> 00:43:48.360
+Aí você vai ter uma hipótese que é o
+médico recém -formado.
+
+00:43:48.460 --> 00:43:54.780
+Você vai ter uma outra hipótese que é um
+médico no ápice da sua carreira.
+
+00:43:54.880 --> 00:43:59.360
+Você vai ter uma terceira hipótese que é
+clínicas de
+
+00:43:59.460 --> 00:44:02.020
+medicina.
+
+00:44:02.120 --> 00:44:03.200
+Então, é um exemplo, tá?
+
+00:44:03.300 --> 00:44:08.240
+O que eu estou dizendo é que é super
+importante você documentar quais são as
+
+00:44:08.340 --> 00:44:13.100
+suas hipóteses quando você vai construir
+a sua máquina de aquisição.
+
+00:44:13.200 --> 00:44:19.440
+Para você entender entre as suas
+hipóteses que perfil performa melhor.
+
+00:44:19.540 --> 00:44:25.010
+Tá certo?
+
+00:44:25.110 --> 00:44:29.470
+Outra coisa é uma persona.
+
+00:44:29.570 --> 00:44:31.490
+Isso você já deve ter ouvido falar.
+
+00:44:31.590 --> 00:44:38.390
+Quais são as metas, os objetivos, quais
+são as perguntas, quais são os hábitos
+
+00:44:38.490 --> 00:44:40.570
+que o seu cliente tem.
+
+00:44:40.670 --> 00:44:45.450
+Então, no meu caso, eu tenho a minha
+persona de forma muito clara e eu também
+
+00:44:45.550 --> 00:44:46.030
+tenho...
+
+00:44:46.130 --> 00:44:46.990
+Eu vou...
+
+00:44:47.090 --> 00:44:52.030
+Vou trazer para vocês aqui um pouco do
+que a gente está construindo aqui na
+
+00:44:52.130 --> 00:44:56.550
+site em exemplos em cima dessas coisas.
+
+00:44:56.650 --> 00:45:01.890
+Primeira coisa, como que eu descobri que
+a gente tinha PMF na site?
+
+00:45:01.990 --> 00:45:03.390
+Eu descobri que...
+
+00:45:03.490 --> 00:45:06.010
+Inclusive, era uma coisa que,
+sinceramente, eu não sabia como é que ia
+
+00:45:06.110 --> 00:45:07.690
+ser quando eu comecei a empresa.
+
+00:45:07.790 --> 00:45:11.910
+Não tinha como saber.
+
+00:45:12.010 --> 00:45:16.730
+Lembrando aqui que o que a gente vende é
+arquitetura de receita para empresas
+
+00:45:16.830 --> 00:45:18.510
+BitBank.
+
+00:45:18.610 --> 00:45:27.630
+Eu descobri que a gente tinha PMF porque
+a cada 10 almoços que eu fazia com
+
+00:45:27.730 --> 00:45:30.470
+possíveis prospects, então, o meu canal
+era...
+
+00:45:30.570 --> 00:45:34.410
+O meu primeiro canal foi almoço.
+
+00:45:34.510 --> 00:45:38.570
+Foi marcar reunião presencial com base
+no meu network.
+
+00:45:38.670 --> 00:45:39.390
+Certo?
+
+00:45:39.490 --> 00:45:46.730
+As minhas três hipóteses de CP eram
+startups, empresas familiares e
+
+00:45:46.830 --> 00:45:46.890
+startups.
+
+00:45:46.990 --> 00:45:49.410
+E empreendedores de marketing digital.
+
+00:45:49.510 --> 00:45:52.490
+Eram essas minhas três hipóteses.
+
+00:45:52.590 --> 00:46:03.330
+A minha persona é um CEO fundador que
+não é técnico em vendas, que tem muito
+
+00:46:03.430 --> 00:46:09.630
+domínio de produto e que tem
+características de disciplina de
+
+00:46:09.730 --> 00:46:10.430
+implementação.
+
+00:46:10.530 --> 00:46:13.150
+Essa é a minha persona.
+
+00:46:13.250 --> 00:46:16.150
+Como que eu descobri que a minha
+proposta de valor tinha aderência?
+
+00:46:16.250 --> 00:46:19.490
+Quando eu desenvolvi e ganhei a minha
+proposta de valor e a cada 10 almoços
+
+00:46:19.590 --> 00:46:24.650
+que eu fazia 6 pessoas queriam comprar
+de mim eu falei, bom, alguma coisa eu
+
+00:46:24.750 --> 00:46:27.150
+tenho aqui que deve estar fazendo
+sentido.
+
+00:46:27.250 --> 00:46:31.350
+Porque além de 6 pessoas a cada 10
+quererem comprar de mim eu estava
+
+00:46:31.450 --> 00:46:36.410
+colocando um preço alto e mesmo assim
+elas queriam comprar.
+
+00:46:36.510 --> 00:46:41.550
+Eu falei, bom, com certeza tem alguma
+coisa fazendo
+
+00:46:41.650 --> 00:46:44.790
+sentido.
+
+00:46:44.890 --> 00:46:52.310
+Do ponto de vista da minha métrica de
+vendas eu falei, bom, eu percebi que a
+
+00:46:52.410 --> 00:46:59.470
+minha taxa de conversão de proposta para
+fechamento era 60%, que é muito alta.
+
+00:46:59.570 --> 00:47:04.230
+Para qualquer empresa é B2B.
+
+00:47:04.330 --> 00:47:08.070
+Geralmente as melhores empresas têm essa
+taxa em torno de 40%.
+
+00:47:08.170 --> 00:47:09.930
+E a gente estava com essa taxa em 60%.
+
+00:47:10.030 --> 00:47:13.710
+Eu falei, bicho, eu devo ter alguma
+coisa especial na mão.
+
+00:47:13.810 --> 00:47:18.170
+É claro que depois eu fui descobrir os
+desafios do meu negócio e percebi que o
+
+00:47:18.270 --> 00:47:21.290
+meu desafio era mais de escalar, do que
+de vender.
+
+00:47:21.390 --> 00:47:23.590
+Então eu percebi os meus...
+
+00:47:23.690 --> 00:47:27.410
+Lógico que eu tive muitos aprendizados e
+nem tudo são flores.
+
+00:47:27.510 --> 00:47:33.010
+Mas na minha área de receita mínima
+viável eu executei exatamente isso.
+
+00:47:33.110 --> 00:47:35.330
+Exatamente.
+
+00:47:35.430 --> 00:47:40.430
+Bom, do ponto de vista de dados agora eu
+preciso que vocês prestem atenção que a
+
+00:47:40.530 --> 00:47:43.910
+gente vai começar um pouquinho de
+matemática.
+
+00:47:44.010 --> 00:47:49.690
+Do ponto de vista de dados eu vou pedir
+para vocês se atentarem a três coisas.
+
+00:47:49.790 --> 00:47:50.230
+Três coisas.
+
+00:47:50.330 --> 00:48:03.020
+A primeira é toda vez, gente, que vocês
+virem esse slide aqui nesse bloquinho e
+
+00:48:03.120 --> 00:48:10.900
+você tiver, prestem atenção aqui, que
+você tiver um jogo da velha a gente está
+
+00:48:11.000 --> 00:48:14.160
+falando de volume.
+
+00:48:14.260 --> 00:48:21.510
+E toda vez que tiver um percentual a
+gente está falando de conversão.
+
+00:48:21.610 --> 00:48:26.950
+Então eu estou dizendo aqui para vocês
+que vocês têm que ter domínio do volume
+
+00:48:27.050 --> 00:48:31.570
+e da conversão de leads que vocês estão
+gerando.
+
+00:48:31.670 --> 00:48:33.050
+Por quê?
+
+00:48:33.150 --> 00:48:36.110
+Porque lembra que eu falei que a gente
+vai lá do lead para o
+
+00:48:36.210 --> 00:48:38.650
+MQL?
+
+00:48:38.750 --> 00:48:39.290
+Pois é.
+
+00:48:39.390 --> 00:48:45.730
+Do lead para o MQL, se você gerou 100
+leads você não vai ter 100 MQLs.
+
+00:48:45.830 --> 00:48:51.950
+Se você gerou 100 leads você
+provavelmente vai ter 20 MQLs.
+
+00:48:52.050 --> 00:48:57.380
+Estatisticamente é assim que funciona.
+
+00:48:57.480 --> 00:49:04.100
+Então você precisa ter domínio do volume
+de leads e da conversão dos seus leads.
+
+00:49:04.200 --> 00:49:08.500
+Outra coisa que geralmente está
+começando uma empresa vai ter que fazer
+
+00:49:08.600 --> 00:49:09.380
+reunião para vender.
+
+00:49:09.480 --> 00:49:12.720
+Pode ser que no futuro você venda
+através de produto e tal, mas os
+
+00:49:12.820 --> 00:49:16.240
+primeiros dos primeiros provavelmente
+você vai ter que fazer uma reunião ou
+
+00:49:16.340 --> 00:49:20.250
+outra para vender, a não ser que seu
+ticket seja muito baixo.
+
+00:49:20.350 --> 00:49:24.010
+E aí se você tiver reunião você também
+tem que descobrir qual é o volume de
+
+00:49:24.110 --> 00:49:28.950
+reuniões e o percentual de conversão
+dessas reuniões.
+
+00:49:29.050 --> 00:49:31.130
+Igualzinho eu estava falando aqui para
+vocês.
+
+00:49:31.230 --> 00:49:35.150
+Acabei de falar para vocês que a cada
+15, bom, era assim, né?
+
+00:49:35.250 --> 00:49:39.270
+A cada 15 mensagens que eu mandava eu
+marcava 20 almoços.
+
+00:49:39.370 --> 00:49:43.210
+A cada 20 almoços, desculpa, a cada 15
+mensagens que eu mandava eu marcava 10
+
+00:49:43.310 --> 00:49:43.810
+almoços.
+
+00:49:43.910 --> 00:49:47.510
+A cada 10 almoços que eu marcava eu
+apresentava 6 propostas.
+
+00:49:47.610 --> 00:49:53.870
+A cada 6 propostas que eu apresentava eu
+fechava cerca de 4 negócios.
+
+00:49:53.970 --> 00:50:02.290
+Esse funil, inicial de vendas, com essa
+matemática, vocês precisam descobrir.
+
+00:50:02.390 --> 00:50:04.810
+Isso é fundamental.
+
+00:50:04.910 --> 00:50:05.670
+Beleza?
+
+00:50:05.770 --> 00:50:08.050
+E por último, o volume de negócios
+fechados.
+
+00:50:08.150 --> 00:50:10.830
+Igual eu acabei de escrever para vocês.
+
+00:50:10.930 --> 00:50:12.830
+Galera, alguma dúvida sobre isso aqui?
+
+00:50:12.930 --> 00:50:13.930
+Está fazendo sentido?
+
+00:50:14.030 --> 00:50:14.850
+Está muito técnico?
+
+00:50:14.950 --> 00:50:17.430
+Me dá um pouco de feedback aí porque eu
+não estou vendo direito a caixa de todo
+
+00:50:17.530 --> 00:50:18.090
+mundo.
+
+00:50:18.190 --> 00:50:19.090
+Deixa eu entender como é que está.
+
+00:50:19.190 --> 00:50:28.090
+Vai me dar um calor aqui.
+
+00:50:28.190 --> 00:50:29.110
+Não, está ótimo, cara.
+
+00:50:29.210 --> 00:50:32.470
+Eu acho que faz todo sentido os dados.
+
+00:50:32.570 --> 00:50:33.890
+As métricas são dados estruturados.
+
+00:50:33.990 --> 00:50:37.350
+Você está pegando a partir de vendas que
+é leads, reuniões.
+
+00:50:37.450 --> 00:50:41.190
+As reuniões, principalmente se for
+ticket médio -alto, né?
+
+00:50:41.290 --> 00:50:42.050
+É isso, né?
+
+00:50:42.150 --> 00:50:43.010
+High ticket, né?
+
+00:50:43.110 --> 00:50:45.110
+Isso.
+
+00:50:45.210 --> 00:50:50.750
+É uma meta que você tem que ter senão
+você não consegue fazer a empresa girar,
+
+00:50:50.850 --> 00:50:51.930
+né?
+
+00:50:52.030 --> 00:50:53.190
+É isso aí.
+
+00:50:53.290 --> 00:50:54.570
+É isso aí.
+
+00:50:54.670 --> 00:50:55.890
+Certo?
+
+00:50:55.990 --> 00:50:58.490
+Estamos alinhados, então?
+
+00:50:58.590 --> 00:51:00.550
+Ô, Giovanni, tira uma dúvida, cara.
+
+00:51:00.650 --> 00:51:03.970
+Lindo quando você falou do channel
+marketing, que você falou que um canal,
+
+00:51:04.070 --> 00:51:09.430
+para ele ser efetivo, ele tem que...
+
+00:51:09.530 --> 00:51:10.650
+Tá bom.
+
+00:51:10.750 --> 00:51:11.150
+Tá bom.
+
+00:51:11.250 --> 00:51:12.230
+Perfeito.
+
+00:51:12.330 --> 00:51:13.990
+Mas qual que ia ser a sua pergunta?
+
+00:51:14.090 --> 00:51:15.970
+Era os 80 %?
+
+00:51:16.070 --> 00:51:16.250
+Não, não.
+
+00:51:16.350 --> 00:51:20.230
+Porque quando a gente fala de canal, por
+exemplo, de vendas, é dos 80%, mas
+
+00:51:20.330 --> 00:51:22.390
+quando eu caio, por exemplo, você deu o
+exemplo das reuniões,
+
+00:51:22.490 --> 00:51:25.130
+certo?
+
+00:51:25.230 --> 00:51:32.270
+E se eu falo num formato de venda
+relacional, cara, até eu fui confuso
+
+00:51:32.370 --> 00:51:36.550
+para identificar qual que é o canal
+nesse caso, entendeu?
+
+00:51:36.650 --> 00:51:37.350
+Mas...
+
+00:51:37.450 --> 00:51:39.650
+É o canal de geração de reunião.
+
+00:51:39.750 --> 00:51:41.490
+Qual o canal de geração de reunião?
+
+00:51:41.590 --> 00:51:46.930
+No meu caso, o canal que eu usei para
+gerar meus almoços foi networking.
+
+00:51:47.030 --> 00:51:47.630
+Tá bom.
+
+00:51:47.730 --> 00:51:48.450
+Perfeito.
+
+00:51:48.550 --> 00:51:51.050
+Depois que a minha...
+
+00:51:51.150 --> 00:51:54.230
+Porque, assim, Paulo, né?
+
+00:51:54.330 --> 00:51:57.010
+Ô, Paulo, por que eu estou falando isso?
+
+00:51:57.110 --> 00:52:03.190
+Porque no meu caso foi networking,
+porque, assim, nos dois casos, nas duas
+
+00:52:03.290 --> 00:52:06.550
+empresas que eu construí, o meu primeiro
+canal foi networking.
+
+00:52:06.650 --> 00:52:10.110
+Porque eu sempre vendi B2B, certo?
+
+00:52:10.210 --> 00:52:13.730
+Eu sempre vendi ticket alto, certo?
+
+00:52:13.830 --> 00:52:18.130
+B2B, ticket alto, você não vai vender
+sem reunião, concorda comigo?
+
+00:52:18.230 --> 00:52:20.090
+Perfeito.
+
+00:52:20.190 --> 00:52:24.570
+Dado que eu tinha o objetivo de gerar
+reunião, eu tinha algumas
+
+00:52:24.670 --> 00:52:25.570
+possibilidades.
+
+00:52:25.670 --> 00:52:29.110
+Eu poderia, por exemplo, fazer ads.
+
+00:52:29.210 --> 00:52:34.490
+Eu poderia, por exemplo, fazer as minhas
+reuniões acontecerem através de
+
+00:52:34.590 --> 00:52:36.150
+conteúdo.
+
+00:52:36.250 --> 00:52:39.770
+Eu poderia também, Paulo, fazer as
+minhas reuniões acontecerem através de
+
+00:52:39.870 --> 00:52:41.830
+prospecção fria.
+
+00:52:41.930 --> 00:52:42.310
+Tá bom.
+
+00:52:42.410 --> 00:52:42.730
+Tá claro.
+
+00:52:42.830 --> 00:52:45.190
+Só que eu fiz do ponto de vista de
+networking.
+
+00:52:45.290 --> 00:52:46.250
+Por quê?
+
+00:52:46.350 --> 00:52:47.910
+Porque eu...
+
+00:52:48.010 --> 00:52:49.850
+Esse é o meu...
+
+00:52:49.950 --> 00:52:53.490
+Eu diria que é a minha fortaleza, de
+certa forma.
+
+00:52:53.590 --> 00:53:00.410
+Eu conheci muita gente legal ao longo do
+tempo, nutri esses relacionamentos, né?
+
+00:53:00.510 --> 00:53:04.310
+E, hoje em dia, quando eu preciso de
+alguma coisa, eu posso recorrer a essas
+
+00:53:04.410 --> 00:53:05.650
+pessoas e elas vão me ajudar.
+
+00:53:05.750 --> 00:53:07.910
+Elas vão falar comigo, elas vão abrir a
+porta.
+
+00:53:08.010 --> 00:53:09.370
+Então, essa é a minha fortaleza.
+
+00:53:09.470 --> 00:53:14.170
+Tem gente aqui que domina tráfego pago.
+
+00:53:14.270 --> 00:53:18.350
+E aí, talvez, você tenha que usar a sua
+fortaleza, que é tráfego pago.
+
+00:53:18.450 --> 00:53:19.850
+Qual que é a sua fortaleza, Paulo?
+
+00:53:19.950 --> 00:53:20.630
+Só pra eu entender aqui.
+
+00:53:20.730 --> 00:53:22.730
+Você tem clareza?
+
+00:53:22.830 --> 00:53:26.270
+Cara, hoje eu creio muito mais no corpo
+a corpo.
+
+00:53:26.370 --> 00:53:34.630
+É bater um cliente, e, cara, conversar,
+propor, explicar um pouco o que a gente
+
+00:53:34.730 --> 00:53:37.610
+está fazendo.
+
+00:53:37.710 --> 00:53:39.310
+E o que você está vendendo, Paulo?
+
+00:53:39.410 --> 00:53:41.070
+O que você vai vender?
+
+00:53:41.170 --> 00:53:44.570
+Cara, hoje a gente está vendendo uma...
+
+00:53:44.670 --> 00:53:51.750
+Tem várias coisas, mas, hoje, o foco
+maior é vender um sistema de gestão de
+
+00:53:51.850 --> 00:53:55.530
+informação para a área de
+anestesiologia.
+
+00:53:55.630 --> 00:53:57.570
+Gestão de informação para
+anestesiologia.
+
+00:53:57.670 --> 00:54:00.750
+Então, você vende para anestesistas,
+médicos.
+
+00:54:00.850 --> 00:54:07.470
+Isso, para grupo de anestesistas,
+médicos e também clínicas, né?
+
+00:54:07.570 --> 00:54:08.110
+Legal.
+
+00:54:08.210 --> 00:54:09.610
+Muito bom.
+
+00:54:09.710 --> 00:54:11.750
+E aí, muito por...
+
+00:54:11.850 --> 00:54:17.110
+Nesse primeiro momento, é, cara, uma
+reunião, contato, o cara gosta,
+
+00:54:17.210 --> 00:54:21.970
+implementa, usa, e aí, depois, pedido de
+indicação.
+
+00:54:22.070 --> 00:54:22.870
+Cara, quem me indica...
+
+00:54:22.970 --> 00:54:26.790
+Mas como que você chega nesse cara que
+você faz contato?
+
+00:54:26.890 --> 00:54:30.630
+Cara, o escritório fica literalmente
+no...
+
+00:54:30.730 --> 00:54:36.210
+Numa rua, onde estão quase todas as
+clínicas, hospitais da cidade.
+
+00:54:36.310 --> 00:54:38.550
+Então...
+
+00:54:38.650 --> 00:54:39.430
+Cara, é...
+
+00:54:39.530 --> 00:54:41.330
+Então, você faz prospecção.
+
+00:54:41.430 --> 00:54:42.510
+É só, ó.
+
+00:54:42.610 --> 00:54:44.230
+Sobe no prédio...
+
+00:54:44.330 --> 00:54:45.790
+Mas é uma prospecção, isso.
+
+00:54:45.890 --> 00:54:47.350
+É uma prospecção presencial.
+
+00:54:47.450 --> 00:54:50.730
+Mas é uma prospecção.
+
+00:54:50.830 --> 00:54:52.190
+Prospecção porta -a -porta.
+
+00:54:52.290 --> 00:54:58.710
+Então, o seu canal é uma prospecção
+porta -a -porta geográfica.
+
+00:54:58.810 --> 00:55:00.470
+Esse é o seu canal.
+
+00:55:00.570 --> 00:55:00.890
+Tá bom.
+
+00:55:00.990 --> 00:55:03.050
+Porque você desenhou uma geografia.
+
+00:55:03.150 --> 00:55:04.910
+Você fez uma geografia estratégica.
+
+00:55:05.010 --> 00:55:08.810
+Você botou o seu escritório no meio do
+furacão.
+
+00:55:08.910 --> 00:55:09.210
+Ótimo.
+
+00:55:09.310 --> 00:55:10.450
+Melhor impossível.
+
+00:55:10.550 --> 00:55:15.990
+E aí, você consegue a distância de
+metros e atrás dos caras.
+
+00:55:16.090 --> 00:55:16.770
+É isso.
+
+00:55:16.870 --> 00:55:19.770
+O que funciona muito é convidar o cara
+pra tomar um café no escritório.
+
+00:55:19.870 --> 00:55:21.650
+Que o cara tá ali.
+
+00:55:21.750 --> 00:55:23.150
+Pra conhecer ele e tal.
+
+00:55:23.250 --> 00:55:25.530
+Mas é uma prospecção.
+
+00:55:25.630 --> 00:55:27.110
+Você entende por que é uma prospecção?
+
+00:55:27.210 --> 00:55:28.370
+Tá claro pra você?
+
+00:55:28.470 --> 00:55:32.610
+Porque, assim, se você vai atrás do cara
+sem você ter contato prévio com ele, é
+
+00:55:32.710 --> 00:55:33.190
+prospecção.
+
+00:55:33.290 --> 00:55:37.870
+Se você vai atrás do cara que já era,
+você já conhecia ele, é relacionamento.
+
+00:55:37.970 --> 00:55:43.350
+Se ele vem até você, é conteúdo ou ads.
+
+00:55:43.450 --> 00:55:43.810
+Concorda?
+
+00:55:43.910 --> 00:55:44.610
+Essa é a diferença.
+
+00:55:44.710 --> 00:55:47.050
+O cara que vem até você ou você que vai
+até ele?
+
+00:55:47.150 --> 00:55:49.150
+Você conhecia ele antes ou não conhecia?
+
+00:55:49.250 --> 00:55:51.930
+Então, essas características é que
+diferenciam um canal do
+
+00:55:52.030 --> 00:55:55.360
+outro.
+
+00:55:55.460 --> 00:55:56.420
+Super claro, velho.
+
+00:55:56.520 --> 00:55:56.760
+Valeu.
+
+00:55:56.860 --> 00:55:58.080
+Obrigadão.
+
+00:55:58.180 --> 00:55:58.540
+Tamo junto.
+
+00:55:58.640 --> 00:55:59.400
+Tô aqui pra isso.
+
+00:55:59.500 --> 00:56:01.260
+Esse foi o tipo de pergunta que o Paulo
+fez.
+
+00:56:01.360 --> 00:56:02.500
+Foi ótimo.
+
+00:56:02.600 --> 00:56:04.300
+Você tem os dois modelos, né, cara?
+
+00:56:04.400 --> 00:56:05.400
+De forma de crescimento.
+
+00:56:05.500 --> 00:56:10.620
+Você tem a Sales Lead Grow, que é a
+venda, a equipe de vendas que vai
+
+00:56:10.720 --> 00:56:12.060
+liderar esse crescimento.
+
+00:56:12.160 --> 00:56:17.140
+E você tem o Product Lead Grow.
+
+00:56:17.240 --> 00:56:19.580
+É o produto liderando essa linha de
+crescimento.
+
+00:56:19.680 --> 00:56:20.460
+Você pode ter híbrido.
+
+00:56:20.560 --> 00:56:22.720
+Num caso de um canal mais...
+
+00:56:22.820 --> 00:56:24.400
+Tudo isso quem me ensinou foi o Roger,
+tá, Roger?
+
+00:56:24.500 --> 00:56:26.300
+Pode ficar feliz aí, dar o sorrisão aí.
+
+00:56:26.400 --> 00:56:27.240
+O Roger é brabo.
+
+00:56:27.340 --> 00:56:27.680
+É isso aí.
+
+00:56:27.780 --> 00:56:28.960
+O Roger é foda, velho.
+
+00:56:29.060 --> 00:56:31.080
+O Roger é foda.
+
+00:56:31.180 --> 00:56:31.820
+Foda.
+
+00:56:31.920 --> 00:56:34.140
+Mas, assim, o fato é esse.
+
+00:56:34.240 --> 00:56:39.020
+Você pode usar um canal de light ticket
+híbrido até.
+
+00:56:39.120 --> 00:56:47.040
+Você fazer uma coisa que possa até
+despertar por conteúdo, o produto,
+
+00:56:47.140 --> 00:56:50.640
+chamar a atenção, mas no meio médico,
+que é o que você vive.
+
+00:56:50.740 --> 00:56:54.360
+Por exemplo, o que você deu, eu vim da
+Redditor, vim disso.
+
+00:56:54.460 --> 00:56:59.020
+Visitação nas clínicas, nos médicos, é
+café, almoço, jantar.
+
+00:56:59.120 --> 00:57:00.340
+Dá muito resultado.
+
+00:57:00.440 --> 00:57:05.400
+Mas não quer dizer, só, Paulo, que você
+não possa também montar um negócio que o
+
+00:57:05.500 --> 00:57:09.580
+médico recebe no zap, ele experimenta e
+ele fala cara, meu, quero marcar uma
+
+00:57:09.680 --> 00:57:10.140
+reunião com você.
+
+00:57:10.240 --> 00:57:19.880
+E essa automação te levar pra um sales
+lead growth, que seria a força de venda
+
+00:57:19.980 --> 00:57:24.140
+ser liderada por você e depois você
+fazer essa transição mesmo com a sua
+
+00:57:24.240 --> 00:57:26.580
+equipe e com o time, que não vai dar pra
+se escalonar.
+
+00:57:26.680 --> 00:57:30.560
+Às vezes não é nem escalonável, é um
+negócio mais vendido por um tíquete
+
+00:57:30.660 --> 00:57:33.460
+altíssimo e pouco médico, eu imagino,
+né?
+
+00:57:33.560 --> 00:57:35.560
+É isso.
+
+00:57:35.660 --> 00:57:36.980
+Muito bom.
+
+00:57:37.080 --> 00:57:39.760
+Ó, o Roger já tá facilitando a vida aí.
+
+00:57:39.860 --> 00:57:43.480
+My master of masters.
+
+00:57:43.580 --> 00:57:47.140
+Galera, se tiver pergunta aí, vai
+levantando a bola aí pra gente
+
+00:57:47.240 --> 00:57:50.500
+continuar, tá?
+
+00:57:50.600 --> 00:57:56.200
+Do ponto de vista de processos, a
+primeira coisa que você vai precisar
+
+00:57:56.300 --> 00:58:01.620
+fazer pra você executar boas reuniões é
+você ter algum nível de script.
+
+00:58:01.720 --> 00:58:03.720
+Algum nível de script.
+
+00:58:03.820 --> 00:58:08.900
+Eu não sou, sinceramente, eu, Giovanni,
+não sou a favor de script.
+
+00:58:09.000 --> 00:58:13.080
+Mas eu tô botando aqui porque ele é
+importante pra quem não tem domínio de
+
+00:58:13.180 --> 00:58:15.920
+metodologia de vendas que eu tenho.
+
+00:58:16.020 --> 00:58:19.080
+Porque eu sou especialista nessa porra,
+faço há 15 anos.
+
+00:58:19.180 --> 00:58:22.260
+Então, no meu caso, eu não preciso de um
+script, nem gosto de script, porque eu
+
+00:58:22.360 --> 00:58:26.340
+gosto de contratar gente que já manja de
+metodologia.
+
+00:58:26.440 --> 00:58:31.020
+Só que, se você não tem orçamento e não
+contrata gente que domina metodologia,
+
+00:58:31.120 --> 00:58:34.940
+você precisa de um script pra garantir
+que a pessoa vai rodar bem uma reunião
+
+00:58:35.040 --> 00:58:35.460
+de vendas.
+
+00:58:35.560 --> 00:58:39.140
+Eu vou, inclusive, mostrar pra vocês
+aqui um exemplo de script.
+
+00:58:39.240 --> 00:58:41.940
+Beleza?
+
+00:58:42.040 --> 00:58:48.080
+Quando você tiver já um time e a coisa
+começar a tomar alguma proporção, aí
+
+00:58:48.180 --> 00:58:54.660
+você desenvolve um playbook, que é um
+artefato que tem todos os processos
+
+00:58:54.760 --> 00:58:58.680
+documentados, o fluxograma, tal, tal,
+tal, tal, tal.
+
+00:58:58.780 --> 00:59:01.180
+E, pra garantir que você...
+
+00:59:01.280 --> 00:59:06.580
+que você tenha, pra cada etapa do
+processo, compreensão do seu time sobre
+
+00:59:06.680 --> 00:59:11.240
+como funcionam essas coisas, você
+desenvolve um handbook, que é um livro
+
+00:59:11.340 --> 00:59:11.680
+de mão.
+
+00:59:11.780 --> 00:59:16.660
+Ele é como se fosse um desdobramento de
+um playbook,
+
+00:59:16.760 --> 00:59:19.740
+ok?
+
+00:59:19.840 --> 00:59:23.260
+Todo mundo comigo aqui, vocês entenderam
+essa parada do processo?
+
+00:59:23.360 --> 00:59:24.000
+Eu tô dizendo...
+
+00:59:24.100 --> 00:59:29.040
+Vamos lá, eu vou até...
+
+00:59:29.140 --> 00:59:33.200
+Mais do que falar, eu vou mostrar.
+
+00:59:33.300 --> 00:59:35.000
+Esperar pra vocês um playbook.
+
+00:59:35.100 --> 00:59:40.780
+Melhor.
+
+00:59:40.880 --> 00:59:42.280
+Playbook.
+
+00:59:42.380 --> 00:59:45.220
+Eu vou mostrar esse playbook aqui.
+
+00:59:45.320 --> 00:59:49.720
+Eu vou fornecendo também, que eu tinha
+feito na época, eu fiz um.
+
+00:59:49.820 --> 00:59:51.720
+Eu vou...
+
+00:59:51.820 --> 00:59:52.820
+Aliás, eu vou pensar.
+
+00:59:52.920 --> 00:59:53.560
+Vou pensar.
+
+00:59:53.660 --> 00:59:55.820
+Vamos ver.
+
+00:59:55.920 --> 00:59:58.400
+Isso aqui é um...
+
+00:59:58.500 --> 01:00:04.800
+o playbook que eu desenvolvi pra essa
+senhora linda aqui, que é a minha
+
+01:00:04.900 --> 01:00:05.260
+esposa.
+
+01:00:05.360 --> 01:00:08.840
+Então, ela tem uma empresa de educação,
+e aí eu desenvolvi um playbook pra ela.
+
+01:00:08.940 --> 01:00:13.100
+Então, nesse caso aqui, eu coloquei como
+é que vai funcionar o caminho do
+
+01:00:13.200 --> 01:00:19.460
+cliente, coloquei os princípios de como
+é que esse vendedor dela tem que operar,
+
+01:00:19.560 --> 01:00:21.800
+cada um dos princípios que eu gosto de
+colocar.
+
+01:00:21.900 --> 01:00:25.900
+Botei o processo aqui, desenhei o
+processo pra ela, então ela gera leads
+
+01:00:26.000 --> 01:00:29.340
+através do TikTok, do Instagram, de ads.
+
+01:00:29.440 --> 01:00:32.400
+Aí a gente tem aqui os leads parados, a
+gente tem os workshops que ela faz, tem
+
+01:00:32.500 --> 01:00:33.320
+o forms.
+
+01:00:33.420 --> 01:00:36.720
+Aí toda vez que a gente vai abordar um
+lead, tem que fazer a pesquisa, fazer um
+
+01:00:36.820 --> 01:00:39.800
+touchpoint, dois touchpoints, três
+touchpoints, quatro touchpoints, cinco
+
+01:00:39.900 --> 01:00:43.060
+touchpoints, seis touchpoints, até
+chegar a uma reunião de diagnóstico, que
+
+01:00:43.160 --> 01:00:48.320
+deve durar 40 minutos, depois fizer uma
+reunião de feedback, e conseguir o
+
+01:00:48.420 --> 01:00:51.420
+comprometimento desse cliente pra jogar
+ele pra etapa de onboarding.
+
+01:00:51.520 --> 01:00:54.420
+Esse foi o processo que eu criei pra
+ela.
+
+01:00:54.520 --> 01:00:56.260
+Aqui eu desdobro ele.
+
+01:00:56.360 --> 01:00:57.380
+O que é o T1 e o T2?
+
+01:00:57.480 --> 01:00:58.100
+É o touch?
+
+01:00:58.200 --> 01:01:01.660
+Seria o ponto que você tem que ter de
+contato com o cliente pra entender?
+
+01:01:01.760 --> 01:01:03.480
+É a cadência.
+
+01:01:03.580 --> 01:01:05.380
+É a prospecção.
+
+01:01:05.480 --> 01:01:10.620
+Por mais que o lead caiu no formulário,
+você tem que fazer no mínimo umas seis
+
+01:01:10.720 --> 01:01:13.340
+tentativas com ele.
+
+01:01:13.440 --> 01:01:15.960
+Vai que o lead caiu no formulário?
+
+01:01:16.060 --> 01:01:17.740
+Isso.
+
+01:01:17.840 --> 01:01:24.600
+Pode ser uma reunião, pode ser uma call,
+pode ser um café, uma visita.
+
+01:01:24.700 --> 01:01:25.640
+Isso.
+
+01:01:25.740 --> 01:01:29.700
+Exatamente.
+
+01:01:29.800 --> 01:01:32.060
+Aí aqui, eu mostro...
+
+01:01:32.160 --> 01:01:37.100
+Esse T1 que você tá falando é um follow
+-up, não é isso?
+
+01:01:37.200 --> 01:01:37.540
+Isso.
+
+01:01:37.640 --> 01:01:40.700
+Um follow -up que é feito com o cliente,
+né?
+
+01:01:40.800 --> 01:01:41.860
+Exatamente.
+
+01:01:41.960 --> 01:01:45.360
+E aí, assim, o Bruno falou, pô, esse
+follow -up pode ser feito
+
+01:01:45.460 --> 01:01:46.340
+presencialmente?
+
+01:01:46.440 --> 01:01:48.400
+Pode.
+
+01:01:48.500 --> 01:01:51.600
+Não necessariamente precisa, mas pode
+fazer presencialmente, ou você pode
+
+01:01:51.700 --> 01:01:54.580
+fazer por WhatsApp, ou você pode fazer
+por LinkedIn, ou você
+
+01:01:54.680 --> 01:01:57.460
+depende.
+
+01:01:57.560 --> 01:01:57.900
+Certo?
+
+01:01:58.000 --> 01:02:00.360
+Entendeu, Edilson?
+
+01:02:00.460 --> 01:02:01.660
+Entendeu, Bruno?
+
+01:02:01.760 --> 01:02:03.680
+Perfeito, perfeito.
+
+01:02:03.780 --> 01:02:08.360
+A gente consegue um exemplo desse
+playbook, ou outro, onde a gente
+
+01:02:08.460 --> 01:02:13.080
+consegue exemplos de playbooks pra gente
+poder pensar em construir o nosso?
+
+01:02:13.180 --> 01:02:20.100
+Eu posso até mandar, aí, se vocês forem
+bonzinhos, aí, se o Roger achar que
+
+01:02:20.200 --> 01:02:24.020
+vocês estão merecendo, eu mando um
+template pra vocês.
+
+01:02:24.120 --> 01:02:25.960
+Defina o que é ser bonzinho.
+
+01:02:26.060 --> 01:02:27.820
+A gente tá super bonzinho, a gente.
+
+01:02:27.920 --> 01:02:28.680
+Bons alunos.
+
+01:02:28.780 --> 01:02:33.440
+Isso, pra mim, assim, o que é ser
+bonzinho, Renata?
+
+01:02:33.540 --> 01:02:39.220
+Pra mim, ser bonzinho é você anotar,
+estudar depois da aula, vir com a
+
+01:02:39.320 --> 01:02:44.520
+próxima aula com pergunta boa, lembrar
+das coisas, igual o nosso amigo Igor,
+
+01:02:44.620 --> 01:02:44.640
+né?
+
+01:02:44.740 --> 01:02:45.760
+O Igor que tá lembrando de tudo.
+
+01:02:45.860 --> 01:02:46.680
+Arthur.
+
+01:02:46.780 --> 01:02:48.860
+O Arthur que tá lembrando de tudo.
+
+01:02:48.960 --> 01:02:49.460
+Arthur.
+
+01:02:49.560 --> 01:02:52.620
+Claudio.
+
+01:02:52.720 --> 01:02:55.880
+O Claudio, o Brunão aí, que tá engajado.
+
+01:02:55.980 --> 01:02:58.740
+Então, isso pra mim é ser bonzinho.
+
+01:02:58.840 --> 01:03:03.580
+Você viu as anotações que eu coloquei na
+mensagem?
+
+01:03:03.680 --> 01:03:04.740
+Pra turma aí?
+
+01:03:04.840 --> 01:03:06.160
+Dá uma olhadinha.
+
+01:03:06.260 --> 01:03:06.680
+Vou ver.
+
+01:03:06.780 --> 01:03:09.420
+Então, quer dizer que você, no caso, tá
+sendo bonzinho, então, né,
+
+01:03:09.520 --> 01:03:12.180
+Renato?
+
+01:03:12.280 --> 01:03:16.760
+Isso daqui, ó, eu tô mostrando um outro
+exemplo de playbook, um pouco mais, bom,
+
+01:03:16.860 --> 01:03:18.500
+diferente, né?
+
+01:03:18.600 --> 01:03:20.080
+Isso aqui é um outro template.
+
+01:03:20.180 --> 01:03:22.460
+Isso aqui é o meu playbook, por exemplo.
+
+01:03:22.560 --> 01:03:25.380
+Esse é o meu playbook do meu time de
+vendas.
+
+01:03:25.480 --> 01:03:28.920
+É um one -pager playbook, né?
+
+01:03:29.020 --> 01:03:29.880
+Isso aqui é uma página só.
+
+01:03:29.980 --> 01:03:31.560
+Tem vários modelos, né, Giovanni?
+
+01:03:31.660 --> 01:03:32.980
+Tem vários modelos.
+
+01:03:33.080 --> 01:03:37.380
+O HubSpot, se vocês colocarem aí na
+internet, modelo, playbook, playbook de
+
+01:03:37.480 --> 01:03:39.040
+vendas, por exemplo, comercial.
+
+01:03:39.140 --> 01:03:40.860
+Pô, tem vários modelos.
+
+01:03:40.960 --> 01:03:44.480
+Mas vocês vão ver que a essência,
+geralmente, é a mesma.
+
+01:03:44.580 --> 01:03:45.200
+É, bem parecido.
+
+01:03:45.300 --> 01:03:48.860
+Aí você pode adaptar, tem essa trilha,
+enfim, pô, bem legal.
+
+01:03:48.960 --> 01:03:49.100
+Exatamente.
+
+01:03:49.200 --> 01:03:52.580
+Esse, obviamente, né, do Messi e
+Giovanni, tá muito mais completo.
+
+01:03:52.680 --> 01:03:55.320
+Vocês vão encontrar ali.
+
+01:03:55.420 --> 01:03:55.700
+Muito bom.
+
+01:03:55.800 --> 01:03:57.860
+Aí, olha só que interessante, gente.
+
+01:03:57.960 --> 01:04:00.300
+Tão vendo que tem o fluxograma todo do
+processo
+
+01:04:00.400 --> 01:04:03.410
+aqui?
+
+01:04:03.510 --> 01:04:03.590
+Sensacional.
+
+01:04:03.690 --> 01:04:05.110
+Então, aqui, ó, nesse fluxograma.
+
+01:04:05.210 --> 01:04:08.330
+Então, eu tenho o fluxograma inicial
+aqui, tem mais esse.
+
+01:04:08.430 --> 01:04:09.910
+Aí, aqui, na prática.
+
+01:04:10.010 --> 01:04:11.150
+Olha só que interessante.
+
+01:04:11.250 --> 01:04:14.390
+Passo a passo de como começar uma
+conversa.
+
+01:04:14.490 --> 01:04:20.790
+Então, eu tenho aqui, ó, tom de voz,
+faça perguntas, ouça ativamente, tome
+
+01:04:20.890 --> 01:04:25.990
+notas, empatize e engaje, repita o que
+você ouviu.
+
+01:04:26.090 --> 01:04:27.330
+Aí, você vai pegar o...
+
+01:04:27.430 --> 01:04:29.870
+Isso aqui é o engajamento do cliente ao
+longo do processo de vendas.
+
+01:04:29.970 --> 01:04:34.350
+Então, você vai se preparar, você vai
+visitar o perfil da pessoa no LinkedIn
+
+01:04:34.450 --> 01:04:38.030
+antes da reunião, pra você pesquisar e
+ter um quebra -gelo.
+
+01:04:38.130 --> 01:04:40.870
+Aí, você vai mandar pra ela,
+eventualmente, um material.
+
+01:04:40.970 --> 01:04:43.970
+Aí, você vai ligar, vai fazer uma video
+message, né?
+
+01:04:44.070 --> 01:04:47.270
+Uma mensagem de vídeo através do
+WhatsApp.
+
+01:04:47.370 --> 01:04:50.630
+Aí, aqui, quando você ligar pra ela,
+você tem que explicar quem é você, por
+
+01:04:50.730 --> 01:04:55.170
+que você é importante, o que você tem
+pra oferecer, né?
+
+01:04:55.270 --> 01:04:56.770
+Aí, você enlice uma conversa.
+
+01:04:56.870 --> 01:05:01.370
+Quando a pessoa tiver objeções comuns,
+você tem que saber o que responder, né?
+
+01:05:01.470 --> 01:05:05.610
+Aí, você vai qualificar essa pessoa com
+perguntas abertas e fechadas,
+
+01:05:05.710 --> 01:05:08.930
+principalmente perguntas de situação e
+dor.
+
+01:05:09.030 --> 01:05:12.430
+Você vai mostrar um insight com base na
+dor que ela tem.
+
+01:05:12.530 --> 01:05:17.350
+E aí, você vai agendar uma reunião pra
+você conseguir tocar o barco na reunião
+
+01:05:17.450 --> 01:05:20.230
+e fazer a venda, certo?
+
+01:05:20.330 --> 01:05:27.310
+E aí, indo pro nosso próximo passo, isso
+aqui é como você abre uma conversa, uma
+
+01:05:27.410 --> 01:05:28.510
+anatomia de uma conversa, né?
+
+01:05:28.610 --> 01:05:31.870
+Falar, eu dei uma olhada no seu
+LinkedIn, vi que você tá em tal empresa
+
+01:05:31.970 --> 01:05:33.010
+há dois anos, né?
+
+01:05:33.110 --> 01:05:34.990
+Entendi que você é analista júnior.
+
+01:05:35.090 --> 01:05:37.590
+Pessoas similares a você, geralmente,
+são promovidas.
+
+01:05:37.690 --> 01:05:40.710
+Cada um ano, mas percebi que você tá um
+pouco fora dessa estatística.
+
+01:05:40.810 --> 01:05:47.950
+No caso, minha empresa, minha esposa,
+vem de crescimento de...
+
+01:05:48.050 --> 01:05:49.950
+Infoproduto de crescimento de carreira.
+
+01:05:50.050 --> 01:05:53.450
+Então, esse é o processo de vendas que
+eu montei pra ela, tá certo?
+
+01:05:53.550 --> 01:05:57.310
+Aí, aqui tem a sugestão de touchpoints,
+né?
+
+01:05:57.410 --> 01:06:01.570
+Então, aqui, eu escrevi os touchpoints
+que eu achava que ela deveria, o time
+
+01:06:01.670 --> 01:06:02.910
+dela deveria usar.
+
+01:06:03.010 --> 01:06:04.950
+E aqui, eu montei o playbook, né?
+
+01:06:05.050 --> 01:06:10.090
+Pra eles, como que tem que conduzir, em
+cada uma das etapas.
+
+01:06:10.190 --> 01:06:14.010
+Aí, vocês podem ver aqui, ó, que a gente
+já tem uma SDRA aqui, aí depois passa
+
+01:06:14.110 --> 01:06:17.810
+pro vendedor, né?
+
+01:06:17.910 --> 01:06:20.670
+Então, obviamente, que é Casa de
+Ferreira e Espeto de Ferro, né?
+
+01:06:20.770 --> 01:06:23.730
+Então, a minha esposa vai ter um
+playbook brabo, que eu não gosto desse
+
+01:06:23.830 --> 01:06:26.550
+treino de Casa de Ferreira e Espeto de
+Pau, não.
+
+01:06:26.650 --> 01:06:27.070
+Certo?
+
+01:06:27.170 --> 01:06:30.090
+Então, isso aqui é o nosso playbook.
+
+01:06:30.190 --> 01:06:34.910
+Playbook, aqui, ó, tem como que conduz
+uma reunião no Spice, né?
+
+01:06:35.010 --> 01:06:39.810
+Situação, dor, impacto, evento crítico,
+como que isso se desenvolve ao longo do
+
+01:06:39.910 --> 01:06:44.390
+tempo, o que que é impacto racional,
+impacto emocional, como fazer um
+
+01:06:44.490 --> 01:06:47.790
+diagnóstico com o cliente.
+
+01:06:47.890 --> 01:06:48.430
+As perguntas, né?
+
+01:06:48.530 --> 01:06:53.190
+Ó aqui, ó o script, ó o script que eu
+falei pra vocês.
+
+01:06:53.290 --> 01:06:57.880
+As perguntas aqui, ó.
+
+01:06:57.980 --> 01:07:04.800
+Esse playbook, gente, ele é o playbook
+do Spice, né?
+
+01:07:04.900 --> 01:07:06.840
+Que eu montei pra ela.
+
+01:07:06.940 --> 01:07:09.920
+E aqui, você vê que, olha que
+interessante, toda reunião, a gente tem
+
+01:07:10.020 --> 01:07:14.120
+um modelo bem determinado de como essa
+reunião tem que acontecer.
+
+01:07:14.220 --> 01:07:17.640
+Então, você vai fazer o rapport,
+pesquisar algumas coisas da pessoa antes
+
+01:07:17.740 --> 01:07:20.800
+pra você já chegar com alguma conexão
+legal.
+
+01:07:20.900 --> 01:07:22.900
+Aí, você vai apreciar o tempo da pessoa.
+
+01:07:23.000 --> 01:07:25.660
+Fala, pô, obrigado pelo seu tempo, você
+disponibilizou aqui pra gente conversar,
+
+01:07:25.760 --> 01:07:26.240
+legal.
+
+01:07:26.340 --> 01:07:28.780
+Pô, deixa eu te perguntar, você tem até
+as nove mesmo ou você tem um pouquinho
+
+01:07:28.880 --> 01:07:30.320
+mais, se a gente passar o tempinho?
+
+01:07:30.420 --> 01:07:31.940
+Tudo bem pra você?
+
+01:07:32.040 --> 01:07:32.840
+Ah, pô, legal.
+
+01:07:32.940 --> 01:07:37.100
+Ó, queria te falar, nosso objetivo hoje
+é falar um pouquinho sobre como que a
+
+01:07:37.200 --> 01:07:39.800
+gente vai poder ajudar você a ser
+promovido, a sua vida a cada dois anos e
+
+01:07:39.900 --> 01:07:41.400
+tal.
+
+01:07:41.500 --> 01:07:42.900
+Aí, começam as perguntas de situação.
+
+01:07:43.000 --> 01:07:44.020
+Me conta um pouco sobre você.
+
+01:07:44.120 --> 01:07:44.860
+Que cargo você tá?
+
+01:07:44.960 --> 01:07:46.780
+Quais são as suas responsabilidades?
+
+01:07:46.880 --> 01:07:50.620
+Suas principais metas?
+
+01:07:50.720 --> 01:07:51.160
+Entenderam?
+
+01:07:51.260 --> 01:07:52.120
+Todo mundo claro?
+
+01:07:52.220 --> 01:07:53.880
+Isso aqui?
+
+01:07:53.980 --> 01:07:55.820
+Pô, cara, vou te contar uma coisa.
+
+01:07:55.920 --> 01:07:58.460
+Tem muita empresa que tá faltando isso.
+
+01:07:58.560 --> 01:08:00.620
+Até empresas multinacionais.
+
+01:08:00.720 --> 01:08:02.740
+Mas há muita coisa.
+
+01:08:02.840 --> 01:08:04.640
+É verdade, Renata.
+
+01:08:04.740 --> 01:08:06.780
+É assim que eu ganho dinheiro.
+
+01:08:06.880 --> 01:08:08.420
+É assim que eu ganho dinheiro.
+
+01:08:08.520 --> 01:08:10.360
+Eu monto esse trem aqui pros caras.
+
+01:08:10.460 --> 01:08:14.560
+É, eu cobro um bom dinheiro.
+
+01:08:14.660 --> 01:08:15.820
+Fala aí, Patrick.
+
+01:08:15.920 --> 01:08:19.680
+Liga lá.
+
+01:08:19.780 --> 01:08:25.280
+Não sei aproveitar, Giovanni, pra depois
+se tu tiver um, depois do evento aqui, a
+
+01:08:25.380 --> 01:08:30.740
+nossa solução é muito voltada à parte de
+vendas.
+
+01:08:30.840 --> 01:08:32.320
+E mostrou o playbook agora, lembrei.
+
+01:08:32.420 --> 01:08:36.400
+Enfim, se tiver um tempinho pra gente
+trocar uma ideia em outro momento.
+
+01:08:36.500 --> 01:08:37.000
+Demorou.
+
+01:08:37.100 --> 01:08:41.160
+Chama no LinkedIn ou no Instagram e aí a
+gente vai.
+
+01:08:41.260 --> 01:08:42.340
+Beleza?
+
+01:08:42.440 --> 01:08:44.400
+Boa demais.
+
+01:08:44.500 --> 01:08:45.100
+Galera, é o seguinte...
+
+01:08:45.200 --> 01:08:46.520
+Ah, a gente convivei pra lá.
+
+01:08:46.620 --> 01:08:51.560
+Espera que você me anexe.
+
+01:08:51.660 --> 01:08:53.460
+Boa.
+
+01:08:53.560 --> 01:08:54.020
+Galera, é o seguinte.
+
+01:08:54.120 --> 01:08:56.260
+Vamos falar um pouquinho aqui de metas.
+
+01:08:56.360 --> 01:08:57.420
+Como que a gente define as metas.
+
+01:08:57.520 --> 01:09:00.880
+Eu preciso chegar numa parte específica
+da apresentação então eu vou andar um
+
+01:09:00.980 --> 01:09:02.220
+pouco mais rápido.
+
+01:09:02.320 --> 01:09:04.820
+Então eu preciso que vocês me parem aqui
+se eu não estiver fazendo, se estiver
+
+01:09:04.920 --> 01:09:06.460
+muito rápido, etc.
+
+01:09:06.560 --> 01:09:09.480
+Bom, vamos lá.
+
+01:09:09.580 --> 01:09:14.700
+Quando a gente vai definir meta, é
+importante vocês pensarem que existem
+
+01:09:14.800 --> 01:09:18.480
+três dimensões sempre, quando você for
+definir uma meta.
+
+01:09:18.580 --> 01:09:22.940
+Volume, conversão e tempo.
+
+01:09:23.040 --> 01:09:24.420
+Como assim?
+
+01:09:24.520 --> 01:09:29.000
+Vocês lembram que eu mostrei pra vocês
+aquela...
+
+01:09:29.100 --> 01:09:34.210
+Oi?
+
+01:09:34.310 --> 01:09:36.650
+Tem alguém aí que deu um espirradona,
+hein?
+
+01:09:36.750 --> 01:09:38.630
+Braba.
+
+01:09:38.730 --> 01:09:40.350
+Saúde!
+
+01:09:40.450 --> 01:09:41.810
+Saúde.
+
+01:09:41.910 --> 01:09:43.110
+Vocês lembram que eu mostrei isso aqui
+pra
+
+01:09:43.210 --> 01:09:47.450
+vocês?
+
+01:09:47.550 --> 01:09:49.030
+Lembram?
+
+01:09:49.130 --> 01:09:50.610
+Aqui é ouro, hein?
+
+01:09:50.710 --> 01:09:51.930
+Nossa senhora, tira um print.
+
+01:09:52.030 --> 01:09:52.370
+Fantástico.
+
+01:09:52.470 --> 01:09:55.670
+Eu olhei esse material aí.
+
+01:09:55.770 --> 01:09:56.890
+Sensacional.
+
+01:09:56.990 --> 01:10:04.270
+Aí, olha só, galera.
+
+01:10:04.370 --> 01:10:09.890
+Percebam que aqui a gente tem as
+conversões.
+
+01:10:09.990 --> 01:10:13.250
+Percebam que aqui a gente tem o tempo.
+
+01:10:13.350 --> 01:10:20.610
+E aí, quando você transforma isso aqui
+no forecast, você tem volume, as
+
+01:10:20.710 --> 01:10:26.330
+conversões, ou seja, pra você vir de 49
+leads pra 14 MQLs, tem uma conversão.
+
+01:10:26.430 --> 01:10:28.310
+Qual é essa conversão?
+
+01:10:28.410 --> 01:10:30.390
+29%.
+
+01:10:30.490 --> 01:10:34.870
+Pra você ir de 14 MQLs pra 4 SQLs, qual
+que é a conversão?
+
+01:10:34.970 --> 01:10:37.050
+30%.
+
+01:10:37.150 --> 01:10:44.970
+E aí, você tem volume, 4, conversão, 30
+% e tempo, que é quando você tem que
+
+01:10:45.070 --> 01:10:45.790
+gerar esse resultado, né?
+
+01:10:45.890 --> 01:10:46.710
+Que é com base nisso.
+
+01:10:46.810 --> 01:10:49.890
+Nesses ciclos aqui.
+
+01:10:49.990 --> 01:10:51.050
+Não é?
+
+01:10:51.150 --> 01:10:56.930
+Bom, então, o que que eu queria que
+vocês entendessem a partir disso?
+
+01:10:57.030 --> 01:11:05.190
+Que toda vez que você for definir meta,
+toda vez que você for definir meta, você
+
+01:11:05.290 --> 01:11:12.210
+precisa levar em consideração que você
+tem que ter volume, conversão e tempo.
+
+01:11:12.310 --> 01:11:19.910
+Como nós dissemos sobre time, você tem
+que contratar dois vendedores, dois CSs
+
+01:11:20.010 --> 01:11:25.330
+e pra você sair da operação e realmente
+conseguir fazer aquela transição de
+
+01:11:25.430 --> 01:11:30.830
+founder -led pra team -led pra de venda
+feita pelo time, pra venda feita pelo
+
+01:11:30.930 --> 01:11:34.170
+fundador, pra venda feita pelo time,
+você tem que contratar um líder.
+
+01:11:34.270 --> 01:11:36.050
+Senão, você não vai conseguir sair dessa
+operação.
+
+01:11:36.150 --> 01:11:39.610
+Essa operação sempre vai depender de
+você.
+
+01:11:39.710 --> 01:11:46.210
+E do ponto de vista de gestão, Renato,
+até perguntando aquilo que você falou,
+
+01:11:46.310 --> 01:11:50.490
+você tem que construir um modelo onde
+você tem uma reunião semanal com essa
+
+01:11:50.590 --> 01:11:54.730
+turma no mínimo, pra fazer a gestão das
+tarefas de todo mundo.
+
+01:11:54.830 --> 01:11:58.730
+Você, pelo menos, se você não tiver um
+CRM, você tem que ter uma planilha com
+
+01:11:58.830 --> 01:12:04.870
+as coisas documentadas e você tem que
+construir os tais incentivos.
+
+01:12:04.970 --> 01:12:10.630
+Portanto, e por fim, na minha
+compreensão, a criação de uma área de
+
+01:12:10.730 --> 01:12:13.810
+receita mínima viável é composta por
+todos esses
+
+01:12:13.910 --> 01:12:16.410
+blocos.
+
+01:12:16.510 --> 01:12:18.050
+Beleza?
+
+01:12:18.150 --> 01:12:27.520
+Como cada um desses blocos se traduz na
+prática pra você e isso aqui, na
+
+01:12:27.620 --> 01:12:33.220
+verdade, é um resumão de uma perspectiva
+aqui, mas eu não vou entrar nisso daqui,
+
+01:12:33.320 --> 01:12:35.520
+não.
+
+01:12:35.620 --> 01:12:42.940
+Eu vou me aprofundar em cada um daqueles
+blocos pra você construir a sua
+
+01:12:43.040 --> 01:12:45.900
+estratégia passo a passo.
+
+01:12:46.000 --> 01:12:49.980
+Primeiro passo, tem que vender os
+primeiros dez negócios.
+
+01:12:50.080 --> 01:12:55.580
+Segundo passo, documentar, desculpa,
+documentar os aprendizados.
+
+01:12:55.680 --> 01:12:59.460
+Terceiro, encontrar os gargalos.
+
+01:12:59.560 --> 01:13:01.000
+Como assim, Giovani?
+
+01:13:01.100 --> 01:13:02.820
+Explica direito.
+
+01:13:02.920 --> 01:13:08.180
+Pra você conseguir começar a rodar esse
+negócio direito, você vai ter que vender
+
+01:13:08.280 --> 01:13:09.440
+os primeiros dez negócios.
+
+01:13:09.540 --> 01:13:13.360
+Quando você vender esses primeiros dez
+negócios, você vai ter executado um
+
+01:13:13.460 --> 01:13:17.240
+certo processo pra vender esses
+primeiros dez negócios.
+
+01:13:17.340 --> 01:13:22.620
+Você vai ter que ter chamado o pessoal
+ali pra você.
+
+01:13:22.720 --> 01:13:28.140
+Tem que ter desenvolvido algum canal pra
+conseguir esses leads.
+
+01:13:28.240 --> 01:13:32.600
+Você vai ter que ter executado um
+processo de venda de alguma forma e você
+
+01:13:32.700 --> 01:13:36.420
+vai a partir dos aprendizados entender o
+que é mais difícil.
+
+01:13:36.520 --> 01:13:37.420
+É gerar os leads?
+
+01:13:37.520 --> 01:13:38.620
+É converter os leads?
+
+01:13:38.720 --> 01:13:40.080
+É convencer o cliente a comprar?
+
+01:13:40.180 --> 01:13:41.880
+É ter que dar desconto?
+
+01:13:41.980 --> 01:13:43.200
+Qual que é a parte mais difícil?
+
+01:13:43.300 --> 01:13:45.420
+Aí você vai encontrar os gargalos.
+
+01:13:45.520 --> 01:13:50.960
+E aí você vai começar a executar coisas
+pra tentar extrair esses gargalos.
+
+01:13:51.060 --> 01:13:58.280
+O segundo passo, é que você vai dar foco
+no canal que te gerou mais leads, mais
+
+01:13:58.380 --> 01:13:59.260
+reuniões.
+
+01:13:59.360 --> 01:14:02.860
+Você vai definir um passo a passo de
+perguntas de qualificação igualzinho que
+
+01:14:02.960 --> 01:14:05.020
+eu mostrei pra vocês.
+
+01:14:05.120 --> 01:14:09.220
+E aí, você vai executar suas melhores
+práticas de fechamento.
+
+01:14:09.320 --> 01:14:11.280
+Ok?
+
+01:14:11.380 --> 01:14:13.380
+Por último, passo 3.
+
+01:14:13.480 --> 01:14:20.020
+Você vai contratar um CRM, descobrir os
+números do seu funil, criar esses
+
+01:14:20.120 --> 01:14:24.060
+handbooks e playbooks igualzinho que eu
+mostrei pra vocês.
+
+01:14:24.160 --> 01:14:25.180
+Beleza?
+
+01:14:25.280 --> 01:14:28.600
+Aí aqui tem umas dicas.
+
+01:14:28.700 --> 01:14:33.620
+Primeira, tente 3 canais diferentes no
+mínimo.
+
+01:14:33.720 --> 01:14:38.100
+Segunda, tente pelo menos 3 perfis de
+clientes diferentes.
+
+01:14:38.200 --> 01:14:43.020
+Terceira, defina uma cadência multicanal
+com seus leads igual eu mostrei.
+
+01:14:43.120 --> 01:14:44.440
+Mostrei tudo isso aqui pra vocês já.
+
+01:14:44.540 --> 01:14:47.540
+Meu playbook também expôs.
+
+01:14:47.640 --> 01:14:52.260
+Quarta, use os templates de playbook e
+handbook, que se vocês forem bonzinhos,
+
+01:14:52.360 --> 01:14:52.620
+eu vou mostrar.
+
+01:14:52.720 --> 01:14:55.340
+Vou mandar.
+
+01:14:55.440 --> 01:14:57.960
+É...
+
+01:14:58.060 --> 01:15:00.100
+Definir um framework de conversa, né?
+
+01:15:00.200 --> 01:15:04.660
+Quando eu falo de framework de conversa
+é aquela coisa, o Spin, o Bunch, o GPCT,
+
+01:15:04.760 --> 01:15:08.760
+o Spiced, qualquer que seja aquele que
+você achar que faz mais sentido pra
+
+01:15:08.860 --> 01:15:11.720
+você.
+
+01:15:11.820 --> 01:15:17.080
+Preencha uma planilha uma vez por
+semana, às sextas -feiras, de tudo
+
+01:15:17.180 --> 01:15:20.120
+aquilo que aconteceu do ponto de vista
+de dados.
+
+01:15:20.220 --> 01:15:22.180
+Eu vou mostrar que tipo de planilha é
+essa.
+
+01:15:22.280 --> 01:15:26.440
+Eu vou mandar um print de planilha.
+
+01:15:26.540 --> 01:15:32.260
+Anota os seus aprendizados no mesmo
+documento e tenha atenção às taxas de
+
+01:15:32.360 --> 01:15:33.880
+conversão e aos ciclos.
+
+01:15:33.980 --> 01:15:37.010
+Ok?
+
+01:15:37.110 --> 01:15:37.530
+Posso passar?
+
+01:15:37.630 --> 01:15:43.580
+Alguém tem alguma dúvida?
+
+01:15:43.680 --> 01:15:45.440
+Segue.
+
+01:15:45.540 --> 01:15:47.140
+Então vamos embora.
+
+01:15:47.240 --> 01:15:47.960
+Sei não, hein?
+
+01:15:48.060 --> 01:15:48.860
+É coisa pra cacete.
+
+01:15:48.960 --> 01:15:52.260
+Eu espero que esteja todo mundo
+confortável com isso mesmo, porque
+
+01:15:52.360 --> 01:15:54.600
+preciso que vocês usem isso aqui.
+
+01:15:54.700 --> 01:15:55.820
+Vamos lá.
+
+01:15:55.920 --> 01:15:58.480
+Clientes.
+
+01:15:58.580 --> 01:16:00.300
+Primeira coisa.
+
+01:16:00.400 --> 01:16:02.280
+O que é o Channel Market Feed?
+
+01:16:02.380 --> 01:16:06.000
+Você encontrar um canal que entrega 80 %
+dos seus leads.
+
+01:16:06.100 --> 01:16:09.760
+Você vai documentar os aprendizados de
+como é que esse canal funciona pra você.
+
+01:16:09.860 --> 01:16:11.600
+Igual o Paulo falou aqui.
+
+01:16:11.700 --> 01:16:15.720
+Ele encontrou uma geografia onde estão
+concentrados os clientes dele e ele
+
+01:16:15.820 --> 01:16:17.620
+prospecta esses caras e vai tomar um
+café.
+
+01:16:17.720 --> 01:16:19.020
+Então ele tem os aprendizados dele ali.
+
+01:16:19.120 --> 01:16:22.320
+Ele consegue gerar demanda.
+
+01:16:22.420 --> 01:16:23.040
+Hipóteses de CP.
+
+01:16:23.140 --> 01:16:27.320
+Você vai colocar características
+demográficas.
+
+01:16:27.420 --> 01:16:33.660
+Que é quantos anos tem, onde mora, qual
+o tamanho da empresa.
+
+01:16:33.760 --> 01:16:37.240
+Você vai colocar características
+situacionais.
+
+01:16:37.340 --> 01:16:41.140
+Então, puto, o cliente de compra de mim
+está passando por esse tipo de
+
+01:16:41.240 --> 01:16:42.540
+dificuldade.
+
+01:16:42.640 --> 01:16:47.220
+E se você for B2B, você vai desenhar o
+comitê de compra.
+
+01:16:47.320 --> 01:16:49.020
+Por quê?
+
+01:16:49.120 --> 01:16:56.040
+Porque, gente, qualquer compra B2B tem
+no meio mínimo seis pessoas participando
+
+01:16:56.140 --> 01:16:57.660
+do processo de decisão.
+
+01:16:57.760 --> 01:17:00.160
+No mínimo.
+
+01:17:00.260 --> 01:17:03.400
+Então você tem que documentar o comitê
+de compra.
+
+01:17:03.500 --> 01:17:06.380
+E, por último aqui, a persona.
+
+01:17:06.480 --> 01:17:09.780
+Quem decidiu e executou a compra.
+
+01:17:09.880 --> 01:17:13.780
+Características comportamentais dessa
+pessoa, metas e perguntas dessa persona.
+
+01:17:13.880 --> 01:17:15.280
+Que nem eu falei pra vocês ali em cima.
+
+01:17:15.380 --> 01:17:18.220
+Já falei um pouco dessas coisas.
+
+01:17:18.320 --> 01:17:20.960
+E aqui, mais algumas dicas.
+
+01:17:21.060 --> 01:17:27.280
+No início da implementação, use o começo
+do processo de vendas pra entrevistar
+
+01:17:27.380 --> 01:17:30.580
+algumas pessoas e documentar esses
+aprendizados.
+
+01:17:30.680 --> 01:17:35.820
+Sobre o melhor canal, quantas tentativas
+você teve que ter até conseguir reuniões
+
+01:17:35.920 --> 01:17:36.700
+ou leads?
+
+01:17:36.800 --> 01:17:40.720
+Quais foram as perguntas, gatilhos e
+argumentos que você usou?
+
+01:17:40.820 --> 01:17:43.540
+E, por último, um comitê de compras.
+
+01:17:43.640 --> 01:17:45.460
+No mínimo seis pessoas participam.
+
+01:17:45.560 --> 01:17:49.000
+Vocês tem que mapear quem são as pessoas
+que estão participando.
+
+01:17:49.100 --> 01:17:49.780
+Beleza?
+
+01:17:49.880 --> 01:17:51.240
+Alguma dúvida aqui?
+
+01:17:51.340 --> 01:17:55.040
+Essa aí do B2B me interessa muito, mas
+só pra eu pensar.
+
+01:17:55.140 --> 01:18:00.720
+Se essas pessoas seriam o cara que
+decide, que é o dono do negócio.
+
+01:18:00.820 --> 01:18:02.640
+Às vezes o dono do negócio é um diretor,
+é
+
+01:18:02.740 --> 01:18:07.480
+um cara que é ligado à diretoria.
+
+01:18:07.580 --> 01:18:10.580
+São os stakeholders?
+
+01:18:10.680 --> 01:18:12.460
+Exatamente.
+
+01:18:12.560 --> 01:18:14.560
+Exatamente.
+
+01:18:14.660 --> 01:18:15.220
+Exatamente isso.
+
+01:18:15.320 --> 01:18:18.960
+Que são os stakeholders que estão no
+processo de compras e que você precisa
+
+01:18:19.060 --> 01:18:23.310
+entender quem que participa do seu
+processo de compras.
+
+01:18:23.410 --> 01:18:28.770
+Porque, estatisticamente, se você está
+vendendo B2B, não vai ser menos do que
+
+01:18:28.870 --> 01:18:32.440
+seis pessoas.
+
+01:18:32.540 --> 01:18:37.230
+Certo?
+
+01:18:37.330 --> 01:18:37.770
+Seguindo.
+
+01:18:37.870 --> 01:18:40.690
+Já que está todo mundo entendendo tudo.
+
+01:18:40.790 --> 01:18:45.690
+João, só uma coisa ali na questão dessa
+documentação e implementação, enfim,
+
+01:18:45.790 --> 01:18:46.590
+tudo mais.
+
+01:18:46.690 --> 01:18:48.330
+Essa documentação tu coloca onde?
+
+01:18:48.430 --> 01:18:49.230
+É drive?
+
+01:18:49.330 --> 01:18:50.750
+É num PPT?
+
+01:18:50.850 --> 01:18:53.630
+Num Markdown?
+
+01:18:53.730 --> 01:19:01.290
+Eu, pessoalmente, Patrick, eu gosto de
+colocar toda a documentação do
+
+01:19:01.390 --> 01:19:05.050
+aprendizado de todos os clientes, de
+cada um dos clientes que eu tenho, ou os
+
+01:19:05.150 --> 01:19:10.610
+meus mesmo, eu coloco tudo em um
+documento só.
+
+01:19:10.710 --> 01:19:15.110
+Se vai ser um PPT, uma planilha, não
+importa, mas um documento só.
+
+01:19:15.210 --> 01:19:18.030
+Tudo que for de aprendizado que você
+tiver nessa construção, você vai colocar
+
+01:19:18.130 --> 01:19:21.870
+em um documento só.
+
+01:19:21.970 --> 01:19:24.750
+O que importa é centralizar a
+informação.
+
+01:19:24.850 --> 01:19:27.900
+Tá, beleza.
+
+01:19:28.000 --> 01:19:30.280
+Fala, Renato.
+
+01:19:30.380 --> 01:19:31.180
+É...
+
+01:19:31.280 --> 01:19:35.380
+Com relação a esse processo de compra
+que você falou aí, que são no mínimo
+
+01:19:35.480 --> 01:19:36.480
+seis pessoas.
+
+01:19:36.580 --> 01:19:38.720
+Isso aí é...
+
+01:19:38.820 --> 01:19:42.700
+Depende do mercado, porque, por exemplo,
+no Brasil talvez seja isso, nos Estados
+
+01:19:42.800 --> 01:19:43.760
+Unidos outro lugar.
+
+01:19:43.860 --> 01:19:49.000
+Eu moro na Finlândia, então eu tenho que
+descobrir aqui também como é que é o...
+
+01:19:49.100 --> 01:19:51.260
+Quantas pessoas estão envolvidas.
+
+01:19:51.360 --> 01:19:54.640
+Isso depende também provavelmente da...
+
+01:19:54.740 --> 01:19:56.560
+do tamanho da empresa.
+
+01:19:56.660 --> 01:19:57.400
+Como é que é isso?
+
+01:19:57.500 --> 01:19:59.100
+Qual é a sua experiência?
+
+01:19:59.200 --> 01:20:03.860
+Com relação a isso, tanto no mercado
+internacional, como no mercado nacional
+
+01:20:03.960 --> 01:20:08.100
+brasileiro, e também dependendo do tipo
+de empresa que você está vendendo.
+
+01:20:08.200 --> 01:20:13.180
+Se é multinacional, se é pequena
+empresa, se é médio, como é que é?
+
+01:20:13.280 --> 01:20:15.080
+Renato, é o seguinte.
+
+01:20:15.180 --> 01:20:19.460
+Primeiro, essa pesquisa das seis
+pessoas, eu não citei a fonte, essa
+
+01:20:19.560 --> 01:20:24.120
+pesquisa foi feita pelo Gartner e levou
+em consideração mais de 1 .500 empresas
+
+01:20:24.220 --> 01:20:25.980
+ao redor do mundo.
+
+01:20:26.080 --> 01:20:30.780
+Então, essa é uma pesquisa de parâmetros
+mundiais.
+
+01:20:30.880 --> 01:20:32.100
+Então, esse é o primeiro ponto.
+
+01:20:32.200 --> 01:20:38.960
+O segundo ponto é que certamente vai ter
+alguma diferença de país para país, mas
+
+01:20:39.060 --> 01:20:43.700
+do ponto de vista estatístico, o que é
+preciso saber é que quando você inicia
+
+01:20:43.800 --> 01:20:47.200
+um processo de compra, você precisa
+mapear todo mundo que vai participar da
+
+01:20:47.300 --> 01:20:48.480
+decisão.
+
+01:20:48.580 --> 01:20:55.900
+Se a empresa deixa de ser uma empresa
+muito pequena, que seria quase um B2C,
+
+01:20:56.000 --> 01:20:59.900
+se ela for muito pequena, quando eu falo
+de B2B aqui, é um tipo de empresa,
+
+01:21:00.000 --> 01:21:05.340
+qualquer empresa que tenha lá seus 15,
+20 funcionários, vai ter seis pessoas
+
+01:21:05.440 --> 01:21:07.140
+participando do processo de decisão.
+
+01:21:07.240 --> 01:21:12.880
+Quanto mais, quanto maior é a empresa,
+Renato, maior é a quantidade de
+
+01:21:12.980 --> 01:21:14.040
+stakeholders.
+
+01:21:14.140 --> 01:21:18.860
+Então, se você está falando de uma
+empresa de 500 funcionários, você pode
+
+01:21:18.960 --> 01:21:22.560
+ter entre seis e quinze pessoas
+participando do processo de decisão.
+
+01:21:22.660 --> 01:21:26.120
+Uma pessoa de mais de cinco, uma empresa
+de mais de cinco mil funcionários, você
+
+01:21:26.220 --> 01:21:31.080
+pode até ter 25 pessoas participando do
+processo de decisão.
+
+01:21:31.180 --> 01:21:35.500
+Quando eu vendi para o Itaú, por
+exemplo, foram 25 pessoas que
+
+01:21:35.600 --> 01:21:37.100
+participaram do processo de decisão.
+
+01:21:37.200 --> 01:21:40.600
+Quando eu vendi para a Iberdrola, por
+exemplo, que é uma das maiores
+
+01:21:40.700 --> 01:21:48.360
+controladoras de energia do mundo, 29
+pessoas participaram do processo de
+
+01:21:48.460 --> 01:21:50.220
+decisão.
+
+01:21:50.320 --> 01:21:53.900
+Contrato de 32 meses, 3 milhões de
+reais, etc.
+
+01:21:54.000 --> 01:21:57.940
+Então, era uma coisa um pouco mais
+complexa.
+
+01:21:58.040 --> 01:22:02.200
+Entendeu, Renato?
+
+01:22:02.300 --> 01:22:02.880
+Sim, sim.
+
+01:22:02.980 --> 01:22:05.000
+Obrigada.
+
+01:22:05.100 --> 01:22:11.140
+Aqui, galera, é um exemplo de definição
+de ICP para vocês terem uma referência
+
+01:22:11.240 --> 01:22:12.380
+aí.
+
+01:22:12.480 --> 01:22:16.260
+Perfil de cliente, no meu caso,
+quantidade de vendedores, pessoas e
+
+01:22:16.360 --> 01:22:16.460
+iniciadores.
+
+01:22:16.560 --> 01:22:22.240
+Isso aqui é o meu, é o documento que eu
+montei quando eu criei a minha empresa.
+
+01:22:22.340 --> 01:22:26.840
+Esse documento eu criei lá no começo
+desse slide.
+
+01:22:26.940 --> 01:22:30.220
+Que eram as minhas hipóteses de ICP.
+
+01:22:30.320 --> 01:22:31.860
+Quem que ia comprar de mim?
+
+01:22:31.960 --> 01:22:38.460
+Startup B2B, empresa familiar, educação
+digital, pessoa física.
+
+01:22:38.560 --> 01:22:46.680
+E a gente vendeu para todo mundo para
+saber quem que tinha melhor performance.
+
+01:22:46.780 --> 01:22:51.260
+E aqui, vocês podem perceber que eu
+coloquei uma coisa interessante que é o
+
+01:22:51.360 --> 01:22:52.640
+anti - ICP.
+
+01:22:52.740 --> 01:22:55.820
+Para quem que a gente não podia vender?
+
+01:22:55.920 --> 01:23:00.120
+PME não podia vender, fatura menos de 2
+milhões por ano, não pode vender.
+
+01:23:00.220 --> 01:23:04.600
+Se a pessoa tem uma característica de
+autossuficiente do tipo eu resolvo tudo,
+
+01:23:04.700 --> 01:23:06.300
+a gente também não vendia.
+
+01:23:06.400 --> 01:23:08.780
+Se a pessoa não tem time, a gente não
+vendia.
+
+01:23:08.880 --> 01:23:12.500
+E se a pessoa é muito técnica em go to
+market, a gente também não vendia
+
+01:23:12.600 --> 01:23:12.860
+antigamente.
+
+01:23:12.960 --> 01:23:17.850
+Hoje em dia a gente vende porque não tem
+ninguém mais técnico que a gente vendia.
+
+01:23:17.950 --> 01:23:18.790
+Certo?
+
+01:23:18.890 --> 01:23:22.150
+Sem falsa modéstia.
+
+01:23:22.250 --> 01:23:25.590
+Bom, fechado?
+
+01:23:25.690 --> 01:23:28.650
+Agora entrando na parte de dados.
+
+01:23:28.750 --> 01:23:32.970
+Percebam aqui que eu estou montando isso
+aqui, essa parte aqui é interessante
+
+01:23:33.070 --> 01:23:36.310
+porque isso aqui é um princípio de
+engenharia de produção, essa parada
+
+01:23:36.410 --> 01:23:37.350
+aqui.
+
+01:23:37.450 --> 01:23:39.110
+O que que tem nessa imagem?
+
+01:23:39.210 --> 01:23:43.290
+Que toda máquina de crescimento tem essa
+característica.
+
+01:23:43.390 --> 01:23:45.350
+Qual é a característica?
+
+01:23:45.450 --> 01:23:52.760
+Ela tem uma métrica de volume que
+funciona como um input.
+
+01:23:52.860 --> 01:23:57.540
+Então, por exemplo, nesse caso, vamos
+dar de exemplo aqui, 10
+
+01:23:57.640 --> 01:24:09.340
+leads.
+
+01:24:09.440 --> 01:24:16.600
+Esses leads passarão por um processo que
+vai levar a uma métrica de
+
+01:24:16.700 --> 01:24:19.100
+conversão.
+
+01:24:19.200 --> 01:24:21.760
+Isso vai demorar um tempo.
+
+01:24:21.860 --> 01:24:24.960
+Que é o que eu estou chamando de delta T
+aqui.
+
+01:24:25.060 --> 01:24:32.460
+E vai ter como output, como resultado,
+uma outra métrica de volume.
+
+01:24:32.560 --> 01:24:39.400
+Então pensa comigo que esses 10 leads
+que passaram por esse processo converteu
+
+01:24:39.500 --> 01:24:40.980
+quantos?
+
+01:24:41.080 --> 01:24:42.760
+20%.
+
+01:24:42.860 --> 01:24:43.840
+20%.
+
+01:24:43.940 --> 01:24:44.580
+Oxe!
+
+01:24:44.680 --> 01:24:47.180
+Não dá nem para entender.
+
+01:24:47.280 --> 01:24:47.960
+20%.
+
+01:24:48.060 --> 01:24:51.240
+20 % de 10 é 2.
+
+01:24:51.340 --> 01:24:57.420
+Chegaram aqui do outro lado 2 clientes
+que demoraram 10 dias.
+
+01:24:57.520 --> 01:24:59.480
+10 dias.
+
+01:24:59.580 --> 01:25:04.540
+Então, você tem 10 leads que entraram 20
+% converteu 2 clientes que demorou 10
+
+01:25:04.640 --> 01:25:04.980
+dias.
+
+01:25:05.080 --> 01:25:07.860
+Então, é assim que funciona uma máquina
+de aquisição.
+
+01:25:07.960 --> 01:25:11.690
+Faz sentido?
+
+01:25:11.790 --> 01:25:14.270
+Coloca isso como regra?
+
+01:25:14.370 --> 01:25:15.410
+Isso é um princípio.
+
+01:25:15.510 --> 01:25:15.930
+Isso é matemático.
+
+01:25:16.030 --> 01:25:17.170
+Isso é uma regra.
+
+01:25:17.270 --> 01:25:19.490
+Mas eu digo que demorou 10 dias.
+
+01:25:19.590 --> 01:25:23.150
+Você tenta reduzir isso?
+
+01:25:23.250 --> 01:25:28.530
+Tem uma característica, Patrick, que é
+assim, o processo de compras é o que ele
+
+01:25:28.630 --> 01:25:29.490
+é.
+
+01:25:29.590 --> 01:25:33.930
+Se você executar um baita processo de
+vendas, você vai conseguir ter a menor
+
+01:25:34.030 --> 01:25:36.090
+quantidade de tempo de compra possível.
+
+01:25:36.190 --> 01:25:37.470
+O que eu estou querendo dizer?
+
+01:25:37.570 --> 01:25:42.510
+Se você for aquele vendedor desleixado
+que remarca a reunião, que não pega as
+
+01:25:42.610 --> 01:25:47.590
+informações, que não anota as coisas e
+tem que fazer reunião de novo porque não
+
+01:25:47.690 --> 01:25:52.850
+anotou, apresenta proposta, não faz
+follow -up, demora para fazer follow
+
+01:25:52.950 --> 01:25:54.890
+-up, esquece do follow -up.
+
+01:25:54.990 --> 01:25:58.330
+No teu caso, se você for um vendedor
+desleixado, essa venda que eu fiz em 10
+
+01:25:58.430 --> 01:26:02.070
+dias, você vai fazer em 40.
+
+01:26:02.170 --> 01:26:04.950
+Só que eu, como não sou um vendedor
+desleixado, eu me preparo para a
+
+01:26:05.050 --> 01:26:05.670
+reunião.
+
+01:26:05.770 --> 01:26:07.150
+Faço todas as perguntas.
+
+01:26:07.250 --> 01:26:09.490
+Anoto tudo.
+
+01:26:09.590 --> 01:26:12.570
+Apresento uma proposta no menor prazo
+possível.
+
+01:26:12.670 --> 01:26:15.950
+Quando eu termino a proposta, eu jamais
+remarco o follow -up.
+
+01:26:16.050 --> 01:26:19.650
+Eu faço o follow -up e se o cara não me
+responder no follow -up, eu já meto
+
+01:26:19.750 --> 01:26:22.530
+louco nele por mensagem.
+
+01:26:22.630 --> 01:26:25.730
+Já falo assim, bicho, seguinte, a gente
+combinou aqui que a gente vai fazer um
+
+01:26:25.830 --> 01:26:28.370
+processo comercial, não combinamos?
+
+01:26:28.470 --> 01:26:30.010
+Eu não investi meu tempo?
+
+01:26:30.110 --> 01:26:33.010
+Então, no mínimo, você precisa me
+responder para a gente poder continuar
+
+01:26:33.110 --> 01:26:35.370
+esse processo comercial.
+
+01:26:35.470 --> 01:26:36.070
+Direto e reto assim?
+
+01:26:36.170 --> 01:26:39.830
+Então, assim, eu sou direto.
+
+01:26:39.930 --> 01:26:46.570
+Eu fui formado, Arthur, numa metodologia
+que, por sorte, do destino, tem a ver um
+
+01:26:46.670 --> 01:26:49.050
+pouco com o meu perfil, que eu somei
+poucas ideias.
+
+01:26:49.150 --> 01:26:55.030
+Mas, de qualquer maneira, eu acredito,
+Arthur, que no papel de vendedor, eu
+
+01:26:55.130 --> 01:26:57.930
+estou no mesmo nível do cliente.
+
+01:26:58.030 --> 01:27:01.610
+Então, eu não acho que o cliente nenhum
+tem o direito de não me responder se eu
+
+01:27:01.710 --> 01:27:03.070
+investir meu tempo.
+
+01:27:03.170 --> 01:27:06.250
+Essa é a minha perspectiva.
+
+01:27:06.350 --> 01:27:09.990
+Muita gente, no papel de vendedor, se
+coloca abaixo do cliente, porque eu sou
+
+01:27:10.090 --> 01:27:11.850
+vendedor.
+
+01:27:11.950 --> 01:27:12.970
+Porra nenhuma.
+
+01:27:13.070 --> 01:27:15.110
+Eu estou aqui, junto com ele.
+
+01:27:15.210 --> 01:27:18.650
+Então, se eu investir meu tempo, ele tem
+que me responder.
+
+01:27:18.750 --> 01:27:20.030
+Ah, porra, estou sem tempo.
+
+01:27:20.130 --> 01:27:21.430
+Sem problema, irmão.
+
+01:27:21.530 --> 01:27:24.650
+Manda assim, estou sem tempo, depois eu
+te respondo.
+
+01:27:24.750 --> 01:27:26.510
+Não tem problema.
+
+01:27:26.610 --> 01:27:30.770
+Agora, eu mando mensagens bem diretas,
+eu sou bem provocativo.
+
+01:27:30.870 --> 01:27:34.870
+Se a pessoa me dá perdido, eu dou umas
+metidas de louco nervosa.
+
+01:27:34.970 --> 01:27:37.910
+E funciona, porque eu uso o dado.
+
+01:27:38.010 --> 01:27:40.790
+Eu falo assim, você não me falou que
+você tinha a meta para bater agora em
+
+01:27:40.890 --> 01:27:41.510
+outubro?
+
+01:27:41.610 --> 01:27:44.790
+A gente não combinou que a gente tinha
+que fechar o negócio até o dia...
+
+01:27:44.890 --> 01:27:47.630
+A gente não combinou que a gente tinha
+que fechar o negócio até o dia 19 de
+
+01:27:47.730 --> 01:27:48.950
+setembro para a gente conseguir fazer
+isso aqui
+
+01:27:49.050 --> 01:27:51.370
+acontecer?
+
+01:27:51.470 --> 01:27:56.070
+Então, se a gente combinou isso, como
+que você não está me respondendo?
+
+01:27:56.170 --> 01:28:01.570
+Então, eu vou usar as coisas que ela me
+falou para poder fazer essa pergunta.
+
+01:28:01.670 --> 01:28:06.650
+E outra coisa, eu tive uma
+característica de ter sido formado...
+
+01:28:06.750 --> 01:28:14.890
+A primeira coisa que eu li sobre vendas
+em 2011 foi um livro chamado A Venda
+
+01:28:14.990 --> 01:28:21.510
+Desafiadora, que ele propõe que foi uma
+das maiores pesquisas já feitas com
+
+01:28:21.610 --> 01:28:22.590
+vendedores na história da humanidade.
+
+01:28:22.690 --> 01:28:26.230
+Foi uma pesquisa feita com 6 mil
+vendedores.
+
+01:28:26.330 --> 01:28:27.370
+Muito bom esse livro.
+
+01:28:27.470 --> 01:28:29.650
+Já indiquei para a galera.
+
+01:28:29.750 --> 01:28:31.430
+Mesmo autor dos pincéis.
+
+01:28:31.530 --> 01:28:32.910
+Não, não é o Neil Heck.
+
+01:28:33.010 --> 01:28:34.970
+Esse é um outro cara.
+
+01:28:35.070 --> 01:28:40.710
+Ele está na mesma categoria, porque são
+duas metodologias muito parecidas.
+
+01:28:40.810 --> 01:28:46.430
+Mas, o Neil Heck, Roger, ele fez a
+introdução do livro.
+
+01:28:46.530 --> 01:28:49.330
+Ele fez a introdução.
+
+01:28:49.430 --> 01:28:52.230
+Está escrito na contracapa.
+
+01:28:52.330 --> 01:28:54.190
+Mas não foi ele que escreveu.
+
+01:28:54.290 --> 01:29:01.810
+E esse livro, Arthur, ele é um livro que
+propõe que você seja capaz de desafiar o
+
+01:29:01.910 --> 01:29:03.870
+cliente.
+
+01:29:03.970 --> 01:29:07.290
+Então, desde o começo da minha
+trajetória, lá no meu primeiro emprego
+
+01:29:07.390 --> 01:29:12.890
+de vendas, eu já me coloquei primeiro no
+mesmo nível do cliente e sempre
+
+01:29:12.990 --> 01:29:16.490
+desafiando o cliente para mostrar para
+ele que eu estou no mesmo nível.
+
+01:29:16.590 --> 01:29:18.550
+Então, eu sempre tive essa
+característica.
+
+01:29:18.650 --> 01:29:23.030
+Sempre fiz e sempre vou fazer isso,
+porque essa é a única forma de um
+
+01:29:23.130 --> 01:29:27.210
+cliente te respeitar e não deixar você
+sem te responder.
+
+01:29:27.310 --> 01:29:30.050
+Eu nunca fui ignorante com ninguém.
+
+01:29:30.150 --> 01:29:32.030
+Nunca me passei com ninguém.
+
+01:29:32.130 --> 01:29:33.330
+Nunca levantei voz no canal.
+
+01:29:33.430 --> 01:29:37.950
+Eu sou direto, reto e provocativo.
+
+01:29:38.050 --> 01:29:40.130
+Sou bem provocativo.
+
+01:29:40.230 --> 01:29:41.690
+Nunca sou irônico.
+
+01:29:41.790 --> 01:29:43.130
+Nada disso.
+
+01:29:43.230 --> 01:29:47.030
+Sempre direto, honesto, transparente e
+provocativo.
+
+01:29:47.130 --> 01:29:49.650
+Quando você é assim, o cara te respeita.
+
+01:29:49.750 --> 01:29:52.170
+Ele mesmo.
+
+01:29:52.270 --> 01:29:53.350
+Ele mesmo.
+
+01:29:53.450 --> 01:29:56.510
+Brabo demais esse livro.
+
+01:29:56.610 --> 01:30:00.070
+Tanto que ele fala assim, assumindo o
+controle da conversa com o cliente.
+
+01:30:00.170 --> 01:30:02.090
+Está aqui a descrição.
+
+01:30:02.190 --> 01:30:06.870
+Eu acabei de sair e hoje à tarde eu fui
+treinar o time inteiro do TikTok nesse
+
+01:30:06.970 --> 01:30:08.630
+livro ali.
+
+01:30:08.730 --> 01:30:12.670
+O time do TikTok que vende anúncios.
+
+01:30:12.770 --> 01:30:15.170
+Tem em inglês esse livro?
+
+01:30:15.270 --> 01:30:15.670
+Tem.
+
+01:30:15.770 --> 01:30:19.780
+The Challenger Sales.
+
+01:30:19.880 --> 01:30:21.940
+The Challenger Sale, eu acho.
+
+01:30:22.040 --> 01:30:24.640
+The Challenger Sales.
+
+01:30:24.740 --> 01:30:26.080
+Matt Dixon, não é?
+
+01:30:26.180 --> 01:30:28.260
+O Roger.
+
+01:30:28.360 --> 01:30:30.820
+Matt Dixon e Brent Adamson.
+
+01:30:30.920 --> 01:30:32.080
+É isso.
+
+01:30:32.180 --> 01:30:42.340
+Então, esses são os caras que propõem
+que você seja bem assertivo e não seja
+
+01:30:42.440 --> 01:30:47.960
+mole, principalmente.
+
+01:30:48.060 --> 01:30:50.020
+É isso aqui.
+
+01:30:50.120 --> 01:30:52.960
+Agora eu queria entrar nessa parte do...
+
+01:30:53.060 --> 01:30:55.140
+Eu expliquei para vocês o princípio do
+crescimento.
+
+01:30:55.240 --> 01:30:56.820
+O Patrick perguntou se isso aqui era
+regra.
+
+01:30:56.920 --> 01:30:58.420
+A gente falou do processo de vendas.
+
+01:30:58.520 --> 01:31:02.580
+Eu falei um pouco da assertividade no
+solo apps.
+
+01:31:02.680 --> 01:31:05.780
+Sem ignorância, mas com assertividade.
+
+01:31:05.880 --> 01:31:10.160
+Agora entrando no volume de leads e na
+conversão dos leads.
+
+01:31:10.260 --> 01:31:13.260
+Aqui você tem que ter o número de leads
+e a conversão que você vai ter para
+
+01:31:13.360 --> 01:31:14.840
+reunião ou para fechamento.
+
+01:31:14.940 --> 01:31:18.000
+Volume de reuniões que você precisa ter
+e a conversão.
+
+01:31:18.100 --> 01:31:19.340
+Ciclo de vendas.
+
+01:31:19.440 --> 01:31:21.160
+Negócios fechados.
+
+01:31:21.260 --> 01:31:23.360
+Código de kit médio.
+
+01:31:23.460 --> 01:31:24.300
+Receita total.
+
+01:31:24.400 --> 01:31:26.380
+E quanto caiu no caixa.
+
+01:31:26.480 --> 01:31:31.140
+Quanto dinheiro que você vendeu
+realmente caiu no caixa.
+
+01:31:31.240 --> 01:31:33.020
+Está certo?
+
+01:31:33.120 --> 01:31:36.200
+Dúvidas aqui, galera?
+
+01:31:36.300 --> 01:31:41.740
+Um negócio legal quando você faz esse
+trabalho de métrica, de criar suas
+
+01:31:41.840 --> 01:31:42.480
+métricas de conversão.
+
+01:31:42.580 --> 01:31:44.300
+Pelo menos eu trabalhei com franchise.
+
+01:31:44.400 --> 01:31:45.900
+Eu fui master franqueado.
+
+01:31:46.000 --> 01:31:48.120
+Fui dono de escola de franquias da
+Microlins.
+
+01:31:48.220 --> 01:31:52.360
+Até eu descobri, depois que o Alan foi
+professor da Microlins.
+
+01:31:52.460 --> 01:31:54.100
+Onde ele trabalhava.
+
+01:31:54.200 --> 01:31:54.620
+Que loucura.
+
+01:31:54.720 --> 01:31:56.080
+Eu batendo papo com o Alan.
+
+01:31:56.180 --> 01:31:59.080
+E eu era dono de uma das franquias que
+estava entre cinco maiores faturamentos
+
+01:31:59.180 --> 01:31:59.520
+no Brasil.
+
+01:31:59.620 --> 01:32:03.840
+E o legal era que a gente tinha um
+negócio chamado planilhão e que era
+
+01:32:03.940 --> 01:32:07.340
+quais são as ações de marketing direto e
+indireto.
+
+01:32:07.440 --> 01:32:10.920
+Marketing indireto é o outdoor que você
+não sabe quantas pessoas passam olhando.
+
+01:32:11.020 --> 01:32:12.940
+Tem uma dormindo no ônibus, tem a outra.
+
+01:32:13.040 --> 01:32:14.120
+O marketing direto não.
+
+01:32:14.220 --> 01:32:17.740
+Você tem como ter a métrica, que é a
+nossa vantagem hoje porque a gente mexe
+
+01:32:17.840 --> 01:32:19.900
+com o negócio digital.
+
+01:32:20.000 --> 01:32:25.160
+Mas quantas são as ações que você tem
+que fazer para gerar você vai fazer seu
+
+01:32:25.260 --> 01:32:26.860
+histórico e você começa a perceber o
+seguinte.
+
+01:32:26.960 --> 01:32:33.100
+Cara, se eu fizer uma reunião de um mês
+com 20 clientes com esse perfil.
+
+01:32:33.200 --> 01:32:34.800
+Cara, eu vou ter um faturamento X.
+
+01:32:34.900 --> 01:32:36.540
+Então você começa a fazer um negócio
+reverso.
+
+01:32:36.640 --> 01:32:39.580
+Você fala assim, quais são as ações que
+eu tenho que fazer para ter o
+
+01:32:39.680 --> 01:32:41.140
+faturamento que eu preciso ter.
+
+01:32:41.240 --> 01:32:44.960
+E como o histórico se mostra, se a
+equipe estiver bem treinada, que é o
+
+01:32:45.060 --> 01:32:47.880
+playbook que vocês estão falando, os
+scripts, enfim.
+
+01:32:47.980 --> 01:32:49.440
+A coisa acontece.
+
+01:32:49.540 --> 01:32:52.620
+E é raro ter esse tipo de trabalho nas
+empresas hoje.
+
+01:32:52.720 --> 01:32:55.420
+Eu vejo que toda hora quando eu entro
+numa empresa, eu vou criar uma empresa,
+
+01:32:55.520 --> 01:32:57.220
+eu quero criar um planilhão.
+
+01:32:57.320 --> 01:33:01.380
+Porque esse planilhão é mais ou menos
+isso que você está me mostrando agora.
+
+01:33:01.480 --> 01:33:07.680
+Criando essa RMV e você fazendo esse
+quadro esse quadrozinho com a métrica do
+
+01:33:07.780 --> 01:33:08.580
+tempo absoluto.
+
+01:33:08.680 --> 01:33:10.520
+Eu gostei quando você fala assim, mandar
+proposta rápida.
+
+01:33:10.620 --> 01:33:13.480
+Às vezes você perde um cliente porque
+você não manda proposta rápida.
+
+01:33:13.580 --> 01:33:14.160
+Exatamente.
+
+01:33:14.260 --> 01:33:15.220
+Isso é exatamente.
+
+01:33:15.320 --> 01:33:17.540
+Você tem o melhor equipe treinada, você
+é foda.
+
+01:33:17.640 --> 01:33:18.420
+Ah, vou mandar a segunda.
+
+01:33:18.520 --> 01:33:20.340
+Vou mandar a sua minha corretora.
+
+01:33:20.440 --> 01:33:21.720
+Às vezes eu brigo com ela.
+
+01:33:21.820 --> 01:33:23.740
+Fala assim, não, será que eu ligo?
+
+01:33:23.840 --> 01:33:25.540
+Porra, liga agora para o cara.
+
+01:33:25.640 --> 01:33:27.200
+Agora.
+
+01:33:27.300 --> 01:33:29.460
+São 10 horas da noite.
+
+01:33:29.560 --> 01:33:33.740
+Você acha que um cara que tem o perfil
+dele fica um pacacete, o cara é
+
+01:33:33.840 --> 01:33:36.880
+empresário, não sei o quê, o cara está
+agoniado, quer comprar a casa, ele não
+
+01:33:36.980 --> 01:33:37.740
+vai ficar feliz?
+
+01:33:37.840 --> 01:33:38.600
+Manda no zap.
+
+01:33:38.700 --> 01:33:42.080
+Cara, e é tiro e queda.
+
+01:33:42.180 --> 01:33:45.520
+O posicionamento que você falou é muito
+legal também de você se colocar de forma
+
+01:33:45.620 --> 01:33:49.080
+educada sempre, mais firme e igual.
+
+01:33:49.180 --> 01:33:53.620
+Você vê que, por exemplo, na parte de
+imobiliário você tem uma situação que é
+
+01:33:53.720 --> 01:33:55.640
+você conseguir a exclusividade do
+imóvel.
+
+01:33:55.740 --> 01:33:57.520
+Porque se você não consegue
+exclusividade do imóvel, todo mundo está
+
+01:33:57.620 --> 01:34:00.460
+vendendo imóvel, coloca para encerrado,
+coloca em site, porque aí você
+
+01:34:00.560 --> 01:34:01.400
+desvaloriza o imóvel.
+
+01:34:01.500 --> 01:34:03.980
+E aí ela, às vezes, peca de não pegar.
+
+01:34:04.080 --> 01:34:05.240
+E é uma venda também.
+
+01:34:05.340 --> 01:34:08.320
+Você se vender de uma maneira que a
+pessoa fala eu quero te dar
+
+01:34:08.420 --> 01:34:09.100
+exclusividade nessa venda.
+
+01:34:09.200 --> 01:34:12.220
+É um dos passos da venda, porque você
+vai fazer mais.
+
+01:34:12.320 --> 01:34:16.040
+E aí o que eu percebi um dia desse, eu
+apresentei um cliente para ela rico pra
+
+01:34:16.140 --> 01:34:19.260
+cacete, ia comprar uma casa, não sei o
+quê, e ela ficou, cara, cheia de dedo e
+
+01:34:19.360 --> 01:34:23.260
+não foi pedir a droga da exclusividade,
+que é uma venda.
+
+01:34:23.360 --> 01:34:24.340
+Sabe o que aconteceu?
+
+01:34:24.440 --> 01:34:25.240
+Ela ligou.
+
+01:34:25.340 --> 01:34:29.120
+Ele ligou nessa semana dizendo que o pai
+tinha sugerido ele fazer com uma
+
+01:34:29.220 --> 01:34:29.440
+imobiliária.
+
+01:34:29.540 --> 01:34:31.620
+A imobiliária que a sua mãe tinha saído.
+
+01:34:31.720 --> 01:34:32.520
+Por exemplo.
+
+01:34:32.620 --> 01:34:35.640
+O cara é meu brother, meu irmão, meu
+amigo.
+
+01:34:35.740 --> 01:34:39.680
+Quer dizer o seguinte, se ela tem um
+cliente na casa que ela vai vender, só
+
+01:34:39.780 --> 01:34:44.460
+que se ela vender essa casa para esse
+cliente, ela vai ter que repartir 50 %
+
+01:34:44.560 --> 01:34:45.220
+da comissão.
+
+01:34:45.320 --> 01:34:50.660
+Então, olha que prejuízo você não ter
+esse tipo de processo bem estipulado,
+
+01:34:50.760 --> 01:34:55.160
+qual é a métrica de tempo absoluto que
+você tem que fazer a coisa, quanto de
+
+01:34:55.260 --> 01:34:58.060
+input você tem que colocar, quantos
+clientes você tem que fazer reunião bem
+
+01:34:58.160 --> 01:35:02.740
+feita para você ter o faturamento que
+seria esse cash collect no final.
+
+01:35:02.840 --> 01:35:08.860
+Quer dizer, essa engenharia reversa faz
+uma empresa morrer ou uma empresa
+
+01:35:08.960 --> 01:35:10.360
+deslanchar.
+
+01:35:10.460 --> 01:35:11.320
+Concordo 100%.
+
+01:35:11.420 --> 01:35:14.600
+A estratégia correta, mas não tem a
+velocidade.
+
+01:35:14.700 --> 01:35:18.780
+Irmão, você vai perder para um cara pior
+que você, que vai crescer com um produto
+
+01:35:18.880 --> 01:35:22.220
+pior que o seu e você vai ficar chupando
+o dedo.
+
+01:35:22.320 --> 01:35:23.940
+É mais ou menos isso.
+
+01:35:24.040 --> 01:35:25.100
+É isso.
+
+01:35:25.200 --> 01:35:26.960
+Belíssima colocação, Bruno.
+
+01:35:27.060 --> 01:35:28.760
+Belíssima colocação.
+
+01:35:28.860 --> 01:35:29.940
+É...
+
+01:35:30.040 --> 01:35:32.740
+E aí, isso daqui tem aqui na
+apresentação, galera.
+
+01:35:32.840 --> 01:35:35.480
+O framework de playbook, eu até tinha
+esquecido.
+
+01:35:35.580 --> 01:35:39.680
+Tem o playbook aqui inteiro para vocês
+usarem.
+
+01:35:39.780 --> 01:35:43.460
+Isso daqui é um outro exemplo de
+playbook nosso interno aqui, para vocês
+
+01:35:43.560 --> 01:35:46.260
+verem como a gente faz as nossas
+reuniões de CS.
+
+01:35:46.360 --> 01:35:50.920
+Pré -requisito da reunião, abertura da
+reunião, pergunta -chave, prática pós
+
+01:35:51.020 --> 01:35:51.740
+-reunião.
+
+01:35:51.840 --> 01:35:55.500
+Isso aqui é um exemplo de handbook, para
+não falar que eu não deixei exemplo de
+
+01:35:55.600 --> 01:35:58.400
+nada aqui, deixei exemplo de tudo.
+
+01:35:58.500 --> 01:36:03.560
+As metas, como nós dissemos, tem que ter
+a meta da ampulheta inteira, o volume, a
+
+01:36:03.660 --> 01:36:06.480
+conversão e o tempo, como eu já
+expliquei extensivamente, não vou me
+
+01:36:06.580 --> 01:36:08.720
+repetir aqui.
+
+01:36:08.820 --> 01:36:13.280
+Essa é a característica da ampulheta no
+seu uso completo, em toda sua
+
+01:36:13.380 --> 01:36:13.540
+matemática.
+
+01:36:13.640 --> 01:36:16.000
+Agora presta atenção aqui rapidão.
+
+01:36:16.100 --> 01:36:17.860
+Lembra que a gente falou pra cacete
+disso aqui.
+
+01:36:17.960 --> 01:36:23.860
+Então, aqui, CR é taxa de conversão, ou
+em inglês, conversion rate.
+
+01:36:23.960 --> 01:36:26.300
+Taxa de conversão, delta T.
+
+01:36:26.400 --> 01:36:28.000
+Taxa de conversão, delta T.
+
+01:36:28.100 --> 01:36:31.460
+Cada etapa tem uma taxa de conversão em
+delta T.
+
+01:36:31.560 --> 01:36:37.820
+Então, você tem o input, as conversões,
+os tempos e os outputs.
+
+01:36:37.920 --> 01:36:38.200
+Certo?
+
+01:36:38.300 --> 01:36:42.540
+Você pode ter tanto aqui e aqui, o input
+e o output, mas você pode fazer aqui e
+
+01:36:42.640 --> 01:36:44.380
+aqui o input e o output.
+
+01:36:44.480 --> 01:36:46.800
+Isso que eu estou dizendo é que você
+pode fazer a conta do jeito que você
+
+01:36:46.900 --> 01:36:47.680
+quiser.
+
+01:36:47.780 --> 01:36:50.180
+Do jeito que mais fizer sentido para
+você.
+
+01:36:50.280 --> 01:36:52.500
+Ok?
+
+01:36:52.600 --> 01:36:54.820
+E por último, por último não.
+
+01:36:54.920 --> 01:36:59.980
+Oi?
+
+01:37:00.080 --> 01:37:04.840
+CR11 é conversion rate, taxa de
+conversão.
+
+01:37:04.940 --> 01:37:08.620
+Conversion rate.
+
+01:37:08.720 --> 01:37:10.000
+Beleza?
+
+01:37:10.100 --> 01:37:14.840
+E aqui, a parte do time, como a gente
+falou, a construção do time, a depender
+
+01:37:14.940 --> 01:37:20.780
+do cenário, você começa pela posição que
+for mais estratégica para o seu momento.
+
+01:37:20.880 --> 01:37:25.080
+Você pode começar com um vendedor e um
+CS, ou com um SDR e um vendedor, e o
+
+01:37:25.180 --> 01:37:28.580
+fundador atuando como CS, depende de
+como vai fazer mais sentido para você.
+
+01:37:28.680 --> 01:37:33.660
+O importante é você montar as duas
+células para você crescer
+
+01:37:33.760 --> 01:37:36.380
+é...
+
+01:37:36.480 --> 01:37:39.880
+montar as duas células porque é melhor
+você crescer menos e crescer sempre do
+
+01:37:39.980 --> 01:37:43.580
+que você crescer de forma errada e
+desestruturada.
+
+01:37:43.680 --> 01:37:51.680
+Uma empresa de Tekken, por exemplo, uma
+empresa técnica, de software, como é que
+
+01:37:51.780 --> 01:37:52.620
+isso seria?
+
+01:37:52.720 --> 01:37:59.720
+Porque é muito importante também ter o
+developer, a pessoa que é um engenheiro
+
+01:37:59.820 --> 01:38:01.660
+de desenvolvimento.
+
+01:38:01.760 --> 01:38:08.560
+Então, no caso, você começar com o
+vendedor e com o CS, como é que você vai
+
+01:38:08.660 --> 01:38:11.640
+então depois montando o restante do
+pessoal técnico?
+
+01:38:11.740 --> 01:38:16.480
+Tem alguma experiência disso aí para
+poder dar uma ideia para a gente?
+
+01:38:16.580 --> 01:38:17.040
+Sim.
+
+01:38:17.140 --> 01:38:24.360
+Então, eu até comentei um pouco disso,
+que é o seguinte, o que eu estou
+
+01:38:24.460 --> 01:38:30.220
+tratando aqui é de como se desenvolve a
+área que traz receita.
+
+01:38:30.320 --> 01:38:35.140
+Eu não estou tratando aqui das áreas que
+são técnicas operacionais.
+
+01:38:35.240 --> 01:38:38.520
+Não é do time todo, é só da parte de
+vendas.
+
+01:38:38.620 --> 01:38:39.880
+Isso.
+
+01:38:39.980 --> 01:38:44.080
+Então, só que eu tenho uma, como eu
+disse anteriormente, eu tenho uma luz
+
+01:38:44.180 --> 01:38:50.900
+para dar que é a seguinte, o que é comum
+é você ter 40 % do seu orçamento de
+
+01:38:51.000 --> 01:38:56.360
+despesas operacionais focado em
+marketing e vendas.
+
+01:38:56.460 --> 01:39:01.720
+E os outros 60 % você vai colocar no
+outro restante do time, como você mesmo
+
+01:39:01.820 --> 01:39:09.850
+está dizendo, entendeu?
+
+01:39:09.950 --> 01:39:11.450
+Show.
+
+01:39:11.550 --> 01:39:16.030
+E aqui tem um pouco de como se
+desenvolve essa estrutura.
+
+01:39:16.130 --> 01:39:20.130
+E aqui por último, aí sim, a gestão.
+
+01:39:20.230 --> 01:39:25.410
+A proposta aqui, galera, é que a gente
+tem esses três pilares de gestão.
+
+01:39:25.510 --> 01:39:31.030
+Uma weekly, que você vai começar a fazer
+uma reunião semanal com o seu time,
+
+01:39:31.130 --> 01:39:37.790
+passa de forma organizada e documenta, e
+documentado usando um modelo de APA,
+
+01:39:37.890 --> 01:39:42.090
+para você ter metas, tarefas, planos de
+ação para todo mundo.
+
+01:39:42.190 --> 01:39:45.910
+E cada participante com prazos semanais
+ou quinzenais.
+
+01:39:46.010 --> 01:39:48.770
+Super importante.
+
+01:39:48.870 --> 01:39:53.770
+Acompanhe tentativas, reuniões,
+aprendizados e crie uma forma de
+
+01:39:53.870 --> 01:39:56.350
+documentar esses aprendizados.
+
+01:39:56.450 --> 01:40:03.870
+Use uma planilha para você conseguir ter
+um filme do que está acontecendo, certo?
+
+01:40:03.970 --> 01:40:11.250
+E aí tem os incentivos para você
+garantir que as pessoas vão querer
+
+01:40:11.350 --> 01:40:14.630
+trabalhar pela sua empresa para que ela
+cresça.
+
+01:40:14.730 --> 01:40:16.450
+Ok?
+
+01:40:16.550 --> 01:40:24.230
+Bom, eu deixei aqui, gente, uma proposta
+dessa parte de comissão.
+
+01:40:24.330 --> 01:40:28.510
+Se vocês puderem ver aqui, vocês vão ver
+que para marketing tem uma proposta de
+
+01:40:28.610 --> 01:40:36.990
+95 % fixo e 5 % variável, 65 BDR, SDR,
+95 % fixo e 35 % variável, vendedor e 50
+
+01:40:37.090 --> 01:40:39.310
+% variável.
+
+01:40:39.410 --> 01:40:45.890
+Essas essas sugestões aqui também não
+saíram
+
+01:40:45.990 --> 01:40:47.070
+da minha cabeça.
+
+01:40:47.170 --> 01:40:50.610
+Elas saíram dos estudos das empresas que
+mais cresceram no mundo.
+
+01:40:50.710 --> 01:40:54.350
+É assim que elas dividiam as suas
+remunerações.
+
+01:40:54.450 --> 01:40:57.250
+Diga lá, Edilson.
+
+01:40:57.350 --> 01:41:02.350
+O que é que você chama de 95 % fixo e a
+variável?
+
+01:41:02.450 --> 01:41:05.770
+Estou querendo entender, porque eu
+entendo como um salário fixo, mas
+
+01:41:05.870 --> 01:41:07.050
+variável, certo?
+
+01:41:07.150 --> 01:41:08.850
+Mas o que seria esse fixo?
+
+01:41:08.950 --> 01:41:11.490
+Eu não entendi muito bem.
+
+01:41:11.590 --> 01:41:15.370
+É o seguinte, Edilson, vamos imaginar
+que eu vou te contratar aí como meu
+
+01:41:15.470 --> 01:41:16.490
+marketer.
+
+01:41:16.590 --> 01:41:21.770
+No teu caso, eu estou te combinando, vou
+combinar com você que você vai ter um
+
+01:41:21.870 --> 01:41:27.530
+potencial financeiro de 10 mil.
+
+01:41:27.630 --> 01:41:31.750
+Só que 9 .5 vai ser fixo.
+
+01:41:31.850 --> 01:41:36.350
+E 5 % vai ser se você entregar, e 5 mil
+vai ser se você entregar a média.
+
+01:41:36.450 --> 01:41:40.770
+Então, se você entregar a média, você
+vai ter 5 % a mais de salário, que nesse
+
+01:41:40.870 --> 01:41:47.290
+caso vão ser os 500, 5 mil por 500.
+
+01:41:47.390 --> 01:41:48.290
+Certo?
+
+01:41:48.390 --> 01:41:50.090
+O marketing...
+
+01:41:50.190 --> 01:41:56.730
+O marketing, ele é responsável pela
+conversão, porque a venda dá para
+
+01:41:56.830 --> 01:41:56.930
+entender.
+
+01:41:57.030 --> 01:41:59.230
+E o marketing?
+
+01:41:59.330 --> 01:42:00.750
+Lead qualificado.
+
+01:42:00.850 --> 01:42:02.670
+Lead qualificado.
+
+01:42:02.770 --> 01:42:03.370
+MQL.
+
+01:42:03.470 --> 01:42:04.610
+Lembra que a gente tem MQL?
+
+01:42:04.710 --> 01:42:05.830
+MQL é marketing qualificado.
+
+01:42:05.930 --> 01:42:10.670
+O marketing tem que entregar esses
+leads.
+
+01:42:10.770 --> 01:42:13.910
+No caso de um vendedor, Edilson, vamos
+supor que eu estou te contratando como
+
+01:42:14.010 --> 01:42:15.190
+meu vendedor.
+
+01:42:15.290 --> 01:42:18.590
+Estou combinando com você aqui que você
+pode ganhar até 10 pau por mês.
+
+01:42:18.690 --> 01:42:19.750
+Só que 5 é fixo.
+
+01:42:19.850 --> 01:42:22.350
+Se você não vender nada, você só vai
+ganhar 5.
+
+01:42:22.450 --> 01:42:26.210
+Se você bater sua meta, você vai ganhar
+10.
+
+01:42:26.310 --> 01:42:27.350
+Entendi, entendi agora.
+
+01:42:27.450 --> 01:42:28.370
+Perfeito, perfeito.
+
+01:42:28.470 --> 01:42:30.690
+Valeu, obrigado.
+
+01:42:30.790 --> 01:42:32.170
+E o Aé?
+
+01:42:32.270 --> 01:42:39.090
+Galera, é o executivo de conta, é como
+as empresas americanas chamam vendedor.
+
+01:42:39.190 --> 01:42:41.510
+É vendedor no final do dia.
+
+01:42:41.610 --> 01:42:43.710
+Vendedor com nome sofisticado.
+
+01:42:43.810 --> 01:42:47.570
+Mas é vendedor, certo?
+
+01:42:47.670 --> 01:42:49.970
+Vendedor bem vendedor mesmo.
+
+01:42:50.070 --> 01:42:53.090
+É, vendedor brabo.
+
+01:42:53.190 --> 01:42:54.770
+É...
+
+01:42:54.870 --> 01:43:00.910
+Isso daqui é uma sugestão de planilha,
+se você não tiver o modelo para você
+
+01:43:01.010 --> 01:43:06.570
+gerenciar essas métricas aí e você
+conseguir analisar a operação da sua
+
+01:43:06.670 --> 01:43:09.410
+empresa, você pode fazer isso.
+
+01:43:09.510 --> 01:43:10.250
+E é isso, galera.
+
+01:43:10.350 --> 01:43:12.050
+É isso que eu tinha para hoje.
+
+01:43:12.150 --> 01:43:15.930
+É isso que eu tinha para hoje.
+
+01:43:16.030 --> 01:43:21.030
+Fiz bastante, tivemos bastante conteúdo,
+bastante coisa.
+
+01:43:21.130 --> 01:43:25.310
+Hoje eu precisei ser um pouco mais
+porrada, mais denso, porque eu precisava
+
+01:43:25.410 --> 01:43:27.570
+chegar nesses pontos aqui.
+
+01:43:27.670 --> 01:43:29.270
+Eu não sei quanto que...
+
+01:43:29.370 --> 01:43:34.250
+Assim, online é difícil saber quanto que
+vocês estão acompanhando aí e tal.
+
+01:43:34.350 --> 01:43:38.930
+É claro que o Arthur estava falando
+bastante, o Brunão falando bastante, o
+
+01:43:39.030 --> 01:43:43.970
+Patrick falando bastante, a Renata
+falando bastante, mas eu não sei o
+
+01:43:44.070 --> 01:43:45.550
+restante da turma aí, como é que estava.
+
+01:43:45.650 --> 01:43:47.990
+Espero que tenha sido útil para vocês.
+
+01:43:48.090 --> 01:43:49.970
+A gente acabou esse nosso primeiro
+bloco.
+
+01:43:50.070 --> 01:43:52.990
+Eu estou às quase três horas da manhã
+aqui
+
+01:43:53.090 --> 01:43:55.570
+falando.
+
+01:43:55.670 --> 01:43:55.930
+Porrada.
+
+01:43:56.030 --> 01:43:56.390
+Muito bom.
+
+01:43:56.490 --> 01:43:59.070
+Espero que você durma até tarde, pelo
+menos, né, minha filha?
+
+01:43:59.170 --> 01:44:01.610
+Eu tenho que dormir quase no dia da
+tarde.
+
+01:44:01.710 --> 01:44:05.270
+Não, tem que dormir até tarde, porque
+você tem que estar me atendendo.
+
+01:44:05.370 --> 01:44:06.670
+Ela não está me atendendo de manhã.
+
+01:44:06.770 --> 01:44:11.150
+No Brasil, eu ligo para ela de manhã e
+ela não me atende.
+
+01:44:11.250 --> 01:44:12.550
+Agora eu estou entendendo o que está
+acontecendo.
+
+01:44:12.650 --> 01:44:17.930
+O marido dela fecha a porta agora porque
+não consegue ouvir a conversa.
+
+01:44:18.030 --> 01:44:19.630
+Não é brincadeira não, Renata.
+
+01:44:19.730 --> 01:44:22.810
+Renata madruga.
+
+01:44:22.910 --> 01:44:26.310
+Giovanni, consegue enviar essa
+apresentação para a gente ou é pedir
+
+01:44:26.410 --> 01:44:27.530
+demais?
+
+01:44:27.630 --> 01:44:28.710
+Já enviei, jovem.
+
+01:44:28.810 --> 01:44:29.490
+Lógico, já enviei.
+
+01:44:29.590 --> 01:44:32.450
+Isso aqui é para a comunidade.
+
+01:44:32.550 --> 01:44:34.710
+Isso aí eu produzi para a comunidade.
+
+01:44:34.810 --> 01:44:39.010
+Eu nem ganho dinheiro com isso, só com a
+apresentação.
+
+01:44:39.110 --> 01:44:40.770
+E essa planilha era aquela que estava
+lá?
+
+01:44:40.870 --> 01:44:42.950
+Porque ela está tão pequenininha aqui no
+meu...
+
+01:44:43.050 --> 01:44:45.970
+Não, essa planilha aí é uma outra, só de
+controle, né?
+
+01:44:46.070 --> 01:44:49.940
+Aquela é de metas.
+
+01:44:50.040 --> 01:44:54.380
+Então vai ser disponibilizado lá na
+plataforma, né, Roger?
+
+01:44:54.480 --> 01:44:58.460
+Eu compartilhei ali, quando vocês
+estavam falando, tem dois arquivos lá no
+
+01:44:58.560 --> 01:45:00.700
+grupo, eu vou subir também.
+
+01:45:00.800 --> 01:45:04.820
+Um é o playbook de vendas e um playbook
+de CS, que eu tinha na minha startup que
+
+01:45:04.920 --> 01:45:07.360
+eu fiz lá em 2022 já.
+
+01:45:07.460 --> 01:45:11.540
+Tá, mas a minha pergunta é, essas coisas
+que você coloca lá no grupo, elas também
+
+01:45:11.640 --> 01:45:12.520
+vão...
+
+01:45:12.620 --> 01:45:14.160
+Está tudo lá, está tudo lá na
+plataforma.
+
+01:45:14.260 --> 01:45:16.240
+Elas também vão para a plataforma, né?
+
+01:45:16.340 --> 01:45:20.480
+Amanhã quando sobe a aula, amanhã cedo,
+provavelmente o Adriano sobe e ele já
+
+01:45:20.580 --> 01:45:21.660
+sobe com os documentos lá.
+
+01:45:21.760 --> 01:45:23.780
+Então vai estar na biblioteca virtual.
+
+01:45:23.880 --> 01:45:26.480
+Então a gente tem que ficar procurando
+no grupo.
+
+01:45:26.580 --> 01:45:28.220
+Vai ter a apresentação então.
+
+01:45:28.320 --> 01:45:32.820
+É porque como tem gente mais
+agoniadinha, que fica pedindo agora, ou
+
+01:45:32.920 --> 01:45:33.720
+já vai ali no grupo.
+
+01:45:33.820 --> 01:45:35.340
+Quem quiser já pega.
+
+01:45:35.440 --> 01:45:37.440
+Quem quiser mais tempo amanhã vai estar
+lá.
+
+01:45:37.540 --> 01:45:40.920
+Então, tudo bem.
+
+01:45:41.020 --> 01:45:41.860
+Muito bom.
+
+01:45:41.960 --> 01:45:46.480
+Bom, essa é uma parte de business que é
+muito importante.
+
+01:45:46.580 --> 01:45:52.300
+O que o Giovanni trouxe aqui, às vezes a
+gente demora muito tempo para construir.
+
+01:45:52.400 --> 01:45:54.160
+Eu passei por isso na época.
+
+01:45:54.260 --> 01:45:58.340
+Você pega modelos referenciais, mas
+quando você tem um modelo que alguém já
+
+01:45:58.440 --> 01:46:02.620
+aplicou, você encurta caminho, você
+acelera o processo, você já começa a
+
+01:46:02.720 --> 01:46:03.560
+organizar.
+
+01:46:03.660 --> 01:46:06.800
+Antes de começar sem processo e aí fica
+uma loucura.
+
+01:46:06.900 --> 01:46:12.220
+Então você já começa caminhando de forma
+mais assertiva, mais organizada.
+
+01:46:12.320 --> 01:46:17.960
+E aí serve justamente para você,
+principalmente como founder, você ter a
+
+01:46:18.060 --> 01:46:19.260
+criação disso.
+
+01:46:19.360 --> 01:46:24.540
+Porque geralmente na fase inicial é você
+quem vai contratar as pessoas.
+
+01:46:24.640 --> 01:46:29.220
+Então, se você não tiver isso
+mentalizado e maduro, como é que você
+
+01:46:29.320 --> 01:46:33.840
+vai contratar a pessoa e fazer perguntas
+para ela para saber se ela está adequada
+
+01:46:33.940 --> 01:46:34.560
+ou não.
+
+01:46:34.660 --> 01:46:38.440
+E aí até para você fazer o treinamento
+de on -boarding desse vendedor que vai,
+
+01:46:38.540 --> 01:46:44.120
+seja o primeiro, seja o segundo, enfim,
+todo mundo vai seguir esse playbook.
+
+01:46:44.220 --> 01:46:51.080
+Até o momento em que ele se torna algo
+mais escalável, digamos assim, de dizer
+
+01:46:51.180 --> 01:46:57.940
+na falta de você como treinador ali do
+próximo, se o time já tem o script, o
+
+01:46:58.040 --> 01:46:59.940
+próprio time já treina o próximo.
+
+01:47:00.040 --> 01:47:01.660
+E assim por diante.
+
+01:47:01.760 --> 01:47:05.400
+Então se você não tem esse modelo, cada
+um faz de uma forma, meu, daí vira uma
+
+01:47:05.500 --> 01:47:07.200
+casa da mãe Joana.
+
+01:47:07.300 --> 01:47:08.960
+Exatamente.
+
+01:47:09.060 --> 01:47:09.960
+Muito bom.
+
+01:47:10.060 --> 01:47:15.860
+Obrigado, Giovanni, por entregar todo
+esse conteúdo aí consolidado.
+
+01:47:15.960 --> 01:47:19.620
+Geralmente é cobrado, eu sei, até eu
+coloquei ali, geralmente quem faz esse
+
+01:47:19.720 --> 01:47:22.400
+tipo de trabalho cobra um valor
+altíssimo.
+
+01:47:22.500 --> 01:47:26.460
+A gente está liberando aqui para vocês,
+então fiquem à vontade aqui para fazer
+
+01:47:26.560 --> 01:47:26.560
+perguntas.
+
+01:47:26.660 --> 01:47:29.520
+A gente tem mais oito minutos aqui
+ainda.
+
+01:47:29.620 --> 01:47:32.740
+Vamos segurar o Giovanni aqui até as
+nove.
+
+01:47:32.840 --> 01:47:33.500
+Fiquem à vontade aí.
+
+01:47:33.600 --> 01:47:35.420
+Quero aqui o bracinho e vamos embora.
+
+01:47:35.520 --> 01:47:37.500
+Vamos para as perguntas aí.
+
+01:47:37.600 --> 01:47:38.480
+Manda bala.
+
+01:47:38.580 --> 01:47:43.460
+Na verdade, a minha pergunta, eu pensei
+que o Bruno como sempre ia fazer o
+
+01:47:43.560 --> 01:47:46.160
+pedido, mas já que ele não fez, faço eu.
+
+01:47:46.260 --> 01:47:50.020
+A planilha de controle consegue
+compartilhar, Giovanni?
+
+01:47:50.120 --> 01:47:50.900
+É possível?
+
+01:47:51.000 --> 01:47:52.920
+Consigo.
+
+01:47:53.020 --> 01:47:57.320
+O papo com vergonha, que nem aquele
+menininho que come dois queijinhos e
+
+01:47:57.420 --> 01:47:58.720
+pergunta, e a terceira coisa que você
+quer comer?
+
+01:47:58.820 --> 01:48:00.820
+Ele fica com vergonha de pedir o
+queijinho.
+
+01:48:00.920 --> 01:48:01.840
+Já pedi duas.
+
+01:48:01.940 --> 01:48:05.040
+Me ajuda aí.
+
+01:48:05.140 --> 01:48:06.500
+Deixa eu procurar aqui.
+
+01:48:06.600 --> 01:48:09.180
+Vai falando aí.
+
+01:48:09.280 --> 01:48:10.260
+Manda lá, Jacinto.
+
+01:48:10.360 --> 01:48:12.700
+O e -book da esposa.
+
+01:48:12.800 --> 01:48:16.320
+Cara, é um bom vendedor porque ele
+conseguiu uma mulher linda, que nem eu.
+
+01:48:16.420 --> 01:48:17.420
+Então já estou respeitando.
+
+01:48:17.520 --> 01:48:19.320
+Quando eu vi a mulher, eu falei, pô,
+beleza.
+
+01:48:19.420 --> 01:48:19.760
+Ele é bom.
+
+01:48:19.860 --> 01:48:21.580
+É isso.
+
+01:48:21.680 --> 01:48:22.600
+Vendedor, não é?
+
+01:48:22.700 --> 01:48:25.580
+Tem que usar as habilidades de vendas
+para as coisas mais importantes da vida
+
+01:48:25.680 --> 01:48:26.300
+também.
+
+01:48:26.400 --> 01:48:32.100
+Coitada dela, não teve nem chance,
+bicho.
+
+01:48:32.200 --> 01:48:32.680
+Ai, caralho.
+
+01:48:32.780 --> 01:48:33.540
+Ela falou isso aí mesmo.
+
+01:48:33.640 --> 01:48:36.320
+Eu falei, pô, não tive nem chance,
+bicho.
+
+01:48:36.420 --> 01:48:37.640
+Não teve nem...
+
+01:48:37.740 --> 01:48:38.960
+Não teve nem como...
+
+01:48:39.060 --> 01:48:40.460
+como é que é?
+
+01:48:40.560 --> 01:48:43.240
+Respondeu objeções aqui, não teve?
+
+01:48:43.340 --> 01:48:47.160
+Quando ela viu, ela...
+
+01:48:47.260 --> 01:48:49.060
+Aí, achei a planilha aqui.
+
+01:48:49.160 --> 01:48:52.280
+Bora lá, Jacinto.
+
+01:48:52.380 --> 01:48:53.580
+Opa.
+
+01:48:53.680 --> 01:48:56.200
+Opa, Giovanni.
+
+01:48:56.300 --> 01:49:03.420
+Com relação, Giovanni, a ferramentas que
+você aplica nesses processos...
+
+01:49:03.520 --> 01:49:04.320
+É uma ferramenta chata.
+
+01:49:04.420 --> 01:49:09.700
+Você fala, pô, essa ferramenta agrega
+bastante aqui, seja ali em alguma
+
+01:49:09.800 --> 01:49:12.880
+gestão, seja ali em controle, seja na
+parte de processo.
+
+01:49:12.980 --> 01:49:15.420
+Seria algo ali que você utiliza no dia a
+dia.
+
+01:49:15.520 --> 01:49:20.460
+Você propôs aqui uma ferramenta que faz
+diferença aqui no dia a dia.
+
+01:49:20.560 --> 01:49:21.860
+Isso seria um...
+
+01:49:21.960 --> 01:49:23.120
+Ferramenta.
+
+01:49:23.220 --> 01:49:24.620
+Cara, é o seguinte, bicho.
+
+01:49:24.720 --> 01:49:28.400
+Eu acho que você tem que, assim que você
+puder e que você tiver dinheiro, você
+
+01:49:28.500 --> 01:49:29.420
+tem que ter um CRM.
+
+01:49:29.520 --> 01:49:31.720
+Eu acho isso.
+
+01:49:31.820 --> 01:49:36.840
+Assim que você tiver dinheiro e você
+puder, eu começaria pelo Pipedrive,
+
+01:49:36.940 --> 01:49:39.380
+HubSpot, alguma coisa assim.
+
+01:49:39.480 --> 01:49:43.520
+Nesse momento, né?
+
+01:49:43.620 --> 01:49:43.980
+Ferramenta.
+
+01:49:44.080 --> 01:49:47.880
+Além disso, cara, eu acho que hoje em
+dia...
+
+01:49:47.980 --> 01:49:52.680
+Deixa eu pensar.
+
+01:49:52.780 --> 01:49:54.400
+Olha...
+
+01:49:54.500 --> 01:49:55.600
+Puta, N8N, bicho.
+
+01:49:55.700 --> 01:50:01.860
+Pra você conseguir fazer as paradas aí
+de personalização em massa, pra poder
+
+01:50:01.960 --> 01:50:04.860
+fazer marketing, prospecção.
+
+01:50:04.960 --> 01:50:08.660
+Eu acho que faz todo sentido.
+
+01:50:08.760 --> 01:50:11.580
+Porra, Chat APT pra produção de
+conteúdo.
+
+01:50:11.680 --> 01:50:15.180
+A gente usa bastante Chat APT e Cloud
+pra produção de conteúdo.
+
+01:50:15.280 --> 01:50:17.900
+Muita coisa que a gente produz no
+LinkedIn é com AI.
+
+01:50:18.000 --> 01:50:20.880
+Eu ainda escrevo bastante só pra minha
+cabeça continuar funcionando, mas a
+
+01:50:20.980 --> 01:50:22.860
+gente produz bastante coisa com AI.
+
+01:50:22.960 --> 01:50:25.580
+Newsletter também.
+
+01:50:25.680 --> 01:50:29.140
+Mas assim, sem ser muito tático, eu acho
+que são essas coisas, cara.
+
+01:50:29.240 --> 01:50:33.940
+Eu diria que um CRM, manjar de AI,
+manjar de automação, acho que se você
+
+01:50:34.040 --> 01:50:36.180
+tiver isso daí, você tá feito.
+
+01:50:36.280 --> 01:50:40.940
+Se você quiser investir em CRM, você
+pode usar uma...
+
+01:50:41.040 --> 01:50:42.460
+CRM open source.
+
+01:50:42.560 --> 01:50:46.040
+Vai lá no Chat APT, pede uma relação.
+
+01:50:46.140 --> 01:50:50.220
+É só ter lá o VPS, instalar lá dentro e
+usar.
+
+01:50:50.320 --> 01:50:52.820
+Eu tô usando tudo open source agora.
+
+01:50:52.920 --> 01:50:53.560
+Com o meu desenvolvimento.
+
+01:50:53.660 --> 01:50:57.560
+Tá vendo a minha tela aí?
+
+01:50:57.660 --> 01:51:02.120
+Esse aqui eu compartilhei no grupo, mas
+tem algumas ferramentas aqui, ó.
+
+01:51:02.220 --> 01:51:03.080
+Só pra colocar.
+
+01:51:03.180 --> 01:51:05.920
+Aqui tem funil, que a gente fez, ciclo
+de vendas.
+
+01:51:06.020 --> 01:51:07.660
+E aqui tem as ferramentas, tá vendo?
+
+01:51:07.760 --> 01:51:09.800
+Que a gente usava na época.
+
+01:51:09.900 --> 01:51:12.940
+Usava o HubSpot aqui na versão pra
+poucas pessoas.
+
+01:51:13.040 --> 01:51:16.460
+Tinha ClickUp pra fazer gestão,
+Authentic, Discord, enfim.
+
+01:51:16.560 --> 01:51:18.500
+Tinha algumas ferramentas aqui.
+
+01:51:18.600 --> 01:51:21.020
+Jornada de cliente, implantação e CS
+aqui.
+
+01:51:21.120 --> 01:51:22.140
+Vocês podem usar.
+
+01:51:22.240 --> 01:51:26.040
+Eu acho que é um investimento bem baixo,
+mas várias sugestões, obviamente, aqui
+
+01:51:26.140 --> 01:51:27.400
+do nosso amigo também.
+
+01:51:27.500 --> 01:51:28.820
+Então, compartilhei esse material aqui.
+
+01:51:28.920 --> 01:51:30.040
+Ficou bem legal.
+
+01:51:30.140 --> 01:51:33.100
+Podem usar também como base pra vocês
+aí.
+
+01:51:33.200 --> 01:51:34.660
+Beleza?
+
+01:51:34.760 --> 01:51:35.100
+Valeu.
+
+01:51:35.200 --> 01:51:40.250
+Obrigado.
+
+01:51:40.350 --> 01:51:43.750
+Meu dúvida é em relação à parte de CS.
+
+01:51:43.850 --> 01:51:48.190
+Como é que tu faz essa parte do
+comissionamento da equipe de CS?
+
+01:51:48.290 --> 01:51:50.830
+Essa ou seria por outra métrica?
+
+01:51:50.930 --> 01:51:53.990
+Cara, baseado em retenção.
+
+01:51:54.090 --> 01:51:56.570
+Baseado em retenção.
+
+01:51:56.670 --> 01:52:00.590
+Eu faço especificamente baseado em
+retenção, porque, como eu disse pra
+
+01:52:00.690 --> 01:52:02.570
+vocês, retenção pra mim é a coisa mais
+importante.
+
+01:52:02.670 --> 01:52:08.390
+Então, se o cara tiver uma retenção de
+logo aí trimestre a trimestre, ele ganha
+
+01:52:08.490 --> 01:52:11.980
+um variável.
+
+01:52:12.080 --> 01:52:14.040
+Entendeu?
+
+01:52:14.140 --> 01:52:14.620
+Entendido.
+
+01:52:14.720 --> 01:52:23.350
+Obrigado.
+
+01:52:23.450 --> 01:52:25.050
+Patrick?
+
+01:52:25.150 --> 01:52:26.490
+Não, só pedir rapidinho ali.
+
+01:52:26.590 --> 01:52:30.810
+O que tu mostrou ali, enfim, todo o
+processo, toda a documentação, é muito
+
+01:52:30.910 --> 01:52:31.550
+foda.
+
+01:52:31.650 --> 01:52:38.010
+Só que, provavelmente, se a gente for
+fazer, ou vai faltar skill, ou vai
+
+01:52:38.110 --> 01:52:41.610
+faltar outras coisas.
+
+01:52:41.710 --> 01:52:44.630
+Tipo, um top 3 do tipo, não, foca nisso.
+
+01:52:44.730 --> 01:52:50.650
+Obviamente em vender, no caso, mas tem
+um da parte da organizacional, foca num
+
+01:52:50.750 --> 01:52:57.110
+top 3 mais foda pra resolver, antes de
+ficar bom, no caso, pra fazer todo o
+
+01:52:57.210 --> 01:52:59.270
+playbook ali.
+
+01:52:59.370 --> 01:53:01.930
+Cara, tem um slide que eu pulei.
+
+01:53:02.030 --> 01:53:06.250
+Eu pulei porque a gente tava falando de
+coisa pra cacete já e eu só dei uma
+
+01:53:06.350 --> 01:53:07.070
+priorizada.
+
+01:53:07.170 --> 01:53:08.090
+Mas vamos lá.
+
+01:53:08.190 --> 01:53:13.890
+Deixa eu mostrar um negócio aqui pra
+você que responde o que você falou.
+
+01:53:13.990 --> 01:53:14.990
+Esse aqui.
+
+01:53:15.090 --> 01:53:19.930
+Só pra avisar que já compartilhei no
+grupo lá o link da planilha que o
+
+01:53:20.030 --> 01:53:21.750
+Giovani mandou.
+
+01:53:21.850 --> 01:53:24.910
+Depois ele vai compartilhar esse outro
+material também, imagino sim.
+
+01:53:25.010 --> 01:53:29.290
+Já te mandei ontem.
+
+01:53:29.390 --> 01:53:30.230
+Ontem?
+
+01:53:30.330 --> 01:53:31.630
+Acho que sim.
+
+01:53:31.730 --> 01:53:32.610
+Acho que não.
+
+01:53:32.710 --> 01:53:34.870
+Esse material aqui não veio.
+
+01:53:34.970 --> 01:53:36.650
+Qual material?
+
+01:53:36.750 --> 01:53:40.350
+Esse aí que você tá usando aí da aula de
+hoje.
+
+01:53:40.450 --> 01:53:42.650
+Só veio planilha e o link.
+
+01:53:42.750 --> 01:53:43.590
+Ah, porra.
+
+01:53:43.690 --> 01:53:48.650
+Eu mandei o Cosplay Success Playbook.
+
+01:53:48.750 --> 01:53:49.970
+Ah, depois você manda.
+
+01:53:50.070 --> 01:53:52.090
+Não, eu só tô olhando porque eu tinha
+certeza que eu tinha
+
+01:53:52.190 --> 01:53:55.050
+mandado.
+
+01:53:55.150 --> 01:53:58.250
+Agora eu mandei.
+
+01:53:58.350 --> 01:54:08.490
+Então, Patrick, pra mim esse aqui é o
+top não sei se 3, mas pra mim esse é o
+
+01:54:08.590 --> 01:54:11.830
+ponto principal que você tem que fazer.
+
+01:54:11.930 --> 01:54:13.530
+Pra mim, não tem segredo.
+
+01:54:13.630 --> 01:54:15.630
+Tem que fechar 10 negócios.
+
+01:54:15.730 --> 01:54:21.310
+Tem que ter uma pessoa com 4 horas por
+dia focada em receita.
+
+01:54:21.410 --> 01:54:25.890
+Um produto bem documentado com PPT em
+proposta de valor e proposta comercial.
+
+01:54:25.990 --> 01:54:32.150
+Se você for PLG não precisa disso.
+
+01:54:32.250 --> 01:54:35.330
+Comprometimento com geração de reuniões
+ou de demanda, simplesmente.
+
+01:54:35.430 --> 01:54:37.470
+Planilha pra documentar os aprendizados.
+
+01:54:37.570 --> 01:54:40.270
+Descobrir o canal de geração de lead,
+descobrir o processo de qualificação,
+
+01:54:40.370 --> 01:54:45.790
+descobrir o processo de fechamento e
+fazer esse funil aqui.
+
+01:54:45.890 --> 01:54:51.070
+Eu diria que essa é a sua prioridade.
+
+01:54:51.170 --> 01:54:54.150
+Esse slide aqui pra mim é a prioridade.
+
+01:54:54.250 --> 01:54:54.730
+Beleza.
+
+01:54:54.830 --> 01:55:00.020
+Obrigadão, Giovani.
+
+01:55:00.120 --> 01:55:04.340
+O que mais?
+
+01:55:04.440 --> 01:55:05.940
+Tem um iPhone aqui com a mão levantada.
+
+01:55:06.040 --> 01:55:07.320
+Quem que é?
+
+01:55:07.420 --> 01:55:09.540
+Sou eu, Joe.
+
+01:55:09.640 --> 01:55:10.600
+Quem é, Joe?
+
+01:55:10.700 --> 01:55:11.580
+Michel.
+
+01:55:11.680 --> 01:55:12.280
+Michel Queiroz.
+
+01:55:12.380 --> 01:55:14.220
+E aí, Michel.
+
+01:55:14.320 --> 01:55:15.200
+Fala aí.
+
+01:55:15.300 --> 01:55:16.380
+Fala aí, Giovani.
+
+01:55:16.480 --> 01:55:21.080
+Cara, no negócio B2C, ontem eu te
+perguntei com relação a CS.
+
+01:55:21.180 --> 01:55:26.960
+E você comentou que quando o ticket é
+baixo, não justifica uma chamada e por
+
+01:55:27.060 --> 01:55:29.360
+isso é tech.
+
+01:55:29.460 --> 01:55:34.660
+Se você puder explicar um pouco melhor
+de como que seria essa...
+
+01:55:34.760 --> 01:55:37.880
+Esse tech seria como se fosse um...
+
+01:55:37.980 --> 01:55:42.360
+Dentro de um site, seria um pop -up que
+quando a pessoa tem dúvida, ela pergunta
+
+01:55:42.460 --> 01:55:45.960
+ali direto naqueles chatzinhos que tem
+tipo do Crisp.
+
+01:55:46.060 --> 01:55:47.200
+Exatamente.
+
+01:55:47.300 --> 01:55:48.220
+Tá.
+
+01:55:48.320 --> 01:55:50.580
+Tipo assim, pensa comigo, Christopher.
+
+01:55:50.680 --> 01:55:50.900
+Desculpa.
+
+01:55:51.000 --> 01:55:52.700
+Qual é o seu nome mesmo, bro?
+
+01:55:52.800 --> 01:55:54.100
+Michel.
+
+01:55:54.200 --> 01:55:56.140
+Você tá sem inscrito.
+
+01:55:56.240 --> 01:55:58.460
+É, perdão, perdão.
+
+01:55:58.560 --> 01:56:03.120
+Aí eu chamei o primeiro menino que tava
+com a pergunta.
+
+01:56:03.220 --> 01:56:04.620
+É...
+
+01:56:04.720 --> 01:56:08.840
+Então, assim, pensa na sua realidade,
+velho.
+
+01:56:08.940 --> 01:56:14.640
+Imagina que, porra, você consome Netflix
+e Nubank, não consome?
+
+01:56:14.740 --> 01:56:15.960
+Sim.
+
+01:56:16.060 --> 01:56:18.820
+Então, você tem cliente de Nubank e
+consome Netflix.
+
+01:56:18.920 --> 01:56:21.120
+Se der merda em algum desses, como que
+você vai fazer?
+
+01:56:21.220 --> 01:56:23.640
+Você entra no suporte.
+
+01:56:23.740 --> 01:56:24.520
+Perfeito.
+
+01:56:24.620 --> 01:56:29.340
+Que é um suporte que primeiro você vai
+falar com uma AI, hoje em dia, e ele vai
+
+01:56:29.440 --> 01:56:32.320
+te filtrar e se você precisar ele vai te
+jogar pra uma pessoa.
+
+01:56:32.420 --> 01:56:33.780
+É isso.
+
+01:56:33.880 --> 01:56:35.760
+Mas aí estamos falando de passivo, né?
+
+01:56:35.860 --> 01:56:38.360
+É suporte.
+
+01:56:38.460 --> 01:56:39.120
+É, pra gente...
+
+01:56:39.220 --> 01:56:42.660
+Pra eu manter o cara na minha
+plataforma, eu entendo que talvez eu
+
+01:56:42.760 --> 01:56:47.080
+precise de alguma ação ativa pra chegar
+até ele antes dele ter dúvida, alguma
+
+01:56:47.180 --> 01:56:48.860
+coisa assim.
+
+01:56:48.960 --> 01:56:53.480
+Aí você entra naquele tipo de CS baseado
+em comunidade.
+
+01:56:53.580 --> 01:56:57.120
+Você precisa ter um esforço de marca
+fodido pras pessoas se autoajudarem
+
+01:56:57.220 --> 01:56:59.240
+através da sua marca.
+
+01:56:59.340 --> 01:57:01.560
+Que é o que o Nubank faz, por exemplo.
+
+01:57:01.660 --> 01:57:02.680
+É...
+
+01:57:02.780 --> 01:57:04.220
+Ou o Lovable.
+
+01:57:04.320 --> 01:57:07.260
+As pessoas se ajudam através de uma
+comunidade.
+
+01:57:07.360 --> 01:57:08.620
+Todo mundo aqui tá falando do Lovable.
+
+01:57:08.720 --> 01:57:09.480
+Isso aqui é uma comunidade.
+
+01:57:09.580 --> 01:57:13.620
+A gente tá fazendo marketing de graça,
+CS de graça pros caras.
+
+01:57:13.720 --> 01:57:14.100
+É...
+
+01:57:14.200 --> 01:57:16.100
+Então, é assim, das duas uma.
+
+01:57:16.200 --> 01:57:22.820
+Ou você cria um fluxo de suporte e você
+interpreta ele como o seu modelo de CS.
+
+01:57:22.920 --> 01:57:29.200
+Ou você usa AI e você cria uma forma de,
+através de tecnologia, ter touchpoints
+
+01:57:29.300 --> 01:57:30.960
+interativos pro seu cliente.
+
+01:57:31.060 --> 01:57:32.660
+Ou você cria comunidade.
+
+01:57:32.760 --> 01:57:36.060
+São as três formas de fazer essa parada
+via TechTouch.
+
+01:57:36.160 --> 01:57:36.640
+Boa.
+
+01:57:36.740 --> 01:57:38.260
+Tá bem.
+
+01:57:38.360 --> 01:57:38.780
+Perfeito, cara.
+
+01:57:38.880 --> 01:57:39.080
+Obrigado.
+
+01:57:39.180 --> 01:57:40.360
+Mas entendeu?
+
+01:57:40.460 --> 01:57:41.480
+Não, perfeitamente.
+
+01:57:41.580 --> 01:57:45.340
+Eu acho que o meu business vai ser
+comunidade, porque hoje eu já tenho.
+
+01:57:45.440 --> 01:57:47.360
+Só vou mudar o...
+
+01:57:47.460 --> 01:57:48.860
+o local.
+
+01:57:48.960 --> 01:57:50.040
+Mas tá feito.
+
+01:57:50.140 --> 01:57:50.700
+Valeu, obrigado.
+
+01:57:50.800 --> 01:57:51.360
+É isso aí.
+
+01:57:51.460 --> 01:57:54.120
+Tamo junto.
+
+01:57:54.220 --> 01:57:56.120
+Que mais, galera?
+
+01:57:56.220 --> 01:57:58.100
+Acabamos?
+
+01:57:58.200 --> 01:57:58.360
+Boa.
+
+01:57:58.460 --> 01:58:00.300
+Eu tenho que ir aqui também, que eu
+tô...
+
+01:58:00.400 --> 01:58:01.840
+Eu tô na empresa de um amigo.
+
+01:58:01.940 --> 01:58:03.760
+Vou fazer a última do Paulo aí.
+
+01:58:03.860 --> 01:58:09.120
+Eu tô na empresa de um amigo meu que eu
+pedi aqui porque eu precisava de um
+
+01:58:09.220 --> 01:58:10.440
+cantinho pra dar essa aula.
+
+01:58:10.540 --> 01:58:13.480
+E eu tava no TikTok hoje, né?
+
+01:58:13.580 --> 01:58:15.040
+Aí eu podia ficar no TikTok o dia
+inteiro.
+
+01:58:15.140 --> 01:58:17.040
+Aí eu pedi asilo político pro amigo meu.
+
+01:58:17.140 --> 01:58:19.040
+Aquele me emprestou a empresa e ele já
+fechou isso aí.
+
+01:58:19.140 --> 01:58:19.420
+Eu tô aqui.
+
+01:58:19.520 --> 01:58:21.040
+Eu tenho que sair.
+
+01:58:21.140 --> 01:58:22.840
+Mas vamos lá.
+
+01:58:22.940 --> 01:58:24.480
+E acho que você não precisa responder
+aqui.
+
+01:58:24.580 --> 01:58:26.620
+Depois, se der pra deixar pro Roger, tá
+de boa.
+
+01:58:26.720 --> 01:58:27.780
+Mas você falou que...
+
+01:58:27.880 --> 01:58:28.660
+Manda aí, Paulo.
+
+01:58:28.760 --> 01:58:29.740
+Manda aí.
+
+01:58:29.840 --> 01:58:32.180
+Você falou que você domina a metodologia
+de vendas.
+
+01:58:32.280 --> 01:58:36.460
+Acho que você tem um track record aí
+longo, né?
+
+01:58:36.560 --> 01:58:41.120
+Cara, pra quem não domina, minha
+pergunta vai o que você recomenda ou
+
+01:58:41.220 --> 01:58:42.160
+seja literatura...
+
+01:58:42.260 --> 01:58:48.320
+Eu sei que vender, ir pra rua e fazer
+funciona muito mais do que teoria, mas o
+
+01:58:48.420 --> 01:58:53.240
+que você aconselha aí pra trabalhar e
+melhorar essa habilidade?
+
+01:58:53.340 --> 01:58:57.380
+O Roger já manda vários livros, mas aí
+queria te ouvir também nesse sentido.
+
+01:58:57.480 --> 01:59:01.940
+E, cara, você falou que hoje você tá
+trampando com o TikTok, mas eu vi que
+
+01:59:02.040 --> 01:59:03.780
+esse material é de um workshop.
+
+01:59:03.880 --> 01:59:13.160
+Tem algum conteúdo que você hoje sei lá,
+comercializa ou como dá pra sei lá, se
+
+01:59:13.260 --> 01:59:18.120
+aprofundar mais, sentar contigo ou
+dentro da empresa que você tem,
+
+01:59:18.220 --> 01:59:19.920
+construir mais conteúdo nesse sentido?
+
+01:59:20.020 --> 01:59:21.740
+São as duas coisas.
+
+01:59:21.840 --> 01:59:22.760
+Tá, vamos lá.
+
+01:59:22.860 --> 01:59:29.480
+Cara, primeira coisa pra quem não domina
+a metodologia de vendas, de vendas
+
+01:59:29.580 --> 01:59:40.720
+especificamente, é o seguinte, eu sugiro
+que você leia A Venda Desafiadora.
+
+01:59:40.820 --> 01:59:43.900
+Eu acho que no teu caso vai ser o melhor
+livro que você vai poder ler, por isso
+
+01:59:44.000 --> 01:59:44.820
+que a gente falou hoje.
+
+01:59:44.920 --> 01:59:49.300
+É um livro foda de metodologia de
+vendas.
+
+01:59:49.400 --> 01:59:50.560
+Então, ponto um.
+
+01:59:50.660 --> 01:59:53.620
+Pra não ficar dando muita coisa, você
+tem que ler direto e reto aqui, pra não
+
+01:59:53.720 --> 01:59:55.360
+ficar também enchendo você de coisa pra
+fazer.
+
+01:59:55.460 --> 01:59:57.440
+Só isso já é o suficiente.
+
+01:59:57.540 --> 01:59:58.460
+Ponto dois.
+
+01:59:58.560 --> 02:00:07.460
+Cara, sobre mim e dos meus negócios,
+entra aí no nosso site, science .cc que
+
+02:00:07.560 --> 02:00:11.980
+tem ali uns cursos que você pode se
+aprofundar nessas paradas que são mais
+
+02:00:12.080 --> 02:00:13.460
+profundos.
+
+02:00:13.560 --> 02:00:15.920
+Então, eu vou colocar aqui, science...
+
+02:00:16.020 --> 02:00:20.740
+Isso, sou eu mesmo.
+
+02:00:20.840 --> 02:00:22.380
+Fechou.
+
+02:00:22.480 --> 02:00:23.440
+É isso aí.
+
+02:00:23.540 --> 02:00:27.360
+Essa é uma que dá pra você fazer em 10
+vezes e eu posso fazer um cupom pra
+
+02:00:27.460 --> 02:00:29.580
+turma da Academia Leidara aqui.
+
+02:00:29.680 --> 02:00:37.220
+E se vocês quiserem, faço um cuponzão de
+20 cursos pra vocês continuarem
+
+02:00:37.320 --> 02:00:38.700
+estudando.
+
+02:00:38.800 --> 02:00:41.960
+E sem contar que, bicho, se você...
+
+02:00:42.060 --> 02:00:46.400
+O meu LinkedIn é muito técnico, mas no
+meu LinkedIn tem muita coisa.
+
+02:00:46.500 --> 02:00:50.100
+Eu tenho um canal no YouTube que tem uma
+cacetada de coisa também que faz sentido
+
+02:00:50.200 --> 02:00:53.520
+você consumir.
+
+02:00:53.620 --> 02:00:57.820
+Que você consegue inclusive achar no
+nosso site ali, as coisas todas.
+
+02:00:57.920 --> 02:01:00.200
+Você entra no site, você acha o canal no
+YouTube.
+
+02:01:00.300 --> 02:01:02.480
+Qual é o site?
+
+02:01:02.580 --> 02:01:04.900
+Eu mandei aqui no chat, science .cc.
+
+02:01:05.000 --> 02:01:05.980
+Ah, desculpe.
+
+02:01:06.080 --> 02:01:07.840
+Não, relaxa.
+
+02:01:07.940 --> 02:01:09.180
+Relaxa.
+
+02:01:09.280 --> 02:01:15.880
+Vou até mandar o YouTube também, porque
+o YouTube é um lugar que também tem
+
+02:01:15.980 --> 02:01:16.640
+várias paradas.
+
+02:01:16.740 --> 02:01:21.500
+Inclusive, eu tô indo amanhã pra
+Washington cobrir o principal evento de
+
+02:01:21.600 --> 02:01:24.200
+vendas como ciência no mundo.
+
+02:01:24.300 --> 02:01:29.100
+Se vocês quiserem acompanhar, entra no
+meu Instagram aí, fica ligado que eu vou
+
+02:01:29.200 --> 02:01:31.060
+cobrir o evento mais foda que tem.
+
+02:01:31.160 --> 02:01:35.800
+O cara que inventou essa ampulheta vai
+tá lá e eu vou fazer o curso com ele.
+
+02:01:35.900 --> 02:01:39.820
+De novo, pela quarta vez eu viajo pros
+Estados Unidos pra ir atrás desse
+
+02:01:39.920 --> 02:01:42.740
+puto.
+
+02:01:42.840 --> 02:01:44.080
+Como é que eu ia falar pra vocês?
+
+02:01:44.180 --> 02:01:48.660
+Eu tenho aqui o coiso, o site...
+
+02:01:48.760 --> 02:01:52.820
+Os dois links já, o site e o do YouTube
+lá.
+
+02:01:52.920 --> 02:01:54.220
+Manda bala.
+
+02:01:54.320 --> 02:01:54.580
+Isso.
+
+02:01:54.680 --> 02:01:59.960
+E aí, galera, pega aí o Instagram se
+vocês quiserem ver a cobertura do
+
+02:02:00.060 --> 02:02:03.640
+evento, que a cobertura do evento vai
+ser pica.
+
+02:02:03.740 --> 02:02:07.400
+Vai ser muito legal, muito legal mesmo.
+
+02:02:07.500 --> 02:02:07.880
+E...
+
+02:02:07.980 --> 02:02:09.660
+é isso.
+
+02:02:09.760 --> 02:02:15.100
+Ô, Patrick, você vê que o vocabulário
+dele é jovem, é só jovem, entendeu?
+
+02:02:15.200 --> 02:02:16.760
+É isso aí, Giovanni.
+
+02:02:16.860 --> 02:02:19.180
+É, eu amei, eu amei.
+
+02:02:19.280 --> 02:02:21.720
+Eu vi e sabia que você tava gostando,
+tava do lado.
+
+02:02:21.820 --> 02:02:22.840
+Eu amei.
+
+02:02:22.940 --> 02:02:24.860
+Cara, só que três aulas.
+
+02:02:24.960 --> 02:02:29.000
+O Patrick fez assim...
+
+02:02:29.100 --> 02:02:30.400
+Paras e paras pra gente.
+
+02:02:30.500 --> 02:02:31.840
+Que legal, que legal.
+
+02:02:31.940 --> 02:02:40.020
+Hoje foi a tarde toda discutindo com o
+meu sobrinho que ele tem uma empresa de
+
+02:02:40.120 --> 02:02:44.480
+venda de roupas super caras usadas.
+
+02:02:44.580 --> 02:02:46.300
+Tipo assim, um sapato custa...
+
+02:02:46.400 --> 02:02:49.640
+Cara, o cara usou três meses e o sapato
+custa cinco mil.
+
+02:02:49.740 --> 02:02:52.680
+Eu não compro nenhum sapato de ouro por
+cinco mil, mas ele...
+
+02:02:52.780 --> 02:02:53.800
+E aí a conversa foi essa.
+
+02:02:53.900 --> 02:02:55.740
+Tem gente que compra.
+
+02:02:55.840 --> 02:02:57.260
+É, e tem gente que compra.
+
+02:02:57.360 --> 02:02:58.340
+Tem mercados doidos.
+
+02:02:58.440 --> 02:02:59.140
+E aí você...
+
+02:02:59.240 --> 02:03:05.660
+Eu tava discutindo aquele negócio,
+porque você vê que vai conversar com o
+
+02:03:05.760 --> 02:03:08.500
+jovem e sair com tanto insight de ir lá
+também, viu, Roger?
+
+02:03:08.600 --> 02:03:10.020
+Porque assim, às vezes você tá...
+
+02:03:10.120 --> 02:03:14.200
+A gente tá com essa geração nova aí e,
+cara, é um mundo novo.
+
+02:03:14.300 --> 02:03:15.720
+E a gente vai vender pra eles.
+
+02:03:15.820 --> 02:03:17.100
+E já já eles tão dominando o mundo.
+
+02:03:17.200 --> 02:03:20.600
+Então se você não entende...
+
+02:03:20.700 --> 02:03:21.380
+Muito bom.
+
+02:03:21.480 --> 02:03:22.800
+É isso aí.
+
+02:03:22.900 --> 02:03:23.420
+Vamos nessa.
+
+02:03:23.520 --> 02:03:24.660
+Boa, Giovanni.
+
+02:03:24.760 --> 02:03:25.560
+Obrigado novamente aí.
+
+02:03:25.660 --> 02:03:28.860
+Pra você ter conectado aí nas redes
+sociais.
+
+02:03:28.960 --> 02:03:30.980
+A gente vai trocando ideia.
+
+02:03:31.080 --> 02:03:33.180
+E talvez tem mais, né, Roger?
+
+02:03:33.280 --> 02:03:33.580
+Tem mais.
+
+02:03:33.680 --> 02:03:37.220
+Então, a gente vai trazer, sim, mais pra
+frente aqui.
+
+02:03:37.320 --> 02:03:40.840
+Então vai ter mais conteúdo do nosso
+mestre aí.
+
+02:03:40.940 --> 02:03:42.080
+Muito bom.
+
+02:03:42.180 --> 02:03:44.160
+Obrigado por hoje.
+
+02:03:44.260 --> 02:03:45.600
+Qual é o nome do mamu?
+
+02:03:45.700 --> 02:03:46.860
+Coloca a hashtag dele.
+
+02:03:46.960 --> 02:03:48.880
+Você tá stalkeando?
+
+02:03:48.980 --> 02:03:49.540
+Que é pico?
+
+02:03:49.640 --> 02:03:49.900
+Qual o nome dele?
+
+02:03:50.000 --> 02:03:51.260
+Eu sigo.
+
+02:03:51.360 --> 02:03:53.860
+Mano, ele é um holandês.
+
+02:03:53.960 --> 02:03:56.660
+Ele é engenheiro de satélite.
+
+02:03:56.760 --> 02:03:58.040
+Mandei no site.
+
+02:03:58.140 --> 02:04:01.640
+Van der Kooij.
+
+02:04:01.740 --> 02:04:02.040
+Kooij.
+
+02:04:02.140 --> 02:04:02.940
+Assim, ó.
+
+02:04:03.040 --> 02:04:04.180
+Kooij.
+
+02:04:04.280 --> 02:04:06.300
+Ele se chama Jaco Van der Kooij.
+
+02:04:06.400 --> 02:04:09.600
+Ele é um cara que eu viajo pelo mundo
+atrás dele.
+
+02:04:09.700 --> 02:04:11.400
+E a primeira vez eu fui pra Hollywood.
+
+02:04:11.500 --> 02:04:14.000
+A segunda vez eu fui pra Nashville.
+
+02:04:14.100 --> 02:04:16.420
+A terceira vez eu fui pro Texas.
+
+02:04:16.520 --> 02:04:18.500
+E amanhã eu tô indo pra Washington.
+
+02:04:18.600 --> 02:04:23.040
+E as quatro vezes eu fui pra trocar uma
+ideia com ele e ver qual é que é.
+
+02:04:23.140 --> 02:04:28.590
+Aí a gente sempre constrói umas paradas
+daora.
+
+02:04:28.690 --> 02:04:30.890
+Muito bom.
+
+02:04:30.990 --> 02:04:31.350
+Valeu.
+
+02:04:31.450 --> 02:04:32.090
+Valeu.
+
+02:04:32.190 --> 02:04:32.350
+Obrigado.
+
+02:04:32.450 --> 02:04:32.950
+Valeu, galera.
+
+02:04:33.050 --> 02:04:34.990
+Bom trabalho.
+
+02:04:35.090 --> 02:04:36.150
+Valeu, Bruno.
+
+02:04:36.250 --> 02:04:38.490
+Valeu.
+
+02:04:38.590 --> 02:04:39.050
+Falou, Bruno.
+
+02:04:39.150 --> 02:04:39.810
+Valeu, Arthur.
+
+02:04:39.910 --> 02:04:42.510
+Não esqueça uma variação, por favor, lá.
+
+02:04:42.610 --> 02:04:43.790
+Não esqueça uma variação.
+
+02:04:43.890 --> 02:04:45.710
+Tamo junto.
+
+02:04:45.810 --> 02:04:46.130
+Valeu.
+
+02:04:46.230 --> 02:04:49.680
+Valeu, galera.
+
+02:04:49.780 --> 02:04:51.420
+Valeu, Roger.
+
+02:04:51.520 --> 02:04:51.420
+Valeu.

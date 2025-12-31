@@ -6,7 +6,7 @@
 |----------|-----------|
 | **Titulo do Curso** | Trilha 3: Dados e Performance |
 | **Subtitulo** | De dados dispersos a decisoes automaticas |
-| **Versao** | 2.0 |
+| **Versao** | 3.0 - Microlearning |
 | **Data** | 2025-12-30 |
 | **Instituicao** | Academia Lendaria |
 | **Categoria** | Reducao de Custo |
@@ -15,7 +15,7 @@
 
 ## Objetivo Geral
 
-Capacitar o empresario a tomar decisoes baseadas em dados, usando sistema automatizado de coleta, visualizacao, alertas e analise por IA — saindo de dados dispersos para decisoes confiantes em 6 horas.
+Capacitar o empresario a tomar decisoes baseadas em dados, usando sistema automatizado de coleta, visualizacao, alertas e analise por IA — saindo de dados dispersos para decisoes confiantes em ~6 horas.
 
 ---
 
@@ -32,27 +32,42 @@ Ao final do curso, o aluno sera capaz de:
 
 ---
 
-## Estrutura Modular
+## Estrutura Modular (Microlearning)
 
-| Modulo | Descricao | Horas Total | Conteudo Gravado | Atividades | Aulas |
-|--------|-----------|-------------|------------------|------------|-------|
-| **Modulo 1:** Mapa de Dados | Inventario de fontes, gaps, consolidacao | 1h30min | 30 min | 60 min | 2 |
-| **Modulo 2:** Dashboard Automatizado | Metricas, Looker Studio, automacao | 1h30min | 30 min | 60 min | 2 |
-| **Modulo 3:** Alertas Inteligentes | n8n, Evolution API, WhatsApp | 1h30min | 30 min | 60 min | 2 |
-| **Modulo 4:** Analista de Dados com IA | Prompts calibrados, interpretacao | 1h30min | 30 min | 60 min | 2 |
-| **Modulo 5:** Rotina de Decisao | Habito, checklist, log de decisoes | 1h30min | 30 min | 60 min | 2 |
+| Modulo | Descricao | Aulas | Duracao Total |
+|--------|-----------|-------|---------------|
+| **Modulo 1:** Mapa de Dados | Inventario de fontes, gaps, consolidacao | 7 | 75 min |
+| **Modulo 2:** Dashboard Automatizado | Metricas, Looker Studio, automacao | 7 | 75 min |
+| **Modulo 3:** Alertas Inteligentes | n8n, Evolution API, WhatsApp | 7 | 75 min |
+| **Modulo 4:** Analista de Dados com IA | Prompts calibrados, interpretacao | 7 | 75 min |
+| **Modulo 5:** Rotina de Decisao | Habito, checklist, log de decisoes | 7 | 75 min |
+| **TOTAL** | | **35** | **6h15min** |
+
+---
+
+## Padrao de Estrutura por Modulo
+
+Cada modulo segue o padrao de 7 aulas:
+
+| # | Tipo | Duracao | Proposito |
+|---|------|---------|-----------|
+| 1 | Quick Win | 5 min | Ganho rapido, criar urgencia |
+| 2 | Conceito 1 | 10 min | Problema + Custo |
+| 3 | Conceito 2 | 10 min | Solucao + Framework |
+| 4 | Ferramenta | 10 min | Template/Tool explicado |
+| 5 | Demo | 15 min | Demonstracao ao vivo |
+| 6 | Exercicio | 20 min | Pratica guiada |
+| 7 | Validacao | 5 min | Checagem + Hook proximo modulo |
 
 ---
 
 ## Metodologia
 
-- Metodologia Problem-First: cada modulo comeca pelo PROBLEMA, mostra o CUSTO, explica POR QUE E DIFICIL, depois apresenta a SOLUCAO
-- Video-aulas com 30% teoria e 70% pratica (hands-on)
-- Build Sprints de 45-60 minutos por modulo
-- Templates preenchidos em tempo real
-- Prompts de IA para cada rotina de analise
-- Alternativas de ferramentas em TODOS os modulos (nunca forcamos uma ferramenta)
-- Quick Actions de 48h ao final de cada modulo
+- **GPS Framework**: Goal (30-60s) → Position (60-90s) → Steps
+- **Didatica Lendaria**: 5 Porques, Semiotica (analogias, diagramas), Regra de Ouro (max 2-3 conceitos)
+- **Microlearning**: 5-20 min por aula, objetivo unico por aula
+- **Hooks Novela**: Cada aula termina com gancho pra proxima
+- **Acao Rapida**: Toda aula tem micro-acao de 2 min
 
 ---
 
@@ -62,7 +77,7 @@ Ao final do curso, o aluno sera capaz de:
 |------------|------|
 | Entregaveis praticos ao final de cada modulo | 60% |
 | Projeto final (Sistema de Inteligencia Completo) | 25% |
-| Rotina de 5 dias executada | 15% |
+| Rotina de 21 dias executada | 15% |
 
 ---
 
@@ -70,9 +85,10 @@ Ao final do curso, o aluno sera capaz de:
 
 | Categoria | Horas |
 |-----------|-------|
-| **Total** | 7h30min (~450 minutos) |
-| Conteudo Gravado | ~2h30min (150 minutos) |
-| Atividades e Exercicios | ~5h (300 minutos) |
+| **Total** | ~6h15min (375 minutos) |
+| Conteudo Gravado | ~6h15min |
+| Aulas | 35 |
+| Media por Aula | ~11 minutos |
 
 ---
 
@@ -81,10 +97,10 @@ Ao final do curso, o aluno sera capaz de:
 | Metrica | Valor |
 |---------|-------|
 | Total de Modulos | 5 |
-| Total de Aulas | 10 |
+| Total de Aulas | 35 |
 | Templates | 5 (1 por modulo) |
 | Prompts de IA | +15 prontos para uso |
-| Media de Duracao por Aula | 30-60 minutos |
+| Media de Duracao por Aula | 5-20 minutos |
 | Formato | 100% Assincrono |
 | Proporcao | 70% pratica / 30% teoria |
 | Categoria | Reducao de Custo |
@@ -97,9 +113,9 @@ Ao final do curso, o aluno sera capaz de:
 |--------|------------|
 | 1 | Mapa de Dados do Negocio preenchido |
 | 2 | Dashboard com 5-7 metricas automaticas |
-| 3 | 5 alertas configurados no WhatsApp |
+| 3 | 3 alertas configurados (Crise, Tendencia, Meta) |
 | 4 | 4 prompts de analise calibrados |
-| 5 | Rotina de 15min implementada + Log de Decisoes |
+| 5 | Rotina OIAD implementada + Tracker 21 dias |
 
 ---
 
@@ -116,10 +132,10 @@ Ao final do curso, o aluno sera capaz de:
 
 ## Bibliografia e Recursos
 
-1. Templates exclusivos: Mapa de Dados, Dashboard, Alertas, Prompts IA, Rotina
+1. Templates exclusivos: Mapa de Dados, Dashboard, Alertas, Prompts IA, Rotina OIAD
 2. Compilacao de +15 Prompts de IA para analise de negocios
 3. Checklists de validacao por modulo
-4. Videos de troubleshooting (5min cada)
+4. Tracker de 21 dias para formacao de habito
 5. Guia de alternativas de ferramentas
 
 ---
@@ -143,152 +159,149 @@ Ao final do curso, o aluno sera capaz de:
 
 ---
 
-# PLANO DE AULA
+# PLANO DE AULA DETALHADO
+
+## Modulo 1: Mapa de Dados (7 aulas - 75 min)
+
+| Aula | Titulo | Tipo | Duracao | Conceitos |
+|------|--------|------|---------|-----------|
+| 1.1 | Quanto Tempo Você Perde Procurando Dados? | Quick Win | 5 min | Calculo do tempo perdido |
+| 1.2 | O Cemiterio dos Dados Dispersos | Conceito | 10 min | Problema + Custo real |
+| 1.3 | O Mapa de Dados: Seu GPS de Informacao | Conceito | 10 min | Framework + 4 categorias |
+| 1.4 | O Template que Organiza Tudo | Ferramenta | 10 min | Como usar o template |
+| 1.5 | Mapeando Meu Negocio ao Vivo | Demo | 15 min | Preenchimento real |
+| 1.6 | Seu Turno: Construa Seu Mapa | Exercicio | 20 min | Pratica guiada |
+| 1.7 | Validacao e Proximos Passos | Validacao | 5 min | Checklist + Hook M2 |
+
+**Entregavel:** Mapa de Dados preenchido com 10+ dados mapeados
+
+---
+
+## Modulo 2: Dashboard Automatizado (7 aulas - 75 min)
+
+| Aula | Titulo | Tipo | Duracao | Conceitos |
+|------|--------|------|---------|-----------|
+| 2.1 | O Dashboard que Ninguem Usa | Quick Win | 5 min | Por que dashboards falham |
+| 2.2 | O Problema: Dados sem Visualizacao | Conceito | 10 min | Custo de nao visualizar |
+| 2.3 | As 5-7 Metricas que Importam | Conceito | 10 min | Framework de selecao |
+| 2.4 | Looker Studio: A Ferramenta Gratuita | Ferramenta | 10 min | Alternativas + Setup |
+| 2.5 | Criando Seu Dashboard ao Vivo | Demo | 15 min | Passo a passo real |
+| 2.6 | Seu Turno: Monte Seu Dashboard | Exercicio | 20 min | Pratica guiada |
+| 2.7 | Automatizacao e Proximos Passos | Validacao | 5 min | 3 niveis + Hook M3 |
+
+**Entregavel:** Dashboard funcional com 5-7 metricas e cores condicionais
+
+---
+
+## Modulo 3: Alertas Inteligentes (7 aulas - 75 min)
+
+| Aula | Titulo | Tipo | Duracao | Conceitos |
+|------|--------|------|---------|-----------|
+| 3.1 | O Problema Descoberto Tarde Demais | Quick Win | 5 min | Custo de descobrir tarde |
+| 3.2 | Dashboard e Retrovisor, Alerta e Farol | Conceito | 10 min | Diferenca fundamental |
+| 3.3 | Os 3 Alertas que Todo Negocio Precisa | Conceito | 10 min | Crise, Tendencia, Meta |
+| 3.4 | n8n + WhatsApp: A Combinacao Poderosa | Ferramenta | 10 min | Alternativas + Setup |
+| 3.5 | Configurando Seu Primeiro Alerta | Demo | 15 min | Evolution API ao vivo |
+| 3.6 | Seu Turno: Configure 3 Alertas | Exercicio | 20 min | Pratica guiada |
+| 3.7 | Testando e Proximos Passos | Validacao | 5 min | Teste real + Hook M4 |
+
+**Entregavel:** 3 alertas configurados e funcionando (Crise, Tendencia, Meta)
+
+---
+
+## Modulo 4: Analista de Dados com IA (7 aulas - 75 min)
+
+| Aula | Titulo | Tipo | Duracao | Conceitos |
+|------|--------|------|---------|-----------|
+| 4.1 | A Pergunta que Ninguem Responde | Quick Win | 5 min | Gap entre dado e acao |
+| 4.2 | O Gap da Interpretacao | Conceito | 10 min | Ter dado ≠ Entender dado |
+| 4.3 | IA como Analista de R$100/mes | Conceito | 10 min | ROI + 4 tipos de analise |
+| 4.4 | Claude/ChatGPT: Configurando Contexto | Ferramenta | 10 min | Setup + Contexto base |
+| 4.5 | Criando 4 Prompts de Analise | Demo | 15 min | Performance, Investigativo, Preditivo, Comparativo |
+| 4.6 | Seu Turno: Calibre Seus Prompts | Exercicio | 20 min | Teste com dados reais |
+| 4.7 | Salvando Biblioteca e Proximos Passos | Validacao | 5 min | Organizacao + Hook M5 |
+
+**Entregavel:** Biblioteca com contexto + 4 prompts calibrados
+
+---
+
+## Modulo 5: Rotina de Decisao (7 aulas - 75 min)
+
+| Aula | Titulo | Tipo | Duracao | Conceitos |
+|------|--------|------|---------|-----------|
+| 5.1 | A Ferrari que Fica na Garagem | Quick Win | 5 min | Ferramentas sem uso |
+| 5.2 | Por que Rotinas Morrem | Conceito | 10 min | 3 assassinos de rotina |
+| 5.3 | Os 15 Minutos que Mudam Tudo | Conceito | 10 min | Framework OIAD |
+| 5.4 | Escolhendo Seu Horario Perfeito | Ferramenta | 10 min | Analise + Bloqueio agenda |
+| 5.5 | Executando a Rotina ao Vivo | Demo | 15 min | 15 min cronometrados |
+| 5.6 | Seu Turno: Primeira Execucao | Exercicio | 20 min | Pratica com dados reais |
+| 5.7 | O Compromisso de 21 Dias | Validacao | 5 min | Tracker + Encerramento |
+
+**Entregavel:** Rotina OIAD configurada + Tracker 21 dias + Primeira execucao feita
+
+---
+
+# CONTEUDO PROGRAMATICO DETALHADO
 
 ## Modulo 1: Mapa de Dados
 
-### Aula 1.1: O Problema dos Dados Dispersos
-
-| Elemento | Descricao |
-|----------|-----------|
-| **Duracao** | 30 min |
-| **Tipo** | Conceitual |
-| **Objetivos** | - Identificar onde os dados estao dispersos<br>- Calcular custo oculto de nao ter dados centralizados<br>- Entender por que e dificil resolver sozinho<br>- Visualizar o estado futuro desejado |
-| **Conteudo** | - O dia tipico do empresario procurando dados<br>- Fragmentacao de dados: 5-15 fontes diferentes<br>- Custo: 4h/semana juntando numeros<br>- Por que tentativas comuns falham<br>- Conceito de Mapa de Dados |
-| **Atividades** | - Lista rapida: onde estao meus dados hoje? |
-| **Recursos** | - Slides com exemplos reais<br>- Diagrama de fontes dispersas |
-
-### Aula 1.2: Construindo seu Mapa de Dados
-
-| Elemento | Descricao |
-|----------|-----------|
-| **Duracao** | 60 min |
-| **Tipo** | Pratica (hands-on) |
-| **Objetivos** | - Preencher template de Mapa de Dados<br>- Mapear pelo menos 10 dados com fontes<br>- Identificar gaps criticos<br>- Usar IA para validar gaps |
-| **Conteudo** | - Estrutura do template (6 colunas)<br>- 5 categorias de dados (Financeiro, Comercial, Cliente, Marketing, Operacional)<br>- Preenchimento guiado categoria por categoria<br>- Analise de gaps com IA |
-| **Atividades** | - Build Sprint: preencher mapa completo (45 min)<br>- Validacao com prompt de IA (10 min)<br>- Definir proxima acao 48h (5 min) |
-| **Recursos** | - Template modulo-1-mapa-dados.md<br>- Prompt IA de analise de gaps<br>- Checklist de validacao |
-
----
+| Aula | Conteudo Principal |
+|------|-------------------|
+| 1.1 | Calculo do tempo perdido procurando dados; O custo oculto de dados dispersos |
+| 1.2 | O "cemiterio" de dados; Fragmentacao de 5-15 fontes; Por que tentativas falham |
+| 1.3 | Conceito de Mapa de Dados; 4 categorias (Financeiro, Comercial, Cliente, Operacional) |
+| 1.4 | Template de 6 colunas; Como preencher cada campo |
+| 1.5 | Demonstracao ao vivo preenchendo mapa completo |
+| 1.6 | Exercicio guiado: preencher seu mapa + validacao com IA |
+| 1.7 | Checklist de validacao; Transicao para Dashboard |
 
 ## Modulo 2: Dashboard Automatizado
 
-### Aula 2.1: Por que seu Dashboard Nao Funciona
-
-| Elemento | Descricao |
-|----------|-----------|
-| **Duracao** | 30 min |
-| **Tipo** | Conceitual |
-| **Objetivos** | - Identificar os 5 erros que matam dashboards<br>- Diferenciar "olhar numeros" de "tomar decisao"<br>- Escolher as metricas certas<br>- Conhecer opcoes de ferramentas |
-| **Conteudo** | - Os 5 motivos pelos quais dashboards falham<br>- Metricas demais, sem automacao, bonito mas inutil, sem acao, sem rotina<br>- As 4 caracteristicas de dashboard que funciona<br>- Comparativo de ferramentas: Looker vs Power BI vs Metabase |
-| **Atividades** | - Reflexao: meu dashboard atual funciona? |
-| **Recursos** | - Slides com dashboards bons vs ruins<br>- Tabela comparativa de ferramentas |
-
-### Aula 2.2: Criando Dashboard que se Atualiza Sozinho
-
-| Elemento | Descricao |
-|----------|-----------|
-| **Duracao** | 60 min |
-| **Tipo** | Pratica (hands-on) |
-| **Objetivos** | - Criar dashboard no Looker Studio<br>- Configurar 5-7 metricas com metas<br>- Implementar cores condicionais<br>- Conectar fonte de dados automatica |
-| **Conteudo** | - Escolhendo metricas (framework de selecao)<br>- Preparando dados no Google Sheets<br>- Criando dashboard passo a passo<br>- Configurando atualizacao automatica |
-| **Atividades** | - Escolher 5-7 metricas (10 min)<br>- Preparar planilha (10 min)<br>- Build Sprint: criar dashboard (30 min)<br>- Configurar automacao (10 min) |
-| **Recursos** | - Template modulo-2-dashboard.md<br>- Prompt IA para definir metricas<br>- Video troubleshooting 5min |
-
----
+| Aula | Conteudo Principal |
+|------|-------------------|
+| 2.1 | 5 erros que matam dashboards; Por que a maioria nao funciona |
+| 2.2 | Custo de decisao sem visualizacao; Exemplo de R$72K perdidos |
+| 2.3 | Framework de selecao de metricas; Criterios por tipo de negocio |
+| 2.4 | Looker Studio vs alternativas; Setup basico |
+| 2.5 | Demonstracao criando dashboard do zero |
+| 2.6 | Exercicio guiado: criar seu dashboard + cores condicionais |
+| 2.7 | 3 niveis de automacao; Transicao para Alertas |
 
 ## Modulo 3: Alertas Inteligentes
 
-### Aula 3.1: Dashboard e Retrovisor, Alerta e Farol
-
-| Elemento | Descricao |
-|----------|-----------|
-| **Duracao** | 30 min |
-| **Tipo** | Conceitual |
-| **Objetivos** | - Entender diferenca entre dashboard e alerta<br>- Identificar os 5 tipos de alertas essenciais<br>- Escolher triggers certos<br>- Conhecer opcoes de ferramentas |
-| **Conteudo** | - Historia real: problema descoberto tarde demais<br>- Dashboard (passivo) vs Alerta (proativo)<br>- As 3 fases do problema: sinal fraco, visivel, crise<br>- Os 5 tipos de alerta: limite, tendencia, anomalia, oportunidade, prazo<br>- Comparativo: n8n vs Make vs Zapier |
-| **Atividades** | - Identificar: qual problema descobri tarde? |
-| **Recursos** | - Slides com metafora retrovisor/farol<br>- Tabela de ferramentas de automacao |
-
-### Aula 3.2: Configurando Alertas no WhatsApp
-
-| Elemento | Descricao |
-|----------|-----------|
-| **Duracao** | 60 min |
-| **Tipo** | Pratica (hands-on) |
-| **Objetivos** | - Configurar n8n (hospedado ou local)<br>- Conectar WhatsApp via Evolution API<br>- Criar 3-5 alertas funcionando<br>- Testar cada alerta |
-| **Conteudo** | - Deploy do n8n no Render/Railway<br>- Configuracao de Evolution API<br>- Criando workflows: trigger, condicao, acao<br>- Templates de mensagem de alerta |
-| **Atividades** | - Configurar n8n (15 min)<br>- Conectar WhatsApp (15 min)<br>- Build Sprint: criar alertas (25 min)<br>- Testar (5 min) |
-| **Recursos** | - Template modulo-3-alertas.md<br>- Guia de configuracao n8n<br>- Templates de mensagem WhatsApp |
-
----
+| Aula | Conteudo Principal |
+|------|-------------------|
+| 3.1 | Historia real de crise evitavel; Custo de descobrir tarde (R$60K) |
+| 3.2 | Analogia retrovisor vs farol; Complementaridade dashboard + alerta |
+| 3.3 | Framework 3 alertas: Crise (imediato), Tendencia (atencao), Meta (acompanhamento) |
+| 3.4 | n8n + Evolution API; Alternativas pagas (Zapier, Make) |
+| 3.5 | Demonstracao configurando alerta completo |
+| 3.6 | Exercicio guiado: criar 3 alertas (1 de cada tipo) |
+| 3.7 | Protocolo de teste; Transicao para IA |
 
 ## Modulo 4: Analista de Dados com IA
 
-### Aula 4.1: IA como seu Analista de R$ 100/mes
-
-| Elemento | Descricao |
-|----------|-----------|
-| **Duracao** | 30 min |
-| **Tipo** | Conceitual |
-| **Objetivos** | - Entender por que precisa de analise alem de numeros<br>- Comparar custo analista humano vs IA<br>- Conhecer os 4 tipos de analise que IA faz bem<br>- Escolher ferramenta de IA certa |
-| **Conteudo** | - O gap da interpretacao: ter numero vs saber o que fazer<br>- Custo: R$ 8K/mes analista vs R$ 100/mes IA<br>- O que IA faz bem: diagnostico, comparacao, hipoteses, acoes<br>- O que IA NAO faz: decisoes estrategicas, contexto nao dado<br>- Comparativo: Claude vs ChatGPT vs Gemini |
-| **Atividades** | - Reflexao: que analise eu preciso? |
-| **Recursos** | - Slides com comparativo de custo<br>- Tabela de IAs e casos de uso |
-
-### Aula 4.2: Criando seus Prompts de Analise
-
-| Elemento | Descricao |
-|----------|-----------|
-| **Duracao** | 60 min |
-| **Tipo** | Pratica (hands-on) |
-| **Objetivos** | - Configurar contexto base do negocio<br>- Criar 4 prompts especializados<br>- Testar com dados reais<br>- Calibrar ate obter respostas uteis |
-| **Conteudo** | - Estrutura do prompt: contexto, dados, pergunta, formato<br>- Prompt 1: Analise de Performance Geral<br>- Prompt 2: Investigacao de Problema<br>- Prompt 3: Previsao e Tendencia<br>- Prompt 4: Comparativo de Periodos |
-| **Atividades** | - Configurar contexto (10 min)<br>- Build Sprint: criar 4 prompts (40 min)<br>- Testar e calibrar (10 min) |
-| **Recursos** | - Template modulo-4-prompts-ia.md<br>- Exemplos de prompts calibrados<br>- Log de calibracao |
-
----
+| Aula | Conteudo Principal |
+|------|-------------------|
+| 4.1 | A pergunta "o que fazer com esse numero?"; Gap entre dado e decisao |
+| 4.2 | Piramide de maturidade (dados → visualizacao → analise → previsao) |
+| 4.3 | ROI: R$5K analista vs R$100 IA; 4 tipos de analise que IA faz |
+| 4.4 | Template de contexto de negocio; Custom Instructions vs Projetos |
+| 4.5 | 4 prompts: Performance, Investigativo, Preditivo, Comparativo |
+| 4.6 | Exercicio: testar e calibrar cada prompt com dados reais |
+| 4.7 | Organizacao da biblioteca; Transicao para Rotina |
 
 ## Modulo 5: Rotina de Decisao
 
-### Aula 5.1: Por que Dados sem Rotina Viram Decoracao
-
-| Elemento | Descricao |
-|----------|-----------|
-| **Duracao** | 30 min |
-| **Tipo** | Conceitual |
-| **Objetivos** | - Entender por que sistemas morrem sem rotina<br>- Identificar os 3 assassinos de rotinas<br>- Conhecer framework dos 4 passos<br>- Escolher melhor horario |
-| **Conteudo** | - O cemiterio de dashboards: por que abandonam<br>- Os 3 assassinos: sem horario fixo, sem processo claro, sem acao<br>- A matematica: 15min/dia = 75min/semana<br>- Os 4 passos: VER, VERIFICAR, ANALISAR, AGIR<br>- Opcoes de horario: manha, almoco, fim do dia |
-| **Atividades** | - Reflexao: por que parei de olhar dados? |
-| **Recursos** | - Slides com framework de 4 passos<br>- Diagrama de rotina |
-
-### Aula 5.2: Os 15 Minutos que Mudam Tudo
-
-| Elemento | Descricao |
-|----------|-----------|
-| **Duracao** | 60 min |
-| **Tipo** | Pratica (hands-on) |
-| **Objetivos** | - Definir horario fixo e bloquear na agenda<br>- Configurar checklist dos 4 passos<br>- Criar log de decisoes<br>- Executar primeira rotina completa |
-| **Conteudo** | - Analise do dia: qual melhor horario?<br>- Bloqueando na agenda<br>- Checklist dos 4 passos detalhado<br>- Template de log de decisoes<br>- Execucao ao vivo da rotina |
-| **Atividades** | - Definir horario (10 min)<br>- Configurar checklist (10 min)<br>- Criar log (5 min)<br>- Primeira execucao ao vivo (25 min)<br>- Compromisso 21 dias (10 min) |
-| **Recursos** | - Template modulo-5-rotina.md<br>- Tracker de 21 dias<br>- Prompt IA assistente de rotina |
-
----
-
-# CONTEUDO PROGRAMATICO
-
-| Modulo | Aula | Conteudo |
-|--------|------|----------|
-| **Modulo 1:** Mapa de Dados | Aula 1.1 | - O problema dos dados dispersos<br>- Custo de 4h/semana juntando dados<br>- Por que tentativas comuns falham |
-| | Aula 1.2 | - Template de Mapa de Dados<br>- 5 categorias de dados<br>- Analise de gaps com IA |
-| **Modulo 2:** Dashboard Automatizado | Aula 2.1 | - 5 erros que matam dashboards<br>- 4 caracteristicas de dashboard que funciona<br>- Comparativo de ferramentas |
-| | Aula 2.2 | - Escolhendo metricas<br>- Criando dashboard no Looker Studio<br>- Configurando automacao |
-| **Modulo 3:** Alertas Inteligentes | Aula 3.1 | - Dashboard vs Alerta (retrovisor vs farol)<br>- 5 tipos de alertas essenciais<br>- Comparativo de ferramentas |
-| | Aula 3.2 | - Configurando n8n<br>- Conectando WhatsApp<br>- Criando alertas funcionais |
-| **Modulo 4:** Analista de Dados com IA | Aula 4.1 | - Gap da interpretacao<br>- Custo analista vs IA<br>- O que IA faz bem e o que nao faz |
-| | Aula 4.2 | - Estrutura de prompt eficaz<br>- 4 prompts especializados<br>- Calibracao de prompts |
-| **Modulo 5:** Rotina de Decisao | Aula 5.1 | - Por que sistemas morrem sem rotina<br>- 3 assassinos de rotinas<br>- Framework dos 4 passos |
-| | Aula 5.2 | - Definindo horario fixo<br>- Checklist e log de decisoes<br>- Primeira execucao ao vivo |
+| Aula | Conteudo Principal |
+|------|-------------------|
+| 5.1 | Analogia da Ferrari na garagem; Ferramentas sem uso = desperdicio |
+| 5.2 | 3 assassinos: friccao, ambiguidade, falta de gatilho |
+| 5.3 | Framework OIAD: Olhar (3min), Investigar (5min), Anotar (3min), Decidir (4min) |
+| 5.4 | Analise do melhor horario; Ancoragem de habito; Bloqueio de agenda |
+| 5.5 | Demonstracao da rotina de 15min cronometrada |
+| 5.6 | Primeira execucao com dados reais do aluno |
+| 5.7 | Compromisso 21 dias; Tracker; Encerramento da trilha |
 
 ---
 
@@ -300,7 +313,7 @@ Ao final do curso, o aluno sera capaz de:
 | **Dashboard** | Manual, desatualizado | Automatico, tempo real |
 | **Problemas** | Descobre no final do mes | Alerta no dia 3 |
 | **Analise** | "Nao sei o que significa" | IA interpreta e sugere |
-| **Rotina** | "Vou ver quando der" | 15min/dia, todo dia |
+| **Rotina** | "Vou ver quando der" | 15min/dia via OIAD |
 | **Decisao** | No feeling | Com dados e confianca |
 
 ---
@@ -310,12 +323,14 @@ Ao final do curso, o aluno sera capaz de:
 | Componente | Criterio Minimo | Criterio Completo |
 |------------|-----------------|-------------------|
 | Mapa de Dados | 5 fontes listadas | 10+ dados, gaps identificados |
-| Dashboard | 3 metricas | 5-7 metricas, 2+ automaticas |
-| Alertas | 1 alerta funcionando | 5 alertas + WhatsApp |
-| Analista IA | 1 prompt testado | 4 prompts calibrados |
-| Rotina | Horario definido | 5 dias executados |
+| Dashboard | 3 metricas | 5-7 metricas, cores condicionais |
+| Alertas | 1 alerta funcionando | 3 alertas (Crise, Tendencia, Meta) |
+| Analista IA | 1 prompt testado | 4 prompts calibrados + contexto |
+| Rotina | Horario definido | 21 dias executados via OIAD |
 | Relatorio Final | - | 3 decisoes reais com dados |
 
 ---
 
-*Ementa TRILHA 3 - DADOS E PERFORMANCE v2.0 - CreatorOS/Academia Lendaria*
+*Ementa TRILHA 3 - DADOS E PERFORMANCE v3.0 Microlearning - CreatorOS/Academia Lendaria*
+*Atualizado: 2025-12-30*
+*Estrutura: GPS Framework + Didatica Lendaria + Microlearning*
