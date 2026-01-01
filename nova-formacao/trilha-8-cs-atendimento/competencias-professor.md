@@ -1,380 +1,206 @@
-# Competencias do Professor - Trilha 8: CS e Atendimento
+# Perfil de Competencias - Professor Trilha 8
 
-## Academia Lendaria | Retencao e Satisfacao
-
----
-
-> **Objetivo deste documento:** Mapear todas as competencias que o professor precisa ter para ministrar o curso Trilha 8 - CS e Atendimento com excelencia, garantindo autoridade, credibilidade e capacidade de guiar os alunos na transformacao proposta.
+## CS e Atendimento com IA
 
 ---
 
-## 1. VISAO GERAL DO CURSO
-
-| Atributo | Valor |
-|----------|-------|
-| **Duracao** | 5-6 horas (5 modulos, 40 aulas) |
-| **Publico** | Empresarios, Gestores de CS, R$ 50K-500K/mes, 3-20 pessoas no suporte |
-| **Promessa** | Montar sistema que resolve 70% dos tickets sozinho, preve churn e melhora continuamente |
-| **Entregaveis** | 7 frameworks praticos (Funil, KB, Motor IA, Triagem, Health Score, QA, Rotina) |
+**Documento para:** Time de Recrutamento / RH
+**Cargo:** Professor/Instrutor de Curso Online
+**Trilha:** CS e Atendimento - De apagar incendio para nunca ter incendio
+**Carga Horaria do Curso:** ~5-6h (40 aulas em 5 modulos)
+**Modalidade:** EAD Assincrono (gravacao de video-aulas)
 
 ---
 
-## 2. MATRIZ DE COMPETENCIAS
+## 1. RESUMO DO CURSO
 
-### 2.1 Competencias Tecnicas (Hard Skills)
+Este curso ensina **empresarios e gestores de CS/Suporte** a:
+- Arquitetar funil de suporte com SLAs e metricas
+- Construir base de conhecimento e motor de resposta com IA
+- Implementar triagem automatica e roteamento inteligente
+- Configurar health score e playbook anti-churn
+- Estabelecer sistema de QA e melhoria continua
 
-| Competencia | Nivel Minimo | Evidencias Necessarias | Modulo(s) |
-|-------------|--------------|------------------------|-----------|
-| **Gestao de Suporte/CS** | Avancado | Ter liderado operacao de atendimento | 1, 2, 3 |
-| **Estruturacao de SLAs** | Avancado | Ter definido e monitorado SLAs reais | 1 |
-| **Criacao de Knowledge Base** | Avancado | Portfolio de KBs implementadas | 2 |
-| **Uso de IA (ChatGPT/Claude)** | Avancado | Uso diario + prompts de atendimento | 2, 3, 4, 5 |
-| **Customer Success** | Intermediario | Entende jornada, health score, churn | 4 |
-| **Metricas de Atendimento** | Avancado | CSAT, NPS, FCR, tempo de resposta | 1, 5 |
-| **Quality Assurance** | Intermediario | Ter implementado QA em operacao | 5 |
-| **Automacao de Processos** | Intermediario | Conhecer n8n, Make, Zapier | 3 |
-| **Ferramentas de Helpdesk** | Intermediario | Zendesk, Intercom, Freshdesk ou similar | 1, 2, 3 |
+**Publico-alvo:** Donos de PMEs, gestores de CS, heads de suporte (28-50 anos)
 
 ---
 
-### 2.2 Competencias de Experiencia (Track Record)
+## 2. COMPETENCIAS TECNICAS OBRIGATORIAS
 
-| Competencia | Evidencia Minima | Por Que Importa |
-|-------------|------------------|-----------------|
-| **Ter liderado equipe de suporte** | 2+ anos gerenciando atendentes | Credibilidade com ICP |
-| **Ter reduzido tempo de resposta** | Case com % de melhoria | Prova de que funciona |
-| **Ter implementado KB** | KB funcionando em producao | Sabe o que da errado |
-| **Ter usado IA para atendimento** | 6+ meses de uso pratico | Domina prompts e limitacoes |
-| **Ter prevenido churn** | Case de cliente salvo | Entende urgencia |
-| **Ter implementado metricas** | Dashboard de CS funcionando | Sabe medir resultado |
-| **Ter escalado atendimento** | Operacao que cresceu 2x+ | Conhece dor de escala |
+### 2.1 Customer Success e Suporte
 
----
+| Competencia | Nivel | Descricao |
+|-------------|-------|-----------|
+| Gestao de Suporte | Avancado | Funil de suporte, SLAs, metricas de atendimento |
+| Base de Conhecimento | Avancado | Estrutura de KB, artigos, categorizacao |
+| Triagem e Roteamento | Avancado | Classificacao de tickets, priorizacao |
+| Customer Success | Avancado | Health score, playbooks, prevencao de churn |
+| Qualidade de Atendimento | Avancado | QA Score, NPS, CSAT, melhoria continua |
 
-### 2.3 Competencias Pedagogicas (Ensino)
+### 2.2 Metricas e KPIs
 
-| Competencia | Descricao | Aplicacao no Curso |
-|-------------|-----------|-------------------|
-| **Facilitacao de Exercicios** | Guiar construcao de templates | Exercicios de 30 min por modulo |
-| **Uso de Exemplos Concretos** | Transformar teoria em casos reais | Demos de cada modulo |
-| **Validacao de Entregaveis** | Avaliar se aluno fez certo | Checklists de cada modulo |
-| **Adaptacao ao Nivel** | Explicar para iniciante em IA | ICP: iniciante em ChatGPT |
-| **Tom Direto** | Comunicar sem rodeios | Microlearning de 5-12 min |
-| **Empatia com Suporte** | Entender dor de quem "apaga incendio" | Conexao emocional |
+| Competencia | Nivel | Descricao |
+|-------------|-------|-----------|
+| Metricas de Suporte | Avancado | Tempo de resposta, FCR, custo por ticket |
+| Health Score | Avancado | Calculo, sinais de risco, intervencoes |
+| NPS e CSAT | Avancado | Medicao, analise, melhoria |
+| Churn | Avancado | Identificacao de risco, prevencao, recuperacao |
 
----
+### 2.3 Inteligencia Artificial Aplicada
 
-### 2.4 Competencias de Comunicacao
-
-| Competencia | Manifesta-se Como | Contra-Indicacao |
-|-------------|-------------------|------------------|
-| **Clareza** | Explica conceito em 1-2 frases | Linguagem academica, jargoes |
-| **Objetividade** | Foco em acao, nao em teoria | Divagacoes sobre "experiencia do cliente" |
-| **Autoridade** | Fala com convicao, cita experiencia | Inseguranca, "eu acho" |
-| **Praticidade** | Sempre conecta ao "faz isso agora" | Teoria sem aplicacao |
-| **Empatia** | Valida dor do suporte sobrecarregado | Tom condescendente |
+| Competencia | Nivel | Descricao |
+|-------------|-------|-----------|
+| ChatGPT/Claude | Avancado | Motor de resposta, classificacao, analise |
+| Prompt Engineering | Avancado | Prompts para suporte e CS |
+| Automacao com IA | Avancado | n8n, triagem automatica, respostas |
+| Guardrails | Intermediario | Seguranca e limites para IA |
 
 ---
 
-## 3. COMPETENCIAS POR MODULO
+## 3. COMPETENCIAS PEDAGOGICAS OBRIGATORIAS
 
-### MODULO 1: Arquitetura, SLAs e Metricas
+### 3.1 Metodologia de Ensino
 
-**Tema Central:** Estruturar operacao de atendimento
+| Competencia | Descricao |
+|-------------|-----------|
+| Abordagem Pratica (70/30) | Aluno sai com sistema funcionando |
+| Microlearning | 8 aulas por modulo, resultados rapidos |
+| Demonstracoes ao Vivo | Configurar KB, motor de resposta, triagem |
+| Templates Prontos | Funil, KB, health score, QA |
 
-| Competencia Especifica | Por Que Precisa |
-|------------------------|-----------------|
-| Definicao de SLAs por canal | Para ensinar matriz de SLAs |
-| Calculo de custo por ticket | Para mostrar impacto financeiro |
-| Metricas de suporte (CSAT, NPS, FCR) | Para montar dashboard |
-| Estrutura de funil 4 camadas | Framework central do modulo |
+### 3.2 Habilidades de Comunicacao
 
-**Perguntas que o aluno fara:**
-- "Qual SLA devo usar para WhatsApp?"
-- "Como calcular custo por ticket se nao tenho sistema?"
-- "Devo medir tempo de resposta ou tempo de resolucao?"
+| Habilidade | Descricao |
+|------------|-----------|
+| Empatia | Entender a dor do suporte sobrecarregado |
+| Praticidade | Foco em resolver, nao em teoria |
+| Clareza | Explicar processos de forma simples |
+| Motivacao | Mostrar que ha solucao para o caos |
 
----
+### 3.3 Producao de Conteudo
 
-### MODULO 2: KB + Motor de Resposta
-
-**Tema Central:** Base de conhecimento e IA respondendo
-
-| Competencia Especifica | Por Que Precisa |
-|------------------------|-----------------|
-| Estrutura de artigo KB | Template do modulo |
-| Identificacao das Top 20 perguntas | Metodo de priorizacao |
-| Criacao de prompts de resposta | Motor de Resposta IA |
-| Guardrails de seguranca | Para evitar IA errar |
-
-**Perguntas que o aluno fara:**
-- "A IA pode dar desconto sozinha?"
-- "Como evitar que a IA invente informacao?"
-- "Qual IA usar? ChatGPT ou Claude?"
-- "A KB precisa estar em qual ferramenta?"
+| Habilidade | Descricao |
+|------------|-----------|
+| Demonstracoes | Criar KB, motor de resposta ao vivo |
+| Gravacao de Tela | Demonstrar ferramentas e fluxos |
+| Criacao de Templates | Funil, playbooks, checklists |
 
 ---
 
-### MODULO 3: Triagem e Automacao
+## 4. EXPERIENCIA PROFISSIONAL
 
-**Tema Central:** Classificacao automatica de tickets
+### 4.1 Experiencia Obrigatoria
 
-| Competencia Especifica | Por Que Precisa |
-|------------------------|-----------------|
-| Definicao de categorias | Para classificador funcionar |
-| Criterios de urgencia | Para priorizar corretamente |
-| Regras de roteamento | Para direcionar ao destino certo |
-| Criacao de prompt classificador | Framework do modulo |
+| Requisito | Tempo Minimo |
+|-----------|--------------|
+| Customer Success ou Suporte | 4+ anos |
+| Gestao de equipe de atendimento | 2+ anos |
+| Reducao de churn comprovada | 2+ anos |
 
-**Perguntas que o aluno fara:**
-- "Quantas categorias devo ter?"
-- "Como sei se o classificador esta acertando?"
-- "Posso deixar a IA responder sozinha?"
-- "E se o ticket for de duas categorias?"
+### 4.2 Experiencia Desejavel
 
----
-
-### MODULO 4: CS Proativo e Anti-Churn
-
-**Tema Central:** Prevenir cancelamento com health score
-
-| Competencia Especifica | Por Que Precisa |
-|------------------------|-----------------|
-| Calculo de custo de churn | Para mostrar urgencia |
-| Sinais de risco de churn | Lista dos 15 sinais |
-| Formula de Health Score | 5 pilares do framework |
-| Playbook de intervencao | Acoes por faixa (verde/amarelo/vermelho) |
-
-**Perguntas que o aluno fara:**
-- "Como calcular Health Score sem sistema?"
-- "Quantos clientes devo monitorar?"
-- "O que oferecer para cliente vermelho?"
-- "Posso automatizar contato proativo?"
+| Requisito | Diferencial |
+|-----------|-------------|
+| Head de CS ou Suporte | Visao estrategica |
+| Implementou health score | Prova de resultado |
+| Cases de automacao de suporte | Entende escala |
+| Professor/instrutor de CS | Didatica comprovada |
 
 ---
 
-### MODULO 5: QA, NPS e Melhoria Continua
+## 5. COMPETENCIAS COMPORTAMENTAIS
 
-**Tema Central:** Medir qualidade e melhorar sempre
+### 5.1 Perfil Ideal
 
-| Competencia Especifica | Por Que Precisa |
-|------------------------|-----------------|
-| Criterios de QA Score | 7 criterios ponderados |
-| Diferenca NPS vs CSAT | Conceito fundamental |
-| Analise de padroes com IA | Prompt de analise |
-| Rotina de melhoria semanal | Ciclo do modulo |
+| Competencia | Por Que Importa |
+|-------------|-----------------|
+| Empatia | CS e sobre entender o cliente |
+| Orientacao a Processo | Suporte escala com sistema |
+| Proatividade | CS proativo previne churn |
+| Resiliencia | Lidar com pressao e reclamacao |
 
-**Perguntas que o aluno fara:**
-- "Quem deve avaliar os atendimentos?"
-- "Devo usar NPS ou CSAT?"
-- "Como dar feedback sem desmotivar?"
-- "Quanto tempo leva para ver resultado?"
+### 5.2 Comportamentos Indesejaveis
 
----
-
-## 4. PERFIL IDEAL DO PROFESSOR
-
-### 4.1 Background Profissional
-
-```
-PERFIL IDEAL:
-- Head de CS, Suporte ou CX com 3+ anos de experiencia
-- Gestao de equipes de 5-30 atendentes
-- Implementou sistema de atendimento do zero ou reestruturou
-- Reducao documentada de tempo de resposta (50%+)
-- Aumento documentado de CSAT/NPS (10+ pontos)
-- Usuario avancado de IA generativa (6+ meses)
-- Experiencia com ferramentas de helpdesk
-```
-
-### 4.2 Anti-Perfil (Quem NAO Serve)
-
-| Caracteristica | Por Que Nao Serve |
-|----------------|-------------------|
-| Consultor sem operacao propria | Falta experiencia de "apagar incendio" |
-| Especialista so em IA | Nao entende dinamica de suporte |
-| Atendente sem gestao | Nao sabe estruturar operacao |
-| Gestor de call center 500+ | Realidade diferente do ICP |
-| Iniciante em IA | Nao consegue criar prompts |
-| Foco so em vendas | CS e diferente de Sales |
+| Evitar | Por Que |
+|--------|---------|
+| Reativo demais | Curso e sobre prevencao |
+| Foco em ferramenta cara | Ensina ferramentas acessiveis |
+| Desorganizado | Contradiz a mensagem do curso |
 
 ---
 
-### 4.3 Caracteristicas de Personalidade
+## 6. ENTREGAVEIS DO PROFESSOR
 
-| Caracteristica | Manifestacao |
-|----------------|--------------|
-| **Pragmatico** | Foco em resolver, nao em teorizar |
-| **Paciente** | Suporte exige paciencia, ensino tambem |
-| **Analitico** | Gosta de metricas e dados |
-| **Empatico** | Entende dor do cliente E do atendente |
-| **Organizado** | Processos claros, documentados |
-| **Resiliente** | Ja passou por crises de atendimento |
+1. **Gravacao de 40 video-aulas** (~5-6h de conteudo)
+2. **Demonstracoes** de KB, motor de resposta, triagem IA
+3. **Templates** de funil, health score, QA score
+4. **Prompts** de classificacao, resposta, analise
+5. **Playbooks** de intervencao e melhoria continua
 
 ---
 
-## 5. CHECKLIST DE VALIDACAO DO PROFESSOR
+## 7. DIFERENCIAIS QUE DESTACAM CANDIDATOS
 
-### Pre-requisitos Obrigatorios
-
-- [ ] **Experiencia em CS/Suporte:** 3+ anos liderando equipes
-- [ ] **Case de melhoria:** Documentado com metricas (tempo, CSAT, churn)
-- [ ] **Portfolio de KB:** Artigos implementados em producao
-- [ ] **Dominio de IA:** Uso avancado de ChatGPT/Claude para atendimento
-- [ ] **Conhecimento de metricas:** CSAT, NPS, FCR, Health Score
-- [ ] **Capacidade de ensinar:** Experiencia como instrutor/mentor
-
-### Demonstracao de Competencias
-
-- [ ] **Criar 1 artigo KB** no formato do curso
-- [ ] **Montar prompt de Motor de Resposta** funcional
-- [ ] **Criar prompt Classificador** com 90%+ acerto
-- [ ] **Calcular Health Score** de 5 clientes reais
-- [ ] **Avaliar 3 atendimentos** usando QA Score
-- [ ] **Gravar video de 5 min** explicando um conceito do curso
-- [ ] **Responder 15 perguntas** tipicas de alunos
+| Diferencial | Peso |
+|-------------|------|
+| Resultados comprovados em reducao de churn | Alto |
+| Experiencia implementando health score | Alto |
+| Cases de automacao de suporte com IA | Alto |
+| Dominio de NPS e CSAT | Medio |
+| Experiencia ensinando CS/Suporte | Medio |
 
 ---
 
-## 6. PONTOS DE ATENCAO
+## 8. PERGUNTAS SUGERIDAS PARA ENTREVISTA
 
-### 6.1 Armadilhas a Evitar
+### Conhecimento Tecnico
 
-| Armadilha | Consequencia | Como Evitar |
-|-----------|--------------|-------------|
-| Focar demais em IA | Aluno esquece que e sobre pessoas | Sempre voltar ao cliente |
-| Ser muito tecnico | ICP e iniciante | Simplificar linguagem |
-| Ignorar realidade de PME | "Usa Zendesk Enterprise" | Usar ferramentas acessiveis |
-| Prometer demais | "Resolve 100% automatico" | Ser realista (30-40% L0) |
-| Exemplos de grande empresa | ICP tem 3-20 no suporte | Usar casos de PME |
-| Ignorar aspecto humano | Atendimento e sobre pessoas | Equilibrar tech + empatia |
+1. "Como identificaria um cliente em risco de churn ANTES dele reclamar?"
+2. "Descreva um health score que implementou. Quais variaveis usou?"
+3. "Como estruturaria uma base de conhecimento do zero?"
+4. "Qual sua estrategia para reduzir tempo de resposta sem contratar?"
 
-### 6.2 Momentos Criticos
+### Habilidade Pedagogica
 
-| Momento | Risco | Preparo Necessario |
-|---------|-------|-------------------|
-| Motor de Resposta errando | Aluno perde confianca | Ter exemplos de guardrails |
-| Classificador < 90% | Aluno acha que nao funciona | Ter estrategia de calibracao |
-| Health Score complexo | Aluno trava | Ter versao simplificada |
-| QA Score subjetivo | Criterios vagos | Ter exemplos claros por nota |
-| Rotina de melhoria | Aluno nao sustenta | Criar accountability |
+5. "Como ensinaria empresario que acha que 'suporte e custo, nao investimento'?"
+6. "Qual analogia usaria para explicar health score?"
+7. "Se tivesse 5 minutos, qual quick win de CS ensinaria?"
+
+### Uso de IA
+
+8. "Como usa IA para classificar tickets automaticamente?"
+9. "Crie um prompt para gerar resposta de suporte a partir de KB."
 
 ---
 
-## 7. CONHECIMENTO DE FERRAMENTAS
+## 9. RESUMO EXECUTIVO PARA RH
 
-### 7.1 Ferramentas que Precisa Conhecer
+**Estamos buscando um profissional que:**
 
-| Categoria | Ferramenta | Nivel |
-|-----------|------------|-------|
-| **Helpdesk** | Zendesk, Freshdesk, Intercom | Intermediario |
-| **IA** | ChatGPT, Claude | Avancado |
-| **Automacao** | n8n, Make, Zapier | Intermediario |
-| **Planilhas** | Google Sheets, Excel | Intermediario |
-| **Comunicacao** | WhatsApp Business, Email | Basico |
-| **Metricas** | Looker Studio, Metabase | Basico |
+- Tenha experiencia solida em CS e gestao de suporte
+- Domine health score, prevencao de churn e QA
+- Saiba construir base de conhecimento e processos
+- Conheca e use IA para escalar atendimento
+- Tenha empatia e didatica para engajar alunos
 
-### 7.2 Prompts que Precisa Dominar
+**Perfil ideal:** Head de CS ou gestor de suporte com experiencia em PMEs, que ja implementou sistemas de prevencao de churn e sabe ensinar de forma pratica.
 
-| Tipo de Prompt | Aplicacao | Modulo |
-|----------------|-----------|--------|
-| Motor de Resposta | Gerar sugestao de resposta | 2 |
-| Classificador | Categorizar + rotear ticket | 3 |
-| Analisador de Risco | Identificar sinais de churn | 4 |
-| Avaliador de QA | Pontuar atendimento | 5 |
-| Detector de Padroes | Analisar reclamacoes em massa | 5 |
+**Formacao minima:** Superior em Administracao, Marketing, ou areas correlatas.
+
+**Certificacoes desejaveis:** Customer Success Manager, ITIL, certificacoes de plataformas de suporte.
 
 ---
 
-## 8. DESENVOLVIMENTO CONTINUO
+## 10. PROXIMOS PASSOS
 
-### Atualizacoes Necessarias
-
-| Area | Frequencia | Por Que |
-|------|------------|---------|
-| Prompts de IA | Trimestral | IA evolui rapido |
-| Ferramentas de helpdesk | Semestral | Novas features |
-| Benchmarks de mercado | Anual | Metas mudam |
-| Cases de sucesso | Continuo | Prova social |
-| Perguntas frequentes | Continuo | FAQ evolui |
-
-### Recursos de Apoio
-
-- Acesso a ferramentas de IA (ChatGPT Plus, Claude Pro)
-- Conta de teste em helpdesk (Zendesk, Freshdesk)
-- Templates atualizados do curso
-- Comunidade de outros professores
-- Feedback dos alunos (NPS + comentarios)
-- Acesso a grupos de CS/Suporte
+1. **Triagem de curriculos** - Filtrar por experiencia em CS/Suporte
+2. **Entrevista tecnica** - Usar perguntas da secao 8
+3. **Teste pratico** - Criar health score para empresa hipotetica
+4. **Case de reducao de churn** - Mostrar resultados reais
+5. **Contratacao** - Definir modelo (CLT, PJ, por projeto)
 
 ---
 
-## 9. RESUMO EXECUTIVO
-
-### Competencias Essenciais (Top 5)
-
-1. **Gestao de Suporte/CS** - Ter liderado operacao real
-2. **Uso Avancado de IA** - Prompts de resposta, classificacao, analise
-3. **Metricas de Atendimento** - CSAT, NPS, FCR, Health Score
-4. **Estruturacao de Processos** - SLAs, fluxos, documentacao
-5. **Comunicacao Direta** - Explicar sem rodeios, microlearning
-
-### Formula do Professor Ideal
-
-```
-Professor Ideal =
-  (Head de CS OU Gestor de Suporte)
-  + Operacao de 5-30 atendentes
-  + Case de melhoria documentado
-  + Dominio de IA para atendimento
-  + Pragmatismo
-  + Empatia (com cliente E atendente)
-```
-
-### Diferencial do Professor Trilha 8
-
-```
-NAO E:
-- Especialista em chatbot
-- Consultor de CX teorico
-- Vendedor de ferramenta
-
-E:
-- Quem ja "apagou incendio" e construiu sistema
-- Quem reduziu tempo de resposta na pratica
-- Quem salvou clientes de cancelar
-- Quem mede e melhora continuamente
-```
-
----
-
-## 10. ROTEIRO DE ENTREVISTA
-
-### Perguntas para Validar Experiencia
-
-1. "Conte um caso onde voce reduziu tempo de resposta significativamente"
-2. "Como voce estrutura uma base de conhecimento do zero?"
-3. "Me de um exemplo de cliente que voce salvou do churn"
-4. "Qual sua experiencia usando IA para atendimento?"
-5. "Como voce mede qualidade de atendimento?"
-6. "Qual foi sua maior crise de suporte e como resolveu?"
-
-### Perguntas para Validar Capacidade de Ensino
-
-7. "Explique o que e Health Score em 2 minutos"
-8. "Como voce ensinaria alguem a criar um prompt de classificacao?"
-9. "Qual a diferenca entre NPS e CSAT? Quando usar cada um?"
-10. "Se um aluno disser que IA nao funciona pro negocio dele, o que voce faria?"
-
-### Exercicio Pratico
-
-11. "Crie um prompt de Motor de Resposta para [contexto do aluno]"
-12. "Avalie este atendimento usando criterios de QA Score"
-13. "Identifique sinais de risco neste cliente"
-
----
-
-**Documento elaborado por:** Course Architect Agent
-**Base:** Analise completa do curso Trilha 8 - CS e Atendimento
-**Versao:** 1.0
-**Data:** Dezembro 2025
+*Documento gerado para contratacao de professor da Trilha 8*
+*Academia Lendaria / Nova Formacao Lendaria*
+*Data: Dezembro 2025*
