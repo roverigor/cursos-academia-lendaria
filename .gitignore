@@ -1,0 +1,16 @@
+# Arquivos temporários do Windows (evita o erro 'invalid path')
+[Zz]one.[Ii]dentifier
+Thumbs.db
+$RECYCLE.BIN/
+
+# Arquivos do macOS (caso um dia use)
+.DS_Store
+
+# Pastas de dependências (se você começar a programar)
+node_modules/
+vendor/
+
+# Logs e arquivos de sistema do Linux
+.swp
+*~
+.nfs*
