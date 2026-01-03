@@ -1,0 +1,200 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+Fala pessoal, eu sou o David Teton, seja muito bem-vindo ao seu curso aqui de Estalação de Ferramentas Open Source.
+
+00:07.000 --> 00:16.000
+Antes de a gente colocar a mão na massa, e começar a realmente configurar doque, reportem, algumas coisas, um pouco mais complexas,
+
+00:16.000 --> 00:21.000
+eu quero te mostrar uma coisa aqui que vai realmente brilhar os seus olhos, uma coisa bem diferente.
+
+00:22.000 --> 00:31.000
+Eu acho que você nunca tinha percebido, nunca tinha parado, talvez, pra contar o quanto você gaste com ferramentas pagas,
+
+00:31.000 --> 00:41.000
+que existem no mundo open source. Então, veja aqui comigo, eu fiz uma pequena planilha aqui, onde eu mostro algumas ferramentas que são muito utilizadas,
+
+00:41.000 --> 00:48.000
+pagas, para vocês terem uma noção de quantos vocês gastam por mês e por ano nessas ferramentas.
+
+00:48.000 --> 01:02.000
+Me acompanhem aqui. Então, a gente tem a nossa primeira ferramenta, que é o Chatute Cloud, que é uma ferramenta de comunicação de Whatsapp, como a Bode Conversa, como multi-3600, por exemplo,
+
+01:02.000 --> 01:11.000
+são essas ferramentas que a gente usa para ter uma corporação de Whatsapp, né? E ela custa 39 dólares por mês.
+
+01:12.000 --> 01:23.000
+É equivalente a 2.574 por ano, certo? Então, a gente tem o Whatsapp da Tuilo, para quem usa a perifacial e precisa visualizar essas coisas,
+
+01:23.000 --> 01:32.000
+pois não tem, né, quando a gente usa a perifacial. O Calend Premium, que é para você poder ter um calendário, uma ferramenta de agendamentos,
+
+01:32.000 --> 01:39.000
+temos o Make, que é bem conhecido aqui, como é uma ferramenta de automação, como Manchette, o Zapper, por exemplo,
+
+01:39.000 --> 01:49.000
+e a gente tem um Robespot aqui, que é um CRM também, muito utilizado e é 45 dólares por mês. Então, vejo, a gente gasta por mês aqui em torno de 200 dólares
+
+01:49.000 --> 02:00.000
+para poder ter essas aplicações, funcionando para nós. Eu que dá aí 12.672 reais por ano,
+
+02:00.000 --> 02:10.000
+por algo que muitas vezes você nem utiliza 100% daquela ferramenta, e você acaba ficando preso nessa ferramenta por anos e por anos e por anos.
+
+02:10.000 --> 02:22.000
+Então, imagine aí, o que você poderia ter investindo de cursos, de trabalho, às vezes até comprando algo legal para você, um novo contador, por exemplo, com esses 12.672 reais.
+
+02:22.000 --> 02:34.000
+E é isso que você vai aprender aqui, nesse curso comigo. Você precisa aprender sobre isso, porque é um ponto muito importante na economia de se trabalhar com a tecnologia.
+
+02:34.000 --> 02:45.000
+Agora, eu entendo, você deve estar pensando assim, dável, mas eu preciso dessas ferramentas, eu uso essas ferramentas, e você está completamente correto em relação a isso.
+
+02:45.000 --> 02:55.000
+Mas, imagine que eu posso te apresentar algumas ferramentas, ou formas de encontrar ferramentas, desse mesmo jeito, só que gratuitas.
+
+02:55.000 --> 03:01.000
+Você só precisa pagar um único mecanismo aqui, que é a nossa VPS.
+
+03:01.000 --> 03:09.000
+Pense comigo, imagine que você tem uma ferramenta de bolo, certo?
+
+03:09.000 --> 03:17.000
+Então, essa ferramenta para fazer bolo é a sua própria ferramenta, sua própria VPS, certo?
+
+03:17.000 --> 03:30.000
+E a receita de bolo é o que todo mundo utiliza para fazer aquele bolo. Então, você tem a sua própria cozinha, a sua própria ferramenta, onde você constrói o bolo, mas existe a receita de bolo.
+
+03:30.000 --> 03:39.000
+E a receita de bolo é o nosso self-hosted, o nosso open-source, diferente, por exemplo, dessas ferramentas que a gente viu aqui, que são os sassos.
+
+03:39.000 --> 03:50.000
+Os sassos não te dão a receita, eles têm um bolo dele da venda, mas você não sabe como construir, você não pode modificar esse bolo, você não pode pegar aquela receita e transformar essa receita em outra coisa.
+
+03:50.000 --> 04:05.000
+Já, dentro das ferramentas open-source, isso é totalmente possível. Você vê a receita da pessoa, você altera a receita da pessoa, quadriona novos ingredientes, se retire ingredientes, muda da forma que você quiser, e segue a vida.
+
+04:05.000 --> 04:23.000
+Mas, lembrando que nem tudo são flores, certo? Eu vou mostrar para vocês aqui algumas ferramentas que a gente pode substituir dessas daqui, que são gratuitas, e a gente pode já interpretar como a gente vai economizar bastante com esses determinados ferramentas.
+
+04:23.000 --> 04:35.000
+Para o próprio Chatute Cloud, a gente tem o nosso Chatute Self-hosted, que é um Chatute gratuito baixado na sua VPS, como falei, na sua cozinha.
+
+04:35.000 --> 04:43.000
+Imagina que a gente está na cozinha, que a gente contratou a cozinha, e agora a gente pode gastar essa cozinha para fazer as receitas gratuitas.
+
+04:43.000 --> 04:58.000
+Então, nosso Chatute vale 0 reais. Então, nós temos a nossa WhatsApp API Twi-Lo, que é a sua API da Twi-Lo, ela é para a API oficial, ela precisa rodar um painel, e a gente é aqui dentro do mundo open-source, temos vários e temos uma bem conhecida que se chama Evolution.
+
+04:58.000 --> 05:11.000
+Evolution é uma API do WhatsApp que você ler diretamente no seu celular com o QR Code, por exemplo, e ela é uma API gratuita de software livre, então a gente pode compartilhar, utilizar sem pagar nada também.
+
+05:11.000 --> 05:20.000
+Já temos uma ótima economia aqui. Dentro do Calenda, por exemplo, Premium, a gente tem o próprio Calenda do Google, mas ele ainda é do Google, então ele não é seu ferroço.
+
+05:20.000 --> 05:32.000
+Mas aqui, no mundo open-source, nós temos o Easy Appointments, que também é um ótimo software para a gendamento, e dá pra gente trabalhar muito legal com ele, ele possui a API BERT, muito bom da gente utilizar.
+
+05:33.000 --> 05:47.000
+Nós temos o Make, que é uma ferramenta de automação, muito conhecida, de criação, de fluxos, mas aqui, na nosso queridíssimo open-source, nós temos o conhecido em 8n self-hosted,
+
+05:47.000 --> 05:58.000
+porque o n8n também possui um modo cloud, onde a gente faz alguns pagamentos, mas nós temos aqui o nosso self-hosted de toda comunidade, que também vale 0 reais.
+
+05:58.000 --> 06:09.000
+Por fim, em CRM, nós temos diversos CRM's open-source, mas hoje a gente vai utilizar aqui, como exemplo, o Krain CRM, que também é o ótimo CRM, bem conhecido.
+
+06:09.000 --> 06:16.000
+E com isso, a gente só tem um único custo aqui, que é a nossa VPS.
+
+06:16.000 --> 06:24.000
+VPS, a gente vai aprender o longo desse custo aqui, mas ela existe uma variação em quantidade de hardware dessa VPS,
+
+06:24.000 --> 06:36.000
+quantidade de memória RAM e quantidade de CPUs, a serem utilizados, mas normalmente vai gerar em torno aí uma VPS legal para a gente poder fazer os desenvolvimentos em torno de 13 euros,
+
+06:36.000 --> 06:40.000
+que é o que valente, vamos fazer um pequeno calco aqui.
+
+06:45.000 --> 06:47.000
+Vamos notar.
+
+06:48.000 --> 06:52.000
+Em torno de 38 reais, certo?
+
+06:53.000 --> 07:00.000
+Então, vejam que a gente economiza de 192 dólares para 78 reais, que daria no ano,
+
+07:04.000 --> 07:16.000
+936 reais. Então, 936 reais, seria o que você gastaria para o urano em vez de 12.672.
+
+07:17.000 --> 07:20.000
+Vamos fazer mais um calco aqui.
+
+07:22.000 --> 07:33.000
+Você economizaria 11.736 reais, por ano, apenas para utilizar o mesmo tipo de ferramenta, mas o nosso mundo,
+
+07:33.000 --> 07:43.000
+Open Source, Self-Rocid, certo? Mas tem umas certas coisas que a gente vai ter que conversar aqui ao longo do custo.
+
+07:43.000 --> 07:51.000
+A primeira coisa é o seguinte, o Self-Rocid, ele é para todo mundo, ele é aberto, ele é simples e ele é fácil,
+
+07:51.000 --> 07:55.000
+mas ele tem uma pequena curva de aprendizado, vamos ter que aprender.
+
+07:55.000 --> 08:01.000
+Ele é bem simples de se fazer, nós temos hoje diversas ferramentas, inclusive Open Source também,
+
+08:01.000 --> 08:08.000
+que é o te aceliam a fazer essas estalações de ferramentas, a gente vai utilizar todas elas aqui no decorrer do custo,
+
+08:08.000 --> 08:15.000
+mas a gente tem que entender que pode ocorrer um certo nível de dificuldade, no início e tudo mais.
+
+08:15.000 --> 08:19.000
+Imagina que assim, quando a gente está no SaaS, é como se a gente estivesse alugado uma casa,
+
+08:19.000 --> 08:24.000
+a casa já vem toda pronta, toda linda, mas ela é alugada, ela não é uma casa sua,
+
+08:24.000 --> 08:31.000
+você não consegue modificá-la crescer dentro daquela casa, subir andares na casa, porque ela é uma casa alugada, certo?
+
+08:31.000 --> 08:35.000
+Então, você não tem autonomia sobre aquela casa, você apenas redes e lá ela abou a casa,
+
+08:35.000 --> 08:42.000
+mas você pode ir para um momento de construir a sua casa, no início pode ser que a sua casa seja um pouco mais simples,
+
+08:42.000 --> 08:47.000
+mas conforme você vai evoluindo, crescendo, você pode aumentar os andares da sua casa,
+
+08:47.000 --> 08:54.000
+distribuir melhores andares da sua casa, comprar, inclusive terrenos ao lado da sua casa e expandir a sua casa.
+
+08:54.000 --> 08:58.000
+Então, essa construção é muito importante e muito legal dentro do Sof.
+
+08:58.000 --> 09:06.000
+do Sof Rostad e o que te tira um pouco dessa parte de dependências dos nossos queridíssimos SaaS,
+
+09:06.000 --> 09:12.000
+não que seja errado a gente contratar SaaS, muitos momentos nós, inclusive, podemos contratar SaaS,
+
+09:12.000 --> 09:18.000
+SaaS de banco de dados, SaaS essenciais desde de CRM, muitas coisas irão acontecer,
+
+09:18.000 --> 09:21.000
+ao decorrer do curso e eu vou explicar tudo isso.
+
+09:21.000 --> 09:28.000
+Mas, nessa primeira aula, eu queria te trazer toda a importância da gente trabalhar com o Self e Rostad,
+
+09:28.000 --> 09:35.000
+o que é o Open Source e por que a gente pode economizar tanto com essa maravilha que foi criada para nós?
+
+09:35.000 --> 09:41.000
+Eu te aguardo ao decorrer do curso e vamos comigo aprender esse mundo incrível que é o Open Source.
+

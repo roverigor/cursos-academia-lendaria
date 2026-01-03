@@ -1,0 +1,152 @@
+WEBVTT
+
+00:00.000 --> 00:05.200
+Fala pessoal, eu sou a David Teton, seja muito bem-vindos de volta aqui ao seu curso de Selfie Rostate.
+
+00:05.840 --> 00:16.000
+Então pessoal, na última aula, a gente aprendeu sobre como usar os terminais, alguns comandos legais do terminais, como CD, MCD, LES, e tudo mais.
+
+00:16.000 --> 00:25.000
+Isso é muito legal, e você já está começando a agitar os seus primeiros comandos no terminao, e isso já está te aproximando cada vez mais de ser um profissional muito completo.
+
+00:25.500 --> 00:40.000
+Hoje, a gente vai falar sobre algo muito importante, antes da gente começar a fazer as estalações da BPS, qualquer custo nisso, que são três passos importantes de como funciona esse mundo da internet.
+
+00:40.000 --> 00:48.000
+Então, a primeira coisa que a gente vai aprender aqui é sobre domínios, o que é um domínio, segunda coisa que a gente vai aprender aqui, o que são denses, e para que ele serve.
+
+00:48.000 --> 00:54.000
+E, por terceiro, qual é a principal diferença entre uma hospedagem e uma VPS?
+
+00:54.000 --> 01:06.000
+Eu tenho até uma coisa importante falar, essa última coisa é uma crítica, uma parte muito difícil sobre isso, porque assim, tem muita gente que foca nessas pequenas hospedagens tradicionais,
+
+01:06.000 --> 01:18.000
+e quando chega no momento de fazer a estalação, vê que não é aquilo que eles querem, nem tem um fazer estalações do que a gente vai precisar, por exemplo, docker dentro dessas hospedagens tradicionais.
+
+01:18.000 --> 01:30.000
+Mas não fica preocupado, no final dessa aula, você vai saber exatamente o que comprar, onde comprar, por que comprar, e como comprar isso daí.
+
+01:30.000 --> 01:42.000
+Bem comigo, fica bem tranquilo, que a gente vai começar a fazer uma viagem no tempo e entender como é que funciona essas questões, primeiros da VPS.
+
+01:42.000 --> 01:50.000
+Então, primeiro de tudo, a gente vai precisar entender o mapa da internet antes de colocar os nossos aplicativos dentro das nossas VPS.
+
+01:50.000 --> 02:03.000
+Então, a primeira coisa que a gente vai fazer é começar a entender o que é um domínio, certo? Então, fica bem tranquilo e vem comigo aqui para a gente começar a entender.
+
+02:03.000 --> 02:09.000
+Primeira coisa que a gente vai ter aqui na internet são os nossos domínios, o que a gente tem que pensar?
+
+02:10.000 --> 02:20.000
+Vamos pensar na internet como uma cidade gigante, certo? Vou trazer uma analogia bem fácil, bem explicativa, para que vocês consigam entender bem o que é.
+
+02:20.000 --> 02:33.000
+Então, nessa cidade nós temos algumas questões, por exemplo, que são os nossos VPS, que é tipo uma casa, certo? A VPS é uma casa dentro dessa cidade.
+
+02:33.000 --> 02:49.000
+E dentro dessa casa, você vai colocar os seus móveis, seus aplicativos, suas questões, que seriam seu sofá, que pode ser o seu n-e-t-n, seria sua mesa, que pode ser o chateote, seria sua cama, que seria o chopei, seria sua instante, que é o portêmio.
+
+02:50.000 --> 03:03.000
+Cada aplicativo é um móvel dentro da sua casa, que é considerado a sua VPS, simples, fácil, então o servidor é onde a gente coloca suas coisas lá dentro, separados pelos móveis, pelos locais.
+
+03:03.000 --> 03:21.000
+A segunda coisa importante é o nosso Kp, e Kp é um número, uma numeração de classe, que é o internet protocol, e ela vem com várias numerações que a gente não precisa decorar.
+
+03:21.000 --> 03:36.000
+Como é que eu vejo um IP? Por exemplo, eu vou pegar o nosso CMD, vamos abrir o PowerShell, vamos fazer diretamente pelo PowerShell, se eu deixar esses dois PowerShell, abrir o PowerShell aqui, que a gente já sabe, não vai aumentar ele, então eu trouxe o PowerShell para cá.
+
+03:36.000 --> 03:45.000
+Então, quando eu quero pingar, o que é pingar? Eu quero ir até esse ponto, esse site, essas determinadas aplicações, e ver se eu estou conseguindo chegar até ela.
+
+03:45.000 --> 03:52.000
+Então, eu posso ir aqui no nosso comando, dar um ping, como eu já tinha mostrado, e vamos pingar para o Google.com.
+
+03:52.000 --> 04:06.000
+Vejam que, quando eu faço esse ping para o Google.com, ele não me retorna um Google, ele me retorna um endereço num mérico, que é esse 142, 251, 13,14.
+
+04:06.000 --> 04:15.000
+Só que esse ping no mérico é difícil da gente decorar, não é bom para as empresas ficarem passando seus IP's internos, e isso não funciona muito bem.
+
+04:15.000 --> 04:31.000
+Então, isso daqui seria como se fosse o CEPS das nossas cidades grandes. Então, a gente sabe que existem as ruas, nem todo o CEP, você decora, normalmente você vai decorar o CEP da sua casa, não outro CEPS, e você consegue procurar essas casas por alguma coisa.
+
+04:31.000 --> 04:37.000
+Certo? E o que são essas coisas? Porque o CEP é difícil a gente decorar tudo, tudo, tudo.
+
+04:37.000 --> 04:50.000
+Aí, é que existe os nossos domínios, certo? Domínio é o apelido da sua casa, ou seria, por exemplo, o nome da rua, da sua própria rua, certo?
+
+04:50.000 --> 05:01.000
+Então, ao invés da gente ter que decorar essa numeração aqui, 1, 4, 2, 2, 5, 1, 3, 3, 4, 12, para eu chegar até o Google, eu escrevo o nome Google.com.
+
+05:01.000 --> 05:13.000
+O que é muito simples de se decorar é como se tivesse falando o nome de uma rua, um barro, alguma coisa do tipo, e aí eu não preciso ficar falando a numeração do CEP, o tempo tudo para aquela pessoa, meu CEP é tal.
+
+05:13.000 --> 05:24.000
+Tente chegar aqui no meu CEP tal, é muito mais fácil a pessoa perder aquele determinado numeração de CEP do que o nome Google.com, do que o nome da sua rua, do que o nome do seu barro.
+
+05:24.000 --> 05:37.000
+Então, domínio é esse nome que a gente dá para esse determinado IP, como se fosse uma máscara, uma apelido para aquela determinado número, o que nos ajuda muito a poder prosseguir dentro da internet.
+
+05:37.000 --> 05:44.000
+Então, domínio é uma parte muito importante para isso, para a gente conseguir facilitar a vida dentro do internet.
+
+05:48.000 --> 06:03.000
+Então, aqui a gente consegue ver alguns domínios, padrões da internet, que são muito utilizados. Então, se a gente fizer um ping agora para o Facebook, .com, a gente vai ter um outro p e conseguimos chegar até o Facebook.
+
+06:03.000 --> 06:15.000
+A gente vai um ping para o Google .com, também vamos ter um IP e também vamos estar pingando para lá. Então, vejam, existem vários e vários domínios na internet.
+
+06:15.000 --> 06:24.000
+Então, quando você compra um domínio, você escolha aquele domínio e você tem um direito de usar aquele nome por um ano dentro da internet. Isso é renovável.
+
+06:24.000 --> 06:38.000
+Você pode contratar várias vezes, a gente vai contratar um domínio aqui na próxima aula, mas eu quero que vocês entendam esse conceito do que é o domínio, o que é o IP, e porque que eles andam juntos, eles são passeiros, dentro disso.
+
+06:38.000 --> 06:48.000
+E é dava. É uma outra coisa que você tinha falado aqui para mim, que é o DNS, o que é o DNS? Pronto. Então, imagine que dentro da nossa cidade, o DNS é o nosso GPS.
+
+06:48.000 --> 06:57.000
+É aquele cara que sabe a localização das coisas, sabe como te guiar dentro daquelas coisas e basta apenas você ou digitar o nome do bairro ou digitar o nome da rua.
+
+06:57.000 --> 07:10.000
+Você não é obrigado a colocar o CPF. Então, sempre que eu faço uma solicitação. E com essa forma desse GPS, a gente consegue chegar até esses pontos.
+
+07:10.000 --> 07:18.000
+E assim que a internet consegue se encontrar, e o que significa DNS? Domém nem sistema, sistema de nome de domínio.
+
+07:18.000 --> 07:37.000
+Ele é quem busca esses domínios com base nessas aplicações. Então, nós temos vários serviços de domínios na internet, como a CloudFlair, como a Rosting, e temos os serviços de DNS, também são a CloudFlair, Google e eles buscam.
+
+07:37.000 --> 07:51.000
+Tem um site que é bem legal, que é o DNS checker, que a gente consegue visualizar qual é o IP que está atrelado aquele domínio. Então, se eu vim aqui no Google.com, e pesquisar 142, 258, 486.
+
+07:51.000 --> 07:57.000
+A gente vem no nosso PowerShell, 142, 151, 133,14.
+
+07:57.000 --> 08:06.000
+Adapu, o que isso acontece? Se você pesquisou num lugar para esse outro? Veja que os DNSs, eles podem ter vários IPs atrelados ao único domínio.
+
+08:06.000 --> 08:20.000
+Que são os nossos subdomínios. Então, eles têm vários IPs atrelados, mas aqui no Brasil, eles se encontram nesse 172, 277, 346, diferente do que eu já estou batendo lá.
+
+08:20.000 --> 08:34.000
+Então, cada hora o Google vai mudando esse P1, 122, 121, 133,14. Para cada um que está solicitando essa informação, ele consegue trazer esse caminho para a gente aqui nessa maior necessidade.
+
+08:34.000 --> 08:48.000
+Então, o DNS é responsável por isso. É responsável por quando você coloca aqui na internet um domínio, por exemplo, Google.com, ele te levar diretamente para lá, passando por esse determinado zona de DNS.
+
+08:48.000 --> 08:56.000
+Então, funciona de uma forma muito simples e é bem legal. É importante a gente saber como é que a internet funciona no mundo das coisas.
+
+08:56.000 --> 09:12.000
+Então, agora você já entende como é que o conceito e a base da internet funciona entre essa comunicação do nosso IP, que é a nossa VPS, do nosso domínio que é o nome que a gente compra, e o DNS fazendo esse caminho entre eles.
+
+09:12.000 --> 09:26.000
+Então, na próxima aula, a gente vai contratar a nossa VPS, vai iniciar esse processo contratando o nosso domínio, contratando a nossa VPS e fazendo essa configuração inicial para a gente começar aqui no mundo do seu viústote.
+
+09:26.000 --> 09:28.000
+Te espero, na próxima aula.
+

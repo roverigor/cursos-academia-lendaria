@@ -1,0 +1,404 @@
+WEBVTT
+
+00:00.000 --> 00:07.720
+Pessoal, estamos de volta aqui na aula, e agora a gente vai contratar a nossa VPS, enfim,
+
+00:07.720 --> 00:12.080
+depois a gente pendei tanto sobre o sucessos, que são processos importantes, mas agora vamos
+
+00:12.080 --> 00:13.760
+para a mão na nossa, que é muito importante.
+
+00:13.760 --> 00:23.880
+Então, eu trouxe aqui 3 principais VPS, mas você pode contratar outro tipo de VPS,
+
+00:23.880 --> 00:28.040
+outro tipo de servidor, você pode estudar, servidor, esse daqui eu conheço, então eu trago
+
+00:28.040 --> 00:32.960
+para vocês, mas assim, não se preocupem com essa questão de ar, qual VPS eu contrato?
+
+00:32.960 --> 00:37.280
+Não altera muito isso, o que altera é como você vai contratar e como você vai operar
+
+00:37.280 --> 00:41.960
+dentro dela, lembrando, tem que ser uma VPS, não pode ser outro tipo de máquina compartilhada
+
+00:41.960 --> 00:46.720
+que não funciona, desse ser uma VPS, ok, então se contratam uma VPS, aqui eu trouxe
+
+00:46.720 --> 00:51.480
+a contabo, aquela uma VPS de flore do Brasil, mas ela tem uns preços legais para você
+
+00:51.480 --> 00:57.920
+pegar, que eu recomendo, sempre inici, pelo menos, assim, com 4 CPU, 8 GB de RAM,
+
+00:58.280 --> 01:03.720
+é uma quantidade legalzinho para poder emociar, aí a gente tem aqui na Rostinger, que é
+
+01:03.720 --> 01:10.240
+aqui do Brasil, então vamos olhar a VPS da Rostinger aqui, quais são os preços que a gente tem?
+
+01:17.480 --> 01:23.440
+Vamos volta aqui próximo, mas aqui ele não é o nosso valor, vamos procurar lá em Pricing,
+
+01:23.720 --> 01:27.400
+então quando a gente quer sempre olhar alguma coisa, a gente procura por pricing, aqui no
+
+01:27.400 --> 01:36.520
+desenvolvimento é mais rápido, então Rostinger, Pricing, Enterpress, procura aqui, se o servidor
+
+01:36.520 --> 01:52.520
+VPS, preços, então aqui a gente tem um ano, aqui é os pedagens, que servidor VPS, a gente tem um
+
+01:52.520 --> 02:00.000
+servidor VPS de 4 GB de RAM e um núcleo de CPU, não pene esse aqui muito fraco, não vai conseguir
+
+02:00.000 --> 02:05.160
+o pé da direita, não recomenta, nem para iniciar, não é bom, vai passar só uma frustração,
+
+02:05.160 --> 02:09.760
+vocês investem um pouquinho mais investem nesse de 32 aqui, com dois núcleos e 8 GB de RAM,
+
+02:09.760 --> 02:15.760
+já dá uma melhorada, se você puder investir nesse daqui, também é bom, é bom, é um bom sistema
+
+02:15.760 --> 02:20.040
+para você iniciar, mas esse aqui já dá para se iniciar, promenza as operações, aprendizado,
+
+02:20.040 --> 02:24.400
+mais, mas não dá para você ter muitos sistemas dentro dele rodando ao mesmo tempo, lembra do que eu
+
+02:24.400 --> 02:30.200
+falei sobre a estrutura da casa, é melhor, às vezes você quebrar uma parede fazer uma reforma do que
+
+02:30.200 --> 02:34.400
+você quer ter mais coisas dentro daquele imóvel, vai chegar um momento que você não consegue mais
+
+02:34.400 --> 02:38.160
+dentro daquele terreno, então você precisa comprar um outro terreno ou aumentar o terreno, tá,
+
+02:38.160 --> 02:45.440
+mais não lendo essa analogia que a gente tem sobre o servidor VPS, então continuando aqui, a gente tem
+
+02:45.440 --> 02:50.360
+esses daqui para escolher dentro da Washington, e eu vou usar esse daqui, que é a Retniser,
+
+02:50.360 --> 02:54.200
+eu gosto bastante dela, ela é um pouquinho chatinha para entrar, tem que colocar alguns documentos,
+
+02:54.200 --> 03:00.400
+lá de se você tiver empresa, não tiver empresa, enviar a documentação, mas é tranquilo se
+
+03:00.400 --> 03:04.840
+utilizar, e a gente vai clicar aqui em novo projeto, clicar em novo projeto, a gente vai dar um nome para
+
+03:04.840 --> 03:16.120
+nossa máquina VPS, então vou botar aqui, aula, selfie, posto, ok, então vamos adicionar o projeto,
+
+03:16.120 --> 03:23.440
+criamos o nosso aula selfie, vamos clicar dentro do projeto, vamos ver que a gente não tem nenhum
+
+03:23.440 --> 03:30.080
+máquina que dentro ainda, antes disso vou ensinar vocês como é que entra aqui na Retniser, então vamos
+
+03:30.080 --> 03:37.120
+treinar aqui da Retniser, vocês vão entrar aqui na página da Retniser, vamos pesquisar Retniser,
+
+03:37.120 --> 03:47.840
+no Google, vou entrar na Retniser, vamos entrar na Retniser, então entrou na Retniser,
+
+03:47.840 --> 03:55.320
+tem que ter nossa página, vai ter a parte de login, clique em Consolhe, vem com em Consolhe, vai entrar
+
+03:55.320 --> 04:01.080
+nessa página aqui, você se registre, aqui mostra as formas de pagamento, tudo mais, vamos citar
+
+04:01.080 --> 04:09.440
+um login, acessou sua página, clique em novo projeto, como eu já fiz, cria e te ressou, vocês
+
+04:09.440 --> 04:16.320
+vem de Severes, então vou criar um novo server, então eu venho aqui, escolhi o qual é o tipo de custo,
+
+04:16.320 --> 04:25.720
+então o custo otimizado, não, na realidade não é otimizado, é o regular performance,
+
+04:27.720 --> 04:35.480
+que a gente vai utilizar, e aí a gente pode pegar esse de 2 CPUs e 4 de RAM, que é igual a a gente
+
+04:35.480 --> 04:44.840
+viu aqui mais ou menos, só que aqui são 2 CPUs e 8 de RAM por 32,99, e aqui é por 99 euros,
+
+04:44.840 --> 04:55.160
+a gente faz aqui, vezes 6, vezes 6, 36, e aqui é o 32,99, então aqui está mais barato, esse
+
+04:55.160 --> 04:59.120
+momento está mais barato, só que eu vou contratar aqui, porque aqui paga por mês, aqui tem que pagar
+
+04:59.120 --> 05:05.160
+por ano, não, não é sem fechar o valor anual, senão não é 90 reais por mês, então vou contratar
+
+05:05.160 --> 05:11.360
+aqui, porque depois eu posso apagar esse server e tudo mais, então eu gosto de usar isso aqui por
+
+05:11.360 --> 05:17.120
+isso, você quer construir algum curso, mais rápido e tal, então você pode utilizar aqui, então aí
+
+05:17.120 --> 05:22.560
+eu vou pegar esse de 2 e 4, mais ou menos parecido com aquele, só para a gente aprender a manipular,
+
+05:22.560 --> 05:27.960
+mas como eu disse, vai fazer muitas instalações, utilize uma VPN um pouco melhor, melhor para você aprender,
+
+05:27.960 --> 05:36.480
+depois da gente escolher aqui a nossa VPN, a gente pode vir aqui escolher a nossa localização, certo? Então aqui nós
+
+05:36.480 --> 05:41.000
+temos alguns localizações, não vai ter localização do Brasil, então você verifica aqui com a localização
+
+05:41.000 --> 05:48.600
+a gente vai achar mais perto, eu normalmente coloco aqui, né? Afilândia, né? Crega de tu, eu que seja, não,
+
+05:48.600 --> 05:54.920
+eu peço que isso aqui, não sou bem agora, e aqui a gente vai escolher aí mais, tá? Aqui eu normalmente não, eu
+
+05:54.920 --> 06:00.520
+verifica assim, né? Pegou às vezes Estados Unidos também, isso dá uma muda não um pouco no valor também, tá?
+
+06:00.520 --> 06:07.320
+Então nem uma verificada aqui, ó, que o valor muda, conforme você altera aqui, para colocar você quer, então
+
+06:07.320 --> 06:11.820
+aqui na aula eu vou pegar essa aqui, ó, mais baratinha, pra eu peguei, aí aqui eu escolho a imagem,
+
+06:11.820 --> 06:16.400
+mas é importante, tá? A gente pode usar o ponto 24, ponto zero, quatro, vinte e dois,
+
+06:16.400 --> 06:21.640
+dois e quatro, então pode deixar no 24, ponto zero, quatro, que vai funcionar legal. Aqui são as redes, então você
+
+06:21.640 --> 06:27.280
+deixa público IPV4, público IPV6, pra poder funcionar, não precisa mexer mais não esse SEGA, não precisa fazer
+
+06:27.280 --> 06:34.960
+files, backup é bom você ativar aqui os backups, certo? Ele vai comprar 20% a mais, mas assim, sua manquina fica
+
+06:34.960 --> 06:41.960
+segura, a dava precisa ativar agora, cara, depende, depende como você se sente em relação ao seu VPS, tá?
+
+06:41.960 --> 06:46.960
+Se você acha que você pode perder essa VPS, não tem problema, então você não ative o backup, pra assim,
+
+06:46.960 --> 06:52.960
+aí eu não posso perder isso, vai me atrapalhar muito, então eu ative o backup ali, você pode ativar futuramente, mas
+
+06:52.960 --> 06:57.960
+é bom ativar os backups, tá? Então eu não vou ativar agora não, mas aqui tem as leibas, você pode configurar
+
+06:57.960 --> 07:01.960
+alguma coisa aqui ao longo do seu serviço, né? O longo do seu serviço, que vai ficar, você não responsável
+
+07:01.960 --> 07:09.960
+por aquilo, vamos botar aqui novamente a aula, online, selfie, rostro, entendeu? Eu criei primeiro, um, acho que não pode
+
+07:09.960 --> 07:15.960
+tendo a derranda, eu criei primeiro um projeto e agora eu criei um server dentro desse projeto, certo?
+
+07:15.960 --> 07:19.960
+São formas que a gente crie aqui dentro, então não criei de guinal,
+
+07:19.960 --> 07:26.960
+esperamos um pouquinho até ele criar, né?
+
+07:26.960 --> 07:39.960
+O conteúdo da criança aqui, ó, criou, é bem rapidinho pelo criar, então ele crie do zero ali, o server, né?
+
+07:39.960 --> 07:46.960
+Tá ligando, criei o nosso server, aqui a gente consegue olhar ele, consegue ver os gráficos,
+
+07:46.960 --> 07:52.960
+vai ver como é que ele tá rodando, ó, o pacote dele, olha, ele atinge no 100% que ele ligou, né?
+
+07:52.960 --> 07:58.960
+Então não é ligou, vai dar senão, a gente não não sabe o que o U tem os backups, os snapshots,
+
+07:58.960 --> 08:04.960
+não várias partes aqui para a refuse, algumas coisas que a gente vai dar uma visualizada aqui em tempo.
+
+08:04.960 --> 08:09.960
+Agora, como você já veio aprendendo tudo aqui no sob os terminais,
+
+08:09.960 --> 08:13.960
+agora a gente vai começar a utilizar a equipa poder a gente fazer a nossa vps,
+
+08:13.960 --> 08:19.500
+Então, a primeira coisa que a gente vai fazer é entrar no terminal, como é que a gente entra no terminal da VPS?
+
+08:19.500 --> 08:27.320
+Então, a gente usa o comando aqui do nosso computador, via PowerShell, tudo mais.
+
+08:27.320 --> 08:29.600
+A gente for usando ali os comandos, só que são comandos internos.
+
+08:29.600 --> 08:32.200
+Não são comandos que eu posso mandar para a internet, para eu mandar para a internet,
+
+08:32.200 --> 08:35.640
+eu até posso fazer por lá, não tem que fazer por SSG, e meu complexo.
+
+08:35.640 --> 08:41.480
+Então, para a gente sempre buscar facilitar as coisas, não para facilitar, a gente vai baixar um sistema em que se chama BitVice.
+
+08:41.480 --> 08:45.520
+O sistema é bem tranquilo de se baixar e bem fácil de se utilizar.
+
+08:45.520 --> 08:50.040
+Então, é que o BitVice é gratuito, o BitVice para o Windows,
+
+08:50.040 --> 08:54.560
+clique em download, da load, o BitVice é SSG, cliente, tá?
+
+08:54.560 --> 08:59.320
+Então, baixa ele aqui, clica aqui para baixar, vocês vão baixar ele, eu já tenho ele aqui,
+
+08:59.320 --> 09:00.920
+e a gente vai abrir ele agora.
+
+09:00.920 --> 09:02.640
+Vamos ver aqui na minha barra de pesquisa,
+
+09:03.640 --> 09:10.240
+Pesquisa o BitVice, e ele vai abrir essa telhinha aqui, tá?
+
+09:10.240 --> 09:15.440
+Então, essa telhinha aqui é a telhinha do nosso terminal, para a gente entrar no nosso terminal aqui,
+
+09:15.440 --> 09:19.440
+pela VPS, que é o que eu falei, a VPS não tem uma visualização, certo?
+
+09:19.440 --> 09:22.480
+Então, como a VPS não tem uma visualização, a gente precisa rodar o terminal.
+
+09:22.480 --> 09:25.360
+Então, a gente vai pegar o terminal e vai abrir lá.
+
+09:25.360 --> 09:28.160
+Então, a gente ocola aqui o nosso rústico, o nosso sever, né?
+
+09:28.160 --> 09:31.600
+Que é o IP da nossa máquina, a gente ainda não tem o nosso domino.
+
+09:31.760 --> 09:34.960
+Eu estou mostrando para vocês como é que a gente entra na máquina, contrata a máquina.
+
+09:34.960 --> 09:36.800
+Vamos contratar o domino na próxima aula.
+
+09:36.800 --> 09:40.400
+Então, a gente vai pegar o nosso rústico aqui, vai ter o nosso rústico, certo?
+
+09:40.400 --> 09:42.000
+A gente vai clicar em login.
+
+09:47.000 --> 09:52.440
+E ele vai pedir uma senha, tá falando aqui, com a enção estabilizada,
+
+09:54.920 --> 09:57.080
+tá procurando aqui a conexão.
+
+09:58.080 --> 10:03.480
+A primeira chave de criptografia encontrada.
+
+10:03.480 --> 10:09.480
+Então, a gente dá um conexão dos conectados, e a gente tem que pegar a nossa primeira senha.
+
+10:09.480 --> 10:12.280
+Então, a gente vem aqui em reis queio, dá um reis queio.
+
+10:12.280 --> 10:16.280
+Rescui, reset, passo o ordem, e clica aqui.
+
+10:16.280 --> 10:18.680
+Que é a primeira vez que a gente tá pegando assim aqui na Retinas.
+
+10:18.680 --> 10:23.080
+Então, a gente vem aqui, cria, que ele não tinha criado ainda na nossa senha.
+
+10:24.080 --> 10:27.080
+Um copiaça sem, não tem problema mostrar a senha.
+
+10:27.080 --> 10:31.080
+Então, se eu anar, bota um login aqui, clica a setra, não sei.
+
+10:31.080 --> 10:33.080
+Pediu a nossa senha, qual é a sua senha?
+
+10:33.080 --> 10:40.080
+Eu vim aqui no reis queio, copia a senha, joga aqui no nosso passo o ordem, dê o quê, e veja.
+
+10:40.080 --> 10:43.080
+Agora, tenho um nil terminal, vamos lá, recapitulado.
+
+10:43.080 --> 10:49.080
+Vem aqui, vim rescui, resetei o passo o ordem, porque foi a primeira vez que eu fiz.
+
+10:49.080 --> 10:53.080
+Vem aqui, quirei lá, coloquei a minha senha.
+
+10:53.080 --> 10:55.080
+Ele salvou a minha senha aqui.
+
+10:55.080 --> 10:58.080
+Eu posso copiar essa senha e imaginar.
+
+10:58.080 --> 11:01.080
+Ou aqui na Retinas, você pode resetar o root passo o ordem, quando você quiser.
+
+11:01.080 --> 11:04.080
+Mas, na Rostm, na Contava, isso não acontece.
+
+11:04.080 --> 11:06.080
+Eu criei uma senha para sua própria.
+
+11:06.080 --> 11:09.080
+Então, vejam como vocês querem trabalhar em relação a isso.
+
+11:09.080 --> 11:12.080
+Ou a armazena, e não reseta mais. Ou fica resetando.
+
+11:12.080 --> 11:16.080
+E assim, a gente consegue abrir o nosso terminal ou da nossa máquina.
+
+11:16.080 --> 11:17.080
+Igual a gente abriu lá.
+
+11:17.080 --> 11:21.080
+Então, se a gente vier aqui na nossa máquina e deu um LES, não temos nada.
+
+11:21.080 --> 11:24.080
+Porque a gente não tem nada aqui nessa máquina.
+
+11:24.080 --> 11:26.080
+Se eu dar um CD, não temos nada.
+
+11:26.080 --> 11:32.080
+Então, a CD, espaço, tab, nada, não temos.
+
+11:32.080 --> 11:33.080
+Essa máquina está vazia.
+
+11:33.080 --> 11:36.080
+Esse é a primeira operação, a gente vai fazer na nossa máquina.
+
+11:36.080 --> 11:39.080
+Agora, a gente vai contratar um domínio para poder começar a instalação
+
+11:39.080 --> 11:42.080
+da nossa ferramentas dentro da nossa VPS.
+
+11:42.080 --> 11:46.080
+Vem comigo para o próximo aula, deixe seus duros aqui nos comentários.
+
+11:46.080 --> 11:48.080
+Vamos para o próximo aula.
+

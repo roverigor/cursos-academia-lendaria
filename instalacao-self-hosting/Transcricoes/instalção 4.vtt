@@ -1,0 +1,131 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+Fala pessoal, nessa aula a gente vai aprender um pouco a diferença entre uma hospedade compartilhada e uma hospedade em VPS.
+
+00:06.000 --> 00:11.000
+Por que a gente deve contratar uma hospedade em VPS? Imagina que o segundo, certo?
+
+00:11.000 --> 00:18.000
+Na cidade que a gente falou, existem dois tipos de móveis, né? Você pode ter um prédio, um condominho onde existe alguém que...
+
+00:18.000 --> 00:27.000
+é o cíncico daquele local, existem regras sobre que local existe a sua casa própria. Você pode modificar destruir parede, destruir da forma que você quiser.
+
+00:27.000 --> 00:34.000
+É a diferença entre uma hospedade compartilhada e uma VPS. Na hospedade compartilhada normalmente você vai poder utilizar um ordem preso,
+
+00:34.000 --> 00:42.000
+vai poder utilizar um aluno de pijos, coisas que sejam relacionadas ao compartilhamento que não envolvam docker, por exemplo, que docker não funciona dentro de uma hospedade.
+
+00:42.000 --> 00:47.000
+Funciona assim dentro de uma VPS, que você está no seu docker, você vai estar lá no aqui no ensino.
+
+00:47.000 --> 00:51.000
+A gente vai aprender muito sobre docker no curso, inclusive nessa aula, a gente vai iniciar o processo de docker.
+
+00:51.000 --> 00:57.000
+Então é importante você entender essa diferença e o porquê a gente contratar uma VPS e não uma hospedade, certo?
+
+00:57.000 --> 01:06.000
+Então, partindo desse preço posto, nós vamos falar agora um pouco, além sobre o que a gente estava falando, dentro do VPS, nós vamos falar sobre docker.
+
+01:06.000 --> 01:13.000
+Por que que eu tenho que aprender docker antes de eu partir para as minhas instalações? Que o docker era uma forma muito importante a gente trabalhar aqui na tecnologia.
+
+01:13.000 --> 01:22.000
+Então, como é que ele funciona? Imaginite. Quando você tem um computador, uma VM, por exemplo, que é uma máquina virtual, você precisa de uma coisa que chama o sistema operacional, certo?
+
+01:22.000 --> 01:28.000
+O sistema operacional, o seu Windows, o seu macOS, o seu Linux, então cada um roda no sistema operacional.
+
+01:28.000 --> 01:33.000
+Quando a gente tem um docker, a gente não precisa 100% desse sistema operacional, ele roda o docker,
+
+01:33.000 --> 01:41.000
+e o docker consegue pegar as instalações dos programas e criar os containers. Então, imagine que aqui dentro desse docker,
+
+01:41.000 --> 01:47.000
+ó, estou dentro da minha máquina virtual aqui, minha máquina de alas, certo? Então, eu estou lá no painel preto,
+
+01:47.000 --> 01:54.000
+e eu estou aqui na nossa visualização que a gente chama de Porteiner, tá? Então, aqui no painel preto, seu der um docker,
+
+01:54.000 --> 02:02.000
+que é para a gente entrar dentro, container, LES, por exemplo, igual a gente sabe que LES é para buscar as coisas na pasta que a gente já aprendeu.
+
+02:02.000 --> 02:09.000
+Então, quando o docker contém LES, veja que eu vejo vários containers rodando. Então, eu tenho anituiniletas,
+
+02:09.000 --> 02:18.000
+eu tenho outro anituiniletas, eu tenho outro anituiniletas, e eu tenho mais alguns questras, evolução, porteiner, redis,
+
+02:18.000 --> 02:26.000
+e tenho container, certo? Que é o que está rodando aqui, essas são as imagens que estão rodando. Então, como é que eu vejo as imagens,
+
+02:26.000 --> 02:35.000
+por exemplo, para ver o que tem rodando. Então, docker, imagina LES. Então, todas as imagens que eu tenho rodando.
+
+02:35.000 --> 02:42.000
+Então, vejo que eu vou dando comandos LES para conseguir identificar. Mas, é muito mais fácil. A gente olhar para o nosso painel visualizador,
+
+02:42.000 --> 02:49.000
+o que a gente fica toda hora no terminal dando esses comandos. Então, a gente baixa um painel visualizador chamado Porteiner, onde eu consigo visualizar isso.
+
+02:49.000 --> 02:56.000
+Então, eu tenho as minhas text, que são as minhas instalações, eu tenho a evolução, o anituinil, o porteiner, o póstico,
+
+02:56.000 --> 03:02.000
+e isso, como a gente viu lá. Não é nosso terminal. Tenho os containers separados, as imagens que a gente também
+
+03:02.000 --> 03:09.000
+deu uma aliança nas imagens para ver as imagens, e a gente consegue visualizar isso em uma forma mais simples. Então, é ele que a gente vai utilizar.
+
+03:09.000 --> 03:18.000
+Então, para que você entenda isso, como o docker roda essas imagens sozinhos, essas partes, sozinhos do sistema, ele separa isso em containers.
+
+03:18.000 --> 03:23.000
+Então, os containers são isso daqui. Veja que ele sempre tem vários erros de containers, isso é muito comum,
+
+03:23.000 --> 03:28.000
+mas a gente pode vir aqui só no runny e pode apagar os containers que não estão funcionando também, que não tem problema.
+
+03:28.000 --> 03:34.000
+Então, veja que eu tenho vários sistemas rodando containers separadamente. Então, cada container roda isoladamente,
+
+03:34.000 --> 03:41.000
+dentro de um único sistema operacional, que é o docker. Então, isso deixa o sistema muito mais leve. Então, porque assim, o sistema operacional
+
+03:41.000 --> 03:46.000
+que ele mais consome da sua máquina, imagina que agora, seu Windows deve estar consumindo muito da sua máquina,
+
+03:46.000 --> 03:51.000
+não nunca tive que consumir bastante. E aí, o Linux vai consumir bastante. Todos eles vão consumir bastante, mas o docker não,
+
+03:51.000 --> 03:57.000
+docker só baixa a instalação precisa para aquele container. Então, ele não precisa ficar fazendo várias instalações,
+
+03:57.000 --> 04:04.000
+ele separa cada máquina dentro do seu espacinho ali. Então, muito legal de trabalhar. Então, na próxima aula, a gente vai fazer uma instalação,
+
+04:04.000 --> 04:11.000
+dvps com o docker para a gente ver como que funciona. Então, ponto importante de entender o docker é isso.
+
+04:11.000 --> 04:17.000
+Imagina que tudo o que eu construo em docker é com se eu tivesse construído na minha máquina, ontem na minha máquina,
+
+04:17.000 --> 04:24.000
+abrir uma caixinha, coloquei coisas na caixinha, fechei e distribui. Só que essa caixinha vai igual para todo mundo.
+
+04:24.000 --> 04:29.000
+A minha abre, ela é igual dentro de um novo container, e não só abrir a caixinha dentro da minha máquina.
+
+04:29.000 --> 04:37.000
+Todo mundo pode compartilhar, ela tem portas, tem text, tem trafic, tem coisas que a gente vai aprendendo no decorrer do curso.
+
+04:37.000 --> 04:42.000
+Mas o docker é um ponto muito importante de início, nas nossas instalações. Vem comigo para o próximo aula.
+
+04:42.000 --> 04:48.000
+Se bem uma dúvida, deixe aqui nos comentários que eu te respondo tranquilamente, tá? Vem comigo e acompanhe nossos cursos.
+

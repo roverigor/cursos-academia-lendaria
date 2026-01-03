@@ -1,0 +1,1208 @@
+WEBVTT
+
+00:00.000 --> 00:04.860
+Fala pessoal bem-vindo de volta e nessa aula nós vamos fazer a nossa primeira
+
+00:04.860 --> 00:09.720
+instalação de ferramentas que será a nossa evolução API. E para você que está
+
+00:09.720 --> 00:15.080
+se perguntando o que é a evolução API, eu vou te dizer de uma forma muito legal. É
+
+00:15.080 --> 00:20.480
+melhor forma de comercio que a gente tem dentro das nossas automações, pois a
+
+00:20.480 --> 00:25.600
+evolução API é uma API gratuita de WhatsApp. Adave, e o que isso significa?
+
+00:25.600 --> 00:31.120
+Significa que com essas APIs nós conseguimos programar e automatizar todos os
+
+00:31.120 --> 00:35.840
+processos de WhatsApp. Seja enviar uma mensagem, enviar um áudio, enviar uma
+
+00:35.840 --> 00:41.160
+imagem, enviar um vídeo, e também receber uma mensagem, receber um vídeo,
+
+00:41.160 --> 00:45.160
+receber uma imagem. E assim, a gente consegue criar os nossos agentes de
+
+00:45.160 --> 00:51.120
+inteligência artificial no nosso WhatsApp. Só para você ter uma noção, as APIs
+
+00:51.120 --> 00:56.860
+oficiais do WhatsApp cobram muito caro por essas aplicações, certo? Então nós
+
+00:56.860 --> 01:00.180
+cobram em torno de 200 a 250 reais por mês no mínimo, você gastar porque ela
+
+01:00.180 --> 01:06.320
+compra por envio de mensagem, dentro de uma janela de 24 horas. Então esse tipo de
+
+01:06.320 --> 01:12.160
+API, como a evolução, é o tipo de API gratis. A gente não paga nada. Sabe aquele o WhatsApp
+
+01:12.160 --> 01:16.760
+Web que você abre no seu computador e você pode ler um QR code? Pois é, a API
+
+01:16.760 --> 01:21.640
+evolução se trata da mesma forma. Então ela cria aquele WhatsApp Web só que com
+
+01:21.640 --> 01:26.600
+caminhos de API para nós, desde o vovadores. Então vem comigo, vamos fazer essa
+
+01:26.600 --> 01:29.720
+instalação e a gente vai conseguir acompanhar direitinho, como é que funciona
+
+01:29.720 --> 01:34.440
+ali o painel. Então nós já temos o nosso portei nele instalado que a gente sabe
+
+01:34.440 --> 01:39.320
+e vamos recapitular tudo que a gente já viu e iniciar de novo para sempre assim a
+
+01:39.320 --> 01:43.000
+gente conseguir ver as ferramentas instaladas. Então a gente vai entrar na nossa
+
+01:43.000 --> 01:51.360
+VPS, estamos no VALANCEVERS, pegamos a nossa VPS, engemos aqui, jogamos aqui,
+
+01:51.360 --> 01:56.200
+logamos a nossa VPS, conseguimos uma canal da VPS. Não estou encontrando minha
+
+01:56.200 --> 02:03.720
+sim, vou deslogar, vou vir aqui, clique na nossa VPS, vamos em Rescui, Reset
+
+02:03.720 --> 02:10.000
+Passu hoje, pode resetar o passu hoje, não tem problema, copia aqui, dá um login
+
+02:10.000 --> 02:14.800
+de novo no nosso bit país e damos um ok, ok, entramos dentro da nossa
+
+02:14.800 --> 02:21.640
+aplicação, vamos em terminal, voltamos no Oreo design, copiamos o setup, abrimos
+
+02:21.640 --> 02:27.360
+aqui, clicamos como tão direito do mouse e vamos acessar a evolução. Vamos acessar
+
+02:27.360 --> 02:31.000
+na realidade o Oreo design para instalar a evolução, vamos fazer aquela
+
+02:31.000 --> 02:35.960
+operação que ele sempre faz que nós já estamos acostumados, ali abre, verifica
+
+02:35.960 --> 02:41.120
+o docker, verifica as estalações, vê se está tudo correto, a gente precisa
+
+02:41.120 --> 02:44.160
+guardar esse momento,
+
+02:51.360 --> 02:55.240
+normalmente esse 3 ele demora mais um pouquinho para carregar, então a gente
+
+02:55.240 --> 03:13.480
+já guarda, eu sempre vou deixar acontecendo para vocês
+
+03:13.480 --> 03:18.360
+irem acompanhando, vendo a velocidade e vendo que as coisas se comportam às vezes e
+
+03:18.360 --> 03:22.720
+formam um pouquinho mais lenta mesmo, mas aí a gente aguarda e aí a operação vai
+
+03:22.720 --> 03:27.080
+ser concluído, então vamos aguardar em tempinho até que ocorra a nossa
+
+03:27.080 --> 03:29.080
+aplicação
+
+03:44.080 --> 03:50.760
+nossa aplicação já foi carregar, então vamos dar um IPSON para iniciar, iniciamos e como
+
+03:50.760 --> 03:55.280
+a gente já tem o traifique portem instalado, agora a gente vai para a evolução,
+
+03:55.280 --> 03:58.760
+mas um ponto importante, lembra que eu disse, sempre que a gente vai criar alguma
+
+03:58.760 --> 04:03.760
+coisa, precisamos do nosso DNS, temos que montar esse nome daquele domínio para
+
+04:03.760 --> 04:07.760
+aquela determinada aplicação, lembrando os nossos containers, então cada
+
+04:07.760 --> 04:11.760
+aplicação tem o seu nome, como a gente viu na aula passada, sobre traifique,
+
+04:11.760 --> 04:17.400
+então vamos lá no nosso DNS, nem servers, e vamos criar um novo domínio para a
+
+04:17.400 --> 04:21.600
+evolução, até já criei aqui, vou remover ele para a gente poder criar ele do zero, então
+
+04:21.600 --> 04:26.200
+removi, dava como é que eu crie os meus domínios, lembrando, se você já assistiu a aula,
+
+04:26.200 --> 04:31.800
+você já sabe criar, então vem um cinema, coloco o nome do domínio que eu quero,
+
+04:31.800 --> 04:36.600
+que a minha aplicação tenha, e coloco o destino, aquela VPS que a gente criou, que é a
+
+04:36.600 --> 04:43.000
+curso self-wrote, em ponto aula n2nshop, adiciono o registro, vem aqui, dão a verificada,
+
+04:43.000 --> 04:51.000
+se o registro está certo, evolução self, que foi o nome que a gente colocou, copio esse nome,
+
+04:51.000 --> 04:57.000
+retorno aqui, e falo que eu quero ir para evolução, quando eu entro na evolução,
+
+04:57.000 --> 05:03.000
+tranquilamente já vai pedir o nosso domínio, então eu vou colocar o evolução self,
+
+05:03.000 --> 05:11.000
+cuidado com uns espaços, ponto o meu domínio, então ponto aula n8ntech.shop,
+
+05:11.000 --> 05:16.000
+é o domínio que a gente já tinha aqui, vou dar um, entre ele vai perguntar se está tudo certo,
+
+05:16.000 --> 05:20.000
+se esse é o nome, o corrigi o nome ali, e do omnipsum, a estalação da evolução é muito rápida,
+
+05:20.000 --> 05:23.000
+e muito simples, então a gente vai estar lá, mas a gente vai precisar dar uma olhada,
+
+05:23.000 --> 05:28.000
+como é que ela funciona, ver as coisas, e pode ver que com esse seta-piorion é muito fácil
+
+05:28.000 --> 05:32.000
+de fazer essas estalações, e muito rápido, por isso que a gente utiliza ele, mas,
+
+05:32.000 --> 05:36.000
+assim que a gente vai criada lá no portêmne, eu vou mostrar para vocês como é que se estrutura
+
+05:36.000 --> 05:41.000
+essas bases, e como é que ele consegue fazer isso daqui, então, como eu sempre digo,
+
+05:41.000 --> 05:45.000
+existe o modo fácil de se fazer, e existe o modo difícil de se fazer,
+
+05:45.000 --> 05:49.000
+é só a gente ver, e normalmente vamos utilizar o modo fácil, mas simples para nós,
+
+05:49.000 --> 05:54.000
+eles desenvolvedores, então vamos aguardar o depois de ser feito, e vamos vendo como é que acontece.
+
+05:54.000 --> 05:58.000
+Essas estalações sempre demoram um pouquinho, já faz parte do processo,
+
+05:58.000 --> 06:02.000
+vamos ver se a gente estava estalando post, que é o banco de dados da evolução,
+
+06:02.000 --> 06:06.000
+agora estamos estalando a evolução API, e depois ele vai fazer um teste para verificar
+
+06:06.000 --> 06:11.000
+a evolução API, está online, esse é sempre o processo do nosso seta-piorion.
+
+06:11.000 --> 06:16.000
+Não, ele vai verificar o serviço, deixa a evolução e o post, eles estão funcionando,
+
+06:16.000 --> 06:19.000
+o post, isso a gente já está vendo que está online aqui, né?
+
+06:19.000 --> 06:21.000
+Então vamos aguardar um pouquinho,
+
+06:26.000 --> 06:29.000
+está entrando na nossa evolução,
+
+06:29.000 --> 06:34.000
+então ele estalou tanto Reds ou post, vocês vão ver lá na nossa estalação do corteine,
+
+06:34.000 --> 06:38.000
+vocês entenderem o que que aconteceu.
+
+06:46.000 --> 06:50.000
+Está terminando a nossa estalação,
+
+06:51.000 --> 07:02.000
+fez a nossa estalação, e aqui a gente tem a nossa URL e a nossa global API,
+
+07:02.000 --> 07:05.000
+nesse momento vamos vocês preocupar tanto com isso daqui, porque você vai conseguir
+
+07:05.000 --> 07:09.000
+pegar lá dentro o corteine, mas é sempre bom tirar o print, tá?
+
+07:09.000 --> 07:13.000
+Então vamos abrir agora o nosso corteine,
+
+07:13.000 --> 07:17.000
+e vamos dar uma olhada como é que ele tá.
+
+07:18.000 --> 07:22.000
+Aseçamos o nosso corteine,
+
+07:22.000 --> 07:26.000
+quando a gente acessa o nosso corteine, veja que agora a gente tem 4 steaks,
+
+07:26.000 --> 07:31.000
+certo? Nós temos a stack da evolução,
+
+07:31.000 --> 07:36.000
+e nós temos a stack do post, e ainda já tinha do corteine e do traifique.
+
+07:36.000 --> 07:39.000
+Lá, o que é uma stack do corteine, a gente não consegue visualizar aqui,
+
+07:39.000 --> 07:42.000
+por isso que eu não tinha mostrado, porque ele é uma stack interna,
+
+07:42.000 --> 07:45.000
+diretamente dentro do doque, a gente não consegue visualizar porque ele é de fora do corteine,
+
+07:46.000 --> 07:49.000
+mas a evolução já começou a ser instalada do nosso corteine,
+
+07:49.000 --> 07:53.000
+e é aqui que a gente consegue ver os nossos processos desses determinados aplicações.
+
+07:53.000 --> 07:55.000
+Então se eu clicar aqui na minha stack evolução,
+
+07:55.000 --> 07:58.000
+se a gente vem aqui em services, eu tenho justamente aqueles contínuos,
+
+07:58.000 --> 08:01.000
+que a gente já tinha falado das instalações e dependências,
+
+08:01.000 --> 08:03.000
+então eu tenho dois contínuos aqui,
+
+08:03.000 --> 08:07.000
+um é o evolução Reds, que Reds é uma forma de memória do nosso evolução,
+
+08:07.000 --> 08:10.000
+e o outro é a evolução API por si só.
+
+08:10.000 --> 08:13.000
+Então ele tem a imagem, tem que ser ela estar hospedada,
+
+08:13.000 --> 08:16.000
+ela não está hospedada, tem a forma de eslogues,
+
+08:16.000 --> 08:20.000
+e se a gente abrir aqui, vai mostrar alguns dados como o ID do contínu,
+
+08:20.000 --> 08:25.000
+o status dele, qual é lá embaixo, vai aparecer qual é a network que ele está conectado,
+
+08:25.000 --> 08:28.000
+que é na minha rede, como todos os outros, lembro que eu falei,
+
+08:28.000 --> 08:31.000
+os contínuos têm que se comunicar para poderes funcionar.
+
+08:31.000 --> 08:33.000
+Então os contínuos funcionam assim.
+
+08:33.000 --> 08:36.000
+E dentro da stack, a gente tem o modo editor,
+
+08:36.000 --> 08:37.000
+que o que é a stack?
+
+08:37.000 --> 08:39.000
+A stack é como eu estalo o meu Docker,
+
+08:39.000 --> 08:42.000
+como eu estalo essa imagem, esse sistema é dentro do meu Docker.
+
+08:42.000 --> 08:45.000
+Então se eu venha em editor, vai ter vários nomes aqui,
+
+08:45.000 --> 08:48.000
+mas não preciso se preocupar, que eu vou te explicar o que é cada coisa.
+
+08:48.000 --> 08:51.000
+A primeira coisa que a gente tem aqui é a versão e o serviço.
+
+08:51.000 --> 08:54.000
+Então essa versão aqui é a versão do Docker,
+
+08:54.000 --> 08:56.000
+qual é a versão que seu Docker se encontra?
+
+08:56.000 --> 08:59.000
+Então esse serviço se encontra na versão 3.7 do Docker.
+
+08:59.000 --> 09:02.000
+Essas atualizações ela acontecem e a gente vai acompanhando,
+
+09:02.000 --> 09:04.000
+mas isso não altera o serviço.
+
+09:04.000 --> 09:06.000
+Pode deixar como o serviço vem do próprio cetatriório,
+
+09:06.000 --> 09:07.000
+que ele vai funcionar.
+
+09:07.000 --> 09:10.000
+Depois, logo na primeira coluna, a gente tem a imagem,
+
+09:10.000 --> 09:12.000
+o que é a imagem?
+
+09:12.000 --> 09:14.000
+Porque o Docker, lembra que eu falei sobre a caixinha,
+
+09:14.000 --> 09:16.000
+que é produzida e transferida,
+
+09:16.000 --> 09:18.000
+quando você abre ela igual,
+
+09:18.000 --> 09:22.000
+por isso que ela funciona, que a imagem é embaixada igual ao desenvolvedor.
+
+09:22.000 --> 09:26.000
+Então quem desenvolveu criou uma imagem compilada daquele container
+
+09:26.000 --> 09:29.000
+e distribui ele na internet pelo Docker Ruby,
+
+09:29.000 --> 09:32.000
+onde a gente consegue visualizar as imagens e atualizações
+
+09:32.000 --> 09:34.000
+que a gente vai ver em umas aulas mais para frente.
+
+09:34.000 --> 09:36.000
+Depois a gente tem uns volumes,
+
+09:36.000 --> 09:37.000
+que são os volumes,
+
+09:37.000 --> 09:40.000
+são os nossos HDs das aplicações.
+
+09:40.000 --> 09:42.000
+Então é onde eu vou armazenar os volumes,
+
+09:42.000 --> 09:45.000
+onde eu vou armazenar algumas coisas que eu preciso guardar,
+
+09:45.000 --> 09:47.000
+o nome das estâncias no caso da Evolution,
+
+09:47.000 --> 09:50.000
+qual é WebRook que ela está configurada e tudo mais.
+
+09:50.000 --> 09:53.000
+Então ele armazena isso dentro do nossos volumes.
+
+09:53.000 --> 09:56.000
+Network é a nossa rede de comunicação dentro do Docker,
+
+09:56.000 --> 09:58.000
+por isso que chama Minha Rede,
+
+09:58.000 --> 10:00.000
+foi aquela rede que a gente criou no início
+
+10:00.000 --> 10:02.000
+para poder funcionar dentro do nosso portem.
+
+10:02.000 --> 10:06.000
+Environments são as variáveis dessa aplicação.
+
+10:06.000 --> 10:10.000
+Quando o desenvolvedor da Evolution desenvolveu a aplicação,
+
+10:10.000 --> 10:14.000
+ele disse, precisa de x em variáveis para poder
+
+10:14.000 --> 10:16.000
+sua evolução funcionar corretamente.
+
+10:16.000 --> 10:17.000
+Quais são essas variáveis?
+
+10:17.000 --> 10:20.000
+Então server o RL, que é o nome do seu domínio,
+
+10:20.000 --> 10:21.000
+que a gente já está vendo aqui.
+
+10:21.000 --> 10:25.000
+A autentiquei um API que acenha para você logar na sua evolução,
+
+10:25.000 --> 10:28.000
+que ela é gerada automaticamente pela própria evolução.
+
+10:28.000 --> 10:30.000
+Então ele tem alguns detalhes,
+
+10:30.000 --> 10:33.000
+tem o limite do QR code, que é quando seja o QR code.
+
+10:33.000 --> 10:36.000
+De quanto tempo você vai poder ler aquele QR code,
+
+10:36.000 --> 10:39.000
+tem a linguagem, tem a configuração do telefone do cliente.
+
+10:39.000 --> 10:42.000
+Por exemplo, configure sessionpone cliente,
+
+10:42.000 --> 10:45.000
+olha o design, configure sessionpone name from.
+
+10:45.000 --> 10:48.000
+Se você quiser alterar o nome disso para outras coisas,
+
+10:48.000 --> 10:49.000
+você pode alterar aqui.
+
+10:49.000 --> 10:51.000
+E aí você pode dizer aqui, por exemplo,
+
+10:51.000 --> 10:53.000
+quando você conectava esse nome da sua empresa
+
+10:53.000 --> 10:56.000
+e o nome do telefone vai ser o telefone da sua empresa.
+
+10:56.000 --> 10:58.000
+Então isso é uma forma de a gente conseguir visualizar
+
+10:58.000 --> 11:02.000
+como é que vai ficar no telefone da pessoa ou na visualização ali.
+
+11:02.000 --> 11:04.000
+Então tem toda a parte do banco de dados,
+
+11:04.000 --> 11:06.000
+que já é criado automaticamente,
+
+11:06.000 --> 11:08.000
+mas é o banco de dados estativo,
+
+11:08.000 --> 11:12.000
+o provedor é o PostgreSQL, aqui é o RL do PostgreSQL com a senha,
+
+11:12.000 --> 11:14.000
+qual o tipo de conexão,
+
+11:14.000 --> 11:16.000
+quando ele vai ser salvo, quando ele não vai ser salvo.
+
+11:16.000 --> 11:18.000
+Aqui tem algumas integrações,
+
+11:18.000 --> 11:20.000
+a integração com o N8N, a integração com o API,
+
+11:20.000 --> 11:22.000
+que é da própria evolução.
+
+11:22.000 --> 11:25.000
+E toda a configuração que é necessária para a evolução,
+
+11:25.000 --> 11:29.000
+o Macache, o WebRooks, telemetria, o WebSocket.
+
+11:29.000 --> 11:32.000
+Então são formas que ele trabalha o WebTmq,
+
+11:32.000 --> 11:34.000
+mas para frente a gente também vai ver sobre isso,
+
+11:34.000 --> 11:36.000
+aqui no mundo open source.
+
+11:36.000 --> 11:39.000
+Então são todas as configurações de environment,
+
+11:39.000 --> 11:41.000
+todas as variáveis que a sua evolução pode ter,
+
+11:41.000 --> 11:43.000
+como os eventos, o que os eventos fazem.
+
+11:43.000 --> 11:46.000
+E por fim, a gente tem um deploy,
+
+11:46.000 --> 11:49.000
+que o deploy faça a instalação,
+
+11:49.000 --> 11:51.000
+por exemplo, é isso que você está dizendo para o terminal,
+
+11:51.000 --> 11:54.000
+no modelo de replicação e só replicando uma vez.
+
+11:54.000 --> 11:55.000
+Isso é algo do Docker.
+
+11:55.000 --> 11:57.000
+Se eu quiser ter dois contênios iguais,
+
+11:57.000 --> 11:59.000
+para se um caí ou outro subir, isso funciona,
+
+11:59.000 --> 12:01.000
+mas normalmente isso é mais para frente.
+
+12:01.000 --> 12:03.000
+Em um outro tipo de Docker, se chamam suarme.
+
+12:03.000 --> 12:05.000
+A gente já tem ele instalado aqui,
+
+12:05.000 --> 12:06.000
+mas isso é um pouco mais para frente,
+
+12:06.000 --> 12:08.000
+não há necessidade de você aprender agora.
+
+12:08.000 --> 12:12.000
+E, por fim, a gente tem aqui as nossas labels.
+
+12:12.000 --> 12:13.000
+O que são as labels?
+
+12:13.000 --> 12:15.000
+Adap lembra que eu disse sobre o traifique,
+
+12:15.000 --> 12:18.000
+que o traifique mapeias, portas, pelo nome.
+
+12:18.000 --> 12:21.000
+Então é por aqui que o traifique consegue entender isso.
+
+12:21.000 --> 12:24.000
+Se você vê que ele tem um rúste, que é o RL da evolução,
+
+12:24.000 --> 12:26.000
+e ele tem a porta que ele vai rodar, oitenta e oitenta.
+
+12:26.000 --> 12:28.000
+Então, quando alguém entra procurando essa RL,
+
+12:28.000 --> 12:31.000
+ele joga para esse determinado container.
+
+12:31.000 --> 12:34.000
+E também o traifique cria o SSL,
+
+12:34.000 --> 12:38.000
+que é o nosso certificado de segurança aqui dentro do nosso sistema.
+
+12:38.000 --> 12:40.000
+Então é muito importante para a gente identificar
+
+12:40.000 --> 12:42.000
+como é que funciona esteque,
+
+12:42.000 --> 12:44.000
+e poder também interpretar isso aqui,
+
+12:44.000 --> 12:46.000
+porque às vezes pode tendo uma rota de labels errado,
+
+12:46.000 --> 12:48.000
+alguma coisa do tipo, você vem aqui,
+
+12:48.000 --> 12:50.000
+ler e consegue alterar.
+
+12:50.000 --> 12:52.000
+Então, aqui ele está fazendo um outro deploy,
+
+12:52.000 --> 12:55.000
+que é dentro do mesmo só que são dois containers diferentes,
+
+12:55.000 --> 12:56.000
+que é a evolução Reds.
+
+12:56.000 --> 12:58.000
+Como é que eu vejo são dois containers diferentes?
+
+12:58.000 --> 13:00.000
+Imagine, cada um tem uma imagem, tá vendo?
+
+13:00.000 --> 13:02.000
+Então é a evolução API, tem uma imagem.
+
+13:02.000 --> 13:05.000
+O container do Reds tem outra imagem.
+
+13:05.000 --> 13:08.000
+E depois nós temos de novo os volumes,
+
+13:08.000 --> 13:11.000
+tanto do Reds quanto da evolução,
+
+13:11.000 --> 13:14.000
+que tem que ser passada pela stack,
+
+13:14.000 --> 13:16.000
+que se chama Docker Compulse.ym,
+
+13:16.000 --> 13:19.000
+ou todo esse texto aqui, se chama isso.
+
+13:19.000 --> 13:21.000
+E as networks novamente,
+
+13:21.000 --> 13:23.000
+então é uma forma de a gente fechar isso.
+
+13:23.000 --> 13:26.000
+E assim, a gente tem a instalação da nossa primeira ferramenta,
+
+13:26.000 --> 13:28.000
+que é a evolução. Vamos abrir ela aqui
+
+13:28.000 --> 13:29.000
+para a gente ver como é que ela funciona.
+
+13:29.000 --> 13:31.000
+Então vem aqui no server URL,
+
+13:31.000 --> 13:33.000
+lembrando, dá pra ver na que entrou nisso.
+
+13:33.000 --> 13:34.000
+Aqui ó, em editor.
+
+13:34.000 --> 13:36.000
+Não vem text, não de novo, text,
+
+13:36.000 --> 13:38.000
+evolução, editor,
+
+13:38.000 --> 13:41.000
+pega o URL, copia,
+
+13:41.000 --> 13:43.000
+joga na web,
+
+13:46.000 --> 13:48.000
+vamos ver o que aconteceu.
+
+13:50.000 --> 13:54.000
+Hmm, tá com dois f's aqui ó, pronto.
+
+13:54.000 --> 13:57.000
+Já é um erro que aconteceu na hora que a gente fez a instalação.
+
+13:57.000 --> 13:59.000
+Ele veio com dois f's aqui ó.
+
+13:59.000 --> 14:00.000
+E o nosso domínio,
+
+14:00.000 --> 14:02.000
+só possuindo um f.
+
+14:02.000 --> 14:04.000
+Então como é que eu resolveria isso? Aqui ó,
+
+14:04.000 --> 14:06.000
+tiraria esse f daqui,
+
+14:06.000 --> 14:08.000
+teria que também descer lá embaixo,
+
+14:08.000 --> 14:10.000
+já é uma forma de vocês aprenderem também.
+
+14:10.000 --> 14:12.000
+Eu diria que vocês não vai estar errado,
+
+14:12.000 --> 14:13.000
+que vocês vão botar certinho,
+
+14:13.000 --> 14:14.000
+mas retire o outro f aqui,
+
+14:14.000 --> 14:15.000
+vem aqui embaixo,
+
+14:15.000 --> 14:17.000
+e atualiza a instake.
+
+14:17.000 --> 14:19.000
+Eu falei pro meu proxy revésso,
+
+14:19.000 --> 14:20.000
+que agora o nome não é mais aqui,
+
+14:20.000 --> 14:22.000
+ele selfie com dois f's,
+
+14:22.000 --> 14:23.000
+só é com um f.
+
+14:23.000 --> 14:26.000
+E veja que ele já faz as instalações dos containers,
+
+14:26.000 --> 14:27.000
+muito rápido,
+
+14:27.000 --> 14:28.000
+isso é o do container que eu alterei.
+
+14:28.000 --> 14:30.000
+Então eu só alterei o container de cima,
+
+14:30.000 --> 14:32.000
+ó, ele já criou um novo container,
+
+14:32.000 --> 14:34.000
+se eu vim aqui agora e dá um enter,
+
+14:34.000 --> 14:35.000
+tirando esse f aqui, né,
+
+14:35.000 --> 14:37.000
+vou tirar o f.
+
+14:37.000 --> 14:39.000
+Veja o que ele conseguiu entrar nessa tela branca,
+
+14:39.000 --> 14:41.000
+mas o status é 200.
+
+14:41.000 --> 14:42.000
+Então, status 200 significa,
+
+14:42.000 --> 14:44.000
+ok, tanto que ele fala bem vindo,
+
+14:44.000 --> 14:45.000
+a evolução,
+
+14:45.000 --> 14:47.000
+aqui na versão 236.
+
+14:47.000 --> 14:50.000
+Então, como é que eu entro no painel da evolução?
+
+14:50.000 --> 14:53.000
+A gente vai utilizar o nosso barra-manager.
+
+14:53.000 --> 14:55.000
+Enfim, aqui, escrever barra-manager.
+
+14:55.000 --> 14:57.000
+Vamos entrar dentro da evolução,
+
+14:57.000 --> 14:59.000
+e ele falar o RL,
+
+14:59.000 --> 15:01.000
+e lembra que a gente tinha que botar a senha.
+
+15:01.000 --> 15:03.000
+Então, a gente vai botar lá no nosso portêmne,
+
+15:03.000 --> 15:05.000
+vem editor,
+
+15:05.000 --> 15:06.000
+procura aquele autentique,
+
+15:06.000 --> 15:08.000
+uma peique, ó, aqui,
+
+15:08.000 --> 15:10.000
+copia, volta lá,
+
+15:10.000 --> 15:12.000
+cola aqui,
+
+15:12.000 --> 15:13.000
+e pronto,
+
+15:13.000 --> 15:14.000
+acessamos a nossa evolução.
+
+15:14.000 --> 15:16.000
+Dá, como é que funciona a evolução?
+
+15:16.000 --> 15:18.000
+Vou fazer um pequeno overview com vocês,
+
+15:18.000 --> 15:19.000
+não vocês entenderem,
+
+15:19.000 --> 15:20.000
+porque ela é tão importante,
+
+15:20.000 --> 15:21.000
+como é que ela funciona,
+
+15:21.000 --> 15:22.000
+que é bem simples a gente operar.
+
+15:22.000 --> 15:24.000
+Então, aqui, instancias,
+
+15:24.000 --> 15:25.000
+você pode criar uma nova instância,
+
+15:25.000 --> 15:26.000
+eu vou chamar de teste aqui,
+
+15:26.000 --> 15:28.000
+criei a instância,
+
+15:28.000 --> 15:30.000
+ela está desconectada,
+
+15:30.000 --> 15:32.000
+eu vim aqui em configurações,
+
+15:32.000 --> 15:34.000
+gerar QR code,
+
+15:34.000 --> 15:36.000
+ela vai abrir um QR code,
+
+15:36.000 --> 15:38.000
+eu leio esse QR code
+
+15:38.000 --> 15:40.000
+com o meu celular conectado no WhatsApp,
+
+15:40.000 --> 15:41.000
+lá em abrir,
+
+15:41.000 --> 15:43.000
+conectar no dispositivo,
+
+15:43.000 --> 15:44.000
+ela vai se conectar.
+
+15:44.000 --> 15:46.000
+Após essa conexão,
+
+15:46.000 --> 15:48.000
+eu consigo fazer algumas configurações,
+
+15:48.000 --> 15:49.000
+por exemplo, visualizar o chat,
+
+15:49.000 --> 15:51.000
+que seria as conversas,
+
+15:51.000 --> 15:53.000
+e os grupos desse número que está conectado,
+
+15:53.000 --> 15:55.000
+consigo vir aqui em configurações
+
+15:55.000 --> 15:57.000
+e alguns pontos muito importantes,
+
+15:57.000 --> 15:58.000
+como, por exemplo,
+
+15:58.000 --> 15:59.000
+se você quiser rejeitar ligações,
+
+15:59.000 --> 16:00.000
+se for um bot,
+
+16:00.000 --> 16:01.000
+por exemplo,
+
+16:01.000 --> 16:02.000
+não é legal o pessoal ficar ligando,
+
+16:02.000 --> 16:03.000
+e ignorar grupos,
+
+16:03.000 --> 16:04.000
+para você não visualizar grupos,
+
+16:04.000 --> 16:06.000
+não compartilhar conversas com grupos.
+
+16:06.000 --> 16:08.000
+Com esse,
+
+16:08.000 --> 16:09.000
+com essa API,
+
+16:09.000 --> 16:11.000
+não é o seu celular que vai ficar sem grupos,
+
+16:11.000 --> 16:12.000
+é só essa API naquele momento,
+
+16:12.000 --> 16:13.000
+que ela não vai operar,
+
+16:13.000 --> 16:15.000
+então, o seu bot não vai operar dentro de grupos.
+
+16:15.000 --> 16:17.000
+Então, a gente marca essas funções,
+
+16:17.000 --> 16:18.000
+que é importante marcar,
+
+16:18.000 --> 16:19.000
+então, aqui a gente tem,
+
+16:19.000 --> 16:20.000
+sempre online,
+
+16:20.000 --> 16:21.000
+ler mensagens,
+
+16:21.000 --> 16:23.000
+olhar todos os isters,
+
+16:23.000 --> 16:24.000
+ler todos os status,
+
+16:24.000 --> 16:26.000
+mas não é isso que a gente quer,
+
+16:26.000 --> 16:27.000
+a gente só precisa dos dois aqui.
+
+16:27.000 --> 16:28.000
+Nós temos o proxy,
+
+16:28.000 --> 16:30.000
+que além do nosso traifique,
+
+16:30.000 --> 16:31.000
+que é outra coisa,
+
+16:31.000 --> 16:33.000
+traifique é um proxy reverso,
+
+16:33.000 --> 16:34.000
+internamente,
+
+16:34.000 --> 16:35.000
+que ele vai trabalhando,
+
+16:35.000 --> 16:36.000
+mas temos um proxy normal,
+
+16:36.000 --> 16:37.000
+que esse proxy normal,
+
+16:37.000 --> 16:38.000
+a gente pode colocar,
+
+16:38.000 --> 16:40.000
+para fazer um outro roteamento de rede,
+
+16:40.000 --> 16:42.000
+saindo no nosso IP.
+
+16:42.000 --> 16:43.000
+Mas, para frente,
+
+16:43.000 --> 16:44.000
+também veremos um aula sobre isso.
+
+16:44.000 --> 16:46.000
+Então, nós temos os eventos aqui,
+
+16:46.000 --> 16:47.000
+que são os webrux,
+
+16:47.000 --> 16:49.000
+que são os eventos mais importantes,
+
+16:49.000 --> 16:50.000
+que a gente vai ver isso
+
+16:50.000 --> 16:52.000
+quando a gente fazia a integração com o n8n,
+
+16:52.000 --> 16:54.000
+mas é aqui que você configura ele,
+
+16:54.000 --> 16:56.000
+então, a gente normalmente configure ele com o nable,
+
+16:56.000 --> 16:58.000
+marca esse base-minha-4,
+
+16:58.000 --> 16:59.000
+que o base-minha-4,
+
+16:59.000 --> 17:02.000
+é uma criptografia de arquivos grandes,
+
+17:02.000 --> 17:05.000
+de imagens, audios e vídeos,
+
+17:05.000 --> 17:07.000
+e marca um evento aqui,
+
+17:07.000 --> 17:08.000
+que é uma mensagem absurd,
+
+17:08.000 --> 17:10.000
+que é qualquer mensagem recebida.
+
+17:10.000 --> 17:12.000
+Também vamos ver nessa frente,
+
+17:12.000 --> 17:13.000
+nas nossas configurações,
+
+17:13.000 --> 17:14.000
+gn8n.
+
+17:14.000 --> 17:16.000
+E aqui é o rl do webrux,
+
+17:16.000 --> 17:17.000
+só que a gente não tem no momento,
+
+17:17.000 --> 17:18.000
+então, a gente não vai colocar,
+
+17:18.000 --> 17:20.000
+mas a gente pode fazer essa integração.
+
+17:20.000 --> 17:23.000
+E aqui, a evolução possui diversas integrações,
+
+17:23.000 --> 17:24.000
+você pode fazer direto,
+
+17:24.000 --> 17:25.000
+uma evoi,
+
+17:25.000 --> 17:27.000
+n8n,
+
+17:27.000 --> 17:28.000
+evolução bot,
+
+17:28.000 --> 17:29.000
+chatute,
+
+17:29.000 --> 17:30.000
+typebot,
+
+17:30.000 --> 17:31.000
+open-i,
+
+17:31.000 --> 17:32.000
+defi,
+
+17:32.000 --> 17:33.000
+flow-ise,
+
+17:33.000 --> 17:34.000
+que é cada coisa?
+
+17:34.000 --> 17:35.000
+Podemos estudar aqui,
+
+17:35.000 --> 17:36.000
+dentro da documentação,
+
+17:36.000 --> 17:38.000
+e a evolução também possui
+
+17:38.000 --> 17:40.000
+uma documentação própria e um postman próprio,
+
+17:40.000 --> 17:42.000
+para quem quer trabalhar com a PI.
+
+17:42.000 --> 17:44.000
+Então, se eu aplicar aqui em documentação,
+
+17:44.000 --> 17:45.000
+eu venho para a documentação,
+
+17:45.000 --> 17:47.000
+onde tem a importo gays,
+
+17:47.000 --> 17:48.000
+em inglês,
+
+17:48.000 --> 17:49.000
+a cuidado com isso daqui,
+
+17:49.000 --> 17:50.000
+está na versão 1,
+
+17:50.000 --> 17:51.000
+temos que usar a versão 2,
+
+17:51.000 --> 17:53.000
+e viemos aqui em API,
+
+17:53.000 --> 17:55.000
+e conseguimos ver tudo que a gente pode criar
+
+17:55.000 --> 17:56.000
+de integração,
+
+17:56.000 --> 17:57.000
+uma com a outra.
+
+17:57.000 --> 18:00.000
+Então, essa é a importância de a gente fazer a instalação
+
+18:00.000 --> 18:02.000
+aqui dentro do...
+
+18:02.000 --> 18:04.000
+Seu sistema,
+
+18:04.000 --> 18:05.000
+com a evolução API,
+
+18:05.000 --> 18:07.000
+e também aprendemos uma parte muito importante,
+
+18:07.000 --> 18:08.000
+que é a criação da stack,
+
+18:08.000 --> 18:10.000
+e a sua primeira instalação de ferramenta,
+
+18:10.000 --> 18:11.000
+aqui do nosso curso.
+
+18:11.000 --> 18:13.000
+Eu te aguardo na próxima aula,
+
+18:13.000 --> 18:15.000
+onde a gente vai fazer a instalação do N8N.
+
+18:15.000 --> 18:16.000
+Qualquer dúvida, já sabe.
+
+18:16.000 --> 18:18.000
+Deixe aqui nos comentários,
+
+18:18.000 --> 18:19.000
+que eu vou te responder,
+
+18:19.000 --> 18:20.000
+um todo certeza.
+
+18:20.000 --> 18:22.000
+Um abraço e até a próxima aula!
+

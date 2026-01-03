@@ -1,0 +1,86 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+Bom, agora que a gente já fez a instalação do nosso portêm, vamos dar uma verificada como é que ele funciona aqui, tá?
+
+00:09.000 --> 00:16.000
+Então, dentro do portêm a gente tem as stacks, que são as nossas instalações, são as nossas receitas do Docker, tá?
+
+00:16.000 --> 00:24.000
+Então ele vem meio que pre-montado ali para a gente conseguir rodar, que se chama Docker Compulse.ym ou que a gente vai rodar dentro das stacks,
+
+00:24.000 --> 00:32.000
+nós temos os serviços que estão rodando, que eles estão dentro ali, que são praticamente os containers, e nós temos os containers que são as separações,
+
+00:32.000 --> 00:36.000
+os serviços que estão rodando e os containers estão dentro do serviço.
+
+00:36.000 --> 00:46.000
+Nós temos as imagens que são o que foram instalados de imagem aqui dentro do nosso Docker, porque quando ele cria aquela maletinha que a gente aprendeu,
+
+00:46.000 --> 00:52.000
+para aquela maletinha, é como se fosse as imagens, aí ele distribui aquela maletinha na internet pelas imagens, certo?
+
+00:52.000 --> 01:00.000
+Net War, que é um ponto importante, que eu falei para vocês que a gente criou minha rede, porque é onde os containers se comunicam.
+
+01:00.000 --> 01:11.000
+Então, se eu preciso ter alguns sistemas meios internos se comunicando, por exemplo, como o N8M, com redes, o traifix, se comunicando com todos os sistemas,
+
+01:11.000 --> 01:17.000
+se ele puder passar o roteamento, porque como a gente tinha falado, vou reforçar aqui para vocês, o que é o traifix?
+
+01:17.000 --> 01:24.000
+O traifix é um proxy reverso. Então, imagine que o seu sistema é o único IP, certo?
+
+01:24.000 --> 01:32.000
+Só tem aquele IP daquela macro. As coisas estão batendo ali sendo solicitadas, por exemplo, que vai ser solicitado em nosso N8M, o nosso evolução,
+
+01:32.000 --> 01:42.000
+como é que o seu único IP iria trabalhar com isso, com essas todas solicitações de entender quem é o dono de daquele nome, entendeu?
+
+01:42.000 --> 01:48.000
+Então, o traifix, ele faz isso, como o traifix controlar as coisas que a gente chama de porta pelas labels, ele diz assim,
+
+01:48.000 --> 01:56.000
+esse cara é dono desse contém, esse nome é dono desse contém, ele é como se fosse um bem nesse interno, certo?
+
+01:56.000 --> 02:04.000
+Funciona mais ou menos dessa forma, mas ele vai passando com base nas portas, ele diz, esse cara é dono desse nome,
+
+02:04.000 --> 02:12.000
+esse cara é dono desse nome, esse cara é dono desse nome, porque internamente essas redes criam um IP, uma classe IP para elas,
+
+02:12.000 --> 02:27.000
+então, se você ver aqui, por exemplo, na nossa classe minha rede é 10.0.1.0 bar 24, então tudo que está dentro dessa classe que 10.0.1.0, que vai do 0 até o 256,
+
+02:27.000 --> 02:37.000
+aí ele cria essa camada, certo? É uma coisa um pouquinho mais voltada para redes, mas importante a gente entender, como é que o Proxy Revesse funciona e para que ele serve.
+
+02:37.000 --> 02:43.000
+Então ele serve para isso, para cada contém que tem o seu nomezinho ali, ser chamado quando alguém solicita ele,
+
+02:43.000 --> 02:49.000
+quando está rodando tudo dentro de uma única máquina, a gente precisa fazer isso, isso é responsabilidade do traifix,
+
+02:49.000 --> 02:56.000
+por isso que o traifix é sempre instalado junto com o portém, para ele já controlar essas portas e ter esse controle sobre os sistemas.
+
+02:56.000 --> 03:02.000
+Então, vamos fazer a nossa primeira instalação, que é da nossa evolução, que é um sistema de WhatsApp,
+
+03:02.000 --> 03:09.000
+não é uma API de WhatsApp, onde você leu seu QR code, você consegue se conectar ali dentro e fazer automações de processo,
+
+03:09.000 --> 03:16.000
+agente de inteligência artificial, envios de disparar em massa com WhatsApp, então é uma API muito legal a gente aprender.
+
+03:16.000 --> 03:23.000
+Como é que eu faço isso? Não, é muito complexo, não, lembrando, a gente tem a parte de código, a gente tem a parte de criação,
+
+03:23.000 --> 03:30.000
+nós conseguimos fazer todas as coisas, mas nós temos aqui o nosso sistema Oreo, que facilita bastante a nossa vida em relação a isso.
+
+03:30.000 --> 03:31.000
+Vamos...
+
