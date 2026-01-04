@@ -1,0 +1,395 @@
+# Vercel Express - Curriculum Structure
+# Generated: 2026-01-04
+# Version: 1.0
+
+course:
+  slug: vercel-express
+  name: Vercel Express
+  tagline: "Seu projeto Next.js no ar em 2 horas"
+  description: |
+    Curso prático e direto ao ponto para desenvolvedores iniciantes
+    que querem fazer deploy do primeiro projeto Next.js na Vercel.
+    Foco em troubleshooting dos erros mais comuns.
+
+  metadata:
+    version: "1.0"
+    language: pt-BR
+    level: beginner
+    duration_hours: 2.5
+    total_lessons: 24
+    total_modules: 6
+
+  pricing:
+    launch: 97
+    regular: 147
+    currency: BRL
+
+  target_audience:
+    primary: "Dev Iniciante (HTML/CSS/JS + React básico)"
+    prerequisites:
+      - HTML/CSS intermediário
+      - JavaScript básico
+      - React/Next.js básico (pelo menos 1 projeto)
+      - Git básico (commit, push, pull)
+
+  transformation:
+    before:
+      - "Projeto funciona local, falha no deploy"
+      - "Copia configurações sem entender"
+      - "Medo de custos surpresa"
+      - "Frustrado com erros de env vars e DNS"
+    after:
+      - "Deploy confiante em minutos"
+      - "Entende as configurações essenciais"
+      - "Sabe resolver os erros mais comuns"
+      - "Projeto online com domínio customizado"
+
+  deliverables:
+    - "Portfolio pessoal funcionando online"
+    - "Domínio customizado configurado"
+    - "SSL/HTTPS automático"
+    - "Checklists de deploy (PDF)"
+
+modules:
+  - id: m1
+    slug: entendendo-vercel
+    name: "Entendendo Vercel"
+    description: "O mínimo que você precisa saber antes de deployar"
+    duration_minutes: 20
+    order: 1
+    deliverable: "Conta criada + GitHub conectado"
+
+    lessons:
+      - id: m1-l1
+        slug: o-que-e-vercel
+        name: "O Que é Vercel (e por que usar)"
+        duration_minutes: 8
+        type: conceptual
+        description: "CDN + Serverless explicado com analogias"
+        objectives:
+          - "Entender o que é Vercel em termos simples"
+          - "Saber por que Vercel é ideal para Next.js"
+          - "Diferenciar Vercel de hospedagem tradicional"
+
+      - id: m1-l2
+        slug: criando-conta-github
+        name: "Criando Conta e Conectando GitHub"
+        duration_minutes: 7
+        type: screencast
+        description: "Passo a passo visual para criar conta"
+        objectives:
+          - "Criar conta no plano Hobby (gratuito)"
+          - "Conectar conta do GitHub"
+          - "Entender as permissões solicitadas"
+
+      - id: m1-l3
+        slug: tour-dashboard
+        name: "Tour pelo Dashboard"
+        duration_minutes: 5
+        type: screencast
+        description: "Onde encontrar o que você precisa"
+        objectives:
+          - "Navegar pelo dashboard com confiança"
+          - "Identificar seções principais"
+
+  - id: m2
+    slug: primeiro-deploy
+    name: "Primeiro Deploy"
+    description: "Seu projeto no ar em 15 minutos"
+    duration_minutes: 30
+    order: 2
+    deliverable: "Projeto deployado com URL Vercel"
+
+    lessons:
+      - id: m2-l1
+        slug: importando-projeto
+        name: "Importando Projeto do GitHub"
+        duration_minutes: 8
+        type: screencast
+        description: "Framework detection automático"
+        objectives:
+          - "Importar repositório do GitHub"
+          - "Entender framework detection"
+          - "Configurar opções de build se necessário"
+
+      - id: m2-l2
+        slug: entendendo-build
+        name: "Entendendo o Build"
+        duration_minutes: 10
+        type: conceptual
+        description: "O que acontece quando você faz deploy"
+        objectives:
+          - "Entender o processo de build"
+          - "Ler logs de build"
+          - "Identificar erros comuns"
+
+      - id: m2-l3
+        slug: primeiro-deploy-pratico
+        name: "Seu Primeiro Deploy"
+        duration_minutes: 7
+        type: screencast
+        description: "Do botão ao link funcionando"
+        objectives:
+          - "Executar primeiro deploy com sucesso"
+          - "Acessar URL gerada"
+          - "Verificar projeto funcionando"
+
+      - id: m2-l4
+        slug: troubleshooting-primeiro-deploy
+        name: "Troubleshooting: Erros do Primeiro Deploy"
+        duration_minutes: 5
+        type: troubleshooting
+        description: "Build failed, framework not detected"
+        objectives:
+          - "Resolver erro 'Build failed'"
+          - "Resolver erro 'Framework not detected'"
+          - "Resolver erro 'Module not found'"
+
+  - id: m3
+    slug: environment-variables
+    name: "Environment Variables"
+    description: "O erro #1 dos iniciantes - resolvido de vez"
+    duration_minutes: 25
+    order: 3
+    deliverable: "Projeto com API key funcionando"
+
+    lessons:
+      - id: m3-l1
+        slug: o-que-sao-env-vars
+        name: "O Que São Env Vars (e por que existem)"
+        duration_minutes: 5
+        type: conceptual
+        description: "Analogia: cofre de senhas"
+        objectives:
+          - "Entender o conceito de environment variables"
+          - "Saber quando usar env vars"
+          - "Diferenciar .env local vs Vercel env vars"
+
+      - id: m3-l2
+        slug: client-vs-server
+        name: "Client vs Server: A Diferença Crucial"
+        duration_minutes: 8
+        type: conceptual
+        description: "NEXT_PUBLIC_ explicado"
+        objectives:
+          - "Entender diferença client vs server"
+          - "Saber quando usar NEXT_PUBLIC_"
+          - "Evitar expor secrets no client"
+
+      - id: m3-l3
+        slug: configurando-env-vars
+        name: "Configurando no Vercel Dashboard"
+        duration_minutes: 7
+        type: screencast
+        description: "Passo a passo + redeploy"
+        objectives:
+          - "Adicionar env vars no dashboard"
+          - "Entender ambientes (Production, Preview, Development)"
+          - "Fazer redeploy após adicionar variáveis"
+
+      - id: m3-l4
+        slug: troubleshooting-env-vars
+        name: "Troubleshooting: Env Var Não Funciona"
+        duration_minutes: 5
+        type: troubleshooting
+        description: "Checklist de debugging"
+        objectives:
+          - "Diagnosticar problemas com env vars"
+          - "Usar checklist de debugging"
+          - "Resolver erro 'undefined'"
+
+  - id: m4
+    slug: dominio-customizado
+    name: "Domínio Customizado"
+    description: "De projeto.vercel.app para seunome.com.br"
+    duration_minutes: 30
+    order: 4
+    deliverable: "Projeto com domínio customizado + SSL"
+
+    lessons:
+      - id: m4-l1
+        slug: dns-para-humanos
+        name: "DNS Para Humanos"
+        duration_minutes: 8
+        type: conceptual
+        description: "Analogia: lista telefônica da internet"
+        objectives:
+          - "Entender DNS de forma simples"
+          - "Conhecer registros A e CNAME"
+          - "Entender propagação"
+
+      - id: m4-l2
+        slug: comprando-dominio
+        name: "Comprando Domínio (Registro.br)"
+        duration_minutes: 5
+        type: screencast
+        description: "Passo a passo de compra"
+        objectives:
+          - "Buscar disponibilidade de domínio"
+          - "Completar compra no Registro.br"
+          - "Conhecer alternativas (.com)"
+
+      - id: m4-l3
+        slug: configurando-dns
+        name: "Configurando DNS no Vercel"
+        duration_minutes: 10
+        type: screencast
+        description: "A, CNAME, propagação"
+        objectives:
+          - "Adicionar domínio no Vercel"
+          - "Configurar DNS (nameservers ou registros)"
+          - "Verificar configuração"
+
+      - id: m4-l4
+        slug: troubleshooting-dns
+        name: "Troubleshooting: DNS Não Funciona"
+        duration_minutes: 7
+        type: troubleshooting
+        description: "Invalid config, SSL pending"
+        objectives:
+          - "Resolver 'Invalid Configuration'"
+          - "Resolver 'SSL Certificate Pending'"
+          - "Usar ferramentas de diagnóstico"
+
+  - id: m5
+    slug: evitando-problemas
+    name: "Evitando Problemas"
+    description: "O que você precisa saber para não ter surpresas"
+    duration_minutes: 20
+    order: 5
+    deliverable: "Spend limit configurado"
+
+    lessons:
+      - id: m5-l1
+        slug: entendendo-free-tier
+        name: "Entendendo o Free Tier"
+        duration_minutes: 8
+        type: conceptual
+        description: "Limites reais, o que cabe"
+        objectives:
+          - "Conhecer limites do plano Hobby"
+          - "Saber o que está incluído"
+          - "Avaliar se projeto cabe no free tier"
+
+      - id: m5-l2
+        slug: protecao-custos
+        name: "Proteção Contra Custos Surpresa"
+        duration_minutes: 7
+        type: screencast
+        description: "Spend limits, bot protection"
+        objectives:
+          - "Configurar spend limit"
+          - "Ativar proteção contra bots"
+          - "Monitorar usage"
+
+      - id: m5-l3
+        slug: quando-upgrade
+        name: "Quando Fazer Upgrade?"
+        duration_minutes: 5
+        type: conceptual
+        description: "Sinais de que você precisa do Pro"
+        objectives:
+          - "Identificar sinais de que precisa upgrade"
+          - "Conhecer diferenças Hobby vs Pro"
+          - "Tomar decisão informada"
+
+  - id: m6
+    slug: projeto-final
+    name: "Projeto Final"
+    description: "Tudo junto: seu portfolio online"
+    duration_minutes: 30
+    order: 6
+    deliverable: "Portfolio funcionando com domínio customizado"
+
+    lessons:
+      - id: m6-l1
+        slug: estrutura-portfolio
+        name: "Estrutura do Portfolio"
+        duration_minutes: 10
+        type: practical
+        description: "Next.js + Tailwind básico"
+        objectives:
+          - "Entender estrutura do template"
+          - "Personalizar conteúdo"
+          - "Adicionar projetos"
+
+      - id: m6-l2
+        slug: deploy-completo
+        name: "Deploy Completo"
+        duration_minutes: 10
+        type: screencast
+        description: "Env vars + domínio"
+        objectives:
+          - "Fazer deploy do portfolio"
+          - "Configurar env vars se necessário"
+          - "Adicionar domínio customizado"
+
+      - id: m6-l3
+        slug: checklist-final
+        name: "Checklist Final"
+        duration_minutes: 5
+        type: validation
+        description: "Validação de qualidade"
+        objectives:
+          - "Verificar todas as páginas"
+          - "Confirmar HTTPS ativo"
+          - "Validar funcionamento completo"
+
+      - id: m6-l4
+        slug: proximos-passos
+        name: "Próximos Passos"
+        duration_minutes: 5
+        type: closing
+        description: "Preview Vercel Masterclass"
+        objectives:
+          - "Recapitular aprendizado"
+          - "Conhecer próximos passos"
+          - "Descobrir Vercel Masterclass"
+
+resources:
+  checklists:
+    - id: checklist-pre-deploy
+      name: "Checklist Pré-Deploy"
+      format: pdf
+
+    - id: checklist-env-vars
+      name: "Checklist de Env Vars"
+      format: pdf
+
+    - id: checklist-dns
+      name: "Checklist de DNS"
+      format: pdf
+
+  templates:
+    - id: template-portfolio
+      name: "Portfolio Template"
+      type: github-repo
+      url: "github.com/academia-lendaria/vercel-express-portfolio"
+
+    - id: template-vercel-json
+      name: "vercel.json básico"
+      type: file
+
+  references:
+    - id: ref-erros-comuns
+      name: "Tabela de Erros Comuns"
+      format: pdf
+
+    - id: ref-glossario
+      name: "Glossário (10 termos)"
+      format: pdf
+
+production:
+  status: ready_for_production
+  estimated_days: 17
+  phases:
+    - name: "Pré-produção (scripts)"
+      days: 3
+    - name: "Gravação"
+      days: 5
+    - name: "Edição"
+      days: 5
+    - name: "Materiais complementares"
+      days: 2
+    - name: "QA"
+      days: 2
